@@ -1,0 +1,43 @@
+{
+  "admitted_typed_runs": 2,
+  "base_archive_sha256": "1dbe571e60e118f4055ff7b7164e151c81250cb24f12169d84b1b550c9f8b878",
+  "cell_values_emitted_in_report": false,
+  "commands": [
+    {
+      "arguments": [
+        "-m",
+        "unittest",
+        "tests.test_benchmark_viewer",
+        "tests.test_dashboard",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stderr": "----------------------------------------------------------------------\nRan 8 tests in 0.172s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "arguments": [
+        "-c",
+        "from pathlib import Path; import civiclab; assert Path(civiclab.__file__).resolve().is_relative_to(Path.cwd()/'src'); from civiclab.benchmark_viewer import build; print(build('.', 'data/processed/delta-viewer', ['e02-775f7460965047e0999ddb81083fee6b','e02-b99863e7664f4af19386526bd5f438ef','e02-1be3718699e54d7380755be1f9d87e6d']))"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "data/processed/delta-viewer/index.html\n"
+    }
+  ],
+  "model_api_spend_usd": 0,
+  "model_calls": 0,
+  "network_requests": 0,
+  "overlay": {
+    "docs/WYOMING_BENCHMARK_VIEWER.md": "f163ed7039c4f97cadb2c77874943cfda96c70ed2aedf2087486625fa45fb5e2",
+    "src/civiclab/benchmark_viewer.py": "8e699821d5ad26077b3bc0e685feda5e9881cc8d897fdf1f0b34cf7fb8e028c9",
+    "src/civiclab/cli.py": "e3d4b542c72451add26a7370c0cd00614b03eea4ba40d49883f7241b0a091586",
+    "src/civiclab/templates/benchmark-detail.html": "5610f810f7bd9ca7f015351958da19a7e8786d59dd4f343d2c59ab588588b292",
+    "tests/test_benchmark_viewer.py": "00f35cb31199c2a63e0a38ca59361c178fb4e3d6c9f0ba244b053081be87450f"
+  },
+  "runs_verified": 3,
+  "schema_version": 1,
+  "scope": "Exact immutable stage3 restored with five explicitly hashed overlay files. Uses existing pinned Python3.12 environment with PYTHONPATH pointing only to restored source. This is neither a new clean dependency installation, a full current-tree archive nor independent acceptance; N1 files are absent from the immutable baseline.",
+  "status": "PASS_ISOLATED_BASE_PLUS_EXPLICIT_VIEWER_OVERLAY",
+  "temporary_restore": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-wy-viewer-delta-bmgs4jet/restored"
+}

@@ -1,0 +1,36 @@
+{
+  "actual_person_GETs": 0,
+  "actual_person_rows_processed": 0,
+  "audited_at_utc": "2026-11-03T13:30:40.979442+00:00",
+  "auditor_role": "independent_auditor",
+  "baseline_test_seconds": 4.563,
+  "baseline_tests_passed": 70,
+  "cost_usd": 0,
+  "file_pins_at_capture": {
+    "configs/e02_national_controls_v1.json": "3cf498e12c9d7317e725cf0ffc79a112c9bab57859e7f05dcf173077be2a5585",
+    "docs/E02_NATIONAL_PUMS_N1_CONTROLS.md": "e014da2a02d0c71e6b3d454ec8e1734609bc418836003c91c79393c9b7ed8ef1",
+    "src/civiclab/e02/national_budget.py": "45d47dc582700da7f18f6e6d0799c91c06367c53fdf683581099818bba68281a",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_national_controls.py": "703165786c9ccda3283de79b2295bfb858da441cc205e296e696b659ac6913fd"
+  },
+  "finding_report": "reports/INDEPENDENT_AUDIT_E02_N1_CONTROL_FINDINGS.json",
+  "independent_positive_probes": {
+    "independent_fork_crash_after_durable_receipt_consumes_full": true,
+    "independent_two_process_single_reservation": true,
+    "independent_varying51state_point80replicate_union_51sharevariances_3covariances_order_replay": true,
+    "own_parent_cancellation_refuses_child_result": true
+  },
+  "mock_artifacts_verified": 7,
+  "mock_body_bytes": 58550,
+  "mock_checksums_sha256": "fe0a3389e26b1d2028dab6dae6d98648ea6c9026434d91eff31a023c590321d6",
+  "mock_ledger_fake_attempts": 50,
+  "mock_ledger_sources": 51,
+  "mock_primary_replay_exact": true,
+  "mock_processing_rows_two_sweeps": 102,
+  "mock_run_id": "e02-ae0e2ceb885d4fd4864e2ef6386beff5",
+  "mock_union_cells": 612,
+  "model_calls": 0,
+  "schema_version": 1,
+  "scope": "Positive fixture/source-ledger evidence only. Does not close counter-integrity or low-space persistence findings; N1 acceptance remains withheld. All rows/sources/probes authored MOCK, not actual person records or network adapter acceptance.",
+  "status": "SCOPED_POSITIVE_N1_PROBES_FINDINGS_STILL_OPEN"
+}
