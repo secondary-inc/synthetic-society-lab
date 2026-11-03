@@ -10,6 +10,8 @@ Research project exploring whether demographic grounding, information exposure, 
 - [Master execution blueprint](CODEX_MASTER_EXECUTION.md)
 - [Original start-here handoff](START_HERE.md)
 - [Data acquisition inventory](configs/MASTER_DATA_ACQUISITION.csv)
+- [Received data and validation status](docs/DATA_SOURCES.md)
+- [Source hashes and CSV structure inventory](configs/SOURCE_INVENTORY.json)
 - [GDELT ingestion fixture](tests/fixtures/gdelt/20261103090000.gkg.csv.zip)
 - [Fixture provenance](tests/fixtures/gdelt/manifest.json)
 
