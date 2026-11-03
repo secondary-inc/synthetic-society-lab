@@ -1,0 +1,90 @@
+{
+  "actual_human_approvals": 0,
+  "actual_network_requests": 0,
+  "actual_owner_bootstraps": 0,
+  "boundaries": [
+    "Only authored owner/client controls; no production owner path created, human approval, model transport or credential access.",
+    "Caller-supplied valid post baseline is not independently bound to an own prior receipt by this component; later journal bridge must establish it.",
+    "Returned success remains SETTLED; caller must make exact durable external checkpoint. No new RunStore, survey run, scoring or journal integration.",
+    "Complete trusted-local history replacement remains outside integrity claim; no hostile-host or human identity authentication.",
+    "Fixture prices and small tests are not authentic price/provider compatibility or large-history resource/retention assurance.",
+    "Wrapper requires checkout test helpers via PYTHONPATH=src:tests, new output below data/processed/fixture_scopes; no automatic reset."
+  ],
+  "controller_receipts_renewed": false,
+  "credential_reads": 0,
+  "development_costs": "Assistant, local compute, storage and labor unpriced and excluded.",
+  "earlier_authored_control": {
+    "index_sha256": "d86db9f4a4f28eecde96923888932b5cc85c693765235273cc2b748fec3fdee6",
+    "path": "data/processed/fixture_scopes/owner-survey-v3-20261103-01",
+    "scope": "Earlier identical client/control logic before explicit wrapper output-root guard. Preserved; final guard version executed as02. No failed component tests."
+  },
+  "experimental_api_spend_usd": 0,
+  "files": {
+    "docs/OWNER_SURVEY_CLIENT_V3_CANDIDATE.md": "c796ce7164cfe77aee38bcb8135c4f9b01e9f8dbe7ddf90d6364da53776ecf62",
+    "scripts/record_owner_survey_v3_fixture.py": "bae8ed3769b982b00a7436317b4842714d60878ab3ec11a613085a8625c00f96",
+    "src/civiclab/owner_survey_client_v3.py": "284486fd4889c8cfa62739f06035118ef67a02f08a64cc453ee8f97c6ff24826",
+    "tests/test_owner_survey_client_v3.py": "fcc1a2b53a89b12102d89958e504b4b397a98c221118d98fed86b056ea033d2c"
+  },
+  "methods_release": {
+    "path": "reports/INDEPENDENT_AUDIT_OWNER_SURVEY_CLIENT_V3_METHODS.json",
+    "sha256": "f2e3cb9f5eb2029c3b8bd8096be1f13cbc71309d0b41f57401cde6e160d489e2"
+  },
+  "model_calls": 0,
+  "preserved_dependencies": {
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+    "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+    "src/civiclab/reconciled_client_v2.py": "6aacbb737b32e1e6d6aa8b84fd831464a6aa7f0fdda1c053043941ea5a15669c",
+    "src/civiclab/survey_envelope_v2.py": "ac210fd41f2f8bffd733fcdef8b1b1813e9035fbeecc6902e8983d2dcecfc877",
+    "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c",
+    "src/civiclab/survey_global_execution_v2.py": "fd8c0260ec2a747ca6a29bece28469e1c917d908b0e5eabb3e151d9b28eedf99"
+  },
+  "recorded_at_utc": "2026-11-03T16:32:56.252444+00:00",
+  "retained_authored_control": {
+    "actual_owner_bootstraps": 0,
+    "approval_epochs": 2,
+    "committed_phases": 2,
+    "fake_POSTs": 2,
+    "fake_statistics_calls": 2,
+    "human_approvals": 0,
+    "index_sha256": "54dd03d5fa53a1996626ddbb616c1d18d28ab3346adc83345667bbe70d4c78ef",
+    "indexed_files": 11,
+    "kind": "AUTHORED_CONTROL_NOT_OWNER_AUTHORITY",
+    "model_calls": 0,
+    "network_requests": 0,
+    "path": "data/processed/fixture_scopes/owner-survey-v3-20261103-02",
+    "retained_simulated_microusd": 2,
+    "spend_usd": 0,
+    "zero_side_effect_refusals": 3
+  },
+  "schema_version": 1,
+  "status": "AUTHORED_CLIENT_IMPLEMENTED_PENDING_INDEPENDENT_REVIEW",
+  "test_logs": {
+    "reports/SURVEY_OWNER_CLIENT_V3_PRIOR_TEST_LOG.txt": "86f39811957c44a1f89b517270b532e42cfa8b3887f1e5ee23a37e998bad5dfa",
+    "reports/SURVEY_OWNER_CLIENT_V3_PY311_TEST_LOG.txt": "1f83b1360273001a7341e74413da5b6dfa31992ff60a70af8c663143fbc74981",
+    "reports/SURVEY_OWNER_CLIENT_V3_TARGETED_TEST_LOG.txt": "b59f3a11a5c59a866b61ce9f4dcf1cdb5ecc582b1714422026cb183f3b9252fc"
+  },
+  "tests": {
+    "Python311": {
+      "new_client_methods": 13,
+      "seconds": 0.34
+    },
+    "Python312": {
+      "new_client_methods": 13,
+      "prior_bridge_budget_tests": 24,
+      "prior_seconds": 1.888,
+      "seconds": 14.209,
+      "targeted_tests": 74,
+      "total_across_two_invocations": 98
+    },
+    "commands": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest test_owner_survey_client_v3 test_owner_budget_v3 test_survey_envelope_v2 test_live_billing_v2 test_openrouter_http_v2 test_survey_global_execution_v2 -v",
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest test_survey_execution test_budget -v",
+      "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest test_owner_survey_client_v3 -v"
+    ]
+  },
+  "wrapper_manual_guards": {
+    "existing_scope_zero_overwrite": "PASS",
+    "outside_scope_zero_create": "PASS"
+  }
+}
