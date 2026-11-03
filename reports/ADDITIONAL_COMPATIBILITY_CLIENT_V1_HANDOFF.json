@@ -1,0 +1,130 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_CLIENT_V1_HANDOFF",
+  "status": "CANDIDATE_INTEGRATION_NO_LIVE_FACTORY_OR_TERMINAL_RELEASE",
+  "files": {
+    "src/civiclab/additional_compatibility_client_v1.py": {
+      "sha256": "f5ad9ffefe55fdaf04f395aac9084d868583a0d578535c1f019e59b8a8ba5171",
+      "bytes": 15353
+    },
+    "tests/test_additional_compatibility_client_v1.py": {
+      "sha256": "558133211d8056fb8eb56942f224bc3608594cd99c6f09d3ee054981c720d323",
+      "bytes": 20545
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_CLIENT_V1_TESTS_312.txt": {
+      "sha256": "608930fe4cee6a880abeef665285d93dfd7d3dc52e73ea1f3e1f534d0a56e5b3",
+      "bytes": 98
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_CLIENT_V1_TESTS_311.txt": {
+      "sha256": "b431452d3f5c76fd5523383eb52f3254920063a2702d08a02cf3e19326c7e9b8",
+      "bytes": 98
+    },
+    "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_OWNER_V1_COMPONENT.json": {
+      "sha256": "60c94ae3b448e779c7fdb514ca298a823341d9d3704da29a328101c74529c923",
+      "bytes": 13330
+    }
+  },
+  "client_contract": {
+    "kind": "ADDITIONAL_COMPATIBILITY_CLIENT_V1",
+    "owner_contract": {
+      "kind": "ADDITIONAL_COMPATIBILITY_OWNER_CODE_V1",
+      "pins": {
+        "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+        "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+        "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+        "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+        "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+        "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+        "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+      },
+      "methods": "4053bff6833993a01e9d0dd58e82fa2fa840ba3ae5dbf690449200100418960e",
+      "live_factory": "DENIED_UNRELEASED",
+      "extra_POSTs": 1
+    },
+    "pins": {
+      "src/civiclab/additional_compatibility_client_v1.py": "f5ad9ffefe55fdaf04f395aac9084d868583a0d578535c1f019e59b8a8ba5171",
+      "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+      "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+      "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+      "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8"
+    },
+    "limits": {
+      "whole_phase_seconds": 120,
+      "HTTP_seconds": 30,
+      "socket_seconds": 15,
+      "catalog_GETs": 1,
+      "POSTs": 1,
+      "statistics_GETs": 1,
+      "retries": 0
+    },
+    "actual_entry": "DENIED_UNRELEASED"
+  },
+  "tests": {
+    "Python3.12": {
+      "count": 70,
+      "seconds": 8.751,
+      "result": "PASS"
+    },
+    "Python3.11": {
+      "count": 70,
+      "seconds": 8.138,
+      "result": "PASS"
+    },
+    "new_client_methods": 15,
+    "new_native_boundaries": [
+      "acknowledgement",
+      "dispatch-consumed",
+      "MODEL_POST_INTENT",
+      "POST_RETURN",
+      "RESPONSE_SEEN",
+      "STATISTICS_GET_INTENT",
+      "STATS_RETURN",
+      "phase",
+      "PHASE_COMMITTED",
+      "summary"
+    ],
+    "race": "Two native client processes same fixed run; one POST and one bill only"
+  },
+  "retained_authored_evidence": {
+    "path": "data/processed/compatibility_authored_fixture/additional-client-v1-20261103-01/AUTHORED_EVIDENCE_INDEX.json",
+    "sha256": "999be0b93b75a9a2e0d5776e1e4f3947fd116211b5fd5d5f710ffe1f25c34d63",
+    "files": 81,
+    "cases": [
+      "success",
+      "ack-failure",
+      "post-error",
+      "invalid-billing",
+      "late-billing"
+    ],
+    "all_actual_access": 0
+  },
+  "new_executor_review_schema": {
+    "fields": [
+      "kind",
+      "reviewer_role",
+      "review_id",
+      "client_contract_hash",
+      "policy_hash",
+      "owner_assertion_hash",
+      "release_hash"
+    ],
+    "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_CLIENT_REVIEW_V1",
+    "binding": "External expected review hash; binds exact full client+accepted owner contracts and M/O/release before OS-home discovery. Independent role/hash is trusted workflow evidence, not cryptographic authentication."
+  },
+  "remaining": [
+    "Independent exact code/retained-mock/outcome review",
+    "Separately bounded actual readonly owner snapshot/valid terms/code/price release metadata and final terminal packet review",
+    "Explicit final owner acceptance of retaining prior unknown bill and one-request exception; existing shared5 consent is not reinterpreted as a ledger rewrite",
+    "No actual entry or terminal command yet; open_actual denies before arguments/OS; execute_authored is a private candidate test path only",
+    "E02 production survey integration and original full scientific contract remain separate unfinished work"
+  ],
+  "limitations": [
+    "Cooperative time/disk/locks and trusted local host, not hard realtime/hostilehost/fsdirectory-powerloss guarantee",
+    "Frozen owner code untouched; future actual factory must seal the core authored callback and client transport boundaries",
+    "Old340 remains UNKNOWN even after successful new bill; simulated replies provide no actual connectivity or scientific result"
+  ],
+  "initial_test_correction": "One history-drift fixture initially attempted an invalid original transition payload and failed during setup. It now changes the anchor after freeze to verify refusal before catalog/key/model. No production validator weakened.",
+  "actual_owner_or_raw_source_or_key_or_env_access": 0,
+  "network_model_calls": 0,
+  "spending_usd": 0
+}
