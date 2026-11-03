@@ -1,0 +1,92 @@
+{
+  "N2_actual_person_acquisition": "BLOCKED",
+  "N3_actual_aggregate": "BLOCKED",
+  "N4_disclosure": "BLOCKED",
+  "N5_population_model": "BLOCKED",
+  "actual_person_GETs": 0,
+  "actual_person_rows_processed": 0,
+  "audited_at_utc": "2026-11-03T13:36:20.042461+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "findings_resolutions": [
+    {
+      "evidence": "Exact4\u21920/8195cap independent repro refuses without new event/reset; six extra independent validJSON domain/genesis/event/semantically coedited counter+attempt corruptions refuse. Semantic reconciliation plus committed transition chain verified separately.",
+      "id": "IA-E02-N1-LEDGER-001",
+      "resolution": "CLOSED_FOR_PINNED_V1_1_FIXTURE_CONTROLS"
+    },
+    {
+      "evidence": "Independent free0/reserve100 enrollment+processing probes refuse before child; disk lost after work leaves full durable pending reservation and blocks persistence until space restored; recovery retains full charge. Independent atomic checkpoint error leaves prior reservation/torn chain blocked with type-only/no secret error text.",
+      "id": "IA-E02-N1-DISK-002",
+      "resolution": "CLOSED_FOR_PINNED_V1_1_FIXTURE_CONTROLS"
+    }
+  ],
+  "full_original_contract": "INCOMPLETE",
+  "history": "Original findings, v1.0 code/config/tests/evidence and earlierMOCKruns preserved; this separate resolution never changes historical findings to improve status. No old ledger migration or counter reset.",
+  "independent_positive_checks_rerun_on_v1_1": {
+    "independent_fork_crash_after_durable_receipt_consumes_full": true,
+    "independent_two_process_single_reservation": true,
+    "independent_varying51state_point80replicate_union_51sharevariances_3covariances_order_replay": true,
+    "own_parent_cancellation_refuses_child_result": true
+  },
+  "independent_remediation_checks": {
+    "default_controls_all_actual_authority_zero_pins_metadata_match": true,
+    "new_recorded_MOCK7artifacts_chain_50attempt51source_resource_totals_replay_verified": true,
+    "original_DISK002_processing_and_enrollment_zero_space_refuse_before_child": true,
+    "original_LEDGER001_exact4_to0_8195cap_refused_without_reset": true,
+    "own_atomic_checkpoint_failure_preserves_prior_reservation_torn_state_blocks_no_secret_error": true,
+    "own_disk_loss_before_checkpoint_full_reservation_no_refund_recovered_after_space_returns": true,
+    "six_own_domain_chain_and_semantically_consistent_coedited_state_corruptions_refused": true
+  },
+  "limits": [
+    "Internal integrity chain is not authentication against coordinated replacement of all history.",
+    "Current logical-byte/free-space checks cannot prevent another writer exhausting disk afterward; failed persistence leaves pending/torn usage blocked, not a false terminal receipt.",
+    "Application-visible BODY and deliveredZIPbytes differ from wire/TLS/buffers/internal inflate work. RSS/time sampling permits overshoot; POSIX-only supervision.",
+    "Householdcitizen18+ candidate remains narrower than original adult/state goal; statepolitical and human validity unproven."
+  ],
+  "model_calls": 0,
+  "original_findings_sha256": "379ca7a0366bc8620993d50ca8610aca6348f53c65b727f271ebd7ca41a2e5bd",
+  "recorded_MOCK": {
+    "artifacts_verified": 7,
+    "checksums_sha256": "9250fb31ddd29fa0bcab135d3ed5ea10ec251a3ecd729bebc6d5b4dbe355fc96",
+    "events_sha256": "f24d2c3594403aa4e2181ad2fbda560fae27f89ce9044144a824fb520835b598",
+    "fake_attempts": 50,
+    "genesis_sha256": "0ea7364a6eb6bbd9337f726269869c0a754f57de6f9bb687850fc54e4c216868",
+    "mock_body_bytes": 58550,
+    "mock_expanded_delivered_bytes": 281520,
+    "mock_rows_two_sweeps": 102,
+    "primary_replay_exact": true,
+    "run_id": "e02-4fc7faa5dcde4300a0975e51ef70a814",
+    "source_ledger_sha256": "b4e304db7a2792ff8b84eedd58eeb231cfaa0f7ba7eb6df7bf95e79bd69ae70f",
+    "states": 51
+  },
+  "required_files": {
+    "configs/e02_pums_wy_pilot_v1_2_consumed.json": "46fb36cebe59fc15372d27761dbfe0dd937028e873c4fbe3e9b6b3ee671bccdf",
+    "reports/E02_NATIONWIDE_PUMS_RESOURCE_METHODS_PROPOSAL.json": "0025b29d5b34ee818a955fec0c88c48c4027f9070f0727909374e297796b9f59",
+    "reports/E02_PUMS_METADATA_RECONSTRUCTION.json": "c261f870b6a891785f7bfe1205c3bfc725b6410627df622f4e366a5dadde1876",
+    "reports/INDEPENDENT_AUDIT_E02_N1_CONTROL_FINDINGS.json": "379ca7a0366bc8620993d50ca8610aca6348f53c65b727f271ebd7ca41a2e5bd",
+    "reports/INDEPENDENT_AUDIT_E02_NATIONAL_PUMS_N0_FREEZE.json": "f24380cd8d9b8f664b7549fbe6c27a8e7e8a9fc2323a3164eb1bda9c9b6c49e9",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_national_controls.py": "f872e98b8d90ade71488ebbef6fca11c78f5ebe7db4689b02ef066274eb7530d"
+  },
+  "reviewed_files": {
+    "configs/e02_national_controls_v1.json": "fe67b984eeb4527eb9858b89e225c2988a1790ee4c55fccd945f136659fec895",
+    "docs/E02_NATIONAL_PUMS_N1_CONTROLS.md": "f082af68e1e911714e4b3f857e8470464ef5c9fbffa9c385c9b5468b04e88875",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_national_controls.py": "f872e98b8d90ade71488ebbef6fca11c78f5ebe7db4689b02ef066274eb7530d"
+  },
+  "schema_version": 1,
+  "scope": "N1 exact trusted-code fixture controls/multi-state parser/union engineering accepted only for authored inputs. NO real transport adapter exists; actual_dispatch refuses. This does not authorize any actual person GET, source enrollment/parse/reuse, population fit, disclosure, model inference or external publication. Fresh separately reviewed N2 implementation/transport/config/source-execution approval required.",
+  "status": "PASS_BOUNDED_N1_V1_1_CONTROLS_AUTHORED_FIXTURES_ONLY",
+  "tests": {
+    "N1_cases_in_suite": 19,
+    "command": ".venv/bin/python -m unittest discover -s tests -p test_e02*.py -q",
+    "passed": 75,
+    "seconds": 5.757
+  },
+  "worker_evidence_sha256": "002e9718b4252e17709419fe9c1621c20f4a9524488520563ce4a18d2104ff90"
+}

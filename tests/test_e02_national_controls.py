@@ -1,0 +1,348 @@
+from copy import deepcopy
+import csv
+import hashlib
+from http.client import IncompleteRead
+import io
+import json
+import multiprocessing
+import os
+from pathlib import Path
+import tempfile
+import time
+import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
+import zipfile
+from civiclab.common import canonical_hash,sha256_file
+from civiclab.e02.national_budget import Ledger,FixtureResponse,acquire_fixture,Blocked,actual_dispatch,load_controls
+from civiclab.e02.national_population import enroll_fixture,parse_fixture,union_fixture,covariance,supervise_fixture,process_fixture,finalize_fixture_union
+
+ROOT=Path(__file__).resolve().parents[1]
+
+
+def controls():
+    c=json.loads((ROOT/'configs/e02_national_controls_v1.json').read_text());c['authored_fixture']=True
+    for row in c['registry']:
+        row.update(published_person_rows=1,first_archive_sha256=None,exact_archive_bytes=None,literal_member_manifest=None,intended_source_action='AUTHORED_FIXTURE_NOT_REAL_SOURCE')
+    c['limits'].update(body_bytes=1024**2,archive_body_bytes=8192,unique_source_bytes=2*1024**2,
+       retained_bytes=10*1024**2,log_bytes=10*1024**2,free_disk_bytes=0,minimum_initial_free_disk_bytes=0,
+       state_uncompressed_bytes=65536,sweep_uncompressed_bytes=4*1024**2,two_sweep_uncompressed_bytes=8*1024**2,
+       state_rows=10,sweep_rows=1000,two_sweep_rows=2000,state_processing_seconds=5,processing_seconds=120,
+       rss_stop_bytes=512*1024**2,watchdog_poll_seconds=0.01,request_seconds=10,network_seconds=1000)
+    return c
+
+
+def fixture(root,c,state='01',*,overrides=None,reps=None,extra=False):
+    row={'RT':'P','STATE':state,'AGEP':'18','CIT':'1','SCHL':'17','RELSHIPP':'20','PWGTP':'1'}
+    row.update({'PWGTP'+str(i+1):str((reps or [1]*80)[i]) for i in range(80)})
+    row.update({f:'0' for f in c['person_controls']['allocation_flags']});row['SERIALNO']='DO_NOT_EXPORT_PRIVATE_FIXTURE'
+    row.update(overrides or {});out=io.StringIO();w=csv.DictWriter(out,fieldnames=row);w.writeheader();w.writerow(row)
+    data=out.getvalue().encode();pdf=b'%PDF-AUTHORED-NOT-EXECUTED';directory=Path(root)/'ledger' if (Path(root)/'ledger').is_dir() else Path(root);path=directory/(state+'.zip');name='psam_p'+state+'.csv'
+    with zipfile.ZipFile(path,'w') as z:
+        z.writestr(name,data);z.writestr('fixture.pdf',pdf)
+        if extra:z.writestr('unreviewed.txt',b'extra')
+    manifest={'state':state,'url':next(r['url'] for r in c['registry'] if r['state_fips']==state),'period':c['period'],
+       'metadata_hashes':c['metadata_hashes'],'archive_bytes':path.stat().st_size,'archive_sha256':sha256_file(path),
+       'person_member':name,'header_sha256':hashlib.sha256(data.splitlines(keepends=True)[0]).hexdigest(),
+       'members':{name:{'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()},'fixture.pdf':{'bytes':len(pdf),'sha256':hashlib.sha256(pdf).hexdigest()}}}
+    audit={'auditor_role':'independent_auditor','status':'PASS_AUTHORED_SOURCE_MANIFEST','manifest_sha256':canonical_hash(manifest)}
+    return path,manifest,audit
+
+
+def crash_read(path,c,state,url,where):
+    ledger=Ledger(path,c)
+    acquire_fixture(ledger,state,FixtureResponse(b'fixturebody',url=url),hook=lambda event:os._exit(17) if event==where else None)
+
+
+def race_reservation(path,c,state,event,queue):
+    event.wait(2)
+    try:
+        ledger=Ledger(path,c);ledger.reserve(state,next(r['url'] for r in c['registry'] if r['state_fips']==state));queue.put('RESERVED')
+    except Blocked:queue.put('BLOCKED')
+
+
+def crash_atomic_commit(path,c):
+    import civiclab.e02.national_budget as module
+    original=module.atomic_json
+    def torn(target,value):
+        if Path(target).name=='ledger.json' and any(a['status']=='BODY_RECORDED_QUARANTINED_NOT_ENROLLED' for a in value.get('attempts',{}).values()):os._exit(23)
+        return original(target,value)
+    module.atomic_json=torn
+    acquire_fixture(Ledger(path,c),'01',FixtureResponse(b'body',url=c['registry'][0]['url']))
+
+
+class NationalControlFixtures(unittest.TestCase):
+    def test_actual_gate_precedes_transport_or_ledger_creation(self):
+        c=json.loads((ROOT/'configs/e02_national_controls_v1.json').read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'must-not-exist'
+            with self.assertRaises(Blocked):Ledger(path,c)
+            self.assertFalse(path.exists())
+            with self.assertRaises(Blocked):actual_dispatch()
+
+    def test_success_atomic_reconcile_and_resume_exact_design(self):
+        c=controls();state='01';url=c['registry'][0]['url']
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger=Ledger(tmp,c);token,path=acquire_fixture(ledger,state,FixtureResponse(b'body',url=url))
+            x=Ledger(tmp,c).snapshot();self.assertEqual(x['body_charged'],4);self.assertEqual(path.read_bytes(),b'body')
+            self.assertEqual(x['attempts'][token]['status'],'BODY_RECORDED_QUARANTINED_NOT_ENROLLED')
+            with self.assertRaises(Blocked):Ledger(tmp,c).reserve(state,url)
+            changed=deepcopy(c);changed['limits']['body_bytes']+=1
+            with self.assertRaises(Blocked):Ledger(tmp,changed)
+            with self.assertRaises(Blocked):ledger.success(token,path,sha256_file(path),closed=True)
+
+    def test_full_charge_on_partial_error_cancel_encoding_and_storage_failure(self):
+        for kind in ('partial','cancel','encoding','storage','overrun'):
+            with self.subTest(kind=kind),tempfile.TemporaryDirectory() as tmp:
+                c=controls();ledger=Ledger(tmp,c);response=FixtureResponse(b'body',url=c['registry'][0]['url'])
+                hook=lambda event:None
+                if kind=='partial':response.error=IncompleteRead(b'PARTIAL_PRIVATE',8)
+                if kind=='encoding':response.encoding='gzip'
+                if kind=='cancel':hook=lambda event:(_ for _ in ()).throw(KeyboardInterrupt()) if event=='after_reservation' else None
+                if kind=='storage':
+                    c['limits']['retained_bytes']=1
+                    # Failure after reservation, before first body read.
+                    hook=lambda event:patcher.start() if event=='after_reservation' else None
+                    patcher=patch('civiclab.e02.national_budget.storage_guard',side_effect=Blocked('disk'))
+                if kind=='overrun':response.read=lambda n:b'x'*(n+1)
+                try:
+                    with self.assertRaises(BaseException):acquire_fixture(ledger,'01',response,hook=hook)
+                finally:
+                    if kind=='storage':patcher.stop()
+                x=Ledger(tmp,ledger.c).snapshot()
+                if x['active'] is not None:x=ledger.recover_unknown()
+                self.assertGreaterEqual(x['body_charged'],c['limits']['archive_body_bytes']);self.assertTrue(x['halted'])
+                self.assertTrue(response.closed)
+                with self.assertRaises(Blocked):ledger.reserve('02',next(r['url'] for r in c['registry'] if r['state_fips']=='02'))
+                self.assertNotIn('PARTIAL_PRIVATE',(Path(tmp)/'events.jsonl').read_text())
+
+    def test_real_child_crash_between_delivery_receipt_and_commit_consumes_full(self):
+        context=multiprocessing.get_context('fork')
+        for where in ('after_reservation','after_delivery_before_receipt','before_commit'):
+            with self.subTest(where=where),tempfile.TemporaryDirectory() as tmp:
+                c=controls();ledger=Ledger(tmp,c);child=context.Process(target=crash_read,args=(tmp,c,'01',c['registry'][0]['url'],where));child.start();child.join(3)
+                self.assertEqual(child.exitcode,17)
+                after=Ledger(tmp,c).recover_unknown();self.assertEqual(after['body_charged'],c['limits']['archive_body_bytes']);self.assertTrue(after['halted'])
+                self.assertIsNone(after['active']);self.assertEqual(len(after['attempts']),1)
+
+    def test_concurrency_quota_clock_and_corrupt_tail_block(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();c['limits']['body_bytes']=c['limits']['archive_body_bytes']-1;ledger=Ledger(tmp,c)
+            with self.assertRaises(Blocked):ledger.reserve('01',c['registry'][0]['url'])
+            self.assertEqual(ledger.snapshot()['body_charged'],0)
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();ledger=Ledger(tmp,c)
+            with ledger.locked():
+                with self.assertRaises(Blocked):Ledger(tmp,c)
+            token=ledger.reserve('01',c['registry'][0]['url'])
+            with self.assertRaises(Blocked):Ledger(tmp,c).reserve('02',next(r['url'] for r in c['registry'] if r['state_fips']=='02'))
+            with (Path(tmp)/'events.jsonl').open('a') as out:out.write('{broken')
+            with self.assertRaises(Blocked):Ledger(tmp,c).snapshot()
+        with tempfile.TemporaryDirectory() as tmp:
+            clock=[1000.0];ledger=Ledger(tmp,controls(),clock=lambda:clock[0]);clock[0]=999
+            with self.assertRaises(Blocked):ledger.snapshot()
+
+    def test_strict_enrollment_source_domains_count_release_and_postparse_drift(self):
+        for kind in ('review','extra','domain','count','release','drift'):
+            with self.subTest(kind=kind),tempfile.TemporaryDirectory() as tmp:
+                c=controls();ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c,overrides={'CIT':'5','PWGTP':'0'} if kind=='domain' else None,extra=kind=='extra')
+                if kind=='review':a['manifest_sha256']='0'*64
+                if kind=='release':m['period']='2024 one-year'
+                if kind in ('review','extra','release'):
+                    with self.assertRaises(Blocked):enroll_fixture(path,c,m,a,ledger=ledger)
+                    continue
+                e=enroll_fixture(path,c,m,a,ledger=ledger)
+                if kind=='count':c['registry'][0]['published_person_rows']=2
+                hook=(lambda:path.write_bytes(path.read_bytes()+b'drift')) if kind=='drift' else lambda:None
+                with self.assertRaises(ValueError):parse_fixture(path,c,m,e,hook=hook)
+
+    def test_fiftyone_partition_same_index_union_and_exact_replay(self):
+        c=controls();parts=[]
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger=Ledger(Path(tmp)/'ledger',c)
+            for state in sorted(r['state_fips'] for r in c['registry']):
+                path,m,a=fixture(tmp,c,state,reps=[-1,3]*40 if state in ('01','02') else None)
+                e=enroll_fixture(path,c,m,a,ledger=ledger);p=parse_fixture(path,c,m,e);replay=parse_fixture(path,c,m,e);self.assertEqual(p,replay);parts.append(p)
+            before=deepcopy(parts);result=union_fixture(parts,c);self.assertEqual(parts,before)
+            self.assertEqual(result,union_fixture(list(reversed(parts)),c));self.assertEqual(len(result['cells']),612)
+            national=result['national'];self.assertEqual(national['point'],51);self.assertEqual(national['replicates'],[47,55]*40)
+            self.assertEqual(national['count_uncertainty']['variance_sdr'],64)
+            a=result['cells']['01:18-24:HS_OR_LESS'];b=result['cells']['02:18-24:HS_OR_LESS']
+            self.assertEqual(covariance(a,b),16);self.assertEqual(a['replicate_sums'][0],-1)
+            self.assertNotIn('DO_NOT_EXPORT_PRIVATE_FIXTURE',json.dumps(result))
+            for malformed in (parts[:-1],parts[:-1]+[parts[0]]):
+                with self.assertRaises(Blocked):union_fixture(malformed,c)
+
+    def test_parent_watchdog_deadline_rss_cancellation_and_abrupt_exit(self):
+        for kind in ('timeout','rss','cancel','exit'):
+            with self.subTest(kind=kind):
+                work=(lambda:os._exit(19)) if kind=='exit' else lambda:time.sleep(5)
+                with self.assertRaises((Blocked,EOFError)):
+                    supervise_fixture(work,seconds=0.1 if kind=='timeout' else 2,rss_bytes=1 if kind=='rss' else 512*1024**2,poll_seconds=0.01,cancelled=lambda:kind=='cancel')
+
+    def test_processing_reservations_replay_no_duplicate_and_failed_resume(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c);e=enroll_fixture(path,c,m,a,ledger=ledger)
+            first,_=process_fixture(ledger,path,m,e);second,_=process_fixture(ledger,path,m,e,sweep='REPLAY')
+            self.assertEqual(first,second)
+            x=ledger.snapshot();self.assertEqual(x['unique_source_bytes'],path.stat().st_size);self.assertEqual(x['processing_rows_charged'],2)
+            with self.assertRaises(Blocked):process_fixture(ledger,path,m,e)
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c);e=enroll_fixture(path,c,m,a,ledger=ledger)
+            prior_seconds=ledger.snapshot()['processing_seconds_charged']
+            with self.assertRaises(Blocked):process_fixture(ledger,path,m,e,cancelled=lambda:True)
+            x=Ledger(ledger.path,c).snapshot();self.assertTrue(x['halted']);self.assertEqual(x['processing_rows_charged'],1)
+            self.assertAlmostEqual(x['processing_seconds_charged'],prior_seconds+c['limits']['state_processing_seconds'])
+
+    def test_expiry_initial_space_log_and_per_sweep_quotas(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();c['limits']['minimum_initial_free_disk_bytes']=10**30
+            with self.assertRaises(Blocked):Ledger(tmp,c)
+            self.assertFalse((Path(tmp)/'ledger.json').exists())
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();clock=[1000.0];ledger=Ledger(tmp,c,clock=lambda:clock[0]);clock[0]+=c['limits']['batch_elapsed_seconds']+1
+            with self.assertRaises(Blocked):ledger.snapshot()
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();c['limits']['log_bytes']=10
+            with self.assertRaises(Blocked):Ledger(tmp,c)
+            self.assertFalse((Path(tmp)/'ledger.json').exists())
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();c['limits']['sweep_rows']=0;ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c)
+            e=enroll_fixture(path,c,m,a,ledger=ledger)
+            with self.assertRaises(Blocked):process_fixture(ledger,path,m,e)
+
+    def test_continuation_preserves_full_failure_charge_and_cannot_retry_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();ledger=Ledger(tmp,c)
+            with self.assertRaises(KeyboardInterrupt):
+                acquire_fixture(ledger,'01',FixtureResponse(b'x',url=c['registry'][0]['url']),hook=lambda event:(_ for _ in ()).throw(KeyboardInterrupt()) if event=='after_reservation' else None)
+            before=ledger.snapshot()
+            bad={'auditor_role':'independent_auditor','status':'PASS_AUTHORED_CONTINUATION','ledger_sha256':'0'*64,'design_sha256':canonical_hash(c)}
+            with self.assertRaises(Blocked):ledger.continue_fixture(bad)
+            audit={**bad,'ledger_sha256':canonical_hash(before)};ledger.continue_fixture(audit)
+            after=ledger.snapshot();self.assertEqual(before['body_charged'],after['body_charged']);self.assertEqual(before['created'],after['created'])
+            with self.assertRaises(Blocked):ledger.reserve('01',c['registry'][0]['url'])
+            next_state=next(r for r in c['registry'] if r['state_fips']=='02')
+            acquire_fixture(ledger,'02',FixtureResponse(b'next',url=next_state['url']))
+            self.assertEqual(ledger.snapshot()['body_charged'],c['limits']['archive_body_bytes']+4)
+
+    def test_full_metered_primary_replay_union_and_checkpoint_tamper(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();ledger=Ledger(Path(tmp)/'ledger',c);parts=[];replay=[]
+            for state in sorted(r['state_fips'] for r in c['registry']):
+                path,m,a=fixture(tmp,c,state);e=enroll_fixture(path,c,m,a,ledger=ledger)
+                p,_=process_fixture(ledger,path,m,e);r,_=process_fixture(ledger,path,m,e,sweep='REPLAY');parts.append(p);replay.append(r)
+            bad=deepcopy(parts);bad[0]['cells']['18-24:HS_OR_LESS']['weight_sum']=999
+            with self.assertRaises(Blocked):finalize_fixture_union(ledger,bad)
+            first,_,p=finalize_fixture_union(ledger,parts);second,_,r=finalize_fixture_union(ledger,replay,sweep='REPLAY')
+            self.assertEqual(first,second);self.assertEqual(p.read_bytes(),r.read_bytes())
+            snap=ledger.snapshot();self.assertEqual(snap['processing_rows_charged'],102)
+            self.assertEqual(len(snap['sources']),51);self.assertEqual(snap['processing']['UNION:PRIMARY']['status'],'MOCK_UNION_LOCAL_ONLY_PENDING_AUDIT')
+            with self.assertRaises(Blocked):finalize_fixture_union(ledger,parts)
+
+    def test_declared_empty_truncated_and_exact_boundary_bodies_fail_closed(self):
+        for body,declared in [(b'',None),(b'x',2),(b'x',9000),(b'x'*8192,8192)]:
+            with self.subTest(size=len(body),declared=declared),tempfile.TemporaryDirectory() as tmp:
+                c=controls();ledger=Ledger(tmp,c)
+                with self.assertRaises(Blocked):acquire_fixture(ledger,'01',FixtureResponse(body,url=c['registry'][0]['url'],content_length=declared))
+                self.assertEqual(ledger.snapshot()['body_charged'],8192)
+                self.assertTrue(ledger.snapshot()['halted'])
+
+    def test_two_process_reservation_race_and_torn_atomic_commit(self):
+        context=multiprocessing.get_context('fork')
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();ledger=Ledger(tmp,c);event=context.Event();queue=context.Queue()
+            children=[context.Process(target=race_reservation,args=(tmp,c,state,event,queue)) for state in ('01','02')]
+            for child in children:child.start()
+            event.set();results=[queue.get(timeout=3) for _ in children]
+            for child in children:child.join(3);self.assertEqual(child.exitcode,0)
+            self.assertEqual(sorted(results),['BLOCKED','RESERVED']);self.assertEqual(ledger.snapshot()['body_charged'],8192)
+            ledger.recover_unknown();self.assertTrue(ledger.snapshot()['halted'])
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();Ledger(tmp,c);child=context.Process(target=crash_atomic_commit,args=(tmp,c));child.start();child.join(3)
+            self.assertEqual(child.exitcode,23)
+            persisted=json.loads((Path(tmp)/'ledger.json').read_text());self.assertEqual(persisted['body_charged'],8192)
+            with self.assertRaises(Blocked):Ledger(tmp,c).snapshot()
+            with self.assertRaises(Blocked):Ledger(tmp,c).recover_unknown()
+
+    def test_valid_json_body_reset_probe_and_all_own_resource_counters_refused(self):
+        # Exact IA-E02-N1-LEDGER-001 probe: 4+8192 >8195 after attempted reset.
+        with tempfile.TemporaryDirectory() as tmp:
+            c=controls();c['limits']['body_bytes']=8195;ledger=Ledger(tmp,c)
+            acquire_fixture(ledger,'01',FixtureResponse(b'body',url=c['registry'][0]['url']))
+            state=json.loads((Path(tmp)/'ledger.json').read_text());events=(Path(tmp)/'events.jsonl').read_bytes();generation=state['generation']
+            self.assertEqual(state['body_charged'],4);state['body_charged']=0
+            (Path(tmp)/'ledger.json').write_text(json.dumps(state))
+            with self.assertRaises(Blocked):Ledger(tmp,c)
+            self.assertEqual((Path(tmp)/'events.jsonl').read_bytes(),events)
+            self.assertEqual(json.loads((Path(tmp)/'ledger.json').read_text())['generation'],generation)
+        for field in ('unique_source_bytes','processing_bytes_charged','processing_rows_charged','processing_seconds_charged','network_seconds_charged'):
+            with self.subTest(field=field),tempfile.TemporaryDirectory() as tmp:
+                c=controls();ledger=Ledger(Path(tmp)/'ledger',c)
+                acquire_fixture(ledger,'01',FixtureResponse(b'body',url=c['registry'][0]['url']))
+                path,m,a=fixture(tmp,c);e=enroll_fixture(path,c,m,a,ledger=ledger);process_fixture(ledger,path,m,e)
+                state=json.loads((ledger.path/'ledger.json').read_text());self.assertGreater(state[field],0)
+                state[field]=0;(ledger.path/'ledger.json').write_text(json.dumps(state))
+                with self.assertRaises(Blocked):Ledger(ledger.path,c)
+
+    def test_schema_status_and_transition_chain_corruption_refused(self):
+        for kind in ('bool','negative','extra','active','status','event'):
+            with self.subTest(kind=kind),tempfile.TemporaryDirectory() as tmp:
+                c=controls();ledger=Ledger(tmp,c);acquire_fixture(ledger,'01',FixtureResponse(b'body',url=c['registry'][0]['url']))
+                state=json.loads((ledger.path/'ledger.json').read_text())
+                if kind=='bool':state['body_charged']=True
+                if kind=='negative':state['body_charged']=-1
+                if kind=='extra':state['unexpected_field']=0
+                if kind=='active':state['active']='invented'
+                if kind=='status':next(iter(state['attempts'].values()))['status']='RESERVED'
+                if kind=='event':
+                    rows=[json.loads(line) for line in (ledger.path/'events.jsonl').read_text().splitlines()];rows[-1]['bytes']=0
+                    (ledger.path/'events.jsonl').write_text(''.join(json.dumps(row)+'\n' for row in rows))
+                else:(ledger.path/'ledger.json').write_text(json.dumps(state))
+                with self.assertRaises(Blocked):Ledger(tmp,c)
+
+    def test_zero_free_space_before_enrollment_and_processing_blocks_child(self):
+        for phase in ('enrollment','processing'):
+            with self.subTest(phase=phase),tempfile.TemporaryDirectory() as tmp:
+                c=controls();c['limits']['free_disk_bytes']=100;ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c)
+                e=enroll_fixture(path,c,m,a,ledger=ledger) if phase=='processing' else None
+                before=ledger.snapshot()
+                with patch('civiclab.e02.national_budget.shutil.disk_usage',return_value=SimpleNamespace(free=0)), \
+                     patch('civiclab.e02.national_population.supervise_fixture',side_effect=AssertionError('no child when reserve unavailable')):
+                    with self.assertRaises(Blocked):
+                        if phase=='enrollment':enroll_fixture(path,c,m,a,ledger=ledger)
+                        else:process_fixture(ledger,path,m,e)
+                self.assertEqual(ledger.snapshot(),before)
+
+    def test_space_lost_before_checkpoint_retains_full_charge_until_recovery(self):
+        from civiclab.e02.national_population import supervise_fixture as original_supervisor
+        for phase in ('enrollment','processing'):
+            with self.subTest(phase=phase),tempfile.TemporaryDirectory() as tmp:
+                c=controls();c['limits']['free_disk_bytes']=100;ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c)
+                e=enroll_fixture(path,c,m,a,ledger=ledger) if phase=='processing' else None
+                before=ledger.snapshot();patcher=patch('civiclab.e02.national_budget.shutil.disk_usage',return_value=SimpleNamespace(free=0))
+                def finish_then_full(*args,**kwargs):
+                    result=original_supervisor(*args,**kwargs);patcher.start();return result
+                try:
+                    with patch('civiclab.e02.national_population.supervise_fixture',side_effect=finish_then_full):
+                        with self.assertRaises(Blocked):
+                            if phase=='enrollment':enroll_fixture(path,c,m,a,ledger=ledger)
+                            else:process_fixture(ledger,path,m,e)
+                    pending=ledger.snapshot();key=pending['processing_active'];self.assertIsNotNone(key)
+                    self.assertEqual(pending['processing'][key]['status'],'RESERVED')
+                    self.assertGreaterEqual(pending['processing_seconds_charged'],before['processing_seconds_charged']+c['limits']['state_processing_seconds'])
+                    self.assertNotIn('result_sha256',pending['processing'][key])
+                    with self.assertRaises(Blocked):ledger.recover_unknown()
+                finally:patcher.stop()
+                after=ledger.recover_unknown();self.assertTrue(after['halted']);self.assertIsNone(after['processing_active'])
+                self.assertEqual(after['processing_seconds_charged'],pending['processing_seconds_charged'])
+
+    def test_retained_and_log_headroom_guard_processing_transition(self):
+        for kind in ('retained','log'):
+            with self.subTest(kind=kind),tempfile.TemporaryDirectory() as tmp:
+                c=controls();c['limits']['retained_bytes']=1024**2;c['limits']['log_bytes']=1024**2
+                ledger=Ledger(Path(tmp)/'ledger',c);path,m,a=fixture(tmp,c);e=enroll_fixture(path,c,m,a,ledger=ledger);before=ledger.snapshot()
+                name='fill.bin' if kind=='retained' else 'fill.json'
+                (ledger.path/name).write_bytes(b'x'*(1024**2))
+                with self.assertRaises(Blocked):process_fixture(ledger,path,m,e)
+                self.assertEqual(ledger.snapshot(),before)

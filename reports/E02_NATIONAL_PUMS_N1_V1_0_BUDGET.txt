@@ -1,0 +1,288 @@
+"""N1 durable application-body ledger and fixture transport; NO network adapter."""
+from contextlib import contextmanager
+from copy import deepcopy
+import fcntl
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import shutil
+import time
+import uuid
+from ..common import atomic_json,canonical_hash,sha256_file
+
+
+class Blocked(ValueError):pass
+
+
+def actual_dispatch(*args,**kwargs):
+    raise Blocked('N2 actual person dispatch/enrollment/processing BLOCKED: no network adapter or execution approval')
+
+
+def load_controls(root):
+    root=Path(root).resolve();c=json.loads((root/'configs/e02_national_controls_v1.json').read_text())
+    for name,digest in c['required_files'].items():
+        p=(root/name).resolve()
+        if not p.is_relative_to(root) or sha256_file(p)!=digest:raise Blocked('N1 frozen input changed')
+    proposal=json.loads((root/'reports/E02_NATIONWIDE_PUMS_RESOURCE_METHODS_PROPOSAL.json').read_text())
+    if c['registry']!=proposal['state_route']['archives'] or c['metadata_hashes']!={k:v['sha256'] for k,v in proposal['frozen_metadata_sources'].items()}:raise Blocked('frozen metadata registry changed')
+    for record in c['metadata_sources'].values():
+        p=(root/record['retained_path']).resolve()
+        if not p.is_relative_to(root/'data/raw/e02_pums_metadata') or p.stat().st_size!=record['bytes'] or sha256_file(p)!=record['sha256']:raise Blocked('retained official metadata drift')
+    if c['person_controls']!=json.loads((root/'configs/e02_pums_wy_pilot_v1_2_consumed.json').read_text()):raise Blocked('reviewed person controls changed')
+    if c['actual_execution_approval'] is not None or c['person_GETs_authorized']!=0 or c['approved_budget_usd']!=0:
+        raise Blocked('N1 is fixture-only, no actual dispatch scope')
+    return c
+
+
+class Ledger:
+    """Locked immutable-design batch. Failed/unknown attempts consume FULL allowance."""
+    def __init__(self,path,controls,*,clock=time.time):
+        self.path=Path(path);self.c=deepcopy(controls);self.clock=clock
+        if self.c.get('authored_fixture') is not True:raise Blocked('N1 fixture ledger only')
+        if any(isinstance(v,bool) or not isinstance(v,(int,float)) or not math.isfinite(v) or v<0 for v in self.c['limits'].values()):raise Blocked('finite nonnegative fixture resource limits required')
+        if self.c['limits']['archive_body_bytes']<=0 or self.c['limits']['watchdog_poll_seconds']<=0:raise Blocked('positive read allowance and watchdog interval required')
+        self.path.mkdir(parents=True,exist_ok=True)
+        with self.locked():
+            if not (self.path/'ledger.json').exists():
+                if shutil.disk_usage(self.path).free<self.c['limits']['minimum_initial_free_disk_bytes']:raise Blocked('initial disk headroom')
+                if any(p.name!='.lock' for p in self.path.iterdir()):raise Blocked('unreconciled directory, never initialize over artifacts')
+                now=clock();atomic_json(self.path/'ledger.json',{'design':canonical_hash(controls),'created':now,'last_clock':now,
+                    'body_charged':0,'network_seconds_charged':0,'attempts':{},'active':None,'halted':False,'halt_reason':None,'generation':0,'sources':{},'unique_source_bytes':0,'processing':{},'processing_active':None,'processing_bytes_charged':0,'processing_rows_charged':0,'processing_seconds_charged':0})
+            self._load()
+            if self.c.get('authored_fixture') is not True:raise Blocked('N1 fixture ledger only')
+    @contextmanager
+    def locked(self):
+        with (self.path/'.lock').open('a') as stream:
+            try:fcntl.flock(stream,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            except BlockingIOError:raise Blocked('batch locked') from None
+            try:yield
+            finally:fcntl.flock(stream,fcntl.LOCK_UN)
+    def _load(self):
+        try:s=json.loads((self.path/'ledger.json').read_text())
+        except (ValueError,OSError):raise Blocked('corrupt/missing ledger; no reset') from None
+        if s['design']!=canonical_hash(self.c):raise Blocked('design changed; existing usage cannot reset')
+        now=self.clock()
+        if not math.isfinite(now) or now<s['last_clock']:raise Blocked('clock rollback/unprovable time')
+        if now-s['created']>self.c['limits']['batch_elapsed_seconds']:raise Blocked('batch expired; no restart reset')
+        return s
+    def _save(self,s,event,**fields):
+        # Fsync event before state; an interrupted multi-file transition fails closed
+        # through generation/tail mismatch, rather than replaying uncertain usage.
+        sequence=s['generation']+1
+        logs=sum(p.stat().st_size for p in self.path.glob('*.json*'))
+        if logs+len(json.dumps(s))+2048>self.c['limits']['log_bytes']:raise Blocked('durable log quota')
+        event_path=self.path/'events.jsonl'
+        with event_path.open('a') as out:
+            out.write(json.dumps({'generation':sequence,'event':event,**fields},sort_keys=True)+'\n');out.flush();os.fsync(out.fileno())
+        s['generation']=sequence;s['last_clock']=self.clock();atomic_json(self.path/'ledger.json',s)
+    def _verified(self):
+        s=self._load();events=self.path/'events.jsonl'
+        try:rows=[json.loads(x) for x in events.read_text().splitlines()] if events.exists() else []
+        except (ValueError,OSError):raise Blocked('unprovable event tail') from None
+        if len(rows)!=s['generation'] or any(r['generation']!=i for i,r in enumerate(rows,1)):
+            raise Blocked('uncommitted event/state transition; usage remains blocked')
+        return s
+    def snapshot(self):
+        with self.locked():return deepcopy(self._verified())
+    def reserve(self,state,url):
+        with self.locked():
+            s=self._verified();limit=self.c['limits'];allowed={r['state_fips']:r for r in self.c['registry']}
+            if state not in allowed or url!=allowed[state]['url'] or state=='56':raise Blocked('exact frozen new-source URL/state required; WY reuse separate')
+            if s['halted'] or s['active'] is not None or s['processing_active'] is not None:raise Blocked('halted/active batch; no concurrent dispatch')
+            if any(a['state']==state for a in s['attempts'].values()):raise Blocked('source already attempted; no retry')
+            if len(s['attempts'])>=limit['requests']:raise Blocked('cumulative request limit')
+            allowance=limit['archive_body_bytes']
+            if s['body_charged']+allowance>limit['body_bytes']:raise Blocked('full attempt body allowance unavailable')
+            if s['network_seconds_charged']+limit['request_seconds']>limit['network_seconds']:raise Blocked('full attempt time allowance unavailable')
+            token=uuid.uuid4().hex
+            s['body_charged']+=allowance;s['network_seconds_charged']+=limit['request_seconds'];s['active']=token
+            s['attempts'][token]={'state':state,'url':url,'allowance':allowance,'observed':0,'reads':0,'inflight':None,
+                'started':self.clock(),'status':'RESERVED','digest':None}
+            self._save(s,'attempt_reserved',attempt=token,state=state,allowance=allowance)
+            return token
+    def before_read(self,token):
+        with self.locked():
+            s=self._verified();a=s['attempts'][token]
+            if s['active']!=token or a['inflight'] is not None or s['halted']:raise Blocked('read state mismatch')
+            if self.clock()-a['started']>self.c['limits']['request_seconds']:raise Blocked('request deadline')
+            n=min(65536,a['allowance']-a['observed'])
+            if n<=0:raise Blocked('body allowance exhausted; no EOF probe')
+            a['inflight']=n;a['status']='READING';self._save(s,'read_reserved',attempt=token,n=n)
+            return n
+    def record_read(self,token,chunk):
+        if not isinstance(chunk,bytes):raise Blocked('body transport must return bytes')
+        with self.locked():
+            s=self._verified();a=s['attempts'][token];n=a['inflight']
+            if s['active']!=token or n is None:raise Blocked('no matching durable read')
+            a['observed']+=len(chunk);a['reads']+=1;a['inflight']=None
+            if len(chunk)>n:
+                s['halted']=True;s['halt_reason']='OBSERVABLE_DELIVERY_OVERRUN';a['status']='UNKNOWN';s['body_charged']+=max(0,a['observed']-a['allowance'])
+            elif not chunk:a['status']='EOF'
+            self._save(s,'read_recorded',attempt=token,bytes=len(chunk))
+            if len(chunk)>n:raise Blocked('observable body overrun; no hard wire guarantee')
+    def success(self,token,path,digest,*,closed):
+        with self.locked():
+            s=self._verified();a=s['attempts'][token];path=Path(path)
+            if s['active']!=token or s['halted'] or a['status']!='EOF' or a['inflight'] is not None or not closed:
+                raise Blocked('no durable EOF/closure proof')
+            if a['observed']<=0 or not path.resolve().is_relative_to(self.path.resolve()) or path.stat().st_size!=a['observed'] or sha256_file(path)!=digest:
+                raise Blocked('retained body identity mismatch')
+            elapsed=self.clock()-a['started']
+            if elapsed>self.c['limits']['request_seconds']:raise Blocked('terminal deadline')
+            a.update(status='BODY_RECORDED_QUARANTINED_NOT_ENROLLED',digest=digest,path=str(path.relative_to(self.path)))
+            s['body_charged']-=a['allowance']-a['observed'];s['network_seconds_charged']-=self.c['limits']['request_seconds']-elapsed
+            s['active']=None;self._save(s,'body_committed',attempt=token,bytes=a['observed'],sha256=digest)
+    def fail(self,token,error_type='FAILED'):
+        with self.locked():
+            s=self._verified();a=s['attempts'][token]
+            if s['active']!=token:raise Blocked('attempt not active')
+            a['status']='FAILED_FULL_RESERVATION_CONSUMED';a['error_type']=error_type
+            s.update(active=None,halted=True,halt_reason='FAILED_OR_UNPROVABLE_ATTEMPT');self._save(s,'attempt_failed',attempt=token,error_type=error_type)
+    def recover_unknown(self):
+        with self.locked():
+            s=self._verified()
+            if s['processing_active'] is not None:
+                s['processing'][s['processing_active']]['status']='CRASHED_FULL_PROCESSING_RESERVATION_CONSUMED'
+                s.update(processing_active=None,halted=True,halt_reason='UNPROVABLE_PROCESSING_CRASH')
+                self._save(s,'processing_crash_consumed')
+            if s['active'] is not None:
+                a=s['attempts'][s['active']];a['status']='CRASHED_FULL_RESERVATION_CONSUMED'
+                s.update(active=None,halted=True,halt_reason='UNPROVABLE_CRASH');self._save(s,'crash_consumed')
+            return deepcopy(s)
+
+    def continue_fixture(self,audit):
+        if not self.c.get('authored_fixture'):raise Blocked('authored continuation only')
+        with self.locked():
+            s=self._verified()
+            if not s['halted'] or s['active'] is not None or s['processing_active'] is not None:raise Blocked('no reconciled halted batch')
+            if audit.get('auditor_role')!='independent_auditor' or audit.get('status')!='PASS_AUTHORED_CONTINUATION' or audit.get('ledger_sha256')!=canonical_hash(s) or audit.get('design_sha256')!=canonical_hash(self.c):raise Blocked('fresh exact-state continuation review required')
+            s['halted']=False;s['halt_reason']=None;self._save(s,'fixture_reviewed_continuation',audit_sha256=canonical_hash(audit))
+    def reserve_union(self,parts,sweep):
+        with self.locked():
+            s=self._verified();key='UNION:'+sweep;l=self.c['limits']
+            if sweep not in ('PRIMARY','REPLAY') or key in s['processing'] or s['active'] is not None or s['processing_active'] is not None or s['halted']:raise Blocked('union state/concurrency')
+            states=[p['state'] for p in parts]
+            if len(states)!=51 or len(set(states))!=51 or set(states)!={r['state_fips'] for r in self.c['registry']}:raise Blocked('union needs51unique sources')
+            for part in parts:
+                receipt=s['processing'].get(sweep+':'+part['state'],{})
+                if receipt.get('status')!='MOCK_LOCAL_PROCESSING_COMMITTED' or receipt.get('result_sha256')!=canonical_hash(part):raise Blocked('uncommitted/tampered state checkpoint')
+            if s['processing_seconds_charged']+l['state_processing_seconds']>l['processing_seconds']:raise Blocked('union cumulative time quota')
+            s['processing_seconds_charged']+=l['state_processing_seconds'];s['processing_active']=key
+            s['processing'][key]={'started':self.clock(),'status':'RESERVED','reserved_rows':0,'reserved_bytes':0}
+            self._save(s,'union_reserved',key=key);return key
+    def finish_union(self,key,path,digest):
+        with self.locked():
+            s=self._verified();item=s['processing'][key];elapsed=self.clock()-item['started'];path=Path(path)
+            if s['processing_active']!=key or s['halted'] or elapsed>self.c['limits']['state_processing_seconds']:raise Blocked('union state/deadline')
+            if not path.resolve().is_relative_to(self.path.resolve()) or sha256_file(path)!=digest:raise Blocked('union artifact identity')
+            s['processing_seconds_charged']-=self.c['limits']['state_processing_seconds']-elapsed
+            item.update(status='MOCK_UNION_LOCAL_ONLY_PENDING_AUDIT',artifact=path.name,sha256=digest)
+            s['processing_active']=None;self._save(s,'union_committed',key=key,sha256=digest)
+    def reserve_enrollment(self,manifest):
+        if not self.c.get('authored_fixture'):raise Blocked('fixture enrollment only')
+        with self.locked():
+            s=self._verified();l=self.c['limits'];state=manifest['state'];key='ENROLL:'+state
+            row=next((r for r in self.c['registry'] if r['state_fips']==state),None)
+            if row is None or row['url']!=manifest['url'] or manifest['period']!=self.c['period'] or manifest['metadata_hashes']!=self.c['metadata_hashes']:raise Blocked('enrollment source release/allowlist')
+            if s['halted'] or s['active'] is not None or s['processing_active'] is not None or key in s['processing']:raise Blocked('enrollment duplicate/halted/concurrent')
+            allowance=l['line_bytes']+(l['members']-1)*l['companion_bytes']
+            if s['processing_bytes_charged']+allowance>l['two_sweep_uncompressed_bytes'] or s['processing_seconds_charged']+l['state_processing_seconds']>l['processing_seconds']:raise Blocked('enrollment cumulative resource quota')
+            s['processing_bytes_charged']+=allowance;s['processing_seconds_charged']+=l['state_processing_seconds']
+            s['processing_active']=key;s['processing'][key]={'status':'RESERVED','reserved_bytes':allowance,'reserved_rows':0,'started':self.clock(),'manifest_sha256':canonical_hash(manifest)}
+            self._save(s,'enrollment_reserved',key=key);return key
+    def finish_enrollment(self,key,source):
+        with self.locked():
+            s=self._verified();l=self.c['limits'];item=s['processing'][key];state=key.split(':')[1]
+            elapsed=self.clock()-item['started']
+            if s['processing_active']!=key or source['state']!=state or source['manifest_sha256']!=item['manifest_sha256'] or source['validation_expanded_bytes']>item['reserved_bytes'] or elapsed>l['state_processing_seconds']:raise Blocked('enrollment receipt mismatch')
+            if state in s['sources'] or source['archive_sha256'] in {r['archive_sha256'] for r in s['sources'].values()}:raise Blocked('duplicate enrolled source')
+            if s['unique_source_bytes']+source['archive_bytes']>l['unique_source_bytes']:raise Blocked('unique source byte quota')
+            s['unique_source_bytes']+=source['archive_bytes'];s['sources'][state]=deepcopy(source)
+            s['processing_bytes_charged']-=item['reserved_bytes']-source['validation_expanded_bytes'];s['processing_seconds_charged']-=l['state_processing_seconds']-elapsed
+            item.update(status='MOCK_ENROLLED',expanded_bytes=source['validation_expanded_bytes'],rows=0,manifest_sha256=source['manifest_sha256'])
+            s['processing_active']=None;self._save(s,'enrollment_committed',key=key)
+    def register_fixture_source(self,source):
+        with self.locked():
+            s=self._verified()
+            if s['halted'] or s['sources'].get(source['state'])!=source:raise Blocked('source not independently reviewed and metered through fixture enrollment')
+    def reserve_processing(self,state,sweep):
+        with self.locked():
+            s=self._verified();l=self.c['limits'];key=sweep+':'+state
+            rows=next(r['published_person_rows'] for r in self.c['registry'] if r['state_fips']==state)
+            size=s['sources'].get(state,{}).get('processing_expanded_bytes',l['state_uncompressed_bytes'])
+            if rows>l['state_rows'] or size>l['state_uncompressed_bytes']:raise Blocked('frozen source row/size exceeds bound')
+            used=[v for k,v in s['processing'].items() if k.startswith(sweep+':')]
+            if sum(v.get('rows',v.get('reserved_rows',0)) for v in used)+rows>l['sweep_rows'] or sum(v.get('expanded_bytes',v.get('reserved_bytes',0)) for v in used)+size>l['sweep_uncompressed_bytes']:raise Blocked('per-sweep cumulative bound')
+            if sweep not in ('PRIMARY','REPLAY') or state not in s['sources'] or key in s['processing']:raise Blocked('processing source/sweep/duplicate')
+            if s['halted'] or s['active'] is not None or s['processing_active'] is not None:raise Blocked('processing halted/concurrent')
+            for field,amount,ceiling in [('processing_bytes_charged',size,l['two_sweep_uncompressed_bytes']),('processing_rows_charged',rows,l['two_sweep_rows']),('processing_seconds_charged',l['state_processing_seconds'],l['processing_seconds'])]:
+                if s[field]+amount>ceiling:raise Blocked('cumulative processing quota')
+                s[field]+=amount
+            s['processing_active']=key;s['processing'][key]={'status':'RESERVED','reserved_bytes':size,'reserved_rows':rows,'started':self.clock(),'source_sha256':s['sources'][state]['archive_sha256']}
+            self._save(s,'processing_reserved',key=key);return key
+    def finish_processing(self,key,result):
+        with self.locked():
+            s=self._verified();l=self.c['limits'];item=s['processing'][key];state=key.split(':')[1]
+            if s['processing_active']!=key or s['halted']:raise Blocked('processing not active')
+            expected=next(r['published_person_rows'] for r in self.c['registry'] if r['state_fips']==state)
+            elapsed=self.clock()-item['started']
+            if result['state']!=state or result['source']!=s['sources'][state] or result['rows']!=expected or result['rows']>l['state_rows'] or result['expanded_bytes']!=item['reserved_bytes'] or result['expanded_bytes']>l['state_uncompressed_bytes'] or elapsed>l['state_processing_seconds']:
+                raise Blocked('processing receipt source/count/resource mismatch')
+            s['processing_bytes_charged']-=item['reserved_bytes']-result['expanded_bytes'];s['processing_rows_charged']-=item['reserved_rows']-result['rows'];s['processing_seconds_charged']-=l['state_processing_seconds']-elapsed
+            item.update(status='MOCK_LOCAL_PROCESSING_COMMITTED',result_sha256=canonical_hash(result),rows=result['rows'],csv_bytes=result['csv_bytes'],expanded_bytes=result['expanded_bytes'])
+            s['processing_active']=None;self._save(s,'processing_committed',key=key)
+    def fail_processing(self,key):
+        with self.locked():
+            s=self._verified()
+            if s['processing_active']!=key:raise Blocked('processing not active')
+            s['processing'][key]['status']='FAILED_OR_CRASHED_FULL_PROCESSING_RESERVATION_CONSUMED';s.update(processing_active=None,halted=True,halt_reason='PROCESSING_FAILURE')
+            self._save(s,'processing_failed',key=key)
+
+
+class FixtureResponse:
+    """Authored bytes ONLY. Not a network adapter, and no real URL is opened."""
+    def __init__(self,body,*,url,status=200,encoding='identity',error=None,content_length=None):
+        self.body=body;self.url=url;self.status=status;self.encoding=encoding;self.position=0;self.closed=False;self.error=error;self.content_length=content_length
+    def read(self,n):
+        if self.error is not None:
+            error=self.error;self.error=None;raise error
+        out=self.body[self.position:self.position+n];self.position+=len(out);return out
+    def close(self):self.closed=True
+
+
+def storage_guard(ledger,extra_bytes=0):
+    limits=ledger.c['limits']
+    if shutil.disk_usage(ledger.path).free<limits['free_disk_bytes']:raise Blocked('free disk reserve')
+    size=sum(p.stat().st_size for p in ledger.path.rglob('*') if p.is_file())
+    if size+extra_bytes>limits['retained_bytes']:raise Blocked('retained body/log storage quota')
+
+
+def acquire_fixture(ledger,state,response,*,hook=lambda event:None):
+    """N1 authored transport only; bytes are quarantined, NEVER source-enrolled."""
+    if type(response) is not FixtureResponse or not ledger.c.get('authored_fixture'):
+        raise Blocked('authored fixture only; actual dispatch BLOCKED')
+    storage_guard(ledger);token=ledger.reserve(state,response.url);path=ledger.path/(token+'.quarantine');digest=hashlib.sha256()
+    try:
+        hook('after_reservation')
+        if response.status!=200 or response.encoding!='identity':raise Blocked('status/encoding refused')
+        declared=response.content_length
+        if declared is not None and (not isinstance(declared,int) or isinstance(declared,bool) or not 0<declared<=ledger.c['limits']['archive_body_bytes']):raise Blocked('declared length refused')
+        with path.open('xb') as out:
+            while True:
+                n=ledger.before_read(token);storage_guard(ledger,n);hook('before_read')
+                try:chunk=response.read(n)
+                except BaseException as error:
+                    partial=getattr(error,'partial',None)
+                    if partial is not None:ledger.record_read(token,partial);out.write(partial);out.flush();os.fsync(out.fileno())
+                    raise
+                hook('after_delivery_before_receipt');ledger.record_read(token,chunk)
+                if not chunk:break
+                out.write(chunk);out.flush();os.fsync(out.fileno());digest.update(chunk);hook('after_receipt')
+        response.close();storage_guard(ledger);hook('before_commit')
+        if declared is not None and path.stat().st_size!=declared:raise Blocked('truncated declared body')
+        ledger.success(token,path,digest.hexdigest(),closed=response.closed)
+        return token,path
+    except BaseException as error:
+        response.close();ledger.fail(token,type(error).__name__);raise
