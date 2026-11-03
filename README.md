@@ -41,6 +41,8 @@ python3.11 -m venv .venv
 .venv/bin/civiclab completion
 ```
 
+For the optional physical-PDF reader, install `.venv/bin/python -m pip install -e '.[geometry]'`. Its scoped Python 3.11/3.12 installation and cached-source checks have [independent acceptance](reports/INDEPENDENT_AUDIT_GEOMETRY_RUNTIME_V1_7.json); readiness integration remains separately gated. The observed full Python 3.12 environment is pinned in [the geometry runtime lock](configs/runtime_python312_geometry_20261103.txt). Historical archives retain their original dependency locks; the new lock is not a Python 3.11 full-environment lock. See the [runtime notes](docs/GEOMETRY_RUNTIME_V1_7.md).
+
 On a machine with the registered local raw inputs:
 
 ```bash
@@ -60,7 +62,7 @@ The viewer serves only its generated index/snapshot at loopback `127.0.0.1:8765`
 
 All E02 responses so far are explicitly MOCK, using project-authored fictional notices and a deliberate known mock effect. Scripted Q&A tests C3/C4 plumbing; it is not live assistant research. The ACS/ANES universe mismatch and sparse population support prohibit representative-electorate claims. Real-news text/rights, population review and preregistration remain unresolved.
 
-E01 includes a real 2018→2024 regular Senate diagnostic with 30 matched states, official-count adjudications and S_ZERO/S0 baselines. This bounded post-hoc workflow awaits independent acceptance; it does not complete the original 2026 House/Senate and agent study. The separate DEMO uses invented fixtures. Local outcome separation is a tested feature-flow boundary, not an OS sandbox or independent timestamp. No prospective forecast claim is permitted. See the [historical runbook](docs/E01_HISTORICAL_RUNBOOK.md).
+E01 includes a real 2018→2024 regular Senate diagnostic with 30 matched states, official-count adjudications and S_ZERO/S0 baselines. Its recorded arithmetic and replay have [scoped independent acceptance](reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json); this post-hoc diagnostic does not complete the original 2026 House/Senate and agent study. The separate DEMO uses invented fixtures. Local outcome separation is a tested feature-flow boundary, not an OS sandbox or independent timestamp. No prospective forecast claim is permitted. See the [historical runbook](docs/E01_HISTORICAL_RUNBOOK.md).
 
 Paid model inference remains disabled, with $0 approved spend and no paid calls. OpenRouter is the only network inference adapter. It requires a fixed model/provider, fresh pricing evidence, an explicit approval ID and positive total/module caps. Atomic reservations count pending requests; unknown billing halts the ledger, known charges are retained even for malformed outputs, and there are no automatic retries/fallbacks. The adapter is mocked in tests; live behavior and billing are not verified. Credentials remain local and untracked; no Meta/X access was exercised.
 
