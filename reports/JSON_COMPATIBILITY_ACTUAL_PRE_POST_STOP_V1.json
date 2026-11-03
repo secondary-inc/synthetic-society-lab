@@ -1,0 +1,114 @@
+{
+  "actual_charges": 0,
+  "actual_consumed_microusd": {
+    "dispatches": 0,
+    "module_dispatches": {
+      "E01": 0,
+      "E02": 0
+    },
+    "modules": {
+      "E01": 0,
+      "E02": 0
+    },
+    "total": 0
+  },
+  "actual_model_POST_attempts": 0,
+  "actual_statistics_GET_attempts": 0,
+  "actual_statistics_claims": 0,
+  "approved_lifetime_dispatches": 1,
+  "approved_lifetime_microusd": 1000,
+  "authority": "DIRECT_HUMAN_APPROVED_ONE_REQUEST_AND_CONFIRMED_SECURE_SETUP",
+  "automatic_retry": false,
+  "bootstrap": "CREATE_ONCE_ZERO_ALLOWANCE_COMPLETED",
+  "credit_purchase_or_account_change": false,
+  "diagnosis": {
+    "automatic_retry": false,
+    "model_POST_attempts": 0,
+    "no_extra_network_or_key_read": true,
+    "remaining_failure_boundary": "ENVIRONMENT_CREDENTIAL_GATE",
+    "retained_price_proof_dispatch_check": "PASS",
+    "statistics_GET_attempts": 0
+  },
+  "key_material_persisted_or_printed": false,
+  "larger_E01_E02_paid_studies_authorized": false,
+  "limitations": [
+    "Owner setup confirmation was recorded as human assertion; actual environment credential gate refused.",
+    "Final reviewed factory suppresses underlying error details; diagnosis used retained price-proof context and read-only dispatch check, with no additional key read or network.",
+    "No inference reservation or POST occurred. Existing authority and failed run preserved; no automatic continuation."
+  ],
+  "operator_allowance": "EXACT_ONE_REQUEST_GRANTED",
+  "price_proofs_retained": 1,
+  "private_evidence_files": {
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/approval.local.json": {
+      "bytes": 1138,
+      "sha256": "c22418b8684e77fa8ff638ff24e2a12b337c2865cdf60323e76fcf5789e45b2b"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/approved-owner-snapshot.local.json": {
+      "bytes": 1726,
+      "sha256": "253371006e18bbcde7ed3ba24eaa4044abab7007447a17ad891fb635d799fe68"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/failure.local.json": {
+      "bytes": 94,
+      "sha256": "20a74a0247e80cf76d67ab873709b0fdddb2f5e899e4ed80a7d3ecf404588173"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/final-owner-snapshot.local.json": {
+      "bytes": 1800,
+      "sha256": "20a251fd8746d804121566cbc78998c7a5890edc2eef97ec2e5fa5869a3c25e1"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/human-decision.local.json": {
+      "bytes": 591,
+      "sha256": "e355106e0915a2231ecb6ba1786a941ab3adb81175c2b42f61a3b57b36e7aa5f"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/read-only-diagnosis.local.json": {
+      "bytes": 243,
+      "sha256": "6f1a8cac8666b7c14ed856f9edf7ecc9f4ffba3a548535582a4d8dbfbee7e82c"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/registration.local.json": {
+      "bytes": 592,
+      "sha256": "86d984f5e270120a15e1b5ef13b275f86268f81baefdc5da57c003114cada039"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/zero-owner-snapshot.local.json": {
+      "bytes": 471,
+      "sha256": "5ea4bc0b23751b075a3c7abb0c117032786f45ccfc6675eb4b47a62143d9f311"
+    }
+  },
+  "private_operator_handoff": "data/processed/compatibility_operator_handoff/actual-20261103-01",
+  "recorded_at_utc": "2026-11-03T18:38:21.164189+00:00",
+  "request_reservation_microusd": 340,
+  "reset_or_new_owner": false,
+  "run_files": {
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/checksums.local.json": {
+      "bytes": 576,
+      "sha256": "9d0a1484a27906745b6841a6dad73d56314db57ddca578d3f0b9cc8f462d5fbd"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000001.local.json": {
+      "bytes": 127,
+      "sha256": "3f6f74b8c93e612f382ceb4fd76430ecf37f1522244dc34a34bb1943496a9eb1"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000002.local.json": {
+      "bytes": 206,
+      "sha256": "62bafdb6ad22ec3f41a31a6f558670fc3ab66ec134355e27f1a7db4ac4c1adb3"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000003.local.json": {
+      "bytes": 246,
+      "sha256": "e66e08412e095f142f30faa2eb3ac7e206d92bb90f7fba33cb59aa2c474005c5"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000004.local.json": {
+      "bytes": 215,
+      "sha256": "6d7f1a318255a0d354e50c2108a79b90e08b0d198507f5f771c0a29872bdcf7a"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/manifest.local.json": {
+      "bytes": 3096,
+      "sha256": "7ef88b7a8ded0c65a16932ba08fbd9cb89234160743e937c17a215ec0862a8ed"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/summary.local.json": {
+      "bytes": 240,
+      "sha256": "4885478c38dbdfd5a2de162bd2392a3d42ba0c70aeb62da00543542c9fe49a68"
+    }
+  },
+  "run_id": "compatibility-20261103-gpt41nano-01",
+  "run_path": "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01",
+  "schema_version": 1,
+  "scientific_effect_or_compatibility_success_claimed": false,
+  "status": "ACTUAL_PRE_POST_STOP_ENVIRONMENT_CREDENTIAL_GATE_PENDING_INDEPENDENT_REVIEW"
+}

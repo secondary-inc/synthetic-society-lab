@@ -1,0 +1,275 @@
+{
+  "actual_executor_review": null,
+  "actual_foundation_review": null,
+  "actual_operator_dispatch_assertion": null,
+  "actual_owner_bootstrap_assertion": null,
+  "actual_secure_key_setup_confirmation": null,
+  "approved_spend_usd": 0,
+  "availability": "UNKNOWN_OPENROUTER_AZURE_ALIAS_NOT_OBSERVED; directOpenAIpageShutDowndoesnotcertifyAzureavailability; noautomaticreplacement",
+  "bootstrap_proposal": {
+    "create_once": true,
+    "initial_allowance": 0,
+    "kind": "ZERO_ALLOWANCE_BOOTSTRAP_PROPOSAL_NOT_OPERATOR_ASSERTION",
+    "namespace": "SYNTHETIC_SOCIETY_LAB_OPENROUTER_V4",
+    "path_policy": "FIXED_OS_ACCOUNT_HOME_NO_PUBLIC_OVERRIDE_NO_RESET",
+    "proposed_owner_id": "80bb8127f4f745bba603397f8c095966"
+  },
+  "compatibility_release": {
+    "interpretation": {
+      "applicability": {
+        "byok_disabled": true,
+        "cache_bound_mode": "SUM_ALL_INPUT_COMPONENTS",
+        "conditional_overrides_absent_or_empty_reviewed": true,
+        "input_framing_bound_reviewed": true,
+        "non_reasoning_reviewed": true,
+        "non_text_fees_inapplicable_reviewed": true,
+        "text_only": true,
+        "tools_plugins_disabled": true
+      },
+      "catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+      "evidence_sha256": [
+        "64edb98d77fa918a303cd38dfa939e4a0b0d4c32d8f908e22ccc06c20849765b",
+        "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e",
+        "d1dd5faa335a0f1a3e76b998893bba807d7456541fdab968519f46f41a9ac908",
+        "f9b2b473541a387a37b4630bc29ddc217f355f1ac3f2fb898201bff07c90a81e",
+        "2bd3dbdfc3f46f3b8aa9bd65cdc86e0e3170afe2610dc7b6596233864d04754f",
+        "4e443581146d5bfba5500dba17cf76a40d272d5441089dec70c0a527e51428da"
+      ],
+      "kind": "EXTERNAL_TEXT_PRICE_INTERPRETATION_V4",
+      "missing_prices": {
+        "azure": {
+          "input_cache_write": "0",
+          "input_cache_write_1h": "0",
+          "internal_reasoning": "0",
+          "request": "0"
+        },
+        "azure/swedencentral": {
+          "input_cache_write": "0",
+          "input_cache_write_1h": "0",
+          "internal_reasoning": "0",
+          "request": "0"
+        }
+      },
+      "model": "openai/gpt-4.1-nano",
+      "reported_provider": "Azure",
+      "requested_route": "azure",
+      "route_scope": "PROVIDER_FAMILY",
+      "valid_from_utc": "2026-11-03T18:09:08.802914+00:00",
+      "valid_until_utc": "2026-11-04T18:10:08.802914+00:00"
+    },
+    "kind": "NONPOLITICAL_JSON_COMPATIBILITY_RELEASE_V4",
+    "request": {
+      "envelope": {
+        "encoded_message_bytes": 228,
+        "input_token_bound": 2276,
+        "max_tokens": 32,
+        "message_count": 2,
+        "request_hash": "21215033b9732a8eb4c1019f1db76abe5790ad8feadaa47fb0b08a33528cb296",
+        "reserved_microusd": 340
+      },
+      "module": "E02",
+      "payload": {
+        "max_completion_tokens": 32,
+        "messages": [
+          {
+            "content": "This is a nonpolitical API compatibility check. Respond only in JSON.",
+            "role": "system"
+          },
+          {
+            "content": "Return exactly one JSON object with the key ok and the boolean value true. Do not add text.",
+            "role": "user"
+          }
+        ],
+        "model": "openai/gpt-4.1-nano",
+        "plugins": [],
+        "provider": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.44,
+            "prompt": 0.11,
+            "request": 0.0
+          },
+          "only": [
+            "azure"
+          ],
+          "require_parameters": true
+        },
+        "response_format": {
+          "type": "json_object"
+        },
+        "seed": 20261103,
+        "stream": false,
+        "temperature": 0,
+        "tool_choice": "none",
+        "tools": []
+      },
+      "phase": "compatibility",
+      "plan_hash": "2b5e9acdc18fec30f2c44edd69eb0f841cd825551e313c1aa9745a4cd317b5bd",
+      "run_id": "compatibility-20261103-gpt41nano-01",
+      "sampling": {
+        "retries": 0,
+        "seed": 20261103,
+        "temperature": 0
+      },
+      "unit_id": "json-compatibility-v4"
+    },
+    "schema_version": 1,
+    "source_pins": {
+      "civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+      "civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+      "civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+      "civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+      "civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+    },
+    "terms": {
+      "components_by_tag": {
+        "azure": {
+          "completion": "0.0000004",
+          "input_cache_read": "0.00000003",
+          "input_cache_write": "0",
+          "input_cache_write_1h": "0",
+          "internal_reasoning": "0",
+          "prompt": "0.0000001",
+          "request": "0"
+        },
+        "azure/swedencentral": {
+          "completion": "0.00000044",
+          "input_cache_read": "0.000000033",
+          "input_cache_write": "0",
+          "input_cache_write_1h": "0",
+          "internal_reasoning": "0",
+          "prompt": "0.00000011",
+          "request": "0"
+        }
+      },
+      "initial_catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+      "input_usd_per_token": "0.000000143",
+      "interpretation_hash": "01f8e4c0d2403d091baca34da6b246f34fe44deccacfa8d9ceb4e3a6d053c94d",
+      "kind": "REVIEWED_TEXT_PRICE_CONTRACT_V4",
+      "metadata_semantic_hash": "0bcf5eede902a12a3e9385daed89c2166400934b7d0d0269e0c7fe91eaf870e6",
+      "model": "openai/gpt-4.1-nano",
+      "output_parameter": "max_completion_tokens",
+      "output_usd_per_token": "0.00000044",
+      "reported_provider": "Azure",
+      "request_fee_usd": "0",
+      "requested_route": "azure",
+      "route_scope": "PROVIDER_FAMILY",
+      "valid_from_utc": "2026-11-03T18:09:08.802914+00:00",
+      "valid_until_utc": "2026-11-04T18:10:08.802914+00:00"
+    }
+  },
+  "compatibility_release_sha256": "dd880b5aaed87e22740a5d4d90b6846a19f442c855da3cac7e93d154723114cf",
+  "cost_scope": "Proposed0.001USDmodelbalanceonly. Creditpurchase/accountfees/taxes/development/localcostsunpriced/separate; noaccountaccess or topupauthorization.",
+  "execution_contract": {
+    "code_pins": {
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+      "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+      "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+      "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+      "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+      "src/civiclab/production_compatibility_transport_v4.py": "9235dc5a62c8c1d028e86908b834490b5ad156d6c6b6037d3f94c5405eff711f",
+      "src/civiclab/production_compatibility_v4.py": "c96e0012699f9401b9562bb9f421acc585776b4bfa418fc3a43d7f236257280c",
+      "src/civiclab/production_compatibility_v4_1.py": "35f71e5de47ed920f224c8500311786575022104d9ebbc7b33dabb9f5abeb1c6",
+      "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+    },
+    "dependency_receipts": {
+      "INDEPENDENT_AUDIT_PRODUCTION_ADMISSION_V4_COMPONENT_RAW.json": "e1670d3ec4ffb514828393f923ac22f9272643cb69e1d5a0d59c7c4fa1ba8ee0",
+      "INDEPENDENT_AUDIT_PRODUCTION_COMPATIBILITY_EXECUTOR_V4_METHODS.json": "3acc581cd31d9a8cf52cf0f5b278e6588d28ab8d476abd588cbac2e0508c7649",
+      "INDEPENDENT_AUDIT_PRODUCTION_COMPATIBILITY_V4_AUXILIARY_USAGE_FINDING.json": "33757150ab69a113a7c61c11b9139d9cbf14a1befac5e105d1a6ea47f54f2c4e"
+    },
+    "kind": "ONE_REQUEST_JSON_COMPATIBILITY_EXECUTION_V4_1",
+    "policy": {
+      "POST_attempts": 1,
+      "auxiliary_observation_policy": "PRESENT_ZERO_INTEGER_OR_REFUSE_ABSENT_NOT_REPORTED_V4_1",
+      "body_bytes": 2000000,
+      "checkpoint_schema": 1,
+      "cooperative_seconds": 30,
+      "global_owner_commit_required": true,
+      "inference_retries": 0,
+      "quality": "EXACT_OBJECT_OK_JSON_BOOLEAN_TRUE",
+      "socket_seconds": 15,
+      "statistics_GET_attempts": 1
+    }
+  },
+  "execution_contract_sha256": "e4a9cd003ef8897f184050396a5b9904f2eeb980fd304d3f3ff77bc73487721c",
+  "interpretation_for_independent_release": {
+    "applicability": {
+      "byok_disabled": true,
+      "cache_bound_mode": "SUM_ALL_INPUT_COMPONENTS",
+      "conditional_overrides_absent_or_empty_reviewed": true,
+      "input_framing_bound_reviewed": true,
+      "non_reasoning_reviewed": true,
+      "non_text_fees_inapplicable_reviewed": true,
+      "text_only": true,
+      "tools_plugins_disabled": true
+    },
+    "catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+    "evidence_sha256": [
+      "64edb98d77fa918a303cd38dfa939e4a0b0d4c32d8f908e22ccc06c20849765b",
+      "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e",
+      "d1dd5faa335a0f1a3e76b998893bba807d7456541fdab968519f46f41a9ac908",
+      "f9b2b473541a387a37b4630bc29ddc217f355f1ac3f2fb898201bff07c90a81e",
+      "2bd3dbdfc3f46f3b8aa9bd65cdc86e0e3170afe2610dc7b6596233864d04754f",
+      "4e443581146d5bfba5500dba17cf76a40d272d5441089dec70c0a527e51428da"
+    ],
+    "kind": "EXTERNAL_TEXT_PRICE_INTERPRETATION_V4",
+    "missing_prices": {
+      "azure": {
+        "input_cache_write": "0",
+        "input_cache_write_1h": "0",
+        "internal_reasoning": "0",
+        "request": "0"
+      },
+      "azure/swedencentral": {
+        "input_cache_write": "0",
+        "input_cache_write_1h": "0",
+        "internal_reasoning": "0",
+        "request": "0"
+      }
+    },
+    "model": "openai/gpt-4.1-nano",
+    "reported_provider": "Azure",
+    "requested_route": "azure",
+    "route_scope": "PROVIDER_FAMILY",
+    "valid_from_utc": "2026-11-03T18:09:08.802914+00:00",
+    "valid_until_utc": "2026-11-04T18:10:08.802914+00:00"
+  },
+  "interpretation_sha256": "01f8e4c0d2403d091baca34da6b246f34fe44deccacfa8d9ceb4e3a6d053c94d",
+  "kind": "NONAUTHORIZING_COMPATIBILITY_OWNER_REVIEW_PACKET_V1",
+  "limitations": [
+    "Conditionaldocumentedprice/request/applicabilitycontract and localreservationcontrols; no guaranteethatexternalservicecannotviolateadvertisedpricing/quantity.",
+    "No actualmodel/providerusage/nativebilling/revision/regionorhuman-studyobservation; onlyonefuture nonpoliticalcompatibilityprobe.",
+    "Candidatehasnorealoperator/bootstrapassertionandcannotenableitself. Exactindependentreviewsandconcretehumanapproval/rotatedkeysetupbeforeanyactualownerorpaidaction.",
+    "Native403documentationfailurepreserved; exactfreshcatalogproofmustmatchwithin15minatdispatchandunexpiredterms; no newmodel/price/approval/attemptonfailure."
+  ],
+  "operator_proposal": {
+    "account_purchases_or_setting_changes": false,
+    "exact_request_run_id": "compatibility-20261103-gpt41nano-01",
+    "expiry_not_later_than_utc": "2026-11-04T18:10:08.802914+00:00",
+    "inference_retries": 0,
+    "kind": "ONE_JSON_REQUEST_BUDGET_PROPOSAL_NOT_OPERATOR_ASSERTION",
+    "module_lifetime_dispatches": {
+      "E01": 0,
+      "E02": 1
+    },
+    "module_lifetime_microusd": {
+      "E01": 0,
+      "E02": 1000
+    },
+    "requires_owner_provided_prefunded_setup_and_rotated_dedicated_environment_key": true,
+    "statistics_GETs": 1,
+    "total_lifetime_dispatches": 1,
+    "total_lifetime_microusd": 1000
+  },
+  "prior_evidence": {
+    "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_PRICE_INTERPRETATION_V1_PROPOSAL.json": "f9b2b473541a387a37b4630bc29ddc217f355f1ac3f2fb898201bff07c90a81e",
+    "reports/INDEPENDENT_AUDIT_PRODUCTION_COMPATIBILITY_V4_1_REMEDIATION.json": "4e443581146d5bfba5500dba17cf76a40d272d5441089dec70c0a527e51428da",
+    "reports/INDEPENDENT_AUDIT_PUBLIC_ENDPOINT_METADATA_20261103_V2.json": "2bd3dbdfc3f46f3b8aa9bd65cdc86e0e3170afe2610dc7b6596233864d04754f"
+  },
+  "schema_version": 1,
+  "status": "PENDING_EXACT_INDEPENDENT_FOUNDATION_AND_EXECUTOR_REVIEW_NOT_OWNER_APPROVAL"
+}

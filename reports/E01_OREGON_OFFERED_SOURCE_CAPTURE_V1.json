@@ -1,0 +1,153 @@
+{
+  "AL_actual_source_access": false,
+  "OR_job_resolved": false,
+  "capture": {
+    "body_bytes": 1523,
+    "body_complete": true,
+    "body_path": "data/raw/e01_oregon_offered_links_v1/01_or_public_candidate_search.body",
+    "body_sha256": "fc0fa20d533ec0e59ffeedf3bc67b1450201ec0bdaa00d83fc12eb5ac47750b6",
+    "candidate_roster_or_ballot_document_obtained": false,
+    "completed_at_utc": "2026-11-03T18:31:10.558057+00:00",
+    "http_status": 200,
+    "observed_page_title": "Please Contact Us",
+    "observed_role": "APPLICATION_LEVEL_ACCESS_DENIAL_CONTACT_PAGE_ONLY",
+    "observed_structure": {
+      "form_elements": 0,
+      "support_contact_and_blocked_page_links_present": true,
+      "support_links_followed": false,
+      "table_elements": 1,
+      "table_not_parsed_as_candidate_data": true
+    },
+    "offered_link": {
+      "href_literal": "https://secure.sos.state.or.us/orestar/CFSearchPage.do",
+      "label": "Search Candidate & Campaign Filings (Opens in new window)",
+      "url": "https://secure.sos.state.or.us/orestar/CFSearchPage.do"
+    },
+    "offered_parent": {
+      "path": "data/raw/e01_ballots_batch03_v1/or_filing_index.html",
+      "sha256": "7cc4aa618fcc2fbcb66bf4c81e7aeb29aeb6183062366b0f1fc44fd5de34b7e6",
+      "url": "https://sos.oregon.gov/elections/pages/candidate-filings-local-measures.aspx"
+    },
+    "redistribution_authorized": false,
+    "representation": "HTTP_RESPONSE_BODY_BYTES_AS_EXPOSED_BY_URLLIB_NOT_WIRE_OR_BROWSER_DOM",
+    "request_url": "https://secure.sos.state.or.us/orestar/CFSearchPage.do",
+    "requested_role": "PUBLIC_CANDIDATE_CAMPAIGN_FILING_SEARCH_DISCOVERY",
+    "response_headers": {
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    "retrieved_at_utc": "2026-11-03T18:31:10.112392+00:00",
+    "rights": "UNKNOWN_NO_REUSE_LICENSE_EVIDENCE",
+    "source_election_edition": "UNKNOWN_DENIAL_BODY_HAS_NO_CANDIDATE_EDITION",
+    "source_id": "or_public_candidate_search",
+    "source_publication_date": null,
+    "source_publication_date_reason": "NOT_OBSERVED_IN_CAPTURE",
+    "source_reported2026Senate_context": false
+  },
+  "capture_harness": {
+    "do_not_repeat": "ExistingterminalSTOP and sameURL/attemptrecords preventretry; noalternateroute authorized.",
+    "executed_command": "PYTHONPATH=src .venv/bin/python scripts/e01_oregon_offered_capture_v1.py --parent data/raw/e01_ballots_batch03_v1/or_filing_index.html --parent-sha 7cc4aa618fcc2fbcb66bf4c81e7aeb29aeb6183062366b0f1fc44fd5de34b7e6 --url https://secure.sos.state.or.us/orestar/CFSearchPage.do --source-id or_public_candidate_search",
+    "path": "scripts/e01_oregon_offered_capture_v1.py",
+    "sha256": "d8063ca7550563a2f1a9eef624cdd82377c6ff342fbae2017243611d9fe7efac"
+  },
+  "cost_usd": 0,
+  "coverage_promoted": false,
+  "current_accepted_coverage": {
+    "final_ballots": 0,
+    "legacy_roster_document_states": 12,
+    "typed_document_union_states": 13,
+    "unfinished_source_jobs": 20
+  },
+  "custom_candidate_parser": false,
+  "existing_queue_check": {
+    "OR_row": {
+      "amendment_review": "PENDING",
+      "candidate_source_ids": [],
+      "contest_id": "2026-OR-SENATE-C2",
+      "election_date": "2026-11-03",
+      "independent_ballot_review": "PENDING",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "seat_class": 2,
+      "state": "OR"
+    },
+    "cache_rehash_before_and_after_match": true,
+    "existing_cache": {
+      "bytes": 107474,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "final_url": "https://sos.oregon.gov/elections/pages/candidate-filings-local-measures.aspx",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Tue, 03 Nov 2026 13:08:13 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 13:08:12 GMT"
+      },
+      "path": "data/raw/e01_ballots_batch03_v1/or_filing_index.html",
+      "retrieved_at_utc": "2026-11-03T13:08:09.531875+00:00",
+      "sha256": "7cc4aa618fcc2fbcb66bf4c81e7aeb29aeb6183062366b0f1fc44fd5de34b7e6",
+      "source_id": "or_filing_index",
+      "status": 200,
+      "url": "https://sos.oregon.gov/elections/pages/candidate-filings-local-measures.aspx"
+    },
+    "path": "configs/e01_ballot_readiness_v1_6_1.json",
+    "prior_source_role_audit": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_BATCH03_SOURCE_ROLES.json",
+      "sha256": "fb25b1acf4a15f6e54dd7e93412517e0696aa730df48a0986b5fc1061159b7ba"
+    },
+    "sha256": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b"
+  },
+  "independent_source_role_review": "NOT_RUN",
+  "legal_nominee_final_latest_asof_geography_selection_acceptance": false,
+  "limits_and_actuals": {
+    "application_GETs": 1,
+    "authentication_or_challenge_bypass": false,
+    "body_deadline_method": "SIGALRM_ITIMER_REAL30s around nativeopen+read plus urllibtimeout30; errorbody/redirect notfollowed; exactofferedURL only.",
+    "cookies_or_credentials_sent": false,
+    "login_browser_proxy_header_alternate_routes_attempted": false,
+    "max_GETs": 4,
+    "max_body_bytes_each": 5242880,
+    "max_seconds_per_request": 30,
+    "observed_body_bytes": 1523,
+    "observed_request_interval_seconds": 0.445534,
+    "redirects_followed": 0,
+    "retries": 0
+  },
+  "model_calls": 0,
+  "new_readiness_runs": 0,
+  "next_unblocked_task": "Independent bounded capture/source-role audit. Oregon remains gap; no retry/workaround/contact/alternate route under this stoppedjob. Other approved researchwork maycontinue separately.",
+  "outcomes_accessed": false,
+  "private_capture_receipts": {
+    "data/raw/e01_oregon_offered_links_v1/01_or_public_candidate_search.body": "fc0fa20d533ec0e59ffeedf3bc67b1450201ec0bdaa00d83fc12eb5ac47750b6",
+    "data/raw/e01_oregon_offered_links_v1/01_or_public_candidate_search_receipt.local.json": "d582c9850a20259454706219e262bd004e561b62d064fe756fc2e21902cad940",
+    "data/raw/e01_oregon_offered_links_v1/01_or_public_candidate_search_started.local.json": "c6ec3d711f3c1ca5e74e2ebafbe9ee5872705a6e535627f1123460b0c64a6515",
+    "data/raw/e01_oregon_offered_links_v1/STOP.local.json": "4aff2eace0fe048fb5d6aeb20781191d09e8a4beb5e8d9f534477db0b9bd2c61"
+  },
+  "recorded_at_utc": "2026-11-03T18:33:40.887001+00:00",
+  "schema_version": 1,
+  "scope": "Oregon2026regularSenate sourcejob discovery only; no parser/readiness/sourceadoption/selection",
+  "source_adoption": false,
+  "status": "ONE_OFFERED_PUBLIC_GET_CAPTURED_APPLICATION_DENIAL_STOPPED_PENDING_SOURCE_ROLE_AUDIT",
+  "task_id": "E01_OREGON_OFFERED_SOURCE_CAPTURE_V1",
+  "terminal_stop": {
+    "path": "data/raw/e01_oregon_offered_links_v1/STOP.local.json",
+    "reason": "HTTP200_APPLICATION_DENIAL_IS_UNSUPPORTED_ROUTE_STOP_NO_RETRY_OR_ALTERNATES",
+    "remaining_request_budget_used_after_denial": 0,
+    "sha256": "4aff2eace0fe048fb5d6aeb20781191d09e8a4beb5e8d9f534477db0b9bd2c61"
+  },
+  "verification": {
+    "AL8candidate_handoff_pins_unchanged": {
+      "configs/e01_al_source_release_v1_candidate.json": "fc1084826c2e014ae533d076915dd4b126b596f6010ce0f6c78384e35c0f4099",
+      "docs/E01_AL_SOURCE_RELEASE_V1_IMPLEMENTATION.md": "80417c1b33c6dbc4eda7b05ce865c9818905d9ead501092314fa4817db540dd9",
+      "reports/E01_AL_SOURCE_RELEASE_V1_IMPLEMENTATION_EVIDENCE.json": "605680188b503ff09d723e09c8ec79251a54ab74a09c77824f2dfbf39239b339",
+      "reports/E01_AL_SOURCE_RELEASE_V1_IMPLEMENTATION_RECEIPT.md": "f4c241d76cde75371a449ae369e95e8187e946d3e1b16831654f9c67c8c227fa",
+      "src/civiclab/e01/alabama_recorded_preflight_v1.py": "a1d5e4f2d4d8101c91d48ad4815b7a6bd00179c66cfe05c93de50fe91d02b6f5",
+      "src/civiclab/e01/alabama_source_release_v1.py": "e5d2561c54a03309ca9acbf7bece27223c252a571c18b3337e92581b1076f201",
+      "tests/test_e01_alabama_recorded_preflight_v1.py": "d366fc966a8ed2635507a2bca29c158cd53f2d103c51cd17ba0cfedfe603200c",
+      "tests/test_e01_alabama_source_release_v1.py": "698a7bae04a7ba6cfcf9cd7931ad8605d2597ebfea910cf313844cd9063da71c"
+    },
+    "captured_bytes_hash_and_limits_rechecked": true,
+    "denial_title_and_structure_read_locally_only": true,
+    "initial_metadata_assertion_error": "First reportgeneration incorrectlyexpected0HTMLtables; localrolecheck found1table oncontactdenialpage. Correctedmetadata only, no newGET/recapture, rawbody/receipts/scriptunchanged.",
+    "no_candidate_names_or_contact_addresses_exported": true,
+    "offered_URL_grounded_in_verified_cache": true,
+    "publisher_WIP_or_source_grants_edited": false,
+    "raw_capture_directory_git_ignored": true
+  }
+}
