@@ -2,7 +2,13 @@
   "acquisition_plan_sha256": "e52e768ad80a8256770cd157017e7c65ceabfacc22863123e57519a35e23e95a",
   "actual_model_api_spend_usd": 0,
   "authenticated_requests": 0,
+  "correction": {
+    "prior_file": "reports/SURVEY_OPENROUTER_PUBLIC_SCHEMA_REVIEW_V1_0.json",
+    "prior_sha256": "806e44f4cc19ac5f80f39fe29db2f717f602e23c8fb9df95b0638feae0e82a79",
+    "reason": "OpenAPI3.1 type-array nullability uses the string null, not Python None; original false boolean corrected to true from exact cached bytes. Proposal prose already stated nullable and is unchanged. No new request."
+  },
   "credentials_loaded": false,
+  "evidence_revision": "1.1",
   "existing_reviewed_code_modified": false,
   "interpretation": "Documentation does not guarantee the fake adapter envelope actual-provider field; future live release requires exact authenticated generation/route/cost reconciliation. No live behavior or missing-field prevalence was measured.",
   "live_release": "NOT_IMPLEMENTED",
@@ -32,7 +38,11 @@
     "chat_declares_top_level_provider": false,
     "chat_result_ref": "#/components/schemas/ChatResult",
     "generation_operation": "getGeneration",
-    "generation_provider_nullable": false,
+    "generation_provider_nullable": true,
+    "generation_provider_type_literal": [
+      "string",
+      "null"
+    ],
     "generation_requires_provider_key": true,
     "generation_requires_total_cost": true,
     "global_authentication_required": true

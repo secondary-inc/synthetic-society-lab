@@ -1,0 +1,41 @@
+{
+  "acquisition_plan_sha256": "e52e768ad80a8256770cd157017e7c65ceabfacc22863123e57519a35e23e95a",
+  "actual_model_api_spend_usd": 0,
+  "authenticated_requests": 0,
+  "credentials_loaded": false,
+  "existing_reviewed_code_modified": false,
+  "interpretation": "Documentation does not guarantee the fake adapter envelope actual-provider field; future live release requires exact authenticated generation/route/cost reconciliation. No live behavior or missing-field prevalence was measured.",
+  "live_release": "NOT_IMPLEMENTED",
+  "model_calls": 0,
+  "price_quote": "NOT_ACQUIRED",
+  "proposal_sha256": "ee28e164a03aed9705063563a6395c64461cf238b9d7bb4061ca206cce21a380",
+  "receipt": {
+    "bytes": 2729603,
+    "credentials_used": false,
+    "headers": {
+      "Content-Length": "2729603",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Tue, 03 Nov 2026 13:59:45 GMT",
+      "ETag": null,
+      "Last-Modified": null
+    },
+    "http_status": 200,
+    "model_calls": 0,
+    "paid_spend_usd": 0,
+    "sha256": "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e",
+    "source_url": "https://openrouter.ai/openapi.json",
+    "status": "PASS_PUBLIC_DOCUMENTATION_ONLY"
+  },
+  "schema_sha256": "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e",
+  "schema_version": 1,
+  "selected_schema_observations": {
+    "chat_declares_top_level_provider": false,
+    "chat_result_ref": "#/components/schemas/ChatResult",
+    "generation_operation": "getGeneration",
+    "generation_provider_nullable": false,
+    "generation_requires_provider_key": true,
+    "generation_requires_total_cost": true,
+    "global_authentication_required": true
+  },
+  "status": "PUBLIC_DOCUMENTATION_OBSERVATION_ONLY_PENDING_INDEPENDENT_REVIEW"
+}
