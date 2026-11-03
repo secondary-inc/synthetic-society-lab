@@ -1,0 +1,130 @@
+{
+  "archive": "data/processed/reproducibility/owner-review-stage3-20261103.zip",
+  "archive_integrity": {
+    "files": 667,
+    "run_ids": [
+      "e02-ad2ad153c5ea480d8a9b7f39433927e7",
+      "e02-0121548188194f04936b85c984ee677f",
+      "e02-f1b88b12ebe34884974116336625ef04",
+      "e02-4d4b679fe0c743a989b0e811fdb72692",
+      "e02-869b271141994c468232e90b6efa83cb",
+      "e01-ed5b716aa76145258ece94c3df6b4188",
+      "e01-9a3e3305877f40b3a84e63bd5ca5ed1c",
+      "e02-247f0495823245aab66a877d623ea310",
+      "e02-06300b9b21d14dac927e702ec7851f56",
+      "e01-291abe736b0648acb08a9254d4880017",
+      "e01-34e1aa5529d54eb598ff645dd0b4d0fc",
+      "e02-edf2b36e269442748f4721ef7f479876",
+      "e02-457e2e2a4e3a47eebc80e1f4a8adcd15",
+      "e01-6a67d910c8b6460b88c08adda45c5e90",
+      "e01-a6da256293dc48ffb56feaab3d1d7125",
+      "e01-32a3512931fc47d98b77a68cc3149158",
+      "e02-1be3718699e54d7380755be1f9d87e6d",
+      "e02-ab4188e6c75d46a18179cb81dfde156c",
+      "e02-70827a2bc8ef49b0bd5f808a00064f74",
+      "e02-775f7460965047e0999ddb81083fee6b",
+      "e02-b99863e7664f4af19386526bd5f438ef"
+    ],
+    "scope": "Byte integrity only; not scientific or publication acceptance.",
+    "sha256": "1dbe571e60e118f4055ff7b7164e151c81250cb24f12169d84b1b550c9f8b878",
+    "status": "PASS_PACKAGE_INTEGRITY"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-m",
+        "venv",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv"
+      ],
+      "elapsed_seconds": 0.9333714169915766,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "configs/runtime_python312_20261103.txt"
+      ],
+      "elapsed_seconds": 4.158663458016235,
+      "exit_code": 0,
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.3\n[notice] To update, run: /var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/python -m pip install --upgrade pip\n",
+      "stdout": "Collecting contourpy==1.4.0 (from -r configs/runtime_python312_20261103.txt (line 4))\n  Using cached contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (3.8 kB)\nCollecting cycler==0.12.1 (from -r configs/runtime_python312_20261103.txt (line 5))\n  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)\nCollecting fonttools==4.68.0 (from -r configs/runtime_python312_20261103.txt (line 6))\n  Using cached fonttools-4.68.0-cp312-cp312-macosx_10_13_universal2.whl.metadata (139 kB)\nCollecting kiwisolver==1.5.1 (from -r configs/runtime_python312_20261103.txt (line 7))\n  Using cached kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (5.2 kB)\nCollecting matplotlib==3.10.7 (from -r configs/runtime_python312_20261103.txt (line 8))\n  Using cached matplotlib-3.10.7-cp312-cp312-macosx_11_0_arm64.whl.metadata (11 kB)\nCollecting numpy==2.5.4 (from -r configs/runtime_python312_20261103.txt (line 9))\n  Using cached numpy-2.5.4-cp312-cp312-macosx_14_0_arm64.whl.metadata (6.6 kB)\nCollecting packaging==26.3 (from -r configs/runtime_python312_20261103.txt (line 10))\n  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting pillow==13.0.0 (from -r configs/runtime_python312_20261103.txt (line 11))\n  Using cached pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)\nCollecting pyparsing==3.3.3 (from -r configs/runtime_python312_20261103.txt (line 12))\n  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)\nCollecting pypdf==6.10.0 (from -r configs/runtime_python312_20261103.txt (line 13))\n  Using cached pypdf-6.10.0-py3-none-any.whl.metadata (7.1 kB)\nCollecting python-dateutil==4.0.0 (from -r configs/runtime_python312_20261103.txt (line 14))\n  Using cached python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)\nCollecting scipy==1.16.3 (from -r configs/runtime_python312_20261103.txt (line 15))\n  Using cached scipy-1.16.3-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)\nCollecting tzdata==2026.6 (from -r configs/runtime_python312_20261103.txt (line 16))\n  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)\nUsing cached contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl (284 kB)\nUsing cached cycler-0.12.1-py3-none-any.whl (8.3 kB)\nUsing cached fonttools-4.68.0-cp312-cp312-macosx_10_13_universal2.whl (3.1 MB)\nUsing cached kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl (64 kB)\nUsing cached matplotlib-3.10.7-cp312-cp312-macosx_11_0_arm64.whl (8.1 MB)\nUsing cached numpy-2.5.4-cp312-cp312-macosx_14_0_arm64.whl (5.5 MB)\nUsing cached packaging-26.3-py3-none-any.whl (129 kB)\nUsing cached pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl (4.9 MB)\nUsing cached pyparsing-3.3.3-py3-none-any.whl (126 kB)\nUsing cached pypdf-6.10.0-py3-none-any.whl (334 kB)\nUsing cached python_dateutil-4.0.0-py3-none-any.whl (92 kB)\nUsing cached scipy-1.16.3-cp312-cp312-macosx_14_0_arm64.whl (20.9 MB)\nUsing cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)\nInstalling collected packages: tzdata, pypdf, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, scipy, python-dateutil, contourpy, matplotlib\nSuccessfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.10.7 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 pypdf-6.10.0 python-dateutil-4.0.0 scipy-1.16.3 tzdata-2026.6\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".",
+        "--no-deps"
+      ],
+      "elapsed_seconds": 0.8971522499923594,
+      "exit_code": 0,
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.3\n[notice] To update, run: /var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/python -m pip install --upgrade pip\n",
+      "stdout": "Obtaining file:///private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/restored\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Getting requirements to build editable: started\n  Getting requirements to build editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: synthetic-society-lab\n  Building editable for synthetic-society-lab (pyproject.toml): started\n  Building editable for synthetic-society-lab (pyproject.toml): finished with status 'done'\n  Created wheel for synthetic-society-lab: filename=synthetic_society_lab-0.1.0-0.editable-py3-none-any.whl size=1810 sha256=7b43eaf393e31f8e4f4f334a01069591e59934cca7ecd08d91f5a3b15eec9501\n  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-zszahmzo/wheels/a0/cf/7f/2ca41f24b4dab1e245ca7642b00682ec23280f8cc91d4e7194\nSuccessfully built synthetic-society-lab\nInstalling collected packages: synthetic-society-lab\nSuccessfully installed synthetic-society-lab-0.1.0\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "elapsed_seconds": 11.196269416017458,
+      "exit_code": 0,
+      "stderr": "----------------------------------------------------------------------\nRan 167 tests in 11.067s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "elapsed_seconds": 0.18661358300596476,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"checks\": 1}\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/civiclab",
+        "dashboard",
+        "--out",
+        "data/processed/restored-dashboard"
+      ],
+      "elapsed_seconds": 0.11557045904919505,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/restored/data/processed/restored-dashboard/index.html\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/venv/bin/python",
+        "-c",
+        "from pathlib import Path; import civiclab,sys; assert Path(civiclab.__file__).resolve().is_relative_to(Path.cwd()); print(sys.version); print(civiclab.__file__)"
+      ],
+      "elapsed_seconds": 0.013902625010814518,
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]\n/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6/restored/src/civiclab/__init__.py\n"
+    }
+  ],
+  "model_api_spend_usd": 0,
+  "model_calls": 0,
+  "publication_authorized": false,
+  "scope": "Exact667-member21-selected-run source snapshot; clean local restoration/fixture tests, not remote CI or full scientific/source-reacquisition acceptance. New owner-review benchmark bytes admitted; original local-only source runs excluded.",
+  "status": "PASS_LEAD_CLEAN_STAGE3_SNAPSHOT",
+  "workspace": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage3-bootstrap-klt11zg6"
+}

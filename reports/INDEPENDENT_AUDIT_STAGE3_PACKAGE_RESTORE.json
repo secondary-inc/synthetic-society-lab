@@ -1,0 +1,166 @@
+{
+  "archive_bytes": 7897135,
+  "archive_checks": {
+    "accepted_benchmark_payload_hash_verified": true,
+    "hashed_manifest_members": 666,
+    "members": 667,
+    "raw_local_credentials_excluded": true,
+    "run_artifacts": 259,
+    "run_ledgers": 21
+  },
+  "archive_code_capture": {
+    "dirty": true,
+    "git_sha": "8eb4ca03219fb859b6c960b33236ed0a38d90ec2",
+    "source_tree_sha256": "b18a323b6bd3f01946ebf67a47e791f3ea9b05ca8bd9b0679488f62eb3c87164"
+  },
+  "archive_path": "data/processed/reproducibility/owner-review-stage3-20261103.zip",
+  "archive_sha256": "1dbe571e60e118f4055ff7b7164e151c81250cb24f12169d84b1b550c9f8b878",
+  "audited_at_utc": "2026-11-03T13:12:33.435836+00:00",
+  "auditor_role": "independent_auditor",
+  "clean_environment": {
+    "PYTHONHOME": "UNSET",
+    "PYTHONPATH": "UNSET",
+    "module_import_confirmed_inside_restoration": true,
+    "project_install": "local editable --no-deps; not registry lookup",
+    "python": "3.12.14",
+    "third_party_exact_pins_verified": 13
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-m",
+        "venv",
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv"
+      ],
+      "elapsed_seconds": 0.8658217909978703,
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "configs/runtime_python312_20261103.txt"
+      ],
+      "elapsed_seconds": 4.455876625026576,
+      "exit_code": 0,
+      "output_sha256": "68c2da574ef89e3cc8195eb4ed7bdb0cc8866af14f236705451bfc20bfff6561",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".",
+        "--no-deps"
+      ],
+      "elapsed_seconds": 0.8725761250243522,
+      "exit_code": 0,
+      "output_sha256": "1ed2d97f4d096d132cf8b0093328606c77a0a554991bd66f0eb4085fd31ddf87",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "elapsed_seconds": 11.020671374979429,
+      "exit_code": 0,
+      "output_sha256": "3e45e5baf1a000123bc67cac8661d360f7c765e2b9ef88484274b58fb2b23858",
+      "result_excerpt": "----------------------------------------------------------------------\nRan 167 tests in 10.888s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "elapsed_seconds": 0.17606500000692904,
+      "exit_code": 0,
+      "output_sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5",
+      "result_excerpt": "{\"status\": \"PASS\", \"checks\": 1}\n"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv/bin/civiclab",
+        "dashboard",
+        "--out",
+        "data/processed/independent-dashboard"
+      ],
+      "elapsed_seconds": 0.14482920803129673,
+      "exit_code": 0,
+      "output_sha256": "365db4fbfe632fdac6c5f7c0b5fb84ca404954019153191060d87ce5e339793f",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/venv/bin/python",
+        "-c",
+        "from pathlib import Path;import civiclab,os,sys;assert \"PYTHONPATH\" not in os.environ;assert Path(civiclab.__file__).resolve().is_relative_to(Path.cwd());print(sys.version);print(civiclab.__file__)"
+      ],
+      "elapsed_seconds": 0.013708999962545931,
+      "exit_code": 0,
+      "output_sha256": "6def7c27da49fb53214bf6c6d7ca8230e4a6de172a1626b720b05545f8f60fc3",
+      "result_excerpt": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]\n/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf/restored/src/civiclab/__init__.py\n"
+    }
+  ],
+  "dashboard": {
+    "audit_server_stopped": true,
+    "browser_render": "PASS read-only CUA inspection of actual restored viewer",
+    "build": "PASS",
+    "http_guards": {
+      "/../README.md": 404,
+      "/.env": 404,
+      "/data/raw/x": 404,
+      "/index.html?raw=1": 404,
+      "/snapshot.json": 200,
+      "/src/civiclab/common.py": 404
+    },
+    "observed": [
+      "Overall INCOMPLETE4/23",
+      "MOCK/DEMO interpretation warning",
+      "40configurations/446holdout comparison with loss/conditionalinterval/BLOCKED population label",
+      "Finalized Wyoming run generic summary and integrityPASS; no Wyomingtable yet, as documented"
+    ],
+    "rejected_runs": 0,
+    "screenshot": {
+      "path": "/tmp/civiclab-independent-stage3-viewer.png",
+      "sha256": "adef485b99a0f220d63958770f9d98a425a93f731d8619ea6afc4e36fead1d43"
+    },
+    "snapshot_runs": 21,
+    "temporary_tab_closed": true
+  },
+  "external_publication_authorized": false,
+  "fixture_source_checks": 1,
+  "full_original_contract": "INCOMPLETE",
+  "isolated_workspace": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage3-yheqtzgf",
+  "manifest_sha256": "b2b8b1510035696845cf76f15658a8a330e851ea50d434539aa8efb4ba063713",
+  "model_api_spend_usd": 0,
+  "paid_calls": 0,
+  "privacy_checks": [
+    "No data/raw, actual .env, .git, .venv or local-marker artifact members. Only synthetic GDELT test ZIP included.",
+    "Credential-pattern scan all member bytes clear; this is bounded pattern screening, not a comprehensive DLP guarantee.",
+    "Original fullPUMSaggregate, localprojection and localballotroster runs excluded.",
+    "Only two exact independently admitted finalized Wyomingpayloads included; bytehash255c5908... verified against archived admission."
+  ],
+  "recorded_run_artifacts_verified": 259,
+  "recorded_runs": 21,
+  "schema_version": 1,
+  "scientific_population_gate": "BLOCKED",
+  "scope": "Exact archive clean local installation/test/fixture/baseviewer acceptance for LOCAL OWNER REVIEW ONLY. Does not certify later checkout edits, new Wyoming viewer integration, full raw-source reacquisition/rights, scientific experiment completion, remote CI, national acquisition/fitting, model dispatch or public publication. Archive and old archives remain immutable.",
+  "status": "PASS_EXACT_STAGE3_ARCHIVE_CLEAN_RESTORE_AND_BASE_VIEWER",
+  "tests_passed": 167
+}
