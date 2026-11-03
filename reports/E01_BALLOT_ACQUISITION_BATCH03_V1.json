@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_OFFICIAL_BALLOT_ACQUISITION_BATCH03_V1",
+  "status": "WORKER_ACQUIRED_PENDING_INDEPENDENT_SOURCE_ROLE_REVIEW",
+  "created_at_utc": "2026-11-03T13:10:53.691900+00:00",
+  "accepted_v1_3_inputs_code_runs_unchanged": true,
+  "capture_count": 11,
+  "unique_obtained_urls": 8,
+  "obtained_captures": [
+    {
+      "source_id": "ks_index",
+      "url": "https://sos.ks.gov/elections/candidates.html",
+      "retrieved_at_utc": "2026-11-03T13:08:08.746746+00:00",
+      "status": 200,
+      "final_url": "https://sos.ks.gov/elections/candidates.html",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 13:08:08 GMT",
+        "Content-Type": "text/html"
+      },
+      "path": "data/raw/e01_ballots_batch03_v1/ks_index.html",
+      "bytes": 31850,
+      "sha256": "2903f2981c68d849e76c93a92529091fcb04d5ec5af3cd2192fec9826027b9af",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "ks_candidates",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+      "retrieved_at_utc": "2026-11-03T13:08:09.073464+00:00",
+      "status": 200,
+      "final_url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 13:08:08 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch03_v1/ks_candidates.html",
+      "bytes": 35372,
+      "sha256": "abc26b2691a8cf0c17a51cc3f57d42137ad731d9b3ed65dc3f23cc714c4840ce",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "or_filing_index",
+      "url": "https://sos.oregon.gov/elections/pages/candidate-filings-local-measures.aspx",
+      "retrieved_at_utc": "2026-11-03T13:08:09.531875+00:00",
+      "status": 200,
+      "final_url": "https://sos.oregon.gov/elections/pages/candidate-filings-local-measures.aspx",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 13:08:13 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 13:08:12 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch03_v1/or_filing_index.html",
+      "bytes": 107474,
+      "sha256": "7cc4aa618fcc2fbcb66bf4c81e7aeb29aeb6183062366b0f1fc44fd5de34b7e6",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "me_index_browser",
+      "url": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "retrieved_at_utc": "2026-11-03T13:08:34.934Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "bytes": 5345,
+      "sha256": "039c7517c693922caec45ea0c607230f8e6c26b52bdedd873293db130d0a6bd7",
+      "path": "data/raw/e01_ballots_batch03_v1/me_index.browser-text.local.txt"
+    },
+    {
+      "source_id": "me_general",
+      "path": "data/raw/e01_ballots_batch03_v1/me_general.browser-download.xlsx",
+      "bytes": 48337,
+      "sha256": "c628e48fa6298b6862e709166adf3145f7bc4a3f60929c3e6ef5a3ea324e03ea",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "retrieved_at_utc": "2026-11-03T13:08:48.634Z",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20General%20Candidate%20List%20-%20FINAL.xlsx",
+      "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "response_headers": "NOT_EXPOSED_BY_BROWSER_DOWNLOAD"
+    },
+    {
+      "source_id": "me_withdrawals",
+      "path": "data/raw/e01_ballots_batch03_v1/me_withdrawals.browser-download.pdf",
+      "bytes": 132429,
+      "sha256": "c2198174417a318956190ec14dce86e42c97099a77282b63fa99a65ae3f2d92c",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "retrieved_at_utc": "2026-11-03T13:08:48.703Z",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Post%20Primary%20Withdrawals%20%26%20Replacement%20Candidates%20-%20Updated%209.22.26_0.pdf",
+      "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "response_headers": "NOT_EXPOSED_BY_BROWSER_DOWNLOAD"
+    },
+    {
+      "source_id": "me_writeins",
+      "path": "data/raw/e01_ballots_batch03_v1/me_writeins.browser-download.pdf",
+      "bytes": 87608,
+      "sha256": "86ab6cfc5d38d4c36c907b291d737d8c0b3863e05446ede0e307fa8d15682ee9",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "retrieved_at_utc": "2026-11-03T13:08:48.767Z",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/Nov26%20Declared%20Write%20in%20List%20-%20Updated%2010.15.26.pdf",
+      "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "response_headers": "NOT_EXPOSED_BY_BROWSER_DOWNLOAD"
+    },
+    {
+      "source_id": "ks_general_browser",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+      "retrieved_at_utc": "2026-11-03T13:09:27.206Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "interaction": "Selected default 2026 General, clicked public Submit to display list; no personal data entered",
+      "path": "data/raw/e01_ballots_batch03_v1/ks_general.browser-text.local.txt",
+      "bytes": 67788,
+      "sha256": "f4f69411838d79235aca844203edb9d72f2c08ba043bb44e95c4b975e8a56583",
+      "response_headers": "NOT_EXPOSED"
+    },
+    {
+      "source_id": "ks_general_dom",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+      "retrieved_at_utc": "2026-11-03T13:09:36.486Z",
+      "capture_kind": "BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES",
+      "path": "data/raw/e01_ballots_batch03_v1/ks_general.table-dom.local.html",
+      "bytes": 177713,
+      "sha256": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d",
+      "headers": [
+        "Candidate",
+        "Office",
+        "District",
+        "Position",
+        "Division",
+        "Party",
+        "Title",
+        "First Name",
+        "Middle",
+        "Last Name",
+        "Suffix",
+        "Home Address",
+        "Home City",
+        "Home Zip",
+        "Mailing Address",
+        "Mailing City",
+        "Mailing Zip",
+        "Home Phone",
+        "Work Phone",
+        "Cell Phone",
+        "Email",
+        "Web Address",
+        "Date Filed",
+        "Ballot City",
+        "Running Mate Ballot City"
+      ]
+    },
+    {
+      "source_id": "ak_general_browser",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr",
+      "path": "data/raw/e01_ballots_batch03_v1/ak_general_browser.local.txt",
+      "bytes": 21139,
+      "sha256": "c1ddc16c1ef47e8b7b8ef55fef906a2cbbeccd531dad26374370150af2d23225",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "retrieved_at_utc": "2026-11-03T13:09:48.346Z",
+      "response_headers": "NOT_EXPOSED"
+    },
+    {
+      "source_id": "ak_senate_dom",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr",
+      "path": "data/raw/e01_ballots_batch03_v1/ak_senate_dom.local.html",
+      "bytes": 9159,
+      "sha256": "1167c252ab39cf0bab9e4c63c52f61c9733b64a92e5a3e13239e1cd53739799c",
+      "capture_kind": "BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES",
+      "retrieved_at_utc": "2026-11-03T13:09:48.347Z",
+      "response_headers": "NOT_EXPOSED"
+    }
+  ],
+  "direct_request_errors": [
+    {
+      "source_id": "me_index",
+      "url": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "retrieved_at_utc": "2026-11-03T13:08:09.297161+00:00",
+      "error_type": "HTTPError",
+      "http_status": 403
+    },
+    {
+      "source_id": "ak_general_candidates",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr",
+      "retrieved_at_utc": "2026-11-03T13:08:09.400643+00:00",
+      "error_type": "URLError",
+      "http_status": null
+    },
+    {
+      "source_id": "ak_sample_index",
+      "url": "https://www.elections.alaska.gov/sample-ballots/",
+      "retrieved_at_utc": "2026-11-03T13:08:09.510966+00:00",
+      "error_type": "URLError",
+      "http_status": null
+    },
+    {
+      "source_id": "me_general",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20General%20Candidate%20List%20-%20FINAL.xlsx",
+      "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "retrieved_at_utc": "2026-11-03T13:08:42.787990+00:00",
+      "error_type": "HTTPError",
+      "http_status": 403
+    },
+    {
+      "source_id": "me_withdrawals",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Post%20Primary%20Withdrawals%20%26%20Replacement%20Candidates%20-%20Updated%209.22.26_0.pdf",
+      "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "retrieved_at_utc": "2026-11-03T13:08:42.821875+00:00",
+      "error_type": "HTTPError",
+      "http_status": 403
+    },
+    {
+      "source_id": "me_writeins",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/Nov26%20Declared%20Write%20in%20List%20-%20Updated%2010.15.26.pdf",
+      "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+      "retrieved_at_utc": "2026-11-03T13:08:42.853605+00:00",
+      "error_type": "HTTPError",
+      "http_status": 403
+    }
+  ],
+  "observations": {
+    "ME": {
+      "index_representation": "Normal browser visible text; direct HTTP403 preserved. Search preview was older than browser content.",
+      "general_roster": "Workbook sheet November 3, 2026; columns Office/Dist/County/Party/DateFiled/LastName/FirstName/MiddleName/Suffix/ResidenceMunicipality. Two Office=US rows with literal party codes R,D; office code key still needs separate verification before incorporation.",
+      "withdrawals": "One-page official withdrawal/replacement PDF, updated9/22/2026; one Office=US row. It must be reconciled with general roster, never discarded or replaced by primary winners.",
+      "writeins": "One-page declared-writein PDF printed10/15/26; index displays10/16/26. Six Office=US rows, literal designations Unaffiliated,Democratic,Independent,Faith in Humanity,Un-enrolled,Democratic. Separate from two printed-roster rows.",
+      "missing": "Offered Office Abbreviation Key not yet obtained; column names/dates require careful mapping, separate withdrawal/replacement and write-in readers/fixtures/audit. No contacts transcribed."
+    },
+    "KS": {
+      "source_kind": "Public official default2026General dropdown thenSubmit browser form. No personal data or credentials entered. HTTPGET page was selection form only, not roster.",
+      "observed_exact_office": "United States Senate",
+      "candidate_rows": 3,
+      "literal_party_labels": [
+        "Democratic",
+        "Republican",
+        "Libertarian"
+      ],
+      "capture_caution": "Rendered table DOM and visible text are separate UTF8representations, not raw postbackHTTP. Header25columns includes public contact fields; fullraw stays ignored. OtherKansasSenate rows excluded from this narrow observation, not from a selectedsample.",
+      "missing": "Standalone edition/update timestamp not established; no final-amendment acceptance."
+    },
+    "AK": {
+      "source_kind": "Normal browser page at offered public ?election=26genr; direct standardHTTP URLError preserved. No security warning/authentication bypass.",
+      "visible_page_last_updated": "September25,2026 at8:16am",
+      "scope": "Exact USSenator table on first visible page, bounded by governor/USHouse. Page includes pagination for other offices, not followed; no statewide alloffice completeness claim.",
+      "candidate_rows": 6,
+      "printed_candidate_rows": 4,
+      "certified_write_in_rows": 2,
+      "label_caution": "Literal registered-party/Undeclared labels and Certified/CertifiedWriteIn markers are separate source concepts, not automatic legal party normalization.",
+      "counter_correction": "Initial row counter subtracted header despite getByRole(cell) omitting header cells. Cached DOM has7tr includingheader and6candidate rows; verified using independent HTMLParser. Raw captures unchanged.",
+      "missing": "Official sample-ballot crosscheck and later amendments not obtained/reviewed. Newsourcequery/DOMrepresentation not admitted by frozenreadinessschema."
+    },
+    "OR": {
+      "source_kind": "Official candidate-filings index cached only. It links openoffices document and separate publicfilingsearch. No general-election candidate roster acquired.",
+      "status": "INCOMPLETE_UNBLOCKED_SOURCE_JOB_NOT_FINAL_BALLOT_EVIDENCE",
+      "caution": "Search results also offered primarydirective, not substituted for Novembergeneralroster. No results/returns link followed."
+    }
+  },
+  "source_rights_notes": "Ordinary public primarygovernment sources. Direct403/URLError failures preserved; normalbrowser publicpages/downloads worked withoutlogin/challenge/securitywarning/alternatehiddenendpoint. Browserrepresentations/downloads labeled honestly; responseheaders unavailable there. No fullrawcontent/contactfields/localroster sent outside localcache.",
+  "tests_and_verification": "All11capturebytecounts/hashes recomputed; no new code or tests, no repeated unchanged suite. Read-only bundledPython XML/PDF and cachedHTML inspection; observations await independent source/role review.",
+  "new_readiness_runs": 0,
+  "accepted_roster_states_remain": 5,
+  "accepted_readiness_unacquired_jobs_remain": 28,
+  "final_ballots_accepted": 0,
+  "source_adoption": false,
+  "actual_selection": false,
+  "2026_outcomes_used": false,
+  "model_calls": 0,
+  "cost_usd": 0
+}

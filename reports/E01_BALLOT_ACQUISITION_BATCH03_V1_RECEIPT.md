@@ -1,0 +1,21 @@
+# E01 official acquisition batch03 v1
+
+TASK_ID: E01_OFFICIAL_BALLOT_ACQUISITION_BATCH03_V1
+
+FILES_CHANGED: New `reports/E01_BALLOT_ACQUISITION_BATCH03_V1.json` and this receipt. Ignored local cache `data/raw/e01_ballots_batch03_v1/` contains source/representation/error receipts and raw bodies only. Accepted v1.3 code/config/tests/inputs/runs, prior batch02 and auditor records unchanged.
+
+OUTPUT_ARTIFACTS:11hash-verified captures across8official URLs:3directHTTPHTML bodies (KSindex,KSselectionform,ORfilingsindex), MEbrowserindextext,3MEbrowserdownload files (generalXLSX/withdrawalPDF/writeinPDF), KSrenderedtableDOM+visibletext, AKSenatetableDOM+visiblepagetext. Six direct-route errors retained:MEindex/3files403,2AKURLError. Browser success does not erase route-specific failures. Exact observed URLs/dates/bytes/hash/representations in JSON; browser download/DOM/text are not mislabeled HTTPwirebytes or invented headers.
+
+REPRODUCTION_COMMANDS: Verify bytecounts/SHA256 at exact local capture paths in JSON. Browser ordinary MEupcomingindex offers3files; KSpublic2026General selector thenSubmit displays table; AKobserved ?election=26genr page includes exactUSSenate table. Capture current representations into a new version if repeating; do not overwrite old hashes. Three temporary browser tabs closed after capture. No hidden/commented links/endpoints, guessed query variants, logins, challenges or certificate overrides used.
+
+TESTS_RUN_AND_RESULTS:11capture sizes/hashes recomputed. No implementation changes or new tests; unchanged suite not repeated. Narrow cached-source observations only: MEworkbook one November3sheet, twoOffice=US rows and R/Dcodes; withdrawalPDF oneUSrow; writeinPDF sixUSrows. KS exactUnitedStatesSenate3rows (distinct fromKansasSenate); AKtableDOM7tr includingheader =>6candidate rows/4printed/2certifiedwriteins. Initial browsercounter incorrectly subtractedheader despite cellroleomittingheader; explicitly corrected via independent cachedDOMHTMLParser, rawcapturedbytesunchanged. Counts are preliminarysourceobservations, not accepted newengineoutputs.
+
+SOURCE_DATA_AND_LICENSE_NOTES: Public government bytes/reps remain ignored locally. Workbook inspected read-only with bundledPython XML; PDFs with bundledpypdf. No rawcandidatecontacts/transcribedrosters in report. MEofficial page says primarywithdrawals removed fromgeneral roster and replacements added; retain withdrawal/replacement data instead of substituting primarynominees. MEliteralwritein designations preserved as sourceconcepts. AKregistered-party/Undeclared plusCertified/CertifiedWriteIn markers remain separate. Queryparameter is an observedpublicelectionselector; frozenadmissionpolicy is not weakened. Browserdownload sizechecked after download (not transportbound); directHTTPreads bounded2MB/5MB and20stimeout.
+
+COST_USD_ACTUAL_OR_ZERO:0; no model calls.
+
+RISKS_AND_LIMITATIONS: Independent source/role review pending. MEOfficeAbbreviationKey still requires acquisition/verification beforeOfficeUS mapping; sourcecolumn/date/withdrawal/writein reconciliation needs new reviewedreaders. MEwriteinPDFprinted10/15 whileindexshows10/16 retained. KS rosteredition timestamp unresolved; rawPOSTresponse notavailable, tableDOM andvisibletextdistinct. AKcapturedfirstpageSenatetable only; otherofficepaginationnotfollowed, sampleballot/amendments pending. ORfilingsindex is not candidate-list evidence; primarydirective not substituted. Searchpreview/initialAX may incidentally show publiccontacts or primaryresult snippets; no returns/results page opened or used analytically. No finalamendment/asof archive/completeballot claim.
+
+UNRESOLVED_BLOCKERS: Source/role audit before any separatelyversionedparser/incorporation; aboveMEkey/KSedition/AKsampleballot gaps andORrosteracquisition. Frozen acceptedreadiness stays5rosterstates/28unacquiredjobs/0finalballots. Acquiring these documents does not itself update that ledger or choose a race sample. Originalscientific/source/geography/selection/holdout gates persist.
+
+NEXT_UNBLOCKED_TASK: Independent source-role review; acquire offeredMEofficekey and boundedofficialsampleballot evidence, then separatelyversionedfixtures/readers after review. Continue remainingClassIIofficialjobs without waiting forratingsarchive; no source-policy adoption or sample promotion.

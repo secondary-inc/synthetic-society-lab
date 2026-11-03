@@ -1,0 +1,102 @@
+{
+  "accepted_readiness_roster_states_remain": 5,
+  "actual_selection": false,
+  "audited_at_utc": "2026-11-03T13:29:26.751447+00:00",
+  "auditor_role": "independent_auditor",
+  "batch_receipt_sha256": "e416da3be04b519e84918b17dadb43bc037f86106203bd919c0360c76e432e42",
+  "cost_usd": 0,
+  "final_ballots_accepted": 0,
+  "incorporation_conditions": [
+    "Acquire offered Maine official office-abbreviation key and independently verify mapping before roster incorporation.",
+    "Reconcile general/withdrawal/write-in candidates, dates and literal labels in separately versioned readers/fixtures; no automatic minor-party legal normalization.",
+    "Browser-rendered DOM, visible text and download bytes require distinct provenance/capture semantics; do not invent response headers.",
+    "Alaska exact observed election query requires narrowly reviewed policy/schema amendment; no arbitrary-query allowance or weakened metadata-secret guard.",
+    "Keep all campaign/home/contact fields local; extract literal names/labels/status only.",
+    "Kansas edition/current amendments, Alaska sample-ballot/later amendments and Oregon general roster remain unfinished source jobs."
+  ],
+  "independent_observations": {
+    "AK": "Independent HTML reader7tr includingheader,6candidate rows,2CertifiedWriteIn/4otherCertified. Name/registeredparty/status concepts remain separate; only first-page Senate section observed.",
+    "KS": "Independent HTML reader25columns/exact United States Senate3rows, D/R/Libertarian literal labels. Cached GETselectionform is not this browser-generated roster; tableDOM/text UTF8 hashes are not HTTPbody hashes.",
+    "ME_general_workbook": "Inert XML: one November3sheet, literal Office=US two rows with R/D labels. Code US remains unmapped to Senate pending offered official office key.",
+    "ME_withdrawal": "One-page September22PDF has one literal US withdrawal/replacement row. Named replacement matches workbook locally and former candidate absent; no named values copied into report. Legal/current completeness still unaccepted.",
+    "ME_writein": "One-page October15PDF has six literal US rows; preserve all literal designations and separate from printed roster; indexOctober16 discrepancy retained.",
+    "OR": "Cached official filings index only; not candidate roster.",
+    "route_failures": "DirectHTTP403/URLerrors remain channel-specific receipts; no no-access or latest-amendment inference."
+  },
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "original_E01_manifest_gate": "BLOCKED",
+  "raw_contacts_or_named_roster_values_in_report": false,
+  "schema_version": 1,
+  "source_adoption": false,
+  "status": "PASS_BOUNDED_BATCH03_CAPTURE_INTEGRITY_AND_SOURCE_ROLES",
+  "unfinished_readiness_jobs_remain": 28,
+  "verified_captures": {
+    "ak_general_browser": {
+      "bytes": 21139,
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "sha256": "c1ddc16c1ef47e8b7b8ef55fef906a2cbbeccd531dad26374370150af2d23225",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr"
+    },
+    "ak_senate_dom": {
+      "bytes": 9159,
+      "capture_kind": "BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES",
+      "sha256": "1167c252ab39cf0bab9e4c63c52f61c9733b64a92e5a3e13239e1cd53739799c",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr"
+    },
+    "ks_candidates": {
+      "bytes": 35372,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "sha256": "abc26b2691a8cf0c17a51cc3f57d42137ad731d9b3ed65dc3f23cc714c4840ce",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx"
+    },
+    "ks_general_browser": {
+      "bytes": 67788,
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "sha256": "f4f69411838d79235aca844203edb9d72f2c08ba043bb44e95c4b975e8a56583",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx"
+    },
+    "ks_general_dom": {
+      "bytes": 177713,
+      "capture_kind": "BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES",
+      "sha256": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx"
+    },
+    "ks_index": {
+      "bytes": 31850,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "sha256": "2903f2981c68d849e76c93a92529091fcb04d5ec5af3cd2192fec9826027b9af",
+      "url": "https://sos.ks.gov/elections/candidates.html"
+    },
+    "me_general": {
+      "bytes": 48337,
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "sha256": "c628e48fa6298b6862e709166adf3145f7bc4a3f60929c3e6ef5a3ea324e03ea",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20General%20Candidate%20List%20-%20FINAL.xlsx"
+    },
+    "me_index_browser": {
+      "bytes": 5345,
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "sha256": "039c7517c693922caec45ea0c607230f8e6c26b52bdedd873293db130d0a6bd7",
+      "url": "https://www.maine.gov/sos/elections-voting/upcoming-elections"
+    },
+    "me_withdrawals": {
+      "bytes": 132429,
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "sha256": "c2198174417a318956190ec14dce86e42c97099a77282b63fa99a65ae3f2d92c",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Post%20Primary%20Withdrawals%20%26%20Replacement%20Candidates%20-%20Updated%209.22.26_0.pdf"
+    },
+    "me_writeins": {
+      "bytes": 87608,
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "sha256": "86ab6cfc5d38d4c36c907b291d737d8c0b3863e05446ede0e307fa8d15682ee9",
+      "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/Nov26%20Declared%20Write%20in%20List%20-%20Updated%2010.15.26.pdf"
+    },
+    "or_filing_index": {
+      "bytes": 107474,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "sha256": "7cc4aa618fcc2fbcb66bf4c81e7aeb29aeb6183062366b0f1fc44fd5de34b7e6",
+      "url": "https://sos.oregon.gov/elections/pages/candidate-filings-local-measures.aspx"
+    }
+  }
+}

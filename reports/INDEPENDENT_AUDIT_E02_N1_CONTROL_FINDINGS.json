@@ -1,0 +1,50 @@
+{
+  "actual_person_rows_processed": 0,
+  "audited_at_utc": "2026-11-03T13:28:24.579521+00:00",
+  "auditor_role": "independent_auditor",
+  "code_files": {
+    "configs/e02_national_controls_v1.json": "3cf498e12c9d7317e725cf0ffc79a112c9bab57859e7f05dcf173077be2a5585",
+    "docs/E02_NATIONAL_PUMS_N1_CONTROLS.md": "e014da2a02d0c71e6b3d454ec8e1734609bc418836003c91c79393c9b7ed8ef1",
+    "src/civiclab/e02/national_budget.py": "e5cfe9e7e73cd8ee473a1e30b84a803ce9e3a95a4147bf5a80675089524d8ca4",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_national_controls.py": "703165786c9ccda3283de79b2295bfb858da441cc205e296e696b659ac6913fd"
+  },
+  "cost_usd": 0,
+  "findings": [
+    {
+      "finding": "Generation/event-tail checks do not validate durable counter consistency. Syntactically valid ledger state with body_charged changed from4 to0 is accepted despite unchanged successful attempt/event history, enabling a reservation that exceeds the configured cumulative allowance. This is an internal integrity gap, not a claim of adversarial authentication.",
+      "id": "IA-E02-N1-LEDGER-001",
+      "independent_evidence": {
+        "body_limit": 8195,
+        "event_generation_unchanged_by_corruption": true,
+        "persisted_total": 8192,
+        "prior_observed_success_bytes": 4,
+        "second_reserved": 8192,
+        "should_total": 8196
+      },
+      "location": "src/civiclab/e02/national_budget.py Ledger._load/_verified/reserve",
+      "required_remediation": "Validate schema/domain/invariants and reconcile resource totals/attempt and processing state against durable event history or an independently verifiable committed transition chain. Refuse inconsistent state without reset or dispatch; include own-resource counter corruptions and retain torn-state protections.",
+      "severity": "HIGH_CONTROL_INTEGRITY",
+      "status": "OPEN"
+    },
+    {
+      "finding": "Actual free-disk reserve is checked for acquisition/union and initial creation, but enrollment/state-processing checkpoint persistence can proceed without the required current reserve. Independent zero-free-space injection still commits one authored state result. N0 requires checks before finalization/checkpoints.",
+      "id": "IA-E02-N1-DISK-002",
+      "independent_evidence": {
+        "committed_rows": 1,
+        "free_disk": 0,
+        "required_reserve": 100,
+        "status": "MOCK_LOCAL_PROCESSING_COMMITTED"
+      },
+      "location": "src/civiclab/e02/national_budget.py Ledger._save/reserve_processing/finish_processing; national_population.py process_fixture",
+      "required_remediation": "Enforce current free-disk/retained/log headroom at relevant ledger reservations and state/source/checkpoint persistence, with conservative failure/cancellation charges and preserved evidence when persistence itself fails. Add enrollment/processing/durable transition low-space probes.",
+      "severity": "MEDIUM_CONTROL_ENFORCEMENT",
+      "status": "OPEN"
+    }
+  ],
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "schema_version": 1,
+  "scope": "Authored fixture controls only. Actual dispatch remains refused, and no actual sources were fetched/enrolled/parsed. No N1 milestone certification or later stage authorization; continue independent unblocked review while implementer remedies findings.",
+  "status": "FINDINGS_OPEN_N1_ACCEPTANCE_WITHHELD"
+}
