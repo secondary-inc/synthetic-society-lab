@@ -1,0 +1,33 @@
+{
+  "actual_credentials_loaded": false,
+  "actual_experimental_model_api_spend_usd": 0,
+  "actual_model_calls": 0,
+  "actual_network_requests": 0,
+  "files": {
+    "docs/LIVE_BILLING_V2_IMPLEMENTATION_CANDIDATE.md": "f89a2d9e96e6cbd3632489485097d136766a9d00e27bee1521b7d87fbfab6e24",
+    "docs/LIVE_OPENROUTER_ADMISSION_V2_PROPOSAL.md": "ee28e164a03aed9705063563a6395c64461cf238b9d7bb4061ca206cce21a380",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/live_billing_v2.py": "94cfdf9b5334a7c385a71bb3e65a85133ae88d84d3b2115f3c56307268abfd44",
+    "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "src/civiclab/reconciled_client_v2.py": "705834cb525d1dfbfc5aaa980707d91204073a66365dbf28a61bbfc1556e036b",
+    "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c",
+    "tests/test_live_billing_v2.py": "ae481172f3d7de99e45ffab72899eab0c0a056b083d8c9ad9c61ba74a2896848"
+  },
+  "input_scope": "Authored fixture ledger/POST/statistics, no source/person records",
+  "limitations": [
+    "Owner-wide semantics apply to the one explicitly opened fixture directory; production fixed-location/authorization controls not implemented.",
+    "History replay, real HTTP limits, live phase integration and adaptive-price/attrition/scientific gates need separate work.",
+    "No MODEL_CONTROLS/controller completion or publication authority implied."
+  ],
+  "positive_ledger_and_price_values": "SIMULATED_ONLY_NOT_OWNER_AUTHORIZATION_OR_PRICE_EVIDENCE",
+  "production_factory": "UNCONDITIONALLY_DISABLED",
+  "real_network_transport": "NOT_IMPLEMENTED",
+  "real_owner_bootstrap_authorization_and_study_release": "NOT_IMPLEMENTED",
+  "schema_version": 1,
+  "status": "IMPLEMENTED_LEAD_TESTED_PENDING_INDEPENDENT_CODE_CONTROLS_REVIEW",
+  "tests": {
+    "command": ".venv/bin/python -m unittest tests.test_live_billing_v2 tests.test_survey_execution tests.test_budget -q",
+    "new_global_tests": 16,
+    "total_targeted_tests": 40
+  }
+}
