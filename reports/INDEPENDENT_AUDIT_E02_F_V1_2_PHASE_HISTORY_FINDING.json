@@ -1,0 +1,49 @@
+{
+  "actual_person_rows_opened": 0,
+  "audited_at_utc": "2026-11-03T15:13:56.501305+00:00",
+  "auditor_role": "independent_auditor",
+  "candidate_evidence_sha256": "a23d64d70f07c55aff9b137cc50d3b6684d2af96a18b80704c908b05bc845975",
+  "exact_query_module_sha256": "256033d0d85ea98977b875e7d95bc0728ec95d2ade2baf5d75a34edc90410b3d",
+  "experimental_model_api_spend_usd": 0,
+  "finding_id": "IA-E02-F-V1_2-PHASE-HISTORY-004",
+  "implementation_files_edited_by_auditor": false,
+  "model_calls": 0,
+  "observed": [
+    {
+      "accepted": true,
+      "after_ops": 6074085,
+      "before_ops": 6073440,
+      "future_evaluations": 1,
+      "immutable_plan_runtime_genesis_unchanged": true,
+      "initial_phase_charge_retained": true,
+      "reopened_halted": false,
+      "terminal": "FAILED"
+    },
+    {
+      "accepted": true,
+      "after_ops": 6074085,
+      "before_ops": 6073440,
+      "future_evaluations": 1,
+      "immutable_plan_runtime_genesis_unchanged": true,
+      "initial_phase_charge_retained": true,
+      "reopened_halted": false,
+      "terminal": "UNKNOWN"
+    }
+  ],
+  "original_HALT003_status": "No overall closure/acceptance granted for v1.2; historical v1.1 finding unchanged.",
+  "other_review_state": "Original flag-only attack and older cost/CSV regressions still require scoped final review; independent135-test suite is running. Passing tests do not close this finding.",
+  "reproduction": [
+    "Prepare a valid plan/binding and reserve MANDATORY:PRIMARY. Finish FAILED, or recover UNKNOWN. Observe halted true and charged6073440 operations.",
+    "Set current halted false; set that phase status COMMITTED and elapsed_seconds0.",
+    "Reseal current state/core transition hashes; rename retained phase_failed or phase_unknown event to phase_terminal and recompute event hash chain. No query receipt evidence exists for a mandatory phase, so no receipt proof has to be forged.",
+    "Reopen QueryLedger and execute the next exact valid query through its actual child process. A shared multiprocessing counter proves one new evaluation."
+  ],
+  "required_remediation": "Preserve failure/unknown evidence in a separate bound authority or enforce a reviewed immutable-history boundary that cannot be reset by resealing the existing mutable current/core history. Add FAILED and UNKNOWN phase relabel plus elapsed/core-chain coedit probes requiring zero future evaluation/reservation and exact charge preservation. Do not lower the accepted permanent analysis halt contract or silently convert history rewriting to continuation approval.",
+  "root_cause": "The new barrier depends on mutable current terminal labels and mutable historical event names. Phase COMMITTED proof is only a caller-stored elapsed number; there is no independently retained binding distinguishing the failed/unknown transition once those labels are relabeled. Query terminal proof checks do not cover mandatory/catalog phases.",
+  "schema_version": 1,
+  "scope": "Authored fixture semantic integrity under coordinated mutable-state/history edits. This probe preserves immutable plan_input.json, runtime_config.json and genesis.json and all original phase operation charges. No source/model access or hostile replacement of every authority file is needed.",
+  "severity": "HIGH",
+  "source_GET_requests": 0,
+  "status": "BLOCKED_F_V1_2_RESEALED_PHASE_HISTORY_RELABEL",
+  "title": "A failed or unknown mandatory phase can be reclassified as committed by resealing mutable event labels and supplying a synthetic elapsed time."
+}
