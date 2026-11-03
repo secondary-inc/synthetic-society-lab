@@ -1,0 +1,60 @@
+{
+  "task_id": "E01_COOK_PUBLIC_ACCESS_FEASIBILITY",
+  "recorded_at_utc": "2026-11-03T10:57:25.138442+00:00",
+  "status": "BLOCKED_PERMISSION_AND_ASOF_FRAME",
+  "independent_review": "PENDING",
+  "files_changed": [
+    "reports/E01_COOK_ACCESS_FEASIBILITY.md",
+    "reports/E01_COOK_ACCESS_FEASIBILITY.json"
+  ],
+  "reader_checks": [
+    {
+      "url": "https://www.cookpolitical.com/ratings/house-race-ratings",
+      "status": "HTTP_403"
+    },
+    {
+      "url": "https://www.cookpolitical.com/ratings/senate-race-ratings",
+      "status": "HTTP_403"
+    },
+    {
+      "url": "https://www.cookpolitical.com/ratings",
+      "status": "HTTP_403"
+    }
+  ],
+  "ordinary_browser_house": {
+    "url": "https://www.cookpolitical.com/ratings/house-race-ratings",
+    "guest_access": "SUCCEEDED_NO_LOGIN",
+    "displayed_edition_date": "2026-11-02",
+    "displayed_category_totals_sum": 435,
+    "roster_unique_coverage_verified": false,
+    "archive": "GUEST_SELECTOR_DISABLED_LOGIN_OR_SUBSCRIPTION_REQUIRED",
+    "public_export": "NONE_OBSERVED_NOT_PROOF_NONE_EXISTS",
+    "independent_asof_bytes": "NOT_ESTABLISHED"
+  },
+  "terms_observation": {
+    "url": "https://www.cookpolitical.com/terms-and-conditions",
+    "displayed_update": "2022-01-23",
+    "automated_access_and_copying_permission": "NOT_VERIFIED_RESTRICTIVE_TERMS_OBSERVED",
+    "action": "STOPPED_NO_FURTHER_COOK_NAVIGATION_OR_COLLECTION"
+  },
+  "ordinary_browser_senate": "NOT_RUN_AFTER_TERMS_STOP",
+  "dataset_receipt": null,
+  "publisher_cache_created": false,
+  "public_inquiry_sent": false,
+  "races_selected": 0,
+  "returns_retrieved": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "proposal_changed": false,
+  "limitations": [
+    "Reader 403 does not establish universal inaccessibility",
+    "Visible current edition is not independent cutoff archive",
+    "Displayed totals do not establish validated unique eligible roster",
+    "Public visibility or subscription does not establish collection/redistribution permission"
+  ],
+  "next_evidence": [
+    "Applicable permission/license scope",
+    "Complete authorized dated House/Senate frame",
+    "Independent as-of provenance and coverage review"
+  ]
+}
