@@ -1,0 +1,49 @@
+{
+  "actual_model_calls": 0,
+  "actual_network_requests": 0,
+  "actual_spend_usd": 0,
+  "audited_at_utc": "2026-11-03T13:46:26.748916+00:00",
+  "auditor_role": "independent_auditor",
+  "finding": {
+    "id": "IA-SURVEY-RECONCILE-001",
+    "independent_reproductions": {
+      "model": {
+        "budget_entries_after": 2,
+        "new_transport_calls_after_resealed_corruption": 1
+      },
+      "provider": {
+        "budget_entries_after": 2,
+        "new_transport_calls_after_resealed_corruption": 1
+      },
+      "reservation": {
+        "budget_entries_after": 2,
+        "new_transport_calls_after_resealed_corruption": 1
+      },
+      "seed": {
+        "budget_entries_after": 2,
+        "new_transport_calls_after_resealed_corruption": 1
+      }
+    },
+    "location": "src/civiclab/survey_execution.py verify_journal",
+    "problem": "Resume cross-checks result/ledger metadata with each other but does not fully reconcile frozen serving route, random seed or exact reservation envelope. Semantically inconsistent records can pass after recomputing the paired checkpoint hashes.",
+    "reproduction_scope": "Each temporary oneprofile/oneDEMO mock pauses after one valid pre; independently edits provider or model consistently in phase result+charge metadata, or changes metadata seed alone, or sets reserved_microusd=0 while charge=1; updates paired file hashes. All four variants invoke a new fake transport and create a second charge instead of refusing before dispatch. No live/network request occurs.",
+    "required_remediation": "Before reuse require actual serving model/provider equal frozen approved Price fields, exact assignment seed and temperature/retry policy; rederive call_envelope/request bounds and reservation micros from complete messages/frozen price/max_tokens, enforce settled reservation/charge invariants, and revalidate recorded token domains/ceilings/cost metadata. Add own-field and coherently coedited variants that fail before any new transport/charge. Keep existing unknown-phase, price/approval, request/output binding and conservative crash controls.",
+    "severity": "HIGH_RESUME_CONTROL_INTEGRITY",
+    "status": "OPEN"
+  },
+  "full_MODEL_CONTROLS": "NOT_CERTIFIED",
+  "reviewed_files": {
+    "configs/e02_demo_stimuli.json": "63926a3749aa5326587c197d2776edb58f25cf1aa8b78af379b82c0e8817d817",
+    "configs/e02_instrument.json": "ae506fe626928a13cbd09b0cadf402e90899048d656fa80d26b59e0b716df790",
+    "docs/LIVE_SURVEY_BRIDGE_V1_DESIGN.md": "b6ddc0f4ba270f61b4c8c2fab3b556a5bf22747c1c50fbe60f0269aee01edfb1",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "src/civiclab/survey_execution.py": "9e676c2451d62832be013c78aae06d30dd3718305ae09cdd557c86e1feac2fee",
+    "tests/test_survey_execution.py": "810050ee9847f355c664fda8f9b20b5185930e964de19d9c1ac3110017fc76e8"
+  },
+  "schema_version": 1,
+  "scope": "Internal semantic consistency issue in authored mock resume controls, not adversarial authentication or actual paid dispatch claim. Initial OpenRouter dispatch enforces route; resumed stored records lack the expected fresh validation. Original prototype/runs and current candidate evidence preserved.",
+  "status": "FINDING_OPEN_SURVEY_BRIDGE_ACCEPTANCE_WITHHELD"
+}
