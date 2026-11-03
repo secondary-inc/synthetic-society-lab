@@ -1,0 +1,21 @@
+{
+  "actual_network_requests": 0,
+  "credential_reads": 0,
+  "experimental_model_api_spend_usd": 0,
+  "experimental_model_calls": 0,
+  "files": {
+    "docs/SURVEY_ADAPTIVE_ENVELOPE_V2_CANDIDATE.md": "1bb4c99a950259c75d0000d01d0fa3d25ffe39143bc2273e3610eeddbf18968d",
+    "src/civiclab/survey_envelope_v2.py": "ac210fd41f2f8bffd733fcdef8b1b1813e9035fbeecc6902e8983d2dcecfc877",
+    "tests/test_survey_envelope_v2.py": "499c535c9ac511e2d6b01cb705da82cb4ee2e249b4d0cfe8de04bdbe5359b5b5"
+  },
+  "remote_ci": "NOT_OBSERVED",
+  "schema_version": 1,
+  "scope": "Pure offline adaptive byte/quote planning and exact external-plan binding; no phase runner/client/ledger/HTTP integration or owner/study/price release. Existing scoring/model/bridge/globalcomponent unchanged.",
+  "status": "LEAD_TESTED_OFFLINE_CANDIDATE_PENDING_INDEPENDENT_REVIEW",
+  "verification": {
+    "command": ".venv/bin/python -m unittest tests.test_survey_envelope_v2 tests.test_openrouter_http_v2 tests.test_live_billing_v2 tests.test_survey_execution tests.test_budget -q",
+    "seconds": 2.868,
+    "status": "PASS",
+    "tests": 57
+  }
+}

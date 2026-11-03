@@ -1,0 +1,303 @@
+{
+  "accepted_readiness_roster_states_remain": 10,
+  "accepted_scope": "Exactoptionalgeometrydependency+new20versionPython312lock/CIconfiguration/selectedlockbuilderguardandscopedstandalonehelpercleaninstall/sourcepreflightonly. EarlierABSENTobservationremainsimmutablehistorical;dependencygateforpreparingseparatereadinessintegrationreviewisnowclosed. Actualmetadataadmission/lifecycle/dispatchconfig/fixturesintegrationandrecordedreadinessremainunapproved.",
+  "actual_person_source_requests": 0,
+  "additional_builder_negative_probes": 3,
+  "audited_at_utc": "2026-11-03T14:56:31.382967+00:00",
+  "auditor_role": "independent_auditor",
+  "controller_receipts_renewed": false,
+  "cost_usd": 0,
+  "final_ballots_accepted": 0,
+  "independent_scoped_install": {
+    "commands": [
+      {
+        "argv": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+          "-m",
+          "venv",
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.11"
+        ],
+        "exit_code": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tail": []
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.11/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--disable-pip-version-check",
+          "-r",
+          "geometry-only.txt"
+        ],
+        "exit_code": 0,
+        "output_sha256": "3ad60676f69de57586423dd599b18a373b351bdb0eca6f4ad0ad409c1e3adde4",
+        "tail": [
+          "Using cached pycparser-3.12-py3-none-any.whl (62 kB)",
+          "Using cached pypdfium2-5.14.0-py3-none-macosx_13_0_arm64.whl (3.5 MB)",
+          "Installing collected packages: pypdfium2, pycparser, pillow, charset-normalizer, cffi, cryptography, pdfminer.six, pdfplumber",
+          "Successfully installed cffi-2.1.1 charset-normalizer-3.5.2 cryptography-50.0.2 pdfminer.six-20251230 pdfplumber-0.11.9 pillow-13.0.0 pycparser-3.12 pypdfium2-5.14.0"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.11/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--disable-pip-version-check",
+          "-e",
+          ".[geometry]",
+          "--no-deps"
+        ],
+        "exit_code": 0,
+        "output_sha256": "2430adaca373cc5a7e6e1e9f6c0548ccc70e582a9747be6f76e9eddb6b5d7af1",
+        "tail": [
+          "  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-lvuqtetk/wheels/08/eb/b7/eb13b48243415a31d77e4e9bc4ee01f8aafe13fb1f8f614b81",
+          "Successfully built synthetic-society-lab",
+          "Installing collected packages: synthetic-society-lab",
+          "Successfully installed synthetic-society-lab-0.1.0"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.11/bin/python",
+          "-m",
+          "unittest",
+          "tests.test_e01_delaware_v1_7",
+          "tests.test_e01_nebraska_v1_7",
+          "-q"
+        ],
+        "exit_code": 0,
+        "output_sha256": "7e9a7dd5077b8abf24717e16e002d6fd38e3d840a657205ce25b875313a75ba2",
+        "tail": [
+          "----------------------------------------------------------------------",
+          "Ran 8 tests in 0.010s",
+          "",
+          "OK"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.11/bin/python",
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/source-check.py",
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/source",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab"
+        ],
+        "exit_code": 0,
+        "output_sha256": "075d3c0ff0434030c9900676bd44a0c33c5e3fb4f03921b0548f9933c235e241",
+        "tail": [
+          "{\"de_hash\": \"606997f0d7db04ecede6c39a3e93e5672cb5ef4cc1fe4be10e949c8fc8b16838\", \"ne_count\": 5, \"ne_hash\": \"20b3e8678bafca8f2c838c83a3f3dd1ad0d08bd13c0acd417f4d38d0aeb1c4e9\", \"origin_checked\": true, \"source_hashes\": 6, \"versions\": {\"cffi\": \"2.1.1\", \"charset-normalizer\": \"3.5.2\", \"cryptography\": \"50.0.2\", \"pdfminer.six\": \"20251230\", \"pdfplumber\": \"0.11.9\", \"pillow\": \"13.0.0\", \"pycparser\": \"3.12\", \"pypdfium2\": \"5.14.0\"}}"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.11/bin/python",
+          "-c",
+          "import json;from importlib.metadata import version;print(json.dumps({k:version(k) for k in ['pillow', 'cffi', 'charset-normalizer', 'cryptography', 'pdfminer.six', 'pdfplumber', 'pycparser', 'pypdfium2']},sort_keys=True))"
+        ],
+        "exit_code": 0,
+        "output_sha256": "609b7ff7f58cdd64703e1fe119921496d5168f771f13eb4b2e0c5633c8aaeed5",
+        "tail": [
+          "{\"cffi\": \"2.1.1\", \"charset-normalizer\": \"3.5.2\", \"cryptography\": \"50.0.2\", \"pdfminer.six\": \"20251230\", \"pdfplumber\": \"0.11.9\", \"pillow\": \"13.0.0\", \"pycparser\": \"3.12\", \"pypdfium2\": \"5.14.0\"}"
+        ]
+      },
+      {
+        "argv": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+          "-m",
+          "venv",
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.12"
+        ],
+        "exit_code": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tail": []
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.12/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--disable-pip-version-check",
+          "-r",
+          "configs/runtime_python312_geometry_20261103.txt"
+        ],
+        "exit_code": 0,
+        "output_sha256": "fbb93d32c4848ee2835699631bd8913fea3adfc204eea9a7b09a0a024eda5c95",
+        "tail": [
+          "Using cached pycparser-3.12-py3-none-any.whl (62 kB)",
+          "Using cached pypdfium2-5.14.0-py3-none-macosx_13_0_arm64.whl (3.5 MB)",
+          "Installing collected packages: tzdata, pypdfium2, pypdf, pyparsing, pycparser, pillow, packaging, numpy, kiwisolver, fonttools, cycler, charset-normalizer, scipy, python-dateutil, contourpy, cffi, matplotlib, cryptography, pdfminer.six, pdfplumber",
+          "Successfully installed cffi-2.1.1 charset-normalizer-3.5.2 contourpy-1.4.0 cryptography-50.0.2 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.10.7 numpy-2.5.4 packaging-26.3 pdfminer.six-20251230 pdfplumber-0.11.9 pillow-13.0.0 pycparser-3.12 pyparsing-3.3.3 pypdf-6.10.0 pypdfium2-5.14.0 python-dateutil-4.0.0 scipy-1.16.3 tzdata-2026.6"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.12/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "--disable-pip-version-check",
+          "-e",
+          ".[geometry]",
+          "--no-deps"
+        ],
+        "exit_code": 0,
+        "output_sha256": "643a13edb24002fc492ffef0aa528d52509197a94e560761c381c2b5bace514a",
+        "tail": [
+          "  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-wzya1ryl/wheels/42/96/08/a923385d0c42226e88f7cafa2a0900310b74239f4046ed4f82",
+          "Successfully built synthetic-society-lab",
+          "Installing collected packages: synthetic-society-lab",
+          "Successfully installed synthetic-society-lab-0.1.0"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.12/bin/python",
+          "-m",
+          "unittest",
+          "tests.test_e01_delaware_v1_7",
+          "tests.test_e01_nebraska_v1_7",
+          "-q"
+        ],
+        "exit_code": 0,
+        "output_sha256": "5b3c3c730ede4ff157e2bc0deebf302bfb2b52b1177e3ad143a854ea6e055b5e",
+        "tail": [
+          "----------------------------------------------------------------------",
+          "Ran 8 tests in 0.011s",
+          "",
+          "OK"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.12/bin/python",
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/source-check.py",
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/source",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab"
+        ],
+        "exit_code": 0,
+        "output_sha256": "075d3c0ff0434030c9900676bd44a0c33c5e3fb4f03921b0548f9933c235e241",
+        "tail": [
+          "{\"de_hash\": \"606997f0d7db04ecede6c39a3e93e5672cb5ef4cc1fe4be10e949c8fc8b16838\", \"ne_count\": 5, \"ne_hash\": \"20b3e8678bafca8f2c838c83a3f3dd1ad0d08bd13c0acd417f4d38d0aeb1c4e9\", \"origin_checked\": true, \"source_hashes\": 6, \"versions\": {\"cffi\": \"2.1.1\", \"charset-normalizer\": \"3.5.2\", \"cryptography\": \"50.0.2\", \"pdfminer.six\": \"20251230\", \"pdfplumber\": \"0.11.9\", \"pillow\": \"13.0.0\", \"pycparser\": \"3.12\", \"pypdfium2\": \"5.14.0\"}}"
+        ]
+      },
+      {
+        "argv": [
+          "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q/venv-3.12/bin/python",
+          "-c",
+          "import json;from importlib.metadata import version;print(json.dumps({k:version(k) for k in ['contourpy', 'cycler', 'fonttools', 'kiwisolver', 'matplotlib', 'numpy', 'packaging', 'pillow', 'pyparsing', 'pypdf', 'python-dateutil', 'scipy', 'tzdata', 'cffi', 'charset-normalizer', 'cryptography', 'pdfminer.six', 'pdfplumber', 'pycparser', 'pypdfium2']},sort_keys=True))"
+        ],
+        "exit_code": 0,
+        "output_sha256": "7f49db8213bc17336a2d552acceabd1aa3a7adfbdc774a87c812a0e74d8f256a",
+        "tail": [
+          "{\"cffi\": \"2.1.1\", \"charset-normalizer\": \"3.5.2\", \"contourpy\": \"1.4.0\", \"cryptography\": \"50.0.2\", \"cycler\": \"0.12.1\", \"fonttools\": \"4.68.0\", \"kiwisolver\": \"1.5.1\", \"matplotlib\": \"3.10.7\", \"numpy\": \"2.5.4\", \"packaging\": \"26.3\", \"pdfminer.six\": \"20251230\", \"pdfplumber\": \"0.11.9\", \"pillow\": \"13.0.0\", \"pycparser\": \"3.12\", \"pyparsing\": \"3.3.3\", \"pypdf\": \"6.10.0\", \"pypdfium2\": \"5.14.0\", \"python-dateutil\": \"4.0.0\", \"scipy\": \"1.16.3\", \"tzdata\": \"2026.6\"}"
+        ]
+      }
+    ],
+    "lead_evidence_sha256": "25012ef5ab32bbff648d2f06566ae84da5bd2c35bce9e251b9cb87bb1eb51fb8",
+    "new_geometry_net_pins": 7,
+    "old13_pin_entries_unchanged": true,
+    "runtimes": {
+      "3.11": {
+        "de_hash": "606997f0d7db04ecede6c39a3e93e5672cb5ef4cc1fe4be10e949c8fc8b16838",
+        "ne_count": 5,
+        "ne_hash": "20b3e8678bafca8f2c838c83a3f3dd1ad0d08bd13c0acd417f4d38d0aeb1c4e9",
+        "origin_checked": true,
+        "runtime_versions_verified": 8,
+        "source_hashes": 6,
+        "versions": {
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cryptography": "50.0.2",
+          "pdfminer.six": "20251230",
+          "pdfplumber": "0.11.9",
+          "pillow": "13.0.0",
+          "pycparser": "3.12",
+          "pypdfium2": "5.14.0"
+        }
+      },
+      "3.12": {
+        "de_hash": "606997f0d7db04ecede6c39a3e93e5672cb5ef4cc1fe4be10e949c8fc8b16838",
+        "ne_count": 5,
+        "ne_hash": "20b3e8678bafca8f2c838c83a3f3dd1ad0d08bd13c0acd417f4d38d0aeb1c4e9",
+        "origin_checked": true,
+        "runtime_versions_verified": 20,
+        "source_hashes": 6,
+        "versions": {
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.2",
+          "cryptography": "50.0.2",
+          "pdfminer.six": "20251230",
+          "pdfplumber": "0.11.9",
+          "pillow": "13.0.0",
+          "pycparser": "3.12",
+          "pypdfium2": "5.14.0"
+        }
+      }
+    },
+    "source_and_dependency_pins": {
+      ".github/workflows/offline.yml": "eca085d8d3303a3e8292ce79d0bf2b5fe2d959ac87c9951090f6b1877c29c51b",
+      "configs/runtime_python312_geometry_20261103.txt": "169054497926df845d715fd3c8caeb1b3260c334a2c2ad7c09b2e5a953242435",
+      "docs/GEOMETRY_RUNTIME_V1_7.md": "c89dd75f37eae62b2c159d3015b01dfea78efe6c26c895e92d1347616336c62e",
+      "pyproject.toml": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764",
+      "src/civiclab/__init__.py": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50",
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/e01/__init__.py": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83",
+      "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+      "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+      "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+      "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e",
+      "src/civiclab/e01/pipeline.py": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763",
+      "src/civiclab/reproduction.py": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335",
+      "tests/test_e01_delaware_v1_7.py": "be6e0a6bf4c4201ee9ede037a9049c714d545071b053ccd494581d6e0fabd087",
+      "tests/test_e01_nebraska_v1_7.py": "0f44be65d8bd0f8045f2f4699d2fca11715e32aabbaf6160784fbbe943b2a110",
+      "tests/test_reproduction.py": "5871e38026f71d3b94b2f5efe503e82051b6eb56dc326358e656c57b6856de80"
+    },
+    "workspace": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-geometry-os2cfk_q"
+  },
+  "lead_evidence_sha256": "25012ef5ab32bbff648d2f06566ae84da5bd2c35bce9e251b9cb87bb1eb51fb8",
+  "limitations": [
+    "Freshindependentvenvs3.11.17/3.12.14usedcopiedexacthelperdependencygraph,notfullcurrenttree.",
+    "Python31220exactruntimeversionsverified;Python3118geometryversionsverified,notPython311fullresearchlock.",
+    "Versionpinsarenotwheel/hash/transientsetuptoolsbuildisolationlocks;packageinstallationmayconsultregistry/cache,notperson-sourceorpaidmodelacquisition.",
+    "OfflineCIextrasconfigurationreviewed;noobservedremoteCI. Oldarchivesunchanged/notrebuilt;nofullREPRO_PACK/controllerrenewal.",
+    "CurrentstandalonereaderalgorithmacceptanceandruntimegatecannotpromoteDE/NEorprovefinal/latestballots/geography/asof/selection/science."
+  ],
+  "model_calls": 0,
+  "old13_pin_bytes_match_before_dependency_commit": true,
+  "old13_pin_file_sha256": "6acb09ebaf9591cc515e8ec5d26c80c9fe57fbd44d686357d51f80ea309b7a76",
+  "preserved_lead_failure_reports_sha256": {
+    "reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7_INITIAL_FAILURE.json": "0a1d3a5c70501ef42a7d6bd6aac9d005b1b6435f5f3f50837f1ed2db9a11bf9b",
+    "reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7_PATH_FAILURE.json": "87c096df9b23b1ebe962b7ab271b442b36435ca00170c10820d65274403ca635"
+  },
+  "prior_standalone_audit_sha256": "12eb3959c5e3f0add8414004b8fe1345308eaec3aee1e29999b22b6e9e8a0a8f",
+  "raw_candidate_names_or_contacts_in_report": false,
+  "reviewed_dependency_files": {
+    ".github/workflows/offline.yml": "eca085d8d3303a3e8292ce79d0bf2b5fe2d959ac87c9951090f6b1877c29c51b",
+    "configs/runtime_python312_geometry_20261103.txt": "169054497926df845d715fd3c8caeb1b3260c334a2c2ad7c09b2e5a953242435",
+    "docs/GEOMETRY_RUNTIME_V1_7.md": "c89dd75f37eae62b2c159d3015b01dfea78efe6c26c895e92d1347616336c62e",
+    "pyproject.toml": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764",
+    "src/civiclab/reproduction.py": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335",
+    "tests/test_reproduction.py": "5871e38026f71d3b94b2f5efe503e82051b6eb56dc326358e656c57b6856de80"
+  },
+  "reviewed_helper_source_files": {
+    "pyproject.toml": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764",
+    "src/civiclab/__init__.py": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e01/__init__.py": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e",
+    "src/civiclab/e01/pipeline.py": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763",
+    "tests/test_e01_delaware_v1_7.py": "be6e0a6bf4c4201ee9ede037a9049c714d545071b053ccd494581d6e0fabd087",
+    "tests/test_e01_nebraska_v1_7.py": "0f44be65d8bd0f8045f2f4699d2fca11715e32aabbaf6160784fbbe943b2a110"
+  },
+  "schema_version": 1,
+  "status": "PASS_BOUNDED_OPTIONAL_GEOMETRY_RUNTIME_AND_BUILDER_GATES",
+  "targeted_project_tests_independently_passed": 15,
+  "unfinished_readiness_jobs_remain": 23
+}
