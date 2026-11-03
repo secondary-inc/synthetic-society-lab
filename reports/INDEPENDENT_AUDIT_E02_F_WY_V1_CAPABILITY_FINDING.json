@@ -1,0 +1,63 @@
+{
+  "actual_cache_open_stat_hash_parse_calls": 0,
+  "actual_source_execution_approval": "NOT_GRANTED",
+  "audited_at_utc": "2026-11-03T16:14:04.322634+00:00",
+  "auditor_role": "independent_auditor",
+  "candidate_evidence_sha256": "569924e37700656b55b6b6d5ca5be823157b2134936d631e2ecce5ba9130987f",
+  "controller_receipts_renewed": false,
+  "experimental_model_api_spend_usd": 0,
+  "finding_id": "IA-E02-F-WY-V1-CAPABILITY-001",
+  "independent_new_fixture_tests": {
+    "passed": 19,
+    "seconds": 31.668
+  },
+  "model_calls": 0,
+  "own_authored_metadata_probe": {
+    "changed_manifest_accepted": true,
+    "new_root_differs_from_execution_output_directory": true,
+    "original_source_and_three_approval_bytes_unchanged": true,
+    "real_or_authored_raw_source_file_created_or_opened": false,
+    "relocated_root_accepted": true,
+    "two_independent_ENROLL_reservations_same_execution_receipt": true
+  },
+  "positive_arithmetic_is_not_control_acceptance": true,
+  "positive_scoped_raw_arithmetic": {
+    "CSV_rows": 78,
+    "adults": 72,
+    "all11deterministic_files_byteexact": true,
+    "all8buffers_exact_both_sweeps": true,
+    "expanded_bytes_and_processing_time_rederived_once": true,
+    "indexed_files_rehashed": 37,
+    "logical_ops_reserved": 12000000,
+    "mandatory_records_checked": 9344,
+    "missing3600_F_and600_C_masks": true,
+    "record_statuses": {
+      "missing": 9161,
+      "nonpositive": 12,
+      "numeric": 171
+    },
+    "rows_charged": 156,
+    "run_id": "partial-wy-v1-20261103-09",
+    "six_domains_and_child_adult_replica_identities_exact": true
+  },
+  "real_owner_or_actual_approval_records_created": false,
+  "reproduction": [
+    "Use the existing test-only three-receipt synthetic metadata pattern in an isolated temporary ROOT; no raw source file exists and every receipt is explicitly tagged TEST_ONLY. Mint the valid ActualAdmission through admit_actual.",
+    "Use dataclasses.replace on the returned object to change only manifest_json archive SHA. Keep its token, original config, three receipt hashes and fixed source-contract bytes unchanged. require_admission accepts the changed manifest although _release still resolves the original approved SHA.",
+    "Separately copy the returned object with a different root, create only its marker, and keep the original approved output_directory receipt unchanged. require_admission and PilotLedger accept the relocated object, allowing a second ENROLL reservation in an independent ledger under the same execution receipt."
+  ],
+  "required_remediation": "Preserve the original candidate/evidence. Rederive and compare every ActualAdmission field on use: exact manifest/origin/stat/source identities, source path, admitted canonical private output root, runtime config and exact release receipt scope. Do not treat a copied token as immutable body authority. Add manifest hash/size/member/header/stat/source-origin/config/root relocation and same-receipt second-workspace negative tests with zero source I/O/reservation/worker after refusal. Re-review separately versioned remedy before any actual cache admission/execution.",
+  "reviewed_code_file_hashes": {
+    "src/civiclab/e02/f_actual_admission_v1.py": "735429a82b5b0431a10653d8a2ea2dff9614c020e533b30a989d2f3d28017a10",
+    "src/civiclab/e02/f_actual_ledger_v1.py": "c53a495ec9e52a1fc69b479a33010e03fc6c9c55a4ec33a96757237f3933c8dc",
+    "src/civiclab/e02/f_census_transport_v1.py": "d5ccd4b4c75b8f0eb83c7696ce113429cd91176d2dd55a67acf79e437bd4db53",
+    "src/civiclab/e02/f_wy_local_pilot_v1.py": "06e85debf59bdc4c9b3d931e920ec7b4b7eefd428a0774a7a4ade5cb69ce1657",
+    "src/civiclab/e02/f_wy_source_v1.py": "4a113ac41ee7cf39e9618cd381aec658e00733e71d238c135ff47dd73590fff9"
+  },
+  "root_cause": "ActualAdmission is a public frozen dataclass with a readable token. Frozen prevents assigning its existing fields but does not prevent constructing a replacement object with the same token. require_admission checks token/origin, fresh config/receipts, marker and source path, but does not compare the object manifest to _actual_manifest(config,records,expected) or root to the execution receipt output directory. Revalidation therefore leaves both critical capability fields caller-controlled.",
+  "schema_version": 1,
+  "scope": "In-scope immutable exact source/output/one-execution binding defect. The implementation and original source/proposal/config/three receipt authorities remain unchanged; no replacement of all trusted authority/history or hostile-host authentication claim is involved. Root/_load_frozen patching is confined to the explicitly authored synthetic metadata fixture, matching existing tests.",
+  "severity": "HIGH",
+  "source_GET_requests": 0,
+  "status": "BLOCKED_F_WY_V1_ACTUAL_CAPABILITY_NOT_REDERIVED"
+}
