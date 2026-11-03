@@ -1,0 +1,97 @@
+{
+  "task_id": "E01_ID_STANDALONE_READER_V1_8_CANDIDATE",
+  "status": "WORKER_CODE_FIXTURE_EVIDENCE_PENDING_INDEPENDENT_CODE_INPUT_RUNTIME_PRIVACY_LIFECYCLE_REVIEW",
+  "new_file_pins": {
+    "src/civiclab/e01/idaho_v1_8.py": "d16b936be7554df6430f621c3ab9879f33d12b00ddbb8b4b9e1bc70c260d8154",
+    "tests/test_e01_idaho_v1_8.py": "9fe8e6c3e87cbaa9c3fc7c29590124ca9ba6f27fab373692ee0342e5ac89f28f",
+    "configs/e01_id_standalone_runtime_contract_v1_8_candidate.json": "7fe8aed67261f1e1cd9ad967afac27ee8e73d4a1b3949d06f771093b022a05b9",
+    "docs/E01_ID_STANDALONE_READER_V1_8_CANDIDATE.md": "51516e99ac89bde8b31d846fe59757ea540b082f829cf80422c13c9bfdc3e6fa"
+  },
+  "frozen_methods_pins": {
+    "configs/e01_id_rendered_source_contract_v1_8_proposal.json": "59c01a619ef51ec5c993c0e5113b4c362135912585f6c0b1ac375a697fe87b8b",
+    "docs/E01_ID_RENDERED_READER_METHODS_V1_8_PROPOSAL.md": "bc139457b41b215cd83f7d618d5bf445056bca8044ed82deb44e24e0191b831d",
+    "reports/E01_ID_RENDERED_READER_METHODS_V1_8_RECEIPT.md": "b4d80c9f9dce8756e35874c1a7efc00460af41a37fecdf9c47ad16c34a68270b",
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_METHODS.json": "cb6aa3f351a7f20c00dc8dbad56302842206e1baaeb85bdc5c01b8c3c5aa8d89",
+    "reports/INDEPENDENT_AUDIT_E01_BATCH06_FILTER_PRECISION.json": "a7b59b56ab72909448fb212aa847f6d863a19909826d688094ce657cecf41b7b"
+  },
+  "input_pins_unchanged": {
+    "id_general_index": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4",
+      "bytes": 218881
+    },
+    "id_candidate_search": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+      "bytes": 15841
+    },
+    "id_browser_visible": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+      "bytes": 203250
+    },
+    "id_browser_federal": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+      "bytes": 68620
+    },
+    "id_browser_senate": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+      "bytes": 29871
+    }
+  },
+  "worker_test_commands": [
+    {
+      "command": ".venv/bin/python -m unittest tests.test_e01_idaho_v1_8 -q",
+      "python": "3.12.14",
+      "passed": 21
+    },
+    {
+      "command": "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e01_idaho_v1_8 -q",
+      "python": "3.11.17",
+      "passed": 21
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -p 'test_e01*.py' -q",
+      "passed": 128
+    }
+  ],
+  "fixture_scope": "Authored DEMO bytes/rows only; trusted contract digest and helper import origin patched explicitly for temporary source fixtures. Metadata-only real contract test disables source reads. No actual-source helper execution.",
+  "preserved_failures": [
+    {
+      "path": "data/raw/e01_id_reader_v1_8_development/attempt01_failure.json",
+      "sha256": "da36414f362eee13948362d597e4b22cb32c7b4748c52908d7b96949acec96ec"
+    },
+    {
+      "path": "data/raw/e01_id_reader_v1_8_development/attempt02_py311_import_failure.json",
+      "sha256": "b829114ab3597bc347786b16e10a1192fe92df913f219c4ce638897a329f6545"
+    }
+  ],
+  "actual_cached_capture_helper_preflight": false,
+  "readiness_schema_adopted": false,
+  "actual_readiness_execution": false,
+  "recorded_run_ids": [],
+  "accepted_coverage_promoted": false,
+  "accepted_document_states_remain": 12,
+  "unfinished_document_jobs_remain": 21,
+  "final_ballots_accepted": 0,
+  "typed_UNKNOWNs": [
+    "printed_ballot_status",
+    "write_in_status",
+    "legal_nomination_status",
+    "latest_amendment_completeness"
+  ],
+  "first_checkbox_state": "UNKNOWN",
+  "candidate_name_input_value_all_captures": "UNKNOWN",
+  "Withdrawn_history_preserved": true,
+  "Approved_Democratic_record_invented": false,
+  "public_named_or_contact_literals_exported": false,
+  "runtime_dependencies": "standard library only; existing package import context unchanged",
+  "external_ocr_calls": 0,
+  "new_GETs": 0,
+  "new_browser_calls": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "next_gate": "Independent exact code/contract/fixture/input/runtime/privacy/lifecycle acceptance before lead-authorized actual helper preflight; subsequent readiness requires separate typed-unknown admission/integration."
+}
