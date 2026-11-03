@@ -1,0 +1,55 @@
+{
+  "credential_reads": 0,
+  "current_coverage": {
+    "final_ballots": 0,
+    "legacy_roster_states": 12,
+    "typed_document_states": 13,
+    "unfinished_source_jobs": 20
+  },
+  "development_compute_unpriced": true,
+  "limitations": [
+    "Search-index excerpts may be stale or partial; they are not a current fetched roster or complete pagination/status/nomination evidence.",
+    "403 is reported by the web tool; no local body/hash/headers/independent transport capture is asserted.",
+    "Access/reuse/nomination/final-ballot/latest/as-of claims remain unestablished."
+  ],
+  "model_API_spend_usd": 0,
+  "model_calls": 0,
+  "native_collector_GETs": 0,
+  "native_raw_stat_hash_open_reads": 0,
+  "next_gate": "Preserve access denial. Do not retry this source family via alternate transports/query parameters. Continue independent approved source or engineering jobs; distinct source policy would require concrete review.",
+  "no_accepted_candidate_rows_from_this_task": true,
+  "recorded_at_utc": "2026-11-03T19:06:50.339536+00:00",
+  "reference_pins": {
+    "configs/e01_ballot_readiness_v1.json": "681eea61afe933046b978685df83c43674c26bd34df4acf0be0511da91796972",
+    "reports/E01_BALLOT_ACQUISITION_BATCH02_V1.json": "7880d608d045cffd58765d874a2190535f95f6f4c58419b6f80726ec22e480cb",
+    "reports/E01_BALLOT_ACQUISITION_BATCH03_V1.json": "e416da3be04b519e84918b17dadb43bc037f86106203bd919c0360c76e432e42",
+    "reports/E01_BALLOT_ACQUISITION_BATCH04_V1.json": "4719b210cfa5fb673537b1a0446f5ccdab68d69d310aa93dbe15734a19207583",
+    "reports/E01_BALLOT_ACQUISITION_BATCH05_V1.json": "eed1066e2279b4b5b43ae2d05a2515960924aff5ffdac893aa25025d41b04c77",
+    "reports/E01_BATCH06_SOURCE_ROLES_V1.json": "4710dbc1d8d3dff484f8b5c6e1e05ef46a016d736f9a9009ec1692d814246840"
+  },
+  "schema_version": 1,
+  "scope": "OFFICIAL_ROUTE_DISCOVERY_ONLY_NO_CANDIDATE_ADMISSION",
+  "selection": "Next alphabetical regular ClassII frame job with no Illinois candidate capture in all checked batch02-06 public metadata, excluding active Alabama and existing Arkansas/Georgia/Oregon routes. This is not a universal absent-cache claim.",
+  "source_adoption_or_readiness_promotion": false,
+  "status": "STOPPED_WEB_TOOL_REPORTED_HTTP403_NO_NATIVE_CAPTURE",
+  "stop_binding": {
+    "alternate_header_proxy_browser_login_or_API": false,
+    "native_fallback": false,
+    "new_results_or_returns_access": false,
+    "other_filtered_query_URLs_followed": false,
+    "retry": false
+  },
+  "task_id": "E01_IL_ROUTE_DISCOVERY_V1",
+  "web_observation": {
+    "candidate_page_url": "https://www.elections.il.gov/ElectionOperations/CandidateList.aspx?ElectionID=71",
+    "current_page_outcome": "WEB_TOOL_REPORTED_403_FORBIDDEN",
+    "http_response_body_headers_or_exact_wire_evidence": "NOT_OBTAINED_BY_NATIVE_COLLECTOR",
+    "official_candidate_page_open_calls": 1,
+    "official_search_calls": 1,
+    "search_excerpt_privacy": "No names, addresses, contact information or candidate rows copied to this report.",
+    "search_query": "site:elections.il.gov \"2026\" \"general election\" \"candidate list\"",
+    "search_result_general_context": "GENERAL_ELECTION_2026_11_03_ADVISORY_CACHED_LABEL_ONLY",
+    "url_origin": "LITERAL_OFFICIAL_SEARCH_RESULT_NOT_GUESSED_ELECTION_ID",
+    "web_internal_transport_requests": "UNKNOWN"
+  }
+}

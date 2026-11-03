@@ -1,0 +1,54 @@
+{
+  "current_coverage": {
+    "final_ballots": 0,
+    "legacy_roster_states": 12,
+    "typed_states": 13,
+    "unfinished_jobs": 20
+  },
+  "development_compute_unpriced": true,
+  "existing_accepted_metadata": {
+    "body_bytes_saved": 69314,
+    "bounded_role_observation": "Body heading2026 Preferential Primary and Nonpartisan Judicial General Election; Search Candidate Filings. Exposes dynamic metl table/API references, but no API request or primary-to-general inference made.",
+    "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+    "complete_body": true,
+    "path": "data/raw/e01_ballots_batch06_v1/ar_candidate_search.body",
+    "sha256": "b431265f4cdaf151080c956f765285fd1e2ee4e8e93ddc1dc197e486b2146008",
+    "source_id": "ar_candidate_search",
+    "source_role": "OFFICIAL_PRIMARY_FILING_SEARCH_SHELL_NOT_GENERAL_NOMINEE_LIST",
+    "status": 200,
+    "url": "https://candidates.arkansas.gov/"
+  },
+  "form_or_API_requests": 0,
+  "model_API_spend_usd": 0,
+  "model_calls": 0,
+  "native_collector_GETs": 0,
+  "native_raw_source_stat_hash_open_reads": 0,
+  "next_gate": "Seek genuine November nominee/certification evidence under a separate bounded task, or review an existing permitted general-source capture. Do not reinterpret primary filers as nominees or probe hidden API/alternate denied routes.",
+  "recorded_at_utc": "2026-11-03T19:05:20.360810+00:00",
+  "reference_pins": {
+    "configs/e01_ballot_readiness_v1.json": "681eea61afe933046b978685df83c43674c26bd34df4acf0be0511da91796972",
+    "reports/E01_BATCH06_SOURCE_ROLES_V1.json": "4710dbc1d8d3dff484f8b5c6e1e05ef46a016d736f9a9009ec1692d814246840",
+    "reports/INDEPENDENT_AUDIT_E01_BATCH06_FILTER_PRECISION.json": "a7b59b56ab72909448fb212aa847f6d863a19909826d688094ce657cecf41b7b",
+    "reports/INDEPENDENT_AUDIT_E01_BATCH06_SOURCE_ROLES.json": "fed3f144d53bab5e0f1314d135cb1d6a6b19149c0efa19a69c505928004f3162"
+  },
+  "results_links_followed": 0,
+  "schema_version": 1,
+  "scope": "DISCOVERY_AND_REGISTERED_METADATA_ONLY_NO_NATIVE_CAPTURE_OR_ADOPTION",
+  "selection_correction": "Initial routing message described AR as unattempted based on incomplete batch02-05 metadata. Batch06 then showed an existing accepted primary-filing-shell capture. No native capture was performed and no retry plan proceeds.",
+  "source_coverage_promoted": false,
+  "source_rights": "UNCHANGED_UNKNOWN_RAW_REDISTRIBUTION; route discovery is not candidate or final-ballot authority",
+  "status": "ADVISORY_ROUTE_CONFIRMED_EXISTING_PRIMARY_FILING_CAPTURE_NOT_NOVEMBER_ROSTER",
+  "task_id": "E01_AR_ROUTE_DISCOVERY_V1",
+  "web_observations": {
+    "existing_page_find_calls": 1,
+    "internal_web_transport_request_count": "UNKNOWN_NOT_A_NATIVE_RECEIPT",
+    "observed_anchor_label": "2026 Candidate Search",
+    "offered_host": "candidates.arkansas.gov",
+    "official_index_open_calls": 1,
+    "official_index_url": "https://www.sos.arkansas.gov/site/page/",
+    "raw_bytes_or_TLS_or_publication_timestamp_verified": false,
+    "search_calls": 1,
+    "search_query": "site:sos.arkansas.gov \"2026\" \"general election\" \"candidates\"",
+    "target_opened_in_this_task": false
+  }
+}
