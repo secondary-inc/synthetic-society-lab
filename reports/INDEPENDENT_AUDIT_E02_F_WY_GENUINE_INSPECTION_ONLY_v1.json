@@ -1,0 +1,97 @@
+{
+  "actual_source_operations_by_auditor": 0,
+  "audit_script": {
+    "path": "/tmp/civiclab-independent-e02-postO.py",
+    "sha256": "29ae0b8d0708cd28c6dbf9ec9ffb1e8a48c9af167d3331fdd369a654d0288ef4"
+  },
+  "auditor_role": "independent_auditor",
+  "checks": {
+    "control_files": 11,
+    "deadline_unix": 1793741015.473082,
+    "events": 2,
+    "metadata_pins": 47,
+    "native_stages": 0,
+    "original_state_unchanged": true,
+    "raw_path_guarded_metadata_API_observation_pass": true,
+    "reservation": {
+      "bytes": 50975766,
+      "ops": 12000000,
+      "rows": 58594,
+      "seconds": 1800
+    },
+    "source_identity_origin": "sealed_O_and_reserved_INSPECT_proof_not_fresh_stat",
+    "source_operations": 0,
+    "status": "PASS_POST_INSPECTION_METADATA_ONLY",
+    "usage": {
+      "core": 623466,
+      "raw": 4202266
+    },
+    "whole_stage_seconds": 0.08553379197837785
+  },
+  "development_costs": "UNPRICED",
+  "experimental_api_spend_usd": 0,
+  "independent_fixture_regression": {
+    "python311": {
+      "count": 27,
+      "path": "/tmp/civiclab-independent-e02-postO-py311-with-path.log",
+      "result": "PASS",
+      "sha256": "87b532a419ecd856320a635e846c8dfc7bc9460803a499b7c049a2624742bcb4",
+      "summary": [
+        "Ran 27 tests in 58.333s",
+        "",
+        "OK"
+      ]
+    },
+    "python312": {
+      "count": 27,
+      "path": "/tmp/civiclab-independent-e02-postO-fixtures.log",
+      "result": "PASS",
+      "sha256": "13cfd497576d82a4c2af72c6cab723f78e466c3891147b4cad05ee3e216529e5",
+      "summary": [
+        "Ran 27 tests in 65.032s",
+        "",
+        "OK"
+      ]
+    }
+  },
+  "initial_python311_discovery_failure": {
+    "correction": "Explicit PYTHONPATH=src:tests; all27thenpassed.",
+    "path": "/tmp/civiclab-independent-e02-postO-py311.log",
+    "sha256": "0d6f6d3ddde5d17547a32b447ddf72dd1b993bbeecbee93a0f47dbecdc95c6be",
+    "status": "HARNESS_IMPORT_PATH_FAILURE_PRESERVED_NO_TEST_EXECUTION"
+  },
+  "inspection_authorization": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_F_WY_GENUINE_INSPECTION_AUTHORIZATION_v1.json",
+    "sha256": "034dcf139ac186ddd4b77e0cf8adf36a79a5e1fe672fde937c7884780fd46f83"
+  },
+  "inspection_evidence": {
+    "path": "reports/E02_F_WY_GENUINE_INSPECTION_ONLY_v1.json",
+    "sha256": "454bfd4b3298503b511806abef2ed8b97087d30c06dc0f9179d3d514301bf2f6"
+  },
+  "issued_at_utc": "2026-11-03T18:29:38.420398+00:00",
+  "model_calls": 0,
+  "native_runtime_invocations": 0,
+  "network_requests": 0,
+  "next_gate": "Issue exact independent K/S/E; separate lead release and final C validation before native work.",
+  "observation": {
+    "path": "data/processed/e02_F_wy_private_bootstrap/conditional-actual-v1-20261103-01/observation.local.json",
+    "sha256": "2d6c95692d3c7fda2b97ab40ef8cf841c6db6943a43706aed5e78921e51c09a9"
+  },
+  "permission_limits": [
+    "This accepts inspection-time source identity and code/metadata integrity only; no source authenticity, new rights, future availability or latest-release guarantee.",
+    "No actual adult/domain values, uncertainty arithmetic or native real-source feasibility accepted until separately authorized execution and independent postrun review.",
+    "Cooperative sampled limits and trusted retained local history; no hostile-host or absolute OS containment claim.",
+    "No fitting, disclosure, national continuation, network acquisition, model calls, spending or publication authority.",
+    "Single original control root and earliest deadline; no retry, reinspection, reset, refund or replacement on expiry/failure."
+  ],
+  "private_handoff": {
+    "path": "data/processed/e02_F_wy_private_bootstrap/conditional-actual-v1-20261103-01/inspection-only-handoff.local.json",
+    "sha256": "ccd96050fe5263c6a7426dcbea23c3d6b8c87d119fa63490fba41b12579e1513"
+  },
+  "proof": {
+    "path": "data/processed/e02_F_wy_private_bootstrap/conditional-actual-v1-20261103-01/INSPECT.proof.local.json",
+    "sha256": "073304706e8621da79b5dfa6e1fdfa22d6fa382e04dcd328953e0d8681bf8407"
+  },
+  "scientific_acceptance": "NOT_RUN",
+  "status": "PASS_EXACT_CLOSED_INSPECTION_O_METADATA_ONLY"
+}

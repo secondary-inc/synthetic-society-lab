@@ -1,0 +1,39 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "API_spend_usd": 0,
+    "GETs": 0,
+    "local_compute_storage_labor": "UNPRICED",
+    "model_calls": 0
+  },
+  "FILES_CHANGED": [
+    "configs/e02_F_WY_ACTUAL_EXECUTION_DRAFT_v1.json",
+    "reports/E02_F_WY_POST_O_EXECUTION_BINDING_DRAFT_v1.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Hold source/control/native work stopped until matching independent receipts and lead release.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_F_WY_ACTUAL_EXECUTION_DRAFT_v1.json": "990a427e8ce05ecffb8c7558eb3df49c5b5c64af3d68f6be4c98fa729f3f2c09",
+    "reports/E02_F_WY_POST_O_EXECUTION_BINDING_DRAFT_v1.json": "c089eea6e1605e816b8496b03633abed62b3ac4481911c4eb903b7644af08291"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "Recompute native D excluding authority/approvals/scope and verify draft differs only in excluded scope; verify all K/S/E entries null. Do not inspect source/control roots."
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Draft C/Y are nonpermission metadata, not K/S/E, live C or a RELEASE_BIND event.",
+    "Original t0/deadline/charged envelope and stopped control state remain unchanged."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Frozen repository metadata and already-issued post-O report only. No actual cache/source/control-root reobservation or source permission issued.",
+  "TASK_ID": "E02_F_WY_POST_O_DISABLED_EXECUTION_DRAFT_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "KSE_fit_disclosure": null,
+    "draft_authority": 0,
+    "native_design_D_unchanged": true,
+    "native_frozen_metadata_hashes_verified": 38,
+    "source_or_control_operations": 0
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent post-O review and genuine K/S/E.",
+    "Explicit separate lead native-execution release."
+  ],
+  "original_deadline_unix": 1793741015.473082,
+  "status": "DISABLED_DRAFTS_READY_SOURCE_CONTROL_UNTOUCHED"
+}
