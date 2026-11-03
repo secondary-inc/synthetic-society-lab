@@ -1,0 +1,58 @@
+{
+  "actual_bridge_runs_admitted_to_package": false,
+  "audited_at_utc": "2026-11-03T13:46:59.769071+00:00",
+  "auditor_role": "independent_auditor",
+  "comparison_base": "1208e1b",
+  "cost_usd": 0,
+  "diff": {
+    "src/civiclab/reproduction.py": [
+      "--- src/civiclab/reproduction.py@1208e1b\n",
+      "+++ src/civiclab/reproduction.py\n",
+      "@@ -28,7 +28,7 @@\n",
+      "     if fixture.exists():inputs[str(fixture.relative_to(root))]=fixture",
+      "     for pattern in ('AUDIT_*','INDEPENDENT_AUDIT*','STATUS*','COORDINATION.json',",
+      "                     'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','BOOTSTRAP*','REVIEW_PACKAGE*',",
+      "-                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','WYOMING_*','E01*','E02*'):",
+      "+                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','WYOMING_*','SURVEY_*','E01*','E02*'):",
+      "         for p in (root/'reports').glob(pattern):",
+      "             if p.is_file() and p.suffix in ('.md','.json','.txt'):inputs[str(p.relative_to(root))]=p",
+      "     return inputs"
+    ],
+    "tests/test_reproduction.py": [
+      "--- tests/test_reproduction.py@1208e1b\n",
+      "+++ tests/test_reproduction.py\n",
+      "@@ -15,6 +15,7 @@\n",
+      "             raw=root/'data/raw/private.csv';raw.parent.mkdir(parents=True);raw.write_text('private source')",
+      "             report=root/'reports/ENGINEERING_EVIDENCE_TEST.json';report.parent.mkdir();report.write_text('{}')",
+      "             (report.parent/'E02_WORKER_RECEIPT.md').write_text('Observed module receipt')",
+      "+            (report.parent/'SURVEY_BRIDGE_MOCK_EVIDENCE.json').write_text('{\"scope\":\"authored mock only\"}')",
+      "             (report.parent/'ANES_UPSTREAM_REACQUISITION.json').write_text('{\"scope\":\"exact byte verification only\"}')",
+      "             (report.parent/'E02_CONSUMED_IMPLEMENTATION.txt').write_text('preserved prior source fixture')",
+      "             (report.parent/'WYOMING_PROJECTION_IMPLEMENTATION.json').write_text('{\"actual_projection_created\":false}')",
+      "@@ -31,6 +32,7 @@\n",
+      "                 self.assertNotIn('.env',z.namelist());self.assertFalse(any(n.startswith('data/raw/') for n in z.namelist()))",
+      "                 self.assertIn('reports/ENGINEERING_EVIDENCE_TEST.json',z.namelist())",
+      "                 self.assertIn('reports/E02_WORKER_RECEIPT.md',z.namelist())",
+      "+                self.assertIn('reports/SURVEY_BRIDGE_MOCK_EVIDENCE.json',z.namelist())",
+      "                 self.assertIn('reports/ANES_UPSTREAM_REACQUISITION.json',z.namelist())",
+      "                 self.assertIn('reports/E02_CONSUMED_IMPLEMENTATION.txt',z.namelist())",
+      "                 self.assertIn('reports/WYOMING_PROJECTION_IMPLEMENTATION.json',z.namelist())"
+    ]
+  },
+  "independent_checks": {
+    "actual_bridge_private_run_still_refused": true,
+    "own_late_report_whole_package_refusal": true,
+    "own_private_name_whole_package_refusal": true,
+    "own_safe_SURVEY_included_raw_env_excluded": true,
+    "own_secret_whole_package_refusal": true
+  },
+  "model_calls": 0,
+  "reviewed_files": {
+    "src/civiclab/reproduction.py": "18a293c52c5920ed1e6ff8a00e53e3d41cb41a42b60fbd9b7adf3bf808ed7d9f",
+    "tests/test_reproduction.py": "3ba855185faba3be6d14e83c74ce9217e366a1e5c534d0e4d16f6342a137d685"
+  },
+  "schema_version": 1,
+  "scope": "Source enumeration/test-fixture delta only: safe SURVEY evidence is eligible source metadata, while local artifact/full-fileset/credential-pattern/raw exclusions remain enforced. Filename/pattern guards are not universalDLP. No whole research-package, new archive/current-tree or bridge milestone acceptance. Earlier exact-version audits remain unchanged.",
+  "status": "PASS_SCOPED_SURVEY_SAFE_REPORT_ENUMERATION_DELTA",
+  "tests_passed": 6
+}

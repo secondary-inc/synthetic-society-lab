@@ -217,6 +217,47 @@ class SurveyBridgeTests(unittest.TestCase):
                     run_mock_bridge(tmp, profiles, STIMULI[:1], INSTRUMENT)
             self.assertFalse((Path(tmp) / 'data').exists())
 
+
+    def test_coedited_routes_seeds_and_reservations_refuse_before_any_transport(self):
+        modes = ('provider', 'model', 'seed', 'temperature', 'retries', 'input_bound',
+                 'zero_reservation', 'charged_above_reservation', 'prompt_boolean', 'output_tokens')
+        for mode in modes:
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as tmp:
+                path = run_mock_bridge(tmp, PROFILES, STIMULI[:1], INSTRUMENT, stop_after_phases=1)
+                with sqlite3.connect(path / 'phase-journal.local.sqlite') as db:
+                    unit, phase, text = db.execute('SELECT unit,phase,result FROM phases').fetchone()
+                    result = json.loads(text)
+                    receipt = result['receipt']
+                    with sqlite3.connect(path / 'budget-ledger.local.sqlite') as budget:
+                        metadata = json.loads(budget.execute('SELECT data FROM metadata WHERE id=?', (receipt,)).fetchone()[0])
+                        if mode == 'provider':
+                            result['provider'] = metadata['actual_provider'] = 'UNAPPROVED'
+                        elif mode == 'model':
+                            result['model'] = metadata['actual_model'] = 'unapproved/model'
+                        elif mode == 'seed': metadata['seed'] += 1
+                        elif mode == 'temperature': metadata['temperature'] = 1
+                        elif mode == 'retries': metadata['retries'] = 1
+                        elif mode == 'input_bound': metadata['input_token_bound'] += 1
+                        elif mode == 'zero_reservation': budget.execute('UPDATE charges SET reserved=0')
+                        elif mode == 'charged_above_reservation': budget.execute('UPDATE charges SET charged=reserved+1')
+                        elif mode == 'prompt_boolean':
+                            result['usage']['prompt_tokens'] = True
+                            metadata['usage']['prompt_tokens'] = True
+                        else:
+                            result['usage']['completion_tokens'] = 513
+                            metadata['usage']['completion_tokens'] = 513
+                        budget.execute('UPDATE metadata SET data=? WHERE id=?', (json.dumps(metadata), receipt))
+                    db.execute('UPDATE phases SET result=? WHERE unit=? AND phase=?', (json.dumps(result), unit, phase))
+                checkpoint = json.loads((path / 'phase-pair-checkpoint.local.json').read_text())
+                checkpoint.update(journal_sha256=sha256_file(path / 'phase-journal.local.sqlite'),
+                                  budget_sha256=sha256_file(path / 'budget-ledger.local.sqlite'))
+                (path / 'phase-pair-checkpoint.local.json').write_text(json.dumps(checkpoint))
+                with patch.object(FixtureTransport, '__call__') as transport:
+                    with self.assertRaises((ValueError, ExecutionBlocked)):
+                        run_mock_bridge(tmp, PROFILES, STIMULI[:1], INSTRUMENT, resume=path)
+                    self.assertEqual(transport.call_count, 0)
+                self.assertEqual(len(BudgetLedger(path / 'budget-ledger.local.sqlite').snapshot()), 1)
+
     def test_live_dispatch_and_non_demo_inputs_block_without_transport_or_credentials(self):
         with tempfile.TemporaryDirectory() as tmp, patch('civiclab.model.network_transport', side_effect=AssertionError('network forbidden')):
             with self.assertRaises(ExecutionBlocked): run_live_bridge(tmp)

@@ -5,12 +5,13 @@ module tests the integrated experimental/billing lifecycle before live review.
 """
 from copy import deepcopy
 from datetime import datetime, timezone
+from decimal import Decimal
 import json
 from pathlib import Path
 import sqlite3
 
 from .common import RunStore, atomic_json, canonical_hash, redact, sha256_file
-from .model import BudgetLedger, ExecutionBlocked, OpenRouter, Policy, Price, micros
+from .model import BudgetLedger, ExecutionBlocked, OpenRouter, Policy, Price, call_envelope, micros
 from .e02.experiment import MockSurvey, assignments, evaluate
 from .e02.instrument import change, score
 
@@ -19,7 +20,7 @@ SYSTEM = ('You are a fictional survey respondent in an engineering experiment. '
           'in the supplied item order using its instrument. Return only a JSON '
           'object with democratic_party and republican_party, each a number '
           'from 0 through 100 or null for refusal/unknown. Do not provide reasoning.')
-STAGE = 'MOCK_SURVEY_OPENROUTER_PHASE_BRIDGE_V1'
+STAGE = 'MOCK_SURVEY_OPENROUTER_PHASE_BRIDGE_V1_2'
 
 INSTRUMENT_HASH = '8ebb2162c3fa85ba07f92f680513014f256f55bf66f6e2760c367b3fe6dd6978'
 DEMO_STIMULUS_HASHES = {'960bf3da9442e0148c6be56691b9a91dfdffcaee7b8d51d58124b8ddd31e58b4', '36664cab5730cb546fb0aaa11db38138073bee043b4bd3f48fae1c07a988c767', 'd2e22d23d1f072cd748729fb209fcd50cd9c8fed39be8d5ae3da6620dad518c2'}
@@ -125,7 +126,26 @@ def verify_journal(journal, ledger, jobs, instrument, price_spec):
         if receipt in receipts or receipt not in charges:
             raise ValueError('phase has duplicate or missing billing receipt')
         charge = charges[receipt]; metadata = charge['metadata']
+        envelope = call_envelope(messages(expected), 512)
+        reservation = micros(Decimal(envelope['input_token_bound']) * Decimal(price_spec['input_usd_per_token'])
+                             + Decimal(512) * Decimal(price_spec['output_usd_per_token']))
+        usage = result.get('usage')
+        if (not isinstance(usage, dict) or set(usage) != {'prompt_tokens', 'completion_tokens', 'cost'}
+            or any(type(usage.get(k)) is not int or usage[k] < 0 for k in ('prompt_tokens', 'completion_tokens'))
+            or usage['prompt_tokens'] > envelope['input_token_bound'] or usage['completion_tokens'] > 512):
+            raise ValueError('phase token accounting differs from frozen envelope')
         if (charge['module'] != 'E02' or charge['status'] != 'SETTLED'
+            or charge['reserved_microusd'] != reservation
+            or type(charge['reserved_microusd']) is not int
+            or type(charge['charged_microusd']) is not int
+            or charge['charged_microusd'] < 0 or charge['charged_microusd'] > reservation
+            or result.get('model') != price_spec['model']
+            or result.get('provider') != price_spec['provider']
+            or metadata.get('seed') != job['pair_seed'] or type(metadata.get('seed')) is not int
+            or metadata.get('temperature') != 0 or type(metadata.get('temperature')) is not int
+            or metadata.get('retries') != 0 or type(metadata.get('retries')) is not int
+            or metadata.get('input_token_bound') != envelope['input_token_bound']
+            or type(metadata.get('input_token_bound')) is not int
             or metadata.get('request_hash') != canonical_hash(messages(expected))
             or metadata.get('survey_request_hash') != row['request_hash']
             or metadata.get('survey_output_sha256') != canonical_hash(result['output'])
