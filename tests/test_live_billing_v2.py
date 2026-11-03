@@ -271,6 +271,65 @@ class LiveBillingV2Tests(unittest.TestCase):
             self.assertEqual(row['observed_cost'], 2)
             self.assertEqual(row['charged'], row['reserved'])
 
+
+    def test_generation_reuse_blocks_before_stats_and_semantic_history_replay(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger, client, transport = self.make(tmp)
+            first = client.complete(MESSAGES, run_id='first', unit_id='u', phase='pre')
+            ledger.commit_phase(first['receipt'], checkpoint(tmp, first))
+            transport.content = '{"different_answer":true}'
+            transport.overrides['response'] = {'id': first['billing']['id']}
+            with self.assertRaises(ExecutionBlocked): client.complete(MESSAGES, run_id='second', unit_id='u', phase='pre')
+            self.assertEqual([m for m, _ in transport.calls], ['POST', 'GET_STATS', 'POST'])
+            rows = ledger.snapshot(); second = next(r for r in rows if r['id'] != first['receipt'])
+            self.assertEqual(second['status'], 'UNCERTAIN')
+            self.assertIsNone(second['generation_id'])
+            self.assertEqual(second['charged'], second['reserved'])
+        with tempfile.TemporaryDirectory() as tmp:
+            ledger, client, transport = self.make(tmp)
+            results = []
+            for run_id in ('first', 'second'):
+                result = client.complete(MESSAGES, run_id=run_id, unit_id='u', phase='pre')
+                ledger.commit_phase(result['receipt'], checkpoint(tmp, result)); results.append(result)
+            first_id = results[0]['billing']['id']; second_id = results[1]['billing']['id']
+            # A fully resealed multi-record trace must still reject reused IDs.
+            with sqlite3.connect(ledger.db_path) as db:
+                rows = db.execute('SELECT sequence,data FROM events ORDER BY sequence').fetchall()
+                previous = None; states = {}
+                for sequence, text in rows:
+                    event = json.loads(text); event['previous'] = previous
+                    if sequence:
+                        row = event['after']
+                        if row['generation_id'] == second_id: row['generation_id'] = first_id
+                        if row['billing'] and row['billing']['id'] == second_id: row['billing']['id'] = first_id
+                        event['before'] = canonical_hash(states[row['id']]) if row['id'] in states else None
+                        states[row['id']] = deepcopy(row)
+                    previous = canonical_hash(event)
+                    db.execute('UPDATE events SET data=?,digest=? WHERE sequence=?', (json.dumps(event), previous, sequence))
+                for identity, row in states.items(): db.execute('UPDATE charges SET data=? WHERE id=?', (json.dumps(row), identity))
+            anchor = json.loads(ledger.anchor.read_text()); anchor['head'] = previous; atomic_json(ledger.anchor, anchor)
+            with self.assertRaisesRegex(ValueError, 'generation identity reused'): GlobalFixtureLedger.open(tmp, fixture_policy())
+
+    def test_resealed_terminal_charge_cannot_understate_known_cost(self):
+        for mode in ('OVERRUN', 'UNCERTAIN'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as tmp:
+                overrides = {'response': {'usage': {'cost': 0.1}}} if mode == 'OVERRUN' else {'stats': {'provider_name': None, 'total_cost': 0.1}}
+                ledger, client, transport = self.make(tmp, overrides=overrides)
+                with self.assertRaises(ExecutionBlocked): client.complete(MESSAGES, run_id='r', unit_id='u', phase='pre')
+                row = ledger.snapshot()[0]; self.assertEqual(row['status'], mode)
+                self.assertEqual(row['observed_cost'], 100000)
+                with sqlite3.connect(ledger.db_path) as db:
+                    sequence, text = db.execute('SELECT sequence,data FROM events ORDER BY sequence DESC LIMIT 1').fetchone()
+                    event = json.loads(text); event['after']['charged'] = row['reserved']
+                    digest = canonical_hash(event)
+                    db.execute('UPDATE events SET data=?,digest=? WHERE sequence=?', (json.dumps(event), digest, sequence))
+                    db.execute('UPDATE charges SET data=? WHERE id=?', (json.dumps(event['after']), row['id']))
+                anchor = json.loads(ledger.anchor.read_text()); anchor['head'] = digest; atomic_json(ledger.anchor, anchor)
+                before = len(transport.calls)
+                with self.assertRaisesRegex(ValueError, 'known charge was understated'):
+                    client.complete(MESSAGES, run_id='other', unit_id='u', phase='pre')
+                self.assertEqual(len(transport.calls), before)
+
     def test_live_factory_never_loads_keys_or_opens_network(self):
         with patch('socket.create_connection', side_effect=AssertionError('network forbidden')):
             with self.assertRaises(ExecutionBlocked): create_live_client()

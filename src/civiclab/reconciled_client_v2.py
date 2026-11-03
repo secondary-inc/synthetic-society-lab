@@ -102,9 +102,12 @@ class ReconciledFixtureClient:
             usage = response.get('usage')
             if isinstance(usage, dict) and usage.get('cost') is not None: known_cost = micros(usage['cost'])
             identity = response.get('id')
-            if isinstance(identity, str) and len(identity) <= 128 and re.fullmatch(r'gen-[0-9A-Za-z-]+', identity): generation_id = identity
-            if generation_id is None or response.get('model') != terms['model']:
+            valid_identity = isinstance(identity, str) and len(identity) <= 128 and re.fullmatch(r'gen-[0-9A-Za-z-]+', identity)
+            if not valid_identity or response.get('model') != terms['model']:
                 raise ValueError('generation/model identity unverified')
+            if any(r['id'] != receipt and r['generation_id'] == identity for r in self.ledger.snapshot()):
+                raise ExecutionBlocked('generation identity already bound to another phase; no statistics lookup')
+            generation_id = identity
             answer = visible_answer(response)
             self.ledger.transition(receipt, 'RESPONSE_SEEN', generation_id=generation_id,
                                    output_hash=canonical_hash(answer), observed_cost=known_cost)

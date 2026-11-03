@@ -183,8 +183,9 @@ class GlobalFixtureLedger:
             raise ValueError('charge terms/status mismatch')
         if row['status'] in ('STARTED', 'RESPONSE_SEEN') and row['charged'] != row['reserved']:
             raise ValueError('unsettled reservation was refunded')
-        if row['status'] in ('UNCERTAIN', 'OVERRUN') and row['charged'] < row['reserved']:
-            raise ValueError('uncertain reservation was refunded')
+        known = 0 if row['observed_cost'] is None else integer(row['observed_cost'])
+        if row['status'] in ('UNCERTAIN', 'OVERRUN') and row['charged'] < max(row['reserved'], known):
+            raise ValueError('uncertain reservation or known charge was understated')
         if row['observed_cost'] is not None:
             integer(row['observed_cost'])
             if row['status'] in ('SETTLED', 'PHASE_COMMITTED') and row['charged'] != row['observed_cost']:
@@ -221,6 +222,8 @@ class GlobalFixtureLedger:
                 if event != {'kind': 'GENESIS', 'header_hash': canonical_hash(header), 'previous': None}: raise ValueError('invalid genesis')
             else:
                 row = event['after']; self._validate_row(row); old = state.get(row['id'])
+                if row['generation_id'] is not None and any(r['id'] != row['id'] and r['generation_id'] == row['generation_id'] for r in state.values()):
+                    raise ValueError('generation identity reused across phase receipts')
                 if event['before'] != (canonical_hash(old) if old else None): raise ValueError('owner prior-state binding changed')
                 if old is None:
                     identity = phase_key(row['context'])
@@ -289,6 +292,8 @@ class GlobalFixtureLedger:
             state, anchor = self._verify(db); old = state.get(receipt)
             if old is None or status not in TRANSITIONS[old['status']]: raise ExecutionBlocked('phase transition unavailable')
             row = {**deepcopy(old), **fields, 'status': status}
+            if row['generation_id'] is not None and any(r['id'] != receipt and r['generation_id'] == row['generation_id'] for r in state.values()):
+                raise ValueError('generation identity already consumed by another phase')
             for key in ('generation_id', 'output_hash', 'billing'):
                 if old[key] is not None and row[key] != old[key]: raise ValueError('observed identity cannot change')
             if old['observed_cost'] is not None and (row['observed_cost'] is None or row['observed_cost'] < old['observed_cost']): raise ValueError('observed charge cannot decrease')
