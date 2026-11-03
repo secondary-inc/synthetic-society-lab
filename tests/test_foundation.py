@@ -74,6 +74,9 @@ class FoundationTests(unittest.TestCase):
             a.finish({"status": "PASS"})
             b.finish({"status": "PASS"})
             self.assertNotIn('"secret"', (a.path / "manifest.json").read_text())
+            environment=json.loads((a.path/'environment.json').read_text())
+            self.assertTrue(environment['core_uses_standard_library'])
+            self.assertIsInstance(environment['installed_relevant_packages'],dict)
             for path, digest in json.loads((a.path / "checksums.json").read_text()).items():
                 self.assertEqual(sha256_file(a.path / path), digest)
 

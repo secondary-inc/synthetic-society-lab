@@ -33,6 +33,11 @@ def verified_run(path):
     if 'population.json' in checks:
         pop=read('population.json')
         result['population']={k:pop[k] for k in ('diagnostics','source_hashes','confirmatory_status','mapping')}
+    if 'citizen-targets.json' in checks:
+        targets=read('citizen-targets.json')
+        result['citizen_targets']={k:targets[k] for k in ('kind','dataset','included_state_dc_rows',
+            'excluded_geographies','national_published25plus_sum','regional','targets','uncertainty',
+            'scientific_population_gate','population_fit','provenance')}
     if 'responses.json' in checks:
         # Only fictional profiles and recorded responses; no donor records.
         result['replay']=[{k:r[k] for k in ('profile_id','stimulus_id','repeat','arm','pre','post','change','request_hashes')}

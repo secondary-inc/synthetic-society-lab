@@ -14,6 +14,9 @@ def main():
     integrity.add_argument("--fixture-only", action="store_true")
     integrity.add_argument("--out", type=Path)
     commands.add_parser("modules")
+    costs=commands.add_parser('cost-plan')
+    costs.add_argument('--spec',type=Path,required=True)
+    costs.add_argument('--out',type=Path,default=Path('data/processed/planning/cost-plan.json'))
     restore=commands.add_parser('restore-inputs')
     restore.add_argument('--from',type=Path,required=True,dest='source_directory')
     restore.add_argument('--apply',action='store_true')
@@ -25,6 +28,7 @@ def main():
     gdelt = commands.add_parser('gdelt-ingest')
     gdelt.add_argument('--out', type=Path, default=Path('data/processed/gdelt/fixture.json'))
     commands.add_parser('e02-fit')
+    commands.add_parser('e02-targets')
     stimuli=commands.add_parser('e02-stimuli')
     stimuli.add_argument('action',choices=['acquire','verify'],default='verify',nargs='?')
     pilot = commands.add_parser('e02-pilot')
@@ -37,6 +41,9 @@ def main():
     commands.add_parser('e01-audit')
     historical=commands.add_parser('e01-historical')
     historical.add_argument('action',choices=['download','verify','prepare','run'])
+    selection=commands.add_parser('e01-select-fixture')
+    selection.add_argument('--fixture',type=Path,required=True)
+    selection.add_argument('--max-seconds',type=float,default=60.)
     dashboard=commands.add_parser('dashboard')
     dashboard.add_argument('--out',type=Path,default=Path('data/processed/dashboard'))
     dashboard.add_argument('--run',action='append',dest='runs',help='Select a recorded run ID; repeat to include more')
@@ -46,6 +53,13 @@ def main():
     args = parser.parse_args()
     if args.command == "modules":
         print(json.dumps(MODULES, indent=2))
+        return
+    if args.command=='cost-plan':
+        from .planning import cost_plan
+        from .common import redact
+        result=redact(cost_plan(json.loads((args.root/args.spec).read_text())))
+        atomic_json(args.root/args.out,result)
+        print(json.dumps({k:result[k] for k in ('status','call_count','total_reservation_usd','dispatch_authorized')}))
         return
     if args.command=='restore-inputs':
         from .intake import restore_inputs
@@ -82,6 +96,10 @@ def main():
         from .e02.experiment import run_population
         print(run_population(args.root))
         return
+    if args.command=='e02-targets':
+        from .e02.citizen_targets import run_targets
+        print(run_targets(args.root))
+        return
     if args.command=='e02-stimuli':
         from .e02.stimuli import acquire,verify_corpus
         print(json.dumps(acquire(args.root) if args.action=='acquire' else verify_corpus(args.root),indent=2))
@@ -104,6 +122,11 @@ def main():
             result=prepare(args.root)
             atomic_json(args.root/'data/processed/e01/prepared_historical.json',result)
             print(json.dumps({'eligible':len(result['features']),'excluded':result['exclusions']}))
+        return
+    if args.command=='e01-select-fixture':
+        from .e01.selection import run_fixture
+        frame=json.loads((args.root/args.fixture).read_text())
+        print(run_fixture(args.root,frame,max_seconds=args.max_seconds))
         return
     result = validate_sources(args.root, args.fixture_only)
     if args.out:

@@ -1,0 +1,117 @@
+{
+  "citizenship_columns": 102,
+  "config_sha256": "fdd3a55c8d8e479a67d96b2d312e8d5c2dc4029c18895e96d015696d0ecf6ae5",
+  "cost_usd_actual_or_zero": 0,
+  "education_percentage_sum_range": [
+    "99.8",
+    "100.1"
+  ],
+  "files_changed": [
+    "configs/e02_citizen_targets_v1.json",
+    "src/civiclab/e02/citizen_targets.py",
+    "tests/test_e02_citizen_targets.py",
+    "docs/E02_CITIZEN_TARGETS_V1_RUNBOOK.md",
+    "reports/E02_CITIZEN_TARGETS_V1_EVIDENCE.json",
+    "reports/E02_CITIZEN_TARGETS_V1_WORKER_RECEIPT.md"
+  ],
+  "implementation_sha256": "9ee987fd5926f86d34375fe923724a004489575a0770e8834cefeb3bd8c880b2",
+  "included_state_dc_rows": 51,
+  "max_absolute_age_discrepancy_fraction": "0.001988300046671065548706889615",
+  "national_published25plus_sum": "212109587",
+  "normalization_scale_ranges": {
+    "age": [
+      "0.9975998134093622190755922195066038828052",
+      "1.001971896554649809911459244028239196530"
+    ],
+    "education": [
+      "0.9990009990009990009990009990009990009990",
+      "1.002004008016032064128256513026052104208"
+    ]
+  },
+  "paid_calls": 0,
+  "population_fit": "NOT_RUN",
+  "preserved_support_code_sha256": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f",
+  "preserved_support_plan_sha256": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+  "preserved_v3_lock": {
+    "checks": [
+      {
+        "path": "configs/e02_analysis_plan.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_demo_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_instrument.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_official_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_population_mapping.json",
+        "status": "PASS"
+      },
+      {
+        "path": "protocols/E02_INFORMATION_EFFECTS.md",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/experiment.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/instrument.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/methods.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/population.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/stimuli.py",
+        "status": "PASS"
+      }
+    ],
+    "external_preregistration": "NOT_RUN",
+    "independent_audit": "PENDING; a hash lock is not independent scientific approval",
+    "lock_sha256": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+    "paid_execution": "BLOCKED; lock verification cannot authorize spending or credential use",
+    "status": "PASS_DEFINITION_INTEGRITY"
+  },
+  "proposal_sha256": "54f2acc1717d05f9518def9bfe874c9c90983e16f3fb0e9d6025a089b9871b52",
+  "regional_published25plus_sums": {
+    "1": "37114497",
+    "2": "45202786",
+    "3": "81487874",
+    "4": "48304430"
+  },
+  "replay_run_id": "e02-457e2e2a4e3a47eebc80e1f4a8adcd15",
+  "run_id": "e02-edf2b36e269442748f4721ef7f479876",
+  "scientific_gate": "BLOCKED; independent target arithmetic audit and separately frozen later fitting design required",
+  "source_provenance": {
+    "archive_sha256": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+    "budget_usd": 0,
+    "config_sha256": "fdd3a55c8d8e479a67d96b2d312e8d5c2dc4029c18895e96d015696d0ecf6ae5",
+    "implementation_sha256": "9ee987fd5926f86d34375fe923724a004489575a0770e8834cefeb3bd8c880b2",
+    "paid_calls": 0,
+    "required_files": {
+      "configs/e02_citizen_benchmark_acquisition.json": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+      "docs/E02_CITIZEN_FIT_PROPOSAL.md": "54f2acc1717d05f9518def9bfe874c9c90983e16f3fb0e9d6025a089b9871b52",
+      "reports/INDEPENDENT_AUDIT_E02_CITIZEN_ACQUISITION.json": "07ff755bc2ce8331887184c82a9eb92277e4b3af7c9d6f241a5ba61618b69972",
+      "reports/INDEPENDENT_AUDIT_E02_CITIZEN_FIT_METHODS.json": "a2f78aa6c5dbf3bec756187d8bc42506a176b8c22ed7673d09295db30e50b082"
+    },
+    "stage": "citizen25plus-target-diagnostic"
+  },
+  "status": "TARGET_DIAGNOSTIC_RECORDED_PENDING_INDEPENDENT_ARITHMETIC_AUDIT",
+  "target_aggregate_sha256": "8b73b98bfa8cc767f2df14375cbb444a81b175e087ceac08d4b8931d714c42ad",
+  "task_id": "E02-CITIZEN25PLUS-TARGETS-v1",
+  "tests_run_and_results": "31 E02 tests PASS, including6 new target tests; real target/replay equality verified",
+  "uncertainty": "Componentwise rounding bounds are not simultaneous feasible margin vectors or statistical confidence intervals. Original90percentMOEs retained; covariance-adjusted target uncertainty NOT_ESTIMATED."
+}

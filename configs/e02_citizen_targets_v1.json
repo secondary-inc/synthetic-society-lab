@@ -1,0 +1,63 @@
+{
+  "age_groups": {
+    "25-44": [
+      "007"
+    ],
+    "45-64": [
+      "008",
+      "009"
+    ],
+    "65+": [
+      "010",
+      "011",
+      "012"
+    ]
+  },
+  "approved_budget_usd": 0,
+  "approved_scope": "Independent methods acceptance for target-only implementation; arithmetic audit still required before any fitting",
+  "columns": [
+    "C02",
+    "C04"
+  ],
+  "count_rows": {
+    "age25plus": "038",
+    "all_ages": "001"
+  },
+  "dataset": "ACSST5Y2024.S0501",
+  "decimal_precision": 40,
+  "education_groups": {
+    "BA_PLUS": [
+      "042",
+      "043"
+    ],
+    "HS_OR_LESS": [
+      "039",
+      "040"
+    ],
+    "SOME_COLLEGE": [
+      "041"
+    ]
+  },
+  "geography_inclusion": "Exactly50states+DC using existing FIPS_REGION; PRpreserved in acquisition but explicitly excluded from derived target",
+  "normalization": "Within each state and citizenship column, anchor age and education composition separately to published row038, then sum C02+C04 and states to regions",
+  "paid_calls": 0,
+  "population_fit": "BLOCKED_PENDING_SEPARATE_TARGET_ARITHMETIC_AUDIT",
+  "protocol_id": "E02-CITIZEN25PLUS-TARGETS-v1",
+  "required_files": {
+    "configs/e02_citizen_benchmark_acquisition.json": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+    "docs/E02_CITIZEN_FIT_PROPOSAL.md": "54f2acc1717d05f9518def9bfe874c9c90983e16f3fb0e9d6025a089b9871b52",
+    "reports/INDEPENDENT_AUDIT_E02_CITIZEN_ACQUISITION.json": "07ff755bc2ce8331887184c82a9eb92277e4b3af7c9d6f241a5ba61618b69972",
+    "reports/INDEPENDENT_AUDIT_E02_CITIZEN_FIT_METHODS.json": "a2f78aa6c5dbf3bec756187d8bc42506a176b8c22ed7673d09295db30e50b082"
+  },
+  "rounding": {
+    "age_count_tolerance_persons": "1",
+    "age_sum_tolerance_fraction_of_total": "0.003",
+    "arithmetic_tolerance_proportion": "1e-10",
+    "count_half_width_persons": "0.5",
+    "education_sum_tolerance_pp": "0.25",
+    "percentage_half_width_pp": "0.05"
+  },
+  "schema_version": 1,
+  "stage": "TARGET_CONVERSION_ONLY_NO_FITTING",
+  "uncertainty": "Componentwise rounding-only bounds are not jointly attainable margin vectors or90percentconfidence intervals; retain source90percentMOEs without derived covariance claims"
+}

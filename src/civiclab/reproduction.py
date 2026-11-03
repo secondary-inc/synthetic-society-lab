@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import zipfile
+import tomllib
 from .common import canonical_bytes, code_identity, sha256_file
 from .dashboard import verified_run
 
@@ -47,13 +48,22 @@ def build_package(root, output, run_ids):
         content=path.read_bytes()
         if SECRET.search(content):raise ValueError('credential-like value; package refused')
         payloads[name]=content
+    runtime_lock='configs/runtime_python312_20261103.txt'
+    if runtime_lock in payloads:
+        reproduction=['python3.12 -m venv .venv',
+                      '.venv/bin/python -m pip install -r '+runtime_lock,
+                      '.venv/bin/python -m pip install -e . --no-deps']
+    else:
+        project=tomllib.loads(payloads.get('pyproject.toml',b'').decode())
+        extra=project.get('project',{}).get('optional-dependencies',{}).get('selection')
+        reproduction=['python3.11 -m venv .venv',
+                      ".venv/bin/python -m pip install -e '.[selection]'" if extra else '.venv/bin/python -m pip install -e .']
+    reproduction+=['.venv/bin/python -m unittest discover -s tests -v',
+                   '.venv/bin/civiclab validate-sources --fixture-only','.venv/bin/civiclab dashboard']
     manifest={'schema_version':1,'audience':'OWNER_REVIEW_ONLY','publication_authorized':False,
               'code':initial_code,'run_ids':run_ids,
               'files':{name:hashlib.sha256(content).hexdigest() for name,content in payloads.items()},
-              'reproduction':['python3.11 -m venv .venv','.venv/bin/python -m pip install -e .',
-                              '.venv/bin/python -m unittest discover -s tests -v',
-                              '.venv/bin/civiclab validate-sources --fixture-only',
-                              '.venv/bin/civiclab dashboard'],
+              'reproduction':reproduction,
               'limits':['Raw ANES/ACS/election inputs excluded; reacquire registered bytes before full source reruns.',
                         'Bundled MOCK/DEMO runs are engineering data, not scientific model effects.',
                         'Review independent audit/status before interpreting any real retrospective run.',

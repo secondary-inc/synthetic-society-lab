@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "published_at_utc",
+    "amendment_status",
+    "first_observed_at_utc",
+    "sha256",
+    "retrieved_at_utc",
+    "revision",
+    "url",
+    "source_id",
+    "reuse_status",
+    "asof_status",
+    "source_type"
+  ],
+  "properties": {
+    "published_at_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "amendment_status": {
+      "const": "RESOLVED_FIXTURE"
+    },
+    "first_observed_at_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "retrieved_at_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^fixture://DEMO/"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reuse_status": {
+      "const": "FIXTURE_AUTHORED"
+    },
+    "asof_status": {
+      "const": "VERIFIED_FIXTURE"
+    },
+    "source_type": {
+      "enum": [
+        "RATINGS",
+        "BALLOT",
+        "SEAT_PARTY"
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "e01_selection_source_fixture_v1",
+  "description": "Synthetic source receipt only. No permission or real-source acceptance is established by flags; real selection denied separately."
+}

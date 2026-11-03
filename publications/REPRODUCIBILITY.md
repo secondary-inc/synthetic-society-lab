@@ -4,11 +4,11 @@ This package is for local owner review. It does not authorize publication, paid 
 
 ## Environment
 
-Use Python 3.11 or 3.12 on macOS/Linux. Core execution uses the standard library. Static figures use the optional pinned Matplotlib extra; official election PDF parsing uses the pinned sources extra:
+Use Python 3.11 or 3.12 on macOS/Linux. Core execution uses the standard library. New E01 selector fixtures additionally use the pinned optional SciPy selection extra; install it to exercise the actual solver. Older frozen archives document their own dependency/test snapshot. Static figures use the optional pinned Matplotlib extra; official election PDF parsing uses the pinned sources extra:
 
 ```bash
 python3.11 -m venv .venv
-.venv/bin/python -m pip install -e .
+.venv/bin/python -m pip install -e '.[selection]'
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/civiclab validate-sources --fixture-only
 # Optional research figures:
@@ -16,6 +16,8 @@ python3.11 -m venv .venv
 ```
 
 The actual local `.env` and raw data are excluded. Do not paste secrets into these documents. Download/import registered source bytes before running full-source validation, real population fitting or real election workflows. The source inventory and module-specific importer documentation state what can be reacquired; unresolved legacy-source acquisition paths remain a completion blocker.
+
+For the observed Python 3.12 research environment, `configs/runtime_python312_20261103.txt` pins the installed optional tools and their transitive dependencies. In a fresh Python 3.12 environment, install that file with `python -m pip install -r configs/runtime_python312_20261103.txt`, then install this project with `python -m pip install -e . --no-deps`. The lock is not for Python 3.11: its NumPy 2.5 requires Python 3.12+. The Python 3.11 CI job instead resolves compatible dependencies from the pinned SciPy extra and must independently pass the same selector fixtures. Run artifacts record the actual Python and relevant dependency versions; older sealed runs preserve their older environment records.
 
 ## Recorded outputs
 

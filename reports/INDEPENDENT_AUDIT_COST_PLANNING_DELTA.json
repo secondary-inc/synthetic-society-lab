@@ -1,0 +1,82 @@
+{
+  "audited_at_utc": "2026-11-03T11:05:00.873049+00:00",
+  "auditor_role": "independent_auditor",
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "tests.test_planning",
+        "tests.test_budget",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stderr": "test_bad_or_unfrozen_inputs_do_not_produce_an_executable_plan (tests.test_planning.PlanningTests.test_bad_or_unfrozen_inputs_do_not_produce_an_executable_plan) ... ok\ntest_matches_real_ledger_per_call_rounding_without_dispatch (tests.test_planning.PlanningTests.test_matches_real_ledger_per_call_rounding_without_dispatch) ... ok\ntest_actual_overrun_halts_future_calls (tests.test_budget.BudgetTests.test_actual_overrun_halts_future_calls) ... ok\ntest_cancellation_preserves_reservation_and_halts_then_propagates (tests.test_budget.BudgetTests.test_cancellation_preserves_reservation_and_halts_then_propagates) ... ok\ntest_concurrent_reservations_and_restart_cannot_exceed_cap (tests.test_budget.BudgetTests.test_concurrent_reservations_and_restart_cannot_exceed_cap) ... ok\ntest_default_blocks_before_transport (tests.test_budget.BudgetTests.test_default_blocks_before_transport) ... ok\ntest_known_billing_not_lost_when_output_is_invalid (tests.test_budget.BudgetTests.test_known_billing_not_lost_when_output_is_invalid) ... ok\ntest_pinned_response_and_accounting (tests.test_budget.BudgetTests.test_pinned_response_and_accounting) ... ok\ntest_string_flags_do_not_authorize_paid_execution (tests.test_budget.BudgetTests.test_string_flags_do_not_authorize_paid_execution) ... ok\ntest_uncertain_call_halts_without_refund (tests.test_budget.BudgetTests.test_uncertain_call_halts_without_refund) ... ok\ntest_wrong_provider_halts_and_unknown_prices_block (tests.test_budget.BudgetTests.test_wrong_provider_halts_and_unknown_prices_block) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.034s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "tests.test_foundation",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stderr": "test_declared_module_source_cannot_be_silently_skipped (tests.test_foundation.FoundationTests.test_declared_module_source_cannot_be_silently_skipped) ... ok\ntest_fixture_and_tamper (tests.test_foundation.FoundationTests.test_fixture_and_tamper) ... ok\ntest_gate_rejects_mismatched_conditions_and_swarm_compute (tests.test_foundation.FoundationTests.test_gate_rejects_mismatched_conditions_and_swarm_compute) ... ok\ntest_interrupted_finalization_recovers_without_overwriting_summary (tests.test_foundation.FoundationTests.test_interrupted_finalization_recovers_without_overwriting_summary) ... ok\ntest_inventory_cannot_escape (tests.test_foundation.FoundationTests.test_inventory_cannot_escape) ... ok\ntest_run_immutable_reproducible_and_redacted (tests.test_foundation.FoundationTests.test_run_immutable_reproducible_and_redacted) ... ok\ntest_run_lock_and_resume_code_config_guards (tests.test_foundation.FoundationTests.test_run_lock_and_resume_code_config_guards) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.099s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "cost_usd": 0,
+  "files": {
+    "docs/COST_PLANNING.md": "56e1fcf307f7e17e2b70c050adb4be1ddb2e8be4519ac9d71325f13d15bf84c1",
+    "src/civiclab/cli.py": "50c95ce03acff89a1429688cd678a5e48d65438554d4ce1a7f568c86ba8a575c",
+    "src/civiclab/common.py": "7ba018f925a5c794c00e00ef0ae20cff5372f527c5da61cdcaaf5416de1fb81f",
+    "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "src/civiclab/planning.py": "8c7f95a89be13686715b4758b7515dc23b6e7313535d3654eeba502cebbabe25",
+    "tests/test_budget.py": "b123bfc05534b5373cacab2e9214de97d8f5fec6488229788580eded8f31f74d",
+    "tests/test_foundation.py": "a3dba8432f85b3f01b26efe6782aba5dc5a4ef6420622604aeb0ae50ae7e9877",
+    "tests/test_planning.py": "91d0253a081442d807a7996e6cd81f3fba8230932b278074a28f72169e5d8b84"
+  },
+  "fixture_ledger_checks": [
+    {
+      "actual_fixture_charge_microusd": 0,
+      "module": "E01",
+      "reserved_microusd": 1,
+      "status": "SETTLED"
+    },
+    {
+      "actual_fixture_charge_microusd": 0,
+      "module": "E02",
+      "reserved_microusd": 1,
+      "status": "SETTLED"
+    }
+  ],
+  "independent_cost_envelopes": [
+    {
+      "bound": 2131,
+      "bytes": 83,
+      "microusd": 1
+    },
+    {
+      "bound": 1068,
+      "bytes": 44,
+      "microusd": 1
+    }
+  ],
+  "limits": [
+    "Allprices/providers/modelnames/credentials/charges hereareconspicuousfictionalfixtures; no livepricing or billingverified.",
+    "Planner and clientsharebounds; per-callmicroceil sums verified independently.",
+    "Freshofficial-domain metadata doesnotauthenticaterates; explicitownerbudget/rotatedcredentials/protocolreview remainrequired.",
+    "Adaptivepostsurveyrequestsneedseparatelyreviewedupperenvelope/stagedplanning; no unknownanswersinvented.",
+    "Doesnotrenewoldarchive/currentwholecheckout certification oracceptnewselector/scientificmodules."
+  ],
+  "live_authorization": "BLOCKED_ZERO_APPROVED_CAP",
+  "metadata_review": "NewRunStore metadata distinguishes standard-library core and installed relevant optional-package versions; priorsealedmetadata leftunchanged. Foundationtests cover schema/immutability/resume. Installed versions are not a claim everypackagewasused.",
+  "paid_calls": 0,
+  "planner_approved_policy_enabled": false,
+  "planner_dispatch_authorized": false,
+  "schema_version": 1,
+  "status": "PASS_REVIEW_ONLY_PLANNER_AND_MOCKED_ACCOUNTING_DELTA"
+}

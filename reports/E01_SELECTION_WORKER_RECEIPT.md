@@ -1,0 +1,21 @@
+# E01 selector worker receipt
+
+TASK_ID: E01_REVIEWED_SELECTOR_FIXTURE_IMPLEMENTATION_V1
+
+FILES_CHANGED: New `src/civiclab/e01/selection.py`, `configs/e01_selection_v1.json`, `configs/e01_selection_schema_v1.json`, `configs/e01_selection_source_schema_v1.json`, `tests/test_e01_selection.py`, `docs/E01_SELECTION_IMPLEMENTATION.md`, `reports/E01_SELECTION_EVIDENCE.json`, this receipt. No audited historical code/config/protocol or selection proposal edited. Lead added optional dependency/CI wiring separately.
+
+OUTPUT_ARTIFACTS: Local synthetic 435H/33S input under ignored `data/processed/e01/selection_435H_33S.fixture.json`; recorded runs `e01-6a67d910c8b6460b88c08adda45c5e90`, `e01-a6da256293dc48ffb56feaab3d1d7125` under `data/processed/runs/`. Result stores all ranks/counts/objectives/optimality receipts and visibly labels DEMO; no real Cook table copied.
+
+REPRODUCTION_COMMANDS: Install exact optional `.[selection]` SciPy1.16.3. `PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_selection tests.test_e01 tests.test_isolation -v`. Generate authored input with `tests.test_e01_selection.fixture(435,33)`, then `PYTHONPATH=src .venv/bin/python -m civiclab.e01.selection PATH --root "$PWD" --max-seconds 60`. See implementation runbook for API details.
+
+TESTS_RUN_AND_RESULTS: 40 tests PASS locally (15 new selector tests, 25 existing E01/isolation); exhaustive independent-algorithm reference for small House/Senate fixtures agrees exactly; randomized and repeated-state fixtures, explicit shortages/OTHER/deep cases and rejection guards pass. Full-size invented fixture returns 24H/8S broad and 4H/2S deep in 65 optimal stages, zero reported gaps. Replay selection hash matches `d24465e4e40aa88adb5d3ff7bd2e76348659d71dff484346769549866e60c036`. First recorded run including logs ~0.32s locally. An initial run-logging test exposed unsupported RunStore kind DEMO; changed to valid MOCK with explicit DEMO role/result labels and reran passing. Nonfinite dual-bound refusal was added and tested. Worker execution is not independent certification; audit pending.
+
+SOURCE_DATA_AND_LICENSE_NOTES: Authored synthetic fixtures only. Optional dependency version verified via official PyPI1.16.3 metadata and official tagged SciPy source; SciPy runtime1.16.3 records bundledHiGHS1.8.0. No Cook ingestion permission inferred, no source substitution, no 2026 returns or actual sample. Methods approval pins unchanged proposal hash; tested against actual document/config.
+
+COST_USD_ACTUAL_OR_ZERO: 0; no inference/model calls, budget changes, API charges or external publication.
+
+RISKS_AND_LIMITATIONS: Exact ordered integer MILP objectives and bit chunks avoid heuristic weighted-rank approximations; every stage must be numerically optimal, integer feasible, with matching finite primal/dual evidence. This is numerical optimization evidence, not a formal rational proof. Failures/timeouts refuse success and accepted fixture configs are retained. Runtime/node counts can vary. Deliberate timeout run `e01-32a3512931fc47d98b77a68cc3149158` retains a sealed failure artifact and summary; all three final runs passed checksum verification. Stage started/optimal receipts are streamed to events so a later failure preserves earlier solver evidence. Source metadata/coverage is fictional and strict schema cannot authenticate real evidence. Public select_fixture/run_fixture reject REAL regardless of flags, but trusted private Python helpers are not an adversarial security boundary. Comparison admission helper covers IDs/cutoff/status, not scientific evaluator or equal-compute enforcement. Exhaustive reference was written by implementing worker, not separate auditor; no self-certification.
+
+UNRESOLVED_BLOCKERS: Independent implementation/solver/schema/oracle audit; complete permitted authenticated as-of Cook universe, official ballot/amendment evidence and original E01 historical/crosswalk/holdout/comparator gates. Actual selection remains disabled. Remote CI not observed by worker.
+
+NEXT_UNBLOCKED_TASK: Separate auditor tests implementation against approved methods, adversarial inputs and source admission; lead can add shared CLI hook once reviewed. No real source collection or sample selection without separate accepted evidence and authority.

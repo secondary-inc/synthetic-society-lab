@@ -11,6 +11,7 @@ import sys
 import platform
 import tempfile
 import uuid
+from importlib.metadata import version, PackageNotFoundError
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -76,7 +77,7 @@ def code_identity(root):
     files = {str(p.relative_to(root)): sha256_file(p)
              for folder in ("src", "protocols", "configs")
              for p in sorted((root / folder).rglob("*"))
-             if p.is_file() and p.suffix in (".py", ".json", ".md", ".csv", ".html")}
+             if p.is_file() and p.suffix in (".py", ".json", ".md", ".csv", ".html", ".txt", ".toml", ".yml")}
     if (root/'pyproject.toml').exists():
         files['pyproject.toml']=sha256_file(root/'pyproject.toml')
     return {"git_sha": revision, "dirty": dirty, "source_tree_sha256": canonical_hash(files)}
@@ -101,8 +102,14 @@ class RunStore:
         self.write("manifest.json", {"schema_version": 1, "run_id": self.run_id,
                    "experiment_id": self.experiment_id, "module": module, "kind": kind,
                    "started_at_utc": utc_now(), "code": code, "config": config})
+        optional_versions={}
+        for package in ('synthetic-society-lab','pypdf','matplotlib','numpy','scipy'):
+            try:optional_versions[package]=version(package)
+            except PackageNotFoundError:pass
         self.write('environment.json',{'python':sys.version,'platform':platform.platform(),
-                                      'runtime_dependencies':'Python standard library only'})
+                                      'core_uses_standard_library':True,
+                                      'installed_relevant_packages':optional_versions,
+                                      'runtime_dependencies':'Standard-library core; optional source, figure and selection dependencies recorded separately when installed.'})
         self.event("started", kind_label=kind)
 
     def write(self, name, value):

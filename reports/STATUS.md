@@ -8,6 +8,20 @@ The blueprint, November 3 progress audit and restored `AUTONOMOUS_RESEARCH_ORCHE
 
 `AGENTS.md` was absent and added from owner constraints. The orchestration source was recovered from two identical Downloads copies (SHA-256 `a6848545d0c322de22f350e1452a93925b84270941f2aa113f44f24cc9c086dd`). No original completion criterion is waived for partial progress.
 
+## Current continuation — new implementation stage
+
+The preceding goal turn made substantive progress: independently restored archive, accepted descriptive results, new source acquisition, reviewed methods proposals and local commits. It was not a no-progress or blocked turn. The full goal remains active.
+
+Since that archive, independently reviewed methods permitted target-only citizen conversion and fixture-only E01 selection. New target runs `e02-edf2b36e269442748f4721ef7f479876` and `e02-457e2e2a4e3a47eebc80e1f4a8adcd15` retain 51 state/DC inputs and explicit PR exclusion. Independent arithmetic review recomputed 9,284 numeric fields at 80-digit precision, confirmed the published25+ anchor sum 212,109,587 and accepted only target arithmetic (`INDEPENDENT_AUDIT_E02_CITIZEN_TARGETS_V1.json`). No new population fit occurred. A separate matched2×2/feasible-rounding comparison proposal awaits methods review before fitting.
+
+E01's new exact selector uses pinned SciPy/HiGHS, ordered integer objectives and deterministic hash tie-breaking. Worker fixtures cover exhaustive-reference comparisons and a 435-House/33-Senate invented frame; final success runs `e01-6a67d910c8b6460b88c08adda45c5e90` / `e01-a6da256293dc48ffb56feaab3d1d7125`, plus a sealed deliberate-failure run. Independent code audit is pending. Actual 2026 frames remain hard-denied; no ratings, ballot facts or 2026 returns are invented by these fixtures.
+
+The review-only cost planner shares the adapter's call envelope and per-call microdollar rounding. Independent delta review passed; no current real price or executable model proposal is asserted. New run environment records distinguish the standard-library core from installed optional dependencies. The exact observed Python3.12 optional environment is pinned separately; Python3.11 compatibility uses the CI matrix and cannot consume the Python3.12 NumPy lock.
+
+The lead's integrated suite passes **104 tests**, and full local source validation still passes **93 checks**. Historical archive acceptance remains **81 tests / 268 members / 11 runs / 111 artifact hashes** for its exact bytes. Current source changes intentionally invalidate broader old audit receipts; stale hashes are never renewed by the implementing lead. The generated completion dashboard can therefore show fewer current acceptances while new independent reviews proceed. This is not full scientific completion.
+
+Cook's ordinary House page is publicly visible, but permission for automated research collection/storage and as-of evidence were not established; collection stopped at restrictive terms. See `E01_COOK_ACCESS_FEASIBILITY.md`. Permitted alternative primary-source ratings routes are being investigated before treating Cook licensing as the only possible route. No source-policy substitution or race selection has been adopted.
+
 ## Verified engineering progress
 
 - Installable Python package, four module namespaces, source validation, isolated jobs, immutable run ledgers and recorded-run viewer exist. Latest lead checkout: **81 tests PASS**. Independent current checkout: **81 tests and 93 local source checks PASS**. Independent earlier frozen-package execution: **65 included tests PASS**. They are different snapshots.

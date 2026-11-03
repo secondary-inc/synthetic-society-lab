@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "status": "FIXTURE_IMPLEMENTATION_ONLY_REAL_BLOCKED",
+  "algorithm": "E01_2026_SELECTION_PROPOSAL_v1",
+  "seed": 20261103,
+  "cutoff": "2026-11-03T04:59:59Z",
+  "proposal_path": "docs/E01_2026_SELECTION_PROPOSAL.md",
+  "proposal_sha256": "2460f9114b507b5e573bb751af19b9b0d5ca63c7752cc9f49ffef75da8aa6941",
+  "methods_approval": "reports/INDEPENDENT_AUDIT_E01_SELECTION_METHODS.json",
+  "solver": {
+    "scipy": "1.16.3",
+    "tie_chunk_bits": 10,
+    "mip_rel_gap": 0,
+    "per_solve_max_seconds": 10,
+    "default_total_max_seconds": 60,
+    "absolute_total_max_seconds": 120
+  },
+  "quota_by_office": {
+    "HOUSE": {
+      "TOSS_UP": {
+        "D": 4,
+        "R": 4,
+        "OTHER": 0
+      },
+      "LEAN": {
+        "D": 4,
+        "R": 4,
+        "OTHER": 0
+      },
+      "LIKELY": {
+        "D": 2,
+        "R": 2,
+        "OTHER": 0
+      },
+      "SOLID": {
+        "D": 2,
+        "R": 2,
+        "OTHER": 0
+      }
+    },
+    "SENATE": {
+      "TOSS_UP": {
+        "D": 1,
+        "R": 1,
+        "OTHER": 0
+      },
+      "LEAN": {
+        "D": 1,
+        "R": 1,
+        "OTHER": 0
+      },
+      "LIKELY": {
+        "D": 1,
+        "R": 1,
+        "OTHER": 0
+      },
+      "SOLID": {
+        "D": 1,
+        "R": 1,
+        "OTHER": 0
+      }
+    }
+  },
+  "region_by_state": {
+    "CT": "NORTHEAST",
+    "ME": "NORTHEAST",
+    "MA": "NORTHEAST",
+    "NH": "NORTHEAST",
+    "RI": "NORTHEAST",
+    "VT": "NORTHEAST",
+    "NJ": "NORTHEAST",
+    "NY": "NORTHEAST",
+    "PA": "NORTHEAST",
+    "IN": "MIDWEST",
+    "IL": "MIDWEST",
+    "MI": "MIDWEST",
+    "OH": "MIDWEST",
+    "WI": "MIDWEST",
+    "IA": "MIDWEST",
+    "KS": "MIDWEST",
+    "MN": "MIDWEST",
+    "MO": "MIDWEST",
+    "NE": "MIDWEST",
+    "ND": "MIDWEST",
+    "SD": "MIDWEST",
+    "DE": "SOUTH",
+    "FL": "SOUTH",
+    "GA": "SOUTH",
+    "MD": "SOUTH",
+    "NC": "SOUTH",
+    "SC": "SOUTH",
+    "VA": "SOUTH",
+    "DC": "SOUTH",
+    "WV": "SOUTH",
+    "AL": "SOUTH",
+    "KY": "SOUTH",
+    "MS": "SOUTH",
+    "TN": "SOUTH",
+    "AR": "SOUTH",
+    "LA": "SOUTH",
+    "OK": "SOUTH",
+    "TX": "SOUTH",
+    "AZ": "WEST",
+    "CO": "WEST",
+    "ID": "WEST",
+    "MT": "WEST",
+    "NV": "WEST",
+    "NM": "WEST",
+    "UT": "WEST",
+    "WY": "WEST",
+    "AK": "WEST",
+    "CA": "WEST",
+    "HI": "WEST",
+    "OR": "WEST",
+    "WA": "WEST"
+  },
+  "real_selection": "DENIED_REGARDLESS_OF_FLAGS",
+  "comparison_rule": "same fixed race IDs and cutoff; missing/failed method blocks intended full-set comparison; no replacement"
+}

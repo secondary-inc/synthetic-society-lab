@@ -20,7 +20,7 @@ Research project exploring whether demographic grounding, information exposure, 
 
 ## Implemented offline laboratory
 
-One installable, standard-library-only Python project contains four module namespaces. E02 and E01 have tested engineering pipelines; E03 (Synthetic City) and E04 (Government AI Reliability) have separate deferred protocols and blocking preflights. Python 3.11+ on macOS/Linux is supported; run locking uses POSIX file locks.
+One installable Python project with a standard-library core contains four module namespaces. E02 and E01 have tested engineering pipelines; E03 (Synthetic City) and E04 (Government AI Reliability) have separate deferred protocols and blocking preflights. Python 3.11+ on macOS/Linux is supported; run locking uses POSIX file locks.
 
 - Shared infrastructure: automated source-byte verification, GDELT fixture ingestion, immutable checksummed run artifacts, JSONL events, environment/code provenance, SQLite job checkpoints and concurrency-safe spending reservations.
 - E02: versioned party-thermometer instrument, ANES weighted joint-cell/ACS calibration, diagnostics, fictional profiles, content-matched randomized treatments, before/after scoring, crossed bootstrap and reproducible mocked pilot.
@@ -33,7 +33,7 @@ Read [current status](reports/STATUS.md), [initial implementation evidence](repo
 
 ```bash
 python3.11 -m venv .venv
-.venv/bin/python -m pip install -e .
+.venv/bin/python -m pip install -e '.[selection]'
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/civiclab modules
 .venv/bin/civiclab validate-sources --fixture-only
@@ -91,3 +91,16 @@ The [paper draft](publications/TECHNICAL_PAPER_DRAFT.md), [blog draft](publicati
 ```
 
 E01's `download` action and E02's `acquire` action fetch only their documented public sources. The local restore command verifies registered hashes and refuses changed existing files; it does not prove upstream authenticity or legal reuse. The full source-reacquisition and remote-CI gates remain separate requirements.
+
+
+The optional `selection` extra pins SciPy for the exact E01 fixture selector; CI installs it so solver checks do not silently skip. Actual 2026 selection remains blocked until a complete permitted as-of ratings/ballot frame passes independent review. Source acquisition permission is separate from public page visibility.
+
+The new citizen-target stage is separate from population fitting:
+
+```bash
+.venv/bin/civiclab e02-targets
+```
+
+It records approximate normalized ACS citizen25+ targets, original MOEs, rounding bounds and source/review lineage. Independent arithmetic acceptance is required before any new fit. Prior v3 runs and resident-calibrated models remain unchanged. See [the target runbook](docs/E02_CITIZEN_TARGETS_V1_RUNBOOK.md).
+
+[Cost planning](docs/COST_PLANNING.md) uses the same conservative request envelope and per-call reservation rounding as the adapter. `civiclab cost-plan --spec PATH` produces a review-only estimate for exact frozen calls; it never loads credentials, dispatches requests or authorizes spend. No real priced run proposal is accepted yet.

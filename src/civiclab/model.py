@@ -135,6 +135,21 @@ def network_transport(payload, api_key):
     return json.loads(raw)
 
 
+def call_envelope(messages, max_tokens=512):
+    """The exact conservative input/output envelope used before paid dispatch."""
+    if not isinstance(max_tokens,int) or isinstance(max_tokens,bool) or not 1<=max_tokens<=4096:
+        raise ExecutionBlocked('invalid output ceiling')
+    if not isinstance(messages,list) or not messages or any(
+        not isinstance(m,dict) or set(m)!={'role','content'} or
+        m['role'] not in ('system','user','assistant') or not isinstance(m['content'],str)
+        for m in messages):
+        raise ExecutionBlocked('text-only messages required')
+    encoded=json.dumps(messages,ensure_ascii=False).encode()
+    if len(encoded)>100_000:raise ExecutionBlocked('input exceeds byte ceiling')
+    return {'input_token_bound':len(encoded)+1024*len(messages),'max_tokens':max_tokens,
+            'request_hash':canonical_hash(messages),'encoded_message_bytes':len(encoded)}
+
+
 class OpenRouter:
     def __init__(self, ledger, price, api_key="", transport=network_transport):
         self.ledger, self.price, self.api_key, self.transport = ledger, price, api_key, transport
@@ -143,15 +158,8 @@ class OpenRouter:
         self.price.validate()
         if not self.api_key:
             raise ExecutionBlocked("local OpenRouter credential missing")
-        if not isinstance(max_tokens, int) or isinstance(max_tokens, bool) or not 1 <= max_tokens <= 4096:
-            raise ExecutionBlocked("invalid output ceiling")
-        if not messages or any(set(m) != {"role", "content"} or m["role"] not in ("system", "user", "assistant") or not isinstance(m["content"], str) for m in messages):
-            raise ExecutionBlocked("text-only messages required")
-        encoded = json.dumps(messages, ensure_ascii=False).encode()
-        if len(encoded) > 100_000:
-            raise ExecutionBlocked("input exceeds byte ceiling")
-        # Deliberately conservative byte upper bound plus message framing allowance.
-        input_bound = len(encoded) + 1024 * len(messages)
+        envelope=call_envelope(messages,max_tokens)
+        input_bound=envelope['input_token_bound']
         estimate = Decimal(input_bound) * Decimal(self.price.input_usd_per_token) + Decimal(max_tokens) * Decimal(self.price.output_usd_per_token)
         receipt = self.ledger.reserve(module, estimate)
         self.ledger.record(receipt,{'model':self.price.model,'requested_provider':self.price.provider,

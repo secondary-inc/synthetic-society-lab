@@ -1,0 +1,50 @@
+{
+  "all_normalized_bounds_and_common_mass_checks": "PASS",
+  "audited_at_utc": "2026-11-03T11:06:15.046409+00:00",
+  "auditor_role": "independent_auditor",
+  "citizenship_columns": 102,
+  "cost_usd": 0,
+  "files": {
+    "configs/e02_citizen_targets_v1.json": "fdd3a55c8d8e479a67d96b2d312e8d5c2dc4029c18895e96d015696d0ecf6ae5",
+    "docs/E02_CITIZEN_TARGETS_V1_RUNBOOK.md": "c46271b951021ed68b597a9e9c0a6f9d4b517692aed0dc44abe580b409653624",
+    "reports/E02_CITIZEN_TARGETS_V1_EVIDENCE.json": "cb3bd5d438dd78793751deae7ebe732619803503e2f0b733208267496bfde015",
+    "src/civiclab/e02/citizen_targets.py": "9ee987fd5926f86d34375fe923724a004489575a0770e8834cefeb3bd8c880b2",
+    "tests/test_e02_citizen_targets.py": "15181a142c7db9a9ee8fe32c09eed71fd634d0dddc17979423058836b092bbea"
+  },
+  "independent_hand_fixture": "T1000,N601 with rawage25+600 normalizes25-44to300.5; education240.4/150.25/210.35, not roundedintegerpublishedcounts.",
+  "independent_method": "RawpinnedZIP -> independent80precision Decimal formulas; no converter/scorer imported for realdata recomputation. Converter imported only for separate handfixture.",
+  "max_absolute_age_discrepancy_fraction": "0.0019883000466710655487068896148832418687738384537393179587041537248338349131757246",
+  "maximum_absolute_error_vs80precision": "1.5935429289379278549503567277941898059450E-32",
+  "national_published25plus_sum": "212109587",
+  "next_gate": "Separate versioned/frozen matched2x2 model/target comparison and feasible rounding sensitivity design must be independently reviewed before fitting. No fit authorized merely by target arithmetic PASS.",
+  "numeric_fields_independently_compared": 9284,
+  "original_population_gate": "BLOCKED: transport,coverage,independentvalidation andsyntheticbehavior unestablished.",
+  "paid_calls": 0,
+  "regional_published25plus_sums": {
+    "1": "37114497",
+    "2": "45202786",
+    "3": "81487874",
+    "4": "48304430"
+  },
+  "replay_targets_bytes_identical": true,
+  "run_ledgers": [
+    {
+      "artifacts": 6,
+      "checksums_sha256": "425c3561c392f27506c047fd068419714d72adeac43585f2c281fd4c03034639",
+      "run_id": "e02-edf2b36e269442748f4721ef7f479876"
+    },
+    {
+      "artifacts": 6,
+      "checksums_sha256": "cdc58218ea9ae2ef6460a075336a261021428c009748b4e146f2a7340f899b3a",
+      "run_id": "e02-457e2e2a4e3a47eebc80e1f4a8adcd15"
+    }
+  ],
+  "schema_version": 1,
+  "source_estimates_and_original_moes_preserved": true,
+  "state_dc_rows": 51,
+  "status": "PASS_TARGET_ARITHMETIC_ONLY",
+  "test_command": ".venv/bin/python -m unittest tests.test_e02_citizen_targets -v",
+  "test_exit_code": 0,
+  "test_stderr": "test_declared_normalization_and_rounding_boundary (tests.test_e02_citizen_targets.CitizenTargetTests.test_declared_normalization_and_rounding_boundary) ... ok\ntest_full_fixture_archive_replay_and_source_byte_tamper (tests.test_e02_citizen_targets.CitizenTargetTests.test_full_fixture_archive_replay_and_source_byte_tamper) ... ok\ntest_geography_native_naturalized_and_region_mass (tests.test_e02_citizen_targets.CitizenTargetTests.test_geography_native_naturalized_and_region_mass) ... ok\ntest_hand_denominators_recodes_and_published_mass (tests.test_e02_citizen_targets.CitizenTargetTests.test_hand_denominators_recodes_and_published_mass) ... ok\ntest_invalid_symbols_counts_mapping_and_moes_rejected (tests.test_e02_citizen_targets.CitizenTargetTests.test_invalid_symbols_counts_mapping_and_moes_rejected) ... ok\ntest_source_proposal_tamper_is_preserved_as_failed_run (tests.test_e02_citizen_targets.CitizenTargetTests.test_source_proposal_tamper_is_preserved_as_failed_run) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.138s\n\nOK\n",
+  "test_stdout": ""
+}

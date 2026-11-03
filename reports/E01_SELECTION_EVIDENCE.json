@@ -1,0 +1,87 @@
+{
+  "status": "WORKER_EXECUTED_PENDING_INDEPENDENT_AUDIT",
+  "dataset_kind": "DEMO_SELECTION_FIXTURE",
+  "fixture_size": {
+    "HOUSE": 435,
+    "SENATE": 33
+  },
+  "run_ids": [
+    "e01-6a67d910c8b6460b88c08adda45c5e90",
+    "e01-a6da256293dc48ffb56feaab3d1d7125"
+  ],
+  "fixture_path": "data/processed/e01/selection_435H_33S.fixture.json",
+  "first_full_recorded_run_elapsed_seconds": 0.31827429099939764,
+  "selection_sha256": "d24465e4e40aa88adb5d3ff7bd2e76348659d71dff484346769549866e60c036",
+  "frame_sha256": "e96a890810f2016d14b1118faec3fa18a5e10ccacb56772eba63073822f9960f",
+  "solver": {
+    "highs": "1.8.0",
+    "relative_gap": 0,
+    "scipy": "1.16.3",
+    "tie_chunk_bits": 10
+  },
+  "replay_identity_match": true,
+  "broad": {
+    "HOUSE": {
+      "status": "FIXTURE_SELECTED",
+      "objective_vector": [
+        0,
+        0,
+        -4,
+        -24
+      ],
+      "absent_bands": [],
+      "shortfall": false
+    },
+    "SENATE": {
+      "status": "FIXTURE_SELECTED",
+      "objective_vector": [
+        0,
+        0,
+        -4,
+        -8
+      ],
+      "absent_bands": [],
+      "shortfall": false
+    }
+  },
+  "deep": {
+    "HOUSE": {
+      "status": "FIXTURE_SELECTED",
+      "objective_vector": [
+        0,
+        -4,
+        -4
+      ],
+      "fallback": null
+    },
+    "SENATE": {
+      "status": "FIXTURE_SELECTED",
+      "objective_vector": [
+        0,
+        -2
+      ],
+      "fallback": null
+    }
+  },
+  "optimal_solve_count": 65,
+  "all_stages_gap_zero": true,
+  "test_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_selection tests.test_e01 tests.test_isolation -v",
+  "tests_passed": 40,
+  "source_data": "Authored synthetic fixture, not real Cook ratings or official ballots",
+  "scientific_gate": "BLOCKED_NO_ACCEPTED_REAL_FRAME",
+  "cost_usd": 0,
+  "paid_calls": 0,
+  "primary_solver_references": [
+    "https://raw.githubusercontent.com/scipy/scipy/v1.16.3/scipy/optimize/_milp.py",
+    "https://pypi.org/pypi/scipy/1.16.3/json"
+  ],
+  "earlier_successful_fixture_run_ids": [
+    "e01-f1f4c3991eb74dada5f316f2804fa2f5",
+    "e01-8bd0a8b85de24843933dae676e959f03",
+    "e01-cc79c766f13440509e1086bbc92bcf1d"
+  ],
+  "failed_timeout_run_id": "e01-32a3512931fc47d98b77a68cc3149158",
+  "failed_configuration_retained_and_checksums_verified": true,
+  "stage_receipts_streamed_to_events": true,
+  "all_three_run_checksums_verified": true
+}

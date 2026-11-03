@@ -1,0 +1,59 @@
+{
+  "archive_path": "data/processed/reproducibility/owner-review-973543f.zip",
+  "archive_sha256": "b50a6d703422277b99a8b62cce1174bd1ff6363c7b6e1f3bf795c880524888ef",
+  "archive_source_identity": {
+    "dirty": true,
+    "git_sha": "973543fa3f48cbe592f1f6b607774a47f1fac74f",
+    "source_tree_sha256": "cb708933d5a436a448da38d6b27fad0de43747fb1a54dde83b0104913a02ee16"
+  },
+  "audited_at_utc": "2026-11-03T11:02:13.387728+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "current_git_sha": "b0d2b0815351a16beecff3654c3c127ce96de241",
+  "evidence": [
+    {
+      "path": "reports/INDEPENDENT_AUDIT_PACKAGE_973543f_EXECUTION.json",
+      "sha256": "bc13c7c9b1ebcf0dda8c365078e60c46d8d992462f194138e1233ed03f44a2cd"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json",
+      "sha256": "d63612e20155da1a9fe7f6796f07eab3e71dd68aaa6a9db1fb170ac59fd061e8"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_SUPPORT_COMPARISON.json",
+      "sha256": "ceb10613f8ba2272edc24248b3ab6bcd8e353fe8a8cdacea332a8c8235be44be"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_PUBLICATION_REVIEW_CURRENT.json",
+      "sha256": "de1caa89dac10f7d557a6af501cf157681f5b075f769a72a9240075ac44d8434"
+    }
+  ],
+  "independent_restoration": {
+    "clean_tests": 81,
+    "fixture_validation": "PASS",
+    "members": 268,
+    "privacy": "Knowncredentialpatternscan/no.env/raw/.git,fictionalprofiles/coarsenedcellsandloopbackprivatepath404checksPASS",
+    "recorded_dashboard": "PASS",
+    "run_artifacts": 111,
+    "runs": 11
+  },
+  "known_changed_after_frozen_snapshot": [
+    ".github/workflows/offline.yml",
+    "src/civiclab/cli.py",
+    "src/civiclab/common.py",
+    "src/civiclab/model.py",
+    "tests/test_foundation.py",
+    "pyproject.toml"
+  ],
+  "limits": [
+    "Python3.12.14/POSIXtested;3.11/remoteCIunobserved.",
+    "Optionalextrasnotinstalled in clean coreenvironment;storedfiguresvalidated,notrerenderedthere.",
+    "Rawsourcecache excluded; no upstreamreacquisition,liveinference orfullscientificacceptance.",
+    "Oldrunenvironmentlabels lackoptionalpackageversions; rootreports metadatarecordingfixforfutureruns outside immutablearchive.",
+    "No publication or paidexecutionauthorized."
+  ],
+  "paid_calls": 0,
+  "schema_version": 1,
+  "scope": "Exact973543f/dirtysnapshot archive and its storedoutputs/fixtures only. Currentlaterrootcode/sourcechanges are not silently certified by oldhashes.",
+  "status": "PASS_EXACT_ARCHIVE_RESTORE; LATER_ROOT_CHANGED"
+}

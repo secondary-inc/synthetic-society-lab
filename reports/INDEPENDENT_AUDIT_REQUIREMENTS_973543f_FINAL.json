@@ -1,0 +1,243 @@
+{
+  "archive_sha256": "b50a6d703422277b99a8b62cce1174bd1ff6363c7b6e1f3bf795c880524888ef",
+  "audited_at_utc": "2026-11-03T11:02:13.387728+00:00",
+  "auditor_role": "independent_auditor",
+  "contract_sha256": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075",
+  "cost_usd": 0,
+  "current_root_note": "Laterrootchangesinvalidateoldcode-scopedreceiptswherehashesdiffer. Do notread frozen11/23boundedacceptances ascurrentfullcompletion.",
+  "frozen_snapshot_scoped_pass_count": 11,
+  "git_sha": "973543fa3f48cbe592f1f6b607774a47f1fac74f",
+  "historical_receipts_preserved": true,
+  "known_later_source_changes": [
+    ".github/workflows/offline.yml",
+    "src/civiclab/cli.py",
+    "src/civiclab/common.py",
+    "src/civiclab/model.py",
+    "tests/test_foundation.py",
+    "pyproject.toml"
+  ],
+  "new_acquisition_scope": "S0501 publicZIP and official2024shell units independently accepted only; explicitrounding/normalization/PR/uncertainty modelamendment precedes newfit.",
+  "observed_checks": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "local_source_checks": 93,
+    "note": "These checks were executed and observed in this turn; prior77-test execution receipt retained as earlier snapshot.",
+    "source_command": ".venv/bin/civiclab validate-sources",
+    "source_exit_code": 0,
+    "tests_passed": 81
+  },
+  "paid_calls": 0,
+  "publication_authorized": false,
+  "requirements": [
+    {
+      "clause": 1,
+      "description": "Clean checkout installs with documented dependencies",
+      "gate": "G0",
+      "id": "G0_INSTALL",
+      "reason": "Exactfrozen973543farchive clean-installed in isolatedPython3.12.14/POSIXvenv; historicalsnapshotacceptance only, laterrootchangesneedfreshreview.",
+      "status": "PASS"
+    },
+    {
+      "clause": 1,
+      "description": "Documented fixture tests pass in an independently reproduced clean environment",
+      "gate": "G0",
+      "id": "G0_TESTS",
+      "reason": "81includedfixturetests independentlypass in cleannamedarchive environment; historicalsnapshot only.",
+      "status": "PASS"
+    },
+    {
+      "clause": 1,
+      "description": "Registered source inventory verifies; nonredistributable data have documented reacquisition/import paths",
+      "gate": "G0",
+      "id": "G0_INTEGRITY",
+      "reason": "93local registered-source checksPASS, new module manifests cannot silently skip missing caches. Complete upstream reacquisition/rights for legacy user downloads still unresolved.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 4,
+      "description": "Credential/raw-data exclusions and fail-closed inference configuration are independently checked",
+      "gate": "G0",
+      "id": "G0_SECRETS",
+      "reason": "Scoped current known-credential scan/exclusions independently checked; .env ignored/untracked0600; no rotation or live-validation claim.",
+      "status": "PASS"
+    },
+    {
+      "clause": 2,
+      "description": "Frozen real race sample, official candidates, geography and historical crosswalks are verified",
+      "gate": "G2",
+      "id": "E01_MANIFEST",
+      "reason": "Original2026ratingsuniverse/selectionpolicy,finalballot-amendmentset and Housecrosswalk incomplete. CD120officialbyteprovenance independently closes one narrow gap only.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 2,
+      "description": "Genuine historical statistical baselines evaluated under frozen sample and input rules",
+      "gate": "G3",
+      "id": "E01_BASELINES",
+      "reason": "Bounded2018\u21922024 Class-I30-state S0/S_ZERO comparison independently accepted. Original2026same-seat2020Senate/compatible2024House workflow remains incomplete; supporting diagnostic does not waive it.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 2,
+      "description": "Comparable agent variants use same races/outcomes/cutoffs and matched simpler controls",
+      "gate": "G6",
+      "id": "E01_VARIANTS",
+      "reason": "No original matched agent/news/social/assistant/swarm comparisons; positive budget not authorized.",
+      "status": "NOT_RUN"
+    },
+    {
+      "clause": 2,
+      "description": "Sealed holdout evaluation, real result tables and retrospective contamination analysis",
+      "gate": "G6",
+      "id": "E01_EVALUATION",
+      "reason": "Boundedposthoc2024diagnostic independently accepted; original2026certifiedoutcome/holdout/variant pipeline incomplete. No untouched or prospective archive.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 3,
+      "description": "Frozen hypotheses, questionnaire mapping, estimand, exclusions, variance and sensitivity plan independently accepted",
+      "gate": "G1",
+      "id": "E02_PROTOCOL",
+      "reason": "Frozen locally hash-lockedv3 offline engineering definitions accepted; real-run sample/model/provider and confirmatory precision/approval plan unresolved.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 3,
+      "description": "ACS/ANES joint fitting is validated for the stated universe, with support and holdout diagnostics",
+      "gate": "G2",
+      "id": "E02_POPULATION",
+      "reason": "52.20% trainingweight suppressed,38.74% heldoutjointcoverage; primaryhierarchicalcandidate worse than simpler model. NewS0501acquisition/unitsacceptedonly, no targetconversion or fit approved by scientific review.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 3,
+      "description": "Permitted real-text stimuli have exact frozen content, rights, timestamps and matched treatments",
+      "gate": "G2",
+      "id": "E02_STIMULI",
+      "reason": "Three original statutory excerpts pass bounded exact-content/USreuse rationale review. Original contemporary-news/actualfeed study not supplied or validated by this purposive official-document corpus.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 3,
+      "description": "Randomization, isolation, scoring and invalid response logging independently pass offline integration",
+      "gate": "G4",
+      "id": "E02_ENGINE",
+      "reason": "OfflineMOCK integration/requestbinding/rawscoring/replay independently accepted. IA-E02-001 fixed and original probes preserved.",
+      "status": "PASS"
+    },
+    {
+      "clause": 3,
+      "description": "Registered real-model evaluation and prespecified sensitivity/uncertainty analysis completed",
+      "gate": "G6",
+      "id": "E02_EVALUATION",
+      "reason": "No real-model registered evaluation or scientific treatment effect; mocked2pointcontrast authoredfixture.",
+      "status": "NOT_RUN"
+    },
+    {
+      "clause": 4,
+      "description": "OpenRouter-only calls enforce atomic reservations, provider reconciliation, cancellation/retry and checkpoint semantics",
+      "gate": "G3",
+      "id": "MODEL_CONTROLS",
+      "reason": "Clientsoftware controls accepted through independently audited unchanged model code and current mocked reservation/provider/cancel/reconciliation/checkpoint tests; no live billing claim.",
+      "status": "PASS"
+    },
+    {
+      "clause": 4,
+      "description": "Owner-approved positive budget, rotated/verified credentials and fresh provider price evidence precede real calls",
+      "gate": "G5",
+      "id": "MODEL_AUTHORIZATION",
+      "reason": "Realinference approvedcap0; ownerrotation/verification, explicitpositivebudget and freshproviderpricing absent.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 5,
+      "description": "A nonimplementing auditor has current evidence for every required milestone",
+      "gate": "G6",
+      "id": "INDEPENDENT_REVIEW",
+      "reason": "Many bounded milestones independently reviewed; finalcurrentarchive/dashboard/status plus unexecutedoriginalscientific milestones not globally accepted.",
+      "status": "BLOCKED"
+    },
+    {
+      "clause": 5,
+      "description": "Remote CI passes for the reviewed code; local tests alone are not substituted",
+      "gate": "G0",
+      "id": "CI",
+      "reason": "RemoteCI unobserved; lead reportsGitHubauthfailure. No localtest substitution.",
+      "status": "NOT_RUN"
+    },
+    {
+      "clause": 5,
+      "description": "Every research table/figure and dashboard view is generated from identified validated run artifacts",
+      "gate": "G7",
+      "id": "TRACEABLE_VISUALS",
+      "reason": "Currentrecorded-output assets/code and exactfrozenarchiveviewer accepted: bothstaticfigures traced to auditedrunledgers/calculations,restoredUIactualhistorical/mock/negativepopulation/DEMOviews verified withprovenance,costs,caveats andINCOMPLETEcontract. No laterunreviewedmodule result certified.",
+      "status": "PASS"
+    },
+    {
+      "clause": 6,
+      "description": "Reproducibility pack restores environment, configs, manifests and permitted outputs with verified hashes",
+      "gate": "G7",
+      "id": "REPRO_PACK",
+      "reason": "Exactb50a6d... immutablearchive restores268members,11sealedruns/111artifacthashes,configs/manifests/drafts/recordedviewer; excludesrawreacquisition/fullscience andlaterrootchanges.",
+      "status": "PASS"
+    },
+    {
+      "clause": 6,
+      "description": "Technical manuscript draft reflects actual findings and clearly separates proposed/unrun analyses",
+      "gate": "G7",
+      "id": "PAPER_DRAFT",
+      "reason": "Owner-review draft accurately reports accepted boundedE01/negativepopulation results and explicitly unrun/fullcontract limits.",
+      "status": "PASS"
+    },
+    {
+      "clause": 6,
+      "description": "Public-facing blog draft states supported findings, limitations and review-only status",
+      "gate": "G7",
+      "id": "BLOG_DRAFT",
+      "reason": "Owner-review public-facingdraft accurately reports boundedfindings/negativecomparison and nohuman/prospective/agent claims.",
+      "status": "PASS"
+    },
+    {
+      "clause": 6,
+      "description": "Complete limitations/failure/source-reuse report is consistent with actual evidence",
+      "gate": "G7",
+      "id": "LIMITATIONS",
+      "reason": "Scientific,source,transport,rounding,cost,retrospective,originalrequirements and publication limits explicit in revieweddraft.",
+      "status": "PASS"
+    },
+    {
+      "clause": 6,
+      "description": "Accurate requirement-level completion dashboard and current status report exist",
+      "gate": "G7",
+      "id": "STATUS",
+      "reason": "Exactstatusandrecordedrequirementviewer honestly report acceptedboundedscopes andfullcontractINCOMPLETE,archiveidentities,zeroapprovedspend andunobservedCI. Thisdoesnotcertifylaternewcode; changingstatusneedsnewreview.",
+      "status": "PASS"
+    }
+  ],
+  "review_evidence": {
+    "path": "reports/INDEPENDENT_AUDIT_ROOT_973543f_FINAL.json",
+    "sha256": "321b27578fbc706196ce5388c2a6c8a3794ccd0fc4c5e9c9780b4c63c3d7b0dd"
+  },
+  "root_code_review": [
+    "Intake hash-checks registered local source bytes, exclusive-writes, rejects paths/drift; not upstream reacquisition or rights validation.",
+    "Fullintegrity now invokes3present module manifests and recordsmissingcache BLOCKED; fixture-only remainsportable.",
+    "Completioncontroller rejects empty/duplicatecontracts, stale/missing/path-escaping evidence and unsupportedPASS; workflow role assertion not cryptographic identity.",
+    "Reviewpackexisting-targetrefusal/sourceadditionguard reviewed and3testsPASS in81; newactualrestoration stillpending.",
+    "Modelcode digest equals previously independently audited/remediated snapshot; currentbudget tests pass."
+  ],
+  "root_reviewed_files": {
+    "src/civiclab/intake.py": "3d5097d6625127e27c698eb3922b710ddc472f878064c57e53523c1499b7bd59",
+    "src/civiclab/integrity.py": "53856f09c6358f8aed9a90a8a6276da94d001e287c1e790776685fbf4b3cfc12",
+    "src/civiclab/model.py": "dca5b04af189415f6a52c363c170408d40aeac166830011536091952888230ac",
+    "src/civiclab/orchestration.py": "4e1a862f815dcb10255fcae4d41c6c36ab3df17714af645469055af161277778",
+    "src/civiclab/reproduction.py": "5e6cbe66a684ab32b45b107021d7642959d25d2dfe8fba5cc7af5f9bcc2cfe64",
+    "tests/test_budget.py": "b123bfc05534b5373cacab2e9214de97d8f5fec6488229788580eded8f31f74d",
+    "tests/test_foundation.py": "57bb0e4c39ee755590b57c1032211ead0cac3cb2cb4c8420cc191536b2bad47e",
+    "tests/test_intake.py": "2522a2ec1436f3b49443495dd96c34c747b815c90b839213e7bfa5cf2222f77d",
+    "tests/test_orchestration.py": "f4d7e941c1d9e28a4cdae3c8e5374a4688ec8166961b822fee79e7874c2e8218",
+    "tests/test_reproduction.py": "03f5f5b7d549a44fc2fcd8734227ea2b3c03fded5a61ad3a1f0d85c365da1bc4"
+  },
+  "schema_version": 1,
+  "snapshot": "Frozen973543farchiveacceptanceplusseparatecurrentvisual/statusreview; laterrootchangesuncertified",
+  "status": "INCOMPLETE"
+}
