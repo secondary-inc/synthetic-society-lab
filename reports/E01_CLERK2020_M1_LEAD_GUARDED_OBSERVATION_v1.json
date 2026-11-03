@@ -1,0 +1,16 @@
+{
+  "actual_source_or_model_calls": 0,
+  "guard": "Deny actual repository data/raw+processed reads/enumerations and sockets; current interpreter stdlib only exception. Child fixed backend separately denies I/O after trusted imports.",
+  "log": {
+    "path": "reports/E01_CLERK2020_M1_LEAD_GUARDED_312_v1.txt",
+    "sha256": "757bbe214a131a28cdae0f0acee469a26400e925d6a205c4a3900ad69f3cf9f8"
+  },
+  "protected_pins_unchanged": 20,
+  "recipe_wall_seconds": 5.621395,
+  "runtime": "3.12.14",
+  "scope": "AuthoredM1/contracts +existingbaseline/capturefixtures only; no actualPDFbackend/sourceparsing/REALbaselineacceptance.",
+  "source_candidate_sha256": "6282a2db1f21f61d3c131b133503239c05728d06a5bbe81ef8fb8eed9e9937d0",
+  "status": "LEAD_AUTHORED_GUARDED_CHECK_PASS_INDEPENDENT_M1_REVIEW_PENDING",
+  "tests": 70,
+  "unittest_seconds": 5.577
+}

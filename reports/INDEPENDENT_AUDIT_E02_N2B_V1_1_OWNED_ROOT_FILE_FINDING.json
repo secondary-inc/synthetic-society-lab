@@ -1,0 +1,360 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E02_N2B_V1_1_OWNED_ROOT_FILE_FINDING.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Leadpreservesv1.1/separateremedy; auditClerkM1next.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E02_N2B_V1_1_OWNED_ROOT_FILE_FINDING.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests <python> -m unittest tests.test_e02_n2b_generic_v1_1 -q",
+    "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-n2b-v11-cap-closure.py",
+    ".venv/bin/python /tmp/civiclab-independent-n2b-v11-retained.py"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only authoredisolatedZIP/parts/controls andpubliccode/configmetadata; noactualsources.",
+  "TASK_ID": "INDEPENDENT_E02_N2B_V1_1_REMEDY_CODE_AUTHORED_REVIEW",
+  "UNRESOLVED_BLOCKERS": [
+    "Newfixedownedrootfile omission; wholecomponentunaccepted.",
+    "Originalactualsource/window/storage/release/national/scientificgates unchanged."
+  ],
+  "additional_evidence": [
+    {
+      "bytes": 1952,
+      "path": "/tmp/civiclab-independent-n2b-v11-cap-closure.py",
+      "sha256": "8617fbd11557b9053a74bb808d7f5506c5157c8871c9ca189d48c03fbbc43001"
+    },
+    {
+      "bytes": 575,
+      "path": "/tmp/civiclab-independent-n2b-v11-cap-closure.json",
+      "sha256": "b4a8edd2e71a4f65dc5d6645c28751ce78741c94c73365f050ce54b440c282b0"
+    },
+    {
+      "bytes": 7841,
+      "path": "/tmp/civiclab-independent-n2b-v11-retained.py",
+      "sha256": "2a65415a9a263eeeb832303e51fa17cd14fb84a936e0a333baad0958bc0d3f3b"
+    },
+    {
+      "bytes": 2190,
+      "path": "/tmp/civiclab-independent-n2b-v11-retained.json",
+      "sha256": "8864f19ce5882fa64c994e28c67d6d302bc3da2fe6e2bb312d86862528db48fc"
+    }
+  ],
+  "auditor_role": "independent_auditor",
+  "files": [
+    {
+      "bytes": 11849,
+      "path": "configs/e02_n2b_generic_state_import_v1_1.json",
+      "sha256": "90255cddb7436a00ccbcfbde17ec04845d727a4756660f47cd94d61a7f25b742"
+    },
+    {
+      "bytes": 11095,
+      "path": "docs/E02_N2B_GENERIC_IMPLEMENTATION_v1_1.md",
+      "sha256": "8059a72ae41a51bfd7668091acb88cc8ed5ebfbdd2f131422d960e277e41e6d6"
+    },
+    {
+      "bytes": 8034,
+      "path": "reports/E02_N2B_V1_1_CANDIDATE_TESTS_311.txt",
+      "sha256": "adf488754daa11b57182fa5b764a7ab57571818bbbbdd7d005a97bcd59940dda"
+    },
+    {
+      "bytes": 8034,
+      "path": "reports/E02_N2B_V1_1_CANDIDATE_TESTS_312.txt",
+      "sha256": "329971f7950c1c5675c36e7bdb947103491ebd9e8156105652a0b7f7204fc29d"
+    },
+    {
+      "bytes": 8218,
+      "path": "reports/E02_N2B_V1_1_FINAL_TESTS_311.txt",
+      "sha256": "407fac7a6a36c97547c4644df580975e201c4858cdade5a7b48c723fc0772c26"
+    },
+    {
+      "bytes": 8219,
+      "path": "reports/E02_N2B_V1_1_FINAL_TESTS_312.txt",
+      "sha256": "374e6a379e8ec4aa94a381b29314b39a17e984f34086429a84c48a4bbbbb143f"
+    },
+    {
+      "bytes": 413,
+      "path": "reports/E02_N2B_V1_1_INITIAL_SMOKE.txt",
+      "sha256": "98ccca1ea838e94c3d79a913e5d379f0a44788d97d7c16eaabbf0bfd86666222"
+    },
+    {
+      "bytes": 260,
+      "path": "reports/E02_N2B_V1_1_RUNNER_SMOKE.txt",
+      "sha256": "fc126f2b3586735c603eb5a5810a355aedf9b78b25c0c141d51b1098a897d707"
+    },
+    {
+      "bytes": 10813,
+      "path": "src/civiclab/e02/n2b_admission_v1_1.py",
+      "sha256": "a0a60bcecb2861fd6154dda84646af3c2ccb4f187a8c0dd456018fd7a0624e7d"
+    },
+    {
+      "bytes": 5759,
+      "path": "src/civiclab/e02/n2b_assembly_v1_1.py",
+      "sha256": "3c4f8478a12a6268a130749a5c62def018d5dc80d948670230aebce19f75db5b"
+    },
+    {
+      "bytes": 14153,
+      "path": "src/civiclab/e02/n2b_control_v1_1.py",
+      "sha256": "f215aacd7c82ca6cef42f0254171362217b300709a44335d00aa3ee382c34848"
+    },
+    {
+      "bytes": 5889,
+      "path": "src/civiclab/e02/n2b_metrics_v1_1.py",
+      "sha256": "31ded96d355fc2a3de3cfa14963e775acc72770b410458773faf3bd801d0b008"
+    },
+    {
+      "bytes": 5621,
+      "path": "src/civiclab/e02/n2b_parts_v1_1.py",
+      "sha256": "f7908a77c6bf94980da8cc8a48552b59cff1d87a117a600b4d1e4919e21a532e"
+    },
+    {
+      "bytes": 6241,
+      "path": "src/civiclab/e02/n2b_runner_v1_1.py",
+      "sha256": "f680ca417ed045b89a50db8541968f9e6b15b8388e56a5ff3af85dde0ebadda4"
+    },
+    {
+      "bytes": 6894,
+      "path": "src/civiclab/e02/n2b_source_v1_1.py",
+      "sha256": "8bce3502a1259a78e3acaa6fb0717f320db82a40a10e1662d3b1e4b440652548"
+    },
+    {
+      "bytes": 4398,
+      "path": "src/civiclab/e02/n2b_storage_v1_1.py",
+      "sha256": "74d33c91d930e9e45aeb3fc24c24693e1fa2b7afd8f31b5f3b6abaa4abf2bb48"
+    },
+    {
+      "bytes": 37861,
+      "path": "tests/test_e02_n2b_generic_v1_1.py",
+      "sha256": "4aeb911f255c4f0b92afe2576003d80e5acdf5b544f1a9bfe4f233363dc85933"
+    }
+  ],
+  "finding": {
+    "id": "N2B_V1_1_OWNED_ROOT_REGULAR_FILE_DISAPPEARS",
+    "impact": "Malformed priorownedroot/corruptmissingoldhistory can be treated as empty while creating a newjob. This violates wholeoldinventory failclosed requirement; current/future metadata preflight should not silently bless that shape. Other priorroots and fallbackroot use same rglob pattern.",
+    "location": "src/civiclab/e02/n2b_storage_v1_1.py:44",
+    "observed": "Own isolatedTEST_ONLY env places4194305B regularfile at fixed data/processed/e02_n2a_core_v1. Control(create=True), storage and BIND complete; old_core=0 and original4MiBcorecap not enforced againstownedbytes. Every source operation is authored; actualproductionroots untouched.",
+    "required_remedy": "Preserve frozenv1.1 and its evidence; separate version must refuse any present expectedownedroot unless realdirectory under fullsafeancestry before ownership/reservation/sourcework. Do same for all fixedold/new/registry/outputroots that scanner assumesdirectories. Maintain missingproductionroot refusal, originalpaths/history/fullcharges/caps; test rootfile atcap/+1 and zero/nonempty allfixedroles, unchangedjobmarkers/no newsourcecall onrefusal. No pathreset or migration authority.",
+    "severity": "MEDIUM",
+    "trigger": "A fixed prior-owned directory root exists as a regularfile instead of directory. scan checks exists then rglob children; no root is_dir/type refusal or ownroot-byte accounting."
+  },
+  "handoff": {
+    "bytes": 29565,
+    "path": "reports/E02_N2B_GENERIC_V1_1_IMPLEMENTATION_HANDOFF.json",
+    "sha256": "75ec49d7b0b61cf5ca2e24fc6437730fc64b51f3f245a04354c19a81d02c071d"
+  },
+  "independent_cap_oracles": {
+    "actual_source_control_network_operations": 0,
+    "cases": {
+      "N2a_core_atcap": {
+        "owner_created": true,
+        "refused": false
+      },
+      "N2a_core_plus1": {
+        "owner_created": false,
+        "refused": true
+      },
+      "N2a_raw_atcap": {
+        "owner_created": true,
+        "refused": false
+      },
+      "N2a_raw_plus1": {
+        "owner_created": false,
+        "refused": true
+      },
+      "WY_PRIMARY_base_atcap": {
+        "owner_created": true,
+        "refused": false
+      },
+      "WY_PRIMARY_base_plus1": {
+        "owner_created": false,
+        "refused": true
+      },
+      "regular_file_at_N2a_core_root": {
+        "BIND_completed": true,
+        "old_core_reported": 0,
+        "owned_bytes": 4194305
+      }
+    },
+    "scope": "AUTHORED_TEST_ONLY"
+  },
+  "not_run": [
+    "Full9344uncertaintyindependentrederivation (frozenanalysiscode unchanged; blockedreview acceptedprimitiveoracle only).",
+    "Actualsource/privateparts/controls/markerabsence/storagepreflight/newdatedrelease/actualimport/disclosure/fit/nationwide/science."
+  ],
+  "operations": {
+    "actual_source_private_part_control_raw_person_key_env_network_model": 0,
+    "api_spend_usd": 0,
+    "implementation_config_status_git_edits": false
+  },
+  "original_finding_disposition": {
+    "N2B_V1_MATCHED_RESOURCE_ORDER_EVIDENCE_MISSING": "CLOSED for exactv1.1 bounded engineering order/scoped measurement implementation and retained/ownauthored tests; no performance/scientific claim.",
+    "N2B_V1_PRIOR_SUBPARTITION_CAPS_LOST": "Original3ordinarydirectorycases CLOSED for exactv1.1 (atcap positive, cap+1refuses preowner). Remainingnew malformedroot omission below blocks wholeinventory acceptance. Originalv1 staysBLOCKED."
+  },
+  "positive_observations": [
+    "Read2newstorage/metrics modules; full8module delta and docs/tests/config. Configbinds originalN2acore+registry/sharedscratch13MiB and overlappingWYbase/catalog/query/receipt/nativewhole caps. ExpectedROOTSfixed and originalnamespace/earliestdeadline unchanged.",
+    "Originalv1sixmodules/config/test plus136authoredfiles rehashed unchanged; final227authoredfiles rehashed and4realisticfixtureeventchains independentlyreplayed.1500s65010rows134724553bytes24Mops retainedonfailure/UNKNOWN; priorrawcap+1 createsnoowner.",
+    "Independent12fictionalrows/6adult primitivearrays/signed80replicates/flags and bothassemblycohorts rederived via scalar mergewithoutproductionparser/merger.144known3528unknownFcells; no fit/nationalclaim.",
+    "PRIMARYdirect\u2192registry and REPLAYregistry\u2192direct invocationevidence, sameinputhash/bytes pervariant, actualmeasurednonnegativewall/RSS/offsets/outputfootprints/bookkeeping/common scope retained. Immutablepayloadprofiles/datahashes matchindependentmerge; failuremeasurementrecord retains attemptedbutunexecutedorder/fullcharges.",
+    "Meter scopes explicitly distinguish logicalserialization vs contentIO and overlappingbookkeeping/samplewall; sampledownprocessRSS includes earlierresults/unflushedcache, no improvementclaim. Targetpoll0.1/4096samples/cooperativeguards/knownshutdown; unknownRSS refuses.",
+    "Sourceparserdiff imports only, partsidentical; preserved285/91/allagevalidation/signedweights/twoDCpass/firstdigest/sourceidentity/privacy gates remain. CurrentexpiredoldWYwindowstillblocksactual1500s, independentprospectivemethods receipt grantsnoimplementationoractualauthority."
+  ],
+  "retained_authored_oracles": {
+    "actual_DC_WY_raw_private_controls_or_parts_operations": 0,
+    "all_DC_primitive_arrays_rederived": true,
+    "both_assembled_cohorts_match_independent_scalar_merge": true,
+    "cases": {
+      "crash_unknown": {
+        "events": 2,
+        "reserved": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "source_passes": {
+          "BIND": {
+            "metadata": 0,
+            "person": 0
+          }
+        },
+        "stages": {
+          "BIND": "UNKNOWN"
+        },
+        "storage_recomputed": true
+      },
+      "invalid_child_failure": {
+        "events": 7,
+        "reserved": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "source_passes": {
+          "BIND": {
+            "metadata": 1,
+            "person": 0
+          },
+          "DC_PRIMARY": {
+            "metadata": 1,
+            "person": 1
+          }
+        },
+        "stages": {
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "FAILED"
+        },
+        "storage_recomputed": true
+      },
+      "success": {
+        "events": 17,
+        "reserved": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "source_passes": {
+          "ASSEMBLE_PRIMARY": {
+            "metadata": 0,
+            "person": 0
+          },
+          "ASSEMBLE_REPLAY": {
+            "metadata": 0,
+            "person": 0
+          },
+          "BIND": {
+            "metadata": 1,
+            "person": 0
+          },
+          "DC_PRIMARY": {
+            "metadata": 2,
+            "person": 1
+          },
+          "DC_REPLAY": {
+            "metadata": 2,
+            "person": 1
+          }
+        },
+        "stages": {
+          "ASSEMBLE_PRIMARY": "COMPLETED",
+          "ASSEMBLE_REPLAY": "COMPLETED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "storage_recomputed": true
+      },
+      "variant_measurement_failure": {
+        "events": 15,
+        "reserved": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "source_passes": {
+          "ASSEMBLE_PRIMARY": {
+            "metadata": 0,
+            "person": 0
+          },
+          "BIND": {
+            "metadata": 1,
+            "person": 0
+          },
+          "DC_PRIMARY": {
+            "metadata": 2,
+            "person": 1
+          },
+          "DC_REPLAY": {
+            "metadata": 2,
+            "person": 1
+          }
+        },
+        "stages": {
+          "ASSEMBLE_PRIMARY": "FAILED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "storage_recomputed": true
+      }
+    },
+    "full9344uncertainty_rederivation": "NOT_RUN_IN_BLOCKED_REVIEW_FROZEN_ARITHMETIC_CODE_UNCHANGED",
+    "independent_adult_rows": 6,
+    "independent_authored_rows": 12,
+    "indexed_files_rehashed": 227,
+    "known_F_cells": 144,
+    "network_key_model_calls": 0,
+    "required_comparator_resource_order_evidence_validated": true,
+    "status": "PASS_BOUNDED_RETAINED_AUTHORED_HASH_CONTROL_PRIMITIVE_ORACLES_NOT_FULL_CANDIDATE_ACCEPTANCE",
+    "unknown_F_cells": 3528
+  },
+  "schema_version": 1,
+  "scope": "Exact offline code/authored fixtures only, no actual DC/WY/raw/part/control authority",
+  "status": "BLOCKED_N2B_V1_1_OWNED_DIRECTORY_REPLACED_BY_FILE_UNCOUNTED",
+  "tests": [
+    {
+      "count": 55,
+      "log": {
+        "bytes": 99,
+        "path": "/tmp/civiclab-independent-n2b-v11-py312.log",
+        "sha256": "80a0268f2e9f34451b05fd2081917730717f13bcb01edb3af3d9d2be0aa311e8"
+      },
+      "runtime": "Python3.12",
+      "seconds": 87.742,
+      "status": "PASS"
+    },
+    {
+      "count": 55,
+      "log": {
+        "bytes": 99,
+        "path": "/tmp/civiclab-independent-n2b-v11-py311.log",
+        "sha256": "f31388c71db46708c2c6a6055955dd55f804c193c323c1a42ad3ab2cd77d67b5"
+      },
+      "runtime": "Python3.11",
+      "seconds": 78.921,
+      "status": "PASS"
+    }
+  ]
+}
