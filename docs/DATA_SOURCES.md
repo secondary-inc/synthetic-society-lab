@@ -34,6 +34,12 @@ Remaining acquisition gaps include ACS demographic tables, questionnaire and pri
 
 ## Validation limits and next use
 
+### Cook Political Report ratings PDFs
+
+User-supplied House (three pages) and Senate (two pages) PDFs are stored locally at `data/raw/ratings/cook_2026/`. Both display a November 2, 2026 ratings date. PDF metadata records creation on November 3, 2026 at 09:46:33 UTC (House) and 09:46:26 UTC (Senate). These are local metadata observations, not independently verified archive timestamps.
+
+All pages were text-extracted and the first page of each PDF was rendered and visually inspected. The horizontally scrolling race-detail tables are clipped in the printouts, so complete individual-race ratings cannot be recovered from these PDFs alone. Register these sources as partially acquired; a complete permitted export or accessible race-level source is still needed for sample selection. The displayed November 2 date does not establish a frozen November 2 snapshot or validate prospective forecasting. PDFs and full-text extracts remain excluded from Git; redistribution rights have not been established.
+
 Archive CRC integrity, hashes, CSV record counts and column widths were checked. These checks do not establish statistical validity, complete geographic coverage or correct vote aggregation. Dataverse dataset DOIs, release versions, reuse terms and original download URLs still require confirmation.
 
 Before election aggregation, account for total versus component voting modes, fusion party lines, redacted vote counts, special elections, runoffs and changing boundaries. Before ANES population fitting, verify survey design, variable universes, weights and response codes. Historical election outcomes must remain separated from any prospective forecast workflow. No experiment or paid inference was run during registration.
