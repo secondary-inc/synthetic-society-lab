@@ -1,0 +1,34 @@
+{
+  "audited_at_utc": "2026-11-03T13:35:03.875779+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "finding": {
+    "evidence": "Independent read of frozen actual KS DOM finds3exact United States Senate rows, each25columns with District=0/Position=0/Division=0. Parser requires these fields all empty, so exact reviewed input raises ValueError(Kansas statewide Senate row/width differs). Authored positive fixtures substitute blanks and therefore do not cover obtained schema.",
+    "id": "IA-E01-V1_4-KS-SCHEMA-001",
+    "location": "src/civiclab/e01/ballot_capture_formats_v1_4.py extract_ks_senate",
+    "required_remediation": "Preserve/document the obtained three literal0source values and bind narrow expected source layout/office identity without guessing a general statewide code convention. Add authored exact-shape zero-field positive fixtures and unknown/nonzero/mixed-shape negatives, then independently recheck cached-source DOM/visible-text agreement before readiness execution.",
+    "severity": "MEDIUM_FUNCTIONAL_SOURCE_FIDELITY",
+    "source_sha256": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d",
+    "status": "OPEN"
+  },
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "other_observations": {
+    "actualAKreader": "6rows/4printed/2certifiedwriteins parses under pinned capture; no finalballot/amendment acceptance",
+    "fixture_file_pins_verified": 7,
+    "source_hashes_verified": 18
+  },
+  "reviewed_files": {
+    "configs/e01_ballot_readiness_v1_4.json": "28817e7281d0ddb531f571af3dcfecaa237e36f8990f04351c21e1f028e173f4",
+    "src/civiclab/e01/ballot_capture_formats_v1_4.py": "ce2046528034d8c5a3f4947bfe1fb807993654c80c1312144bc09491dfddb63b",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballots.py": "8cd2160b1805c0dfd06479aff7faffeece5ed8c9a5e9baf93a44eb581adbb30a",
+    "tests/test_e01_ballot_captures_v1_4.py": "d243dbabee237fa7244454dcde7aabfdd0bd49d29550b122c734ba310b0556b5",
+    "tests/test_e01_ballot_formats_v1_3.py": "0505ea5db838a9d774245d32113549dff4455525f5506da0a556952d64b73aa1",
+    "tests/test_e01_ballots.py": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668"
+  },
+  "schema_version": 1,
+  "scope": "Currentv1.4 exact readiness execution acceptance withheld until functional source-shape mismatch is remedied. No actual run executed by auditor; actual source acquisition/model/selection/finalballot authority unchanged.",
+  "status": "FINDING_OPEN_E01_V1_4_EXECUTION_ACCEPTANCE_WITHHELD",
+  "targeted_tests_passed": 55
+}

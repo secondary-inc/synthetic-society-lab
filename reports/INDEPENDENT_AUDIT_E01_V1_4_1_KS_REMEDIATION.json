@@ -1,0 +1,67 @@
+{
+  "additional_checks": {
+    "actualAK_sixrows_fourprinted_twowriteins": true,
+    "actualKS_and_AK_names_labels_match_independent_DOM_reader": true,
+    "defaultURL_exactobservedquery_guard_and_preRunStore_secretrefusal_retained": true,
+    "preserved_original_code_and_initialtypeonly_NBSPpreflightfailure": true
+  },
+  "audited_at_utc": "2026-11-03T13:37:51.613662+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "current_accepted_roster_states": 5,
+  "current_code_fixture_audit_sha256": "ebda83735cf59fa4811d687ce09476a293b286f098fa734b60fcae78d7ee5927",
+  "current_unfinished_jobs": 28,
+  "expected_states_after_success": [
+    "AK",
+    "CO",
+    "KS",
+    "NC",
+    "NJ",
+    "VA",
+    "WY"
+  ],
+  "expected_unfinished_after_success": 26,
+  "final_ballots_accepted": 0,
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "raw_contacts_or_named_values_in_report": false,
+  "resolved_finding": {
+    "id": "IA-E01-V1_4-KS-SCHEMA-001",
+    "independent_evidence": "Preserved reviewed v1.4source reproduces exact actualcachedKSfailure. v1.4.1parses same frozen DOM/visibletexts3rows retaining literal0/0/0; nine own matched DOM/text blank/mixed/nonzero/00/unknown negatives reject. Nonwhitespace mismatch in another column rejects; all25column agreement preserved.",
+    "original_receipt_sha256": "aa51e6f97548779f51cf7c9ec9751bcd2a512e68fbac9a91b1a2fd6851a16296",
+    "resolution": "CLOSED_FOR_PINNED_V1_4_1"
+  },
+  "reviewed_files": {
+    "configs/e01_ballot_readiness_v1_4_1.json": "28817e7281d0ddb531f571af3dcfecaa237e36f8990f04351c21e1f028e173f4",
+    "src/civiclab/e01/ballot_capture_formats_v1_4.py": "0c8cc0be58b249c9d31968a439025e5025f42949abdfe15214496f63fddbf370",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballots.py": "8cd2160b1805c0dfd06479aff7faffeece5ed8c9a5e9baf93a44eb581adbb30a",
+    "tests/test_e01_ballot_captures_v1_4.py": "f4992790858c129c1af0c2a55d6d1ccf543fc2e9a4efcfc77fa5b25ef4e16a43",
+    "tests/test_e01_ballot_formats_v1_3.py": "0505ea5db838a9d774245d32113549dff4455525f5506da0a556952d64b73aa1",
+    "tests/test_e01_ballots.py": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668"
+  },
+  "schema_version": 1,
+  "scope": "Exact18-source cachedlocalv1.4.1 readiness run/replay may proceed under these pins; independent actual run/result/ledger review required before coverage acceptance. This is not final-ballot/sourcepolicy/race-selection/amendment acceptance. Original v1.3runs/sourcecaptures unchanged; MEreader not incorporated.",
+  "source_pins": {
+    "ak_general_browser": "c1ddc16c1ef47e8b7b8ef55fef906a2cbbeccd531dad26374370150af2d23225",
+    "ak_senate_dom": "1167c252ab39cf0bab9e4c63c52f61c9733b64a92e5a3e13239e1cd53739799c",
+    "co_general": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+    "fl_broward_notice": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922",
+    "fl_palm_notice": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0",
+    "fl_vacancy_law": "169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da",
+    "ks_general_browser": "f4f69411838d79235aca844203edb9d72f2c08ba043bb44e95c4b975e8a56583",
+    "ks_general_dom": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d",
+    "nc_federal_general": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d",
+    "nj_nominee_certification": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec",
+    "nj_senate": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e",
+    "senate_appointments": "13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7",
+    "senate_class_II": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb",
+    "senate_class_III": "592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823",
+    "va_federal": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+    "va_index": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+    "wy_general": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16",
+    "wy_index": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d"
+  },
+  "status": "PASS_E01_V1_4_1_KS_SCHEMA_REMEDIATION_AND_BOUNDED_EXECUTION_READINESS",
+  "tests_passed": 57
+}

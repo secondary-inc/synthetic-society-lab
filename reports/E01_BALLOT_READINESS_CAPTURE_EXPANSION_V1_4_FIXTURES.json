@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_BALLOT_READINESS_CAPTURE_EXPANSION_V1_4_FIXTURES",
+  "status": "FIXTURES_IMPLEMENTED_PENDING_INDEPENDENT_REVIEW_BEFORE_ACTUAL_EXECUTION",
+  "reviewed_file_sha256": {
+    "src/civiclab/e01/ballots.py": "8cd2160b1805c0dfd06479aff7faffeece5ed8c9a5e9baf93a44eb581adbb30a",
+    "src/civiclab/e01/ballot_capture_formats_v1_4.py": "ce2046528034d8c5a3f4947bfe1fb807993654c80c1312144bc09491dfddb63b",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "tests/test_e01_ballot_captures_v1_4.py": "d243dbabee237fa7244454dcde7aabfdd0bd49d29550b122c734ba310b0556b5",
+    "tests/test_e01_ballot_formats_v1_3.py": "0505ea5db838a9d774245d32113549dff4455525f5506da0a556952d64b73aa1",
+    "tests/test_e01_ballots.py": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668",
+    "configs/e01_ballot_readiness_v1_4.json": "28817e7281d0ddb531f571af3dcfecaa237e36f8990f04351c21e1f028e173f4"
+  },
+  "snapshot": "data/processed/reproducibility/e01-ballot-readiness-v1_3-pre-capture-expansion/snapshot.json",
+  "source_role_review": "reports/INDEPENDENT_AUDIT_E01_BATCH03_SOURCE_ROLES.json",
+  "source_policy_amendment": "Only exact observed https://www.elections.alaska.gov/candidates/?election=26genr query; all other queries denied. DOM and visible-text are separate UTF8representations; browser captures must have empty response_headers. No inferred HTTP headers.",
+  "tests_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_ballot_captures_v1_4 tests.test_e01_ballot_formats_v1_3 tests.test_e01_ballots tests.test_e01 tests.test_isolation",
+  "tests_passed": 55,
+  "new_tests": 8,
+  "configured_source_pins": 18,
+  "expected_roster_states_after_success": [
+    "AK",
+    "CO",
+    "KS",
+    "NC",
+    "NJ",
+    "VA",
+    "WY"
+  ],
+  "expected_unacquired_after_success": 26,
+  "actual_source_runs": "NOT_RUN_PENDING_INDEPENDENT_CODE_FIXTURE_REVIEW",
+  "accepted_readiness_states_remain": 5,
+  "accepted_unacquired_jobs_remain": 28,
+  "ME_incorporated": false,
+  "ME_officekey_source_pending_review": "reports/E01_MAINE_OFFICE_KEY_SOURCE_V1.json",
+  "final_ballots_accepted": 0,
+  "source_adoption": false,
+  "actual_selection": false,
+  "2026_outcomes_used": false,
+  "model_calls": 0,
+  "cost_usd": 0
+}

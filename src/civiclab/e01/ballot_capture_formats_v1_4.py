@@ -1,0 +1,65 @@
+"""Bounded official KS/AK browser captures, no complete-ballot acceptance."""
+from collections import Counter
+import re
+from civiclab.e01.ballot_formats_v1_3 import Tables,candidate,norm,roster,table_with_header
+
+KS_HEADER=['Candidate','Office','District','Position','Division','Party','Title','First Name','Middle',
+           'Last Name','Suffix','Home Address','Home City','Home Zip','Mailing Address','Mailing City',
+           'Mailing Zip','Home Phone','Work Phone','Cell Phone','Email','Web Address','Date Filed',
+           'Ballot City','Running Mate Ballot City']
+
+
+def extract_ks_senate(table_dom,visible_text):
+    if 'Candidates for the 2026 General' not in visible_text:raise ValueError('Kansas displayed election identity differs')
+    rows=table_with_header(table_dom,KS_HEADER);out=[];dom_rows=[]
+    for fields,struck in rows:
+        if 'United States Senate' not in fields:continue
+        if len(fields)!=25 or fields[1]!='United States Senate' or [fields[i] for i in [2,3,4]]!=['0','0','0']:
+            raise ValueError('Kansas statewide Senate row/width differs')
+        # Compare all25columns after identical whitespace normalization;
+        # rendered empty cells may contain NBSP. Return no contact fields.
+        dom_rows.append(tuple(fields))
+        out.append(candidate(fields[0],fields[5],source_district_literal=fields[2],
+                             source_position_literal=fields[3],source_division_literal=fields[4],
+                             withdrawal_markup_observed=struck))
+    visible=[]
+    for line in visible_text.splitlines():
+        cells=line.split('\t')
+        if len(cells)>1 and cells[1]=='United States Senate':
+            if len(cells)!=25:raise ValueError('Kansas visible row width differs')
+            visible.append(tuple(norm(v) for v in cells))
+    if sorted(visible)!=sorted(dom_rows):
+        raise ValueError('Kansas DOM/visible candidate coverage differs')
+    return roster('KS',out,capture_scope='EXACT_US_SENATE_ROWS_IN_DISPLAYED_2026_GENERAL_TABLE',
+                  withdrawal_scope='NO_EXPLICIT_WITHDRAWAL_STATUS_OR_LATER_AMENDMENT_ACCEPTANCE',
+                  edition_timestamp='NOT_ESTABLISHED')
+
+
+def extract_ak_senate(table_dom,visible_text):
+    if not all(x in visible_text for x in ['2026 General Election','Election Date November 3, 2026',
+                                          'Page last updated September 25, 2026 at 8:16 am']):
+        raise ValueError('Alaska visible general edition differs')
+    if visible_text.count('UNITED STATES SENATOR')!=1 or visible_text.count('UNITED STATES REPRESENTATIVE')!=1:
+        raise ValueError('Alaska visible Senate section missing/ambiguous')
+    section=norm(visible_text.split('UNITED STATES SENATOR')[1].split('UNITED STATES REPRESENTATIVE')[0])
+    rows=table_with_header(table_dom,['Candidate Name on Ballot','Campaign Address','Contact','Election Pamphlet Information']);out=[]
+    for fields,struck in rows:
+        if len(fields)!=4:raise ValueError('Alaska candidate row width differs')
+        value=fields[0]
+        if value not in section:raise ValueError('Alaska DOM/visible Senate candidate mismatch')
+        m=re.fullmatch(r'(?:(Certified Write-In)\s+)?(.+?)\s+\((Registered [^()]+|Undeclared|Nonpartisan)\)\s+\(Certified\)(?:\s+(Incumbent))?',value)
+        if not m:raise ValueError('Alaska literal name/registration/certification syntax differs')
+        writein,name,registration,incumbent=m.groups()
+        if struck:raise ValueError('Alaska inline strike requires separate source review')
+        row=candidate(name,registration,source_registration_label=registration,source_certification_label='Certified',
+                      certified_write_in=bool(writein),printed_on_ballot=not bool(writein),incumbent_printed=bool(incumbent))
+        # Registered-party labels are not nomination/legal-recognition claims.
+        row['party_class']={'Registered Republican':'R','Registered Democrat':'D'}.get(registration,'UNSPECIFIED')
+        out.append(row)
+    if section.count('(Certified)')!=len(out) or section.count('Certified Write-In')!=sum(c['certified_write_in'] for c in out):
+        raise ValueError('Alaska DOM/visible certification coverage differs')
+    return roster('AK',out,printed_candidates=sum(c['printed_on_ballot'] for c in out),
+                  qualified_write_ins=sum(c['certified_write_in'] for c in out),
+                  printed_candidate_party_class_counts=dict(Counter(c['party_class'] for c in out if c['printed_on_ballot'])),
+                  publication_date_printed='2026-09-25',capture_scope='FIRST_VISIBLE_PAGE_EXACT_SENATE_TABLE_ONLY_NOT_WHOLE_PAGE_COMPLETENESS',
+                  withdrawal_scope='CERTIFIED_MARKERS_IN_OBTAINED_PAGE_ONLY_NOT_LATER_AMENDMENT_OR_SAMPLE_BALLOT_CHECK')

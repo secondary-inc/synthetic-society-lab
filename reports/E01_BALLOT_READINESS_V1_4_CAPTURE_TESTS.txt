@@ -1,0 +1,113 @@
+"""Authored browser capture fixtures; no real documents/contact values."""
+import copy
+import re
+from pathlib import Path
+import tempfile
+import unittest
+from civiclab.e01 import ballots as b
+from civiclab.e01 import ballot_capture_formats_v1_4 as f
+from tests.test_e01_ballots import ledger,write_source
+from tests.test_e01_ballot_formats_v1_3 import table
+
+
+def ks():
+    rows=[]
+    for name,office,party in [('DEMO A','United States Senate','Democratic'),('DEMO B','United States Senate','Republican'),
+                              ('DEMO C','United States Senate','DEMO UNKNOWN'),('DEMO STATE','Kansas Senate','Republican')]:
+        rows.append([name,office,'','','',party]+['']*5+['DEMO CONTACT']*14)
+    html=table(f.KS_HEADER,rows)
+    text='Candidates for the 2026 General\n'+'\t'.join(f.KS_HEADER)+'\n'+'\n'.join('\t'.join(r) for r in rows)
+    return html,text
+
+
+def ak():
+    rows=[['DEMO A (Registered Republican) (Certified) Incumbent']+['DEMO CONTACT']*3,
+          ['DEMO B (Registered Democrat) (Certified)']+['DEMO CONTACT']*3,
+          ['Certified Write-In DEMO C (Undeclared) (Certified)']+['DEMO CONTACT']*3,
+          ['DEMO D (Registered DEMO UNKNOWN) (Certified)']+['DEMO CONTACT']*3]
+    html=table(['Candidate Name on Ballot','Campaign Address','Contact','Election Pamphlet Information'],rows)
+    text='2026 General Election\nElection Date November 3, 2026\nPage last updated September 25, 2026 at 8:16 am\nUNITED STATES SENATOR\n'+'\n'.join(r[0] for r in rows)+'\nUNITED STATES REPRESENTATIVE\nDEMO HOUSE'
+    return html,text
+
+
+class CaptureFormatTests(unittest.TestCase):
+    def test_ks_exact_federal_no_contacts_literal_unknown(self):
+        h,t=ks();r=f.extract_ks_senate(h,t)
+        self.assertEqual(len(r['candidates']),3);self.assertNotIn('DEMO CONTACT',str(r));self.assertNotIn('DEMO STATE',str(r))
+        self.assertEqual(r['candidates'][2]['source_party_label'],'DEMO UNKNOWN')
+        self.assertEqual(r['candidates'][2]['party_class'],'UNSPECIFIED')
+        self.assertEqual(r['edition_timestamp'],'NOT_ESTABLISHED')
+
+    def test_ks_refuses_context_mismatch_header_width_and_statewide_scope(self):
+        h,t=ks()
+        for a,z in [(h,t.replace('2026 General','2024 General')),(h,t.replace('DEMO A','DEMO ALTERED')),
+                    (h.replace('<td>Office</td>','<td>Unknown</td>'),t),(h+h,t),
+                    (h.replace('DEMO B','DEMO A'),t.replace('DEMO B','DEMO A')),
+                    (h.replace('United States Senate</td><td></td>','United States Senate</td><td>1</td>'),t)]:
+            with self.assertRaises(ValueError):f.extract_ks_senate(a,z)
+
+    def test_ak_writein_registration_certification_distinct_no_contacts(self):
+        h,t=ak();r=f.extract_ak_senate(h,t)
+        self.assertEqual((r['printed_candidates'],r['qualified_write_ins']),(3,1))
+        self.assertEqual(r['candidates'][2]['source_registration_label'],'Undeclared')
+        self.assertEqual(r['candidates'][2]['source_certification_label'],'Certified')
+        self.assertTrue(r['candidates'][2]['certified_write_in']);self.assertFalse(r['candidates'][2]['printed_on_ballot'])
+        self.assertEqual(r['candidates'][3]['source_party_label'],'Registered DEMO UNKNOWN')
+        self.assertEqual(r['candidates'][3]['party_class'],'UNSPECIFIED')
+        self.assertNotIn('DEMO CONTACT',str(r));self.assertNotIn('DEMO HOUSE',str(r))
+
+    def test_ak_refuses_wrong_scope_status_duplicate_table_and_context_drift(self):
+        h,t=ak()
+        for a,z in [(h,t.replace('2026 General','2024 General')),(h,t.replace('September 25','September 24')),
+                    (h,t.replace('UNITED STATES SENATOR','STATE SENATE')),(h,t.replace('DEMO A','DEMO ALTERED')),
+                    (h.replace('(Certified)','(Pending)'),t),(h+h,t),
+                    (h.replace('DEMO B','DEMO A'),t.replace('DEMO B','DEMO A')),
+                    (h.replace('DEMO A','<del>DEMO A</del>'),t)]:
+            with self.assertRaises(ValueError):f.extract_ak_senate(a,z)
+
+    def test_truncated_dom_cannot_pass_complete_visible_context(self):
+        for factory,reader in [(ks,f.extract_ks_senate),(ak,f.extract_ak_senate)]:
+            h,t=factory()
+            h=re.sub(r'<tr>(?:(?!</tr>).)*DEMO B(?:(?!</tr>).)*</tr>','',h,flags=re.S)
+            with self.assertRaises(ValueError):reader(h,t)
+
+    def test_exact_observed_alaska_query_only_and_no_userinfo(self):
+        good='https://www.elections.alaska.gov/candidates/?election=26genr'
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);c=ledger(root);c['sources'][0]['url']=good
+            b.admit_metadata(c);b.verify_source(root,c['sources'][0])
+            for url in [good+'&token=DEMO_SECRET',good+'&x=1',good.replace('26genr','24genr'),good.replace('election=','ELECTION='),
+                        good.replace('www.elections','elections'),good.replace('/candidates/','/other/'),
+                        good.replace('https://','http://'),good.replace('https://','https://user:DEMO_SECRET@'),
+                        good+'#DEMO_SECRET',good.replace('?','?token=DEMO_SECRET&')]:
+                c['sources'][0]['url']=url
+                with self.assertRaises(ValueError):b.admit_metadata(c)
+                with self.assertRaises(ValueError):b.verify_source(root,c['sources'][0])
+
+    def test_browser_header_fabrication_refused(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);c=ledger(root);s=c['sources'][0]
+            for kind in ['BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES']:
+                s['capture_kind']=kind;s['response_headers']={};b.admit_metadata(c);b.verify_source(root,s)
+                s['response_headers']={'Date':'Tue, 03 Nov 2026 12:00:00 GMT'}
+                with self.assertRaises(ValueError):b.admit_metadata(c)
+                with self.assertRaises(ValueError):b.verify_source(root,s)
+
+    def test_integrated_capture_pairs_preserve_slots_no_adoption_or_acceptance(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td);c=ledger(root)
+            for state,ids,inputs in [('KS',['ks_general_dom','ks_general_browser'],ks()),('AK',['ak_senate_dom','ak_general_browser'],ak())]:
+                for i,(key,data) in enumerate(zip(ids,inputs)):
+                    s=write_source(root,key,data.encode(),role='OFFICIAL_CANDIDATE_LIST' if i==0 else 'OFFICIAL_CAPTURE_CONTEXT')
+                    s['capture_kind']='BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES' if i==0 else 'BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES'
+                    c['sources'].append(s)
+                next(x for x in c['class_II_frame'] if x['state']==state)['candidate_source_ids']=ids
+            r=b.validate_readiness(root,c);self.assertEqual(r['official_rosters_extracted'],2)
+            self.assertEqual(r['regular_frame_slots'],33);self.assertEqual(r['final_ballots_accepted'],0)
+            self.assertFalse(r['source_adoption']);self.assertFalse(r['actual_selection'])
+            for field,value in [('capture_kind','HTTP_RESPONSE_BYTES'),('source_role','OFFICIAL_CANDIDATE_INDEX')]:
+                changed=copy.deepcopy(c);changed['sources'][1][field]=value
+                with self.assertRaises(ValueError):b.validate_readiness(root,changed)
+
+
+if __name__=='__main__':unittest.main()

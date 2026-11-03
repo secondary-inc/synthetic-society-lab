@@ -1,0 +1,678 @@
+{
+  "schema_version": 1,
+  "scope": "OFFICIAL_BALLOT_READINESS_ONLY",
+  "source_adoption": false,
+  "sources": [
+    {
+      "source_id": "nj_senate",
+      "url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-official-general-candidates-us-senate.pdf",
+      "path": "data/raw/e01_ballots_2026/nj_senate-f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e.pdf",
+      "bytes": 57353,
+      "sha256": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e",
+      "retrieved_at_utc": "2026-11-03T11:57:57.309203+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": "2026-07-27",
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:57:57 GMT",
+        "Last-Modified": "Tue, 28 Jul 2026 00:56:44 GMT",
+        "ETag": "\"e009-6a67fe4c\"",
+        "Content-Type": "application/pdf"
+      }
+    },
+    {
+      "source_id": "nj_nominee_certification",
+      "url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-certification-of-general-election-nominees_us-senate_us-house.pdf",
+      "path": "data/raw/e01_ballots_2026/nj_nominee_certification-c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec.pdf",
+      "bytes": 411364,
+      "sha256": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec",
+      "retrieved_at_utc": "2026-11-03T11:57:57.427784+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_NOMINEE_CERTIFICATION",
+      "published_date": "2026-07-27",
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:57:57 GMT",
+        "Last-Modified": "Tue, 28 Jul 2026 00:56:43 GMT",
+        "ETag": "\"646e4-6a67fe4b\"",
+        "Content-Type": "application/pdf"
+      }
+    },
+    {
+      "source_id": "nc_federal_general",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf",
+      "path": "data/raw/e01_ballots_2026/nc_federal_general-378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d.pdf",
+      "bytes": 170443,
+      "sha256": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d",
+      "retrieved_at_utc": "2026-11-03T11:57:57.514028+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": "2026-10-13",
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:57:57 GMT",
+        "Last-Modified": "Tue, 13 Oct 2026 16:47:39 GMT",
+        "ETag": "\"5680ec783cbfdfd5444808eac8c2cc51\"",
+        "Content-Type": "application/pdf"
+      }
+    },
+    {
+      "source_id": "fl_vacancy_law",
+      "url": "https://flsenate.gov/Laws/Statutes/2026/Chapter100/All",
+      "path": "data/raw/e01_ballots_2026/fl_vacancy_law-169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da.html",
+      "bytes": 184582,
+      "sha256": "169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da",
+      "retrieved_at_utc": "2026-11-03T11:59:29.024919+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_VACANCY_LAW",
+      "published_date": null,
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:59:28 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "source_id": "senate_class_III",
+      "url": "https://www.senate.gov/senators/Class_III.htm",
+      "path": "data/raw/e01_ballots_2026/senate_class_III-592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823.html",
+      "bytes": 19634,
+      "sha256": "592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823",
+      "retrieved_at_utc": "2026-11-03T11:59:29.143674+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CLASS_IDENTITY",
+      "published_date": null,
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:59:29 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "source_id": "senate_appointments",
+      "url": "https://www.senate.gov/senators/AppointedSenators.htm",
+      "path": "data/raw/e01_ballots_2026/senate_appointments-13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7.html",
+      "bytes": 109299,
+      "sha256": "13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7",
+      "retrieved_at_utc": "2026-11-03T11:59:29.240278+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_APPOINTMENT_REGISTER",
+      "published_date": null,
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:59:29 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "source_id": "fl_broward_notice",
+      "url": "https://dos.fl.gov/media/710691/2026_nge_bro_english.pdf",
+      "path": "data/raw/e01_election_type/fl_broward_notice.pdf",
+      "bytes": 29306,
+      "sha256": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922",
+      "retrieved_at_utc": "2026-11-03T11:35:19.710441+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_GENERAL_NOTICE",
+      "published_date": "2026-05-26",
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:35:19 GMT",
+        "Content-Type": "application/pdf",
+        "ETag": "0x8DEBB342B987B37",
+        "Last-Modified": "Tue, 26 May 2026 14:36:27 GMT"
+      }
+    },
+    {
+      "source_id": "fl_palm_notice",
+      "url": "https://dos.fl.gov/media/710950/2026_nge_pal_english.pdf",
+      "path": "data/raw/e01_election_type/fl_palm_notice.pdf",
+      "bytes": 115597,
+      "sha256": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0",
+      "retrieved_at_utc": "2026-11-03T11:35:19.832575+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_GENERAL_NOTICE",
+      "published_date": "2026-06-09",
+      "status": "ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:35:19 GMT",
+        "Content-Type": "application/pdf",
+        "ETag": "0x8DEC7467622210E",
+        "Last-Modified": "Wed, 10 Jun 2026 23:17:37 GMT"
+      }
+    },
+    {
+      "source_id": "senate_class_II",
+      "url": "https://www.senate.gov/senators/Class_II.htm",
+      "path": "data/raw/e01_inside_elections/senate-class-II-browser-text-c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb.txt",
+      "bytes": 3488,
+      "sha256": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb",
+      "retrieved_at_utc": "2026-11-03T11:28:14.410Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "source_role": "OFFICIAL_CLASS_IDENTITY",
+      "published_date": null,
+      "status": "CURRENT_INSTITUTIONAL_CAPTURE_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {}
+    },
+    {
+      "source_id": "co_general",
+      "url": "https://www.sos.state.co.us/pubs/elections/vote/generalCandidates.html",
+      "path": "data/raw/e01_ballots_batch02_v1/co_general.html",
+      "bytes": 72145,
+      "sha256": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+      "retrieved_at_utc": "2026-11-03T12:09:28.264902+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": "2026-09-15",
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Last-Modified": "Tue, 15 Sep 2026 17:09:44 GMT",
+        "Content-Type": "text/html"
+      }
+    },
+    {
+      "source_id": "va_index",
+      "url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/",
+      "path": "data/raw/e01_ballots_batch02_v1/va_index.html",
+      "bytes": 35879,
+      "sha256": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+      "retrieved_at_utc": "2026-11-03T12:09:28.616308+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_INDEX",
+      "published_date": null,
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Last-Modified": "Mon, 02 Nov 2026 20:12:26 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "source_id": "va_federal",
+      "url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices/",
+      "path": "data/raw/e01_ballots_batch02_v1/va_federal.html",
+      "bytes": 48018,
+      "sha256": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+      "retrieved_at_utc": "2026-11-03T12:09:28.686862+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": "2026-10-06",
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Last-Modified": "Mon, 02 Nov 2026 20:12:27 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "source_id": "wy_index",
+      "url": "https://sos.wyo.gov/Elections/Default.aspx",
+      "path": "data/raw/e01_ballots_batch02_v1/wy_index.html",
+      "bytes": 54800,
+      "sha256": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d",
+      "retrieved_at_utc": "2026-11-03T12:09:28.742425+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_INDEX",
+      "published_date": null,
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "source_id": "wy_general",
+      "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_WY_General_Election_Candidates.pdf",
+      "path": "data/raw/e01_ballots_batch02_v1/wy_general.pdf",
+      "bytes": 84715,
+      "sha256": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16",
+      "retrieved_at_utc": "2026-11-03T12:09:42.721334+00:00",
+      "capture_kind": "HTTP_RESPONSE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": "2026-09-09",
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:42 GMT",
+        "Last-Modified": "Wed, 09 Sep 2026 18:04:58 GMT",
+        "ETag": "\"8c12dbb98540dd1:0\"",
+        "Content-Type": "application/pdf"
+      }
+    },
+    {
+      "source_id": "ks_general_dom",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+      "path": "data/raw/e01_ballots_batch03_v1/ks_general.table-dom.local.html",
+      "bytes": 177713,
+      "sha256": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d",
+      "retrieved_at_utc": "2026-11-03T13:09:36.486Z",
+      "capture_kind": "BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": null,
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {}
+    },
+    {
+      "source_id": "ks_general_browser",
+      "url": "https://sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+      "path": "data/raw/e01_ballots_batch03_v1/ks_general.browser-text.local.txt",
+      "bytes": 67788,
+      "sha256": "f4f69411838d79235aca844203edb9d72f2c08ba043bb44e95c4b975e8a56583",
+      "retrieved_at_utc": "2026-11-03T13:09:27.206Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "source_role": "OFFICIAL_CAPTURE_CONTEXT",
+      "published_date": null,
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {}
+    },
+    {
+      "source_id": "ak_senate_dom",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr",
+      "path": "data/raw/e01_ballots_batch03_v1/ak_senate_dom.local.html",
+      "bytes": 9159,
+      "sha256": "1167c252ab39cf0bab9e4c63c52f61c9733b64a92e5a3e13239e1cd53739799c",
+      "retrieved_at_utc": "2026-11-03T13:09:48.347Z",
+      "capture_kind": "BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES",
+      "source_role": "OFFICIAL_CANDIDATE_LIST",
+      "published_date": "2026-09-25",
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {}
+    },
+    {
+      "source_id": "ak_general_browser",
+      "url": "https://www.elections.alaska.gov/candidates/?election=26genr",
+      "path": "data/raw/e01_ballots_batch03_v1/ak_general_browser.local.txt",
+      "bytes": 21139,
+      "sha256": "c1ddc16c1ef47e8b7b8ef55fef906a2cbbeccd531dad26374370150af2d23225",
+      "retrieved_at_utc": "2026-11-03T13:09:48.346Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "source_role": "OFFICIAL_CAPTURE_CONTEXT",
+      "published_date": "2026-09-25",
+      "status": "OBTAINED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW",
+      "response_headers": {}
+    }
+  ],
+  "class_identity_source_id": "senate_class_II",
+  "class_II_frame": [
+    {
+      "state": "AK",
+      "contest_id": "2026-AK-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "ak_senate_dom",
+        "ak_general_browser"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "AL",
+      "contest_id": "2026-AL-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "AR",
+      "contest_id": "2026-AR-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "CO",
+      "contest_id": "2026-CO-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "co_general"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "DE",
+      "contest_id": "2026-DE-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "GA",
+      "contest_id": "2026-GA-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "IA",
+      "contest_id": "2026-IA-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "ID",
+      "contest_id": "2026-ID-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "IL",
+      "contest_id": "2026-IL-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "KS",
+      "contest_id": "2026-KS-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "ks_general_dom",
+        "ks_general_browser"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "KY",
+      "contest_id": "2026-KY-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "LA",
+      "contest_id": "2026-LA-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "MA",
+      "contest_id": "2026-MA-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "ME",
+      "contest_id": "2026-ME-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "MI",
+      "contest_id": "2026-MI-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "MN",
+      "contest_id": "2026-MN-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "MS",
+      "contest_id": "2026-MS-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "MT",
+      "contest_id": "2026-MT-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "NC",
+      "contest_id": "2026-NC-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "nc_federal_general"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "NE",
+      "contest_id": "2026-NE-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "NH",
+      "contest_id": "2026-NH-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "NJ",
+      "contest_id": "2026-NJ-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "nj_senate",
+        "nj_nominee_certification"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "NM",
+      "contest_id": "2026-NM-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "OK",
+      "contest_id": "2026-OK-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "OR",
+      "contest_id": "2026-OR-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "RI",
+      "contest_id": "2026-RI-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "SC",
+      "contest_id": "2026-SC-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "SD",
+      "contest_id": "2026-SD-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "TN",
+      "contest_id": "2026-TN-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "TX",
+      "contest_id": "2026-TX-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "VA",
+      "contest_id": "2026-VA-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "va_federal"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "WV",
+      "contest_id": "2026-WV-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    },
+    {
+      "state": "WY",
+      "contest_id": "2026-WY-SENATE-C2",
+      "seat_class": 2,
+      "election_date": "2026-11-03",
+      "scope": "REGULAR_CLASS_II_FRAME",
+      "candidate_source_ids": [
+        "wy_general"
+      ],
+      "amendment_review": "PENDING",
+      "independent_ballot_review": "PENDING"
+    }
+  ],
+  "context_contests": [
+    {
+      "contest_id": "2026-OH-SENATE-C3",
+      "scope": "CONTEXT_OUTSIDE_REGULAR_QUOTAS",
+      "official_source_ids": [
+        "senate_class_III",
+        "senate_appointments"
+      ],
+      "status": "INDEXED_OFFICIAL_WRIT_SUPPORTS_SPECIAL_LOCAL_WRIT_BODY_PENDING",
+      "reason": "ClassIII unexpired term through2029; official indexed Ohio directive/writ text saysspecialNov3; localbody/hashpending"
+    },
+    {
+      "contest_id": "2026-FL-SENATE-C3",
+      "scope": "CONTEXT_OUTSIDE_REGULAR_QUOTAS",
+      "official_source_ids": [
+        "senate_class_III",
+        "senate_appointments",
+        "fl_vacancy_law",
+        "fl_broward_notice"
+      ],
+      "status": "PRIMARY_CHAIN_SUPPORTS_VACANCY_CONTEXT_SPECIFIC_STATE_WRIT_PENDING",
+      "reason": "OfficialClassIIItermthrough2029,appointmentregister,Florida100.161and2026Senatenotice supportvacancyelection inference; exactwrit/finaltermballotpending; notClassIIregular"
+    },
+    {
+      "contest_id": "2026-FL-HOUSE-20",
+      "scope": "CONTEXT_OUTSIDE_REGULAR_QUOTAS",
+      "official_source_ids": [
+        "fl_broward_notice"
+      ],
+      "status": "OFFICIAL_GENERAL_NOTICE_CONFIRMED_PUBLISHER_FLAG_NOT_STAGE_AUTHORITY",
+      "reason": "BrowardgeneralNov3noticeincludesCD20; finalterm/candidate/amendmentsneedreview; no automaticexclusion"
+    }
+  ]
+}

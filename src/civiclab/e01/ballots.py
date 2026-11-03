@@ -16,6 +16,7 @@ from urllib.parse import urlsplit
 
 from civiclab.common import RunStore,canonical_hash,sha256_file
 from civiclab.e01.ballot_formats_v1_3 import extract_co_senate,extract_va_senate,extract_wy_senate
+from civiclab.e01.ballot_capture_formats_v1_4 import extract_ks_senate,extract_ak_senate
 
 CLASS_II_STATES=tuple('AK AL AR CO DE GA IA ID IL KS KY LA MA ME MI MN MS MT NC NE NH NJ NM OK OR RI SC SD TN TX VA WV WY'.split())
 CONTEXT_IDS={'2026-OH-SENATE-C3','2026-FL-SENATE-C3','2026-FL-HOUSE-20'}
@@ -107,6 +108,14 @@ def visible_html_text(data):
     parser=_VisibleText();parser.feed(data.decode('utf-8-sig'));return normalize(' '.join(parser.parts))
 
 
+def official_url_allowed(url):
+    u=urlsplit(url)
+    if u.scheme!='https' or u.username is not None or u.password is not None or u.fragment:return False
+    if u.query and url!='https://www.elections.alaska.gov/candidates/?election=26genr':return False
+    return ((u.hostname or '').endswith('.gov') or u.hostname=='www.sos.state.co.us' or
+            (u.hostname=='s3.amazonaws.com' and u.path.startswith('/dl.ncsbe.gov/Elections/')))
+
+
 def admit_metadata(config):
     """No file reads or logging: reject credential-bearing metadata first."""
     expected={'schema_version','scope','source_adoption','sources','class_identity_source_id','class_II_frame','context_contests'}
@@ -117,14 +126,12 @@ def admit_metadata(config):
     for source in config['sources']:
         if not isinstance(source,dict) or set(source)!=SOURCE_FIELDS:raise ValueError('source schema differs')
         if not isinstance(source['url'],str):raise ValueError('source URL metadata differs')
-        u=urlsplit(source['url'])
-        if (u.scheme!='https' or u.username is not None or u.password is not None or u.query or u.fragment or not
-            ((u.hostname or '').endswith('.gov') or u.hostname=='www.sos.state.co.us' or
-             (u.hostname=='s3.amazonaws.com' and u.path.startswith('/dl.ncsbe.gov/Elections/')))):
-            raise ValueError('source URL metadata admission rejected')
+        if not official_url_allowed(source['url']):raise ValueError('source URL metadata admission rejected')
         headers=source['response_headers']
         if not isinstance(headers,dict) or set(headers)-{'Date','Last-Modified','ETag','Content-Type'}:
             raise ValueError('source header metadata admission rejected')
+        if source['capture_kind'].startswith('BROWSER_') and headers:
+            raise ValueError('browser captures have no observed HTTP response headers')
         if any(not isinstance(v,str) or '\r' in v or '\n' in v for v in headers.values()):
             raise ValueError('source header value metadata admission rejected')
     # Runs persist only a deterministic input digest, not arbitrary caller text.
@@ -138,20 +145,18 @@ def verify_source(root,source):
     if not path.is_relative_to(raw) or path.is_symlink() or not path.is_file():raise ValueError('source path invalid/outside raw')
     if type(source['bytes']) is not int or path.stat().st_size!=source['bytes'] or sha256_file(path)!=source['sha256']:
         raise ValueError('official source bytes/hash changed')
-    u=urlsplit(source['url'])
-    if (u.scheme!='https' or u.username or u.password or u.query or not
-        ((u.hostname or '').endswith('.gov') or u.hostname=='www.sos.state.co.us' or
-         (u.hostname=='s3.amazonaws.com' and u.path.startswith('/dl.ncsbe.gov/Elections/')))):
-        raise ValueError('source must be ordinary public official HTTPS URL without credentials/query')
+    if not official_url_allowed(source['url']):raise ValueError('source URL metadata admission rejected')
     stamp=datetime.fromisoformat(source['retrieved_at_utc'].replace('Z','+00:00'))
     if stamp.tzinfo is None:raise ValueError('source retrieval clock needs explicit timezone')
-    if source['capture_kind'] not in {'HTTP_RESPONSE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES'}:
+    if source['capture_kind'] not in {'HTTP_RESPONSE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES'}:
         raise ValueError('unknown capture representation')
     if source['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION',
-        'OFFICIAL_CANDIDATE_INDEX','OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
+        'OFFICIAL_CAPTURE_CONTEXT','OFFICIAL_CANDIDATE_INDEX','OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
         raise ValueError('finance registration or unknown source role is not ballot evidence')
     if not isinstance(source['response_headers'],dict) or set(source['response_headers'])-{'Date','Last-Modified','ETag','Content-Type'}:
         raise ValueError('only limited noncredential response headers may be recorded')
+    if source['capture_kind'].startswith('BROWSER_') and source['response_headers']:
+        raise ValueError('browser captures have no observed HTTP response headers')
     if source['published_date'] is not None:datetime.strptime(source['published_date'],'%Y-%m-%d')
     return path
 
@@ -205,7 +210,7 @@ def validate_readiness(root,config):
             findings.append({'state':row['state'],'status':'NOT_YET_ACQUIRED_OFFICIAL_CANDIDATE_DOCUMENT',
                              'work_state':'UNBLOCKED_SOURCE_JOB_NOT_AN_ASOF_OR_OWNER_BLOCK',
                              'final_ballot_accepted':False});continue
-        if any(sources[k]['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION'} for k in refs):
+        if any(sources[k]['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION','OFFICIAL_CAPTURE_CONTEXT'} for k in refs):
             raise ValueError('candidate reference is not official roster/certification evidence')
         if row['state']=='NJ' and 'nj_senate' in refs:
             roster=extract_nj_senate(pdf_pages(paths['nj_senate']))
@@ -216,6 +221,14 @@ def validate_readiness(root,config):
                 key=lambda x:sorted((c['official_name'],c['source_party_label']) for c in x['candidates'])
                 if key(roster)!=key(certified):raise ValueError('NJ official list/certification candidate sets disagree')
                 roster['nominee_certification_consistency']='MATCHING_CANDIDATE_NAMES_AND_EXPLICIT_PARTY_LABELS'
+        elif row['state']=='KS' and refs==['ks_general_dom','ks_general_browser']:
+            if [sources[k]['capture_kind'] for k in refs]!=['BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES'] or [sources[k]['source_role'] for k in refs]!=['OFFICIAL_CANDIDATE_LIST','OFFICIAL_CAPTURE_CONTEXT']:
+                raise ValueError('Kansas capture representation/role differs')
+            roster=extract_ks_senate(paths[refs[0]].read_text(),paths[refs[1]].read_text())
+        elif row['state']=='AK' and refs==['ak_senate_dom','ak_general_browser']:
+            if [sources[k]['capture_kind'] for k in refs]!=['BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES'] or [sources[k]['source_role'] for k in refs]!=['OFFICIAL_CANDIDATE_LIST','OFFICIAL_CAPTURE_CONTEXT']:
+                raise ValueError('Alaska capture representation/role differs')
+            roster=extract_ak_senate(paths[refs[0]].read_text(),paths[refs[1]].read_text())
         elif row['state']=='CO' and refs==['co_general']:
             roster=extract_co_senate(paths['co_general'].read_text())
         elif row['state']=='VA' and refs==['va_federal']:

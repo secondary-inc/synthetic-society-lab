@@ -1,0 +1,21 @@
+# E01 browser-capture readiness v1.4 fixture handoff
+
+TASK_ID: E01_BALLOT_READINESS_CAPTURE_EXPANSION_V1_4_FIXTURES
+
+FILES_CHANGED: Updated `src/civiclab/e01/ballots.py`; new `src/civiclab/e01/ballot_capture_formats_v1_4.py`, `tests/test_e01_ballot_captures_v1_4.py`, `configs/e01_ballot_readiness_v1_4.json`, versioned fixture evidence and this receipt. Exact v1.3 code/formats/tests/config/actualevidence preserved before mutation in ignored snapshot with hashes at `data/processed/reproducibility/e01-ballot-readiness-v1_3-pre-capture-expansion/`. Four named v1.3 implementation/formats/tests/format-tests reportTXT preserve historical code/test bytes for Git/repropack. Original configs/runs/audits/captures and sharedhelpers/CLI/status untouched.
+
+OUTPUT_ARTIFACTS: Seven reviewed file pins in fixture JSON. New config18sourcepins includes14v1.3 plus KS/AK renderedtableDOM and visibletextpairs. DOMhas OFFICIAL_CANDIDATE_LIST role; full visibletext has OFFICIAL_CAPTURE_CONTEXT. Representation/role pairs strictly checked; context alone cannot act as roster. Capture bytes remain local/ignored. Actualreadiness/replay NOT_RUN pending independent review. No invented newactualcoverage.
+
+REPRODUCTION_COMMANDS:55-test command in fixture JSON. Future actual run only after review: `PYTHONPATH=src .venv/bin/python -m civiclab.e01.ballots configs/e01_ballot_readiness_v1_4.json --root "$PWD"`.
+
+TESTS_RUN_AND_RESULTS:55targeted tests PASS (8new+47retained). KS exact2026General banner,25columnrows/exactUnitedStatesSenate, literal labels/unknownclass, contactomission; DOMvisible fullrow and candidatecoverage crosschecks. AK exactgeneraldate/edition/USSenatorbounds;6actualrows expected only afterfutureexecution, fixturehas4; separate literalname/registration/Certified/CertifiedWriteIn/incumbent concepts; writeinprintedflags; unknownregistrationclass; contactomission. Both reject altered/duplicate/truncatedDOM vs fullvisiblecontext. ExactAKURLquery negativevariants includeotherpath/host/election/case/extraquery/token/userinfo/fragment/http; allreject. No generalqueryauthorization. BrowserHTTPheaderfabrication rejected. Integratedfixture retains33slots, pendingamendments, noadoption/selection/acceptedballots. Priorsecretadmission/parserhashcancellation/NJfullpartylabel and COwritein tests remain.
+
+SOURCE_DATA_AND_LICENSE_NOTES: No newrequests for KS/AKintegration. Uses separately audited existing batch03 captures. BrowserDOM/text remain distinctsource representations, never HTTPwirebody. Empty response_headers enforced; no invented headers. Exact observed AK ?election=26genr URL only; no wildcardquery. KS source is displayed default2026General+Submit, not rawGETselectionform. AKsource covers exactSenatetable on firstvisiblepage, nototherofficepagination/wholepagecompleteness. Registeredparty labels normalized toD/R only for sourceinterpretation, notlegalnomination status; otherlabels UNSPECIFIEDliteralretained. Maineofficekey separately downloaded viaofferednormalbrowser link and sent for independentmappingreview; no MEreader/inputincorporation yet. All originalcaptures unchanged.
+
+COST_USD_ACTUAL_OR_ZERO:0; no inference.
+
+RISKS_AND_LIMITATIONS: Implementer checks pending independent fixture/code/sourceparse review. Expected7rosterstates/26unacquiredjobs only iffutureactualpipeline succeeds; acceptedstatus remains5states/28jobs. KSedition/currentamendments and AKsampleballot/lateramendments remainpending. PairedDOM/text fromsamecapture/channel are consistency checks, not independenthistoricalasofverification. No finalballotacceptance/source-policyadoption/racesample/outcomes. Future broader capturetypes/downloadreaders require separateversionreview; MEdownloadbytes not automaticallyadmitted here.
+
+UNRESOLVED_BLOCKERS: Independentv1.4code/fixture review beforeactualreadiness/replay. MEofficekeyindependentreview andgeneralreplacementwriteinreconciliation; ORcandidateacquisition; missingClassIIjobs; originalscientific/selection/asof/geography gates unchanged.
+
+NEXT_UNBLOCKED_TASK: Auditor verifies newreaderfixtures/exactqueryguard/representations againstexistingcaptures, then authorize boundedlocalv1.4actualreadiness+replay undernewpins. Lead owns integration/status. MEwork remains separatelysource-reviewed beforeincorporation.
