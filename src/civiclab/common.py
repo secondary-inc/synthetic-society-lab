@@ -77,7 +77,8 @@ def code_identity(root):
     files = {str(p.relative_to(root)): sha256_file(p)
              for folder in ("src", "protocols", "configs")
              for p in sorted((root / folder).rglob("*"))
-             if p.is_file() and p.suffix in (".py", ".json", ".md", ".csv", ".html", ".txt", ".toml", ".yml")}
+             if p.is_file() and p.suffix in (".py", ".json", ".md", ".csv", ".html", ".txt", ".toml", ".yml")
+             and not any(part=='__pycache__' or part.endswith(('.egg-info','.dist-info')) for part in p.relative_to(root).parts)}
     if (root/'pyproject.toml').exists():
         files['pyproject.toml']=sha256_file(root/'pyproject.toml')
     return {"git_sha": revision, "dirty": dirty, "source_tree_sha256": canonical_hash(files)}

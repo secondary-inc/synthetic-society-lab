@@ -19,3 +19,7 @@ RISKS_AND_LIMITATIONS: Exact ordered integer MILP objectives and bit chunks avoi
 UNRESOLVED_BLOCKERS: Independent implementation/solver/schema/oracle audit; complete permitted authenticated as-of Cook universe, official ballot/amendment evidence and original E01 historical/crosswalk/holdout/comparator gates. Actual selection remains disabled. Remote CI not observed by worker.
 
 NEXT_UNBLOCKED_TASK: Separate auditor tests implementation against approved methods, adversarial inputs and source admission; lead can add shared CLI hook once reviewed. No real source collection or sample selection without separate accepted evidence and authority.
+
+## Evidence clarification after auditor feedback
+
+The recorded timeout run `e01-32a3512931fc47d98b77a68cc3149158` contains `quota_L1: STARTED` followed by failure and has **zero prior OPTIMAL stages**. It demonstrates sealed failure/configuration retention and retention of the available started-stage event. It does not demonstrate retention of a completed optimum before a later failure. That behavior is demonstrated separately by `tests.test_e01_selection.SolverTests.test_later_solver_failure_retains_earlier_optimality_receipts`, a worker-authored unit injection using a temporary run directory. Independent auditor injection is separate evidence. Code and original run artifacts remain unchanged; earlier wording describing the general streaming behavior must not be read as a claim that the recorded timeout contains a prior optimum.

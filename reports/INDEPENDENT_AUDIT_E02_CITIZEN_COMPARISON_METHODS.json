@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:21:27.945273+00:00",
+  "status": "PASS_METHODS_FOR_IMPLEMENTATION_AND_FIXTURES_ONLY",
+  "proposal_path": "docs/E02_CITIZEN_COMPARISON_PLAN.md",
+  "proposal_sha256": "2f3d4c4c4eb4cfd0466af3d84ef55b311167798f4817fca2f29099972bffb451",
+  "accepted_design": [
+    "Matched resident/citizen by independent/hierarchical primary comparison, fixed tau5 and tau1/20 sensitivities, all six joint fields and original negative results retained.",
+    "Nine citizen scenarios use central plus eight prespecified transfers with Decimal amplitude min(0.04, donor, 100-receiver); source observations remain unchanged.",
+    "Version1.1 correctly distinguishes perturbations of rounded input weights from jointly feasible latent ACS vectors; normalization yields coherent derived margins only.",
+    "Four trained distributions reused across ten target sets yield forty calibrations, with matched held-out weights and shared 500 cluster-bootstrap draws, fixed scoring floor and no adaptive selection.",
+    "Exact transient cohort/weight/recode/design/split identity must be independently reviewed; aggregate counts alone insufficient.",
+    "Inspected holdout is exploratory; scenario range is finite, not worst-case or ACS sampling confidence interval."
+  ],
+  "required_before_fitting": [
+    "Freeze new comparison config and all source/target/proposal/review/extractor/code hashes.",
+    "Independent equivalence review of separate reference extractor against pinned original loader and branch-complete fixtures.",
+    "Independent scenario, anchor/mass, leakage, identity and complete-configuration fixture review before actual model fitting."
+  ],
+  "original_scientific_population_gate": "BLOCKED",
+  "scope": "Methods review permits implementation and fixtures only; no actual fitting, inference, spend, external publication or scientific promotion authorized.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

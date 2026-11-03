@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:25:40.332183+00:00",
+  "status": "PASS_SOURCE_METHODS_FOR_BOUNDED_WYOMING_PILOT_PREPARATION",
+  "proposal_path": "docs/E02_MATCHED_PUMS_SOURCE_PROPOSAL.md",
+  "proposal_sha256": "18a4f8f484f167d75ac773c0a1a8c3fe94f17c649fe0ac532e6d587a022fa1d2",
+  "independent_metadata_evidence": [
+    {
+      "source": "dictionary_txt",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.txt",
+      "sha256": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+      "bytes": 307894
+    },
+    {
+      "source": "accuracy_pdf",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2020_2024AccuracyPUMS.pdf",
+      "sha256": "edbc9973f8cdf1a6528bb9acc450d83e230edc66421aa708ec9892a087b86447",
+      "bytes": 434590
+    },
+    {
+      "source": "file_index",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/",
+      "sha256": "156a5263721b09cb60d8ed9a1bbbcc21b8ef156f4b7bdc5a8c27f4c4df9ca507",
+      "bytes": 58152
+    },
+    {
+      "source": "record_counts_csv",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_20_24.csv",
+      "sha256": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+      "bytes": 4782
+    },
+    {
+      "source": "user_guide_pdf",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/2020_2024ACS_PUMS_User_Guide.pdf",
+      "sha256": "77f9b74efef7cb9d3eb8ffa4dc875df9e15765432d6134ead3691a5fe8b35e1a",
+      "bytes": 474159
+    }
+  ],
+  "accepted_points": [
+    "Official five-year public PUMS distribution offers state person archives without login/key.",
+    "Person dictionary STATE/RT/AGEP/CIT/RELSHIPP/SCHL supports citizen1..4 and household20..36 filter without housing merge.",
+    "PWGTP positive1..9999; eighty replicate weights signed-9999..9999. Preserve identical eligibility and signed replicate weights.",
+    "Released five-year weights need no second division by five. SDR4/80 and replicate proportions with matching denominators are appropriate.",
+    "Coarse state-age-education benchmarks cannot identify missing political correlations or validate human-response transport."
+  ],
+  "next_scope": "Implementation and fixtures for one Wyoming person-archive engineering pilot. Under existing research authorization, bounded public acquisition may follow frozen/reviewed resource and schema controls; no additional owner approval solely for public microdata.",
+  "required_before_download": [
+    "Freeze exact official Wyoming URL/product/metadata hashes and positive compressed/uncompressed byte ceilings, network/processing time and retry limits.",
+    "Freeze local ignored retention, archive/member safety, field allowlist, domain/error/exclusion policy, duplicate prevention, signed-replicate arithmetic, aggregate-only output and low-support sharing policy."
+  ],
+  "required_before_scaling_or_fitting": [
+    "Independent Wyoming archive/member/header/count/aggregate/uncertainty audit and exact replay.",
+    "Separate nonoverlapping national acquisition plan using measured resource bounds and reviewed checkpoints.",
+    "Separate adult/state model amendment, validation and fitting review; preserve existing negative evidence."
+  ],
+  "limits": "Auditor downloaded metadata only; actual person bytes, parser and pilot outputs not certified. PUMS sampling/disclosure/period/coverage and ANES transport limits remain. No national target, effect, publication or scientific completion accepted.",
+  "scientific_population_gate": "BLOCKED",
+  "cost_usd": 0,
+  "model_calls": 0
+}

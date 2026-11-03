@@ -16,7 +16,11 @@ class PackageTests(unittest.TestCase):
             report=root/'reports/ENGINEERING_EVIDENCE_TEST.json';report.parent.mkdir();report.write_text('{}')
             (report.parent/'E02_WORKER_RECEIPT.md').write_text('Observed module receipt')
             with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO','cost_usd':0})
-            a=build_package(root,root/'a.zip',[run.run_id]);b=build_package(root,root/'b.zip',[run.run_id])
+            metadata=root/'src/local_project.egg-info';metadata.mkdir(parents=True)
+            (metadata/'SOURCES.txt').write_text('generated during install')
+            a=build_package(root,root/'a.zip',[run.run_id])
+            (metadata/'SOURCES.txt').write_text('regenerated during another install')
+            b=build_package(root,root/'b.zip',[run.run_id])
             self.assertEqual(a['sha256'],b['sha256'])
             with self.assertRaises(FileExistsError):build_package(root,root/'a.zip',[run.run_id])
             self.assertEqual(verify_package(root/'a.zip')['sha256'],a['sha256'])
@@ -24,6 +28,7 @@ class PackageTests(unittest.TestCase):
                 self.assertNotIn('.env',z.namelist());self.assertFalse(any(n.startswith('data/raw/') for n in z.namelist()))
                 self.assertIn('reports/ENGINEERING_EVIDENCE_TEST.json',z.namelist())
                 self.assertIn('reports/E02_WORKER_RECEIPT.md',z.namelist())
+                self.assertFalse(any('.egg-info/' in n for n in z.namelist()))
             with zipfile.ZipFile(root/'a.zip','a') as z:z.writestr('unregistered.txt','tampered')
             with self.assertRaises(ValueError):verify_package(root/'a.zip')
 
@@ -45,4 +50,14 @@ class PackageTests(unittest.TestCase):
             with patch('civiclab.reproduction.verified_run',side_effect=concurrent_change):
                 with self.assertRaisesRegex(ValueError,'source tree changed'):
                     build_package(root,root/'pack.zip',[run.run_id])
+            self.assertFalse((root/'pack.zip').exists())
+
+    def test_local_project_cannot_be_registry_bootstrap_dependency(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'pyproject.toml').write_text('[project]\nname="my-local.project"\n')
+            config=root/'configs';config.mkdir()
+            lock=config/'runtime_python312_20261103.txt';lock.write_text('my_local-project==0.1.0\n')
+            with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO'})
+            with self.assertRaisesRegex(ValueError,'local project'):
+                build_package(root,root/'pack.zip',[run.run_id])
             self.assertFalse((root/'pack.zip').exists())

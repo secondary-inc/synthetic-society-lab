@@ -83,5 +83,18 @@
   "failed_timeout_run_id": "e01-32a3512931fc47d98b77a68cc3149158",
   "failed_configuration_retained_and_checksums_verified": true,
   "stage_receipts_streamed_to_events": true,
-  "all_three_run_checksums_verified": true
+  "all_three_run_checksums_verified": true,
+  "failure_evidence_clarification": {
+    "recorded_timeout_run_id": "e01-32a3512931fc47d98b77a68cc3149158",
+    "observed_solver_events": [
+      {
+        "stage": "quota_L1",
+        "status": "STARTED"
+      }
+    ],
+    "observed_prior_optimal_stage_count": 0,
+    "later_stage_preservation_evidence": "tests.test_e01_selection.SolverTests.test_later_solver_failure_retains_earlier_optimality_receipts",
+    "evidence_type": "Worker-authored unit injection in temporary run directory, not the recorded timeout run",
+    "correction": "The recorded timeout proves failure-artifact retention and available STARTED-event retention only. Prior OPTIMAL-stage retention is demonstrated by the separate unit injection; independent auditor verification remains separate."
+  }
 }

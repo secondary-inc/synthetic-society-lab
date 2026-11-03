@@ -1,0 +1,660 @@
+{
+  "api_spend_usd": 0,
+  "bulk_data_bytes_downloaded": 0,
+  "dictionary_release_date": "2026-03-05",
+  "files_changed": [
+    "docs/E02_MATCHED_PUMS_SOURCE_PROPOSAL.md",
+    "reports/E02_MATCHED_PUMS_SOURCE_PROPOSAL.json"
+  ],
+  "housing_field_not_person_field": "TYPEHUGQ1housing/2institutionalGQ/3noninstitutionalGQ;notneededbecausepersonRELSHIPPfilteravoidsjoin",
+  "limitations": [
+    "PUMSsubsampling/disclosureedits/ageandweightperturbation/rounding",
+    "ANESframeandperiodnonresponse/modedifferencesremain",
+    "statepoliticalassociationsnotidentifiedbydemographictargets",
+    "signedreplicatetargetsnotautomaticallyvalidcalibrationmargins",
+    "zeroestimate/zeroSEandundefinedreplicateratiosrequiremethodsreview"
+  ],
+  "metadata_bytes_read_total": 1279577,
+  "metadata_bytes_retained_locally": false,
+  "metadata_requests": {
+    "access_page": {
+      "alternate_read": "Accesspagecontentreadsuccessfullythroughwebtool;noidenticalrawbyteclaim",
+      "bytes_read": 0,
+      "http_status": 403,
+      "sha256": null,
+      "status": "HTTP_ERROR_NO_BYPASS",
+      "url": "https://www.census.gov/programs-surveys/acs/microdata/access/2024.html"
+    },
+    "accuracy_pdf": {
+      "bytes_read": 434590,
+      "http_content_type": "application/pdf",
+      "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+      "retrieved_at_utc": "2026-11-03T11:20:11.393153+00:00",
+      "sha256": "edbc9973f8cdf1a6528bb9acc450d83e230edc66421aa708ec9892a087b86447",
+      "status": "OBTAINED_METADATA_ONLY",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2020_2024AccuracyPUMS.pdf"
+    },
+    "dictionary_txt": {
+      "bytes_read": 307894,
+      "http_content_type": "text/plain",
+      "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+      "retrieved_at_utc": "2026-11-03T11:20:10.811864+00:00",
+      "sha256": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+      "status": "OBTAINED_METADATA_ONLY",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.txt"
+    },
+    "file_index": {
+      "bytes_read": 58152,
+      "http_content_type": "text/html;charset=ISO-8859-1",
+      "http_last_modified": "Sun, 01 Nov 2026 15:27:59 GMT",
+      "retrieved_at_utc": "2026-11-03T11:20:10.695744+00:00",
+      "sha256": "156a5263721b09cb60d8ed9a1bbbcc21b8ef156f4b7bdc5a8c27f4c4df9ca507",
+      "status": "OBTAINED_METADATA_ONLY",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/"
+    },
+    "record_counts_csv": {
+      "bytes_read": 4782,
+      "http_content_type": "text/csv",
+      "http_last_modified": "Thu, 05 Mar 2026 12:30:03 GMT",
+      "retrieved_at_utc": "2026-11-03T11:20:11.599674+00:00",
+      "sha256": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+      "status": "OBTAINED_METADATA_ONLY",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_20_24.csv"
+    },
+    "user_guide_pdf": {
+      "bytes_read": 474159,
+      "http_content_type": "application/pdf",
+      "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+      "retrieved_at_utc": "2026-11-03T11:20:11.034311+00:00",
+      "sha256": "77f9b74efef7cb9d3eb8ffa4dc875df9e15765432d6134ead3691a5fe8b35e1a",
+      "status": "OBTAINED_METADATA_ONLY",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/2020_2024ACS_PUMS_User_Guide.pdf"
+    }
+  },
+  "next_unblocked_task": "Independentreviewofsource/universe/mapping/minimalpilotandreplicateuncertaintybeforeanybulkacquisition,conversionorfitting",
+  "official_person_record_count_metadata": [
+    {
+      "FILE_DESCRIPTION": "United States (PSAM_PUSA, PSAM_PUSB, PSAM_PUSC, and PSAM_PUSD)",
+      "FILE_NAME": "National Persons Records",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "16095728",
+      "STATE": "US"
+    },
+    {
+      "FILE_DESCRIPTION": "PUMS Person US A File (STATE 01 through 15)",
+      "FILE_NAME": "PSAM_PUSA",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "4748656",
+      "STATE": "PA"
+    },
+    {
+      "FILE_DESCRIPTION": "PUMS Person US B File (STATE 16 through 28)",
+      "FILE_NAME": "PSAM_PUSB",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "3468017",
+      "STATE": "PB"
+    },
+    {
+      "FILE_DESCRIPTION": "PUMS Person US C File (STATE 29 through 41)",
+      "FILE_NAME": "PSAM_PUSC",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "3757739",
+      "STATE": "PC"
+    },
+    {
+      "FILE_DESCRIPTION": "PUMS Person US D File (STATE 42 through 56)",
+      "FILE_NAME": "PSAM_PUSD",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "4121316",
+      "STATE": "PD"
+    },
+    {
+      "FILE_DESCRIPTION": "District of Columbia",
+      "FILE_NAME": "PSAM_P11",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "32505",
+      "STATE": "11"
+    },
+    {
+      "FILE_DESCRIPTION": "Wyoming",
+      "FILE_NAME": "PSAM_P56",
+      "FILE_TYPE": "Person",
+      "NUMBER_OF_RECORDS": "29297",
+      "STATE": "56"
+    }
+  ],
+  "original_population_completion": "INCOMPLETE_BLOCKED;no18+/statevaliditywaiver",
+  "paid_calls": 0,
+  "person_file_index_entries": [
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "4.5M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pak.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pak.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "33M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pal.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pal.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "20M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_par.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_par.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "48M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_paz.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_paz.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "256M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pca.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pca.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "39M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pco.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pco.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "24M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pct.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pct.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "4.5M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pdc.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pdc.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "6.4M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pde.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pde.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "137M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pfl.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pfl.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "67M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pga.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pga.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "10M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_phi.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_phi.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "22M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pia.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pia.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "13M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pid.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pid.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "84M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pil.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pil.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "45M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pin.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pin.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "20M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pks.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pks.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "30M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pky.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pky.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "28M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pla.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pla.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "48M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pma.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pma.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "41M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pmd.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmd.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "9.5M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pme.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pme.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "67M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pmi.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmi.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "38M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pmn.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmn.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "41M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pmo.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmo.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "19M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pms.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pms.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "7.4M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pmt.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmt.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "70M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pnc.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnc.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "5.3M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pnd.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnd.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "13M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pne.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pne.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "9.3M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pnh.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnh.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "61M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pnj.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnj.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "13M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pnm.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnm.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "20M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pnv.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnv.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "134M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pny.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pny.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "78M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_poh.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_poh.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "26M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pok.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pok.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "28M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_por.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_por.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "87M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_ppa.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ppa.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "17M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_ppr.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ppr.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "7.0M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pri.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pri.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "34M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_psc.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_psc.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "6.1M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_psd.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_psd.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "46M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_ptn.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ptn.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "182M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_ptx.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ptx.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "2.1G",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pus.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pus.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "22M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_put.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_put.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "58M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pva.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pva.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "4.6M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pvt.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pvt.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "53M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pwa.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwa.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "40M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pwi.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwi.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "12M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pwv.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwv.zip"
+    },
+    {
+      "archive_bytes_not_downloaded": true,
+      "archive_sha256": null,
+      "displayed_compressed_size": "4.0M",
+      "displayed_last_modified": "2026-03-05 07:10",
+      "exact_bytes": null,
+      "filename": "csv_pwy.zip",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwy.zip"
+    }
+  ],
+  "person_or_housing_downloads": 0,
+  "population_fit": "NOT_RUN",
+  "proposed_minimal_target": "612state\u00d74age\u00d73educationjointcells,80replicatecellvectors,aggregatequality/exclusionsonly",
+  "proposed_period": "2020\u20132024 five-year average",
+  "proposed_pilot": "Wyomingcsv_pwy.zip,index4.0M;lateracquisitiononlyafterapproval,notanationalbenchmark",
+  "sdr_variance": "4/80sum_r(X_r-X)^2;90percentMOE1.645SE;recomputeeachreplicateproportiondenominator",
+  "source_evidence_pages": {
+    "accuracy_pdf": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "dictionary_txt": "personbasicandvariables;RELSHIPP,SCHL,personreplicates,allocationflags",
+    "user_guide_pdf": [
+      4,
+      6,
+      7,
+      10,
+      11,
+      12,
+      15,
+      19,
+      20
+    ]
+  },
+  "source_permission": "OfficialpublicCensusPUMSdistributionwithoutlogin/key;candidatepermittedsourcependingindependentreview;rawrowslocalignoredonly,noreidentification/linkage/externaltransmission",
+  "status": "METADATA_ONLY_PENDING_INDEPENDENT_SOURCE_AND_METHODS_APPROVAL",
+  "target_conversion": "NOT_RUN",
+  "task_id": "E02-MATCHED-PUMS-SOURCE-PROPOSAL",
+  "verified_person_fields": {
+    "age": "AGEP18+;0..99,topcoded",
+    "allocation_flags": [
+      "FAGEP",
+      "FCITP",
+      "FSCHLP",
+      "FRELSHIPP"
+    ],
+    "citizenship": "CIT1..4 included,5noncitizenexcluded",
+    "education": "SCHL01..17HS_OR_LESS;18..20SOME_COLLEGE;21..24BA_PLUS",
+    "household_filter": "RELSHIPP20..36 included;37institutionalGQ/38noninstitutionalGQexcluded",
+    "point_weight": "PWGTPpositiveinteger,alreadyfive-yearready;nodivisionby5",
+    "record_type": "RT=P",
+    "replicates": "PWGTP1..80,signedintegers;negative/zeroallowed",
+    "state": "STATE (not assumed ST)"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_INSIDE_ELECTIONS_BOUNDED_INTERNAL_ACQUISITION",
+  "recorded_at_utc": "2026-11-03T11:21:18.398674+00:00",
+  "authorization": "reports/INDEPENDENT_AUDIT_E01_PUBLIC_API_SCOPE.json",
+  "status": "BROWSER_TEXT_CAPTURE_AND_METADATA_CHECK_COMPLETE_SOURCE_ADOPTION_BLOCKED",
+  "scope": "Bounded internal acquisition authorized; this failure is not a rights prohibition or proof all access channels fail",
+  "attempts": [
+    {
+      "office": "HOUSE",
+      "url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year%3D2026_district%3Dall_clean.json?v=1793388069",
+      "method": "GET",
+      "client": "Python stdlib urllib.request",
+      "request_headers": {
+        "User-Agent": "SyntheticSocietyLab internal source verification",
+        "Accept": "application/json"
+      },
+      "authentication": false,
+      "timeout_seconds": 20,
+      "status": "HTTP_403",
+      "response_body_read": false,
+      "response_headers_retained": false,
+      "bytes_cached": 0,
+      "sha256": null,
+      "redirects_observed": 0
+    },
+    {
+      "office": "SENATE",
+      "url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year%3D2026_district%3Dall_clean.json?v=1793297246",
+      "status": "NOT_RUN_AFTER_STOP_RULE"
+    }
+  ],
+  "bounds": {
+    "maximum_bytes_per_export": 2000000,
+    "maximum_redirects": 2,
+    "redirect_policy": "HTTPS same hostname, same decoded offered path, exact original query only",
+    "retries": 0
+  },
+  "stop_action": "No retry, header identity change, URL variation, login or alternative channel after the newly observed barrier",
+  "raw_cache_files": [
+    "data/raw/e01_inside_elections/house-browser-text-50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909.json",
+    "data/raw/e01_inside_elections/senate-browser-text-7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b.json"
+  ],
+  "verified_counts_or_unique_ids": {
+    "HOUSE": {
+      "publisher_total": 435,
+      "row_count": 435,
+      "unique_identity_count": 435,
+      "duplicate_identity_count": 0
+    },
+    "SENATE": {
+      "publisher_total": 100,
+      "row_count": 100,
+      "unique_identity_count": 100,
+      "duplicate_identity_count": 0
+    }
+  },
+  "schema_or_metadata_validation": "NOT_RUN_NO_JSON_ACQUIRED",
+  "field_segregation_policy": "Allowlisted rating/office/party/seat/stage metadata only; segregate electoral_votes without inspecting values; any other outcome key stops and quarantines; not exercised on a fresh body",
+  "independent_asof_status": "NOT_ESTABLISHED",
+  "source_adoption": "NOT_ADOPTED_PENDING_SEPARATE_AMENDMENT_AND_AUDITS",
+  "races_selected": 0,
+  "outcome_values_inspected": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "next_step": "Independent source/method review; verify authoritative seat-cycle/ballot and as-of evidence; Tilt/category mapping unresolved; no actual sample",
+  "browser_channel_appendix": {
+    "operational_clarification": "Parent relayed independent operational clarification allowing normal publisher-offered browser route after urllib-only403; no identity spoofing or challenge bypass",
+    "observed_at_utc": "2026-11-03T11:27:49.215534+00:00",
+    "house_download_helper": "Attachment downloadMedia timed out after20s; normal link navigation/render succeeded; helper failure not an HTTP denial",
+    "exports": [
+      {
+        "office": "HOUSE",
+        "channel": "NORMAL_IN_APP_BROWSER_PUBLISHER_OFFERED_LINK",
+        "actual_offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json?v=1793388069",
+        "retrieved_at_utc": "2026-11-03T11:26:51.681Z",
+        "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+        "bytes": 321964,
+        "sha256": "50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909",
+        "local_ignored_path": "data/raw/e01_inside_elections/house-browser-text-50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909.json",
+        "response_headers": "NOT_EXPOSED_BY_NORMAL_BROWSER_TEXT_CAPTURE",
+        "redirect_chain": "NOT_EXPOSED_NO_CHALLENGE_OR_LOGIN_OBSERVED",
+        "root_keys": [
+          "generated_at",
+          "last_updated",
+          "office",
+          "ratings",
+          "total"
+        ],
+        "segregated_field_occurrences": {
+          "electoral_votes": 435
+        },
+        "vote_field_values_evaluated": false,
+        "status": "INTERNAL_METADATA_AUDITED_NOT_ADOPTED",
+        "publisher_total": 435,
+        "publisher_last_updated": "2026-10-29T13:05:00-05:00",
+        "publisher_generated_at": "2026-10-30T19:21:09+00:00",
+        "row_count": 435,
+        "unique_identity_count": 435,
+        "duplicate_identity_count": 0,
+        "count_matches_publisher": true,
+        "row_schema_variants": [
+          {
+            "keys": [
+              "date",
+              "district",
+              "election_year",
+              "electoral_votes",
+              "flipped",
+              "incumbent",
+              "incumbent_name",
+              "note",
+              "office",
+              "office_slug",
+              "open",
+              "party",
+              "previous_rating",
+              "rating",
+              "rating_numeric",
+              "shift",
+              "special",
+              "state"
+            ],
+            "rows": 435
+          }
+        ],
+        "omitted_unanalysed_fields": {
+          "shift": 435,
+          "previous_rating": 435,
+          "flipped": 435,
+          "incumbent_name": 435,
+          "incumbent": 435,
+          "electoral_votes": 435,
+          "note": 435
+        },
+        "rating_counts": {
+          "Lean Democrat": 7,
+          "Lean Republican": 11,
+          "Likely Democrat": 5,
+          "Likely Republican": 19,
+          "Solid Democrat": 190,
+          "Solid Republican": 163,
+          "Tilt Democrat": 22,
+          "Tilt Republican": 5,
+          "Toss-up": 13
+        },
+        "year_counts": {
+          "2026": 435
+        },
+        "office_or_class_counts": {
+          "House": 435
+        },
+        "special_flag_counts": {
+          "False": 434,
+          "True": 1
+        },
+        "party_counts": {
+          "Democrat": 215,
+          "Independent": 1,
+          "Republican": 219
+        },
+        "rating_side_counts": {
+          "D": 224,
+          "UNRESOLVED_TOSSUP_OR_OTHER": 13,
+          "R": 198
+        },
+        "directional_rating_opposes_declared_party_count": 26,
+        "missing_metadata": {
+          "district": 0,
+          "office": 0,
+          "election_year": 0,
+          "date": 0,
+          "rating": 0,
+          "party": 0,
+          "special": 0
+        },
+        "metadata_date_min": "2025-12-05T00:00:00-05:00",
+        "metadata_date_max": "2026-10-29T13:05:00-05:00",
+        "state_prefix_count": 50,
+        "district_id_pattern_counts": {
+          "STATE_DISTRICT": 429,
+          "AT_LARGE_AL": 6
+        }
+      },
+      {
+        "office": "SENATE",
+        "channel": "NORMAL_IN_APP_BROWSER_PUBLISHER_OFFERED_LINK",
+        "actual_offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year=2026_district=all_clean.json?v=1793297246",
+        "retrieved_at_utc": "2026-11-03T11:27:09.121Z",
+        "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+        "bytes": 86042,
+        "sha256": "7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b",
+        "local_ignored_path": "data/raw/e01_inside_elections/senate-browser-text-7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b.json",
+        "response_headers": "NOT_EXPOSED_BY_NORMAL_BROWSER_TEXT_CAPTURE",
+        "redirect_chain": "NOT_EXPOSED_NO_CHALLENGE_OR_LOGIN_OBSERVED",
+        "root_keys": [
+          "generated_at",
+          "last_updated",
+          "office",
+          "ratings",
+          "total"
+        ],
+        "segregated_field_occurrences": {
+          "electoral_votes": 100
+        },
+        "vote_field_values_evaluated": false,
+        "status": "INTERNAL_METADATA_AUDITED_NOT_ADOPTED",
+        "publisher_total": 100,
+        "publisher_last_updated": "2026-10-29T13:05:00-05:00",
+        "publisher_generated_at": "2026-10-29T18:07:26+00:00",
+        "row_count": 100,
+        "unique_identity_count": 100,
+        "duplicate_identity_count": 0,
+        "count_matches_publisher": true,
+        "row_schema_variants": [
+          {
+            "keys": [
+              "date",
+              "district",
+              "election_year",
+              "electoral_votes",
+              "flipped",
+              "incumbent",
+              "incumbent_name",
+              "note",
+              "office",
+              "office_slug",
+              "open",
+              "party",
+              "previous_rating",
+              "rating",
+              "rating_numeric",
+              "shift",
+              "special",
+              "state"
+            ],
+            "rows": 100
+          }
+        ],
+        "omitted_unanalysed_fields": {
+          "shift": 100,
+          "previous_rating": 100,
+          "flipped": 100,
+          "incumbent_name": 100,
+          "incumbent": 100,
+          "electoral_votes": 100,
+          "note": 100
+        },
+        "rating_counts": {
+          "Lean Democrat": 2,
+          "Likely Democrat": 1,
+          "Likely Republican": 3,
+          "Not Up This Cycle": 65,
+          "Solid Democrat": 9,
+          "Solid Republican": 10,
+          "Tilt Democrat": 4,
+          "Tilt Republican": 2,
+          "Toss-up": 4
+        },
+        "year_counts": {
+          "2024": 25,
+          "2026": 75
+        },
+        "office_or_class_counts": {
+          "I": 33,
+          "II": 33,
+          "III": 34
+        },
+        "special_flag_counts": {
+          "False": 100
+        },
+        "party_counts": {
+          "Republican": 53,
+          "Democrat": 45,
+          "Independent": 2
+        },
+        "rating_side_counts": {
+          "D": 16,
+          "UNRESOLVED_TOSSUP_OR_OTHER": 69,
+          "R": 15
+        },
+        "directional_rating_opposes_declared_party_count": 3,
+        "missing_metadata": {
+          "district": 0,
+          "office": 0,
+          "election_year": 0,
+          "date": 0,
+          "rating": 0,
+          "party": 0,
+          "special": 0
+        },
+        "metadata_date_min": "2023-01-06T00:00:00-05:00",
+        "metadata_date_max": "2026-10-29T13:05:00-05:00",
+        "year_class_special_cross_counts": {
+          "('2026', 'III', False)": 10,
+          "('2026', 'II', False)": 33,
+          "('2026', 'I', False)": 32,
+          "('2024', 'I', False)": 1,
+          "('2024', 'III', False)": 24
+        },
+        "cycle_filter": "NOT_ACCEPTED_WITHOUT_INDEPENDENT_OFFICIAL_SEAT_AND_BALLOT_EVIDENCE"
+      }
+    ],
+    "limits": "Hashes identify captured browser-visible UTF8 JSON text, not HTTP response bytes or an independent historical archive; raw headers not available",
+    "body_inspection": "Automated browser initial state may render raw JSON; analysis explicitly excludes names/notes/electoral_votes values and only projects approved rating/seat/stage metadata"
+  }
+}

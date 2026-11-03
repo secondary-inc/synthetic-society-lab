@@ -1,0 +1,104 @@
+{
+  "18plus_conversion": "NOT_RUN",
+  "anes_public_columns": {
+    "age": "V241458x",
+    "postal": "V243001",
+    "region": "V243007",
+    "state_fips": "V243002"
+  },
+  "census_available": "C02/C04 row00618\u201324 percentages(all-age denominator),row038published25+counts,039..043educationpercentages(25+denominator); direct18+count not found among inspected S0501 count fields",
+  "census_shell_units_checked": "Rows9..17 C02/F andC04/J showpercent; row11=18\u201324; row56=25+persons; rows57..61 educationpercent",
+  "codebook_pages": {
+    "age_topcode": [
+      192
+    ],
+    "public_state_codes": [
+      610
+    ],
+    "region_and_restricted_lower_geographies": [
+      610,
+      611
+    ],
+    "sample_target_and_coverage": [
+      6,
+      7,
+      8
+    ],
+    "weights_and_design": [
+      12,
+      13,
+      14,
+      15,
+      16
+    ]
+  },
+  "cost_usd_actual_or_zero": 0,
+  "eligibility_diagnostic": "Same types2/3 and positiveV240103a; age18..80(topcoded80+),valid originaleducation/region/design variables; no actual mapping or fitter changed",
+  "eligible18plus_records": 2936,
+  "eligible18plus_state_dc_count": 51,
+  "eligible18to24_records": 204,
+  "eligible_state_region_mismatches": 0,
+  "existing_official_shell": {
+    "actual_sha256_checked": "13ed8f7313c156b9acf9bc608814e72925e5cb7413c8be7317eb7147360a34b7",
+    "bytes": 22380,
+    "path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-s0501-e6c5w3y8/S0501.xlsx",
+    "sha256": "13ed8f7313c156b9acf9bc608814e72925e5cb7413c8be7317eb7147360a34b7",
+    "source_url": "https://www2.census.gov/programs-surveys/acs/tech_docs/table_shells/2024/Shells/S0501.xlsx"
+  },
+  "files_changed": [
+    "docs/E02_ADULT_STATE_SCOPE_FEASIBILITY.md",
+    "reports/E02_ADULT_STATE_SCOPE_FEASIBILITY.json"
+  ],
+  "fresh_records": 3105,
+  "heldout_missing_state_fips": [
+    "50",
+    "54",
+    "56"
+  ],
+  "heldout_records": 472,
+  "heldout_represented_states_under5_count": 19,
+  "heldout_states": 48,
+  "new_downloads": 0,
+  "next_unblocked_task": "Separate independent original-scope methods review; no18+implementation/fittingbeforethatreview",
+  "original_population_completion": "INCOMPLETE_BLOCKED; regional25+scope is partial, not substitute",
+  "paid_calls": 0,
+  "population_fit": "NOT_RUN",
+  "privacy": "Aggregate counts only; no respondent identifiers,row positions,raw answers,clusters or per-record hashes exported",
+  "recorded_at_utc": "2026-11-03T11:15:53.737752+00:00",
+  "route": "Separately review approximate18+anchors and25+-only education linearconstraints; statepartialpooling vs simpler transportedregional/nationalconditional priors; state support/transport not established by allocation",
+  "seed": 20261103,
+  "source_hashes": {
+    "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf": "fbad3417cc50b18977563e128f00dfd164ab1d50c5de694134fc57196436a799",
+    "data/raw/e02_citizen_benchmarks/ACSST5Y2024.S0501_2026-11-03T054417.zip": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+    "data/raw/e02_citizen_benchmarks/S0501-variables.json": "a6085ef72bb893508344bb377605a94d43368b297343aae22ec3973556195dc0"
+  },
+  "status": "READ_ONLY_FINDINGS_NO_CONVERSION_OR_FIT",
+  "task_id": "E02-ADULT-STATE-SCOPE-FEASIBILITY",
+  "train_records": 2464,
+  "train_states": 51,
+  "training_states_under5_fips": [
+    "02",
+    "10",
+    "15",
+    "16",
+    "50",
+    "56"
+  ],
+  "young_missing_state_fips": [
+    "02",
+    "04",
+    "10",
+    "25",
+    "30",
+    "31",
+    "33",
+    "40",
+    "44",
+    "50",
+    "54",
+    "56"
+  ],
+  "young_states": 39
+}

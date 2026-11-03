@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "publisher": "Inside Elections",
+  "scope": "AUTHORIZED_INTERNAL_OFFERED_EXPORT_ROUTE_NOT_ACCEPTED_DATA",
+  "operational_audit": "reports/INDEPENDENT_AUDIT_E01_PUBLIC_API_SCOPE.json",
+  "sources": [
+    {
+      "office": "HOUSE",
+      "offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year%3D2026_district%3Dall_clean.json?v=1793388069",
+      "local_ignored_directory": "data/raw/e01_inside_elections",
+      "acquisition_status": "HTTP_403_STOPPED",
+      "acquired_sha256": null
+    },
+    {
+      "office": "SENATE",
+      "offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year%3D2026_district%3Dall_clean.json?v=1793297246",
+      "local_ignored_directory": "data/raw/e01_inside_elections",
+      "acquisition_status": "NOT_RUN_AFTER_STOP_RULE",
+      "acquired_sha256": null
+    }
+  ],
+  "bounds": {
+    "maximum_bytes_per_export": 2000000,
+    "maximum_redirects": 2,
+    "redirect_policy": "HTTPS same hostname, same decoded offered path, exact original query only",
+    "retries": 0
+  },
+  "real_frame_accepted": false,
+  "source_adoption": false,
+  "independent_asof": "UNVERIFIED",
+  "full_publisher_content_in_git": false,
+  "redistribution": "NOT_AUTHORIZED_BY_THIS_RECORD",
+  "browser_captures": [
+    {
+      "office": "HOUSE",
+      "actual_offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json?v=1793388069",
+      "retrieved_at_utc": "2026-11-03T11:26:51.681Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "bytes": 321964,
+      "sha256": "50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909",
+      "local_ignored_path": "data/raw/e01_inside_elections/house-browser-text-50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909.json"
+    },
+    {
+      "office": "SENATE",
+      "actual_offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year=2026_district=all_clean.json?v=1793297246",
+      "retrieved_at_utc": "2026-11-03T11:27:09.121Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "bytes": 86042,
+      "sha256": "7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b",
+      "local_ignored_path": "data/raw/e01_inside_elections/senate-browser-text-7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b.json"
+    }
+  ]
+}

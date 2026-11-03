@@ -1,0 +1,12 @@
+{
+  "auditor_role": "independent_auditor",
+  "finding_id": "IA-REPRO-002",
+  "status": "OPEN",
+  "path": "configs/runtime_python312_20261103.txt",
+  "observation": "Lockincludeslocalprojectsynthetic-society-lab==0.1.0; newmanifestinstallsthislockbeforeeditableproject, sofreshbootstrapattemptsregistryresolutionoflocalproject.",
+  "primary_registry_url": "https://pypi.org/pypi/synthetic-society-lab/0.1.0/json",
+  "registry_http_status": 404,
+  "required_fix": "Excludelocalprojectfromthirdpartydependencylock or installreviewedlocalproject--no-depsbeforelock. Do notfetchanunrelatedregistrypackageforownproject.",
+  "paid_calls": 0,
+  "cost_usd": 0
+}

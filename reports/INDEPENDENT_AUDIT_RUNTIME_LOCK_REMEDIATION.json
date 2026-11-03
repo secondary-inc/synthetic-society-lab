@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:21:27.944998+00:00",
+  "finding": "IA-REPRO-002",
+  "status": "PASS_DELTA_REMEDIATION; CLEAN_BOOTSTRAP_PENDING",
+  "checks": [
+    {
+      "alias": "synthetic-society-lab",
+      "rejected": true,
+      "archive_created": false
+    },
+    {
+      "alias": "synthetic_society_lab",
+      "rejected": true,
+      "archive_created": false
+    },
+    {
+      "alias": "Synthetic.Society-Lab",
+      "rejected": true,
+      "archive_created": false
+    }
+  ],
+  "generated_metadata_fingerprint_invariant": true,
+  "real_source_change_alters_fingerprint": true,
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_reproduction tests.test_foundation",
+    "passed": 11
+  },
+  "code_files": {
+    "src/civiclab/common.py": "6230927f6524fa7ab2e87612707d77594f937b041885ec5c1a767f2326fe759a",
+    "src/civiclab/reproduction.py": "c7a770a180ec08886d5593156da00db461d743c27fec967c14b6e0b77132ffdc",
+    "tests/test_reproduction.py": "920462fc169f351d68f95623e1b7f35a748cba1d5a55a683456605b62ed89171",
+    "configs/runtime_python312_20261103.txt": "6acb09ebaf9591cc515e8ec5d26c80c9fe57fbd44d686357d51f80ea309b7a76"
+  },
+  "limits": "Exact pin availability previously checked; this delta does not establish clean installation of current snapshot or renew historical archive receipts.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

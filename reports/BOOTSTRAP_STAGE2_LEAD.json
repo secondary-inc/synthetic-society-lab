@@ -1,0 +1,93 @@
+{
+  "archive": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/stage2.zip",
+  "archive_integrity": {
+    "files": 221,
+    "run_ids": [
+      "e02-edf2b36e269442748f4721ef7f479876",
+      "e01-6a67d910c8b6460b88c08adda45c5e90",
+      "e01-32a3512931fc47d98b77a68cc3149158",
+      "e01-ed5b716aa76145258ece94c3df6b4188"
+    ],
+    "scope": "Byte integrity only; not scientific or publication acceptance.",
+    "sha256": "274d8ccdbea3a5b7b2a1415fc98fdbd99311bd173d3fdc57a2c475c11ee395ff",
+    "status": "PASS_PACKAGE_INTEGRITY"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-m",
+        "venv",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "configs/runtime_python312_20261103.txt"
+      ],
+      "exit_code": 0,
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.3\n[notice] To update, run: /var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/python -m pip install --upgrade pip\n",
+      "stdout": "Collecting contourpy==1.4.0 (from -r configs/runtime_python312_20261103.txt (line 4))\n  Using cached contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (3.8 kB)\nCollecting cycler==0.12.1 (from -r configs/runtime_python312_20261103.txt (line 5))\n  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)\nCollecting fonttools==4.68.0 (from -r configs/runtime_python312_20261103.txt (line 6))\n  Using cached fonttools-4.68.0-cp312-cp312-macosx_10_13_universal2.whl.metadata (139 kB)\nCollecting kiwisolver==1.5.1 (from -r configs/runtime_python312_20261103.txt (line 7))\n  Using cached kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (5.2 kB)\nCollecting matplotlib==3.10.7 (from -r configs/runtime_python312_20261103.txt (line 8))\n  Using cached matplotlib-3.10.7-cp312-cp312-macosx_11_0_arm64.whl.metadata (11 kB)\nCollecting numpy==2.5.4 (from -r configs/runtime_python312_20261103.txt (line 9))\n  Using cached numpy-2.5.4-cp312-cp312-macosx_14_0_arm64.whl.metadata (6.6 kB)\nCollecting packaging==26.3 (from -r configs/runtime_python312_20261103.txt (line 10))\n  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting pillow==13.0.0 (from -r configs/runtime_python312_20261103.txt (line 11))\n  Using cached pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)\nCollecting pyparsing==3.3.3 (from -r configs/runtime_python312_20261103.txt (line 12))\n  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)\nCollecting pypdf==6.10.0 (from -r configs/runtime_python312_20261103.txt (line 13))\n  Using cached pypdf-6.10.0-py3-none-any.whl.metadata (7.1 kB)\nCollecting python-dateutil==4.0.0 (from -r configs/runtime_python312_20261103.txt (line 14))\n  Using cached python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)\nCollecting scipy==1.16.3 (from -r configs/runtime_python312_20261103.txt (line 15))\n  Using cached scipy-1.16.3-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)\nCollecting tzdata==2026.6 (from -r configs/runtime_python312_20261103.txt (line 16))\n  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)\nUsing cached contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl (284 kB)\nUsing cached cycler-0.12.1-py3-none-any.whl (8.3 kB)\nUsing cached fonttools-4.68.0-cp312-cp312-macosx_10_13_universal2.whl (3.1 MB)\nUsing cached kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl (64 kB)\nUsing cached matplotlib-3.10.7-cp312-cp312-macosx_11_0_arm64.whl (8.1 MB)\nUsing cached numpy-2.5.4-cp312-cp312-macosx_14_0_arm64.whl (5.5 MB)\nUsing cached packaging-26.3-py3-none-any.whl (129 kB)\nUsing cached pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl (4.9 MB)\nUsing cached pyparsing-3.3.3-py3-none-any.whl (126 kB)\nUsing cached pypdf-6.10.0-py3-none-any.whl (334 kB)\nUsing cached python_dateutil-4.0.0-py3-none-any.whl (92 kB)\nUsing cached scipy-1.16.3-cp312-cp312-macosx_14_0_arm64.whl (20.9 MB)\nUsing cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)\nInstalling collected packages: tzdata, pypdf, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, scipy, python-dateutil, contourpy, matplotlib\nSuccessfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.10.7 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 pypdf-6.10.0 python-dateutil-4.0.0 scipy-1.16.3 tzdata-2026.6\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".",
+        "--no-deps"
+      ],
+      "exit_code": 0,
+      "stderr": "\n[notice] A new release of pip is available: 25.0.1 -> 26.3\n[notice] To update, run: /var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/python -m pip install --upgrade pip\n",
+      "stdout": "Obtaining file:///private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/restored\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Getting requirements to build editable: started\n  Getting requirements to build editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: synthetic-society-lab\n  Building editable for synthetic-society-lab (pyproject.toml): started\n  Building editable for synthetic-society-lab (pyproject.toml): finished with status 'done'\n  Created wheel for synthetic-society-lab: filename=synthetic_society_lab-0.1.0-0.editable-py3-none-any.whl size=1809 sha256=6c02eec7c13ad8c508139947ad442802a02a9329862acd61b9cc6c6f8fe08562\n  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-4nyruzev/wheels/44/74/ff/b6a6e816376193610b81aba70272a4a66cf1ffd09f603278c6\nSuccessfully built synthetic-society-lab\nInstalling collected packages: synthetic-society-lab\nSuccessfully installed synthetic-society-lab-0.1.0\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stderr": "----------------------------------------------------------------------\nRan 105 tests in 10.835s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"checks\": 1}\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/venv/bin/civiclab",
+        "dashboard"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/restored/data/processed/dashboard/index.html\n"
+    }
+  ],
+  "model_api_spend_usd": 0,
+  "paid_calls": 0,
+  "restored": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-bootstrap-stage2-4lopcqwq/restored",
+  "scope": "Lead clean-bootstrap probe only; independent archive acceptance remains separate",
+  "status": "PASS_LEAD_CLEAN_BOOTSTRAP"
+}

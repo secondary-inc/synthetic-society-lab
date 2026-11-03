@@ -1,0 +1,116 @@
+{
+  "audited_at_utc": "2026-11-03T11:12:37.939632+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "files": {
+    "configs/e01_selection_schema_v1.json": "adc6fe1d471b7eb5e331d186716aa714a27ad647dbfd3ff0181f4cc298ed9267",
+    "configs/e01_selection_source_schema_v1.json": "79c99629a7dda6f8dd2e6663825a632ffd2faa21a84cbe4ab79cd4fee08ccaba",
+    "configs/e01_selection_v1.json": "3edd9ed550f9ea68f97e0c79ea03010485b11292f45a922cab91a8542a3ada1d",
+    "docs/E01_SELECTION_IMPLEMENTATION.md": "1bec3ade840664a54a82c650387521c3a444209a12f266db8c808bd0d353f366",
+    "reports/E01_SELECTION_EVIDENCE.json": "e98e13de0e8ff1e7821f3c4251d5fe7aa8344c45e1f2761b4ae011a153dde173",
+    "src/civiclab/e01/selection.py": "70a0a4a1d3b6c27d65c2a318affb415a96f395ca6d0ecc7c83bf3e566297c4e4",
+    "tests/test_e01_selection.py": "eb37dc098ba0c827837eed5da6f05687b98d6b74d667190dab373b1f53ba8b87"
+  },
+  "full_size_fixture": {
+    "broad": [
+      24,
+      8
+    ],
+    "deep": [
+      4,
+      2
+    ],
+    "elapsed_seconds": 0.26238491700496525,
+    "house": 435,
+    "optimal_stages": 65,
+    "primary_objectives_achieve_theoretical_lower_bounds": true,
+    "row_order_identity_invariant": true,
+    "selection_sha256": "d24465e4e40aa88adb5d3ff7bd2e76348659d71dff484346769549866e60c036",
+    "senate": 33,
+    "solver": {
+      "highs": "1.8.0",
+      "relative_gap": 0,
+      "scipy": "1.16.3",
+      "tie_chunk_bits": 10
+    }
+  },
+  "handoff_correction": "RecordedtimeoutpreservesSTARTEDonly,notpriorOPTIMAL. Implementedlater-stagepreservationindependently verified by separate injectedtest below; never rewrite old timeoutartifact.",
+  "independent_exhaustive_cases": [
+    {
+      "broad_and_deep_match_independent_reference": true,
+      "house": 27,
+      "seed": 17,
+      "senate": 12
+    },
+    {
+      "broad_and_deep_match_independent_reference": true,
+      "house": 26,
+      "seed": 29,
+      "senate": 11
+    },
+    {
+      "broad_and_deep_match_independent_reference": true,
+      "house": 7,
+      "seed": 31,
+      "senate": 11
+    },
+    {
+      "broad_and_deep_match_independent_reference": true,
+      "house": 5,
+      "seed": 43,
+      "senate": 5
+    }
+  ],
+  "independent_later_failure": {
+    "artifacts_verified": 6,
+    "checksums_sha256": "1b0e9ae54321197696fe49baf8e52f9eaa0201847dc28de3f38dac1e5ccde14b",
+    "first_optimal_stage_preserved": true,
+    "no_success_result": true,
+    "sealed_failed_summary": true,
+    "temp_run_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-later-failure-0vroa3ic/data/processed/runs/e01-9aa46171210442db92a3b669b1453807"
+  },
+  "independent_reference_script": {
+    "path": "/tmp/civiclab_independent_selection_audit.py",
+    "sha256": "cb1ed6f0c8640ba4b70aa79dc69753349c2ca3f3da1968b89a85c994207da06e"
+  },
+  "numerical_review": "Sequentialintegerobjectiveequalities andexact10bitbinarylexlocks withcoefficients<=512; status/gap/finiteprimaldual/integrality/constraintchecks reviewedagainstofficialSciPy1.16.3source. NumericalMILPcertification,notformalrationalproof.",
+  "optional_dependency_observation": {
+    "core_clean_selector_probe_exit": 1,
+    "note": "Expandedtestsrequireselectionextra; root separately amendedfuturepackagecommands/lock to provideit. Newpackactualrestorationstillrequired; old81testarchiveunaffected.",
+    "probe_stderr": "test_full_size_synthetic_frame_optimal_not_tiny_only_solver (tests.test_e01_selection.SolverTests.test_full_size_synthetic_frame_optimal_not_tiny_only_solver) ... ERROR\n\n======================================================================\nERROR: test_full_size_synthetic_frame_optimal_not_tiny_only_solver (tests.test_e01_selection.SolverTests.test_full_size_synthetic_frame_optimal_not_tiny_only_solver)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_selection.py\", line 184, in test_full_size_synthetic_frame_optimal_not_tiny_only_solver\n    f=fixture(435,33);start=time.monotonic();r=s.select_fixture(f,max_seconds=60)\n                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/selection.py\", line 294, in select_fixture\n    broad={office:_broad([r for r in rows if r['office']==office and r['eligibility']=='ELIGIBLE'],office,deadline,_stage_callback) for office in ('HOUSE','SENATE')}\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/selection.py\", line 239, in _broad\n    model=_MILP(rows,n,deadline,emit);quota=_quota(office);deviations={}\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/selection.py\", line 143, in __init__\n    raise SelectionBlocked('optional selection extra scipy==1.16.3 required') from None\nciviclab.e01.selection.SelectionBlocked: optional selection extra scipy==1.16.3 required\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n"
+  },
+  "original_scientific_gate": "BLOCKED_NO_ACCEPTED_REAL_FRAME; fixturepermissionsnotrights/asof/ballotproof; noCookor2026returns/realraceselectionperformed",
+  "paid_calls": 0,
+  "recorded_run_ledgers": [
+    {
+      "artifacts": 6,
+      "checksums_sha256": "34d35bd8e2e8d05bcd98de1dcfa36f579d65e026cb6cdb1da4d2bf0d2b7d5bd4",
+      "run_id": "e01-6a67d910c8b6460b88c08adda45c5e90",
+      "status": "DEMO_SELECTION_FIXTURE_COMPLETE"
+    },
+    {
+      "artifacts": 6,
+      "checksums_sha256": "0b7d9558ab1fae9a4c3409fe246b2858371f572a95b03da4ea0f52eb5193ccf0",
+      "run_id": "e01-a6da256293dc48ffb56feaab3d1d7125",
+      "status": "DEMO_SELECTION_FIXTURE_COMPLETE"
+    },
+    {
+      "artifacts": 6,
+      "checksums_sha256": "4186b948b3ac0910c512ec40a64184143f5bf98d218b43eb250111718631da40",
+      "run_id": "e01-32a3512931fc47d98b77a68cc3149158",
+      "status": "DEMO_SELECTION_FIXTURE_FAILED"
+    }
+  ],
+  "recorded_timeout_stage_statuses": [
+    "STARTED"
+  ],
+  "reference_independence": "Own authoredfixture,regionmapping,rankhash,quota/count/orderedobjective/tiebreak/exhaustivelogic; no workeroracleorproductionobjectivehelpers imported.",
+  "schema_version": 1,
+  "status": "PASS_FIXTURE_SELECTOR_ONLY",
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_selection tests.test_e01 tests.test_isolation -v",
+    "exit_code": 0,
+    "stderr": "test_absent_band_senate_fallback_insufficient_and_other_targets (tests.test_e01_selection.SolverTests.test_absent_band_senate_fallback_insufficient_and_other_targets) ... ok\ntest_exhaustive_house_repeated_states_geography_and_party_priority (tests.test_e01_selection.SolverTests.test_exhaustive_house_repeated_states_geography_and_party_priority) ... ok\ntest_exhaustive_reference_house_27_senate_12_other_and_shortfalls (tests.test_e01_selection.SolverTests.test_exhaustive_reference_house_27_senate_12_other_and_shortfalls) ... ok\ntest_full_size_synthetic_frame_optimal_not_tiny_only_solver (tests.test_e01_selection.SolverTests.test_full_size_synthetic_frame_optimal_not_tiny_only_solver) ... ok\ntest_hash_collision_tie_breaks_on_canonical_id (tests.test_e01_selection.SolverTests.test_hash_collision_tie_breaks_on_canonical_id) ... ok\ntest_later_solver_failure_retains_earlier_optimality_receipts (tests.test_e01_selection.SolverTests.test_later_solver_failure_retains_earlier_optimality_receipts) ... ok\ntest_randomized_adversarial_senate_exhaustive (tests.test_e01_selection.SolverTests.test_randomized_adversarial_senate_exhaustive) ... ok\ntest_refuse_timeout_nonoptimal_unknown_gap_fractional_or_infeasible (tests.test_e01_selection.SolverTests.test_refuse_timeout_nonoptimal_unknown_gap_fractional_or_infeasible) ... ok\ntest_row_order_invariance_and_fixed_rank_exactness (tests.test_e01_selection.SolverTests.test_row_order_invariance_and_fixed_rank_exactness) ... ok\ntest_run_logging_preserves_success_and_solver_failure (tests.test_e01_selection.SolverTests.test_run_logging_preserves_success_and_solver_failure) ... ok\ntest_versioned_policy_matches_implementation (tests.test_e01_selection.SolverTests.test_versioned_policy_matches_implementation) ... ok\ntest_no_missing_universe_pending_or_silent_exclusion (tests.test_e01_selection.SourceGateTests.test_no_missing_universe_pending_or_silent_exclusion) ... ok\ntest_real_denied_even_with_complete_flags (tests.test_e01_selection.SourceGateTests.test_real_denied_even_with_complete_flags) ... ok\ntest_seed_cutoff_identity_region_and_provenance_guards (tests.test_e01_selection.SourceGateTests.test_seed_cutoff_identity_region_and_provenance_guards) ... ok\ntest_structural_exclusion_is_logged_and_unavailable_input_cannot_replace (tests.test_e01_selection.SourceGateTests.test_structural_exclusion_is_logged_and_unavailable_input_cannot_replace) ... ok\ntest_feature_leak_and_invalid_values_rejected (tests.test_e01.ForecastTests.test_feature_leak_and_invalid_values_rejected) ... ok\ntest_formula_and_clamp (tests.test_e01.ForecastTests.test_formula_and_clamp) ... ok\ntest_freeze_and_independent_evaluation (tests.test_e01.ForecastTests.test_freeze_and_independent_evaluation) ... ok\ntest_holdout_same_races_and_offices (tests.test_e01.ForecastTests.test_holdout_same_races_and_offices) ... ok\ntest_matched_comparison (tests.test_e01.ForecastTests.test_matched_comparison) ... ok\ntest_real_execution_is_blocked_without_evidence (tests.test_e01.ForecastTests.test_real_execution_is_blocked_without_evidence) ... ok\ntest_clerk_fusion_does_not_add_blanks_or_other_votes (tests.test_e01.HistoricalSourceTests.test_clerk_fusion_does_not_add_blanks_or_other_votes) ... ok\ntest_discovery_party_lines_sum_without_reallocating_independent (tests.test_e01.HistoricalSourceTests.test_discovery_party_lines_sum_without_reallocating_independent) ... ok\ntest_explicit_alias_not_fuzzy_matching (tests.test_e01.HistoricalSourceTests.test_explicit_alias_not_fuzzy_matching) ... ok\ntest_fec_general_column_fusion_and_party (tests.test_e01.HistoricalSourceTests.test_fec_general_column_fusion_and_party) ... ok\ntest_scope_excludes_house_and_rejects_ambiguous_candidate (tests.test_e01.HistoricalSourceTests.test_scope_excludes_house_and_rejects_ambiguous_candidate) ... ok\ntest_scoped_runner_rejects_duplicates_and_changed_inputs (tests.test_e01.HistoricalSourceTests.test_scoped_runner_rejects_duplicates_and_changed_inputs) ... ok\ntest_changed_geography_requires_reaggregation (tests.test_e01.ManifestTests.test_changed_geography_requires_reaggregation) ... ok\ntest_date_stage_status_guards (tests.test_e01.ManifestTests.test_date_stage_status_guards) ... ok\ntest_missing_ballot_evidence (tests.test_e01.ManifestTests.test_missing_ballot_evidence) ... ok\ntest_senate_different_classes_rejected (tests.test_e01.ManifestTests.test_senate_different_classes_rejected) ... ok\ntest_uncontested_and_duplicate_ids (tests.test_e01.ManifestTests.test_uncontested_and_duplicate_ids) ... ok\ntest_verified_manifest_and_house_pair (tests.test_e01.ManifestTests.test_verified_manifest_and_house_pair) ... ok\ntest_duplicates_and_unresolved_fusion (tests.test_e01.ReturnsTests.test_duplicates_and_unresolved_fusion) ... ok\ntest_formula_fusion_and_denominator (tests.test_e01.ReturnsTests.test_formula_fusion_and_denominator) ... ok\ntest_no_total_plus_component_double_count (tests.test_e01.ReturnsTests.test_no_total_plus_component_double_count) ... ok\ntest_real_schema_audit_not_aggregation (tests.test_e01.ReturnsTests.test_real_schema_audit_not_aggregation) ... ok\ntest_redaction_sentinel_runoff (tests.test_e01.ReturnsTests.test_redaction_sentinel_runoff) ... ok\ntest_predictor_environment_excludes_credentials (tests.test_isolation.IsolationTests.test_predictor_environment_excludes_credentials) ... ok\ntest_worker_runtime_denies_outcome_reads_and_network (tests.test_isolation.IsolationTests.test_worker_runtime_denies_outcome_reads_and_network) ... ok\n\n----------------------------------------------------------------------\nRan 40 tests in 0.638s\n\nOK\n",
+    "stdout": ""
+  }
+}

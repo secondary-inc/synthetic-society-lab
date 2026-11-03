@@ -26,12 +26,13 @@ def build_package(root, output, run_ids):
         if p.is_file():inputs[name]=p
     for folder in ('src','configs','protocols','docs','tests','publications','.github'):
         for p in (root/folder).rglob('*'):
-            if p.is_file() and p.suffix in ALLOWED_SUFFIXES and '__pycache__' not in p.parts:
+            if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(
+                part=='__pycache__' or part.endswith(('.egg-info','.dist-info')) for part in p.relative_to(root).parts):
                 inputs[str(p.relative_to(root))]=p
     fixture=root/'tests/fixtures/gdelt/20261103090000.gkg.csv.zip'
     if fixture.exists():inputs[str(fixture.relative_to(root))]=fixture
     for pattern in ('AUDIT_*','INDEPENDENT_AUDIT*','STATUS*','COORDINATION.json',
-                    'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','E01*','E02*'):
+                    'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','BOOTSTRAP*','REVIEW_PACKAGE*','E01*','E02*'):
         for p in (root/'reports').glob(pattern):
             if p.is_file() and p.suffix in ('.md','.json'):inputs[str(p.relative_to(root))]=p
     for identity in run_ids:
@@ -49,12 +50,20 @@ def build_package(root, output, run_ids):
         if SECRET.search(content):raise ValueError('credential-like value; package refused')
         payloads[name]=content
     runtime_lock='configs/runtime_python312_20261103.txt'
+    project=tomllib.loads(payloads.get('pyproject.toml',b'').decode())
     if runtime_lock in payloads:
+        local_name=re.sub(r'[-_.]+','-',project.get('project',{}).get('name','')).lower()
+        for line in payloads[runtime_lock].decode().splitlines():
+            line=line.strip()
+            if not line or line.startswith('#'):continue
+            requirement=re.fullmatch(r'([A-Za-z0-9_.-]+)==([A-Za-z0-9_.+!-]+)',line)
+            if not requirement:raise ValueError('runtime lock must contain exact third-party registry pins only')
+            if local_name and re.sub(r'[-_.]+','-',requirement[1]).lower()==local_name:
+                raise ValueError('local project must not be resolved from a registry runtime lock')
         reproduction=['python3.12 -m venv .venv',
                       '.venv/bin/python -m pip install -r '+runtime_lock,
                       '.venv/bin/python -m pip install -e . --no-deps']
     else:
-        project=tomllib.loads(payloads.get('pyproject.toml',b'').decode())
         extra=project.get('project',{}).get('optional-dependencies',{}).get('selection')
         reproduction=['python3.11 -m venv .venv',
                       ".venv/bin/python -m pip install -e '.[selection]'" if extra else '.venv/bin/python -m pip install -e .']

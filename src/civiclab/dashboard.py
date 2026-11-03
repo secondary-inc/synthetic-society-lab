@@ -28,6 +28,8 @@ def verified_run(path):
                      ('S0.evaluation.json','evaluation'),('S_ZERO.evaluation.json','simpler_evaluation'),
                      ('counterfactual.evaluation.json','counterfactual'),('paired_comparison.json','paired_comparison'),
                      ('returns_audit.json','returns_audit'),
+                     ('selection.result.json','selection_result'),
+                     ('selection.failure.json','selection_failure'),
                      ('population-support-comparison.json','population_comparison')]:
         if name in checks:result[key]=read(name)
     if 'population.json' in checks:
