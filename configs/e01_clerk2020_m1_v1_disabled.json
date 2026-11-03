@@ -1,0 +1,88 @@
+{
+  "actual_backend": null,
+  "actual_parser_or_baseline": false,
+  "actual_source_enabled": false,
+  "actual_source_release": null,
+  "api_spend_usd": 0,
+  "backend": {
+    "id": "AUTHORED_UTF8_PAGE_ARRAY_V1",
+    "input_prefix": "CLERK_M1_AUTHORED_ONLY\n",
+    "pdf_parser": false,
+    "source_ids": "DEMO_[A-Z0-9_]+",
+    "version": "1.0.0"
+  },
+  "bound_semantics": {
+    "cpu": "Child POSIX RLIMIT_CPU.",
+    "input_output": "Bound before dispatch/decode and while parent streams pipes; no communicate() unbounded capture.",
+    "memory": "No OS memory/data/address-space limit claimed. Host refused both RLIMIT_AS and RLIMIT_DATA candidates, preserved as failures. Fixed parent ps RSS samples plus trusted child getrusage highwater refusal;128MiB threshold, sampling gaps/native allocations between checks not prevented.",
+    "parent_death": "No supervision after parent death promised.",
+    "rss": "Parent fixed /bin/ps exact-owned-child RSS samples and trusted child getrusage highwater,128MiB threshold. Sampling gaps/startup/parent death and hostile-host replacement excluded; no continuous/hardRSS claim.",
+    "wall": "Parent-owned monotonic deadline, process-group kill/reap; no retries."
+  },
+  "cleanup_policy": {
+    "automatic_retry": false,
+    "first_signal": "SIGKILL_OWNED_PROCESS_GROUP",
+    "group_permission_denied": "ONE_OWNED_CHILD_KILL_THEN_REAP",
+    "limit": "Direct child fallback does not establish descendant containment. Trusted fixed backend refuses spawning; parent death/hostile host excluded.",
+    "reap_wait_seconds": 1
+  },
+  "limits": {
+    "cpu_hard_seconds": 4,
+    "cpu_soft_seconds": 3,
+    "documents": 2,
+    "input_bytes_each": 1048576,
+    "input_bytes_total": 2097152,
+    "json_depth": 12,
+    "json_nodes": 4096,
+    "output_bytes": 262144,
+    "pages_each": 100,
+    "pages_total": 119,
+    "poll_seconds": 0.05,
+    "request_bytes": 4194304,
+    "rss_peak_bytes": 134217728,
+    "rss_probe_seconds": 1,
+    "stderr_bytes": 4096,
+    "termination_wait_seconds": 1,
+    "text_characters_each_page": 40000,
+    "text_characters_total": 4760000,
+    "wall_seconds": 5
+  },
+  "methods_audit_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK2020_SENATE_INPUT_METHODS_V1.json",
+    "sha256": "000aabb54032c10da248971fc7101522e9c740446b8a754623602ee5d23da979"
+  },
+  "methods_ref": {
+    "path": "configs/e01_clerk_2020_senate_input_methods_v1.json",
+    "sha256": "ab53c24e13f27327b623f7f0ef622de046c3308f3e139418b3b79b73563bade0"
+  },
+  "model_calls": 0,
+  "new_GETs": 0,
+  "no_source_or_scientific_acceptance": true,
+  "original_contract": {
+    "broad_house": 24,
+    "broad_senate_max": 8,
+    "deep_house": 4,
+    "deep_senate": 2
+  },
+  "roles": [
+    "AUTHORED_HISTORICAL_COUNTS",
+    "AUTHORED_NOMINEE_COMPILATION"
+  ],
+  "rss_backend": "TRUSTED_CHILD_PEAK_AND_PARENT_PS_SAMPLES_V1",
+  "rss_probe": {
+    "arguments": [
+      "-o",
+      "rss=",
+      "-p",
+      "<owned_child_pid>"
+    ],
+    "executable": "/bin/ps",
+    "platforms": [
+      "darwin",
+      "linux"
+    ],
+    "units": "KiB"
+  },
+  "schema_version": 1,
+  "scope": "CLERK2020_M1_AUTHORED_ONLY_DISABLED_ACTUAL_SOURCES"
+}

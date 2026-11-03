@@ -1,0 +1,28 @@
+======================================================================
+ERROR: test_fixed_backend_real_subprocess_positive_replay_and_metrics (tests.test_e01_clerk2020_m1_v1.InspectionHarness.test_fixed_backend_real_subprocess_positive_replay_and_metrics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_clerk2020_m1_v1.py", line 188, in test_fixed_backend_real_subprocess_positive_replay_and_metrics
+    one=h.inspect_authored(docs);two=h.inspect_authored(docs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/clerk2020_contracts_v1.py", line 254, in call
+    if failed:raise ContractRejected()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+civiclab.e01.clerk2020_contracts_v1.ContractRejected: CLERK_M1_CONTRACT_REFUSED
+
+======================================================================
+ERROR: test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused (tests.test_e01_clerk2020_m1_v1.InspectionHarness.test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_clerk2020_m1_v1.py", line 225, in test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused
+    docs=[document()];raw,cfg=h.load_policy();expected=h.project_authored(docs,cfg);valid=h.inspect_authored(docs)
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/clerk2020_contracts_v1.py", line 254, in call
+    if failed:raise ContractRejected()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+civiclab.e01.clerk2020_contracts_v1.ContractRejected: CLERK_M1_CONTRACT_REFUSED
+
+----------------------------------------------------------------------
+Ran 25 tests in 5.245s
+
+FAILED (errors=2)
