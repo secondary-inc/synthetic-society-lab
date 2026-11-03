@@ -1,0 +1,46 @@
+{
+  "actual_archive_created": false,
+  "actual_private_run_or_raw_inputs_read": false,
+  "credentials_read": false,
+  "development_compute": "UNPRICED",
+  "experimental_spend_usd": 0,
+  "files": {
+    "docs/REVIEW_PACKAGE_V2_PUBLIC_EVIDENCE_CANDIDATE.md": {
+      "bytes": 2685,
+      "sha256": "612a6d730937d2add6b7132bf9020b14cef88cae07ac0f90c2860c41c79b9d39"
+    },
+    "src/civiclab/reproduction_v2.py": {
+      "bytes": 8673,
+      "sha256": "698ec417ac766be9b72be0c55f0dc05516f9e121c34c2ab795986399b2b808e2"
+    },
+    "tests/test_reproduction_v2.py": {
+      "bytes": 6034,
+      "sha256": "f79503d1dcce96408547f3f6ab8ff69490e5ccf746c76c7b6c70b1ce2b257f6f"
+    }
+  },
+  "historical_builder_unchanged_sha256": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335",
+  "model_calls": 0,
+  "recorded_at_utc": "2026-11-03T19:47:56.739022+00:00",
+  "remaining": [
+    "Independent code/privacy/content review",
+    "Exact committed source snapshot, explicit permitted run selection and actual archive assembly",
+    "Fresh full restoration, figures/dashboard provenance, independent package review",
+    "Full original source restoration, rights, CI and science remain incomplete"
+  ],
+  "schema_version": 1,
+  "status": "CANDIDATE_OFFLINE_TESTED_INDEPENDENT_REVIEW_PENDING",
+  "tests": {
+    "command": "PYTHONPATH=src:tests <python> -m unittest tests.test_reproduction_v2 tests.test_reproduction -q",
+    "python311": {
+      "count": 13,
+      "result": "PASS",
+      "seconds": 0.864
+    },
+    "python312": {
+      "count": 13,
+      "result": "PASS",
+      "seconds": 0.96
+    },
+    "scope": "Six new v2 package tests plus seven unchanged historical-builder tests; disposable authored MOCK runs and five public evidence copies only."
+  }
+}

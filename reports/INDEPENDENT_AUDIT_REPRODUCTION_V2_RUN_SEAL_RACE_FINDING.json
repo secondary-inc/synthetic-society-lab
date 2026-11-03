@@ -1,0 +1,165 @@
+{
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_REPRODUCTION_V2_RUN_SEAL_RACE_FINDING.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead implements separate corrected version with sealed-payload capture regression; independent review before actual assembly.",
+  "TASK_ID": "INDEPENDENT_REPRODUCTION_V2_CODE_BOUNDARIES",
+  "UNRESOLVED_BLOCKERS": [
+    "Selected captured run bytes are not bound to their admitted seal; exact candidate not fully accepted for use.",
+    "Actual package/restore/full completion remain separate and unexecuted."
+  ],
+  "auditor_role": "independent_auditor",
+  "bounded_positive_observations": [
+    "All supplied sixnew/sevenhistorical tests pass in both runtimes; complete module diff read and inherited builder examined.",
+    "Five exact public receipt allowlist/hash/1MiB bounds, schema2map, no recursive reference following, root aliases and existing.writing guards are implemented. Source inclusion gap for those exact five proof files is addressed at enumeration level.",
+    "Original991f6a legacy remains byte-identical, candidate698ec417 and testsf79503/doc612a6d exact.",
+    "Three preceding independent direct v2 probes for addedsource/addedreport/changedsource refused before final archive, before the batch stopped at run race. No unexecuted probes claimed."
+  ],
+  "candidate": {
+    "bytes": 1761,
+    "path": "reports/REVIEW_PACKAGE_V2_PUBLIC_EVIDENCE_CANDIDATE.json",
+    "sha256": "b59c2a45d5ffe9a432704cd20d12c97d1d6a4fd9a18c53ca736a1c1dfee86658"
+  },
+  "code": {
+    "bytes": 8673,
+    "path": "src/civiclab/reproduction_v2.py",
+    "sha256": "698ec417ac766be9b72be0c55f0dc05516f9e121c34c2ab795986399b2b808e2"
+  },
+  "direct_reproductions": [
+    {
+      "evidence": {
+        "actual_private_raw_key_reads": 0,
+        "actual_project_archive_builds": 0,
+        "archive_manifest_hash_matches_changed_artifact": true,
+        "archived_artifact_changed": true,
+        "archived_original_checksums_unchanged": true,
+        "authored_only": true,
+        "builder_result": "PASS_PACKAGE_INTEGRITY",
+        "current_run_reader_refuses_stale_seal": true,
+        "network_model_calls": 0,
+        "pre_mutation_run_integrity": "PASS",
+        "schema_version": 2,
+        "separate_verify_package_result": "PASS_PACKAGE_INTEGRITY",
+        "status": "CONFIRMED_HIGH_FINDING_STALE_SEALED_RUN_EXPORTED_WITH_INTEGRITY_PASS"
+      },
+      "result": {
+        "bytes": 551,
+        "path": "/tmp/civiclab-independent-reproduction-v2-run-race.json",
+        "sha256": "39d31dd331ecabc2eca4085bf2cd059f0ad0a250a14dd534c896c9f1957f673e"
+      },
+      "runtime": "Python3.12"
+    },
+    {
+      "evidence": {
+        "actual_private_raw_key_reads": 0,
+        "actual_project_archive_builds": 0,
+        "archive_manifest_hash_matches_changed_artifact": true,
+        "archived_artifact_changed": true,
+        "archived_original_checksums_unchanged": true,
+        "authored_only": true,
+        "builder_result": "PASS_PACKAGE_INTEGRITY",
+        "current_run_reader_refuses_stale_seal": true,
+        "network_model_calls": 0,
+        "pre_mutation_run_integrity": "PASS",
+        "schema_version": 2,
+        "separate_verify_package_result": "PASS_PACKAGE_INTEGRITY",
+        "status": "CONFIRMED_HIGH_FINDING_STALE_SEALED_RUN_EXPORTED_WITH_INTEGRITY_PASS"
+      },
+      "result": {
+        "bytes": 551,
+        "path": "/tmp/civiclab-independent-reproduction-v2-run-race-py311.json",
+        "sha256": "39d31dd331ecabc2eca4085bf2cd059f0ad0a250a14dd534c896c9f1957f673e"
+      },
+      "runtime": "Python3.11"
+    }
+  ],
+  "documentation": {
+    "bytes": 2685,
+    "path": "docs/REVIEW_PACKAGE_V2_PUBLIC_EVIDENCE_CANDIDATE.md",
+    "sha256": "612a6d730937d2add6b7132bf9020b14cef88cae07ac0f90c2860c41c79b9d39"
+  },
+  "finding": {
+    "id": "REPRO_V2_SELECTED_RUN_CAPTURE_NOT_BOUND_TO_SEAL",
+    "impact": "Owner-review package can contain a selected run whose archived artifacts do not match its recorded checksum seal, despite the builder requiring and claiming selected sealed runs. This is engineering provenance corruption, not evidence of a fabricated scientific result in an actual prior package.",
+    "inherited_scope": "The same structure exists in frozen legacy builder; legacy bytes and historical accepted archives remain unchanged. This finding does not prove any historical package suffered the race.",
+    "location": "src/civiclab/reproduction_v2.py:73",
+    "observed": "The builder captures changed artifact bytes while copying original stale checksums.json. Its archive manifest hashes the changed bytes, later input comparisons agree with those bytes, and both builder and verify_package report PASS_PACKAGE_INTEGRITY. Independent original run reader refuses the same stale sealed run.",
+    "related_lines": [
+      78,
+      85,
+      118,
+      146
+    ],
+    "required_remediation": "Bind exact captured run buffers plus checksum closure to the verified seal, with deterministic failure on any mismatch before archive emission; retain independent source/report mutation guards. A live-reader rerun unbound to the captured bytes alone is insufficient. Preserve fixture/private/nonrecursive/runtime/root/temp/output guarantees and provide a regression reproducing this exact window.",
+    "root_cause": "Verified artifact membership is reused as paths without binding later-captured artifact bytes and checksums to the originally verified seal. Later mutation guard compares only against payload hashes computed after the race.",
+    "severity": "HIGH",
+    "trigger": "A selected recorded run artifact changes after genuine verified_run(path) returns PASS and before payload path.read_bytes().",
+    "verifier_scope": "Standalone byte-integrity verifier label is honest for archive manifest bytes. That limited label does not repair builder selected-sealed-run admission."
+  },
+  "historical_code": {
+    "bytes": 7814,
+    "path": "src/civiclab/reproduction.py",
+    "sha256": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335"
+  },
+  "not_run": [
+    "Actual project package assembly",
+    "Current exact committed snapshot and explicit real/safe run selection",
+    "Fresh full package installation/restoration/documented full suite",
+    "Current figure/dashboard trace/provenance review",
+    "Actual private/raw/owner/credential input packaging"
+  ],
+  "preserved_initial_probe": {
+    "outcome": "Initial additional-oracle batch stopped with AssertionError resealed_run_mutation accepted. This exposed the substantive finding, not a fixture-harness fix. Remaining branches in that batch were not executed; no complete-batch PASS claimed.",
+    "script": {
+      "bytes": 3260,
+      "path": "/tmp/civiclab-independent-reproduction-v2-oracles.py",
+      "sha256": "a1846e55c339d841f1cbef97445fdf17777ce8f1c583f58399f0cbf676db77b2"
+    }
+  },
+  "reproducer": {
+    "bytes": 2232,
+    "path": "/tmp/civiclab-independent-reproduction-v2-run-race.py",
+    "sha256": "ffc1f1c758a20a35f765b2d90009708e3247d8e1b5325d5fcfc93ea94c0b49df"
+  },
+  "reproduction_command": "PYTHONPATH=src:tests <python> -m unittest tests.test_reproduction_v2 tests.test_reproduction -q",
+  "reviewer_operations": {
+    "actual_private_raw_key_reads": 0,
+    "actual_project_archives": 0,
+    "api_spend_usd": 0,
+    "authored_temporary_archives_only": true,
+    "development_compute_unpriced": true,
+    "network_model_calls": 0
+  },
+  "schema_version": 1,
+  "scope": "EXACT_REPRODUCTION_V2_CODE_AND_AUTHORED_BOUNDARIES_NOT_CURRENT_ARCHIVE_RESTORE",
+  "status": "BLOCKED_SELECTED_RUN_SEAL_CAPTURE_RACE",
+  "supplied_tests": [
+    {
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-reproduction-v2-py312.log",
+        "sha256": "1e7f740d499b4c9f0177b3833691e633f8040655564aa39ac4bd5e09d3b6e912"
+      },
+      "result": "OK",
+      "runtime": "Python3.12",
+      "seconds": 1.062,
+      "tests": 13
+    },
+    {
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-reproduction-v2-py311.log",
+        "sha256": "747d11cef57dc6e4de0b2c95e65937df0547093ea990369be7521939e94464e2"
+      },
+      "result": "OK",
+      "runtime": "Python3.11",
+      "seconds": 0.973,
+      "tests": 13
+    }
+  ],
+  "test_file": {
+    "bytes": 6034,
+    "path": "tests/test_reproduction_v2.py",
+    "sha256": "f79503d1dcce96408547f3f6ab8ff69490e5ccf746c76c7b6c70b1ce2b257f6f"
+  }
+}
