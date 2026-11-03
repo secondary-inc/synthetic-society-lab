@@ -1,0 +1,79 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_OWNER_V1_COMPONENT_HANDOFF",
+  "status": "CANDIDATE_COMPONENT_ONLY_INDEPENDENT_REVIEW_PENDING",
+  "files": {
+    "src/civiclab/additional_compatibility_owner_v1.py": {
+      "sha256": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+      "bytes": 20485
+    },
+    "tests/test_additional_compatibility_owner_v1.py": {
+      "sha256": "dc6513cea182d0aa3e46d5d172b95761237da13e9eae00ad8552b1bb56b79920",
+      "bytes": 18395
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_OWNER_V1_TESTS_312.txt": {
+      "sha256": "c3a3c95b9504433b35443e1cacecdc5c24350f8678598cdbe46f938f2f176c91",
+      "bytes": 98
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_OWNER_V1_TESTS_311.txt": {
+      "sha256": "c19d696c9cc0c01d4822889cae6f6af5883989f476a47bbf121c5b6feed824db",
+      "bytes": 98
+    }
+  },
+  "code_contract": {
+    "kind": "ADDITIONAL_COMPATIBILITY_OWNER_CODE_V1",
+    "pins": {
+      "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+      "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+      "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+      "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+      "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+    },
+    "methods": "4053bff6833993a01e9d0dd58e82fa2fa840ba3ae5dbf690449200100418960e",
+    "live_factory": "DENIED_UNRELEASED",
+    "extra_POSTs": 1
+  },
+  "tests": {
+    "Python3.12": {
+      "tests": 55,
+      "seconds": 6.553,
+      "result": "PASS"
+    },
+    "Python3.11": {
+      "tests": 55,
+      "seconds": 6.159,
+      "result": "PASS"
+    },
+    "new_control_cases": 14,
+    "inherited_safe_diagnostics": 41,
+    "native_crash_boundaries": [
+      "INSERT_1",
+      "INSERT_2",
+      "INSERT_3",
+      "INSERT_4",
+      "CHARGE_INSERT",
+      "COMMIT",
+      "ANCHOR",
+      "RETURN_LOST"
+    ],
+    "concurrency": "Two spawned processes/same owner; exactly one reserved, other refused"
+  },
+  "scope": "Closed artifact validation, prefix/replay successor financial predicates and four-event single-commit control core. Not complete live integration. No dispatch capability is returned. Tests use disposable isolated mocked OS homes and authored external assertions/catalog metadata only.",
+  "known_remaining": [
+    "Fixed original owner/run namespace first-use marker/intent/lock/ACK and sealed single-use POST capability are not in this component",
+    "Whole120-second client and bounded catalog/credential/HTTP integration absent; caller credential_shape_check is an authored-only callback, not safe actual admission",
+    "Real entry open_actual is unconditionally denied before arguments/home; no live release/terminal command",
+    "Independent exact component review then integrated-client/crash/secret/price/terminal packet review and explicit unknown-billing amendment acceptance remain required"
+  ],
+  "actual_owner_access": 0,
+  "credential_or_env_access": 0,
+  "network_requests": 0,
+  "new_model_requests": 0,
+  "source_access": 0,
+  "spending_usd": 0,
+  "retained_test_data": "Temporary authored ledgers deleted normally; no claim of retained raw outcome audit. Logs/code persist.",
+  "initial_fixture_failure": "First test setup used unresolved macOS /var temporary path; original symlink guard refused before a test owner was created. Fixture changed to Path.resolve; production guard unchanged.",
+  "next": "Independent component review; separately owned fixed-run client integration. No scientific gate advanced."
+}
