@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 import sqlite3
 
-from .common import RunStore, canonical_hash, redact
+from .common import RunStore, atomic_json, canonical_hash, redact, sha256_file
 from .model import BudgetLedger, ExecutionBlocked, OpenRouter, Policy, Price, micros
 from .e02.experiment import MockSurvey, assignments, evaluate
 from .e02.instrument import change, score
@@ -87,7 +87,7 @@ class PhaseJournal:
                 raise ValueError('phase completion has no unique started checkpoint')
 
 
-def verify_journal(journal, ledger, jobs, instrument):
+def verify_journal(journal, ledger, jobs, instrument, price_spec):
     """Reconcile committed phase/request/output identities before ANY reuse."""
     rows = {(r['unit'], r['phase']): r for r in journal.rows()}
     charges = {r['id']: r for r in ledger.snapshot()}
@@ -132,6 +132,13 @@ def verify_journal(journal, ledger, jobs, instrument):
             or metadata.get('actual_provider') != result.get('provider')
             or metadata.get('actual_model') != result.get('model')
             or metadata.get('completion_id') != result.get('completion_id')
+            or metadata.get('pricing_verified_at_utc') != price_spec['verified_at_utc']
+            or metadata.get('input_usd_per_token') != price_spec['input_usd_per_token']
+            or metadata.get('output_usd_per_token') != price_spec['output_usd_per_token']
+            or metadata.get('model') != price_spec['model']
+            or metadata.get('requested_provider') != price_spec['provider']
+            or metadata.get('max_tokens') != 512
+            or metadata.get('approval_id') != ledger.policy.approval_id
             or metadata.get('usage') != result.get('usage')
             or charge['charged_microusd'] != micros(result['usage']['cost'])):
             raise ValueError('phase billing/output/request reconciliation failed')
@@ -168,6 +175,9 @@ def run_mock_bridge(root, profiles, stimuli, instrument, *, seed=20261103, repea
         raise ValueError('positive clean checkpoint limit required')
     jobs = assignments(profiles, stimuli, seed, repeats)
     if resume:
+        resume = Path(resume).resolve()
+        if not resume.is_relative_to(root / 'data/processed/runs'):
+            raise ValueError('resume path outside run store')
         old = json.loads((Path(resume) / 'manifest.json').read_text())
         price_spec = old['config']['fixture_price']
     else:
@@ -178,27 +188,41 @@ def run_mock_bridge(root, profiles, stimuli, instrument, *, seed=20261103, repea
     config = {'stage': STAGE, 'seed': seed, 'repeats': repeats,
               'assignment_hash': canonical_hash(jobs), 'instrument_hash': canonical_hash(instrument),
               'stimuli_hash': canonical_hash(stimuli), 'fixture_script_hash': canonical_hash(script),
-              'fixture_price': price_spec, 'actual_paid_budget_usd': 0, 'transport': 'LOCAL_AUTHORED_FIXTURE_ONLY',
+              'fixture_price': price_spec, 'actual_paid_budget_usd': 0,
+              'simulated_policy': Policy(True, '1', '0', '1', 'MOCK_ONLY_NOT_OWNER_AUTHORIZATION').__dict__, 'transport': 'LOCAL_AUTHORED_FIXTURE_ONLY',
               'invalid_pre_policy': 'RECORD_AND_SKIP_POST_WITHOUT_IMPUTATION', 'max_tokens': 512}
     run = RunStore.resume(root, resume, config) if resume else RunStore(root, 'E02', config, kind='MOCK')
     try:
         for name, value in [('instrument.json', instrument), ('profiles.json', profiles), ('stimuli.json', stimuli),
-                            ('assignments.json', jobs), ('fixture-script.local.json', script)]:
+                            ('assignments.json', jobs), ('fixture-script.local.json', script), ('bridge-lock.json', config)]:
             path = run.path / name
             if path.exists():
                 if json.loads(path.read_text()) != value:
                     raise ValueError('frozen bridge artifact differs')
             else:
+                if resume:
+                    raise ValueError('resume frozen artifact missing')
                 run.write(name, value)
+        checkpoint = run.path / 'phase-pair-checkpoint.local.json'
+        def pair_state():
+            return {'schema_version': 1, 'config_sha256': canonical_hash(config),
+                    'journal_sha256': sha256_file(run.path / 'phase-journal.local.sqlite'),
+                    'budget_sha256': sha256_file(run.path / 'budget-ledger.local.sqlite')}
+        if resume:
+            if not all((run.path / name).is_file() for name in ('phase-journal.local.sqlite', 'budget-ledger.local.sqlite', 'phase-pair-checkpoint.local.json')):
+                raise ExecutionBlocked('checkpoint journal or budget missing; no replay')
+            if json.loads(checkpoint.read_text()) != pair_state():
+                raise ExecutionBlocked('checkpoint pair changed or phase interrupted; no replay')
         journal = PhaseJournal(run.path / 'phase-journal.local.sqlite')
         # Positive limits and token prices below are SIMULATED test accounting.
-        policy = Policy(True, '1', '0', '1', 'MOCK_ONLY_NOT_OWNER_AUTHORIZATION')
+        policy = Policy(**config['simulated_policy'])
         ledger = BudgetLedger(run.path / 'budget-ledger.local.sqlite', policy)
         transport = FixtureTransport(script)
         completed_calls = sum(r['status'].startswith('DONE_') for r in journal.rows())
         transport.calls = completed_calls
         router = OpenRouter(ledger, Price(**price_spec), 'FIXTURE_ONLY_NO_NETWORK', transport)
-        rows = verify_journal(journal, ledger, jobs, instrument)
+        rows = verify_journal(journal, ledger, jobs, instrument, price_spec)
+        atomic_json(checkpoint, pair_state())
         phase_count = 0
         for job in jobs:
             unit = canonical_hash(job)
@@ -225,7 +249,8 @@ def run_mock_bridge(root, profiles, stimuli, instrument, *, seed=20261103, repea
                 journal.finish(unit, phase, status, result)
                 run.event('survey_phase_committed', unit=unit, phase=phase, status=status,
                           simulated_receipt=result.get('receipt'), actual_spend_usd=0)
-                rows = verify_journal(journal, ledger, jobs, instrument)
+                rows = verify_journal(journal, ledger, jobs, instrument, price_spec)
+                atomic_json(checkpoint, pair_state())
                 phase_count += 1
                 if stop_after_phases is not None and phase_count >= stop_after_phases:
                     run.event('clean_checkpoint_pause', committed_phase_count=len(rows))

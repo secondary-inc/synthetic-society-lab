@@ -111,6 +111,9 @@ class SurveyBridgeTests(unittest.TestCase):
                         result = json.loads(db.execute('SELECT result FROM phases').fetchone()[0])
                         result['output']['democratic_party'] = 0
                         db.execute('UPDATE phases SET result=?', (json.dumps(result),))
+                checkpoint = json.loads((path / 'phase-pair-checkpoint.local.json').read_text())
+                checkpoint['journal_sha256'] = sha256_file(path / 'phase-journal.local.sqlite')
+                (path / 'phase-pair-checkpoint.local.json').write_text(json.dumps(checkpoint))
                 with patch.object(FixtureTransport, '__call__', side_effect=AssertionError('must not dispatch')):
                     with self.assertRaises((ValueError, ExecutionBlocked)):
                         run_mock_bridge(tmp, PROFILES, STIMULI[:1], INSTRUMENT, resume=path)
@@ -185,6 +188,34 @@ class SurveyBridgeTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     run_mock_bridge(root, PROFILES + [PROFILES[0]], STIMULI[:1], INSTRUMENT)
             self.assertEqual(len(BudgetLedger(path / 'budget-ledger.local.sqlite').snapshot()), 1)
+
+
+    def test_missing_pair_database_and_coedited_manifest_price_do_not_reset_accounting(self):
+        for mode in ('missing_budget', 'changed_price'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as tmp:
+                path = run_mock_bridge(tmp, PROFILES, STIMULI[:1], INSTRUMENT, stop_after_phases=1)
+                if mode == 'missing_budget':
+                    # Preserve the bytes elsewhere; refusal must not create a replacement ledger.
+                    (path / 'budget-ledger.local.sqlite').rename(path / 'preserved-budget.local.sqlite')
+                else:
+                    manifest = json.loads((path / 'manifest.json').read_text())
+                    manifest['config']['fixture_price']['input_usd_per_token'] = '0.000002'
+                    (path / 'manifest.json').write_text(json.dumps(manifest))
+                with patch.object(FixtureTransport, '__call__', side_effect=AssertionError('must not dispatch')):
+                    with self.assertRaises((ValueError, ExecutionBlocked)):
+                        run_mock_bridge(tmp, PROFILES, STIMULI[:1], INSTRUMENT, resume=path)
+                if mode == 'missing_budget':
+                    self.assertFalse((path / 'budget-ledger.local.sqlite').exists())
+
+    def test_outside_resume_and_raw_profile_fields_are_rejected_before_io(self):
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as other:
+            with patch.object(FixtureTransport, '__call__', side_effect=AssertionError('must not dispatch')):
+                with self.assertRaisesRegex(ValueError, 'outside'):
+                    run_mock_bridge(tmp, PROFILES, STIMULI[:1], INSTRUMENT, resume=other)
+                profiles = deepcopy(PROFILES); profiles[0]['respondent_name'] = 'PRIVATE_TEST_MARKER'
+                with self.assertRaises(ValueError):
+                    run_mock_bridge(tmp, profiles, STIMULI[:1], INSTRUMENT)
+            self.assertFalse((Path(tmp) / 'data').exists())
 
     def test_live_dispatch_and_non_demo_inputs_block_without_transport_or_credentials(self):
         with tempfile.TemporaryDirectory() as tmp, patch('civiclab.model.network_transport', side_effect=AssertionError('network forbidden')):
