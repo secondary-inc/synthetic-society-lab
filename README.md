@@ -43,6 +43,8 @@ python3.11 -m venv .venv
 
 For the optional physical-PDF reader, install `.venv/bin/python -m pip install -e '.[geometry]'`. Its scoped Python 3.11/3.12 installation and cached-source checks have [independent acceptance](reports/INDEPENDENT_AUDIT_GEOMETRY_RUNTIME_V1_7.json); readiness integration remains separately gated. The observed full Python 3.12 environment is pinned in [the geometry runtime lock](configs/runtime_python312_geometry_20261103.txt). Historical archives retain their original dependency locks; the new lock is not a Python 3.11 full-environment lock. See the [runtime notes](docs/GEOMETRY_RUNTIME_V1_7.md).
 
+The [offline global-survey replay command](docs/OFFLINE_GLOBAL_SURVEY_REPLAY.md) reproduces the authored twelve-profile accounting/phase pilot without raw research inputs or API credentials. Its `--dry-run` checks the plans without writing files.
+
 On a machine with the registered local raw inputs:
 
 ```bash

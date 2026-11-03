@@ -1,0 +1,153 @@
+"""Standalone AUTHORED authority component; no F integration/production service.
+
+Trust: this code/key/SQLite registry/head are outside the editable run boundary.
+0600 alone is NOT isolation from hostile same-UID code or full-host rollback.
+"""
+from contextlib import contextmanager
+import base64
+import fcntl
+import hashlib
+import hmac
+import json
+import os
+from pathlib import Path
+import sqlite3
+import subprocess
+import sys
+import time
+import uuid
+from ..common import atomic_json
+from .national_budget import Blocked
+
+
+def encoded(value):return (json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False)+'\n').encode()
+def digest(value):return hashlib.sha256(encoded(value)).hexdigest()
+def file_hash(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def production_authority(*args,**kwargs):raise Blocked('no production authority/service/phase-proof integration')
+
+
+class AuthoredAuthority:
+    """Explicit trusted test handle. Never reconstruct it from run configuration."""
+    MAX_DB_BYTES=1024*1024
+    @classmethod
+    def bootstrap(cls,authority_path,run_path,bindings,works):
+        authority_path=Path(authority_path);run_path=Path(run_path)
+        if authority_path.exists() or run_path.exists():raise Blocked('bootstrap requires absent authority AND run; no migration/reset')
+        authority_path=authority_path.resolve();run_path=run_path.resolve()
+        if authority_path==run_path or authority_path.is_relative_to(run_path) or run_path.is_relative_to(authority_path):raise Blocked('authority must be outside editable run')
+        if set(bindings)!={'runtime','spec','code','plan'} or any(type(v) is not str or len(v)!=64 or any(ch not in '0123456789abcdef' for ch in v) for v in bindings.values()):raise Blocked('fixed hash bindings')
+        if not 1<=len(works)<=32 or len({w['id'] for w in works})!=len(works):raise Blocked('authored work registry')
+        for w in works:
+            if set(w)!={'id','kind','sweep','ops','bytes','payload_b64','mode'} or w['kind'] not in ('CATALOG','MANDATORY','QUERY') or w['sweep'] not in ('PRIMARY','REPLAY') or w['mode'] not in ('SUCCESS','FAIL','ABRUPT'):raise Blocked('closed authored worker registry')
+            if type(w['id']) is not str or not 1<=len(w['id'])<=64 or type(w['ops']) is not int or not 0<=w['ops']<=64000000 or type(w['bytes']) is not int or not 0<=w['bytes']<=2048:raise Blocked('registry identity/charge')
+            payload=base64.b64decode(w['payload_b64'],validate=True)
+            if len(payload)>2048:raise Blocked('authored byte-worker bound')
+        authority_path.mkdir(parents=True,mode=0o700);key=os.urandom(32)
+        fd=os.open(authority_path/'private.key',os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+        with os.fdopen(fd,'wb') as f:f.write(key);f.flush();os.fsync(f.fileno())
+        identity={'authority':uuid.uuid4().hex,'batch':uuid.uuid4().hex,'nonce':uuid.uuid4().hex,'run':str(run_path),'bindings':bindings,'registry_sha256':digest(works),'scope':'MOCK_AUTHORED_BYTE_WORKERS_ONLY'}
+        meta={'identity':identity,'works':works,'seq':0,'head':None,'ops':0,'bytes':0,'barrier':False,'pending':None,'completed':{},'last_time':time.time()}
+        db=sqlite3.connect(authority_path/'authority.sqlite')
+        try:
+            db.execute('PRAGMA synchronous=FULL');db.execute('PRAGMA max_page_count=256')
+            db.execute('CREATE TABLE metadata (id INTEGER PRIMARY KEY CHECK(id=1), body TEXT, mac TEXT)')
+            db.execute('CREATE TABLE transitions (seq INTEGER PRIMARY KEY, body TEXT, mac TEXT)')
+            db.execute('INSERT INTO metadata VALUES(1,?,?)',(encoded(meta).decode(),hmac.new(key,encoded(meta),hashlib.sha256).hexdigest()));db.commit()
+        finally:db.close()
+        os.chmod(authority_path/'authority.sqlite',0o600)
+        run_path.mkdir(parents=True);atomic_json(run_path/'genesis.json',identity);(run_path/'.AUTHORED_AUTHORITY_ONLY').write_text('MOCK_TERMINAL_AUTHORITY_V1_3\n')
+        instance=cls.__new__(cls);instance.path=authority_path;instance.run=run_path;instance.bindings=dict(bindings)
+        instance._mirror(meta,[]);return cls.open(authority_path,run_path,bindings)
+    @classmethod
+    def open(cls,authority_path,run_path,bindings,*,forensic=False):
+        instance=cls.__new__(cls);instance.path=Path(authority_path).resolve();instance.run=Path(run_path).resolve();instance.bindings=dict(bindings)
+        with instance.lock():
+            _,meta,rows=instance._verified()
+            if not forensic:instance._projection(meta,rows)
+        return instance
+    @contextmanager
+    def lock(self):
+        if not self.path.is_dir() or not (self.path/'private.key').is_file() or not (self.path/'authority.sqlite').is_file():raise Blocked('authority missing; never bootstrap on open')
+        with (self.path/'.lock').open('a') as f:
+            try:fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            except BlockingIOError:raise Blocked('trusted authority owned by another worker') from None
+            try:yield
+            finally:fcntl.flock(f,fcntl.LOCK_UN)
+    def _verified(self):
+        key_path=self.path/'private.key';db_path=self.path/'authority.sqlite'
+        if key_path.is_symlink() or db_path.is_symlink() or key_path.stat().st_mode&0o077:raise Blocked('private authority identity/permissions')
+        key=key_path.read_bytes()
+        if len(key)!=32:raise Blocked('authority key lost/corrupt')
+        try:
+            db=sqlite3.connect(db_path.as_uri()+'?mode=rw',uri=True)
+            try:row=db.execute('SELECT body,mac FROM metadata WHERE id=1').fetchone();records=db.execute('SELECT body,mac FROM transitions ORDER BY seq').fetchall()
+            finally:db.close()
+            if row is None:raise Blocked('trusted head absent')
+            if not hmac.compare_digest(row[1],hmac.new(key,row[0].encode(),hashlib.sha256).hexdigest()):raise Blocked('authority metadata authentication')
+            meta=json.loads(row[0]);rows=[];previous=None
+            for n,(body,mac) in enumerate(records,1):
+                if not hmac.compare_digest(mac,hmac.new(key,body.encode(),hashlib.sha256).hexdigest()):raise Blocked('authority transition authentication')
+                r=json.loads(body)
+                if r['seq']!=n or r['prev']!=previous or r['identity']!=digest(meta['identity']):raise Blocked('authority sequence/identity')
+                rows.append({'record':r,'mac':mac});previous=digest(rows[-1])
+            if len(rows)!=meta['seq'] or previous!=meta['head']:raise Blocked('authority head/truncated history')
+            if meta['identity']['run']!=str(self.run) or meta['identity']['bindings']!=self.bindings or digest(meta['works'])!=meta['identity']['registry_sha256']:raise Blocked('authority batch/design/run transplant')
+            if time.time()<meta['last_time']:raise Blocked('trusted clock rollback')
+            return key,meta,rows
+        except (sqlite3.Error,ValueError,KeyError,TypeError):raise Blocked('authority unavailable/corrupt; no replacement') from None
+    def _state(self,meta):return {k:meta[k] for k in ('identity','seq','head','ops','bytes','barrier','pending','completed')}
+    def _mirror(self,meta,rows):
+        atomic_json(self.run/'authority_state.json',self._state(meta))
+        data=b''.join(encoded(r) for r in rows);path=self.run/'authority_history.jsonl';tmp=path.with_suffix('.tmp')
+        with tmp.open('wb') as f:f.write(data);f.flush();os.fsync(f.fileno())
+        os.replace(tmp,path)
+    def _projection(self,meta,rows):
+        try:
+            if (self.run/'.AUTHORED_AUTHORITY_ONLY').read_text()!='MOCK_TERMINAL_AUTHORITY_V1_3\n' or json.loads((self.run/'genesis.json').read_text())!=meta['identity'] or json.loads((self.run/'authority_state.json').read_text())!=self._state(meta) or (self.run/'authority_history.jsonl').read_bytes()!=b''.join(encoded(r) for r in rows):raise Blocked('run projection differs from trusted current head')
+        except (OSError,ValueError):raise Blocked('run marker/state/history absent; no reset') from None
+    def _commit(self,key,meta,rows,event,*,hook=lambda event:None):
+        meta['seq']+=1;meta['last_time']=time.time();r={'seq':meta['seq'],'prev':meta['head'],'identity':digest(meta['identity']),**event,'ops':meta['ops'],'bytes':meta['bytes'],'barrier':meta['barrier']};signed={'record':r,'mac':hmac.new(key,encoded(r),hashlib.sha256).hexdigest()};rows=[*rows,signed];meta['head']=digest(signed)
+        db=sqlite3.connect((self.path/'authority.sqlite').as_uri()+'?mode=rw',uri=True)
+        try:
+            db.execute('PRAGMA synchronous=FULL');db.execute('PRAGMA max_page_count=256');db.execute('BEGIN IMMEDIATE')
+            db.execute('INSERT INTO transitions VALUES(?,?,?)',(meta['seq'],encoded(r).decode(),signed['mac']))
+            db.execute('UPDATE metadata SET body=?,mac=? WHERE id=1',(encoded(meta).decode(),hmac.new(key,encoded(meta),hashlib.sha256).hexdigest()));db.commit()
+        except sqlite3.Error:db.rollback();raise Blocked('trusted transaction failed; prior reservation retained') from None
+        finally:db.close()
+        hook('after_authority_'+event['status']+'_before_projection');self._mirror(meta,rows);self._projection(meta,rows)
+        return meta,rows
+    def inspect(self):
+        with self.lock():
+            _,meta,rows=self._verified();self._projection(meta,rows);return json.loads(encoded(self._state(meta)))
+    def execute(self,work_id,*,hook=lambda event:None):
+        with self.lock():
+            key,meta,rows=self._verified();self._projection(meta,rows)
+            if meta['barrier'] or meta['pending'] is not None or work_id in meta['completed']:raise Blocked('trusted pending/permanent/duplicate barrier')
+            work=next((w for w in meta['works'] if w['id']==work_id),None)
+            if work is None or meta['ops']+work['ops']>64000000:raise Blocked('unregistered work/quota')
+            meta['ops']+=work['ops'];meta['bytes']+=work['bytes'];meta['pending']=work_id
+            meta,rows=self._commit(key,meta,rows,{'work':work_id,'kind':work['kind'],'sweep':work['sweep'],'definition':digest(work),'status':'RESERVED','proof':None},hook=hook)
+            hook('after_reservation_before_child')
+            # Fixed isolated authored byte worker; no arbitrary code/sign-success API.
+            script="import base64,os,sys; mode=sys.argv[1]; os._exit(9) if mode=='ABRUPT' else None; sys.exit(7) if mode=='FAIL' else None; sys.stdout.buffer.write(base64.b64decode(sys.argv[2]))"
+            start=time.monotonic();proof=None;status='FAILED'
+            try:
+                child=subprocess.run([sys.executable,'-I','-c',script,work['mode'],work['payload_b64']],capture_output=True,timeout=5,env={'PATH':os.defpath})
+                expected=hashlib.sha256(base64.b64decode(work['payload_b64'],validate=True)).hexdigest()
+                if child.returncode==0 and len(child.stdout)<=2048 and hashlib.sha256(child.stdout).hexdigest()==expected:
+                    status='SUCCESS';proof={'artifact_sha256':expected,'observed_bytes':len(child.stdout),'worker':'FIXED_AUTHORED_BYTES_V1_3'}
+            except (OSError,subprocess.TimeoutExpired):pass
+            hook('after_child_before_terminal')
+            elapsed=time.monotonic()-start;meta['pending']=None;meta['completed'][work_id]=status
+            if status!='SUCCESS':meta['barrier']=True
+            meta,rows=self._commit(key,meta,rows,{'work':work_id,'kind':work['kind'],'sweep':work['sweep'],'definition':digest(work),'status':status,'proof':proof,'elapsed_seconds':elapsed},hook=hook)
+            return {'status':status,'proof':proof,'ops':meta['ops'],'bytes':meta['bytes'],'barrier':meta['barrier']}
+    def recover_unknown(self):
+        """Explicit forensic quarantine, never a successful replay or refund."""
+        with self.lock():
+            key,meta,rows=self._verified()
+            work_id=meta['pending']
+            if work_id is None:raise Blocked('no pending work to recover; projection gap remains blocked')
+            work=next(w for w in meta['works'] if w['id']==work_id);meta['pending']=None;meta['completed'][work_id]='UNKNOWN';meta['barrier']=True
+            self._commit(key,meta,rows,{'work':work_id,'kind':work['kind'],'sweep':work['sweep'],'definition':digest(work),'status':'UNKNOWN','proof':None})
+            return self._state(meta)

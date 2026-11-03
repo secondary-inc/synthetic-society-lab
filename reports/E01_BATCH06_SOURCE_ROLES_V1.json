@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_BATCH06_SOURCE_ROLES_V1",
+  "status": "WORKER_SOURCE_ROLE_EVIDENCE_PENDING_INDEPENDENT_REVIEW",
+  "prepared_at_utc": "2026-11-03T15:25:36.155834+00:00",
+  "http_receipt": {
+    "path": "data/raw/e01_ballots_batch06_v1/http_receipt.json",
+    "sha256": "1c306dde898815a791de4bc78a0155ba0ed01d56243af7d35403227a192a6fc7"
+  },
+  "http_captures": [
+    {
+      "source_id": "ar_candidate_index",
+      "url": "https://www.sos.arkansas.gov/elections/for-candidates",
+      "offered_by": "WEB_SEARCH_OFFICIAL_RESULT",
+      "offered_label": "For Candidates",
+      "retrieved_at_utc": "2026-11-03T15:21:14.083339+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/ar_candidate_index.body",
+      "status": 200,
+      "final_url": "https://www.sos.arkansas.gov/elections/for-candidates",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:15 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 15:21:15 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 97859,
+      "sha256": "34922365da29bfc003c0d0eeb14ba3ef32e2ea3ef9bd037b4ae0c730ea019ffb",
+      "elapsed_seconds": 1.173358,
+      "source_role": "OFFICIAL_STATE_CANDIDATE_RESOURCE_INDEX",
+      "bounded_role_observation": "State authority links 2026 Candidate Search; no November nominee roster on acquired index.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "ga_elections_index",
+      "url": "https://sos.ga.gov/elections-division-georgia-secretary-states-office",
+      "offered_by": "WEB_SEARCH_OFFICIAL_RESULT",
+      "offered_label": "Elections Division",
+      "retrieved_at_utc": "2026-11-03T15:21:15.287092+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/ga_elections_index.body",
+      "status": 403,
+      "final_url": "https://sos.ga.gov/elections-division-georgia-secretary-states-office",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:15 GMT",
+        "Content-Type": "text/html; charset=UTF-8",
+        "Content-Length": "5603"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 5603,
+      "sha256": "4f3835a99ff209347a6a83c44107c84caca7b0407f22989c6ed8e73a809590cd",
+      "elapsed_seconds": 0.073657,
+      "source_role": "HTTP403_ACCESS_RESPONSE_NOT_CANDIDATE_EVIDENCE",
+      "bounded_role_observation": "Access blocked; no bypass, browser retry, spoofed identity or hidden data route attempted.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "id_general_index",
+      "url": "https://voteidaho.gov/idaho-general-election/",
+      "offered_by": "WEB_SEARCH_OFFICIAL_RESULT",
+      "offered_label": "2026 Idaho General Election",
+      "retrieved_at_utc": "2026-11-03T15:21:15.392647+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "status": 200,
+      "final_url": "https://voteidaho.gov/idaho-general-election/",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:15 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 15:12:45 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 218881,
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4",
+      "elapsed_seconds": 0.111802,
+      "source_role": "OFFICIAL_NOVEMBER_GENERAL_INFORMATION_AND_CANDIDATE_LINK_INDEX",
+      "bounded_role_observation": "November3 general page explicitly links See The Full Candidate List to run.voteidaho.gov/search. Results links not followed.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "ar_candidate_search",
+      "url": "https://candidates.arkansas.gov/",
+      "offered_by": "https://www.sos.arkansas.gov/elections/for-candidates",
+      "offered_label": "2026 Candidate Search",
+      "retrieved_at_utc": "2026-11-03T15:21:45.568033+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/ar_candidate_search.body",
+      "status": 200,
+      "final_url": "https://candidates.arkansas.gov/",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:45 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 15:20:32 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 69314,
+      "sha256": "b431265f4cdaf151080c956f765285fd1e2ee4e8e93ddc1dc197e486b2146008",
+      "elapsed_seconds": 0.086705,
+      "source_role": "OFFICIAL_PRIMARY_FILING_SEARCH_SHELL_NOT_GENERAL_NOMINEE_LIST",
+      "bounded_role_observation": "Body heading2026 Preferential Primary and Nonpartisan Judicial General Election; Search Candidate Filings. Exposes dynamic metl table/API references, but no API request or primary-to-general inference made.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "id_candidate_search",
+      "url": "https://run.voteidaho.gov/search",
+      "offered_by": "https://voteidaho.gov/idaho-general-election/",
+      "offered_label": "See The Full Candidate List",
+      "retrieved_at_utc": "2026-11-03T15:21:45.685699+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "status": 200,
+      "final_url": "https://run.voteidaho.gov/search",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:45 GMT",
+        "Last-Modified": "Mon, 17 Aug 2026 14:26:50 GMT",
+        "Content-Type": "text/html"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 15841,
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+      "elapsed_seconds": 0.164202,
+      "source_role": "OFFICIAL_CANDIDATE_PORTAL_INITIAL_HTTP_SHELL",
+      "bounded_role_observation": "Initial HTML shell titled Idaho Candidate Filing Portal - ReFrame; populated browser context captured separately. HTTP shell is not the dynamic candidate table.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "ar_county_election_index",
+      "url": "https://sebastiancountyar.gov/Departments/County-Clerk/Election-Details",
+      "offered_by": "WEB_SEARCH_OFFICIAL_COUNTY_RESULT",
+      "offered_label": "County Clerk Election Details",
+      "retrieved_at_utc": "2026-11-03T15:23:21.861733+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/ar_county_election_index.body",
+      "status": 302,
+      "final_url": "https://sebastiancountyar.gov/Departments/County-Clerk/Election-Details",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:23:22 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "206",
+        "Location": "https://sebastiancountyar.gov/Departments/County-Clerk/County-Clerk-Home/Election-Details"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 206,
+      "sha256": "c2b0ab2b823e9506a285b0fba5c8ad506759db0532dde27eaa968842d2ebf210",
+      "elapsed_seconds": 0.884159,
+      "source_role": "HTTP302_OBSERVED_REDIRECT_NOT_CANDIDATE_EVIDENCE",
+      "bounded_role_observation": "Official county indexed election link redirects to recorded Location; followed once as a separately countedGET.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "ar_county_election_index_redirect",
+      "url": "https://sebastiancountyar.gov/Departments/County-Clerk/County-Clerk-Home/Election-Details",
+      "offered_by": "https://sebastiancountyar.gov/Departments/County-Clerk/Election-Details",
+      "offered_label": "Observed HTTP302 Location",
+      "retrieved_at_utc": "2026-11-03T15:23:31.381999+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/ar_county_election_index_redirect.body",
+      "status": 404,
+      "final_url": "https://sebastiancountyar.gov/Departments/County-Clerk/County-Clerk-Home/Election-Details",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:23:30 GMT",
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": "72280"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 72280,
+      "sha256": "81fab7e1f39fe2b841dfe00a9bb048f82c410dc71b0e658679679d65057a3a38",
+      "elapsed_seconds": 0.420002,
+      "source_role": "HTTP404_NOT_CANDIDATE_EVIDENCE",
+      "bounded_role_observation": "Observed redirect target returned404. No guessed URL variants or outcome page used.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    },
+    {
+      "source_id": "ar_washington_general",
+      "url": "https://www.washingtoncountyar.gov/government/departments-a-e/election-commission/november-3-2026-general-election-information",
+      "offered_by": "WEB_SEARCH_OFFICIAL_COUNTY_RESULT",
+      "offered_label": "November 3, 2026 Election Information",
+      "retrieved_at_utc": "2026-11-03T15:24:23.278943+00:00",
+      "method": "GET",
+      "socket_timeout_seconds": 15,
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "path": "data/raw/e01_ballots_batch06_v1/ar_washington_general.body",
+      "status": 403,
+      "final_url": "https://www.washingtoncountyar.gov/government/departments-a-e/election-commission/november-3-2026-general-election-information",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:24:23 GMT",
+        "Content-Type": "text/html",
+        "Content-Length": "515"
+      },
+      "complete_body": true,
+      "body_bytes_saved": 515,
+      "sha256": "826cdaba6cda9b4bd75f5e45a40eaf0068cf37f833e4396d3c1fee338bef95f6",
+      "elapsed_seconds": 0.186954,
+      "source_role": "HTTP403_ACCESS_RESPONSE_NOT_CANDIDATE_EVIDENCE",
+      "bounded_role_observation": "Separate official county general-election information page discovered by search; GET403. Search-visible candidate content not substituted for acquired body or certification.",
+      "rights": "PUBLIC_READ_ACCESS_ONLY_WHERE_SUCCESSFUL; no raw redistribution license established; all raw bodies ignored/local",
+      "publication_or_update_date": "NOT_VERIFIED_FROM_ACQUIRED_BODY_FOR_GENERAL_ROSTER",
+      "pagination": "DYNAMIC_OR_NOT_CANDIDATE_DOCUMENT; see separate Idaho browser captures"
+    }
+  ],
+  "browser_captures": [
+    {
+      "source_id": "id_browser_visible",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "bytes": 203250,
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "url": "https://run.voteidaho.gov/search",
+      "captured_at_utc": "2026-11-03T15:22:51.233Z",
+      "source_role": "OFFICIAL_BROWSER_POPULATED_GENERAL_CONTEXT_WITH_STATUS_HISTORY_NOT_FINAL_BALLOT_ACCEPTANCE",
+      "selected_controls": [
+        {
+          "disabled": "false",
+          "id": "mat-select-0",
+          "text": "November 03, 2026 - 2026 GENERAL"
+        },
+        {
+          "disabled": "false",
+          "id": "mat-select-1",
+          "text": "Select District Type"
+        },
+        {
+          "disabled": "false",
+          "id": "partyAffiliation",
+          "text": "Select Party"
+        },
+        {
+          "disabled": "false",
+          "id": "mat-select-3",
+          "text": "50"
+        }
+      ],
+      "status_checkboxes": "NOT_SAVED_INITIAL_CAPTURE; initial AX showed selected statuses",
+      "displayed_total": "592 Candidate(s) Found of 592 total",
+      "pagination": "1 \u2013 50 of 592",
+      "visible_data_rows": 50,
+      "visible_US_Senate_rows": 5,
+      "http_response_headers": "UNAVAILABLE_FOR_BROWSER_CAPTURE",
+      "transport_byte_limit_certificate": false,
+      "wire_or_upstream_original_bytes": false
+    },
+    {
+      "source_id": "id_browser_federal",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "bytes": 68620,
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "url": "https://run.voteidaho.gov/search",
+      "captured_at_utc": "2026-11-03T15:23:56.646Z",
+      "source_role": "OFFICIAL_BROWSER_POPULATED_GENERAL_CONTEXT_WITH_STATUS_HISTORY_NOT_FINAL_BALLOT_ACCEPTANCE",
+      "selected_controls": [
+        {
+          "id": "mat-select-0",
+          "text": "November 03, 2026 - 2026 GENERAL"
+        },
+        {
+          "id": "mat-select-1",
+          "text": "Federal"
+        },
+        {
+          "id": "mat-select-4",
+          "text": "Select Office"
+        },
+        {
+          "id": "partyAffiliation",
+          "text": "Select Party"
+        },
+        {
+          "id": "mat-select-3",
+          "text": "50"
+        }
+      ],
+      "status_checkboxes": [
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-0-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-1-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-2-input"
+        }
+      ],
+      "displayed_total": "15 Candidate(s) Found of 592 total",
+      "pagination": "1 \u2013 15 of 15",
+      "visible_data_rows": 15,
+      "visible_US_Senate_rows": 5,
+      "http_response_headers": "UNAVAILABLE_FOR_BROWSER_CAPTURE",
+      "transport_byte_limit_certificate": false,
+      "wire_or_upstream_original_bytes": false
+    },
+    {
+      "source_id": "id_browser_senate",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "bytes": 29871,
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "url": "https://run.voteidaho.gov/search",
+      "captured_at_utc": "2026-11-03T15:24:13.622Z",
+      "source_role": "OFFICIAL_BROWSER_POPULATED_GENERAL_CONTEXT_WITH_STATUS_HISTORY_NOT_FINAL_BALLOT_ACCEPTANCE",
+      "selected_controls": [
+        {
+          "id": "mat-select-0",
+          "text": "November 03, 2026 - 2026 GENERAL"
+        },
+        {
+          "id": "mat-select-1",
+          "text": "Federal"
+        },
+        {
+          "id": "mat-select-4",
+          "text": "United States Senator"
+        },
+        {
+          "id": "partyAffiliation",
+          "text": "Select Party"
+        },
+        {
+          "id": "mat-select-3",
+          "text": "50"
+        }
+      ],
+      "status_checkboxes": [
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-0-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-1-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-2-input"
+        }
+      ],
+      "displayed_total": "5 Candidate(s) Found of 592 total",
+      "pagination": "1 \u2013 5 of 5",
+      "visible_data_rows": 5,
+      "visible_US_Senate_rows": 5,
+      "http_response_headers": "UNAVAILABLE_FOR_BROWSER_CAPTURE",
+      "transport_byte_limit_certificate": false,
+      "wire_or_upstream_original_bytes": false
+    }
+  ],
+  "acquisition_limits": {
+    "max_application_GETs": 12,
+    "actual_application_GETs": 8,
+    "max_body_bytes": 4194304,
+    "largest_saved_body_bytes": 218881,
+    "max_batch_body_bytes": 20971520,
+    "actual_saved_HTTP_body_bytes": 480499,
+    "socket_timeout_seconds": 15,
+    "per_request_elapsed_check_seconds": 45,
+    "cumulative_active_request_elapsed_check_seconds": 240,
+    "actual_cumulative_active_request_elapsed_seconds": 3.100839,
+    "complete_HTTP_bodies_saved": 8,
+    "truncated_HTTP_bodies": 0,
+    "redirects_auto_followed": 0,
+    "separately_counted_redirect_target_GETs": 1,
+    "timeout_or_size_rejections": 0,
+    "browser_network_or_response_bytes": "NOT_OBSERVED; browser/publicsearch activity separately labeled, not included in applicationGET/byte receipts",
+    "clock_limit_scope": "Checks before/after chunk reads and requests, with15s socket timeout; operator/search/browser pauses excluded. Not a strict process wall-clock kill or production cumulative network-quota certificate."
+  },
+  "local_acquisition_helpers": [
+    {
+      "path": "data/raw/e01_ballots_batch06_v1/acquisition_helper_v1.py",
+      "sha256": "28e68ba2d77c7048be393401173c5af93b9947c47f36e02566dfb9df068caaec",
+      "preservation_kind": "Initial helper reconstructed from retained authored command after the one-line cap correction; not a captured per-request executable snapshot"
+    },
+    {
+      "path": "data/raw/e01_ballots_batch06_v1/acquisition_helper_v2.py",
+      "sha256": "b0124d1b3c59399bfe09f7cb836c9bbd183bc58007490da4ee0c1795919d7d15",
+      "preservation_kind": "Saved final helper source; no claim all first-three processes used this revision"
+    }
+  ],
+  "helper_limit_note": "Initial local helper used remaining+1 detection read; corrected helper stops at exact remaining cap conservatively before another read. No body approached cap (largest218881bytes); exact helper revision per first-three invocation boundary was not captured, so no stronger per-attempt helper-version enforcement claim. Actual byte/count receipts verify the stated acquired sizes. No production security-control acceptance claimed.",
+  "web_search_observations": {
+    "path": "data/raw/e01_ballots_batch06_v1/web_search_observations.local.json",
+    "sha256": "3892a6e805ca347698a9445ce79741bf5b38aebf498e52df16b7826779d06158",
+    "kind": "MANUALLY_RECORDED_WEB_SEARCH_OBSERVATIONS_NOT_CACHED_OFFICIAL_BODY"
+  },
+  "bounded_state_findings": {
+    "AR": {
+      "status": "GENERAL_NOMINEE_SOURCE_GAP_REMAINS",
+      "obtained_role": "State index plus primary filing-search shell only. County route302then404; separate county403.",
+      "no_primary_nominee_substitution": true,
+      "observed_official_redirect_followed_once": true,
+      "further_sources_needed": "Obtain permitted official November general nominee/ballot document and amendments. Search-visible WashingtonCounty unofficial-until-certified caveat is not replaced by guessed certification."
+    },
+    "GA": {
+      "status": "TESTED_OFFICIAL_PAGE_ACCESS_BLOCKED_403",
+      "no_candidate_roster_acquired": true,
+      "no_bypass_attempted": true,
+      "unknown": "Access through this route unavailable; does not establish general-source or candidate absence. Qualifying UI route only observed in search, not fetched after403."
+    },
+    "ID": {
+      "status": "GENERAL_CONTEXT_BROWSER_SOURCE_OBTAINED_PENDING_ROLE_REVIEW",
+      "official_index_offered_link_verified": true,
+      "general_context": "November03,2026 - 2026 GENERAL",
+      "source_title": "FINAL CANDIDATES LIST",
+      "title_role": "SOURCE_LABEL_NOT_FINAL_BALLOT_ACCEPTANCE",
+      "selected_final_filter": [
+        "Federal",
+        "United States Senator"
+      ],
+      "selected_party": "Select Party (unfiltered)",
+      "statuses_both_selected": [
+        "Approved",
+        "Withdrawn"
+      ],
+      "complete_visible_selected_page": "1 \u2013 5 of 5",
+      "global_count": 592,
+      "senate_rows": 5,
+      "safe_literal_party_status_filing_writein_fields": [
+        {
+          "party_label": "Democratic",
+          "status_literal": "Withdrawn",
+          "date_filed_literal": "02/23/2026",
+          "write_in_cell_literal": "",
+          "district_cell_literal": ""
+        },
+        {
+          "party_label": "Independent",
+          "status_literal": "Approved",
+          "date_filed_literal": "02/25/2026",
+          "write_in_cell_literal": "",
+          "district_cell_literal": ""
+        },
+        {
+          "party_label": "Independent",
+          "status_literal": "Approved",
+          "date_filed_literal": "02/26/2026",
+          "write_in_cell_literal": "",
+          "district_cell_literal": ""
+        },
+        {
+          "party_label": "Libertarian",
+          "status_literal": "Approved",
+          "date_filed_literal": "02/27/2026",
+          "write_in_cell_literal": "",
+          "district_cell_literal": ""
+        },
+        {
+          "party_label": "Republican",
+          "status_literal": "Approved",
+          "date_filed_literal": "02/23/2026",
+          "write_in_cell_literal": "",
+          "district_cell_literal": ""
+        }
+      ],
+      "four_Approved_one_Withdrawn": true,
+      "withdrawn_history_preserved": true,
+      "no_Approved_Democratic_row_observed": true,
+      "active_Democrat_not_invented": true,
+      "no_writein_global_absence_inference_from_blank_cells": true,
+      "same_five_full_rows_across_three_local_browser_captures": true,
+      "candidate_names_or_contact_literals_exported": false,
+      "unknowns": [
+        "Filing dates are not a general certification/update/asof timestamp.",
+        "Legal status semantics, latest amendments, write-in completeness and immutable cutoff not independently validated.",
+        "All-candidate capture has50of592rows only; federal capture15of15 and Senator capture5of5 bound their selected scopes.",
+        "Browser body/table are DOM-rendered observations; no HTTP headers/wirebytes/billing/API-adapter authority."
+      ]
+    }
+  },
+  "raw_sources_and_browser_rows_local_only": true,
+  "accepted_coverage_promoted": false,
+  "candidate_parser_or_roster_adopted": false,
+  "final_ballots_accepted": 0,
+  "geography_accepted": false,
+  "source_policy_adopted": false,
+  "actual_selection": false,
+  "2026_returns_used": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "auth_or_restricted_access": false,
+  "external_ocr_calls": 0,
+  "agent_created_browser_tabs_closed": true,
+  "next_requirements": [
+    "Independent source-role and original-byte/browser-representation review.",
+    "ID versioned bounded reader/local-only literal validation contract before readiness incorporation; preserve Withdrawn separately, no activeD imputation.",
+    "AR actual permitted official general nominee/ballot acquisition and amendment context; currentprimary shell is not adequate.",
+    "GA permitted accessible official route or owner-provided official document; no bypass of403."
+  ]
+}

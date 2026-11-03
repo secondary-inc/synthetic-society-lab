@@ -1,0 +1,40 @@
+{
+  "dry_run": {
+    "actual_budget_usd": 0,
+    "fake_calls_per_run": 360,
+    "mode": "MOCK_ONLY_DRY_RUN",
+    "planned_runs": 2,
+    "units_per_run": 180,
+    "writes": 0
+  },
+  "existing_scope_exit": 2,
+  "existing_scope_preserved": true,
+  "files": {
+    "README.md": "ad27383db53338cd2060c6b2faccf5269247417ffca9d02f21631011463e5e9d",
+    "docs/OFFLINE_GLOBAL_SURVEY_REPLAY.md": "f994e99843559c7f81485bac2dcec336f68fb5f7979dffa54f7317e9a75fe539",
+    "scripts/offline_global_survey_pilot_v2.py": "41ef5000e0bd383ec11da3cbd6846b248336765637d0ccc4c6dee40e422f8538"
+  },
+  "full_non_dry_wrapper_invocation": "NOT_RUN; equivalent underlying direct-API fullpilot/replay independentlyaccepted; no duplicate executionclaimed",
+  "independent_review": "PENDING_NARROW_WRAPPER_REVIEW",
+  "initial_harness_correction": "Initial harness resolved the venv interpreter symlink to bundled Python, losing editable-project imports and failing before scope creation. Corrected harness preserves absolute venv executable path; wrapper unchanged.",
+  "invalid_scope_exit": 2,
+  "model_calls": 0,
+  "spend_usd": 0,
+  "three_exact_stimuli_guards": [
+    {
+      "case": "valid",
+      "exit_code": 0,
+      "no_data_directory_created": true
+    },
+    {
+      "case": "changed",
+      "exit_code": 2,
+      "no_data_directory_created": true
+    },
+    {
+      "case": "missing",
+      "exit_code": 2,
+      "no_data_directory_created": true
+    }
+  ]
+}
