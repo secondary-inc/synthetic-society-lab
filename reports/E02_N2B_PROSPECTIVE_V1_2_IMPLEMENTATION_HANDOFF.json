@@ -1,0 +1,1212 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "development_compute": "UNPRICED",
+    "experimental_spend_usd": 0,
+    "model_calls": 0,
+    "real_network_calls": 0
+  },
+  "FILES_CHANGED": {
+    "configs/e02_n2b_prospective_window_v1_2.json": "b1f463318d09b8d27c0f24fd004ba738cd126553079108c6aa21bda138a34b74",
+    "docs/E02_N2B_PROSPECTIVE_WINDOW_IMPLEMENTATION_v1_2.md": "4a57778087b99a990af6a4ebb1ca257988c5500c11bcd263580b65aa35ec3dff",
+    "reports/E02_N2B_V1_2_CLOCK_SMOKE.txt": "d6b14c4fb365a523499c51933a06029c820c996e3d33abdb975b8e4ccdc7f031",
+    "reports/E02_N2B_V1_2_FINAL_TESTS_311.txt": "2b1eed8555ad413fb627277960c8b06fe633d7ca52b28311460db0eec0738a2e",
+    "reports/E02_N2B_V1_2_FINAL_TESTS_312.txt": "ce074e2243e6430e3c778a5616e8336a2446c11fc330916689ca602a42d2dfdc",
+    "reports/E02_N2B_V1_2_HELPER_CORRECTION_SMOKE.txt": "1d3349000d93bcbe68dc48aab8868e2421ce0e644161c7f10f37868233c34c5f",
+    "reports/E02_N2B_V1_2_INITIAL_HANDOFF_VALIDATION_FAILURE.txt": "271b2e13fb8f5bad05f382074bc0abea8740f1701c3e8b26b7e39da875597bea",
+    "reports/E02_N2B_V1_2_INITIAL_RUNNER_SMOKE.txt": "e73e2932fae455f04694f34878a7ba149467422fbec9dd110a6084e83193b57e",
+    "reports/E02_N2B_V1_2_PRE_EVIDENCE_TESTS_311.txt": "3c845d1425305bed6257c44b28d8e6f0525d2ab726891a82eaffa0f5a37eef79",
+    "reports/E02_N2B_V1_2_PRE_EVIDENCE_TESTS_312.txt": "3db663ea509cc8b7a75c13ab23038952b05ba6ec14d1ee081fa1b55c67be5c25",
+    "src/civiclab/e02/n2b_admission_v1_2.py": "6fa14ecde27eb481e187089156979163735cd08932e43aee508ffb7592af09da",
+    "src/civiclab/e02/n2b_control_v1_2.py": "8bebb4dfaba7aa283918b948dac2c99ca325b03b442d6a7ec60528be751ade5a",
+    "src/civiclab/e02/n2b_fixture_reader_v1_2.py": "b5a38f73d622b4d14aa1bbbb968569dfe2987aee612bb5c321e3f43210937c03",
+    "src/civiclab/e02/n2b_runner_v1_2.py": "011eeae1ac90f4c980fe6b1479d858887c3a281de30ae47d861736c00dc2bcc6",
+    "src/civiclab/e02/n2b_source_v1_2.py": "8fa5eab699e9e7c4df7b0b9a02e0e527f1af467594ef0e4510a03f046fb1e110",
+    "src/civiclab/e02/n2b_window_v1_2.py": "7c09a4d7ef1693dee8eb683ea4e044e2fcc493e8ebf3e213ba86b2eb3c2d228f",
+    "tests/test_e02_n2b_prospective_v1_2.py": "5f241abc4caa7440bfb10a94b41946e76f2ca9d18c73d77992033d8396191a4a"
+  },
+  "NEXT_UNBLOCKED_TASK": "Independent exact v1.2 review. Lead owns STATUS/Git. Only after PASS develop separately bounded actual readonly preflight contract/reader; do not issue live times/source execution from this candidate.",
+  "OUTPUT_ARTIFACTS": {
+    "after_old_deadlines_mock_clock_accounting": {
+      "added_elapsed_window_seconds": 10800,
+      "cumulative_elapsed_at_new_expiry_seconds": 30584.526917934418,
+      "cumulative_elapsed_at_observation_seconds": 19784.526917934418,
+      "effective_at_unix": 1793750000.0,
+      "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+      "expires_at_unix": 1793760800.0,
+      "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+      "extension_relative_WY_seconds": 19784.526917934418,
+      "historical_gap_after_WY_seconds": 8984.526917934418,
+      "native_processing_added": 0,
+      "new_issued": {
+        "boot": "TEST_BOOT_A",
+        "mono": 14000.0,
+        "wall": 1793750000.0
+      },
+      "observed": {
+        "boot": "TEST_BOOT_A",
+        "mono": 14000.0,
+        "wall": 1793750000.0
+      },
+      "original_DC_deadline": 1793746220.467812,
+      "original_DC_genesis": {
+        "mono": 402605.244778333,
+        "wall": 1793735420.467812
+      },
+      "original_WY_deadline": 1793741015.473082,
+      "original_WY_genesis": {
+        "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+        "mono": 398483.537517083,
+        "wall": 1793730215.473082
+      },
+      "pauses_count": true,
+      "positive_extension_relative_DC_seconds": 14579.53218793869,
+      "sequence_created": {
+        "boot": "TEST_BOOT_A",
+        "mono": 14000.0,
+        "wall": 1793750000.0
+      },
+      "sequence_elapsed_seconds": 0.0
+    },
+    "cases": {
+      "crash_unknown": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "BIND": "UNKNOWN"
+        },
+        "status": null,
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 0,
+            "DC_REPLAY_part": 0,
+            "core": 11383,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "existing_marker_refusal": {
+        "final_state": {
+          "clock_accounting_at_creation": {
+            "added_elapsed_window_seconds": 10800,
+            "cumulative_elapsed_at_new_expiry_seconds": 30584.526917934418,
+            "cumulative_elapsed_at_observation_seconds": 19784.526917934418,
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "extension_relative_WY_seconds": 19784.526917934418,
+            "historical_gap_after_WY_seconds": 8984.526917934418,
+            "native_processing_added": 0,
+            "new_issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "observed": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "original_DC_deadline": 1793746220.467812,
+            "original_DC_genesis": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "original_WY_deadline": 1793741015.473082,
+            "original_WY_genesis": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "pauses_count": true,
+            "positive_extension_relative_DC_seconds": 14579.53218793869,
+            "sequence_created": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "sequence_elapsed_seconds": 0.0
+          },
+          "created": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "deadline": 1793751500.0,
+          "design": "fdf319973530f2f6650a626deee29f27fce12af15447bae9d0c5fe7e2726645f",
+          "halted": false,
+          "history": {
+            "N2a_DC_full_reservation": {
+              "body_bytes": 8388608,
+              "network_seconds": 180,
+              "processing_seconds": 300,
+              "requests": 1
+            },
+            "N2a_DC_original_t0": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "WY_full_outer_reservation": {
+              "bytes": 50975766,
+              "ops": 12000000,
+              "rows": 58594,
+              "seconds": 1800
+            },
+            "WY_original_deadline_unix": 1793741015.473082,
+            "WY_original_t0": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "analysis_ops_total_old_new": 36000000,
+            "expanded_bytes_old_DC_metadata_new": 192057311,
+            "new_GETs": 0,
+            "new_analysis_ops": 24000000,
+            "new_person_rows": 65010,
+            "new_processing_seconds": 1500,
+            "new_reserved_expanded_bytes": 134724553,
+            "person_rows_old_new": 123604,
+            "prior_acquisition_metadata_history": {
+              "prior_WY_retained_bytes": 4202266,
+              "prior_body_reserved_upper_bound": 8388608,
+              "prior_charges_refunded": false,
+              "prior_metadata_received_bytes": 1279577,
+              "prior_metadata_requests": 5,
+              "prior_person_GETs": 1
+            },
+            "prior_charges_refunded": false,
+            "processing_total_WY_DC_N2b": 3600
+          },
+          "last": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "prospective_grant": {
+            "capacity_sha256": "108a549f92282999b90651d04d18215faceab4dbdcda7d600fad1a8858e6bfa0",
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "issuer_role": "lead",
+            "kind": "E02_N2B_PROSPECTIVE_WINDOW_GRANT_V1_2",
+            "methods_review_sha256": "c20910bf8fc93d78ff10312ca9a7580951f33c503ea25f681edcf83702ecaaca",
+            "nonce": "55555555555555555555555555555555",
+            "old_history_sha256": "0c4dc17c1ac21c1a46df729d51e57e75f16008b5658af6b18640c380870a82a1",
+            "policy_sha256": "98199704d95f6fffbd1335c326ca6a89ae2d26cab54f8730e2162df1a90b91b7",
+            "preflight_sha256": "d0d59a71337c75bb503003437fa14826818125dabac072e3a1bfdd1a66d266db",
+            "realm": "TEST_ONLY",
+            "root": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/e02_F_local_fixture/n2b-prospective-v1_2-20261103-02/existing_marker_refusal/realm",
+            "source_sha256": "e8a4b557caaab46c5ba58aeff702c4de89c31e4e41c5e11e2b9edc489ef0f087"
+          },
+          "realm": "TEST_ONLY",
+          "reservation": {
+            "expanded_bytes": 134724553,
+            "ops": 24000000,
+            "rows": 65010,
+            "seconds": 1500
+          },
+          "schema": "E02_N2B_PROSPECTIVE_CONTROL_V1_2",
+          "sequence": 0,
+          "session": "fd78851b78f843afaf14710b51733e04",
+          "stages": {},
+          "window_grant_ref": {
+            "path": "reports/TEST_ONLY_N2B_grant.json",
+            "sha256": "e378e45650f272e5f8bc5f6235885854e73838818364abaff8a0b2a7ece19829"
+          }
+        },
+        "history_unchanged": true,
+        "person_rows": 0,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "status": "EXPECTED_EXISTING_MARKER_NEW_SESSION_REFUSAL"
+      },
+      "invalid_child_failure": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "FAILED"
+        },
+        "status": "EXPECTED_AUTHORED_FAILURE_invalid_child_failure",
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 0,
+            "DC_REPLAY_part": 0,
+            "core": 19066,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "missing_grant_refusal": {
+        "new_job_reserved": false,
+        "person_rows": 0,
+        "status": "EXPECTED_NULL_GRANT_REFUSAL_NO_OWNER",
+        "window_grant_requested": null
+      },
+      "prior_core_regular_file": {
+        "new_job_reserved": false,
+        "original_history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "person_rows": 0,
+        "retained_root_file_bytes": 4194305,
+        "scenario": "prior_core_regular_file",
+        "status": "EXPECTED_PRE_OWNER_DIRECTORY_PRESENCE_REFUSAL",
+        "target_exists": true,
+        "target_is_directory": false,
+        "target_relative_path": "data/processed/e02_n2a_core_v1"
+      },
+      "prior_history_missing": {
+        "new_job_reserved": false,
+        "original_history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "person_rows": 0,
+        "retained_root_file_bytes": null,
+        "scenario": "prior_history_missing",
+        "status": "EXPECTED_PRE_OWNER_DIRECTORY_PRESENCE_REFUSAL",
+        "target_exists": false,
+        "target_is_directory": false,
+        "target_relative_path": "data/processed/e02_n2a_registry_v1"
+      },
+      "prior_raw_overcap": {
+        "new_job_reserved": false,
+        "original_history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "person_rows": 0,
+        "prior_raw_bytes_retained": 8388609,
+        "status": "EXPECTED_PRE_JOB_PRIOR_RAW_CAP_REFUSAL"
+      },
+      "success": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "ASSEMBLE_PRIMARY": "COMPLETED",
+          "ASSEMBLE_REPLAY": "COMPLETED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "status": "PRIVATE_N2B_ENGINEERING_CLOSED_PENDING_INDEPENDENT_REVIEW",
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 6628927,
+            "ASSEMBLE_REPLAY_canonical_data": 6628916,
+            "DC_PRIMARY_part": 5385849,
+            "DC_REPLAY_part": 5385848,
+            "core": 52785,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "variant_measurement_failure": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "ASSEMBLE_PRIMARY": "FAILED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "status": "EXPECTED_AUTHORED_FAILURE_variant_measurement_failure",
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 5385849,
+            "DC_REPLAY_part": 5385848,
+            "core": 31095,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "window_expiry_unknown": {
+        "final_state": {
+          "clock_accounting_at_creation": {
+            "added_elapsed_window_seconds": 10800,
+            "cumulative_elapsed_at_new_expiry_seconds": 30584.526917934418,
+            "cumulative_elapsed_at_observation_seconds": 19784.526917934418,
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "extension_relative_WY_seconds": 19784.526917934418,
+            "historical_gap_after_WY_seconds": 8984.526917934418,
+            "native_processing_added": 0,
+            "new_issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "observed": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "original_DC_deadline": 1793746220.467812,
+            "original_DC_genesis": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "original_WY_deadline": 1793741015.473082,
+            "original_WY_genesis": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "pauses_count": true,
+            "positive_extension_relative_DC_seconds": 14579.53218793869,
+            "sequence_created": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "sequence_elapsed_seconds": 0.0
+          },
+          "created": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "deadline": 1793751500.0,
+          "design": "666e4c9056bbfdcdb0fa03df820bf0021145a20a11016b717e1da4f52d4eb65b",
+          "halted": false,
+          "history": {
+            "N2a_DC_full_reservation": {
+              "body_bytes": 8388608,
+              "network_seconds": 180,
+              "processing_seconds": 300,
+              "requests": 1
+            },
+            "N2a_DC_original_t0": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "WY_full_outer_reservation": {
+              "bytes": 50975766,
+              "ops": 12000000,
+              "rows": 58594,
+              "seconds": 1800
+            },
+            "WY_original_deadline_unix": 1793741015.473082,
+            "WY_original_t0": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "analysis_ops_total_old_new": 36000000,
+            "expanded_bytes_old_DC_metadata_new": 192057311,
+            "new_GETs": 0,
+            "new_analysis_ops": 24000000,
+            "new_person_rows": 65010,
+            "new_processing_seconds": 1500,
+            "new_reserved_expanded_bytes": 134724553,
+            "person_rows_old_new": 123604,
+            "prior_acquisition_metadata_history": {
+              "prior_WY_retained_bytes": 4202266,
+              "prior_body_reserved_upper_bound": 8388608,
+              "prior_charges_refunded": false,
+              "prior_metadata_received_bytes": 1279577,
+              "prior_metadata_requests": 5,
+              "prior_person_GETs": 1
+            },
+            "prior_charges_refunded": false,
+            "processing_total_WY_DC_N2b": 3600
+          },
+          "last": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "prospective_grant": {
+            "capacity_sha256": "108a549f92282999b90651d04d18215faceab4dbdcda7d600fad1a8858e6bfa0",
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "issuer_role": "lead",
+            "kind": "E02_N2B_PROSPECTIVE_WINDOW_GRANT_V1_2",
+            "methods_review_sha256": "c20910bf8fc93d78ff10312ca9a7580951f33c503ea25f681edcf83702ecaaca",
+            "nonce": "55555555555555555555555555555555",
+            "old_history_sha256": "0c4dc17c1ac21c1a46df729d51e57e75f16008b5658af6b18640c380870a82a1",
+            "policy_sha256": "98199704d95f6fffbd1335c326ca6a89ae2d26cab54f8730e2162df1a90b91b7",
+            "preflight_sha256": "e96c0b031e5bf35068ec34750c77309218d19fc1edc7c1bd1e26c2da2c0721b8",
+            "realm": "TEST_ONLY",
+            "root": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/e02_F_local_fixture/n2b-prospective-v1_2-20261103-02/window_expiry_unknown/realm",
+            "source_sha256": "9ee3f3a7498fb1a455151d122cafb29c3fb41b5c673e455541d2e925ce5b5e3e"
+          },
+          "realm": "TEST_ONLY",
+          "reservation": {
+            "expanded_bytes": 134724553,
+            "ops": 24000000,
+            "rows": 65010,
+            "seconds": 1500
+          },
+          "schema": "E02_N2B_PROSPECTIVE_CONTROL_V1_2",
+          "sequence": 1,
+          "session": "df2edf950b3f4ca0bbce88141bb75382",
+          "stages": {
+            "BIND": {
+              "reservation": {
+                "expanded_bytes": 101365,
+                "id": "BIND",
+                "logical_operations": 0,
+                "person_rows": 0,
+                "processing_seconds": 300,
+                "source_access": "Compressed/header/companion metadata and accepted saved WY parts only; no person scan"
+              },
+              "result": null,
+              "source_reads": {
+                "metadata": 0,
+                "person": 0
+              },
+              "started": {
+                "boot": "TEST_BOOT_A",
+                "mono": 14000.0,
+                "wall": 1793750000.0
+              },
+              "status": "RESERVED"
+            }
+          },
+          "window_grant_ref": {
+            "path": "reports/TEST_ONLY_N2B_grant.json",
+            "sha256": "2e90527e9262019d9c723083767973d4aa1d1a67a9bc4f663c8f796c409f1670"
+          }
+        },
+        "history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "normal_closure_claimed": false,
+        "person_rows": 0,
+        "readonly_decoder_used": true,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "status": "EXPIRED_LIVE_WRITER_REFUSED_SHUTDOWN_UNKNOWN"
+      }
+    },
+    "final_authored_index": {
+      "indexed_files": 524,
+      "path": "data/processed/e02_F_local_fixture/n2b-prospective-v1_2-20261103-02/AUTHORED_EVIDENCE_INDEX.json",
+      "sha256": "2fdf792065102ac5586e1dadb4772738cf386f75244d6b2e013c7c38886ad114"
+    },
+    "inherited_component_review": {
+      "path": "reports/INDEPENDENT_AUDIT_E02_N2B_V1_1_1_DIRECTORY_REMEDY.json",
+      "sha256": "cb55fd4382f25cc58f0de1488dd53ad113c0d96a4d578357096787423f156785"
+    },
+    "policy_sha256": "cecd339d18a647c462e4047e0172c0a16039cc99a3fdcb1c3b359613b42ae662",
+    "preserved_nonfinal_bundle": "data/processed/e02_F_local_fixture/n2b-prospective-v1_2-20261103-01",
+    "verified_window_scenarios": {
+      "existing_marker_refusal": {
+        "final_state": {
+          "clock_accounting_at_creation": {
+            "added_elapsed_window_seconds": 10800,
+            "cumulative_elapsed_at_new_expiry_seconds": 30584.526917934418,
+            "cumulative_elapsed_at_observation_seconds": 19784.526917934418,
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "extension_relative_WY_seconds": 19784.526917934418,
+            "historical_gap_after_WY_seconds": 8984.526917934418,
+            "native_processing_added": 0,
+            "new_issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "observed": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "original_DC_deadline": 1793746220.467812,
+            "original_DC_genesis": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "original_WY_deadline": 1793741015.473082,
+            "original_WY_genesis": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "pauses_count": true,
+            "positive_extension_relative_DC_seconds": 14579.53218793869,
+            "sequence_created": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "sequence_elapsed_seconds": 0.0
+          },
+          "created": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "deadline": 1793751500.0,
+          "design": "fdf319973530f2f6650a626deee29f27fce12af15447bae9d0c5fe7e2726645f",
+          "halted": false,
+          "history": {
+            "N2a_DC_full_reservation": {
+              "body_bytes": 8388608,
+              "network_seconds": 180,
+              "processing_seconds": 300,
+              "requests": 1
+            },
+            "N2a_DC_original_t0": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "WY_full_outer_reservation": {
+              "bytes": 50975766,
+              "ops": 12000000,
+              "rows": 58594,
+              "seconds": 1800
+            },
+            "WY_original_deadline_unix": 1793741015.473082,
+            "WY_original_t0": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "analysis_ops_total_old_new": 36000000,
+            "expanded_bytes_old_DC_metadata_new": 192057311,
+            "new_GETs": 0,
+            "new_analysis_ops": 24000000,
+            "new_person_rows": 65010,
+            "new_processing_seconds": 1500,
+            "new_reserved_expanded_bytes": 134724553,
+            "person_rows_old_new": 123604,
+            "prior_acquisition_metadata_history": {
+              "prior_WY_retained_bytes": 4202266,
+              "prior_body_reserved_upper_bound": 8388608,
+              "prior_charges_refunded": false,
+              "prior_metadata_received_bytes": 1279577,
+              "prior_metadata_requests": 5,
+              "prior_person_GETs": 1
+            },
+            "prior_charges_refunded": false,
+            "processing_total_WY_DC_N2b": 3600
+          },
+          "last": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "prospective_grant": {
+            "capacity_sha256": "108a549f92282999b90651d04d18215faceab4dbdcda7d600fad1a8858e6bfa0",
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "issuer_role": "lead",
+            "kind": "E02_N2B_PROSPECTIVE_WINDOW_GRANT_V1_2",
+            "methods_review_sha256": "c20910bf8fc93d78ff10312ca9a7580951f33c503ea25f681edcf83702ecaaca",
+            "nonce": "55555555555555555555555555555555",
+            "old_history_sha256": "0c4dc17c1ac21c1a46df729d51e57e75f16008b5658af6b18640c380870a82a1",
+            "policy_sha256": "98199704d95f6fffbd1335c326ca6a89ae2d26cab54f8730e2162df1a90b91b7",
+            "preflight_sha256": "d0d59a71337c75bb503003437fa14826818125dabac072e3a1bfdd1a66d266db",
+            "realm": "TEST_ONLY",
+            "root": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/e02_F_local_fixture/n2b-prospective-v1_2-20261103-02/existing_marker_refusal/realm",
+            "source_sha256": "e8a4b557caaab46c5ba58aeff702c4de89c31e4e41c5e11e2b9edc489ef0f087"
+          },
+          "realm": "TEST_ONLY",
+          "reservation": {
+            "expanded_bytes": 134724553,
+            "ops": 24000000,
+            "rows": 65010,
+            "seconds": 1500
+          },
+          "schema": "E02_N2B_PROSPECTIVE_CONTROL_V1_2",
+          "sequence": 0,
+          "session": "fd78851b78f843afaf14710b51733e04",
+          "stages": {},
+          "window_grant_ref": {
+            "path": "reports/TEST_ONLY_N2B_grant.json",
+            "sha256": "e378e45650f272e5f8bc5f6235885854e73838818364abaff8a0b2a7ece19829"
+          }
+        },
+        "history_unchanged": true,
+        "person_rows": 0,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "status": "EXPECTED_EXISTING_MARKER_NEW_SESSION_REFUSAL"
+      },
+      "missing_grant_refusal": {
+        "new_job_reserved": false,
+        "person_rows": 0,
+        "status": "EXPECTED_NULL_GRANT_REFUSAL_NO_OWNER",
+        "window_grant_requested": null
+      },
+      "window_expiry_unknown": {
+        "final_state": {
+          "clock_accounting_at_creation": {
+            "added_elapsed_window_seconds": 10800,
+            "cumulative_elapsed_at_new_expiry_seconds": 30584.526917934418,
+            "cumulative_elapsed_at_observation_seconds": 19784.526917934418,
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "extension_relative_WY_seconds": 19784.526917934418,
+            "historical_gap_after_WY_seconds": 8984.526917934418,
+            "native_processing_added": 0,
+            "new_issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "observed": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "original_DC_deadline": 1793746220.467812,
+            "original_DC_genesis": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "original_WY_deadline": 1793741015.473082,
+            "original_WY_genesis": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "pauses_count": true,
+            "positive_extension_relative_DC_seconds": 14579.53218793869,
+            "sequence_created": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "sequence_elapsed_seconds": 0.0
+          },
+          "created": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "deadline": 1793751500.0,
+          "design": "666e4c9056bbfdcdb0fa03df820bf0021145a20a11016b717e1da4f52d4eb65b",
+          "halted": false,
+          "history": {
+            "N2a_DC_full_reservation": {
+              "body_bytes": 8388608,
+              "network_seconds": 180,
+              "processing_seconds": 300,
+              "requests": 1
+            },
+            "N2a_DC_original_t0": {
+              "mono": 402605.244778333,
+              "wall": 1793735420.467812
+            },
+            "WY_full_outer_reservation": {
+              "bytes": 50975766,
+              "ops": 12000000,
+              "rows": 58594,
+              "seconds": 1800
+            },
+            "WY_original_deadline_unix": 1793741015.473082,
+            "WY_original_t0": {
+              "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+              "mono": 398483.537517083,
+              "wall": 1793730215.473082
+            },
+            "analysis_ops_total_old_new": 36000000,
+            "expanded_bytes_old_DC_metadata_new": 192057311,
+            "new_GETs": 0,
+            "new_analysis_ops": 24000000,
+            "new_person_rows": 65010,
+            "new_processing_seconds": 1500,
+            "new_reserved_expanded_bytes": 134724553,
+            "person_rows_old_new": 123604,
+            "prior_acquisition_metadata_history": {
+              "prior_WY_retained_bytes": 4202266,
+              "prior_body_reserved_upper_bound": 8388608,
+              "prior_charges_refunded": false,
+              "prior_metadata_received_bytes": 1279577,
+              "prior_metadata_requests": 5,
+              "prior_person_GETs": 1
+            },
+            "prior_charges_refunded": false,
+            "processing_total_WY_DC_N2b": 3600
+          },
+          "last": {
+            "boot": "TEST_BOOT_A",
+            "mono": 14000.0,
+            "wall": 1793750000.0
+          },
+          "prospective_grant": {
+            "capacity_sha256": "108a549f92282999b90651d04d18215faceab4dbdcda7d600fad1a8858e6bfa0",
+            "effective_at_unix": 1793750000.0,
+            "effective_at_utc": "2026-11-03T23:53:20.000000Z",
+            "expires_at_unix": 1793760800.0,
+            "expires_at_utc": "2026-11-04T02:53:20.000000Z",
+            "issued": {
+              "boot": "TEST_BOOT_A",
+              "mono": 14000.0,
+              "wall": 1793750000.0
+            },
+            "issuer_role": "lead",
+            "kind": "E02_N2B_PROSPECTIVE_WINDOW_GRANT_V1_2",
+            "methods_review_sha256": "c20910bf8fc93d78ff10312ca9a7580951f33c503ea25f681edcf83702ecaaca",
+            "nonce": "55555555555555555555555555555555",
+            "old_history_sha256": "0c4dc17c1ac21c1a46df729d51e57e75f16008b5658af6b18640c380870a82a1",
+            "policy_sha256": "98199704d95f6fffbd1335c326ca6a89ae2d26cab54f8730e2162df1a90b91b7",
+            "preflight_sha256": "e96c0b031e5bf35068ec34750c77309218d19fc1edc7c1bd1e26c2da2c0721b8",
+            "realm": "TEST_ONLY",
+            "root": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/e02_F_local_fixture/n2b-prospective-v1_2-20261103-02/window_expiry_unknown/realm",
+            "source_sha256": "9ee3f3a7498fb1a455151d122cafb29c3fb41b5c673e455541d2e925ce5b5e3e"
+          },
+          "realm": "TEST_ONLY",
+          "reservation": {
+            "expanded_bytes": 134724553,
+            "ops": 24000000,
+            "rows": 65010,
+            "seconds": 1500
+          },
+          "schema": "E02_N2B_PROSPECTIVE_CONTROL_V1_2",
+          "sequence": 1,
+          "session": "df2edf950b3f4ca0bbce88141bb75382",
+          "stages": {
+            "BIND": {
+              "reservation": {
+                "expanded_bytes": 101365,
+                "id": "BIND",
+                "logical_operations": 0,
+                "person_rows": 0,
+                "processing_seconds": 300,
+                "source_access": "Compressed/header/companion metadata and accepted saved WY parts only; no person scan"
+              },
+              "result": null,
+              "source_reads": {
+                "metadata": 0,
+                "person": 0
+              },
+              "started": {
+                "boot": "TEST_BOOT_A",
+                "mono": 14000.0,
+                "wall": 1793750000.0
+              },
+              "status": "RESERVED"
+            }
+          },
+          "window_grant_ref": {
+            "path": "reports/TEST_ONLY_N2B_grant.json",
+            "sha256": "2e90527e9262019d9c723083767973d4aa1d1a67a9bc4f663c8f796c409f1670"
+          }
+        },
+        "history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "normal_closure_claimed": false,
+        "person_rows": 0,
+        "readonly_decoder_used": true,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "status": "EXPIRED_LIVE_WRITER_REFUSED_SHUTDOWN_UNKNOWN"
+      }
+    },
+    "window_methods_review": {
+      "path": "reports/INDEPENDENT_AUDIT_E02_N2B_PROSPECTIVE_WINDOW_METHODS_V1.json",
+      "sha256": "c20910bf8fc93d78ff10312ca9a7580951f33c503ea25f681edcf83702ecaaca"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_n2b_prospective_v1_2 -v",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e02_n2b_prospective_v1_2 -v",
+    "PYTHONPATH=src:tests .venv/bin/python -c 'from pathlib import Path; from test_e02_n2b_prospective_v1_2 import retain_authored_evidence; print(retain_authored_evidence(Path(\"data/processed/e02_F_local_fixture/n2b-prospective-review-reproduction\")))'"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Independent exact v1.2 code/window/session/clock/history/resource/privacy review required. Methods/inherited component acceptance does not release new code.",
+    "New10800 elapsed lease only; oldWY/DC genesis/deadlines/full charges/native3600processing/rows/bytes/ops/storage/GETs unchanged. Job min(created+1500,expiry), stages300, no backdating/quiet renewal.",
+    "Fixed original namespaces: fresh context/process/session cannot reconstruct an occupied writer. Original live-session bookkeeping only while valid; any future statebound continuation needs separate review.",
+    "After expiry bookkeeping may refuse: retained RESERVED means shutdown UNKNOWN with full allowances, not successfulcleanup; TEST_ONLY state reader constructs no Control and is not actual semantic certification.",
+    "Actual readonly preflight is a deliberate immediate default-denied placeholder with no filesystem operations. Actual source/currentidentity/savedparts/oldanchors/markerabsence/storage inputs remain unknown and grants/dates null.",
+    "Initial retained helper misrouted three scenarios to missing-directory refusal; original -01, validation failure and79testlogs preserved as nonfinal. Corrected helper and focused regression precede final80tests and verified -02 scenarios.",
+    "Cooperative sampled resource/boot/clock checks and trusted preserved local authority, not hostile-host/hardOS/powerloss/instantstop guarantee. F2 scoped contentIO/nonexclusiveRSS/cache limits retained.",
+    "No49remainingcapacity/nationwidepopulationfit/ANES/model/humanvalidity/disclosure/dashboard/scientific/publication acceptance."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored isolated ZIPs/parts/required historical directory topology/test clocks/owner/preflight/grant namespaces and copied public repository metadata only. Effective1793750000 is TEST_ONLY, not an issued actual date. No actual raw/cache/private source/control/part stat/read/hash, actual admission/import, keys/.env/environment inspection, network/model or fit. Own-process comparator runtime/RSS observations only.",
+  "TASK_ID": "E02_N2B_PROSPECTIVE_WINDOW_V1_2_AUTHORED_IMPLEMENTATION",
+  "TESTS_RUN_AND_RESULTS": {
+    "additional_window_methods": [
+      "test_WINDOW_actual_preflight_and_fixture_reader_are_default_denied",
+      "test_WINDOW_boot_wall_mono_unavailable_and_future_refuse",
+      "test_WINDOW_boundaries_minus1_zero9300_9301_expiry",
+      "test_WINDOW_expiry_during_stage_retains_unknown_full_reservations",
+      "test_WINDOW_finite_UTC_and_exact_duration",
+      "test_WINDOW_frozen_predecessors_keep_expired_original_admission",
+      "test_WINDOW_lost_ack_after_owner_creation_never_reissues",
+      "test_WINDOW_lost_process_session_cannot_reconstruct_control",
+      "test_WINDOW_new_job_after_both_old_deadlines_and_explicit_gap",
+      "test_WINDOW_new_session_cannot_resume_any_existing_job",
+      "test_WINDOW_null_wrong_kind_extra_fields_and_unsigned_ref",
+      "test_WINDOW_old_release_cannot_authorize_new_context",
+      "test_WINDOW_own_marker_grant_drift_refuses",
+      "test_WINDOW_pause_counts_and_no_restart_clock_reset",
+      "test_WINDOW_retained_scenario_helper_routes_actual_window_cases",
+      "test_WINDOW_wrong_hash_root_nativecap_history_and_preflight"
+    ],
+    "all_new_index_file_hashes_sizes": "PASS_IMPLEMENTER",
+    "code_methods_component_pins": {
+      "configs/e02_n2b_prospective_window_methods_v1.json": "512afa5fcb5b6bb27a81e4dcce8b010d2dd24248e5364e6d4d9afa49c1128594",
+      "docs/E02_N2B_PROSPECTIVE_WINDOW_METHODS_v1.md": "c1eb537dc81f921c25e06670e6cab0ea6bc50e68d69ecdddeb41ec9379bb38f4",
+      "reports/INDEPENDENT_AUDIT_E02_N2B_PROSPECTIVE_WINDOW_METHODS_V1.json": "c20910bf8fc93d78ff10312ca9a7580951f33c503ea25f681edcf83702ecaaca",
+      "reports/INDEPENDENT_AUDIT_E02_N2B_V1_1_1_DIRECTORY_REMEDY.json": "cb55fd4382f25cc58f0de1488dd53ad113c0d96a4d578357096787423f156785"
+    },
+    "default_times_refs_and_authority_zero": "PASS",
+    "final": {
+      "311": {
+        "log": "reports/E02_N2B_V1_2_FINAL_TESTS_311.txt",
+        "seconds": 106.335,
+        "sha256": "2b1eed8555ad413fb627277960c8b06fe633d7ca52b28311460db0eec0738a2e",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 80
+      },
+      "312": {
+        "log": "reports/E02_N2B_V1_2_FINAL_TESTS_312.txt",
+        "seconds": 119.009,
+        "sha256": "ce074e2243e6430e3c778a5616e8336a2446c11fc330916689ca602a42d2dfdc",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 80
+      }
+    },
+    "independent_new_code_acceptance": "NOT_RUN",
+    "prior64_methods_retained_with_documented_new_window_fit_case": true,
+    "prior_frozen_handoffs_evidence": {
+      "reports/E02_N2B_GENERIC_IMPLEMENTATION_HANDOFF_v1.json": {
+        "authored_files_rehashed": 136,
+        "files_unchanged": true,
+        "sha256": "25578f584d90a17c4110707458cbd36dcc50c6514d71a135d180c833c1e72cb8"
+      },
+      "reports/E02_N2B_GENERIC_V1_1_1_IMPLEMENTATION_HANDOFF.json": {
+        "authored_files_rehashed": 308,
+        "files_unchanged": true,
+        "sha256": "3d1b6dd0471bc8ab9c9af34c95518ed38333023b72cf6c5558b1ee771c661736"
+      },
+      "reports/E02_N2B_GENERIC_V1_1_IMPLEMENTATION_HANDOFF.json": {
+        "authored_files_rehashed": 227,
+        "files_unchanged": true,
+        "sha256": "75ec49d7b0b61cf5ca2e24fc6437730fc64b51f3f245a04354c19a81d02c071d"
+      }
+    }
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact prospective v1.2 code/authored-evidence acceptance.",
+    "Separate finite actual readonly preflight/reader implementation, audit and release before any current source/private/marker/storage inspection.",
+    "Genuine particular identity/descriptors/savedparts/terminal anchors/whole inventory, dated live grant and execution release remain absent.",
+    "Original national campaign/capacity and research completion contract remain unfinished."
+  ],
+  "actual_operations": 0,
+  "created_utc": "2026-11-03T22:41:21.039712+00:00",
+  "default_approvals": {
+    "code_review": null,
+    "execution": null,
+    "source_review": null
+  },
+  "default_authority": 0,
+  "default_window_dates": {
+    "effective_at_unix": null,
+    "effective_at_utc": null,
+    "expires_at_unix": null,
+    "expires_at_utc": null
+  },
+  "default_window_grant": null,
+  "original_namespace_output": "data/processed/e02_n2b_private_v1",
+  "original_namespace_registry": "data/processed/e02_n2b_registry_v1",
+  "status": "PROSPECTIVE_V1_2_CANDIDATE_AWAITING_INDEPENDENT_CODE_AUTHORED_REVIEW"
+}
