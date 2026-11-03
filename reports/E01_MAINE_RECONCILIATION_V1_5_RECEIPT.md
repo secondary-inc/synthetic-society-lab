@@ -1,0 +1,21 @@
+# Maine v1.5 reconciliation source/fixture contract
+
+TASK_ID: E01_MAINE_RECONCILIATION_V1_5_FIXTURES
+
+FILES_CHANGED: New `src/civiclab/e01/maine_v1_5.py`, `tests/test_e01_maine_v1_5.py`, `configs/e01_maine_reconciliation_v1_5.json`, fixtureevidenceJSON andthisreceipt. No acceptedv1.4.1source/config/tests/dispatch/runs/audits changed; originalMainecaptures/receipts intact. Newreader has no network/model/RunStore/CLI/readiness integration.
+
+OUTPUT_ARTIFACTS: Three newfilepins in `reports/E01_MAINE_RECONCILIATION_V1_5_FIXTURES.json`. Five exactoriginalMainecaptures pinned by distinctroles:generalXLSX,withdrawal/replacementPDF,declaredwriteinPDF,officekeyPDF,visibleindextext. Officekeyaudit hash binds independentlyverified US=US SENATOR. No newrealreader outputs/runIDs claimed; futurepipeline disabled in designcontract.
+
+REPRODUCTION_COMMANDS: `PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_maine_v1_5`. Independent reviewer can examine inertXML/layouttext fixtures then separately execute `reconcile(workbook_path,key_pages,withdrawal_pages,writein_pages)` on pinnedcache only aftercode/fixture acceptance. Expectedsourceobservations2printed/1historicalreplacement/6declaredwriteins are previouslyobserved sourcefacts, not fabricatedexecutedreaderresults.
+
+TESTS_RUN_AND_RESULTS:7newtests PASS; unchangedaccepted57-testsuite not repeated. Officialofficekeyedition/codeguards; inertone-sheetXLSXrelations/sharedstrings/header/datecells andstyledblankK-Ohandling; formulas/externalrelationships/entities/wrongedition/nonblankextracolumn/duplicate/scope/date refusals. PDFwithdrawaldatechronology andwriteinedition/duplicateguards. Exactreplacementfullname/party/date agreement; formercandidate absentprintedroster; writeinvsprintedoverlaprefused forfurtherreview. Residences/otheroffices omitted. Separatehistorialchange/writeindesignation concepts retained; nolegalpartynormalization. Fiveoriginalcapturebytecounts/hashes reverified.
+
+SOURCE_DATA_AND_LICENSE_NOTES: No newnetworkrequests inthisreconciliationtask; officekeyobtainedseparatelyearlier andindependentlyaccepted. Browserdownloadbytes/visibleindextext represented distinctly with noinventedHTTPheaders. Read-onlybundledPythonXMLsourceinspection established actualworkbook12members/337560uncompressedbytes/noformulas/60styledblankK-Ocellswithnovalues. Literalnameconstruction uses first/middle/last/suffix andwhitespaceonly; originalnamecomponents retained. No fuzzyname/entityresolution or externalID inferred. Priorad hocsourcecomparisons: replacementfullname/party matchesworkbook,formerabsent,noneof6writeinfullnamesexactmatchesprintedroster/formerwithdrawnfullname. Reportcontainscounts/dates/digests only; namedrecords/residences remain local. DeclaredwriteinPDFprinted10/15 versusindex10/16 retained; index7/27rosteredition/withdrawal9/22 are separate sourceupdates.
+
+COST_USD_ACTUAL_OR_ZERO:0; no inference.
+
+RISKS_AND_LIMITATIONS: Newreader/configcontract pendingindependentformat/code review. It has notbeenexecuted onactualMainefiles andisnotpartofacceptedreadinessdispatcher. Source-localconsistency doesnotdemonstratelatestamendments/currentballot/finalcertification. Printedpartycode literals retainedwithoutlegalrecognitionclaims; declaredwriteindesignations are notpartynominationproof. Workbookfilingdate andreplacementreceiveddate matching is a narrowobtainedformatcheck, not generalstatutoryrule. Actualreaderfailure mustbe preserved, notrelaxed. Acceptedcoverage remains7/33documentrosters,26unfinishedjobs,0finalballots.
+
+UNRESOLVED_BLOCKERS: Independentnewreader/source-role/configreview beforeactualcacheprobe andnewpipelineversion. Readinessmetadata doesnotyetadmitMainebrowserdownloadtypes, withdrawal/keyroles ornewdispatch, deliberatelyunchanged. Originalamendment/geography/asof/selection/comparator/holdout gates persist. ORgeneralroster stillnotobtained; othermissingClassIIjobsremainunblocked.
+
+NEXT_UNBLOCKED_TASK: Independentreview ofthreenewpins, inertworkbookpolicy, literalPDFrowlayout/replacement/writeinsemantics usingexistingfivecaptures. Onlyafteracceptance designversionedreadinessintegration/runs withtype-onlyfailure preservation andlocalonlyrosters. ContinuedordinaryOR/missingstatesacquisition remainsseparate.

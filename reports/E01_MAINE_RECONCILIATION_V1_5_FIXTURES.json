@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_MAINE_RECONCILIATION_V1_5_FIXTURES",
+  "status": "NEW_READER_FIXTURES_PENDING_INDEPENDENT_SOURCE_FORMAT_REVIEW",
+  "reviewed_file_sha256": {
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "tests/test_e01_maine_v1_5.py": "695d2a07f2c9548ce2069a0c576921f024f8698bb24af156642d153a8215d51a",
+    "configs/e01_maine_reconciliation_v1_5.json": "676a473aa596343cb4e7731bd3a9ac2415fc89d46ae2f3c7e6ffc34aefa84fd9"
+  },
+  "source_hashes_verified": 5,
+  "source_role_contract": {
+    "schema_version": 1,
+    "scope": "MAINE_OBTAINED_SOURCE_RECONCILIATION_DESIGN_ONLY",
+    "pipeline_enabled": false,
+    "source_adoption": false,
+    "sources": [
+      {
+        "source_id": "me_general",
+        "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20General%20Candidate%20List%20-%20FINAL.xlsx",
+        "path": "data/raw/e01_ballots_batch03_v1/me_general.browser-download.xlsx",
+        "bytes": 48337,
+        "sha256": "c628e48fa6298b6862e709166adf3145f7bc4a3f60929c3e6ef5a3ea324e03ea",
+        "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+        "retrieved_at_utc": "2026-11-03T13:08:48.634Z",
+        "source_role": "OFFICIAL_CANDIDATE_LIST_XLSX",
+        "response_headers": {},
+        "response_headers_status": "NOT_EXPOSED_NOT_INVENTED"
+      },
+      {
+        "source_id": "me_withdrawals",
+        "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Post%20Primary%20Withdrawals%20%26%20Replacement%20Candidates%20-%20Updated%209.22.26_0.pdf",
+        "path": "data/raw/e01_ballots_batch03_v1/me_withdrawals.browser-download.pdf",
+        "bytes": 132429,
+        "sha256": "c2198174417a318956190ec14dce86e42c97099a77282b63fa99a65ae3f2d92c",
+        "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+        "retrieved_at_utc": "2026-11-03T13:08:48.703Z",
+        "source_role": "OFFICIAL_WITHDRAWAL_REPLACEMENT_LIST",
+        "response_headers": {},
+        "response_headers_status": "NOT_EXPOSED_NOT_INVENTED"
+      },
+      {
+        "source_id": "me_writeins",
+        "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/Nov26%20Declared%20Write%20in%20List%20-%20Updated%2010.15.26.pdf",
+        "path": "data/raw/e01_ballots_batch03_v1/me_writeins.browser-download.pdf",
+        "bytes": 87608,
+        "sha256": "86ab6cfc5d38d4c36c907b291d737d8c0b3863e05446ede0e307fa8d15682ee9",
+        "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+        "retrieved_at_utc": "2026-11-03T13:08:48.767Z",
+        "source_role": "OFFICIAL_DECLARED_WRITE_IN_LIST",
+        "response_headers": {},
+        "response_headers_status": "NOT_EXPOSED_NOT_INVENTED"
+      },
+      {
+        "source_id": "me_index_browser",
+        "url": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+        "path": "data/raw/e01_ballots_batch03_v1/me_index.browser-text.local.txt",
+        "bytes": 5345,
+        "sha256": "039c7517c693922caec45ea0c607230f8e6c26b52bdedd873293db130d0a6bd7",
+        "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+        "retrieved_at_utc": "2026-11-03T13:08:34.934Z",
+        "source_role": "OFFICIAL_CANDIDATE_INDEX",
+        "response_headers": {},
+        "response_headers_status": "NOT_EXPOSED_NOT_INVENTED"
+      },
+      {
+        "source_id": "me_office_key",
+        "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Candidate%20Office%20Order.pdf",
+        "path": "data/raw/e01_maine_office_key_v1/2026-office-key.browser-download.pdf",
+        "bytes": 100104,
+        "sha256": "9245f464172b6e358a1dfad20653672a4a5fa9fa2db5ec92a05cc58c36fb187e",
+        "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+        "retrieved_at_utc": "2026-11-03T13:30:28.018Z",
+        "source_role": "OFFICIAL_OFFICE_CODE_KEY",
+        "response_headers": {},
+        "response_headers_status": "NOT_EXPOSED_NOT_INVENTED"
+      }
+    ],
+    "office_key_mapping_audit": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_MAINE_OFFICE_KEY.json",
+      "sha256": "cfb7c1e895e2094b2d1a9ce306e47a9091da58332ab8c2e26eaff6e0cdf7e71d"
+    },
+    "source_local_expected_observations": {
+      "office": "US SENATOR",
+      "printed_roster_rows": 2,
+      "withdrawal_replacement_rows": 1,
+      "declared_write_in_rows": 6
+    },
+    "record_semantics": "Printed roster entries, historical withdrawal/replacement changes, declared write-in designations are distinct; no automatic legal-status/classification or final acceptance",
+    "pending_review": "Readers/source-role config contract require independent acceptance before real-source reader/pipeline execution; no readiness dispatch integration yet"
+  },
+  "tests_passed": 7,
+  "test_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_maine_v1_5",
+  "actual_new_reader_execution": "NOT_RUN_PENDING_INDEPENDENT_CODE_FIXTURE_REVIEW",
+  "actual_pipeline_execution": "NOT_IMPLEMENTED_OR_RUN_NO_READINESS_DISPATCH_CHANGE",
+  "prior_source_local_observations_only": {
+    "mapping": "US=US SENATOR independentlyaccepted",
+    "printed_rows": 2,
+    "withdrawal_replacement_rows": 1,
+    "declared_writein_rows": 6,
+    "replacement_exact_fullname_matches_workbook": true,
+    "replacement_literal_party_code_matches_workbook": true,
+    "withdrawn_candidate_absent_workbook": true,
+    "printed_writein_exact_fullname_overlap_count": 0,
+    "former_withdrawn_writein_exact_fullname_overlap_count": 0,
+    "withdrawal_date": "2026-07-10",
+    "replacement_received_date": "2026-07-27",
+    "writein_pdf_printed_date": "2026-10-15",
+    "writein_index_displayed_date": "2026-10-16",
+    "names_or_residences_exported": false,
+    "interpretation": "Adhoc source observations only; not output of new reader or final amendment evidence"
+  },
+  "xlsx_structural_observations": {
+    "one_named_sheet": "November 3, 2026",
+    "xml_members": 12,
+    "total_uncompressed_bytes": 337560,
+    "formula_count": 0,
+    "additional_K_to_O_cells": 60,
+    "additional_K_to_O_cells_with_values": 0,
+    "reader_policy": "Exact10namedcolumns; observedstyledblankK-O tolerated only withoutvalue; othercolumns/values refused"
+  },
+  "accepted_readiness_roster_states_remain": 7,
+  "accepted_unfinished_source_jobs_remain": 26,
+  "final_ballots_accepted": 0,
+  "source_adoption": false,
+  "actual_selection": false,
+  "2026_outcomes_used": false,
+  "new_network_requests_this_task": 0,
+  "model_calls": 0,
+  "cost_usd": 0
+}
