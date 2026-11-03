@@ -1,0 +1,488 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "development_compute": "UNPRICED",
+    "experimental_spend_usd": 0,
+    "model_calls": 0,
+    "real_network_calls": 0
+  },
+  "FILES_CHANGED": {
+    "configs/e02_n2b_generic_state_import_v1_1_1.json": "f1a7fb3b3dc5701e75d93cb1d70318dd77e523bd5065aac4c15e6dd783f8d180",
+    "docs/E02_N2B_GENERIC_IMPLEMENTATION_v1_1_1.md": "eebe8e819c83bc105ffdbe59c971850a624636eb45f6c34e8b408c697e859247",
+    "reports/E02_N2B_V1_1_1_FINAL_TESTS_311.txt": "c124d958a11ee3e14ca5943d448437c36c9a0070531868ca584494f5db4623d9",
+    "reports/E02_N2B_V1_1_1_FINAL_TESTS_312.txt": "c2f42f51bb234bed06f48146241ec63821c9184f48312d66cbdb2df9334e4687",
+    "reports/E02_N2B_V1_1_1_INITIAL_ROOT_SMOKE.txt": "ff2c715d3c6788d025b57c4b0aff53d6adaf7ea67eb4e50628d34fe4fffb1673",
+    "reports/E02_N2B_V1_1_1_OWNER_AND_RUNNER_SMOKE.txt": "dc8306bfba94832dfdba25ca21114bde644bbdff1202b83f7d0f57a7a04a8b02",
+    "src/civiclab/e02/n2b_admission_v1_1_1.py": "0ce1ab8bd96efcefc318dd196b2bc66053c13f78e7c71846de02220565d2aac5",
+    "src/civiclab/e02/n2b_assembly_v1_1_1.py": "e6093f2e555d2d11d1422c3e14d9fe0e0a0a6dd456311abdd5e707168538e947",
+    "src/civiclab/e02/n2b_control_v1_1_1.py": "90d72740eee466a8237c75bd03d40664ccb6828dfad92f1a609e9dd866e2de1c",
+    "src/civiclab/e02/n2b_metrics_v1_1_1.py": "31ded96d355fc2a3de3cfa14963e775acc72770b410458773faf3bd801d0b008",
+    "src/civiclab/e02/n2b_parts_v1_1_1.py": "f7908a77c6bf94980da8cc8a48552b59cff1d87a117a600b4d1e4919e21a532e",
+    "src/civiclab/e02/n2b_runner_v1_1_1.py": "cca195e3278d8aa6a4890f8f33e653c4777a809abe0ee1f1fa1165cd4266340c",
+    "src/civiclab/e02/n2b_source_v1_1_1.py": "32158eb197c85ffa2787ce7b933226c7ff510caeafe1f282d5493f3ee65c3cad",
+    "src/civiclab/e02/n2b_storage_v1_1_1.py": "202e21593f04c62cf2ba38ffc56fac47c5314db10c7b209dbc99763f066d9b58",
+    "tests/test_e02_n2b_generic_v1_1_1.py": "dc40b09df225d5bc8a4add4fdfef12361685dd286a73645c92ae0a1632da8432"
+  },
+  "NEXT_UNBLOCKED_TASK": "Independent review of exact v1.1.1 against de21ad4 finding and preserved predecessors. Lead owns STATUS/Git; worker holds new bytes unchanged. Do not combine prospective-window implementation or actual operations until independently gated.",
+  "OUTPUT_ARTIFACTS": {
+    "final_authored_index": {
+      "indexed_files": 308,
+      "path": "data/processed/e02_F_local_fixture/n2b-generic-v1_1_1-20261103-01/AUTHORED_EVIDENCE_INDEX.json",
+      "sha256": "413b5357aadd01987cc169224a83ef43043775eb705b64eb23a6761552fa85f0"
+    },
+    "policy_sha256": "c7a44933d48442d9d7afb54b317a18e168389ba18af8e54312ce4936704537d0",
+    "retained_cases": {
+      "crash_unknown": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "BIND": "UNKNOWN"
+        },
+        "status": null,
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 0,
+            "DC_REPLAY_part": 0,
+            "core": 5311,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "invalid_child_failure": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "FAILED"
+        },
+        "status": "EXPECTED_AUTHORED_FAILURE_invalid_child_failure",
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 0,
+            "DC_REPLAY_part": 0,
+            "core": 11404,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "prior_core_regular_file": {
+        "new_job_reserved": false,
+        "original_history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "person_rows": 0,
+        "retained_root_file_bytes": 4194305,
+        "scenario": "prior_core_regular_file",
+        "status": "EXPECTED_PRE_OWNER_DIRECTORY_PRESENCE_REFUSAL",
+        "target_exists": true,
+        "target_is_directory": false,
+        "target_relative_path": "data/processed/e02_n2a_core_v1"
+      },
+      "prior_history_missing": {
+        "new_job_reserved": false,
+        "original_history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "person_rows": 0,
+        "retained_root_file_bytes": null,
+        "scenario": "prior_history_missing",
+        "status": "EXPECTED_PRE_OWNER_DIRECTORY_PRESENCE_REFUSAL",
+        "target_exists": false,
+        "target_is_directory": false,
+        "target_relative_path": "data/processed/e02_n2a_registry_v1"
+      },
+      "prior_raw_overcap": {
+        "new_job_reserved": false,
+        "original_history": {
+          "N2a_DC_full_reservation": {
+            "body_bytes": 8388608,
+            "network_seconds": 180,
+            "processing_seconds": 300,
+            "requests": 1
+          },
+          "N2a_DC_original_t0": {
+            "mono": 402605.244778333,
+            "wall": 1793735420.467812
+          },
+          "WY_full_outer_reservation": {
+            "bytes": 50975766,
+            "ops": 12000000,
+            "rows": 58594,
+            "seconds": 1800
+          },
+          "WY_original_deadline_unix": 1793741015.473082,
+          "WY_original_t0": {
+            "boot": "{ sec = 1789773316, usec = 140385 } Fri Sep 18 19:15:16 2026",
+            "mono": 398483.537517083,
+            "wall": 1793730215.473082
+          },
+          "analysis_ops_total_old_new": 36000000,
+          "expanded_bytes_old_DC_metadata_new": 192057311,
+          "new_GETs": 0,
+          "new_analysis_ops": 24000000,
+          "new_person_rows": 65010,
+          "new_processing_seconds": 1500,
+          "new_reserved_expanded_bytes": 134724553,
+          "person_rows_old_new": 123604,
+          "prior_acquisition_metadata_history": {
+            "prior_WY_retained_bytes": 4202266,
+            "prior_body_reserved_upper_bound": 8388608,
+            "prior_charges_refunded": false,
+            "prior_metadata_received_bytes": 1279577,
+            "prior_metadata_requests": 5,
+            "prior_person_GETs": 1
+          },
+          "prior_charges_refunded": false,
+          "processing_total_WY_DC_N2b": 3600
+        },
+        "person_rows": 0,
+        "prior_raw_bytes_retained": 8388609,
+        "status": "EXPECTED_PRE_JOB_PRIOR_RAW_CAP_REFUSAL"
+      },
+      "success": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "ASSEMBLE_PRIMARY": "COMPLETED",
+          "ASSEMBLE_REPLAY": "COMPLETED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "status": "PRIVATE_N2B_ENGINEERING_CLOSED_PENDING_INDEPENDENT_REVIEW",
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 6628927,
+            "ASSEMBLE_REPLAY_canonical_data": 6628916,
+            "DC_PRIMARY_part": 5385849,
+            "DC_REPLAY_part": 5385848,
+            "core": 39178,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      },
+      "variant_measurement_failure": {
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "stages": {
+          "ASSEMBLE_PRIMARY": "FAILED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "status": "EXPECTED_AUTHORED_FAILURE_variant_measurement_failure",
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 5385849,
+            "DC_REPLAY_part": 5385848,
+            "core": 20334,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0,
+          "old_scratch": 0,
+          "prior_subpartitions": {
+            "N2A:total": 0,
+            "WY:all_artifacts": 0,
+            "WY:data_both": 0,
+            "WY:logs": 0
+          }
+        }
+      }
+    },
+    "success_resource_metadata": {
+      "PRIMARY": {
+        "evaluation_order": [
+          "direct",
+          "registry"
+        ],
+        "variants": [
+          {
+            "evaluation_seconds": 2.513527625007555,
+            "input_logical_bytes": 10733071,
+            "output_logical_bytes": 5626035,
+            "rss_samples": 3,
+            "sampled_rss_peak": 114900992,
+            "variant": "direct"
+          },
+          {
+            "evaluation_seconds": 2.6816497499821708,
+            "input_logical_bytes": 10733071,
+            "output_logical_bytes": 5626035,
+            "rss_samples": 3,
+            "sampled_rss_peak": 114540544,
+            "variant": "registry"
+          }
+        ]
+      },
+      "REPLAY": {
+        "evaluation_order": [
+          "registry",
+          "direct"
+        ],
+        "variants": [
+          {
+            "evaluation_seconds": 2.6821347500081174,
+            "input_logical_bytes": 10733070,
+            "output_logical_bytes": 5626035,
+            "rss_samples": 4,
+            "sampled_rss_peak": 135512064,
+            "variant": "registry"
+          },
+          {
+            "evaluation_seconds": 2.634957416972611,
+            "input_logical_bytes": 10733070,
+            "output_logical_bytes": 5626035,
+            "rss_samples": 3,
+            "sampled_rss_peak": 97992704,
+            "variant": "direct"
+          }
+        ]
+      }
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_n2b_generic_v1_1_1 -v",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e02_n2b_generic_v1_1_1 -v",
+    "PYTHONPATH=src:tests .venv/bin/python -c 'from pathlib import Path; from test_e02_n2b_generic_v1_1_1 import retain_authored_evidence; print(retain_authored_evidence(Path(\"data/processed/e02_F_local_fixture/n2b-v1_1_1-review-reproduction\")))'"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Candidate only: independent review must close root-file/presence finding; predecessors remain frozen/blocked.",
+    "Required paths are shape/presence checks, not independent historical chain/source/capacity acceptance; genuine current terminal/source/savedpart bindings remain separately gated.",
+    "All declared historical roots and completed-state structural directories are required in both realms; no TEST_ONLY missing-path waiver. Optional new partitions may be absent before use, but any present path must be directory. Existing output without registry refuses.",
+    "Initial two-case smoke exposed lost owner registry beside existing output; original failed log retained, orphan refusal fixed and separate owner/runner smoke passed.",
+    "All prior subpartition/global caps, full charges, no-reset paths, earliest original deadlines and scoped F2 order/resource behavior retained. No prospective-window code/grant/date change introduced.",
+    "Cooperative sampled clock/RSS and trusted preserved history, not hard OS containment/hostile whole-store replacement/powerloss proof.",
+    "No actual source/private preflight, import, representative national population/ANESfit, models/human effects/disclosure/dashboard/scientific acceptance."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored isolated equivalent-production-relative directory layouts, ZIP/parts/test clocks/owner/release namespaces and copied public code/metadata only. Empty authored directories are topology fixtures, not genuine historical contents/capacity proof. No actual raw/cache/private source/control/part stat/read/hash, actual admission/import, key/.env/environment inspection, model/network or fit. Only own-process runtime/RSS measurements for F2.",
+  "TASK_ID": "E02_N2B_GENERIC_V1_1_1_DIRECTORY_SHAPE_PRESENCE_REMEDY",
+  "TESTS_RUN_AND_RESULTS": {
+    "default_pinned_template": true,
+    "final": {
+      "311": {
+        "log": "reports/E02_N2B_V1_1_1_FINAL_TESTS_311.txt",
+        "seconds": 85.659,
+        "sha256": "c124d958a11ee3e14ca5943d448437c36c9a0070531868ca584494f5db4623d9",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 64
+      },
+      "312": {
+        "log": "reports/E02_N2B_V1_1_1_FINAL_TESTS_312.txt",
+        "seconds": 94.768,
+        "sha256": "c2f42f51bb234bed06f48146241ec63821c9184f48312d66cbdb2df9334e4687",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 64
+      }
+    },
+    "frozen_native_dependency_pins": {
+      "configs/e02_F_WY_ACTUAL_BOOTSTRAP_IMPLEMENTATION_v1.json": {
+        "mismatches": [],
+        "pins_checked": 9
+      },
+      "configs/e02_F_WY_LOCAL_IMPLEMENTATION_v1_1.json": {
+        "mismatches": [],
+        "pins_checked": 38
+      },
+      "configs/e02_n2a_dc_collector_v1.json": {
+        "mismatches": [],
+        "pins_checked": 12
+      }
+    },
+    "independent_candidate_acceptance": "NOT_RUN",
+    "new_index_all_files_rehashed": true,
+    "new_root_shape_methods": [
+      "test_ROOT_active_core_output_registry_required_shape_and_presence",
+      "test_ROOT_all_required_history_directories_equivalent_paths_positive",
+      "test_ROOT_full_ancestry_regular_file_and_symlink_refused",
+      "test_ROOT_missing_each_required_history_refuses_before_owner",
+      "test_ROOT_missing_policy_cannot_be_TEST_ONLY_waived",
+      "test_ROOT_new_output_registry_files_refuse_without_extra_markers",
+      "test_ROOT_optional_new_stage_and_scratch_absence_vs_regular_file",
+      "test_ROOT_regular_files_zero_one_atcap_plus1_all_historical_roles",
+      "test_ROOT_required_nested_and_fallback_shapes_missing_and_file"
+    ],
+    "predecessor55_methods_retained": true,
+    "predecessor_bytes_and_evidence": {
+      "reports/E02_N2B_GENERIC_IMPLEMENTATION_HANDOFF_v1.json": {
+        "authored_files_rehashed": 136,
+        "files_unchanged": 18,
+        "sha256": "25578f584d90a17c4110707458cbd36dcc50c6514d71a135d180c833c1e72cb8"
+      },
+      "reports/E02_N2B_GENERIC_V1_1_IMPLEMENTATION_HANDOFF.json": {
+        "authored_files_rehashed": 227,
+        "files_unchanged": 17,
+        "sha256": "75ec49d7b0b61cf5ca2e24fc6437730fc64b51f3f245a04354c19a81d02c071d"
+      }
+    }
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact rootshape/presence/storage/lifecycle/arithmetic/F2/privacy/authored evidence review.",
+    "Actual source/private part/history/current marker/storage preflight and exact finite release remain absent.",
+    "Expired original inherited window still blocks actual sequence; distinct prospective-window implementation remains unimplemented and separately gated.",
+    "Full49remaining-jurisdiction campaign/capacity and original research completion contract unfinished."
+  ],
+  "actual_source_or_private_operations": 0,
+  "created_utc": "2026-11-03T22:14:06.826744+00:00",
+  "default_actual_authority": 0,
+  "default_approvals": {
+    "code_review": null,
+    "execution": null,
+    "source_review": null
+  },
+  "finding_reference": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_N2B_V1_1_OWNED_ROOT_FILE_FINDING.json",
+    "sha256": "de21ad4e051d20dadb5a8b9a2a2be4458354899cbd14ab9de6655abe915968fc"
+  },
+  "original_fixed_output_directory": "data/processed/e02_n2b_private_v1",
+  "original_fixed_registry_directory": "data/processed/e02_n2b_registry_v1",
+  "prospective_window_implemented": false,
+  "required_history_directories": [
+    "data/processed/e02_F_wy_private/conditional-actual-v1-20261103-01",
+    "data/processed/e02_F_wy_private_bootstrap/conditional-actual-v1-20261103-01",
+    "data/processed/e02_n2a_registry_v1",
+    "data/processed/e02_n2a_core_v1",
+    "data/raw/e02_n2a_sources_v1",
+    "data/raw/e02_pums_wy",
+    "data/raw/e02_pums_metadata",
+    "data/processed/e02_F_wy_private/conditional-actual-v1-20261103-01/PRIMARY",
+    "data/processed/e02_F_wy_private/conditional-actual-v1-20261103-01/REPLAY",
+    "data/processed/e02_F_wy_private/conditional-actual-v1-20261103-01/ledger",
+    "data/raw/e02_n2a_sources_v1/11"
+  ],
+  "status": "SEPARATE_V1_1_1_CANDIDATE_AWAITING_INDEPENDENT_ROOTSHAPE_REVIEW"
+}
