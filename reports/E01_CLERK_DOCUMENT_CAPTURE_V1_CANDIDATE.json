@@ -1,0 +1,68 @@
+{
+  "actual_raw_source_body_reads": 0,
+  "actual_release_plan": null,
+  "development_compute_unpriced": true,
+  "files": {
+    "docs/E01_CLERK_DOCUMENT_CAPTURE_V1_CANDIDATE.md": "9b1290c9032da43e17494d7c40548db0e6d8968b25b23354ccc7937f591193a4",
+    "scripts/e01_clerk_documents_capture_v1.py": "9cfde25228fb02bdda67f73f280916a80f68dd314c4b3c8d0d33462ff4d94ad2",
+    "tests/test_e01_clerk_documents_capture_v1.py": "2f9c476f6836ed9e46caf08f5d480108d95e2d0356d4032cfaa404d24a305577"
+  },
+  "independent_code_review": null,
+  "limits": {
+    "body_bytes_each": 8388608,
+    "body_bytes_total": 16777216,
+    "metadata_bytes": 1048576,
+    "minimum_free_bytes": 67108864,
+    "request_seconds": 45,
+    "requests": 2,
+    "retained_bytes": 17825792,
+    "socket_seconds": 15,
+    "unit_seconds": 120
+  },
+  "model_calls_or_spend": 0,
+  "native_GETs": 0,
+  "next_gate": "Independent bounded code/methods review, then one exact lead plan/release before any native capture; later parsing/role/baseline gates separate.",
+  "original_E01_and_shared_code_unchanged": true,
+  "private_transcript_reads": 0,
+  "real_source_capture": false,
+  "recorded_at_utc": "2026-11-03T19:40:46.833575+00:00",
+  "schema_version": 1,
+  "source_or_coverage_adoption": false,
+  "source_policy_sha256": "bd6d0340ed8d04f1ba0bf64a2a1a7349fab9819366615c1b7b7a616c6c4e584f",
+  "sources": [
+    {
+      "id": "clerk2020_statistics",
+      "role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "id": "clerk2026_nominees",
+      "role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ],
+  "status": "AUTHORED_CODE_CANDIDATE_PENDING_INDEPENDENT_REVIEW_NO_ACTUAL_CAPTURE",
+  "task_id": "E01_CLERK_2020_COUNTS_AND_2026_NOMINEE_CAPTURE_V1",
+  "test_evidence": "TERMINAL_LEAD_TOOL_OUTPUT_NO_SAVED_SEPARATE_LOG; auditor to reproduce from authored fixtures",
+  "test_observations": [
+    {
+      "exit_code": 0,
+      "python": "3.12.14",
+      "seconds": 0.066,
+      "tests": 13
+    },
+    {
+      "exit_code": 0,
+      "python": "3.11.17",
+      "seconds": 0.058,
+      "tests": 13
+    }
+  ],
+  "web_discovery_observations": {
+    "2026_results_access": false,
+    "native_bytes_sizes_hashes_headers": "UNKNOWN",
+    "offered_nominee_PDF_preview": 1,
+    "official_domain_search": 1,
+    "official_index_preview": 1
+  }
+}
