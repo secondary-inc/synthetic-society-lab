@@ -16,6 +16,8 @@ class PackageTests(unittest.TestCase):
             report=root/'reports/ENGINEERING_EVIDENCE_TEST.json';report.parent.mkdir();report.write_text('{}')
             (report.parent/'E02_WORKER_RECEIPT.md').write_text('Observed module receipt')
             (report.parent/'ANES_UPSTREAM_REACQUISITION.json').write_text('{"scope":"exact byte verification only"}')
+            (report.parent/'E02_CONSUMED_IMPLEMENTATION.txt').write_text('preserved prior source fixture')
+            (report.parent/'WYOMING_PROJECTION_IMPLEMENTATION.json').write_text('{"actual_projection_created":false}')
             with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO','cost_usd':0})
             metadata=root/'src/local_project.egg-info';metadata.mkdir(parents=True)
             (metadata/'SOURCES.txt').write_text('generated during install')
@@ -30,6 +32,8 @@ class PackageTests(unittest.TestCase):
                 self.assertIn('reports/ENGINEERING_EVIDENCE_TEST.json',z.namelist())
                 self.assertIn('reports/E02_WORKER_RECEIPT.md',z.namelist())
                 self.assertIn('reports/ANES_UPSTREAM_REACQUISITION.json',z.namelist())
+                self.assertIn('reports/E02_CONSUMED_IMPLEMENTATION.txt',z.namelist())
+                self.assertIn('reports/WYOMING_PROJECTION_IMPLEMENTATION.json',z.namelist())
                 self.assertFalse(any('.egg-info/' in n for n in z.namelist()))
             with zipfile.ZipFile(root/'a.zip','a') as z:z.writestr('unregistered.txt','tampered')
             with self.assertRaises(ValueError):verify_package(root/'a.zip')
@@ -55,6 +59,9 @@ class PackageTests(unittest.TestCase):
             with RunStore(root,'E02',{},kind='MOCK') as safe:
                 safe.write('local-reuse-config.json',{'network_requests':0});safe.finish({'status':'MOCK'})
             self.assertEqual(build_package(root,root/'safe.zip',[safe.run_id])['status'],'PASS_PACKAGE_INTEGRITY')
+            private=root/'reports/E02_intermediate.local.json';private.parent.mkdir(exist_ok=True);private.write_text('{"marker":"RETAIN_ONLY_LOCALLY"}')
+            with self.assertRaisesRegex(ValueError,'local-only'):build_package(root,root/'source-refused.zip',[safe.run_id])
+            self.assertFalse((root/'source-refused.zip').exists())
 
     def test_source_added_after_enumeration_cannot_create_mixed_snapshot(self):
         from civiclab.dashboard import verified_run

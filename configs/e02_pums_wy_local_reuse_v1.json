@@ -1,0 +1,58 @@
+{
+  "approved_budget_usd": 0,
+  "archive": {
+    "bytes": 4202266,
+    "path": "data/raw/e02_pums_wy/QUARANTINED-20f0ff6a0b674edc916272fd8b41ff4d.zip",
+    "sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73"
+  },
+  "companion_member": {
+    "exact_bytes": 99489,
+    "maximum_bytes": 99489,
+    "name": "ACS2020_2024_PUMS_README.pdf",
+    "sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b"
+  },
+  "deadline_semantics": "Single shared cooperative120secondprocessingdeadline across local container checks+aggregation; originalindividualbyte/row/memberlimitsunchanged;notOShardtermination",
+  "disclosure": "LOCAL_ONLY_PENDING_SEPARATE_DISCLOSURE_AUDIT",
+  "legacy_readme_txt_rule": {
+    "changed": false,
+    "extra_members_not_allowed_for_this_exact_archive": true,
+    "maximum_bytes": 16384,
+    "name": "readme.txt"
+  },
+  "local_reuse_approval": null,
+  "member_policy": "ExactlyobservedpersonCSV+literalcompanionPDFonly;exactsourcehash+companionhash/sizebound,noextraction/execution/wildcards;oldsourcecontainerfailurepreserved",
+  "network_requests_authorized": 0,
+  "original_attempt_id": "wy-05da99bbf77c454e9e616b4ba624fa61",
+  "original_failed_run_id": "e02-70827a2bc8ef49b0bd5f808a00064f74",
+  "paid_calls": 0,
+  "person_member": "psam_p56.csv",
+  "population_fit_authorized": false,
+  "protocol_id": "E02-PUMS-WY-EXACT-LOCAL-REUSE-v1.2",
+  "required_files": {
+    "configs/e02_pums_wy_pilot_v1_2_consumed.json": "46fb36cebe59fc15372d27761dbfe0dd937028e873c4fbe3e9b6b3ee671bccdf",
+    "docs/E02_PUMS_WY_LOCAL_REUSE_AMENDMENT.md": "5a57c39fd879a13a7578a94c2c2cfd761e1151ac09fa4eb9cf49cfc454fce24d",
+    "reports/E02_PUMS_WY_PILOT_ACQUISITION_FAILURE.json": "6d4a060b5ed2e23b148f665dbff9ef0e5025c1f886de98982363b26be0b76903",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_FINDING.json": "ce77ff2862623eca5495835654d3fa461d2c3b6cb6d02d45f58d74b2de7488ac",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_METHODS.json": "800d27ebfec12e8d97cdf61c2baa91e34c29e48d10ba7e5c3124fa91c12a79d2",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_pums_wy_local_reuse_v1.py": "6838591df40937e6d5b81f6170549230264eec9650b6fd0cdfd022ea4e4034b6"
+  },
+  "schema_version": 1,
+  "source_controls_path": "configs/e02_pums_wy_pilot_v1_2_consumed.json",
+  "source_integrity_amendment": {
+    "finding_id": "IA-E02-PUMS-LOCAL-SOURCE-001",
+    "policy": "Parsed archive hash, actual person member name/size and full postprocessing archive/companion/file identity must match frozen preflight before aggregate persistence; mismatch seals FAILED with no accepted aggregate.",
+    "previous_config": "configs/e02_pums_wy_local_reuse_v1_0.json"
+  },
+  "stage": "IMPLEMENTATION_AND_SYNTHETIC_FIXTURES_ONLY",
+  "test_only_amendment": {
+    "finding": "Negative approval fixture depended on live repository approval state",
+    "previous_consumed_config": "configs/e02_pums_wy_local_reuse_v1_1_consumed.json",
+    "previous_consumed_config_sha256": "300d93c14762930294627dbc6ba0718d7b514e2c03a0e12518685aa76c15cf71",
+    "previous_test_sha256": "71ebd98c00c1b91deecb41442eac3018bc3d3961d106b0cf1ae4e7b62c8700c8",
+    "previous_test_snapshot": "reports/E02_PUMS_WY_LOCAL_REUSE_V1_1_CONSUMED_TESTS.txt",
+    "scope": "Only negative-approval fixture isolation: copied config with explicit null approval and temporary root. Source/parser/runner/arithmetic unchanged. Completed v1.1 actual runs/approval preserved; no future execution under new design before fresh independent delta."
+  }
+}

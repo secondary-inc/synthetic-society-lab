@@ -1,0 +1,34 @@
+{
+  "actual_finalization_executed_by_auditor": false,
+  "actual_values_emitted": false,
+  "audited_at_utc": "2026-11-03T12:37:44.836326+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "independent_checks": {
+    "actual_null_approval_prevents_source_and_runstore": true,
+    "byte_exact_replay_source_immutable_no_network": true,
+    "four_approval_identity_drift_guards_before_new_run": true,
+    "independent_systemexit_sealed_type_only_no_review_payload": true,
+    "real_approval_matcher_accepts_exact_mock_proof_without_bypass": true
+  },
+  "network_requests": 0,
+  "paid_calls": 0,
+  "reviewed_design_sha256": "cfa971020381655bbf675ef00ec88ea739f47b5de3cfd0135f68d141d87c8fb3",
+  "reviewed_required_files": {
+    "configs/wyoming_benchmark_projection_schema_v1.json": "504e92619482a5a04fb37aa2857b058ca18f7213c1508685afc138b84991a72d",
+    "docs/WYOMING_BENCHMARK_FINALIZATION.md": "51152f8cfee17e42f9e83e781f1dc450e50c0de5e9589608d5ce1d888811672d",
+    "reports/INDEPENDENT_AUDIT_WYOMING_PROJECTION_OUTPUT_DISCLOSURE.json": "2c4611d49ffb4c2ac489c287e8a0470767d5a0d63f7e8b6b09e3ef5e49def243",
+    "src/civiclab/benchmark_export.py": "bcd6a7505c28255973534b8571fca105f1d8065964293e5e71131a9597a7fd55",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/dashboard.py": "1b65f89800688ee7b279b6a2bc39f27b1b6f45b7504ff2e103f48f38dfd77cab",
+    "src/civiclab/reviewed_benchmark.py": "9a99e5660895317645fdbbb4005a64bfd48668e4cd355dbee5dbeae02ab67370",
+    "tests/test_reviewed_benchmark.py": "f725e46f8f655434dd3de6cc97f7d62cd8bb05d6e39b6c710810360b9df70819"
+  },
+  "schema_version": 1,
+  "scope": "Exact new RunStore finalization by byte-exact copying of independently accepted Wyoming owner-review projection. Actual finalized output must receive separate independent admission check before owner-review package/dashboard use. No original source mutation, national acquisition, population fitting, model execution or external publication authorized.",
+  "status": "PASS_WYOMING_REVIEW_FINALIZATION_CODE_AND_FIXTURES",
+  "targeted_tests": {
+    "command": ".venv/bin/python -m unittest tests.test_reviewed_benchmark -v",
+    "passed": 4
+  }
+}

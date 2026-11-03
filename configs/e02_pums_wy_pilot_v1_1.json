@@ -1,0 +1,218 @@
+{
+  "age_bins": [
+    "18-24",
+    "25-44",
+    "45-64",
+    "65+"
+  ],
+  "allocation_flags": [
+    "FAGEP",
+    "FCITP",
+    "FSCHLP",
+    "FRELSHIPP"
+  ],
+  "allocation_policy": "Keepallocatedrecords;aggregateflags,nomicrodataexport",
+  "amendment": {
+    "new_common_sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "old_common_sha256": "6230927f6524fa7ab2e87612707d77594f937b041885ec5c1a767f2326fe759a",
+    "previous_config": "configs/e02_pums_wy_pilot_v1_0.json",
+    "previous_config_sha256": "82e62d5b95f7dd82da8831c84276b993be9efe0494a473e18580bef1688edfa8",
+    "reason": "Leadaddedexecutable scripts/ toRunStorecode_identity;explicitsharedprovenancepinrefresh",
+    "scope": "Provenancemetadataonly;nooriginalcohort/target/scenario/fitmathchange;nullgatesandoldruns/auditsunchanged",
+    "version": "1.1"
+  },
+  "approved_budget_usd": 0,
+  "archive_sha256": null,
+  "dictionary_sha256": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+  "disclosure": {
+    "minimum_unweighted_cell_count_for_sharing": 30,
+    "raw_rows": "Ignoredlocalarchiveonly,noIDs/rowdumps/externalservice",
+    "sharing": "LOCAL_ONLY_PENDING_INDEPENDENT_DISCLOSURE_REVIEW"
+  },
+  "education_recode": {
+    "BA_PLUS": [
+      21,
+      24
+    ],
+    "HS_OR_LESS": [
+      1,
+      17
+    ],
+    "SOME_COLLEGE": [
+      18,
+      20
+    ]
+  },
+  "eligibility_order": [
+    "validate required fields/domains/weights for every row",
+    "CIT5noncitizen",
+    "RELSHIPP37/38groupquarters",
+    "AGEPunder18",
+    "retainedcitizen18+household"
+  ],
+  "limits": {
+    "automatic_retries": 0,
+    "compressed_bytes": 8388608,
+    "csv_line_bytes": 65536,
+    "expected_person_rows": 29297,
+    "maximum_members": 4,
+    "maximum_rows": 40000,
+    "network_timeout_seconds": 10,
+    "network_total_seconds": 120,
+    "overall_seconds": 240,
+    "processing_total_seconds": 120,
+    "uncompressed_bytes": 134217728
+  },
+  "local_archive": "data/raw/e02_pums_wy/csv_pwy.zip",
+  "official_metadata": {
+    "accuracy_pdf": {
+      "bytes": 434590,
+      "sha256": "edbc9973f8cdf1a6528bb9acc450d83e230edc66421aa708ec9892a087b86447",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2020_2024AccuracyPUMS.pdf"
+    },
+    "dictionary_txt": {
+      "bytes": 307894,
+      "sha256": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.txt"
+    },
+    "file_index": {
+      "bytes": 58152,
+      "sha256": "156a5263721b09cb60d8ed9a1bbbcc21b8ef156f4b7bdc5a8c27f4c4df9ca507",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/"
+    },
+    "record_counts_csv": {
+      "bytes": 4782,
+      "sha256": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_20_24.csv"
+    },
+    "user_guide_pdf": {
+      "bytes": 474159,
+      "sha256": "77f9b74efef7cb9d3eb8ffa4dc875df9e15765432d6134ead3691a5fe8b35e1a",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/2020_2024ACS_PUMS_User_Guide.pdf"
+    }
+  },
+  "optional_member_bytes": 16384,
+  "optional_members_casefold": [
+    "readme.txt"
+  ],
+  "paid_calls": 0,
+  "period": "2020-2024five-year",
+  "person_member_casefold": "psam_p56.csv",
+  "point_weight_range": [
+    1,
+    9999
+  ],
+  "predownload_approval": null,
+  "protocol_id": "E02-PUMS-WY-PILOT-v1.1",
+  "replicate_weight_range": [
+    -9999,
+    9999
+  ],
+  "required_fields": [
+    "RT",
+    "STATE",
+    "AGEP",
+    "CIT",
+    "SCHL",
+    "RELSHIPP",
+    "PWGTP",
+    "PWGTP1",
+    "PWGTP2",
+    "PWGTP3",
+    "PWGTP4",
+    "PWGTP5",
+    "PWGTP6",
+    "PWGTP7",
+    "PWGTP8",
+    "PWGTP9",
+    "PWGTP10",
+    "PWGTP11",
+    "PWGTP12",
+    "PWGTP13",
+    "PWGTP14",
+    "PWGTP15",
+    "PWGTP16",
+    "PWGTP17",
+    "PWGTP18",
+    "PWGTP19",
+    "PWGTP20",
+    "PWGTP21",
+    "PWGTP22",
+    "PWGTP23",
+    "PWGTP24",
+    "PWGTP25",
+    "PWGTP26",
+    "PWGTP27",
+    "PWGTP28",
+    "PWGTP29",
+    "PWGTP30",
+    "PWGTP31",
+    "PWGTP32",
+    "PWGTP33",
+    "PWGTP34",
+    "PWGTP35",
+    "PWGTP36",
+    "PWGTP37",
+    "PWGTP38",
+    "PWGTP39",
+    "PWGTP40",
+    "PWGTP41",
+    "PWGTP42",
+    "PWGTP43",
+    "PWGTP44",
+    "PWGTP45",
+    "PWGTP46",
+    "PWGTP47",
+    "PWGTP48",
+    "PWGTP49",
+    "PWGTP50",
+    "PWGTP51",
+    "PWGTP52",
+    "PWGTP53",
+    "PWGTP54",
+    "PWGTP55",
+    "PWGTP56",
+    "PWGTP57",
+    "PWGTP58",
+    "PWGTP59",
+    "PWGTP60",
+    "PWGTP61",
+    "PWGTP62",
+    "PWGTP63",
+    "PWGTP64",
+    "PWGTP65",
+    "PWGTP66",
+    "PWGTP67",
+    "PWGTP68",
+    "PWGTP69",
+    "PWGTP70",
+    "PWGTP71",
+    "PWGTP72",
+    "PWGTP73",
+    "PWGTP74",
+    "PWGTP75",
+    "PWGTP76",
+    "PWGTP77",
+    "PWGTP78",
+    "PWGTP79",
+    "PWGTP80",
+    "FAGEP",
+    "FCITP",
+    "FSCHLP",
+    "FRELSHIPP"
+  ],
+  "required_files": {
+    "docs/E02_MATCHED_PUMS_SOURCE_PROPOSAL.md": "18a4f8f484f167d75ac773c0a1a8c3fe94f17c649fe0ac532e6d587a022fa1d2",
+    "reports/E02_MATCHED_PUMS_SOURCE_PROPOSAL.json": "b4464f2b599c2f60e80d102f18f24c22a1994ee20306c7c2bbd7a5fd6090c6e7",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_SOURCE_METHODS.json": "54d388ca6d2357f26b8e0d840bc37aef5b0b99d17d6b7cb6a0eb2c4adadeb5e2",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "c27dedc40dfca3549d6f4d2b76c89fd1ee773a3eeb9306010dfb012dc162bce7",
+    "tests/test_e02_pums_wy_pilot_v1.py": "9d6c031829b3574dafab16eb977fe3d3e3869083dea29afee745a7662ca895b5"
+  },
+  "schema_version": 1,
+  "scientific_gate": "BLOCKED;WYengineeringpilotisnotnationalbenchmarkorfittedpopulation",
+  "source_drift": "Immutablefirstarchive+receipt;changedbytesquarantinedandblocked,neveroverwrite",
+  "stage": "PREPARATION_AND_SYNTHETIC_FIXTURES_ONLY",
+  "state": "56",
+  "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwy.zip"
+}

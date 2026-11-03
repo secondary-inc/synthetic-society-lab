@@ -1,0 +1,69 @@
+{
+  "actual_aggregate_created": false,
+  "actual_guard": "BLOCKED",
+  "actual_replay": "NOT_RUN",
+  "api_spend_usd": 0,
+  "exact_existing_archive": {
+    "bytes": 4202266,
+    "path": "data/raw/e02_pums_wy/QUARANTINED-20f0ff6a0b674edc916272fd8b41ff4d.zip",
+    "sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73"
+  },
+  "files_sha256": {
+    "configs/e02_pums_wy_local_reuse_v1.json": "c8738a0bf5ae8431149fc35be2ba891f4a8dd4161e0e8eeda3bd9b61248f659e",
+    "docs/E02_PUMS_WY_LOCAL_REUSE_RUNBOOK.md": "05ed5adc148fc64a35c7317c0cf2f9ffaea2dfa12e5291a333481db21989e662",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "tests/test_e02_pums_wy_local_reuse_v1.py": "71ebd98c00c1b91deecb41442eac3018bc3d3961d106b0cf1ae4e7b62c8700c8"
+  },
+  "frozen_design_sha256": "de8e0c239d97aed0937f523c523b8fb918db7fc8fb24aca2d5e53a045a9cd2dd",
+  "literal_companion": {
+    "exact_bytes": 99489,
+    "maximum_bytes": 99489,
+    "name": "ACS2020_2024_PUMS_README.pdf",
+    "sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b"
+  },
+  "local_reuse_approval": null,
+  "new_GETs": 0,
+  "next_unblocked_task": "Freshindependentlocal-onlyimplementation/fixtureapprovalbeforepersonrowprocessing;actualaggregate/replayauditbeforeanydisclosure/national/fitting",
+  "original_module_sha256": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+  "original_module_unchanged": true,
+  "paid_calls": 0,
+  "population_fit": "NOT_RUN",
+  "prior_failure_preserved": {
+    "attempt": "wy-05da99bbf77c454e9e616b4ba624fa61",
+    "run": "e02-70827a2bc8ef49b0bd5f808a00064f74",
+    "source": "Stillquarantined,canonicalarchiveabsent",
+    "status": "FAILED"
+  },
+  "prior_review_snapshots": {
+    "configs/e02_pums_wy_local_reuse_v1_0.json": "bd642651bd55e89ad3ddf8ad7a0424e1643c200a6501d308c8664dcf869fdcdc",
+    "reports/E02_PUMS_WY_LOCAL_REUSE_V1_0_FIXTURE_EVIDENCE.json": "0309ed045f47b59c03d77ed9b8ab80f6cf455da785de4366ca2b32595951dd12",
+    "reports/E02_PUMS_WY_LOCAL_REUSE_V1_0_IMPLEMENTATION.txt": "f8daee91b63da4347193c47b6e93afcbc725ea7e80064afa00b34107454eaf21",
+    "reports/E02_PUMS_WY_LOCAL_REUSE_V1_0_TESTS.txt": "5cba3583cdc1e6367f704de68ecf4f64854c239f446ce6de69d0e004331967bc"
+  },
+  "privacy": "No individual/low-supportactualvaluesexported;companiononlyhashmetadata;futurefullaggregatelocalignoredpendingdisclosurereview",
+  "real_person_rows_processed": 0,
+  "required_files": {
+    "configs/e02_pums_wy_pilot_v1_2_consumed.json": "46fb36cebe59fc15372d27761dbfe0dd937028e873c4fbe3e9b6b3ee671bccdf",
+    "docs/E02_PUMS_WY_LOCAL_REUSE_AMENDMENT.md": "5a57c39fd879a13a7578a94c2c2cfd761e1151ac09fa4eb9cf49cfc454fce24d",
+    "reports/E02_PUMS_WY_PILOT_ACQUISITION_FAILURE.json": "6d4a060b5ed2e23b148f665dbff9ef0e5025c1f886de98982363b26be0b76903",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_FINDING.json": "ce77ff2862623eca5495835654d3fa461d2c3b6cb6d02d45f58d74b2de7488ac",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_METHODS.json": "800d27ebfec12e8d97cdf61c2baa91e34c29e48d10ba7e5c3124fa91c12a79d2",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_pums_wy_local_reuse_v1.py": "71ebd98c00c1b91deecb41442eac3018bc3d3961d106b0cf1ae4e7b62c8700c8"
+  },
+  "source_integrity_remediation": {
+    "archive_hash_member_name_actual_size_postprocessing_hash_and_file_identity_required": true,
+    "finding": "IA-E02-PUMS-LOCAL-SOURCE-001",
+    "independent_finding_unmodified": true,
+    "original_source_parser_and_shared_code_unchanged": true,
+    "sealed_failure_checksums_verified": true,
+    "synthetic_swap_and_restore": "FAILED_NO_AGGREGATE",
+    "synthetic_weight_2_to_9_swap": "FAILED_NO_AGGREGATE"
+  },
+  "status": "READY_FOR_FRESH_INDEPENDENT_SOURCE_INTEGRITY_REVIEW_NOT_EXECUTION_APPROVAL",
+  "task_id": "E02-PUMS-WY-EXACT-LOCAL-REUSE-v1.1-SOURCE-INTEGRITY-REMEDIATION",
+  "tests": "53 E02 tests PASS; 6 local-reuse cases; all dynamically parsed rows/ZIPs authored synthetic fixtures",
+  "total_prior_approved_GETs": 1
+}

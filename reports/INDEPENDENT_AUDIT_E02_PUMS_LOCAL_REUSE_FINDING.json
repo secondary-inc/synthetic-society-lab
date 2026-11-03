@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:07:15.311243+00:00",
+  "finding_id": "IA-E02-PUMS-LOCAL-SOURCE-001",
+  "status": "OPEN_LOCAL_REUSE_EXECUTION_APPROVAL_NOT_ISSUED",
+  "severity": "source-integrity milestone blocker",
+  "probe": "Syntheticonly:swapvalidsame-schemaZIPafterexactcontainerpreflightbeforeoriginalparser. aggregate_exact_localacceptschangedpersonweightsandreturnsaggregate.source.archive_sha256differentfromcontainerexpectedSHA.",
+  "observed": {
+    "expected_archive_sha256": "8d29b0d5746f6dec419af522ffb11e2e63ef865b441928e369df96181592fb5b",
+    "actual_aggregate_source_sha256": "6fbd552a89297ff56e6f49e699ad404bc38b47a4533db8aba1320a4fa53c6080",
+    "original_fixture_point_weight": 2,
+    "changed_accepted_point_weight": 9
+  },
+  "required_remediation": [
+    "Checkfinalaggregate.source.archive_sha256againstfrozenconfig/containerSHAaftercompleteparseandbeforewritingacceptedaggregate;rechecksourcefileidentity/bytes asneeded.",
+    "Requireactualpersonmembername/declaredandactualsizeidentityandcompanionpreflightremainconsistent;preservefailedrunonmismatch,noaggregatecompletion.",
+    "InjectsourcechangebetweenpreflightandparsingandverifyFAILEDlifecycle/sourcepreservation;refreshnewcode/config/testpinsbeforefreshapproval."
+  ],
+  "real_person_rows_processed": 0,
+  "real_source_changed": false,
+  "network_requests": 0,
+  "cost_usd": 0,
+  "model_calls": 0
+}

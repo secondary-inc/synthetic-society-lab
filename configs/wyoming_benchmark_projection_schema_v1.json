@@ -1,0 +1,320 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "state",
+    "period",
+    "universe",
+    "total_unfiltered_person_rows",
+    "point_person_weight_total",
+    "cells",
+    "provenance",
+    "owner_review_only",
+    "external_publication_authorized",
+    "minimum_unweighted_contributors",
+    "population_fit",
+    "scientific_population_gate",
+    "network_requests",
+    "paid_calls",
+    "spent_usd",
+    "limits"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "kind": {
+      "type": "string",
+      "const": "OWNER_REVIEW_WYOMING_DEMOGRAPHIC_BENCHMARK"
+    },
+    "state": {
+      "type": "string",
+      "const": "56"
+    },
+    "period": {
+      "type": "string",
+      "const": "2020-2024five-year"
+    },
+    "universe": {
+      "type": "string",
+      "const": "Household citizens aged18+ in Wyoming; PUMS person weights are not divided by five."
+    },
+    "total_unfiltered_person_rows": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "point_person_weight_total": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "cells": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "age",
+          "education",
+          "unweighted_contributors",
+          "point_person_weight_count",
+          "point_share",
+          "person_count_sampling_error",
+          "share_sampling_error"
+        ],
+        "properties": {
+          "age": {
+            "type": "string",
+            "enum": [
+              "18-24",
+              "25-44",
+              "45-64",
+              "65+"
+            ]
+          },
+          "education": {
+            "type": "string",
+            "enum": [
+              "HS_OR_LESS",
+              "SOME_COLLEGE",
+              "BA_PLUS"
+            ]
+          },
+          "unweighted_contributors": {
+            "type": "integer",
+            "minimum": 30
+          },
+          "point_person_weight_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "point_share": {
+            "type": "number",
+            "maximum": 1,
+            "exclusiveMinimum": 0
+          },
+          "person_count_sampling_error": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "variance_sdr",
+              "standard_error",
+              "moe90",
+              "status"
+            ],
+            "properties": {
+              "variance_sdr": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "standard_error": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "moe90": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "status": {
+                "type": "string",
+                "const": "SDR_CONDITIONAL_SAMPLING_ERROR_ONLY"
+              }
+            }
+          },
+          "share_sampling_error": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "variance_sdr",
+              "standard_error",
+              "moe90",
+              "status"
+            ],
+            "properties": {
+              "variance_sdr": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "standard_error": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "moe90": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "status": {
+                "type": "string",
+                "const": "SDR_CONDITIONAL_SAMPLING_ERROR_ONLY"
+              }
+            }
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "checksums_sha256",
+        "aggregate_file_sha256",
+        "aggregate_canonical_sha256",
+        "archive_sha256",
+        "member_sha256",
+        "projection_config_sha256",
+        "projection_schema_sha256",
+        "methods_approval_sha256",
+        "source_arithmetic_audit_sha256",
+        "run_id",
+        "source_recorded_at_utc",
+        "projection_implementation_sha256",
+        "projection_execution_approval_sha256",
+        "source_evidence_sha256",
+        "source_header_sha256",
+        "source_public_url",
+        "source_archive_bytes",
+        "source_member_bytes",
+        "source_header_bytes",
+        "source_header_columns",
+        "source_process_highwater_rss_bytes",
+        "source_elapsed_seconds",
+        "source_resource_limits_note"
+      ],
+      "properties": {
+        "checksums_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "aggregate_file_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "aggregate_canonical_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "archive_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "member_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "projection_config_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "projection_schema_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "methods_approval_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_arithmetic_audit_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "run_id": {
+          "type": "string",
+          "pattern": "^e02-[0-9a-f]{32}$"
+        },
+        "source_recorded_at_utc": {
+          "type": "string",
+          "pattern": "^[0-9T:+.Z-]+$"
+        },
+        "projection_implementation_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "projection_execution_approval_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_evidence_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_header_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_public_url": {
+          "type": "string",
+          "const": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwy.zip"
+        },
+        "source_archive_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_member_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_header_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_header_columns": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_process_highwater_rss_bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_elapsed_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "source_resource_limits_note": {
+          "type": "string",
+          "const": "Observed source-processing wall time and process highwater RSS, not a per-run memory increment or a hard resource guarantee. Original deadlines were cooperative."
+        }
+      }
+    },
+    "owner_review_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "external_publication_authorized": {
+      "type": "boolean",
+      "const": false
+    },
+    "minimum_unweighted_contributors": {
+      "type": "integer",
+      "const": 30
+    },
+    "population_fit": {
+      "type": "string",
+      "const": "NOT_RUN"
+    },
+    "scientific_population_gate": {
+      "type": "string",
+      "const": "BLOCKED"
+    },
+    "network_requests": {
+      "type": "integer",
+      "const": 0
+    },
+    "paid_calls": {
+      "type": "integer",
+      "const": 0
+    },
+    "spent_usd": {
+      "type": "integer",
+      "const": 0
+    },
+    "limits": {
+      "type": "string",
+      "const": "Owner-review demographic benchmark only. SDR sampling approximation is conditional on the public PUMS release; not full error, ANES transport, political-response validity, a national population, anonymity or differential privacy. No population fit or external publication is authorized."
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

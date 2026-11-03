@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:15:55.767675+00:00",
+  "status": "PASS_LOCAL_WYOMING_SOURCE_AND_AGGREGATE_ARITHMETIC_ONLY",
+  "runs": [
+    "e02-08feb38db25d4f49a7b9886ee2a692b9",
+    "e02-9fa6be30b51b4fb6a90ff68ecf2edc33"
+  ],
+  "approval_sha256": "ede6fd6b9683a06aec4001f29b68648efcd7a671c031961046a4497e237833db",
+  "run_artifact_hashes_verified": 16,
+  "exact_replay_artifacts": [
+    "aggregate-local-only.json",
+    "local-reuse-config.json",
+    "source-controls.json",
+    "container-identity.json"
+  ],
+  "aggregate_file_sha256": "868d66c2ec727e3668b10962c38d7bfd70964fcee788b93739fbf3ef69e2b72b",
+  "aggregate_canonical_sha256": "e186900121fa65426fc926d358d4e3de33d578c51cb5bd25d422c416f420718d",
+  "source": {
+    "archive_sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73",
+    "archive_bytes": 4202266,
+    "person_member_sha256": "233da94393faa13ed45b9274d2d7f98f7d7b36223aceced1634820ea6978b24d",
+    "person_member_bytes": 18928161,
+    "companion_sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b",
+    "companion_bytes": 99489,
+    "ZIP_CRC": "PASS",
+    "columns": 285,
+    "required_fields": 91,
+    "actual_unfiltered_rows": 29297,
+    "maximum_physical_CSV_line_bytes": 1876
+  },
+  "independent_checks": {
+    "point_cells": 12,
+    "signed_replicate_sums": 960,
+    "allocation_count_and_weight_cells": "all12x4",
+    "point_squared_weights": "all12",
+    "count_and_share_SDR_variance_SE_MOE": "all12",
+    "count_covariances": 144,
+    "exclusive_exclusions_and_state_totals": "PASS",
+    "matching_replicate_denominators": "PASS",
+    "no_second_division_by_five": true,
+    "maximum_absolute_float_check_error": 0
+  },
+  "signed_weight_handling": "Allactualreplicateinputsvalidatedandretainedwithoutclipping;noindividualvaluesorrecordsreported.",
+  "lifecycle": [
+    {
+      "run_id": "e02-08feb38db25d4f49a7b9886ee2a692b9",
+      "started_at_utc": "2026-11-03T12:14:18.551249+00:00",
+      "events": [
+        "started",
+        "local_container_validation_started",
+        "local_container_validation_completed",
+        "local_aggregate_started",
+        "completed"
+      ]
+    },
+    {
+      "run_id": "e02-9fa6be30b51b4fb6a90ff68ecf2edc33",
+      "started_at_utc": "2026-11-03T12:14:19.423614+00:00",
+      "events": [
+        "started",
+        "local_container_validation_started",
+        "local_container_validation_completed",
+        "local_aggregate_started",
+        "completed"
+      ]
+    }
+  ],
+  "source_and_prior_failure_preserved": true,
+  "disclosure_status": "LOCAL_ONLY_NOT_APPROVED_FOR_BUNDLING_OR_PUBLIC_DERIVATIVE",
+  "package_actual_run_refusal": "PASS",
+  "test_fixture_state_note": "Actualexecutedsource/configapprovalboundoldtestbytesvalidatdispatch;futurepost-pinnegativefixturecorrectionisaseparatependingtest-onlyreviewanddoesnotrewriteexecutedruns.",
+  "limitations": [
+    "Wyomingengineeringaggregateonly,notnationalbenchmarkorrepresentativepoliticalresponsemodel.",
+    "SDRsampling/covariancechecksnotallsourceerror,ANEStransportorhumanvalidity.",
+    "Noactualcellcounts/pointtotals/low-supportvaluesexportedinthisauditreceipt;separatedisclosuretransformationapprovalrequired.",
+    "No nationalcollection,targetconversion,populationfittingorpublicationapproved."
+  ],
+  "new_GETs": 0,
+  "model_calls": 0,
+  "cost_usd": 0
+}

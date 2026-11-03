@@ -1,0 +1,148 @@
+from copy import deepcopy
+import csv
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+import tempfile
+import unittest
+from unittest.mock import patch
+import zipfile
+from civiclab.common import sha256_file
+from civiclab.e02.pums_wy_local_reuse_v1 import inspect_exact_container,aggregate_exact_local,run_local_reuse,require_local_approval
+from civiclab.e02.pums_wy_pilot_v1 import aggregate_archive as legacy_aggregate_archive
+
+ROOT=Path(__file__).resolve().parents[1]
+
+
+class LocalReuseFixtures(unittest.TestCase):
+    def setUp(self):
+        self.config=json.loads((ROOT/'configs/e02_pums_wy_local_reuse_v1.json').read_text())
+        self.controls=json.loads((ROOT/'configs/e02_pums_wy_pilot_v1_2_consumed.json').read_text())
+        self.controls['limits']['expected_person_rows']=1
+        self.pdf=b'%PDF-MOCK-NOT-EXECUTED'
+
+    def make_fixture(self,path,*,pdf_name='ACS2020_2024_PUMS_README.pdf',pdf=None,extra=False,weight='2'):
+        row={'RT':'P','STATE':'56','AGEP':'18','CIT':'1','SCHL':'17','RELSHIPP':'20','PWGTP':weight}
+        row.update({'PWGTP'+str(i):'1' for i in range(1,81)});row.update({f:'0' for f in self.controls['allocation_flags']})
+        row['SERIALNO']='PRIVATE_FIXTURE_MARKER'
+        out=io.StringIO();writer=csv.DictWriter(out,fieldnames=row);writer.writeheader();writer.writerow(row)
+        with zipfile.ZipFile(path,'w') as z:
+            z.writestr('psam_p56.csv',out.getvalue());z.writestr(pdf_name,self.pdf if pdf is None else pdf)
+            if extra:z.writestr('unapproved.pdf',b'not allowed')
+        c=deepcopy(self.config);c['archive']['bytes']=path.stat().st_size;c['archive']['sha256']=sha256_file(path)
+        c['companion_member'].update(exact_bytes=len(self.pdf),maximum_bytes=len(self.pdf),sha256=hashlib.sha256(self.pdf).hexdigest())
+        return c
+
+    def test_literal_companion_fixture_and_same_original_arithmetic(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'fixture.zip';c=self.make_fixture(path);before=path.read_bytes();controls_before=deepcopy(self.controls)
+            with patch('civiclab.e02.pums_wy_pilot_v1.acquire_pilot',side_effect=AssertionError('network/acquire forbidden')), \
+                 patch('civiclab.e02.pums_wy_pilot_v1.build_opener',side_effect=AssertionError('network forbidden')):
+                aggregate,metadata=aggregate_exact_local(path,c,self.controls)
+                replay,replay_meta=aggregate_exact_local(path,c,self.controls)
+            self.assertEqual(aggregate,replay);self.assertEqual(metadata,replay_meta)
+            self.assertEqual(aggregate['point_person_weight_sum'],2);self.assertEqual(len(aggregate['cells']),12)
+            self.assertEqual(aggregate['cells']['18-24:HS_OR_LESS']['replicate_sums'],[1]*80)
+            self.assertEqual(metadata['person_rows_processed'],0);self.assertFalse(metadata['pdf_executed_or_extracted'])
+            self.assertEqual(path.read_bytes(),before);self.assertEqual(self.controls,controls_before)
+            self.assertEqual(self.controls['optional_member_bytes'],16384)
+            self.assertNotIn('PRIVATE_FIXTURE_MARKER',json.dumps(aggregate))
+
+    def test_wrong_name_size_extra_member_hash_and_source_drift_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path=Path(tmp)/'fixture.zip'
+            for kwargs in ({'pdf_name':'unapproved.pdf'},{'pdf':self.pdf+b'x'},{'extra':True}):
+                c=self.make_fixture(path,**kwargs)
+                with self.subTest(kwargs=kwargs):
+                    with patch('civiclab.e02.pums_wy_local_reuse_v1.aggregate_archive',side_effect=AssertionError('must not processpersonrows')):
+                        with self.assertRaises(ValueError):aggregate_exact_local(path,c,self.controls)
+            c=self.make_fixture(path);c['companion_member']['sha256']='0'*64
+            with self.assertRaises(ValueError):inspect_exact_container(path,c,self.controls)
+            c=self.make_fixture(path);path.write_bytes(path.read_bytes()+b'drift')
+            with self.assertRaises(ValueError):inspect_exact_container(path,c,self.controls)
+            c=self.make_fixture(path);controls=deepcopy(self.controls);controls['optional_member_bytes']=99999
+            with self.assertRaises(ValueError):inspect_exact_container(path,c,controls)
+
+    def test_null_local_approval_blocks_before_person_processing(self):
+        with self.assertRaisesRegex(ValueError,'BLOCKED'):require_local_approval(ROOT,self.config)
+        with patch('civiclab.e02.pums_wy_local_reuse_v1.load_local_config',return_value=self.config), \
+             patch('civiclab.e02.pums_wy_local_reuse_v1.inspect_exact_container',side_effect=AssertionError('person processing forbidden')), \
+             patch('civiclab.e02.pums_wy_pilot_v1.acquire_pilot',side_effect=AssertionError('GET forbidden')):
+            with self.assertRaisesRegex(ValueError,'BLOCKED'):run_local_reuse(ROOT)
+
+    def test_local_runner_manifest_precedes_processing_and_failure_stays_failed(self):
+        for fail in (False,True):
+            with self.subTest(fail=fail),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);(root/'configs').mkdir();rawdir=root/'data/raw/e02_pums_wy';rawdir.mkdir(parents=True)
+                source=rawdir/'quarantine-fixture.zip';c=self.make_fixture(source);c['archive']['path']=str(source.relative_to(root))
+                (root/'configs/e02_pums_wy_local_reuse_v1.json').write_text(json.dumps(c))
+                controls=root/c['source_controls_path'];controls.parent.mkdir(parents=True,exist_ok=True);controls.write_text(json.dumps(self.controls))
+                original=inspect_exact_container
+                def observed(*args,**kwargs):
+                    run=list((root/'data/processed/runs').iterdir())[0]
+                    self.assertTrue((run/'manifest.json').exists());self.assertTrue((run/'local-reuse-config.json').exists())
+                    self.assertTrue((run/'source-controls.json').exists())
+                    if fail:raise RuntimeError('PRIVATE_ERROR_MUST_NOT_PERSIST')
+                    return original(*args,**kwargs)
+                with patch('civiclab.e02.pums_wy_local_reuse_v1.load_local_config',return_value=c), \
+                     patch('civiclab.e02.pums_wy_local_reuse_v1.require_local_approval'), \
+                     patch('civiclab.e02.pums_wy_local_reuse_v1.inspect_exact_container',side_effect=observed), \
+                     patch('civiclab.e02.pums_wy_pilot_v1.acquire_pilot',side_effect=AssertionError('no GET')):
+                    if fail:
+                        with self.assertRaises(RuntimeError):run_local_reuse(root,kind='MOCK')
+                    else:run_local_reuse(root,kind='MOCK')
+                run=list((root/'data/processed/runs').iterdir())[0]
+                summary=json.loads((run/'summary.json').read_text());self.assertTrue((run/'checksums.json').exists());self.assertTrue(source.exists())
+                if fail:
+                    self.assertEqual(summary['status'],'FAILED');self.assertFalse((run/'aggregate-local-only.json').exists())
+                    self.assertNotIn('PRIVATE_ERROR_MUST_NOT_PERSIST',(run/'failure.json').read_text())
+                else:self.assertTrue((run/'aggregate-local-only.json').exists())
+
+    def test_parser_source_metadata_must_match_frozen_preflight(self):
+        for field,value in (('archive_sha256','0'*64),('member_name','other.csv'),('actual_uncompressed_bytes',0)):
+            with self.subTest(field=field),tempfile.TemporaryDirectory() as tmp:
+                source=Path(tmp)/'fixture.zip';c=self.make_fixture(source)
+                def tampered(*args,**kwargs):
+                    result=legacy_aggregate_archive(*args,**kwargs)
+                    result['source'][field]=value
+                    return result
+                with patch('civiclab.e02.pums_wy_local_reuse_v1.aggregate_archive',side_effect=tampered):
+                    with self.assertRaisesRegex(ValueError,'frozen preflight'):
+                        aggregate_exact_local(source,c,self.controls)
+
+    def test_between_preflight_parser_swap_seals_failed_without_aggregate(self):
+        # Authored ZIPs only. Exercise changed parse bytes and swap-and-restore.
+        for restore in (False,True):
+            with self.subTest(restore=restore),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);(root/'configs').mkdir();rawdir=root/'data/raw/e02_pums_wy';rawdir.mkdir(parents=True)
+                source=rawdir/'quarantine-fixture.zip';c=self.make_fixture(source)
+                original_bytes=source.read_bytes();c['archive']['path']=str(source.relative_to(root))
+                (root/'configs/e02_pums_wy_local_reuse_v1.json').write_text(json.dumps(c))
+                controls=root/c['source_controls_path'];controls.write_text(json.dumps(self.controls))
+                observed_weights=[]
+                def swapped(*args,**kwargs):
+                    self.make_fixture(source,weight='9')
+                    result=legacy_aggregate_archive(*args,**kwargs)
+                    observed_weights.append(result['point_person_weight_sum'])
+                    if restore:
+                        # A digest-only final check cannot detect this replacement.
+                        replacement=rawdir/'restored.zip';replacement.write_bytes(original_bytes)
+                        os.replace(replacement,source)
+                        result['source']['archive_sha256']=c['archive']['sha256']
+                    return result
+                with patch('civiclab.e02.pums_wy_local_reuse_v1.load_local_config',return_value=c), \
+                     patch('civiclab.e02.pums_wy_local_reuse_v1.require_local_approval'), \
+                     patch('civiclab.e02.pums_wy_local_reuse_v1.aggregate_archive',side_effect=swapped), \
+                     patch('civiclab.e02.pums_wy_pilot_v1.acquire_pilot',side_effect=AssertionError('no GET')):
+                    with self.assertRaisesRegex(ValueError,'frozen preflight'):
+                        run_local_reuse(root,kind='MOCK')
+                self.assertEqual(observed_weights,[9])
+                run=next((root/'data/processed/runs').iterdir())
+                self.assertEqual(json.loads((run/'summary.json').read_text())['status'],'FAILED')
+                self.assertTrue((run/'container-identity.json').exists())
+                self.assertTrue((run/'failure.json').exists());self.assertTrue(source.exists())
+                self.assertFalse((run/'aggregate-local-only.json').exists())
+                for relative,expected in json.loads((run/'checksums.json').read_text()).items():
+                    self.assertEqual(sha256_file(run/relative),expected)

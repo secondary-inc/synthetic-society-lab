@@ -1,0 +1,117 @@
+"""Exact cached Wyoming container amendment; no network path or arithmetic change."""
+from copy import deepcopy
+import json
+from pathlib import Path
+import stat
+import time
+import zipfile
+import hashlib
+from ..common import RunStore,canonical_hash,sha256_file
+from .pums_wy_pilot_v1 import aggregate_archive,validate_config,check_deadline
+
+
+def load_local_config(root):
+    root=Path(root).resolve();config=json.loads((root/'configs/e02_pums_wy_local_reuse_v1.json').read_text())
+    if config['network_requests_authorized']!=0 or config['population_fit_authorized'] is not False:raise ValueError('local-only reuse/no-fitting required')
+    for name,expected in config['required_files'].items():
+        path=(root/name).resolve()
+        if not path.is_relative_to(root) or sha256_file(path)!=expected:raise ValueError('pinned local-reuse input/code changed')
+    return config
+
+
+def require_local_approval(root,config):
+    approval=config.get('local_reuse_approval')
+    if not isinstance(approval,dict) or not approval.get('path') or not approval.get('sha256'):raise ValueError('local person validation BLOCKED: fresh independent local-reuse code/fixture approval required')
+    root=Path(root).resolve();path=(root/approval['path']).resolve()
+    if not path.is_relative_to(root) or sha256_file(path)!=approval['sha256']:raise ValueError('local-reuse approval bytes changed')
+    audit=json.loads(path.read_text());design={k:v for k,v in config.items() if k!='local_reuse_approval'}
+    if audit.get('auditor_role')!='independent_auditor' or audit.get('status')!='PASS_WYOMING_LOCAL_REUSE_IMPLEMENTATION_AND_FIXTURES' or audit.get('reviewed_design_sha256')!=canonical_hash(design) or audit.get('reviewed_required_files')!=config['required_files']:
+        raise ValueError('local-reuse independent approval scope/design mismatch')
+
+
+def inspect_exact_container(path,config,controls,*,clock=time.monotonic):
+    """Only directory/companion bytes, NEVER person rows. Intended for fixtures now."""
+    validate_config(controls);path=Path(path);start=clock();limits=controls['limits']
+    if path.stat().st_size!=config['archive']['bytes'] or path.stat().st_size>limits['compressed_bytes'] or sha256_file(path)!=config['archive']['sha256']:
+        raise ValueError('exact cached source bytes changed')
+    companion=config['companion_member']
+    if config['person_member']!='psam_p56.csv' or companion['name'].casefold()!='acs2020_2024_pums_readme.pdf':raise ValueError('only reviewed literalWYmembers permitted')
+    if controls['optional_members_casefold']!=['readme.txt'] or controls['optional_member_bytes']!=16384:raise ValueError('originalreadme.txt16KiBpolicy changed')
+    required={config['person_member'],companion['name']}
+    with zipfile.ZipFile(path) as z:
+        infos=z.infolist();names=[i.filename for i in infos]
+        if len(infos)!=2 or len(set(n.casefold() for n in names))!=2 or set(names)!=required:raise ValueError('literal two-member source policy mismatch')
+        if len(infos)>limits['maximum_members'] or sum(i.file_size for i in infos)>limits['uncompressed_bytes']:raise ValueError('source expansion/member ceiling exceeded')
+        for info in infos:
+            if Path(info.filename).name!=info.filename or '\\' in info.filename or stat.S_ISLNK(info.external_attr>>16) or info.flag_bits&1:raise ValueError('unsafe cached archive member')
+        info=z.getinfo(companion['name'])
+        if info.file_size!=companion['exact_bytes'] or info.file_size>companion['maximum_bytes']:raise ValueError('literal companion byte bound mismatch')
+        digest=hashlib.sha256();n=0
+        with z.open(info) as stream:
+            while True:
+                check_deadline(start,limits['processing_total_seconds'],clock)
+                chunk=stream.read(min(65536,companion['maximum_bytes']-n+1))
+                if not chunk:break
+                n+=len(chunk)
+                if n>companion['maximum_bytes']:raise ValueError('actual companion expansion ceiling exceeded')
+                digest.update(chunk)
+        if n!=companion['exact_bytes'] or digest.hexdigest()!=companion['sha256']:raise ValueError('exact companion bytes changed')
+    return {'status':'EXACT_CONTAINER_AND_COMPANION_IDENTITY_VERIFIED_NOT_PERSON_ROWS',
+            'archive_sha256':config['archive']['sha256'],'archive_bytes':path.stat().st_size,
+            'members':[{'name':i.filename,'declared_uncompressed_bytes':i.file_size,'compressed_bytes':i.compress_size} for i in infos],
+            'companion_sha256':digest.hexdigest(),'companion_bytes':n,'pdf_executed_or_extracted':False,'person_rows_processed':0}
+
+
+def bounded_local_clock(clock,seconds):
+    start=clock()
+    def checked():
+        now=clock()
+        if now-start>seconds:raise ValueError('shared local processing deadline exceeded')
+        return now
+    return checked
+
+
+def aggregate_exact_local(path,config,controls,*,clock=time.monotonic):
+    """Same reviewed person parser/math; only exact container prevalidation differs."""
+    clock=bounded_local_clock(clock,controls['limits']['processing_total_seconds'])
+    container=inspect_exact_container(path,config,controls,clock=clock)
+    adapted=deepcopy(controls)
+    # Strict exact-two-member/hash preflight above admits no readme.txt, extra PDF,
+    # wildcard or changed size. Legacy generic optional allowance is narrowed to
+    # the observed literal companion for this one exact cached archive only.
+    adapted['optional_members_casefold']=[config['companion_member']['name'].casefold()]
+    adapted['optional_member_bytes']=config['companion_member']['maximum_bytes']
+    result=aggregate_archive(path,adapted,clock=clock)
+    result['local_reuse']={'original_archive_preserved':True,'no_network_request':True,
+                           'original_failed_attempt_id':config['original_attempt_id'],
+                           'literal_companion_sha256':container['companion_sha256']}
+    return result,container
+
+
+def run_local_reuse(root,*,kind='EXPLORATORY'):
+    root=Path(root).resolve();config=load_local_config(root);require_local_approval(root,config)
+    cp=root/'configs/e02_pums_wy_local_reuse_v1.json';pending=None
+    with RunStore(root,'E02',{'stage':'pums-wy-exact-local-reuse','config_sha256':sha256_file(cp),'network_requests':0},kind=kind) as run:
+        run.write('local-reuse-config.json',config)
+        try:
+            source=(root/config['archive']['path']).resolve()
+            if not source.is_relative_to(root/'data/raw/e02_pums_wy'):raise ValueError('cached source escapes approved local directory')
+            controls=json.loads((root/config['source_controls_path']).read_text());run.write('source-controls.json',controls)
+            clock=bounded_local_clock(time.monotonic,controls['limits']['processing_total_seconds'])
+            run.event('local_container_validation_started',network_requests=0)
+            container=inspect_exact_container(source,config,controls,clock=clock)
+            run.write('container-identity.json',container);run.event('local_container_validation_completed',archive_sha256=container['archive_sha256'])
+            run.event('local_aggregate_started',disclosure='LOCAL_ONLY')
+            aggregate,rechecked=aggregate_exact_local(source,config,controls,clock=clock)
+            if container!=rechecked:raise ValueError('container changed between local validation and aggregation')
+            run.write('aggregate-local-only.json',aggregate)
+            run.finish({'status':'LOCAL_WY_AGGREGATE_RECORDED_PENDING_INDEPENDENT_SOURCE_ARITHMETIC_AND_DISCLOSURE_AUDITS',
+                        'aggregate_sha256':canonical_hash(aggregate),'source_archive_sha256':container['archive_sha256'],
+                        'network_requests':0,'paid_calls':0,'spent_usd':0,'population_fit':'NOT_RUN'})
+        except BaseException as error:
+            pending=error;failure={'status':'FAILED','error_type':type(error).__name__,
+                                  'cancelled':isinstance(error,(KeyboardInterrupt,SystemExit)),
+                                  'original_quarantine_preserved':True,'network_requests':0,'paid_calls':0,'spent_usd':0}
+            run.write('failure.json',failure);run.event('local_reuse_failed',error_type=failure['error_type']);run.finish(failure)
+    if pending is not None:raise pending
+    return run.path

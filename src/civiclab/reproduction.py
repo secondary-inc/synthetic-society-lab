@@ -28,9 +28,9 @@ def source_inputs(root):
     if fixture.exists():inputs[str(fixture.relative_to(root))]=fixture
     for pattern in ('AUDIT_*','INDEPENDENT_AUDIT*','STATUS*','COORDINATION.json',
                     'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','BOOTSTRAP*','REVIEW_PACKAGE*',
-                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','E01*','E02*'):
+                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','WYOMING_*','E01*','E02*'):
         for p in (root/'reports').glob(pattern):
-            if p.is_file() and p.suffix in ('.md','.json'):inputs[str(p.relative_to(root))]=p
+            if p.is_file() and p.suffix in ('.md','.json','.txt'):inputs[str(p.relative_to(root))]=p
     return inputs
 
 
@@ -54,6 +54,8 @@ def build_package(root, output, run_ids):
             p=path/name;inputs[str(p.relative_to(root))]=p
     payloads={}
     for name,path in sorted(inputs.items()):
+        if any(marker in name.casefold() for marker in ('-local-only.','.local.')):
+            raise ValueError('package input marked local-only; independent disclosure-safe derivative required')
         if not path.resolve().is_relative_to(root) or name=='.env' or name.startswith('data/raw/'):
             raise ValueError('unsafe package member')
         content=path.read_bytes()

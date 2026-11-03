@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:51:28.346357+00:00",
+  "finding_id": "IA-E02-PUMS-ATTEMPT-001",
+  "status": "OPEN_PREDOWNLOAD_APPROVAL_NOT_ISSUED",
+  "reviewed_module_sha256": "c27dedc40dfca3549d6f4d2b76c89fd1ee773a3eeb9306010dfb012dc162bce7",
+  "observation": "Acquisition writes success receipt and quarantines partial bytes; no structured attempt manifest is persisted before network, so errors before any response bytes can leave no machine-readable failure record.",
+  "required_remediation": [
+    "Persist attempt provenance/state before network read under ignored local acquisition directory.",
+    "Record terminal success/failure, error type/status and quarantine-byte identity when present, excluding raw records/error response bodies.",
+    "Inject HTTP/read/validation failure and verify failed attempt metadata survives without promoting raw archive."
+  ],
+  "other_preliminary_checks": "Official source/schema, positive resource ceilings, signed replicate weights, fixed eligibility and local-only aggregate disclosure policy appear coherent. No source GET performed. Deadline checks are cooperative plus socket timeout, not hard OS termination.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

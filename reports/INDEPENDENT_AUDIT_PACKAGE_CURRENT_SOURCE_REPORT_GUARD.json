@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:25:21.059190+00:00",
+  "status": "PASS_CURRENT_PACKAGE_SNAPSHOT_EVIDENCE_AND_MARKER_DELTA",
+  "code_files": {
+    "src/civiclab/reproduction.py": "003688a57ebe8e9f07ebc6beef4302b20b43593d1124dc26af57f3ca34b2b053",
+    "tests/test_reproduction.py": "5f59644fd011bbf37a8b7e2d6496be26be177de41449a0377fdfd39f97dde844",
+    "docs/LOCAL_ONLY_ARTIFACTS.md": "6b9eebeede4d3005e3494b48decdd408aacc919d546cf0707c1364b726c8f14a"
+  },
+  "independent_checks": {
+    "E01_E02_TXT_and_WYOMING_receipts_included": true,
+    "enumerated_source_report_local_marker_refusals": [
+      "reports/E02_intermediate.local.json",
+      "reports/WYOMING_AGGREGATE-LOCAL-ONLY.json",
+      "docs/PRIVATE.LOCAL.md"
+    ],
+    "synthetic_credential_pattern_refused": true,
+    "no_refused_output_created": true,
+    "raw_env_excluded": true,
+    "original_run_unchanged": "Verified during fixture lifetime"
+  },
+  "scope": "Finalcurrentenumerationandknownlocal-marker/credentialguards;fullfilesetdriftguardunchangedfrompreviousindependentreview.",
+  "limits": "Onlynamedpermittedreports/snapshots,notarbitrarycontentDLPorsourcecopyrightvalidation. Fullcurrentarchiveindependentrestorestillrequired.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

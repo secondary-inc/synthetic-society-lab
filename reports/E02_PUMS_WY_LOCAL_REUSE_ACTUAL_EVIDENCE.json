@@ -1,0 +1,122 @@
+{
+  "actual_data_kind": "PUBLIC_PUMS_LOCAL_ONLY",
+  "api_spend_usd": 0,
+  "approval": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_EXECUTION_APPROVAL.json",
+    "sha256": "ede6fd6b9683a06aec4001f29b68648efcd7a671c031961046a4497e237833db"
+  },
+  "arithmetic_checks": {
+    "allocation_and_cell_domain_checks": "REVIEWED_PARSER_COMPLETED",
+    "cells": 12,
+    "covariance_entries": 144,
+    "replicates_per_cell": 80,
+    "sdr_and_moe_and_ratio_denominators": "WORKER_CHECKS_PASS",
+    "stream_crc": "ZIPFILE_END_OF_MEMBER_CRC_CHECK_COMPLETED"
+  },
+  "canonical_archive_absent": true,
+  "config_sha256": "300d93c14762930294627dbc6ba0718d7b514e2c03a0e12518685aa76c15cf71",
+  "disclosure": "FULL_AGGREGATES_LOCAL_IGNORED_ONLY_PENDING_SEPARATE_REVIEW",
+  "exact_aggregate_replay": true,
+  "execution_journal_sha256": "fa24b7386f7baca3f9e60deed7b64ed6a51c09c35c5976f74fd9b157855b44f4",
+  "fixture_state_note": "Reviewed53E02testsandfull145tests passed before approval pin. No tests rerun after pin: negative-null fixture assumes repositoryapprovalnull; lead notified. Pinnedtests/codeunchangedduringactualruns; test-onlyamendmentrequiresfreshreview.",
+  "frozen_design_sha256": "de8e0c239d97aed0937f523c523b8fb918db7fc8fb24aca2d5e53a045a9cd2dd",
+  "header": {
+    "bytes": 1876,
+    "columns": 285,
+    "duplicate_columns": 0,
+    "required_columns": 91,
+    "sha256": "4232ff33d8ef453a59ed659d662a98bbb510421d7c001aabffcd5ec292f20604"
+  },
+  "ignored_local_artifacts_confirmed": true,
+  "independent_postrun_audit": "PENDING",
+  "model_calls": 0,
+  "network_requests": 0,
+  "observed_person_member_bytes": 18928161,
+  "observed_person_member_sha256": "233da94393faa13ed45b9274d2d7f98f7d7b36223aceced1634820ea6978b24d",
+  "orchestrating_script_sha256": "88559ae3764dc572705feee0fad786462a5d7b52fe4983724030bdfff4f0b416",
+  "original_failed_run_and_attempt_unchanged": true,
+  "population_fit": "NOT_RUN",
+  "required_files": {
+    "configs/e02_pums_wy_pilot_v1_2_consumed.json": "46fb36cebe59fc15372d27761dbfe0dd937028e873c4fbe3e9b6b3ee671bccdf",
+    "docs/E02_PUMS_WY_LOCAL_REUSE_AMENDMENT.md": "5a57c39fd879a13a7578a94c2c2cfd761e1151ac09fa4eb9cf49cfc454fce24d",
+    "reports/E02_PUMS_WY_PILOT_ACQUISITION_FAILURE.json": "6d4a060b5ed2e23b148f665dbff9ef0e5025c1f886de98982363b26be0b76903",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_FINDING.json": "ce77ff2862623eca5495835654d3fa461d2c3b6cb6d02d45f58d74b2de7488ac",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_LOCAL_REUSE_METHODS.json": "800d27ebfec12e8d97cdf61c2baa91e34c29e48d10ba7e5c3124fa91c12a79d2",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_pums_wy_local_reuse_v1.py": "71ebd98c00c1b91deecb41442eac3018bc3d3961d106b0cf1ae4e7b62c8700c8"
+  },
+  "runs": [
+    {
+      "aggregate_canonical_sha256": "e186900121fa65426fc926d358d4e3de33d578c51cb5bd25d422c416f420718d",
+      "aggregate_file_sha256": "868d66c2ec727e3668b10962c38d7bfd70964fcee788b93739fbf3ef69e2b72b",
+      "checksums_sha256": "1f1b83ac3c3e74a5c26dc33801f450f1d1d29d7e01ef261e972b57cf7fa6070e",
+      "checksums_verified": 8,
+      "code": {
+        "dirty": true,
+        "git_sha": "97f2cdaee9be8d318327a880954b31e39f1738fc",
+        "source_tree_sha256": "7910e2999c980a3b087e59b40e41cb569bb3215c6306e41f1b332f3342f11781"
+      },
+      "elapsed_seconds": 0.8776630000211298,
+      "event_order_verified": true,
+      "events_sha256": "3dfca7f842f5c4db8000c77f55f2aaeacd3210722a14d213fd1e854d71db54b8",
+      "manifest_sha256": "46678a92ef508555416fde76bc89fa8bed9946994478573f7980568ec6072932",
+      "process_highwater_rss_bytes_macos": 35110912,
+      "role": "LOCAL_AGGREGATE",
+      "run_id": "e02-08feb38db25d4f49a7b9886ee2a692b9",
+      "runtime_python": "3.12.14",
+      "system_cpu_seconds": 0.011496999999999997,
+      "user_cpu_seconds": 0.8411139999999999,
+      "validation": "WORKER_CHECKS_PASSED_PENDING_INDEPENDENT_POSTRUN_AUDIT"
+    },
+    {
+      "aggregate_canonical_sha256": "e186900121fa65426fc926d358d4e3de33d578c51cb5bd25d422c416f420718d",
+      "aggregate_file_sha256": "868d66c2ec727e3668b10962c38d7bfd70964fcee788b93739fbf3ef69e2b72b",
+      "checksums_sha256": "d3672de82935600bb189cde7837b8bea9b8c768ce65feb49961de35229c152d3",
+      "checksums_verified": 8,
+      "code": {
+        "dirty": true,
+        "git_sha": "97f2cdaee9be8d318327a880954b31e39f1738fc",
+        "source_tree_sha256": "7910e2999c980a3b087e59b40e41cb569bb3215c6306e41f1b332f3342f11781"
+      },
+      "elapsed_seconds": 0.887222749995999,
+      "event_order_verified": true,
+      "events_sha256": "923005ed52c4214cb9a99cc50d7d448ebec46288a8e622746c5b45d9cee6ae63",
+      "manifest_sha256": "9f6931c7537005a5e8326b59007b0881aefddbe3f24aa120853898f7a2cc18d5",
+      "process_highwater_rss_bytes_macos": 35356672,
+      "role": "EXACT_REPLAY",
+      "run_id": "e02-9fa6be30b51b4fb6a90ff68ecf2edc33",
+      "runtime_python": "3.12.14",
+      "system_cpu_seconds": 0.009033999999999997,
+      "user_cpu_seconds": 0.8569849999999999,
+      "validation": "WORKER_CHECKS_PASSED_PENDING_INDEPENDENT_POSTRUN_AUDIT"
+    }
+  ],
+  "scientific_population_gate": "BLOCKED",
+  "separate_disclosure_review": "PENDING",
+  "source_archive": {
+    "bytes": 4202266,
+    "path": "data/raw/e02_pums_wy/QUARANTINED-20f0ff6a0b674edc916272fd8b41ff4d.zip",
+    "sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73",
+    "unchanged": true
+  },
+  "source_members": [
+    {
+      "compressed_bytes": 4107368,
+      "crc32": 1864538888,
+      "declared_uncompressed_bytes": 18928161,
+      "name": "psam_p56.csv"
+    },
+    {
+      "compressed_bytes": 94540,
+      "crc32": 1962583236,
+      "declared_uncompressed_bytes": 99489,
+      "name": "ACS2020_2024_PUMS_README.pdf"
+    }
+  ],
+  "source_unchanged": true,
+  "status": "RECORDED_LOCAL_AGGREGATE_AND_EXACT_REPLAY_PENDING_INDEPENDENT_AUDIT",
+  "total_unfiltered_person_rows": 29297,
+  "worker_checks_limits": "Derived arithmetic consistency rechecked from recorded aggregate; no independent raw-row oracle by implementingworker. Original reviewed parser validates required domains/expectedcount/bytes/CRC. MaxobservedCSVlinebytesnotseparatelyinstrumented; frozen64KiBceilingapplied. RuntimeRSS is process highwater on macOS,notper-runincrement. Cooperative deadline,notOShardtermination."
+}

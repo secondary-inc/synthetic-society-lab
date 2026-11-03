@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:02:46.132718+00:00",
+  "status": "PASS_METHODS_FOR_LOCAL_REUSE_IMPLEMENTATION_FIXTURES_ONLY",
+  "proposal_path": "docs/E02_PUMS_WY_LOCAL_REUSE_AMENDMENT.md",
+  "proposal_sha256": "5a57c39fd879a13a7578a94c2c2cfd761e1151ac09fa4eb9cf49cfc454fce24d",
+  "original_failed_attempt": "wy-05da99bbf77c454e9e616b4ba624fa61",
+  "original_failed_run": "e02-70827a2bc8ef49b0bd5f808a00064f74",
+  "failed_run_artifacts_verified": 6,
+  "network_request_started_events": 1,
+  "source": {
+    "path": "data/raw/e02_pums_wy/QUARANTINED-20f0ff6a0b674edc916272fd8b41ff4d.zip",
+    "archive_bytes": 4202266,
+    "archive_sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73",
+    "member_directory": [
+      {
+        "name": "psam_p56.csv",
+        "declared_uncompressed_bytes": 18928161,
+        "compressed_bytes": 4107368,
+        "encrypted": false
+      },
+      {
+        "name": "ACS2020_2024_PUMS_README.pdf",
+        "declared_uncompressed_bytes": 99489,
+        "compressed_bytes": 94540,
+        "encrypted": false
+      }
+    ],
+    "person_header_only_bytes": 1876,
+    "person_header_sha256": "4232ff33d8ef453a59ed659d662a98bbb510421d7c001aabffcd5ec292f20604",
+    "header_columns": 285,
+    "required_fields_present": 91,
+    "pdf_member_bytes": 99489,
+    "pdf_member_sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b",
+    "pdf_pages": 2,
+    "pdf_title_period_check": "Firstpage title:2024 5-Year PUMS File ReadMe; preparedbyAmericanCommunitySurveyOffice,USCensusBureau,March5,2026. Thisisconsistentwithfive-year2020-2024product,notindependenthistoricalbyteauthentication."
+  },
+  "review": "FailureclosedcorrectlyonliteraloptionalPDFbasenameandsize;personschemaheaderdidnotfail. Narrowpost-observationcontaineramendmentisdefensibleforalreadycachedexactarchivewithoutscientificselectionorretry. Preserveoldfailedrecordsandapprovalunchanged.",
+  "required_next_stage": [
+    "Newversionedlocal-onlyconfig/codeandfixtureapproval; pinexactquarantineZIPsize/hashandPDFsize/hash;readme.txt16KiBallowanceremainsunchanged.",
+    "Onlyliteralcompanioncasefoldnameaccepted; noarbitraryPDFs,paths,symlinks,encryption,extra/duplicate/driftedmembersorbroaderresourceceilings.",
+    "Localrunnerhasnourllib/acquire/openerdispatchpath; network-denialfixturesandmanifest-before-processing/failurepreservationmustpass.",
+    "Recheckall91personfields/domains,unchangedeligibility/signedreplicatearithmetic/ceilings/disclosure;measureactualmemberhashes/counts/resources.",
+    "Freshindependentcode/fixtureacceptanceBEFOREpersonrowvalidationoraggregation; actualaggregate+replayindependentauditbeforeanynationaltarget/fitting/disclosure."
+  ],
+  "person_rows_processed_by_auditor": 0,
+  "person_member_full_hash": "NOT_COMPUTED_AT_METHODS_STAGE",
+  "new_GET_authorized": 0,
+  "scientific_population_gate": "BLOCKED",
+  "external_publication": "NOT_AUTHORIZED",
+  "cost_usd": 0,
+  "model_calls": 0
+}

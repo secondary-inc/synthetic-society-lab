@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:57:52.708084+00:00",
+  "status": "PASS_PREDOWNLOAD_PROBES_PENDING_FINAL_RECEIPT",
+  "finding_id": "IA-E02-PUMS-ATTEMPT-001",
+  "independent_failures": [
+    {
+      "mode": "http",
+      "directory": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-pums-controls-mdk9ateo/http/data/raw/e02_pums_wy/attempts/wy-141312ef0c414a01b1d5e96adc8e43c4",
+      "error_type": "HTTPError",
+      "http_status": 503,
+      "quarantined": 0
+    },
+    {
+      "mode": "read",
+      "directory": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-pums-controls-mdk9ateo/read/data/raw/e02_pums_wy/attempts/wy-2aae433cdcff4ce6b106a17241702c24",
+      "error_type": "OSError",
+      "http_status": 200,
+      "quarantined": 1
+    },
+    {
+      "mode": "invalid_zip",
+      "directory": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-pums-controls-mdk9ateo/invalid_zip/data/raw/e02_pums_wy/attempts/wy-d7be05cbc3404bd39eb17b6449551366",
+      "error_type": "BadZipFile",
+      "http_status": 200,
+      "quarantined": 1
+    },
+    {
+      "mode": "cancel",
+      "directory": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-pums-controls-mdk9ateo/cancel/data/raw/e02_pums_wy/attempts/wy-f776b4467cfb4c1fadf5498016696311",
+      "error_type": "KeyboardInterrupt",
+      "http_status": null,
+      "quarantined": 0
+    }
+  ],
+  "independent_synthetic_rows": 40,
+  "cells_checked": 12,
+  "replicate_sums_checked": 960,
+  "count_covariances_checked": 144,
+  "exclusion_and_proportion_arithmetic": "PASS",
+  "raw_record_output_marker_absent": true,
+  "real_person_gets": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "independent_archive_ceiling_probes_rejected": [
+    "compressed",
+    "uncompressed",
+    "line",
+    "casefoldduplicate"
+  ],
+  "null_predownload_gate_rejected": true
+}

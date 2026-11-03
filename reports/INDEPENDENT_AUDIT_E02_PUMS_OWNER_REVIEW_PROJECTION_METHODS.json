@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:17:42.467434+00:00",
+  "status": "PASS_METHODS_FOR_OWNER_REVIEW_AGGREGATE_PROJECTION_IMPLEMENTATION_ONLY",
+  "fixed_input": {
+    "run_id": "e02-08feb38db25d4f49a7b9886ee2a692b9",
+    "aggregate_file_sha256": "868d66c2ec727e3668b10962c38d7bfd70964fcee788b93739fbf3ef69e2b72b",
+    "aggregate_canonical_sha256": "e186900121fa65426fc926d358d4e3de33d578c51cb5bd25d422c416f420718d",
+    "run_checksums_sha256": "1f1b83ac3c3e74a5c26dc33801f450f1d1d29d7e01ef261e972b57cf7fa6070e",
+    "independent_actual_audit_path": "reports/INDEPENDENT_AUDIT_E02_PUMS_WY_ACTUAL.json",
+    "independent_actual_audit_sha256": "01b56ddd99b0f464517b51c4f4fc329241eb813baef8fc0f706046bd98dbdc89"
+  },
+  "threshold_observation": {
+    "fixed_cells": 12,
+    "minimum_unweighted_contributors_required": 30,
+    "cells_failing_threshold": 0,
+    "unreviewed_scalar_uncertainty_statuses": 0,
+    "actual_cell_values_emitted": false
+  },
+  "allowed_fixed_projection": [
+    "FixedtwelveWyomingcitizen18+householdage-by-educationcelllabels.",
+    "Per-cellaggregateunweightedcontributingcount,pointPWGTPpersontotalandshare,scalarcount/shareSDRstandarderrorand90percentMOE.",
+    "File-levelsource/run/code/config/audithashes,publicsourceURL/retrievalandreleaseperiod,explicituniverse/weighting/method/uncertaintyandresourceprovenance.",
+    "Explicitowner-review-only/disclosurelimitsandoriginalpopulation/national/fitting/publicationgates."
+  ],
+  "excluded_fields": [
+    "Allindividualrecords/IDs/rowpositions/designidentifiers/contact/below-stategeography.",
+    "Full80replicatevectors,144covariances,allocationcounts,exclusioncounts/smallqualitycells.",
+    "Rawsource/localfilesystempaths,device/inodeidentityandunnecessaryhostmetadata."
+  ],
+  "required_before_derivative_execution": [
+    "Implementnewstrictallowlist/versionedprojectionconfigandoutputschemawithexactacceptedinputhashes,methodsauditandcode/testpins.",
+    "Independentcode/fixtureapprovalbeforeactualcell-valuedprojection; methodreceiptalonecannotdispatch.",
+    "Enforceall12expectedcells/uniquelabelsandnonnegativeintegercontributorcounts. IfANYcell<30,produceNOcell-valuedderivative;retainonlyaggregatefailurestatusuntilseparatelyreviewedcomplementary-suppressionpolicy.",
+    "Keeporiginalfullaggregate/local-onlyfilenameandledgerunchanged;constructnewrecordedRunStorederivativewithmanifestbeforeprocessing,sealedfailureonerroranddeterministicreplay.",
+    "Validatefiniteconsistentpointshares/SE/MOEandretaineddenominators;zero/undefineduncertaintymustretainexplicitlimitationsorblockunsupportedintervaloutput. Noautomaticzero-SEcertainty.",
+    "Independentlyinspecttheactualderivedschema/values/replaybeforebundling;futurepublicreleaseisnotauthorizedhere."
+  ],
+  "disclosure_assessment": "Reasonableboundedowner-reviewprojectionofalreadypublicPUMScoarsedemographicaggregates;all12thresholdcheckspassatcurrentexactinput. Thisisneitheranonymity/differentialprivacyproofnorageneraldisclosurerule. Omittingfieldsdoesnotguaranteenonderivabilityoftotalsfromotherreleasedaggregates;anynewcohort/dimension/outputrequiresnewreview.",
+  "actual_derivative_created": false,
+  "actual_cell_values_emitted": false,
+  "owner_review_only": true,
+  "external_publication": "NOT_AUTHORIZED",
+  "national_acquisition": "NOT_AUTHORIZED",
+  "population_fitting": "NOT_AUTHORIZED",
+  "original_population_gate": "BLOCKED",
+  "cost_usd": 0,
+  "model_calls": 0
+}

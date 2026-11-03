@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:28:24.641894+00:00",
+  "status": "PASS_WYOMING_OWNER_REVIEW_PROJECTION_CODE_AND_FIXTURES",
+  "reviewed_design_sha256": "639eb326158d3d901cd9aecf322e99eb67a77d64bcb157690ba13f3a8c5678b6",
+  "reviewed_required_files": {
+    "configs/wyoming_benchmark_projection_schema_v1.json": "504e92619482a5a04fb37aa2857b058ca18f7213c1508685afc138b84991a72d",
+    "docs/WYOMING_BENCHMARK_DISCLOSURE_PROPOSAL.md": "e821935189015d1c0898cda683164d8e100067b6dcf5f8dab6afe9df17bae0f5",
+    "reports/E02_PUMS_WY_LOCAL_REUSE_ACTUAL_EVIDENCE.json": "79deda17cede5bf55fe9d287bfc2fba560a0e588931eb44dc99cf3c3fab022a2",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_WY_ACTUAL.json": "01b56ddd99b0f464517b51c4f4fc329241eb813baef8fc0f706046bd98dbdc89",
+    "reports/INDEPENDENT_AUDIT_WYOMING_DISCLOSURE_PROPOSAL_METHODS.json": "ec3630534400e048406f230c0fde21a81d60826864645411904fc37ef56f3a4f",
+    "src/civiclab/benchmark_export.py": "bcd6a7505c28255973534b8571fca105f1d8065964293e5e71131a9597a7fd55",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/dashboard.py": "1b65f89800688ee7b279b6a2bc39f27b1b6f45b7504ff2e103f48f38dfd77cab",
+    "tests/test_benchmark_export.py": "10715ef51e29037242ee69080fa6939085724cf76f0aa09e697e52abd87ea5bc"
+  },
+  "independent_probes": [
+    {
+      "case": "success_replay",
+      "sealed_status": "OWNER_REVIEW_DERIVATIVE_PENDING_INDEPENDENT_OUTPUT_DISCLOSURE_REVIEW",
+      "cell_output": true,
+      "synthetic_only": true
+    },
+    {
+      "case": "late_low_count",
+      "sealed_status": "FAILED",
+      "cell_output": false,
+      "synthetic_only": true
+    },
+    {
+      "case": "late_bad_uncertainty",
+      "sealed_status": "FAILED",
+      "cell_output": false,
+      "synthetic_only": true
+    },
+    {
+      "case": "dependency_drift",
+      "sealed_status": "FAILED",
+      "cell_output": false,
+      "synthetic_only": true
+    },
+    {
+      "case": "source_swap_restore",
+      "sealed_status": "FAILED",
+      "cell_output": false,
+      "synthetic_only": true
+    },
+    {
+      "case": "cancel",
+      "sealed_status": "FAILED",
+      "cell_output": false,
+      "synthetic_only": true
+    }
+  ],
+  "targeted_tests_passed": 6,
+  "actual_header_metadata_independently_checked": true,
+  "actual_null_gate_stops_before_RunStore_or_source_processing": true,
+  "provenance_contract": "LiteralofficialURL/archive+memberbytes/headerhash+bytes+columns/recordedtime/codeconfigschemaexecutionapproval/audithashes included;nosourcepath/inode/hostfields. Resourcevaluesarethoseinthepinnedworkerexecutionevidence,explicitprocess-highwater/cooperative-timeoutlimits,notretrospectivelyremeasuredRSSbythisaudit.",
+  "source_projection": "Exactacceptedrun/ledger/aggregate/archive/memberproofs;all12cells>=30andreviewedpositivefiniteconsistentcount/shareSDRvariance-SE-MOEstatusrequired;anyfailureyieldsnocell-valuedartifact.",
+  "scope": "Afterpinningthisreportpath/hash,onlyfrozenactualowner-reviewprojectionandexactlocalreplaymayrun. Outputmustremaindemographic-benchmark.local.jsonuntilindependentactualvalue/schema/disclosureauditandseparatelyreviewedfinalization. Noautomaticpackage/dashboardadmission.",
+  "required_postexecution_review": [
+    "Verifyactual12projectedrows/totals/shares/scalaruncertaintyexactlymatchacceptedsourceandschema,allprovenance/threshold/disclosuredenialsandbyte-exactreplay.",
+    "Confirmoriginalfullaggregate/ledgerunchangedandinitialprojectionrunisrefusedbylocal-onlypackageguard.",
+    "Separatereviewedshare-safeRunStorefinalizationmustpreserveindependentapprovalratherthanrenametheoriginalartifact."
+  ],
+  "actual_cell_values_projected_by_auditor": false,
+  "actual_derivative_created_by_auditor": false,
+  "external_publication": "NOT_AUTHORIZED",
+  "national_acquisition": "NOT_AUTHORIZED",
+  "population_fitting": "NOT_AUTHORIZED",
+  "original_scientific_population_gate": "BLOCKED",
+  "cost_usd": 0,
+  "model_calls": 0,
+  "network_requests": 0
+}
