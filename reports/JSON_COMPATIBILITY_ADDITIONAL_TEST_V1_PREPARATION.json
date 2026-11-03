@@ -1,0 +1,24 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_PREPARATION_V1",
+  "status": "PROPOSAL_AWAITING_INDEPENDENT_METHODS_REVIEW",
+  "pins": {
+    "docs/JSON_COMPATIBILITY_ADDITIONAL_TEST_V1_PROPOSAL.md": "9b196770716e1ef0ae5c0b686fc06b57bdd83fc16930c4bfb86a9878f1bff06f",
+    "configs/json_compatibility_additional_test_v1_proposal.json": "d1e2ef944c574917a606a269d6f1d19da7af6a529830aa98365d39498a1601a6",
+    "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+    "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+    "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf"
+  },
+  "verification": {
+    "command": "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_production_compatibility_v4_2_1 tests.test_compatibility_safe_diagnostics_v4_2_1 -q",
+    "tests": 41,
+    "seconds": 4.327,
+    "exit_code": 0,
+    "scope": "Existing exact safe-diagnostic component authored fixtures only; successor control implementation absent"
+  },
+  "actual_owner_access": false,
+  "actual_key_access": false,
+  "network_requests": 0,
+  "additional_model_attempts": 0,
+  "historical_charge": "UNKNOWN_PROVIDER_COST_RETAIN_340_MICROUSD_HOLD",
+  "approval": "No live amendment or terminal packet created"
+}
