@@ -1,0 +1,73 @@
+{
+  "F_scope_correction_reference": "reports/INDEPENDENT_AUDIT_E02_F_V1_2_SCOPE_CORRECTION.json",
+  "audited_at_utc": "2026-11-03T15:18:12.394731+00:00",
+  "auditor_role": "independent_auditor",
+  "contract_sources": [
+    {
+      "line": 5,
+      "path": "src/civiclab/live_billing_v2.py",
+      "text": "Hostile replacement of every authority file is outside this local integrity model. Production bootstrap/release is unavailable."
+    },
+    {
+      "line": 73,
+      "path": "reports/INDEPENDENT_AUDIT_GLOBAL_BILLING_V2_V1_1_REMEDIATION.json",
+      "text": "Accepted scope excludes hostile host authentication and production fixed owner/bootstrap."
+    },
+    {
+      "line": 19,
+      "path": "docs/E02_FULL_ADULT_ENGINE_V1_2_REMEDIATION.md",
+      "text": "Arbitrary coordinated rewriting of all trusted histories/anchors remains outside internal SHA-chain authentication claims."
+    }
+  ],
+  "credential_reads": 0,
+  "experimental_model_api_spend_usd": 0,
+  "independent_own_isolated_fixture_probes": {
+    "all_billing_authority_costs_lowered": {
+      "accepted": true,
+      "billing_and_chain_anchor_replaced": true,
+      "immutable_genesis_header_policy_context_quote_preserved": true,
+      "native_counts_preserved": true,
+      "original_charged": 2,
+      "rewritten_charged": 1
+    },
+    "unknown_terminal_authority_replaced_by_synthetic_settlement": {
+      "accepted": true,
+      "immutable_genesis_header_policy_context_quote_preserved": true,
+      "new_fake_POSTs": 1,
+      "new_fake_same_ID_stats_calls": 1,
+      "original_charge": 1599,
+      "original_status": "UNCERTAIN",
+      "rewritten_charge": 1,
+      "rewritten_status": "PHASE_COMMITTED",
+      "terminal_history_billing_checkpoint_and_anchor_replaced": true
+    }
+  },
+  "model_calls": 0,
+  "not_claimed": [
+    "Cryptographic owner/provider identity or anti-rollback authentication",
+    "Malicious-host-resistant accounting or irreversible terminal evidence",
+    "Live production authorization, authentic fees, real keys or full MODEL_CONTROLS"
+  ],
+  "production_design_consequences": [
+    "Before live release, explicitly name the trusted writer/store/identity and rollback boundary; no production fixed-owner acceptance follows from these fixtures.",
+    "If hostile local writers are in scope, use a separately controlled append-only authority or authenticated remote receipt/ledger with protected signing keys and rollback protection. A MAC whose key and counter are editable by the same actor is insufficient.",
+    "If trusted-host execution is the intended production assumption, document it precisely and independently validate admission/owner-wide budget/price/credential controls under that assumption rather than implying cryptographic authentication."
+  ],
+  "protected_boundary": [
+    "The global fixture ledger assumes its retained billing evidence/event anchor are trusted together with execution code. SHA chains detect inconsistency, torn persistence and semantically invalid transitions; they do not authenticate the original provider reply against an actor who rewrites all billing/terminal evidence and reseals the anchor.",
+    "Keeping header/policy/context/quote/genesis unchanged does not preserve the replaced later billing/terminal authority.",
+    "Known-cost-undercharge remediation protects charges relative to retained known cost. It cannot prove an erased known-cost value after every retained copy is replaced consistently.",
+    "Same-ID/route/quote validation remains useful within trusted history, but a synthetic full legal transition history cannot be distinguished from actual provider history by local unkeyed hashes alone."
+  ],
+  "reviewed_file_hashes": {
+    "docs/E02_FULL_ADULT_ENGINE_V1_2_REMEDIATION.md": "accf14513079d610d27f7d762692fddca8e06a2942aa86fcf439b61b13f10644",
+    "docs/SURVEY_GLOBAL_INTEGRATION_V2_CANDIDATE.md": "584d1132eb90ba373e9b7a3302ba8516f34a0588dfaa001d4fc57e7755875874",
+    "reports/INDEPENDENT_AUDIT_GLOBAL_BILLING_V2_V1_1_REMEDIATION.json": "a0c694286ebbccd5e90a4898fbb165c157f48519b27cb8b7d883058ee16ec66f",
+    "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+    "src/civiclab/reconciled_client_v2.py": "6aacbb737b32e1e6d6aa8b84fd831464a6aa7f0fdda1c053043941ea5a15669c"
+  },
+  "schema_version": 1,
+  "source_GET_requests": 0,
+  "status": "PASS_BOUNDED_TRUST_BOUNDARY_CHARACTERIZATION_NOT_HOSTILE_HOST_AUTHENTICATION",
+  "verdict": "Both coordinated-authority replacement probes are accepted by the fixture implementation. This is a confirmed limit, not a new defect within the explicitly bounded accepted component contract. All cached real pilot owner/run files remained read-only."
+}
