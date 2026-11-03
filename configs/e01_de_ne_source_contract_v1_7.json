@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "scope": "DE_NE_STANDALONE_SOURCE_FORMAT_CONTRACT_ONLY",
+  "pipeline_enabled": false,
+  "source_adoption": false,
+  "sources": [
+    {
+      "source_id": "de_index",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/",
+      "path": "data/raw/e01_ballots_batch05_v1/de_index.html",
+      "bytes": 45230,
+      "sha256": "a81f9845ff5c3c54941bbc9782eaffddc3ae82b158a4d1f1c15e8c32a665dbd9",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "retrieved_at_utc": "2026-11-03T14:09:34.233195+00:00",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Fri, 14 Aug 2026 18:57:24 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "source_role": "OFFICIAL_CANDIDATE_INDEX"
+    },
+    {
+      "source_id": "de_general",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/genl_fcddt_2026.html",
+      "path": "data/raw/e01_ballots_batch05_v1/de_general.html",
+      "bytes": 139922,
+      "sha256": "ccc92e779eb0c49574d468ba55af40a11e3733630214ac0734a3c44907425ab7",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "retrieved_at_utc": "2026-11-03T14:09:34.344760+00:00",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Sat, 31 Oct 2026 00:00:01 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "source_role": "OFFICIAL_GENERAL_FILED_CANDIDATE_STATUS_HTML"
+    },
+    {
+      "source_id": "de_writeins",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/genl_wcddt_2026.html",
+      "path": "data/raw/e01_ballots_batch05_v1/de_writeins.html",
+      "bytes": 63448,
+      "sha256": "cba02ad4bbf824e5db9ebe1fdeda7b05f66074087fa66426a46f94ef0d0291ed",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "retrieved_at_utc": "2026-11-03T14:09:51.840771+00:00",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:51 GMT",
+        "Last-Modified": "Sat, 31 Oct 2026 00:00:02 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "source_role": "OFFICIAL_DECLARED_WRITE_IN_STATUS_HTML"
+    },
+    {
+      "source_id": "de_general_xlsx",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/genl_fcddt_2026.xlsx",
+      "path": "data/raw/e01_ballots_batch05_v1/de_general_xlsx.xlsx",
+      "bytes": 19856,
+      "sha256": "9d212a9575eb6fb4d178930ece50a2f89e34c7e1e8e476d977447dcb7a9c2afa",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "retrieved_at_utc": "2026-11-03T14:09:51.899798+00:00",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "Last-Modified": "Sat, 31 Oct 2026 00:00:01 GMT",
+        "ETag": "\"4d90-65f1798273bd4\"",
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      },
+      "source_role": "OFFICIAL_LINKED_GENERAL_FILED_CANDIDATE_WORKBOOK"
+    },
+    {
+      "source_id": "ne_index",
+      "url": "https://sos.nebraska.gov/elections",
+      "path": "data/raw/e01_ballots_batch05_v1/ne_index.html",
+      "bytes": 73911,
+      "sha256": "9b0f766299e388995b4bccdfdc45e5867a1acc7a61deaeff69268bd76b23efd1",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "retrieved_at_utc": "2026-11-03T14:09:34.417649+00:00",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Mon, 02 Nov 2026 22:44:00 GMT",
+        "ETag": "W/\"1793659440\"",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "source_role": "OFFICIAL_ELECTION_CANDIDATE_INDEX"
+    },
+    {
+      "source_id": "ne_general",
+      "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_Statewide_General_Candidate_Filing_List_9.11.26.pdf",
+      "path": "data/raw/e01_ballots_batch05_v1/ne_general.pdf",
+      "bytes": 120495,
+      "sha256": "d27a071715896b8c82b8cce8d48200b4207ba10c44f1778f56f92c4efcd7cf96",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "retrieved_at_utc": "2026-11-03T14:09:52.087971+00:00",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "Last-Modified": "Wed, 16 Sep 2026 21:48:23 GMT",
+        "ETag": "\"6aab0ea7-1d6af\"",
+        "Content-Type": "application/pdf"
+      },
+      "source_role": "OFFICIAL_FINAL_TITLED_GENERAL_CANDIDATE_LIST_PDF_NOT_AUTOMATIC_FINAL_ACCEPTANCE"
+    }
+  ],
+  "source_role_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_BATCH05_SOURCE_ROLES.json",
+    "sha256": "041742f25ad138b2d869b3d35bfa5d24b6f89490fc3f8c252bae825aafb4c8eb"
+  },
+  "optional_geometry_dependency": {
+    "package": "pdfplumber",
+    "version": "0.11.9",
+    "project_dependency_declared": false,
+    "actual_preflight_runtime": "BundleddocumentPython3.12runtime",
+    "gate": "Independentprojectdependency/lock/cleaninstallreviewrequired before readinessintegration"
+  },
+  "source_local_expected_observations": {
+    "DE_general": 2,
+    "DE_declared_writeins": 3,
+    "NE_obtained_Senate_rows": 5
+  },
+  "record_semantics": "MainHTMLlighthouse-tableclassonly;DEwriteinsnopartycolumn;NEphysicalgeometryfirstpageonly,minor/petitionlabelsnotnormalizedtoD",
+  "pending_review": "Newstandalonecode/fixtures/sourcepreflight only;noactualreadinessdispatcher/configmutation"
+}
