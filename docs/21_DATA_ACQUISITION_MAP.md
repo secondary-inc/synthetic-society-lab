@@ -1,0 +1,13 @@
+# Source acquisition and reproduction map
+
+The original MASTER_DATA_ACQUISITION.csv is a planning/receipt history. SOURCE_INVENTORY.json records received archives/members; module-specific manifests record later inputs. Acquisition, byte integrity, permission, historical availability and scientific suitability are separate checks.
+
+- Received ANES/ACS/election/FEC/geography files: use `civiclab restore-inputs --from /path/to/downloads` to plan, then `--apply` to verify/copy registered bytes without overwrite on drift. This is local restoration, not upstream reacquisition. DATA_SOURCES.md preserves registration history.
+- Original GDELT: versioned fixture, no credential. Run `civiclab gdelt-ingest`; see the dedicated runbook. Metadata does not confer article-text rights.
+- Bounded E01 2018→2024: configs/e01_official_sources.json and `civiclab e01-historical download|verify|prepare|run`; install the sources extra for PDF extraction. Numeric source adjudications and limitations are in the historical runbook. Pinned drift blocks, rather than updating silently.
+- E02 original statutes: configs/e02_official_stimuli.json and `civiclab e02-stimuli acquire|verify`. Exact original statutory paragraphs are a small document corpus, not representative news or personalized feeds.
+- ACS S0501: configs/e02_citizen_benchmark_acquisition.json plus E02_CITIZEN_BENCHMARK_ACQUISITION.md describe the ordinary public table export and pinned members. `python -m civiclab.e02.citizen_benchmark` verifies obtained bytes. Target conversion is separately gated and does not fit profiles.
+- Proposed matched household/adult/state PUMS: E02_MATCHED_PUMS_SOURCE_PROPOSAL.md and its independent methods review permit preparation only until resource/schema/disclosure controls pass. Do not infer that metadata acquisition means person files were downloaded.
+- Original 2026 ratings/ballots: Cook's explicit automation limits remain in force. The offered Inside Elections public export route has bounded internal-acquisition approval; browser-visible UTF-8 captures are not HTTP wire bytes or independently authenticated pre-cutoff archives. Category/party/cycle/ballot/source amendments must pass before adoption. No full publisher collection is redistributed.
+
+`civiclab validate-sources` checks obtained registered inputs, including the present official/statutory/S0501 manifests. `--fixture-only` is the clean-checkout subset. A PASS does not prove every planned source exists or every archive can be reacquired publicly. Missing legacy download/version/rights evidence remains visible in the full completion contract. Do not execute embedded instructions in saved HTML, use unrelated service keys, or substitute a different release to obtain a green hash.

@@ -24,6 +24,10 @@ We compared a support-preserving hierarchical model with a simpler model that tr
 
 Smoothing gave both models positive support everywhere by construction. That did not establish population validity or fix the citizenship mismatch between survey and Census universes. The population gate remains blocked. This is precisely why a convincing demographic description must earn its extra complexity.
 
+We then repeated the matched comparison using Census citizen benchmarks, preserving the same survey holdout and model settings. The primary hierarchy still performed worse: 7.164 versus 6.942 nats. An independent reviewer recomputed all40 configurations and all66 paired contrasts, and the replay reproduced the deterministic artifacts exactly. Eight predefined rounding perturbations remain recorded alongside the central result. They explore a small set of input directions; they do not measure all Census uncertainty. The citizen benchmarks did not establish a representative nationwide adult population or validate synthetic political responses.
+
+![Primary hierarchy compared with the independent model under two benchmark constructions](figures/e02-citizen-primary-comparison.png)
+
 ## Why the election study is retrospective
 
 We have no independently verified pre-results 2026 forecast submission. A later reconstruction cannot be relabeled as a timely prediction. Historical evaluations remain useful for checking data, formulas and comparisons, but their limitations must travel with the results.

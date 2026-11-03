@@ -1,0 +1,1752 @@
+{
+  "aggregate_comparison_sha256": "af55869bbef174a4288cd4cb665acc8be1c0a39d56611cd3dbbcf7dad6a9b954",
+  "api_spend_usd": 0,
+  "cohort_identity": {
+    "compared_fields": [
+      "local row membership",
+      "six recoded features",
+      "original weight text",
+      "exact parsed float weight",
+      "raw design pair",
+      "split assignment"
+    ],
+    "exclusions": {
+      "age_education_or_region_missing_outside_universe": 373,
+      "outside_fresh_weighted_sample": 2416
+    },
+    "fit_or_calibration_performed": false,
+    "heldout_records": 446,
+    "independent_equivalence_review": "Pinned separately approved audit; see config execution_approval",
+    "privacy": "No row positions,records,respondent IDs,design/cluster IDs or per-record hashes exported",
+    "records_checked": 2732,
+    "status": "PASS_EXACT_TRANSIENT_COHORT_IDENTITY_PENDING_INDEPENDENT_EQUIVALENCE_REVIEW",
+    "training_records": 2286
+  },
+  "comparison_config_sha256": "787c9dccadb816b57b6e4b0e3e9ec5602f12ffa910b94f6fd8e3989d6499137b",
+  "configuration_count": 40,
+  "configuration_metrics_and_distribution_hashes": {
+    "CITIZEN_AGE_007_TO_008::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.75153733256315,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.002220256067336e-09,
+        "maximum_cell_probability": 0.013114123483772961
+      },
+      "fitted_distribution_sha256": "495ab1c64a040f7fb3eded8f13297043abf0a59197f43cc4a4b63615d5100f95",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462331431942742
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_007_TO_008::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.1862298594756,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.629391682497985e-09,
+        "maximum_cell_probability": 0.011428410933657299
+      },
+      "fitted_distribution_sha256": "e07f9f799e9b4907e12a6963531b3446d09ab8eb34175f51efb975e4df393dda",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965681722116363
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_007_TO_008::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.3504491076035,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.921038236627151e-09,
+        "maximum_cell_probability": 0.012741204900758994
+      },
+      "fitted_distribution_sha256": "f1f74fd56ae1c213c50225bda43a0937e5261f1722bb03abbad8eded21c2e94e",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.164076899422926
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_007_TO_008::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.261808973894,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.1102230246251565e-16,
+        "maximum_cell_probability": 0.005756501162939593
+      },
+      "fitted_distribution_sha256": "d0813041afdbb5b46b61a7242db767a04bf19c04078a2ae6d31ef660a4924d45",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.9420634524691405
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_008_TO_007::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.69802608507206,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.038939467072456e-09,
+        "maximum_cell_probability": 0.013152383699147365
+      },
+      "fitted_distribution_sha256": "7262f40686089c34ad7ba44842e22ddd502ca2d9b567dd1d8eeabe3b48bbdd72",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462119811515052
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_008_TO_007::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.1108825221998,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.66319807768123e-09,
+        "maximum_cell_probability": 0.011461777920858122
+      },
+      "fitted_distribution_sha256": "0b0027f5cbd8057c7afdf87cf87e6bbb1f92efc68dbeae08b3140f55659db1ff",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.9654697023522285
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_008_TO_007::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.2915680009201,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.957121782500629e-09,
+        "maximum_cell_probability": 0.012778382991877158
+      },
+      "fitted_distribution_sha256": "162dcec2b4109dce63ddfdf4df985982ea2cb334491d525c2a0e7a75a15a3167",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1638649129110785
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_008_TO_007::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.1950813820333,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.1102230246251565e-16,
+        "maximum_cell_probability": 0.005774613094328798
+      },
+      "fitted_distribution_sha256": "f07ea488949356860940286ae15e8e42e3221ec43342a89733f6be4c22eb2949",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.941845645249386
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_009_TO_010::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.80322532981364,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.026985230860426e-09,
+        "maximum_cell_probability": 0.01313506163916839
+      },
+      "fitted_distribution_sha256": "3818c13e35cb87e6a194d2878a91ba585061f3892f9dcb73500a0d8d46e16487",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462247072552548
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_009_TO_010::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.25796575008144,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.6524461227992475e-09,
+        "maximum_cell_probability": 0.011446658427182572
+      },
+      "fitted_distribution_sha256": "1a8059abb4a63c2704d4e12610705c1385c441a54332d21f830e86ae6eb255e1",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965596901172733
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_009_TO_010::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.41003280297025,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.945431640590581e-09,
+        "maximum_cell_probability": 0.012761547831935406
+      },
+      "fitted_distribution_sha256": "54a5dc8edc196755b38d638382c1082835e34f0698fdd03284e9e1c0ce06b860",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.163992153293849
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_009_TO_010::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.417519386788,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.1102230246251565e-16,
+        "maximum_cell_probability": 0.005765557128634196
+      },
+      "fitted_distribution_sha256": "3b339673db8d23b17eefef8b76572e2ec63f2b2aa2d7964517321368e4294f3f",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.941969524091768
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_010_TO_009::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.64635506982984,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.01388076196152e-09,
+        "maximum_cell_probability": 0.013131450712854396
+      },
+      "fitted_distribution_sha256": "3713cf45cec2fa5f2accc287d45bbd3e80db537fc1bc0bd9c6c81faf49bd248a",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.4622043266912454
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_010_TO_009::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.0392365366254,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.639874706668934e-09,
+        "maximum_cell_probability": 0.011443534897338356
+      },
+      "fitted_distribution_sha256": "c189947091aec73188bdb59657bfdaac85ecf0fd60bec7df4b73583de219fcb3",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965554679763041
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_010_TO_009::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.23202685620146,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.932439894023144e-09,
+        "maximum_cell_probability": 0.012758045074622719
+      },
+      "fitted_distribution_sha256": "a62d16a61aaae838d9f23ec0cb0a2a4f3e46f09eb76a0bfc4f8570fc01f74b77",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.163949815204765
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_AGE_010_TO_009::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.039495646974,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.942890293094024e-16,
+        "maximum_cell_probability": 0.005765557128634193
+      },
+      "fitted_distribution_sha256": "7730e637500a94bf14fec2f46e779af9e51e992bf093cdfb6ca1049af7ca120d",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.941939750322281
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_CENTRAL::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.72536135696487,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.020556373414031e-09,
+        "maximum_cell_probability": 0.013133256420618114
+      },
+      "fitted_distribution_sha256": "83b1fb7b479fcd94e74015b62eca4db5279a76c41d423189ee5097e48a10b303",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.46222463054912
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_CENTRAL::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.14923901892877,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.646273275843438e-09,
+        "maximum_cell_probability": 0.011445096873574916
+      },
+      "fitted_distribution_sha256": "ef15ffba7fad0811e403104d3e831d786ae76e1947d7e25c604a3ca1cf1445ab",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965574721069531
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_CENTRAL::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.3216178739124,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.939056809372122e-09,
+        "maximum_cell_probability": 0.012759796690495324
+      },
+      "fitted_distribution_sha256": "8ec12897f2a442ebb7e978653632a8df06160b1af2b3e382f9247e5c8e1298c2",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.163969914747463
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_CENTRAL::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.2295752462843,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.249000902703301e-16,
+        "maximum_cell_probability": 0.005765557128634195
+      },
+      "fitted_distribution_sha256": "04c3ed7b78838b85c1826a8b74552e3148f5073dc4b0f36814a5d0606e5d837c",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.941953575669164
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_040_TO_041::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.7641923012439,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.935562909758051e-09,
+        "maximum_cell_probability": 0.013132205887262403
+      },
+      "fitted_distribution_sha256": "0387f87d974387a0cd0def9a08b0ee6d04861138992c5f8ea40721986ebaef4b",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462158354076681
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_040_TO_041::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.1977213621149,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.56756092670485e-09,
+        "maximum_cell_probability": 0.011444187671459926
+      },
+      "fitted_distribution_sha256": "0897ebbe5acfa16f293f9170d515d2664f10ef92c8b6afd3f6e88993ee6e4e38",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965508436480781
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_040_TO_041::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.3636477827955,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.855430779659997e-09,
+        "maximum_cell_probability": 0.012758777515710838
+      },
+      "fitted_distribution_sha256": "8cba5099d795bf1ce35c581a949486907d7ea3ceae1ac6ed289bfb858edc960d",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.163903627522101
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_040_TO_041::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.3039303601723,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.3877787807814457e-16,
+        "maximum_cell_probability": 0.005759230248734797
+      },
+      "fitted_distribution_sha256": "c9ed814719e926664a944c634b86c3ceebde75d14bcd0582adf50379c260d4ad",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.9418884658473585
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_040::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.6860613831944,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.1057274172428e-09,
+        "maximum_cell_probability": 0.013134306685208201
+      },
+      "fitted_distribution_sha256": "f445c1c8f67f53132986aea8b8b379f3f774038f5f4b5c89c430694bce709fed",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462291978200456
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_040::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.10022690693967,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.725151304951769e-09,
+        "maximum_cell_probability": 0.011446005844081628
+      },
+      "fitted_distribution_sha256": "eea2383703027533ba1dd9a398e427528d964671750e4b7d6276ebcb609aa884",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965642076547764
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_040::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.2791059113018,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.022858046155321e-09,
+        "maximum_cell_probability": 0.012760815604772793
+      },
+      "fitted_distribution_sha256": "efeb7af465e4363891d779fad2703b2308a5d415eb9fd660a927cda0a0feff95",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1640372731078035
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_040::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.1541862641006,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.3877787807814457e-16,
+        "maximum_cell_probability": 0.005771884008533593
+      },
+      "fitted_distribution_sha256": "59caf85c0fc24ab69342297e0ff5c33d294daa938c897f67c378a9bc0bcc7447",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.942019739018917
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_042::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.6074418469331,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.00416184878727e-09,
+        "maximum_cell_probability": 0.0131477774081361
+      },
+      "fitted_distribution_sha256": "d2966dd379924cada270e81596851746e419da4b00bcde8d97fc6113dcf6977b",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462280799080948
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_042::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 348.99682287644373,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.631135842869671e-09,
+        "maximum_cell_probability": 0.011457758307974547
+      },
+      "fitted_distribution_sha256": "f32fb963f20a65466bc3387e48a437b9d5decc4ff7dfbbfb961849798f13ddf2",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965630585723017
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_042::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.1901655001159,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.922936266971156e-09,
+        "maximum_cell_probability": 0.012773906406041407
+      },
+      "fitted_distribution_sha256": "1a949475ae242539ddbc09aa9a411be2db75ba7863a9363f566137ec012028cc",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.164025835569094
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_041_TO_042::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.1451337913652,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.3877787807814457e-16,
+        "maximum_cell_probability": 0.005765557128634195
+      },
+      "fitted_distribution_sha256": "bf1a4ae42aacfcc6de6f3a1fea0ff017e2d26d9e169a7ba6af544a41a6f97248",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.942001640798113
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_042_TO_041::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 298.8427946462368,
+        "iterations": 5,
+        "max_absolute_margin_residual": 5.036898099997078e-09,
+        "maximum_cell_probability": 0.01311873295692845
+      },
+      "fitted_distribution_sha256": "e69c231a2def54cb83ae08c1124fee334cf223922a72488870d6d952db22817c",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.462169504608361
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_042_TO_041::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 349.30111205555573,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.6613621504376646e-09,
+        "maximum_cell_probability": 0.011432433297841323
+      },
+      "fitted_distribution_sha256": "baa61bb84fe5a558719f4b80d5b72535ea4c06e0ba31309b17049be8f176d543",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.965519899513698
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_042_TO_041::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 313.45257311947864,
+        "iterations": 5,
+        "max_absolute_margin_residual": 4.9551255390523075e-09,
+        "maximum_cell_probability": 0.012745684573098624
+      },
+      "fitted_distribution_sha256": "71d88dd8476ece3c332a8b70ae1f2ea06a4b58d073a9a3833bd35793a2c4198f",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.163915037078329
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "CITIZEN_EDU_042_TO_041::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 555.3129880125224,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.942890293094024e-16,
+        "maximum_cell_probability": 0.005765557128634195
+      },
+      "fitted_distribution_sha256": "a3953571956979d903800795133dd093dd06c5ec40e236c8be2913c8cbbcdd05",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.941906549388126
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "RESIDENT::H1": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.477992161168896
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 296.26349368082595,
+        "iterations": 6,
+        "max_absolute_margin_residual": 6.622292020308507e-10,
+        "maximum_cell_probability": 0.012948135256910109
+      },
+      "fitted_distribution_sha256": "a6fab50fe0135fbfbc427f847071ea7f561b0afc504c95386e035689adec25bd",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.460030688579237
+      },
+      "pre_calibration_distribution_sha256": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "RESIDENT::H20": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.981256678664196
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 346.3543801987291,
+        "iterations": 6,
+        "max_absolute_margin_residual": 5.965439253685645e-10,
+        "maximum_cell_probability": 0.011284040088693848
+      },
+      "fitted_distribution_sha256": "5464b4ae431428f2c6d7a72ba9ab9edc458621e756ccd32fd3b66e4cba21f028",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.963381420080076
+      },
+      "pre_calibration_distribution_sha256": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "RESIDENT::H5": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.1797102264627375
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 310.8074460701489,
+        "iterations": 6,
+        "max_absolute_margin_residual": 6.477743202948361e-10,
+        "maximum_cell_probability": 0.012580003147533008
+      },
+      "fitted_distribution_sha256": "88155fb59bc964bdbb4ded8b886e189871455b15f3e7a67f9c4d57969e4cae86",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 7.161779629076086
+      },
+      "pre_calibration_distribution_sha256": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    },
+    "RESIDENT::I": {
+      "before_calibration": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.953362071472499
+      },
+      "calibration": {
+        "converged": true,
+        "effective_grid_cells": 547.4712922819671,
+        "iterations": 1,
+        "max_absolute_margin_residual": 1.6653345369377348e-16,
+        "maximum_cell_probability": 0.00623273981100091
+      },
+      "fitted_distribution_sha256": "d34763c96e062c6b0bdc334651c55a70020969cda87fb55901e04169ec8d319c",
+      "metrics": {
+        "raw_weighted_joint_support_coverage": 1.0,
+        "weighted_joint_log_loss_nats": 6.9393607155394506
+      },
+      "pre_calibration_distribution_sha256": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095",
+      "status": "RECORDED",
+      "training_weight_retained_fraction": 1.0
+    }
+  },
+  "exact_replay": {
+    "byte_identical_data_artifacts": 45,
+    "checkpoints_equal": 40,
+    "comparison_objects_equal": true,
+    "events_and_instance_manifests": "Run IDs/times differ; verified separately rather than expected byte-identical"
+  },
+  "execution_approval": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_COMPARISON_EXECUTION_APPROVAL_V1_2.json",
+    "sha256": "bb04cc54dd74d6e83b199751b03d9d127cd458dc172ab68b3a2410c72f0b2274"
+  },
+  "failed_configuration_ids": [],
+  "finite_directional_scenario_ranges": {
+    "H1": {
+      "attempted_directions": 8,
+      "failed_scenario_ids": [],
+      "finite_directional_minus_central_range_nats": [
+        -0.0001048190340684485,
+        0.00010680139362140295
+      ],
+      "finite_directional_score_range_nats": [
+        7.462119811515052,
+        7.462331431942742
+      ],
+      "interpretation": "Finite observed range of the predefined directional scenarios only; not a95percent interval, worst-case bound, latent-vector feasibility certificate or ACS sampling uncertainty.",
+      "maximum_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008"
+      ],
+      "minimum_scenario_ids": [
+        "CITIZEN_AGE_008_TO_007"
+      ],
+      "recorded_directions": 8,
+      "successful_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008",
+        "CITIZEN_AGE_008_TO_007",
+        "CITIZEN_AGE_009_TO_010",
+        "CITIZEN_AGE_010_TO_009",
+        "CITIZEN_EDU_040_TO_041",
+        "CITIZEN_EDU_041_TO_040",
+        "CITIZEN_EDU_041_TO_042",
+        "CITIZEN_EDU_042_TO_041"
+      ]
+    },
+    "H20": {
+      "attempted_directions": 8,
+      "failed_scenario_ids": [],
+      "finite_directional_minus_central_range_nats": [
+        -0.00010501871730284051,
+        0.00010700104683181166
+      ],
+      "finite_directional_score_range_nats": [
+        6.9654697023522285,
+        6.965681722116363
+      ],
+      "interpretation": "Finite observed range of the predefined directional scenarios only; not a95percent interval, worst-case bound, latent-vector feasibility certificate or ACS sampling uncertainty.",
+      "maximum_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008"
+      ],
+      "minimum_scenario_ids": [
+        "CITIZEN_AGE_008_TO_007"
+      ],
+      "recorded_directions": 8,
+      "successful_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008",
+        "CITIZEN_AGE_008_TO_007",
+        "CITIZEN_AGE_009_TO_010",
+        "CITIZEN_AGE_010_TO_009",
+        "CITIZEN_EDU_040_TO_041",
+        "CITIZEN_EDU_041_TO_040",
+        "CITIZEN_EDU_041_TO_042",
+        "CITIZEN_EDU_042_TO_041"
+      ]
+    },
+    "H5": {
+      "attempted_directions": 8,
+      "failed_scenario_ids": [],
+      "finite_directional_minus_central_range_nats": [
+        -0.00010500183638484373,
+        0.00010698467546266244
+      ],
+      "finite_directional_score_range_nats": [
+        7.1638649129110785,
+        7.164076899422926
+      ],
+      "interpretation": "Finite observed range of the predefined directional scenarios only; not a95percent interval, worst-case bound, latent-vector feasibility certificate or ACS sampling uncertainty.",
+      "maximum_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008"
+      ],
+      "minimum_scenario_ids": [
+        "CITIZEN_AGE_008_TO_007"
+      ],
+      "recorded_directions": 8,
+      "successful_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008",
+        "CITIZEN_AGE_008_TO_007",
+        "CITIZEN_AGE_009_TO_010",
+        "CITIZEN_AGE_010_TO_009",
+        "CITIZEN_EDU_040_TO_041",
+        "CITIZEN_EDU_041_TO_040",
+        "CITIZEN_EDU_041_TO_042",
+        "CITIZEN_EDU_042_TO_041"
+      ]
+    },
+    "I": {
+      "attempted_directions": 8,
+      "failed_scenario_ids": [],
+      "finite_directional_minus_central_range_nats": [
+        -0.00010793041977752438,
+        0.00010987679997676025
+      ],
+      "finite_directional_score_range_nats": [
+        6.941845645249386,
+        6.9420634524691405
+      ],
+      "interpretation": "Finite observed range of the predefined directional scenarios only; not a95percent interval, worst-case bound, latent-vector feasibility certificate or ACS sampling uncertainty.",
+      "maximum_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008"
+      ],
+      "minimum_scenario_ids": [
+        "CITIZEN_AGE_008_TO_007"
+      ],
+      "recorded_directions": 8,
+      "successful_scenario_ids": [
+        "CITIZEN_AGE_007_TO_008",
+        "CITIZEN_AGE_008_TO_007",
+        "CITIZEN_AGE_009_TO_010",
+        "CITIZEN_AGE_010_TO_009",
+        "CITIZEN_EDU_040_TO_041",
+        "CITIZEN_EDU_041_TO_040",
+        "CITIZEN_EDU_041_TO_042",
+        "CITIZEN_EDU_042_TO_041"
+      ]
+    }
+  },
+  "frozen_design_sha256": "c044d7deaa04ac9f93c53b41491f437c1e845c5d28283d1e610e772c8f712725",
+  "interpretation": "Primarytau5hierarchyworsethanindependentunderbothresidentandcitizen targets;noautomaticpromotion. Citizen-minus-residentchangesareexploratoryuniversecontrast,notcausaleffect. Inspected25+/regionholdout,signed-inputroundingscenariosnotlatentACSfeasibility,worstcaseorACSsamplingCI.",
+  "network_model_inference_calls": 0,
+  "next_unblocked_task": "Independentactualscenarioarithmetic,pairedloss/uncertainty,40coverage/distributionhash/replay/lifecyclepostrunaudit",
+  "original_population_science_gate": "BLOCKED;adult/state/household-coverage/transport/human-response validityunresolved",
+  "paid_calls": 0,
+  "paired_contrasts": {
+    "CITIZEN_AGE_007_TO_008::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.2660183976088217,
+        0.8203569797078518
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202679794736011,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_007_TO_008::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09533797964033967,
+        0.15506513034946548
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.023618269647223234,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_007_TO_008::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.051655963187174594,
+        0.4197550476963679
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22201344695378633,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_007_TO_008_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -9.479334514683086e-05,
+        0.0002955872873783448
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.00010680139362141709,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_007_TO_008_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -9.4625398199867e-05,
+        0.00029569712714944954
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.00010700104683163258,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_007_TO_008_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -9.471489175934043e-05,
+        0.000295726256557098
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.00010698467546315033,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_007_TO_008_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -8.465596124695758e-05,
+        0.0002945557988227692
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.00010987679997732983,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.265994979633214,
+        0.8203572850859013
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202741662656662,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09534520075803203,
+        0.15504657047892412
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.02362405710284274,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05164662422142062,
+        0.41973278834734523
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22201926766169275,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.0002943989369583065,
+        9.089961118946777e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -0.0001048190340680076,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00029459603506361623,
+        9.070221906596895e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -0.00010501871730331518,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.0002946152618244256,
+        9.07742825814429e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -0.00010500183638489603,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_008_TO_007_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00029435796003317755,
+        8.443172349729592e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -0.00010793041977712938,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.26602426995135536,
+        0.8203674166898579
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202775484607802,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09532523139369968,
+        0.15506749523285163
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.023627377080964938,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05166994040181219,
+        0.41973620024746905
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22202262920208113,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00013428709447942572,
+        0.00015519062797321969
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 2.244200342767567e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.0001350080105172456,
+        0.00015500085882740375
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 2.2180103200543693e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00013492761542540686,
+        0.00015500450975499528
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 2.2238546385151946e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_009_TO_010_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00014193484370320916,
+        0.00015812109912425015
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 1.5948422604536984e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.26598908273938293,
+        0.820346828882282
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.520264576368965,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09535797826462163,
+        0.1550441996991914
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.023614929440759984,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.051632628631683636,
+        0.41975162888660456
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.2220100648824835,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00016130445296115554,
+        0.0001337186182192688
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -2.0303857874552695e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00016130741319077976,
+        0.00013411768330606673
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -2.00413064913244e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00016133333257331196,
+        0.00013407416953238905
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -2.0099542699403227e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_AGE_010_TO_009_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00015953546558545662,
+        0.00013930333080064712
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -1.3825346882393754e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_CENTRAL::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.2660066696222073,
+        0.8203571176119404
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202710548799572,
+      "repetitions": 500
+    },
+    "CITIZEN_CENTRAL::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09534161191515295,
+        0.1550558364346268
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.02362114540036892,
+      "repetitions": 500
+    },
+    "CITIZEN_CENTRAL::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05165127689906891,
+        0.41974390434058106
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22201633907830048,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.26600307560465825,
+        0.8203474695795795
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202698882293224,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09534661985564921,
+        0.1550799962016053
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.02361997063342166,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05165736375945664,
+        0.4197485230324801
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22201516167474267,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.0001798848138426732,
+        3.791822335608361e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -6.62764724390712e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00017999360751689916,
+        3.785412261098714e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -6.628458875174404e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.000179923896705714,
+        3.789700959105957e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -6.628722536232469e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_040_TO_041_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00017668102963714632,
+        3.564474082984073e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -6.51098218044833e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.2660102841181888,
+        0.8203667807492643
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202722391815386,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09533658227543708,
+        0.1550316949444193
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.023622337528847136,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05164520632341382,
+        0.41973930173622964
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22201753408888616,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -3.8438246529942646e-05,
+        0.00017966444775076293
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 6.734765133563924e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -3.8338108124739235e-05,
+        0.00017967693855810356
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 6.735547823229546e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -3.839626025379596e-05,
+        0.00017964878516589904
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 6.73583603397515e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_040_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -3.940966375652671e-05,
+        0.00017677851094580763
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 6.616334975408761e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.2660131496528256,
+        0.8203637569690568
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202791582828351,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09533780114110647,
+        0.15506564332874395
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.02362894492490414,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05165987452630638,
+        0.41974976558062477
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22202419477098045,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -4.8501079825586356e-05,
+        0.00015023959589015163
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 5.61685318276193e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -4.8921720612303086e-05,
+        0.00015011395740242153
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 5.586465348474445e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -4.8855810287310494e-05,
+        0.00015020431877842637
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 5.5920821629462884e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_041_TO_042_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -5.831817777408026e-05,
+        0.00014178168884279696
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 4.806512894951546e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.26600019375085365,
+        0.8203504809900511
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5202629552202344,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09534541858710967,
+        0.15504603351291063
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.02361335012557286,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.051642684293848516,
+        0.4197380470629682
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.2220084876902029,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041_minus_CENTRAL::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.000149427819209994,
+        4.464135057434737e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -5.512594075992972e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041_minus_CENTRAL::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00014912557696413487,
+        4.468566330974841e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -5.482155583328605e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041_minus_CENTRAL::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.00014917918170255303,
+        4.464967400859276e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -5.487766913483731e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_EDU_042_TO_041_minus_CENTRAL::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.0001408563405022319,
+        5.423167362187296e-05
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": -4.702628103723021e-05,
+      "repetitions": 500
+    },
+    "CITIZEN_minus_RESIDENT::H1": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.008384100445990843,
+        0.010950927461648568
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.0021939419698834947,
+      "repetitions": 500
+    },
+    "CITIZEN_minus_RESIDENT::H20": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.008387789517402901,
+        0.010952446196517673
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.002193300989456528,
+      "repetitions": 500
+    },
+    "CITIZEN_minus_RESIDENT::H5": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.008383551141934543,
+        0.01095376516035
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.002190285671377275,
+      "repetitions": 500
+    },
+    "CITIZEN_minus_RESIDENT::I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.008217518326882039,
+        0.011266279285889823
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.002592860129713002,
+      "repetitions": 500
+    },
+    "RESIDENT::H1_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.2663525819331044,
+        0.8210435953956678
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.5206699730397866,
+      "repetitions": 500
+    },
+    "RESIDENT::H20_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        -0.09510040496585606,
+        0.15372228205166344
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.024020704540625413,
+      "repetitions": 500
+    },
+    "RESIDENT::H5_minus_I": {
+      "clusters": 352,
+      "descriptive_percentile95": [
+        0.05117678385308161,
+        0.41953460779957624
+      ],
+      "interpretation": "Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference",
+      "mean_loss_difference_nats": 0.22241891353663623,
+      "repetitions": 500
+    }
+  },
+  "pre_calibration_distribution_sha256": {
+    "H1": "2ecb6fdb1654991dd828b887479b32ba30b5b6b68515dc20e3daf47f728b3f88",
+    "H20": "3f2fa34190f3b29cb6499ad59afd872eae30673e7acfd3942c75da36a2b4caa8",
+    "H5": "8a1b2466afa96599d9578c35a082d40bb291bfd3cb43f395f0ae24fe36286329",
+    "I": "5ad803d242fbb5ad3847bcd2b18d363ddb9ceb8f33af106298c861849a8f8095"
+  },
+  "pums_person_get_requests": 0,
+  "recorded": 40,
+  "replay_run_id": "e02-ab4188e6c75d46a18179cb81dfde156c",
+  "run_id": "e02-1be3718699e54d7380755be1f9d87e6d",
+  "run_proof": {
+    "e02-1be3718699e54d7380755be1f9d87e6d": {
+      "code": {
+        "dirty": true,
+        "git_sha": "62389799403347ba7743c4dffebb7fad3c2eadf5",
+        "source_tree_sha256": "97c4cd7c2c892e3b39d924d0f607671298afe3a62b12b6393de9907244ebbd1c"
+      },
+      "completed_at_utc": "2026-11-03T11:52:05.516876+00:00",
+      "environment": {
+        "core_uses_standard_library": true,
+        "installed_relevant_packages": {
+          "matplotlib": "3.10.7",
+          "numpy": "2.5.4",
+          "pypdf": "6.10.0",
+          "scipy": "1.16.3",
+          "synthetic-society-lab": "0.1.0"
+        },
+        "platform": "macOS-26.6-arm64-arm-64bit",
+        "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+        "runtime_dependencies": "Standard-library core; optional source, figure and selection dependencies recorded separately when installed."
+      },
+      "event_counts": {
+        "completed": 1,
+        "configuration_completed": 40,
+        "configuration_started": 40,
+        "preparation_completed": 1,
+        "preparation_started": 1,
+        "started": 1,
+        "training_completed": 1,
+        "training_started": 1
+      },
+      "started_at_utc": "2026-11-03T11:52:01.956161+00:00",
+      "verified_checksum_entries": 49
+    },
+    "e02-ab4188e6c75d46a18179cb81dfde156c": {
+      "code": {
+        "dirty": true,
+        "git_sha": "62389799403347ba7743c4dffebb7fad3c2eadf5",
+        "source_tree_sha256": "97c4cd7c2c892e3b39d924d0f607671298afe3a62b12b6393de9907244ebbd1c"
+      },
+      "completed_at_utc": "2026-11-03T11:52:15.295437+00:00",
+      "environment": {
+        "core_uses_standard_library": true,
+        "installed_relevant_packages": {
+          "matplotlib": "3.10.7",
+          "numpy": "2.5.4",
+          "pypdf": "6.10.0",
+          "scipy": "1.16.3",
+          "synthetic-society-lab": "0.1.0"
+        },
+        "platform": "macOS-26.6-arm64-arm-64bit",
+        "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+        "runtime_dependencies": "Standard-library core; optional source, figure and selection dependencies recorded separately when installed."
+      },
+      "event_counts": {
+        "completed": 1,
+        "configuration_completed": 40,
+        "configuration_started": 40,
+        "preparation_completed": 1,
+        "preparation_started": 1,
+        "started": 1,
+        "training_completed": 1,
+        "training_started": 1
+      },
+      "started_at_utc": "2026-11-03T11:52:11.666327+00:00",
+      "verified_checksum_entries": 49
+    }
+  },
+  "source_and_runtime_limits": "Dirtycheckoutrecordedhonestly;relevantsource/code/inputhashguardsPASSandrunenvironmentsactual. Existingnegative/suppressedrunsandauditreportsunchanged. Noexternalscience/publicationclaim.",
+  "status": "RECORDED_PENDING_INDEPENDENT_POSTRUN_AUDIT",
+  "task_id": "E02-CITIZEN-COMPARISON-v1.2-ACTUAL-OFFLINE-EXECUTION",
+  "tests_before_execution": "46E02testsPASS;freshindependentv1.2approvalverifiedrequiredhashesandexactdesign"
+}

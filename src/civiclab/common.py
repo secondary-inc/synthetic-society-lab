@@ -75,7 +75,7 @@ def code_identity(root):
         revision, dirty = "UNVERSIONED", True
     # Captures uncommitted implementation used in a run; never scans .env/raw data.
     files = {str(p.relative_to(root)): sha256_file(p)
-             for folder in ("src", "protocols", "configs")
+             for folder in ("src", "protocols", "configs", "scripts")
              for p in sorted((root / folder).rglob("*"))
              if p.is_file() and p.suffix in (".py", ".json", ".md", ".csv", ".html", ".txt", ".toml", ".yml")
              and not any(part=='__pycache__' or part.endswith(('.egg-info','.dist-info')) for part in p.relative_to(root).parts)}

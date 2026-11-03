@@ -80,6 +80,18 @@ Lower weighted log loss is better. The independent candidate scored **6.93936 na
 
 Thus the primary hierarchical configuration has not earned adoption over its simpler comparator on this already-inspected holdout. This is an exploratory model-development result, not confirmatory inference or proof that independence correctly models humans. Citizenship/resident mismatch, transported political response validity and state representativeness remain unresolved. The original population acceptance gate stays blocked, and neither candidate is silently substituted into the frozen response pilot.
 
+### Matched resident and citizen benchmark sensitivity
+
+A separately reviewed amendment holds the six recoded fields, 2,286 training records, 446 inspected held-out records, four trained distributions, scoring floor and 500 cluster-resampling draws fixed. It compares resident targets with citizen25+ targets derived from ACS S0501 native and naturalized counts. Central citizen targets and eight predefined compensating transfers of 0.04 percentage points in rounded source percentages yield ten target sets and 40 calibrations across independent, primary H5 and sensitivity H1/H20 models. All configurations and failures are retained; none failed in these executions. These finite perturbations preserve specified section sums but do not certify feasible latent ACS percentage vectors.
+
+Runs `e02-1be3718699e54d7380755be1f9d87e6d` and `e02-ab4188e6c75d46a18179cb81dfde156c` reproduce 45 deterministic artifacts exactly. [Independent post-run review](../reports/INDEPENDENT_AUDIT_E02_CITIZEN_COMPARISON_ACTUAL.json) recomputed all40 losses, all66 paired contrasts and their conditional intervals, actual scenario arithmetic and recorded lifecycle. Under central citizen targets, independent loss was **6.94195 nats** and H5 loss **7.16397**; the H5-minus-independent difference was **+0.22202**, with descriptive resampling interval [0.05165, 0.41974]. The corresponding resident difference remained +0.22242 [0.05118, 0.41953]. The primary hierarchy was not promoted under either benchmark construction.
+
+![Primary population comparison under resident and citizen benchmarks](figures/e02-citizen-primary-comparison.png)
+
+Figure 2. Frozen H5 primary contrasts on the same inspected holdout; all sensitivity models and directions remain in the recorded runs. Intervals condition on fixed target inputs and are not full ANES design-based or ACS sampling uncertainty. [Figure provenance](figures/e02-citizen-primary-comparison.provenance.json) binds source run, audit and output hashes.
+
+Central citizen-minus-resident loss changes were +0.00259 nats for the independent model (descriptive interval [−0.00822, 0.01127]) and +0.00219 for H5 ([−0.00838, 0.01095]). They compare benchmark constructions and do not estimate a causal citizenship effect. Across the eight citizen directions, independent loss ranged 6.941846–6.942063 and H5 loss 7.163865–7.164077. These are finite observed ranges, not worst-case bounds or confidence intervals. Citizen benchmarks address one universe distinction; household/group-quarters coverage, age/state scope, period, nonresponse, transport and model-response validity remain unresolved. This narrower diagnostic does not fulfill the original nationwide adult/state population requirement.
+
 ## Bounded real historical result
 
 The [bounded Senate protocol](../protocols/E01_SENATE_2018_2024_DIAGNOSTIC.md) begins with all 33 regular Class-I constituencies. Eligibility requires a Democratic and Republican nominee in both 2018 and 2024. California (2018 D–D), Nebraska (no 2024 Democrat) and Vermont (no Democrat) are structurally excluded, leaving 30 states. Maine remains included despite its independent winner because the stated target is the conditional D–R margin, not winner probability. This denominator can produce very different results from an all-candidate vote-share task.
@@ -92,7 +104,7 @@ S0 macro MAE was **10.1993 percentage points**, versus **18.1883** for S_ZERO. T
 
 ![Post-hoc historical Senate error comparison](figures/e01-historical-errors.png)
 
-Figure 2. Identical 30-state cohort and conditional D–R denominator for both methods. The left panel shows macro MAE; the right shows every state in alphabetical order, preserving unfavorable differences. Errors are recomputed from the checksum-verified saved margins. [Figure provenance](figures/e01-historical-errors.provenance.json) identifies the exact run, ledger hash and numerical rows. These results do not show agent value, general forecasting superiority or prospective performance. Original 2026 House/Senate and comparable-agent requirements remain incomplete.
+Figure 3. Identical 30-state cohort and conditional D–R denominator for both methods. The left panel shows macro MAE; the right shows every state in alphabetical order, preserving unfavorable differences. Errors are recomputed from the checksum-verified saved margins. [Figure provenance](figures/e01-historical-errors.provenance.json) identifies the exact run, ledger hash and numerical rows. These results do not show agent value, general forecasting superiority or prospective performance. Original 2026 House/Senate and comparable-agent requirements remain incomplete.
 
 ## Operational independence and costs
 

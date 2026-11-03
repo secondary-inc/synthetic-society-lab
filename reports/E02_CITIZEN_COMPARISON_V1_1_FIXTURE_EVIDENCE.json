@@ -1,0 +1,140 @@
+{
+  "api_spend_usd": 0,
+  "configuration_count": 40,
+  "execution_approval": null,
+  "files_sha256": {
+    "configs/e02_citizen_comparison_v1.json": "ec7fd25cb8a5360ddbb0f8dfc4c4cf3134eabe8d14eb2fc2d69fd63d54aa44be",
+    "docs/E02_CITIZEN_COMPARISON_V1_RUNBOOK.md": "45549d93e6aff9b651c078b272a9ba1467f6157594dec64824ee29b9a2dd887c",
+    "src/civiclab/e02/citizen_comparison_v1.py": "f568d620cd0a37f9a698bd054c994fd162aebef509dcba03e883a2f567b05d97",
+    "src/civiclab/e02/citizen_scenarios_v1.py": "e86740a5e7e7240fcf796c40ddf91d00753c8d476dbbf11e1d0256a0b14f04d2",
+    "src/civiclab/e02/cohort_reference_v1.py": "2c6dcea8eb9d2015acf4039151fe564b0ac5f509ec53cdafe0e94f8c67292f9c",
+    "tests/test_e02_citizen_comparison_v1.py": "34e468c7a157c68326be912f243fc95da72f4d4d36f06127bb714bd192653849"
+  },
+  "frozen_design_sha256": "0194c72ce095ab7b1b68dfdbaf0782e917f20dd48c394dfae9690b7eeb54184d",
+  "identity": {
+    "compared_fields": [
+      "local row membership",
+      "six recoded features",
+      "original weight text",
+      "exact parsed float weight",
+      "raw design pair",
+      "split assignment"
+    ],
+    "exclusions": {
+      "age_education_or_region_missing_outside_universe": 373,
+      "outside_fresh_weighted_sample": 2416
+    },
+    "fit_or_calibration_performed": false,
+    "heldout_records": 446,
+    "privacy": "No row positions,records,respondent IDs,design/cluster IDs or per-record hashes exported",
+    "provenance": {
+      "comparison_config_sha256": "ec7fd25cb8a5360ddbb0f8dfc4c4cf3134eabe8d14eb2fc2d69fd63d54aa44be",
+      "required_files": {
+        "configs/SOURCE_INVENTORY.json": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c",
+        "configs/e02_citizen_benchmark_acquisition.json": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+        "configs/e02_citizen_targets_v1.json": "fdd3a55c8d8e479a67d96b2d312e8d5c2dc4029c18895e96d015696d0ecf6ae5",
+        "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+        "configs/e02_population_support_plan.json": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+        "data/processed/runs/e02-2fb676d7d32e4ba29537cb62395efd03/population.json": "65ab07b490724b97d3b9aaaeccaad47a1c2dbf456bad9f723632749291f26141",
+        "data/processed/runs/e02-edf2b36e269442748f4721ef7f479876/citizen-targets.json": "9bbf30312b0b1eb34521c08db6561cc9cf95bb51f5962fe62c6adb9018af9652",
+        "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7",
+        "data/raw/e02_citizen_benchmarks/ACSST5Y2024.S0501_2026-11-03T054417.zip": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+        "docs/E02_CITIZEN_COMPARISON_PLAN.md": "2f3d4c4c4eb4cfd0466af3d84ef55b311167798f4817fca2f29099972bffb451",
+        "reports/INDEPENDENT_AUDIT_E02_CITIZEN_COMPARISON_METHODS.json": "e5add835df17a2b6615bad16a40aa13a261408b5173b31174661b7a17cbed003",
+        "reports/INDEPENDENT_AUDIT_E02_CITIZEN_TARGETS_V1.json": "c34dcd369e6be3dc2f3ecb9e85e54ea6c2708914931ea6294d60526e30f4264c",
+        "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "src/civiclab/e02/citizen_benchmark.py": "a907d865139cc999048bba5a1fb16b491c314f645cbb280b28f48d2bf426b463",
+        "src/civiclab/e02/citizen_comparison_v1.py": "f568d620cd0a37f9a698bd054c994fd162aebef509dcba03e883a2f567b05d97",
+        "src/civiclab/e02/citizen_scenarios_v1.py": "e86740a5e7e7240fcf796c40ddf91d00753c8d476dbbf11e1d0256a0b14f04d2",
+        "src/civiclab/e02/citizen_targets.py": "9ee987fd5926f86d34375fe923724a004489575a0770e8834cefeb3bd8c880b2",
+        "src/civiclab/e02/cohort_reference_v1.py": "2c6dcea8eb9d2015acf4039151fe564b0ac5f509ec53cdafe0e94f8c67292f9c",
+        "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+        "src/civiclab/e02/population_alternatives.py": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f"
+      }
+    },
+    "records_checked": 2732,
+    "status": "PASS_EXACT_TRANSIENT_COHORT_IDENTITY_PENDING_INDEPENDENT_EQUIVALENCE_REVIEW",
+    "training_records": 2286
+  },
+  "identity_aggregate_sha256": "18da62fc6b2b42ed82251e896d9f460ced7890171d70a28e55fdfdd1e29d4d4d",
+  "identity_run_id": "e02-10f83244230e4189b223e5d32febd10e",
+  "independent_reference_equivalence_audit": "PENDING; worker exact agreement is not independent certification",
+  "models": [
+    "I",
+    "H5",
+    "H1",
+    "H20"
+  ],
+  "next_unblocked_task": "Independent reference-extractor equivalence, scenario/coverage/identity/leakage/gate fixture audit before separately pinned real-fit approval",
+  "output_contract": {
+    "directional_ranges": "Per-modelobservedmin/maxdirectionalrawlossanddeltafromcentral,endpointtiesandallfailedscenarioIDs;no95CIorworstcaseclaim",
+    "fitted_hashes": "Oneperrecordedconfiguration;nulliffailed",
+    "pre_calibration_hashes": "Fourcanonicalfull2880cellprobabilitygridhashes"
+  },
+  "paid_calls": 0,
+  "preserved_v3_definition_integrity": {
+    "checks": [
+      {
+        "path": "configs/e02_analysis_plan.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_demo_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_instrument.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_official_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_population_mapping.json",
+        "status": "PASS"
+      },
+      {
+        "path": "protocols/E02_INFORMATION_EFFECTS.md",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/experiment.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/instrument.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/methods.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/population.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/stimuli.py",
+        "status": "PASS"
+      }
+    ],
+    "external_preregistration": "NOT_RUN",
+    "independent_audit": "PENDING; a hash lock is not independent scientific approval",
+    "lock_sha256": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+    "paid_execution": "BLOCKED; lock verification cannot authorize spending or credential use",
+    "status": "PASS_DEFINITION_INTEGRITY"
+  },
+  "previous_evidence": "reports/E02_CITIZEN_COMPARISON_V1_0_FIXTURE_EVIDENCE.json",
+  "previous_identity_run_id": "e02-80dc42b6dd104c319096ae77bdce7aef",
+  "real_candidate_fitting": "NOT_RUN",
+  "real_comparison_cli": "NOT_RUN",
+  "real_scenario_calibration": "NOT_RUN",
+  "scientific_population_gate": "BLOCKED",
+  "shared_common_sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+  "status": "READY_FOR_SEPARATE_INDEPENDENT_IMPLEMENTATION_AUDIT_NO_REAL_FIT",
+  "target_sets": 10,
+  "task_id": "E02-CITIZEN-COMPARISON-v1-IMPLEMENTATION-FIXTURES-IDENTITY",
+  "tests_run_and_results": "45E02testsPASS;7comparisonfixturesincluding2newrange/hashcontracts;newnumericalfitsauthoredsyntheticonly",
+  "version": "1.1"
+}

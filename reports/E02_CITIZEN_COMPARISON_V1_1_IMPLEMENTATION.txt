@@ -1,0 +1,255 @@
+"""Gated40-condition exploratory comparison; fixtures and cohort identity first."""
+import argparse
+from collections import Counter,defaultdict
+import csv
+from decimal import Decimal,localcontext
+import io
+import json
+import math
+from pathlib import Path
+import random
+import zipfile
+from ..common import RunStore,canonical_hash,sha256_file
+from .cohort_reference_v1 import extract_reference
+from .citizen_scenarios_v1 import TRANSFERS,scenario_targets
+from .citizen_targets import convert_rows,decimal_strings
+from .citizen_benchmark import inspect_archive
+from .population_alternatives import distributions,calibrate,score,GRID
+
+MODELS=('I','H5','H1','H20')
+TARGETS=('RESIDENT','CITIZEN_CENTRAL')+tuple('CITIZEN_'+x[0] for x in TRANSFERS)
+
+
+def extract_candidate(path,mapping,seed):
+    """Independent implementation; no import of the reference extraction/recodes."""
+    records=[];excluded=Counter()
+    def numeric(raw):
+        try:n=float(raw)
+        except (TypeError,ValueError):return None
+        return n if math.isfinite(n) else None
+    def category(raw,lookup):return lookup.get(numeric(raw),'UNKNOWN')
+    party={1:'D',2:'R',0:'I',3:'I',5:'I'}
+    race={1:'WHITE_NH',2:'BLACK_NH',3:'HISPANIC',4:'OTHER_NH',5:'OTHER_NH',6:'OTHER_NH'}
+    income={1:'LOW',2:'LOW',3:'MID',4:'MID',5:'HIGH',6:'HIGH'}
+    with path.open(encoding='utf-8-sig',newline='') as f:
+        reader=csv.DictReader(f)
+        if any(mapping[k] not in reader.fieldnames for k in ('sample','weight','age','education','region','party','race','income','stratum','psu')):raise ValueError('candidate mapped variable missing')
+        for position,row in enumerate(reader,1):
+            wtext=row[mapping['weight']];w=numeric(wtext)
+            if numeric(row[mapping['sample']]) not in mapping['sample_values'] or w is None or w<=0:
+                excluded['outside_fresh_weighted_sample']+=1;continue
+            age=numeric(row[mapping['age']]);edu=numeric(row[mapping['education']]);region=numeric(row[mapping['region']])
+            if age is None or age<25 or age>80 or edu not in (1,2,3,4,5) or region not in (1,2,3,4):
+                excluded['age_education_or_region_missing_outside_universe']+=1;continue
+            design=tuple(row[mapping[k]] for k in ('stratum','psu'))
+            numbers=[numeric(v) for v in design]
+            if any(v is None or v<0 for v in numbers):
+                excluded['invalid_design_cluster']+=1;continue
+            bin_age=('25-44','45-64','65+')[int(age>=45)+int(age>=65)]
+            key=(str(int(region)),bin_age,mapping['education_recode'][str(int(edu))],
+                 category(row[mapping['party']],party),category(row[mapping['race']],race),category(row[mapping['income']],income))
+            heldout=(int(canonical_hash([seed,design])[:8],16)%5)==0
+            records.append({'position':position,'key':key,'weight_raw':wtext,'weight':w,'design':design,'heldout':heldout})
+    return records,dict(excluded)
+
+
+def assert_identity(reference,candidate,reference_exclusions,candidate_exclusions):
+    """Only aggregate identity results leave this function, never record keys/hashes."""
+    if len({r['position'] for r in reference})!=len(reference) or len({r['position'] for r in candidate})!=len(candidate):raise ValueError('duplicate cohort membership key')
+    left={r['position']:r for r in reference};right={r['position']:r for r in candidate}
+    if set(left)!=set(right):raise ValueError('cohort membership differs')
+    if reference_exclusions!=candidate_exclusions:raise ValueError('cohort exclusion branches differ')
+    for position,record in left.items():
+        other=right[position]
+        for field in ('position','key','weight_raw','design','heldout'):
+            if record[field]!=other[field]:raise ValueError('cohort identity mismatch: '+field)
+        if record['weight'].hex()!=other['weight'].hex():raise ValueError('cohort identity mismatch: numeric weight')
+    return {'status':'PASS_EXACT_TRANSIENT_COHORT_IDENTITY_PENDING_INDEPENDENT_EQUIVALENCE_REVIEW',
+            'records_checked':len(reference),'training_records':sum(not r['heldout'] for r in reference),
+            'heldout_records':sum(r['heldout'] for r in reference),'exclusions':reference_exclusions,
+            'compared_fields':['local row membership','six recoded features','original weight text','exact parsed float weight','raw design pair','split assignment'],
+            'privacy':'No row positions,records,respondent IDs,design/cluster IDs or per-record hashes exported',
+            'fit_or_calibration_performed':False}
+
+
+def load_config(root):
+    root=Path(root).resolve();path=root/'configs/e02_citizen_comparison_v1.json'
+    config=json.loads(path.read_text())
+    for name,expected in config['required_files'].items():
+        source=(root/name).resolve()
+        if not source.is_relative_to(root) or sha256_file(source)!=expected:raise ValueError('pinned comparison input/code changed: '+name)
+    if config['seed']!=20261103 or config['models']!=list(MODELS) or config['target_sets']!=list(TARGETS) or config['calibration_count']!=40:raise ValueError('frozen40-condition coverage changed')
+    if config['bootstrap_repetitions']!=500 or config['scoring_floor']!=1e-9 or config['amplitude_pp']!='0.04':raise ValueError('frozen evaluation/scenario parameters changed')
+    return config
+
+
+def run_identity(root):
+    root=Path(root).resolve();config=load_config(root)
+    mapping=json.loads((root/config['mapping_path']).read_text());source=root/config['anes_path']
+    reference,exclusions=extract_reference(source,mapping,config['seed'])
+    candidate,other_exclusions=extract_candidate(source,mapping,config['seed'])
+    result=assert_identity(reference,candidate,exclusions,other_exclusions)
+    # Strip transient sensitive membership and weights before creating artifacts.
+    del reference,candidate
+    result['provenance']={'comparison_config_sha256':sha256_file(root/'configs/e02_citizen_comparison_v1.json'),
+                          'required_files':config['required_files']}
+    with RunStore(root,'E02',{'stage':'citizen-comparison-identity-only','config_sha256':result['provenance']['comparison_config_sha256']},kind='EXPLORATORY') as run:
+        run.write('cohort-identity.json',result);run.finish({'status':'IDENTITY_DIAGNOSTIC_ONLY_NO_FITTING','paid_calls':0,'spent_usd':0,'reproducibility_hash':canonical_hash(result)})
+    return run.path
+
+
+def require_fit_approval(root,config):
+    approval=config.get('execution_approval')
+    if not isinstance(approval,dict) or not approval.get('path') or not approval.get('sha256'):
+        raise ValueError('real fitting BLOCKED: separately pinned independent extractor/scenario/coverage audit required')
+    path=(Path(root)/approval['path']).resolve()
+    if not path.is_relative_to(Path(root).resolve()) or sha256_file(path)!=approval['sha256']:raise ValueError('independent implementation approval bytes changed')
+    audit=json.loads(path.read_text())
+    if audit.get('auditor_role')!='independent_auditor' or audit.get('status')!='PASS_COMPARISON_IMPLEMENTATION_FOR_REAL_EXPLORATORY_FIT':raise ValueError('independent implementation approval scope invalid')
+    # Pin reviewed scientific/method inputs and all implementation hashes without
+    # a circular hash of the later approval reference itself.
+    if audit.get('reviewed_required_files')!=config['required_files'] or audit.get('reviewed_design_sha256')!=canonical_hash({k:v for k,v in config.items() if k!='execution_approval'}):
+        raise ValueError('independent implementation approval does not cover frozen design/code')
+
+
+def make_draws(test,seed=20261103,repetitions=500):
+    clusters=list(dict.fromkeys(c for _,_,c in test));rng=random.Random(seed)
+    if not clusters:raise ValueError('nonempty heldout clusters required')
+    return clusters,[rng.choices(range(len(clusters)),k=len(clusters)) for _ in range(repetitions)]
+
+
+def paired_summary(left,right,clusters,draws):
+    if len(left)!=len(right) or not left:raise ValueError('matched nonempty losses required')
+    aggregate=defaultdict(lambda:[0.,0.])
+    for (a,w,c),(b,v,d) in zip(left,right):
+        if w!=v or c!=d:raise ValueError('unmatched heldout weight or cluster')
+        aggregate[c][0]+=(a-b)*w;aggregate[c][1]+=w
+    if set(aggregate)!=set(clusters):raise ValueError('bootstrap cluster population changed')
+    values=[aggregate[c] for c in clusters];interval=[]
+    for draw in draws:
+        if len(draw)!=len(clusters) or any(not isinstance(i,int) or not 0<=i<len(clusters) for i in draw):raise ValueError('invalid shared bootstrap draw')
+        interval.append(sum(values[i][0] for i in draw)/sum(values[i][1] for i in draw))
+    interval.sort();n=len(interval)
+    return {'mean_loss_difference_nats':sum(v[0] for v in values)/sum(v[1] for v in values),
+            'descriptive_percentile95':[interval[int((n-1)*.025)],interval[int((n-1)*.975)]],
+            'clusters':len(clusters),'repetitions':n,
+            'interpretation':'Descriptive inspected-holdout cluster resampling conditional on fixed target inputs; not ACS uncertainty or confirmatory inference'}
+
+
+def distribution_hash(model):
+    """Canonical whole2,880-cell distribution hash, including implicit zero cells.
+
+    Fixed lexical cell order and exact float.hex probabilities make insertion order
+    irrelevant. These are aggregate model probabilities, never per-record hashes.
+    """
+    if not set(model).issubset(set(GRID)):raise ValueError('probability outside frozen grid')
+    probabilities=[float(model.get(key,0.0)) for key in sorted(GRID)]
+    if any(not math.isfinite(p) or p<0 for p in probabilities) or abs(math.fsum(probabilities)-1)>1e-8:raise ValueError('invalid full-grid probability model')
+    cells=[[*key,(0.0 if p==0 else p).hex()] for key,p in zip(sorted(GRID),probabilities)]
+    return canonical_hash({'schema':'FULL_JOINT_PROBABILITY_GRID_FLOAT_HEX-v1','fields':['region','age_bin','education','party','race','income'],'cells':cells})
+
+
+def directional_ranges(outputs):
+    """Describe all eight attempted directions, including failures and endpoint ties."""
+    ranges={}
+    for model in MODELS:
+        observed=[];failed=[]
+        for target in TARGETS[2:]:
+            entry=outputs[target+'::'+model]
+            if entry['status']=='RECORDED':observed.append((target,entry['metrics']['weighted_joint_log_loss_nats']))
+            else:failed.append(target)
+        central=outputs['CITIZEN_CENTRAL::'+model]
+        low=min((score for _,score in observed),default=None);high=max((score for _,score in observed),default=None)
+        center=central['metrics']['weighted_joint_log_loss_nats'] if central['status']=='RECORDED' else None
+        ranges[model]={'finite_directional_score_range_nats':[low,high] if observed else None,
+                       'minimum_scenario_ids':sorted(name for name,value in observed if value==low),
+                       'maximum_scenario_ids':sorted(name for name,value in observed if value==high),
+                       'finite_directional_minus_central_range_nats':[low-center,high-center] if observed and center is not None else None,
+                       'successful_scenario_ids':sorted(name for name,_ in observed),'failed_scenario_ids':failed,
+                       'attempted_directions':8,'recorded_directions':len(observed),
+                       'interpretation':'Finite observed range of the predefined directional scenarios only; not a95percent interval, worst-case bound, latent-vector feasibility certificate or ACS sampling uncertainty.'}
+    return ranges
+
+
+def _compute_numeric_comparison(train,test,target_sets,seed=20261103):
+    """Pure computation called on synthetic fixtures now; production caller is gated."""
+    if set(target_sets)!=set(TARGETS):raise ValueError('complete frozen ten target sets required')
+    models={};ind,h5=distributions(train,5,.5);models['I']=ind;models['H5']=h5
+    for tau in (1,20):models['H'+str(tau)]=distributions(train,tau,.5)[1]
+    pre_hashes={name:distribution_hash(model) for name,model in models.items()}
+    before={name:score(model,test,1e-9)[0] for name,model in models.items()}
+    clusters,draws=make_draws(test,seed,500);outputs={};losses={}
+    for target in TARGETS:
+        for name in MODELS:
+            identifier=target+'::'+name
+            try:
+                fitted,diagnostics=calibrate(models[name],target_sets[target]);metrics,raw_loss=score(fitted,test,1e-9)
+                outputs[identifier]={'status':'RECORDED','metrics':metrics,'calibration':diagnostics,
+                                     'before_calibration':before[name],'training_weight_retained_fraction':1.0,
+                                     'pre_calibration_distribution_sha256':pre_hashes[name],
+                                     'fitted_distribution_sha256':distribution_hash(fitted)}
+                losses[identifier]=raw_loss
+            except ValueError as error:
+                outputs[identifier]={'status':'FAILED_CONFIGURATION','error':str(error),
+                                     'pre_calibration_distribution_sha256':pre_hashes[name],
+                                     'fitted_distribution_sha256':None}
+    if len(outputs)!=40:raise ValueError('configuration coverage incomplete')
+    if {name:distribution_hash(model) for name,model in models.items()}!=pre_hashes:raise ValueError('precalibration distributions mutated across target sets')
+    contrasts={}
+    def contrast(label,left,right):
+        contrasts[label]=paired_summary(losses[left],losses[right],clusters,draws) if left in losses and right in losses else {'status':'NOT_COMPUTABLE_FAILED_CONFIGURATION'}
+    for target in TARGETS:
+        for name in ('H5','H1','H20'):contrast(target+'::'+name+'_minus_I',target+'::'+name,target+'::I')
+    for name in MODELS:contrast('CITIZEN_minus_RESIDENT::'+name,'CITIZEN_CENTRAL::'+name,'RESIDENT::'+name)
+    for target in TARGETS[2:]:
+        for name in MODELS:contrast(target+'_minus_CENTRAL::'+name,target+'::'+name,'CITIZEN_CENTRAL::'+name)
+    return {'kind':'EXPLORATORY_CONDITIONAL_POPULATION_COMPARISON','configurations':outputs,'contrasts':contrasts,
+            'pre_calibration_distribution_sha256':pre_hashes,'finite_directional_scenario_ranges':directional_ranges(outputs),
+            'distinct_trained_distributions':4,'target_sets':10,'calibration_configurations':40,'shared_bootstrap_draws':True,
+            'grid_cells':len(GRID),'primary_model':'H5','selection':'No adaptive tau/scenario selection or automatic promotion',
+            'uncertainty':'Eight deterministic rounded-input perturbation directions; no latent-vector guarantee, worst-case bound or ACS sampling interval',
+            'original_population_gate':'BLOCKED; original negative/suppressed results preserved; adult/state/transport/model-response validity unresolved',
+            'paid_calls':0,'api_spend_usd':0}
+
+
+def _target_sets_after_approval(root,config):
+    resident=json.loads((root/config['resident_population_path']).read_text())['targets']
+    central_saved=json.loads((root/config['citizen_target_path']).read_text())
+    acquisition=json.loads((root/'configs/e02_citizen_benchmark_acquisition.json').read_text())
+    target_config=json.loads((root/'configs/e02_citizen_targets_v1.json').read_text())
+    raw=(root/acquisition['local_archive']).read_bytes();inspect_archive(raw,acquisition)
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        reader=csv.DictReader(io.StringIO(z.read('ACSST5Y2024.S0501-Data.csv').decode('utf-8-sig')));next(reader);rows=list(reader)
+    central=convert_rows(rows,target_config)
+    if decimal_strings(central)['targets']!=central_saved['targets']:raise ValueError('central targets differ from audited artifact')
+    sets={'RESIDENT':resident,'CITIZEN_CENTRAL':central_saved['targets']};scenarios={}
+    for scenario,_,_ in TRANSFERS:
+        result,audit=scenario_targets(rows,target_config,central,scenario,config['amplitude_pp'])
+        sets['CITIZEN_'+scenario]=result['targets'];scenarios[scenario]={'targets':result,'percentage_transfers':audit}
+    return {name:{dim:{k:float(v) for k,v in margins.items()} for dim,margins in targets.items()} for name,targets in sets.items()},decimal_strings(scenarios)
+
+
+def run_comparison(root):
+    root=Path(root).resolve();config=load_config(root)
+    require_fit_approval(root,config)  # MUST precede any real fitting/calibration.
+    mapping=json.loads((root/config['mapping_path']).read_text());source=root/config['anes_path']
+    reference,a=extract_reference(source,mapping,config['seed']);records,b=extract_candidate(source,mapping,config['seed'])
+    identity=assert_identity(reference,records,a,b)
+    target_sets,scenario_artifacts=_target_sets_after_approval(root,config)
+    train=[];test=[]
+    for r in records:(test if r['heldout'] else train).append((r['key'],r['weight'],canonical_hash(r['design'])))
+    result=_compute_numeric_comparison(train,test,target_sets,config['seed'])
+    result['identity']={**identity,'independent_equivalence_review':'Pinned separately approved audit; see config execution_approval'}
+    result['provenance']={'config_sha256':sha256_file(root/'configs/e02_citizen_comparison_v1.json'),'required_files':config['required_files']}
+    with RunStore(root,'E02',{'stage':'citizen40-condition-comparison','config_sha256':result['provenance']['config_sha256']},kind='EXPLORATORY') as run:
+        run.write('comparison-config.json',config);run.write('rounding-scenarios.json',scenario_artifacts);run.write('comparison.json',result)
+        run.finish({'status':'RECORDED_ALL_CONFIGURATIONS_INCLUDING_FAILURES','paid_calls':0,'spent_usd':0,'reproducibility_hash':canonical_hash(result)})
+    return run.path
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('action',choices=('identity','compare'));parser.add_argument('--root',type=Path,default=Path.cwd())
+    args=parser.parse_args();print((run_identity if args.action=='identity' else run_comparison)(args.root))
+
+
+if __name__=='__main__':main()

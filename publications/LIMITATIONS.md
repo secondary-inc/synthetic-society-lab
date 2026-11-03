@@ -16,6 +16,8 @@ Coarsened joint-cell suppression removes sparse combinations. In the initial rec
 
 The independently checked support-preserving comparison is exploratory: its holdout had already been inspected, the common uniform floor affects the suppressed model’s absolute log loss, and uniform cluster resampling is not a complete survey-design variance estimator. Full smoothed grid support is imposed. The primary hierarchical candidate performed worse than the simpler independent model and was not promoted; sensitivity settings remain reported without selecting a winner.
 
+The subsequent40-configuration citizen/resident benchmark comparison uses the same inspected regional25+ cohort. S0501-derived citizen targets do not resolve ANES household versus Census group-quarters coverage, missing young adults or state representativeness. Eight compensating transfers in rounded input percentages describe only those finite directions, without latent-vector feasibility guarantees, worst-case bounds or ACS sampling uncertainty. Conditional cluster-resampling intervals omit target-estimation covariance and full survey-design uncertainty. Citizen-minus-resident contrasts compare benchmark constructions, not causal effects of citizenship. Independent arithmetic acceptance does not open the original population-validity gate.
+
 Survey cluster holdout checks do not establish external validity for generated model attitudes. Missing values, mode differences, top coding and questionnaire-version discrepancies can alter mappings. New fitting specifications require documented deviations and fresh independent review rather than post-hoc selection for desirable synthetic behavior.
 
 ## Stimuli and treatments

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:59:59.748102+00:00",
+  "code_files": {
+    "src/civiclab/dashboard.py": "1b65f89800688ee7b279b6a2bc39f27b1b6f45b7504ff2e103f48f38dfd77cab",
+    "src/civiclab/templates/run-viewer.html": "8f64d6626a92a29d70bb72a8c7745ae8742b88f9d25cf10f0a9d3a1681244b69",
+    "src/civiclab/figures.py": "8f1439c87f180e3588de2a2d39bc513569667d3605bea9f1208efb64d046ed08",
+    "publications/TECHNICAL_PAPER_DRAFT.md": "564bb26456d464b78bd3038cf198e9dd5554d06660af230f74971811d0aff084",
+    "publications/BLOG_DRAFT.md": "7e26c38455063bf5a1fb07f52b58553b7b1981f102d284c1a2dda07a8968c655",
+    "publications/LIMITATIONS.md": "216717685549d8bc0f8cb4577ed96f26859f95e1b36417d07e1ff749d97d6b39",
+    "publications/REPRODUCIBILITY.md": "3c27d10f98552baada5aa30250a7783d04840d1912b28aec1b5cc80744d4f5db",
+    "publications/figures/e02-citizen-primary-comparison.provenance.json": "6e95fa5a4c85215fc184ce34531b5d06783498cc8c40a82c74635014031279b7",
+    "publications/figures/e02-citizen-primary-comparison.png": "ca389263faf79469ae96799c9519738f77514ff01a0d1b2da11fe2f2123cce28",
+    "publications/figures/e02-citizen-primary-comparison.svg": "43e0e2028453a4ed97580cc25f217ffb634e3ba4ab63cbf7d4de475cb3812a06"
+  },
+  "requirements": [
+    {
+      "id": "TRACEABLE_VISUALS",
+      "status": "PASS",
+      "reason": "Recorded comparison viewer and primary figure trace exactly to accepted runs/audit; browser resident/citizen/failure views and figure inspected. Existing deferred scientific limits remain.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPARISON_INTEGRATION.json",
+          "sha256": "ae1066659d4aa0b2ad81ae8ebdf80d4c8377de1ce8a1b076360de63b96afc1b2"
+        }
+      ]
+    },
+    {
+      "id": "PAPER_DRAFT",
+      "status": "PASS",
+      "reason": "Owner-review technical draft accurately integrates bounded negativecomparison and uncertainties; does not certify fullresearch or publication.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPARISON_INTEGRATION.json",
+          "sha256": "ae1066659d4aa0b2ad81ae8ebdf80d4c8377de1ce8a1b076360de63b96afc1b2"
+        }
+      ]
+    },
+    {
+      "id": "BLOG_DRAFT",
+      "status": "PASS",
+      "reason": "Owner-review blog preserves negative result andpopulation/uncertainty limits; noexternalpublication or humaneffectclaims.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPARISON_INTEGRATION.json",
+          "sha256": "ae1066659d4aa0b2ad81ae8ebdf80d4c8377de1ce8a1b076360de63b96afc1b2"
+        }
+      ]
+    },
+    {
+      "id": "LIMITATIONS",
+      "status": "PASS",
+      "reason": "Updated limitations explicitly retain originaladult/state scope, inspectedholdout, benchmark/covariance/coverageandtransport gaps.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPARISON_INTEGRATION.json",
+          "sha256": "ae1066659d4aa0b2ad81ae8ebdf80d4c8377de1ce8a1b076360de63b96afc1b2"
+        }
+      ]
+    }
+  ],
+  "scope": "Currenthashboundintegration/draftrequirements only; nofullprogram or scientificcompletion implied."
+}

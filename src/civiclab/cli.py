@@ -27,6 +27,7 @@ def main():
     pack.add_argument('--out',type=Path,default=Path('data/processed/reproducibility/owner-review.zip'))
     gdelt = commands.add_parser('gdelt-ingest')
     gdelt.add_argument('--out', type=Path, default=Path('data/processed/gdelt/fixture.json'))
+    gdelt.add_argument('--summary',type=Path)
     commands.add_parser('e02-fit')
     commands.add_parser('e02-targets')
     stimuli=commands.add_parser('e02-stimuli')
@@ -78,11 +79,8 @@ def main():
         print(json.dumps(build_package(args.root,args.root/args.out,args.runs)))
         return
     if args.command == 'gdelt-ingest':
-        from .gdelt import ingest
-        manifest = json.loads((args.root / 'tests/fixtures/gdelt/manifest.json').read_text())
-        result = ingest(args.root / manifest['path'], manifest['sha256'])
-        atomic_json(args.root / args.out, result)
-        print(json.dumps({'status':'PASS_FIXTURE', 'records':len(result['records']), 'out':str(args.out)}))
+        from .gdelt import ingest_fixture
+        print(json.dumps(ingest_fixture(args.root,args.out,args.summary)))
         return
     if args.command == 'dashboard':
         from .dashboard import build

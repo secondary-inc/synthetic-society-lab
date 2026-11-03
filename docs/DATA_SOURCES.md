@@ -1,5 +1,7 @@
 # Registered research inputs
 
+This file preserves the source-registration history. Statements about implementation refer to that stage; current code, source-specific later manifests and independent acceptance are indexed in reports/STATUS.md and docs/21_DATA_ACQUISITION_MAP.md. Do not treat historical missing-component descriptions as current execution evidence.
+
 The machine-readable inventory is [SOURCE_INVENTORY.json](../configs/SOURCE_INVENTORY.json). It records archive and extracted-member SHA-256 hashes, file sizes, CSV columns and record counts. Raw downloads and extracted files are local under `data/raw/`, excluded from Git; this commit does not redistribute ANES respondent records or the large election tables.
 
 ## Received from the user

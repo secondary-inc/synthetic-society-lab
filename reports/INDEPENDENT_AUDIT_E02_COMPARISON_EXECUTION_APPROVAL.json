@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:44:13.473266+00:00",
+  "status": "PASS_COMPARISON_IMPLEMENTATION_FOR_REAL_EXPLORATORY_FIT",
+  "reviewed_required_files": {
+    "configs/SOURCE_INVENTORY.json": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c",
+    "configs/e02_citizen_benchmark_acquisition.json": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+    "configs/e02_citizen_targets_v1.json": "fdd3a55c8d8e479a67d96b2d312e8d5c2dc4029c18895e96d015696d0ecf6ae5",
+    "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+    "configs/e02_population_support_plan.json": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+    "data/processed/runs/e02-2fb676d7d32e4ba29537cb62395efd03/population.json": "65ab07b490724b97d3b9aaaeccaad47a1c2dbf456bad9f723632749291f26141",
+    "data/processed/runs/e02-edf2b36e269442748f4721ef7f479876/citizen-targets.json": "9bbf30312b0b1eb34521c08db6561cc9cf95bb51f5962fe62c6adb9018af9652",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7",
+    "data/raw/e02_citizen_benchmarks/ACSST5Y2024.S0501_2026-11-03T054417.zip": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+    "docs/E02_CITIZEN_COMPARISON_PLAN.md": "2f3d4c4c4eb4cfd0466af3d84ef55b311167798f4817fca2f29099972bffb451",
+    "reports/INDEPENDENT_AUDIT_E02_CITIZEN_COMPARISON_METHODS.json": "e5add835df17a2b6615bad16a40aa13a261408b5173b31174661b7a17cbed003",
+    "reports/INDEPENDENT_AUDIT_E02_CITIZEN_TARGETS_V1.json": "c34dcd369e6be3dc2f3ecb9e85e54ea6c2708914931ea6294d60526e30f4264c",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/citizen_benchmark.py": "a907d865139cc999048bba5a1fb16b491c314f645cbb280b28f48d2bf426b463",
+    "src/civiclab/e02/citizen_comparison_v1.py": "f568d620cd0a37f9a698bd054c994fd162aebef509dcba03e883a2f567b05d97",
+    "src/civiclab/e02/citizen_scenarios_v1.py": "e86740a5e7e7240fcf796c40ddf91d00753c8d476dbbf11e1d0256a0b14f04d2",
+    "src/civiclab/e02/citizen_targets.py": "9ee987fd5926f86d34375fe923724a004489575a0770e8834cefeb3bd8c880b2",
+    "src/civiclab/e02/cohort_reference_v1.py": "2c6dcea8eb9d2015acf4039151fe564b0ac5f509ec53cdafe0e94f8c67292f9c",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/population_alternatives.py": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f"
+  },
+  "reviewed_design_sha256": "0194c72ce095ab7b1b68dfdbaf0782e917f20dd48c394dfae9690b7eeb54184d",
+  "reviewed_fixture_tests_sha256": "34e468c7a157c68326be912f243fc95da72f4d4d36f06127bb714bd192653849",
+  "identity_run_id": "e02-10f83244230e4189b223e5d32febd10e",
+  "identity_run_artifacts_verified": 5,
+  "acceptance_evidence": {
+    "original_loader_equivalence": "Executed exact original AST statements through split only, without fitting; exact transient comparison against both extractors for2732actualrecords plus66single-variable fixtures.",
+    "cohort": "2286training/446heldout, raw and exact float weights, six recodes, raw design pair and split matched; no individual data exported.",
+    "scenario_arithmetic": "Own80digit fixture calculation independently checked192targetcomponents across eightdirections,maxerror3.25e-40; donor0/receiver100 zeroandreceiver99.9 fullamplitude separately checked.",
+    "coverage_and_failures": "Forty configurations with fixedten targetsets/fourmodeldistributions, shared500drawbootstrap, recorded failures and noncomputable contrasts; seven new comparison tests reviewed.",
+    "distribution_and_range_output": "Fortycanonical pre/postfullgridhashpairs independently reconstructed on separate varied synthetic target fixture; allfourfinite ranges/endpoints checked, failures/ties retained by regression fixtures.",
+    "leakage_and_gate": "Training alone constructs models; heldout only scored after designfreeze. Nullapproval and changeddesign reject; allrequiredhashpins fresh.",
+    "tests": "45currentE02testsPASS independently."
+  },
+  "probes_report": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_COMPARISON_PREFIT_PROBES.json",
+    "sha256": "60095486880075773d5c9a9044a5c41a65443286f71ed46391f518ba1197cb3b"
+  },
+  "execution_scope": "Only the exact frozen offline retrospective exploratory40-calibration comparison and exact replay may run after implementer adds this audit path/hash to execution_approval. No new scientific choices or tuning; preserve every configuration/failure and prior negative evidence.",
+  "required_postexecution_review": [
+    "Independently recheck actual citizen scenario arithmetic and selected paired loss/uncertainty outputs from permitted local inputs.",
+    "Verify all40configurations, input/code/output hashes, range/failure accounting, comparator reuse and exact aggregate replay.",
+    "Do not promote complexity or claim representative adult/state populations, confirmatory validity, human persuasion or prospective forecasting."
+  ],
+  "original_population_science_gate": "BLOCKED",
+  "external_publication": "NOT_AUTHORIZED",
+  "paid_inference": "NOT_AUTHORIZED",
+  "approved_spend_usd": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "limitations": "Trusted-code workflow gate, not OS/adversarial authentication. Existing inspected25+/region cohort remains narrower than original adult/state scope; all transport/coverage and ACS sampling uncertainty limits remain.",
+  "editorial_correction": "Before final handoff pin: single-variable fixture count corrected from arithmetic transcription76 to actual66; all fixture comparisons and actual2732records unchanged."
+}

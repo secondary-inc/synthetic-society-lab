@@ -15,11 +15,35 @@ const el=(tag,text,cls)=>{const x=document.createElement(tag);if(text!==undefine
 const json=x=>JSON.stringify(x,null,2);let selected=null;
 for(const [name,status]of Object.entries(data.modules)){const x=el('div',undefined,'module');x.append(el('strong',name),el('span',status));document.getElementById('modules').append(x)}
 const prettify=x=>x===null||x===undefined?'Not estimated':typeof x==='number'?Number(x.toFixed(4)).toString():String(x);
+function citizenComparison(parent,metrics,c){
+parent.append(el('h3','Citizen and resident benchmarks · recorded exploratory comparison'));
+metric(metrics,'Frozen configurations',c.calibration_configurations);
+metric(metrics,'Recorded configurations',Object.values(c.configurations).filter(x=>x.status==='RECORDED').length);
+metric(metrics,'Held-out survey records',c.identity.heldout_records);
+parent.append(el('p',c.original_population_gate,'error'),el('p','Same inspected regional25+ survey holdout. Artifact integrity does not establish independent scientific acceptance; consult the audit receipts. '+c.selection,'muted'));
+const target=el('select');target.id='comparison-target';const targetLabel=el('label','Recorded benchmark condition');targetLabel.htmlFor=target.id;parent.append(targetLabel);
+const targets=[...new Set(Object.keys(c.configurations).map(x=>x.split('::')[0]))];
+targets.sort((a,b)=>{const order=['RESIDENT','CITIZEN_CENTRAL'];return (order.includes(a)?order.indexOf(a):2)-(order.includes(b)?order.indexOf(b):2)||a.localeCompare(b)});
+for(const name of targets){const option=el('option',name);option.value=name;target.append(option)}
+parent.append(target);const output=el('div');parent.append(output);
+const show=()=>{output.replaceChildren();const name=target.value;
+table(output,['Model','Status','Weighted joint log loss (nats; lower is better)'],['I',c.primary_model,'H1','H20'].filter((v,i,a)=>a.indexOf(v)===i).map(model=>{const v=c.configurations[name+'::'+model];return[model==='I'?'Independent':model===c.primary_model?'Hierarchy '+model+' (primary)':'Hierarchy '+model+' (sensitivity)',v?.status??'MISSING',v?.metrics?.weighted_joint_log_loss_nats??null]}));
+const contrast=c.contrasts[name+'::'+c.primary_model+'_minus_I'];
+if(contrast){table(output,['Primary paired contrast','Difference (nats)','Descriptive cluster-resampling 95% interval'],[['Hierarchy minus independent',contrast.mean_loss_difference_nats,JSON.stringify(contrast.descriptive_percentile95)]]);output.append(el('p',contrast.interpretation,'muted'))}
+};target.addEventListener('change',show);show();
+parent.append(el('p',c.uncertainty,'muted'));
+details(parent,'All configurations, including failures',c.configurations);
+details(parent,'All paired contrasts and conditional uncertainty',c.contrasts);
+details(parent,'Finite directional ranges and failed scenario IDs',c.finite_directional_scenario_ranges);
+details(parent,'Frozen design, source hashes and distribution reuse',c);
+}
 function metric(parent,label,value){const box=el('div',undefined,'metric');box.append(el('div',label,'muted'),el('div',prettify(value),'data'));parent.append(box)}
 function details(parent,label,value){const d=el('details');d.append(el('summary',label),el('pre',json(value)));parent.append(d)}
 function table(parent,headers,rows){const t=el('table'),head=el('tr');headers.forEach(h=>head.append(el('th',h)));t.append(head);for(const row of rows){const tr=el('tr');row.forEach(c=>tr.append(el('td',prettify(c))));t.append(tr)}parent.append(t)}
 function selectRun(run){selected=run.manifest.run_id;renderList();const d=document.getElementById('detail');d.replaceChildren();const m=run.manifest,s=run.summary;d.append(el('span',m.kind,'badge'),el('span',s.status,'badge'),el('h2',m.module+' · '+(m.config.stage||m.config.action||(m.config.role==='DEMO_SELECTION_FIXTURE'?'selection engineering fixture':m.config.role)||'S0 baseline')));d.append(el('p',m.run_id,'muted'));const metrics=el('div',undefined,'metrics');d.append(metrics);metric(metrics,'Recorded model/API spend ($)',s.spent_usd??s.cost_usd??null);metric(metrics,'Paid calls recorded',s.paid_calls??null);metric(metrics,'Artifact integrity',run.integrity);
 if(run.analysis){metric(metrics,'Matched primary units',run.analysis.paired_units);metric(metrics,'Mock difference in changes (points)',run.analysis.estimate_thermometer_points);metric(metrics,'Mock 95% resampling interval',JSON.stringify(run.analysis.interval_95_crossed_bootstrap));d.append(el('p',run.analysis.uncertainty_label,'muted'));details(d,'Quality, exclusions and analysis',run.analysis)}
+if(run.citizen_comparison){citizenComparison(d,metrics,run.citizen_comparison)}
+if(run.execution_failure){d.append(el('h3','Execution failed · retained progress'),el('p','This sealed failure does not supply a completed comparison. Review recorded and incomplete configurations below.','error'));details(d,'Failure status and configuration accounting',run.execution_failure)}
 if(run.population){d.append(el('h3','Population calibration · exploratory'));table(d,['Diagnostic','Recorded value'],Object.entries(run.population.diagnostics).filter(([k,v])=>typeof v==='number'||typeof v==='boolean'));d.append(el('p',run.population.confirmatory_status,'error'));details(d,'Population source hashes and limitations',run.population)}
 if(run.selection_result){const r=run.selection_result;d.append(el('h3','Authored selection fixture · no election forecasts'));table(d,['Office','Broad selected','Deep selected'],Object.keys(r.broad).map(office=>[office,r.broad[office].selected.length,r.deep[office].selected.length]));d.append(el('p',r.scientific_gate+' · invented frame, not Cook ratings or an accepted actual 2026 sample.','error'));details(d,'Exact selector objectives, IDs and solver receipts',r)}
 if(run.selection_failure){d.append(el('h3','Selection fixture failed · no accepted optimum'),el('p',run.selection_failure.reason,'error'),el('p','The failure and available solver-stage events are preserved. No replacement selection or forecast was created.','muted'));details(d,'Recorded failure',run.selection_failure)}

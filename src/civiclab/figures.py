@@ -5,6 +5,59 @@ from .dashboard import verified_run
 from .common import atomic_json,sha256_file
 
 
+def citizen_comparison_figure(root, run_id, output):
+    """Plot the frozen primary contrast; retain all sensitivities in the run."""
+    import math
+    root=Path(root).resolve();path=(root/'data/processed/runs'/run_id).resolve()
+    if not path.is_relative_to(root/'data/processed/runs'):raise ValueError('run path escapes store')
+    run=verified_run(path);comparison=run.get('citizen_comparison',{})
+    if comparison.get('primary_model')!='H5' or comparison.get('calibration_configurations')!=40:
+        raise ValueError('frozen40-condition comparison required')
+    audit_path=root/'reports/INDEPENDENT_AUDIT_E02_CITIZEN_COMPARISON_ACTUAL.json'
+    audit=json.loads(audit_path.read_text())
+    if audit.get('status')!='PASS_BOUNDED_EXPLORATORY_COMPARISON' or run_id not in audit.get('runs',[]):
+        raise ValueError('independent bounded result acceptance required')
+    rows=[]
+    for target,label in [('RESIDENT','Resident benchmarks'),('CITIZEN_CENTRAL','Citizen benchmarks (central)')]:
+        contrast=comparison['contrasts'][target+'::H5_minus_I']
+        mean=contrast['mean_loss_difference_nats'];low,high=contrast['descriptive_percentile95']
+        scores={model:comparison['configurations'][target+'::'+model] for model in ('I','H5')}
+        if any(v['status']!='RECORDED' for v in scores.values()):raise ValueError('primary configuration failed')
+        delta=scores['H5']['metrics']['weighted_joint_log_loss_nats']-scores['I']['metrics']['weighted_joint_log_loss_nats']
+        if not all(math.isfinite(v) for v in (mean,low,high)) or not low<=mean<=high or not math.isclose(mean,delta,abs_tol=1e-12):
+            raise ValueError('inconsistent recorded primary contrast')
+        rows.append({'target':target,'label':label,'difference_nats':mean,'interval':[low,high]})
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({'font.size':10,'svg.fonttype':'none','svg.hashsalt':'civiclab'})
+    fig,ax=plt.subplots(figsize=(9,4),layout='constrained')
+    for i,row in enumerate(rows):
+        mean=row['difference_nats'];low,high=row['interval']
+        ax.errorbar(mean,i,xerr=[[mean-low],[high-mean]],fmt='o',capsize=5,color='#315e51')
+        ax.annotate(f'{mean:+.4f}',(mean,i),xytext=(0,12),textcoords='offset points',ha='center')
+    ax.axvline(0,color='#657874',linewidth=1)
+    ax.set_yticks(range(len(rows)),[r['label'] for r in rows]);ax.invert_yaxis()
+    ax.set_ylim(1.6,-.6);ax.set_xlim(-.05,.5)
+    ax.set_xlabel('Primary hierarchy minus independent weighted joint log loss (nats)\nPositive values favor the simpler independent model')
+    ax.set_title('Primary hierarchy did not improve either benchmark comparison',loc='left',pad=18)
+    ax.spines[['top','right']].set_visible(False)
+    fig.text(.01,-.05,'Descriptive 95% cluster-resampling intervals: 446 inspected held-out records / 352 clusters; 500 shared draws.\nConditional on fixed targets, not full survey-design or ACS uncertainty. Regional25+ diagnostic; population gate blocked.',fontsize=8)
+    output=Path(output);output.mkdir(parents=True,exist_ok=True);base='e02-citizen-primary-comparison'
+    for suffix in ('png','svg'):
+        metadata={'Title':'Exploratory primary population comparison','Description':run_id}
+        if suffix=='svg':metadata['Date']=None
+        fig.savefig(output/(base+'.'+suffix),dpi=180,bbox_inches='tight',metadata=metadata)
+    plt.close(fig)
+    receipt={'figure':base,'run_id':run_id,'source_checksums_sha256':run['checksums_sha256'],
+             'comparison_sha256':run['artifacts']['comparison.json'],
+             'independent_audit_sha256':sha256_file(audit_path),'rows':rows,
+             'scope':'Frozen H5 primary only; all40conditions and66contrasts retained in sealed run. Exploratory inspected regional25+ holdout, no promotion or population validity claim.',
+             'outputs':{base+'.'+s:sha256_file(output/(base+'.'+s)) for s in ('png','svg')}}
+    atomic_json(output/(base+'.provenance.json'),receipt)
+    return receipt
+
+
 def population_figures(root, run_id, output):
     root=Path(root).resolve();path=(root/'data/processed/runs'/run_id).resolve()
     if not path.is_relative_to(root/'data/processed/runs'):raise ValueError('run path escapes store')

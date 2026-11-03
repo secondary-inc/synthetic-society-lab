@@ -24,7 +24,7 @@ def build_package(root, output, run_ids):
                  'CODEX_MASTER_EXECUTION.md','.gitignore','.env.example'):
         p=root/name
         if p.is_file():inputs[name]=p
-    for folder in ('src','configs','protocols','docs','tests','publications','.github'):
+    for folder in ('src','configs','protocols','docs','scripts','tests','publications','.github'):
         for p in (root/folder).rglob('*'):
             if p.is_file() and p.suffix in ALLOWED_SUFFIXES and not any(
                 part=='__pycache__' or part.endswith(('.egg-info','.dist-info')) for part in p.relative_to(root).parts):

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:33:54.499829+00:00",
+  "status": "PASS_BOUNDED_CSV_EXPORT_WITH_PROVENANCE_AND_WORDING_FINDINGS",
+  "checks": {
+    "actual_records": 868,
+    "all_publication_dates_unknown": true,
+    "forecast_admissible": 0,
+    "csv_hash_bound_to_json": true,
+    "output_guard_probes_rejected": 3
+  },
+  "findings": [
+    {
+      "id": "IA-GDELT-001",
+      "scope": "wording/consumer consistency",
+      "observation": "CSV and JSON replacements individually atomic but not a pair transaction: injected JSON failure leaves new CSV and old JSON. Do not claim pair-atomic export; consumers must require matching JSON-bound CSV hash or implement paired commit."
+    },
+    {
+      "id": "IA-GDELT-002",
+      "scope": "run code provenance",
+      "observation": "New executable scripts/gdelt_ingest.py enters package, but code_identity excludes scripts; independent probe changes script without changing source_tree_sha256. Include executable entrypoint in code fingerprint or separately record its hash and include it in mutation guard."
+    }
+  ],
+  "code_files": {
+    "src/civiclab/gdelt.py": "7247bdf73fec4f632ec66673f2ea7f0c8f548abedda8bba616f27e0178726e4b",
+    "src/civiclab/reproduction.py": "fe226f2a5cb9d4fa12e5f159206bdaad0d083bf97c81ac1b553156b3c79f786c",
+    "scripts/gdelt_ingest.py": "efa4a6779646d8be3bc253fc7757f199ad1406e2de45b995fbff9ced7b67ee22"
+  },
+  "limits": "No current full-checkout/test/controller certification; no news rights/publication clock or forecast admissibility established.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

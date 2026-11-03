@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:36:23.930311+00:00",
+  "status": "PASS_DELTA_REMEDIATION",
+  "findings": {
+    "IA-GDELT-001": "CLOSED: immutable CSV creation then atomic JSON pointer; interrupted update preserves prior verified pair, orphan unreferenced new CSV permissible. Consumer rejects tamper, writer refuses clobber.",
+    "IA-GDELT-002": "CLOSED: executable scripts included in code fingerprint; independent edit changes identity."
+  },
+  "checks": {
+    "records": 868,
+    "failure_injection_preserves_prior_pair": true,
+    "tamper_rejected": true,
+    "changed_csv_refused": true,
+    "script_edit_changes_fingerprint": true
+  },
+  "code_files": {
+    "src/civiclab/gdelt.py": "bf0e4dbe0b40b51c4120900f1363a5d2338fe246d6910a98ee5e486cc9f6fa52",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/reproduction.py": "fe226f2a5cb9d4fa12e5f159206bdaad0d083bf97c81ac1b553156b3c79f786c",
+    "scripts/gdelt_ingest.py": "efa4a6779646d8be3bc253fc7757f199ad1406e2de45b995fbff9ced7b67ee22"
+  },
+  "limits": "Local fixture/export delta only; no publication times, news rights, forecasting admissibility or whole-repository acceptance.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

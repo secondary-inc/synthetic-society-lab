@@ -1,0 +1,27 @@
+{
+  "api_spend_usd": 0,
+  "checked_at_utc": "2026-11-03T12:00:28.285791+00:00",
+  "expected_archive_bytes": 6516359,
+  "expected_archive_sha256": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+  "limits": "HEADdenial does not prove GET denial or a blanket access restriction. Existing user-provided bytes remain unchanged. Upstream reacquisition not proven; no login/challenge/terms accepted, no raw respondents exported.",
+  "model_calls": 0,
+  "next_step": "Review ordinary offered-link browser download under existing source authorization before another channel; do not guess alternate endpoints or silently substitute release.",
+  "observations": [
+    {
+      "channel": "webpage read",
+      "result": "Official study page offers May19,2026CSV link and reports5521pre-election completions."
+    },
+    {
+      "channel": "web click on offered CSV",
+      "result": "Reader reported unsupported application/x-zip-compressed content type; no local archive obtained."
+    },
+    {
+      "channel": "ordinary urllib HEAD of exact offered URL",
+      "result": "HTTP403; Content-Type text/html;charset=UTF-8; Content-Length5564. No response body inspected, no GET or alternate URL attempted."
+    }
+  ],
+  "offered_csv_link": "https://electionstudies.org/anes_timeseries_2024_csv_20260519/",
+  "release": "2026-05-19",
+  "status": "PUBLIC_RELEASE_LINK_IDENTIFIED_PROGRAMMATIC_HEAD_DENIED",
+  "study_page": "https://electionstudies.org/data-center/2024-time-series-study/"
+}

@@ -1,0 +1,76 @@
+{
+  "api_spend_usd": 0,
+  "archive": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/source.zip",
+  "archive_integrity": {
+    "files": 257,
+    "run_ids": [
+      "e01-ed5b716aa76145258ece94c3df6b4188"
+    ],
+    "scope": "Byte integrity only; not scientific or publication acceptance.",
+    "sha256": "4a3eeb31dbcfddca5e0f28eb46fd43d61d6c294aa258f4fe5c1b9ccf17d9e425",
+    "status": "PASS_PACKAGE_INTEGRITY"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+        "-m",
+        "venv",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/venv"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".[selection]"
+      ],
+      "exit_code": 0,
+      "stderr": "\n[notice] A new release of pip is available: 24.0 -> 26.3\n[notice] To update, run: /var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/venv/bin/python -m pip install --upgrade pip\n",
+      "stdout": "Obtaining file:///private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/restored\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Getting requirements to build editable: started\n  Getting requirements to build editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nCollecting scipy==1.16.3 (from synthetic-society-lab==0.1.0)\n  Downloading scipy-1.16.3-cp311-cp311-macosx_14_0_arm64.whl.metadata (62 kB)\n     \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 62.0/62.0 kB 1.9 MB/s eta 0:00:00\nCollecting numpy<2.6,>=1.25.2 (from scipy==1.16.3->synthetic-society-lab==0.1.0)\n  Downloading numpy-2.4.6-cp311-cp311-macosx_14_0_arm64.whl.metadata (6.6 kB)\nDownloading scipy-1.16.3-cp311-cp311-macosx_14_0_arm64.whl (20.9 MB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 20.9/20.9 MB 28.2 MB/s eta 0:00:00\nDownloading numpy-2.4.6-cp311-cp311-macosx_14_0_arm64.whl (5.5 MB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 5.5/5.5 MB 28.1 MB/s eta 0:00:00\nChecking if build backend supports build_editable: started\nChecking if build backend supports build_editable: finished with status 'done'\nBuilding wheels for collected packages: synthetic-society-lab\n  Building editable for synthetic-society-lab (pyproject.toml): started\n  Building editable for synthetic-society-lab (pyproject.toml): finished with status 'done'\n  Created wheel for synthetic-society-lab: filename=synthetic_society_lab-0.1.0-0.editable-py3-none-any.whl size=1806 sha256=8ec341a8c932a24c66b7a55aab679a4232cd2d8c18039002370271453c8b3ab9\n  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-3q6xt75g/wheels/73/82/bb/c372ae61f6585308b23378a34f15ff73d482d96059519d27d9\nSuccessfully built synthetic-society-lab\nInstalling collected packages: synthetic-society-lab, numpy, scipy\nSuccessfully installed numpy-2.4.6 scipy-1.16.3 synthetic-society-lab-0.1.0\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stderr": "----------------------------------------------------------------------\nRan 122 tests in 11.880s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"status\": \"PASS\", \"checks\": 1}\n"
+    },
+    {
+      "argv": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/venv/bin/python",
+        "-c",
+        "import sys,scipy,numpy,civiclab; print(sys.version); print(scipy.__version__,numpy.__version__); print(civiclab.__file__)"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "3.11.17 (main, Oct 14 2026, 00:55:17) [Clang 23.1.3 ]\n1.16.3 2.4.6\n/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-python311-4pf1ev1c/restored/src/civiclab/__init__.py\n"
+    }
+  ],
+  "paid_calls": 0,
+  "scope": "Lead local Python3.11 compatibility probe of exact source snapshot; not remote CI or scientific acceptance",
+  "status": "PASS_LOCAL_PY311_SNAPSHOT"
+}

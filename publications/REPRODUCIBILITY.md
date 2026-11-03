@@ -44,6 +44,16 @@ The population-support comparison runs with `.venv/bin/python -m civiclab.e02.po
 
 ## Completion and dashboard
 
+The accepted exploratory citizen/resident comparison is recorded in runs `e02-1be3718699e54d7380755be1f9d87e6d` and `e02-ab4188e6c75d46a18179cb81dfde156c`. Its [runbook](../docs/E02_CITIZEN_COMPARISON_V1_RUNBOOK.md) describes exact source/code/approval pins. A rerun intentionally fails closed if pinned inputs change; do not rewrite old approvals to make it run. With exact registered source bytes and the reviewed implementation present:
+
+```bash
+.venv/bin/python -m civiclab.e02.citizen_comparison_v1 compare
+.venv/bin/civiclab dashboard --run e02-1be3718699e54d7380755be1f9d87e6d --run e02-ab4188e6c75d46a18179cb81dfde156c --out data/processed/comparison-dashboard
+.venv/bin/python -c "from pathlib import Path; from civiclab.figures import citizen_comparison_figure; citizen_comparison_figure(Path.cwd(), 'e02-1be3718699e54d7380755be1f9d87e6d', Path('publications/figures'))"
+```
+
+The viewer renders every saved configuration and failure, all paired contrasts and finite directional ranges. Changing its benchmark selector reads existing recorded scores; it performs no new fit, model call or counterfactual computation. The figure shows the frozen H5 primary under both central targets; full sensitivities remain in the run. Both original population-science acceptance and paid inference remain gated.
+
 ```bash
 .venv/bin/civiclab completion
 .venv/bin/civiclab dashboard --run e02-ad2ad153c5ea480d8a9b7f39433927e7 --run e02-0121548188194f04936b85c984ee677f

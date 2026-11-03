@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:50:45.806414+00:00",
+  "finding_id": "IA-E02-COMPARISON-LIFECYCLE-001",
+  "status": "PASS_LIFECYCLE_REMEDIATION",
+  "independent_injections": [
+    {
+      "case": "preparation",
+      "run": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-e02-lifecycle-cu0plcjd/preparation/data/processed/runs/e02-16894c4904c34a138380a5077e44fae4",
+      "failure": {
+        "cancelled": false,
+        "error_type": "RuntimeError",
+        "final_comparison_available": false,
+        "incomplete_configuration_ids": [],
+        "known_failed_configuration_ids": [],
+        "last_stage": "preparation",
+        "paid_calls": 0,
+        "recorded_configuration_ids": [],
+        "spent_usd": 0,
+        "started_configuration_ids": [],
+        "status": "FAILED"
+      },
+      "checksums_sha256": "682c32ab8b79c8d183e80b80bd0b1e14c21e91c74be70c3b8d86b18af327d69a"
+    },
+    {
+      "case": "training_cancel",
+      "run": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-e02-lifecycle-cu0plcjd/training_cancel/data/processed/runs/e02-b4a6da6d7cc04f459639e7ea09f3d1af",
+      "failure": {
+        "cancelled": true,
+        "error_type": "KeyboardInterrupt",
+        "final_comparison_available": false,
+        "incomplete_configuration_ids": [],
+        "known_failed_configuration_ids": [],
+        "last_stage": "training_started",
+        "paid_calls": 0,
+        "recorded_configuration_ids": [],
+        "spent_usd": 0,
+        "started_configuration_ids": [],
+        "status": "FAILED"
+      },
+      "checksums_sha256": "69d41e3f1bb8b1a839cc0ea687a5926bb09cd2d5577be62639553d6530db70a2"
+    },
+    {
+      "case": "mixed_config_failure_then_interrupt",
+      "run": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-e02-lifecycle-cu0plcjd/mixed_config_failure_then_interrupt/data/processed/runs/e02-ee8dbe4be03247fcb0c2599088cdc587",
+      "failure": {
+        "cancelled": true,
+        "error_type": "KeyboardInterrupt",
+        "final_comparison_available": false,
+        "incomplete_configuration_ids": [
+          "RESIDENT::H1"
+        ],
+        "known_failed_configuration_ids": [
+          "RESIDENT::I"
+        ],
+        "last_stage": "configuration_started",
+        "paid_calls": 0,
+        "recorded_configuration_ids": [
+          "RESIDENT::H5"
+        ],
+        "spent_usd": 0,
+        "started_configuration_ids": [
+          "RESIDENT::I",
+          "RESIDENT::H5",
+          "RESIDENT::H1"
+        ],
+        "status": "FAILED"
+      },
+      "checksums_sha256": "c3516ab9d747ef344380623065b60a62bf4dea4e431596f5551d2dedca515470"
+    }
+  ],
+  "old_approval_rejected_for_new_code_design": true,
+  "reviewed_required_files": {
+    "configs/SOURCE_INVENTORY.json": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c",
+    "configs/e02_citizen_benchmark_acquisition.json": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+    "configs/e02_citizen_targets_v1.json": "fdd3a55c8d8e479a67d96b2d312e8d5c2dc4029c18895e96d015696d0ecf6ae5",
+    "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+    "configs/e02_population_support_plan.json": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+    "data/processed/runs/e02-2fb676d7d32e4ba29537cb62395efd03/population.json": "65ab07b490724b97d3b9aaaeccaad47a1c2dbf456bad9f723632749291f26141",
+    "data/processed/runs/e02-edf2b36e269442748f4721ef7f479876/citizen-targets.json": "9bbf30312b0b1eb34521c08db6561cc9cf95bb51f5962fe62c6adb9018af9652",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7",
+    "data/raw/e02_citizen_benchmarks/ACSST5Y2024.S0501_2026-11-03T054417.zip": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+    "docs/E02_CITIZEN_COMPARISON_PLAN.md": "2f3d4c4c4eb4cfd0466af3d84ef55b311167798f4817fca2f29099972bffb451",
+    "reports/INDEPENDENT_AUDIT_E02_CITIZEN_COMPARISON_METHODS.json": "e5add835df17a2b6615bad16a40aa13a261408b5173b31174661b7a17cbed003",
+    "reports/INDEPENDENT_AUDIT_E02_CITIZEN_TARGETS_V1.json": "c34dcd369e6be3dc2f3ecb9e85e54ea6c2708914931ea6294d60526e30f4264c",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/citizen_benchmark.py": "a907d865139cc999048bba5a1fb16b491c314f645cbb280b28f48d2bf426b463",
+    "src/civiclab/e02/citizen_comparison_v1.py": "72bede804eb6c1b726c5479511ef53c55133f65b85e72b612d40a144944f85c9",
+    "src/civiclab/e02/citizen_scenarios_v1.py": "e86740a5e7e7240fcf796c40ddf91d00753c8d476dbbf11e1d0256a0b14f04d2",
+    "src/civiclab/e02/citizen_targets.py": "9ee987fd5926f86d34375fe923724a004489575a0770e8834cefeb3bd8c880b2",
+    "src/civiclab/e02/cohort_reference_v1.py": "2c6dcea8eb9d2015acf4039151fe564b0ac5f509ec53cdafe0e94f8c67292f9c",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/population_alternatives.py": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f"
+  },
+  "scope": "Synthetic fixture lifecycle only; no real distribution fitting or source scenario computation run by auditor. Abrupt OS kill/powerloss cannot be guaranteed to seal failure, but fsynced manifest/progress/checkpoints precede compute.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

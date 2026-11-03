@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:56:45.199797+00:00",
+  "status": "PASS_BOUNDED_EXPLORATORY_COMPARISON",
+  "runs": [
+    "e02-1be3718699e54d7380755be1f9d87e6d",
+    "e02-ab4188e6c75d46a18179cb81dfde156c"
+  ],
+  "run_artifact_hashes_verified": 98,
+  "exact_replay_artifacts": 45,
+  "approval_sha256": "bb04cc54dd74d6e83b199751b03d9d127cd458dc172ab68b3a2410c72f0b2274",
+  "code_and_source_pins_current": true,
+  "configuration_count": 40,
+  "configuration_failures": 0,
+  "independent_metrics_recomputed": 40,
+  "maximum_metric_error_nats": 8.881784197001252e-16,
+  "paired_contrasts_independently_recomputed": 66,
+  "heldout_clusters": 352,
+  "shared_bootstrap_draws": 500,
+  "actual_scenario_state_column_counts_independently_recomputed": 4896,
+  "actual_scenario_target_components_independently_recomputed": 192,
+  "maximum_derived_count_decimal_error": "4.984984984984984984984984984984984984985E-34",
+  "selected_independent_contrasts": {
+    "RESIDENT::H5_minus_I": {
+      "mean": 0.2224189135366361,
+      "interval": [
+        0.05117678385308147,
+        0.41953460779957613
+      ]
+    },
+    "CITIZEN_CENTRAL::H5_minus_I": {
+      "mean": 0.2220163390783003,
+      "interval": [
+        0.05165127689906871,
+        0.4197439043405809
+      ]
+    },
+    "CITIZEN_minus_RESIDENT::I": {
+      "mean": 0.002592860129713057,
+      "interval": [
+        -0.008217518326881968,
+        0.01126627928588987
+      ]
+    },
+    "CITIZEN_minus_RESIDENT::H5": {
+      "mean": 0.002190285671377248,
+      "interval": [
+        -0.00838355114193457,
+        0.010953765160349932
+      ]
+    }
+  },
+  "distribution_reuse": "Samefourprecalibrationhashesacrosstenuses; replay45dataartifactsbyteexact; syntheticprefitaudit independentlycheckedcanonicalprobabilityhashimplementation. Ownnumericmodelsagreeall40losseswithinreportederror.",
+  "lifecycle": "Manifest/config/preparation/training/configurationeventsand40immutablecheckpointsverified; interruptedlifecyclepreviously independentlytested.",
+  "disclosure": "Reviewedrecordedartifactsaggregateonly; norespondentIDs,rowpositions,design/clusterIDs,rawanswersorperrecordhashesareexported. Source hashes are file-level, not respondent-level.",
+  "scientific_population_gate": "BLOCKED",
+  "conclusion": "Primaryhierarchytau5worsensheldoutlossunderbothresidentandcitizentargets; no promotion. Citizen-minus-resident and8directionrangesareconditionalexploratorydiagnostics, not causal effects/ACSconfidence/worstcase orvalidity evidence.",
+  "limits": [
+    "Already-inspected25+/regioncohortnarrowerthanoriginaladult/state scope.",
+    "Uniformclusterbootstrapconditionalonpointtargetsisdescriptive,notfullANES/PUMS/ACSdesignuncertainty.",
+    "Fullsupportimposedbysmoothing; residentcitizen/GQ/household/time/nonresponse/transportremainunresolved."
+  ],
+  "paid_calls": 0,
+  "cost_usd": 0,
+  "raw_source_data_exported": false
+}

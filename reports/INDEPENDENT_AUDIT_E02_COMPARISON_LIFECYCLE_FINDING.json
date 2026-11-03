@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:45:03.907090+00:00",
+  "finding_id": "IA-E02-COMPARISON-LIFECYCLE-001",
+  "status": "OPEN_EXECUTION_PAUSED_PENDING_REMEDIATION",
+  "source": "Lead independently identified post-approval lifecycle gap; auditor confirms current source orders computation before RunStore context.",
+  "affected_approval": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_COMPARISON_EXECUTION_APPROVAL.json",
+    "sha256": "8505c19d875f1283f124ec51efba4719fa8a5b6acecb63dd0bc4910a2af8efac"
+  },
+  "observation": "run_comparison loads/calibrates/scores all real configurations before entering RunStore, so process errors or interruption can leave no manifest/config/progress/failure run artifacts.",
+  "required_remediation": [
+    "Create run context and persist config/input provenance before first actual fitting/calibration.",
+    "Record per-configuration aggregate start/completion/failure events without respondent data.",
+    "Injected interruption must preserve sealed failed run, completed/failed aggregate configurations, available progress and errors.",
+    "Refresh code/config/test pins and independently audit lifecycle before versioned replacement execution approval."
+  ],
+  "prior_valid_checks": "Cohort/scenario/arithmetic/coverage/hash/range fixture checks remain useful; prior receipt is preserved but not sufficient authority to dispatch this snapshot.",
+  "real_fit": "NOT_RUN per lead/worker handoff",
+  "cost_usd": 0,
+  "model_calls": 0
+}
