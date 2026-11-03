@@ -1,0 +1,568 @@
+{
+  "actual_approvals": {
+    "fit": null,
+    "parse": null,
+    "source": null
+  },
+  "actual_authority": 0,
+  "actual_person_rows_processed": 0,
+  "actual_source_requests": 0,
+  "api_model_cost_usd": 0,
+  "files": {
+    "configs/e02_full_adult_engine_v1_1.json": "a02ae6c46099c4b17ecf413291c5df2bbfa5b006bd798500f5cab8f3e054a06a",
+    "docs/E02_FULL_ADULT_ENGINE_V1_1_REMEDIATION.md": "38b467408b21d6e77968458d93f7416588ae50347ebe31d170407cc99312a2ab",
+    "reports/E02_FULL_ADULT_ENGINE_V1_1_TEST_LOG.txt": "04b8c1c54a742a8abd003011e38680f7dc907d525a1a7bb2a60129eb0d84d7e5",
+    "src/civiclab/e02/full_adult_analysis_v1_1.py": "9eea9e7fb3998acc0fdce62641d8d59abee7d36d68f29d873c43ed3037232d72",
+    "src/civiclab/e02/full_adult_codec_v1_1.py": "d65c07388924f488c0e84f13924302f31e8df8c8b8189958c17d92a150177d25",
+    "src/civiclab/e02/full_adult_control_v1_1.py": "f58b33b0e66f049cddcbca5a487cb8c36abc5585e08ea053b18fd10a1cc4569c",
+    "src/civiclab/e02/full_adult_engine_v1_1.py": "b11cc3e7a29ae494bba01ec7b89f0f54ec6f658725c277d588e5c79a1884c242",
+    "src/civiclab/e02/full_adult_queries_v1_1.py": "d58d2195cc7d791c184518a5db2ee0896e65f89f1301bdee03e75a9c16de86ae",
+    "src/civiclab/e02/full_adult_runtime_v1_1.py": "4e8f586b3a2a6922131a50ce468a7260eedc18a9aff6fa07980421c3fd98c4d5",
+    "src/civiclab/e02/full_adult_types_v1_1.py": "05f2641c5f258d881de3cc72cdfb20e66ddb5a7f6a620c466bc2cfdf681b512f",
+    "tests/test_e02_full_adult_v1_1.py": "eb054c7e999c1e9382e4897d7fa724fcf51c8a15c499c20093cfa19fb36c3c8e"
+  },
+  "final_E02_suite": {
+    "command": "PYTHONPATH=src:tests .venv/bin/python -m unittest discover -s tests -p 'test_e02*.py' -v",
+    "historical_v1_methods": 18,
+    "log_path": "reports/E02_FULL_ADULT_ENGINE_V1_1_TEST_LOG.txt",
+    "log_sha256": "04b8c1c54a742a8abd003011e38680f7dc907d525a1a7bb2a60129eb0d84d7e5",
+    "methods": 113,
+    "new_v1_1_methods": 20,
+    "other_existing_E02_methods": 75,
+    "result": "OK",
+    "seconds": 81.504
+  },
+  "git_base": "5368564dbaeba57e38624982b353c2844b77a0e2",
+  "model_calls": 0,
+  "original_candidate_all_files_unchanged": true,
+  "original_findings_file_sha256": "e2a094b0146be769ef6c1cabf3a72f6faac3883ead25ca6b99cd48ba43d3e52d",
+  "original_findings_status": "OPEN_PENDING_INDEPENDENT_REMEDIATION_REVIEW",
+  "original_freeze_file_sha256": "283a286b33b13df0383256221c578f86a04eb81beed2977126c87297c9ec4768",
+  "preserved_probe_index": {
+    "cases": 42,
+    "indexed_files": 306,
+    "path": "data/processed/e02_F_authored/F-remediation-probes-v1_1-20261103-01/probe_index.json",
+    "results": [
+      {
+        "anchors_unchanged": true,
+        "corrupt_claimed_ops": 73440,
+        "future_query_evaluations": 0,
+        "kind": "MOCK_MUTABLE_COEDIT_REFUSED",
+        "mode": "zero",
+        "new_reservations": 0,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "rejected_open_reserve_execute": 3
+      },
+      {
+        "anchors_unchanged": true,
+        "corrupt_claimed_ops": 74084,
+        "future_query_evaluations": 0,
+        "kind": "MOCK_MUTABLE_COEDIT_REFUSED",
+        "mode": "one_less",
+        "new_reservations": 0,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "rejected_open_reserve_execute": 3
+      },
+      {
+        "anchors_unchanged": true,
+        "corrupt_claimed_ops": 74085,
+        "future_query_evaluations": 0,
+        "kind": "MOCK_MUTABLE_COEDIT_REFUSED",
+        "mode": "kind",
+        "new_reservations": 0,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "rejected_open_reserve_execute": 3
+      },
+      {
+        "anchors_unchanged": true,
+        "corrupt_claimed_ops": 74085,
+        "future_query_evaluations": 0,
+        "kind": "MOCK_MUTABLE_COEDIT_REFUSED",
+        "mode": "definition",
+        "new_reservations": 0,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "rejected_open_reserve_execute": 3
+      },
+      {
+        "anchors_unchanged": true,
+        "corrupt_claimed_ops": 74085,
+        "future_query_evaluations": 0,
+        "kind": "MOCK_MUTABLE_COEDIT_REFUSED",
+        "mode": "total",
+        "new_reservations": 0,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "rejected_open_reserve_execute": 3
+      },
+      {
+        "anchors_unchanged": true,
+        "corrupt_claimed_ops": 74085,
+        "future_query_evaluations": 0,
+        "kind": "MOCK_MUTABLE_COEDIT_REFUSED",
+        "mode": "receipt_only",
+        "new_reservations": 0,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "rejected_open_reserve_execute": 3
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "de95430b25417c89a002304105769b94a54a5058608b0079c122e3e8c9e8cf65",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00538992881775,
+        "target": 0
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "1f3be5a69361ea6cdeeae86a90366d39fa64abb3a8450b7ed74f0f9646abc34c",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.0053129196167,
+        "target": 0
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 0
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "7704fcbfd3548b5c5dd89bf00ca5768ada74be75a6422da7bc14fe6c2195ad09",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.005308866500854,
+        "target": 1
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "c9a69c38d9e0f8b892f883437eb8969b6228de9f448f4c3a7d5aafa58ac7ca25",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.005450963974,
+        "target": 1
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 1
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "55e15c97dcb3ab2ca1332a66065bd6bee00832f690bd55da6a156fa111d99552",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00485706329346,
+        "target": 2
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "fe8539d33a55e8613944ce3e1d7ec4b524c5da004669e8c87c4562ff548e1d5d",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.005439043045044,
+        "target": 2
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 2
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "07fb408d4b2b54a6bda7f2810ab8962c5a78e36c53c271266a5f61f03f82ff18",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.005358934402466,
+        "target": 3
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "37ad84688479f0cb616ba1256b6097a132cc59981e40d343c0f804d3cd3602b5",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.005975008010864,
+        "target": 3
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 3
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "38b018abc8936b30d6c890d91c40494dd3434244d4607c038227c53f39e430ee",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00619912147522,
+        "target": 4
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "d224fbfd7005482eeb67ceaf1a57d83e0d9a597adcef9ed3110b4db87e8008f5",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.00532507896423,
+        "target": 4
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 4
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "00f1fd445f7c1bd9282c104d513cffd37eb07da0b2736f9f5ec586bd1773a875",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.0056471824646,
+        "target": 5
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "c4a710975921f22ed29e967319a178d34ce9b0a939ce9837d5adf8ec8d827ef6",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.00562381744385,
+        "target": 5
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 5
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "4ec2c20273bdad8abe358b6b6b837349a83395cf57c27c8517db07cfc933fbcd",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00539517402649,
+        "target": 6
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "d4c78e9bb4ac7cd9b813dad857b5f1273392040beef58d4cab5fb67fbbbedc34",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.005576848983765,
+        "target": 6
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 6
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "533b33461be66795a4fa6b914d4439c291742b6e4d7788589d20722dec55725f",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00519394874573,
+        "target": 7
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "97763f32d075503458063dc0f1b5f22c8c230b4a44c2a98b39a7665903a4d7d9",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.006126165390015,
+        "target": 7
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 7
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "66df1696de201d6960aa06bce2ed4c12c5709b9e2082f6e0731c8d740f05a380",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.005210876464844,
+        "target": 8
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "b19a20222c20399846283c5f12e8f4945c465f2e230cdc7b8f8be3996a8c057c",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.00551199913025,
+        "target": 8
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 8
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "4a2566dca4f5764e0206cfa1cfb28b99a119a14d468fc9b20eecebdfd7785740",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00581908226013,
+        "target": 9
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "0e4b7783eaa32d8908a91418b861373fa17df9b06466fd14bc4d0c7b1a69c4fb",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.00505089759827,
+        "target": 9
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 9
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "fe662ae6e06a24f3c17ac3ebd922f0092a26f4de69a122153f60ba0c3c88b7d6",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.004904985427856,
+        "target": 10
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "f5db3655f7933e4572f676faded743d189441bbc9634bfd66c379118641774e6",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.00521111488342,
+        "target": 10
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 10
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "08c6b04b5e23a4bd5643194434fd1e86c54fa9c6860af75ced7941c20a41751c",
+        "mode": "missing",
+        "rows_charged": 12,
+        "seconds_charged": 60.00592279434204,
+        "target": 11
+      },
+      {
+        "accepted_aggregate": false,
+        "actual_person_rows": 0,
+        "halted": true,
+        "kind": "MOCK_MALFORMED_WIDTH_REFUSED",
+        "manifest_sha256": "0351dd29c393f382cd33f08de4d055d808295d92cabcde7e66c0ab3b52a56ff6",
+        "mode": "extra",
+        "rows_charged": 12,
+        "seconds_charged": 60.00540113449097,
+        "target": 11
+      },
+      {
+        "adults": 6,
+        "kind": "MOCK_VALID_EMPTY_UNUSED_ACCEPTED",
+        "rows": 12,
+        "target": 11
+      }
+    ],
+    "sha256": "1b3f4c0082931ace9865e1fd6e3bbd2b180b99d38fec6be78fc272224e0477f0"
+  },
+  "recorded_at_utc": "2026-11-03T14:57:55.408582+00:00",
+  "remediation_tests": {
+    "dispatch_argument_modes": [
+      "zero",
+      "one_less",
+      "kind",
+      "definition",
+      "vector",
+      "nonzero_count"
+    ],
+    "frozen_inputs_runtime_genesis_unchanged_in_attacks": true,
+    "future_query_evaluations_and_new_reservations_after_corruption": 0,
+    "methods": 2,
+    "resealed_mutable_history_modes": [
+      "zero",
+      "one_less",
+      "kind",
+      "definition",
+      "total",
+      "receipt_only"
+    ],
+    "result": "OK",
+    "seconds": 1.187,
+    "width_case_count": 36,
+    "width_matrix": "6 adult+6 under18 domains x missing unused/extra quoted/valid empty unused"
+  },
+  "required_source_and_reference_pins": {
+    "configs/e02_full_adult_benchmark_u1_v1_1.json": "3d71a83dc88d3f0622ec4db536030ab0f42ff46520659e514853eb00be813fdf",
+    "docs/E02_FULL_ADULT_BENCHMARK_U1_SPEC_V1_1.md": "90759d9e9718b98703d2a9d0353dad3a25b426311fa29fc70e6e630db6d4a2d2",
+    "reports/INDEPENDENT_AUDIT_E02_N1_V1_1_REMEDIATION.json": "a5cddcdd8fdcc85300b62256aae3cb1dbb2c4f3e463ff68a0e98a491e24404b5",
+    "reports/INDEPENDENT_AUDIT_E02_U1_V1_1_SPEC.json": "326028829f931912ddf582ab2344c28424c548bd6b03ef28a86bf3c2e0da0439",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/full_adult_analysis_v1_1.py": "9eea9e7fb3998acc0fdce62641d8d59abee7d36d68f29d873c43ed3037232d72",
+    "src/civiclab/e02/full_adult_codec_v1_1.py": "d65c07388924f488c0e84f13924302f31e8df8c8b8189958c17d92a150177d25",
+    "src/civiclab/e02/full_adult_control_v1_1.py": "f58b33b0e66f049cddcbca5a487cb8c36abc5585e08ea053b18fd10a1cc4569c",
+    "src/civiclab/e02/full_adult_engine_v1_1.py": "b11cc3e7a29ae494bba01ec7b89f0f54ec6f658725c277d588e5c79a1884c242",
+    "src/civiclab/e02/full_adult_queries_v1_1.py": "d58d2195cc7d791c184518a5db2ee0896e65f89f1301bdee03e75a9c16de86ae",
+    "src/civiclab/e02/full_adult_runtime_v1_1.py": "4e8f586b3a2a6922131a50ce468a7260eedc18a9aff6fa07980421c3fd98c4d5",
+    "src/civiclab/e02/full_adult_types_v1_1.py": "05f2641c5f258d881de3cc72cdfb20e66ddb5a7f6a620c466bc2cfdf681b512f",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_full_adult_v1_1.py": "eb054c7e999c1e9382e4897d7fa724fcf51c8a15c499c20093cfa19fb36c3c8e"
+  },
+  "run": {
+    "artifact_index_path": "data/processed/e02_F_authored/F-mock-v1_1-20261103-01/artifact_hashes.json",
+    "artifact_index_sha256": "d39ca902cb2a1d226107a18c3fc2e844526453aedf9677ceab812d9ec0ad2346",
+    "authored_adult_rows_per_sweep": 3672,
+    "authored_all_age_rows_per_sweep": 3978,
+    "cells": 3672,
+    "elapsed_seconds": 29.10115975001827,
+    "indexed_files": 111,
+    "kind": "MOCK_AUTHORED_F_ENGINE_V1_1",
+    "logical_ops_charged": 12150122,
+    "nested_C_rows_per_sweep": 612,
+    "primary_replay_file_equality": {
+      "allocation_counts.i64le": true,
+      "allocation_weights.i64le": true,
+      "contrast_results_v1_1.jsonl": true,
+      "count.i64le": true,
+      "covariance_results_v1_1.jsonl": true,
+      "execution_manifest.json": true,
+      "point.i64le": true,
+      "replicates.i64le": true,
+      "source_status.u8": true,
+      "sum_squared.i64le": true,
+      "support_status.u8": true,
+      "uncertainty.json": true,
+      "views.json": true
+    },
+    "receipt_path": "data/processed/e02_F_authored/F-mock-v1_1-20261103-01/fixture_receipt.json",
+    "receipt_sha256": "78f64c69d800d6821c9904776d2e9cbf9c144951d129a5afc44bf30b7f93f542",
+    "resource_observations": 161,
+    "run_id": "F-mock-v1_1-20261103-01",
+    "sampled_child_peak_rss_bytes": 29278208,
+    "signed_replicate_components": 293760
+  },
+  "status": "REMEDIATION_IMPLEMENTER_TESTS_PASS_INDEPENDENT_REVIEW_PENDING",
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "src/civiclab/e02/full_adult_analysis_v1_1.py",
+      "src/civiclab/e02/full_adult_codec_v1_1.py",
+      "src/civiclab/e02/full_adult_control_v1_1.py",
+      "src/civiclab/e02/full_adult_engine_v1_1.py",
+      "src/civiclab/e02/full_adult_queries_v1_1.py",
+      "src/civiclab/e02/full_adult_runtime_v1_1.py",
+      "src/civiclab/e02/full_adult_types_v1_1.py",
+      "configs/e02_full_adult_engine_v1_1.json",
+      "tests/test_e02_full_adult_v1_1.py",
+      "docs/E02_FULL_ADULT_ENGINE_V1_1_REMEDIATION.md",
+      "reports/E02_FULL_ADULT_ENGINE_V1_1_TEST_LOG.txt",
+      "reports/E02_FULL_ADULT_ENGINE_V1_FREEZE.json",
+      "reports/E02_FULL_ADULT_ENGINE_V1_1_EVIDENCE.json",
+      "reports/E02_FULL_ADULT_ENGINE_V1_1_RECEIPT.md"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Lead routes exact v1.1 source/config/test/output pins to independent auditor for re-execution and own corruption probes. Keep original findings/v1 history and all actual approvals unchanged.",
+    "OUTPUT_ARTIFACTS": [
+      "Wholly separate v1.1 modules/config/test scope; immutable v1 preserved",
+      "full-shape retained v1.1 MOCK run and42 retained adversarial source/ledger fixtures",
+      "frozen byte hashes, final test log and worker receipt"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest test_e02_full_adult_v1_1.RemediationTests -v",
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest discover -s tests -p 'test_e02*.py' -v",
+      "PYTHONPATH=src:tests .venv/bin/python -c \"from test_e02_full_adult_v1_1 import record_authored_run; record_authored_run('data/processed/e02_F_authored/F-mock-v1_1-NEW-ID')\""
+    ],
+    "RISKS_AND_LIMITATIONS": "Implementer remediation candidate only. Scoped standard-library schema validation; cached immutable-plan semantic rederivation; internal trusted anchors; sampled/cooperative limits; authored full-output shape not national volume; no political priors or human effects.",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authored fictional285-column ZIP/CSV only; legitimate fixture source manifests updated for malformed width cases. No actual respondent source, new GET, publisher data, fit or external service. All raw fixtures stay ignored/local. Existing U1/public metadata/N1 references only.",
+    "TASK_ID": "E02-F-v1.1-QUERY-COST-CSV-WIDTH-REMEDIATION",
+    "TESTS_RUN_AND_RESULTS": "2 expanded remediation methods OK in1.187s; full113 E02 methods OK in81.504s (75 older E02 +18 preserved defective-v1 fixture methods +20 new v1.1 methods). 42 separately retained probes pass;13 primary/replay output files match; all retained indexes rehashed. Historical v1 still has independently open defects.",
+    "UNRESOLVED_BLOCKERS": "Both original findings remain OPEN until independent reviewer issues a new exact-candidate decision. Actual source/adapter/WY reuse/disclosure/fit/model/spend gates remain blocked."
+  },
+  "task_id": "E02-F-v1.1-QUERY-COST-CSV-WIDTH-REMEDIATION",
+  "worktree_scope": "new uncommitted disjoint v1.1 candidate; originalv1 preserved at75b4823 by lead"
+}
