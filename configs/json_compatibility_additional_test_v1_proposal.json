@@ -1,0 +1,73 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_TEST_V1_METHODS_PROPOSAL",
+  "authority": "NONE_PROPOSAL_ONLY",
+  "owner_request": "Prepare and approve one additional tightly capped connectivity test; owner reports no matching OpenRouter log.",
+  "evidence": {
+    "owner_report_no_matching_log": true,
+    "screenshot_observation": {
+      "usage_display_usd": "0.0000",
+      "last_used": "Never",
+      "scope": "Displayed key only; attribution to historical run03 credential unverified"
+    },
+    "historical_provider_cost": "UNKNOWN",
+    "historical_receipt": "4fc8f40cbc434a308f11e1094fae5d7a",
+    "historical_conservative_charge_microusd": 340,
+    "historical_dispatches": 1
+  },
+  "proposed_limits": {
+    "absolute_lifetime_microusd": 1000,
+    "absolute_lifetime_dispatches": 2,
+    "additional_POST_attempts": 1,
+    "additional_reservation_max_microusd": 340,
+    "conservative_held_total_max_microusd": 680,
+    "catalog_GET_attempts": 1,
+    "statistics_GET_attempts": 1,
+    "inference_retries": 0,
+    "purchases": 0,
+    "topups": 0,
+    "fallbacks": 0
+  },
+  "request": {
+    "model": "openai/gpt-4.1-nano",
+    "provider_family": "Azure",
+    "temperature": 0,
+    "seed": 20261103,
+    "max_tokens": 32,
+    "input_token_bound_max": 2276,
+    "purpose": "Nonpolitical JSON compatibility only",
+    "user_message": "Return exactly one JSON object with the key ok and the boolean value true. Do not add text."
+  },
+  "accounting_change": {
+    "mode": "PROPOSED_EXPLICIT_ONE_SHOT_UNCERTAINTY_EXCEPTION",
+    "existing_V4_source": "UNCHANGED",
+    "existing_owner_namespace": "UNCHANGED",
+    "existing_uncertain_row": "UNCHANGED_AND_STILL_UNCERTAIN",
+    "refund_microusd": 0,
+    "clear_unfinished_count": false,
+    "new_owner": false,
+    "exception_receipts": [
+      "4fc8f40cbc434a308f11e1094fae5d7a"
+    ],
+    "other_unfinished_allowed": false,
+    "successor_writer": "NOT_IMPLEMENTED",
+    "legacy_reader_after_new_event": "FAIL_CLOSED_UNKNOWN_EVENT_EXPECTED"
+  },
+  "release_gates": [
+    "Independent methods acceptance of explicitly disclosed control amendment",
+    "Separately versioned implementation and authored crash/concurrency/cap/secret tests",
+    "Independent exact code and terminal packet acceptance",
+    "Owner explicit acceptance of retaining unknown prior billing while allowing one additional dispatch",
+    "Fresh exact price/applicability review and bounded runtime catalog match",
+    "Owner same-terminal assertion of rotated dedicated key and prefunded account; no key in chat",
+    "Read-only current owner snapshot binds existing history/head and exact run03 row; any drift refuses"
+  ],
+  "actual": {
+    "owner_amendment_assertion": null,
+    "independent_methods_review": null,
+    "code_review": null,
+    "terminal_packet": null,
+    "effective_at_utc": null,
+    "expires_at_utc": null,
+    "new_request_dispatched": false
+  }
+}
