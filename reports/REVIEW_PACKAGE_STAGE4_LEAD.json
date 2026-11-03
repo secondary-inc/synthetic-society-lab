@@ -1,0 +1,135 @@
+{
+  "actual_model_api_spend_usd": 0,
+  "archive": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage4-b41aaec-20261103.zip",
+  "archive_sha256": "7c52c2c913bafe7aa30e56fa0e2699beab9bc7d8ddd034d71db63ea5c2e33b28",
+  "commands": [
+    {
+      "arguments": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-m",
+        "venv",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.881810916995164,
+      "tail": []
+    },
+    {
+      "arguments": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--index-url",
+        "https://pypi.org/simple",
+        "-r",
+        "configs/runtime_python312_20261103.txt"
+      ],
+      "exit_code": 0,
+      "log_sha256": "0d2c2c13aab88c6fc78fc73f19706922f4d4df441c13817d77bfa495ef14f330",
+      "seconds": 4.189732667000499,
+      "tail": [
+        "Using cached python_dateutil-4.0.0-py3-none-any.whl (92 kB)",
+        "Using cached scipy-1.16.3-cp312-cp312-macosx_14_0_arm64.whl (20.9 MB)",
+        "Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)",
+        "Installing collected packages: tzdata, pypdf, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, scipy, python-dateutil, contourpy, matplotlib",
+        "Successfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.10.7 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pyparsing-3.3.3 pypdf-6.10.0 python-dateutil-4.0.0 scipy-1.16.3 tzdata-2026.6"
+      ]
+    },
+    {
+      "arguments": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "-e",
+        ".",
+        "--no-deps",
+        "--index-url",
+        "https://pypi.org/simple"
+      ],
+      "exit_code": 0,
+      "log_sha256": "fedd0b77f89ad403b2f4c58e67b8803730e177451f6b45ca803bab8805271fea",
+      "seconds": 0.906623209011741,
+      "tail": [
+        "  Created wheel for synthetic-society-lab: filename=synthetic_society_lab-0.1.0-0.editable-py3-none-any.whl size=1814 sha256=c5be77ee0835395affe7fd160d28cd46b521f50ae10d0d02cb56b520a4488a2c",
+        "  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-hh7qitmk/wheels/49/00/9a/abe080a3cd14e68291a29b84fcd279bfaeef2b42346a4cadfa",
+        "Successfully built synthetic-society-lab",
+        "Installing collected packages: synthetic-society-lab",
+        "Successfully installed synthetic-society-lab-0.1.0"
+      ]
+    },
+    {
+      "arguments": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log_sha256": "88f5496bd11975c725a79acc4c6a1f47cffcc4218a1696689d6df311fde5fc33",
+      "seconds": 16.17595149995759,
+      "tail": [
+        "  self.pid = os.fork()",
+        "----------------------------------------------------------------------",
+        "Ran 224 tests in 15.977s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "arguments": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "exit_code": 0,
+      "log_sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5",
+      "seconds": 0.2103982080006972,
+      "tail": [
+        "{\"status\": \"PASS\", \"checks\": 1}"
+      ]
+    },
+    {
+      "arguments": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv/bin/civiclab",
+        "dashboard",
+        "--out",
+        "data/processed/stage4-restored-viewer"
+      ],
+      "exit_code": 0,
+      "log_sha256": "3f45db6a3f5749af463228a78a0b9e14238302b210ff011b0eca74f872bc248c",
+      "seconds": 0.1502535410108976,
+      "tail": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/data/processed/stage4-restored-viewer/index.html"
+      ]
+    },
+    {
+      "arguments": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored/.venv/bin/python",
+        "-c",
+        "from pathlib import Path; import civiclab,json; assert Path(civiclab.__file__).resolve().is_relative_to(Path.cwd()/'src'); d=json.loads(Path('data/processed/stage4-restored-viewer/snapshot.json').read_text()); assert len(d['runs'])==21 and sum('demographic_benchmark' in r for r in d['runs'])==2; print('restored-source origin,21runs,2typedbenchmarks verified')"
+      ],
+      "exit_code": 0,
+      "log_sha256": "894ac17db0b5c4dd33a55b6a7bc7c4d6956131909ee4d6dcb6c4c24905b0269f",
+      "seconds": 0.024041959026362747,
+      "tail": [
+        "restored-source origin,21runs,2typedbenchmarks verified"
+      ]
+    }
+  ],
+  "full_upstream_reacquisition_and_science": "NOT_CERTIFIED",
+  "model_calls": 0,
+  "publication_authorized": false,
+  "schema_version": 1,
+  "scope": "Separate fresh Python3.12 venv,13 pinned third-party runtime dependencies,local editable project,source-origin check,all fixture tests and21 selected safe run dashboard including2admittedbenchmarks. Committed milestone only; uncommitted main-worktree work excluded. Build isolation may resolve its own setuptools backend;13 runtime pins are not a claim that all transient build tools are frozen.",
+  "source_commit": "b41aaecad048dfd195a86d1bf0829a0bc8c9ed6b",
+  "status": "PASS_EXACT_ARCHIVE_CLEAN_BOOTSTRAP_PENDING_INDEPENDENT_RESTORE",
+  "temporary_restore": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage4-bootstrap-wbs2kod_/restored"
+}
