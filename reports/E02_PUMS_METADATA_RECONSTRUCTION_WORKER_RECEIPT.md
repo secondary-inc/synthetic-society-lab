@@ -1,0 +1,21 @@
+# Public Census PUMS metadata reconstruction worker contract
+
+TASK_ID: E02-PUMS-PUBLIC-METADATA-RECONSTRUCTION-v1.
+
+FILES_CHANGED: Added offline-only `src/civiclab/e02/pums_metadata.py`, `tests/test_e02_pums_metadata.py`, metadata reconstruction evidence and this receipt. Updated nationwide proposal doc/JSON/check evidence to distinguish completed authorized metadata reconstruction from still-gated national controls/person acquisition. Preserved exact earlier proposal doc/JSON/checks in `_V1_0` snapshots. Source person parsers/runners/math, previous actual runs/configs and independent findings unchanged.
+
+OUTPUT_ARTIFACTS: Metadata run `e02-ccc5bacea3b545fab6d7d2b0ff68395b` with six verified sealed checksums. Full five metadata files retained ignored under `data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b`; controls/ledger precede requests. Safe hashes/dates/51count and4part reconciliation in `reports/E02_PUMS_METADATA_RECONSTRUCTION.json`. Current proposal v1.1 and full consistency evidence in `reports/E02_NATIONWIDE_PUMS_PROPOSAL_CHECKS.json`.
+
+REPRODUCTION_COMMANDS: Verify cached metadata against recorded original SHA256s, then call offline `civiclab.e02.pums_metadata.reconstruct(index_text,record_count_text,proposal['state_route']['archives'])`. Index decoding ISO-8859-1; count CSV UTF-8. `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_e02*.py' -q`. Ignored acquisition script `data/processed/e02_pums_metadata_reconstruction_v1.py` is hashed in sealed run controls; it already used the authorized one attempt per URL and must not be rerun without a further dispatch. Regeneration requires no network.
+
+TESTS_RUN_AND_RESULTS: All56 E02 tests PASS including3 new authored public-metadata fixtures. Missing/duplicate index/count entries, bad member/state identity, national count/range mismatch rejected; HTML scripts and unrelated external links inert. Actual retained metadata regenerates51 unique state/DC filenames/URLs/display sizes/counts. State total16,095,728 equals four national parts4,748,656+3,468,017+3,757,739+4,121,316. PR130,037 is separate; US+PR16,225,765 reconciles. These are public release record counts, not actual unacquired-archive validation or respondent/aggregate-cell values. Six run checksums and all five retained file hashes reverified.
+
+SOURCE_DATA_AND_LICENSE_NOTES: Exactly the five previously recorded official Census HTTPS metadata URLs (index, record counts, dictionary, guide, accuracy). All original hash/size identities match. FiveHTTP200 responses, one attempt each, no redirects/retries, 2MiB/file and8MiBtotal limits,30second socket/cooperative per-request bounds. Received1,279,577bytes; largest474,159bytes. Full metadata bytes cached ignored, no publisher scripts executed and no person/housing ZIP requested. Index Last-Modified header changed while identical body bytes/hash were retained; old/new headers explicitly recorded. Existing public-source permissions apply; no respondent data or credentials read/exported.
+
+COST_USD_ACTUAL_OR_ZERO: $0 API/model spend; five metadata GETs, zero person GETs, person rows, model calls or fits. Recorded metadata elapsed approximately1.006seconds; local compute/storage not priced.
+
+RISKS_AND_LIMITATIONS: Reconstructed metadata is not proof that 50 unacquired person ZIPs match expected counts, schema, container policy or unknown first hashes. All those person hashes/manifests remain unknown. No national parser/acquisition controls implemented.30second socket/cooperative bounds are not OS absolute termination. Raw metadata and stage evidence reproduce metadata knowledge only; PUMS/ANES uncertainty, transport and state political validity remain unresolved.
+
+UNRESOLVED_BLOCKERS: Independent retained-metadata/proposal review before national controls or person fetches; then reviewed source enrollment/quotas/checkpoints/parser fixtures and fresh national execution approval. Disclosure, adult/state model fitting and scientific completion separately blocked. Current person-data request authority remains zero.
+
+NEXT_UNBLOCKED_TASK: Lead routes stable metadata/proposal/code/test/evidence hashes to independent auditor. Continue only its approved metadata/national-controls preparation scope, preserving original person-source unknowns and scientific acceptance contract.

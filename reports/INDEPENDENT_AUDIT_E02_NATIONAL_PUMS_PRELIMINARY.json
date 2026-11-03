@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:33:01.517693+00:00",
+  "status": "PRELIMINARY_METHODS_REVIEW_METADATA_AND_CONTROL_FREEZE_PENDING",
+  "proposal_path": "docs/E02_NATIONWIDE_PUMS_RESOURCE_METHODS_PROPOSAL.md",
+  "proposal_sha256": "1e66686793f5e568d28126465974d386b10344f757d707123ac8e43542930818",
+  "registry_sha256": "79ab63d8019229af90948711b00450b53ea6389fdef8ee7ffbca1d0d947a1c3c",
+  "independent_metadata_check": {
+    "official_cached_record_count_file_sha256": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+    "state_DC_person_rows": 51,
+    "state_record_count_sum": 16095728,
+    "PR_excluded": true,
+    "source": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_20_24.csv"
+  },
+  "accepted_design_points": [
+    "Chooseonly51state/DCpersonarchives,reuseWyomingonce;nonationalfallbackorstateomission,sourceexactlyoncepersweep.",
+    "Cumulativefailed/partialrequestandprocessingbudgetscarryacrossrestart;unknownusageblocks,zeroautomaticretry/rangeresume.",
+    "Explicit3GiBapplicationdata/uniqueinputplanningcaps,4GiBretention+scratch+logs+reserve,streamingbyte/row/timeceilingsandcooperativewatchdogovershootlimitsrequireactualN1fixtureverification.",
+    "Allfirstarchivehashes/containeridentitiesunknownexWyoming;first-responseenrollmentandliteralcontainerreviewmustprecedepersonparsing.",
+    "Householdcitizen18+universe,unchanged91fields/eligibility/allocations/signed80replicates,noextradividefive,ratio/covariancecrossstatesneedconsistentreplicateindex.",
+    "Allnationaldata/612cellreplicatesremainlocal;disclosure,targetconversion/modelamendment/fittingandsynthetic/humanvalidityseparategates."
+  ],
+  "required_before_N0_acceptance": [
+    "Retainandrevalidatefiveexactofficialmetadatafileslocallyandfreezeall51publishedstatecounts/URLFIPSidentitywithnationaltotalcheck;currentproposal49countnullsmustberesolved.",
+    "Definebytecounterunitasapplication-deliveredHTTPbodybytesversuswirereception. Budgetbeforeeachread,accountanyread/transportbufferovershootandfailedpartials;donotclaimhardwirebyteceilingfromcooperativePythonreadchecks.",
+    "Specifydurableper-attempt/chunkreservation/reconciliationandcrashconsumptionrule;unprovableusageconsumedconservativelyorblocksdispatch,notresettozero.",
+    "Independentlycheckofficialreplicateguidancethatnational/regionestimatesusesamePWGTP1..80indexacrossdisjointstatefilesfromonesamerelease. NevercombineindependentlyestimatedstateSEsorperiods.",
+    "Freezeexactmetadata/route/resource/time/storagecountingsemanticsbeforeN1implementation/controlfixtures;newfirsthashesnotself-certifiedbyoperator."
+  ],
+  "no_person_GETs_authorized": true,
+  "national_implementation_execution_approval": "NOT_ISSUED",
+  "cost_usd": 0,
+  "model_calls": 0
+}

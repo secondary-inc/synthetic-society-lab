@@ -1,0 +1,66 @@
+{
+  "actual_final_ballots_accepted": 0,
+  "actual_readiness_run_executed_by_auditor": false,
+  "audited_at_utc": "2026-11-03T12:44:36.389696+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "expected_roster_states_after_success": [
+    "CO",
+    "NC",
+    "NJ",
+    "VA",
+    "WY"
+  ],
+  "independent_checks": {
+    "CO_all_actual_literal_names_labels_match_separate_reader": true,
+    "VA_all_actual_literal_names_labels_match_separate_reader": true,
+    "WY_two_actual_names_labels_filingdates_cross_engine_match_with_blank_withdrawal_cells": true,
+    "own_actual_index_role_cannot_supply_candidate_ref": true,
+    "own_duplicate_roster_tables_refused": true,
+    "own_three_inline_withdrawal_variants_and_comment_isolation": true,
+    "v12_predecessor_bytes_preserved_exact_commit": true
+  },
+  "limitations": [
+    "Exact official Colorado hostname exception only; no general .us authority.",
+    "Inline markup and printed withdrawal cells only; not rendered CSS or absence of later amendments.",
+    "VA later all-offices comparison and all final-amendment checks remain pending.",
+    "Narrow obtained editions, not generic robust state roster parsers."
+  ],
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "original_manifest_gate": "BLOCKED",
+  "raw_contacts_emitted": false,
+  "reviewed_file_sha256": {
+    "configs/e01_ballot_readiness_v1_3.json": "8348d847436acd9dcd0d48cb27c330b92ee8603de6ff5acc4c3bdf6ddc556648",
+    "reports/E01_BALLOT_READINESS_V1_2_IMPLEMENTATION.txt": "c6fe05e0dc569f006acc488435f14e52f88adb651ff0be76cab13cdd4729ade9",
+    "reports/E01_BALLOT_READINESS_V1_2_TESTS.txt": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballots.py": "4af832b141ff21223f853a69603c46438809e3080e57a4ccae72e8802162bb41",
+    "tests/test_e01_ballot_formats_v1_3.py": "0505ea5db838a9d774245d32113549dff4455525f5506da0a556952d64b73aa1",
+    "tests/test_e01_ballots.py": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668"
+  },
+  "schema_version": 1,
+  "scope": "Exact v1.3 local readiness run and replay may proceed under these code/config/source pins. Independent actual run/artifact/result review still required. No network source reacquisition, candidate contact, source-policy adoption, real race selection, final-ballot certification or 2026 outcome use.",
+  "source_names_or_labels_emitted_in_report": false,
+  "source_pins": {
+    "co_general": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+    "fl_broward_notice": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922",
+    "fl_palm_notice": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0",
+    "fl_vacancy_law": "169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da",
+    "nc_federal_general": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d",
+    "nj_nominee_certification": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec",
+    "nj_senate": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e",
+    "senate_appointments": "13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7",
+    "senate_class_II": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb",
+    "senate_class_III": "592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823",
+    "va_federal": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+    "va_index": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+    "wy_general": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16",
+    "wy_index": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d"
+  },
+  "status": "PASS_BOUNDED_E01_V1_3_CODE_FIXTURES_AND_SOURCE_PARSER_CHECKS",
+  "targeted_tests": {
+    "command": ".venv/bin/python -m unittest tests.test_e01_ballot_formats_v1_3 tests.test_e01_ballots tests.test_e01 tests.test_isolation",
+    "passed": 47
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_BALLOT_READINESS_V1_3_ACTUAL",
+  "status": "WORKER_EXECUTED_PENDING_INDEPENDENT_ACTUAL_RESULT_REVIEW",
+  "prior_fixture_audit": "reports/INDEPENDENT_AUDIT_E01_BALLOT_V1_3_CODE_FIXTURES.json",
+  "frozen_code_config_pins_verified": {
+    "configs/e01_ballot_readiness_v1_3.json": "8348d847436acd9dcd0d48cb27c330b92ee8603de6ff5acc4c3bdf6ddc556648",
+    "reports/E01_BALLOT_READINESS_V1_2_IMPLEMENTATION.txt": "c6fe05e0dc569f006acc488435f14e52f88adb651ff0be76cab13cdd4729ade9",
+    "reports/E01_BALLOT_READINESS_V1_2_TESTS.txt": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballots.py": "4af832b141ff21223f853a69603c46438809e3080e57a4ccae72e8802162bb41",
+    "tests/test_e01_ballot_formats_v1_3.py": "0505ea5db838a9d774245d32113549dff4455525f5506da0a556952d64b73aa1",
+    "tests/test_e01_ballots.py": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668"
+  },
+  "source_hash_checks": 14,
+  "run_ids": [
+    "e01-5bb6231c06494cd086e49eda1d643b65",
+    "e01-f1bd9dc13797462bad3651d0a3515d12"
+  ],
+  "run_ledgers": {
+    "e01-5bb6231c06494cd086e49eda1d643b65": {
+      "checksums_sha256": "4003ff0547b19a50b748adbe21a28ee139bea4d0ae4f5272bd9f5e2b587d473a",
+      "artifacts": {
+        "ballot_readiness.json": "f5505117a5457e9457d6c625537399d8efb90d60bba7f39123a5033eed5e0484",
+        "candidate_rosters.local.json": "80323297a5df5bf413cfca77cd4fe05a0b63f615a730b7f327341f593a03a947",
+        "environment.json": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+        "events.jsonl": "8613916ebb7555e4f5086e0d63e06dd42fff782c9b9a4c8766738e6bc3a5aa96",
+        "manifest.json": "58c97e6fdf85f425c0330288ec086c65eddb4e4e46c515bd2f80648cb0f8bc6e",
+        "summary.json": "2901c053afbab90263bd39613b74445a5ae082d1056fe009d3cf30da87334552"
+      }
+    },
+    "e01-f1bd9dc13797462bad3651d0a3515d12": {
+      "checksums_sha256": "8fb357c9cd14b037a8780fdc519fb4f17c74ae3c414e0198fddb429fc3c5383d",
+      "artifacts": {
+        "ballot_readiness.json": "f5505117a5457e9457d6c625537399d8efb90d60bba7f39123a5033eed5e0484",
+        "candidate_rosters.local.json": "80323297a5df5bf413cfca77cd4fe05a0b63f615a730b7f327341f593a03a947",
+        "environment.json": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+        "events.jsonl": "c5aab8a4974c91224c896411df5158429dce3d895bb71573b7a5dde2c00c5ff4",
+        "manifest.json": "d3a1089e98a5a7ed984bc9c5768e966555bcd8d02eae54ad87be6a72731489a7",
+        "summary.json": "2901c053afbab90263bd39613b74445a5ae082d1056fe009d3cf30da87334552"
+      }
+    }
+  },
+  "replay_byte_identical_artifacts": [
+    "ballot_readiness.json",
+    "candidate_rosters.local.json"
+  ],
+  "regular_class_II_slots": 33,
+  "official_roster_states": [
+    "CO",
+    "NC",
+    "NJ",
+    "VA",
+    "WY"
+  ],
+  "coverage_summary": {
+    "CO": {
+      "candidate_document_rows": 9,
+      "party_class_counts": {
+        "D": 1,
+        "R": 3,
+        "UNSPECIFIED": 5
+      },
+      "withdrawal_observations_scope": "INLINE_MARKUP_ONLY_NO_LATER_AMENDMENT_ASSURANCE",
+      "printed_candidates": 6,
+      "qualified_write_ins": 3,
+      "printed_candidate_party_class_counts": {
+        "D": 1,
+        "R": 1,
+        "UNSPECIFIED": 4
+      },
+      "inline_withdrawal_markup_count": 0
+    },
+    "NC": {
+      "candidate_document_rows": 4,
+      "party_class_counts": {
+        "D": 1,
+        "OTHER": 2,
+        "R": 1
+      },
+      "withdrawal_observations_scope": "NO_FINAL_AMENDMENT_ACCEPTANCE"
+    },
+    "NJ": {
+      "candidate_document_rows": 4,
+      "party_class_counts": {
+        "D": 1,
+        "R": 1,
+        "UNSPECIFIED": 2
+      },
+      "withdrawal_observations_scope": "NO_FINAL_AMENDMENT_ACCEPTANCE"
+    },
+    "VA": {
+      "candidate_document_rows": 2,
+      "party_class_counts": {
+        "D": 1,
+        "R": 1
+      },
+      "withdrawal_observations_scope": "OBTAINED_FEDERAL_DOCUMENT_ONLY_ALL_OFFICES_COMPARISON_PENDING"
+    },
+    "WY": {
+      "candidate_document_rows": 2,
+      "party_class_counts": {
+        "D": 1,
+        "R": 1
+      },
+      "withdrawal_observations_scope": "PRINTED_DATE_CELLS_ONLY_NOT_ABSENCE_OF_LATER_WITHDRAWALS",
+      "printed_withdrawal_dates_count": 0
+    }
+  },
+  "not_yet_acquired_unblocked_states": [
+    "AK",
+    "AL",
+    "AR",
+    "DE",
+    "GA",
+    "IA",
+    "ID",
+    "IL",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "ME",
+    "MI",
+    "MN",
+    "MS",
+    "MT",
+    "NE",
+    "NH",
+    "NM",
+    "OK",
+    "OR",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "WV"
+  ],
+  "unacquired_unblocked_jobs": 28,
+  "final_ballots_accepted": 0,
+  "context_contests": [
+    {
+      "contest_id": "2026-OH-SENATE-C3",
+      "official_source_ids": [
+        "senate_class_III",
+        "senate_appointments"
+      ],
+      "reason": "ClassIII unexpired term through2029; official indexed Ohio directive/writ text saysspecialNov3; localbody/hashpending",
+      "scope": "CONTEXT_OUTSIDE_REGULAR_QUOTAS",
+      "status": "INDEXED_OFFICIAL_WRIT_SUPPORTS_SPECIAL_LOCAL_WRIT_BODY_PENDING"
+    },
+    {
+      "contest_id": "2026-FL-SENATE-C3",
+      "official_source_ids": [
+        "senate_class_III",
+        "senate_appointments",
+        "fl_vacancy_law",
+        "fl_broward_notice"
+      ],
+      "reason": "OfficialClassIIItermthrough2029,appointmentregister,Florida100.161and2026Senatenotice supportvacancyelection inference; exactwrit/finaltermballotpending; notClassIIregular",
+      "scope": "CONTEXT_OUTSIDE_REGULAR_QUOTAS",
+      "status": "PRIMARY_CHAIN_SUPPORTS_VACANCY_CONTEXT_SPECIFIC_STATE_WRIT_PENDING"
+    },
+    {
+      "contest_id": "2026-FL-HOUSE-20",
+      "official_source_ids": [
+        "fl_broward_notice"
+      ],
+      "reason": "BrowardgeneralNov3noticeincludesCD20; finalterm/candidate/amendmentsneedreview; no automaticexclusion",
+      "scope": "CONTEXT_OUTSIDE_REGULAR_QUOTAS",
+      "status": "OFFICIAL_GENERAL_NOTICE_CONFIRMED_PUBLISHER_FLAG_NOT_STAGE_AUTHORITY"
+    }
+  ],
+  "context_observations": {
+    "FL20_general_notice_present": true,
+    "FL_100_161_clause_present": true,
+    "FL_appointment_Jan21_2025_present": true,
+    "class_III_FL_OH_codes_present": {
+      "FL": true,
+      "OH": true
+    },
+    "class_III_term_2023_2029_present": true
+  },
+  "exclusions": "No race sample selected or candidate excluded by extraction, write-in flag, withdrawal marker or publisher flag. Context contests stay outside regular33 frame. Pending amendments are not exclusions.",
+  "local_roster_disclosure": "candidate_rosters.local.json stays ignored and unbundled; only digest recorded here",
+  "source_adoption": false,
+  "actual_selection": false,
+  "new_network_requests": 0,
+  "2026_outcomes_used": false,
+  "model_calls": 0,
+  "cost_usd": 0
+}
