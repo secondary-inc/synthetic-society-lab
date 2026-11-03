@@ -1,0 +1,182 @@
+{
+  "actual_environment_key_reads": 0,
+  "actual_owner_namespace_operations": 0,
+  "audited_at_utc": "2026-11-03T18:05:26.840412+00:00",
+  "auditor_role": "independent_auditor",
+  "cached_official_schema_reference": {
+    "fields": {
+      "num_input_audio_prompt": {
+        "description": "Number of audio inputs in the prompt",
+        "example": 0,
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "num_media_completion": {
+        "description": "Number of media items in the completion",
+        "example": 0,
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "num_media_prompt": {
+        "description": "Number of media items in the prompt",
+        "example": 1,
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "num_search_results": {
+        "description": "Number of search results included",
+        "example": 5,
+        "type": [
+          "integer",
+          "null"
+        ]
+      }
+    },
+    "path": "data/raw/openrouter_docs_20261103/openapi.json",
+    "scope": "ExistingcachedofficialGenerationResponse nullableintegercounterdescriptions only; no newnetwork/currentproviderbehaviorclaim.",
+    "sha256": "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e"
+  },
+  "component_acceptance": "BLOCKED_OPEN_AUXILIARY_USAGE_FINDING; healthyraw/lifecycle/transport observations limited to exactstatedfixtures, not wholeexecutorPASS.",
+  "controller_receipts_renewed": false,
+  "experimental_model_api_spend_usd": 0,
+  "finding": {
+    "actual_behavior": "Executor validates onlyid/model/provider/nativeprompt/nativecompletion/nativereasoning/BYOK/totalcost, drops auxiliarycounters from billing allowlist, returnsCOMPATIBLE and commitsownerphase. Fourindependentlyexecuted positivecountercases each reachthatstate afteronefakePOST/onestatsGET and1simulatedmicro.",
+    "expected_behavior": "Acceptedmethods explicitlyhalt auxiliarybehavioroutsidereleasedtext-onlycontract. Recognizedpositiveauxiliaryevidence cannot be silentlydiscarded as harmlessfieldvariation while certifyingcompatibility.",
+    "impact": "False text-only compatibility and loss of contradictory auxiliaryfee/usageevidence in the ordinary retained accounting projection. Demonstratedcharges stayedwithinreservation; no actualspend/provideraction or ownerceilingbypass claimed.",
+    "location": "src/civiclab/production_compatibility_v4.py:253",
+    "trigger": "One releasedtext-onlyfakeprobe receives otherwisevalid samegeneration billing with one positive num_search_results, num_media_prompt, num_media_completion or num_input_audio_prompt counter. No code/release/ownerauthority replacement."
+  },
+  "finding_id": "IA-COMPATIBILITY-V4-AUXILIARY-USAGE-001",
+  "independent_finding_probes": [
+    {
+      "charged_simulated_microusd": 1,
+      "field": "num_search_results",
+      "observed_value": 1,
+      "owner_status": "PHASE_COMMITTED",
+      "posts": 1,
+      "retained_billing_has_field": false,
+      "statistics_GETs": 1,
+      "summary_status": "COMPATIBLE"
+    },
+    {
+      "charged_simulated_microusd": 1,
+      "field": "num_media_prompt",
+      "observed_value": 1,
+      "owner_status": "PHASE_COMMITTED",
+      "posts": 1,
+      "retained_billing_has_field": false,
+      "statistics_GETs": 1,
+      "summary_status": "COMPATIBLE"
+    },
+    {
+      "charged_simulated_microusd": 1,
+      "field": "num_media_completion",
+      "observed_value": 1,
+      "owner_status": "PHASE_COMMITTED",
+      "posts": 1,
+      "retained_billing_has_field": false,
+      "statistics_GETs": 1,
+      "summary_status": "COMPATIBLE"
+    },
+    {
+      "charged_simulated_microusd": 1,
+      "field": "num_input_audio_prompt",
+      "observed_value": 1,
+      "owner_status": "PHASE_COMMITTED",
+      "posts": 1,
+      "retained_billing_has_field": false,
+      "statistics_GETs": 1,
+      "summary_status": "COMPATIBLE"
+    }
+  ],
+  "independent_healthy_raw_oracle": {
+    "8owner_events_chain_head_and_materialized_row_rederived": true,
+    "all38indexedhashes_before_after": true,
+    "both_private_journal_ledgers_chains_and9primary_orderedevents": true,
+    "canonical_request_UTF8_envelope_Fraction_ceil": true,
+    "contract_code_review_operator_and_payloadbindings": true,
+    "fakecredential_absent_all38files": true,
+    "one_generation_claim_billing_checkpoint_and_ownercommit": true,
+    "one_simulated_micro_lifetime_dispatch_preserved": true,
+    "one_stubkey_two_stubmetadata_onePOST_oneGET": true,
+    "scope": "Healthy authored baseline raw only; auxiliary-usage finding remains open. No actualOSnamespace/environmentkey/network/model/source.",
+    "two_refusals_zeroextraPOST_stats_key_ownerwrites_failedsecondjournal_retained": true
+  },
+  "independent_tests": {
+    "logs_sha256": {
+      "py311": "5e31c006d4aba6519b5f84b76a2bd068641f21a8ee74108417555dea7cd1308f",
+      "tests": "b3892a0c46d613d755ac63b2cb621edf53bacb811a9ddf070d49640093964a5e"
+    },
+    "python311_seconds": 2.576,
+    "python311_targeted": 25,
+    "python312_combined": 164,
+    "python312_seconds": 33.886,
+    "scope": "16executor+9transporttargetedcases with inheritedframingregressions;8spawnexitboundaries/2processdifferent-outputrace included. Passingtests do notclose finding."
+  },
+  "minimal_remedy": "Preserve exactv4candidate/raw/foundation and thisfinding. Separateversioned narrowexecutor validation of recognizedauxiliarycounter/serviceevidence before ordinarySETTLED/compatibilitycommit, retaining safe knowncharge and conservativeunknown/overrun/no-retrybarriers. Explicitly define absent/nullable/invalidtype semantics under releasedcontract rather than inferzero. Add positivecounter/semanticcounter/knowncost+privacy/regressiontests; no newownerschema/daemon/crypto/permissionstage. Independentremedyreview required before genuineprice/owner/probe release preparation.",
+  "model_calls": 0,
+  "network_requests": 0,
+  "other_review_observations": [
+    "Fullnewexecutor/checkedtransport/tests/recorder read;5candidate/20foundationfiles/3testlogs andmethods pins unchanged. Acyclicexecutioncontract\u2192foundationreview.limitations\u2192operatorreview binding checked in authored raw. Staticbadreleasebeforeworkspace/OS/catalog/key, exactreservation/journalbeforeonePOST, oneclaimedstatsGET, lifetimeglobalbarrier andphasecheckpoint mechanisms covered.",
+    "Own38rawhashes before/after, two privatejournal ledgers/chains,9primaryorderedevents,8ownerchain/head/materializedrow, exactcode/review/operator/requestbindings,UTF8/Fractionreserve/rounding, originalgenerationstatsclaim/billing/checkpoint and1simulatedmicro/1dispatch rederived. Two refusedrepeats addnoPOST/key/ownerwrite; differentworkspacefailedjournal honestlyretained.",
+    "StrictJSONboolean/duplicatequality separate from billing; invalidanswers chargedcommitted, no repair. Greaterknowncost includingsecretbody failures retained; unsupportedidentity/nativeusage/reasoning/BYOK/costdisagreement, cancellation/crash/persistence barriers andlateexpiry/rollback/unavailableclock tests passed. Checkedtransportobservedclosefailures propagate; nativeTLS/OSshutdownunverified.",
+    "Freshcatalogbodynotreturnedbyfrozenfactory; retainedproofhash/time/semanticcontract notfullfreshbodyarchive. Privatecompatibilityruns outside defaultviewer; no genericDLP/export/scienceadmission. Noactualnamespace/key/network/model orprice/provider/ownerrelease."
+  ],
+  "preserved_foundation_pins": {
+    "docs/PRODUCTION_ADMISSION_V4_CANDIDATE.md": "4a6dc2b8464650a8cced496bf8b55b7680a18af5feddfd3705bc5a11ca328549",
+    "reports/INDEPENDENT_AUDIT_OWNER_BUDGET_V3_COMPONENT.json": "3bf8cc05782db70187116e6d02f030f94e7a57d8173ee78618f8fd7f397c5523",
+    "reports/INDEPENDENT_AUDIT_OWNER_SURVEY_CLIENT_V3_COMPONENT.json": "a3925aadd2e573e549d0c94c3298d693f9e38b49629993b84221e27ba73d71de",
+    "scripts/record_production_admission_v4_fixture.py": "a4f360a9e226576d673129bfd2bd365c9364faf1c06bf76f1e951a469866f069",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/dashboard.py": "1b65f89800688ee7b279b6a2bc39f27b1b6f45b7504ff2e103f48f38dfd77cab",
+    "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+    "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+    "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+    "src/civiclab/owner_survey_client_v3.py": "284486fd4889c8cfa62739f06035118ef67a02f08a64cc453ee8f97c6ff24826",
+    "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+    "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+    "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+    "src/civiclab/survey_envelope_v2.py": "ac210fd41f2f8bffd733fcdef8b1b1813e9035fbeecc6902e8983d2dcecfc877",
+    "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c",
+    "src/civiclab/survey_global_execution_v2.py": "fd8c0260ec2a747ca6a29bece28469e1c917d908b0e5eabb3e151d9b28eedf99",
+    "src/civiclab/survey_owner_execution_v3.py": "3d9ad9cf3848941363fdcc1c46b06882a0cf883eef80f2042f86a76cc6f823e0",
+    "tests/test_production_admission_v4.py": "f8c6adb07bd05bf6d8b8186e8483e468ae7df018fad44d0771fd62cfae9d436f",
+    "tests/test_production_price_v4.py": "d823f5ffdc281be7ad2e094c56382401d42dc5befac061d7c2769e9deccd6d91"
+  },
+  "retained_healthy_raw_index": {
+    "approval_epochs": 1,
+    "different_output_may_retain_failed_private_journal": true,
+    "index_sha256": "627485ed4731baa6b617b9f3c2a9b69dc6f1b2389116766190419c02ace4c9fa",
+    "indexed_files": 38,
+    "no_extra_dispatch_key_or_owner_write_refusals": 2,
+    "owner_phase_status": "PHASE_COMMITTED",
+    "path": "data/processed/fixture_scopes/production-compatibility-v4-20261103-02",
+    "recorded_code_pins_match_current": true,
+    "simulated_microusd": 1,
+    "stub_POSTs": 1,
+    "stub_key_accesses": 1,
+    "stub_public_metadata_GETs": 2,
+    "stub_statistics_GETs": 1
+  },
+  "reviewed_candidate": {
+    "path": "reports/PRODUCTION_COMPATIBILITY_EXECUTOR_V4_CANDIDATE.json",
+    "sha256": "88ea0854c43764384df2b8395044f90e88b1b687b90afc8d5edf66046a113982"
+  },
+  "reviewed_code_test_doc_pins_unchanged": {
+    "docs/PRODUCTION_COMPATIBILITY_EXECUTOR_V4_CANDIDATE.md": "1619edf2f758700d58c2ed2ebf78e83131db4dacaf5aeaad06978069e4c7c1c2",
+    "scripts/record_production_compatibility_v4_fixture.py": "85b0a98e5b48e40a198b3ea7224f7910690a8abeb566d4af500ca0aa7c169ff2",
+    "src/civiclab/production_compatibility_transport_v4.py": "9235dc5a62c8c1d028e86908b834490b5ad156d6c6b6037d3f94c5405eff711f",
+    "src/civiclab/production_compatibility_v4.py": "c96e0012699f9401b9562bb9f421acc585776b4bfa418fc3a43d7f236257280c",
+    "tests/test_production_compatibility_v4.py": "9acdee8505efdf816cd6f30ddf0fe511c6188619b09a478304ac26305c80184a"
+  },
+  "schema_version": 1,
+  "severity": "MEDIUM",
+  "status": "BLOCKED_COMPATIBILITY_V4_POSITIVE_AUXILIARY_USAGE_SILENTLY_ADMITTED"
+}
