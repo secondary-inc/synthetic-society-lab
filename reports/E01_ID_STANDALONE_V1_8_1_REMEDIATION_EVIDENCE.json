@@ -1,0 +1,108 @@
+{
+  "task_id": "E01_ID_STANDALONE_READER_V1_8_1_REMEDIATION",
+  "status": "WORKER_REMEDIATION_CANDIDATE_PENDING_INDEPENDENT_RE_REVIEW",
+  "new_file_pins": {
+    "src/civiclab/e01/idaho_v1_8_1.py": "1413f9a6e784e88d82b0ffe0beb2e8323775c5a8b55a1f5fc223f4a2505c2bb7",
+    "tests/test_e01_idaho_v1_8_1.py": "65b58cca8603c5b44afdfe2b09de624b4d8dfc9389b9ee67f566a5f19146ab73",
+    "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json": "cd90a92c4ba3a6984ccbe2e6f9b5180c0cb0de09f9bfe4cab3ccf152add5683b",
+    "docs/E01_ID_STANDALONE_READER_V1_8_1_REMEDIATION.md": "ea2e72ecec8d023a0762c42ee45bf802961df4fc5fdca631efb0a50ea1fd81bd"
+  },
+  "preserved_original_candidate_pins": {
+    "src/civiclab/e01/idaho_v1_8.py": "d16b936be7554df6430f621c3ab9879f33d12b00ddbb8b4b9e1bc70c260d8154",
+    "tests/test_e01_idaho_v1_8.py": "9fe8e6c3e87cbaa9c3fc7c29590124ca9ba6f27fab373692ee0342e5ac89f28f",
+    "configs/e01_id_standalone_runtime_contract_v1_8_candidate.json": "7fe8aed67261f1e1cd9ad967afac27ee8e73d4a1b3949d06f771093b022a05b9",
+    "reports/E01_ID_STANDALONE_V1_8_CODE_FIXTURES.json": "5ed965355b6cdce7420c7e5dedaffac18eae60850bd1d5d37d64c411198cbf7f"
+  },
+  "preserved_independent_findings": {
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_HEADER_ICON_FINDING.json": "fb7bf0ed035efbd3c86dde08f42045a9da69d70d5a29a698a8c21a66ad65de1a",
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_METADATA_ALIAS_FINDING.json": "3e790df4c949c224bf8cd1026b7ffcbb202c0ff6d1caeb23768a8da29e051320"
+  },
+  "worker_addressed_findings": [
+    "IA-E01-ID-V1_8-HEADER-SVG-001",
+    "IA-E01-ID-V1_8-METADATA-ALIAS-002"
+  ],
+  "independent_findings_self_closed": false,
+  "worker_tests": [
+    {
+      "command": ".venv/bin/python -m unittest tests.test_e01_idaho_v1_8_1 -q",
+      "python": "3.12.14",
+      "passed": 27
+    },
+    {
+      "command": "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e01_idaho_v1_8_1 -q",
+      "python": "3.11.17",
+      "passed": 27
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -p 'test_e01*.py' -q",
+      "passed": 155
+    }
+  ],
+  "fixture_scope": "Authored DEMO sources only, now including observed inert sort-header shape. Temporary fixture digest/import-origin explicitly patched; frozen digest held unchanged during each metadata/body coedit attack. No actual cached helper preflight.",
+  "header_positive_fixture": {
+    "SVGs_per_table": 8,
+    "position": "First8THonly; exact observed parent/shape/attributes/path; none in ACTIONS/body",
+    "text_projected_from_icons": false,
+    "global_SVG_allowance": false
+  },
+  "metadata_remediation": {
+    "detached_closed_builtin_snapshot_before_canonical_admission": true,
+    "only_admitted_snapshot_used_in_reads_rechecks_output": true,
+    "custom_container_protocols_allowed": false,
+    "caller_coedit_attack_read_positions": [
+      0,
+      4,
+      9
+    ],
+    "equal_and_changed_byte_length_attacks": true,
+    "attempted_reads_before_refusal": [
+      3,
+      5,
+      10
+    ],
+    "gate_boundary_coedit_no_result": true,
+    "metadata_only_changes_cannot_replace_source_authority": true
+  },
+  "input_pins_unchanged": {
+    "id_general_index": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "bytes": 218881,
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4"
+    },
+    "id_candidate_search": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "bytes": 15841,
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a"
+    },
+    "id_browser_visible": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "bytes": 203250,
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0"
+    },
+    "id_browser_federal": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "bytes": 68620,
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875"
+    },
+    "id_browser_senate": {
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "bytes": 29871,
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30"
+    }
+  },
+  "actual_cached_source_helper_preflight": false,
+  "readiness_schema_integration": false,
+  "recorded_run_ids": [],
+  "candidate_or_source_adoption": false,
+  "accepted_coverage_promoted": false,
+  "accepted_document_states_remain": 12,
+  "unfinished_document_jobs_remain": 21,
+  "final_ballots_accepted": 0,
+  "new_GETs": 0,
+  "new_browser_calls": 0,
+  "external_ocr_calls": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "named_or_contact_literals_exported": false,
+  "next_gate": "Fresh independent exact v1.8.1 code/contract/fixtures/input/runtime/privacy/lifecycle review; actual helper/source preflight and readiness remain separately gated."
+}

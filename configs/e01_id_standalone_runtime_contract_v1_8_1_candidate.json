@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "scope": "ID_STANDALONE_READER_V1_8_1_CANDIDATE_ONLY_NOT_READINESS",
+  "pipeline_enabled": false,
+  "source_adoption": false,
+  "methods_proposal_sha256": "59c01a619ef51ec5c993c0e5113b4c362135912585f6c0b1ac375a697fe87b8b",
+  "methods_audit_sha256": "cb6aa3f351a7f20c00dc8dbad56302842206e1baaeb85bdc5c01b8c3c5aa8d89",
+  "inputs": [
+    {
+      "source_id": "id_general_index",
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "bytes": 218881,
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4",
+      "url": "https://voteidaho.gov/idaho-general-election/",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "role": "OFFICIAL_GENERAL_ELECTION_LINK_INDEX"
+    },
+    {
+      "source_id": "id_candidate_search",
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "bytes": 15841,
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+      "url": "https://run.voteidaho.gov/search",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "role": "OFFICIAL_CANDIDATE_PORTAL_INITIAL_HTML_SHELL_NOT_RENDERED_TABLE"
+    },
+    {
+      "source_id": "id_browser_visible",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "bytes": 203250,
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+      "url": "https://run.voteidaho.gov/search",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT"
+    },
+    {
+      "source_id": "id_browser_federal",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "bytes": 68620,
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+      "url": "https://run.voteidaho.gov/search",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT"
+    },
+    {
+      "source_id": "id_browser_senate",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "bytes": 29871,
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+      "url": "https://run.voteidaho.gov/search",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT"
+    }
+  ],
+  "actual_preflight_authority": "PENDING_SEPARATE_CODE_INPUT_RUNTIME_PRIVACY_REVIEW",
+  "remediation_version": "1.8.1",
+  "preserved_original_candidate_pins": {
+    "src/civiclab/e01/idaho_v1_8.py": "d16b936be7554df6430f621c3ab9879f33d12b00ddbb8b4b9e1bc70c260d8154",
+    "tests/test_e01_idaho_v1_8.py": "9fe8e6c3e87cbaa9c3fc7c29590124ca9ba6f27fab373692ee0342e5ac89f28f",
+    "configs/e01_id_standalone_runtime_contract_v1_8_candidate.json": "7fe8aed67261f1e1cd9ad967afac27ee8e73d4a1b3949d06f771093b022a05b9",
+    "reports/E01_ID_STANDALONE_V1_8_CODE_FIXTURES.json": "5ed965355b6cdce7420c7e5dedaffac18eae60850bd1d5d37d64c411198cbf7f"
+  },
+  "independent_findings": {
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_HEADER_ICON_FINDING.json": "fb7bf0ed035efbd3c86dde08f42045a9da69d70d5a29a698a8c21a66ad65de1a",
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_METADATA_ALIAS_FINDING.json": "3e790df4c949c224bf8cd1026b7ffcbb202c0ff6d1caeb23768a8da29e051320"
+  }
+}
