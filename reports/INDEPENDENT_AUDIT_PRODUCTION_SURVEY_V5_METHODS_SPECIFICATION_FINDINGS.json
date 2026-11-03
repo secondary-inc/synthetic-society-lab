@@ -1,0 +1,122 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_PRODUCTION_SURVEY_V5_METHODS_SPECIFICATION_FINDINGS.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Leadmethods successor withclosedauthorization/hash/append/CAS/crash/count/deadlinecontracts; reviewotherfrozenofflinecandidates meanwhile.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_PRODUCTION_SURVEY_V5_METHODS_SPECIFICATION_FINDINGS.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Readexactproposal andcurrentfrozenowner/admissionpublicsource; verify14SHA256pins."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Publicdesign/code/reviewmetadataonly; noactualowner/rawsource/model/key.",
+  "TASK_ID": "INDEPENDENT_PRODUCTION_SURVEY_V5_METHODS",
+  "UNRESOLVED_BLOCKERS": [
+    "ThreeexactS5Mspecification findings above; noS5Aimplementationadmission."
+  ],
+  "audited_at_utc": "2026-11-03T22:16:13.255959+00:00",
+  "auditor_role": "independent_auditor",
+  "findings": [
+    {
+      "evidence": "Proposal says reviewedbridge mayappendlinkedordinaryapproval but defines onlyinterface names andnatural-languageobligations. No closed externaldelegation/parentreview/derivedphaseproof/derivedapproval schemas oracyclic canonicalhash graph maps into unchangedclosedV4approval/context. Existingpublicgrant alwayscallsproduction_admission_v4.precheck_dispatch_approval, which rederivesfixedcompatibilityrelease. No approvednewwritepath yetexists.",
+      "id": "S5M_AUTHORIZATION_SCHEMA_AND_OWNER_APPEND_BOUNDARY_MISSING",
+      "locations": [
+        "docs/PRODUCTION_SURVEY_V5_METHODS_PROPOSAL.md:One explicit policy, bounded derived phase bindings",
+        "src/civiclab/production_owner_v4.py:58",
+        "src/civiclab/production_owner_v4.py:394"
+      ],
+      "required_specification": [
+        "Freezeexactclosedparentpolicy/externallysuppliedoperatorassertion/independentreview/phaseproof schemas andtype/range/ownership/time/code/input/expectedhashvalidation. Explicitdelegationmustcome fromtrustedowner workflow, notselfmintedrecord/hash; role/hash assertions are notcryptographic humanauthentication.",
+        "Specifyhowimmutableparentpolicy/review/delegation andderivedrequestproof arestored andtransitivelybound byordinaryAPPROVAL/allowed_plans/context/payload/requestbinding. No newfields in frozenowner schema; if schema/API mustchange, propose separatelyversionedowner controls andreview ratherthanclaimunchangedowner.",
+        "Defineexactacyclic order forparenthash,phaseproof/planhash,payload/envelope,approvalhash,priceproof. request_binding excludesapprovalhash+priceproof but includesplan/release/payload; do nothash a proofcontainingitsownplanhash or claimfutureauditorreview inspectedunknownanswerbytes.",
+        "Nameconcretev5admission writebridge anditsownerlock/verify/event/apply/append/CAS sequence using existingownerchecks; no monkeypatch/fakev4release/runtimeauditorassertion/unreviewedlowlevelwrites. Preserveordinaryapproval previoushash/id/clock/cap/unfinished semantics."
+      ],
+      "severity": "HIGH_METHODS_BLOCKER_NOT_OBSERVED_SPEND_BYPASS"
+    },
+    {
+      "evidence": "Ownpre/head/epoch/concurrency/lostgrantack statedas desiredoracles, but no durablestate machine identifiesexactintent/persistedproof/approvalack/priceproof/reservation boundaries orrestart rules. ExistingAPPROVAL recordsactiveepoch but doesnotcreateunfinishedphase; that barrier beginsatRESERVE. CannotassumegrantlostACK automaticallyusesexistingunfinishedbarrier.",
+      "id": "S5M_GRANT_INTENT_LOST_ACK_AND_CONCURRENCY_PROTOCOL_MISSING",
+      "locations": [
+        "configs/production_survey_v5_methods_proposal.json:required_adversarial_oracles",
+        "src/civiclab/production_owner_v4.py:305"
+      ],
+      "required_specification": [
+        "Freezeowner/run/policy/unit/phase idempotency keys, fixedoriginaljournal/registry identity andexclusiveownership, immutablegrantintent andproof persistencebeforeapprovalmutation, exactexpectedownerhead/activeapproval/precheckpoint binding andCAS/revalidation underownerlock. No caller-suppliedcurrentepoch substitution.",
+        "Specifydurablestate transitions forintent/append/ack/priceproof/reserve/POST/checkpoint/commit plus interrupted/torn/lostACK dispositions. Aftergrantambiguity refuseallnewgrant/dispatch paths unless a separatelyreviewedstatebound disposition verifiesexacthistory; do notinventcharges or clearuncertaintyautomatically.",
+        "Specifyhowv5admission observespendingjournalintent beforecatalog/key/grant and preventsduplicateroot/process/policy reattachment. Existingglobalunfinishedbarrier cannotbeclaimedwhere noownerreservationexists.",
+        "Keepfullreserved/higherknown financialhold andglobalbarrier afterreservedambiguity; unavailable/rollbackclocks mayallowonlyexisting boundedbookkeeping, nevernewapproval/reservation. Crash/concurrent-tests mustcovereverydurableboundarywith retainedbytes."
+      ],
+      "severity": "HIGH_METHODS_BLOCKER_NOT_OBSERVED_SPEND_BYPASS"
+    },
+    {
+      "evidence": "Policyhasglobaldispatchcap andmodulemoneycaps but lacks explicitmodule_dispatches mappingrequiredbyV4approval. Newstudyphasecount vs ownerlifetime/globalhistory andprimary+replay accounting notclosed. phase_deadline_seconds30 coexistswith30cooperativeperHTTP requests; encodedmessages100000 ceilinginunchangedowner notexplicitlydistinguishedfrom262144requestbytes.",
+      "id": "S5M_COUNT_AND_RESOURCE_BOUND_SEMANTICS_INCOMPLETE",
+      "locations": [
+        "configs/production_survey_v5_methods_proposal.json:policy_contract",
+        "docs/PRODUCTION_SURVEY_V5_METHODS_PROPOSAL.md:S5C"
+      ],
+      "required_specification": [
+        "Defineabsolutelifetimetotal+permodulemoneyANDdispatchmaps, retainedhistoricalconsumption, exactcompiledunit/phase/seed IDs, perstudynewdispatchbudget andcountderivation, skippedpost counts, term/output/paddedinput reservationbounds andcompleteworstcaseestimate beforeexternalapproval.",
+        "ForS5C statewhetherreplayonlyreconstructsrecordedartifacts (0newcalls) orsecondfullfakeexecution (360additional). Ifsecondfullfakeexecution, prefreeze twoauthoredrunpolicies/externallyauthoredcaps covering720calls underonesameowner while eachstudymax360; no runtimeautomaticcapincrease orclaimofproviderdeterminism.",
+        "Distinguishonewholephase deadline fromboundedcatalog/POST/statisticsrequest deadlines, includejournal/persistence/reconciliation andpause clockrules, defineeffectivedeadline=min(scopeexpiry,phaseexpiry,requesttimeout). No silentlyadded30-secondperiod perretry/stage.",
+        "Enforceboth100000encodedmessage limit and262144serializedrequest ceiling, ownerinputframing/output<=4096 plus appropriatefrozenloweroutput, exactfreshproofterms andpriceGETcap; requiredfalse/unknownmetadatarefusal before money/networkeffects."
+      ],
+      "severity": "MEDIUM_METHODS_BLOCKER"
+    }
+  ],
+  "limitations": [
+    "Findings are missingdesigncontracts, not demonstrationsof actualoverspend in nonexistentv5implementation. Positiveintentcannotreplaceconcreteadmissionproof.",
+    "Actualrun03stillUNCERTAIN340microUSDconservative/actualchargeunknown,dispatch1of1exhausted/unfinishedphase. No model/statisticsguess/retry/replenishment/newowner orliveexecutionauthority.",
+    "No originalscientificgate/remoteCI/currentfullengineering/completionrequirementacceptance;4draft/visual clauses unchanged.",
+    "Localcompute/laborunpriced."
+  ],
+  "operations": {
+    "actual_owner_state_or_key_or_credential_env_or_raw_source_access": 0,
+    "api_spend_usd": 0,
+    "implementation_config_status_git_edits": false,
+    "network_model_requests": 0
+  },
+  "positive_observations": [
+    "Correctly identifiesV3client/journal as fixture-only andV4admission as fixedcompatibilitypayload. Adaptivepost unknownbytes requireexplicitowner delegation underexact independently reviewedparentpolicy, notruntimefabricatedauditorapproval.",
+    "Allauthorityfalse/null, allmoney/newcount/lifetimecaps0. Existingfixedowner/history/consumption/exhaustedrun03/unfinishedbarrier retained. No newowner/reset/refund/caprenewal/liveauthority; no closureofpriorunknownbill.",
+    "Precompiledunit andowncommittedvalidprecheckpoint only; invalidpre skipwithoutgrant/reservation/POST; onePOST/no repair/retry/fallback, oneclaimedstatisticslookup onlyvaliduniqueID, safe knowncost+auxiliary/nativeprovider reconciliation andprivatecheckpointbeforeownercommit.",
+    "Scientific/engineering/MOCK labels, originalnationalpopulation/stimulus/attrition/evaluation/complexitycontrols/publicationboundaries retained; S5M/A/B/C/L independentstageorder is appropriate.",
+    "All11preservedcode and3dependencyreviewpins match. Purearithmetic180units*2phases=360POST ceiling; twofullMOCKexecutions would be720calls, a matter requiringexplicitfrozenfixtureauthorization ratherthansilentcapgrowth."
+  ],
+  "required_acceptance_order": "Preserveexactproposal/finding -> separatefullyspecifiedmethods successor -> independentS5Mreview -> S5Apurefixtures -> S5Bonephase/crashledger -> S5Cfullmock -> separateS5Lauthority. Thisreceipt doesnot authorize implementation.",
+  "reviewed": [
+    {
+      "bytes": 10057,
+      "path": "docs/PRODUCTION_SURVEY_V5_METHODS_PROPOSAL.md",
+      "sha256": "67f1fa5ae180117cf21513a0bd0a075ed4a1157e2fcda201d692c828b4cf7202"
+    },
+    {
+      "bytes": 10579,
+      "path": "configs/production_survey_v5_methods_proposal.json",
+      "sha256": "552a392a9ad8b0af09d59df5684b0c0308377ca024fc604e5ad0982b4089ff7a"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Design review of exact publicproposal/currentcode only. No implementedexploit, actualowner/key/source access or spend. S5A implementation must await separate revisedmethods acceptance.",
+  "status": "BLOCKED_S5M_AUTHORIZATION_AND_DURABLE_GRANT_PROTOCOL_UNDERSPECIFIED",
+  "tests_and_checks": "Staticfullproposal andtargetedowner/admission/envelope/clientcode read; all14pins exact; zero/null/defaultauthority and180*2/2runs*360 arithmetic checked. Noimplementationtests or actualowner probe warranted.",
+  "verified_dependency_reviews": {
+    "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_RUN03_UNCERTAIN_V1.json": "5e998c37e4be53b265527c4df0558ba70ea80e52b7fd0d75a0c8599388e015b0",
+    "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1_REMEDY.json": "e369ce24d1de7f875e3e20a8be1d0d7aebec4b5058209ce79a43f16793b927d5",
+    "reports/INDEPENDENT_AUDIT_OWNER_SURVEY_CLIENT_V3_COMPONENT.json": "a3925aadd2e573e549d0c94c3298d693f9e38b49629993b84221e27ba73d71de"
+  },
+  "verified_preserved_code": {
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/owner_survey_client_v3.py": "284486fd4889c8cfa62739f06035118ef67a02f08a64cc453ee8f97c6ff24826",
+    "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+    "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+    "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+    "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+    "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+    "src/civiclab/survey_envelope_v2.py": "ac210fd41f2f8bffd733fcdef8b1b1813e9035fbeecc6902e8983d2dcecfc877",
+    "src/civiclab/survey_owner_execution_v3.py": "3d9ad9cf3848941363fdcc1c46b06882a0cf883eef80f2042f86a76cc6f823e0"
+  }
+}
