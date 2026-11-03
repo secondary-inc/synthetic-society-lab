@@ -1,14 +1,14 @@
 # Review-package v2 public evidence candidate
 
-The historical builder omits five public receipts cited by the current status
+The historical builder omits public receipts cited by the current status
 and reproduction documentation. `src/civiclab/reproduction_v2.py` is a separate
 candidate builder that requires their exact reviewed bytes. The historical
 builder and previously accepted archives are unchanged. No new actual review
 archive, full clean restoration or scientific acceptance is claimed here.
 
-The explicit five-path allowlist contains the successful722e63a clean-restore
-receipt/log, the preserved a856b96 failure receipt/log, and the actual
-compatibility pre-POST stop receipt. Each is bounded to1MiB, requires its fixed
+The explicit six-path allowlist contains the successful722e63a clean-restore
+receipt/log, the preserved a856b96 failure receipt/log, the original compatibility pre-POST stop receipt, and the independently
+reviewed owner-terminal continuation pre-POST stop receipt. Each is bounded to1MiB, requires its fixed
 SHA256, and refuses missing, changed or symlinked files. References inside these
 reports remain documentary: they do not authorize recursive private/raw export.
 The archive manifest records schema2 and the exact public evidence extension.
@@ -22,11 +22,11 @@ remains limited to bytes; it is not a claim that a current source snapshot or
 research result has been independently validated.
 
 Nine new tests exercise complete inclusion, non-recursive private exclusion,
-all five missing/changed/oversized/symlinked receipts, mid-assembly mutation,
+all six missing/changed/oversized/symlinked receipts, mid-assembly mutation,
 private reports/runs, unsafe run paths, empty selections, temporary preservation
 and root aliases. Additional adversarial cases cover payload replacement,
 coordinated artifact/checksum resealing, seal membership addition/removal and
-seal reformatting after the initial verifier returns. They copy only the five public receipts into disposable
+seal reformatting after the initial verifier returns. They copy only the six public receipts into disposable
 fixture roots and use authored MOCK runs. No existing research run, person
 source, owner ledger, credential or actual output archive is read or packaged.
 The seven historical-builder tests run separately without modification.
@@ -51,3 +51,11 @@ code and private actual Census/ballot/survey/owner controls stay excluded. This
 candidate does not establish full source reacquisition, rights, remote CI or
 the original E01/E02 scientific completion contract. No publication or model
 spending is authorized.
+
+A later one-entry extension adds the exact public terminal-run02 stop receipt
+(fec410ce...) after independent zero-dispatch/zero-consumption review784799d7.
+Its private journal/owner references are documentary only and are not followed
+or exported. The five earlier public receipts and all capture/seal guards remain
+unchanged; the narrow extension is independently accepted in
+`INDEPENDENT_AUDIT_REVIEW_PACKAGE_SIXTH_RECEIPT_EXTENSION_V1.json`; actual
+packaging and restoration still require separate evidence.

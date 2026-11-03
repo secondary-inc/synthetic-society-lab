@@ -44,7 +44,9 @@ Every state remains visible, including those where persistence performed worse. 
 
 The program now separates implementation and audit across specialized chats. The independent auditor found failures that the original tests missed: a string value could enable a policy, a cancelled request could leave uncertain billing without stopping later calls, and a crash could leave a completed result without its final integrity ledger. Those issues were corrected and retested independently.
 
-That is the kind of autonomy we want: routine work continues without repeated permission questions, while claims, spending and publication still have explicit boundaries. The owner has approved one separate nonpolitical API check with a $0.001 cap. Its first attempt stopped before any model request, with $0 consumed; it has not been retried. The larger research studies still have no paid execution budget, and no paid model experiment has run.
+That is the kind of autonomy we want: routine work continues without repeated permission questions, while claims, spending and publication still have explicit boundaries. The owner has approved one separate nonpolitical API check with a $0.001 cap. Its first attempt stopped before any model request, with $0 consumed; the owner’s terminal continuation also stopped before a model request, with independently verified zero consumption. A later diagnostic showed the key was unavailable to Python in that pane; the original error did not record its exact cause. The larger research studies still have no paid execution budget, and no paid model experiment has run.
+
+We have also verified the downloaded bytes and limited metadata of a DC Census archive and two official election documents. This is preparation work: no DC person rows have been imported, the population is not nationally validated, and the new documents do not establish final ballots or a2026 forecasting result. An independent reviewer also caught a race in review-package assembly; the corrected builder now binds archived data to the original verified run seal.
 
 ## What still has to earn a place
 

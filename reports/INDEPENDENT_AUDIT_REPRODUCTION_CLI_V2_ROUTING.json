@@ -1,0 +1,79 @@
+{
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_REPRODUCTION_CLI_V2_ROUTING.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Review newpublicationclaims and then exactupdatedpackageplan.",
+  "TASK_ID": "INDEPENDENT_REPRODUCTION_PUBLIC_CLI_V2_ROUTING",
+  "auditor_role": "independent_auditor",
+  "builder": {
+    "bytes": 10468,
+    "path": "src/civiclab/reproduction_v2.py",
+    "sha256": "c5eacf0e2007b0e58fb6596a7ec762cff9c92c954d833077bb2c1efc6b9bd954"
+  },
+  "candidate": {
+    "bytes": 1636,
+    "path": "reports/REVIEW_PACKAGE_CLI_V2_ROUTING_CANDIDATE.json",
+    "sha256": "9540b974b742a6a663c7fd10133dcc5d8d0139b3f548ac804fb1aa089ce0db4f"
+  },
+  "checks": [
+    "Exactbytecomparisonagainstf4b2b8e confirms onlyrepro-pack import changed fromlegacytoindependentlyreviewedv2; everyotherCLIbranch/arguments/outputbehavior unchanged.",
+    "Real publicCLI invoked in disposable authoredroots: schema2fiveproofreceipts included; missingrequiredproofrefuses; postverificationrunmutation refuses beforearchive. Tests wouldfail with oldlegacyroute.",
+    "Independent19tests onbothruntimes cover3CLI/9v2/7legacy; no duplicatedimportedTestCase discovery. Originallead12-vs3harnesscount noted as correctedtestdiscovery, not evidenceofadditionaltests.",
+    "Acceptedc5eacf v2sealbinding and991f6a legacy remainexact; no common/dashboard/builderchanges. Command now reaches sameaccepted guardboundary."
+  ],
+  "cli": {
+    "bytes": 7017,
+    "path": "src/civiclab/cli.py",
+    "sha256": "88f9af069db005b39d19f099712129ffb5b5af1f31750b1d9b875e1d7509f679"
+  },
+  "legacy_builder": {
+    "bytes": 7814,
+    "path": "src/civiclab/reproduction.py",
+    "sha256": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335"
+  },
+  "limitations": [
+    "Wiring/componentacceptance only; sourcefreeze/packageassembly/fullrestoration/content/figureviewerprovenance not rerun here.",
+    "Oldf4b2b8eplan was unexecuted and does not containthisCLIroute; mustusefresh exactcommittedsnapshot and separatelyreviewedcopyplan.",
+    "All scientific/fullsource/rights/remoteCI/publication gates remain unchanged."
+  ],
+  "operations": {
+    "actual_private_raw_key_reads": 0,
+    "actual_project_archive_builds": 0,
+    "api_spend_usd": 0,
+    "development_compute_unpriced": true,
+    "network_model_calls": 0
+  },
+  "schema_version": 1,
+  "scope": "ONE_IMPORT_ROUTE_CHANGE_AND_AUTHORED_COMMAND_TESTS_ONLY_NO_CURRENT_PROJECT_PACKAGE",
+  "status": "PASS_SCOPED_PUBLIC_REPRO_PACK_V2_CLI_ROUTING",
+  "test_command": "PYTHONPATH=src:tests <python> -m unittest tests.test_reproduction_cli_v2 tests.test_reproduction_v2 tests.test_reproduction -q",
+  "tests": {
+    "bytes": 2443,
+    "path": "tests/test_reproduction_cli_v2.py",
+    "sha256": "a6b12655042c638d30b30258f572525f3bd8cd9c704ae00a5e0c59d450c7d3c0"
+  },
+  "tests_results": [
+    {
+      "count": 19,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-cli-repro-v2-py312.log",
+        "sha256": "ee81cfed307cb1e530ec30253f53be895adfd0e2caf237ac754c7c622e50d220"
+      },
+      "result": "OK",
+      "runtime": "Python3.12",
+      "seconds": 1.372
+    },
+    {
+      "count": 19,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-cli-repro-v2-py311.log",
+        "sha256": "41d81f7a7e78818ff6dfe04b14eb5358b6c7a845f08322229a4fdf7834b22dcd"
+      },
+      "result": "OK",
+      "runtime": "Python3.11",
+      "seconds": 1.272
+    }
+  ]
+}

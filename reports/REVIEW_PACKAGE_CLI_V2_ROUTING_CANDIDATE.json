@@ -1,0 +1,37 @@
+{
+  "actual_new_project_archive_created": false,
+  "builder_sha256": "c5eacf0e2007b0e58fb6596a7ec762cff9c92c954d833077bb2c1efc6b9bd954",
+  "experimental_spend_usd": 0,
+  "files": {
+    "src/civiclab/cli.py": {
+      "bytes": 7017,
+      "sha256": "88f9af069db005b39d19f099712129ffb5b5af1f31750b1d9b875e1d7509f679"
+    },
+    "tests/test_reproduction_cli_v2.py": {
+      "bytes": 2443,
+      "sha256": "a6b12655042c638d30b30258f572525f3bd8cd9c704ae00a5e0c59d450c7d3c0"
+    }
+  },
+  "key_or_actual_private_data_read": false,
+  "legacy_builder_sha256": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335",
+  "model_calls": 0,
+  "recorded_at_utc": "2026-11-03T20:04:23.798347+00:00",
+  "schema_version": 1,
+  "scope": "Only public repro-pack route to independently acceptedv2; allotherCLIbranches unchanged.",
+  "stage6_old_plan_disposition": "Unexecuted f4b2b8e plan held; new exact source snapshot required after routing acceptance.",
+  "status": "ROUTING_CANDIDATE_TESTED_INDEPENDENT_REVIEW_PENDING",
+  "tests": {
+    "command": "PYTHONPATH=src:tests <python> -m unittest tests.test_reproduction_cli_v2 tests.test_reproduction_v2 tests.test_reproduction -q",
+    "earlier_harness_observation": "InitialsingleCLItestmodule run counted12 because imported TestCase class was also discovered. Import now uses modulealias; finaltargeted19 correctlycounts3+9+7.",
+    "python311": {
+      "count": 19,
+      "result": "PASS"
+    },
+    "python312": {
+      "count": 19,
+      "result": "PASS",
+      "seconds": 1.389
+    },
+    "scope": "3CLIintegration/9v2/7legacytests; authoredtemporaryMOCK/public5receiptcopies only."
+  }
+}

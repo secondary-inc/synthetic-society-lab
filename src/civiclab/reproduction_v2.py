@@ -1,4 +1,4 @@
-"""Versioned owner-review builder with five exact public evidence receipts.
+"""Versioned owner-review builder with six exact public evidence receipts.
 
 Candidate only until independent review; no current package is certified here.
 The historical builder and accepted archives remain unchanged.
@@ -26,12 +26,13 @@ PUBLIC_RECEIPTS = {
     'reports/CLEAN_RESTORE_A856B96_767_FIXTURES_FAILURE.json': 'cecc81f66e5785a294c78acebd0acb5a741e7223066688cef5ff157e132b425d',
     'reports/CLEAN_RESTORE_A856B96_767_FIXTURES_FAILURE_LOG.txt': 'b25a2c57337e36d94ccfdb0e729660e0272412ce559819839c50ddf224f4e108',
     'reports/JSON_COMPATIBILITY_ACTUAL_PRE_POST_STOP_V1.json': 'cec0c62c912d09f7ff8648268fc3b93366865e9ff64aa9ab1d3026a54af744ce',
+    'reports/JSON_COMPATIBILITY_CONTINUATION_ACTUAL_STOP_V1.json': 'fec410cecae68a73a9faf42c93568a46b92681026eea026dea6762e7e5751898',
 }
 PUBLIC_RECEIPT_LIMIT = 1024 * 1024
 
 
 def source_inputs(root):
-    """Historical public set plus five exact, independently reviewed receipts.
+    """Historical public set plus six exact, independently reviewed receipts.
 
     References inside reports are documentary only: never follow them into
     raw, owner, respondent or private control storage.

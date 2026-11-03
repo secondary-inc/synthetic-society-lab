@@ -80,6 +80,8 @@ The completion status consumes independently authored audit receipts. Empty, dup
 
 ## Build a review package
 
+The current `repro-pack` command routes to the versioned builder. It requires six exact public evidence receipts, including both preserved pre-POST compatibility stops, and binds captured run artifacts and checksum bytes to the original verified seal. The historical builder remains unchanged for prior evidence; its demonstrated capture race is preserved in the independent finding and original-source fixture. The six-receipt extension passed independent review (`reports/INDEPENDENT_AUDIT_REVIEW_PACKAGE_SIXTH_RECEIPT_EXTENSION_V1.json`); no new archive is claimed by these instructions.
+
 Select every included run explicitly. The builder includes code, configurations, tests, protocols, drafts, audit/status reports and the full checked artifact set for those runs. It excludes `.env`, raw datasets and Git credentials. It refuses unsafe paths, credential-like values, source changes during assembly, unsealed runs and inconsistent hashes.
 
 ```bash

@@ -76,7 +76,7 @@ def main():
                           'required':len(result['requirements']),'out':str(args.out)}))
         return
     if args.command=='repro-pack':
-        from .reproduction import build_package
+        from .reproduction_v2 import build_package
         print(json.dumps(build_package(args.root,args.root/args.out,args.runs)))
         return
     if args.command == 'gdelt-ingest':
