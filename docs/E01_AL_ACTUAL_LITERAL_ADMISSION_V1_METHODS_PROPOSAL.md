@@ -1,0 +1,51 @@
+# Alabama actual literal audit, admission and standalone preflight: methods proposal
+
+Status: PENDING INDEPENDENT METHODS REVIEW. No actual PDF/image/private-reference read/hash, literal transcription or source execution is performed or released here. The accepted pure reader, null runtime and all earlier candidate/failure evidence remain unchanged.
+
+The exact pure-reader code/privacy acceptance is `reports/INDEPENDENT_AUDIT_E01_AL_STANDALONE_V1_CODE.json`, SHA `d3b18101177621d440156132ee69303de048c94524903c6520bba187154898da`. It accepts authored reconciliation/binding/privacy tests, not actual literal accuracy or an actual admission factory. This proposal supplies the smallest sequential source-access/transcription/audit/runtime/preflight path, without a new blanket owner-approval category or service.
+
+## Fixed policy and two working paths
+
+Preserve the five cached source identities (1,700,245declared PDF bytes),47source/page/render associations, six occurrence roles, dates, four typed UNKNOWNs, bounds and metadata lineage. Four PDFs/34pages have no extracted text; the amended Republican13pages have text. No text-only fallback can populate image-only names. No OCR/model service, new rendering or GET is proposed.
+
+The stable source snapshot SHA is `21ff95e66c6f44272b47c8a5318fa5c9d79191df6cf4a86ad697ac8291a8bda6`. A stricter fixed-policy SHA also binds unchanged schema/role/limits/metadata lineage/non-adoption fields: `71ad6da095a4f37fd78a30186bf29d29bd6bfaf881865240753995e115604a0b`. The proposal names the exact projection keys and metadata references; these hashes were computed from metadata only, not new source reads.
+
+Prepare one separate small admission adapter and one recorded preflight wrapper, both with authored positive and negative tests before actual release. Keep the old `alabama_documents_v1.py` unchanged. Its public null-contract entry remains denied. The new adapter performs its own complete closed external-release/runtime/fixed-policy admission, then reuses pinned unchanged pure binding/reconciliation helpers. It must not monkeypatch the old fixed digest or skip the equivalent null/shape/authority/code/root checks for its reviewed mode.
+
+There are two explicit positive modes. SOURCE_TRANSCRIPTION_ONLY permits bounded cached-source verification and local visual transcription without requiring a transcript or audit that cannot yet exist. AUDITED_RUNTIME admits a non-null versioned runtime only after genuine independent literal review and an exact separate runtime release. Both modes must work in authored fixtures; an always-denied implementation does not satisfy this proposal.
+
+## Source-only release and actual transcription
+
+After adapter/wrapper code/privacy acceptance, the lead issues an exact source-only release manifest under the already authorized local research scope. It binds the stable policy, exact accepted adapter/helper code SHA, source files/render set, permitted output root, purpose and counts/limits. Its externally supplied expected SHA comes from the specific recorded lead instruction, never from the same file's self-declared digest or a digest computed from arbitrary caller metadata.
+
+A caller flag, copied receipt or newly invented hash is not permission. The cooperating executor must act only under the particular released instruction. These SHA bindings are local integrity controls, not a cryptographic human identity system, hostile-host boundary or new daemon. No paid/account/publication permission follows from a local-source release.
+
+The bounded source-only job rechecks exactly5PDFs/47cached PNGs, using1MiB/PDF,8MiB/render,376MiB combined render and existing exact-source-size constraints. It may visually inspect only11declared source/page images: six Senate-bearing occurrences plus five certificate/amendment covers needed for document context/dates. No broad file exploration, new render or alternate-source fallback occurs. If an image is absent, oversize or unclear, preserve the failure and block; do not silently fetch/render/OCR it.
+
+Transcribe six observed name and office literals to new ignored local files with source/PDFpage/render hashes, reviewed role, party context, historical flag and structured document/receipt dates. Do not prefill names from metadata, memory, expectations or prior party grouping. Preserve UTF-8 display bytes and their hashes; these are transcription bytes, not invented original encoding in an image PDF. Only declared whitespace trimming/collapse is allowed for identity; preserve punctuation/accents/case and original literals. Missing or conflicting values block rather than infer. Failed or corrected transcriptions retain immutable versioned files.
+
+The six occurrence slots remain state Democratic3/8/9, state Republican2, party Democratic2 and party Republican2. Four Democratic and two Republican source-context occurrences may agree on two document-supported groups; they do not establish distinct persons, active nominees or an exhaustive ballot. Historical July1 is corroboration rather than extra candidates. Independent state-office-only, committee, House-only and conditional historical non-Senate roles stay excluded. Partial Democratic stamps at8/11/13 remain unguessed; dates never become candidate filing/cutoff/pre-results evidence.
+
+## Independent literal review and acyclic runtime amendment
+
+A different reviewer rechecks the relevant actual source/render hashes and independently inspects the six occurrences and supporting covers. The review binds exact transcript bytes and all six name/office/role/date/history witnesses. It may issue a private audit only after checking the actual literals; the implementing transcription worker cannot manufacture its own PASS. The public receipt contains only scoped conclusions/hashes and limitations. Disagreements stay failed/preserved, with a new corrected transcript and fresh review required.
+
+After that review, prepare three source-snapshot grant documents and a separately versioned actual runtime filling only the allowed dynamic fields: scope, transcript ref, independent-audit ref, execution release and its three grant-document refs. All fixed fields must match the reviewed policy. Existing literal audit/code/source status structures remain exact; fixture PASS labels never substitute for a genuine released instruction and independent audit.
+
+An outer runtime release manifest binds the exact stable adapter/helper code, accepted code/privacy and literal-review receipts, source policy, actual runtime bytes, transcript/audit/grant-document hashes and sizes, output scope and authorized primary/replay plan. The expected outer SHA is independently supplied by the particular lead release. Admission freezes this entire authority before use, rechecks code/import/root/runtime/source bindings at use/finalization and refuses caller coedits or changed outputs.
+
+This order avoids code/runtime/audit hash circularity. Compile only the stable policy into the adapter. Code is independently reviewed once; subsequent transcript/runtime/outer-release hashes are data pinned externally, not compiled into the module they hash. Dependencies flow from stable policy/code to source-only release, transcript, independent audit, three snapshot grant documents, runtime and finally outer release. Grant documents cannot hash an outer manifest or future runtime that already references them. The outer release binds all of them. No new protected-store/owner-budget/hostile-OS system is introduced.
+
+## Recorded standalone primary and replay
+
+Only after the recording wrapper's independent authored review and the exact runtime release, execute one parent per primary/replay. Retain named occurrence/group data in `al_document_observations.local.json`; export only the closed safe `al_document_diagnostics.json` and hash/provenance/count/error evidence. There is no child recorded success or readiness integration.
+
+Validate all input/source/runtime/audit identities before and after the pure call and around publication. Preserve failures, exclusions, cancellation/SystemExit and partial private files with type/static errors. Complete the parent ledger and final seal before ordinary typed admission. Final seal is a local commit record separate from caller acknowledgment: before a seal, refuse; after an intact valid seal with uncertain acknowledgment, preserve and seek independent read-only resolution. Writable failure evidence still invalidates ordinary admission. No automatic retry/resume/replacement/deletion, guaranteed tombstone, OS power-loss or hostile-host claim is added.
+
+Independent post-run review compares all six complete private occurrences, two document groups,41role exclusions, four exact typed UNKNOWNs, source/code/runtime provenance, deterministic private/public bytes/canonical replay, parent ledgers/seals and name absence in public/generic projections. Private packages/paths remain refused. This accepts only the exact standalone document scope. Readiness integration and any coverage change remain later separately reviewed work; legal/final/latest/geography/selection/forecast/science stay unresolved.
+
+## Acceptance and current evidence
+
+The machine-readable proposal lists concrete positive, coedit, wrong-phase/hash, null/missing authority, independent-audit, literal/role/date/Unicode,52file/11page/byte/path/import, lifecycle/ACK and privacy fixtures required before actual access. Missing an actual human/owner input is not a new blanket blocker for this already authorized local-source research; the existing concrete source/code/privacy review and particular lead release govern the bounded work. Paid execution and publication still require their separate approvals.
+
+Current proposal checks use metadata only. All actual transcript/audit/source-release/runtime-release/run-ID fields remain null, and every phase's `executed_actual_IO` is false. No adapter/wrapper implementation or actual source release is claimed here. Accepted coverage remains **12 document states / 21 unfinished jobs / zero final ballots**, with zero experimental spend, requests, rendering, OCR or model calls. All original sources/private names remain ignored and unbundled; no redistribution or external publication is authorized.

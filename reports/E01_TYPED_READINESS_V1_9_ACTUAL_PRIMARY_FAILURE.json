@@ -1,0 +1,425 @@
+{
+  "Alabama_actual_source_access": false,
+  "cost_usd": 0,
+  "current_accepted_coverage": {
+    "document_states": 12,
+    "final_ballots": 0,
+    "unfinished_source_jobs": 21
+  },
+  "independent_actual_review": "NOT_RUN",
+  "independent_code_acceptance": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_TYPED_READINESS_V1_9_CODE_COMMIT_CLARIFIED.json",
+    "sha256": "e61f5e2b1c9c55e3167e2894c542a696140f3d7f4d6bb6678a35a96521771918"
+  },
+  "lead_authorization_id": "E01_TYPED_V1_9_CACHED_PRIMARY_REPLAY_20261103",
+  "legacy12_and_ID5_actual_comparison": "NOT_RUN_NO_RESULT_PAYLOADS",
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "next_gate": "Independent read-only failure/artifact diagnosis and separate authorization for any actual re-execution or versioned remediation. Preserve exact failed parent/control/code/reference/source evidence.",
+  "preflight": {
+    "code_config_audit_pins_before_and_after": {
+      "configs/e01_ballot_readiness_v1_6_1.json": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b",
+      "configs/e01_ballot_readiness_v1_7.json": "478d9bfd87c34703f260336c652c4e4a0ce36298e89614b709a4105b8d6a5bfe",
+      "configs/e01_de_ne_source_contract_v1_7.json": "f698aa051299e0c9787a5376d455a941fa0374bf5524941988ff49ad27f3321a",
+      "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json": "cd90a92c4ba3a6984ccbe2e6f9b5180c0cb0de09f9bfe4cab3ccf152add5683b",
+      "configs/e01_typed_readiness_schema_v1_9_proposal.json": "ecbf3179e4f668a6a7990d499ac9a5ae1ca83fc97a1e248a7599305aba48853f",
+      "configs/e01_typed_readiness_v1_9_candidate.json": "f906665266fa7f816d37002e677fdc1d3e99bcefe7a1c1163d56bc91eb48a5ac",
+      "reports/E01_DE_NE_READINESS_V1_7_ACTUAL.json": "2bc8917cf3b49f3e7278c6c2d98051a5cacfedaf67e801b570cee201b63c7c89",
+      "reports/E01_ID_STANDALONE_V1_8_1_ACTUAL_PREFLIGHT.json": "89c59435dd7c1df97e72c1f2710095fd65d41649d86ce4ba1c97df5e57569dd9",
+      "reports/INDEPENDENT_AUDIT_E01_DE_NE_V1_7_ACTUAL.json": "a21aee686e28fcfcf13c0a39d08eb22e54e88665acdb141f8ffad410ea45932f",
+      "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_1_ACTUAL_PREFLIGHT.json": "b3adbb37b0ca1b16b977b91673b73d68615725d1ce5ff91e8c94bcb0ea19aa07",
+      "reports/INDEPENDENT_AUDIT_E01_TYPED_READINESS_V1_9_CODE_COMMIT_CLARIFIED.json": "e61f5e2b1c9c55e3167e2894c542a696140f3d7f4d6bb6678a35a96521771918",
+      "reports/INDEPENDENT_AUDIT_E01_TYPED_READINESS_V1_9_METHODS.json": "465241cf3a3a57445074f7e91c4c62609ed2ba8430d7d3fc040bd93b900a06e9",
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/e01/ballot_capture_formats_v1_4.py": "0c8cc0be58b249c9d31968a439025e5025f42949abdfe15214496f63fddbf370",
+      "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+      "src/civiclab/e01/ballot_formats_v1_6.py": "fb5fb665225dfdef782eef3f8ba712cd0eb67816e9b69632323e39310a19faa9",
+      "src/civiclab/e01/ballots.py": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec",
+      "src/civiclab/e01/ballots_v1_7.py": "b45746439df1e50469f76a7d6ff9acb8bb0536e2f1d605eb116a28460b169062",
+      "src/civiclab/e01/ballots_v1_9.py": "c4f9cdde81cd58b9b2c5f97e6ac41dab4764b48c12376be732887e254a3be04a",
+      "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+      "src/civiclab/e01/idaho_v1_8_1.py": "1413f9a6e784e88d82b0ffe0beb2e8323775c5a8b55a1f5fc223f4a2505c2bb7",
+      "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+      "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e",
+      "tests/test_e01_idaho_v1_8_1.py": "65b58cca8603c5b44afdfe2b09de624b4d8dfc9389b9ee67f566a5f19146ab73"
+    },
+    "distinct_source_representations": 40,
+    "python": "3.12.14",
+    "references": {
+      "id_diagnostics": {
+        "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_diagnostics.local.json",
+        "sha256": "02a02643f3dded40faec287ba18eb8c5a8fbeaecf2d9e203d9f4c2d3a88a26a7"
+      },
+      "id_records": {
+        "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_records.local.json",
+        "sha256": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea"
+      },
+      "legacy_public": {
+        "path": "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/ballot_readiness.json",
+        "sha256": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997"
+      },
+      "legacy_rosters": {
+        "path": "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/candidate_rosters.local.json",
+        "sha256": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c"
+      }
+    },
+    "runtime_versions": {
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "contourpy": "1.4.0",
+      "cryptography": "50.0.2",
+      "cycler": "0.12.1",
+      "fonttools": "4.68.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pdfminer.six": "20251230",
+      "pdfplumber": "0.11.9",
+      "pillow": "13.0.0",
+      "pycparser": "3.12",
+      "pyparsing": "3.3.3",
+      "pypdf": "6.10.0",
+      "pypdfium2": "5.14.0",
+      "python-dateutil": "4.0.0",
+      "scipy": "1.16.3",
+      "tzdata": "2026.6"
+    },
+    "sources": [
+      {
+        "bytes": 57353,
+        "path": "data/raw/e01_ballots_2026/nj_senate-f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e.pdf",
+        "sha256": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e",
+        "source_id": "nj_senate"
+      },
+      {
+        "bytes": 411364,
+        "path": "data/raw/e01_ballots_2026/nj_nominee_certification-c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec.pdf",
+        "sha256": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec",
+        "source_id": "nj_nominee_certification"
+      },
+      {
+        "bytes": 170443,
+        "path": "data/raw/e01_ballots_2026/nc_federal_general-378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d.pdf",
+        "sha256": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d",
+        "source_id": "nc_federal_general"
+      },
+      {
+        "bytes": 184582,
+        "path": "data/raw/e01_ballots_2026/fl_vacancy_law-169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da.html",
+        "sha256": "169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da",
+        "source_id": "fl_vacancy_law"
+      },
+      {
+        "bytes": 19634,
+        "path": "data/raw/e01_ballots_2026/senate_class_III-592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823.html",
+        "sha256": "592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823",
+        "source_id": "senate_class_III"
+      },
+      {
+        "bytes": 109299,
+        "path": "data/raw/e01_ballots_2026/senate_appointments-13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7.html",
+        "sha256": "13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7",
+        "source_id": "senate_appointments"
+      },
+      {
+        "bytes": 29306,
+        "path": "data/raw/e01_election_type/fl_broward_notice.pdf",
+        "sha256": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922",
+        "source_id": "fl_broward_notice"
+      },
+      {
+        "bytes": 115597,
+        "path": "data/raw/e01_election_type/fl_palm_notice.pdf",
+        "sha256": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0",
+        "source_id": "fl_palm_notice"
+      },
+      {
+        "bytes": 3488,
+        "path": "data/raw/e01_inside_elections/senate-class-II-browser-text-c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb.txt",
+        "sha256": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb",
+        "source_id": "senate_class_II"
+      },
+      {
+        "bytes": 72145,
+        "path": "data/raw/e01_ballots_batch02_v1/co_general.html",
+        "sha256": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+        "source_id": "co_general"
+      },
+      {
+        "bytes": 35879,
+        "path": "data/raw/e01_ballots_batch02_v1/va_index.html",
+        "sha256": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+        "source_id": "va_index"
+      },
+      {
+        "bytes": 48018,
+        "path": "data/raw/e01_ballots_batch02_v1/va_federal.html",
+        "sha256": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+        "source_id": "va_federal"
+      },
+      {
+        "bytes": 54800,
+        "path": "data/raw/e01_ballots_batch02_v1/wy_index.html",
+        "sha256": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d",
+        "source_id": "wy_index"
+      },
+      {
+        "bytes": 84715,
+        "path": "data/raw/e01_ballots_batch02_v1/wy_general.pdf",
+        "sha256": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16",
+        "source_id": "wy_general"
+      },
+      {
+        "bytes": 177713,
+        "path": "data/raw/e01_ballots_batch03_v1/ks_general.table-dom.local.html",
+        "sha256": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d",
+        "source_id": "ks_general_dom"
+      },
+      {
+        "bytes": 67788,
+        "path": "data/raw/e01_ballots_batch03_v1/ks_general.browser-text.local.txt",
+        "sha256": "f4f69411838d79235aca844203edb9d72f2c08ba043bb44e95c4b975e8a56583",
+        "source_id": "ks_general_browser"
+      },
+      {
+        "bytes": 9159,
+        "path": "data/raw/e01_ballots_batch03_v1/ak_senate_dom.local.html",
+        "sha256": "1167c252ab39cf0bab9e4c63c52f61c9733b64a92e5a3e13239e1cd53739799c",
+        "source_id": "ak_senate_dom"
+      },
+      {
+        "bytes": 21139,
+        "path": "data/raw/e01_ballots_batch03_v1/ak_general_browser.local.txt",
+        "sha256": "c1ddc16c1ef47e8b7b8ef55fef906a2cbbeccd531dad26374370150af2d23225",
+        "source_id": "ak_general_browser"
+      },
+      {
+        "bytes": 48337,
+        "path": "data/raw/e01_ballots_batch03_v1/me_general.browser-download.xlsx",
+        "sha256": "c628e48fa6298b6862e709166adf3145f7bc4a3f60929c3e6ef5a3ea324e03ea",
+        "source_id": "me_general"
+      },
+      {
+        "bytes": 132429,
+        "path": "data/raw/e01_ballots_batch03_v1/me_withdrawals.browser-download.pdf",
+        "sha256": "c2198174417a318956190ec14dce86e42c97099a77282b63fa99a65ae3f2d92c",
+        "source_id": "me_withdrawals"
+      },
+      {
+        "bytes": 87608,
+        "path": "data/raw/e01_ballots_batch03_v1/me_writeins.browser-download.pdf",
+        "sha256": "86ab6cfc5d38d4c36c907b291d737d8c0b3863e05446ede0e307fa8d15682ee9",
+        "source_id": "me_writeins"
+      },
+      {
+        "bytes": 5345,
+        "path": "data/raw/e01_ballots_batch03_v1/me_index.browser-text.local.txt",
+        "sha256": "039c7517c693922caec45ea0c607230f8e6c26b52bdedd873293db130d0a6bd7",
+        "source_id": "me_index_browser"
+      },
+      {
+        "bytes": 100104,
+        "path": "data/raw/e01_maine_office_key_v1/2026-office-key.browser-download.pdf",
+        "sha256": "9245f464172b6e358a1dfad20653672a4a5fa9fa2db5ec92a05cc58c36fb187e",
+        "source_id": "me_office_key"
+      },
+      {
+        "bytes": 222898,
+        "path": "data/raw/e01_ballots_batch04_v1/ia_general.browser-download.pdf",
+        "sha256": "df70d066973b16c7b51e5c2a2bbf9f7fdb166bba9404311a945404c83813af38",
+        "source_id": "ia_general"
+      },
+      {
+        "bytes": 2379,
+        "path": "data/raw/e01_ballots_batch04_v1/ia_index.main.browser-text.txt",
+        "sha256": "dd1640e3339b35bfc18219dfd716c8a76e241b622b70e819b2cf2d5146ae5325",
+        "source_id": "ia_index_browser"
+      },
+      {
+        "bytes": 310515,
+        "path": "data/raw/e01_ballots_batch04_v1/nh_general.browser-download.pdf",
+        "sha256": "9e4f505d9bf236691d6ee2618a35d32b1270efdf4f91a08f5dc17e794802b02e",
+        "source_id": "nh_general"
+      },
+      {
+        "bytes": 1863,
+        "path": "data/raw/e01_ballots_batch04_v1/nh_index.content.browser-text.txt",
+        "sha256": "a0bf4534faa931a52910f891a20e2e71a90a03ea0ec0a5b01e11f6dd5ff70719",
+        "source_id": "nh_index_browser"
+      },
+      {
+        "bytes": 86386,
+        "path": "data/raw/e01_ballots_batch04_v1/nh_post_primary_vacancies.browser-download.pdf",
+        "sha256": "e3e21e5fa2d7b5423df597680de672cbb457e0439d37a0c931e2ba5601e6d6cf",
+        "source_id": "nh_post_primary_vacancies"
+      },
+      {
+        "bytes": 91228,
+        "path": "data/raw/e01_ballots_batch04_v1/nh_withdrawals.browser-download.pdf",
+        "sha256": "02900b009c1005b756eda3a5ebd78b8e3f4c4cc46415df1fe4eb6c65540825f6",
+        "source_id": "nh_withdrawals"
+      },
+      {
+        "bytes": 45230,
+        "path": "data/raw/e01_ballots_batch05_v1/de_index.html",
+        "sha256": "a81f9845ff5c3c54941bbc9782eaffddc3ae82b158a4d1f1c15e8c32a665dbd9",
+        "source_id": "de_index"
+      },
+      {
+        "bytes": 139922,
+        "path": "data/raw/e01_ballots_batch05_v1/de_general.html",
+        "sha256": "ccc92e779eb0c49574d468ba55af40a11e3733630214ac0734a3c44907425ab7",
+        "source_id": "de_general"
+      },
+      {
+        "bytes": 63448,
+        "path": "data/raw/e01_ballots_batch05_v1/de_writeins.html",
+        "sha256": "cba02ad4bbf824e5db9ebe1fdeda7b05f66074087fa66426a46f94ef0d0291ed",
+        "source_id": "de_writeins"
+      },
+      {
+        "bytes": 19856,
+        "path": "data/raw/e01_ballots_batch05_v1/de_general_xlsx.xlsx",
+        "sha256": "9d212a9575eb6fb4d178930ece50a2f89e34c7e1e8e476d977447dcb7a9c2afa",
+        "source_id": "de_general_xlsx"
+      },
+      {
+        "bytes": 73911,
+        "path": "data/raw/e01_ballots_batch05_v1/ne_index.html",
+        "sha256": "9b0f766299e388995b4bccdfdc45e5867a1acc7a61deaeff69268bd76b23efd1",
+        "source_id": "ne_index"
+      },
+      {
+        "bytes": 120495,
+        "path": "data/raw/e01_ballots_batch05_v1/ne_general.pdf",
+        "sha256": "d27a071715896b8c82b8cce8d48200b4207ba10c44f1778f56f92c4efcd7cf96",
+        "source_id": "ne_general"
+      },
+      {
+        "bytes": 218881,
+        "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+        "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4",
+        "source_id": "id_general_index"
+      },
+      {
+        "bytes": 15841,
+        "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+        "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+        "source_id": "id_candidate_search"
+      },
+      {
+        "bytes": 203250,
+        "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+        "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+        "source_id": "id_browser_visible"
+      },
+      {
+        "bytes": 68620,
+        "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+        "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+        "source_id": "id_browser_federal"
+      },
+      {
+        "bytes": 29871,
+        "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+        "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+        "source_id": "id_browser_senate"
+      }
+    ],
+    "status": "EXACT40_SOURCE4_REFERENCE_CODE_RUNTIME_BINDINGS_VERIFIED",
+    "total_declared_source_bytes": 3760839
+  },
+  "primary": {
+    "artifact_hashes": {
+      "checksums.json": "33f06b879fce052fbfa6dca7675e9e8a26538d095da6ea6fdd4e35de6af14ae1",
+      "environment.json": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+      "events.jsonl": "5029df4a4ac1da479afbb234aeaddae6658a63b83ea2069ac1b7426edda1b9d8",
+      "failure.json": "d9f2208f295d64f39172bb543499ba585569c0c7df2a062fea5753fe09ae1cb4",
+      "manifest.json": "6c2c4cea537641e2722a2ef9a10f95a741b4253e6109bd41f014f4d076e744f3",
+      "summary.json": "12abb2117c3fb8bd57272adf8be50b271dfd46031f8e7f8e6e05cff93c8283bb"
+    },
+    "caller_exception_type": "CaptureRejected",
+    "captured_diagnostic_bytes": 0,
+    "checksum_entries": {
+      "environment.json": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+      "events.jsonl": "5029df4a4ac1da479afbb234aeaddae6658a63b83ea2069ac1b7426edda1b9d8",
+      "failure.json": "d9f2208f295d64f39172bb543499ba585569c0c7df2a062fea5753fe09ae1cb4",
+      "manifest.json": "6c2c4cea537641e2722a2ef9a10f95a741b4253e6109bd41f014f4d076e744f3",
+      "summary.json": "12abb2117c3fb8bd57272adf8be50b271dfd46031f8e7f8e6e05cff93c8283bb"
+    },
+    "checksum_ledger_valid": true,
+    "elapsed_seconds": 1.0811296669999138,
+    "events": [
+      {
+        "at_utc": "2026-11-03T17:49:07.489578+00:00",
+        "event": "started",
+        "kind_label": "EXPLORATORY",
+        "sequence": 1
+      },
+      {
+        "at_utc": "2026-11-03T17:49:08.526676+00:00",
+        "error_type": "ValueError",
+        "event": "typed_failed",
+        "sequence": 2
+      },
+      {
+        "at_utc": "2026-11-03T17:49:08.527155+00:00",
+        "event": "completed",
+        "sequence": 3
+      }
+    ],
+    "final_typed_seal_written": false,
+    "manifest_code": {
+      "dirty": true,
+      "git_sha": "53989f4f885de2f0a3f1dcc7c48ab047104da261",
+      "source_tree_sha256": "733184f292d1f5b988e97efeb8323f80af876cca93b54a70465414d59577efca"
+    },
+    "not_post_seal_ACK_ambiguity": true,
+    "payloads_written": false,
+    "run_config": {
+      "config_sha256": "36ddd6638774afa8cfad14e3e2ae34a918a3cf77f05961d26a1b40413b117c42",
+      "role": "TYPED_SOURCE_DOCUMENT_READINESS_V1_9",
+      "schema_version": 2,
+      "wrapper_sha256": "c4f9cdde81cd58b9b2c5f97e6ac41dab4764b48c12376be732887e254a3be04a"
+    },
+    "run_id": "e01-aadc141b93f74f69ad70f0279c67489e",
+    "run_path": "data/processed/runs/e01-aadc141b93f74f69ad70f0279c67489e",
+    "sealed_error_type": "ValueError",
+    "stage_resolved": "Failure occurred before any of the four typed payloads was published; internal component/assembly cause not diagnosed or inferred.",
+    "summary_status": "FAILED"
+  },
+  "privacy": {
+    "private_payloads_in_failed_run": false,
+    "raw_candidate_names_in_report": false,
+    "raw_source_or_reference_bodies_exported": false,
+    "reports_contain_only_hashes_metadata_static_errors": true
+  },
+  "private_control": {
+    "file_hashes": {
+      "preflight_complete.local.json": "673ba719a9db51fc4d4031ca9c011ee19743b0e0899cc92240b1bf7bd50bdd84",
+      "preflight_started.local.json": "e231d0323408bae0697d91c8e26ce2d8623c36047e6423951fd9c9ab9b92c010",
+      "primary_control_error.local.json": "2def67d31cb5ba52c4f6bb59e2da74a2cc480ba231e201d65539750e2e825790",
+      "primary_diagnostics.local.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "primary_started.local.json": "873e641d01618b258cf8eaef1f1464237b65ab3f62d7780df91f0058dc8d9789",
+      "primary_uncertain_or_failed.local.json": "34c673a5b29b9fbf048668016f6c9ac97be9cbe17f5c8201d46b865fd8be3d7a"
+    },
+    "path": "data/processed/e01_typed_v1_9_actual_control/release-20261103-e61f5e2b"
+  },
+  "recorded_at_utc": "2026-11-03T17:49:58.385967+00:00",
+  "replay": "NOT_RUN_PRIMARY_FAILED_NO_RETRY",
+  "reproduction_harness": {
+    "commands_completed": [
+      "preflight",
+      "primary"
+    ],
+    "existing_phase_retries_refused": true,
+    "new_execution_authorization_required": true,
+    "path": "scripts/e01_typed_readiness_v1_9_actual_release.py",
+    "sha256": "381594340533b7e87c20f7b37f1db409edb36f1fad0d6a770e4229710e971126"
+  },
+  "schema_version": 1,
+  "source_expansion": false,
+  "status": "ACTUAL_PRIMARY_FAILED_SEALED_NO_RETRY_REPLAY_NOT_RUN_PENDING_INDEPENDENT_DIAGNOSIS",
+  "task_id": "E01_TYPED_V1_9_CACHED_PRIMARY_REPLAY_20261103"
+}

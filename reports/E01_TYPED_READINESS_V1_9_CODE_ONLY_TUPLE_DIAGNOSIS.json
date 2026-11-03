@@ -1,0 +1,41 @@
+{
+  "additional_actual_helper_or_readiness_calls": 0,
+  "additional_actual_source_or_reference_body_IO": 0,
+  "cost_usd": 0,
+  "failed_actual_run": "e01-aadc141b93f74f69ad70f0279c67489e",
+  "frozen_code_modified": false,
+  "model_calls": 0,
+  "observation": "Static Nebraska BOUNDS contains tuple values and extract_geometry returns those values in physical_column_bounds. v1.7 preserves that native nested shape. v1.9 assemble compares native rosters using Python object equality to strict_json-decoded saved references, whose tuple-equivalent values are lists. The authored test proves object inequality while exact encoded bytes and canonical hashes remain equal, then reproduces a sealed ValueError before any payload.",
+  "possible_future_remediation": "Only after independent finding, prepare separate versioned wrapper whose legacy comparison checks exact serialized JSON bytes/canonical JSON identities instead of pre-serialization tuple/list object equality; retain old candidate/failure and add native tuple/list fixture plus bool/int JSON inequality guards. No such remediation is implemented or released here.",
+  "proof_boundary": "An authored static-code-compatible shape demonstrates a rejection path. No actual parser or failed-run internal traceback was replayed; this does not independently certify the actual failure stage/root cause.",
+  "recorded_at_utc": "2026-11-03T17:51:24.934880+00:00",
+  "retry_or_replay": false,
+  "schema_version": 1,
+  "static_code_paths": {
+    "src/civiclab/e01/ballots_v1_7.py": "b45746439df1e50469f76a7d6ff9acb8bb0536e2f1d605eb116a28460b169062",
+    "src/civiclab/e01/ballots_v1_9.py": "c4f9cdde81cd58b9b2c5f97e6ac41dab4764b48c12376be732887e254a3be04a",
+    "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e"
+  },
+  "status": "AUTHORED_CODE_PATH_REPRODUCED_PENDING_INDEPENDENT_ACTUAL_DIAGNOSIS",
+  "task_id": "E01_V1_9_CODE_ONLY_NATIVE_TUPLE_JSON_DIAGNOSIS",
+  "test_file": {
+    "path": "tests/test_e01_typed_readiness_v1_9_tuple_diagnosis.py",
+    "sha256": "75e91a2f96afd2f1235877e78b37eec33adf842c87bfcd34ea5e6a9fffd554e9"
+  },
+  "tests": [
+    {
+      "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_typed_readiness_v1_9_tuple_diagnosis -q",
+      "exit_code": 0,
+      "python": "3.12.14",
+      "seconds": 0.057,
+      "tests": 1
+    },
+    {
+      "command": "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e01_typed_readiness_v1_9_tuple_diagnosis -q",
+      "exit_code": 0,
+      "python": "3.11.17",
+      "seconds": 0.048,
+      "tests": 1
+    }
+  ]
+}
