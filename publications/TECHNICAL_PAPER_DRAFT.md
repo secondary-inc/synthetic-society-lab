@@ -118,6 +118,8 @@ The later Wyoming adult-source engineering pipeline has separate independent ret
 
 Code, protocols, input hashes, seeds, environment metadata, responses, failures and checksum ledgers support reconstruction of each recorded run. The reproducibility package includes permitted code/configuration and explicitly selected sealed outputs; raw survey and publisher data are excluded. Full source reconstruction still depends on documented access and matching source bytes. The [completion contract](../configs/completion_contract.json) requires independent evidence for every item, including remote CI and genuine research evaluation. Local engineering checks cannot substitute for those requirements.
 
+Exact committed engineering snapshot `722e63a` has independent retained clean-restoration acceptance:767 fixture tests passed, fixture-only source validation passed, and974 archived files matched Git and the restored checkout (`reports/INDEPENDENT_AUDIT_CLEAN_RESTORE_722E63A_767_FIXTURES_V1.json`). This excludes later worker code and actual private research sources/runs. The original one-test restoration failure and its separately reviewed test-only correction remain preserved. No remote-CI or scientific requirement is substituted by this result.
+
 The [complete limitations report](LIMITATIONS.md), [current status](../reports/STATUS.md), independent audit receipts and source-specific rights notes govern interpretation. This manuscript is ready for methods review as a draft, not for a claim that the complete E01/E02 research program has finished. Further empirical sections require separately accepted real-run evidence; this bounded historical result does not certify the complete program.
 
 ## Data and software statement

@@ -19,6 +19,22 @@ The actual local `.env` and raw data are excluded. Do not paste secrets into the
 
 For the observed Python 3.12 research environment, `configs/runtime_python312_20261103.txt` pins the installed optional tools and their transitive dependencies. In a fresh Python 3.12 environment, install that file with `python -m pip install -r configs/runtime_python312_20261103.txt`, then install this project with `python -m pip install -e . --no-deps`. The lock is not for Python 3.11: its NumPy 2.5 requires Python 3.12+. The Python 3.11 CI job instead resolves compatible dependencies from the pinned SciPy extra and must independently pass the same selector fixtures. Run artifacts record the actual Python and relevant dependency versions; older sealed runs preserve their older environment records.
 
+## Verified committed engineering snapshot
+
+Exact commit `722e63aad090714eba58b51c83e68e21beeb0bc9` has an independently reviewed clean-source restoration. A new Python3.12 environment installed `configs/runtime_python312_geometry_20261103.txt` and the editable project;767 fixture tests passed in377.484seconds, fixture-only source validation passed, and all974 archived files remained byte-identical. See the [execution receipt](../reports/CLEAN_RESTORE_722E63A_767_FIXTURES_LEAD.json) and [independent review](../reports/INDEPENDENT_AUDIT_CLEAN_RESTORE_722E63A_767_FIXTURES_V1.json).
+
+Export that exact commit with `git archive --format=zip --output=committed-source.zip 722e63aad090714eba58b51c83e68e21beeb0bc9`, extract into a new directory, and use a credential-free subprocess environment. In the extracted directory:
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip --isolated install --no-input -r configs/runtime_python312_geometry_20261103.txt
+.venv/bin/python -m pip --isolated install --no-input --no-deps -e .
+PYTHONPATH=src:tests .venv/bin/python -m unittest discover -s tests -q
+.venv/bin/civiclab validate-sources --fixture-only
+```
+
+The source ZIP hash is `baeb3d209901cceaa96cbb3206fbb7659f0b42438141773b2d4855e935e1bee8` (7,027,666bytes). It excludes actual raw sources, private run/owner histories and credentials; selected research outputs require the separate review-package procedure below. This receipt does not cover later worker code, remote CI, full research-data reconstruction or scientific validity. Historical defective versions remain present for regression evidence, without their findings being closed by healthy tests. The earlier `a856b96` restoration failed one nonportable historical-proposal test; its archive/log and original test remain preserved. The correction has its own independent receipt. Dependency versions were pinned, but transient isolated build tools were not hash-locked.
+
 ## Recorded outputs
 
 `reports/ENGINEERING_EVIDENCE_20261103.json` records the original sealed engineering runs. Newer module receipts and independent audits may supersede those for specific claims. Every run includes source/configuration identity, environment, seeds, summaries, events and a final checksum ledger. `verified_run()` rejects altered or incomplete artifacts. MOCK/DEMO outputs remain engineering fixtures after packaging.
