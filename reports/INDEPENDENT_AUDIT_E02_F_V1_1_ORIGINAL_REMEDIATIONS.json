@@ -1,0 +1,91 @@
+{
+  "actual_person_rows_processed": 0,
+  "additional_independent_adverse_cases": {
+    "argument_modes": [
+      "cost_zero",
+      "cost_one_less",
+      "kind",
+      "definition",
+      "vector",
+      "nonzero_count"
+    ],
+    "history_modes": [
+      "zero",
+      "one_less",
+      "kind",
+      "definition",
+      "total",
+      "receipt_only",
+      "boolean",
+      "negative"
+    ],
+    "valid_empty_unused_accepted": 12,
+    "width_extra_refused": 12,
+    "width_missing_refused": 12
+  },
+  "audited_at_utc": "2026-11-03T15:03:52.060112+00:00",
+  "auditor_role": "independent_auditor",
+  "candidate_evidence_sha256": "cfce8680993d860a4c27b5655ddce9a93a4dcc64657bec885666c481f12bf250",
+  "component_acceptance": "BLOCKED",
+  "controller_receipts_renewed": false,
+  "cost_usd": 0,
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "new_open_finding": "IA-E02-F-V1_1-HALT-003",
+  "new_open_finding_receipt": "reports/INDEPENDENT_AUDIT_E02_F_V1_1_HALT_FINDING.json",
+  "original_attacks_after_v1_1": {
+    "resealed_query_cost_refund": {
+      "accepted": false,
+      "error_type": "Blocked"
+    },
+    "truncated_unused_field": {
+      "accepted": false,
+      "error_type": "Blocked"
+    }
+  },
+  "original_freeze_files_and_findings_unchanged": true,
+  "raw_authored_run_oracles": {
+    "13deterministic_files_byteexact": true,
+    "Cshare_blocked_replicate_denominators": 612,
+    "adults": 3672,
+    "all8primitive_buffers_exact_both_sweeps": true,
+    "all_age_rows": 3978,
+    "artifact_hashes_verified": 111,
+    "artifact_index_sha256": "d39ca902cb2a1d226107a18c3fc2e844526453aedf9677ceab812d9ec0ad2346",
+    "authored_ZIPs": 51,
+    "charged_logical_units_independently_rederived": 12150122,
+    "mandatory_records_independently_recomputed": 9344,
+    "nested_C": 612,
+    "query_cov_minus16_diffvar64_negativepoint_both_sweeps": true,
+    "retained42probe_indexed_files_rehashed": 306,
+    "run_id": "F-mock-v1_1-20261103-01"
+  },
+  "resolved_findings": [
+    {
+      "id": "IA-E02-F-V1-QUERY-COST-001",
+      "resolution": "CLOSED_FOR_PINNED_SEPARATE_V1_1_ONLY"
+    },
+    {
+      "id": "IA-E02-F-V1-CSV-WIDTH-002",
+      "resolution": "CLOSED_FOR_PINNED_SEPARATE_V1_1_ONLY"
+    }
+  ],
+  "reviewed_files": {
+    "configs/e02_full_adult_engine_v1_1.json": "a02ae6c46099c4b17ecf413291c5df2bbfa5b006bd798500f5cab8f3e054a06a",
+    "docs/E02_FULL_ADULT_ENGINE_V1_1_REMEDIATION.md": "38b467408b21d6e77968458d93f7416588ae50347ebe31d170407cc99312a2ab",
+    "reports/E02_FULL_ADULT_ENGINE_V1_1_TEST_LOG.txt": "04b8c1c54a742a8abd003011e38680f7dc907d525a1a7bb2a60129eb0d84d7e5",
+    "src/civiclab/e02/full_adult_analysis_v1_1.py": "9eea9e7fb3998acc0fdce62641d8d59abee7d36d68f29d873c43ed3037232d72",
+    "src/civiclab/e02/full_adult_codec_v1_1.py": "d65c07388924f488c0e84f13924302f31e8df8c8b8189958c17d92a150177d25",
+    "src/civiclab/e02/full_adult_control_v1_1.py": "f58b33b0e66f049cddcbca5a487cb8c36abc5585e08ea053b18fd10a1cc4569c",
+    "src/civiclab/e02/full_adult_engine_v1_1.py": "b11cc3e7a29ae494bba01ec7b89f0f54ec6f658725c277d588e5c79a1884c242",
+    "src/civiclab/e02/full_adult_queries_v1_1.py": "d58d2195cc7d791c184518a5db2ee0896e65f89f1301bdee03e75a9c16de86ae",
+    "src/civiclab/e02/full_adult_runtime_v1_1.py": "4e8f586b3a2a6922131a50ce468a7260eedc18a9aff6fa07980421c3fd98c4d5",
+    "src/civiclab/e02/full_adult_types_v1_1.py": "05f2641c5f258d881de3cc72cdfb20e66ddb5a7f6a620c466bc2cfdf681b512f",
+    "tests/test_e02_full_adult_v1_1.py": "eb054c7e999c1e9382e4897d7fa724fcf51c8a15c499c20093cfa19fb36c3c8e"
+  },
+  "schema_version": 1,
+  "scope": "ClosesONLYtwooriginaldefectsforexactseparatev1.1underindependentadverseandrawarithmeticchecks. NewresealedhaltflagbypasskeepsoverallFimplementationBLOCKED. Originalv1/findings/evidence/runsimmutable;noactualsource/Fadapter/WYreuse/disclosure/fit/science/paidrelease/controlleracceptance.",
+  "status": "ORIGINAL_TWO_F_FINDINGS_CLOSED_FOR_V1_1_NEW_HALT_FINDING_OPEN",
+  "targeted_E02_tests_independently_passed": 113,
+  "test_scope": "75olderE02+18preserveddefectivev1+20v1.1;greenhistoricalv1testsareNOTv1acceptance."
+}

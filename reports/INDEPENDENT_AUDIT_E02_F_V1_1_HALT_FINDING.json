@@ -1,0 +1,54 @@
+{
+  "actual_person_rows_processed": 0,
+  "audited_at_utc": "2026-11-03T15:03:14.527119+00:00",
+  "auditor_role": "independent_auditor",
+  "candidate_evidence_sha256": "cfce8680993d860a4c27b5655ddce9a93a4dcc64657bec885666c481f12bf250",
+  "controller_receipts_renewed": false,
+  "cost_usd": 0,
+  "finding": {
+    "cause": "Semanticreopeningvalidateshaltedbooleanstype,butdoesnotderivefrozenbatchhaltfromretainedFAILED/UNKNOWNqueryorphasehistory. ReservationgatechecksresettablehaltedandRESERVEDonly.",
+    "id": "IA-E02-F-V1_1-HALT-003",
+    "implication": "AnewdifferentqueryisevaluatedandCOMMITTEDwithouttherequirednewexact-statecontinuationapprovalafteranUNKNOWNattempt. Nomoneyrefundisneededtobypassthefailed/unknownbatchgate.",
+    "location": "src/civiclab/e02/full_adult_queries_v1_1.py:72",
+    "observed": {
+      "accepted": true,
+      "additional_query_evaluations": 1,
+      "after_ops": 74654,
+      "immutable_plan_runtime_genesis_unchanged": true,
+      "next_query_status": "COMMITTED",
+      "prior_ops": 74085,
+      "prior_unknown_full_bytes_retained": true,
+      "reopened_halted": false,
+      "retained_first_query_status": "UNKNOWN"
+    },
+    "required_remediation": [
+      "Preservev1.1candidate/evidence/runs/findingbeforeseparatelyversionednarrowfix.",
+      "Rederivehalt/barrierinvariantfromretainedFAILED/UNKNOWNqueryandphasehistoryonwrite/reopen;directfuture reservations/evaluationmustrefusewhenpriorunknown/failureexists.",
+      "Anyplannedcontinuationmustbeanexplicitindependentlyreviewednewexact-stateapprovalmechanism,notbooleanreset. Currentcandidatehasnosuchauthority.",
+      "TestFAILEDandUNKNOWNqueries/phases,coeditedhaltflags+resealedreceipt/events/state,zeroqueryevaluations/noreservations,andordinarysuccessfulcontinuationpositive."
+    ],
+    "severity": "HIGH_FOR_CONTROL_ACCEPTANCE",
+    "status": "OPEN",
+    "trigger": "Reservevalidquery,recoverittoUNKNOWN(fullcost/2048bytesretained). ChangeonlycurrenthaltedTrue\u2192Falseandresealmutablefinalreceipt/event/statehashclosure; frozenplan/runtime/genesisunchanged."
+  },
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "original_two_findings_remediation_observation": "OriginalquerycostandCSVwidthattacksnowrefuseunderpinnedv1.1;independent8resealedhistory/6argument/36widthvariantsalsoPASS. Theseclosureswillberecordedseparately;fullcomponentacceptancewithheldbecauseofthisnewfinding.",
+  "reviewed_files": {
+    "configs/e02_full_adult_engine_v1_1.json": "a02ae6c46099c4b17ecf413291c5df2bbfa5b006bd798500f5cab8f3e054a06a",
+    "docs/E02_FULL_ADULT_ENGINE_V1_1_REMEDIATION.md": "38b467408b21d6e77968458d93f7416588ae50347ebe31d170407cc99312a2ab",
+    "reports/E02_FULL_ADULT_ENGINE_V1_1_TEST_LOG.txt": "04b8c1c54a742a8abd003011e38680f7dc907d525a1a7bb2a60129eb0d84d7e5",
+    "src/civiclab/e02/full_adult_analysis_v1_1.py": "9eea9e7fb3998acc0fdce62641d8d59abee7d36d68f29d873c43ed3037232d72",
+    "src/civiclab/e02/full_adult_codec_v1_1.py": "d65c07388924f488c0e84f13924302f31e8df8c8b8189958c17d92a150177d25",
+    "src/civiclab/e02/full_adult_control_v1_1.py": "f58b33b0e66f049cddcbca5a487cb8c36abc5585e08ea053b18fd10a1cc4569c",
+    "src/civiclab/e02/full_adult_engine_v1_1.py": "b11cc3e7a29ae494bba01ec7b89f0f54ec6f658725c277d588e5c79a1884c242",
+    "src/civiclab/e02/full_adult_queries_v1_1.py": "d58d2195cc7d791c184518a5db2ee0896e65f89f1301bdee03e75a9c16de86ae",
+    "src/civiclab/e02/full_adult_runtime_v1_1.py": "4e8f586b3a2a6922131a50ce468a7260eedc18a9aff6fa07980421c3fd98c4d5",
+    "src/civiclab/e02/full_adult_types_v1_1.py": "05f2641c5f258d881de3cc72cdfb20e66ddb5a7f6a620c466bc2cfdf681b512f",
+    "tests/test_e02_full_adult_v1_1.py": "eb054c7e999c1e9382e4897d7fa724fcf51c8a15c499c20093cfa19fb36c3c8e"
+  },
+  "schema_version": 1,
+  "scope": "AuthoredfixtureimplementationcontrolsONLY. Noactualpersonsource/GET/WYreuse/disclosure/fit/model/spendauthority. Originalv1/findingsremainimmutable;no scientific/controlleracceptance.",
+  "status": "BLOCKED_F_V1_1_RESEALED_HALT_FLAG_BYPASS",
+  "targeted_E02_tests_independently_passed": 113
+}

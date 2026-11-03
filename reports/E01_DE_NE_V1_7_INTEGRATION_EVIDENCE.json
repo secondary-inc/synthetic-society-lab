@@ -1,0 +1,54 @@
+{
+  "task_id": "E01_DE_NE_READINESS_INTEGRATION_V1_7",
+  "status": "WORKER_IMPLEMENTATION_EVIDENCE_PENDING_INDEPENDENT_REVIEW",
+  "new_file_pins": {
+    "src/civiclab/e01/ballots_v1_7.py": "b45746439df1e50469f76a7d6ff9acb8bb0536e2f1d605eb116a28460b169062",
+    "configs/e01_ballot_readiness_v1_7.json": "478d9bfd87c34703f260336c652c4e4a0ce36298e89614b709a4105b8d6a5bfe",
+    "tests/test_e01_ballot_integration_v1_7.py": "f2d045ece1c748b3231b78d9bc13188d6014b1905434564a1e236a41d8b3a767",
+    "docs/E01_DE_NE_READINESS_INTEGRATION_V1_7.md": "6c003baa0c9c6a2e7c11483c77c284e30ede01941b2e1fc5c4ea5c86acd45af0",
+    "reports/E01_DE_NE_V1_7_INTEGRATION_CACHED_PREFLIGHT.json": "dd3b86ef8c7624de6cc00377e9ae723a498e1635a1043c3ce012cc87b884e08d"
+  },
+  "frozen_base_and_helper_pins": {
+    "configs/e01_ballot_readiness_v1_6_1.json": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b",
+    "configs/e01_de_ne_source_contract_v1_7.json": "f698aa051299e0c9787a5376d455a941fa0374bf5524941988ff49ad27f3321a",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e01/ballots.py": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballot_capture_formats_v1_4.py": "0c8cc0be58b249c9d31968a439025e5025f42949abdfe15214496f63fddbf370",
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "src/civiclab/e01/ballot_formats_v1_6.py": "fb5fb665225dfdef782eef3f8ba712cd0eb67816e9b69632323e39310a19faa9",
+    "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+    "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e"
+  },
+  "geometry_dependency_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_GEOMETRY_RUNTIME_V1_7.json",
+    "sha256": "fc8fc518230de3ab54f00e1206e2e7783ff4d2bd476a148fbabc6eef5bf47d4f"
+  },
+  "worker_tests": {
+    "new_integration_command": ".venv/bin/python -m unittest tests.test_e01_ballot_integration_v1_7 -q",
+    "new_integration_passed": 8,
+    "broader_targeted_passed": 69,
+    "fixture_scope": "Authored source bodies/geometry boxes; ten authored base state objects via stub; temporary source hash/origin constants explicitly patched. These are engineering fixtures.",
+    "all_e01_command": ".venv/bin/python -m unittest discover -s tests -p 'test_e01*.py' -q",
+    "all_e01_passed": 107
+  },
+  "actual_cached_preflight": "reports/E01_DE_NE_V1_7_INTEGRATION_CACHED_PREFLIGHT.json",
+  "accepted_prior_run_preservation_check": {
+    "run_id": "e01-ca50c23ae56d4c2e95576778b80bfa2b",
+    "artifact_hashes_reverified": 6,
+    "exact_prior_roster_objects": 10,
+    "local_roster_sha256": "f12007aa5fe219ff2f4dc124f7b905f115d409c510c9f2a9e4a6223c8379fb92"
+  },
+  "acceptance_not_self_issued": true,
+  "recorded_v1_7_readiness_runs": 0,
+  "accepted_coverage_not_promoted": true,
+  "final_ballots_accepted": 0,
+  "latest_amendments_accepted": false,
+  "geography_accepted": false,
+  "actual_selection": false,
+  "source_policy_adopted": false,
+  "new_network_requests": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "named_candidate_or_contact_literals_exported": false
+}
