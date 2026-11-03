@@ -17,6 +17,21 @@ User-specified source: <https://github.com/MEDSL/2022-elections-official>.
 
 SSH authentication was unavailable; HTTPS succeeded. A shallow, filtered clone without checkout is stored at `data/raw/medsl_2022_repository`. The exact observed commit is pinned in the inventory. This registers the source; it does not mean the repository's complete state datasets have been downloaded or validated. The project Git remote remains `secondary-inc/synthetic-society-lab`.
 
+## Additional candidate and geography inputs
+
+The subsequent user upload adds these local files, with hashes and structural checks recorded in the inventory:
+
+- Candidate summary CSVs: 5,302 records for the 2024 file and 4,540 for the 2026 file, each with 50 columns. These contain candidate and financial reporting information; coverage dates must be checked before use in any time-bounded analysis.
+- FEC-format candidate master files (`cn22`, `cn24`, `cn26`): respectively 8,578, 9,796 and 8,890 headerless, pipe-delimited records, with 15 fields each.
+- FEC-format candidate–committee linkage files (`ccl22`, `ccl24`, `ccl26`): respectively 7,683, 8,619 and 8,397 headerless, pipe-delimited records, with seven fields each. These link candidates and committees; they are not election returns.
+- `cd120.zip`: a national block-to-congressional-district assignment table with 8,174,955 records, plus nine state tables. Each has six columns: GEOID, STATEFP, COUNTYFP, TRACTCE, BLOCKCE and CDFP. State and national files must not be concatenated as independent records without overlap checks. This is a geographic assignment input, not a district polygon shapefile or an ACS population table. Release provenance, applicable boundary revisions and compatibility with historical geography remain unverified.
+
+The additional ANES ZIP is byte-identical to the previously registered archive. The two `cd120` ZIPs are byte-identical, as are all three `cn26` ZIPs. Duplicate uploads are registered as aliases to a single local copy.
+
+The [FEC candidate master documentation](https://www.fec.gov/campaign-finance-data/candidate-master-file-description/) says that its universe includes active committees regardless of election year and some candidates referenced by other committees. Accordingly, candidate registration records alone do not establish the official 2026 general-election ballot. The [candidate–committee linkage documentation](https://www.fec.gov/campaign-finance-data/candidate-committee-linkage-file-description/) describes the seven linkage fields. These references support format interpretation; they do not authenticate the supplied downloads' exact upstream release.
+
+Remaining acquisition gaps include ACS demographic tables, questionnaire and primary-scale selection, permitted experiment text, official general-election ballot verification, dated race ratings if used, and authoritative geography-version checks. The new geography and candidate inputs partially address E01 requirements; they do not complete those gates. No paid inference or experiment was run.
+
 ## Validation limits and next use
 
 Archive CRC integrity, hashes, CSV record counts and column widths were checked. These checks do not establish statistical validity, complete geographic coverage or correct vote aggregation. Dataverse dataset DOIs, release versions, reuse terms and original download URLs still require confirmation.
