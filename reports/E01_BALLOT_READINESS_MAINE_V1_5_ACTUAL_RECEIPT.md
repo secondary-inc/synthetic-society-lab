@@ -1,0 +1,21 @@
+# E01 Maine v1.5 actual cached readiness receipt
+
+TASK_ID: E01_BALLOT_READINESS_MAINE_V1_5_ACTUAL
+
+FILES_CHANGED: New `reports/E01_BALLOT_READINESS_MAINE_V1_5_ACTUAL.json` and thisreceipt only. Sixindependentlyreviewedcode/config/test pins and23sourcepins verified preexecution; allunchanged. Existingcaptures/runs/snapshots/audits/preflightfailure preserved. No sharedhelper/CLI/status change.
+
+OUTPUT_ARTIFACTS: Actual `e01-2081bebd6e1d46acbe9468e62083595d`; replay `e01-266705c10bf5482a86adf5ce5bba6498`. Both6artifactledgers sealed. EvidenceJSON includes checksumfileSHA256 andallartifactdigests. Namedroster/history remainignored/unbundled `candidate_rosters.local.json`; publicreportcounts/digests only, nocandidatecontacts/names/residences exported.
+
+REPRODUCTION_COMMANDS: Verify exactreviewedfiles/sourcepins in `reports/INDEPENDENT_AUDIT_E01_MAINE_V1_5_INTEGRATION.json`; execute twice `PYTHONPATH=src .venv/bin/python -m civiclab.e01.ballots configs/e01_ballot_readiness_v1_5.json --root "$PWD"`; verifyledgers and compare readiness/localroster bytes. Existingcachedsourceonly, nonetworkrequired.
+
+TESTS_RUN_AND_RESULTS: Previouslyindependentlypassed69tests underunchangedpins, not redundantlyrerun. Sixreviewedfilepinsverified;23sourcebytecounts/hashesmatchaudit/config. Bothactualruns succeed;12artifacthashesverify;readiness/localrosterbyteidentical. All7previouslyacceptedrosterobjects exactlyunchangedagainstacceptedv1.4.1run. Actual8rosterstates AK/CO/KS/ME/NC/NJ/VA/WY,33regularClassIIslots,25unacquired/unblockedcandidate-sourcejobs. Maine8candidate rows=2printed/6declaredwriteins, historicalwithdrawal/replacement1keptseparately,exactreplacementfullnamepartydate1match,formerabsentprinted,0printed/writeinexactfullnameoverlap. PrintedD/Rcodes1each,sixwriteindesignationsliteral/UNSPECIFIED,notnominationproof. Finalballotsaccepted0. Source-resultcoveragependingindependentactualaudit; acceptedcoverage remains7/26untilthen.
+
+SOURCE_DATA_AND_LICENSE_NOTES: No newGETs, bytes, headers orsourcepolicy. Browserdownload/text semantics unchanged; officialofficekeymappingbindsMEofficeUS. Index10/16versusPDF10/15 retained. PublicreadinesscheckedtocontainnocurrentMainecandidatefullname; historicalnames onlyinlocalroster. Rawrespondent/publisher/candidatecontactdata notincludedinthishandoff. Context IDs/factsunchangedoutside33regularquota frame. Formerwithdrawalhistoryisnotsilentlydiscarded orcountedaspresentprintedcandidate; no racesample/exclusiondecision made.
+
+COST_USD_ACTUAL_OR_ZERO:0; no modelcalls.
+
+RISKS_AND_LIMITATIONS: Implementeractualevidencependingindependentreview. Source-localreconciliationdoesnotprovelatestamendments,finalballots,asofarchives orprospectiveforecasts. SameKSedition/AKsampleballot/VAlateralloffices andotheramendmentgapsremain. Localnamedreconciliationstayspackage-refused; anyshareablederivedartifactrequiresseparatereview. No sourceadoption/actualselection/outcomes/inference.
+
+UNRESOLVED_BLOCKERS: Independentactualledger/resultreviewbeforecoveragepromotion.25remainingcandidate-sourcejobsunblocked/incomplete aftersuccessfulnewexecution; originalfinalballot/geography/ratingsasof/selection/comparator/holdoutgatesremain. ORandmissingstatesacquisitionjobsstillunfilled.
+
+NEXT_UNBLOCKED_TASK: Auditor independentlyverifiesbothledgers,exactreplay,Mainecounts/literallabel/source-localhistory andunchangedsevenpriorrosters. Allv1.5files frozenforreview. Afteracceptance, leadmaycommit/updatetruecoverage; nextsourcejobsproceedinseparateversion.

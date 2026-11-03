@@ -17,6 +17,7 @@ from urllib.parse import urlsplit
 from civiclab.common import RunStore,canonical_hash,sha256_file
 from civiclab.e01.ballot_formats_v1_3 import extract_co_senate,extract_va_senate,extract_wy_senate
 from civiclab.e01.ballot_capture_formats_v1_4 import extract_ks_senate,extract_ak_senate
+from civiclab.e01.maine_v1_5 import reconcile as reconcile_maine
 
 CLASS_II_STATES=tuple('AK AL AR CO DE GA IA ID IL KS KY LA MA ME MI MN MS MT NC NE NH NJ NM OK OR RI SC SD TN TX VA WV WY'.split())
 CONTEXT_IDS={'2026-OH-SENATE-C3','2026-FL-SENATE-C3','2026-FL-HOUSE-20'}
@@ -148,10 +149,11 @@ def verify_source(root,source):
     if not official_url_allowed(source['url']):raise ValueError('source URL metadata admission rejected')
     stamp=datetime.fromisoformat(source['retrieved_at_utc'].replace('Z','+00:00'))
     if stamp.tzinfo is None:raise ValueError('source retrieval clock needs explicit timezone')
-    if source['capture_kind'] not in {'HTTP_RESPONSE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES'}:
+    if source['capture_kind'] not in {'HTTP_RESPONSE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_RENDERED_TABLE_DOM_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_DOWNLOAD_BYTES'}:
         raise ValueError('unknown capture representation')
     if source['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION',
-        'OFFICIAL_CAPTURE_CONTEXT','OFFICIAL_CANDIDATE_INDEX','OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
+        'OFFICIAL_CAPTURE_CONTEXT','OFFICIAL_CANDIDATE_INDEX','OFFICIAL_CANDIDATE_LIST_XLSX',
+        'OFFICIAL_WITHDRAWAL_REPLACEMENT_LIST','OFFICIAL_DECLARED_WRITE_IN_LIST','OFFICIAL_OFFICE_CODE_KEY','OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
         raise ValueError('finance registration or unknown source role is not ballot evidence')
     if not isinstance(source['response_headers'],dict) or set(source['response_headers'])-{'Date','Last-Modified','ETag','Content-Type'}:
         raise ValueError('only limited noncredential response headers may be recorded')
@@ -210,9 +212,38 @@ def validate_readiness(root,config):
             findings.append({'state':row['state'],'status':'NOT_YET_ACQUIRED_OFFICIAL_CANDIDATE_DOCUMENT',
                              'work_state':'UNBLOCKED_SOURCE_JOB_NOT_AN_ASOF_OR_OWNER_BLOCK',
                              'final_ballot_accepted':False});continue
-        if any(sources[k]['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION','OFFICIAL_CAPTURE_CONTEXT'} for k in refs):
+        if row['state']=='ME':
+            if refs!=['me_general','me_withdrawals','me_writeins','me_office_key','me_index_browser']:
+                raise ValueError('Maine requires exact five source references in reviewed order')
+            if [sources[k]['source_role'] for k in refs]!=['OFFICIAL_CANDIDATE_LIST_XLSX','OFFICIAL_WITHDRAWAL_REPLACEMENT_LIST',
+                    'OFFICIAL_DECLARED_WRITE_IN_LIST','OFFICIAL_OFFICE_CODE_KEY','OFFICIAL_CANDIDATE_INDEX']:
+                raise ValueError('Maine source roles differ')
+            if [sources[k]['capture_kind'] for k in refs]!=['BROWSER_DOWNLOAD_BYTES']*4+['BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES']:
+                raise ValueError('Maine capture representation differs')
+        elif any(sources[k]['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION','OFFICIAL_CAPTURE_CONTEXT'} for k in refs):
             raise ValueError('candidate reference is not official roster/certification evidence')
-        if row['state']=='NJ' and 'nj_senate' in refs:
+        if row['state']=='ME':
+            index=paths['me_index_browser'].read_text()
+            if not all(x in index for x in ['November 3, 2026 - General Election','7/27/2026','09/22/2026','10/16/26']):
+                raise ValueError('Maine observed index edition context differs')
+            reconciled=reconcile_maine(paths['me_general'],pdf_pages(paths['me_office_key']),
+                                       pdf_pages(paths['me_withdrawals']),pdf_pages(paths['me_writeins']))
+            candidates=[]
+            for item in reconciled['printed_candidates']:
+                candidates.append({**item,'source_name_literal':item['official_name'],
+                    'party_class':{'D':'D','R':'R'}.get(item['source_party_label'],'UNSPECIFIED'),
+                    'source_label_role':'PRINTED_SOURCE_PARTY_CODE_NOT_INDEPENDENT_LEGAL_RECOGNITION',
+                    'printed_on_ballot':True,'declared_write_in':False})
+            for item in reconciled['declared_write_ins']:
+                candidates.append({**item,'source_name_literal':item['official_name'],
+                    'party_class':'UNSPECIFIED','printed_on_ballot':False,'declared_write_in':True})
+            roster={'state':'ME','office':'SENATE','seat_class':2,'election_date':'2026-11-03','printed_stage':'GENERAL',
+                    'candidates':candidates,'printed_candidates':len(reconciled['printed_candidates']),
+                    'declared_write_ins':len(reconciled['declared_write_ins']),
+                    'historical_replacement_count':reconciled['historical_replacement_count'],
+                    'maine_reconciliation':reconciled,'writein_pdf_edition':'2026-10-15','writein_index_display_date':'2026-10-16',
+                    'completeness_claim':'SOURCE_LOCAL_CONSISTENCY_NOT_LATEST_AMENDMENT_OR_FINAL_BALLOT_ACCEPTANCE'}
+        elif row['state']=='NJ' and 'nj_senate' in refs:
             roster=extract_nj_senate(pdf_pages(paths['nj_senate']))
             if 'nj_nominee_certification' in refs:
                 certification=pdf_pages(paths['nj_nominee_certification'])
@@ -239,7 +270,11 @@ def validate_readiness(root,config):
             roster=extract_nc_senate(pdf_pages(paths['nc_federal_general']))
         else:raise ValueError('state source parser not implemented; no silent generic extraction')
         roster['source_hashes']=[sources[k]['sha256'] for k in refs]
-        roster['observations']=roster_observations(roster);rosters[row['state']]=roster
+        roster['observations']=roster_observations(roster)
+        if row['state']=='ME':
+            roster['observations'].update(printed_candidate_count=roster['printed_candidates'],
+                declared_write_in_count=roster['declared_write_ins'],historical_replacement_count=roster['historical_replacement_count'])
+        rosters[row['state']]=roster
         findings.append({'state':row['state'],'status':'OFFICIAL_DOCUMENT_EXTRACTED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW',**roster['observations']})
     for context in contexts:
         if set(context)!={'contest_id','scope','official_source_ids','status','reason'} or context['scope']!='CONTEXT_OUTSIDE_REGULAR_QUOTAS':raise ValueError('context source schema/scope differs')

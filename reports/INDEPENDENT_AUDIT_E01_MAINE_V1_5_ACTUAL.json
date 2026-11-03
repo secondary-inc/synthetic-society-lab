@@ -1,0 +1,66 @@
+{
+  "accepted_runs": [
+    {
+      "artifacts_verified": 6,
+      "checksums_sha256": "dd136c00eec9cbfdf56f5e387a28250b162b5b80917cb03b72000c2dd3458df7",
+      "local_rosters_sha256": "d4a7d11fde6548e9736e19f2deeb7b69a355758bc489e93f9db8088472c354d3",
+      "readiness_sha256": "545e9ec2a06d73e33eef75bb4d2ef73a69fabfec7ade75a3dc203425d61a912b",
+      "run_id": "e01-2081bebd6e1d46acbe9468e62083595d"
+    },
+    {
+      "artifacts_verified": 6,
+      "checksums_sha256": "4f0c058b612cb2175de8fcd84f6b087157528a642631d8b4d4e469b730eda53f",
+      "local_rosters_sha256": "d4a7d11fde6548e9736e19f2deeb7b69a355758bc489e93f9db8088472c354d3",
+      "readiness_sha256": "545e9ec2a06d73e33eef75bb4d2ef73a69fabfec7ade75a3dc203425d61a912b",
+      "run_id": "e01-266705c10bf5482a86adf5ce5bba6498"
+    }
+  ],
+  "actual_selection": false,
+  "audited_at_utc": "2026-11-03T14:06:14.622138+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "evidence_sha256": {
+    "reports/E01_BALLOT_READINESS_MAINE_V1_5_ACTUAL.json": "d65c7028017c423d59404c7ce88705e037ab5a002b88837d50bda228952f11e9",
+    "reports/INDEPENDENT_AUDIT_E01_MAINE_V1_5_INTEGRATION.json": "42264a7ccfc615bb53bad283ff2c7d5beec4982260a00e37a390a426ed1f9941"
+  },
+  "final_ballots_accepted": 0,
+  "independent_checks": {
+    "all33regularslots_three_separate_contexts_25unfinished_jobs": true,
+    "all_seven_previously_accepted_rosters_unchanged": true,
+    "independent_XML_printed_names_parties_dates_and_PDF_literals_match": true,
+    "local_roster_ignored_and_unbundled": true,
+    "public_payloads_contain_no_actual_roster_names_no_contact_fields_returned": true,
+    "readiness_and_local_roster_byte_exact_replay": true,
+    "twelve_artifact_hashes_exact_filesets_and_manifest_config_binding": true,
+    "two_edition_dates_retained_no_final_or_legal_status_inference": true,
+    "two_printed_six_declared_writeins_one_separate_historical_replacement": true
+  },
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "official_document_roster_states": [
+    "AK",
+    "CO",
+    "KS",
+    "ME",
+    "NC",
+    "NJ",
+    "VA",
+    "WY"
+  ],
+  "raw_names_or_contact_values_emitted": false,
+  "regular_slots": 33,
+  "reviewed_files": {
+    "configs/e01_ballot_readiness_v1_5.json": "5f3eb266728fc77b06ed24d3d0407f6935f4d33d82133771d3a0dea2c8f923e0",
+    "configs/e01_maine_reconciliation_v1_5.json": "676a473aa596343cb4e7731bd3a9ac2415fc89d46ae2f3c7e6ffc34aefa84fd9",
+    "src/civiclab/e01/ballots.py": "4f793aed7a548fec65dc3f199ceb4876f53eac8359bf8c316e1f9dcd5e5902bc",
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "tests/test_e01_maine_integration_v1_5.py": "ec0b5e4d6f65059945ebea8957a32ae0252a2317199608bcfb1e17f015cfec59",
+    "tests/test_e01_maine_v1_5.py": "695d2a07f2c9548ce2069a0c576921f024f8698bb24af156642d153a8215d51a"
+  },
+  "schema_version": 1,
+  "scope": "Exact cached-source readiness extraction/replay only. Original fullE01 manifest remains BLOCKED. No final/latest-amendment completeness, legal nomination inference, geography/crosswalk, ratings adoption/asof, selection,2026outcomes or prospectiveforecast acceptance. Candidate/historical literals stay local-only; no values emitted in this report.",
+  "source_adoption": false,
+  "source_hashes_verified": 23,
+  "status": "PASS_BOUNDED_MAINE_V1_5_ACTUAL_READINESS_AND_REPLAY",
+  "unfinished_unblocked_source_jobs": 25
+}

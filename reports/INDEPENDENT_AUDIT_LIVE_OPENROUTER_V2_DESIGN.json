@@ -1,0 +1,46 @@
+{
+  "actual_experimental_spend_usd": 0,
+  "actual_model_calls": 0,
+  "audited_at_utc": "2026-11-03T14:06:50.869596+00:00",
+  "auditor_public_documentation_pages_consulted": 2,
+  "auditor_role": "independent_auditor",
+  "authenticated_requests": 0,
+  "design_acceptance": "Separate versioned disabled factory/global-ledger implementation with authored/mock HTTP tests may proceed; accepted offline bridge remains unchanged. No enabled live factory or source/model execution authority.",
+  "implementation_acceptance_requirements": [
+    "One durable owner-wide approval ledger with atomic cross-module reservation and no fresh allowance from a new run/path/process; exact request/phase/code/input/price/approval binding.",
+    "Exact adaptive message numeric/serialization/token/output/reasoning/fee envelope; no unknown extra fees, fallback, inference retries or repair calls.",
+    "Generation lookup exact ID/model/actual-provider/BYOK/cost binding; required nullable fields block when unknown. Safe metadata allowlist must exclude user agents/referrers/external_user/private reasoning/content.",
+    "Global unknown/torn/outstanding state remains blocked with full reservation through crash, cancellation, partial commit and reconciliation; zero additional transport calls after refusal.",
+    "Concurrent different modules/runs, approval/price change, budget resets, invalid phases and persistence-boundary adversarial fixtures; independent implementation review required.",
+    "Scientific/population/rights/attrition release and fresh concrete endpoint fees plus affirmative owner budget remain separately blocked."
+  ],
+  "independent_schema_checks": {
+    "OpenAPI3_1_global_security_inherited_by_generation_lookup": true,
+    "chat_no_declared_provider_is_not_closed_schema_or_live_absence_claim": true,
+    "completion_id_query_required_bounded_pattern_and_Response_ref": true,
+    "generation_cost_usage_BYOK_and_nullable_native_fields_checked": true,
+    "pricing_supports_request_search_reasoning_cache_and_overrides": true,
+    "provider_name_required_key_but_nullable_type_array": true,
+    "v1_0_false_observation_preserved_v1_1_corrected": true
+  },
+  "new_person_source_requests": 0,
+  "public_primary_document_checks": [
+    {
+      "observation": "Overview supports postcompletion generation-stat lookup by returned ID. Live compatibility untested.",
+      "url": "https://github.com/OpenRouterTeam/docs/blob/main/api_reference/overview.mdx"
+    },
+    {
+      "observation": "Max-price example uses per-million token units and separately documents per-request and per-image pricing. Complete endpoint fee review remains necessary.",
+      "url": "https://github.com/OpenRouterTeam/docs/blob/main/guides/routing/provider-selection.mdx"
+    }
+  ],
+  "reviewed_sha256": {
+    "data/raw/openrouter_docs_20261103/openapi.json": "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e",
+    "docs/LIVE_OPENROUTER_ADMISSION_V2_PROPOSAL.md": "ee28e164a03aed9705063563a6395c64461cf238b9d7bb4061ca206cce21a380",
+    "reports/SURVEY_OPENROUTER_PUBLIC_SCHEMA_REVIEW.json": "5b261364b39440be7b072f621230ff64fd01c2281b317661e98d685275b7fb1c",
+    "reports/SURVEY_OPENROUTER_PUBLIC_SCHEMA_REVIEW_V1_0.json": "806e44f4cc19ac5f80f39fe29db2f717f602e23c8fb9df95b0638feae0e82a79"
+  },
+  "schema_version": 1,
+  "scope": "Design/documentation evidence only. No authenticated generation/price/account/model lookup attempted, no credential read and no serving-route observation. No MODEL_CONTROLS/MODEL_AUTHORIZATION/controller renewal.",
+  "status": "PASS_BOUNDED_LIVE_V2_DESIGN_PUBLIC_SCHEMA_ONLY"
+}
