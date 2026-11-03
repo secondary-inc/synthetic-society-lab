@@ -7,6 +7,7 @@ Research project exploring whether demographic grounding, information exposure, 
 
 ## Project handoff
 
+- [Complete progress report — November 3, 2026](reports/PROGRESS_2026-11-03.md)
 - [Master execution blueprint](CODEX_MASTER_EXECUTION.md)
 - [Original start-here handoff](START_HERE.md)
 - [Data acquisition inventory](configs/MASTER_DATA_ACQUISITION.csv)
