@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_OFFICIAL_BALLOT_ACQUISITION_BATCH04_V1",
+  "status": "WORKER_ACQUIRED_PENDING_INDEPENDENT_SOURCE_ROLE_REVIEW",
+  "created_at_utc": "2026-11-03T14:07:15.318706+00:00",
+  "frozen_v1_5_inputs_code_tests_runs_unchanged": true,
+  "capture_count": 14,
+  "unique_urls": 14,
+  "obtained_captures": [
+    {
+      "source_id": "ia_index_browser",
+      "url": "https://sos.iowa.gov/general-election",
+      "path": "data/raw/e01_ballots_batch04_v1/ia_index.main.browser-text.txt",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "scope": "Visible main element only, excludes global navigation/result announcement",
+      "bytes": 2379,
+      "sha256": "dd1640e3339b35bfc18219dfd716c8a76e241b622b70e819b2cf2d5146ae5325",
+      "retrieved_at_utc": "2026-11-03T14:04:30.880Z",
+      "response_headers": "NOT_EXPOSED",
+      "proposed_document_role": "OFFICIAL_GENERAL_CANDIDATE_INDEX_VISIBLE_MAIN"
+    },
+    {
+      "source_id": "ia_general",
+      "url": "https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections_1.pdf",
+      "offered_by": "https://sos.iowa.gov/general-election",
+      "path": "data/raw/e01_ballots_batch04_v1/ia_general.browser-download.pdf",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "bytes": 222898,
+      "sha256": "df70d066973b16c7b51e5c2a2bbf9f7fdb166bba9404311a945404c83813af38",
+      "retrieved_at_utc": "2026-11-03T14:04:31.183Z",
+      "response_headers": "NOT_EXPOSED",
+      "proposed_document_role": "OFFICIAL_GENERAL_CANDIDATE_LIST_PDF"
+    },
+    {
+      "source_id": "nh_index_browser",
+      "url": "https://www.sos.nh.gov/2026-election-details",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_index.content.browser-text.txt",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "scope": "Visible page content element only",
+      "bytes": 1863,
+      "sha256": "a0bf4534faa931a52910f891a20e2e71a90a03ea0ec0a5b01e11f6dd5ff70719",
+      "retrieved_at_utc": "2026-11-03T14:04:43.205Z",
+      "response_headers": "NOT_EXPOSED",
+      "proposed_document_role": "OFFICIAL_ELECTION_DETAIL_INDEX_VISIBLE_CONTENT"
+    },
+    {
+      "source_id": "nh_general",
+      "url": "https://mm.nh.gov/files/uploads/sos/docs/2026-ge-candidate-list.pdf",
+      "offered_by": "https://www.sos.nh.gov/2026-election-details",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_general.browser-download.pdf",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "bytes": 310515,
+      "sha256": "9e4f505d9bf236691d6ee2618a35d32b1270efdf4f91a08f5dc17e794802b02e",
+      "retrieved_at_utc": "2026-11-03T14:04:43.583Z",
+      "response_headers": "NOT_EXPOSED",
+      "proposed_document_role": "OFFICIAL_INDEX_LINKED_GENERAL_CANDIDATE_LIST_PDF"
+    },
+    {
+      "source_id": "nh_post_primary_vacancies",
+      "url": "https://mm.nh.gov/files/uploads/sos/docs/vacancies-created-following-the-state-primary-2026.pdf",
+      "offered_by": "https://www.sos.nh.gov/2026-election-details",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_post_primary_vacancies.browser-download.pdf",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "bytes": 86386,
+      "sha256": "e3e21e5fa2d7b5423df597680de672cbb457e0439d37a0c931e2ba5601e6d6cf",
+      "retrieved_at_utc": "2026-11-03T14:04:43.705Z",
+      "response_headers": "NOT_EXPOSED",
+      "proposed_document_role": "OFFICIAL_POST_PRIMARY_VACANCY_LIST_NOT_AUTOMATIC_GENERAL_AMENDMENT"
+    },
+    {
+      "source_id": "nh_withdrawals",
+      "url": "https://mm.nh.gov/files/uploads/sos/docs/withdrawals-2026.pdf",
+      "offered_by": "https://www.sos.nh.gov/2026-election-details",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_withdrawals.browser-download.pdf",
+      "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+      "bytes": 91228,
+      "sha256": "02900b009c1005b756eda3a5ebd78b8e3f4c4cc46415df1fe4eb6c65540825f6",
+      "retrieved_at_utc": "2026-11-03T14:04:43.790Z",
+      "response_headers": "NOT_EXPOSED",
+      "proposed_document_role": "OFFICIAL_FILING_WITHDRAWAL_LIST_SCOPE_REQUIRES_REVIEW"
+    },
+    {
+      "source_id": "sd_general",
+      "url": "https://vip.sdsos.gov/candidatelist.aspx?eid=774",
+      "retrieved_at_utc": "2026-11-03T14:05:01.650801+00:00",
+      "status": 200,
+      "final_url": "https://vip.sdsos.gov/candidatelist.aspx?eid=774",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:05:02 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/sd_general.html",
+      "bytes": 151963,
+      "sha256": "051280cbceed248d6be26002aef377592b165a1c659b2b1b6d9b71ec983d62e3",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_GENERAL_CANDIDATE_STATUS_TABLE_FIRST_PAGE"
+    },
+    {
+      "source_id": "sd_index",
+      "url": "https://www.sdsos.gov/elections-voting/upcoming-elections/general-information/default.aspx",
+      "retrieved_at_utc": "2026-11-03T14:05:02.074837+00:00",
+      "status": 200,
+      "final_url": "https://www.sdsos.gov/elections-voting/upcoming-elections/general-information/default.aspx",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:05:02 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/sd_index.html",
+      "bytes": 111221,
+      "sha256": "5a32fae0607a65ec8f00500ebc11f0b5bb5672283acbee3373ffc3ab4b603e96",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_ELECTION_INFORMATION_INDEX"
+    },
+    {
+      "source_id": "al_index",
+      "url": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "retrieved_at_utc": "2026-11-03T14:05:02.360661+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:05:02 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/al_index.html",
+      "bytes": 55570,
+      "sha256": "2000677a3a9a152e782da93b2cd1db95cc0023fd7859bfe6ba2b7407a8bc5b12",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_ELECTION_INFORMATION_INDEX"
+    },
+    {
+      "source_id": "al_party_democratic_amended",
+      "url": "https://www.sos.alabama.gov/sites/default/files/election-2026/AmendedCertificationofDemocraticPartyCandidates.pdf",
+      "offered_by": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "offered_label": "Amended Certification of Democratic Party Candidates",
+      "retrieved_at_utc": "2026-11-03T14:05:36.140280+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.alabama.gov/sites/default/files/election-2026/AmendedCertificationofDemocraticPartyCandidates.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:23:08 GMT",
+        "Last-Modified": "Tue, 25 Aug 2026 15:15:16 GMT",
+        "ETag": "\"6a8db184-39ae7\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/al_party_democratic_amended.pdf",
+      "bytes": 236263,
+      "sha256": "2fdc47aad58c945ba0869b7a816fe893b51e578e3da916a935c636b44e556fe7",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "PARTY_AMENDMENT_HOSTED_BY_OFFICIAL_STATE_SOURCE"
+    },
+    {
+      "source_id": "al_state_democratic",
+      "url": "https://www.sos.alabama.gov/sites/default/files/election-2026/2026GeneralElectionStateCertificationofDemocraticCandidates.pdf",
+      "offered_by": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "offered_label": "State Certification of Democratic Party Candidates",
+      "retrieved_at_utc": "2026-11-03T14:05:36.195641+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.alabama.gov/sites/default/files/election-2026/2026GeneralElectionStateCertificationofDemocraticCandidates.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 09:38:59 GMT",
+        "Last-Modified": "Wed, 26 Aug 2026 19:22:46 GMT",
+        "ETag": "\"6a8f3d06-60ed5\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/al_state_democratic.pdf",
+      "bytes": 397013,
+      "sha256": "dbb8540ace50584ad92c20fec3fc9fef0f5f24a3d317b13d2ed4eb7d578a00a0",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_STATE_GENERAL_CANDIDATE_CERTIFICATION"
+    },
+    {
+      "source_id": "al_state_republican",
+      "url": "https://www.sos.alabama.gov/sites/default/files/election-2026/2026GeneralElectionStateCertificationofRepublicanCandidates.pdf",
+      "offered_by": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "offered_label": "State Certification of Republican Party Candidates",
+      "retrieved_at_utc": "2026-11-03T14:05:36.251280+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.alabama.gov/sites/default/files/election-2026/2026GeneralElectionStateCertificationofRepublicanCandidates.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 02:59:56 GMT",
+        "Last-Modified": "Wed, 26 Aug 2026 19:22:47 GMT",
+        "ETag": "\"6a8f3d07-9c970\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/al_state_republican.pdf",
+      "bytes": 641392,
+      "sha256": "a3a109642073bd075596e0d2a0d3fa5c5a692b1178f12e13532a73987c2c89c6",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_STATE_GENERAL_CANDIDATE_CERTIFICATION"
+    },
+    {
+      "source_id": "al_state_independent",
+      "url": "https://www.sos.alabama.gov/sites/default/files/election-2026/2026GeneralElection-StateCertificationofIndependentCandidate.pdf",
+      "offered_by": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "offered_label": "State Certification of Independent Candidate",
+      "retrieved_at_utc": "2026-11-03T14:05:36.324110+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.alabama.gov/sites/default/files/election-2026/2026GeneralElection-StateCertificationofIndependentCandidate.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 09:39:00 GMT",
+        "Last-Modified": "Wed, 26 Aug 2026 19:22:46 GMT",
+        "ETag": "\"6a8f3d06-c5d8\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/al_state_independent.pdf",
+      "bytes": 50648,
+      "sha256": "707afb050c7bc052ce8eca51ced59b56641acedfb7c28e7ae5a1e164da2f71ae",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_STATE_GENERAL_CANDIDATE_CERTIFICATION"
+    },
+    {
+      "source_id": "al_party_republican_amended",
+      "url": "https://www.sos.alabama.gov/sites/default/files/election-2026/Amended_2026_Republican_Certification.pdf",
+      "offered_by": "https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026",
+      "offered_label": "Republican Party Amended Certification of Candidates",
+      "retrieved_at_utc": "2026-11-03T14:05:36.362496+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.alabama.gov/sites/default/files/election-2026/Amended_2026_Republican_Certification.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 12:23:05 GMT",
+        "Last-Modified": "Fri, 28 Aug 2026 21:51:32 GMT",
+        "ETag": "\"6a9202e4-5b891\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch04_v1/al_party_republican_amended.pdf",
+      "bytes": 374929,
+      "sha256": "890c0d2492d070025abdc16cbb3f0b52ba2abe06d0261a307a3ec6c14494b48b",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "PARTY_AMENDMENT_HOSTED_BY_OFFICIAL_STATE_SOURCE"
+    }
+  ],
+  "request_errors": [],
+  "historical_route_failures_preserved": "PriorIA/NH403receipts remain in batch02; no repeated directrequests tothose knownblockedroutes. Normalpublicbrowserpages/offereddownloadswereavailablewithoutauth/challenge/securityoverride.",
+  "observations": {
+    "IA": {
+      "pdf_pages": 14,
+      "official_index_scope": "Visiblemainonly, excludesglobalresultannouncement",
+      "bounded_firstpage_USSenate_party_labels": [
+        "Republican",
+        "Democratic",
+        "Libertarian"
+      ],
+      "candidate_rows_observed": 3,
+      "pdf_last_update_observed": "2026-08-19",
+      "caution": "Offeredliststatesacceptedfilings updatedduringfilingperiod; source-localroster not latestamendment/finalballot assurance. Primarywinners not substituted."
+    },
+    "NH": {
+      "general_list_pdf_pages": 46,
+      "general_pdf_title": "CANDIDATE LIST W/ ADDRESS - 09/17/2026",
+      "general_stage_context": "Officialindexlink2026GeneralElectionCandidates; exactbodytitlepreserved ratherthaninventedGeneralElectionstamp",
+      "firstpage_USSenate_rows_observed": 3,
+      "literal_party_labels": [
+        "DEM",
+        "REP",
+        "CON"
+      ],
+      "separate_documents": {
+        "post_primary_vacancies_pdf_pages": 1,
+        "filing_withdrawals_pdf_pages": 1
+      },
+      "caution": "NeitherseparatedocumenthasexactUSSenatorphraseundertextinspection; notproofnoSenateamendments. Filingwithdrawals andpost-primaryvacancies require scopedmapping,notautomaticgeneralrosterexclusions. No candidateaddressfieldsreported."
+    },
+    "SD": {
+      "obtained_representation": "HTTP_RESPONSE_BODY_BYTES",
+      "observed_exact_query": "eid=774",
+      "firstpage_USSenator_rows_observed": 3,
+      "literal_status_counts": {
+        "Withdrawn": 1,
+        "Active": 2
+      },
+      "withdrawn_literal_party_label": "DEM",
+      "withdrawal_date_printed": "2026-08-04",
+      "active_literal_party_labels": [
+        "IND",
+        "REP"
+      ],
+      "source_pagination": "745items/15pages asofferedfirstpage; paginationnotfollowed",
+      "caution": "Retainwithdrawnrow ashistoricalstatus,separatefromactiveobservations. NoactiveDemocraticrowinvented,noquota/fallbackselection. Sourcewarnsnotlistedmayawaitdocuments; firstpageexactSenatesectiononly,notwholepage/otherofficecompleteness. Exactquerynotadmittedtoexistingpipeline."
+    },
+    "AL": {
+      "source_set": "StateDemocratic13pages/StateRepublican14pages/StateIndependent1page,PartyDemocraticamended6pages/PartyRepublicanamended13pages",
+      "state_democratic_cover_visual": "SignedSecretaryofStatecertificationforDemocraticPartyNovember3,2026GeneralElection,datedAugust26,2026",
+      "state_republican_cover_visual": "SignedSecretaryofStatecertificationforRepublicanPartyNovember3,2026GeneralElection,datedAugust26,2026",
+      "party_republican_amendment_printed_date": "2026-08-28",
+      "caution": "SeveralPDFsimage-scanned; absenttextSenatephraseisNOTcandidateabsence. OnlystateD/Rcoverpagesvisuallychecked,candidateattachmentrows/independentofficerole/partyamendmentreconciliationstillpending. Partyamendmentsarenotstatecertification. LaterofferedSD25partyamendmentlinknotfetchedasUSSenateauthority."
+    }
+  },
+  "inspection_notes": {
+    "methods": "Read-onlypypdflayouttext,stdlibHTMLParser,PopplerrenderstateD/Rcoverpages;2temporarybrowser tabsclosed. No newreaderimplementation or repeatedtests.",
+    "local_probe_error": "Optionalbs4missinginbundledruntime; fellbacktostdlibHTMLParser,noinstallation or sourcechange.",
+    "raw_contacts_or_named_roster_values_exported": false
+  },
+  "source_rights_notes": "Ordinarypublicprimarygovernmentpagesandobservedofferedlinks only; rawbodies/scannedpages/localtextstayignored. Browserdownloads/texthonestlydistinctfromHTTPbodies;browserheadersunavailable. Directreadsbounded2MBHTML/5MBPDF,20stimeouts, noretries. Browserdownloadsizecheckedafterdownload,nottransportbound.",
+  "readiness_incorporation": false,
+  "source_policy_adoption": false,
+  "actual_selection": false,
+  "new_recorded_readiness_runs": 0,
+  "final_ballots_accepted": 0,
+  "accepted_coverage_note": "Noacceptedcoverageupdatefromacquisition;latestMainev1.5actualresultsremainunderseparatereview",
+  "2026_outcomes_used": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "next_unblocked_task": "Independentrole/sourcevalidationthen separatelyversionedreaderfixtures. IA/NH/SDnarrowformats;ALneedsvisiblecandidateattachment/scannedsource/amendmentreview. Currentcode/configfrozen."
+}
