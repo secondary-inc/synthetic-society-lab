@@ -1,0 +1,65 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "experimental_API_spend_usd": 0,
+    "local_compute_storage_labor": "UNPRICED",
+    "model_calls": 0,
+    "new_GETs": 0
+  },
+  "FILES_CHANGED": [
+    "docs/E02_NEXT_DC_SOURCE_UNIT_PROPOSAL_v1.md",
+    "configs/e02_next_dc_source_unit_proposal_v1.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent proposal review, then implement one small reusable single-worker public collector/attempt ledger for DC and authored tests. Keep accepted actual WY run/source/control frozen; no DC GET now.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_next_dc_source_unit_proposal_v1.json": "7aa38ba132f15c068f4ce2e71cf17767fa82b04c3642cc6cab990c5a87025bae",
+    "docs/E02_NEXT_DC_SOURCE_UNIT_PROPOSAL_v1.md": "4394e63dfc41218342d93056189a8fc4a9b2bef62e8b4ecb051bca83d7b8b29e"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "Read config + pinned repository metadata; re-sort51state entries excluding56 by published_person_rows; check DC32505minimum, native subcap/byte/row arithmetic and projected masks. Do not GET/stat/hash/open any raw dataset."
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Metadata row ranking and rounded4.5M listing are not exact first-download bytes or actual DC validation.",
+    "Single DC acquisition cannot import automatically through frozen Wyoming-only source guard; one reusable state adapter is required, not a duplicated stack perstate.",
+    "Partial/failed first acquisition may stop at8MiB/time bounds; no automatic retry/national fallback/cap increase.",
+    "Future 2source mask projections are not present coverage or nationally representative profiles.",
+    "ACS/PUMS five-year/age/geography/household/GQ/disclosure edits and ANES state/period/nonresponse/mode transport limitations persist."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Recorded ordinary public Census 2020\u20132024 five-year PUMS metadata only, exact source URL/provenance/rights references pinned. DC actual archive/header/member/row quantities unknown. No raw metadata CSV/PDF/archive or respondent file was read/stat/hash-observed. Existing owner ordinary-public-source research scope does not require another blanket human permission or model key; concrete independent bounded code/methods/source release still precedes execution. Raw data stay local/ignored; no redistribution/linkage/targeting/model submission.",
+  "TASK_ID": "E02_NEXT_DC_SINGLE_SOURCE_ACQUISITION_IMPORT_PATH_PROPOSAL_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "checks": [
+      "proposal_doc_exact",
+      "51jurisdictions_50remaining_inventory_only",
+      "published_national_count_sum",
+      "minimum_remaining_rows_is_DC32505",
+      "exact_DC_url_and_logical_record_entry",
+      "DC_actual_fields_unknown",
+      "single_GET_no_retry_HEAD_or_rows",
+      "native_ceiling_preserving_acquisition_subcaps",
+      "retained_total_and_declared_expansion_arithmetic",
+      "conservative_metadata_expansion",
+      "prospective_import_bytes_rows_time",
+      "prospective_masks_not_national_complete",
+      "no_execution_model_fit_disclosure_or_extra_human_gate",
+      "all_native_caps_identical",
+      "one_generic_collector_and_state_adapter_not_perstate_module_fork"
+    ],
+    "collector_or_DC_import_implementation": "NOT_IMPLEMENTED",
+    "generic_reuse_code_hashes_verified": 5,
+    "metadata_consistency_checks_passed": 15,
+    "metadata_reference_hashes_verified": 9,
+    "network_or_source_tests": "NOT_RUN_PROPOSAL_ONLY"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent methods review of this exact one-DC source/control/reuse/comparator plan.",
+    "Bounded collector implementation + authored transport/ledger/path/storage tests and exact code review before any ordinary public GET release.",
+    "After first accepted source manifest, one generic state-specific admission/import adapter and reviewed DC-only local replay; no inherited WY approval.",
+    "Nationwide remaining49jurisdictions, calibration, human/model validity and disclosure still incomplete after hypothetical DC+WY success."
+  ],
+  "accepted_WY_source_or_native_code_changed": false,
+  "actual_source_operations": 0,
+  "ordinary_source_URL": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pdc.zip",
+  "selected_published_rows": 32505,
+  "selected_state_fips": "11",
+  "status": "METADATA_ONLY_DC_NEXT_UNIT_PROPOSAL_READY_FOR_INDEPENDENT_REVIEW"
+}
