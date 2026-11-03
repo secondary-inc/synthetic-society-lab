@@ -1,0 +1,57 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "GETs": 0,
+    "experimental_api_spend_usd": 0,
+    "local_compute_storage_labor": "UNPRICED",
+    "network_model_calls": 0
+  },
+  "FILES_CHANGED": [
+    "configs/e02_F_WY_ACTUAL_RELEASE_PROPOSAL_v1.json",
+    "docs/E02_F_WY_ACTUAL_RELEASE_PROPOSAL_v1.md",
+    "tests/test_e02_f_wy_release_proposal_v1.py",
+    "configs/e02_F_WY_RELEASE_DRAFTS_v1/adapter_code.proposal.json",
+    "configs/e02_F_WY_RELEASE_DRAFTS_v1/exact_source.proposal.json",
+    "configs/e02_F_WY_RELEASE_DRAFTS_v1/execution.proposal.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent review of this exact proposal; then review/implement a separately scoped bounded inspection and cumulative-accounting procedure before any real source access.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_F_WY_ACTUAL_RELEASE_PROPOSAL_v1.json": "f39e262dd8b706569092def719711cdbefdafd7efaf20aa2d97a3206605e8aa5",
+    "configs/e02_F_WY_RELEASE_DRAFTS_v1/adapter_code.proposal.json": "50e64568814a0c7aafebebb0a7b67b32a0f207cd3598675ff4525b04450c297a",
+    "configs/e02_F_WY_RELEASE_DRAFTS_v1/exact_source.proposal.json": "dade5ad66d4c60a8198a50c11ae39bfac2f50d3ab85ead3aec47db4a95318711",
+    "configs/e02_F_WY_RELEASE_DRAFTS_v1/execution.proposal.json": "edecc24fd1bcf784969852f01583660b4957368f8e11fb79187a5bc1051bdb40",
+    "docs/E02_F_WY_ACTUAL_RELEASE_PROPOSAL_v1.md": "0e511f7a6a3cecddb2ccac2ae35205b8fd9ddefa88a814c6c6e530b6e1953da0",
+    "tests/test_e02_f_wy_release_proposal_v1.py": "24d795a3753d215ecacab0d05e4fefa4c68d34ecdbd07913b4128a2b80a4c180"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests/test_e02_f_wy_release_proposal_v1.py -v"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Static proposal consistency is not independent acceptance.",
+    "Fresh source stat identity and adult/domain quantities unknown.",
+    "Combined inspection/runtime deadline and resource carry-forward are not implemented by accepted runtime alone.",
+    "No raw source, person arithmetic, fit, disclosure, national completeness or scientific validity acceptance."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Historical reviewed repository metadata only. No raw cache filesystem operations or source reuse. Original Census origin/dates/member hashes preserved; raw respondent data stay private. Publication/reuse rights not newly established. No existing authority transfers.",
+  "TASK_ID": "E02_F_WY_ACTUAL_RELEASE_PROPOSAL_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_source_checks": "NOT_RUN_NO_AUTHORITY",
+    "elapsed_seconds": 0.005,
+    "frozen_reference_hashes_verified": 38,
+    "passed": 8,
+    "runtime_or_scientific_acceptance": "NOT_CLAIMED",
+    "static_proposal_tests": 8
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Fresh device/inode/bytes/mtime_ns/ctime_ns unknown; no actual source access authorized.",
+    "Source S needs fresh inspection identity, while actual runtime requires S and E before ENROLL; bootstrap inspection needs separately reviewed bounded code/procedure and scope.",
+    "Combined inspection/runtime deadline and resource carry-forward are not implemented by the accepted runtime alone; review a bounded launcher/procedure before release.",
+    "Code/source/execution approvals absent; draft templates are intentionally rejected by runtime.",
+    "Adult/statistical compatibility, national completeness, fit/disclosure and human/model validity remain unaccepted."
+  ],
+  "accepted_implementation_files_modified": false,
+  "actual_source_filesystem_operations": 0,
+  "approvals_populated": false,
+  "live_execution_authorized": false,
+  "reviewed_design_sha256": "793213c3a0bad063fdd772e91af4d612b5dabdba4ecbac49f1971b9801dafc1f",
+  "status": "PROPOSAL_READY_FOR_INDEPENDENT_REVIEW_NOT_APPROVAL"
+}

@@ -1,0 +1,11 @@
+# Journal v3 viewer boundary clarification
+
+Status: independent methods clarification pending. Preserve the accepted original proposal unchanged. Its sentence that existing viewer behavior must reject the new stage was broader than the frozen viewer actually implements.
+
+`dashboard.verified_run` and `dashboard.snapshot` are generic local recorded-run readers. A valid MOCK run can contribute its manifest, summary and analysis without a stage allowlist. Raw `responses.local.json`, phase files, journal and owner database are not loaded into that overview. The HTTP viewer serves only its built index/snapshot, not arbitrary run paths. The reproduction builder refuses a run containing local-only artifacts. The separate exact Wyoming disclosure admission does not admit journal-v3 data or change these rules.
+
+For this authored integration, retain default denial of the private files and package export, no addition to the shipped21-run review snapshot, and no new typed disclosure or external publication admission. A generic local MOCK overview of its recorded metadata/analysis is not a scientific or publication release. The fixture stage contains no actual source population or model response. Do not claim the entire stage is hidden from every generic local reader. No frozen viewer/common/builder source is changed.
+
+The exact new stage's projected manifest, summary and analysis require independent review for safe MOCK metadata/aggregate content. The generic reader is not content-DLP or scientific admission. Artifact names, local path and hash metadata remain visible; raw body, fixture-script content, journal/checkpoint contents and owner database do not become overview fields. Admission applies only to these reviewed authored outputs, not an arbitrary future artifact with the same filename or stage string.
+
+Add a negative content check: an authored private response marker retained in a local raw answer must be absent from the generic overview; private-run packaging must refuse. Independent review must verify this exact boundary and the static HTTP path restriction before accepting the clarification. Full real-data disclosure and study validity remain separate gates. The original privacy assertion and this correction remain preserved; no actual source, model, budget or publication authority follows.
