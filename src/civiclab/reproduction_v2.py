@@ -9,6 +9,7 @@ import json
 import re
 import zipfile
 import tomllib
+import os
 from .common import canonical_bytes, code_identity, sha256_file
 from .dashboard import verified_run
 
@@ -65,12 +66,23 @@ def build_package(root, output, run_ids):
     if not run_ids:
         raise ValueError('select recorded runs explicitly; no broad raw-data export')
     initial_code=code_identity(root)
-    inputs=source_inputs(root);source_names=set(inputs)
+    inputs=source_inputs(root);source_names=set(inputs);selected_seals={}
     for identity in run_ids:
         path=(root/'data/processed/runs'/identity).resolve()
         if not path.is_relative_to(root/'data/processed/runs'):
             raise ValueError('run path escapes store')
         run=verified_run(path)
+        # Capture the verifier's original expectations before any payload read.
+        # Re-reading the live run later would admit a coordinated reseal.
+        expected_artifacts=json.loads(json.dumps(run['artifacts']))
+        expected_seal=run['checksums_sha256']
+        if (not isinstance(expected_artifacts,dict) or
+            any(not isinstance(name,str) or Path(name).is_absolute() or
+                '..' in Path(name).parts or '\\' in name or
+                not isinstance(value,str) or not re.fullmatch(r'[a-f0-9]{64}',value)
+                for name,value in expected_artifacts.items())):
+            raise ValueError('invalid selected run seal')
+        selected_seals[str(path.relative_to(root))]=(expected_artifacts,expected_seal)
         if any(marker in name.casefold() for name in run['artifacts']
                for marker in ('-local-only.','.local.')):
             raise ValueError('run contains local-only artifacts; a separately reviewed disclosure-safe derived run is required')
@@ -82,9 +94,22 @@ def build_package(root, output, run_ids):
             raise ValueError('package input marked local-only; independent disclosure-safe derivative required')
         if not path.resolve().is_relative_to(root) or name=='.env' or name.startswith('data/raw/'):
             raise ValueError('unsafe package member')
+        if any(p.is_symlink() for p in (path,*path.parents)):
+            raise ValueError('package input alias')
         content=path.read_bytes()
         if SECRET.search(content):raise ValueError('credential-like value; package refused')
         payloads[name]=content
+    for prefix,(expected_artifacts,expected_seal) in selected_seals.items():
+        seal_bytes=payloads[prefix+'/checksums.json']
+        if hashlib.sha256(seal_bytes).hexdigest()!=expected_seal:
+            raise ValueError('selected run seal changed during capture')
+        # Equality against the original admitted map also closes coordinated
+        # artifact+checksum replacement and added/removed seal members.
+        if json.loads(seal_bytes)!=expected_artifacts:
+            raise ValueError('selected run seal membership changed during capture')
+        for name,expected in expected_artifacts.items():
+            if hashlib.sha256(payloads[prefix+'/'+name]).hexdigest()!=expected:
+                raise ValueError('selected run payload changed during capture')
     runtime_lock=('configs/runtime_python312_geometry_20261103.txt'
                   if 'configs/runtime_python312_geometry_20261103.txt' in payloads
                   else 'configs/runtime_python312_20261103.txt')
@@ -128,7 +153,10 @@ def build_package(root, output, run_ids):
         for name,content in sorted({**payloads,'REPRODUCIBILITY_MANIFEST.json':canonical_bytes(manifest)}.items()):
             info=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED
             info.external_attr=0o600<<16;archive.writestr(info,content)
-    temporary.replace(output)
+    # Publish without clobbering an output created after the initial check.
+    os.chmod(temporary,0o600)
+    os.link(temporary,output)
+    temporary.unlink()
     return verify_package(output)
 
 

@@ -105,5 +105,51 @@ class PublicEvidencePackageTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'alias'):
                 module.build_package(alias, Path(tmp)/'fail.zip', [run.run_id])
 
+    def test_post_verification_run_mutation_and_coordinated_reseal_refuse(self):
+        from civiclab.dashboard import verified_run
+        for attack in ('payload', 'reseal', 'add_member', 'remove_member', 'seal_reformat'):
+            with self.subTest(attack=attack), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp).resolve(); run = self.populate(root)
+                def mutate(path):
+                    admitted = verified_run(path)
+                    ledger = path/'checksums.json'
+                    checks = json.loads(ledger.read_text())
+                    if attack in ('payload', 'reseal'):
+                        (path/'mock.json').write_text('{"value":999,"label":"MOCK"}')
+                        checks['mock.json'] = hashlib.sha256((path/'mock.json').read_bytes()).hexdigest()
+                    elif attack == 'add_member':
+                        (path/'added.json').write_text('{}')
+                        checks['added.json'] = hashlib.sha256(b'{}').hexdigest()
+                    elif attack == 'remove_member':
+                        (path/'mock.json').unlink(); del checks['mock.json']
+                    if attack != 'payload': ledger.write_text(json.dumps(checks, indent=7)+'\n')
+                    return admitted
+                with patch.object(module, 'verified_run', side_effect=mutate):
+                    with self.assertRaises((ValueError, OSError)):
+                        module.build_package(root, root/'fail.zip', [run.run_id])
+                self.assertFalse((root/'fail.zip').exists())
+                self.assertFalse((root/'fail.zip.writing').exists())
+
+    def test_source_alias_inside_root_refuses(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve(); run = self.populate(root)
+            (root/'src').mkdir(); (root/'src/real.py').write_text('value=1\n')
+            (root/'src/alias.py').symlink_to(root/'src/real.py')
+            with self.assertRaisesRegex(ValueError, 'alias'):
+                module.build_package(root, root/'fail.zip', [run.run_id])
+
+    def test_output_created_at_publication_is_never_overwritten(self):
+        import os
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve(); run = self.populate(root); output = root/'late.zip'
+            original_link = os.link
+            def late_output(source, destination):
+                Path(destination).write_bytes(b'PRESERVE_LATE_OUTPUT')
+                return original_link(source, destination)
+            with patch.object(module.os, 'link', side_effect=late_output):
+                with self.assertRaises(FileExistsError): module.build_package(root, output, [run.run_id])
+            self.assertEqual(output.read_bytes(), b'PRESERVE_LATE_OUTPUT')
+            self.assertTrue(output.with_suffix('.zip.writing').is_file())
+
 
 if __name__ == '__main__': unittest.main()

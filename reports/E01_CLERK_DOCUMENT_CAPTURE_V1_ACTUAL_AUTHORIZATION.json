@@ -1,0 +1,48 @@
+{
+  "after": "STOP after invocation; preserve failure; independent byte/provenance/privacy review. No PDF parsing or source adoption.",
+  "approved": true,
+  "authority_basis": "Existing owner autonomous ordinary official public research acquisition scope; independent code review exact0b2e133c. No additional human/key gate.",
+  "automatic_retry_or_reset": false,
+  "code_review": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK_DOCUMENT_CAPTURE_V1_CODE.json",
+    "sha256": "0b2e133c0085e53fae43de66d67f80397ea49d3a54a53b3c01a87267d59171c1"
+  },
+  "decision_id": "CLERK_TWO_PDF_CAPTURE_20261103_01",
+  "experimental_spend_usd": 0,
+  "external_publication": false,
+  "issued_at_utc": "2026-11-03T19:48:23.936355+00:00",
+  "issuer_role": "lead",
+  "kind": "LEAD_FINITE_CLERK_CAPTURE_DECISION",
+  "latest_launch_at_utc": "2026-11-03T19:58:23.936355+00:00",
+  "limits": {
+    "body_bytes_each": 8388608,
+    "body_bytes_total": 16777216,
+    "metadata_bytes": 1048576,
+    "minimum_free_bytes": 67108864,
+    "request_seconds": 45,
+    "requests": 2,
+    "retained_bytes": 17825792,
+    "socket_seconds": 15,
+    "unit_seconds": 120
+  },
+  "maximum_invocations": 1,
+  "model_calls": 0,
+  "plan": {
+    "canonical_sha256": "827f93fe7d31568ee996c4fcc6c0f9265bb8dd8f651e64786b1f31d0f8546252",
+    "path": "data/processed/e01_clerk_capture_plans/actual-20261103-01.json",
+    "sha256": "827f93fe7d31568ee996c4fcc6c0f9265bb8dd8f651e64786b1f31d0f8546252"
+  },
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "clerk2020_statistics",
+      "role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "id": "clerk2026_nominees",
+      "role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ]
+}

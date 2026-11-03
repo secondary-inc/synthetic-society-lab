@@ -21,13 +21,25 @@ Identical permitted fixtures produce identical archives. A byte-integrity PASS
 remains limited to bytes; it is not a claim that a current source snapshot or
 research result has been independently validated.
 
-Six new tests exercise complete inclusion, non-recursive private exclusion,
+Nine new tests exercise complete inclusion, non-recursive private exclusion,
 all five missing/changed/oversized/symlinked receipts, mid-assembly mutation,
 private reports/runs, unsafe run paths, empty selections, temporary preservation
-and root aliases. They copy only the five public receipts into disposable
+and root aliases. Additional adversarial cases cover payload replacement,
+coordinated artifact/checksum resealing, seal membership addition/removal and
+seal reformatting after the initial verifier returns. They copy only the five public receipts into disposable
 fixture roots and use authored MOCK runs. No existing research run, person
 source, owner ledger, credential or actual output archive is read or packaged.
 The seven historical-builder tests run separately without modification.
+
+The original candidate is preserved at commit2650f47 with its independent HIGH
+finding. It could capture a changed run artifact after checking the original
+seal. The remediation binds every captured artifact and the exact captured
+checksum bytes to the original verifier's detached expectations. Revalidating a
+new live seal is insufficient. Source aliases also refuse, and final publication
+uses an exclusive hard-link operation so a destination created during assembly
+cannot be overwritten. Failed publication retains the `.writing` file. This
+requires ordinary local filesystem hard-link support and does not claim hostile
+complete-store replacement protection. Original archives are not reclassified.
 
 Independent code/privacy/content review is required before using this candidate.
 Then build from an exact committed isolated source checkout, explicitly select

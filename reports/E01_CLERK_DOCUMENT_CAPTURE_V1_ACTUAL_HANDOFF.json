@@ -1,0 +1,107 @@
+{
+  "authority": {
+    "path": "reports/E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL_AUTHORIZATION.json",
+    "sha256": "f97e4f785682bbc4290bb1cebb34fde739335ee5c7d4c7c3fcdf8144275edb51"
+  },
+  "coverage_unchanged": {
+    "accepted_final_ballots": 0,
+    "legacy_roster_states": 12,
+    "typed_document_states": 13,
+    "unfinished_source_jobs": 20
+  },
+  "development_compute": "UNPRICED",
+  "execution": {
+    "exit_code": 0,
+    "limitation": "Tool process wall time and script elapsed clock differ; retained per-record clock is authoritative for source stages.",
+    "process_wall_seconds": 0.300195042
+  },
+  "experimental_spend_usd": 0,
+  "independent_actual_review": "PENDING",
+  "lead_post_run_raw_body_reads": 0,
+  "local_metadata": {
+    "data/raw/e01_clerk_documents_capture_v1/COMPLETED.local.json": {
+      "bytes": 176,
+      "sha256": "8e2bc7cc6360de591cc9947b436c6835c0af1831414d65f4f1d831baf9764bcd"
+    },
+    "data/raw/e01_clerk_documents_capture_v1/STARTED.local.json": {
+      "bytes": 398,
+      "sha256": "fee6826671492eb52b4e5a4c6acb2dd6dbaba608cdd2a99d0a56385634456ec9"
+    },
+    "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.intent.local.json": {
+      "bytes": 276,
+      "sha256": "467b590ceec9df2c4ad0f9a73815d93d7d5fc5eca57baab9caf26060aa354fd3"
+    },
+    "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.receipt.local.json": {
+      "bytes": 751,
+      "sha256": "360e1eff22de82776d72544ec2f992d09716f3a990d229cbac7bdd971e3895c4"
+    },
+    "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.intent.local.json": {
+      "bytes": 304,
+      "sha256": "6abf8183557356b9ebac254a9cb4e7be001384f4c0df44eb58a5b697a653edec"
+    },
+    "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.receipt.local.json": {
+      "bytes": 777,
+      "sha256": "7505c36f0b1d24aef758faea82c2bb8787a35c7081891c42a44b00b424b0034a"
+    }
+  },
+  "model_calls": 0,
+  "recorded_at_utc": "2026-11-03T19:48:43.549349+00:00",
+  "records": [
+    {
+      "automatic_retry": false,
+      "body_bytes": 602172,
+      "body_complete": true,
+      "body_path": "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.pdf",
+      "body_sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76",
+      "elapsed_unit_seconds": 0.2413384590181522,
+      "error_type": null,
+      "finished_utc": "2026-11-03T19:48:26.995611+00:00",
+      "headers": {
+        "Content-Length": "602172",
+        "Content-Type": "application/pdf",
+        "Date": "Tue, 03 Nov 2026 19:48:26 GMT",
+        "Last-Modified": "Tue, 09 Mar 2021 17:03:19 GMT"
+      },
+      "pdf_admitted": true,
+      "role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "source_id": "clerk2020_statistics",
+      "started_utc": "2026-11-03T19:48:26.756965+00:00",
+      "status": 200,
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "automatic_retry": false,
+      "body_bytes": 257739,
+      "body_complete": true,
+      "body_path": "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.pdf",
+      "body_sha256": "cb2e4194c88042cf22f8589fb6b8c352d29b501f96abc62a962b6cc52e2c28a8",
+      "elapsed_unit_seconds": 0.3882049589883536,
+      "error_type": null,
+      "finished_utc": "2026-11-03T19:48:27.142472+00:00",
+      "headers": {
+        "Content-Length": "257739",
+        "Content-Type": "application/pdf",
+        "Date": "Tue, 03 Nov 2026 19:48:27 GMT",
+        "Last-Modified": "Tue, 13 Oct 2026 15:49:00 GMT"
+      },
+      "pdf_admitted": true,
+      "role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "source_id": "clerk2026_nominees",
+      "started_utc": "2026-11-03T19:48:26.995895+00:00",
+      "status": 200,
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ],
+  "remaining": [
+    "Independent receipt/body/provenance/privacy review",
+    "Separate bounded PDF parsing/source-role methods",
+    "2020 event/runoff/seat-class interpretation and historical-baseline integration",
+    "2026 source scope/amendments/state final ballots and geography remain incomplete"
+  ],
+  "requests": 2,
+  "retries": 0,
+  "schema_version": 1,
+  "status": "CAPTURED_PDF_BYTES_ONLY_NOT_PARSED_OR_ADOPTED",
+  "task_id": "CLERK_TWO_PDF_CAPTURE_20261103_01",
+  "total_body_bytes": 859911
+}

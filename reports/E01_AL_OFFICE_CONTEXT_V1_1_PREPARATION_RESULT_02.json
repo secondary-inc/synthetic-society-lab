@@ -1,0 +1,273 @@
+{
+  "all17_candidate_pins_unchanged_from_committed_7c4c518": {
+    "configs/e01_al_office_context_schema_v1_1.json": "cc3faa7e268ecfc2514d06a12671e552deafa33c4c9d91a36b9ac89d0b1983b3",
+    "configs/e01_al_office_family_rule_v1_1.json": "0fd731e11325133ef7ecd251aa9e974d40e3670b4e634a3edd368fe81974f8cc",
+    "configs/e01_al_source_release_v1_1_candidate.json": "35f947d6ff32d3229e04ee8f46cd985237fb27e7b1f90f908602b145cf336a01",
+    "docs/E01_AL_OFFICE_CONTEXT_V1_1_IMPLEMENTATION.md": "36f6154cc3b2b46dddf4f41f861b0178688284245f723c5de6421f0d02a645fe",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_IMPLEMENTATION_EVIDENCE.json": "9cddf2065ea9576440af2e8734a7012eff9638ab77ab2e0e02dd9232b76319ca",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_IMPLEMENTATION_RECEIPT.md": "1ccc642f77139913c83af5944450a0849b666fee524cb7cd8deb1a0de80a14e6",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_INITIAL_RUNNER_IMPORT_FAILURE.txt": "0aaeed1c294565d120437f15101899c1d6d8302f6be8d05ad2b395a3adc3684b",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_INITIAL_RUNNER_STDLIB_FAILURE.txt": "99b93d8f05b68f7535e78976f74f13eaf3917bc09536c876cb4ed43d099c6ce5",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_PY311_FIXTURE_LOG.txt": "0604a310e7e5c7500af9b3f3cf3d14fde89d1a531c1a9733be0758a07dd367a9",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_PY312_FIXTURE_LOG.txt": "4bb55f071a65796a68c14eb1e15a9f85c60db36d0937c4f7a1ffcf6a4f134d52",
+    "scripts/e01_al_office_context_v1_1_fixture_check.py": "b47f73ae7d75c548338d4a273436cded292fe22697724040811f5d93176781b8",
+    "src/civiclab/e01/alabama_office_context_v1_1.py": "83c54b78d0e7a480c34d958bf563d642b8f08517499c6ab75f761d06bec95834",
+    "src/civiclab/e01/alabama_recorded_preflight_v1_1.py": "b7a6f6cc60e89641c5095cb2bdf3e3c214e7bd91e3c2af3cb651f89a5878f4ab",
+    "src/civiclab/e01/alabama_source_release_v1_1.py": "38e3ab5617c667d9a1c777b0406eecee3c451d7edd564ecca219d8bfa3982825",
+    "tests/test_e01_alabama_office_context_v1_1.py": "c2686796606d40c5ce1ae9d56fce9bfc6ba22b9cef70e0fb2a79e55c0dc24456",
+    "tests/test_e01_alabama_recorded_preflight_v1_1.py": "a0b887274757171f5db27c583fc30efbe2b7d33767167b9ab6cf95c895479a25",
+    "tests/test_e01_alabama_source_release_v1_1.py": "5894c5b7f3fd05230ade09d885f3e6442f94b9de5149555a63cb665fb2f1ce97"
+  },
+  "binding_edges": [
+    [
+      "source_snapshot",
+      "three_grant_bodies"
+    ],
+    [
+      "frozen_pure_code_sha",
+      "runtime_code_grant_body"
+    ],
+    [
+      "three_grant_bodies",
+      "runtime_bytes"
+    ],
+    [
+      "original_transcript_ref",
+      "runtime_bytes"
+    ],
+    [
+      "literal_audit_copy_ref",
+      "runtime_bytes"
+    ],
+    [
+      "runtime_bytes",
+      "outer_bytes"
+    ],
+    [
+      "final_code_review_ref",
+      "outer_bytes"
+    ],
+    [
+      "historical_source_manifest_ref",
+      "outer_bytes"
+    ],
+    [
+      "fixed_config_and_rule",
+      "outer_bytes"
+    ],
+    [
+      "root_path_binding",
+      "outer_bytes"
+    ],
+    [
+      "outer_bytes",
+      "external_expected_sha"
+    ],
+    [
+      "external_expected_sha",
+      "particular_metadata_review"
+    ],
+    [
+      "particular_metadata_review",
+      "lead_execution_decision"
+    ],
+    [
+      "lead_execution_decision",
+      "primary_recording"
+    ],
+    [
+      "primary_recording",
+      "verified_primary_ack"
+    ],
+    [
+      "verified_primary_ack",
+      "replay_recording"
+    ],
+    [
+      "source_snapshot",
+      "runtime_code_grant_body"
+    ],
+    [
+      "runtime_code_grant_body",
+      "three_grant_bodies"
+    ]
+  ],
+  "code_review_ref": {
+    "bytes": 16411,
+    "path": "reports/INDEPENDENT_AUDIT_E01_AL_OFFICE_CONTEXT_V1_1_CODE_PRIVACY.json",
+    "sha256": "793eb1494b64fc056d55c8ea62678b39fd8e3787c834db70748a25372836ead5"
+  },
+  "counts": {
+    "GET_model_credential_calls": 0,
+    "api_spend_usd": 0,
+    "helper_admission_reconcile_record_RunStore_calls": 0,
+    "new_run_parents_or_controls": 0,
+    "original_transcript_byte_hash_verifications": 1,
+    "private_files_created": 6,
+    "private_source_history_reads": 0,
+    "public_literal_audit_copy_source_reads": 1,
+    "source_pdf_png_stat_hash_open_or_views": 0,
+    "transcript_copy_or_write": 0,
+    "transcript_json_parses": 0
+  },
+  "execution_authority": "ABSENT_SEPARATE_INDEPENDENT_PARTICULAR_METADATA_REVIEW_AND_LEAD_EXEC_REQUIRED",
+  "global_status_unchanged": {
+    "final_ballots_accepted": 0,
+    "legacy_roster_states": 12,
+    "typed_document_states": 13,
+    "unfinished_source_jobs": 20
+  },
+  "grant_body_hashes": {
+    "recorded_preflight_release_sha256": "8f4fc70c98ddf219ac55d737950e39b735d0b92e0eeafd4b664d44d4fb91581e",
+    "runtime_code_acceptance_sha256": "852443b61bd9c78ac3ac148df08bd314538e8c22afd68b336dd1a978c5a352f4",
+    "source_read_authorization": "7887475a02ac8b4ef109919c4bdaf83b630526f233b23a28b466768cc6471cb0"
+  },
+  "grant_issuer": "LEAD_ASSERTIONS_BASED_ON_EXISTING_INDEPENDENT_CODE_AND_LITERAL_REVIEWS_NOT_NEW_INDEPENDENT_DECISIONS",
+  "input_proof": {
+    "before_after_file_identity_size_mtime_ctime_unchanged": true,
+    "byte_hash_verifications": 1,
+    "copy_identical_to_single_copy_source_read": true,
+    "genuine_public_literal_audit": {
+      "bytes": 6905,
+      "path": "reports/INDEPENDENT_AUDIT_E01_AL_LITERAL_TRANSCRIPTION_V1.json",
+      "sha256": "33d264043f5a81a134eac1ec66746841c750730c03acdc9140fe8726b0f2311f"
+    },
+    "original_transcript": {
+      "bytes": 7328,
+      "path": "data/processed/e01_al_actual_release_v1/source-only-20261103-dea06f8/literal_transcript_v1.local.json",
+      "sha256": "5a44a70e36acb9b14ec961b02de8ff42e03933c20ca4e1a9eff023da6e74b8b1"
+    },
+    "private_source_only_history_read": false,
+    "public_literal_audit_metadata_pin_reads": 1,
+    "public_literal_audit_total_reads": 2,
+    "transcript_copied_or_rewritten": false,
+    "transcript_parsed": false
+  },
+  "lead_decision_id": "E01_AL_V11_PREPARE_CORRECTED_METADATA_20261103_02",
+  "lead_preparation_authorization_ref": {
+    "bytes": 5266,
+    "path": "reports/E01_AL_OFFICE_CONTEXT_V1_1_PREPARATION_AUTHORIZATION_02.json",
+    "sha256": "8492983c922abea624895b8b1777d670827326c1ddf54931c5489c636e8b0e26"
+  },
+  "limitations": [
+    "Writes are verified from exact submitted buffers plus full writes/fsync/file-size/regularity checks; no readback of six newlyprepared files was performed. Independent particular reviewer must read and verify final bytes.",
+    "No source-only grant/run/control private bytes were reopened; historical consistency remains for independent review and separately released code admission.",
+    "A prepared runtime approved flag and outerdigest do not create execution authority.",
+    "Cooperating filesystem guard; no hostile-host/race/power-loss/durable-failure proof.",
+    "No source reading beyond the single authorized private transcript byte/hash check; no names or raw occurrences are emitted.",
+    "Development compute remains UNPRICED; no science/readiness/coverage/legal/latest/forecast/publication acceptance."
+  ],
+  "metadata_construction_checks": [
+    "Accepted public hashes/statuses/scope/policy/snapshot/newfive refs agree.",
+    "Allnewtargetfiles absent; exact preparation areas contain no unexpected entries; regular/non-symlink path guards.",
+    "Three bodies have exact required4/5keys, source snapshot and frozenpure code constant; no issuer/review/runtime/outer/self-hash insidebody.",
+    "Runtime changesonly five dynamicfields; originaltranscriptref unchanged, auditcopy exact, approvedflag preparationonly.",
+    "Outer binds exact code-review/newfive/config/rule/source-only/runtime/root/output/phase metadata; expectedSHA not EXEC permission.",
+    "Six files written with O_EXCL/O_NOFOLLOW,0600,complete write,fsync,fstat size; no readback or helper admission.",
+    "Originaltranscript byte/hash checked once without parsing; same file identity/stat after preparation; no second hash claimed.",
+    "Candidate17 public bytes checked before/after and against original Git blobs; no originals or controls changed."
+  ],
+  "next_gate": "STOP. Independent exact particular metadata review, then separate finite lead EXEC decision. No retries/overwrites/resets or alternate preparation root.",
+  "outer_digest_for_external_lead_binding_only": "25d043afa6ebd3ba9344c07b93853e911b279b39b60af6c01627823a276d4977",
+  "outer_manifest_ref": {
+    "bytes": 2605,
+    "path": "data/processed/e01_al_office_context_v1_1_release/outer_manifest.local.json",
+    "sha256": "25d043afa6ebd3ba9344c07b93853e911b279b39b60af6c01627823a276d4977"
+  },
+  "plan_ref": {
+    "path": "configs/e01_al_office_context_actual_runtime_v1_1_plan.json",
+    "sha256": "31a5e60292fa4091ca13c3f13b6d13f007dccfc02eb3267596a96a3069fc4593"
+  },
+  "recipe_review_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_AL_OFFICE_CONTEXT_ACTUAL_RUNTIME_V1_1_PLAN.json",
+    "sha256": "f9e8652c096848281986f309ecc70763b8a7ae4c3deab7775efb76fbdd9cfa43"
+  },
+  "recorded_at_utc": "2026-11-03T19:50:28.182621+00:00",
+  "resolved_binding_refs": {
+    "exact_literal_audit_copy": {
+      "bytes": 6905,
+      "path": "data/processed/e01_al_office_context_v1_1_inputs/literal_audit.local.json",
+      "sha256": "33d264043f5a81a134eac1ec66746841c750730c03acdc9140fe8726b0f2311f"
+    },
+    "historical_source_manifest": {
+      "bytes": 1958,
+      "path": "data/processed/e01_al_actual_release_v1/source-only-20261103-dea06f8/manifest.local.json",
+      "sha256": "26187b919bb6e74a0b16eb666b59a77df9925f5d83eb70cc809b5b8b8ea6f106"
+    },
+    "new_code_review": {
+      "bytes": 16411,
+      "path": "reports/INDEPENDENT_AUDIT_E01_AL_OFFICE_CONTEXT_V1_1_CODE_PRIVACY.json",
+      "sha256": "793eb1494b64fc056d55c8ea62678b39fd8e3787c834db70748a25372836ead5"
+    },
+    "new_outer": {
+      "bytes": 2605,
+      "path": "data/processed/e01_al_office_context_v1_1_release/outer_manifest.local.json",
+      "sha256": "25d043afa6ebd3ba9344c07b93853e911b279b39b60af6c01627823a276d4977"
+    },
+    "original_transcript": {
+      "bytes": 7328,
+      "path": "data/processed/e01_al_actual_release_v1/source-only-20261103-dea06f8/literal_transcript_v1.local.json",
+      "sha256": "5a44a70e36acb9b14ec961b02de8ff42e03933c20ca4e1a9eff023da6e74b8b1"
+    },
+    "runtime": {
+      "bytes": 29326,
+      "path": "data/processed/e01_al_office_context_v1_1_release/runtime.local.json",
+      "sha256": "92a93850ad677d761a37193628b5a2626fd07ca6de87c87820f79e935476fb65"
+    },
+    "three_grants": [
+      {
+        "bytes": 205,
+        "path": "data/processed/e01_al_office_context_v1_1_release/grants/source_read_authorization.local.json",
+        "role": "source_read_authorization",
+        "sha256": "7887475a02ac8b4ef109919c4bdaf83b630526f233b23a28b466768cc6471cb0"
+      },
+      {
+        "bytes": 293,
+        "path": "data/processed/e01_al_office_context_v1_1_release/grants/runtime_code_acceptance_sha256.local.json",
+        "role": "runtime_code_acceptance_sha256",
+        "sha256": "852443b61bd9c78ac3ac148df08bd314538e8c22afd68b336dd1a978c5a352f4"
+      },
+      {
+        "bytes": 213,
+        "path": "data/processed/e01_al_office_context_v1_1_release/grants/recorded_preflight_release_sha256.local.json",
+        "role": "recorded_preflight_release_sha256",
+        "sha256": "8f4fc70c98ddf219ac55d737950e39b735d0b92e0eeafd4b664d44d4fb91581e"
+      }
+    ]
+  },
+  "runtime_approved_flag_scope": "PREPARED_METADATA_ONLY_UNDER_EXPLICIT_PREP_DECISION_NOT_EXECUTION_AUTHORITY",
+  "schema_version": 1,
+  "six_private_files": [
+    {
+      "bytes": 6905,
+      "path": "data/processed/e01_al_office_context_v1_1_inputs/literal_audit.local.json",
+      "sha256": "33d264043f5a81a134eac1ec66746841c750730c03acdc9140fe8726b0f2311f"
+    },
+    {
+      "bytes": 205,
+      "path": "data/processed/e01_al_office_context_v1_1_release/grants/source_read_authorization.local.json",
+      "sha256": "7887475a02ac8b4ef109919c4bdaf83b630526f233b23a28b466768cc6471cb0"
+    },
+    {
+      "bytes": 293,
+      "path": "data/processed/e01_al_office_context_v1_1_release/grants/runtime_code_acceptance_sha256.local.json",
+      "sha256": "852443b61bd9c78ac3ac148df08bd314538e8c22afd68b336dd1a978c5a352f4"
+    },
+    {
+      "bytes": 213,
+      "path": "data/processed/e01_al_office_context_v1_1_release/grants/recorded_preflight_release_sha256.local.json",
+      "sha256": "8f4fc70c98ddf219ac55d737950e39b735d0b92e0eeafd4b664d44d4fb91581e"
+    },
+    {
+      "bytes": 29326,
+      "path": "data/processed/e01_al_office_context_v1_1_release/runtime.local.json",
+      "sha256": "92a93850ad677d761a37193628b5a2626fd07ca6de87c87820f79e935476fb65"
+    },
+    {
+      "bytes": 2605,
+      "path": "data/processed/e01_al_office_context_v1_1_release/outer_manifest.local.json",
+      "sha256": "25d043afa6ebd3ba9344c07b93853e911b279b39b60af6c01627823a276d4977"
+    }
+  ],
+  "status": "PREPARED_EXACT_METADATA_ONLY_STOP_FOR_INDEPENDENT_PARTICULAR_REVIEW"
+}

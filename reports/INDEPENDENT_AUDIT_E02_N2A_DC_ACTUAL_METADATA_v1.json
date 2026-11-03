@@ -1,0 +1,117 @@
+{
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E02_N2A_DC_ACTUAL_METADATA_v1.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Review AL exact six prepared metadatafiles; lead may design N2b without actualrow access.",
+  "TASK_ID": "INDEPENDENT_ACTUAL_DC_N2A_RETAINED_EVIDENCE_V1",
+  "UNRESOLVED_BLOCKERS": [
+    "N2b source importer/adult universe/STATE/row checks and all fitting/disclosure remain separately gated."
+  ],
+  "auditor_role": "independent_auditor",
+  "authority_used": {
+    "companion_bytes": 99489,
+    "compressed_byte_hash_passes": 1,
+    "credentials_models": 0,
+    "experimental_spend_usd": 0,
+    "full_person_CRC": 0,
+    "header_output_bytes": 1876,
+    "live_helpers": 0,
+    "new_GETs": 0,
+    "person_rows": 0,
+    "source_files": 1
+  },
+  "checks": [
+    "Read only8fixed registry/core metadata files including emptylock; no live Registry/snapshot/unknown/helper/collect invocation.",
+    "Independently replayed all729event state transitions, hash/predecessor/before/after/sequence, source/design/root/policy/history, durable reservation\u2192dispatch\u2192726monotone received/written progress\u2192COMPLETE and final state equality. Exactly1reserve/dispatch/completion, no failure/refund/reset.",
+    "Full request1/body8MiB/network180s/processing300s reservation retained. Prior WY and metadata history exactly preserved as conservative bounds; no WY source reread.",
+    "Actual bound receipt/sourceidentity/descriptor/ancestry match; one compressed-byte hash pass4739881B matches received/written/archive. Raw bytes not copied/exported.",
+    "Actual exact2member ZIP central layout, member metadata/expansion bounds checked. Independent raw-deflate output restricted to onebyte until firstnewline,1876B/285unique fields/91required; no person ZipExtFile or person rows/fullCRC.",
+    "Companion99489B hash/CRC verified as inert bytes, noPDF execution/render. Header matches recordedWYreference; actualmember/layout observations replace priorunknowns only for DC N2a metadata.",
+    "Earliest registry t0 retained, all events inside original finite release; network61.96832728385925s/unit62.62973403930664s within caps. External observation62.64791091700317s is a separate measurement, not substituted.",
+    "All owned storage independently counted: core405409/raw4739881/scratch0 within4/8/1MiB and13MiBtotal. Full allowances remain charged despite lower observed usage.",
+    "No personhash/count/adult/STATE/import/fit/disclosure flags promoted; receipt identifies metadata acquired not personimported."
+  ],
+  "independent_evidence": {
+    "archive_bytes": 4739881,
+    "archive_sha256": "bc9ea5024f1fe1755274171bd3374488f63ef454baf1e46c2c77a74b67e79ee9",
+    "companion_bytes": 99489,
+    "companion_sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b",
+    "compressed_raw_hash_passes": 1,
+    "events": 729,
+    "full_person_CRC_scans": 0,
+    "full_reservation": {
+      "body_bytes": 8388608,
+      "network_seconds": 180,
+      "processing_seconds": 300,
+      "requests": 1
+    },
+    "header_bytes": 1876,
+    "header_fields": 285,
+    "header_sha256": "4232ff33d8ef453a59ed659d662a98bbb510421d7c001aabffcd5ec292f20604",
+    "helper_live_calls": 0,
+    "metadata_files_read": 8,
+    "new_GET_key_model_calls": 0,
+    "original_t0": {
+      "mono": 402605.244778333,
+      "wall": 1793735420.467812
+    },
+    "person_rows_parsed": 0,
+    "progress_events": 726,
+    "recorded_network_seconds": 61.96832728385925,
+    "recorded_unit_seconds": 62.62973403930664,
+    "required_fields": 91,
+    "status": "PASS_ACTUAL_DC_N2A_METADATA_ONLY",
+    "storage": {
+      "core": 405409,
+      "raw": 4739881,
+      "scratch": 0
+    }
+  },
+  "limitations": [
+    "Historical source GET count1 comes from unique durable dispatch/code/receipt and lead execution observation, not independent networkwire trace. Reviewer made no new request.",
+    "Independent raw header/companion check is the one separately authorized metadata-only pass. No actualperson row classification/fullCRC/universe/STATE validation, representative population, scientific effect or externalvalidity claim.",
+    "No actual syscall/RSS trace or hard OS stop latency independently established; sampled cooperative/resource assertions retain reviewed limitations.",
+    "Trusted preserved local history assumed. Current archive identity stable; no coordinated whole-store attack or powerloss proof.",
+    "Recorded local rawbytes remain ignored/private, no redistribution/rightsclearance or publicdashboard adoption. Developmentcompute/labor unpriced."
+  ],
+  "probe_result": {
+    "bytes": 961,
+    "path": "/tmp/civiclab-independent-dc-actual-v1.json",
+    "sha256": "7bd7fd886ec65f4ad00e535611f64c8bbc3e76ace0d2e7e7eab7923e5eb87376"
+  },
+  "probe_script": {
+    "bytes": 8333,
+    "path": "/tmp/civiclab-independent-dc-actual-v1.py",
+    "sha256": "4cc433c7b5d292010881c5ec123f9f6f7b0e5e6ff5b295ff07791fe93d7cc1da"
+  },
+  "public_inputs": [
+    {
+      "bytes": 542,
+      "path": "reports/E02_N2A_DC_ACTUAL_EXECUTION_DECISION_v1.json",
+      "sha256": "7777699ab6f4f56b2dabe10542a5f534b14bc81642c7d53fa830562fb3546a8f"
+    },
+    {
+      "bytes": 661,
+      "path": "reports/E02_N2A_DC_ACTUAL_EXECUTION_OBSERVATION_v1.json",
+      "sha256": "b4cceb71f9a883d55804bce2a75442489e46b38c3b21772f0ca55c425df2d478"
+    },
+    {
+      "bytes": 1885,
+      "path": "reports/E02_N2A_DC_FINITE_RELEASE_v1.json",
+      "sha256": "117713f052f76533aee16e877d47641ebda3510bf2b4af5731e9e76a22263473"
+    },
+    {
+      "bytes": 6413,
+      "path": "reports/E02_N2A_DC_PARTICULAR_LIVE_CONFIG_v1.json",
+      "sha256": "0f030777dcd6b79d2290a66562c897faabbd4c79a2bfa8299d694bdcdc282740"
+    },
+    {
+      "bytes": 4920,
+      "path": "reports/INDEPENDENT_AUDIT_E02_N2A_DC_PARTICULAR_METADATA_v1.json",
+      "sha256": "b21dc22d77552ec38398bf4fa1c409705d332c9259abc66c7be9e514cf023052"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "SAVED_CONTROL_AND_ONE_COMPRESSED_HASH_HEADER_COMPANION_ONLY_NOT_PERSON_IMPORT",
+  "status": "PASS_ACTUAL_DC_N2A_METADATA_ONLY"
+}
