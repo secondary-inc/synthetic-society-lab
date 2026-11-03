@@ -1,0 +1,121 @@
+{
+  "archive": {
+    "bytes": 7027666,
+    "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/committed-source.zip",
+    "sha256": "baeb3d209901cceaa96cbb3206fbb7659f0b42438141773b2d4855e935e1bee8"
+  },
+  "archive_files_checked": 974,
+  "changed_archive_files": [],
+  "checkout": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-current-722e63a-kljgsjzn/checkout",
+  "controller_receipts_renewed": false,
+  "credential_environment_forwarded": false,
+  "development_compute_unpriced": true,
+  "fixture_source_validation": {
+    "exit_code": 0,
+    "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/fixture-source-validation.log",
+    "sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5"
+  },
+  "limitations": [
+    "Lead execution evidence pending independent review, not current uncommitted worktree certification.",
+    "Includes frozen historical implementations with preserved findings; healthy tests do not close those findings.",
+    "Only committed source and authored fixtures restored; original private/raw research inputs and actual run/owner histories are excluded.",
+    "Python3.12 macOS exact recorded dependency versions; isolated transient build tools were not hash-locked.",
+    "Pip used ordinary package registry access; no OS-level network trace or hostile-host guarantee.",
+    "Existing multiprocessing fork-from-multithreaded-process deprecation warnings retained; no future-runtime guarantee.",
+    "No scientific/source-completeness/population-fit/disclosure/dashboard/private-package/remote-CI/publication promotion."
+  ],
+  "model_calls_authorized": 0,
+  "original_failed_restoration_preserved": {
+    "archive_sha256": "1862da650222bc81161dbf5523b394d9db30fbfd1ec442ac9814f6154219bfc3",
+    "commit": "a856b96",
+    "report": "reports/CLEAN_RESTORE_A856B96_767_FIXTURES_FAILURE.json"
+  },
+  "paid_model_API_spend_usd": 0,
+  "private_source_or_runs_copied": false,
+  "recorded_at_utc": "2026-11-03T18:58:26.182016+00:00",
+  "reproduction_commands": [
+    "git archive --format=zip 722e63aad090714eba58b51c83e68e21beeb0bc9 > committed-source.zip",
+    "Extract into a new directory; do not copy data/raw, private processed runs, owner ledgers or credential environment.",
+    "python3.12 -m venv .venv",
+    ".venv/bin/python -m pip --isolated install --no-input -r configs/runtime_python312_geometry_20261103.txt",
+    ".venv/bin/python -m pip --isolated install --no-input --no-deps -e .",
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest discover -s tests -q",
+    ".venv/bin/civiclab validate-sources --fixture-only"
+  ],
+  "runtime": {
+    "packages": {
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "contourpy": "1.4.0",
+      "cryptography": "50.0.2",
+      "cycler": "0.12.1",
+      "fonttools": "4.68.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pdfminer.six": "20251230",
+      "pdfplumber": "0.11.9",
+      "pillow": "13.0.0",
+      "pip": "25.0.1",
+      "pycparser": "3.12",
+      "pyparsing": "3.3.3",
+      "pypdf": "6.10.0",
+      "pypdfium2": "5.14.0",
+      "python-dateutil": "4.0.0",
+      "scipy": "1.16.3",
+      "synthetic-society-lab": "0.1.0",
+      "tzdata": "2026.6"
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "source_origin": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-current-722e63a-kljgsjzn/checkout/src/civiclab/__init__.py"
+  },
+  "schema_version": 1,
+  "scope": "EXACT722E63A_NO_LATER_WORKER_IMPLEMENTATION_SCIENCE_REMOTE_CI_OR_FULL_REPROPACK",
+  "source_commit": "722e63aad090714eba58b51c83e68e21beeb0bc9",
+  "status": "LEAD_PASS_CLEAN_EXACT_COMMITTED_ENGINEERING_FIXTURES_PENDING_INDEPENDENT_REVIEW",
+  "steps": [
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/create-venv.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "create-venv",
+      "seconds": 0.8758834580075927
+    },
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/install-runtime.log",
+      "log_sha256": "3ac8df2e3c373ecaacbb7b8374c51e3e4094a83d9bad7ab9e0b8bdd5698171ca",
+      "name": "install-runtime",
+      "seconds": 4.948137208994012
+    },
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/install-project.log",
+      "log_sha256": "c838b39547514fea8313b0bde239ec837d4ca3ef9e33654db44fa2118591bb27",
+      "name": "install-project",
+      "seconds": 0.8775579590001144
+    },
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/fixture-tests.log",
+      "log_sha256": "b565aa140b44ec922a994712c2d54102eda4be0087c518f418c1649b1fd3107b",
+      "name": "fixture-tests",
+      "seconds": 377.8187078749761
+    },
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-722e63a-20261103/fixture-source-validation.log",
+      "log_sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5",
+      "name": "fixture-source-validation",
+      "seconds": 0.24037250003311783
+    }
+  ],
+  "test_result": {
+    "exit_code": 0,
+    "log": "reports/CLEAN_RESTORE_722E63A_767_FIXTURES_LOG.txt",
+    "seconds": 377.484,
+    "sha256": "b565aa140b44ec922a994712c2d54102eda4be0087c518f418c1649b1fd3107b",
+    "tests": 767
+  }
+}
