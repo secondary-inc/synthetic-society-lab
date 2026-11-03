@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_MAINE_OFFICE_KEY_SOURCE_V1",
+  "status": "WORKER_OBSERVED_PENDING_INDEPENDENT_SOURCE_MAPPING_REVIEW",
+  "source": {
+    "source_id": "me_office_key",
+    "url": "https://www.maine.gov/sos/sites/maine.gov.sos/files/inline-files/2026%20Candidate%20Office%20Order.pdf",
+    "offered_by": "https://www.maine.gov/sos/elections-voting/upcoming-elections",
+    "retrieved_at_utc": "2026-11-03T13:30:28.018Z",
+    "capture_kind": "BROWSER_DOWNLOAD_BYTES",
+    "response_headers": "NOT_EXPOSED",
+    "bytes": 100104,
+    "sha256": "9245f464172b6e358a1dfad20653672a4a5fa9fa2db5ec92a05cc58c36fb187e",
+    "path": "data/raw/e01_maine_office_key_v1/2026-office-key.browser-download.pdf"
+  },
+  "pdf_pages": 1,
+  "title": "2026 Office Listing of Candidates Guide",
+  "observed_mapping": {
+    "US": "US SENATOR",
+    "CG": "REPRESENTATIVE TO CONGRESS",
+    "SS": "STATE SENATOR"
+  },
+  "method": "pypdf layout extraction and Poppler page1 visual review; exact printed two-column mapping",
+  "source_adoption": false,
+  "readiness_incorporation": false,
+  "final_ballots_accepted": 0,
+  "accepted_roster_states_remain": 5,
+  "new_model_calls": 0,
+  "cost_usd": 0,
+  "limitations": "Key maps office abbreviation only. General/withdrawal/replacement/write-in reconciliation and source amendment completeness remain separate; no automatic candidate inclusion/acceptance. Original batch03captures/receipts unchanged."
+}
