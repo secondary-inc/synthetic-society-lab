@@ -1,0 +1,27 @@
+# Alabama pure document reconciler v1 authored handoff
+
+TASK_ID: E01_AL_STANDALONE_DOCUMENTS_V1_AUTHORED_IMPLEMENTATION
+
+FILES_CHANGED: Five new module/runtime/test/doc/evidence files below, plus this receipt. Sixteen protected prior v1.9/commit-clarification/Alabama-proposal/methods-audit files unchanged before/after checks. No shared CLI/viewer/status, independent finding, publisher WIP or Git commit edited.
+
+OUTPUT_ARTIFACTS: Authored pure candidate with actual release fields null/default denial. Exact SHA-256:
+
+- `src/civiclab/e01/alabama_documents_v1.py`: `b5922949b184bbea8e832088f19884226a6220824e6e4d7c977caa9b470e1b9a`
+- `configs/e01_al_standalone_runtime_contract_v1_candidate.json`: `c4f0f8a630d83700051a1ac4dbb03b2da4cc6a3f9e666610a232f8c0a2cfc77e`
+- `tests/test_e01_alabama_documents_v1.py`: `2c4b1a49e701aa2f5f5d41f7bf90874dc01c5bf32e1ef17ef0d9a5b75a0a9828`
+- `docs/E01_AL_STANDALONE_IMPLEMENTATION_V1.md`: `7e4503b9ad1851559a5da72c774b03b905670ccfaeb1124435890de0bb68e6fa`
+- `reports/E01_AL_STANDALONE_IMPLEMENTATION_V1_EVIDENCE.json`: `afa482c3980794b58309114643ddc7896872dcacdaf4970f25a5e775a3ed60cd`
+
+REPRODUCTION_COMMANDS: `PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_alabama_documents_v1 -q`; substitute `data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11` for supported-runtime fixtures. `PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_e01*.py' -q`. Exact command arrays/versions/stdout/stderr/timing and source fingerprints are in the evidence JSON.
+
+TESTS_RUN_AND_RESULTS: Final16 targeted tests passed Python3.12.14 (1.650s) and Python3.11.17 (1.398s); all192 E01 tests passed Python3.12.14 (9.447s). Pure no-write replay,6occurrences/41role exclusions/4D-2R source-context groupings, exact display UTF8 hashes, whitespace-only normalization, resealed semantic disagreements, dates/history/UNKNOWNs, metadata null authority/custom hooks/size/path/symlink/origin, audit/release/code binding, first/middle/final caller+source coedits through raw-read attempt103, between-pass transcript/audit mutation, cancel/SystemExit and type-only errors passed. Public closed-schema/adoption/coercion and package refusal passed. Seven simulated existing-viewer private/traversal/query paths returned404 before file access; no sockets or actual HTTP requests used. No failed fixture runs occurred in this candidate's executed checks. These are worker observations; independent code acceptance remains NOT_RUN.
+
+SOURCE_DATA_AND_LICENSE_NOTES: Module and fixtures use standard library only. All executed source/render/transcript/audit/release bytes are temporary authored fixtures; metadata/code/docs only were read in the actual checkout. Zero actual PDF/render/private-reference reads/hashes, real transcription, independent literal audit or actual helper/readiness call. Five actual source hashes/47page associations remain declarations copied from accepted metadata. No OCR/render/PDFtext extraction is implemented; the proposed independent source-bound transcription route is reconciled and bound. Original source rights/private names remain local/unbundled; no redistribution or legal/as-of inference.
+
+COST_USD_ACTUAL_OR_ZERO: $0 experimental model/API spend; zero GET/render/OCR/model calls. Development compute/labor unpriced.
+
+RISKS_AND_LIMITATIONS: Current actual runtime has all transcription/audit/release paths/hashes/sizes null and approved=false; it refuses before root/source access. Canonical runtime SHA8c09beb1fec22a3194ec82d6f30c9662d0392f807b406520e69bc2cefe85dd1d. Fixture trust constant/import origin and fake release documents are expressly patched, not owner authority. Actual release/admission factory and literal audit remain unimplemented/unissued; filling metadata or replacing a constant is not authorization. Reader is pure, with no recorded preflight/failure ledger or readiness integration. Optional Republican PDFtext agreement is NOT_IMPLEMENTED. Every occurrence preserves source/page/render/history/context/date and literal transcribed UTF8 hashes; derived private outputs attach the independently bound audit hash after audit verification, avoiding transcript/audit hash circularity. Two groups are document-supported observations, not distinct-person/nominee/complete-ballot/D-R forecasts. Four final/writein/legal/latest unknowns, partial stamps and later corrective-action limitations remain. Same-host hashes do not prove owner identity, immutable timing or hostile-host security.
+
+UNRESOLVED_BLOCKERS: Independent exact code/privacy/fixture review; explicit lead bounded cached-source/render/transcription release; genuine independent literal-transcription audit; separately reviewed actual admission/runtime amendment; later authorized standalone recording/replay and independent actual-source/result/privacy review; later separate readiness methods/code/run gates. Actual data feasibility, optional PDFtext check and recording wrapper remain incomplete. Current accepted12documentstates/21unfinishedjobs/0finalballots unchanged; all v1.9/clarification/Alabama metadata pins held.
+
+NEXT_UNBLOCKED_TASK: Independent reviewer inspects exact candidate/runtime/test/evidence pins and runs authored fixtures. Do not read/hash/render actual PDFs/images/private references, transcribe real names or invoke actual helper/readiness while reviewing. Lead retains execution/status authority.

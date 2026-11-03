@@ -1,0 +1,16 @@
+{
+  "actual_owner_bootstraps": 0,
+  "correction": "Register the valid authored proof before injecting the reservation head-write failure.",
+  "errors": 1,
+  "model_calls": 0,
+  "original_test_sha256": "163d37e875a8bea50511ebc958e0a100562fb7c5568424eb6d67c19f84e1fed6",
+  "reason": "The torn-head test bypassed newly required protected price-proof registration; guard correctly refused before the intended persistence hook.",
+  "scope": "AUTHORED_TEST_HARNESS_MISSING_PRICE_REGISTRATION",
+  "source_sha256": {
+    "src/civiclab/production_admission_v4.py": "1bd13670de50d08387a4347c17921f77e7db54f922070e268983fcac0b56c9ed",
+    "src/civiclab/production_owner_v4.py": "08490aee4a7dba57da7542a98dc6706370eae240bd6c1de341a0958c07f3d9dc",
+    "src/civiclab/production_price_v4.py": "c0bc66a06a09de9de6e042a559133970a0616fcf2eba8a6480b14fbf7ba407b7"
+  },
+  "spend_usd": 0,
+  "tests": 19
+}

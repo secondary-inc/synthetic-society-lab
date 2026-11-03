@@ -1,0 +1,108 @@
+{
+  "accepted_coverage": {
+    "document_states": 12,
+    "final_ballots": 0,
+    "unfinished_jobs": 21
+  },
+  "actual_helper_or_readiness_calls": 0,
+  "actual_source_or_render_or_private_reference_body_IO": 0,
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "tests.test_e01_typed_readiness_v1_9",
+        "tests.test_e01_typed_readiness_v1_9_commit_semantics",
+        "-q"
+      ],
+      "elapsed_seconds": 4.979126,
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "python_version": "Python 3.12.14",
+      "stderr": "----------------------------------------------------------------------\nRan 21 tests in 4.921s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+        "-m",
+        "unittest",
+        "tests.test_e01_typed_readiness_v1_9",
+        "tests.test_e01_typed_readiness_v1_9_commit_semantics",
+        "-q"
+      ],
+      "elapsed_seconds": 4.306015,
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "python_version": "Python 3.11.17",
+      "stderr": "----------------------------------------------------------------------\nRan 21 tests in 4.199s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_e01*.py",
+        "-q"
+      ],
+      "elapsed_seconds": 8.64614,
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "python_version": "Python 3.12.14",
+      "stderr": "----------------------------------------------------------------------\nRan 176 tests in 8.568s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "corrected_claim": "A final seal may commit before a caller exception. Later read-only failure can leave a fully valid sealed run eligible for read-only independent resolution; caller acknowledgment alone does not determine commit. No automatic retry or promotion follows.",
+  "cost_usd": 0,
+  "frozen_candidate_files_unchanged": true,
+  "independent_acceptance": "NOT_RUN",
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "original_claim_withdrawn": "Persistent filesystem failure always means no eligible success, including after the final seal has already persisted.",
+  "pins_after": {
+    "configs/e01_typed_readiness_v1_9_candidate.json": "f906665266fa7f816d37002e677fdc1d3e99bcefe7a1c1163d56bc91eb48a5ac",
+    "docs/E01_TYPED_READINESS_V1_9_COMMIT_SEMANTICS_CLARIFICATION.md": "48a51b10d1fd0e7ba6df278e2c50cc10dc43af41ed2208e6d301aa489d97d325",
+    "docs/E01_TYPED_READINESS_V1_9_IMPLEMENTATION.md": "0b4f888af896cfa800f34b5cd3c41925f496a6d19f24bdcb10cf78b38c365a58",
+    "reports/E01_TYPED_READINESS_V1_9_DEVELOPMENT_FAILURE.json": "710be2eedb9f87495427e044a14a6988360e43127df95ac229e2576bd5ad0a19",
+    "reports/E01_TYPED_READINESS_V1_9_IMPLEMENTATION_EVIDENCE.json": "18800fc7ab71c6daa154b899ed8346ebf00ed7c6adad3209392300c279de76bf",
+    "reports/E01_TYPED_READINESS_V1_9_IMPLEMENTATION_RECEIPT.md": "7e2a39d8ab7c8171beeebd49f3c6e8ee2af25c3b1b21f8b753707bbd94c26ca1",
+    "src/civiclab/e01/ballots_v1_9.py": "c4f9cdde81cd58b9b2c5f97e6ac41dab4764b48c12376be732887e254a3be04a",
+    "tests/test_e01_typed_readiness_v1_9.py": "6a00ba117f30e7d7c09be627c39f598b7611007f5f3564abf64514948e80149f",
+    "tests/test_e01_typed_readiness_v1_9_commit_semantics.py": "8974f0528f8d8f6610ffc698e76571a365d585c736bb08a41388ddd187272641"
+  },
+  "pins_before": {
+    "configs/e01_typed_readiness_v1_9_candidate.json": "f906665266fa7f816d37002e677fdc1d3e99bcefe7a1c1163d56bc91eb48a5ac",
+    "docs/E01_TYPED_READINESS_V1_9_COMMIT_SEMANTICS_CLARIFICATION.md": "48a51b10d1fd0e7ba6df278e2c50cc10dc43af41ed2208e6d301aa489d97d325",
+    "docs/E01_TYPED_READINESS_V1_9_IMPLEMENTATION.md": "0b4f888af896cfa800f34b5cd3c41925f496a6d19f24bdcb10cf78b38c365a58",
+    "reports/E01_TYPED_READINESS_V1_9_DEVELOPMENT_FAILURE.json": "710be2eedb9f87495427e044a14a6988360e43127df95ac229e2576bd5ad0a19",
+    "reports/E01_TYPED_READINESS_V1_9_IMPLEMENTATION_EVIDENCE.json": "18800fc7ab71c6daa154b899ed8346ebf00ed7c6adad3209392300c279de76bf",
+    "reports/E01_TYPED_READINESS_V1_9_IMPLEMENTATION_RECEIPT.md": "7e2a39d8ab7c8171beeebd49f3c6e8ee2af25c3b1b21f8b753707bbd94c26ca1",
+    "src/civiclab/e01/ballots_v1_9.py": "c4f9cdde81cd58b9b2c5f97e6ac41dab4764b48c12376be732887e254a3be04a",
+    "tests/test_e01_typed_readiness_v1_9.py": "6a00ba117f30e7d7c09be627c39f598b7611007f5f3564abf64514948e80149f",
+    "tests/test_e01_typed_readiness_v1_9_commit_semantics.py": "8974f0528f8d8f6610ffc698e76571a365d585c736bb08a41388ddd187272641"
+  },
+  "production_code_changed": false,
+  "read_only_test_boundary": "Injected EROFS at RunStore.write and RunStore.event, not an OS read-only mount. No power-loss/directory-fsync/hostile-host guarantee tested.",
+  "recorded_at_utc": "2026-11-03T17:23:59.719078+00:00",
+  "scenarios": [
+    "Final seal persisted then EIO; all subsequent persistence modeled EROFS: caller raises, strict consumer accepts complete unchanged saved evidence, no retry/coverage promotion.",
+    "Main ledger persisted then EIO before final seal; all subsequent persistence modeled EROFS: consumer refuses uncommitted run.",
+    "Final seal persisted then EIO with writable storage: later failure evidence invalidates ordinary consumer admission while original summary/seal persist."
+  ],
+  "schema_version": 1,
+  "scope": "WORKER_AUTHORED_FIXTURES_AND_CLAIM_CORRECTION_ONLY_PENDING_INDEPENDENT_REVIEW",
+  "task_id": "E01_TYPED_READINESS_V1_9_COMMIT_SEMANTICS_CLARIFICATION"
+}

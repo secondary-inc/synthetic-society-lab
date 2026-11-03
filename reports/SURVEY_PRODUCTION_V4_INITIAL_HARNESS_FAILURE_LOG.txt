@@ -1,0 +1,27 @@
+test_zero_bootstrap_static_release_and_one_exact_prepared_request (test_production_admission_v4.ProductionAdmissionTests.test_zero_bootstrap_static_release_and_one_exact_prepared_request) ... ERROR
+
+======================================================================
+ERROR: test_zero_bootstrap_static_release_and_one_exact_prepared_request (test_production_admission_v4.ProductionAdmissionTests.test_zero_bootstrap_static_release_and_one_exact_prepared_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_production_admission_v4.py", line 149, in test_zero_bootstrap_static_release_and_one_exact_prepared_request
+    with self.case() as c:
+         ^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_production_admission_v4.py", line 137, in case
+    release,review,raw,receipt=materials();owner=initialize(release,review)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_production_admission_v4.py", line 48, in initialize
+    return ProductionOwnerV4.initialize(r,expected_registration_hash=canonical_hash(r),release=release,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/production_owner_v4.py", line 175, in initialize
+    if candidate.is_symlink():raise ExecutionBlocked('symlink owner namespace refused')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+civiclab.model.ExecutionBlocked: symlink owner namespace refused
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (errors=1)

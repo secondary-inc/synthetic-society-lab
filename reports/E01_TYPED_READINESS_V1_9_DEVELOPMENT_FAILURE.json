@@ -1,0 +1,17 @@
+{
+  "scope": "AUTHORED_FIXTURE_TEST_HARNESS_FAILURE_RETAINED",
+  "status": "FAILED_17_TESTS_2_ERRORS",
+  "code_pins_at_failure": {
+    "src/civiclab/e01/ballots_v1_9.py": "e585a5c8b101eafac6caf28732a3e964fbb7ff206a2e13f78a72cb7fd2cb95f5",
+    "tests/test_e01_typed_readiness_v1_9.py": "9b3979fdbc7546433d98b329f79e9a91532cdc373e8e18645dd394c8e9dcb3c8",
+    "configs/e01_typed_readiness_v1_9_candidate.json": "f906665266fa7f816d37002e677fdc1d3e99bcefe7a1c1163d56bc91eb48a5ac"
+  },
+  "errors": [
+    "Final-recheck test selected an authored reference directory instead of the newly created parent; its checksum existence assertion failed and was sanitized by the wrapper.",
+    "Record-order test attempted reverse() on tuple-backed local records before invoking the wrapper."
+  ],
+  "actual_source_io": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "production_failure_claim": false
+}

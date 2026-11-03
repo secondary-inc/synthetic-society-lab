@@ -1,0 +1,16 @@
+# Conditional actual wiring: accepted v1.1 dependency addendum
+
+METHODS HANDOFF ONLY. The original actual-wiring proposal remains unchanged. Review it with this narrowly pinned dependency update: the accepted component is the separate v1.1 inspector/control/launcher remedy, not defective v1 history. No executable code or authority is added, and no additional approval stage is proposed.
+
+`reports/INDEPENDENT_AUDIT_E02_F_WY_BOOTSTRAP_V1_1_PATH_STORAGE_REMEDY.json`, SHA817e5b4ee3535bfba56accaccdcdfae1a1a69b81fed3af2151f60287268f1f98, accepts exact authored v1.1 engineering only. It closes path/storage findings for that version, not actual inspection/wiring. The future actual implementation manifest A must pin the accepted v1.1 files listed in the companion config plus the actual-wiring methods decision and this addendum. Existing native D/38required files, I/K/S/E/C lineage and source permission gates remain unchanged.
+
+Carry these two proven corrections into the actual positive path:
+
+- After bounded descriptor reads, reopen every absolute lexical ancestor without following symlinks and compare observed ancestor device/inode and reopened regular-file five-field identity against the original descriptor observations. Directory mtime/ctime are not directory identity fields. Same-content file/ancestor substitution and introduced symlinks must refuse; unrelated legitimate directory timestamp changes may pass.
+- Count every file in the newly owned external control/admission root and runtime root, including mandatory context/config/binding metadata, originals, copies, unexpected owned files, hardlinks and temporary projections, under existing native categories. Count the single actual source commitment exactly once; native actual Storage already includes it after admission. Do not inherit v1's omitted binding-file footprint or create a new pool.
+
+These extend W02/W04 path validation and W05 storage tests in the unchanged proposal. They require no daemon, hostile-host containment, new source policy, extra mandatory owner-permission artifact, raised cap, deadline reset or refund.
+
+After the independent conditional-wiring methods decision, prepare only separate owned files: `src/civiclab/e02/f_wy_actual_bootstrap_v1.py`, `f_wy_actual_bootstrap_control_v1.py`, `f_wy_actual_bootstrap_launcher_v1.py`, `tests/test_e02_f_wy_actual_bootstrap_v1.py`, and corresponding new config/docs/reports. All submitted prototypes and native files remain immutable. Actual-shaped positive branches must work in an explicitly isolated tagged fake-root test realm, while the production realm refuses test records and null/wrong real authorities before source operations. The real entry must become conditionally usable through genuine I/K/S/E, not another unconditional refusal stub.
+
+Implementation acceptance must include all W01–W08 cases and the v1.1 path/storage regressions under conditional positive admission, including exact-cap/one-byte-over and pre-admission/copy/ENROLL order. Return code/test/private raw-fixture pins for independent review before any real cache stat/hash/open/resolve/read/person parse/helper/runtime. No actual I/K/S/E, cleanup permission or fresh real identity exists now; defaults remain null/zero. Engineering readiness and permission remain distinct.

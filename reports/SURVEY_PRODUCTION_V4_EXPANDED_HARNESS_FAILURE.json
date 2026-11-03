@@ -1,0 +1,17 @@
+{
+  "actual_owner_bootstraps": 0,
+  "correction": "Record authored RESPONSE_SEEN with known cost before OVERRUN; production source unchanged.",
+  "credential_reads": 0,
+  "errors": 1,
+  "model_calls": 0,
+  "original_test_sha256": "6210507b4624cffe93d8ff1ed3f377a3fdeda1e6951f3d6ad51916e6e865219a",
+  "reason": "Harness attempted forbidden STARTED-to-OVERRUN transition. Existing state machine correctly requires response evidence first.",
+  "scope": "EXPANDED_AUTHORED_TEST_HARNESS_FAILURE",
+  "source_sha256": {
+    "src/civiclab/production_admission_v4.py": "3b2ffed773ca6f01d625d6d7f61ecd4ae238aba5db6a7d1926fbaa9460b00b25",
+    "src/civiclab/production_owner_v4.py": "a5fd2e57aae855bbfc047c266f901bd9b32879eebc8b0791466768eb27607f6b",
+    "src/civiclab/production_price_v4.py": "c0bc66a06a09de9de6e042a559133970a0616fcf2eba8a6480b14fbf7ba407b7"
+  },
+  "spend_usd": 0,
+  "tests": 19
+}

@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "scope": "TYPED_READINESS_V1_9_CANDIDATE_ONLY",
+  "pipeline_release": "PENDING_INDEPENDENT_INTEGRATION_REVIEW",
+  "source_adoption": false,
+  "code_config_audit_pins": {
+    "configs/e01_ballot_readiness_v1_6_1.json": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b",
+    "configs/e01_de_ne_source_contract_v1_7.json": "f698aa051299e0c9787a5376d455a941fa0374bf5524941988ff49ad27f3321a",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e01/ballots.py": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballot_capture_formats_v1_4.py": "0c8cc0be58b249c9d31968a439025e5025f42949abdfe15214496f63fddbf370",
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "src/civiclab/e01/ballot_formats_v1_6.py": "fb5fb665225dfdef782eef3f8ba712cd0eb67816e9b69632323e39310a19faa9",
+    "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+    "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e",
+    "configs/e01_ballot_readiness_v1_7.json": "478d9bfd87c34703f260336c652c4e4a0ce36298e89614b709a4105b8d6a5bfe",
+    "src/civiclab/e01/ballots_v1_7.py": "b45746439df1e50469f76a7d6ff9acb8bb0536e2f1d605eb116a28460b169062",
+    "reports/E01_DE_NE_READINESS_V1_7_ACTUAL.json": "2bc8917cf3b49f3e7278c6c2d98051a5cacfedaf67e801b570cee201b63c7c89",
+    "reports/INDEPENDENT_AUDIT_E01_DE_NE_V1_7_ACTUAL.json": "a21aee686e28fcfcf13c0a39d08eb22e54e88665acdb141f8ffad410ea45932f",
+    "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json": "cd90a92c4ba3a6984ccbe2e6f9b5180c0cb0de09f9bfe4cab3ccf152add5683b",
+    "src/civiclab/e01/idaho_v1_8_1.py": "1413f9a6e784e88d82b0ffe0beb2e8323775c5a8b55a1f5fc223f4a2505c2bb7",
+    "tests/test_e01_idaho_v1_8_1.py": "65b58cca8603c5b44afdfe2b09de624b4d8dfc9389b9ee67f566a5f19146ab73",
+    "reports/E01_ID_STANDALONE_V1_8_1_ACTUAL_PREFLIGHT.json": "89c59435dd7c1df97e72c1f2710095fd65d41649d86ce4ba1c97df5e57569dd9",
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_1_ACTUAL_PREFLIGHT.json": "b3adbb37b0ca1b16b977b91673b73d68615725d1ce5ff91e8c94bcb0ea19aa07",
+    "configs/e01_typed_readiness_schema_v1_9_proposal.json": "ecbf3179e4f668a6a7990d499ac9a5ae1ca83fc97a1e248a7599305aba48853f",
+    "reports/INDEPENDENT_AUDIT_E01_TYPED_READINESS_V1_9_METHODS.json": "465241cf3a3a57445074f7e91c4c62609ed2ba8430d7d3fc040bd93b900a06e9"
+  },
+  "sources": [
+    {
+      "source_id": "nj_senate",
+      "path": "data/raw/e01_ballots_2026/nj_senate-f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e.pdf",
+      "bytes": 57353,
+      "sha256": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e"
+    },
+    {
+      "source_id": "nj_nominee_certification",
+      "path": "data/raw/e01_ballots_2026/nj_nominee_certification-c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec.pdf",
+      "bytes": 411364,
+      "sha256": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec"
+    },
+    {
+      "source_id": "nc_federal_general",
+      "path": "data/raw/e01_ballots_2026/nc_federal_general-378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d.pdf",
+      "bytes": 170443,
+      "sha256": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d"
+    },
+    {
+      "source_id": "fl_vacancy_law",
+      "path": "data/raw/e01_ballots_2026/fl_vacancy_law-169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da.html",
+      "bytes": 184582,
+      "sha256": "169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da"
+    },
+    {
+      "source_id": "senate_class_III",
+      "path": "data/raw/e01_ballots_2026/senate_class_III-592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823.html",
+      "bytes": 19634,
+      "sha256": "592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823"
+    },
+    {
+      "source_id": "senate_appointments",
+      "path": "data/raw/e01_ballots_2026/senate_appointments-13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7.html",
+      "bytes": 109299,
+      "sha256": "13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7"
+    },
+    {
+      "source_id": "fl_broward_notice",
+      "path": "data/raw/e01_election_type/fl_broward_notice.pdf",
+      "bytes": 29306,
+      "sha256": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922"
+    },
+    {
+      "source_id": "fl_palm_notice",
+      "path": "data/raw/e01_election_type/fl_palm_notice.pdf",
+      "bytes": 115597,
+      "sha256": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0"
+    },
+    {
+      "source_id": "senate_class_II",
+      "path": "data/raw/e01_inside_elections/senate-class-II-browser-text-c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb.txt",
+      "bytes": 3488,
+      "sha256": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb"
+    },
+    {
+      "source_id": "co_general",
+      "path": "data/raw/e01_ballots_batch02_v1/co_general.html",
+      "bytes": 72145,
+      "sha256": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7"
+    },
+    {
+      "source_id": "va_index",
+      "path": "data/raw/e01_ballots_batch02_v1/va_index.html",
+      "bytes": 35879,
+      "sha256": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be"
+    },
+    {
+      "source_id": "va_federal",
+      "path": "data/raw/e01_ballots_batch02_v1/va_federal.html",
+      "bytes": 48018,
+      "sha256": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1"
+    },
+    {
+      "source_id": "wy_index",
+      "path": "data/raw/e01_ballots_batch02_v1/wy_index.html",
+      "bytes": 54800,
+      "sha256": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d"
+    },
+    {
+      "source_id": "wy_general",
+      "path": "data/raw/e01_ballots_batch02_v1/wy_general.pdf",
+      "bytes": 84715,
+      "sha256": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16"
+    },
+    {
+      "source_id": "ks_general_dom",
+      "path": "data/raw/e01_ballots_batch03_v1/ks_general.table-dom.local.html",
+      "bytes": 177713,
+      "sha256": "b9ad75801f854af89bc6d0bd920f99091853c6f037002b2aa4ce0252cd7e332d"
+    },
+    {
+      "source_id": "ks_general_browser",
+      "path": "data/raw/e01_ballots_batch03_v1/ks_general.browser-text.local.txt",
+      "bytes": 67788,
+      "sha256": "f4f69411838d79235aca844203edb9d72f2c08ba043bb44e95c4b975e8a56583"
+    },
+    {
+      "source_id": "ak_senate_dom",
+      "path": "data/raw/e01_ballots_batch03_v1/ak_senate_dom.local.html",
+      "bytes": 9159,
+      "sha256": "1167c252ab39cf0bab9e4c63c52f61c9733b64a92e5a3e13239e1cd53739799c"
+    },
+    {
+      "source_id": "ak_general_browser",
+      "path": "data/raw/e01_ballots_batch03_v1/ak_general_browser.local.txt",
+      "bytes": 21139,
+      "sha256": "c1ddc16c1ef47e8b7b8ef55fef906a2cbbeccd531dad26374370150af2d23225"
+    },
+    {
+      "source_id": "me_general",
+      "path": "data/raw/e01_ballots_batch03_v1/me_general.browser-download.xlsx",
+      "bytes": 48337,
+      "sha256": "c628e48fa6298b6862e709166adf3145f7bc4a3f60929c3e6ef5a3ea324e03ea"
+    },
+    {
+      "source_id": "me_withdrawals",
+      "path": "data/raw/e01_ballots_batch03_v1/me_withdrawals.browser-download.pdf",
+      "bytes": 132429,
+      "sha256": "c2198174417a318956190ec14dce86e42c97099a77282b63fa99a65ae3f2d92c"
+    },
+    {
+      "source_id": "me_writeins",
+      "path": "data/raw/e01_ballots_batch03_v1/me_writeins.browser-download.pdf",
+      "bytes": 87608,
+      "sha256": "86ab6cfc5d38d4c36c907b291d737d8c0b3863e05446ede0e307fa8d15682ee9"
+    },
+    {
+      "source_id": "me_index_browser",
+      "path": "data/raw/e01_ballots_batch03_v1/me_index.browser-text.local.txt",
+      "bytes": 5345,
+      "sha256": "039c7517c693922caec45ea0c607230f8e6c26b52bdedd873293db130d0a6bd7"
+    },
+    {
+      "source_id": "me_office_key",
+      "path": "data/raw/e01_maine_office_key_v1/2026-office-key.browser-download.pdf",
+      "bytes": 100104,
+      "sha256": "9245f464172b6e358a1dfad20653672a4a5fa9fa2db5ec92a05cc58c36fb187e"
+    },
+    {
+      "source_id": "ia_general",
+      "path": "data/raw/e01_ballots_batch04_v1/ia_general.browser-download.pdf",
+      "bytes": 222898,
+      "sha256": "df70d066973b16c7b51e5c2a2bbf9f7fdb166bba9404311a945404c83813af38"
+    },
+    {
+      "source_id": "ia_index_browser",
+      "path": "data/raw/e01_ballots_batch04_v1/ia_index.main.browser-text.txt",
+      "bytes": 2379,
+      "sha256": "dd1640e3339b35bfc18219dfd716c8a76e241b622b70e819b2cf2d5146ae5325"
+    },
+    {
+      "source_id": "nh_general",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_general.browser-download.pdf",
+      "bytes": 310515,
+      "sha256": "9e4f505d9bf236691d6ee2618a35d32b1270efdf4f91a08f5dc17e794802b02e"
+    },
+    {
+      "source_id": "nh_index_browser",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_index.content.browser-text.txt",
+      "bytes": 1863,
+      "sha256": "a0bf4534faa931a52910f891a20e2e71a90a03ea0ec0a5b01e11f6dd5ff70719"
+    },
+    {
+      "source_id": "nh_post_primary_vacancies",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_post_primary_vacancies.browser-download.pdf",
+      "bytes": 86386,
+      "sha256": "e3e21e5fa2d7b5423df597680de672cbb457e0439d37a0c931e2ba5601e6d6cf"
+    },
+    {
+      "source_id": "nh_withdrawals",
+      "path": "data/raw/e01_ballots_batch04_v1/nh_withdrawals.browser-download.pdf",
+      "bytes": 91228,
+      "sha256": "02900b009c1005b756eda3a5ebd78b8e3f4c4cc46415df1fe4eb6c65540825f6"
+    },
+    {
+      "source_id": "de_index",
+      "path": "data/raw/e01_ballots_batch05_v1/de_index.html",
+      "bytes": 45230,
+      "sha256": "a81f9845ff5c3c54941bbc9782eaffddc3ae82b158a4d1f1c15e8c32a665dbd9"
+    },
+    {
+      "source_id": "de_general",
+      "path": "data/raw/e01_ballots_batch05_v1/de_general.html",
+      "bytes": 139922,
+      "sha256": "ccc92e779eb0c49574d468ba55af40a11e3733630214ac0734a3c44907425ab7"
+    },
+    {
+      "source_id": "de_writeins",
+      "path": "data/raw/e01_ballots_batch05_v1/de_writeins.html",
+      "bytes": 63448,
+      "sha256": "cba02ad4bbf824e5db9ebe1fdeda7b05f66074087fa66426a46f94ef0d0291ed"
+    },
+    {
+      "source_id": "de_general_xlsx",
+      "path": "data/raw/e01_ballots_batch05_v1/de_general_xlsx.xlsx",
+      "bytes": 19856,
+      "sha256": "9d212a9575eb6fb4d178930ece50a2f89e34c7e1e8e476d977447dcb7a9c2afa"
+    },
+    {
+      "source_id": "ne_index",
+      "path": "data/raw/e01_ballots_batch05_v1/ne_index.html",
+      "bytes": 73911,
+      "sha256": "9b0f766299e388995b4bccdfdc45e5867a1acc7a61deaeff69268bd76b23efd1"
+    },
+    {
+      "source_id": "ne_general",
+      "path": "data/raw/e01_ballots_batch05_v1/ne_general.pdf",
+      "bytes": 120495,
+      "sha256": "d27a071715896b8c82b8cce8d48200b4207ba10c44f1778f56f92c4efcd7cf96"
+    },
+    {
+      "source_id": "id_general_index",
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "bytes": 218881,
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4"
+    },
+    {
+      "source_id": "id_candidate_search",
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "bytes": 15841,
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a"
+    },
+    {
+      "source_id": "id_browser_visible",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "bytes": 203250,
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0"
+    },
+    {
+      "source_id": "id_browser_federal",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "bytes": 68620,
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875"
+    },
+    {
+      "source_id": "id_browser_senate",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "bytes": 29871,
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30"
+    }
+  ],
+  "references": {
+    "legacy_public": {
+      "path": "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/ballot_readiness.json",
+      "sha256": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997"
+    },
+    "legacy_rosters": {
+      "path": "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/candidate_rosters.local.json",
+      "sha256": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c"
+    },
+    "id_records": {
+      "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_records.local.json",
+      "sha256": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea"
+    },
+    "id_diagnostics": {
+      "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_diagnostics.local.json",
+      "sha256": "02a02643f3dded40faec287ba18eb8c5a8fbeaecf2d9e203d9f4c2d3a88a26a7"
+    }
+  },
+  "base_config_path": "configs/e01_ballot_readiness_v1_7.json",
+  "id_contract_path": "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json",
+  "geometry_runtime": {
+    "engine": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "id_diagnostics_canonical_sha256": "5d05c4ce15b704da8cdf5730a4c866609bbce8373fd0b1cfe877dada5248e21c",
+  "context_contests_canonical_sha256": "feb92afb1fea60e0aba8a14b433464a7f3d1bb3f9d529bf3f936bbcb8bb241f7"
+}

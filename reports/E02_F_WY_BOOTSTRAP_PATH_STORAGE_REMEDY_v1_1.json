@@ -1,0 +1,86 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "GETs": 0,
+    "development_compute_storage_labor": "UNPRICED",
+    "experimental_api_spend_usd": 0,
+    "network_model_calls": 0
+  },
+  "FILES_CHANGED": [
+    "src/civiclab/e02/f_wy_bootstrap_v1_1.py",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1_1.py",
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1_1.py",
+    "tests/test_e02_f_wy_bootstrap_v1_1.py",
+    "docs/E02_F_WY_BOOTSTRAP_PATH_STORAGE_REMEDY_v1_1.md",
+    "reports/E02_F_WY_BOOTSTRAP_PATH_STORAGE_TEST_LOG_v1_1.txt",
+    "configs/e02_F_WY_BOOTSTRAP_PATH_STORAGE_REMEDY_v1_1.json",
+    "reports/E02_F_WY_BOOTSTRAP_V1_FREEZE.json",
+    "reports/E02_F_WY_BOOTSTRAP_V1_STORAGE_FINDING_FREEZE.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent re-review of exact v1.1 path/storage remedy; hold frozen actual-wiring proposal and all actual source operations until subsequent review.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_F_WY_BOOTSTRAP_PATH_STORAGE_REMEDY_v1_1.json": "f45796574000b78a324a92b6e6e8aa286f86b2dc4194701b68e9fe8b573dfa91",
+    "docs/E02_F_WY_BOOTSTRAP_PATH_STORAGE_REMEDY_v1_1.md": "e392994b907def4a81c3a345aa52dab51e45467664c822bbc3de3a1781f31c01",
+    "reports/E02_F_WY_BOOTSTRAP_PATH_STORAGE_TEST_LOG_v1_1.txt": "f3e39775554566834d7c38046dd3a81dd68b129bcd0203133e0437db1eebcd4d",
+    "reports/E02_F_WY_BOOTSTRAP_V1_FREEZE.json": "ab8bd2b54641108f74a8920fa9f6be3c135cb2b974e3f259db204a656ec5d086",
+    "reports/E02_F_WY_BOOTSTRAP_V1_STORAGE_FINDING_FREEZE.json": "89833e4643c32870f7d49e969bf5763476a3e451f8c2dcbd4dac4e22dc331d23",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1_1.py": "18430abe0a9fd65080bae80753a8c237b130190a53283eeea2c33bf028633fb2",
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1_1.py": "a825de0d36c19d65dc421912b862ef2341d8409618d1cd717f7946669a1e2a95",
+    "src/civiclab/e02/f_wy_bootstrap_v1_1.py": "72fa8b6b6cc60baaf67efdfa3d1c806c6fc7d84afc98f3913a7ebd7462964984",
+    "tests/test_e02_f_wy_bootstrap_v1_1.py": "4031daf9d37f3a16a7833498e9eb5fb378f5eb4c0800553f0bde0394030da828"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests/test_e02_f_wy_bootstrap_v1_1.py tests/test_e02_f_wy_release_proposal_v1.py -v",
+    "PYTHONPATH=src:tests .venv/bin/python -c \"from pathlib import Path; from test_e02_f_wy_bootstrap_v1_1 import retain_remedy_evidence; retain_remedy_evidence(Path('data/processed/e02_F_local_fixture/NEW_V1_1_REMEDY'))\""
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Worker tests do not close independent findings; exact independent re-review required.",
+    "No atomic lexical filesystem snapshot, hostile-host containment or absolute OS resource guarantee is claimed.",
+    "Storage exact-cap/over-cap checks are arithmetic projections without allocating oversized files.",
+    "Authored native admission still generates two identical fixture ZIPs; both retained copies count. Actual same-cache wiring remains unimplemented and frozen proposal unchanged."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only authored generated ZIPs and repository metadata/code. No actual Wyoming cache metadata/stat/hash/open/read/resolve/parse/helper/runtime/GET or authority. Raw fixture data remain local/ignored and MOCK. Both independent findings and all old authority/source-policy artifacts remain unchanged.",
+  "TASK_ID": "E02_F_WY_BOOTSTRAP_V1_1_PATH_AND_STORAGE_REMEDY",
+  "TESTS_RUN_AND_RESULTS": {
+    "elapsed_seconds": 31.951,
+    "frozen_native_refs_verified": 38,
+    "new_path_storage": 13,
+    "old_v1_raw_files_verified_unchanged": 70,
+    "ported_prior_bootstrap": 29,
+    "prior_release_proposal_static": 8,
+    "raw_indexed_files_verified": 97,
+    "result": "PASS_TEST_EXECUTION_ONLY_NOT_INDEPENDENT_ACCEPTANCE",
+    "retained_evidence": {
+      "GETs": 0,
+      "actual_cache_operations": 0,
+      "actual_source_rows": 0,
+      "allocated_oversized_file": false,
+      "binding_actual_owned_root_core": 132317,
+      "binding_bytes_delta": 2348,
+      "binding_old_reported_core": 129969,
+      "exact_core_cap_projection": 71303168,
+      "full_reservation": {
+        "bytes": 12739060,
+        "ops": 12000000,
+        "rows": 24,
+        "seconds": 1800
+      },
+      "kind": "MOCK_V1_1_PATH_STORAGE_REMEDY",
+      "model_calls": 0,
+      "normal_proof_absent": true,
+      "one_byte_over_projection_refused": true,
+      "same_byte_parent_replacement_refused": true,
+      "shutdown": "SHUTDOWN_UNKNOWN",
+      "source_hash_unchanged": true
+    },
+    "total": 50
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact v1.1 code/test/raw review of both findings.",
+    "Separate conditional actual-wiring methods/implementation review and genuine fresh I/K/S/E remain absent.",
+    "No actual source/scientific/fit/disclosure acceptance."
+  ],
+  "actual_source_operations": 0,
+  "approvals_populated": false,
+  "old_v1_files_and_70_raw_files_unchanged": true,
+  "status": "CANDIDATE_READY_FOR_INDEPENDENT_RE_REVIEW"
+}

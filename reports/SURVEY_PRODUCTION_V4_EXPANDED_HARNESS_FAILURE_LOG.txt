@@ -1,0 +1,36 @@
+test_bootstrap_has_no_allowance_and_cannot_open_create_or_relocate (test_production_admission_v4.ProductionAdmissionTests.test_bootstrap_has_no_allowance_and_cannot_open_create_or_relocate) ... ok
+test_checkpoint_requires_statistics_claim_and_exact_output_binding (test_production_admission_v4.ProductionAdmissionTests.test_checkpoint_requires_statistics_claim_and_exact_output_binding) ... ok
+test_expired_or_failed_clock_does_not_strand_existing_billing (test_production_admission_v4.ProductionAdmissionTests.test_expired_or_failed_clock_does_not_strand_existing_billing) ... ok
+test_fully_committed_bootstrap_with_lost_ack_is_not_an_empty_reset (test_production_admission_v4.ProductionAdmissionTests.test_fully_committed_bootstrap_with_lost_ack_is_not_an_empty_reset) ... ok
+test_incomplete_review_bootstrap_and_changed_code_refuse_before_owner_files (test_production_admission_v4.ProductionAdmissionTests.test_incomplete_review_bootstrap_and_changed_code_refuse_before_owner_files) ... ok
+test_invalid_dispatch_and_missing_key_do_not_reserve_or_read_unapproved_key (test_production_admission_v4.ProductionAdmissionTests.test_invalid_dispatch_and_missing_key_do_not_reserve_or_read_unapproved_key) ... ok
+test_lifetime_dispatch_caps_across_new_runs_cheap_answers_and_renewals (test_production_admission_v4.ProductionAdmissionTests.test_lifetime_dispatch_caps_across_new_runs_cheap_answers_and_renewals) ... ok
+test_missing_outer_inner_state_and_torn_head_never_bootstrap_or_reset (test_production_admission_v4.ProductionAdmissionTests.test_missing_outer_inner_state_and_torn_head_never_bootstrap_or_reset) ... ok
+test_real_process_deaths_and_competing_exact_request_reservation (test_production_admission_v4.ProductionAdmissionTests.test_real_process_deaths_and_competing_exact_request_reservation) ... ok
+test_semantic_replay_rejects_historical_caps_despite_new_larger_approval (test_production_admission_v4.ProductionAdmissionTests.test_semantic_replay_rejects_historical_caps_despite_new_larger_approval) ... ok
+test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block (test_production_admission_v4.ProductionAdmissionTests.test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block) ... 
+  test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block (test_production_admission_v4.ProductionAdmissionTests.test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block) (status='OVERRUN') ... ERROR
+test_zero_bootstrap_static_release_and_one_exact_prepared_request (test_production_admission_v4.ProductionAdmissionTests.test_zero_bootstrap_static_release_and_one_exact_prepared_request) ... ok
+test_conservative_component_maxima_and_fractional_per_request_rounding (test_production_price_v4.ProductionPriceTests.test_conservative_component_maxima_and_fractional_per_request_rounding) ... ok
+test_freshness_for_dispatch_does_not_invalidate_historical_math (test_production_price_v4.ProductionPriceTests.test_freshness_for_dispatch_does_not_invalidate_historical_math) ... ok
+test_missing_fee_has_no_automatic_zero_and_requires_external_binding (test_production_price_v4.ProductionPriceTests.test_missing_fee_has_no_automatic_zero_and_requires_external_binding) ... ok
+test_refresh_may_change_telemetry_but_not_semantics_or_proof (test_production_price_v4.ProductionPriceTests.test_refresh_may_change_telemetry_but_not_semantics_or_proof) ... ok
+test_route_scope_membership_and_strict_json_identity (test_production_price_v4.ProductionPriceTests.test_route_scope_membership_and_strict_json_identity) ... ok
+test_snapshot_and_caller_alias_changes_cannot_change_contract (test_production_price_v4.ProductionPriceTests.test_snapshot_and_caller_alias_changes_cannot_change_contract) ... ok
+test_unsupported_fees_tiers_overrides_tools_and_parameters_refuse (test_production_price_v4.ProductionPriceTests.test_unsupported_fees_tiers_overrides_tools_and_parameters_refuse) ... ok
+
+======================================================================
+ERROR: test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block (test_production_admission_v4.ProductionAdmissionTests.test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block) (status='OVERRUN')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_production_admission_v4.py", line 273, in test_unknown_overrun_and_duplicate_generations_conserve_funds_and_block
+    owner.transition(r,status,observed_cost=cost,error_type='AuthoredFailure')
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/production_owner_v4.py", line 413, in transition
+    if old is None or status not in TRANSITIONS[old['status']]:raise ExecutionBlocked('phase transition unavailable')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+civiclab.model.ExecutionBlocked: phase transition unavailable
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.850s
+
+FAILED (errors=1)

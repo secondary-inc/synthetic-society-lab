@@ -1,0 +1,17 @@
+{
+  "actual_owner_bootstraps": 0,
+  "correction": "Resolve only the temporary fake OS-account home in the test harness; production source unchanged.",
+  "credential_reads": 0,
+  "model_calls": 0,
+  "original_test_sha256": "18d24cebca12efd72161081ba2da5ae5f71fde4f407622db4e5458b40e6edb34",
+  "reason": "macOS tempfile path used /var symlink; fixed-namespace guard correctly refused the uncanonicalized fake OS home.",
+  "result": "ERROR_BEFORE_OWNER_BOOTSTRAP",
+  "scope": "INITIAL_AUTHORED_TEST_HARNESS_FAILURE_NOT_ACTUAL_EXECUTION",
+  "source_sha256": {
+    "src/civiclab/production_admission_v4.py": "d23bd47c517c76f8cd49694ea98a5f95ae9a2e4e7ffcce62191398ab2af52ef2",
+    "src/civiclab/production_owner_v4.py": "a5fd2e57aae855bbfc047c266f901bd9b32879eebc8b0791466768eb27607f6b",
+    "src/civiclab/production_price_v4.py": "c0bc66a06a09de9de6e042a559133970a0616fcf2eba8a6480b14fbf7ba407b7"
+  },
+  "spend_usd": 0,
+  "test_count": 1
+}

@@ -1,0 +1,37 @@
+{
+  "actual_cache_operations": 0,
+  "audited_at_utc": "2026-11-03T17:15:40.972534+00:00",
+  "auditor_role": "independent_auditor",
+  "controller_receipts_renewed": false,
+  "experimental_model_api_spend_usd": 0,
+  "finding": {
+    "expected": "Count the minted immutable bundle binding as retained core input/provenance for the campaign, and reject unexpected owned-root files or make any intentional fixed input-metadata exclusion explicit and separately bounded. Core/log/artifact projection must include that footprint once, with original/copy/temp rules intact.",
+    "impact": "Reported normalstorage is a correct sum of selected3subtrees, but is not complete logical retained core accounting for the owned bundle. Current healthy fixture is far below cap; no actual disk exhaustion or actualsource/production limit breach observed.",
+    "location": "Control.storage root scan source/control/runtime, excluding bundle.root/BUNDLE.local.json created by make_fixture and required by require_bundle",
+    "requested_remediation": "Preserve exactv1 and add separateversioned storage fix/explicit bounded policy with minted-binding and ownedroot-unknownfile/cap-edge tests; no new pool/quota increase or discounts. Can be combined with separatelyversioned PATH-IDENTITY-001 remedy.",
+    "scope": "Exact byte accounting already requested for original provenance/copies; no physical-block guarantee, arbitrary wholefilesystem quota or hostile-host requirement. Pure projection test used immutableoriginalmetadata and untouched quota/design values.",
+    "trigger": "Fresh mandatory original binding is2120bytes in own fixture. Without editing limits/authority or allocating largefiles, storage(extra=corecap-reportedcore) accepts reportedcore exactly71303168 while the mandatory original binding remains outside the total."
+  },
+  "finding_id": "IA-E02-F-WY-BOOTSTRAP-V1-STORAGE-BINDING-002",
+  "independent_authored_projection_probe": {
+    "actual_owned_core_plus_mandatory_binding_exceeds_cap_at_that_projection": true,
+    "core_projection_to_exact_native_cap_accepted": true,
+    "declared_roots": [
+      "source",
+      "control",
+      "runtime"
+    ],
+    "mandatory_original_bundle_binding_bytes_not_scanned": 2120,
+    "scope": "Pure authored temporary fixture; no large file allocation, production/source I/O or quota edits. storage(extra=...) is the component projection API.",
+    "source_or_control_authorities_modified": false
+  },
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "next_unblocked_task": "Narrow independently reviewable storage/path remedy; healthy raw arithmetic may still be recorded without fullcapacity acceptance.",
+  "reviewed_control_sha256": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+  "reviewed_worker_evidence_sha256": "7bd7602464659f6ea8a8f55e0ea8bc8a22795ef4401857ae389b81ebb32d0769",
+  "runtime_actual_calls": 0,
+  "schema_version": 1,
+  "severity": "LOW",
+  "status": "BLOCKED_COMPLETE_BOOTSTRAP_V1_STORAGE_ACCOUNTING_FINDING"
+}

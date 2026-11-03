@@ -1,0 +1,42 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "experimental_api_spend_usd": 0,
+    "local_compute_storage_labor": "UNPRICED",
+    "network_model_calls": 0
+  },
+  "FILES_CHANGED": [
+    "docs/E02_F_WY_ACTUAL_BOOTSTRAP_WIRING_PROPOSAL_v1.md",
+    "configs/e02_F_WY_ACTUAL_BOOTSTRAP_WIRING_PROPOSAL_v1.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent chosen actual-wiring methods review while original authored component review finishes; no actualcacheoperations or approval population.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_F_WY_ACTUAL_BOOTSTRAP_WIRING_PROPOSAL_v1.json": "dce439d63f6623ddbe43c16f3b8b2b1ad917c451bde8478abf91afa270beaa54",
+    "docs/E02_F_WY_ACTUAL_BOOTSTRAP_WIRING_PROPOSAL_v1.md": "1beaf5ce19502a409986262bf623464895831889841c3d5571822d0ae6ac011e"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "python3 -c \"import hashlib,json,pathlib; c=json.loads(pathlib.Path('configs/e02_F_WY_ACTUAL_BOOTSTRAP_WIRING_PROPOSAL_v1.json').read_text()); assert all(hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()==v for p,v in (c['parent_refs']|c['frozen_component_files']|c['frozen_native_required_files']).items())\""
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Submitted authored component is still pending independent review and remains immutable.",
+    "Actual conditional authority/context/cleanup/release wiring is proposed, not implemented.",
+    "Positive tagged fake-root branches must be tested before requesting actual-source inspection scope.",
+    "All original deadline/storage/native caps, source policies and scientific gates remain unchanged."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only existing repository metadata/code used. No source inspection, authority transfer, raw data import or real-source permission. Historical origin/rights remain unchanged.",
+  "TASK_ID": "E02_F_WY_ACTUAL_BOOTSTRAP_WIRING_PROPOSAL_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_source_operations": 0,
+    "conditional_actual_tests": "NOT_RUN_SPECIFICATION_ONLY",
+    "frozen_component_files_verified": 5,
+    "frozen_native_files_verified": 38,
+    "parent_pins_recorded": 5
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent methods review of this separate actual wiring proposal.",
+    "Separate conditional actual adapter implementation and independent authored acceptance.",
+    "Genuine source-scoped inspection authorization and later independent K/S/E/C remain absent; no extra mandatory owner-permission artifact is imposed."
+  ],
+  "frozen_files_modified": false,
+  "new_executable_code_written": false,
+  "status": "PROPOSAL_READY_FOR_INDEPENDENT_METHODS_REVIEW"
+}

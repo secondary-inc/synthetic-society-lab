@@ -1,0 +1,60 @@
+test_actual_default_denied_before_any_filesystem_or_socket (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_actual_default_denied_before_any_filesystem_or_socket) ... ok
+test_bundle_copied_field_override_refuses_before_source (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_bundle_copied_field_override_refuses_before_source) ... ok
+test_cleanup_cannot_refund_renew_clear_failure_or_authorize (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_cleanup_cannot_refund_renew_clear_failure_or_authorize) ... ok
+test_concurrent_control_and_launcher_owner_refuse (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_concurrent_control_and_launcher_owner_refuse) ... ok
+test_existing_runtime_root_and_copy_failure_do_not_enroll (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_existing_runtime_root_and_copy_failure_do_not_enroll) ... ok
+test_extra_member_and_duplicate_header_generated_as_authored_only (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_extra_member_and_duplicate_header_generated_as_authored_only) ... ok
+test_failed_artifact_write_retains_pending_charge (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_failed_artifact_write_retains_pending_charge) ... ok
+test_full_plan_reserved_before_inspection_and_no_runtime_precreation (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_full_plan_reserved_before_inspection_and_no_runtime_precreation) ... ok
+test_global_deadline_includes_review_gap_and_equality (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_global_deadline_includes_review_gap_and_equality) ... ok
+test_happy_all_six_stages_normal_close_exact_replay (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay) ... ok
+test_launcher_deadline_or_bad_closure_unknown_no_success (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success) ... ok
+test_low_disk_and_symlink_storage_refuse (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_low_disk_and_symlink_storage_refuse) ... ok
+test_missing_copied_or_torn_journal_never_reinitializes (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_missing_copied_or_torn_journal_never_reinitializes) ... ok
+test_normal_stage_completion_checks_whole_elapsed (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_normal_stage_completion_checks_whole_elapsed) ... ok
+test_order_duplicate_and_unknown_cannot_be_success (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_order_duplicate_and_unknown_cannot_be_success) ... ok
+test_parent_directory_symlink_refused (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_parent_directory_symlink_refused) ... ok
+test_process_identity_unknown_sampling_is_failure (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure) ... ok
+test_real_controller_death_retains_pending_unknown_and_separate_cleanup (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_real_controller_death_retains_pending_unknown_and_separate_cleanup) ... FAIL
+test_rollback_boot_change_and_nonfinite_refuse (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_rollback_boot_change_and_nonfinite_refuse) ... ok
+test_root_order_and_copied_evidence_tampering_refuses (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_root_order_and_copied_evidence_tampering_refuses) ... ok
+test_single_descriptor_no_path_reopen_and_no_person_zipstream (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_single_descriptor_no_path_reopen_and_no_person_zipstream) ... ok
+test_source_symlink_and_archive_drift_fail_with_full_charge (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_source_symlink_and_archive_drift_fail_with_full_charge) ... ok
+test_storage_raw_duplicates_hardlinks_and_temporaries_count (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_storage_raw_duplicates_hardlinks_and_temporaries_count) ... ok
+test_unknown_backend_refuses_before_start (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_unknown_backend_refuses_before_start) ... ok
+
+======================================================================
+FAIL: test_real_controller_death_retains_pending_unknown_and_separate_cleanup (tests.test_e02_f_wy_bootstrap_v1.BootstrapTests.test_real_controller_death_retains_pending_unknown_and_separate_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e02_f_wy_bootstrap_v1.py", line 229, in test_real_controller_death_retains_pending_unknown_and_separate_cleanup
+    os.kill(child,signal.SIGKILL)
+    ^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/synchronize.py", line 345, in set
+    self._cond.notify_all()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/synchronize.py", line 304, in notify_all
+    self.notify(n=sys.maxsize)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/synchronize.py", line 297, in notify
+    self._woken_count.acquire()       # wait for a sleeper to wake
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e02_f_wy_bootstrap_v1.py", line 235, in test_real_controller_death_retains_pending_unknown_and_separate_cleanup
+    if state.returncode != 0 or state.stdout.strip().startswith('Z'):
+    ^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/synchronize.py", line 345, in set
+    self._cond.notify_all()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/synchronize.py", line 304, in notify_all
+    self.notify(n=sys.maxsize)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/synchronize.py", line 279, in notify
+    assert not self._wait_semaphore.acquire(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: notify: Should not have been able to acquire _wait_semaphore
+
+----------------------------------------------------------------------
+Ran 24 tests in 57.908s
+
+FAILED (failures=1)

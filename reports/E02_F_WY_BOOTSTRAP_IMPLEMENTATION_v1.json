@@ -1,0 +1,105 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "GETs": 0,
+    "development_compute_storage_labor": "UNPRICED",
+    "experimental_api_spend_usd": 0,
+    "network_model_calls": 0
+  },
+  "FILES_CHANGED": [
+    "src/civiclab/e02/f_wy_bootstrap_v1.py",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py",
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py",
+    "tests/test_e02_f_wy_bootstrap_v1.py",
+    "docs/E02_F_WY_BOOTSTRAP_IMPLEMENTATION_v1.md",
+    "configs/e02_F_WY_BOOTSTRAP_IMPLEMENTATION_v1.json",
+    "reports/E02_F_WY_BOOTSTRAP_CANDIDATE_TEST_LOG_v1.txt",
+    "reports/E02_F_WY_BOOTSTRAP_NATIVE_REGRESSION_LOG_v1.txt",
+    "reports/E02_F_WY_BOOTSTRAP_INITIAL_TEST_FAILURE_v1.txt",
+    "reports/E02_F_WY_BOOTSTRAP_DEATH_RETRY_LOG_v1.txt"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent review of this exact authored candidate; do not access actual source or populate approvals from worker results.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_F_WY_BOOTSTRAP_IMPLEMENTATION_v1.json": "aab233a2f4803e8b7ce7c72421a0e06fe99da4b0083891ca70fff12daae53db7",
+    "docs/E02_F_WY_BOOTSTRAP_IMPLEMENTATION_v1.md": "efa75d3dcdc50cc6c08f7fd550440af6edb86463c0547956e57e3c1c627e1283",
+    "reports/E02_F_WY_BOOTSTRAP_CANDIDATE_TEST_LOG_v1.txt": "3cdbc43ecd22b2baca0fcf2f45649865b18e9ed1dcaf3344ac7b465797c48d51",
+    "reports/E02_F_WY_BOOTSTRAP_DEATH_RETRY_LOG_v1.txt": "7111cb87cfc0d7423fa15543295e142394ce45a2f4aac1b24041c7e32d7b728e",
+    "reports/E02_F_WY_BOOTSTRAP_INITIAL_TEST_FAILURE_v1.txt": "1990dcf0bd256e406f0e474ff20d960520820f31918f82cf622225861d612c15",
+    "reports/E02_F_WY_BOOTSTRAP_NATIVE_REGRESSION_LOG_v1.txt": "d68e523d4ddd06c392e8c6668b6704cb3629694e6c913f2f50ccfd21f0442adc",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+    "src/civiclab/e02/f_wy_bootstrap_v1.py": "9f23112301875b2432ab17a027023bc857dfd40e8499d6a92e6a8dbb8eef2c5a",
+    "tests/test_e02_f_wy_bootstrap_v1.py": "4d1d15e34d770fe34faa4506e7a44fe603e0aee821b21d5164e4bffa357c850a"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests/test_e02_f_wy_bootstrap_v1.py tests/test_e02_f_wy_release_proposal_v1.py -v",
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests/test_e02_f_wy_local_v1_1.py -v",
+    "PYTHONPATH=src:tests .venv/bin/python -c \"from pathlib import Path; from test_e02_f_wy_bootstrap_v1 import retain_authored_evidence; retain_authored_evidence(Path('data/processed/e02_F_local_fixture/NEW_BOOTSTRAP_FIXTURE'))\""
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Actual inspect_actual/execute_actual entries unconditionally refuse; production I/K/S/E/cleanup admission and real same-cache launch wiring not implemented/released.",
+    "Fixture native admission generates second identical authored archive; BOTH raw copies charged. Not a real cache transfer or stat-identity continuity proof.",
+    "Fixed-code normal joins plus sampled process/RSS checks are cooperative; controller death may leave survivors. UNKNOWN/full charges/blocking is not shutdown proof.",
+    "TEST_ONLY cleanup changes liveness label only; failed stages/native barriers/t0/charges/authority remain unchanged.",
+    "No real source compatibility/arithmetic, fit, disclosure, scientific representativeness or model-human validity acceptance."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only newly generated authored respondent rows and repository metadata/code were used. No actual Wyoming cache stat/hash/open/read/resolve/parse or source helper/runtime access. Source/approval history/pins unchanged. All raw fixture archives/parts remain ignored/local and visibly MOCK. No credentials used or exposed.",
+  "TASK_ID": "E02_F_WY_BOOTSTRAP_NATIVE_IMPLEMENTATION_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "bootstrap_and_proposal_total": 37,
+    "bootstrap_methods": 29,
+    "elapsed_seconds": 32.112,
+    "frozen_runtime_refs_hash_verified": 38,
+    "independent_acceptance": false,
+    "initial_failure_preserved": "reports/E02_F_WY_BOOTSTRAP_INITIAL_TEST_FAILURE_v1.txt",
+    "native_elapsed_seconds": 32.604,
+    "prior_proposal_static": 8,
+    "retained_normal_summary": {
+      "GETs": 0,
+      "actual_source_rows": 0,
+      "api_spend_usd": 0,
+      "fixture_raw_archives": "Two independently generated identical authored archives; both retained byte copies charged, not an actual cache transfer.",
+      "kind": "MOCK_AUTHORED_BOOTSTRAP_EVIDENCE",
+      "model_calls": 0,
+      "normal_charge": {
+        "bytes": 12793400,
+        "ops": 12000000,
+        "rows": 156,
+        "seconds": 1800
+      },
+      "normal_shutdown": "CLOSED",
+      "normal_source_rows_per_parse": 78,
+      "normal_stages": [
+        "INSPECT",
+        "ENROLL",
+        "PRIMARY",
+        "REPLAY",
+        "FINALIZE_PRIMARY",
+        "FINALIZE_REPLAY"
+      ],
+      "normal_storage": {
+        "PRIMARY:base": 6615241,
+        "REPLAY:base": 6615241,
+        "core": 11065958,
+        "raw": 69740
+      },
+      "real_parent_death_and_live_cancel": "SEPARATE_TEST_LOG_NOT_THIS_RETAINED_CASE",
+      "unknown_after_cleanup": "CLEANUP_OBSERVED_STILL_BLOCKED",
+      "unknown_case": "RESERVATION_THEN_UNKNOWN_NO_PROCESS_DISPATCHED_NOT_CONTROLLER_DEATH",
+      "unknown_full_charges_preserved": true
+    },
+    "retained_private_files_hash_verified": 70,
+    "unchanged_native_regression": 20
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact implementation/code/tests/private raw-fixture audit.",
+    "Separate production admission/release wiring and explicit exact-source inspection authorization; no I/K/S/E or fresh stat identity exists.",
+    "Actual same-cache compatibility/native runtime integration and independent actual arithmetic/replay remain unaccepted.",
+    "Fit/disclosure/national completeness/scientific gates remain blocked."
+  ],
+  "actual_source_filesystem_operations": 0,
+  "actual_source_rows": 0,
+  "independent_acceptance_claimed": false,
+  "old_runtime_config_tests_or_authority_modified": false,
+  "paid_model_inference": false,
+  "status": "CANDIDATE_READY_FOR_INDEPENDENT_IMPLEMENTATION_REVIEW"
+}
