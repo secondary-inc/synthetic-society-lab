@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:11:58.987092+00:00",
+  "status": "PASS_FINAL_PACKAGE_REPORT_ENUMERATION_DELTA",
+  "code_files": {
+    "src/civiclab/reproduction.py": "78064da813fdf1df55d87b4750e4db2c78409da11812bfe793c325896f812f48",
+    "tests/test_reproduction.py": "0685f49b19f8f5aa7eb79121baf1fe5450f467e3f7759943b5a1b3cfcc7747aa"
+  },
+  "independent_probes": [
+    {
+      "prefix": "ANES_",
+      "receipt_included": true,
+      "late_addition_refused": true,
+      "raw_input_excluded": true
+    },
+    {
+      "prefix": "GDELT_",
+      "receipt_included": true,
+      "late_addition_refused": true,
+      "raw_input_excluded": true
+    },
+    {
+      "prefix": "BLUEPRINT_",
+      "receipt_included": true,
+      "late_addition_refused": true,
+      "raw_input_excluded": true
+    },
+    {
+      "prefix": "GITHUB_",
+      "receipt_included": true,
+      "late_addition_refused": true,
+      "raw_input_excluded": true
+    },
+    {
+      "prefix": "PY311_SNAPSHOT",
+      "receipt_included": true,
+      "late_addition_refused": true,
+      "raw_input_excluded": true
+    }
+  ],
+  "prior_scope": "Earlierknown-localonlyguardandfilesetmutationfindingsretainimmutablehistoricalreceipts. Thisfinalenumeratorusesallnewprefixesforbothcaptureandfilesetdriftcheck.",
+  "limits": "Explicitreportnameallowlistwithcredential/pathchecks,notgenericcontentprivacyclassification. Currentfullarchiveandindependentrestorationstillrequired;noimplicitraw/disclosure/publicationapproval.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

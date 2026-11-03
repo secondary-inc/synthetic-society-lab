@@ -15,6 +15,7 @@ class PackageTests(unittest.TestCase):
             raw=root/'data/raw/private.csv';raw.parent.mkdir(parents=True);raw.write_text('private source')
             report=root/'reports/ENGINEERING_EVIDENCE_TEST.json';report.parent.mkdir();report.write_text('{}')
             (report.parent/'E02_WORKER_RECEIPT.md').write_text('Observed module receipt')
+            (report.parent/'ANES_UPSTREAM_REACQUISITION.json').write_text('{"scope":"exact byte verification only"}')
             with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO','cost_usd':0})
             metadata=root/'src/local_project.egg-info';metadata.mkdir(parents=True)
             (metadata/'SOURCES.txt').write_text('generated during install')
@@ -28,6 +29,7 @@ class PackageTests(unittest.TestCase):
                 self.assertNotIn('.env',z.namelist());self.assertFalse(any(n.startswith('data/raw/') for n in z.namelist()))
                 self.assertIn('reports/ENGINEERING_EVIDENCE_TEST.json',z.namelist())
                 self.assertIn('reports/E02_WORKER_RECEIPT.md',z.namelist())
+                self.assertIn('reports/ANES_UPSTREAM_REACQUISITION.json',z.namelist())
                 self.assertFalse(any('.egg-info/' in n for n in z.namelist()))
             with zipfile.ZipFile(root/'a.zip','a') as z:z.writestr('unregistered.txt','tampered')
             with self.assertRaises(ValueError):verify_package(root/'a.zip')
@@ -78,3 +80,18 @@ class PackageTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'local project'):
                 build_package(root,root/'pack.zip',[run.run_id])
             self.assertFalse((root/'pack.zip').exists())
+
+    def test_new_test_or_report_cannot_silently_escape_snapshot(self):
+        from civiclab.dashboard import verified_run
+        for name in ('tests/late_test.py','reports/E02_LATE_RECEIPT.md'):
+            with self.subTest(name=name),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp)
+                with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO'})
+                def concurrent_addition(path):
+                    result=verified_run(path);added=root/name
+                    added.parent.mkdir(parents=True,exist_ok=True);added.write_text('late file')
+                    return result
+                with patch('civiclab.reproduction.verified_run',side_effect=concurrent_addition):
+                    with self.assertRaisesRegex(ValueError,'file set changed'):
+                        build_package(root,root/'pack.zip',[run.run_id])
+                self.assertFalse((root/'pack.zip').exists())

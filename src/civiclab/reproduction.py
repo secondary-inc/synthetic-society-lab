@@ -12,13 +12,8 @@ SECRET=re.compile(rb'sk-or-v1-[a-f0-9]{64}|EAA[A-Za-z0-9]{80,}')
 ALLOWED_SUFFIXES={'.py','.json','.md','.toml','.csv','.yml','.html','.png','.svg','.txt'}
 
 
-def build_package(root, output, run_ids):
-    root=Path(root).resolve();output=Path(output)
-    if output.exists():
-        raise FileExistsError('review archive already exists; choose a new snapshot name')
-    if not run_ids:
-        raise ValueError('select recorded runs explicitly; no broad raw-data export')
-    initial_code=code_identity(root)
+def source_inputs(root):
+    """Enumerate the complete permitted source/report set at one instant."""
     inputs={}
     for name in ('pyproject.toml','README.md','AGENTS.md','AUTONOMOUS_RESEARCH_ORCHESTRATION.md',
                  'CODEX_MASTER_EXECUTION.md','.gitignore','.env.example'):
@@ -32,9 +27,21 @@ def build_package(root, output, run_ids):
     fixture=root/'tests/fixtures/gdelt/20261103090000.gkg.csv.zip'
     if fixture.exists():inputs[str(fixture.relative_to(root))]=fixture
     for pattern in ('AUDIT_*','INDEPENDENT_AUDIT*','STATUS*','COORDINATION.json',
-                    'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','BOOTSTRAP*','REVIEW_PACKAGE*','E01*','E02*'):
+                    'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','BOOTSTRAP*','REVIEW_PACKAGE*',
+                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','E01*','E02*'):
         for p in (root/'reports').glob(pattern):
             if p.is_file() and p.suffix in ('.md','.json'):inputs[str(p.relative_to(root))]=p
+    return inputs
+
+
+def build_package(root, output, run_ids):
+    root=Path(root).resolve();output=Path(output)
+    if output.exists():
+        raise FileExistsError('review archive already exists; choose a new snapshot name')
+    if not run_ids:
+        raise ValueError('select recorded runs explicitly; no broad raw-data export')
+    initial_code=code_identity(root)
+    inputs=source_inputs(root);source_names=set(inputs)
     for identity in run_ids:
         path=(root/'data/processed/runs'/identity).resolve()
         if not path.is_relative_to(root/'data/processed/runs'):
@@ -85,6 +92,8 @@ def build_package(root, output, run_ids):
             raise ValueError('input changed during package assembly; retry from a frozen state')
     if code_identity(root)!=initial_code:
         raise ValueError('source tree changed during package assembly; retry from a frozen state')
+    if set(source_inputs(root))!=source_names:
+        raise ValueError('source/report file set changed during package assembly; retry from a frozen state')
     output.parent.mkdir(parents=True,exist_ok=True)
     temporary=output.with_suffix(output.suffix+'.writing')
     with zipfile.ZipFile(temporary,'w',compression=zipfile.ZIP_DEFLATED) as archive:

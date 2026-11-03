@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:11:03.324395+00:00",
+  "status": "PASS_BOUNDED_PACKAGE_FILESET_DRIFT_GUARD",
+  "independent_mutation_probes": [
+    {
+      "action": "add",
+      "path": "tests/late_test.py",
+      "refused": true,
+      "exception_type": "ValueError",
+      "output_created": false
+    },
+    {
+      "action": "add",
+      "path": "reports/E02_LATE.json",
+      "refused": true,
+      "exception_type": "ValueError",
+      "output_created": false
+    },
+    {
+      "action": "remove",
+      "path": "tests/fixture_test.py",
+      "refused": true,
+      "exception_type": "FileNotFoundError",
+      "output_created": false
+    },
+    {
+      "action": "remove",
+      "path": "reports/E02_EXISTING.json",
+      "refused": true,
+      "exception_type": "FileNotFoundError",
+      "output_created": false
+    },
+    {
+      "action": "add",
+      "path": "src/new_module.py",
+      "refused": true,
+      "exception_type": "ValueError",
+      "output_created": false
+    },
+    {
+      "action": "change",
+      "path": "src/existing.py",
+      "refused": true,
+      "exception_type": "ValueError",
+      "output_created": false
+    }
+  ],
+  "code_files": {
+    "src/civiclab/reproduction.py": "27aa4a0c303d76dbb8ab9366a636dfef350e3a331ff6e6f27000c606330e8314",
+    "tests/test_reproduction.py": "2786a642e6bd8de7704d77a5663820c8d47d6738cd96e56da27fa649e71869ea"
+  },
+  "scope": "Permittedtest/report/sourceadditions/removalsandcodesourcechangesinassemblywindowareindependentlyrefusedbeforeno-clobberarchivecreation. Existinglocal-onlyartifactguardunchanged.",
+  "limits": "Cooperativefreezeandpost-enumerationconsistencychecks,notOS-levelatomicsnapshot/concurrencyisolation. Onlypermittedsource/reporttypes/patternsarebundled. Exactcurrentpackrestorestillrequired.",
+  "cost_usd": 0,
+  "model_calls": 0
+}
