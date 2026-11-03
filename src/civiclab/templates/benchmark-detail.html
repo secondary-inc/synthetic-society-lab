@@ -1,0 +1,15 @@
+if(run.demographic_benchmark){
+const b=run.demographic_benchmark;
+d.append(el('h3','Wyoming demographic benchmark · local owner review'),el('span','Exact payload independently admitted','badge'));
+d.append(el('p','The recorded run status predates its separate independent admission. The receipt below binds this displayed payload to that later review.','muted'));
+d.append(el('p',b.period+' · '+b.universe,'muted'));
+d.append(el('p','Original population-science gate: '+b.scientific_population_gate+' · Population fit: '+b.population_fit,'error'));
+d.append(el('p','These are ACS survey-weighted count estimates and shares, with design-based 90% margins of error. The margins cover sampling error; they do not quantify model validity, selection bias or human political response.','muted'));
+metric(metrics,'Unfiltered source person rows',b.total_unfiltered_person_rows);
+metric(metrics,'Estimated persons in benchmark universe',b.point_person_weight_total);
+const benchmarkTable=el('div');benchmarkTable.style.overflowX='auto';
+table(benchmarkTable,['Age','Education','Unweighted contributors','Estimated persons','Count 90% MOE','Share (fraction)','Share 90% MOE (fraction)'],b.cells.map(c=>[c.age,({'HS_OR_LESS':'High school or less','SOME_COLLEGE':'Some college / associate','BA_PLUS':'Bachelor or higher'})[c.education]||c.education,c.unweighted_contributors,c.point_person_weight_count,c.person_count_sampling_error.moe90,c.point_share,c.share_sampling_error.moe90]));d.append(benchmarkTable);
+d.append(el('p',b.limits,'muted'),el('p','Local owner-review admission only. External publication is not authorized. This one-state benchmark does not establish nationwide population validity.','error'));
+details(d,'Benchmark provenance, source hashes and resource measurements',b.provenance);
+details(d,'Independent exact-payload admission',run.benchmark_admission);
+}

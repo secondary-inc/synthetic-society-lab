@@ -1,0 +1,79 @@
+{
+  "browser_checks": [
+    "Actual Wyoming table, all uncertainty labels and local-only scope inspected",
+    "Separate later exact-payload admission badge explains original recorded pending status",
+    "Original resident 40-configuration comparison renders with 446 holdout records and retained negative hierarchy result"
+  ],
+  "cell_values_emitted_in_report": false,
+  "cells_per_admitted_run": 12,
+  "external_publication_authorized": false,
+  "files": {
+    "docs/WYOMING_BENCHMARK_VIEWER.md": "f163ed7039c4f97cadb2c77874943cfda96c70ed2aedf2087486625fa45fb5e2",
+    "src/civiclab/benchmark_viewer.py": "8e699821d5ad26077b3bc0e685feda5e9881cc8d897fdf1f0b34cf7fb8e028c9",
+    "src/civiclab/cli.py": "e3d4b542c72451add26a7370c0cd00614b03eea4ba40d49883f7241b0a091586",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/dashboard.py": "1b65f89800688ee7b279b6a2bc39f27b1b6f45b7504ff2e103f48f38dfd77cab",
+    "src/civiclab/templates/benchmark-detail.html": "5610f810f7bd9ca7f015351958da19a7e8786d59dd4f343d2c59ab588588b292",
+    "src/civiclab/templates/run-viewer.html": "8f64d6626a92a29d70bb72a8c7745ae8742b88f9d25cf10f0a9d3a1681244b69",
+    "tests/test_benchmark_viewer.py": "00f35cb31199c2a63e0a38ca59361c178fb4e3d6c9f0ba244b053081be87450f"
+  },
+  "http_checks": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/snapshot.json",
+      "status": 200
+    },
+    {
+      "path": "/demographic-benchmark.json",
+      "status": 404
+    },
+    {
+      "path": "/../.env",
+      "status": 404
+    },
+    {
+      "path": "/data/raw/",
+      "status": 404
+    },
+    {
+      "path": "/index.html?raw=1",
+      "status": 404
+    },
+    {
+      "path": "/snapshot.json?raw=1",
+      "status": 404
+    }
+  ],
+  "interim_integrated_tests": {
+    "passed": 187,
+    "scope": "Observed shared checkout execution before subsequent worker remediation and final fragment label changes; not a frozen-source or independent acceptance certificate. Multiprocessing fork-in-multithreaded-process deprecation warnings observed in national fixtures.",
+    "seconds": 6.973
+  },
+  "model_api_spend_usd": 0,
+  "model_calls": 0,
+  "original_population_gate": "BLOCKED",
+  "population_fit": "NOT_RUN",
+  "prior_archives_unchanged": true,
+  "recorded_at_utc": "2026-11-03T13:29:52.602527+00:00",
+  "schema_version": 1,
+  "screenshot": {
+    "local_path": "/tmp/synthetic-society-wyoming-viewer.png",
+    "scope": "Approved coarse aggregate owner-review screenshot; never public publication",
+    "sha256": "79b453dfeaff850e7a665124861e7d87a028f0b13014b158a67165ba46426715"
+  },
+  "selected_runs": [
+    "e02-775f7460965047e0999ddb81083fee6b",
+    "e02-b99863e7664f4af19386526bd5f438ef",
+    "e02-1be3718699e54d7380755be1f9d87e6d"
+  ],
+  "source_admission_sha256": "3f13ba4cddddf54b390e0236072e1a52f97c7373100e0d658404d0ed15491224",
+  "status": "IMPLEMENTED_PENDING_INDEPENDENT_REVIEW_AND_NEW_ARCHIVE_RESTORE",
+  "targeted_tests": {
+    "command": ".venv/bin/python -m unittest tests.test_benchmark_viewer tests.test_dashboard -q",
+    "passed": 8
+  },
+  "typed_benchmark_runs": 2
+}

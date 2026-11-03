@@ -84,7 +84,7 @@ def main():
         print(json.dumps(ingest_fixture(args.root,args.out,args.summary)))
         return
     if args.command == 'dashboard':
-        from .dashboard import build
+        from .benchmark_viewer import build
         print(build(args.root,args.root/args.out,args.runs))
         return
     if args.command == 'serve':
