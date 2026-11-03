@@ -1,0 +1,196 @@
+{
+  "actual_record_invocations": 2,
+  "api_spend_usd": 0,
+  "development_compute": "UNPRICED",
+  "entrypoint": "civiclab.e01.alabama_recorded_preflight_v1_1.record",
+  "global_status_unchanged": {
+    "final_ballots_accepted": 0,
+    "legacy_roster_states": 12,
+    "typed_document_states": 13,
+    "unfinished_source_jobs": 20
+  },
+  "lead_execution_authorization_ref": {
+    "bytes": 2155,
+    "path": "reports/E01_AL_OFFICE_CONTEXT_V1_1_ACTUAL_EXECUTION_AUTHORIZATION.json",
+    "sha256": "e88fcf50310c5e4f71286d469effddd552e259802a31ef4d727b20d351d217a8"
+  },
+  "lead_execution_decision_id": "AL_OFFICE_CONTEXT_EXEC_20261103_01",
+  "limits": [
+    "Normal caller returns and linked metadata observed, not independent source/content/science acceptance.",
+    "Payload equality is comparison of recorded hashes; independent auditor must inspect original private saved bytes under separate scope.",
+    "Static416 source verifications/eightpasses/3167718568byte ceiling are reviewed code-path specifications, not observed OS I/O measurements.",
+    "No source/coverage/adoption/geography/final-ballot/latest/forecast/dashboard/publication change."
+  ],
+  "next_gate": "STOP for independent exact original saved-output review. No further source/helper/reader/record calls.",
+  "outer_manifest_ref": {
+    "bytes": 2605,
+    "path": "data/processed/e01_al_office_context_v1_1_release/outer_manifest.local.json",
+    "sha256": "25d043afa6ebd3ba9344c07b93853e911b279b39b60af6c01627823a276d4977"
+  },
+  "particular_review_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_AL_V1_1_PARTICULAR_PREPARED_METADATA.json",
+    "sha256": "2a520512895b56e6956f10930c92d96ac13dd21283eb573a744bb09c4a92be1c"
+  },
+  "phase_observations": [
+    {
+      "phase": "primary",
+      "returned_normally": true,
+      "run_id": "e01-b8052de033ce4655b1f899ec2d3becfa",
+      "seconds": 0.25816
+    },
+    {
+      "phase": "replay",
+      "returned_normally": true,
+      "run_id": "e01-f02a00c7df7041549d0f6e8b82b6eb9b",
+      "seconds": 0.221156
+    }
+  ],
+  "postrun_scope": "Only newly returned run ledger/seal/payload-hash/public-diagnostics/summary metadata and exact phase controls read. No private observation payload readback, source sweep or extra helper/saved-reader.",
+  "primary_replay_recorded_payload_hashes_equal": {
+    "al_document_diagnostics.json": true,
+    "al_document_observations.local.json": true
+  },
+  "recorded_at_utc": "2026-11-03T19:55:57.380210+00:00",
+  "runs": [
+    {
+      "controls": {
+        "completed": {
+          "bytes": 273,
+          "sha256": "f26c80ae7154b6b838c95841898e5a6681e0430cb717b5bcb563726d8a43359e"
+        },
+        "started": {
+          "bytes": 199,
+          "sha256": "0c1abf304b4941df414d917563a319e4b27ed248cc2341464f79aebe581478fc"
+        }
+      },
+      "final_seal": {
+        "bytes": 931,
+        "sha256": "27cd9fefbea06f00198e5add8f1b340eaf68cb7160b4a6ccf78eacb0c2df0821"
+      },
+      "ledger": {
+        "bytes": 847,
+        "entries": {
+          "al_commit.json": "db49f0f168467429e37ba04600e0495158d7bed78b650e85a5d591819bcd4885",
+          "al_document_diagnostics.json": "d3416458e61123e3ad15d737a0610f74fdf835ee0c9b1842e43ea11d21570587",
+          "al_document_observations.local.json": "3d277c2fe471d236dac8bef716e15fcd9c4e1c1865ee37094449591612d07c51",
+          "al_payload_hashes.json": "a834e65c72e99fef30b12711ad41648524180558710d4c23e7254a8e08064222",
+          "al_release_provenance.json": "ead0d522d158acd26840f7b120ee841c526d565737a70551d275c98be20c2edd",
+          "environment.json": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+          "events.jsonl": "8ee0c99a0012ff13d14fd6a7fc904133e0fcc06d4bff904d92afff4c6f656f5d",
+          "manifest.json": "bf95acde56395f01233b0ec6fb241d3b3e64a3e262c26132a2fabd994f611abb",
+          "summary.json": "2393dd6ec1e3e72fae9e68d977263f69190eb58c3e7997c39c746298263399cd"
+        },
+        "sha256": "488ad467383117831569df6240712deb77a3a1a0ff9ef6b834fceb88fc60f50b"
+      },
+      "normal_observations": {
+        "accepted_coverage_promoted": false,
+        "caller_returned_normally": true,
+        "cost_usd": 0,
+        "cross_literal_exception_count": 1,
+        "document_supported_name_group_count": 2,
+        "final_ballots_accepted": 0,
+        "historical_occurrence_count": 2,
+        "model_calls": 0,
+        "office_family_rule_sha256": "48a9cbeefbaccb3b51c1d916990e962a816cfa73767afe3f7513190122b9f974",
+        "office_literal_form_count": 3,
+        "physical_page_count": 47,
+        "schema_version": 2,
+        "seal_status": "LOCAL_AL_FINAL_SEAL_PENDING_INDEPENDENT_REVIEW",
+        "senate_occurrence_count": 6,
+        "source_adoption": false,
+        "source_count": 5,
+        "summary_status": "AL_RECORDING_COMPLETE_PENDING_INDEPENDENT_REVIEW",
+        "typed_unknown_count": 4
+      },
+      "path": "data/processed/runs/e01-b8052de033ce4655b1f899ec2d3becfa",
+      "payload_hashes_from_verified_metadata_not_private_readback": {
+        "al_document_diagnostics.json": "d3416458e61123e3ad15d737a0610f74fdf835ee0c9b1842e43ea11d21570587",
+        "al_document_observations.local.json": "3d277c2fe471d236dac8bef716e15fcd9c4e1c1865ee37094449591612d07c51",
+        "al_release_provenance.json": "ead0d522d158acd26840f7b120ee841c526d565737a70551d275c98be20c2edd"
+      },
+      "phase": "primary",
+      "run_id": "e01-b8052de033ce4655b1f899ec2d3becfa"
+    },
+    {
+      "controls": {
+        "completed": {
+          "bytes": 273,
+          "sha256": "ea6318ed677155eaeab8d974528aec3f31389d8a423a073a321a40ba53cd7ba5"
+        },
+        "started": {
+          "bytes": 198,
+          "sha256": "09fbc15948252de9087c175851d12f6da7c80cb4af634268da26a4e851b1657a"
+        }
+      },
+      "final_seal": {
+        "bytes": 930,
+        "sha256": "dfa28f43e9399634f788e54583db2786adb1618737c1534ded2228e46ff29265"
+      },
+      "ledger": {
+        "bytes": 847,
+        "entries": {
+          "al_commit.json": "555fb78b1bc4c8d71fb6e8712abff015f23989ffb5e9b457ba0fe83c1583fa49",
+          "al_document_diagnostics.json": "d3416458e61123e3ad15d737a0610f74fdf835ee0c9b1842e43ea11d21570587",
+          "al_document_observations.local.json": "3d277c2fe471d236dac8bef716e15fcd9c4e1c1865ee37094449591612d07c51",
+          "al_payload_hashes.json": "171d27c0415d175aa3710b76cc8454fd4a55ba71a39867c975e9c40126e085a9",
+          "al_release_provenance.json": "e6083826f3cdfc5cc1b2dea8a037fa26dcac42bb1115d8a4ad449c28023bae29",
+          "environment.json": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+          "events.jsonl": "87f25e029b609e9215be8f81f487c89c771876f84241275b0177c7989dd0898b",
+          "manifest.json": "5fc0a9e06e6a74f44863a3df30b6c359b5e32f5ea84f92ccab68f34a48cd05c3",
+          "summary.json": "762fb15bde97a238a962ec35e26a01f8b7f8d4a3e0f3f29533e1a122e233ff5c"
+        },
+        "sha256": "4f7dd06a9078ecdc6cb54d372b2d1a8c6d16bb0a2e58e4c45ccdb9ab9ee99329"
+      },
+      "normal_observations": {
+        "accepted_coverage_promoted": false,
+        "caller_returned_normally": true,
+        "cost_usd": 0,
+        "cross_literal_exception_count": 1,
+        "document_supported_name_group_count": 2,
+        "final_ballots_accepted": 0,
+        "historical_occurrence_count": 2,
+        "model_calls": 0,
+        "office_family_rule_sha256": "48a9cbeefbaccb3b51c1d916990e962a816cfa73767afe3f7513190122b9f974",
+        "office_literal_form_count": 3,
+        "physical_page_count": 47,
+        "schema_version": 2,
+        "seal_status": "LOCAL_AL_FINAL_SEAL_PENDING_INDEPENDENT_REVIEW",
+        "senate_occurrence_count": 6,
+        "source_adoption": false,
+        "source_count": 5,
+        "summary_status": "AL_RECORDING_COMPLETE_PENDING_INDEPENDENT_REVIEW",
+        "typed_unknown_count": 4
+      },
+      "path": "data/processed/runs/e01-f02a00c7df7041549d0f6e8b82b6eb9b",
+      "payload_hashes_from_verified_metadata_not_private_readback": {
+        "al_document_diagnostics.json": "d3416458e61123e3ad15d737a0610f74fdf835ee0c9b1842e43ea11d21570587",
+        "al_document_observations.local.json": "3d277c2fe471d236dac8bef716e15fcd9c4e1c1865ee37094449591612d07c51",
+        "al_release_provenance.json": "e6083826f3cdfc5cc1b2dea8a037fa26dcac42bb1115d8a4ad449c28023bae29"
+      },
+      "phase": "replay",
+      "run_id": "e01-f02a00c7df7041549d0f6e8b82b6eb9b"
+    }
+  ],
+  "schema_version": 1,
+  "source_limits": {
+    "declared_static_success_path": {
+      "PDF_verifications": 40,
+      "PNG_verifications": 376,
+      "byte_ceiling": 3167718568,
+      "calls": 416,
+      "files_per_pass": 52,
+      "not_observed_IO_measurement": true,
+      "passes": 8
+    },
+    "observed_syscall_IO_counters": "NOT_INSTRUMENTED_NOT_CLAIMED",
+    "scope": "Only frozen cached5PDF47PNG paths/hashes through reviewed wrapper; no standalone preflight, source-only phase, OCR/render/view/source acquisition."
+  },
+  "status": "TWO_NORMAL_RECORDED_PHASE_RETURNS_PENDING_INDEPENDENT_SAVED_OUTPUT_REVIEW",
+  "worker_extra_runtime_calls": {
+    "manual_source_PDF_PNG_stat_hash_read_or_view": 0,
+    "monkeypatches_or_source_changes": 0,
+    "network_GET_model_key_calls": 0,
+    "retry_reset_newroot": 0,
+    "standalone_preflight_prepare_read_released_read_verified_sourceonly": 0
+  }
+}

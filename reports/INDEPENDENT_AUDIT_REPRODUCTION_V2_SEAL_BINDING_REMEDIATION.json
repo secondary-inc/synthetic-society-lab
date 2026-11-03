@@ -1,0 +1,145 @@
+{
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_REPRODUCTION_V2_SEAL_BINDING_REMEDIATION.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead can commit exactremedy and prepare separate exactsnapshot/disclosure-safe-run package plan for independent review; auditor awaits actual AL postrun handoff.",
+  "TASK_ID": "INDEPENDENT_REPRODUCTION_V2_SEAL_BINDING_REMEDY",
+  "UNRESOLVED_BLOCKERS": [
+    "Actual currentpackage and full restoration/provenance/research completeness not executed or accepted."
+  ],
+  "auditor_role": "independent_auditor",
+  "candidate": {
+    "bytes": 2640,
+    "path": "reports/REVIEW_PACKAGE_V2_SEAL_BINDING_REMEDIATION_CANDIDATE.json",
+    "sha256": "36b84eceb36ea91fd5971aa26de93066c77a168c206c9bd579169498c15df08a"
+  },
+  "code": {
+    "bytes": 10468,
+    "path": "src/civiclab/reproduction_v2.py",
+    "sha256": "c5eacf0e2007b0e58fb6596a7ec762cff9c92c954d833077bb2c1efc6b9bd954"
+  },
+  "command": "PYTHONPATH=src:tests <python> -m unittest tests.test_reproduction_v2 tests.test_reproduction -q",
+  "direct_code_review": [
+    "Reviewed full source diff against2650f47failedcandidate and current regression additions/doc; legacy991f6a unchanged.",
+    "Original verifier artifact map detached and original checksum-file hash preserved before reading payloads. Captured checksum bytes must match originalseal hash and parsedoriginalmap; every capturedartifact buffer must match original admitted map. No later live reseal adopted.",
+    "Independent original artifact-only race now refuses before final/temporary archive. Own direct source/report addition/change, sourcealias and credential-like authored bytes guards refuse; deterministic schema2 fixture archive allmanifest hashes/5receipt map verified with private sentinel read forbidden.",
+    "Own coordinated payload+ledger reseal, memberadd/removal and equivalentseal reformat refuse even when current live verified_run accepts each altered resealedrun. This directly checks original admittedseal binding, not unrelated second livevalidation.",
+    "Supplied late-output test preserves existing destination bytes by exclusive os.link, leaves.writing on failed publication; sourcealiases and existing.writing remain rejected.",
+    "Five exact public proofreceipt bounds/hashmap and schema2nonrecursive extension preserved; local-only/raw/path/runtime/source-file-set guards remain in code and supplied/own tests."
+  ],
+  "docs": {
+    "bytes": 3581,
+    "path": "docs/REVIEW_PACKAGE_V2_PUBLIC_EVIDENCE_CANDIDATE.md",
+    "sha256": "4c703c5bbc3f6c57ec16d457a75daf6bdac631446ce8f015dd3651a600c9662d"
+  },
+  "finding_disposition": "Original HIGH remains preserved for exact698ec417candidate/commit2650f47. Exactc5eacf0e remediation resolves the demonstrated selected-run capture race under trusted local verifier/history assumptions. No prior archive or actual projectoutput reclassified.",
+  "historical_code": {
+    "bytes": 7814,
+    "path": "src/civiclab/reproduction.py",
+    "sha256": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335"
+  },
+  "limitations": [
+    "Code/fixture component acceptance only. No current-source projectarchive assembly, exact committedsource/runselection, full freshrestoration, figure/dashboardprovenance or external CI acceptance.",
+    "Captured run closure uses existing trusted local verified_run artifact map/checksum hash, not hostile replacement of verifier/process/store or full semantic research validation.",
+    "Standalone verify_package remains byte-integrity-only; a malicious externally constructed internally consistent ZIP is not certified as a scientific or sealedresearchrecord by that function. Builder admission is the reviewed sealbinding boundary.",
+    "Exclusive hardlink output requires filesystem hardlink support; failure can leave.writing, requiring preserved failure/new review rather than overwrite. No hardOS/powerloss guarantee.",
+    "General credential regex is a narrow defense for known formats, not universal DLP. Actual packaged files and disclosure-safe run selections still require independent contentreview.",
+    "Scientific/rights/source-reacquisition/reproducibility-full-contract and publication remain separate. Developmentassistant/compute/labor unpriced."
+  ],
+  "operations": {
+    "actual_private_raw_key_reads": 0,
+    "actual_project_archive_builds": 0,
+    "api_spend_usd": 0,
+    "new_network_model_calls": 0,
+    "temporary_MOCK_fixture_archives_only": true
+  },
+  "original_finding": {
+    "bytes": 8379,
+    "path": "reports/INDEPENDENT_AUDIT_REPRODUCTION_V2_RUN_SEAL_RACE_FINDING.json",
+    "sha256": "a5bf07fe4cedfe735f7090e2e99056e7bb0232c91c30323963acdc147d0a437c"
+  },
+  "own_coordinated_variants": {
+    "actual_project_archives": 0,
+    "network_model_calls": 0,
+    "private_raw_credentials_reads": 0,
+    "status": "PASS",
+    "variants": {
+      "coordinated_add": "REFUSED_ORIGINAL_SEAL_NOT_REPLACED_BY_LATER_LIVE_VALIDITY",
+      "coordinated_remove": "REFUSED_ORIGINAL_SEAL_NOT_REPLACED_BY_LATER_LIVE_VALIDITY",
+      "coordinated_reseal": "REFUSED_ORIGINAL_SEAL_NOT_REPLACED_BY_LATER_LIVE_VALIDITY",
+      "equivalent_seal_encoding": "REFUSED_ORIGINAL_SEAL_NOT_REPLACED_BY_LATER_LIVE_VALIDITY",
+      "payload_only": "REFUSED_ORIGINAL_SEAL_NOT_REPLACED_BY_LATER_LIVE_VALIDITY"
+    }
+  },
+  "own_original_and_boundary_oracles": {
+    "actual_private_raw_key_reads": 0,
+    "actual_project_archive_builds": 0,
+    "additional_v2_direct_oracles": {
+      "added_report": "REFUSED_NO_FINAL_ARCHIVE",
+      "added_source": "REFUSED_NO_FINAL_ARCHIVE",
+      "changed_source": "REFUSED_NO_FINAL_ARCHIVE",
+      "credential_like_authored": "REFUSED_NO_FINAL_ARCHIVE",
+      "outside_alias": "REFUSED_NO_FINAL_ARCHIVE",
+      "resealed_run_mutation": "REFUSED_NO_FINAL_ARCHIVE",
+      "separate_authored_pack_oracle": "DETERMINISTIC_SCHEMA2_ALL_HASHES_EXACT_NO_PRIVATE_READS"
+    },
+    "network_model_calls": 0,
+    "original_builder_sha256": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335",
+    "status": "PASS"
+  },
+  "own_scripts_results": [
+    {
+      "bytes": 3260,
+      "path": "/tmp/civiclab-independent-reproduction-v2-oracles.py",
+      "sha256": "a1846e55c339d841f1cbef97445fdf17777ce8f1c583f58399f0cbf676db77b2"
+    },
+    {
+      "bytes": 625,
+      "path": "/tmp/civiclab-independent-reproduction-v2-remedy-oracles.json",
+      "sha256": "c6a624f1d736550d727b52e528304b212a93e23c3ba14e43163c0365da0a9b1e"
+    },
+    {
+      "bytes": 2056,
+      "path": "/tmp/civiclab-independent-reproduction-v2-remedy-variants.py",
+      "sha256": "8d7eff9989db72db94d0fe41261e7dad3ffa9ee5d5415ecea9845badc3bd7517"
+    },
+    {
+      "bytes": 537,
+      "path": "/tmp/civiclab-independent-reproduction-v2-remedy-variants.json",
+      "sha256": "a1ba765c9b3ea66e30bd8551b386a5641d2fbb7198df482376810e09a1eace61"
+    }
+  ],
+  "preserved_original_candidate_commit": "2650f47",
+  "schema_version": 1,
+  "scope": "EXACT_CODE_AND_DISPOSABLE_AUTHORED_PACKAGES_ONLY_NOT_ACTUAL_CURRENT_ARCHIVE_OR_RESTORE",
+  "status": "PASS_BOUNDED_REPRODUCTION_V2_SEAL_BINDING_REMEDIATION",
+  "supplied_tests": [
+    {
+      "count": 16,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-reproduction-v2-remedy-py312.log",
+        "sha256": "a0d797ae6f26ecbcbe431bfad7f48537a246ab587575f68b7b22d641a32f3de1"
+      },
+      "result": "OK",
+      "runtime": "Python3.12",
+      "seconds": 1.228
+    },
+    {
+      "count": 16,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-reproduction-v2-remedy-py311.log",
+        "sha256": "f7a4826b290a14f09463d242af909f21d9abf5e446cbf195ee9c07a80b5c408c"
+      },
+      "result": "OK",
+      "runtime": "Python3.11",
+      "seconds": 1.186
+    }
+  ],
+  "tests": {
+    "bytes": 8898,
+    "path": "tests/test_reproduction_v2.py",
+    "sha256": "fab565fd485a519eb21774a3ee54de376535d089746241971093c785c2edf03f"
+  }
+}
