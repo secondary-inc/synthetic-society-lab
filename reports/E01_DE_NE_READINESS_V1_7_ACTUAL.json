@@ -1,0 +1,150 @@
+{
+  "task_id": "E01_DE_NE_READINESS_V1_7_ACTUAL",
+  "status": "WORKER_RECORDED_EXECUTION_PENDING_INDEPENDENT_POST_RUN_REVIEW",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "command": "PYTHONPATH=src bundled-document-python /tmp/e01_v1_7_actual.py (two calls to ballots_v1_7.run_readiness with exact reviewed config)",
+  "integration_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_DE_NE_V1_7_INTEGRATION.json",
+    "sha256": "0530c185f5063e9d9f337b93a8cfa5a1edc765149297afaa5fdc14a1637f862d"
+  },
+  "config_path": "configs/e01_ballot_readiness_v1_7.json",
+  "config_bytes_sha256": "478d9bfd87c34703f260336c652c4e4a0ce36298e89614b709a4105b8d6a5bfe",
+  "config_canonical_sha256": "b0290ecda07a4d164cccec3b1f9bfca8b54a0a82b5938acdc7aa4f74fbc75e9a",
+  "run_ids": [
+    "e01-6a2b9fded13e4bb48d15985d98c7bb34",
+    "e01-6c8ddc6ebefe4af6bf42bc3d825963f5"
+  ],
+  "artifact_ledgers": {
+    "e01-6a2b9fded13e4bb48d15985d98c7bb34": {
+      "ballot_readiness.json": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997",
+      "candidate_rosters.local.json": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c",
+      "environment.json": "98b46f4756cc724d90615a0057c53a12df3a88bdec46153363d5646a5f0f09e3",
+      "events.jsonl": "96e105f91ce69f5380579b28593179100a5c7f2a534be3c619991b6d9bd34f13",
+      "manifest.json": "0a35622c8a4a3c7d9019f127a0aca550141dc37ff58a683dc50c23493838b5c2",
+      "summary.json": "9a1a8415a258d9d9ccfb3b221ef8e4441084baf71b1454912c457eb9b0ee0e91"
+    },
+    "e01-6c8ddc6ebefe4af6bf42bc3d825963f5": {
+      "ballot_readiness.json": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997",
+      "candidate_rosters.local.json": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c",
+      "environment.json": "98b46f4756cc724d90615a0057c53a12df3a88bdec46153363d5646a5f0f09e3",
+      "events.jsonl": "3ef0dee1ec0c4ca161ab967b76419fd991d788aa18d4fe608df7bb12de6d2df9",
+      "manifest.json": "c89031603db7c10b29e946385b9e6350a13a92ac2eec76c2de01d17f88f76a42",
+      "summary.json": "9a1a8415a258d9d9ccfb3b221ef8e4441084baf71b1454912c457eb9b0ee0e91"
+    }
+  },
+  "artifact_hashes_verified": 12,
+  "byte_exact_replay_artifacts": [
+    "ballot_readiness.json",
+    "candidate_rosters.local.json"
+  ],
+  "prior_accepted_run_id": "e01-ca50c23ae56d4c2e95576778b80bfa2b",
+  "prior_artifact_hashes_reverified": 6,
+  "prior_state_objects_unchanged": [
+    "AK",
+    "CO",
+    "IA",
+    "KS",
+    "ME",
+    "NC",
+    "NH",
+    "NJ",
+    "VA",
+    "WY"
+  ],
+  "prior_roster_canonical_hashes": {
+    "AK": "88c58e05fa9cd9666d2979c351b978c630769779a60039548f8e176925fee955",
+    "CO": "b9d5708b8dada20a6e0ce6f10c3871b4ab41d23e3c5a30063f5c172ef3be7520",
+    "IA": "4e319934a9c3dbd71615d07fd83a5a49a57d33f3c238e9130fd373218ab845c2",
+    "KS": "bb643222c560c283910faa61fc1147411886be4f46950e54f7cab98a9c78781b",
+    "ME": "4a9d14da91a86466d398c0c986628a0b34f53fd75ddc591e3aba6eb43bc01ce7",
+    "NC": "5ee085b0c3d0ff9959e1771b3a0d1e16c14b0b5d3493ae2df6183935d17db925",
+    "NH": "f2e4740ec01ffa4fb0c8c2f780825ce6b52383dde87846cc81fa4ebc544938ed",
+    "NJ": "2ee381dbcb96f9af0b63ebe97e036e106b59e7558aae9a4e97e89ba7355f11fc",
+    "VA": "bba7ef8aa8a4043d4dab86b07d140ed0598f5a2cbf03c465ad81fc4d2437926f",
+    "WY": "791791f6f2c2f5ce79f07cf0529e8e53da2deee168bdc63d6f565fd2243f7d2c"
+  },
+  "source_hash_checks_per_run": 35,
+  "new_source_pins": {
+    "de_index": "a81f9845ff5c3c54941bbc9782eaffddc3ae82b158a4d1f1c15e8c32a665dbd9",
+    "de_general": "ccc92e779eb0c49574d468ba55af40a11e3733630214ac0734a3c44907425ab7",
+    "de_writeins": "cba02ad4bbf824e5db9ebe1fdeda7b05f66074087fa66426a46f94ef0d0291ed",
+    "de_general_xlsx": "9d212a9575eb6fb4d178930ece50a2f89e34c7e1e8e476d977447dcb7a9c2afa",
+    "ne_index": "9b0f766299e388995b4bccdfdc45e5867a1acc7a61deaeff69268bd76b23efd1",
+    "ne_general": "d27a071715896b8c82b8cce8d48200b4207ba10c44f1778f56f92c4efcd7cf96"
+  },
+  "helper_and_frozen_input_hashes": {
+    "configs/e01_ballot_readiness_v1_6_1.json": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b",
+    "configs/e01_de_ne_source_contract_v1_7.json": "f698aa051299e0c9787a5376d455a941fa0374bf5524941988ff49ad27f3321a",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e01/ballots.py": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/ballot_capture_formats_v1_4.py": "0c8cc0be58b249c9d31968a439025e5025f42949abdfe15214496f63fddbf370",
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "src/civiclab/e01/ballot_formats_v1_6.py": "fb5fb665225dfdef782eef3f8ba712cd0eb67816e9b69632323e39310a19faa9",
+    "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+    "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e"
+  },
+  "geometry_runtime": {
+    "engine": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "DE": {
+    "general_rows": 2,
+    "declared_writeins": 3,
+    "no_writein_party_inference": true,
+    "source_statuses": [
+      "Qualified",
+      "Qualified",
+      "Qualified",
+      "Qualified",
+      "Qualified"
+    ],
+    "filing_dates": [
+      "2026-06-12",
+      "2026-03-19",
+      "2026-09-21",
+      "2026-09-21",
+      "2026-09-17"
+    ],
+    "source_last_updated_printed": "2026-10-30 07:56 PM",
+    "source_timezone": "NOT_STATED"
+  },
+  "NE": {
+    "rows": 5,
+    "source_labels": [
+      "Republican",
+      "Legal Marijuana NOW",
+      "Nebraska Working People",
+      "America First",
+      "By Petition"
+    ],
+    "party_classes": [
+      "R",
+      "UNSPECIFIED",
+      "UNSPECIFIED",
+      "UNSPECIFIED",
+      "UNSPECIFIED"
+    ],
+    "source_printed_edition": "2026-09-11",
+    "pdf_creation_metadata": "D:20260916164704-05'00'",
+    "pdf_modification_metadata": "D:20260916164704-05'00'"
+  },
+  "recorded_document_states": 12,
+  "accepted_coverage_promoted_by_worker": false,
+  "final_ballots_accepted": 0,
+  "actual_selection": false,
+  "source_adoption": false,
+  "geography_accepted": false,
+  "latest_amendment_completeness": false,
+  "named_candidate_or_contact_literals_in_this_report": false,
+  "named_rosters_local_only": true,
+  "2026_outcomes_used": false,
+  "new_network_requests": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "actual_private_roster_bundle_guard_refusals": [
+    "e01-6a2b9fded13e4bb48d15985d98c7bb34",
+    "e01-6c8ddc6ebefe4af6bf42bc3d825963f5"
+  ],
+  "named_candidate_literals_absent_all_public_run_artifacts": true
+}
