@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_OFFICIAL_BALLOT_ACQUISITION_BATCH02_V1",
+  "status": "WORKER_ACQUIRED_PENDING_INDEPENDENT_REVIEW",
+  "scope": "Separate acquisition memo; no reviewed readiness input mutation, source adoption, final acceptance, or sample selection",
+  "sources": [
+    {
+      "source_id": "co_general",
+      "url": "https://www.sos.state.co.us/pubs/elections/vote/generalCandidates.html",
+      "retrieved_at_utc": "2026-11-03T12:09:28.264902+00:00",
+      "status": 200,
+      "final_url": "https://www.sos.state.co.us/pubs/elections/vote/generalCandidates.html",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Last-Modified": "Tue, 15 Sep 2026 17:09:44 GMT",
+        "Content-Type": "text/html"
+      },
+      "path": "data/raw/e01_ballots_batch02_v1/co_general.html",
+      "bytes": 72145,
+      "sha256": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "va_index",
+      "url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/",
+      "retrieved_at_utc": "2026-11-03T12:09:28.616308+00:00",
+      "status": 200,
+      "final_url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Last-Modified": "Mon, 02 Nov 2026 20:12:26 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "path": "data/raw/e01_ballots_batch02_v1/va_index.html",
+      "bytes": 35879,
+      "sha256": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "va_federal",
+      "url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices/",
+      "retrieved_at_utc": "2026-11-03T12:09:28.686862+00:00",
+      "status": 200,
+      "final_url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices/",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Last-Modified": "Mon, 02 Nov 2026 20:12:27 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "path": "data/raw/e01_ballots_batch02_v1/va_federal.html",
+      "bytes": 48018,
+      "sha256": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "wy_index",
+      "url": "https://sos.wyo.gov/Elections/Default.aspx",
+      "retrieved_at_utc": "2026-11-03T12:09:28.742425+00:00",
+      "status": 200,
+      "final_url": "https://sos.wyo.gov/Elections/Default.aspx",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:28 GMT",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch02_v1/wy_index.html",
+      "bytes": 54800,
+      "sha256": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "ia_index",
+      "url": "https://sos.iowa.gov/general-election",
+      "retrieved_at_utc": "2026-11-03T12:09:29.652828+00:00",
+      "error": "HTTPError",
+      "detail": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "nh_index",
+      "url": "https://www.sos.nh.gov/2026-election-details",
+      "retrieved_at_utc": "2026-11-03T12:09:29.706837+00:00",
+      "error": "HTTPError",
+      "detail": "HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "wy_general",
+      "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_WY_General_Election_Candidates.pdf",
+      "retrieved_at_utc": "2026-11-03T12:09:42.721334+00:00",
+      "status": 200,
+      "final_url": "https://sos.wyo.gov/Elections/Docs/2026/2026_WY_General_Election_Candidates.pdf",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 12:09:42 GMT",
+        "Last-Modified": "Wed, 09 Sep 2026 18:04:58 GMT",
+        "ETag": "\"8c12dbb98540dd1:0\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch02_v1/wy_general.pdf",
+      "bytes": 84715,
+      "sha256": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES"
+    },
+    {
+      "source_id": "ia_general",
+      "url": "https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections_1.pdf",
+      "retrieved_at_utc": "2026-11-03T12:09:43.480446+00:00",
+      "error": "HTTPError",
+      "detail": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "observations": {
+    "CO": {
+      "source_id": "co_general",
+      "official_edition": "Certified to counties September 4, 2026 (page text)",
+      "senate_rows": 9,
+      "printed_candidate_rows": 6,
+      "qualified_write_in_rows": 3,
+      "withdrawal_markup": "No s/strike/del or inline line-through found in nine Senate tr elements; CSS/rendered withdrawal review still pending",
+      "caution": "Write-ins explicitly not printed on ballot. Preserve distinction; do not treat all nine as printed candidates."
+    },
+    "VA": {
+      "source_ids": [
+        "va_index",
+        "va_federal"
+      ],
+      "index_label_edition": "Federal list updated 10/6/26",
+      "http_last_modified": "2026-11-02",
+      "senate_rows": 2,
+      "caution": "Index printed revision and HTTP modification date differ; neither proves amendment completeness or pre-cutoff snapshot."
+    },
+    "WY": {
+      "source_ids": [
+        "wy_index",
+        "wy_general"
+      ],
+      "pdf_pages": 19,
+      "printed_edition": "Wednesday, September 09, 2026 - 11:20AM",
+      "senate_rows_observed_on_page_1": 2,
+      "caution": "Column-level Date Withdrawn and later amendments require independent/visual review; engineering observation is not final acceptance."
+    },
+    "IA": {
+      "status": "READER_DISCOVERED_DIRECT_HTTP_403",
+      "caution": "Official index reader links August PDF; raw PDF and index acquisition each 403. No raw-byte hash fabricated. Search May edition has blank Senate slots and must not substitute for final roster."
+    },
+    "NH": {
+      "status": "INDEX_DISCOVERED_DIRECT_HTTP_403",
+      "caution": "Indexed official page offers general candidate list and post-primary vacancies. Exact candidate-list href/body not acquired; no URL guessed."
+    }
+  },
+  "source_hash_checks": 5,
+  "final_ballots_accepted": 0,
+  "readiness_v1_unchanged": true,
+  "2026_outcomes_used": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "access_notes": "No retries, credentials, challenge solving, hidden endpoints, or source bypass. Ordinary public HTTPS GET with timeout20s and bounded read2MB HTML/5MB PDF. No third-party news used as candidate authority. Raw content/contact fields stay ignored locally."
+}

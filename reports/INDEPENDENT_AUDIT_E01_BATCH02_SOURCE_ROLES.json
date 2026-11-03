@@ -1,0 +1,57 @@
+{
+  "audited_at_utc": "2026-11-03T12:38:28.555939+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "final_ballots_accepted": 0,
+  "incorporation_conditions": [
+    "Colorado www.sos.state.co.us is official but fails current .gov-only admission. Add narrowly reviewed explicit hostname exception and rejection tests before incorporating; no general .us wildcard.",
+    "Preserve all literal party labels and separate printed candidates from qualified write-ins.",
+    "New state parsers require independent fixture review before actual readiness integration.",
+    "VA federal label October6 vs all-offices October9 merits offered-source comparison; HTTP November2 does not prove edition completeness.",
+    "No absence-of-later-amendments conclusion from blank withdrawal cells or September9 PDF."
+  ],
+  "independent_checks": {
+    "CO_no_inline_strike_in_senate_rows_with_unrelated_struck_state_row_positive_control": true,
+    "CO_printed_rows": 6,
+    "CO_senate_rows": 9,
+    "CO_write_in_rows": 3,
+    "VA_senate_rows": 2,
+    "WY_commented_general_withdrawal_link_not_visible_or_requested": true,
+    "WY_general_pdf_offered_visible_link": true,
+    "WY_pdf_19page_September9_edition_page1_visual_review": "Two Senate rows; Date Withdrawn subrows blank. Earlier independent local Poppler rendering and source-reader review, not latest-amendment assurance.",
+    "all_five_local_bodies_exact": true
+  },
+  "model_calls": 0,
+  "network_requests_this_followup": 0,
+  "original_E01_manifest_gate": "BLOCKED",
+  "schema_version": 1,
+  "scope": "Source hashes and bounded document-role observations only; no final ballot acceptance, source adoption, real race selection or 2026 outcome use. Raw public contact fields remain local/ignored.",
+  "sources_verified": {
+    "co_general": {
+      "bytes": 72145,
+      "sha256": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+      "url": "https://www.sos.state.co.us/pubs/elections/vote/generalCandidates.html"
+    },
+    "va_federal": {
+      "bytes": 48018,
+      "sha256": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+      "url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices/"
+    },
+    "va_index": {
+      "bytes": 35879,
+      "sha256": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+      "url": "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/"
+    },
+    "wy_general": {
+      "bytes": 84715,
+      "sha256": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16",
+      "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_WY_General_Election_Candidates.pdf"
+    },
+    "wy_index": {
+      "bytes": 54800,
+      "sha256": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d",
+      "url": "https://sos.wyo.gov/Elections/Default.aspx"
+    }
+  },
+  "status": "PASS_BOUNDED_BATCH02_SOURCE_AND_ROLE_OBSERVATIONS"
+}

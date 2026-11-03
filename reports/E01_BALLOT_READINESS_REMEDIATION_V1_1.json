@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_BALLOT_READINESS_REMEDIATION_V1_1",
+  "status": "WORKER_EXECUTED_PENDING_FRESH_INDEPENDENT_REVIEW",
+  "finding_ids": [
+    "IA-E01-BALLOT-LABEL-001",
+    "IA-E01-BALLOT-LIFECYCLE-001"
+  ],
+  "prior_evidence_preserved": "reports/E01_BALLOT_READINESS_EVIDENCE.json",
+  "pre_remediation_snapshot": "data/processed/reproducibility/e01-ballot-readiness-v1-pre-remediation/snapshot.json",
+  "config_path": "configs/e01_ballot_readiness_v1_1.json",
+  "config_sha256": "681eea61afe933046b978685df83c43674c26bd34df4acf0be0511da91796972",
+  "reviewed_file_sha256": {
+    "src/civiclab/e01/ballots.py": "4900144d2f124b300d61438e2d123ebdbcaa7dcd05c60685801c8a26a79e3797",
+    "tests/test_e01_ballots.py": "93f54f07d2192d4a6f07513fff772eddcaec638d1412b7f66d8c3c42079d83b2",
+    "configs/e01_ballot_readiness_v1_1.json": "681eea61afe933046b978685df83c43674c26bd34df4acf0be0511da91796972"
+  },
+  "run_ids": [
+    "e01-d2a62fec0a25420bbd0fad40e5ae1f96",
+    "e01-82750c6ed2a94e61a56da7479e628353"
+  ],
+  "failure_run_id": "e01-413373ee05784e4aad046e611e93dd83",
+  "failure_run_status": "FAILED",
+  "failure_type": "RuntimeError",
+  "failure_details_logged": false,
+  "final_readiness_artifact_on_failure": false,
+  "all_run_artifact_hashes_verified": true,
+  "replay_identical": [
+    "ballot_readiness.json",
+    "candidate_rosters.local.json"
+  ],
+  "source_hash_checks": 9,
+  "regular_slots": 33,
+  "official_rosters_extracted": 2,
+  "unacquired_unblocked_jobs": 31,
+  "final_ballots_accepted": 0,
+  "tests_passed": 38,
+  "tests_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01_ballots tests.test_e01 tests.test_isolation",
+  "literal_label_correction": "Prior blank-party statements were incorrect. NJ Party column prints END THE CORRUPTION! and SOCIALIST WORKERS PARTY. These are preserved literally; normalized classification UNSPECIFIED does not decide legal recognition.",
+  "model_calls": 0,
+  "cost_usd": 0,
+  "source_adoption": false,
+  "actual_selection": false,
+  "2026_outcomes_used": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:16:59.884058+00:00",
+  "status": "PASS_BOUNDED_OFFICIAL_SOURCE_AND_READINESS_ENGINEERING",
+  "closed_findings": [
+    "IA-E01-BALLOT-LABEL-001",
+    "IA-E01-BALLOT-LIFECYCLE-001",
+    "IA-E01-BALLOT-ADMISSION-SECRET-001"
+  ],
+  "independent_secret_admission_probes": [
+    {
+      "case": "userinfo",
+      "rejected_before_IO_or_RunStore": true
+    },
+    {
+      "case": "cookie",
+      "rejected_before_IO_or_RunStore": true
+    },
+    {
+      "case": "authorization",
+      "rejected_before_IO_or_RunStore": true
+    },
+    {
+      "case": "query",
+      "rejected_before_IO_or_RunStore": true
+    },
+    {
+      "case": "fragment",
+      "rejected_before_IO_or_RunStore": true
+    },
+    {
+      "case": "CRLF",
+      "rejected_before_IO_or_RunStore": true
+    }
+  ],
+  "admitted_source_hash_failure_sealed": true,
+  "actual_runs": [
+    "e01-f1de103d63af446ab3ed0400ece82845",
+    "e01-b2fbe45cfef841f49add4a9eeccf2901",
+    "e01-6dfc1683af5e4f0e8363a77b18a9206b"
+  ],
+  "artifact_hashes_verified": 17,
+  "readiness_and_local_roster_replay_byte_exact": true,
+  "actual_source_hashes_verified": 9,
+  "actual_NJ_literal_labels_and_full_certification_crosscheck": "PASS;unknownnormalizedclassificationdoesnotinferlegalrecognition",
+  "independent_tests_passed": 40,
+  "code_files": {
+    "src/civiclab/e01/ballots.py": "c6fe05e0dc569f006acc488435f14e52f88adb651ff0be76cab13cdd4729ade9",
+    "tests/test_e01_ballots.py": "324142b9b8467ff143a99f08d203430ef183b24087ea1bc80dc0c3fd9e8f3668",
+    "configs/e01_ballot_readiness_v1_2.json": "681eea61afe933046b978685df83c43674c26bd34df4acf0be0511da91796972"
+  },
+  "source_evidence": "reports/INDEPENDENT_AUDIT_E01_BALLOT_SOURCE_OBSERVATIONS.json",
+  "coverage": {
+    "regular_class_II_slots": 33,
+    "acquired_rosters": 2,
+    "unacquired_unblocked_source_jobs": 31,
+    "accepted_final_ballots": 0
+  },
+  "source_adoption": false,
+  "actual_selection": false,
+  "full_original_2026_E01_gate": "BLOCKED",
+  "limitations": [
+    "OnlyNJ/NCnarrowreadersverified;noreader/fullcandidateframeforall33states.",
+    "Latestwithdrawal/amendments andexacttermwritremainpending;currentofficialdocumentsarenotindependenthistoricalsnapshot.",
+    "FL/OHclass/appointment/law/generalnoticesarecontextonly,notfinalspecialballotcertificationorregularquotafillers.",
+    "Localcandidateartefactnotapprovedforpackage;knownlocalmarkerbuilderrefusalapplies.",
+    "Metadataguardprecedesloggingandparserexceptionsaretype-onlyinartifacts;notgenericsecretdiscoveryoradversarialauthentication."
+  ],
+  "cost_usd": 0,
+  "model_calls": 0
+}

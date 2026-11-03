@@ -1,0 +1,242 @@
+"""Outcome-free official ballot readiness, not race selection or source adoption.
+
+Readers check obtained bytes and narrowly scoped official-document text. A
+complete printed roster is not automatically the latest accepted final ballot.
+"""
+from __future__ import annotations
+
+import argparse
+from collections import Counter
+from datetime import datetime
+from html.parser import HTMLParser
+import json
+from pathlib import Path
+import re
+from urllib.parse import urlsplit
+
+from civiclab.common import RunStore,canonical_hash,sha256_file
+
+CLASS_II_STATES=tuple('AK AL AR CO DE GA IA ID IL KS KY LA MA ME MI MN MS MT NC NE NH NJ NM OK OR RI SC SD TN TX VA WV WY'.split())
+CONTEXT_IDS={'2026-OH-SENATE-C3','2026-FL-SENATE-C3','2026-FL-HOUSE-20'}
+SOURCE_FIELDS={'source_id','url','path','bytes','sha256','retrieved_at_utc','capture_kind','source_role','published_date','status','response_headers'}
+ROSTER_PARTIES={'Democratic':'D','Democrat':'D','Republican':'R','DEM':'D','REP':'R',
+                'LIB':'OTHER','GRE':'OTHER','UNA':'OTHER','CST':'OTHER','WTP':'OTHER','UNC':'OTHER'}
+
+
+def normalize(value):return ' '.join(value.split())
+
+
+def extract_nj_senate(pages,*,page_offset=0):
+    """Narrow official five-page Senate-list layout; no contact fields returned."""
+    if len(pages)!=5:raise ValueError('NJ Senate roster expects all five official list pages')
+    rows=[];ids=set();dates=set()
+    for number,text in enumerate(pages,1):
+        if 'Candidates for US Senate' not in text or 'For GENERAL ELECTION 11/03/2026' not in normalize(text):
+            raise ValueError('NJ document office/date is not exact 2026 general Senate')
+        match=re.search(r'(?m)^(\d{2}/\d{2}/2026)\s+Official List\s+Page\s+(\d+)\s+of\s+5\s*$',text)
+        if not match:raise ValueError('missing NJ publication date')
+        if int(match.group(2))!=number:raise ValueError('NJ pages missing or reordered')
+        dates.add(match.group(1))
+        headers=[line for line in text.splitlines() if line.startswith('Name') and 'Address' in line and 'Party' in line]
+        if not headers:continue  # The final page is party totals, not another candidate.
+        for line in text.splitlines():
+            if not re.match(r'^[A-Z][A-Z ,.*’\'-]+\s{2,}',line):continue
+            fields=re.split(r'\s{2,}',line.strip());name=fields[0].strip().rstrip(' *').strip()
+            if not name or name in {'GENERAL ELECTION','OFFICIAL LIST'}:continue
+            if len(fields)<3 or not re.search(r'\d',fields[1]):
+                raise ValueError('ambiguous NJ name/address column layout; no partial-name inference')
+            if name in ids:raise ValueError('duplicate NJ named candidate')
+            # Party column is blank for petition nominees in the observed source.
+            # Their slogan is not silently converted to a recognized party.
+            explicit=next((f for f in fields[2:] if f in {'Democratic','Republican'}),None)
+            rows.append({'official_name':name,'source_party_label':explicit,
+                         'party_class':ROSTER_PARTIES.get(explicit,'UNSPECIFIED'),
+                         'pdf_page':number+page_offset,'source_name_literal':fields[0].strip()})
+            ids.add(name)
+    if len(dates)!=1 or not rows:raise ValueError('inconsistent NJ edition or empty roster')
+    total=re.search(r'(?m)^Total Candidates\s+(\d+)\s*$',pages[-1])
+    if not total or int(total.group(1))!=len(rows):raise ValueError('NJ printed candidate total differs from extraction')
+    return {'state':'NJ','office':'SENATE','seat_class':2,'election_date':'2026-11-03',
+            'printed_stage':'GENERAL','publication_date_printed':next(iter(dates)),
+            'candidates':rows,'completeness_claim':'ALL_FIVE_PAGES_PROCESSED_NOT_LATEST_AMENDMENT_CERTIFICATION'}
+
+
+def extract_nc_senate(pages):
+    """Read only the US SENATE block, stopping before any US HOUSE section."""
+    rows=[];active=False;finished=False;edition_pages=[]
+    for number,text in enumerate(pages,1):
+        if finished:break
+        if 'Election: 11/03/2026' not in text:raise ValueError('NC election criteria differ')
+        lines=text.splitlines()
+        header=next((line for line in lines if 'NAME ON BALLOT' in line and 'FILING DATE' in line and 'PARTY' in line),None)
+        if header is None:raise ValueError('NC source column header missing')
+        begin=header.index('NAME ON BALLOT');party=header.index('PARTY');end=header.index('FILING DATE')
+        for line in lines:
+            stripped=line.strip()
+            if stripped=='US SENATE':active=True;edition_pages.append(number);continue
+            if active and stripped.startswith('US HOUSE OF REPRESENTATIVES'):
+                active=False;finished=True;break
+            if not active:continue
+            label=line[party:end].strip();name=line[begin:party].strip()
+            if bool(label)!=bool(name):raise ValueError('partial/wrapped NC candidate row')
+            if label and name:
+                if label not in ROSTER_PARTIES:raise ValueError('unknown NC party code; no silent recode')
+                rows.append({'official_name':name,'source_party_label':label,'party_class':ROSTER_PARTIES[label],
+                             'pdf_page':number,'source_name_literal':name})
+    if not rows or not finished:raise ValueError('NC Senate block incomplete or unbounded')
+    if len({r['official_name'] for r in rows})!=len(rows):raise ValueError('duplicate NC ballot candidate')
+    return {'state':'NC','office':'SENATE','seat_class':2,'election_date':'2026-11-03',
+            'printed_stage':'GENERAL_LIST','candidates':rows,
+            'completeness_claim':'US_SENATE_BLOCK_EXTRACTED_NOT_FINAL_BALLOT_ACCEPTANCE'}
+
+
+class _VisibleText(HTMLParser):
+    def __init__(self):super().__init__();self.skip=0;self.parts=[]
+    def handle_starttag(self,tag,attrs):
+        if tag in {'script','style','noscript'}:self.skip+=1
+    def handle_endtag(self,tag):
+        if tag in {'script','style','noscript'}:self.skip=max(0,self.skip-1)
+    def handle_data(self,text):
+        if not self.skip:self.parts.append(text)
+
+
+def visible_html_text(data):
+    parser=_VisibleText();parser.feed(data.decode('utf-8-sig'));return normalize(' '.join(parser.parts))
+
+
+def verify_source(root,source):
+    if not isinstance(source,dict) or set(source)!=SOURCE_FIELDS:raise ValueError('source schema differs')
+    path=(Path(root)/source['path']).resolve();raw=(Path(root)/'data/raw').resolve()
+    if not path.is_relative_to(raw) or path.is_symlink() or not path.is_file():raise ValueError('source path invalid/outside raw')
+    if type(source['bytes']) is not int or path.stat().st_size!=source['bytes'] or sha256_file(path)!=source['sha256']:
+        raise ValueError('official source bytes/hash changed')
+    u=urlsplit(source['url'])
+    if (u.scheme!='https' or u.username or u.password or u.query or not
+        ((u.hostname or '').endswith('.gov') or
+         (u.hostname=='s3.amazonaws.com' and u.path.startswith('/dl.ncsbe.gov/Elections/')))):
+        raise ValueError('source must be ordinary public official HTTPS URL without credentials/query')
+    stamp=datetime.fromisoformat(source['retrieved_at_utc'].replace('Z','+00:00'))
+    if stamp.tzinfo is None:raise ValueError('source retrieval clock needs explicit timezone')
+    if source['capture_kind'] not in {'HTTP_RESPONSE_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES'}:
+        raise ValueError('unknown capture representation')
+    if source['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION',
+        'OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
+        raise ValueError('finance registration or unknown source role is not ballot evidence')
+    if not isinstance(source['response_headers'],dict) or set(source['response_headers'])-{'Date','Last-Modified','ETag','Content-Type'}:
+        raise ValueError('only limited noncredential response headers may be recorded')
+    if source['published_date'] is not None:datetime.strptime(source['published_date'],'%Y-%m-%d')
+    return path
+
+
+def pdf_pages(path):
+    try:from pypdf import PdfReader
+    except ImportError:raise RuntimeError('optional sources extra pypdf required') from None
+    return [page.extract_text(extraction_mode='layout') for page in PdfReader(path).pages]
+
+
+def roster_observations(roster):
+    """Observed major-party counts are not final-ballot/amendment approval."""
+    counts=Counter(r['party_class'] for r in roster['candidates'])
+    return {'candidate_count':len(roster['candidates']),'observed_party_class_counts':dict(counts),
+            'one_observed_D_and_R':counts['D']==counts['R']==1,
+            'unknown_party_labels':counts['UNSPECIFIED'],
+            'final_ballot_accepted':False,'candidate_ids_match_fec':'NOT_RUN_NOT_BALLOT_PROOF'}
+
+
+def validate_readiness(root,config):
+    expected={'schema_version','scope','source_adoption','sources','class_identity_source_id','class_II_frame','context_contests'}
+    if not isinstance(config,dict) or set(config)!=expected:raise ValueError('readiness config schema differs')
+    if config['schema_version']!=1 or config['scope']!='OFFICIAL_BALLOT_READINESS_ONLY' or config['source_adoption'] is not False:
+        raise ValueError('not an adoption or real-selection route')
+    if not isinstance(config['class_II_frame'],list) or len(config['class_II_frame'])!=33:raise ValueError('requires all33 frame slots')
+    states=[x.get('state') for x in config['class_II_frame']]
+    if len(set(states))!=33 or set(states)!=set(CLASS_II_STATES):raise ValueError('regular class-II frame incomplete/duplicate')
+    contexts=config['context_contests']
+    if len(contexts)!=3 or {c.get('contest_id') for c in contexts}!=CONTEXT_IDS:raise ValueError('context contests mixed with regular33 frame')
+    sources={};paths={}
+    for source in config['sources']:
+        if source['source_id'] in sources:raise ValueError('duplicate source ID')
+        paths[source['source_id']]=verify_source(root,source);sources[source['source_id']]=source
+    identity=config['class_identity_source_id']
+    if identity not in sources or sources[identity]['source_role']!='OFFICIAL_CLASS_IDENTITY':raise ValueError('official class source missing')
+    text=paths[identity].read_text()
+    if not all(t in text for t in ('Class II','January 3, 2021','January 3, 2027')):
+        raise ValueError('class source term identity differs')
+    observed=set(re.findall(r'\([DRI]-([A-Z]{2})\)',text))
+    if observed!=set(CLASS_II_STATES):raise ValueError('official class-II state coverage differs')
+    findings=[];rosters={}
+    for row in config['class_II_frame']:
+        fields={'state','contest_id','seat_class','election_date','scope','candidate_source_ids','amendment_review','independent_ballot_review'}
+        if set(row)!=fields or row['contest_id']!=f'2026-{row["state"]}-SENATE-C2' or row['seat_class']!=2 or row['election_date']!='2026-11-03' or row['scope']!='REGULAR_CLASS_II_FRAME':
+            raise ValueError('regular identity/stage/frame differs')
+        if row['amendment_review']!='PENDING' or row['independent_ballot_review']!='PENDING':
+            raise ValueError('this readiness phase cannot self-certify amendment/ballot acceptance')
+        refs=row['candidate_source_ids']
+        if not isinstance(refs,list) or len(set(refs))!=len(refs) or any(k not in sources for k in refs):raise ValueError('invalid ballot source reference')
+        if not refs:
+            findings.append({'state':row['state'],'status':'NOT_YET_ACQUIRED_OFFICIAL_CANDIDATE_DOCUMENT',
+                             'work_state':'UNBLOCKED_SOURCE_JOB_NOT_AN_ASOF_OR_OWNER_BLOCK',
+                             'final_ballot_accepted':False});continue
+        if any(sources[k]['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION'} for k in refs):
+            raise ValueError('candidate reference is not official roster/certification evidence')
+        if row['state']=='NJ' and 'nj_senate' in refs:
+            roster=extract_nj_senate(pdf_pages(paths['nj_senate']))
+            if 'nj_nominee_certification' in refs:
+                certification=pdf_pages(paths['nj_nominee_certification'])
+                blocks=[p for p in certification if 'Candidates for US Senate' in p]
+                certified=extract_nj_senate(blocks,page_offset=1)
+                key=lambda x:sorted((c['official_name'],c['source_party_label']) for c in x['candidates'])
+                if key(roster)!=key(certified):raise ValueError('NJ official list/certification candidate sets disagree')
+                roster['nominee_certification_consistency']='MATCHING_CANDIDATE_NAMES_AND_EXPLICIT_PARTY_LABELS'
+        elif row['state']=='NC' and 'nc_federal_general' in refs:
+            roster=extract_nc_senate(pdf_pages(paths['nc_federal_general']))
+        else:raise ValueError('state source parser not implemented; no silent generic extraction')
+        roster['source_hashes']=[sources[k]['sha256'] for k in refs]
+        roster['observations']=roster_observations(roster);rosters[row['state']]=roster
+        findings.append({'state':row['state'],'status':'OFFICIAL_DOCUMENT_EXTRACTED_PENDING_FINAL_AMENDMENT_AND_INDEPENDENT_REVIEW',**roster['observations']})
+    for context in contexts:
+        if set(context)!={'contest_id','scope','official_source_ids','status','reason'} or context['scope']!='CONTEXT_OUTSIDE_REGULAR_QUOTAS':raise ValueError('context source schema/scope differs')
+        if any(k not in sources for k in context['official_source_ids']):raise ValueError('context source reference missing')
+    context_observations={}
+    if 'fl_vacancy_law' in paths:
+        law=visible_html_text(paths['fl_vacancy_law'].read_bytes())
+        context_observations['FL_100_161_clause_present']='Governor shall issue a writ of election to fill such vacancy at the next general election' in law
+    if 'senate_class_III' in paths:
+        text=visible_html_text(paths['senate_class_III'].read_bytes())
+        context_observations['class_III_term_2023_2029_present']=all(x in text for x in ('January 3, 2023','January 3, 2029'))
+        context_observations['class_III_FL_OH_codes_present']={state:bool(re.search(r'\([DRI]-'+state+r'\)',text)) for state in ('FL','OH')}
+    if 'senate_appointments' in paths:
+        text=visible_html_text(paths['senate_appointments'].read_bytes())
+        context_observations['FL_appointment_Jan21_2025_present']=bool(re.search(
+            r'Ashley Moody\s*\(R-FL\).{0,140}Jan\s+21,\s+2025',text))
+    if 'fl_broward_notice' in paths:
+        notice=normalize(pdf_pages(paths['fl_broward_notice'])[0])
+        context_observations['FL20_general_notice_present']=all(x in notice for x in (
+            'GENERAL ELECTION','NOVEMBER, 2026','Representative in Congress: Districts 20, 22, 24, 25, and 26'))
+    return {'status':'READINESS_PARTIAL_NOT_SOURCE_OR_SAMPLE_ACCEPTANCE','scope':'OFFICIAL_BALLOT_READINESS_ONLY',
+            'config_sha256':canonical_hash(config),'source_hash_checks':len(sources),'regular_frame_slots':33,
+            'official_rosters_extracted':len(rosters),'final_ballots_accepted':0,'candidate_observations':findings,
+            'local_only_rosters':rosters,'context_contests':contexts,'context_observations':context_observations,
+            'official_class_II_coverage_count':len(observed),'source_adoption':False,'actual_selection':False,
+            'strict_ratings_asof_gate':'SEPARATE_UNVERIFIED_NOT_A_STOP_ON_BALLOT_WORK','cost_usd':0,'model_calls':0}
+
+
+def run_readiness(root,config):
+    # Sources are official, outcome-free candidate/identity records; no predictor invoked.
+    result=validate_readiness(root,config)
+    public={k:v for k,v in result.items() if k!='local_only_rosters'}
+    with RunStore(Path(root),'E01',{'role':'OFFICIAL_BALLOT_READINESS_ONLY','config':config},kind='EXPLORATORY') as run:
+        run.write('ballot_readiness.json',public);run.write('candidate_rosters.local.json',result['local_only_rosters'])
+        run.finish({'status':result['status'],'source_hash_checks':result['source_hash_checks'],
+                    'regular_frame_slots':33,'official_rosters_extracted':result['official_rosters_extracted'],
+                    'final_ballots_accepted':0,'actual_selection':False,'cost_usd':0})
+    return run.path
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('config',type=Path)
+    parser.add_argument('--root',type=Path,default=Path.cwd());args=parser.parse_args()
+    print(run_readiness(args.root,json.loads(args.config.read_text())))
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:10:30.668807+00:00",
+  "status": "OPEN_BALLOT_READINESS_CODE_FINDINGS",
+  "findings": [
+    {
+      "id": "IA-E01-BALLOT-LABEL-001",
+      "scope": "NJsourcefidelity",
+      "observation": "OfficialNJpages3/4placepetition/designationlabelsinthePartycolumn,andpage5liststhemunderCandidateTotalsforParty. CurrentparserdiscardsnonD/Rlabelstonullanddocumentationincorrectlycallscolumnsblank.",
+      "required": "Retainliteralprintedlabelseparatelyfromnormalizedclassification;crosscheckfullcandidate-labelsetsincertification;do notinferrecognizedpartyfromtext. Preserveoldrunsandre-executeundernewcode.",
+      "evidence": "IndependentPopplerrendersNJpages1,3,4,5andcertificationcoverinspected;separateprimarywebPDFreadcorroborates."
+    },
+    {
+      "id": "IA-E01-BALLOT-LIFECYCLE-001",
+      "scope": "admittedsourceparsefailurepreservation",
+      "observation": "run_readinesscallsvalidate_readiness/actualPDFparsingbeforeRunStore;injectedparserRuntimeErrorleavesnorun/provenance/failureartifact.",
+      "required": "Separatebasicadmissionifneeded,butcreateRunStore/configbeforeadmittedsourceparsingandrecordtype-onlyFAILED/cancellationevidence;do notmaskevidenceorcallfailedparsescompleted."
+    }
+  ],
+  "code_files": {
+    "src/civiclab/e01/ballots.py": "14570c002e50f67411801d754274ffb9b48dd0a1fdd07b114f173acdb734a459"
+  },
+  "tests_independently_passed": 34,
+  "full_original_E01_gate": "BLOCKED",
+  "scope_limits": "Noactualselection/finalballotacceptance/ratingssourceadoption/outcomeinspection. Sourcecontentand34testsusefulbutdonotcloseidentifiedissues.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:14:37.053244+00:00",
+  "status": "PASS_TWO_REMEDIATIONS_WITH_NEW_ADMISSION_FINDING_OPEN",
+  "closed_findings": [
+    "IA-E01-BALLOT-LABEL-001",
+    "IA-E01-BALLOT-LIFECYCLE-001"
+  ],
+  "open_finding": "IA-E01-BALLOT-ADMISSION-SECRET-001",
+  "real_runs": [
+    "e01-d2a62fec0a25420bbd0fad40e5ae1f96",
+    "e01-82750c6ed2a94e61a56da7479e628353",
+    "e01-413373ee05784e4aad046e611e93dd83"
+  ],
+  "artifact_hashes_verified": 17,
+  "real_replay": "readinessandlocalrosterbyteexact",
+  "NJ_literal_label_review": "AllfourprintedParty/designationlabelsnowretainedandfullcertificationlabelscompared;minorlabelsremainUNSPECIFIEDwithoutlegalrecognitionclaim.",
+  "independent_failure_types": [
+    "RuntimeError",
+    "KeyboardInterrupt",
+    "SystemExit"
+  ],
+  "tests_passed": 38,
+  "original_E01_gate": "BLOCKED",
+  "coverage": "2acquiredrosters/33regularslots,31unblockedsourcejobs,0acceptedfinalballots;noactualselection/sourceadoption/outcomes.",
+  "code_files": {
+    "src/civiclab/e01/ballots.py": "4900144d2f124b300d61438e2d123ebdbcaa7dcd05c60685801c8a26a79e3797",
+    "tests/test_e01_ballots.py": "93f54f07d2192d4a6f07513fff772eddcaec638d1412b7f66d8c3c42079d83b2",
+    "configs/e01_ballot_readiness_v1_1.json": "681eea61afe933046b978685df83c43674c26bd34df4acf0be0511da91796972"
+  },
+  "cost_usd": 0,
+  "model_calls": 0
+}

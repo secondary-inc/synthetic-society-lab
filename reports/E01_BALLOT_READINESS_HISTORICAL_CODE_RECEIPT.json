@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_HISTORICAL_BALLOT_CODE_PRESERVATION",
+  "status": "EXACT_BYTE_COPIES_VERIFIED_PENDING_LEAD_REVIEW",
+  "purpose": "Historical implementation/test evidence only; not active source code or replacement for independent audits",
+  "copies": [
+    {
+      "version": "V1_0",
+      "kind": "IMPLEMENTATION",
+      "original_path": "src/civiclab/e01/ballots.py",
+      "snapshot_path": "data/processed/reproducibility/e01-ballot-readiness-v1-pre-remediation/src/civiclab/e01/ballots.py",
+      "snapshot_receipt": "data/processed/reproducibility/e01-ballot-readiness-v1-pre-remediation/snapshot.json",
+      "tracked_copy": "reports/E01_BALLOT_READINESS_V1_0_IMPLEMENTATION.txt",
+      "bytes": 16665,
+      "sha256": "14570c002e50f67411801d754274ffb9b48dd0a1fdd07b114f173acdb734a459",
+      "matches_snapshot_pin": true
+    },
+    {
+      "version": "V1_0",
+      "kind": "TESTS",
+      "original_path": "tests/test_e01_ballots.py",
+      "snapshot_path": "data/processed/reproducibility/e01-ballot-readiness-v1-pre-remediation/tests/test_e01_ballots.py",
+      "snapshot_receipt": "data/processed/reproducibility/e01-ballot-readiness-v1-pre-remediation/snapshot.json",
+      "tracked_copy": "reports/E01_BALLOT_READINESS_V1_0_TESTS.txt",
+      "bytes": 9127,
+      "sha256": "21183724ca31c046222959968c055070c47f83714d6c7877ab4fef94755be8e0",
+      "matches_snapshot_pin": true
+    },
+    {
+      "version": "V1_1",
+      "kind": "IMPLEMENTATION",
+      "original_path": "src/civiclab/e01/ballots.py",
+      "snapshot_path": "data/processed/reproducibility/e01-ballot-readiness-v1_1-pre-admission-remediation/src/civiclab/e01/ballots.py",
+      "snapshot_receipt": "data/processed/reproducibility/e01-ballot-readiness-v1_1-pre-admission-remediation/snapshot.json",
+      "tracked_copy": "reports/E01_BALLOT_READINESS_V1_1_IMPLEMENTATION.txt",
+      "bytes": 17346,
+      "sha256": "4900144d2f124b300d61438e2d123ebdbcaa7dcd05c60685801c8a26a79e3797",
+      "matches_snapshot_pin": true
+    },
+    {
+      "version": "V1_1",
+      "kind": "TESTS",
+      "original_path": "tests/test_e01_ballots.py",
+      "snapshot_path": "data/processed/reproducibility/e01-ballot-readiness-v1_1-pre-admission-remediation/tests/test_e01_ballots.py",
+      "snapshot_receipt": "data/processed/reproducibility/e01-ballot-readiness-v1_1-pre-admission-remediation/snapshot.json",
+      "tracked_copy": "reports/E01_BALLOT_READINESS_V1_1_TESTS.txt",
+      "bytes": 12862,
+      "sha256": "93f54f07d2192d4a6f07513fff772eddcaec638d1412b7f66d8c3c42079d83b2",
+      "matches_snapshot_pin": true
+    }
+  ],
+  "current_code_modified": false,
+  "source_configs_modified": false,
+  "audits_modified": false,
+  "raw_source_or_local_roster_included": false,
+  "contents": "Python implementation and authored synthetic tests only; no credentials/raw government source bodies/candidate contact fields/local rosters",
+  "cost_usd": 0,
+  "model_calls": 0
+}

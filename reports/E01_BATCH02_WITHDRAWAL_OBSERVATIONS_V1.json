@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_BATCH02_WITHDRAWAL_OBSERVATIONS_V1",
+  "status": "WORKER_SOURCE_OBSERVATIONS_PENDING_INDEPENDENT_REVIEW",
+  "observed_at_utc": "2026-11-03T12:14:11.556753+00:00",
+  "readiness_inputs_mutated": false,
+  "batch02_receipts_mutated": false,
+  "source_hashes_reverified": {
+    "co_general": "a42c13b34ecc6d7a7da85e6845e1d62e1c6c9495be95497b163cf6463a4b7ef7",
+    "va_index": "866204c4ee2940cc398bff8382247404791dcfcb2f4c08d6eb6cfcdea33103be",
+    "va_federal": "a31960d03a39d4afeceb888fc3820dda45aa1068b03ec06b64ca7f559760e0d1",
+    "wy_index": "cabf75b56474970c2bf9849e59d36260dc2bcd6675dea91a21bfd6fb95cb753d",
+    "wy_general": "72303805c37f2058e8092dc330b62cb7b592ca48c828ae0afbdcbf18c8622d16"
+  },
+  "observations": {
+    "CO": {
+      "source": "co_general.html",
+      "certified_to_counties_text_date": "2026-09-04",
+      "visible_footer_last_updated": "September 15, 2026, 11:09 AM",
+      "http_last_modified": "Tue, 15 Sep 2026 17:09:44 GMT",
+      "withdrawal_markup_control": "An unrelated State Senate row in the SAME HTML explicitly uses span style=text-decoration: line-through on all five cells; nine federal Senate rows have no such inline markup. This is a positive HTML-markup control, not rendered CSS proof or proof of later amendment absence.",
+      "write_in_caution": "Six printed candidates and three qualified write-ins remain separate."
+    },
+    "VA": {
+      "source": "va_index.html",
+      "printed_federal_list_revision": "10/6/26",
+      "printed_all_offices_revision": "10/9/26",
+      "http_last_modified": "Mon, 02 Nov 2026 20:12:26 GMT",
+      "caution": "The later all-offices revision might merit federal roster comparison. Neither revision label alone demonstrates current amendment completeness. No legal-rule interpretation or candidate contact was needed."
+    },
+    "WY": {
+      "source": "wy_general.pdf page1",
+      "visual_render": "Poppler pdftoppm at scale-to1800, visually inspected",
+      "observation": "Two Senate rows visible. Date Filed / Date Withdrawn column separates labels; filing dates appear for both and no date is printed in their Date Withdrawn sub-row. This is only this September9document observation.",
+      "index_caution": "A general-withdrawn-roster link occurs ONLY inside an HTML comment; it is not an offered visible link. It was not fetched, navigated, or treated as evidence of no withdrawals. The visible withdrawn-primary roster is not general-election authority."
+    }
+  },
+  "local_visual_artifact": {
+    "path": "data/raw/e01_ballots_batch02_withdrawal_check_v1/wy_page1.png",
+    "sha256": "13d44f98fec1fb3cc66473278f83145a9e8b5db4b3112d511ae1f894781c1e1d",
+    "disclosure": "Local-only full government PDF page contains public campaign contact fields; not a shareable review artifact."
+  },
+  "source_data_and_license_notes": "No new network requests; existing ordinary official-government bodies only. No outcomes, publisher flags, hidden link requests, or candidate contacts in this memo.",
+  "reproduction": "Reverify five original batch02 hashes, inspect cited source footer/markup/comment, and render cached WY PDF page1.",
+  "tests": "Five frozen source hashes verified; no code or implementation test change.",
+  "cost_usd": 0,
+  "model_calls": 0,
+  "final_ballots_accepted": 0,
+  "source_adoption": false,
+  "actual_selection": false,
+  "limitations": "Implementer observations only; independent review and final amendments remain pending. No as-of historical archive or absence-of-withdrawals claim.",
+  "next_unblocked_task": "Independently review amendment/withdrawal observations and, under separate scope, compare VA offered all-offices roster with federal roster."
+}

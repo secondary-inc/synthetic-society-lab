@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:11:30.857559+00:00",
+  "status": "PASS_BOUNDED_SOURCE_OBSERVATIONS_WITH_OPEN_CODE_FINDINGS",
+  "source_files_verified": [
+    {
+      "source_id": "nj_senate",
+      "url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-official-general-candidates-us-senate.pdf",
+      "bytes": 57353,
+      "sha256": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "nj_nominee_certification",
+      "url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-certification-of-general-election-nominees_us-senate_us-house.pdf",
+      "bytes": 411364,
+      "sha256": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "nc_federal_general",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf",
+      "bytes": 170443,
+      "sha256": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "fl_vacancy_law",
+      "url": "https://flsenate.gov/Laws/Statutes/2026/Chapter100/All",
+      "bytes": 184582,
+      "sha256": "169dee1765d3e18f0e5a747ad99248a0848f34d80e0e84168518b27d7a7ce3da",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "senate_class_III",
+      "url": "https://www.senate.gov/senators/Class_III.htm",
+      "bytes": 19634,
+      "sha256": "592aab695512fece01597d15522319680cb9cc5b570ee82cdf4130cd2e913823",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "senate_appointments",
+      "url": "https://www.senate.gov/senators/AppointedSenators.htm",
+      "bytes": 109299,
+      "sha256": "13facbff1ab7158148b18c190cc7997b48ae39c68e93148b0ae2979cec8447d7",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "fl_broward_notice",
+      "url": "https://dos.fl.gov/media/710691/2026_nge_bro_english.pdf",
+      "bytes": 29306,
+      "sha256": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "fl_palm_notice",
+      "url": "https://dos.fl.gov/media/710950/2026_nge_pal_english.pdf",
+      "bytes": 115597,
+      "sha256": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0",
+      "capture_kind": "HTTP_RESPONSE_BYTES"
+    },
+    {
+      "source_id": "senate_class_II",
+      "url": "https://www.senate.gov/senators/Class_II.htm",
+      "bytes": 3488,
+      "sha256": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES"
+    }
+  ],
+  "independent_ordinary_PDF_rechecks": [
+    {
+      "source_id": "nj_senate",
+      "status": "SAME_EXACT_BYTES",
+      "bytes": 57353,
+      "sha256": "f1458af2e44ef482ed01314ddadc515dc351d7b6c963533ba5504ea5a873422e"
+    },
+    {
+      "source_id": "nj_nominee_certification",
+      "status": "SAME_EXACT_BYTES",
+      "bytes": 411364,
+      "sha256": "c4c64097c2f4f99f1e6fda176c318b91d86098ab6d8a2e066fa3ce7b33b4f7ec"
+    },
+    {
+      "source_id": "nc_federal_general",
+      "status": "SAME_EXACT_BYTES",
+      "bytes": 170443,
+      "sha256": "378ca3dde9e97f65a921c922171aa34942bcc68582ef46e713b371e0b6caf11d"
+    },
+    {
+      "source_id": "fl_broward_notice",
+      "status": "READ_FAILED_CHANNEL_ONLY",
+      "error_type": "HTTPError",
+      "http_status": 403
+    },
+    {
+      "source_id": "fl_palm_notice",
+      "status": "READ_FAILED_CHANNEL_ONLY",
+      "error_type": "HTTPError",
+      "http_status": 403
+    }
+  ],
+  "run_replay": "Bothreadinessandlocalrosterartifactsbyteidentical;allregisteredrunartifacthashesverified.",
+  "PDF_review": "IndependentPopplerextractionchecksall8listedNJ/NCnamesandNJcertificationcandidatepresence;visualNJ1/3/4/5,certificationcoverandNC1confirmdates/offices/totals/partycolumns. Noaddresses/contactdatareported.",
+  "class_context_review": "CurrentprimarySenateClassII/IIIandappointmentpagesplusFlorida100.161textcorroborateclass/appointment/statutoryobservations. Thesearecontextonly,notexactFlorida/Ohiowritorfuturefinalballotacceptance.",
+  "limitations": [
+    "NJliteralminorlabelparserandadmittedparsefailurelifecyclefindingsremainOPENinseparatefindingreport.",
+    "Zeroacceptedfinalballots,31candidate-sourcejobsunacquired;actualselection/sourceadoptionandoriginal2026manifestremainBLOCKED.",
+    "Currentofficialpageobservationsarenotindependenthistoricalbytearchives;latestwithdrawal/amendmentreviewstillpending.",
+    "Localrostersnotshareablewithoutreview;packageknownlocalonlyguardprotectscurrentartifactname."
+  ],
+  "temporary_PDF_workdir": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-e01-ballots-g0pd6h31",
+  "cost_usd": 0,
+  "model_calls": 0
+}
