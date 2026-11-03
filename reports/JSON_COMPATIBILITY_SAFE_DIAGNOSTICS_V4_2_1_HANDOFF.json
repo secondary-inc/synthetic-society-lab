@@ -1,0 +1,52 @@
+{
+  "actual_key_reads": 0,
+  "actual_model_or_network_requests": 0,
+  "actual_owner_writes": 0,
+  "files": {
+    "docs/JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1.md": {
+      "bytes": 2777,
+      "sha256": "7b4f4da15f1656793026cc8366ef3ea0302b5f70088b18a8c750934e5ef91d5c"
+    },
+    "reports/JSON_COMPATIBILITY_DIAGNOSTICS_V4_2_1_TESTS_311.txt": {
+      "bytes": 8351,
+      "sha256": "a42762225d6ccdf0635e101fe566020f865560c99e691bc6e7d5d82c7e8b1c0c"
+    },
+    "reports/JSON_COMPATIBILITY_DIAGNOSTICS_V4_2_1_TESTS_312.txt": {
+      "bytes": 8351,
+      "sha256": "7db460b7936501c5fdbadae9498e93693fb85bc1c6d9a8b4a8263849d1ade27f"
+    },
+    "src/civiclab/production_compatibility_v4_2_1.py": {
+      "bytes": 21542,
+      "sha256": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a"
+    },
+    "tests/test_compatibility_safe_diagnostics_v4_2_1.py": {
+      "bytes": 12722,
+      "sha256": "06e07fe769af9c102b00554324354124215161d45c801f1de5d4e670945ff464"
+    },
+    "tests/test_production_compatibility_v4_2_1.py": {
+      "bytes": 25060,
+      "sha256": "2ef330b153de36f42bd3c14ed7e8f712eadf8fb05eb653e5550e2576235975df"
+    }
+  },
+  "new_live_release": false,
+  "original_failure_reproduced": "Originalv4.2 authored owner realreserve+lostack reportsfalse while durableSTARTED/charge/dispatch retained. Newboundary observationUNKNOWN in both beforewrite and durablereservation failures.",
+  "original_v42_handoff_unchanged_sha256": "a37fd2def65006743aae150c664d3a20682bf144e9d4238897346860da5537fc",
+  "scope": "Diagnostic truthfulness only; existing financial/unfinished-phase barriers unchanged. All authored tests, not API compatibility or scientific evidence.",
+  "status": "OFFLINE_RESERVATION_ACK_REMEDY_CANDIDATE_PENDING_INDEPENDENT_REVIEW",
+  "tests": {
+    "python311": {
+      "count": 41,
+      "seconds": 4.188,
+      "status": "PASS"
+    },
+    "python312": {
+      "count": 41,
+      "seconds": 4.539,
+      "status": "PASS"
+    }
+  },
+  "unchanged_transport": {
+    "path": "src/civiclab/production_compatibility_transport_v4_2.py",
+    "sha256": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0"
+  }
+}
