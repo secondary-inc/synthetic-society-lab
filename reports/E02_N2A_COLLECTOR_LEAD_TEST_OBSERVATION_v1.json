@@ -1,0 +1,30 @@
+{
+  "before_after_pin_claim": false,
+  "command": "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_n2a_collector_v1 -q",
+  "elapsed_seconds": 22.526,
+  "exit_code": 0,
+  "limitations": [
+    "Lead terminal observation and post-execution file verification only.",
+    "Independent code and authored-control review pending.",
+    "No actual DC source acquisition, key access, model request or experimental spend."
+  ],
+  "post_execution_handoff_pins_verified": {
+    "configs/e02_n2a_dc_collector_v1.json": "4ce01dbb19732b52516e4623632b473df46389a05226a7d0475bda49147cdaf8",
+    "docs/E02_N2A_COLLECTOR_IMPLEMENTATION_v1.md": "1d7cabf4b92519ebec7d6d80223333e9ce8ede78aaa5ac44b6e32fc14c73f90f",
+    "reports/E02_N2A_COLLECTOR_CLOCK_HARNESS_FAILURE_311_v1.txt": "0b92090c261c3ea8b5d89c97545fb195d1faf635edb41ef22997528148e53bb7",
+    "reports/E02_N2A_COLLECTOR_CLOCK_HARNESS_FAILURE_312_v1.txt": "2e336d12ef8129b9360e4001e3bd79aebebbf45240bda8f88982b4a1fdd29b9e",
+    "reports/E02_N2A_COLLECTOR_FINAL_TESTS_311_v1.txt": "77866a34c809803a0d8f147ca40e16976c635844f8b08dddb939475cfc8914b9",
+    "reports/E02_N2A_COLLECTOR_FINAL_TESTS_312_v1.txt": "f462c18e08630abab200ffdb4dfe5f0f497ac99deea61c8ac0095a7906edd388",
+    "reports/E02_N2A_COLLECTOR_INITIAL_TEST_FAILURE_v1.txt": "19869ea51dc7f59b2deaf5ffdedb8eff47b402d3758e4d4f132e4080628684ee",
+    "reports/E02_N2A_COLLECTOR_PREPIN_TESTS_311_v1.txt": "d0f9341af29efd12545b045cac8026ab0df66cfc5beddc51eb3a24546e47197a",
+    "reports/E02_N2A_COLLECTOR_PREPIN_TESTS_312_v1.txt": "998085553949203b9897f71e67082f5b89f42dd8e813881d2435beb60932314b",
+    "src/civiclab/e02/n2a_collector_v1.py": "f2dafe96dcaee402735fb56843909eaa68e58c5c8d706995ff6d0e6e72d8ff31",
+    "src/civiclab/e02/n2a_http_v1.py": "b5d1e76ba84ee7e4be48638560e4c8b75fbf3f941b4a61c660b027ae25d98a07",
+    "tests/test_e02_n2a_collector_v1.py": "4dcf853a85500667f13bf88d9b3950b30bb536cd07370a777281773422c089d2"
+  },
+  "recorded_at_utc": "2026-11-03T19:45:55.269833+00:00",
+  "schema_version": 1,
+  "status": "PASS_LEAD_OFFLINE_TEST_EXECUTION_NOT_INDEPENDENT_ACCEPTANCE",
+  "terminal_session_id": 43143,
+  "tests": 38
+}

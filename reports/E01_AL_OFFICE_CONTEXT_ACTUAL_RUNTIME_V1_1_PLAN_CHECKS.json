@@ -1,0 +1,92 @@
+{
+  "acceptance_gates": {
+    "actual_primary_replay": "NOT_RUN",
+    "coverage_adoption": "OUT_OF_SCOPE",
+    "independent_code_privacy": "ISSUED_EXACT_BOUND_REVIEW_ONLY",
+    "independent_particular_metadata_review": "NOT_RUN",
+    "independent_retained_result_review": "NOT_RUN",
+    "lead_exact_execution_decision": "ABSENT",
+    "lead_preparation_decision": "ABSENT",
+    "private_preparation": "NOT_RUN"
+  },
+  "all17_original_committed_candidate_pins_unchanged": {
+    "configs/e01_al_office_context_schema_v1_1.json": "cc3faa7e268ecfc2514d06a12671e552deafa33c4c9d91a36b9ac89d0b1983b3",
+    "configs/e01_al_office_family_rule_v1_1.json": "0fd731e11325133ef7ecd251aa9e974d40e3670b4e634a3edd368fe81974f8cc",
+    "configs/e01_al_source_release_v1_1_candidate.json": "35f947d6ff32d3229e04ee8f46cd985237fb27e7b1f90f908602b145cf336a01",
+    "docs/E01_AL_OFFICE_CONTEXT_V1_1_IMPLEMENTATION.md": "36f6154cc3b2b46dddf4f41f861b0178688284245f723c5de6421f0d02a645fe",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_IMPLEMENTATION_EVIDENCE.json": "9cddf2065ea9576440af2e8734a7012eff9638ab77ab2e0e02dd9232b76319ca",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_IMPLEMENTATION_RECEIPT.md": "1ccc642f77139913c83af5944450a0849b666fee524cb7cd8deb1a0de80a14e6",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_INITIAL_RUNNER_IMPORT_FAILURE.txt": "0aaeed1c294565d120437f15101899c1d6d8302f6be8d05ad2b395a3adc3684b",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_INITIAL_RUNNER_STDLIB_FAILURE.txt": "99b93d8f05b68f7535e78976f74f13eaf3917bc09536c876cb4ed43d099c6ce5",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_PY311_FIXTURE_LOG.txt": "0604a310e7e5c7500af9b3f3cf3d14fde89d1a531c1a9733be0758a07dd367a9",
+    "reports/E01_AL_OFFICE_CONTEXT_V1_1_PY312_FIXTURE_LOG.txt": "4bb55f071a65796a68c14eb1e15a9f85c60db36d0937c4f7a1ffcf6a4f134d52",
+    "scripts/e01_al_office_context_v1_1_fixture_check.py": "b47f73ae7d75c548338d4a273436cded292fe22697724040811f5d93176781b8",
+    "src/civiclab/e01/alabama_office_context_v1_1.py": "83c54b78d0e7a480c34d958bf563d642b8f08517499c6ab75f761d06bec95834",
+    "src/civiclab/e01/alabama_recorded_preflight_v1_1.py": "b7a6f6cc60e89641c5095cb2bdf3e3c214e7bd91e3c2af3cb651f89a5878f4ab",
+    "src/civiclab/e01/alabama_source_release_v1_1.py": "38e3ab5617c667d9a1c777b0406eecee3c451d7edd564ecca219d8bfa3982825",
+    "tests/test_e01_alabama_office_context_v1_1.py": "c2686796606d40c5ce1ae9d56fce9bfc6ba22b9cef70e0fb2a79e55c0dc24456",
+    "tests/test_e01_alabama_recorded_preflight_v1_1.py": "a0b887274757171f5db27c583fc30efbe2b7d33767167b9ab6cf95c895479a25",
+    "tests/test_e01_alabama_source_release_v1_1.py": "5894c5b7f3fd05230ade09d885f3e6442f94b9de5149555a63cb665fb2f1ce97"
+  },
+  "checks": [
+    "All17 original candidate bytes match exact committed Git blobs; no candidate edits.",
+    "Final genuine code-review bytes/size/status/scope/newfive/policy/snapshot bindings agree.",
+    "All future authority/runtime/outer/grant/run refs stay null and approvedfalse; proposal cannot be adapter manifest.",
+    "Exact old source grant/run/seal/controls, original transcript and genuine literal audit refs match pinned public config.",
+    "Three closed grant schemas match source-inspected legacy verifier keys; no outer/runtime-hash self-reference.",
+    "Dependency edges topologically sorted without cycle.",
+    "Static arithmetic:5PDF+47PNG,4passes/phase,2phases,416rawverificationcalls,3167718568byte ceiling; no empirical execution claimed.",
+    "Original candidate actual_* fields remain null."
+  ],
+  "dependency_topological_order": [
+    "final_code_review_ref",
+    "fixed_config_and_rule",
+    "frozen_pure_code_sha",
+    "historical_source_manifest_ref",
+    "literal_audit_copy_ref",
+    "original_transcript_ref",
+    "root_path_binding",
+    "source_snapshot",
+    "runtime_code_grant_body",
+    "three_grant_bodies",
+    "runtime_bytes",
+    "outer_bytes",
+    "external_expected_sha",
+    "particular_metadata_review",
+    "lead_execution_decision",
+    "primary_recording",
+    "verified_primary_ack",
+    "replay_recording"
+  ],
+  "document_ref": {
+    "path": "docs/E01_AL_OFFICE_CONTEXT_ACTUAL_RUNTIME_V1_1_PLAN.md",
+    "sha256": "adb3e8e6b5190117782236222b9b3f5ad8c0afb9d17bd09de269e4ad8165342f"
+  },
+  "final_code_review_ref": {
+    "bytes": 16411,
+    "path": "reports/INDEPENDENT_AUDIT_E01_AL_OFFICE_CONTEXT_V1_1_CODE_PRIVACY.json",
+    "sha256": "793eb1494b64fc056d55c8ea62678b39fd8e3787c834db70748a25372836ead5"
+  },
+  "limits": [
+    "Static metadata/code inspection only; source/runtime helper functions were not imported or called.",
+    "No physical existence/contents/permissions of private proposed paths were checked.",
+    "Counts are source-derived successful-path expectations, not an observed I/O trace or newly enforced output quota.",
+    "Worker observations do not substitute for independent particular-metadata admission or lead authority."
+  ],
+  "observed_planning_actions": {
+    "GET_model_calls": 0,
+    "actual_source_private_transcript_or_run_body_reads": 0,
+    "api_spend_usd": 0,
+    "copies_grants_runtime_outer_created": 0,
+    "development_compute": "UNPRICED",
+    "helper_source_runtime_calls": 0
+  },
+  "original_candidate_commit": "7c4c518",
+  "proposal_ref": {
+    "path": "configs/e01_al_office_context_actual_runtime_v1_1_plan.json",
+    "sha256": "31a5e60292fa4091ca13c3f13b6d13f007dccfc02eb3267596a96a3069fc4593"
+  },
+  "recorded_at_utc": "2026-11-03T19:37:53.753599+00:00",
+  "schema_version": 1,
+  "status": "METADATA_CONSISTENCY_OBSERVED_NOT_EXECUTION_AUTHORITY"
+}

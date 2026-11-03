@@ -1,0 +1,59 @@
+test_at_cap_known_completed_length_accepts_without_probe (tests.test_e02_n2a_collector_v1.N2aTests.test_at_cap_known_completed_length_accepts_without_probe) ... ok
+test_at_cap_unknown_EOF_no_extra_probe (tests.test_e02_n2a_collector_v1.N2aTests.test_at_cap_unknown_EOF_no_extra_probe) ... ok
+test_authority_scope_tamper_and_production_test_separation (tests.test_e02_n2a_collector_v1.N2aTests.test_authority_scope_tamper_and_production_test_separation) ... ok
+test_bad_members_schema_and_header_limit_refuse (tests.test_e02_n2a_collector_v1.N2aTests.test_bad_members_schema_and_header_limit_refuse) ... ok
+test_cancel_does_not_wait_on_collector_owner_lock (tests.test_e02_n2a_collector_v1.N2aTests.test_cancel_does_not_wait_on_collector_owner_lock) ... ok
+test_completed_URL_cannot_retry_or_mutate_state (tests.test_e02_n2a_collector_v1.N2aTests.test_completed_URL_cannot_retry_or_mutate_state) ... ok
+test_concurrent_owner_refuses_without_transport (tests.test_e02_n2a_collector_v1.N2aTests.test_concurrent_owner_refuses_without_transport) ... ok
+test_content_length_truncation_and_oversize_declared (tests.test_e02_n2a_collector_v1.N2aTests.test_content_length_truncation_and_oversize_declared) ... ok
+test_context_path_override_refuses (tests.test_e02_n2a_collector_v1.N2aTests.test_context_path_override_refuses) ... ok
+test_declared_expansion_bound_before_person_inflate (tests.test_e02_n2a_collector_v1.N2aTests.test_declared_expansion_bound_before_person_inflate) ... ok
+test_directory_mtime_only_change_is_allowed (tests.test_e02_n2a_collector_v1.N2aTests.test_directory_mtime_only_change_is_allowed) ... ok
+test_failed_request_history_counters_not_refunded (tests.test_e02_n2a_collector_v1.N2aTests.test_failed_request_history_counters_not_refunded) ... ok
+test_file_replacement_and_symlink_during_header_refuse (tests.test_e02_n2a_collector_v1.N2aTests.test_file_replacement_and_symlink_during_header_refuse) ... ok
+test_full_parent_replacement_same_bytes_refuses (tests.test_e02_n2a_collector_v1.N2aTests.test_full_parent_replacement_same_bytes_refuses) ... ok
+test_http_error_redirect_encoding_and_type_no_fallback (tests.test_e02_n2a_collector_v1.N2aTests.test_http_error_redirect_encoding_and_type_no_fallback) ... ok
+test_initial_low_disk_blocks_before_dispatch (tests.test_e02_n2a_collector_v1.N2aTests.test_initial_low_disk_blocks_before_dispatch) ... ok
+test_metadata_only_does_not_open_person_ZipExtFile (tests.test_e02_n2a_collector_v1.N2aTests.test_metadata_only_does_not_open_person_ZipExtFile) ... FAIL
+test_missing_length_metered_EOF_before_cap_success (tests.test_e02_n2a_collector_v1.N2aTests.test_missing_length_metered_EOF_before_cap_success) ... ok
+test_owned_binding_unexpected_files_hardlinks_and_exactcap (tests.test_e02_n2a_collector_v1.N2aTests.test_owned_binding_unexpected_files_hardlinks_and_exactcap) ... ok
+test_partial_failure_retains_bytes_and_full_charge_no_second_GET (tests.test_e02_n2a_collector_v1.N2aTests.test_partial_failure_retains_bytes_and_full_charge_no_second_GET) ... ok
+test_person_CRC_content_is_explicitly_deferred (tests.test_e02_n2a_collector_v1.N2aTests.test_person_CRC_content_is_explicitly_deferred) ... ok
+test_positive_immutable_firsthash_unknown_before_response (tests.test_e02_n2a_collector_v1.N2aTests.test_positive_immutable_firsthash_unknown_before_response) ... ok
+test_production_null_or_test_authority_denied_before_filesystem_socket (tests.test_e02_n2a_collector_v1.N2aTests.test_production_null_or_test_authority_denied_before_filesystem_socket) ... ok
+test_real_process_death_pending_unknown_fullcharge_no_retry (tests.test_e02_n2a_collector_v1.N2aTests.test_real_process_death_pending_unknown_fullcharge_no_retry) ... ok
+test_registry_attempt_other_state_is_same_code_not_module_copy (tests.test_e02_n2a_collector_v1.N2aTests.test_registry_attempt_other_state_is_same_code_not_module_copy) ... ok
+test_request_and_unit_clock_overrun_fail_fullcharge (tests.test_e02_n2a_collector_v1.N2aTests.test_request_and_unit_clock_overrun_fail_fullcharge) ... ok
+test_semantic_reseal_dispatched_before_reservation_refuses (tests.test_e02_n2a_collector_v1.N2aTests.test_semantic_reseal_dispatched_before_reservation_refuses) ... ok
+test_tagged_test_transport_cannot_enter_production (tests.test_e02_n2a_collector_v1.N2aTests.test_tagged_test_transport_cannot_enter_production) ... ok
+test_torn_state_lost_registry_and_raw_remnant_no_reset (tests.test_e02_n2a_collector_v1.N2aTests.test_torn_state_lost_registry_and_raw_remnant_no_reset) ... ok
+
+======================================================================
+FAIL: test_metadata_only_does_not_open_person_ZipExtFile (tests.test_e02_n2a_collector_v1.N2aTests.test_metadata_only_does_not_open_person_ZipExtFile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e02_n2a_collector_v1.py", line 164, in test_metadata_only_does_not_open_person_ZipExtFile
+    self.assertEqual(names,['ACS2020_2024_PUMS_README.pdf'])
+AssertionError: Lists differ: [<ZipInfo filename='psam_p11.csv' compress[222 chars]pdf'] != ['ACS2020_2024_PUMS_README.pdf']
+
+First differing element 0:
+<ZipInfo filename='psam_p11.csv' compress[64 chars]=679>
+'ACS2020_2024_PUMS_README.pdf'
+
+First list contains 2 additional elements.
+First extra element 1:
+<ZipInfo filename='ACS2020_2024_PUMS_README.pdf' compress_type=deflate filemode='?rw-------' file_size=26 compress_size=26>
+
+- [<ZipInfo filename='psam_p11.csv' compress_type=deflate filemode='?rw-------' file_size=2765 compress_size=679>,
+-  <ZipInfo filename='ACS2020_2024_PUMS_README.pdf' compress_type=deflate filemode='?rw-------' file_size=26 compress_size=26>,
+-  'ACS2020_2024_PUMS_README.pdf']
+? ^
+
++ ['ACS2020_2024_PUMS_README.pdf']
+? ^
+
+
+----------------------------------------------------------------------
+Ran 29 tests in 19.860s
+
+FAILED (failures=1)

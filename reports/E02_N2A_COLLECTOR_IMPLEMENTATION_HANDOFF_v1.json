@@ -1,0 +1,204 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "development_compute": "UNPRICED",
+    "experimental_spend_usd": 0,
+    "model_calls": 0,
+    "real_network_calls": 0
+  },
+  "FILES_CHANGED": {
+    "configs/e02_n2a_dc_collector_v1.json": "4ce01dbb19732b52516e4623632b473df46389a05226a7d0475bda49147cdaf8",
+    "docs/E02_N2A_COLLECTOR_IMPLEMENTATION_v1.md": "1d7cabf4b92519ebec7d6d80223333e9ce8ede78aaa5ac44b6e32fc14c73f90f",
+    "reports/E02_N2A_COLLECTOR_CLOCK_HARNESS_FAILURE_311_v1.txt": "0b92090c261c3ea8b5d89c97545fb195d1faf635edb41ef22997528148e53bb7",
+    "reports/E02_N2A_COLLECTOR_CLOCK_HARNESS_FAILURE_312_v1.txt": "2e336d12ef8129b9360e4001e3bd79aebebbf45240bda8f88982b4a1fdd29b9e",
+    "reports/E02_N2A_COLLECTOR_FINAL_TESTS_311_v1.txt": "77866a34c809803a0d8f147ca40e16976c635844f8b08dddb939475cfc8914b9",
+    "reports/E02_N2A_COLLECTOR_FINAL_TESTS_312_v1.txt": "f462c18e08630abab200ffdb4dfe5f0f497ac99deea61c8ac0095a7906edd388",
+    "reports/E02_N2A_COLLECTOR_INITIAL_TEST_FAILURE_v1.txt": "19869ea51dc7f59b2deaf5ffdedb8eff47b402d3758e4d4f132e4080628684ee",
+    "reports/E02_N2A_COLLECTOR_PREPIN_TESTS_311_v1.txt": "d0f9341af29efd12545b045cac8026ab0df66cfc5beddc51eb3a24546e47197a",
+    "reports/E02_N2A_COLLECTOR_PREPIN_TESTS_312_v1.txt": "998085553949203b9897f71e67082f5b89f42dd8e813881d2435beb60932314b",
+    "src/civiclab/e02/n2a_collector_v1.py": "f2dafe96dcaee402735fb56843909eaa68e58c5c8d706995ff6d0e6e72d8ff31",
+    "src/civiclab/e02/n2a_http_v1.py": "b5d1e76ba84ee7e4be48638560e4c8b75fbf3f941b4a61c660b027ae25d98a07",
+    "tests/test_e02_n2a_collector_v1.py": "4dcf853a85500667f13bf88d9b3950b30bb536cd07370a777281773422c089d2"
+  },
+  "NEXT_UNBLOCKED_TASK": "Independent code/privacy/lifecycle/resource/authored-control review of these exact pins; preserve prior findings and genuineWY controls. Lead alone updates STATUS and coordinates any bounded source release.",
+  "OUTPUT_ARTIFACTS": {
+    "code_review_policy_sha256": "b4cf8cd839dff28be1dc11641aa803f8aa8bd6be52b93fa09b1d7531dd5d53c5",
+    "prior_nonfinal_authored_bundle_preserved": "data/processed/e02_F_local_fixture/n2a-collector-v1-20261103-01",
+    "retained_authored_index": {
+      "indexed_files": 98,
+      "path": "data/processed/e02_F_local_fixture/n2a-collector-v1-20261103-02/AUTHORED_EVIDENCE_INDEX.json",
+      "sha256": "5d872c45d774ea8cfec9975e6fe7639e9e6af7e2f536e26ae656045622cd856e"
+    },
+    "retained_cases": {
+      "death_pending_unknown": {
+        "actual_fake_open_calls": 0,
+        "child_exitcode": 27,
+        "durable_dispatch_intents": 1,
+        "history": {
+          "prior_WY_retained_bytes": 4202266,
+          "prior_body_reserved_upper_bound": 8388608,
+          "prior_charges_refunded": false,
+          "prior_metadata_received_bytes": 1279577,
+          "prior_metadata_requests": 5,
+          "prior_person_GETs": 1
+        },
+        "raw_files": {},
+        "reservation": {
+          "body_bytes": 8388608,
+          "network_seconds": 180,
+          "processing_seconds": 300,
+          "requests": 1
+        },
+        "retry_fake_open_calls": 0,
+        "status": "UNKNOWN",
+        "storage": {
+          "core": 59839,
+          "raw": 0,
+          "scratch": 0
+        },
+        "unknown_recovery": "Explicit UNKNOWN, no retry, allowance retained"
+      },
+      "partial_failure": {
+        "actual_fake_open_calls": 1,
+        "delivered_bytes": 1024,
+        "expected_stopped": true,
+        "history": {
+          "prior_WY_retained_bytes": 4202266,
+          "prior_body_reserved_upper_bound": 8388608,
+          "prior_charges_refunded": false,
+          "prior_metadata_received_bytes": 1279577,
+          "prior_metadata_requests": 5,
+          "prior_person_GETs": 1
+        },
+        "raw_files": {
+          "11/csv_pdc.zip.part": 1024
+        },
+        "requested_read_sizes": [
+          65536,
+          65536
+        ],
+        "reservation": {
+          "body_bytes": 8388608,
+          "network_seconds": 180,
+          "processing_seconds": 300,
+          "requests": 1
+        },
+        "response_closed": true,
+        "retry_fake_open_calls": 0,
+        "status": "FAILED",
+        "storage": {
+          "core": 61376,
+          "raw": 1024,
+          "scratch": 0
+        }
+      },
+      "success": {
+        "actual_fake_open_calls": 1,
+        "delivered_bytes": 3045,
+        "history": {
+          "prior_WY_retained_bytes": 4202266,
+          "prior_body_reserved_upper_bound": 8388608,
+          "prior_charges_refunded": false,
+          "prior_metadata_received_bytes": 1279577,
+          "prior_metadata_requests": 5,
+          "prior_person_GETs": 1
+        },
+        "raw_files": {
+          "11/csv_pdc.zip": 3045
+        },
+        "receipt_sha256": "a482fc113f9c5e7e2d85431d06a4162556eeb3951cf61c3cf4d5df51c5e3c6bc",
+        "requested_read_sizes": [
+          65536,
+          65536
+        ],
+        "reservation": {
+          "body_bytes": 8388608,
+          "network_seconds": 180,
+          "processing_seconds": 300,
+          "requests": 1
+        },
+        "response_closed": true,
+        "retry_fake_open_calls": 0,
+        "status": "COMPLETED",
+        "storage": {
+          "core": 66542,
+          "raw": 3045,
+          "scratch": 0
+        }
+      }
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_n2a_collector_v1 -v",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e02_n2a_collector_v1 -v",
+    "PYTHONPATH=src:tests .venv/bin/python -c 'from pathlib import Path; from test_e02_n2a_collector_v1 import retain_authored_evidence; print(retain_authored_evidence(Path(\"data/processed/e02_F_local_fixture/n2a-review-reproduction\")))'"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Implementer tests do not certify the milestone; independent code/raw fixture review required.",
+    "Cooperative sampled time/RSS/cancel checks and bounded socket operations; no hard OS stop or hostile-store-replacement guarantee.",
+    "Full failed/unknown/success time reservations retained conservatively; fixed shared raw/core roots may stop later additions. No campaign, reconciliation/migration or national throughput claim.",
+    "Metadata only: first compressed hash/identity, central layout,285/91 header, companion hash/CRC; person contents/full CRC/actual rows/STATE validation/import/fit/disclosure remain unadmitted.",
+    "Known exact Content-Length may close at8MiB; unknown EOF at8MiB refuses without extra-byte probe. Receipt measures application bytes, not network wire buffering.",
+    "Prior8MiB body allowance is conservative history bound, not claimed old actual usage. Full prior history preserved.",
+    "Initial ZIP-spy and clock-harness failures plus interim37-test logs preserved separately; final helper/test/config pins differ from earlier local-01 bundle."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored fictional HTTP ZIP payloads and repository metadata/code only. Public Census URL/product descriptors derive from pinned accepted metadata, not observed DC bytes. No real DC/WY raw source access, no person rows, no publisher content, PDF execution, credentials or network calls. Existing public-source research scope referenced; redistribution and external-model use not authorized.",
+  "TASK_ID": "E02_N2A_REGISTRY_COLLECTOR_V1_AUTHORED_IMPLEMENTATION",
+  "TESTS_RUN_AND_RESULTS": {
+    "disabled_config_equals_final_pinned_template": "PASS_IMPLEMENTER",
+    "final": {
+      "311": {
+        "log": "reports/E02_N2A_COLLECTOR_FINAL_TESTS_311_v1.txt",
+        "seconds": 21.856,
+        "sha256": "77866a34c809803a0d8f147ca40e16976c635844f8b08dddb939475cfc8914b9",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 38
+      },
+      "312": {
+        "log": "reports/E02_N2A_COLLECTOR_FINAL_TESTS_312_v1.txt",
+        "seconds": 23.656,
+        "sha256": "f462c18e08630abab200ffdb4dfe5f0f497ac99deea61c8ac0095a7906edd388",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 38
+      }
+    },
+    "independent_code_review": "NOT_RUN",
+    "prior_accepted_repository_pins": {
+      "configs/e02_F_WY_ACTUAL_BOOTSTRAP_IMPLEMENTATION_v1.json": {
+        "mismatches": [],
+        "pins_checked": 9
+      },
+      "configs/e02_F_WY_LOCAL_IMPLEMENTATION_v1_1.json": {
+        "mismatches": [],
+        "pins_checked": 38
+      }
+    },
+    "real_DC_GET_source_inspection_or_import": "NOT_RUN",
+    "retained_index_hash_and_size_verification": "PASS_IMPLEMENTER"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent review of this exact code/config/test/retained-control candidate before real GET.",
+    "Particular finite lead release with exact production review/policy/source/root/date binding remains null; no new blanket owner or credential gate.",
+    "N2b DC import/state adapter and later matched union require separate gates. Nationwide fit, ANES validation, experimental effects, disclosure, dashboard adoption and publication remain incomplete."
+  ],
+  "acceptance_criteria_observations": {
+    "actual_source_acquisition": "NOT_RUN",
+    "default_denial_and_exact_review_release_bindings": "PASS_IMPLEMENTER_AUTHORED",
+    "full_lexical_identity_owned_storage_caps_and_headroom": "PASS_IMPLEMENTER_AUTHORED",
+    "independent_code_certification": "NOT_RUN",
+    "matched_same_generic_code_DC_AK": "PASS_IMPLEMENTER_AUTHORED",
+    "metadata_only_no_person_import": "PASS_IMPLEMENTER_AUTHORED",
+    "one_GET_metered_partial_EOF_length_error_no_retry": "PASS_IMPLEMENTER_AUTHORED",
+    "persistent_semantic_history_and_real_authored_death": "PASS_IMPLEMENTER_AUTHORED"
+  },
+  "created_utc": "2026-11-03T19:41:01.209177+00:00",
+  "methods_reference": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_NEXT_DC_SOURCE_UNIT_V1_METHODS.json",
+    "sha256": "4c0b586e075663b88ed677e73f20c97c4a2a577bcfcf3f478bc697e9b4057f4e"
+  },
+  "production_execution_authority": 0,
+  "production_live_refs": {
+    "code_review": null,
+    "release": null
+  },
+  "status": "IMPLEMENTATION_CANDIDATE_AWAITING_INDEPENDENT_REVIEW"
+}
