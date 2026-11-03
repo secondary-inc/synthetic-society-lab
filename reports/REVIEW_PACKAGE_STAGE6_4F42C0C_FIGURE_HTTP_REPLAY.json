@@ -1,0 +1,63 @@
+{
+  "archived_payload_files_unchanged": 1362,
+  "earlier_invocation_failure": {
+    "disposition": "Preserved; wrong relative script destination in restored cwd. Corrected absolute script path; original archive and core restoration unchanged.",
+    "log": "data/processed/reproducibility/stage6-4f42c0c-retained/figures-http.log",
+    "sha256": "92554ecaa8698aca3d6db27c5fac37cd3e133069259833b9c0ef5ddc79676039",
+    "status": "SCRIPT_PATH_MISSING_BEFORE_REPLAY"
+  },
+  "external_requests": 0,
+  "figures": [
+    {
+      "all_provenance_and_output_hashes_equal": true,
+      "figure": "population-record-disposition",
+      "run_id": "e02-ad2ad153c5ea480d8a9b7f39433927e7"
+    },
+    {
+      "all_provenance_and_output_hashes_equal": true,
+      "figure": "e01-historical-errors",
+      "run_id": "e01-ed5b716aa76145258ece94c3df6b4188"
+    },
+    {
+      "all_provenance_and_output_hashes_equal": true,
+      "figure": "e02-citizen-primary-comparison",
+      "run_id": "e02-1be3718699e54d7380755be1f9d87e6d"
+    }
+  ],
+  "loopback_checks": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/snapshot.json",
+      "status": 200
+    },
+    {
+      "route": "/data/raw/secret",
+      "status": 404
+    },
+    {
+      "route": "/../pyproject.toml",
+      "status": 404
+    },
+    {
+      "route": "/snapshot.json?extra=1",
+      "status": 404
+    }
+  ],
+  "model_requests": 0,
+  "raw_source_reads": 0,
+  "retained_success_log": {
+    "path": "data/processed/reproducibility/stage6-4f42c0c-retained/figures-http-attempt02.log",
+    "sha256": "9b38f9cb6833128990da0c4ed06f92cda6ea270f21a2ae17f5d999a68f84b37c"
+  },
+  "runner": {
+    "path": "data/processed/reproducibility/verify_stage6_figures_and_http.py",
+    "sha256": "d705c2cfaa8167c7867c974d4f8488f7930121b72c1cd61f0fe52bba4c3c8315"
+  },
+  "scope": "Same21savedpublicruns/exactfrozen4fsource only. No new science/currentcandidate acceptance.",
+  "source_commit": "4f42c0c7f233c6895f32d8f5a39787dd6dbd5457",
+  "status": "PASS_LEAD_REPLAY_PENDING_INDEPENDENT_REVIEW",
+  "visual_inspection": "Lead inspected regenerated citizen-comparison PNG: labels/intervals/caveats visible; no browser interaction certification."
+}

@@ -1,0 +1,508 @@
+{
+  "accepted_capture_review_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL.json",
+    "sha256": "2b0e3af466645773ca00b11590d871533ee7b2d80abec27abb9b2e77cd5c3a75"
+  },
+  "approval": {
+    "actual_parser_run": false,
+    "actual_release_ref": null,
+    "baseline_run": false,
+    "coverage_adoption": false,
+    "historical_feature_adoption": false,
+    "independent_methods_decision_ref": null,
+    "parser_implementation_adopted": false,
+    "source_inspection": false
+  },
+  "authored_fixture_contract": [
+    "F01 single valid fictional regularGENClassII row/header/party/vote span set and independently handcomputed signedmargin oracle.",
+    "F02 state/year shared regular+special; distinctclass/term and dates prevent join orsource-role leakage.",
+    "F03 NovemberGEN and latercalendar-yearRUNOFF; retain both, denyRUNOFFtoexistingS0, no date/year relabeling.",
+    "F04 GA-style multievent/term ambiguity leavesUNKNOWN andblocks until explicit sourceboundadjudication.",
+    "F05 LA-style multiplenamedD/R preserved individually andpriorfeature refused; no sample replacement.",
+    "F06 fusion components+combinedtotal; aggregateone complete nonoverlapping representation and crosscheck; duplicate/ambiguousidentity refusal.",
+    "F07 uncontested/absent/blank/dash/unopposed/one-vote/missing modes andzero denominator; source-specific rules, no imputation.",
+    "F08 commas/whitespace/Unicode/minus/boolean/nonfinite/fraction/numeric-footnote tokens; exact supportedgrammar orrefusal.",
+    "F09 two-column/wrappednames/continuationheaders/pagebreak/footnote/currentoffice-crossing; field-level spans required, unknownlayoutrefuses.",
+    "F10 summary/state/county/precinct/TOTAL/component/mode overlap orduplicate candidatepartyline keys; never double count.",
+    "F11 2026nominee row rejected fromhistoricalvote schema/features;2020President/House rows cannot becomeSenatefeatures.",
+    "F12 wrongclass/two-yearSenategap/six-yearHousegap/changedmaps/unknown2020term mapping refuse.",
+    "F13 row-order/seed/replaydeterminism, rawrecordhashpreservation, source/hash/text/coeditedauthority tamper and closed-schema unknownkeys.",
+    "F14 finitebounds/parserfailure/cancel/SystemExit/partialwrites retainfailedrun;noauto-retry/fallbackOCR/alternateparser orquotareset.",
+    "F15 outcome/path/key/2026results infiltration refused byfeatureallowlist/isolation; privatewhole-runpackage/name guards.",
+    "F16 selectedrace missingprior remainsBLOCKED withoutselection/replacement; matchedcomparison reusesexactIDs/outcomes/weights andsecondarysubsetlabel."
+  ],
+  "authoritative_protocol_code_refs": [
+    {
+      "path": "protocols/E01_FEED_TO_BALLOT.md",
+      "sha256": "1eec697325442c2001c684d72fd38676deb0448bd41d756b882220316242165f"
+    },
+    {
+      "path": "protocols/E01_RETROSPECTIVE.md",
+      "sha256": "63003cc9eb060a241eaf19470488453e26bfbab645a0366b1ee8ef700793cb16"
+    },
+    {
+      "path": "docs/E01_2026_SELECTION_PROPOSAL.md",
+      "sha256": "2460f9114b507b5e573bb751af19b9b0d5ca63c7752cc9f49ffef75da8aa6941"
+    },
+    {
+      "path": "configs/e01_retrospective.json",
+      "sha256": "0d51243dd08d146e96a9455003a60819461c60f5b44d73956f8cf17a9685e29e"
+    },
+    {
+      "path": "src/civiclab/e01/pipeline.py",
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    },
+    {
+      "path": "src/civiclab/e01/isolation.py",
+      "sha256": "2d68590042a501f853d084576ed92c73006073a2eeb414881ab487f1fe0089f3"
+    },
+    {
+      "path": "src/civiclab/e01/worker.py",
+      "sha256": "307c978355b543b49ed13fa3ef6246908dadb3c71170d0cc2355884a29e88172"
+    },
+    {
+      "path": "src/civiclab/e01/historical.py",
+      "sha256": "cf1f8325e2f78ca1a806359b88c2fb746e1c62b8255698e1f966cde6fed0c00f"
+    },
+    {
+      "path": "configs/e01_senate2018_2024.json",
+      "sha256": "162d75f9049b8e0d412fd4c9bf6d1cbdd601bc4a8bc260cc64f91988420fe305"
+    }
+  ],
+  "capture_handoff_ref": {
+    "path": "reports/E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL_HANDOFF.json",
+    "sha256": "f7bc9f73be013fc94ff9e4f2984141f3d13a498c1c7216542254764edb6aff27"
+  },
+  "contest_key": {
+    "2020_prior": "Canonical existing pipeline2020-SS-SENATE-STATEWIDE-C<sameverifiedclass>, regularGEN. Cycle label alone does not change actual event year/date.",
+    "2026_target": "Canonical existing pipeline2026-SS-SENATE-STATEWIDE-C<verifiedclass>; classII expected by regular frame but independently evidenced.",
+    "fields": [
+      "state",
+      "office",
+      "seat_class",
+      "term_context",
+      "event_date",
+      "stage",
+      "special"
+    ],
+    "source_observation_identity": "Use source/page/row-span occurrence identity before contest normalization; no state/year-only join."
+  },
+  "cover_observation_ref": {
+    "path": "reports/E01_CLERK_INITIAL_COVER_INSPECTION_v1.json",
+    "sha256": "7ec849ff2fc10fd06a88ef6e8a70790c60d57d8084a634c6e493ebdc85216842"
+  },
+  "error_policy": [
+    "Unknown source/layout/date/role/party/class/unit/number => typedUNKNOWN/BLOCKED, no parserfallback/guessedvalue.",
+    "Duplicate keys/nonfinite/boolcounts/invalidencodings/extra schemafields/hashes fail before scientific projection.",
+    "Preserve sourcebounds/backend/version/codehash/inputhash/seed/runID/errors/exclusions and all failed configurations; public error types only, raw literals local.",
+    "Any actual parser/refusal/cancel/storage issue stops within finite release; no unbounded retries, source acquisition, OCR/render or codepatch-on-source."
+  ],
+  "event_and_state_rules": {
+    "GA": "Explicit disambiguation gate: simultaneous regular/special seats, term/class headers and November versus later-runoff stages must each have independent source spans. A verified2020regularGEN with exactly1D/1R may support a conditionalGEN margin even if later runoff exists; it is not a final-winner forecast. ActualGArows/classes/participants/stages remain UNKNOWN until source review.",
+    "LA": "Keep all named participants and party lines in the source-defined election stage. More than one named D or R makes currentS0prior unsupported; no summing opposing same-party candidates into one pretend nominee, no winner-only/final-stage replacement. ActualLAstage/candidate counts remain UNKNOWN.",
+    "classII_same_seat": "Verify2020\u21922026same state/constitutional class/regular term, exactly6year gap. Current2026ClassII listing alone does not adjudicate2020special/regular/term. Never substitute2022/2024orClassI/III.",
+    "corrections": "Immutable original records plus separate exact correction/adjudication refs. No silent repairs or choosing official values because they improve2026errors.",
+    "fusion": "Aggregate only separately observed nonoverlapping line counts mapped by reviewed identity evidence to the same named candidate. If combined candidate total and component fusion lines coexist, choose the verified complete representation once and use other as crosscheck, never both.",
+    "one_vote": "Preserve literal1 as reported count candidate; do not import MEDSL2022sentinel semantics or assume every1is safe. Source-format explanation and state-specific adjudication needed if ambiguous.",
+    "party_mapping": "Versioned explicit source-supported Democratic/Republican/affiliate mapping; unknown party is UNKNOWN. Preserve literal party text and nonmajor candidates. No suffix/surname/fuzzy/diacritic-stripping alias borrowed from old diagnostic.",
+    "regular_general": "Only official source-supported GEN/specialfalse passes current S0; raw unknown stages stay UNKNOWN, not guessed from document/year/date.",
+    "runoff": "Retain actual date/year/stage separately, including events in a different calendar year. No relabeling as2020GEN, no pooling rounds or substituting final-runoff result for chosenGEN margin. Separate protocol amendment required to use a RUNOFF stage.",
+    "specials": "Retain separate event rows and evidence; never merge by state/year or infer special from winner/incumbent/name. Specials remain outside current S0.",
+    "uncontested": "Require exactly1verifiednamedD and1verifiednamedR with positive counts and D+R>0 for margin. Absent/blank/dash/unopposed/sentinel marks are never zero. Unsupported historical structure blocks feature, not target sample replacement.",
+    "units_and_totals": "Statewide Senate candidate-event total is target historical unit; county/precinct/component/party/state/national/summary totals stay distinct. Never sum statewideTOTAL with component units or multiple modes. Duplicate or ambiguous unit/line/mode keys refuse."
+  },
+  "existing_class_reference_metadata_only": {
+    "registry_ref": {
+      "path": "configs/e01_ballot_readiness_v1_6_1.json",
+      "sha256": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b"
+    },
+    "role": "Potential2026ClassII identity evidence only; not a verified2020event/term mapping, never read its raw source here."
+  },
+  "full_body_evidence_required": [
+    "Inventory all81historical and38nominee physical pages by observed office/state/event/stage/table/footnote role, with UNKNOWN for unresolved content; no page ranges guessed from cover.",
+    "Identify actual Senate row/header/column/continuation/page-break/footnote/number/token/total formats, text-layer completeness and any visual evidence needed under separate finite authority.",
+    "Bind printed publication and actual event dates to source spans; separate printed page labels from physical pages and transport/collection dates.",
+    "For every intended2020 regular same-seat feature, independently resolve official seat class/term/regular-special/event stage/date/candidate/fusion/unit/mode/total roles before aggregation.",
+    "Confirm source completeness/version/corrections and review numerical row crosschecks; all candidate/contest/eligible-feature counts remain null until inspected.",
+    "Review2026nominee compilation amendment/as-of limitations against state contest/ballot sources; never infer final ballots or target returns."
+  ],
+  "geography_pair_policy": "Use independently evidenced2020 and2026state/class/term links to a canonical constituency manifest before creating prior/target verified geography fields. Do not copy a2026listing/hash into2020merely to satisfy validator equality. House needs reviewed2024-to2026exact reaggregation if boundaries differ.",
+  "implementation_compatibility_limits": [
+    "pipeline.freeze_predictions currently rejects genericREALdatasets; do not weaken its gate or route2026through frozenhistorical.prepare, which onlypermits2018\u21922024ClassI.",
+    "Futurerecord normalization adds rich lineage in a sidecar; only exact8existingfeaturefields pass to trustedpredictor.",
+    "Priorhistoricalcandidate participation/party/vote evidence and target2026candidate/ballot evidence need separate independent decisions; aClerk header orsource hash alone cannot setverifiedtrue.",
+    "Known publication date values are lead-reported metadata pending literal date spans; publiccoverreportitself records81/38pagecounts, not those date strings."
+  ],
+  "leakage_and_date_policy": [
+    "2020statistics are historical predictor evidence only;2026nominees are candidate-source observations only;2026target returns belong exclusively to independent outcome custodian/evaluator after prediction sealing.",
+    "Freeze selection/race IDs/quotas/seed/source roles/stage/fusion rules/adjustments/scoring/exclusions before2026evaluation. Never choose parser/adjudication/sample using2026returns or errors.",
+    "Prediction child receives only existing8feature fields; reject outcome fields, raw PDFs, response histories, paths/credentials and postcutoff sources. Retain existing trusted-worker I/O guards; no newOSsandbox claim.",
+    "Historical source publication may precede2026cutoff; collection onNov3is not independent pre-cutoff binding. Keep printed publication/event/collection/LastModified/created_at/feature_as_of distinct; unknown asof evidence blocks, never backdate creation or autoassign cutoff.",
+    "Actual contemporaneous artifact timestamps remain truthful. The feature_as_of/cutoff describe reviewed retrospective information eligibility, never a prospective submission.",
+    "House still needs validated2024\u21922026maps/exactreaggregation and selectedmanifest; state labels orCD120assignments alone do not establish geography.",
+    "Any advanced method must use the exact same selectedIDs/outcome version/cutoffs/weights; interaction requires equalcompute independent control. Historical2018\u21922024posthocdiagnostic is separately frozen and cannot enable genericREAL2026orcomplete originalstudy."
+  ],
+  "milestones": [
+    {
+      "acceptance": "Separate independent methods/source-role review of this exact proposal; no source execution.",
+      "id": "M0",
+      "status": "NOT_RUN"
+    },
+    {
+      "acceptance": "Author separate closed schemas/pure normalization/lineage/feature-contract and finite inspection-harness fixtures first;F01-F16usingauthoredtokens only,3.11/3.12independentcode/privacy/bounds review. No claim that authoredlayouts match realPDFs.",
+      "id": "M1",
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "acceptance": "AfterM1 and a separate finite source-inspection release only, inspect all119physicalpages for role/layout/date/stage/footnote spans andbackendcompleteness; unresolvedlayouts UNKNOWN. Independent source-format decision; no statisticalprojection/baseline.",
+      "id": "M2",
+      "status": "BLOCKED_NO_SOURCE_INSPECTION_AUTHORITY"
+    },
+    {
+      "acceptance": "Implement separately versioned exact observed source-format parser/rules with fixture regeneration from permitted authored analogues; allschema/adversarial/source-role tests and independent newcode/privacy review. No actualparserrun underfixtureauthority.",
+      "id": "M3",
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "acceptance": "Fresh exact actual cached-source/parser/manifest release afterM2/M3; retain primary/replay literal records/annotations/hash/unit/stage/class crosschecks andfailures; independent original-output/arithmetic/source-completeness review.",
+      "id": "M4",
+      "status": "BLOCKED"
+    },
+    {
+      "acceptance": "Resolve every proposed historicalfeature party/fusion/count/term/class/unit/asof andtargetmanifest/geography link; priorunavailability never changes selection. Independent feature acceptance plus alloriginal2026selection/outcome-custody gates before any REALadapter/run.",
+      "id": "M5",
+      "status": "BLOCKED"
+    },
+    {
+      "acceptance": "Separately reviewed/versioned REALintegration andfinitebaseline release; predictionssealed before2026outcomes; recordedretrospectiveprimary/replay+independentleakage/evaluation/provenance/limitations review. Original24House/up8Senate and4/2deep scopes remain.",
+      "id": "M6",
+      "status": "BLOCKED"
+    }
+  ],
+  "missing_inputs": [
+    "Full-body source-role/layout/date/span evidence and reliable parsegrammar",
+    "2020regularGENsame-seatClassII/term/candidate/party/fusion/count adjudications",
+    "2026officialtarget candidates/amendments/regular-special/class/finalballots asrequired",
+    "Complete acceptedrating/selection/sourcecutoffframe andoriginal24House/up8Senatesample",
+    "2024House returns onverified2026geography/exactcrosswalks",
+    "Separately managed certified2026evaluationoutcomes andfreshREALexecutionintegration",
+    "Independentmethods/code/source/result reviews andfiniteactualreleases"
+  ],
+  "no_source_access_in_this_task": {
+    "GET_model_credential_calls": 0,
+    "PDF_or_private_cover_raw_history_person_stat_hash_read_view": 0,
+    "api_spend_usd": 0,
+    "development_compute": "UNPRICED",
+    "source_helper_or_parser_calls": 0
+  },
+  "priority": "2020 Senate historical counts for original2026 S0;2026nominees separate role; House2024 inputs/geography remain independent",
+  "privacy_and_rights": [
+    "Rawsource/privatecovers/rows/names/textspans remain ignored/local; public evidence hashes/coverage/errors/limitations only.",
+    "No existing grant, capture orcoverinspection decision authorizes newsource reads/parser/baseline work.",
+    "No named-voter profiling, outreach, humanpersuasion or external publication.",
+    "Governmentdocument availability is not a blanket redistribution/thirdparty-reuse clearance."
+  ],
+  "proposed_schema_contracts_not_record_instances": {
+    "historical_normalized_annotation": {
+      "closed_fields": [
+        "schema_version",
+        "raw_occurrence_id",
+        "raw_occurrence_canonical_sha256",
+        "evidence_refs",
+        "state",
+        "office",
+        "seat_class",
+        "term_context",
+        "cycle_year",
+        "event_year",
+        "event_date",
+        "stage",
+        "special",
+        "unit_kind",
+        "unit_id",
+        "mode",
+        "record_role",
+        "candidate_id",
+        "party_line_id",
+        "party_family",
+        "votes",
+        "normalization_rule_ref",
+        "adjudication_status"
+      ],
+      "derived_from": "Immutable raw occurrence/hash and separately reviewed exact mapping/versioned rule evidence.",
+      "known_values": "Resolved state/office/class/stage/special/unit/mode/candidate/party/votes only after source review; otherwise typed UNKNOWN and BLOCKED.",
+      "required": [
+        "schema_version",
+        "raw_occurrence_id",
+        "raw_occurrence_canonical_sha256",
+        "evidence_refs",
+        "state",
+        "office",
+        "seat_class",
+        "term_context",
+        "cycle_year",
+        "event_year",
+        "event_date",
+        "stage",
+        "special",
+        "unit_kind",
+        "unit_id",
+        "mode",
+        "record_role",
+        "candidate_id",
+        "party_line_id",
+        "party_family",
+        "votes",
+        "normalization_rule_ref",
+        "adjudication_status"
+      ],
+      "votes": "KNOWN exact nonnegative integer (bool/nonfinite/fractional/negative denied), or typed UNKNOWN; raw string preserved."
+    },
+    "historical_raw_occurrence": {
+      "closed_fields": [
+        "schema_version",
+        "kind",
+        "occurrence_id",
+        "source_id",
+        "source_sha256",
+        "source_spans",
+        "office_literal",
+        "state_literal",
+        "contest_label_literal",
+        "event_date_literal",
+        "stage_literal",
+        "special_term_literal",
+        "candidate_name_literal",
+        "party_line_literal",
+        "votes_literal",
+        "unit_literal",
+        "mode_literal",
+        "footnote_literals",
+        "source_context_span_refs"
+      ],
+      "immutability": "Literal extraction record plus canonical hash, no in-place normalization or correction.",
+      "kind": "HISTORICAL_2020_VOTE_LINE",
+      "required": [
+        "schema_version",
+        "kind",
+        "occurrence_id",
+        "source_id",
+        "source_sha256",
+        "source_spans",
+        "office_literal",
+        "state_literal",
+        "contest_label_literal",
+        "event_date_literal",
+        "stage_literal",
+        "special_term_literal",
+        "candidate_name_literal",
+        "party_line_literal",
+        "votes_literal",
+        "unit_literal",
+        "mode_literal",
+        "footnote_literals",
+        "source_context_span_refs"
+      ]
+    },
+    "nominee_observation": {
+      "closed_fields": [
+        "schema_version",
+        "kind",
+        "occurrence_id",
+        "source_id",
+        "source_sha256",
+        "source_spans",
+        "publication_date_evidence",
+        "office_literal",
+        "state_literal",
+        "district_or_seat_literal",
+        "candidate_name_literal",
+        "party_literal",
+        "footnote_literals",
+        "source_role",
+        "typed_unknowns"
+      ],
+      "forbidden_fields": [
+        "votes",
+        "candidatevotes",
+        "observed_margin_pp",
+        "winner",
+        "returns",
+        "prior_margin_pp"
+      ],
+      "kind": "DATED_2026_NOMINEE_LINE",
+      "required": [
+        "schema_version",
+        "kind",
+        "occurrence_id",
+        "source_id",
+        "source_sha256",
+        "source_spans",
+        "publication_date_evidence",
+        "office_literal",
+        "state_literal",
+        "district_or_seat_literal",
+        "candidate_name_literal",
+        "party_literal",
+        "footnote_literals",
+        "source_role",
+        "typed_unknowns"
+      ],
+      "typed_unknowns": [
+        "printed_on_final_ballot",
+        "legal_nominee_adjudication",
+        "latest_amendment_complete",
+        "independent_cutoff_binding"
+      ]
+    },
+    "predictor_feature": {
+      "closed_fields": [
+        "race_id",
+        "office",
+        "prior_margin_pp",
+        "national_shift_pp",
+        "incumbency_adjustment_pp",
+        "feature_as_of",
+        "cutoff",
+        "source_hashes"
+      ],
+      "lineage": "Rich candidate/source-span/party/vote/class provenance stored in a separate private sidecar, never extra worker JSON keys.",
+      "required": [
+        "race_id",
+        "office",
+        "prior_margin_pp",
+        "national_shift_pp",
+        "incumbency_adjustment_pp",
+        "feature_as_of",
+        "cutoff",
+        "source_hashes"
+      ]
+    },
+    "source_span": {
+      "closed_fields": [
+        "source_id",
+        "source_sha256",
+        "physical_pdf_page_1_based",
+        "printed_page_label",
+        "extraction_backend",
+        "backend_version",
+        "text_coordinate_system",
+        "text_start",
+        "text_end",
+        "text_span_utf8_sha256",
+        "render_bbox_points",
+        "field_roles"
+      ],
+      "field_roles": "Explicit header/row/party/vote/unit/stage/footnote linkage; context must not bleed across table/office/event boundaries.",
+      "physical_page_index": "integer1based bounded by reported81/38 and later verified parser pagecount",
+      "required": [
+        "source_id",
+        "source_sha256",
+        "physical_pdf_page_1_based",
+        "printed_page_label",
+        "extraction_backend",
+        "backend_version",
+        "text_coordinate_system",
+        "text_start",
+        "text_end",
+        "text_span_utf8_sha256",
+        "render_bbox_points",
+        "field_roles"
+      ],
+      "unknown_representation": "Explicit typed UNKNOWN; never invent page offsets/printed labels/bboxes or empty strings. Only available text offsets OR inspected bbox coordinates may be KNOWN; no fake precision."
+    }
+  },
+  "protected_program": {
+    "broad_house_target": 24,
+    "broad_senate_max": 8,
+    "deep_house_target": 4,
+    "deep_senate_target": 2,
+    "earlier_2018_2024_classI_diagnostic_is_not_original_2026_completion": true,
+    "prior_availability_must_not_choose_or_replace_selected_races": true,
+    "selection_changed": false,
+    "status": "RETROSPECTIVE"
+  },
+  "s0_feature_policy": {
+    "actual_evaluations": null,
+    "actual_features": null,
+    "actual_predictions": null,
+    "formula": "100*(D-R)/(D+R), with D/R the verified combined votes for exactlyone named candidate each; other votes preserved outside denominator.",
+    "house_lag_years": 2,
+    "incumbency_adjustment_pp": 0,
+    "national_shift_pp": 0,
+    "not_allowed": "2020House counts cannot supply2026House two-year prior;2026nominee compilation supplies no numeric outcomes.",
+    "prediction": "clamp(prior_margin_pp+0+0,-100,100)",
+    "prior_year_for2026_house": 2024,
+    "prior_year_for2026_senate": 2020,
+    "selected_race_missing_feature": "BLOCKED_NO_PRIOR_FEATURE; do not replace/reroll or shrink intended full-sample claim. Any matched availability-subset analysis is separately frozen secondary.",
+    "senate_lag_years": 6
+  },
+  "schema_version": 1,
+  "scope": "METHODS_PROPOSAL_ONLY_CLERK_2020_SAME_SEAT_SENATE_FEATURES_AND_SEPARATE_2026_NOMINEE_ROLE",
+  "sources": [
+    {
+      "actual_candidate_record_count": null,
+      "actual_senate_contest_count": null,
+      "bytes": 602172,
+      "candidate_or_vote_table_rows_parsed_in_this_methods_task": 0,
+      "capture_finished_utc": "2026-11-03T19:48:26.995611+00:00",
+      "forbidden_future_roles": [
+        "2026_TARGET_OUTCOMES",
+        "FINAL_BALLOT_CERTIFICATE",
+        "LATEST_AMENDMENT_CERTIFICATE"
+      ],
+      "full_body_layout_validated": false,
+      "http_last_modified_observed": "Tue, 09 Mar 2021 17:03:19 GMT",
+      "page_count_evidence_ref": {
+        "path": "reports/E01_CLERK_INITIAL_COVER_INSPECTION_v1.json",
+        "sha256": "7ec849ff2fc10fd06a88ef6e8a70790c60d57d8084a634c6e493ebdc85216842"
+      },
+      "page_count_reported": 81,
+      "path": "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.pdf",
+      "permitted_future_role": "HISTORICAL_FEATURE_COUNTS_ONLY",
+      "publication_date_evidence": {
+        "kind": "LEAD_REPORTED_COVER_OBSERVATION",
+        "literal_date_present_in_public_cover_report": false,
+        "literal_date_source_span_verified_here": false,
+        "reverification_required_before_data_use": true
+      },
+      "publication_date_reported": "2021-02-26",
+      "recorded_source_role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76",
+      "source_id": "clerk2020_statistics",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "actual_candidate_record_count": null,
+      "actual_senate_contest_count": null,
+      "bytes": 257739,
+      "candidate_or_vote_table_rows_parsed_in_this_methods_task": 0,
+      "capture_finished_utc": "2026-11-03T19:48:27.142472+00:00",
+      "forbidden_future_roles": [
+        "2026_TARGET_OUTCOMES",
+        "FINAL_BALLOT_CERTIFICATE",
+        "LATEST_AMENDMENT_CERTIFICATE"
+      ],
+      "full_body_layout_validated": false,
+      "http_last_modified_observed": "Tue, 13 Oct 2026 15:49:00 GMT",
+      "page_count_evidence_ref": {
+        "path": "reports/E01_CLERK_INITIAL_COVER_INSPECTION_v1.json",
+        "sha256": "7ec849ff2fc10fd06a88ef6e8a70790c60d57d8084a634c6e493ebdc85216842"
+      },
+      "page_count_reported": 38,
+      "path": "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.pdf",
+      "permitted_future_role": "DATED_NOMINEE_OBSERVATION_ONLY",
+      "publication_date_evidence": {
+        "kind": "LEAD_REPORTED_COVER_OBSERVATION_AND_PUBLIC_CAPTURE_DISCOVERY_NOTE",
+        "literal_date_present_in_public_cover_report": false,
+        "literal_date_source_span_verified_here": false,
+        "reverification_required_before_data_use": true
+      },
+      "publication_date_reported": "2026-10-08",
+      "recorded_source_role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "sha256": "cb2e4194c88042cf22f8589fb6b8c352d29b501f96abc62a962b6cc52e2c28a8",
+      "source_id": "clerk2026_nominees",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ]
+}

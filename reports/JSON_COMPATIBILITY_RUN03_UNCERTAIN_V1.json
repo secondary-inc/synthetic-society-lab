@@ -1,0 +1,94 @@
+{
+  "charge_status": "UNCERTAIN",
+  "conservative_reserved_consumption_microusd": 340,
+  "consumed": {
+    "dispatches": 1,
+    "module_dispatches": {
+      "E01": 0,
+      "E02": 1
+    },
+    "modules": {
+      "E01": 0,
+      "E02": 340
+    },
+    "total": 340
+  },
+  "failure_error_type": "ExecutionBlocked",
+  "generation_id_recorded": false,
+  "independent_actual_review": "PENDING",
+  "lead_key_reads_or_requests": 0,
+  "model_POST_attempts": 1,
+  "next": "Preserve state; no retry/newowner/refund/replenishment/billinglookup without recordedgeneration. Fix safe offline stage/status diagnostics without changing frozen executedcode.",
+  "one_dispatch_lifetime_limit_exhausted": true,
+  "original_failure_stage_detail": "Not retained: transport suppresses HTTP status/body and exact cause. No inference of wrong key/model unavailability/provider charge is established.",
+  "original_lifetime_microusd_cap": 1000,
+  "recorded_at_utc": "2026-11-03T20:21:00.037620+00:00",
+  "remaining_model_dispatches": 0,
+  "reported_provider_charge_microusd": null,
+  "retained_files": {
+    "data/processed/compatibility_operator_handoff/continuation-20261103-03/after-owner.local.json": {
+      "bytes": 5235,
+      "sha256": "b94f4300600d7597cd01174c1d5b6fbf4b8ed2ca7e3626aad97119b91b029b3e"
+    },
+    "data/processed/compatibility_operator_handoff/continuation-20261103-03/approval.local.json": {
+      "bytes": 1200,
+      "sha256": "497ae7592715fe96250510ef3adb05efbbdfc34df1e92416b3ea62164c802380"
+    },
+    "data/processed/compatibility_operator_handoff/continuation-20261103-03/before-owner.local.json": {
+      "bytes": 1934,
+      "sha256": "df2db666ce795ede6e764255e3d0951f6fa0f8a0414183f7e9d71041119cd9c1"
+    },
+    "data/processed/compatibility_operator_handoff/continuation-20261103-03/failure.local.json": {
+      "bytes": 112,
+      "sha256": "9f988d561fe28c84dcdcca154de2f89014318f6dd16bdb07d95deed7c671064c"
+    },
+    "data/processed/compatibility_operator_handoff/continuation-20261103-03/human-continuation.local.json": {
+      "bytes": 277,
+      "sha256": "f5cb3d3a9765ed4c23eff22083bc089d979db7e29aa2989f29b819da40973021"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/checksums.local.json": {
+      "bytes": 862,
+      "sha256": "2737e05f33ae5c31cce0fddbab1967605720f6d34509ed8fe69d1fe5a8f0aaf1"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/event-000001.local.json": {
+      "bytes": 127,
+      "sha256": "41a9f918fb3182d8ed0006709117d5961715b5d258d117eb7ee748d1d8142c75"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/event-000002.local.json": {
+      "bytes": 206,
+      "sha256": "b8da65d2e4ccd376dd9aa5d4d0ce3c9aaf8537e1a113f935b669620418690be3"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/event-000003.local.json": {
+      "bytes": 329,
+      "sha256": "a2ac99ccc55b076b8ad822ae60a6ad7628d6f1b7bdd9082f50dee8c1ac4c6e92"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/event-000004.local.json": {
+      "bytes": 238,
+      "sha256": "9da438724757fec4da0e4a052ef8001a86e9480ace06cba4f30be863f017e75c"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/event-000005.local.json": {
+      "bytes": 276,
+      "sha256": "3ab8b57b761e6d19c655e460fb10a1d744d3873dc39b8e428961ceba3b797c2e"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/event-000006.local.json": {
+      "bytes": 215,
+      "sha256": "643fd1ee036fb199226baf080d2d540ba6b61ce519497f3dc0d6f4801daeb91f"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/manifest.local.json": {
+      "bytes": 3096,
+      "sha256": "1f4311667f57d9e4489342edaf88e7ccfd2b66586a5a132fb02056d8c91896fc"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/request.local.json": {
+      "bytes": 3477,
+      "sha256": "da65a2a023f7f6bedb9ba4df67ac0a9bdd5ffb17638b93fcb29b00d6f50cbb28"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-03/summary.local.json": {
+      "bytes": 270,
+      "sha256": "482b88a63130379c6d0e5133b6cd06d6a51efd2a1ef38d3746d86c9d250e1ec3"
+    }
+  },
+  "run_id": "compatibility-20261103-gpt41nano-03",
+  "schema_version": 1,
+  "statistics_GET_attempts": 0,
+  "status": "ACTUAL_RUN03_POST_ATTEMPT_FAILED_UNCERTAIN_NO_RETRY"
+}
