@@ -30,7 +30,19 @@ The additional ANES ZIP is byte-identical to the previously registered archive. 
 
 The [FEC candidate master documentation](https://www.fec.gov/campaign-finance-data/candidate-master-file-description/) says that its universe includes active committees regardless of election year and some candidates referenced by other committees. Accordingly, candidate registration records alone do not establish the official 2026 general-election ballot. The [candidate–committee linkage documentation](https://www.fec.gov/campaign-finance-data/candidate-committee-linkage-file-description/) describes the seven linkage fields. These references support format interpretation; they do not authenticate the supplied downloads' exact upstream release.
 
-Remaining acquisition gaps include ACS demographic tables, questionnaire and primary-scale selection, permitted experiment text, official general-election ballot verification, dated race ratings if used, and authoritative geography-version checks. The new geography and candidate inputs partially address E01 requirements; they do not complete those gates. No paid inference or experiment was run.
+At this registration stage, acquisition gaps included ACS demographic tables and questionnaires; the subsequent delivery below supplies those inputs. Remaining work includes primary-scale selection, permitted experiment text, official general-election ballot verification, complete dated race ratings if used, and authoritative geography-version checks. The geography and candidate inputs partially address E01 requirements; they do not complete those gates. No paid inference or experiment was run.
+
+## ACS benchmarks and questionnaire delivery
+
+Four user-supplied ZIPs now provide 2024 ACS five-year detailed tables B01001 (age/sex), B03002 (Hispanic origin/race), B15003 (education) and B19001 (household income), with column metadata and table notes. All four tables have 52 geographic records: the 50 states, DC and Puerto Rico. Puerto Rico is retained in the raw files but is outside the proposed 50-state-plus-DC experiment. Each data CSV has a machine-name header and an additional descriptive-label row; that label row is not a geography observation. Margins of error are preserved.
+
+The B01001 product ZIP additionally contains an ACS one-year table, registered separately. Use the five-year product for consistency across these starting benchmarks. These separate marginal tables do not establish joint demographic distributions, citizenship or voter eligibility. B15003 covers people age 25 and older and B19001 covers households; their denominators cannot be treated as interchangeable person-level sampling weights. Joint population fitting, ANES calibration and numerical consistency checks remain to be implemented.
+
+Two ANES questionnaire PDFs were received and opened. Their first pages were text-extracted, rendered and visually inspected. The full pre/post-election questionnaire has 481 pages and a cover date of August 8, 2025 despite the supplied filename ending in `20240808`. Preserve that discrepancy and reconcile the version with the existing codebook before selecting items. The paper questionnaire has 20 pages. Receipt of questionnaires does not mean a primary scale, scoring rule or variable mapping has been chosen.
+
+The additional `file.xhtml` is a saved Dataverse file landing page titled “Copy of Stanford_A1R_Codebook B.tab”, with DOI `10.7910/DVN/KJ8IH2` observed in its HTML. Its underlying data, relevance and license have not been verified. `download.html` is an ANES 2016 updates/errata page, not the 2024 study dataset. Both are preserved as inert local reference pages and are not counted as acquired underlying datasets. Embedded scripts and instructions were not executed.
+
+These acquisitions close the initial state-level ACS and questionnaire download gaps. E02 still needs permitted text stimuli and a frozen protocol, instrument mapping and sampling/analysis implementation. They do not establish representative synthetic populations or validate any election forecast.
 
 ## Validation limits and next use
 
