@@ -1,0 +1,56 @@
+{
+  "all3_member_hashes_and_selected_labels_domains": "PASS independently checked with zipfile/csv/Decimal",
+  "archive_bytes": 162782,
+  "archive_sha256": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+  "audited_at_utc": "2026-11-03T10:49:26.431379+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "files": {
+    "configs/e02_citizen_benchmark_acquisition.json": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+    "docs/E02_CITIZEN_BENCHMARK_ACQUISITION.md": "371ba29a289a6854c81a0245835a41167c0e87780f9d18d994fca786182a87aa",
+    "reports/E02_CITIZEN_BENCHMARK_ACQUISITION.json": "70e6ff5e541e96334dcf642fd21d67ee43cabe67f6b9850cc8e3f30375c285c1",
+    "src/civiclab/e02/citizen_benchmark.py": "a907d865139cc999048bba5a1fb16b491c314f645cbb280b28f48d2bf426b463",
+    "tests/test_e02_citizen_benchmark.py": "b5eb84f7333067aab3b9bf4d1ba181f1b306358b916965ea347f36dd52c3bb11"
+  },
+  "geography_rows": 52,
+  "hard_limits": [
+    "No target conversion or fit performed by auditor. Separate versioned model/target amendment and review before using new margins.",
+    "Multiplication of one-decimal subgroup percentages by totals yields approximate derived counts, not published integer subgroup counts.",
+    "Preserve90percentMOEs; simple products/sums do not establish covariance-adjusted uncertainty.",
+    "Predeclare PR exclusion, geography aggregation, normalization/rounding tolerances and alignment of age25+ denominators; do not silently force inconsistent marginals.",
+    "2020\u20132024 five-year averages are not a2026 population census; no state representativeness or synthetic-response validity follows."
+  ],
+  "independent_rounding_checks": {
+    "education_percentage_sum_range": [
+      99.8,
+      100.1
+    ],
+    "max_absolute_derived25plus_minus_published25plus_fraction_of_column_total": 0.0019883000466710656,
+    "six_age_percentages_rounding_bound": 0.003
+  },
+  "official_definition_source": "https://www.census.gov/topics/population/foreign-born/about/faq.html",
+  "official_shell": {
+    "bytes": 22380,
+    "path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-s0501-e6c5w3y8/S0501.xlsx",
+    "sha256": "13ed8f7313c156b9acf9bc608814e72925e5cb7413c8be7317eb7147360a34b7",
+    "source_url": "https://www2.census.gov/programs-surveys/acs/tech_docs/table_shells/2024/Shells/S0501.xlsx"
+  },
+  "original_population_gate": "BLOCKED; acquisition/unit rationale alone does not validate a model or promote a new calibration",
+  "paid_calls": 0,
+  "registered_variables_checked": 52,
+  "schema_version": 1,
+  "status": "PASS_ACQUISITION_AND_UNIT_RATIONALE_ONLY",
+  "tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -p test_e02_citizen_benchmark.py -v",
+    "exit_code": 0,
+    "stderr": "test_integrity_only_never_activates_calibration (test_e02_citizen_benchmark.CitizenAcquisitionTests.test_integrity_only_never_activates_calibration) ... ok\ntest_labels_units_and_suppression_fail_closed (test_e02_citizen_benchmark.CitizenAcquisitionTests.test_labels_units_and_suppression_fail_closed) ... ok\ntest_missing_geography_rejected_even_when_rehashed (test_e02_citizen_benchmark.CitizenAcquisitionTests.test_missing_geography_rejected_even_when_rehashed) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n",
+    "stdout": ""
+  },
+  "unit_findings": {
+    "citizenship": "Current Census FAQ defines native as citizenship at birth and includes naturalized citizens among foreign-born; native+naturalized is a defensible candidate resident-citizen benchmark. It does not resolve ANES eligibility/sampling/group-quarters/period differences by itself.",
+    "coarsening": "25-44=row007;45-64=008+009;65+=010+011+012. Education HS-or-less=039+040;some-college=041;BA-plus=042+043.",
+    "count_fields": "C02/C04 row001 total population and row038 population25+ are integer estimates (#), official shell rows4,56 columnsF,J.",
+    "denominators": "Age uses each nativity/citizenship column total row001. Education uses same column population25+ row038. Do not use all-age denominator for education.",
+    "percentage_fields": "C02/C04 age rows007..012 and education rows039..043 are % (official shell rows12..17 and57..61, columnsF,J). MOEs for these percentages are percentage points."
+  }
+}

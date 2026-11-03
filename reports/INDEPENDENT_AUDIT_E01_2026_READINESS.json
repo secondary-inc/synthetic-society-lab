@@ -1,0 +1,58 @@
+{
+  "audited_at_utc": "2026-11-03T10:50:05.087524+00:00",
+  "auditor_role": "independent_auditor",
+  "candidate_summary_records": 4540,
+  "cost_usd": 0,
+  "independent_upstream_stream": {
+    "bytes": 55241385,
+    "final_url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2027/120-congressional-district-befs/cd120.zip",
+    "matches_worker_and_local": true,
+    "sha256": "bc9a4fc543b8b279ce3663642a5cc4e19e32a8ef84f12371e26f754e5b8cc8a5",
+    "url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2027/120-congressional-district-befs/cd120.zip"
+  },
+  "local_integrity": [
+    {
+      "bytes": 1754475,
+      "path": "data/raw/fec_candidate_summary_2026/candidate_summary_2026.csv",
+      "sha256": "b6a61c95af4d5f21449a38dbf51108ed8c53c4c02087ee80408b17f32ba0bf9e"
+    },
+    {
+      "bytes": 90692,
+      "path": "data/raw/fec_ccl26/ccl26.zip",
+      "sha256": "ff72b3f8bd0437dbb8a5befb8ed375aea2d21a1f966e14905a7a5194451228c1"
+    },
+    {
+      "bytes": 55241385,
+      "path": "data/raw/geography_cd120/cd120.zip",
+      "sha256": "bc9a4fc543b8b279ce3663642a5cc4e19e32a8ef84f12371e26f754e5b8cc8a5"
+    },
+    {
+      "bytes": 312753,
+      "path": "data/raw/fec_cn26/cn26.zip",
+      "sha256": "97e057ca4b4f27f3a635181578075e68dae712f1b1ca616f3971afbbe19d6c89"
+    }
+  ],
+  "original_blockers": [
+    "No complete permitted as-of ratings universe or frozen original sample policy/raceIDs.",
+    "No assembled final-ballot and amendment evidence for selected2026 contests.",
+    "CD120 exact upstream bytes do not prove operative boundaries or historical vote crosswalk; Missouri/split-block caveats persist.",
+    "2020 same-seat Senate and compatible2024House predictors missing; original2026evaluation/agents unrun.",
+    "No independently timed pre-results forecast."
+  ],
+  "paid_calls": 0,
+  "schema_version": 1,
+  "scope": "Outcome-free candidate/geography readiness only. No2026 returns or race selection evaluated. FEC master is registration/finance evidence, not ballot certification.",
+  "status": "PASS_READINESS_BLOCKER_REVIEW; ORIGINAL_MANIFEST_BLOCKED",
+  "zip_members": [
+    "CD120_37.txt",
+    "CD120_39.txt",
+    "CD120_47.txt",
+    "CD120_48.txt",
+    "CD120_49.txt",
+    "CD120_01.txt",
+    "CD120_06.txt",
+    "CD120_12.txt",
+    "CD120_22.txt",
+    "NationalCD120.txt"
+  ]
+}
