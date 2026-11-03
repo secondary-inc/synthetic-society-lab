@@ -28,7 +28,7 @@ def source_inputs(root):
     if fixture.exists():inputs[str(fixture.relative_to(root))]=fixture
     for pattern in ('AUDIT_*','INDEPENDENT_AUDIT*','STATUS*','COORDINATION.json',
                     'ENGINEERING_EVIDENCE*','PROGRESS*','LOCAL_RESTORE*','BOOTSTRAP*','REVIEW_PACKAGE*',
-                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','WYOMING_*','E01*','E02*'):
+                    'ANES_*','GDELT_*','BLUEPRINT_*','GITHUB_*','PY311_SNAPSHOT*','WYOMING_*','SURVEY_*','E01*','E02*'):
         for p in (root/'reports').glob(pattern):
             if p.is_file() and p.suffix in ('.md','.json','.txt'):inputs[str(p.relative_to(root))]=p
     return inputs
