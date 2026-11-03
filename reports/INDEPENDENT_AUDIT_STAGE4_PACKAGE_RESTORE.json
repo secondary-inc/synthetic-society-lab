@@ -1,0 +1,174 @@
+{
+  "actual_model_calls": 0,
+  "actual_restored_viewer_checks": {
+    "MOCKwarning_and4of23_INCOMPLETE": true,
+    "audit_server_stopped": true,
+    "http_guards": {
+      "/": 200,
+      "/../.env": 404,
+      "/.env": 404,
+      "/data/raw/": 404,
+      "/demographic-benchmark.json": 404,
+      "/index.html?raw=1": 404,
+      "/snapshot.json": 200,
+      "/snapshot.json?raw=1": 404,
+      "/src/civiclab/common.py": 404
+    },
+    "local_no_publication_one_state_citizenhousehold_period_MOE_NOT_RUN_BLOCKED_labels": true,
+    "retained40config446holdout_negativecomparison_andconditionalinterval": true,
+    "screenshot": {
+      "path": "/tmp/civiclab-independent-stage4-wyoming-viewer.png",
+      "scope": "Accepted coarseownerreviewvalues/localonly",
+      "sha256": "7d34bb36c4953355df514593da94bcca72d913e4e58e02ab420143106c9f8986"
+    },
+    "sixty_numeric_fields_match_approved_four_decimal_display": true,
+    "temporary_tab_closed": true,
+    "two_admitted12cell_tables_present": true
+  },
+  "actual_spend_usd": 0,
+  "archive_bytes": 8119550,
+  "archive_checks": {
+    "accepted_benchmark_payload_hash_verified": true,
+    "hashed_manifest_members": 735,
+    "members": 736,
+    "raw_local_credentials_excluded": true,
+    "run_artifacts": 259,
+    "run_ledgers": 21
+  },
+  "archive_code": {
+    "dirty": false,
+    "git_sha": "b41aaecad048dfd195a86d1bf0829a0bc8c9ed6b",
+    "source_tree_sha256": "956251db952eb0ac6216187e6d9eb59c3f10d8ac8546e015944ebcd86611ebaa"
+  },
+  "archive_path": "data/processed/reproducibility/owner-review-stage4-b41aaec-20261103.zip",
+  "archive_sha256": "7c52c2c913bafe7aa30e56fa0e2699beab9bc7d8ddd034d71db63ea5c2e33b28",
+  "audited_at_utc": "2026-11-03T13:59:21.837797+00:00",
+  "auditor_role": "independent_auditor",
+  "clean_environment": {
+    "PYTHONHOME": "UNSET",
+    "PYTHONPATH": "UNSET",
+    "local_project_install": "editable --no-deps from restored directory",
+    "python": "3.12.14",
+    "runtime_exact_dependency_pins_verified": 13,
+    "source_import_origin_checked": true,
+    "transient_build_tools": "Build isolation may resolve setuptools independently;13runtimepins do not freeze every transient build tool."
+  },
+  "commands": [
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-m",
+        "venv",
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv"
+      ],
+      "elapsed_seconds": 0.8535016669775359,
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "configs/runtime_python312_20261103.txt"
+      ],
+      "elapsed_seconds": 4.071202791994438,
+      "exit_code": 0,
+      "output_sha256": "1388dee84cbd70e74bd5c2e3ef456023ac580b77d38c45204ae03fa728573054",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".",
+        "--no-deps"
+      ],
+      "elapsed_seconds": 0.8692034999839962,
+      "exit_code": 0,
+      "output_sha256": "ed6273125ddf4a276c9d1110a510185345beecf11a3e73aac44f5d001614ae2e",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "elapsed_seconds": 16.000643167004455,
+      "exit_code": 0,
+      "output_sha256": "ac8586cd1f89fe7b32fdba9091d40cf4c8ba0a2f815e5fc6e4fc81f4ac617466",
+      "result_excerpt": "ti-threaded, use of fork() may lead to deadlocks in the child.\n  self.pid = os.fork()\n/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/multiprocessing/popen_fork.py:66: DeprecationWarning: This process (pid=32250) is multi-threaded, use of fork() may lead to deadlocks in the child.\n  self.pid = os.fork()\n----------------------------------------------------------------------\nRan 224 tests in 15.856s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "elapsed_seconds": 0.18930195801658556,
+      "exit_code": 0,
+      "output_sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5",
+      "result_excerpt": "{\"status\": \"PASS\", \"checks\": 1}\n"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv/bin/civiclab",
+        "dashboard",
+        "--out",
+        "data/processed/independent-dashboard"
+      ],
+      "elapsed_seconds": 0.14540329203009605,
+      "exit_code": 0,
+      "output_sha256": "2b27c29cb20f996609ee7a56c93343f0fe09b35c322fe50eaddee32d7a114d38",
+      "result_excerpt": "PASS"
+    },
+    {
+      "argv": [
+        "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/venv/bin/python",
+        "-c",
+        "from pathlib import Path;import civiclab,os,sys;assert \"PYTHONPATH\" not in os.environ;assert Path(civiclab.__file__).resolve().is_relative_to(Path.cwd());print(sys.version);print(civiclab.__file__)"
+      ],
+      "elapsed_seconds": 0.014014334010425955,
+      "exit_code": 0,
+      "output_sha256": "91172e91523c28420ad212926018355a6a57cda008a4ee16590e76c43453d98a",
+      "result_excerpt": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]\n/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs/restored/src/civiclab/__init__.py\n"
+    }
+  ],
+  "controller_receipts_renewed": false,
+  "fixture_source_checks": 1,
+  "full_original_contract": "INCOMPLETE",
+  "independent_tests_passed": 224,
+  "independent_workspace": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-stage4-88i0nkrs",
+  "manifest_sha256": "ca6b14334b3a59dd1e7a1bd2d753c7234ec0bd0fb95e3573d7b6582347db99ce",
+  "new_person_source_GETs": 0,
+  "privacy_checks": [
+    "All736memberbytes/735manifesthashes/CRC/path/no-symlink checks passed;455non-run sources match exactb41aaec GitblobIDs.",
+    "Only21explicitselectedsafe runs/259artifacts+21ledgers; twoWyomingpayloads match independently admitted hashes.",
+    "No actualrawdata/.env/private.localor-local-only artifacts; credential-pattern scan clear, not universalDLP.",
+    "Allprivatebridge/journal/budget/ballotroster/fullPUMS/localprojectionruninputs excluded.",
+    "UncommittedMaineintegration/U1changes excluded by exactcommittedsource binding; laterWIP notcertified."
+  ],
+  "recorded_runs": 21,
+  "run_artifact_hashes_verified": 259,
+  "schema_version": 1,
+  "scope": "Exact immutable committedb41aaec snapshot clean installation/224fixturetests/recordedtypedviewer forLOCAL OWNER REVIEW ONLY. Does not certify currentWIP, fullrawsourcereacquisition/rights/scientificpopulation/actualsourceorpaidmodel execution/globalcontrols/remoteCI/publicpublication. No completion-controller renewal inferred. Priorarchivesunchanged.",
+  "source_commit_binding": {
+    "code_dirty": false,
+    "committed_source_members_matched": 455,
+    "git_sha": "b41aaecad048dfd195a86d1bf0829a0bc8c9ed6b",
+    "version_snapshot_output": "13versions,21runs,2typed,0rejected PASS\n"
+  },
+  "status": "PASS_EXACT_STAGE4_COMMITTED_SNAPSHOT_CLEAN_RESTORE_AND_TYPED_VIEWER",
+  "typed_demographic_runs": 2
+}
