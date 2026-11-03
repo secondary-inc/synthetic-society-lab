@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "proposal_version": "1.9",
+  "scope": "METHODS_TYPED_READINESS_SCHEMA_PROPOSAL_ONLY",
+  "prepared_at_utc": "2026-11-03T16:33:54.616375+00:00",
+  "implementation_exists": false,
+  "pipeline_enabled": false,
+  "source_adoption": false,
+  "coverage_promotion_authorized": false,
+  "actual_readiness_execution": false,
+  "proposed_module": "src/civiclab/e01/ballots_v1_9.py",
+  "proposed_fixture_module": "tests/test_e01_typed_readiness_v1_9.py",
+  "frozen_reference_pins": {
+    "configs/e01_ballot_readiness_v1_7.json": "478d9bfd87c34703f260336c652c4e4a0ce36298e89614b709a4105b8d6a5bfe",
+    "src/civiclab/e01/ballots_v1_7.py": "b45746439df1e50469f76a7d6ff9acb8bb0536e2f1d605eb116a28460b169062",
+    "reports/E01_DE_NE_READINESS_V1_7_ACTUAL.json": "2bc8917cf3b49f3e7278c6c2d98051a5cacfedaf67e801b570cee201b63c7c89",
+    "reports/INDEPENDENT_AUDIT_E01_DE_NE_V1_7_ACTUAL.json": "a21aee686e28fcfcf13c0a39d08eb22e54e88665acdb141f8ffad410ea45932f",
+    "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json": "cd90a92c4ba3a6984ccbe2e6f9b5180c0cb0de09f9bfe4cab3ccf152add5683b",
+    "src/civiclab/e01/idaho_v1_8_1.py": "1413f9a6e784e88d82b0ffe0beb2e8323775c5a8b55a1f5fc223f4a2505c2bb7",
+    "tests/test_e01_idaho_v1_8_1.py": "65b58cca8603c5b44afdfe2b09de624b4d8dfc9389b9ee67f566a5f19146ab73",
+    "reports/E01_ID_STANDALONE_V1_8_1_ACTUAL_PREFLIGHT.json": "89c59435dd7c1df97e72c1f2710095fd65d41649d86ce4ba1c97df5e57569dd9",
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_1_ACTUAL_PREFLIGHT.json": "b3adbb37b0ca1b16b977b91673b73d68615725d1ce5ff91e8c94bcb0ea19aa07"
+  },
+  "legacy_reference": {
+    "accepted_run_ids": [
+      "e01-6a2b9fded13e4bb48d15985d98c7bb34",
+      "e01-6c8ddc6ebefe4af6bf42bc3d825963f5"
+    ],
+    "preserve_state_keys": [
+      "AK",
+      "CO",
+      "DE",
+      "IA",
+      "KS",
+      "ME",
+      "NC",
+      "NE",
+      "NH",
+      "NJ",
+      "VA",
+      "WY"
+    ],
+    "preserve_roster_object_count": 12,
+    "accepted_whole_roster_artifact_sha256": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c",
+    "accepted_public_legacy_payload_sha256": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997",
+    "source_representation_hash_checks": 35,
+    "meaning": "Previously accepted engineering roster-format extractions, not legally final ballots; retain complete object/observation/flag semantics and source references without adding ID to this container."
+  },
+  "ID_reference": {
+    "accepted_standalone_preflight_id": "e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1",
+    "accepted_local_record_artifact_sha256": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea",
+    "accepted_full9_projection_canonical_sha256": "e92b68b5b18dc716263504e4a5286db64150f1362f68f3fd464f095b3f94051e",
+    "five_input_pins": [
+      {
+        "source_id": "id_general_index",
+        "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+        "bytes": 218881,
+        "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4",
+        "url": "https://voteidaho.gov/idaho-general-election/",
+        "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+        "role": "OFFICIAL_GENERAL_ELECTION_LINK_INDEX"
+      },
+      {
+        "source_id": "id_candidate_search",
+        "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+        "bytes": 15841,
+        "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+        "url": "https://run.voteidaho.gov/search",
+        "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+        "role": "OFFICIAL_CANDIDATE_PORTAL_INITIAL_HTML_SHELL_NOT_RENDERED_TABLE"
+      },
+      {
+        "source_id": "id_browser_visible",
+        "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+        "bytes": 203250,
+        "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+        "url": "https://run.voteidaho.gov/search",
+        "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+        "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT"
+      },
+      {
+        "source_id": "id_browser_federal",
+        "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+        "bytes": 68620,
+        "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+        "url": "https://run.voteidaho.gov/search",
+        "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+        "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT"
+      },
+      {
+        "source_id": "id_browser_senate",
+        "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+        "bytes": 29871,
+        "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+        "url": "https://run.voteidaho.gov/search",
+        "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+        "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT"
+      }
+    ],
+    "source_role": "OBSERVED_GENERAL_CONTEXT_CANDIDACY_STATUS_HISTORY",
+    "regular_contest_id": "2026-ID-SENATE-C2",
+    "class_identity_evidence": "Use unchanged official ClassII source validated by base33-state frame; no new nomination/geography inference.",
+    "source_status_records": 5,
+    "Approved_status_records": 4,
+    "Withdrawn_status_records": 1,
+    "Approved_literal_party_counts": {
+      "Independent": 2,
+      "Libertarian": 1,
+      "Republican": 1
+    },
+    "Withdrawn_literal_party_counts": {
+      "Democratic": 1
+    },
+    "accepted_full9_projection_artifact_byte_sha256": "59f90ab697f87dca31d5fe897206d6098d32fe7dc95482fb919d79687aa4145a",
+    "observed_capture_contexts": {
+      "general_election_text": "November 03, 2026 - 2026 GENERAL",
+      "source_title_role": "FINAL CANDIDATES LIST source label only",
+      "district_controls": [
+        "Select District Type",
+        "Federal",
+        "Federal"
+      ],
+      "office_controls": [
+        "NOT_PRESENT_WHILE_DISTRICT_UNSELECTED",
+        "Select Office",
+        "United States Senator"
+      ],
+      "party_control": "Select Party in all3captures",
+      "items_per_page": "50",
+      "page_ranges": [
+        "1 \u2013 50 of 592",
+        "1 \u2013 15 of 15",
+        "1 \u2013 5 of 5"
+      ],
+      "selected_counts": [
+        592,
+        15,
+        5
+      ],
+      "global_count": 592,
+      "name_input_all3": "UNKNOWN",
+      "initial_checkbox_array": "UNKNOWN_MISSING_FROM_ARTIFACT",
+      "later2_checkbox_arrays": "Select All / Approved / Withdrawn checked",
+      "source_representation": "BROWSER_DOM_TEXT_NOT_HTTP_WIRE",
+      "observation_clock_role": "Captured UTC observation only, not immutable publisher/asof evidence"
+    }
+  },
+  "proposed_output_envelope": {
+    "schema_version": 2,
+    "scope": "TYPED_SOURCE_DOCUMENT_READINESS_ONLY_NOT_SAMPLE_OR_FINAL_BALLOT_ACCEPTANCE",
+    "legacy_payload_ref": "legacy_readiness_v1_7.json (unchanged full legacy public payload, explicitly a legacy-component view)",
+    "document_observations": "Exactly33 regular ClassII states, discriminated by kind; separate3 context contests unchanged and outside coverage denominator.",
+    "document_observation_kinds": {
+      "LEGACY_ROSTER_DOCUMENT": {
+        "allowed_states": [
+          "AK",
+          "CO",
+          "DE",
+          "IA",
+          "KS",
+          "ME",
+          "NC",
+          "NE",
+          "NH",
+          "NJ",
+          "VA",
+          "WY"
+        ],
+        "payload": "Reference unchanged legacy public observation and local roster; do not recast existing booleans/party classes as new legal evidence."
+      },
+      "GENERAL_CONTEXT_CANDIDACY_STATUS_HISTORY": {
+        "allowed_states": [
+          "ID"
+        ],
+        "record_role": "OBSERVED_GENERAL_CONTEXT_CANDIDACY_STATUS_HISTORY",
+        "source_status_record_count": 5,
+        "Approved_status_record_count": 4,
+        "Withdrawn_status_record_count": 1,
+        "local_record_artifact_ref": "id_status_records.local.json",
+        "safe_diagnostics": "Exact allowlisted helper diagnostics only, with captured roles/filters/pagination/unknowns; no name projection."
+      },
+      "NO_DOCUMENT_ADMITTED_FOR_ANY_REVIEWED_KIND": {
+        "meaning": "Unfinished document-acquisition job in this33-state frame, not upstream absence or external access impossibility."
+      }
+    },
+    "metrics": {
+      "regular_frame_slots": 33,
+      "legacy_roster_state_count": "len(legacy_rosters)==12",
+      "typed_status_history_state_count": "len(status_history_states)==1 only after integration/run/postrun acceptance",
+      "document_state_coverage_count": "Cardinality of disjoint validated state-key union, never sum of candidates/statuses/captures/GETs.",
+      "remaining_document_acquisition_jobs": "33-document_state_coverage_count; does not count final/legal/geography/selection gates as finished.",
+      "final_ballots_accepted": 0,
+      "distinct_source_representation_count": "35 legacy +5 ID ==40 unique declared source artifacts/representations; not number of repeated before/after hash operations, uniqueURLs or legal documents."
+    },
+    "forbidden_redefinitions": [
+      "Do not increment legacy official_rosters_extracted from12 to13 for ID.",
+      "Do not reuse candidate_count as active/Approved/ballot count for5status records.",
+      "Do not call ID Approved rows legal nominees or omit Withdrawn history.",
+      "Do not interpret blank source cells or typed UNKNOWN as false/true.",
+      "Do not merge contexts or add states outside official33 regular ClassII slots."
+    ]
+  },
+  "private_payload_contract": {
+    "candidate_rosters.local.json": "Exactly same12 state objects and canonical output bytes as accepted v1.7 reference; ID absent.",
+    "id_status_records.local.json": "Exactly5 standalone record objects including full local names/source literals/row locators/four typed UNKNOWNs; compare objects/canonical projection to accepted standalone artifacts, do not add/overwrite fields.",
+    "privacy": "Both are ignored/unbundled and refused by generic viewer/package/path guards. Public document_observations must be assembled from safe diagnostics, not redaction-by-deleting-name from raw objects."
+  },
+  "ID_unknown_contract": {
+    "write_in_status": "UNKNOWN: BLANK_SOURCE_CELL_DOES_NOT_ESTABLISH_BOOLEAN_FALSE",
+    "printed_ballot_status": "UNKNOWN: PORTAL_APPROVAL_AND_FINAL_TITLE_ARE_NOT_PRINTED_BALLOT_CERTIFICATION",
+    "legal_nomination_status": "UNKNOWN: NO_INDEPENDENT_LEGAL_NOMINATION_ADJUDICATION",
+    "latest_amendment_completeness": "UNKNOWN: CAPTURED_PORTAL_CONTEXT_NOT_LATEST_UPSTREAM_COMPLETENESS_CERTIFICATE",
+    "initial_status_checkbox_snapshot": "UNKNOWN; final2 snapshots record bothApproved/Withdrawn selected.",
+    "candidate_name_input_value_all3": "UNKNOWN; no unfiltered/global source-completeness claim.",
+    "filing_date_role": "Source filing date only, not nomination/withdrawal/certification/publication/asof timestamp.",
+    "source_writein_and_district_cells": "Preserve empty strings separately from semantic UNKNOWN fields."
+  },
+  "current_accepted_counts": {
+    "document_states": 12,
+    "unfinished_document_acquisition_jobs": 21,
+    "final_ballots": 0
+  },
+  "conditional_post_acceptance_arithmetic_example": {
+    "is_current_result": false,
+    "origin": "Proposed union/denominator arithmetic only; not execution or authority.",
+    "legacy_roster_states": 12,
+    "typed_status_history_states": 1,
+    "document_states": 13,
+    "unfinished_document_acquisition_jobs": 20,
+    "final_ballots": 0,
+    "required_gates_before_any_promotion": [
+      "Independent methods/schema acceptance",
+      "Exact integration/config/code/runtime/privacy/lifecycle acceptance",
+      "Lead authorization of recorded readiness/replay",
+      "Independent actual-result/source/privacy acceptance and lead status update"
+    ],
+    "distinct_source_representations": 40
+  },
+  "proposed_admission_and_execution_order": [
+    "Create a separate runtime configuration/entry point; do not alter existing base/classII frame/configs/readers/CLI semantics.",
+    "Detach bounded closed built-in wrapper metadata BEFORE admitting that exact frozen snapshot; all code/config/source/audit anchors derive from it, no caller aliases.",
+    "Verify exact reviewed35-source base config/helper/geometry dependency and exact5-source ID helper/runtime/actual-result pins; refuse unknown contract or source kind.",
+    "Run existing v1.7 validator and ID read_sources as pure in-memory components, not child recorded run functions. Hold geometry runtime at previously accepted pdfplumber0.11.9; ID adds no dependencies.",
+    "Validate twelve legacy objects/public observations against accepted references; validate ID5 objects/typed UNKNOWNs and safe diagnostics against accepted standalone result; reject duplicate/wrong states/types and claims.",
+    "Assemble new33-state discriminated envelope; compute union counters; recheck all frozen inputs/sources/code after parsing before success publication.",
+    "Single parent exploratory RunStore only after metadata admission; preserve sealed type-only parser/cancel/persistence failures. No partial success may be served/packaged/promoted; retain failed partial private artifacts if persistence fails without overwriting historical evidence.",
+    "Record new public typed_document_readiness.json plus explicitly labeled unchanged legacy_readiness_v1_7.json and private payloads. Never write ID as a legacy candidate roster.",
+    "Recorded primary/replay must reproduce public envelope, unchanged legacy payload/12 rosters and ID5record objects/typed UNKNOWNs exactly under deterministic serializers; compare to accepted references."
+  ],
+  "consumer_policy": {
+    "forecast_or_race_selection_consumption": false,
+    "default_for_unknown_schema_or_kind": "REFUSE; no generic roster fallback or truthiness coercion",
+    "viewer": "Any future viewer extension must label source-status history/UNKNOWNs and guard private paths; current consumers must not silently treat new schema as old rosters. No viewer/CLI implementation authorized now.",
+    "source_policy": "Document observation admission is not experiment source-policy adoption, candidate/FEC validation, geography mapping, legal nomination, sealed evaluation or prospective forecast acceptance."
+  },
+  "acceptance_criteria": [
+    "Old v1.7 APIs/configs/readers unchanged; existing fixtures still pass and12actual legacy state objects plus legacy public payload match accepted hashes.",
+    "New schema explicitly discriminates legacy/status-history/unadmitted types with exact33regular slots and unchanged3context contests.",
+    "ID status-history records exactly match accepted standalone content/roles/filter/paging/unknown evidence; no legal/printed/writein bools or inventedApprovedD.",
+    "Document union count independent of roster count and all data quantities; current12/21/0 held until all newgates complete.",
+    "Five ID sources plus35legacy representations are rehashed before/after; metadata alias/source/code/config drift refused without authority replacement.",
+    "Public output names/contact-free; both named artifact paths denied by viewer/package; no generic private-source/dataframe display.",
+    "Full same-input/seedless replay and independent source/result audit before lead coverage promotion."
+  ],
+  "negative_fixture_plan": [
+    "Coedited caller metadata and source bodies at first/middle/final read with frozenrelease constant unchanged; no partial success.",
+    "ID accidentally inserted into legacy roster, changed one of12legacy objects, changed original flags/party labels or copied neweroldstatevalues without accepted bindings.",
+    "Approved/Withdrawn collapsed, WithdrawnD counted as Approved or oneObservedDandR fallback; record-count used as ballotcount.",
+    "Blank writein/district coerced tofalse, UNKNOWN dropped/replaced withbool/null/default, statusdate relabeledwithdrawal/certificationdate.",
+    "Unknown discriminator/schema, duplicateID inbothcontainers, unreviewed state or special/context contaminating33regular coverage.",
+    "First-checkbox/nameinput UNKNOWN backfilled; selectedfilter/page/count/sourcekind altered or browser data mislabeledwire/asof.",
+    "Missingmismatched old/IDsource/code/config/audit pins, unsupported geometry runtime, privatepath/symlink/traversal.",
+    "Public name/contact sentinel, unsafe diagnosticprojection, rawlocalartifact viewer/package routes, arbitrarymanifest metadata.",
+    "Parser/hash/cancel/SystemExit/source-after-read or publication failure after firstcomponent/secondcomponent/assembly; sealedfailureandnoeligiblepartialsuccess."
+  ],
+  "new_GETs": 0,
+  "new_browser_calls": 0,
+  "external_ocr_calls": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "new_helper_or_integration_calls": 0,
+  "final_ballots_accepted": 0
+}
