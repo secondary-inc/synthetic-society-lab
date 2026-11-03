@@ -1,0 +1,103 @@
+{
+  "all_120_numeric_crosschecks": "PASS using independent Poppler layout extraction; see calculations receipt",
+  "audited_at_utc": "2026-11-03T10:42:57.898275+00:00",
+  "auditor_role": "independent_auditor",
+  "class_I_state_set": "PASS: independent 33-state set read from FEC PDF page40 (printed34)",
+  "code_and_claim_files": {
+    "configs/e01_official_sources.json": "2df422bd26c0ba2809b9aeb0c89d48a02763d6740cd30ff0d7ef33a621f1eded",
+    "configs/e01_senate2018_2024.json": "162d75f9049b8e0d412fd4c9bf6d1cbdd601bc4a8bc260cc64f91988420fe305",
+    "docs/E01_HISTORICAL_RUNBOOK.md": "d8fa06f437bed41dfa88ccee3dacdc3c7fd0e123ad3d91e16f04ee164e3f121d",
+    "protocols/E01_SENATE_2018_2024_DIAGNOSTIC.md": "043b588da2b1b61bb11d15f2cdde90f19b4aa33089ac71c74e9d691dffd7cf2a",
+    "reports/E01_HISTORICAL_EVIDENCE.json": "e2bb2175c826abb48c38fb93df7a6e874d6c8fb503f289894bbf794f9fdef0e2",
+    "src/civiclab/e01/historical.py": "cf1f8325e2f78ca1a806359b88c2fb746e1c62b8255698e1f966cde6fed0c00f",
+    "src/civiclab/e01/isolation.py": "2d68590042a501f853d084576ed92c73006073a2eeb414881ab487f1fe0089f3",
+    "src/civiclab/e01/pipeline.py": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763",
+    "src/civiclab/e01/worker.py": "307c978355b543b49ed13fa3ef6246908dadb3c71170d0cc2355884a29e88172",
+    "tests/test_e01.py": "f84ca22d6c486f176c8ffd5f2e3361a4db98db379f3673e72ed75f39820ebd52",
+    "tests/test_isolation.py": "bb1ca6aa2cc0e4e7fb4a4f28ee5790109f94ce69cda7d4c2ffe461cf84521057"
+  },
+  "cost_usd": 0,
+  "evidence_path": "reports/INDEPENDENT_AUDIT_E01_calculations.json",
+  "evidence_sha256": "9636fe79ad6d8c85d12dc661214a95cfe076f6e00bb982d68c12cec7103aad05",
+  "independent_metrics": {
+    "S0_mae_pp": 10.199287428521941,
+    "S_ZERO_mae_pp": 18.18830603000105,
+    "leave_one_state_out_range_pp": [
+      -8.72470437989103,
+      -6.524110162136731
+    ],
+    "paired_mean_pp": -7.98901860147911,
+    "races": 30
+  },
+  "limitations": [
+    "No independent pre-results archive; not prospective or historically untouched.",
+    "Operator and selection logic read outcomes; process/input separation is an accidental-I/O control, not researcher blindness or adversarial sandbox.",
+    "Finite selected eligible cohort and leave-one-state-out sensitivity do not provide forecasting intervals or universal superiority.",
+    "No model calls, agent variants, human effects or 2026 performance evidence."
+  ],
+  "name_alias_review": "Maryland State Archives independently confirms Tony Campbell Republican697017; FEC spelling Cambell is explicitly reconciled.",
+  "nine_corrections_visual_review": "PASS: FEC PDF pages34,38,39 and Clerk PDF pages31,48 visually checked including general vs primary columns and NY fusion lines.",
+  "original_E01_contract": {
+    "E01_BASELINES": "Scoped supporting diagnostic accepted; original2026 workflow still BLOCKED",
+    "E01_EVALUATION": "Original untouched/2026 evaluation BLOCKED; retrospective diagnostic accepted only",
+    "E01_MANIFEST": "BLOCKED for original2026 sample/House geography/ballot evidence",
+    "E01_VARIANTS": "NOT_RUN"
+  },
+  "paid_calls": 0,
+  "rights_scope": "Published numeric government election facts and derived aggregates; no blanket MEDSL-code/data-collection license or raw redistribution approval inferred.",
+  "run_checks": [
+    {
+      "artifacts_verified": 15,
+      "checksums_sha256": "3d2611fdc535ed59062e3cd76a522e5324511529234d080c4c51aec80d7a87a2",
+      "predictions_and_outcome_identity_verified": true,
+      "run_id": "e01-ed5b716aa76145258ece94c3df6b4188"
+    },
+    {
+      "artifacts_verified": 15,
+      "checksums_sha256": "06224fe7a661c379c452bae146376af0743b576658a0a43941b8e8c2a84082fd",
+      "predictions_and_outcome_identity_verified": true,
+      "run_id": "e01-9a3e3305877f40b3a84e63bd5ca5ed1c"
+    }
+  ],
+  "schema_version": 1,
+  "selection_scope": "Conditional major-party participants in both regular general elections; post-hoc and outcome sources encountered before freeze. Maine remains conditional D-R even with independent winner.",
+  "source_date_review": "FEC cover October2019 and Clerk cover March10,2025 match. 2019-11-01 is conservative month-bound metadata, not exact observed availability. Current Senate page is not pre-election proof. Web Senate fetch returned403; no bypass. Local pinned HTML hash checked.",
+  "sources": {
+    "clerk2024": {
+      "sha256": "d4ba800fc17135b616ae556c92861080ab962d95916ace34b546c5aac824aec4",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf"
+    },
+    "fec2018": {
+      "sha256": "6d7b65418458f40cb4d301f04034e79a6938344097c6d28ec418d676af757ab2",
+      "url": "https://www.fec.gov/resources/cms-content/documents/federalelections2018.pdf"
+    },
+    "maryland2018": {
+      "sha256": "7df55b8bc667d4a22fd7dcc7b4cd75e071fb5e5da0555c7aaff69b88211889d0",
+      "url": "https://www.msa.maryland.gov/msa/mdmanual/42electg/html/2018/2018ussen.html"
+    },
+    "medsl2018": {
+      "sha256": "8ab824d9acca70ad54dc69f9b191c5cea604cd5bbda2f8777e968cf25bada50e",
+      "url": "https://raw.githubusercontent.com/MEDSL/constituency-returns/fe67c056502fc09ddb1ace2ff8f87c53233a744e/1976-2018-senate.csv"
+    },
+    "medsl2024": {
+      "sha256": "e50fbfc62a095b9fe0d5178b7c09176b5cb8b7d320e08dd31e54987b9e3fcd76",
+      "url": "https://raw.githubusercontent.com/MEDSL/2024-elections-official/df531089c78e6d0098db1a6bfb3849a066a06995/2024-senate-state.csv"
+    },
+    "senateclass1": {
+      "sha256": "68453e923b8717ee1b21878390b0bfa1d64f982eca4928c21b74a367cf97cdd1",
+      "url": "https://www.senate.gov/senators/Class_I.htm"
+    }
+  },
+  "status": "PASS_BOUNDED_HISTORICAL_DIAGNOSTIC_ONLY",
+  "structural_exclusions": [
+    "CA",
+    "NE",
+    "VT"
+  ],
+  "summary_replay_identical": true,
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01 tests.test_isolation -v",
+    "exit_code": 0,
+    "passed": 25
+  }
+}

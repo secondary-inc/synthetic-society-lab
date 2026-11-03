@@ -1,0 +1,152 @@
+{
+  "protocol_id": "E01_SENATE_2018_2024_DIAGNOSTIC_v1",
+  "study_scope": "Historical Class-I Senate diagnostic supporting, not replacing, the original E01 2026 forecasting workflow",
+  "status": "RETROSPECTIVE",
+  "target_year": 2024,
+  "prior_year": 2018,
+  "seat_class": 1,
+  "target_election_date": "2024-11-05",
+  "prior_election_date": "2018-11-06",
+  "feature_cutoff": "2024-11-04",
+  "historical_feature_publication_year_month": "2019-10",
+  "feature_as_of": "2019-11-01",
+  "feature_date_policy": "Conservative first day after the documented FEC October 2019 publication month; not an observed precise release timestamp",
+  "methods": [
+    "S_ZERO",
+    "S0"
+  ],
+  "national_shift_pp": 0,
+  "incumbency_adjustment_pp": 0,
+  "selection_rule": "All 33 regular Class-I statewide contests in the 2018 six-year-cycle official FEC table. Require exactly one named major-party Democratic candidate and one Republican in both regular general elections. No sampling by ratings, closeness, winner, margin, model error or forecast performance. Independent winners are not an exclusion: the target is explicitly D-R conditional two-party margin. Eligibility and official-source candidate/vote reconciliation are established before any error calculation. Any unresolved official discrepancy blocks evaluation instead of silently changing its denominator.",
+  "class1_states": [
+    "AZ",
+    "CA",
+    "CT",
+    "DE",
+    "FL",
+    "HI",
+    "IN",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NJ",
+    "NM",
+    "NY",
+    "ND",
+    "OH",
+    "PA",
+    "RI",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY"
+  ],
+  "party_rule": "Democrat includes state affiliates Democratic-Farmer-Labor (MN) and Democratic-NPL (ND); sum all fusion lines for the same named candidate, never count combined and separate totals twice. Nonmajor candidate votes are not reallocated.",
+  "geography_rule": "Statewide constitutional Senate constituency, not House districts. Official FEC six-year Class-I table identifies prior seats; Senate official Class-I page identifies the 2024 cycle. Political state/seat identity is invariant for these elections; no tract/precinct spatial interpolation or House-map assumptions are used.",
+  "missing_or_bad_input": "Block, no imputation. Party/ballot structural exclusions are logged before scoring. No one-vote sentinel rows from county tables are used; this pipeline uses statewide published candidate totals independently cross-checked to official sources.",
+  "metric": "Macro MAE of signed (D-R)/(D+R)*100 vote margins, same exact eligible states for S_ZERO and S0; paired error differences and leave-one-state-out sensitivity, not universal superiority claims.",
+  "limitations": [
+    "Post-hoc reconstruction: source retrieval and sample freeze occur after the 2024 election; not a historically untouched holdout or prospective forecast",
+    "No inference about 2026 performance or agent value",
+    "No model calls or agent variants run",
+    "The D-R conditional target can exclude an independent winner's votes and is not winner probability",
+    "Retrospective official results establish participant identity but are not pre-election archived ballots",
+    "Statewide Senate constituency checks do not validate House district maps"
+  ],
+  "paid_execution": false,
+  "approved_spend_usd": 0,
+  "official_name_aliases": {
+    "2018:MD:TONY CAMPBELL": {
+      "official_family": "CAMBELL",
+      "reason": "FEC PDF prints Cambell; Maryland State Archives 2018 table confirms Tony Campbell, Republican, 697017.",
+      "corroboration_source": "maryland2018"
+    }
+  },
+  "protocol_amendment_before_scoring": "During source validation and before any error calculation, nine CSV count discrepancies were identified. Explicit pinned-government-PDF corrections below replace those counts; all eligible states remain included. An unlisted discrepancy still blocks. MEDSL is discovery/normalization, government totals are authoritative.",
+  "official_count_adjudications": [
+    {
+      "year": 2018,
+      "state": "OH",
+      "party": "DEMOCRAT",
+      "csv_votes": 2355923,
+      "official_votes": 2358508,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2018,
+      "state": "OH",
+      "party": "REPUBLICAN",
+      "csv_votes": 2053963,
+      "official_votes": 2057559,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2018,
+      "state": "PA",
+      "party": "DEMOCRAT",
+      "csv_votes": 2777680,
+      "official_votes": 2792437,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2018,
+      "state": "WV",
+      "party": "DEMOCRAT",
+      "csv_votes": 288808,
+      "official_votes": 290510,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2018,
+      "state": "WV",
+      "party": "REPUBLICAN",
+      "csv_votes": 269872,
+      "official_votes": 271113,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2024,
+      "state": "ME",
+      "party": "DEMOCRAT",
+      "csv_votes": 88875,
+      "official_votes": 88891,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2024,
+      "state": "ME",
+      "party": "REPUBLICAN",
+      "csv_votes": 284434,
+      "official_votes": 284338,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2024,
+      "state": "NY",
+      "party": "DEMOCRAT",
+      "csv_votes": 4711669,
+      "official_votes": 4711298,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    },
+    {
+      "year": 2024,
+      "state": "NY",
+      "party": "REPUBLICAN",
+      "csv_votes": 3246690,
+      "official_votes": 3246114,
+      "reason": "Authoritative pinned FEC/House Clerk publication supersedes machine-readable discovery CSV"
+    }
+  ]
+}

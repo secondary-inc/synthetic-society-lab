@@ -1,0 +1,28 @@
+{
+  "audited_at_utc": "2026-11-03T10:27:05.906949+00:00",
+  "string_false_policy": {
+    "reservation_allowed": false,
+    "expected": false,
+    "status": "PASS"
+  },
+  "cancelled_request": {
+    "first_status": "UNCERTAIN",
+    "later_request_allowed": false,
+    "cancellation_propagated": true,
+    "status": "PASS"
+  },
+  "finalization_crash": {
+    "summary_exists": true,
+    "checksums_exist": true,
+    "status": "PASS"
+  },
+  "empty_completion_contract": {
+    "actual_status": "COMPLETE",
+    "expected": "reject malformed/empty scope, not COMPLETE"
+  },
+  "code_files": {
+    "src/civiclab/model.py": "dca5b04af189415f6a52c363c170408d40aeac166830011536091952888230ac",
+    "src/civiclab/common.py": "05f75573e1099584acf5fbb65264067f868b870ba992a834d111a6ddfe74eae3",
+    "src/civiclab/orchestration.py": "8abdd523466948e2e33f5f1e80d598e933a2b67e848173693a1df2b03fd6e22a"
+  }
+}

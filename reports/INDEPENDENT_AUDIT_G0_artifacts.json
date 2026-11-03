@@ -1,0 +1,102 @@
+{
+  "stored_runs": [
+    {
+      "role": "e01_audit",
+      "run_id": "e01-066654cf38c64c5a97913d828bd00058",
+      "kind": "RETROSPECTIVE",
+      "status": "BLOCKED_REAL_BASELINE",
+      "artifact_count": 6,
+      "mismatches": [],
+      "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+      "dirty": false,
+      "checksum_ledger_matches_committed_receipt": true
+    },
+    {
+      "role": "e01_demo",
+      "run_id": "e01-291abe736b0648acb08a9254d4880017",
+      "kind": "MOCK",
+      "status": "DEMO_COMPLETE",
+      "artifact_count": 10,
+      "mismatches": [],
+      "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+      "dirty": false,
+      "checksum_ledger_matches_committed_receipt": true
+    },
+    {
+      "role": "e01_demo_replay",
+      "run_id": "e01-34e1aa5529d54eb598ff645dd0b4d0fc",
+      "kind": "MOCK",
+      "status": "DEMO_COMPLETE",
+      "artifact_count": 10,
+      "mismatches": [],
+      "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+      "dirty": false,
+      "checksum_ledger_matches_committed_receipt": true
+    },
+    {
+      "role": "pilot",
+      "run_id": "e02-0121548188194f04936b85c984ee677f",
+      "kind": "MOCK",
+      "status": "PASS_MOCK_PILOT",
+      "artifact_count": 11,
+      "mismatches": [],
+      "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+      "dirty": false,
+      "checksum_ledger_matches_committed_receipt": true
+    },
+    {
+      "role": "pilot_replay",
+      "run_id": "e02-f1b88b12ebe34884974116336625ef04",
+      "kind": "MOCK",
+      "status": "PASS_MOCK_PILOT",
+      "artifact_count": 11,
+      "mismatches": [],
+      "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+      "dirty": false,
+      "checksum_ledger_matches_committed_receipt": true
+    },
+    {
+      "role": "population",
+      "run_id": "e02-ad2ad153c5ea480d8a9b7f39433927e7",
+      "kind": "EXPLORATORY",
+      "status": "PASS_EXPLORATORY_FIT",
+      "artifact_count": 5,
+      "mismatches": [],
+      "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+      "dirty": false,
+      "checksum_ledger_matches_committed_receipt": true
+    }
+  ],
+  "pilot": {
+    "responses": 180,
+    "hash": "8675da5f1ae4dd5cb4226f5b9b8997234abf8b9626f646d634d9508c747a077a",
+    "primary_pairs": 24,
+    "excluded": {
+      "missing_invalid_or_nonpartisan_primary": 12
+    }
+  },
+  "pilot_replay": {
+    "responses": 180,
+    "hash": "8675da5f1ae4dd5cb4226f5b9b8997234abf8b9626f646d634d9508c747a077a",
+    "primary_pairs": 24,
+    "excluded": {
+      "missing_invalid_or_nonpartisan_primary": 12
+    }
+  },
+  "tracked_credential_pattern_matches": [],
+  "nonsecret_spend_settings": {
+    "PAID_API_ENABLED": "false",
+    "TOTAL_BUDGET_USD": "0",
+    "E01_BUDGET_USD": "0",
+    "E02_BUDGET_USD": "0"
+  },
+  "independent_primary_recalculation": {
+    "paired_units": 24,
+    "excluded": 12,
+    "mean_thermometer_points": 2.0,
+    "distinct_pair_differences": [
+      2
+    ],
+    "interpretation": "Known injected MOCK value only; not a research finding."
+  }
+}

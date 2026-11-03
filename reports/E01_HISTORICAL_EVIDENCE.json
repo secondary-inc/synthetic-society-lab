@@ -1,0 +1,85 @@
+{
+  "audit_status": "PENDING_INDEPENDENT_REVIEW",
+  "run_ids": [
+    "e01-ed5b716aa76145258ece94c3df6b4188",
+    "e01-9a3e3305877f40b3a84e63bd5ca5ed1c"
+  ],
+  "source_count": 6,
+  "candidate_count_crosschecks": 120,
+  "count_adjudications": 9,
+  "source_config": "configs/e01_official_sources.json",
+  "protocol_config": "configs/e01_senate2018_2024.json",
+  "summary": {
+    "cost_usd": 0,
+    "dataset_kind": "REAL_HISTORICAL_DIAGNOSTIC",
+    "excluded": [
+      {
+        "basis": "party/participant structure, not performance",
+        "reason": "requires one named Democrat and Republican; no margin/winner-based exclusions",
+        "state": "CA"
+      },
+      {
+        "basis": "party/participant structure, not performance",
+        "reason": "requires one named Democrat and Republican; no margin/winner-based exclusions",
+        "state": "NE"
+      },
+      {
+        "basis": "party/participant structure, not performance",
+        "reason": "requires one named Democrat and Republican; no margin/winner-based exclusions",
+        "state": "VT"
+      }
+    ],
+    "leave_one_state_out_paired_mean_range_pp": [
+      -8.72470437989103,
+      -6.524110162136731
+    ],
+    "limitations": [
+      "Post-hoc reconstruction: source retrieval and sample freeze occur after the 2024 election; not a historically untouched holdout or prospective forecast",
+      "No inference about 2026 performance or agent value",
+      "No model calls or agent variants run",
+      "The D-R conditional target can exclude an independent winner's votes and is not winner probability",
+      "Retrospective official results establish participant identity but are not pre-election archived ballots",
+      "Statewide Senate constituency checks do not validate House district maps"
+    ],
+    "methods": {
+      "S0": {
+        "SENATE": {
+          "macro_mae_pp": 10.199287428521943,
+          "max_absolute_error_pp": 45.931502377593326,
+          "min_absolute_error_pp": 0.05950082804470691,
+          "n": 30
+        }
+      },
+      "S_ZERO": {
+        "SENATE": {
+          "macro_mae_pp": 18.18830603000105,
+          "max_absolute_error_pp": 52.366509569192104,
+          "min_absolute_error_pp": 0.2228208993178275,
+          "n": 30
+        }
+      }
+    },
+    "original_E01_completion": "BLOCKED: 2026 outcomes, verified 2026 sample and agent comparisons remain missing",
+    "paid_calls": 0,
+    "paired_S0_minus_S_ZERO_mae_pp": -7.98901860147911,
+    "prediction_hashes": {
+      "S0": "c25b0b50fc8f98aa1aaa8d0ef17a725a652dae12b3e4f4f02a18fbf849cc3de5",
+      "S_ZERO": "badefdad313de0498c20057b3414ab946b6a242c3c96a519df6f9e63dc91cee4"
+    },
+    "races": 30,
+    "reproducibility_hash": "ec3ded3027c50c3468abea845b63caa64bdf6b14306644248ef63da0acd17cda",
+    "source_validation": "Each modeled major candidate and combined vote count matched official government PDF",
+    "spent_usd": 0,
+    "status": "REAL_RETROSPECTIVE_DIAGNOSTIC_COMPLETE",
+    "study_scope": "2018\u21922024 Class-I Senate; original 2026/agent E01 contract remains incomplete",
+    "uncertainty": "Finite retrospectively eligible cohort; no sampling CI. Leave-one-state-out range is descriptive sensitivity, not forecast uncertainty."
+  },
+  "replay_verified": true,
+  "test_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e01 tests.test_isolation -v",
+  "test_result": "25 tests passed",
+  "visual_checks": [
+    "FEC PDF page 34 (printed 28), official OH/PA general totals",
+    "Clerk PDF page 31 (printed 29), official Maine Senate totals"
+  ],
+  "claim_limit": "Not a replacement for full original E01; no prospective forecast, untouched holdout, agents or human inference."
+}

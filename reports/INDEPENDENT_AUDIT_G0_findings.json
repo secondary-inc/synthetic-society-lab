@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T10:31:25.765862+00:00",
+  "overall_status": "BLOCKED",
+  "findings": [
+    {
+      "id": "IA-G0-001",
+      "severity": "P2",
+      "status": "REMEDIATION_VERIFIED",
+      "description": "False-like string enabled flag"
+    },
+    {
+      "id": "IA-G0-002",
+      "severity": "P1_BEFORE_PAID",
+      "status": "REMEDIATION_VERIFIED",
+      "description": "Cancellation did not halt uncertain billing"
+    },
+    {
+      "id": "IA-G0-003",
+      "severity": "P2",
+      "status": "REMEDIATION_VERIFIED",
+      "description": "Summary-before-checksum crash could not resume"
+    },
+    {
+      "id": "IA-G0-004",
+      "severity": "P2",
+      "status": "REMEDIATION_VERIFIED",
+      "description": "Empty/duplicate completion contract accepted"
+    }
+  ],
+  "completion_matrix": [
+    {
+      "id": "G0_INSTALL",
+      "clause": 1,
+      "gate": "G0",
+      "description": "Clean checkout installs with documented dependencies",
+      "status": "PASS",
+      "reason": "Fresh isolated Python 3.12 environment installed the exact copied source snapshot successfully; no raw data or .env copied. This is scoped installation evidence, not remote CI."
+    },
+    {
+      "id": "G0_TESTS",
+      "clause": 1,
+      "gate": "G0",
+      "description": "Documented fixture tests pass in an independently reproduced clean environment",
+      "status": "PASS",
+      "reason": "All 53 tests in the frozen post-remediation snapshot passed independently; original snapshot 46 passed. Later five controller tests passed. Counts overlap and do not prove scientific completeness."
+    },
+    {
+      "id": "G0_INTEGRITY",
+      "clause": 1,
+      "gate": "G0",
+      "description": "Registered source inventory verifies; nonredistributable data have documented reacquisition/import paths",
+      "status": "BLOCKED",
+      "reason": "All 90 local registered byte/ZIP checks pass, but complete documented reacquisition/import paths, exact upstream releases and rights for nonredistributable/manual inputs are not demonstrated; local hashes alone do not meet clause 1."
+    },
+    {
+      "id": "G0_SECRETS",
+      "clause": 4,
+      "gate": "G0",
+      "description": "Credential/raw-data exclusions and fail-closed inference configuration are independently checked",
+      "status": "PASS",
+      "reason": "Observed .env ignored/untracked, mode 0600, current tracked source scan had no credential-pattern matches, actual nonsecret budgets are disabled/zero; strict enabled guard/cancellation probes passed after fixes. Rotation/real credentials remain G5, not certified."
+    },
+    {
+      "id": "E01_MANIFEST",
+      "clause": 2,
+      "gate": "G2",
+      "description": "Frozen real race sample, official candidates, geography and historical crosswalks are verified",
+      "status": "BLOCKED",
+      "reason": "No independently accepted real race/ballot/geography manifest in audited snapshot; later E01 worker artifacts need separate review."
+    },
+    {
+      "id": "E01_BASELINES",
+      "clause": 2,
+      "gate": "G3",
+      "description": "Genuine historical statistical baselines evaluated under frozen sample and input rules",
+      "status": "BLOCKED",
+      "reason": "Audited sealed forecast outputs are DEMO; genuine retrospective worker implementation not yet independently validated."
+    },
+    {
+      "id": "E01_VARIANTS",
+      "clause": 2,
+      "gate": "G6",
+      "description": "Comparable agent variants use same races/outcomes/cutoffs and matched simpler controls",
+      "status": "NOT_RUN",
+      "reason": "No actual same-race agent comparator execution is established; zero paid authorization remains."
+    },
+    {
+      "id": "E01_EVALUATION",
+      "clause": 2,
+      "gate": "G6",
+      "description": "Sealed holdout evaluation, real result tables and retrospective contamination analysis",
+      "status": "BLOCKED",
+      "reason": "Real sealed historical holdout evaluation not independently accepted; local hashes do not prove prospective timing."
+    },
+    {
+      "id": "E02_PROTOCOL",
+      "clause": 3,
+      "gate": "G1",
+      "description": "Frozen hypotheses, questionnaire mapping, estimand, exclusions, variance and sensitivity plan independently accepted",
+      "status": "BLOCKED",
+      "reason": "Instrument is frozen for mock engineering only; scientific target universe, registration, full sensitivity plan and independent signoff remain."
+    },
+    {
+      "id": "E02_POPULATION",
+      "clause": 3,
+      "gate": "G2",
+      "description": "ACS/ANES joint fitting is validated for the stated universe, with support and holdout diagnostics",
+      "status": "BLOCKED",
+      "reason": "Exploratory calibration has major sparse support exclusions and citizen/resident mismatch; not accepted as representative or full target-universe validation."
+    },
+    {
+      "id": "E02_STIMULI",
+      "clause": 3,
+      "gate": "G2",
+      "description": "Permitted real-text stimuli have exact frozen content, rights, timestamps and matched treatments",
+      "status": "BLOCKED",
+      "reason": "Audited pilot uses authored DEMO notices; newly curated official-text worker sources require independent rights/timestamp/content review."
+    },
+    {
+      "id": "E02_ENGINE",
+      "clause": 3,
+      "gate": "G4",
+      "description": "Randomization, isolation, scoring and invalid response logging independently pass offline integration",
+      "status": "BLOCKED",
+      "reason": "Sealed old MOCK crossed assignment, reset/scoring and recomputed fixture outputs were verified, but final real-provider/stimulus integration is not yet accepted."
+    },
+    {
+      "id": "E02_EVALUATION",
+      "clause": 3,
+      "gate": "G6",
+      "description": "Registered real-model evaluation and prespecified sensitivity/uncertainty analysis completed",
+      "status": "NOT_RUN",
+      "reason": "No registered real-model treatment evaluation or scientific robustness/sensitivity results established."
+    },
+    {
+      "id": "MODEL_CONTROLS",
+      "clause": 4,
+      "gate": "G3",
+      "description": "OpenRouter-only calls enforce atomic reservations, provider reconciliation, cancellation/retry and checkpoint semantics",
+      "status": "BLOCKED",
+      "reason": "Original three safety/recovery defects are independently remediated; full current runner integration and actual authorized provider reconciliation remain unaccepted."
+    },
+    {
+      "id": "MODEL_AUTHORIZATION",
+      "clause": 4,
+      "gate": "G5",
+      "description": "Owner-approved positive budget, rotated/verified credentials and fresh provider price evidence precede real calls",
+      "status": "BLOCKED",
+      "reason": "Positive owner funding, rotated/verified credentials and fresh exact provider pricing have not been authorized/verified."
+    },
+    {
+      "id": "INDEPENDENT_REVIEW",
+      "clause": 5,
+      "gate": "G6",
+      "description": "A nonimplementing auditor has current evidence for every required milestone",
+      "status": "BLOCKED",
+      "reason": "Initial G0 independent review exists; not every subsequent milestone is audited."
+    },
+    {
+      "id": "CI",
+      "clause": 5,
+      "gate": "G0",
+      "description": "Remote CI passes for the reviewed code; local tests alone are not substituted",
+      "status": "NOT_RUN",
+      "reason": "Configured GitHub workflow is not observed passing for current reviewed code; authentication/delivery remained unresolved at inspection."
+    },
+    {
+      "id": "TRACEABLE_VISUALS",
+      "clause": 5,
+      "gate": "G7",
+      "description": "Every research table/figure and dashboard view is generated from identified validated run artifacts",
+      "status": "BLOCKED",
+      "reason": "Existing six mock/exploratory run ledgers verify; final genuine research figures/tables and new completion view need separate provenance review."
+    },
+    {
+      "id": "REPRO_PACK",
+      "clause": 6,
+      "gate": "G7",
+      "description": "Reproducibility pack restores environment, configs, manifests and permitted outputs with verified hashes",
+      "status": "BLOCKED",
+      "reason": "New reproduction module is implementer work awaiting independent review; complete private-source reacquisition remains unresolved."
+    },
+    {
+      "id": "PAPER_DRAFT",
+      "clause": 6,
+      "gate": "G7",
+      "description": "Technical manuscript draft reflects actual findings and clearly separates proposed/unrun analyses",
+      "status": "BLOCKED",
+      "reason": "Final technical manuscript package not reviewed in this initial G0 snapshot."
+    },
+    {
+      "id": "BLOG_DRAFT",
+      "clause": 6,
+      "gate": "G7",
+      "description": "Public-facing blog draft states supported findings, limitations and review-only status",
+      "status": "BLOCKED",
+      "reason": "Final public-facing draft not reviewed in this initial G0 snapshot."
+    },
+    {
+      "id": "LIMITATIONS",
+      "clause": 6,
+      "gate": "G7",
+      "description": "Complete limitations/failure/source-reuse report is consistent with actual evidence",
+      "status": "BLOCKED",
+      "reason": "Status documents contain caveats, but full publication limitations/failure/source-reuse report remains unreviewed."
+    },
+    {
+      "id": "STATUS",
+      "clause": 6,
+      "gate": "G7",
+      "description": "Accurate requirement-level completion dashboard and current status report exist",
+      "status": "BLOCKED",
+      "reason": "New completion controller rejects empty/duplicate contracts after review; full fresh completion view/status integration not yet audited."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0.md",
+      "sha256": "728b1c60c8b4b4e65564403ee7004550fcbbc0c2df0af1e0fbd447b02c756d67"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0_current_execution.json",
+      "sha256": "80ff7b516bbee20d49ea2bfc12304f54448727edbbea110ae54d87898c6431aa"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0_execution.json",
+      "sha256": "b214eccaf098a93af853f568fcd4551981bfc19c3c7fdd7617862f7a2ccc9e07"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0_artifacts.json",
+      "sha256": "45b9d809dc5df4d696d87f3121da42ff73585244ea150dab806b160de0dc5594"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0_probes.json",
+      "sha256": "660131454017e2d73a8940a2c5a6061f41ba3a397ca95e10b482ba8bbfbe9e5c"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0_remediation.json",
+      "sha256": "27bc4744e7fad5e0f3701363b5ae18c2ab81aad72f97e251e470286766c496c3"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_G0_controller_remediation.json",
+      "sha256": "4a5360c693d9aca9f312b94c3a9b2fb3ea0def3a48259e3731151a1a21406101"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G0",
+      "status": "BLOCKED",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    },
+    {
+      "id": "G1",
+      "status": "BLOCKED",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    },
+    {
+      "id": "G2",
+      "status": "BLOCKED",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    },
+    {
+      "id": "G3",
+      "status": "BLOCKED",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    },
+    {
+      "id": "G4",
+      "status": "PASS",
+      "scope": "G4 PASS is only the independently verified sealed MOCK engineering pilot, not scientific readiness."
+    },
+    {
+      "id": "G5",
+      "status": "BLOCKED",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    },
+    {
+      "id": "G6",
+      "status": "NOT_RUN",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    },
+    {
+      "id": "G7",
+      "status": "NOT_RUN",
+      "scope": "See clause/requirement matrix; no aggregate scientific PASS."
+    }
+  ]
+}

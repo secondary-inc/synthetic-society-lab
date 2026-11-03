@@ -14,9 +14,19 @@ def main():
     integrity.add_argument("--fixture-only", action="store_true")
     integrity.add_argument("--out", type=Path)
     commands.add_parser("modules")
+    restore=commands.add_parser('restore-inputs')
+    restore.add_argument('--from',type=Path,required=True,dest='source_directory')
+    restore.add_argument('--apply',action='store_true')
+    completion=commands.add_parser('completion')
+    completion.add_argument('--out',type=Path,default=Path('data/processed/orchestration/completion.json'))
+    pack=commands.add_parser('repro-pack')
+    pack.add_argument('--run',action='append',required=True,dest='runs')
+    pack.add_argument('--out',type=Path,default=Path('data/processed/reproducibility/owner-review.zip'))
     gdelt = commands.add_parser('gdelt-ingest')
     gdelt.add_argument('--out', type=Path, default=Path('data/processed/gdelt/fixture.json'))
     commands.add_parser('e02-fit')
+    stimuli=commands.add_parser('e02-stimuli')
+    stimuli.add_argument('action',choices=['acquire','verify'],default='verify',nargs='?')
     pilot = commands.add_parser('e02-pilot')
     pilot.add_argument('--population', type=Path, required=True, help='population.json from a recorded fit')
     pilot.add_argument('--seed', type=int, default=20261103)
@@ -25,6 +35,8 @@ def main():
     pilot.add_argument('--resume', type=Path)
     commands.add_parser('e01-demo')
     commands.add_parser('e01-audit')
+    historical=commands.add_parser('e01-historical')
+    historical.add_argument('action',choices=['download','verify','prepare','run'])
     dashboard=commands.add_parser('dashboard')
     dashboard.add_argument('--out',type=Path,default=Path('data/processed/dashboard'))
     dashboard.add_argument('--run',action='append',dest='runs',help='Select a recorded run ID; repeat to include more')
@@ -34,6 +46,22 @@ def main():
     args = parser.parse_args()
     if args.command == "modules":
         print(json.dumps(MODULES, indent=2))
+        return
+    if args.command=='restore-inputs':
+        from .intake import restore_inputs
+        result=restore_inputs(args.root,args.source_directory,args.apply)
+        print(json.dumps(result,indent=2))
+        if result['status']=='BLOCKED':raise SystemExit(2)
+        return
+    if args.command=='completion':
+        from .orchestration import write_completion
+        result=write_completion(args.root,args.root/args.out)
+        print(json.dumps({'status':result['status'],'passed':sum(r['status']=='PASS' for r in result['requirements']),
+                          'required':len(result['requirements']),'out':str(args.out)}))
+        return
+    if args.command=='repro-pack':
+        from .reproduction import build_package
+        print(json.dumps(build_package(args.root,args.root/args.out,args.runs)))
         return
     if args.command == 'gdelt-ingest':
         from .gdelt import ingest
@@ -54,6 +82,10 @@ def main():
         from .e02.experiment import run_population
         print(run_population(args.root))
         return
+    if args.command=='e02-stimuli':
+        from .e02.stimuli import acquire,verify_corpus
+        print(json.dumps(acquire(args.root) if args.action=='acquire' else verify_corpus(args.root),indent=2))
+        return
     if args.command == 'e02-pilot':
         from .e02.experiment import run_pilot
         population = json.loads(args.population.read_text())
@@ -62,6 +94,16 @@ def main():
     if args.command in ('e01-demo', 'e01-audit'):
         from .e01 import run_demo, run_audit
         print(run_demo(args.root) if args.command == 'e01-demo' else run_audit(args.root,args.root))
+        return
+    if args.command=='e01-historical':
+        from .e01.historical import download_sources,verify_sources,prepare,run_historical
+        if args.action=='run':print(run_historical(args.root))
+        elif args.action=='download':print(json.dumps(download_sources(args.root),indent=2))
+        elif args.action=='verify':print(json.dumps(verify_sources(args.root),indent=2))
+        else:
+            result=prepare(args.root)
+            atomic_json(args.root/'data/processed/e01/prepared_historical.json',result)
+            print(json.dumps({'eligible':len(result['features']),'excluded':result['exclusions']}))
         return
     result = validate_sources(args.root, args.fixture_only)
     if args.out:

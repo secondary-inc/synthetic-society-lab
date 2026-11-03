@@ -2,6 +2,8 @@ import math
 
 
 def score(response, party):
+    if not isinstance(response, dict) or set(response) - {'democratic_party', 'republican_party'}:
+        return {"status": "INVALID", "primary": None, "absolute_gap": None}
     values = []
     for key in ("democratic_party", "republican_party"):
         value = response.get(key)
@@ -18,6 +20,8 @@ def score(response, party):
 def change(pre, post, party):
     before, after = score(pre, party), score(post, party)
     if before["status"] != "VALID" or after["status"] != "VALID":
-        return {"status": "INVALID_PAIR", "primary": None, "absolute_gap": None}
+        return {"status": "INVALID_PAIR", "primary": None, "absolute_gap": None,
+                "pre_status":before['status'],"post_status":after['status']}
     return {"status": "VALID", "primary": None if before["primary"] is None else after["primary"] - before["primary"],
-            "absolute_gap": after["absolute_gap"] - before["absolute_gap"]}
+            "absolute_gap": after["absolute_gap"] - before["absolute_gap"],
+            "pre_status":before['status'],"post_status":after['status']}

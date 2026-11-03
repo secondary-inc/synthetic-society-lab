@@ -61,24 +61,79 @@ class MockSurvey:
         return {'democratic_party':baseline+sign*shift,'republican_party':100-baseline-sign*shift}
 
 
-def evaluate(responses, seed=20261103, bootstrap_repeats=500):
+def evaluate(responses, seed=20261103, bootstrap_repeats=500, *, expected_assignments=None, expected_instrument=None):
+    """Recompute outcomes from raw responses; never accept cached derived scores.
+
+    Optional assignments require a separately supplied frozen instrument and bind
+    complete request contents, including survey and phase, to the frozen cohort.
+    Integrity checks are distinct from the scientific validity of the stimulus set.
+    """
+    if not isinstance(bootstrap_repeats,int) or isinstance(bootstrap_repeats,bool) or bootstrap_repeats < 1:
+        raise ValueError('positive bootstrap repeat count required')
+    if expected_assignments is not None and (not isinstance(expected_instrument,dict) or not expected_instrument):
+        raise ValueError('frozen instrument required with frozen assignments')
+    expected = {}
+    if expected_assignments is not None:
+        for job in expected_assignments:
+            key=(job['profile']['profile_id'],job['stimulus_id'],job['repeat'],job['arm'])
+            if key in expected:
+                raise ValueError('duplicate frozen assignment')
+            expected[key]=job
     grouped = defaultdict(dict); invalid = Counter(); arms = Counter()
     for row in responses:
         key = (row['profile_id'], row['stimulus_id'], row['repeat'])
+        if row['arm'] not in ARMS:
+            raise ValueError('unknown response arm')
         if row['arm'] in grouped[key]:
             raise ValueError('duplicate profile-stimulus-repeat-arm response')
-        grouped[key][row['arm']] = row
+        if 'pre' not in row or 'post' not in row:
+            raise ValueError('raw before-and-after responses required for independent scoring')
+        party=row.get('scoring_party',row.get('pre_request',{}).get('profile',{}).get('party'))
+        assignment_key=(*key,row['arm'])
+        if expected_assignments is not None:
+            if assignment_key not in expected:
+                raise ValueError('response outside frozen assignments')
+            job=expected[assignment_key]
+            if party != job['profile']['party']:
+                raise ValueError('response scoring party differs from fixed experimental prior')
+            expected_pre={'phase':'pre','seed':job['pair_seed'],
+                          'profile':deepcopy(job['profile']),
+                          'survey':deepcopy(expected_instrument),
+                          'item_order':deepcopy(job['item_order']),'exposure':None}
+            expected_post={**deepcopy(expected_pre),'phase':'post',
+                           'pre_response':deepcopy(row['pre']),
+                           'exposure':deepcopy(job['exposure'])}
+            for phase, frozen_request in (('pre',expected_pre),('post',expected_post)):
+                if row.get(phase+'_request') != frozen_request:
+                    raise ValueError('request differs from frozen assignment, instrument or phase')
+            hashes=[canonical_hash(row['pre_request']),canonical_hash(row['post_request'])]
+            if hashes != row.get('request_hashes'):
+                raise ValueError('recorded request hash mismatch')
+        if party not in ('D','R','I','UNKNOWN'):
+            raise ValueError('fixed scoring party missing or invalid')
+        derived=change(row['pre'],row['post'],party)
+        if 'change' in row and any(row['change'].get(k) != derived[k] for k in ('status','primary','absolute_gap')):
+            raise ValueError('cached derived score differs from raw before-and-after responses')
+        grouped[key][row['arm']] = {**row,'scoring_party':party,'change':derived}
         arms[row['arm']] += 1
-        if row['change']['status'] != 'VALID':
-            invalid[row['change']['status']] += 1
+        if derived['status'] != 'VALID':
+            invalid[derived['status']] += 1
+    if not responses:
+        raise ValueError('no responses to score')
+    if expected_assignments is not None and len(responses) != len(expected):
+        raise ValueError('missing frozen assignment responses')
     differences = []; excluded = Counter()
     for key, group in grouped.items():
         if set(group) != set(ARMS):
             raise ValueError('incomplete crossed assignment; do not change evaluation denominator')
         one, two = group['C1'],group['C2']
         a,b = one['change']['primary'],two['change']['primary']
+        if one['scoring_party'] != two['scoring_party']:
+            raise ValueError('party prior changes across matched arms')
+        if one['scoring_party'] not in ('D','R'):
+            excluded['non_major_party_primary'] += 1; continue
         if a is None or b is None:
-            excluded['missing_invalid_or_nonpartisan_primary'] += 1; continue
+            excluded['missing_or_invalid_primary_pair'] += 1; continue
         differences.append({'profile_id':key[0], 'stimulus_id':key[1], 'repeat':key[2], 'difference':b-a})
     interval = None; estimate = None
     if differences:
@@ -95,11 +150,34 @@ def evaluate(responses, seed=20261103, bootstrap_repeats=500):
         draws.sort()
         if len(profile_ids)>=2 and len(stimulus_ids)>=2 and draws:
             interval=[draws[int((len(draws)-1)*.025)],draws[int((len(draws)-1)*.975)]]
+    leave_one_stimulus_out={}
+    for stimulus in sorted({d['stimulus_id'] for d in differences}):
+        retained=[d['difference'] for d in differences if d['stimulus_id']!=stimulus]
+        leave_one_stimulus_out[stimulus]=statistics.mean(retained) if retained else None
+    leave_one_profile_out=[]
+    for profile in sorted({d['profile_id'] for d in differences}):
+        retained=[d['difference'] for d in differences if d['profile_id']!=profile]
+        if retained:leave_one_profile_out.append(statistics.mean(retained))
+    secondaries={}
+    for label,base,advanced in (('C1_minus_C0','C0','C1'),('C3_minus_C1','C1','C3'),('C4_minus_C2','C2','C4')):
+        values=[g[advanced]['change']['primary']-g[base]['change']['primary'] for g in grouped.values()
+                if g[advanced]['change']['primary'] is not None and g[base]['change']['primary'] is not None]
+        secondaries[label]={'mean_change_difference_points':statistics.mean(values) if values else None,
+                            'complete_pairs':len(values),'interpretation':'Exploratory descriptive contrast; scripted QA is not a live assistant.'}
+    abs_pairs=[g['C2']['change']['absolute_gap']-g['C1']['change']['absolute_gap'] for g in grouped.values()
+               if g['C2']['change']['absolute_gap'] is not None and g['C1']['change']['absolute_gap'] is not None]
     return {'kind':'MOCK_ENGINEERING_ONLY','primary_contrast':'(post-pre) C2 minus C1',
             'estimate_thermometer_points':estimate,'interval_95_crossed_bootstrap':interval,
             'uncertainty_label':'Resampling interval of deterministic mock outputs; no human or model-effect inference.',
             'paired_units':len(differences),'excluded_units':dict(excluded),'invalid_counts':dict(invalid),
             'arm_counts':dict(arms),'responses':len(responses),'paired_differences':differences,
+            'scoring_method':'Recomputed from recorded raw pre/post values; cached-score disagreement rejected.',
+            'frozen_assignment_validation':'PASS' if expected_assignments is not None else 'NOT_REQUESTED',
+            'sensitivity':{'leave_one_stimulus_out':leave_one_stimulus_out,
+                           'leave_one_profile_out_range':[min(leave_one_profile_out),max(leave_one_profile_out)] if leave_one_profile_out else None,
+                           'absolute_gap_all_profiles':{'mean_change_difference_points':statistics.mean(abs_pairs) if abs_pairs else None,'complete_pairs':len(abs_pairs)},
+                           'interpretation':'Descriptive sensitivity diagnostics, not confirmatory significance or proof of real-world robustness.'},
+            'secondary_contrasts':secondaries,
             'scale_standardization':'divide thermometer points by 100',
             'primary_weighting':'equal matched profile-stimulus-repeat units; describes this engineering pool, not a national estimate'}
 
@@ -152,14 +230,14 @@ def run_pilot(root, fit, *, seed=20261103, n=12, repeats=1, resume=None):
             post=provider.respond(deepcopy(post_request))
             result={'profile_id':job['profile']['profile_id'],'stimulus_id':job['stimulus_id'],
                     'repeat':job['repeat'],'arm':job['arm'],'execution_order':job['execution_order'],
-                    'pre':pre,'post':post,'change':change(pre,post,job['profile']['party']),
+                    'pre':pre,'post':post,'scoring_party':job['profile']['party'],'change':change(pre,post,job['profile']['party']),
                     'pre_request':pre_request,'post_request':post_request,
                     'request_hashes':[canonical_hash(pre_request),canonical_hash(post_request)],
                     'provider':provider.name,'model':'MOCK','tokens':None,'cost_usd':0}
             queue.finish(identity,result)
             run.event('unit_completed',job_id=identity,arm=job['arm'],cost_usd=0)
         responses=sorted((j['result'] for j in queue.snapshot()),key=lambda x:x['execution_order'])
-        summary=evaluate(responses,seed)
+        summary=evaluate(responses,seed,expected_assignments=jobs,expected_instrument=instrument)
         write_once('responses.json',responses);write_once('analysis.json',summary)
         run.finish({'status':'PASS_MOCK_PILOT','kind':'MOCK','units':len(jobs),'mock_calls':2*len(jobs),
                     'paid_calls':0,'spent_usd':0,'analysis':{k:v for k,v in summary.items() if k!='paired_differences'},

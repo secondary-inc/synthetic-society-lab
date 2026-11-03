@@ -179,5 +179,57 @@ class ReturnsTests(unittest.TestCase):
             self.assertNotIn('observed_margin_pp', report)
 
 
+class HistoricalSourceTests(unittest.TestCase):
+    """Fictional parser fixtures exercise actual source-specific failure modes."""
+    def test_fec_general_column_fusion_and_party(self):
+        from civiclab.e01.historical import official_candidate_votes
+        rows=[{'line':'(I) Example, Amy  Combined Parties:'.ljust(80)+'100 60.00%', 'general_start':80,'pdf_page':2},
+              {'line':'Example, Amy  D  50 90.00%'.ljust(80)+'[80] [48.00%]', 'general_start':80,'pdf_page':2},
+              {'line':'Example, Amy  WF'.ljust(80)+'[20] [12.00%]', 'general_start':80,'pdf_page':2}]
+        match=official_candidate_votes(rows,'Amy Example',2018,expected_party='DEMOCRAT')
+        self.assertEqual(match['votes'],100)
+        with self.assertRaisesRegex(ValueError,'party mismatch'):
+            official_candidate_votes(rows,'Amy Example',2018,expected_party='REPUBLICAN')
+
+    def test_clerk_fusion_does_not_add_blanks_or_other_votes(self):
+        from civiclab.e01.historical import official_candidate_votes
+        rows=[{'line':line,'pdf_page':4} for line in [
+            'Amy Example, Democrat ........ 100', 'Working Families ........ 20',
+            'Blanks ........ 500', 'All Others ........ 10',
+            'Bob Other, Republican ........ 90']]
+        self.assertEqual(official_candidate_votes(rows,'Amy Example',2024,expected_party='DEMOCRAT')['votes'],120)
+        self.assertEqual(official_candidate_votes(rows,'Bob Other',2024,expected_party='REPUBLICAN')['votes'],90)
+
+    def test_explicit_alias_not_fuzzy_matching(self):
+        from civiclab.e01.historical import official_candidate_votes
+        rows=[{'line':'Typo, Tony  R'.ljust(80)+'12 30.00%', 'general_start':80,'pdf_page':2}]
+        with self.assertRaisesRegex(ValueError,'not unique'):
+            official_candidate_votes(rows,'Tony Correct',2018)
+        self.assertEqual(official_candidate_votes(rows,'Tony Correct',2018,official_family='TYPO',expected_party='REPUBLICAN')['votes'],12)
+
+    def test_scope_excludes_house_and_rejects_ambiguous_candidate(self):
+        from civiclab.e01.historical import official_sections,official_candidate_votes
+        pages=[{'pdf_page':1,'text':'MAINE\nFOR UNITED STATES SENATOR\nAmy Example, Democrat .... 20\nFOR UNITED STATES REPRESENTATIVE\nAmy Example, Democrat .... 500'}]
+        section=official_sections(pages,2024)['ME']
+        self.assertEqual(official_candidate_votes(section,'Amy Example',2024)['votes'],20)
+        with self.assertRaisesRegex(ValueError,'not unique'):
+            official_candidate_votes(section+section,'Amy Example',2024)
+
+    def test_discovery_party_lines_sum_without_reallocating_independent(self):
+        from civiclab.e01.historical import major_candidates
+        rows=[{'candidate':n,'party':p,'count':v} for n,p,v in [('Amy','democrat',10),('Amy','working families',2),('Bob','republican',8),('Other','independent',50)]]
+        self.assertEqual([r['votes'] for r in major_candidates(rows)],[12,8])
+        with self.assertRaises(ValueError):major_candidates(rows+[{'candidate':'Third','party':'democrat','count':1}])
+
+    def test_scoped_runner_rejects_duplicates_and_changed_inputs(self):
+        from civiclab.e01.historical import _frozen_real
+        f=feature('SENATE');f['race_id']=race(2024,'SENATE',1)['race_id']
+        prepared={'manifest':[{'prior':race(2018,'SENATE',1),'target':race(2024,'SENATE',1)}],'features':[f]}
+        with self.assertRaisesRegex(ValueError,'coverage'):_frozen_real([f,f],prepared,'S0')
+        changed={**f,'prior_margin_pp':77}
+        with self.assertRaisesRegex(ValueError,'differ'):_frozen_real([changed],prepared,'S0')
+        with self.assertRaisesRegex(ValueError,'unapproved'):_frozen_real([f],prepared,'TUNED')
+
+
 if __name__ == '__main__':
     unittest.main()

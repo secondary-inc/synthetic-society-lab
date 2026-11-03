@@ -9,6 +9,10 @@ description = "Reproducible, gated synthetic social-science research"
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+figures = ["matplotlib==3.10.7"]
+sources = ["pypdf==6.10.0"]
+
 [project.scripts]
 civiclab = "civiclab.cli:main"
 

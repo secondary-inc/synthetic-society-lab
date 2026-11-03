@@ -1,0 +1,141 @@
+{
+  "acceptance": [
+    {
+      "reason": "Observed claims trace to previously independently checked recorded snapshot; no real-model or human effect claims. Update only with independently accepted later results.",
+      "requirement": "PAPER_DRAFT",
+      "status": "PASS_REVIEW_DRAFT_ONLY"
+    },
+    {
+      "reason": "Explicit mock/retrospective and unpublished labels; no invented election accuracy.",
+      "requirement": "BLOG_DRAFT",
+      "status": "PASS_REVIEW_DRAFT_ONLY"
+    },
+    {
+      "reason": "Population transport, suppression, scripted responses, historical contamination, costs, raw-data gaps and publication boundaries disclosed.",
+      "requirement": "LIMITATIONS",
+      "status": "PASS_CURRENT_DRAFT_SCOPE"
+    },
+    {
+      "reason": "Counts, saved run checksum, image hashes and visible plot independently checked; does not certify whole dashboard.",
+      "requirement": "TRACEABLE_VISUALS",
+      "status": "PASS_ONE_FIGURE_ONLY"
+    },
+    {
+      "reason": "No generated package existed at review; unit tests are not actual package restoration.",
+      "requirement": "REPRO_PACK",
+      "status": "NOT_RUN"
+    },
+    {
+      "reason": "Worker final scoring and lock audit still required; independent candidate corpus content review alone is insufficient.",
+      "requirement": "E02_PROTOCOL",
+      "status": "PENDING"
+    },
+    {
+      "reason": "Sparse support and citizen/resident transport; weight-loss/support figures newly reported but not independently recomputed in this review.",
+      "requirement": "E02_POPULATION",
+      "status": "BLOCKED"
+    }
+  ],
+  "audited_at_utc": "2026-11-03T10:35:40.254381+00:00",
+  "auditor_role": "independent_auditor",
+  "corpus_hash": "636b1fb763ac0086e79627ef67c74cd858b8b3c3e419ed7929e8a4851a9c22d7",
+  "cost_usd": 0,
+  "figure": {
+    "checksums_and_output_hashes_match": true,
+    "independently_checked_counts": {
+      "Age / education / region exclusions": 373,
+      "Held-out records": 446,
+      "Outside weighted fresh sample": 2416,
+      "Retained training records": 1253,
+      "Sparse joint-cell exclusions": 1033
+    },
+    "run_id": "e02-ad2ad153c5ea480d8a9b7f39433927e7",
+    "total": 5521,
+    "visual_inspection": "PASS: legible axes, values and run citation; describes record counts, not representativeness or model effects."
+  },
+  "files_reviewed": {
+    "configs/e02_official_stimuli.json": "9a0980244ca8afcf0d5ee8c9349e69404a5a3464c6e1a4c83cd6eac02b8eaf9f",
+    "protocols/E02_INFORMATION_EFFECTS.md": "0d5518f359ca577d71ce39b6c323ab439d92bb659fef25586fbc6abcc4f9af42",
+    "publications/BLOG_DRAFT.md": "1e95921e2714f7bc5113dcfdbb8889563b0e4f7ed44fe840e317e27c4ee429ac",
+    "publications/LIMITATIONS.md": "2f9107f994e17671322a0c0037e6ad9dd7f8f72e6b618c8d9b503b3c58b10262",
+    "publications/REPRODUCIBILITY.md": "2eb1688313d18ab1b439f6b3b3dcef32e702c6a931ad4a4530ceb7249d4f90b7",
+    "publications/TECHNICAL_PAPER_DRAFT.md": "b47091018a4297812536dc86dae7b2d45af5e7e5b444c8e1608dbde79ce63ccb",
+    "publications/figures/population-record-disposition.provenance.json": "419d155340e89b86be2943c39034420b4cc36acf6143af298ca2db3eb5d91df5",
+    "src/civiclab/e02/stimuli.py": "51d92b13e58b890ff42580c606f882288cffbcf8b9aad3944de1628e48def49c",
+    "src/civiclab/figures.py": "22f7055854fe2901de5962a039bbff1c3e13156cc095018cd15bf2a6648c1aef",
+    "src/civiclab/reproduction.py": "8347a456947a9a031e5742fb97e2ab8086af733a1cdc7dd14f39dcefe1b7042e",
+    "tests/test_e02_stimuli.py": "3fca8e8e7b0d2d825d7aa694645150b78d160ef4aae3846b8a7ec0f7efebab0a",
+    "tests/test_reproduction.py": "4730f0b27d43113cb1c23e39cfd7cabfb11892811931cd7c50627f2424f783dc"
+  },
+  "findings": [
+    {
+      "finding": "Report inclusion patterns omit ENGINEERING_EVIDENCE_20261103.json explicitly referenced by reproducibility instructions and omit E01/E02 module receipts. Include required evidence before final package restoration review.",
+      "id": "IA-G7-001",
+      "path": "src/civiclab/reproduction.py",
+      "severity": "P2",
+      "status": "OPEN_AT_REVIEW"
+    }
+  ],
+  "historical_g0_receipts_modified": false,
+  "independent_paragraph_checks": [
+    {
+      "citation": "5 USC 552(a)(3)(A)",
+      "id": "OFFICIAL-foia",
+      "paragraph_unique_and_exact": true,
+      "source_key": "foia",
+      "text_sha256": "5397e8c813e42e323362d5f80310f90cbc54786ca3a5e94df91a681946f301af"
+    },
+    {
+      "citation": "29 USC 157",
+      "id": "OFFICIAL-labor",
+      "paragraph_unique_and_exact": true,
+      "source_key": "labor",
+      "text_sha256": "5c64db3657937aba4ea10585f18a5ef0531ca3fa2aa726c9ed6ee9e4fb3acf28"
+    },
+    {
+      "citation": "42 USC 7401(b)(1)-(2)",
+      "id": "OFFICIAL-air",
+      "paragraph_unique_and_exact": true,
+      "source_key": "air",
+      "text_sha256": "75bb6aa2a29d6b1e1a7fffb39cd7cbca7a930395d7ad7dbab3cfec1deaa548e6"
+    }
+  ],
+  "literature_review": {
+    "scope": "Primary-source abstracts match the three limited related-work summaries; not full paper replication.",
+    "sources": [
+      "https://doi.org/10.1017/pan.2023.2",
+      "https://doi.org/10.1017/pan.2024.5",
+      "https://proceedings.mlr.press/v202/aher23a.html"
+    ]
+  },
+  "paid_calls": 0,
+  "publication_authorized": false,
+  "rights_review": {
+    "evidence_urls": [
+      "https://www.govinfo.gov/about/policies",
+      "https://www.govinfo.gov/content/pkg/USCODE-2024-title17/html/USCODE-2024-title17-chap1-sec105.htm"
+    ],
+    "limitations": [
+      "Purposive old-edition statutory text, not contemporary journalism or balanced news sample.",
+      "Full-statute exceptions outside selected excerpts remain relevant; no legal-advice claims.",
+      "Unknown original publication clock; never prospective forecasting evidence."
+    ],
+    "scope": "The exact selected original US statutory paragraphs have a documented US public-domain rationale. Not worldwide advice or external publication approval; no blanket clearance for all GovInfo content.",
+    "status": "PASS_LIMITED_CONTENT_RATIONALE"
+  },
+  "schema_version": 1,
+  "source_hashes_verified": 7,
+  "status": "PARTIAL_REVIEW; package restoration pending; no full-program acceptance",
+  "tests": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -p test_reproduction.py -v",
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -p test_e02_stimuli.py -v",
+      "exit_code": 0,
+      "passed": 6
+    }
+  ]
+}

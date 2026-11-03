@@ -1,0 +1,14 @@
+{
+  "lead_thread":"01a18903-4f62-7403-ab36-e69e5a8f48d8",
+  "maximum_specialized_workers":3,
+  "coordination_mode":"User-authorized forked Codex chats sharing one checkout; disjoint file ownership and independent audit",
+  "workers":[
+    {"thread_id":"01a1a0ee-b07e-7263-9a52-2f72975cffbc","role":"E02 methods, population, data and stimuli","ownership":["src/civiclab/e02/","tests/test_e02*.py","configs/e02*","protocols/E02*","docs/E02*","reports/E02*"],"status_at_dispatch":"active"},
+    {"thread_id":"01a1a0ee-d568-7861-93f8-9ad1a720a5f8","role":"E01 election engineer and data steward","ownership":["src/civiclab/e01/","tests/test_e01.py","tests/test_isolation.py","configs/e01*","protocols/E01*","docs/E01*","reports/E01*"],"status_at_dispatch":"active"},
+    {"thread_id":"01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c","role":"Independent milestone auditor","ownership":["reports/INDEPENDENT_AUDIT*","reports/AUDIT_*"],"implementation_access":"read only","status_at_dispatch":"active"}
+  ],
+  "lead_ownership":["shared infrastructure","CLI","completion contract/dashboard","publications/","reports/STATUS.md","integration and version control"],
+  "state_note":"Dispatch status is historical, not proof of current liveness. Use wait_threads for authoritative current status.",
+  "publication_permission":false,
+  "approved_model_spend_usd":0
+}

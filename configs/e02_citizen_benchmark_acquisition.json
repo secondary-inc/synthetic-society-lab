@@ -1,0 +1,353 @@
+{
+  "acquisition": "Ordinary public Census UI: More Tools > Download > ZIP > 2024 ACS 5-Year Estimates Subject Tables > Download ZIP. No API credentials or bypass.",
+  "activation": "NOT USED FOR FITTING; frozen v3 and existing population comparison inputs unchanged",
+  "archive_bytes": 162782,
+  "archive_sha256": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+  "candidate_population": "Native C02 plus Foreign-born Naturalized citizen C04; proposed resident citizens25+, not yet independently reviewed for ANES target alignment",
+  "dataset": "ACSST5Y2024.S0501",
+  "dataset_universe": "U.S. resident population and housing; subgroup and section universes differ. Data notes include group quarters.",
+  "download_filename_timestamp": "2026-11-03T054417 local America/New_York; filename is a local download receipt, not a source publication timestamp",
+  "geography": "52 state-level rows:50 states,DC,Puerto Rico; future mainland-region analysis must explicitly exclude PR rather than silently drop rows",
+  "limitations": [
+    "age percentages are rounded, so multiplying by total produces derived approximate counts, not published exact subgroup counts",
+    "education percentage denominators differ from age percentages; verify before any conversion",
+    "90 percent MOEs available; covariance and nonsampling error not provided by simple margins",
+    "citizenship alignment cannot alone certify representative synthetic profiles, joint associations or model behavior"
+  ],
+  "local_archive": "data/raw/e02_citizen_benchmarks/ACSST5Y2024.S0501_2026-11-03T054417.zip",
+  "members": {
+    "ACSST5Y2024.S0501-Column-Metadata.csv": {
+      "bytes": 202140,
+      "sha256": "ccb7860a7427b7c0901153a928f6205fa782bacd22d22a3b1b677b72ad880490"
+    },
+    "ACSST5Y2024.S0501-Data.csv": {
+      "bytes": 670117,
+      "sha256": "84d4ce24aeefaea19772e3b033970729b76cee4649d30dba9a517801cc7d02dc"
+    },
+    "ACSST5Y2024.S0501-Table-Notes.txt": {
+      "bytes": 12522,
+      "sha256": "9148cf30dae76f8a5210e56df1fccd59b4a61de85fa689eb4b2e507135b94059"
+    }
+  },
+  "period": "2020-2024 ACS 5-year estimates",
+  "receipt_recorded_at_utc": "2026-11-03T10:45:36.203414+00:00",
+  "rights": "Official U.S. Census aggregate public statistical table; retain Census attribution and methodology notes. No respondent microdata.",
+  "schema_version": 1,
+  "source_published_at_utc": null,
+  "source_table_url": "https://data.census.gov/table/ACSST5Y2024.S0501?g=010XX00US$0400000",
+  "status": "ACQUIRED_PENDING_INDEPENDENT_UNIVERSE_AND_UNIT_REVIEW",
+  "variables": {
+    "S0501_C02_001E": {
+      "denominator": "none; population total",
+      "label": "Estimate!!Native!!Total population",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_001M": {
+      "denominator": "none; population total",
+      "label": "Margin of Error!!Native!!Total population",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_007E": {
+      "denominator": "S0501_C02_001E",
+      "label": "Estimate!!Native!!Total population!!SEX AND AGE!!25 to 44 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_007M": {
+      "denominator": "S0501_C02_001E",
+      "label": "Margin of Error!!Native!!Total population!!SEX AND AGE!!25 to 44 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_008E": {
+      "denominator": "S0501_C02_001E",
+      "label": "Estimate!!Native!!Total population!!SEX AND AGE!!45 to 54 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_008M": {
+      "denominator": "S0501_C02_001E",
+      "label": "Margin of Error!!Native!!Total population!!SEX AND AGE!!45 to 54 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_009E": {
+      "denominator": "S0501_C02_001E",
+      "label": "Estimate!!Native!!Total population!!SEX AND AGE!!55 to 64 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_009M": {
+      "denominator": "S0501_C02_001E",
+      "label": "Margin of Error!!Native!!Total population!!SEX AND AGE!!55 to 64 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_010E": {
+      "denominator": "S0501_C02_001E",
+      "label": "Estimate!!Native!!Total population!!SEX AND AGE!!65 to 74 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_010M": {
+      "denominator": "S0501_C02_001E",
+      "label": "Margin of Error!!Native!!Total population!!SEX AND AGE!!65 to 74 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_011E": {
+      "denominator": "S0501_C02_001E",
+      "label": "Estimate!!Native!!Total population!!SEX AND AGE!!75 to 84 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_011M": {
+      "denominator": "S0501_C02_001E",
+      "label": "Margin of Error!!Native!!Total population!!SEX AND AGE!!75 to 84 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_012E": {
+      "denominator": "S0501_C02_001E",
+      "label": "Estimate!!Native!!Total population!!SEX AND AGE!!85 years and over",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_012M": {
+      "denominator": "S0501_C02_001E",
+      "label": "Margin of Error!!Native!!Total population!!SEX AND AGE!!85 years and over",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_038E": {
+      "denominator": "none; population total",
+      "label": "Estimate!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_038M": {
+      "denominator": "none; population total",
+      "label": "Margin of Error!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_039E": {
+      "denominator": "S0501_C02_038E",
+      "label": "Estimate!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Less than high school graduate",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_039M": {
+      "denominator": "S0501_C02_038E",
+      "label": "Margin of Error!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Less than high school graduate",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_040E": {
+      "denominator": "S0501_C02_038E",
+      "label": "Estimate!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate (includes equivalency)",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_040M": {
+      "denominator": "S0501_C02_038E",
+      "label": "Margin of Error!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate (includes equivalency)",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_041E": {
+      "denominator": "S0501_C02_038E",
+      "label": "Estimate!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Some college or associate's degree",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_041M": {
+      "denominator": "S0501_C02_038E",
+      "label": "Margin of Error!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Some college or associate's degree",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_042E": {
+      "denominator": "S0501_C02_038E",
+      "label": "Estimate!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_042M": {
+      "denominator": "S0501_C02_038E",
+      "label": "Margin of Error!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_043E": {
+      "denominator": "S0501_C02_038E",
+      "label": "Estimate!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Graduate or professional degree",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C02_043M": {
+      "denominator": "S0501_C02_038E",
+      "label": "Margin of Error!!Native!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Graduate or professional degree",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_001E": {
+      "denominator": "none; population total",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_001M": {
+      "denominator": "none; population total",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_007E": {
+      "denominator": "S0501_C04_001E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!25 to 44 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_007M": {
+      "denominator": "S0501_C04_001E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!25 to 44 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_008E": {
+      "denominator": "S0501_C04_001E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!45 to 54 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_008M": {
+      "denominator": "S0501_C04_001E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!45 to 54 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_009E": {
+      "denominator": "S0501_C04_001E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!55 to 64 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_009M": {
+      "denominator": "S0501_C04_001E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!55 to 64 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_010E": {
+      "denominator": "S0501_C04_001E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!65 to 74 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_010M": {
+      "denominator": "S0501_C04_001E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!65 to 74 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_011E": {
+      "denominator": "S0501_C04_001E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!75 to 84 years",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_011M": {
+      "denominator": "S0501_C04_001E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!75 to 84 years",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_012E": {
+      "denominator": "S0501_C04_001E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!85 years and over",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_012M": {
+      "denominator": "S0501_C04_001E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!Total population!!SEX AND AGE!!85 years and over",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_038E": {
+      "denominator": "none; population total",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_038M": {
+      "denominator": "none; population total",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over",
+      "proposed_unit": "persons",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_039E": {
+      "denominator": "S0501_C04_038E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Less than high school graduate",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_039M": {
+      "denominator": "S0501_C04_038E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Less than high school graduate",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_040E": {
+      "denominator": "S0501_C04_038E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate (includes equivalency)",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_040M": {
+      "denominator": "S0501_C04_038E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate (includes equivalency)",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_041E": {
+      "denominator": "S0501_C04_038E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Some college or associate's degree",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_041M": {
+      "denominator": "S0501_C04_038E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Some college or associate's degree",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_042E": {
+      "denominator": "S0501_C04_038E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_042M": {
+      "denominator": "S0501_C04_038E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_043E": {
+      "denominator": "S0501_C04_038E",
+      "label": "Estimate!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Graduate or professional degree",
+      "proposed_unit": "percent",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    },
+    "S0501_C04_043M": {
+      "denominator": "S0501_C04_038E",
+      "label": "Margin of Error!!Foreign-born; Naturalized citizen!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Graduate or professional degree",
+      "proposed_unit": "percentage points",
+      "unit_review": "Census table view directly shows age estimates as percentages; same subgroup education percentages require shell or independent table review before conversion"
+    }
+  }
+}

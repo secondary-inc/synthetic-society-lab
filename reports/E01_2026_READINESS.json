@@ -1,0 +1,106 @@
+{
+  "task_id": "E01_2026_OUTCOME_FREE_MANIFEST_FEASIBILITY",
+  "recorded_at_utc": "2026-11-03T10:46:02.510706+00:00",
+  "audit_status": "PENDING_INDEPENDENT_REVIEW",
+  "overall": "BLOCKED_ORIGINAL_MANIFEST",
+  "scope": "No 2026 returns retrieved/used; no race selection, prediction or historical diagnostic edits",
+  "original_contract": {
+    "house_proposed": 24,
+    "senate_maximum": 8,
+    "deep_house": 4,
+    "deep_senate": 2,
+    "frozen_races": 0,
+    "selection_policy_status": "Missing exact quotas/fallback/tie-break/Senate/deep IDs and complete permitted as-of ratings universe"
+  },
+  "local_integrity": [
+    {
+      "path": "data/raw/fec_candidate_summary_2026/candidate_summary_2026.csv",
+      "bytes": 1754475,
+      "sha256": "b6a61c95af4d5f21449a38dbf51108ed8c53c4c02087ee80408b17f32ba0bf9e",
+      "matches_inventory": true
+    },
+    {
+      "path": "data/raw/fec_ccl26/ccl26.zip",
+      "bytes": 90692,
+      "sha256": "ff72b3f8bd0437dbb8a5befb8ed375aea2d21a1f966e14905a7a5194451228c1",
+      "matches_inventory": true
+    },
+    {
+      "path": "data/raw/geography_cd120/cd120.zip",
+      "bytes": 55241385,
+      "sha256": "bc9a4fc543b8b279ce3663642a5cc4e19e32a8ef84f12371e26f754e5b8cc8a5",
+      "matches_inventory": true
+    },
+    {
+      "path": "data/raw/fec_cn26/cn26.zip",
+      "bytes": 312753,
+      "sha256": "97e057ca4b4f27f3a635181578075e68dae712f1b1ca616f3971afbbe19d6c89",
+      "matches_inventory": true
+    }
+  ],
+  "census_current_public_download": {
+    "url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2027/120-congressional-district-befs/cd120.zip",
+    "bytes": 55241385,
+    "sha256": "bc9a4fc543b8b279ce3663642a5cc4e19e32a8ef84f12371e26f754e5b8cc8a5",
+    "matches_local": true,
+    "status": "VERIFIED_PUBLIC_STREAM"
+  },
+  "coverage_dates": {
+    "candidate_summary_records": 4540,
+    "parseable_end_date": 2836,
+    "missing_or_unparsed_end_date": 1704,
+    "end_date_after_2026_11_03": 4,
+    "maximum_end_date": "2026-12-31",
+    "acceptance": "quarantine or adjudicate before time-bounded use"
+  },
+  "gates": {
+    "selection": "BLOCKED",
+    "official_ballots": "PARTIAL_PUBLIC_ROUTES_IDENTIFIED_NOT_IMPORTED",
+    "CD120_upstream_bytes": "PASS_NARROW_PROVENANCE_ONLY",
+    "historical_vote_crosswalk": "NOT_RUN",
+    "same_seat_baseline_inputs": "BLOCKED",
+    "certified_2026_outcomes": "NOT_RUN",
+    "prospective_archive": "BLOCKED_NOT_DEMONSTRATED",
+    "matched_advanced_variants": "BLOCKED"
+  },
+  "missing_referenced_files": [
+    "protocols/E01_FEED_TO_BALLOT.md",
+    "docs/20_ELECTION_DAY_DECISION_TREE.md",
+    "docs/22_PREANALYSIS_AND_STATISTICS.md",
+    "docs/23_IMPLEMENTATION_BACKLOG.md"
+  ],
+  "sources_located_not_full_rosters_imported": [
+    {
+      "state": "CA",
+      "url": "https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+      "status": "CERTIFIED_LIST_ROUTE_IDENTIFIED_AMENDMENT_CHECK_REQUIRED"
+    },
+    {
+      "state": "NJ",
+      "url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-certification-of-general-election-nominees_us-senate_us-house.pdf",
+      "amendment_url": "https://www.nj.gov/state/elections/assets/pdf/election-results/2026/2026-certification-amended-7th-congressional-district-us-house.pdf",
+      "status": "OFFICIAL_DOCUMENTS_ACCESSIBLE_ROSTER_NOT_IMPORTED"
+    },
+    {
+      "state": "NC",
+      "url": "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf",
+      "status": "OFFICIAL_LIST_ACCESSIBLE_PAGE_WARNS_NOT_ALWAYS_FINAL"
+    }
+  ],
+  "failed_access": [
+    {
+      "url": "https://www.senate.gov/senators/Class_II.htm",
+      "status": "HTTP_403",
+      "action": "No bypass; no claim this page was verified"
+    }
+  ],
+  "cost_usd": 0,
+  "paid_calls": 0,
+  "publication": false,
+  "scientific_results": false,
+  "next_unblocked_work": [
+    "Draft and independently review missing sample-selection rules without outcome access; label new registration retrospective",
+    "Build certification/amendment and geography validation fixtures",
+    "Acquire necessary historical same-seat/compatible-geography sources after permitted source plan"
+  ]
+}

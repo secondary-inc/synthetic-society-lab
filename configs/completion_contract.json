@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "source": "AUTONOMOUS_RESEARCH_ORCHESTRATION.md Mission and completion contract items 1 through 6",
+  "completion_policy": "Every required item must independently PASS with current artifact evidence. Missing, stale, unsupported or blocked evidence is not completion. Engineering fixtures cannot establish scientific requirements.",
+  "requirements": [
+    {"id":"G0_INSTALL","clause":1,"gate":"G0","description":"Clean checkout installs with documented dependencies"},
+    {"id":"G0_TESTS","clause":1,"gate":"G0","description":"Documented fixture tests pass in an independently reproduced clean environment"},
+    {"id":"G0_INTEGRITY","clause":1,"gate":"G0","description":"Registered source inventory verifies; nonredistributable data have documented reacquisition/import paths"},
+    {"id":"G0_SECRETS","clause":4,"gate":"G0","description":"Credential/raw-data exclusions and fail-closed inference configuration are independently checked"},
+    {"id":"E01_MANIFEST","clause":2,"gate":"G2","description":"Frozen real race sample, official candidates, geography and historical crosswalks are verified"},
+    {"id":"E01_BASELINES","clause":2,"gate":"G3","description":"Genuine historical statistical baselines evaluated under frozen sample and input rules"},
+    {"id":"E01_VARIANTS","clause":2,"gate":"G6","description":"Comparable agent variants use same races/outcomes/cutoffs and matched simpler controls"},
+    {"id":"E01_EVALUATION","clause":2,"gate":"G6","description":"Sealed holdout evaluation, real result tables and retrospective contamination analysis"},
+    {"id":"E02_PROTOCOL","clause":3,"gate":"G1","description":"Frozen hypotheses, questionnaire mapping, estimand, exclusions, variance and sensitivity plan independently accepted"},
+    {"id":"E02_POPULATION","clause":3,"gate":"G2","description":"ACS/ANES joint fitting is validated for the stated universe, with support and holdout diagnostics"},
+    {"id":"E02_STIMULI","clause":3,"gate":"G2","description":"Permitted real-text stimuli have exact frozen content, rights, timestamps and matched treatments"},
+    {"id":"E02_ENGINE","clause":3,"gate":"G4","description":"Randomization, isolation, scoring and invalid response logging independently pass offline integration"},
+    {"id":"E02_EVALUATION","clause":3,"gate":"G6","description":"Registered real-model evaluation and prespecified sensitivity/uncertainty analysis completed"},
+    {"id":"MODEL_CONTROLS","clause":4,"gate":"G3","description":"OpenRouter-only calls enforce atomic reservations, provider reconciliation, cancellation/retry and checkpoint semantics"},
+    {"id":"MODEL_AUTHORIZATION","clause":4,"gate":"G5","description":"Owner-approved positive budget, rotated/verified credentials and fresh provider price evidence precede real calls"},
+    {"id":"INDEPENDENT_REVIEW","clause":5,"gate":"G6","description":"A nonimplementing auditor has current evidence for every required milestone"},
+    {"id":"CI","clause":5,"gate":"G0","description":"Remote CI passes for the reviewed code; local tests alone are not substituted"},
+    {"id":"TRACEABLE_VISUALS","clause":5,"gate":"G7","description":"Every research table/figure and dashboard view is generated from identified validated run artifacts"},
+    {"id":"REPRO_PACK","clause":6,"gate":"G7","description":"Reproducibility pack restores environment, configs, manifests and permitted outputs with verified hashes"},
+    {"id":"PAPER_DRAFT","clause":6,"gate":"G7","description":"Technical manuscript draft reflects actual findings and clearly separates proposed/unrun analyses"},
+    {"id":"BLOG_DRAFT","clause":6,"gate":"G7","description":"Public-facing blog draft states supported findings, limitations and review-only status"},
+    {"id":"LIMITATIONS","clause":6,"gate":"G7","description":"Complete limitations/failure/source-reuse report is consistent with actual evidence"},
+    {"id":"STATUS","clause":6,"gate":"G7","description":"Accurate requirement-level completion dashboard and current status report exist"}
+  ],
+  "publication_boundary":"Drafts are for owner review. No external publication, affiliation claim, deployment or political activity is authorized.",
+  "deferred_modules":["E03","E04"]
+}

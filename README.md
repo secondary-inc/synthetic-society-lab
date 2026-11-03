@@ -8,6 +8,8 @@ Research project exploring whether demographic grounding, information exposure, 
 ## Project handoff
 
 - [Complete progress report — November 3, 2026](reports/PROGRESS_2026-11-03.md)
+- [Current orchestration status](reports/STATUS.md)
+- [Full completion contract](configs/completion_contract.json)
 - [Master execution blueprint](CODEX_MASTER_EXECUTION.md)
 - [Original start-here handoff](START_HERE.md)
 - [Data acquisition inventory](configs/MASTER_DATA_ACQUISITION.csv)
@@ -25,7 +27,7 @@ One installable, standard-library-only Python project contains four module names
 - E01: retrospective-only manifests and ballot/geography validators, historical-margin S0, feature-only predictor subprocess, frozen predictions, separate held-out scoring, matched comparisons and actual returns-readiness audit.
 - Local run viewer: integrity-checked snapshots, exclusions, uncertainty, source hashes, paired exposure replay and saved DEMO counterfactuals. It never runs inference or invents results.
 
-Read [implementation status and acceptance evidence](reports/STATUS_20261103.md), [E02 protocol](protocols/E02_INFORMATION_EFFECTS.md), [E01 protocol](protocols/E01_RETROSPECTIVE.md) and [milestone criteria](configs/milestones.json). The original November 3 progress audit is retained as the pre-implementation historical record.
+Read [current status](reports/STATUS.md), [initial implementation evidence](reports/STATUS_20261103.md), [E02 protocol](protocols/E02_INFORMATION_EFFECTS.md), [E01 protocol](protocols/E01_RETROSPECTIVE.md) and [milestone criteria](configs/milestones.json). The original November 3 progress audit is retained as the pre-implementation historical record. Verify older descriptions of missing components against the current checkout.
 
 ## Install and verify
 
@@ -36,6 +38,7 @@ python3.11 -m venv .venv
 .venv/bin/civiclab modules
 .venv/bin/civiclab validate-sources --fixture-only
 .venv/bin/civiclab gdelt-ingest
+.venv/bin/civiclab completion
 ```
 
 On a machine with the registered local raw inputs:
@@ -57,7 +60,7 @@ The viewer serves only its generated index/snapshot at loopback `127.0.0.1:8765`
 
 All E02 responses so far are explicitly MOCK, using project-authored fictional notices and a deliberate known mock effect. Scripted Q&A tests C3/C4 plumbing; it is not live assistant research. The ACS/ANES universe mismatch and sparse population support prohibit representative-electorate claims. Real-news text/rights, population review and preregistration remain unresolved.
 
-E01's genuine historical forecasts remain blocked by missing comparable prior returns, verified manifests and aggregation policies. The working S0 demonstration uses labeled invented fixtures. Local outcome separation is a tested feature-flow boundary, not an OS sandbox or independent timestamp. No prospective forecast claim is permitted.
+E01 includes a real 2018→2024 regular Senate diagnostic with 30 matched states, official-count adjudications and S_ZERO/S0 baselines. This bounded post-hoc workflow awaits independent acceptance; it does not complete the original 2026 House/Senate and agent study. The separate DEMO uses invented fixtures. Local outcome separation is a tested feature-flow boundary, not an OS sandbox or independent timestamp. No prospective forecast claim is permitted. See the [historical runbook](docs/E01_HISTORICAL_RUNBOOK.md).
 
 Paid model inference remains disabled, with $0 approved spend and no paid calls. OpenRouter is the only network inference adapter. It requires a fixed model/provider, fresh pricing evidence, an explicit approval ID and positive total/module caps. Atomic reservations count pending requests; unknown billing halts the ledger, known charges are retained even for malformed outputs, and there are no automatic retries/fallbacks. The adapter is mocked in tests; live behavior and billing are not verified. Credentials remain local and untracked; no Meta/X access was exercised.
 
@@ -68,3 +71,23 @@ Advanced demographics, news/social content, live assistants and swarms need matc
 The GDELT fixture has 868 records and 27 fields and is versioned under `tests/fixtures`. Full acquired datasets and generated runs remain under Git-ignored `data/`. A fresh clone can run offline tests and the E01 DEMO; full population fitting requires the exact local source files recorded in the inventory. The historical handoff's original commands/tests were not present; use the commands above for the implemented software.
 
 Each run records source-code identity (including uncommitted implementation fingerprint), Python/platform, config, seeds, artifact hashes and events. Responses/assignments replay deterministically for the mock provider; real hosted models may not honor deterministic seeds. The dashboard is local-only; nothing has been publicly deployed or published.
+
+## Review workflows
+
+The [paper draft](publications/TECHNICAL_PAPER_DRAFT.md), [blog draft](publications/BLOG_DRAFT.md), [limitations](publications/LIMITATIONS.md) and [reproducibility instructions](publications/REPRODUCIBILITY.md) are for owner review. Independent acceptance is scoped to the exact evidence in each audit receipt; a packaged mock run remains a mock run.
+
+```bash
+# Plan restoration from previously downloaded registered files; add --apply to copy:
+.venv/bin/civiclab restore-inputs --from /path/to/downloads
+# Optional official election-document parser:
+.venv/bin/python -m pip install -e '.[sources]'
+.venv/bin/civiclab e01-historical verify
+.venv/bin/civiclab e01-historical prepare
+.venv/bin/civiclab e01-historical run
+# Exact statutory excerpts, separate from real-news acquisition:
+.venv/bin/civiclab e02-stimuli verify
+# Explicitly select sealed artifacts for an owner-review archive:
+.venv/bin/civiclab repro-pack --run RECORDED_RUN_ID --out data/processed/reproducibility/review-snapshot.zip
+```
+
+E01's `download` action and E02's `acquire` action fetch only their documented public sources. The local restore command verifies registered hashes and refuses changed existing files; it does not prove upstream authenticity or legal reuse. The full source-reacquisition and remote-CI gates remain separate requirements.

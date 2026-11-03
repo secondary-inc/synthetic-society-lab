@@ -11,6 +11,20 @@ def price():
 
 
 class BudgetTests(unittest.TestCase):
+    def test_string_flags_do_not_authorize_paid_execution(self):
+        for flag in ('false','true',1,None):
+            ledger=BudgetLedger(self.path,Policy(flag,'1','0','1','TEST_ONLY'))
+            with self.assertRaises(ExecutionBlocked):ledger.reserve('E02','.001')
+
+    def test_cancellation_preserves_reservation_and_halts_then_propagates(self):
+        ledger=BudgetLedger(self.path,Policy(True,'1','0','1','TEST_ONLY'))
+        def cancelled(*args):raise KeyboardInterrupt()
+        client=OpenRouter(ledger,price(),'fixture-key',cancelled)
+        with self.assertRaises(KeyboardInterrupt):
+            client.complete([{'role':'user','content':'hello'}],module='E02')
+        self.assertEqual(ledger.snapshot()[0]['status'],'UNCERTAIN')
+        with self.assertRaises(ExecutionBlocked):ledger.reserve('E02','.001')
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)

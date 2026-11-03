@@ -1,0 +1,79 @@
+{
+  "audited_at_utc": "2026-11-03T10:44:08.154800+00:00",
+  "auditor_role": "independent_auditor",
+  "claim": "Primary hierarchical tau5 worsens weighted log loss versus matched simpler model by0.22241891353663623 nats. No promotion.",
+  "cost_usd": 0,
+  "files": {
+    "configs/e02_population_support_plan.json": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+    "docs/E02_POPULATION_SUPPORT_COMPARISON.md": "e4a618c95830093160c5cbd92dbe883b9e986db8460ca73c6cdc9cfa6e6d6674",
+    "reports/E02_POPULATION_SUPPORT_EVIDENCE.json": "162a8a279020f903eeca68f2c60f6678cdba406e445ece4c4fc1e6d919065704",
+    "src/civiclab/e02/population_alternatives.py": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f",
+    "tests/test_e02_population_alternatives.py": "06104a1b610946557b2c668786f1005e1d3e4d1ac64437f3a5a7ae6a6c6a4d43"
+  },
+  "grid_cells": 2880,
+  "heldout_records": 446,
+  "independent_recalculation": {
+    "1": {
+      "hierarchical_loss": 7.460030688579237,
+      "independent_loss": 6.9393607155394506,
+      "paired": {
+        "clusters": 352,
+        "difference": 0.5206699730397866,
+        "interval": [
+          0.26635258193310424,
+          0.8210435953956678
+        ]
+      }
+    },
+    "20": {
+      "hierarchical_loss": 6.963381420080076,
+      "independent_loss": 6.9393607155394506,
+      "paired": {
+        "clusters": 352,
+        "difference": 0.024020704540625284,
+        "interval": [
+          -0.09510040496585619,
+          0.15372228205166333
+        ]
+      }
+    },
+    "5": {
+      "hierarchical_loss": 7.161779629076086,
+      "independent_loss": 6.9393607155394506,
+      "paired": {
+        "clusters": 352,
+        "difference": 0.22241891353663615,
+        "interval": [
+          0.05117678385308148,
+          0.41953460779957613
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Already-inspected holdout; no confirmatory registration or untouched test.",
+    "Full support imposed by smoothing; citizen/resident transport unresolved.",
+    "Uniform cluster bootstrap descriptive, not full ANES survey-design inference.",
+    "Citizen benchmark count data/units NOT_OBTAINED; one failed endpoint does not establish global access block."
+  ],
+  "paid_calls": 0,
+  "replay_aggregate_bytes_identical": true,
+  "representative_population_gate": "BLOCKED",
+  "run_ledgers": [
+    {
+      "artifacts_verified": 6,
+      "checksums_sha256": "95148ff5e65d1b430d55112caa1741b4d09bb5bbd6e9c806b7c407dd48a18848",
+      "run_id": "e02-247f0495823245aab66a877d623ea310"
+    },
+    {
+      "artifacts_verified": 6,
+      "checksums_sha256": "8ff1ecaa1c2fd476f8c818f0316f2a66b87d714d84eda371faa38315abc2adc3",
+      "run_id": "e02-06300b9b21d14dac927e702ec7851f56"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Independent raw-CSV recodes/cohort, full-grid distributions, IPF, scores and paired cluster bootstrap; no worker fitting/scoring imports.",
+  "status": "PASS_SCOPED_EXPLORATORY_COMPARISON; NO_PROMOTION",
+  "suppressed_original_common_floor_loss": 19.62294597059126,
+  "training_records": 2286
+}

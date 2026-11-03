@@ -1,0 +1,18 @@
+{
+  "string_false_policy": {
+    "reservation_allowed": true,
+    "status": "RESERVED"
+  },
+  "cancelled_request": {
+    "first_status": "RESERVED",
+    "first_charged_microusd": 2085,
+    "later_request_allowed": true
+  },
+  "finalization_crash": {
+    "summary_exists": true,
+    "checksums_exist": false,
+    "resume_allowed": false,
+    "resume_error": "run already finalized; create a new recorded run"
+  },
+  "scope": "Injected fake transports/temporary ledgers only; zero external model/API calls or real billing."
+}

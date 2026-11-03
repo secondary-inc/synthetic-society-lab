@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T10:31:25.765862+00:00",
+  "scope": "Initial independently reproduced G0 snapshot and explicitly reviewed controller remediation; later changes invalidate relevant hashes. Not full research approval.",
+  "code_files": {
+    ".github/workflows/offline.yml": "104a5ed92de0eef4389e0a31e16bbba9e335838f718acbd05c00815e1e48c0b4",
+    ".gitignore": "2ce71967114360eca35ee0d7e231141d7a857ecb78ab9d1f2195d1c803e5d6c4",
+    "configs/SOURCE_INVENTORY.json": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c",
+    "configs/completion_contract.json": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075",
+    "pyproject.toml": "88a88e84955f78fbe306cf6d66adfbcc449c3c27962c198263258fbd28671c50",
+    "src/civiclab/__init__.py": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50",
+    "src/civiclab/cli.py": "092e0c2da9953d559ecd1257ec3f5092e72a108cb3829f97aab7d158f783e8c1",
+    "src/civiclab/common.py": "05f75573e1099584acf5fbb65264067f868b870ba992a834d111a6ddfe74eae3",
+    "src/civiclab/dashboard.py": "9c2f83021072bb5c1ef0f86eb7970d53e5b56c5099a3772906168d5c9edcaea8",
+    "src/civiclab/e01/__init__.py": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83",
+    "src/civiclab/e01/isolation.py": "2d68590042a501f853d084576ed92c73006073a2eeb414881ab487f1fe0089f3",
+    "src/civiclab/e01/pipeline.py": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763",
+    "src/civiclab/e01/worker.py": "e50db180e47c93886d2813b183beff56d863879ea8b93e8278aa9a40a0459e7d",
+    "src/civiclab/e02/__init__.py": "ae8242d75f4a676c8bb274147a73142105525d525520ed32a3cf93f8416d9074",
+    "src/civiclab/e02/experiment.py": "11e95f058d8ff0c148a844ea5edff0cb1859525c4d7d492ad1333d65fe889f3d",
+    "src/civiclab/e02/instrument.py": "0177db8f68e72088e5e291eb661d71f2f58bae3e08b9000a58f7f180c04688db",
+    "src/civiclab/e02/population.py": "750866d84f842c126797d2ebac9fb70f85f641f4be2d46bc29753d7c46b6d3f3",
+    "src/civiclab/e02/stimuli.py": "83a198f1eff008d9664ac1e329acde12db724118dd98271e6d48903b667805ed",
+    "src/civiclab/e03/__init__.py": "92ba3c1e259d4d12ba781567f634467d7d3c7d23d86885b7fa47336965fc06ad",
+    "src/civiclab/e04/__init__.py": "4d4a56fd3cc98fb23323b61ec6a78318cd4a2e58abd58f82bd72946374bf08bc",
+    "src/civiclab/gates.py": "05e82fc283ad591241d2a58266138955371134a89c3163cf1d94a13a6e964ac4",
+    "src/civiclab/gdelt.py": "91dcbe71474c20013115ddd187b938a7aa83c7d1ba42edefa51ee4deb1c3e961",
+    "src/civiclab/integrity.py": "d4fca1b894d93904e386c1ebdb4db7eaeb0deaf666c2f814b3e34727d79a9adc",
+    "src/civiclab/jobs.py": "9fbb98860ab9e817249353162b23efc18c672bcdf83b3147641a36cf95bc7a67",
+    "src/civiclab/model.py": "dca5b04af189415f6a52c363c170408d40aeac166830011536091952888230ac",
+    "src/civiclab/orchestration.py": "4e1a862f815dcb10255fcae4d41c6c36ab3df17714af645469055af161277778",
+    "src/civiclab/templates/run-viewer.html": "215bae69a479a495b248df23db494754c29d150cbc45e948348138a1e7c82a89",
+    "tests/fixtures/gdelt/20261103090000.gkg.csv.zip": "6ed52033813c98b8b341c56e0a58bff8449907c0a823d3a780f4228d617af9bf",
+    "tests/fixtures/gdelt/manifest.json": "ff29371897e01b6b7c7c56945ebb813ad7972f67c9fdd5f151177fa2bb36b0d8",
+    "tests/test_budget.py": "b123bfc05534b5373cacab2e9214de97d8f5fec6488229788580eded8f31f74d",
+    "tests/test_dashboard.py": "77c70e575616ea63f3f110ed4ed276a86b751e652aa2623041123ec1f7a06673",
+    "tests/test_e01.py": "8334dfc920b5be5e54d060603e195e6f5f26ce4783da1686c30aa3e93810b58b",
+    "tests/test_e02_experiment.py": "8706ec7b151f10b692072e2dde6fd02120c82b4654051e7ad46151b5bc77416d",
+    "tests/test_e02_integration.py": "2f1ea1a58b186fd29a7c2874a1b296f7556062f9c8268ffc71b57d892e300d4c",
+    "tests/test_e02_population.py": "0982409b959de74c30e36673c845cd53ccae326281a96bfed9a37571207b7b05",
+    "tests/test_foundation.py": "0a5824451f96c0e62acdbd8cf178ab6eff895c2774e20e564da5194cf1c9de51",
+    "tests/test_isolation.py": "bb1ca6aa2cc0e4e7fb4a4f28ee5790109f94ce69cda7d4c2ffe461cf84521057",
+    "tests/test_jobs.py": "346c5492c61611083b36a28f3de4c231cd8057080d14dcc3f83f324a6357d8d1",
+    "tests/test_orchestration.py": "f4d7e941c1d9e28a4cdae3c8e5374a4688ec8166961b822fee79e7874c2e8218"
+  },
+  "requirements": [
+    {
+      "id": "G0_INSTALL",
+      "status": "PASS",
+      "reason": "Fresh isolated Python 3.12 environment installed the exact copied source snapshot successfully; no raw data or .env copied. This is scoped installation evidence, not remote CI.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0.md",
+          "sha256": "728b1c60c8b4b4e65564403ee7004550fcbbc0c2df0af1e0fbd447b02c756d67"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_current_execution.json",
+          "sha256": "80ff7b516bbee20d49ea2bfc12304f54448727edbbea110ae54d87898c6431aa"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_execution.json",
+          "sha256": "b214eccaf098a93af853f568fcd4551981bfc19c3c7fdd7617862f7a2ccc9e07"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_artifacts.json",
+          "sha256": "45b9d809dc5df4d696d87f3121da42ff73585244ea150dab806b160de0dc5594"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_remediation.json",
+          "sha256": "27bc4744e7fad5e0f3701363b5ae18c2ab81aad72f97e251e470286766c496c3"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_controller_remediation.json",
+          "sha256": "4a5360c693d9aca9f312b94c3a9b2fb3ea0def3a48259e3731151a1a21406101"
+        }
+      ]
+    },
+    {
+      "id": "G0_TESTS",
+      "status": "PASS",
+      "reason": "All 53 tests in the frozen post-remediation snapshot passed independently; original snapshot 46 passed. Later five controller tests passed. Counts overlap and do not prove scientific completeness.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0.md",
+          "sha256": "728b1c60c8b4b4e65564403ee7004550fcbbc0c2df0af1e0fbd447b02c756d67"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_current_execution.json",
+          "sha256": "80ff7b516bbee20d49ea2bfc12304f54448727edbbea110ae54d87898c6431aa"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_execution.json",
+          "sha256": "b214eccaf098a93af853f568fcd4551981bfc19c3c7fdd7617862f7a2ccc9e07"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_artifacts.json",
+          "sha256": "45b9d809dc5df4d696d87f3121da42ff73585244ea150dab806b160de0dc5594"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_remediation.json",
+          "sha256": "27bc4744e7fad5e0f3701363b5ae18c2ab81aad72f97e251e470286766c496c3"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_controller_remediation.json",
+          "sha256": "4a5360c693d9aca9f312b94c3a9b2fb3ea0def3a48259e3731151a1a21406101"
+        }
+      ]
+    },
+    {
+      "id": "G0_INTEGRITY",
+      "status": "BLOCKED",
+      "reason": "All 90 local registered byte/ZIP checks pass, but complete documented reacquisition/import paths, exact upstream releases and rights for nonredistributable/manual inputs are not demonstrated; local hashes alone do not meet clause 1.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0.md",
+          "sha256": "728b1c60c8b4b4e65564403ee7004550fcbbc0c2df0af1e0fbd447b02c756d67"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_current_execution.json",
+          "sha256": "80ff7b516bbee20d49ea2bfc12304f54448727edbbea110ae54d87898c6431aa"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_execution.json",
+          "sha256": "b214eccaf098a93af853f568fcd4551981bfc19c3c7fdd7617862f7a2ccc9e07"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_artifacts.json",
+          "sha256": "45b9d809dc5df4d696d87f3121da42ff73585244ea150dab806b160de0dc5594"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_remediation.json",
+          "sha256": "27bc4744e7fad5e0f3701363b5ae18c2ab81aad72f97e251e470286766c496c3"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_controller_remediation.json",
+          "sha256": "4a5360c693d9aca9f312b94c3a9b2fb3ea0def3a48259e3731151a1a21406101"
+        }
+      ]
+    },
+    {
+      "id": "G0_SECRETS",
+      "status": "PASS",
+      "reason": "Observed .env ignored/untracked, mode 0600, current tracked source scan had no credential-pattern matches, actual nonsecret budgets are disabled/zero; strict enabled guard/cancellation probes passed after fixes. Rotation/real credentials remain G5, not certified.",
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0.md",
+          "sha256": "728b1c60c8b4b4e65564403ee7004550fcbbc0c2df0af1e0fbd447b02c756d67"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_current_execution.json",
+          "sha256": "80ff7b516bbee20d49ea2bfc12304f54448727edbbea110ae54d87898c6431aa"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_execution.json",
+          "sha256": "b214eccaf098a93af853f568fcd4551981bfc19c3c7fdd7617862f7a2ccc9e07"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_artifacts.json",
+          "sha256": "45b9d809dc5df4d696d87f3121da42ff73585244ea150dab806b160de0dc5594"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_remediation.json",
+          "sha256": "27bc4744e7fad5e0f3701363b5ae18c2ab81aad72f97e251e470286766c496c3"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G0_controller_remediation.json",
+          "sha256": "4a5360c693d9aca9f312b94c3a9b2fb3ea0def3a48259e3731151a1a21406101"
+        }
+      ]
+    }
+  ],
+  "known_stale_at_receipt": [
+    "pyproject.toml",
+    "src/civiclab/cli.py",
+    "src/civiclab/e01/worker.py",
+    "src/civiclab/e02/experiment.py",
+    "src/civiclab/e02/instrument.py",
+    "src/civiclab/e02/stimuli.py",
+    "tests/test_e02_experiment.py",
+    "tests/test_e02_population.py"
+  ],
+  "status_note": "Initial historical audit snapshot; completion controller must reject stale code scope. Final current-source audit required after concurrent workers finish."
+}

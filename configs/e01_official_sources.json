@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "local_directory": "data/raw/e01_official",
+  "sources": [
+    {
+      "id": "medsl2018",
+      "filename": "medsl_1976_2018_senate.csv",
+      "url": "https://raw.githubusercontent.com/MEDSL/constituency-returns/fe67c056502fc09ddb1ace2ff8f87c53233a744e/1976-2018-senate.csv",
+      "sha256": "8ab824d9acca70ad54dc69f9b191c5cea604cd5bbda2f8777e968cf25bada50e",
+      "encoding": "latin1",
+      "purpose": "Machine-readable discovery/normalization; each modeled count must match FEC official publication",
+      "reuse_note": "Public numeric election facts. MEDSL repository attributes source to House Clerk; no license assertion for repository code. Raw file retained locally, not redistributed."
+    },
+    {
+      "id": "medsl2024",
+      "filename": "medsl_2024_senate_state.csv",
+      "url": "https://raw.githubusercontent.com/MEDSL/2024-elections-official/df531089c78e6d0098db1a6bfb3849a066a06995/2024-senate-state.csv",
+      "sha256": "e50fbfc62a095b9fe0d5178b7c09176b5cb8b7d320e08dd31e54987b9e3fcd76",
+      "encoding": "utf-8",
+      "purpose": "Machine-readable discovery/normalization; each modeled count must match House Clerk official publication",
+      "reuse_note": "Public numeric election facts; CSV contains some unofficial flags, so those flags never substitute for independent official-count verification. Raw file retained locally."
+    },
+    {
+      "id": "fec2018",
+      "filename": "fec/federalelections2018.pdf",
+      "url": "https://www.fec.gov/resources/cms-content/documents/federalelections2018.pdf",
+      "sha256": "6d7b65418458f40cb4d301f04034e79a6938344097c6d28ec418d676af757ab2",
+      "purpose": "Authoritative 2018 general-election candidate totals and Class-I six-year-cycle table",
+      "published_at": "2019-10 (cover month; exact day unverified)",
+      "reuse_note": "Federal government published numeric election facts used for research verification; raw PDF remains local."
+    },
+    {
+      "id": "clerk2024",
+      "filename": "statistics2024.pdf",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf",
+      "sha256": "d4ba800fc17135b616ae556c92861080ab962d95916ace34b546c5aac824aec4",
+      "purpose": "Authoritative official 2024 nominee names and votes",
+      "published_at": "2025-03-10 (cover date)",
+      "reuse_note": "Federal government published numeric election facts used for research verification; raw PDF remains local."
+    },
+    {
+      "id": "senateclass1",
+      "filename": "senate_class1.html",
+      "url": "https://www.senate.gov/senators/Class_I.htm",
+      "sha256": "68453e923b8717ee1b21878390b0bfa1d64f982eca4928c21b74a367cf97cdd1",
+      "purpose": "Current official confirmation that Class-I terms span 2025\u20132031 after November 2024 election; not pre-election archived evidence",
+      "reuse_note": "Public official institutional facts. Live page can change; strict importer blocks drift instead of changing the frozen receipt."
+    },
+    {
+      "id": "maryland2018",
+      "filename": "maryland2018.html",
+      "url": "https://www.msa.maryland.gov/msa/mdmanual/42electg/html/2018/2018ussen.html",
+      "sha256": "7df55b8bc667d4a22fd7dcc7b4cd75e071fb5e5da0555c7aaff69b88211889d0",
+      "purpose": "Resolve FEC spelling Cambell to official Tony Campbell; state archives records Republican 697017 votes",
+      "reuse_note": "State government numeric election facts; raw page local only."
+    }
+  ],
+  "failed_sources": [
+    {
+      "url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/PEJ5QU",
+      "status": "HTTP_403",
+      "action": "Not bypassed; used public primary-source repository instead"
+    },
+    {
+      "url": "https://www.fec.gov/resources/cms-content/documents/federalelections2024.pdf",
+      "status": "HTTP_403",
+      "action": "Not bypassed; official House Clerk 2024 publication supplies the needed authoritative totals"
+    },
+    {
+      "url": "https://elections.maryland.gov/elections/archive/2018/results/general/gen_results_2018_2_007-.html",
+      "status": "HTTP_403",
+      "action": "No bypass; independently public Maryland State Archives table used."
+    }
+  ]
+}

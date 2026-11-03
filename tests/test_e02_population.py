@@ -45,3 +45,5 @@ class InstrumentTests(unittest.TestCase):
         for v in (None,-9,-8,101,998,float('nan'),True,'50'):
             self.assertNotEqual(score({'democratic_party':v,'republican_party':30},'D')['status'],'VALID')
         self.assertIsNone(change({'democratic_party':None},{'democratic_party':70,'republican_party':30},'D')['primary'])
+        for response in (None,[], 'refused', {'democratic_party':50,'republican_party':50,'unexpected':1}):
+            self.assertEqual(score(response,'D')['status'],'INVALID')

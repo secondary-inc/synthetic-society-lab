@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import zipfile
+from importlib import import_module
 from .common import sha256_file
 
 
@@ -44,6 +45,21 @@ def validate_sources(root, fixture_only=False):
             for member in entry.get("members", []):
                 path = str(Path(name).parent / "extracted" / member["name"]) if name.endswith(".zip") else name
                 check(path, member["sha256"], "member")
+        # Module manifests are separate from the historical received-file inventory.
+        # A present manifest is mandatory to verify in a full local check; absence of
+        # its raw cache blocks that check rather than silently reducing coverage.
+        validators=(
+            ('configs/e01_official_sources.json','civiclab.e01.historical','verify_sources'),
+            ('configs/e02_official_stimuli.json','civiclab.e02.stimuli','verify_corpus'),
+            ('configs/e02_citizen_benchmark_acquisition.json','civiclab.e02.citizen_benchmark','verify'),
+        )
+        for manifest,module,function in validators:
+            if not (root/manifest).exists():continue
+            try:
+                detail=getattr(import_module(module),function)(root)
+                checks.append({'path':manifest,'type':'module_source_verifier','status':'PASS','detail':detail})
+            except (ValueError,OSError,KeyError,TypeError,zipfile.BadZipFile) as error:
+                checks.append({'path':manifest,'type':'module_source_verifier','status':'BLOCKED','error_type':type(error).__name__})
     return {"status": "PASS" if all(c["status"] == "PASS" for c in checks) else "BLOCKED",
             "scope": "fixture" if fixture_only else "local_registered_sources", "checks": checks,
             "limitation": "Byte integrity only; not source authenticity, reuse permission or scientific validity."}

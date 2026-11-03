@@ -1,0 +1,27 @@
+{
+  "audited_at_utc": "2026-11-03T10:30:29.633433+00:00",
+  "cases": [
+    {
+      "requirements": [],
+      "rejected": true,
+      "error": "completion contract must have nonempty identified requirements"
+    },
+    {
+      "requirements": [
+        {
+          "id": "x"
+        },
+        {
+          "id": "x"
+        }
+      ],
+      "rejected": true,
+      "error": "duplicate completion requirement IDs"
+    }
+  ],
+  "code_files": {
+    "src/civiclab/orchestration.py": "4e1a862f815dcb10255fcae4d41c6c36ab3df17714af645469055af161277778",
+    "tests/test_orchestration.py": "f4d7e941c1d9e28a4cdae3c8e5374a4688ec8166961b822fee79e7874c2e8218",
+    "configs/completion_contract.json": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075"
+  }
+}

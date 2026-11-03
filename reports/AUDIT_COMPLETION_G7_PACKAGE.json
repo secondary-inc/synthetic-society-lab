@@ -1,0 +1,29 @@
+{
+  "audited_at_utc": "2026-11-03T10:37:36.399472+00:00",
+  "auditor_role": "independent_auditor",
+  "code_files": {
+    "configs/completion_contract.json": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075",
+    "pyproject.toml": "f2437e372f571333f7e4d0dc2529546cddf6889052cd1833bc22dd68a3de2ed6",
+    "src/civiclab/reproduction.py": "cb8e615b014453d98fc057a25cda463533ca9e5684be510f9bbb34ee43017958",
+    "tests/test_reproduction.py": "f45d486ca84ee32b8d5e6101badba6172e6a5bf4caed26f4a78b05f31e4ad5dc"
+  },
+  "requirements": [
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G7_PACKAGE_EXECUTION.json",
+          "sha256": "5b2444b1b57e134c30aca54cd77639052932eb3ca8cf6c006b07e58e1966522f"
+        },
+        {
+          "path": "data/processed/reproducibility/owner-review.zip",
+          "sha256": "3d7bcfea1824c4f91f0598fe7f5c478503813a966ac0ec5de8b71a21febf834e"
+        }
+      ],
+      "id": "REPRO_PACK",
+      "reason": "Scoped frozen owner-review pack SHA 3d7bcfea1824c4f91f0598fe7f5c478503813a966ac0ec5de8b71a21febf834e: independently extracted 129 hash-verified members, hashed 26 selected-run artifacts, clean-installed, passed 65 fixture tests and fixture integrity, rendered included recorded dashboard. No raw source reacquisition, model rerun, whole-program scientific or publication acceptance.",
+      "status": "PASS"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Frozen owner-review archive mechanism and included fixture/recorded-output restoration only, not full research reproducibility or real-model validation."
+}

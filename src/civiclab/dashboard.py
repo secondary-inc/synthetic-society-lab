@@ -25,8 +25,10 @@ def verified_run(path):
             'run_directory':str(path),'checksums_sha256':sha256_file(path/'checksums.json'),
             'artifacts':checks,'integrity':'PASS'}
     for name,key in [('analysis.json','analysis'),('evaluation.json','evaluation'),
+                     ('S0.evaluation.json','evaluation'),('S_ZERO.evaluation.json','simpler_evaluation'),
                      ('counterfactual.evaluation.json','counterfactual'),('paired_comparison.json','paired_comparison'),
-                     ('returns_audit.json','returns_audit')]:
+                     ('returns_audit.json','returns_audit'),
+                     ('population-support-comparison.json','population_comparison')]:
         if name in checks:result[key]=read(name)
     if 'population.json' in checks:
         pop=read('population.json')
@@ -49,11 +51,18 @@ def snapshot(root, run_ids=None):
             runs.append(verified_run(path))
         except (ValueError,OSError,KeyError,json.JSONDecodeError) as error:
             rejected.append({'run_id':path.name,'reason':str(error)})
-    return {'title':'Synthetic Society Lab','runs':runs,'rejected_runs':rejected,
+    from .orchestration import completion_status
+    latest={}
+    for run in sorted(runs,key=lambda r:r['manifest']['started_at_utc']):
+        m=run['manifest'];latest[m['module']]=f"{m['kind']}: {run['summary']['status']}"
+    result={'title':'Synthetic Society Lab','runs':runs,'rejected_runs':rejected,
             'scope':'Local recorded artifacts. MOCK is engineering data, not research findings. No human effects or prospective forecasts.',
-            'modules':{'E01':'RETROSPECTIVE; real baseline blocked','E02':'MOCK pilot; main research blocked',
+            'modules':{'E01':latest.get('E01','No verified run in this snapshot'),'E02':latest.get('E02','No verified run in this snapshot'),
                        'E03':'DEFERRED','E04':'DEFERRED'},
             'privacy':'No credentials or respondent-level source data exported.'}
+    if (Path(root)/'configs/completion_contract.json').exists():
+        result['completion']=completion_status(root)
+    return result
 
 
 def build(root, output, run_ids=None):

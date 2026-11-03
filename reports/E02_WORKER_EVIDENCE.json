@@ -1,0 +1,154 @@
+{
+  "analysis": {
+    "arm_counts": {
+      "C0": 36,
+      "C1": 36,
+      "C2": 36,
+      "C3": 36,
+      "C4": 36
+    },
+    "estimate_thermometer_points": 2,
+    "excluded_units": {
+      "non_major_party_primary": 12
+    },
+    "frozen_assignment_validation": "PASS",
+    "interval_95_crossed_bootstrap": [
+      2.0,
+      2.0
+    ],
+    "invalid_counts": {},
+    "kind": "MOCK_ENGINEERING_ONLY",
+    "paired_units": 24,
+    "primary_contrast": "(post-pre) C2 minus C1",
+    "primary_weighting": "equal matched profile-stimulus-repeat units; describes this engineering pool, not a national estimate",
+    "responses": 180,
+    "scale_standardization": "divide thermometer points by 100",
+    "scoring_method": "Recomputed from recorded raw pre/post values; cached-score disagreement rejected.",
+    "secondary_contrasts": {
+      "C1_minus_C0": {
+        "complete_pairs": 24,
+        "interpretation": "Exploratory descriptive contrast; scripted QA is not a live assistant.",
+        "mean_change_difference_points": 0
+      },
+      "C3_minus_C1": {
+        "complete_pairs": 24,
+        "interpretation": "Exploratory descriptive contrast; scripted QA is not a live assistant.",
+        "mean_change_difference_points": 0
+      },
+      "C4_minus_C2": {
+        "complete_pairs": 24,
+        "interpretation": "Exploratory descriptive contrast; scripted QA is not a live assistant.",
+        "mean_change_difference_points": 0
+      }
+    },
+    "sensitivity": {
+      "absolute_gap_all_profiles": {
+        "complete_pairs": 36,
+        "mean_change_difference_points": 1.3333333333333333
+      },
+      "interpretation": "Descriptive sensitivity diagnostics, not confirmatory significance or proof of real-world robustness.",
+      "leave_one_profile_out_range": [
+        2,
+        2
+      ],
+      "leave_one_stimulus_out": {
+        "DEMO-library": 2,
+        "DEMO-records": 2,
+        "DEMO-transit": 2
+      }
+    },
+    "uncertainty_label": "Resampling interval of deterministic mock outputs; no human or model-effect inference."
+  },
+  "analysis_lock": {
+    "checks": [
+      {
+        "path": "configs/e02_analysis_plan.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_demo_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_instrument.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_official_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_population_mapping.json",
+        "status": "PASS"
+      },
+      {
+        "path": "protocols/E02_INFORMATION_EFFECTS.md",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/experiment.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/instrument.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/methods.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/population.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/stimuli.py",
+        "status": "PASS"
+      }
+    ],
+    "external_preregistration": "NOT_RUN",
+    "independent_audit": "PENDING; a hash lock is not independent scientific approval",
+    "lock_sha256": "af63e44041558da851a7f1f76e45abf432c77687ea378171408ae8be47a6729c",
+    "paid_execution": "BLOCKED; lock verification cannot authorize spending or credential use",
+    "status": "PASS_DEFINITION_INTEGRITY"
+  },
+  "corpus": {
+    "checked_at_utc": "2026-11-03T10:35:43.952333+00:00",
+    "corpus_hash": "636b1fb763ac0086e79627ef67c74cd858b8b3c3e419ed7929e8a4851a9c22d7",
+    "independent_rights_and_content_audit": "PENDING",
+    "manifest_sha256": "9a0980244ca8afcf0d5ee8c9349e69404a5a3464c6e1a4c83cd6eac02b8eaf9f",
+    "scientific_gate": "NOT_OPENED; public original statutes are not current journalism, a representative corpus, or evidence of effects.",
+    "status": "PASS_PROVENANCE_CHECKS",
+    "stimuli": 3
+  },
+  "cost_usd": 0,
+  "mock_pilot": "e02-992f415b285b4c43afbb72eb2dabaeba",
+  "mock_replay": "e02-b9b4c0b7977b41febd26612c9ea4a59a",
+  "paid_calls": 0,
+  "population_diagnostics": {
+    "contributing_survey_records": 1253,
+    "converged": true,
+    "design_clusters": 1856,
+    "effective_survey_sample_size": 352.0802922531969,
+    "exclusions": {
+      "age_education_or_region_missing_outside_universe": 373,
+      "outside_fresh_weighted_sample": 2416,
+      "sparse_joint_cell_below_5_records": 1033
+    },
+    "heldout_joint_support_coverage_fraction": 0.38740827651768267,
+    "heldout_party_max_absolute_share_error": 0.05701106632164965,
+    "heldout_records": 446,
+    "iterations": 246,
+    "max_absolute_margin_residual": 9.698395128654447e-09,
+    "max_calibration_factor": 5.401487619245175,
+    "support_interpretation": "Marginal calibration can converge despite unsupported held-out joint cells and substantial removed survey mass. These diagnostics do not open a representative-population gate.",
+    "supported_joint_cells": 139,
+    "weighted_exclusions_before_normalization": {
+      "age_education_or_region_missing_outside_universe": 464.88027435810744,
+      "sparse_joint_cell_below_5_records": 1193.3422209316648
+    },
+    "weighted_training_mass_excluded_sparse_fraction": 0.5220223887023523
+  },
+  "population_run": "e02-2fb676d7d32e4ba29537cb62395efd03",
+  "response_hash": "26bddbb93f15729030b7862771edc475758a7ae558ecf3c682c151279e5384a1"
+}

@@ -128,8 +128,13 @@ class RunStore:
     def finish(self, summary):
         if self.finished:
             raise RuntimeError("run already finished")
-        self.event("completed")
-        self.write("summary.json", summary)
+        if (self.path/'summary.json').exists():
+            if (self.path/'checksums.json').exists() or json.loads((self.path/'summary.json').read_text()) != redact(summary):
+                raise ValueError('existing finalization summary differs or run already sealed')
+            self.event('finalization_recovered')
+        else:
+            self.event("completed")
+            self.write("summary.json", summary)
         self.write("checksums.json", {str(p.relative_to(self.path)): sha256_file(p)
                                      for p in sorted(self.path.rglob("*")) if p.is_file() and p.name != '.lock'})
         self.finished = True
@@ -159,7 +164,7 @@ class RunStore:
         manifest = json.loads((path / 'manifest.json').read_text())
         if manifest['config'] != redact(config) or manifest['code'] != code_identity(root):
             raise ValueError('resume configuration or code changed')
-        if (path / 'summary.json').exists():
+        if (path / 'checksums.json').exists():
             raise ValueError('run already finalized; create a new recorded run')
         obj = cls.__new__(cls)
         obj.root, obj.path = root, path
@@ -168,12 +173,16 @@ class RunStore:
         lines = (path / 'events.jsonl').read_text().splitlines()
         obj._sequence = max(json.loads(line)['sequence'] for line in lines)
         obj.finished = False
+        obj._pending_summary=json.loads((path/'summary.json').read_text()) if (path/'summary.json').exists() else None
         obj.event('resumed')
         return obj
 
     def __exit__(self, exc_type, exc, tb):
-        if exc_type:
-            self.event("failed", error_type=exc_type.__name__)
-        elif not self.finished:
-            self.finish({"status": "DONE"})
-        self._release_lock()
+        try:
+            if exc_type:
+                self.event("failed", error_type=exc_type.__name__)
+            elif not self.finished:
+                pending=getattr(self,'_pending_summary',None)
+                self.finish(pending if pending is not None else {"status": "DONE"})
+        finally:
+            self._release_lock()

@@ -1,0 +1,89 @@
+{
+  "audited_at_utc": "2026-11-03T10:43:24.982628+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "definition_files_checked": {
+    "configs/e02_analysis_plan.json": true,
+    "configs/e02_demo_stimuli.json": true,
+    "configs/e02_instrument.json": true,
+    "configs/e02_official_stimuli.json": true,
+    "configs/e02_population_mapping.json": true,
+    "protocols/E02_INFORMATION_EFFECTS.md": true,
+    "src/civiclab/e02/experiment.py": true,
+    "src/civiclab/e02/instrument.py": true,
+    "src/civiclab/e02/methods.py": true,
+    "src/civiclab/e02/population.py": true,
+    "src/civiclab/e02/stimuli.py": true
+  },
+  "finding": "IA-E02-001",
+  "missing_instrument_probe": {
+    "exception": "frozen instrument required with frozen assignments",
+    "rejected": true
+  },
+  "nonpartisan_exclusions": {
+    "non_major_party_primary": 12
+  },
+  "original_probe_receipt": "reports/INDEPENDENT_AUDIT_E02_request_probes.json",
+  "original_probes_preserved": true,
+  "paid_calls": 0,
+  "primary_mock_estimate": 2,
+  "primary_pairs": 24,
+  "rehashed_tamper_probes": [
+    {
+      "exception": "request differs from frozen assignment, instrument or phase",
+      "field": "survey",
+      "phase": "pre",
+      "rejected": true
+    },
+    {
+      "exception": "request differs from frozen assignment, instrument or phase",
+      "field": "phase",
+      "phase": "pre",
+      "rejected": true
+    },
+    {
+      "exception": "request differs from frozen assignment, instrument or phase",
+      "field": "unapproved_context",
+      "phase": "pre",
+      "rejected": true
+    },
+    {
+      "exception": "request differs from frozen assignment, instrument or phase",
+      "field": "survey",
+      "phase": "post",
+      "rejected": true
+    },
+    {
+      "exception": "request differs from frozen assignment, instrument or phase",
+      "field": "phase",
+      "phase": "post",
+      "rejected": true
+    },
+    {
+      "exception": "request differs from frozen assignment, instrument or phase",
+      "field": "unapproved_context",
+      "phase": "post",
+      "rejected": true
+    }
+  ],
+  "replay_response_bytes_identical": true,
+  "run_ledger_checks": [
+    {
+      "artifacts": 11,
+      "checksums_sha256": "79d90b72fee3ac1e78716751fc3d1f6e4c5b6d0b120a0252428f4f08e851afa4",
+      "run_id": "e02-4d4b679fe0c743a989b0e811fdb72692"
+    },
+    {
+      "artifacts": 11,
+      "checksums_sha256": "bd75361bc006caba2d8d9bdd6e614612d575582392f3fb16c3f021f89ab0985a",
+      "run_id": "e02-869b271141994c468232e90b6efa83cb"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Full recorded mock-request binding and raw outcome engineering integrity only; no real-model study, representative population or publication acceptance",
+  "status": "REMEDIATED_INDEPENDENTLY_VERIFIED",
+  "test_result": "22 E02 tests PASS; 20 core plus2 separately scoped alternatives smoke tests, alternatives study not certified here",
+  "v2_prior_lock_preserved": true,
+  "v3_definition_lock_sha256": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+  "valid_frozen_assignment_evaluation": "PASS"
+}

@@ -1,0 +1,134 @@
+{
+  "amendment": {
+    "change": "Require separately supplied frozen instrument with assignment validation; bind exact complete pre/post request objects including phase, questionnaire and allowed context",
+    "estimand_change": false,
+    "prior_lock": "configs/e02_analysis_lock_v2.json",
+    "prior_runs": "Preserved unchanged; superseded for request-integrity evidence only",
+    "reason": "IA-E02-001: rehashed saved requests could change questionnaire or pre/post phase without rejection",
+    "scientific_gates": "Unchanged; mock engineering only, independent re-audit pending"
+  },
+  "analysis": {
+    "multiplicity": "secondary/sensitivity outputs descriptive only, no confirmatory significance claims; primary inference requires frozen real-run analysis/audit",
+    "primary": "paired mean change difference",
+    "secondary": [
+      "C1-C0 primary-change contrast",
+      "C3-C1 scripted-QA contrast",
+      "C4-C2 scripted-QA contrast",
+      "absolute-gap C2-C1 across all profiles"
+    ],
+    "sensitivity": [
+      "leave-one-stimulus-out primary estimate",
+      "leave-one-profile-out primary range",
+      "response-invalid and primary-exclusion counts",
+      "survey-weight mass removed and held-out joint support"
+    ],
+    "small_cluster_limit": "three purposively selected texts and a tiny profile pool do not support broad content or human-population inference",
+    "source_of_outcomes": "raw pre/post answers rescored independently, not cached change fields or model interpretation",
+    "uncertainty": "seeded crossed profile/stimulus percentile bootstrap; repetitions nested; 500 repetitions for engineering checks only"
+  },
+  "assignment": {
+    "baseline_seeds": "paired across arms",
+    "carryover": "no cross-arm history; post request receives only its own baseline and assigned exposure",
+    "design": "fully crossed 5 arms per profile x stimulus x repeat; seed randomized execution order",
+    "item_order": "paired across arms within matched unit, randomized by pair seed",
+    "seed_guarantee": "mock deterministic; hosted model determinism not assumed"
+  },
+  "conditions": {
+    "C0": "no policy text; repeated instrument control",
+    "C1": "exact official-policy excerpt in a document/news-card text wrapper",
+    "C2": "identical excerpt and source label in synthetic social-post text wrapper",
+    "C3": "C1 plus fixed source-bounded scripted reference QA; live assistant contrast deferred",
+    "C4": "C2 plus the identical scripted QA; live assistant contrast deferred",
+    "actual_platform_feeds": "NOT_RUN",
+    "swarms": "NOT_RUN"
+  },
+  "earned_complexity": {
+    "demographics": "require persona-free/party-only simpler comparators on identical profile IDs, stimuli, questionnaire, seeds, source cutoff and compute plan; not yet earned",
+    "live_assistant": "require fixed source-bounded prompts and matched-compute no-assistant controls; scripted QA is not sufficient",
+    "real_text": "candidate official text must pass independent rights/content audit",
+    "social_wrapper": "matched exact text and attribution; no personalized platform claim",
+    "swarms": "equal-compute independent ensemble required; deferred"
+  },
+  "exclusions": {
+    "response_quality": "missing/non-numeric/refusal/out-of-range/unexpected-field answers recorded; invalid C1/C2 pairs excluded with counts",
+    "sampling": "predeclared 25+ and fresh sample; sparse joint cells below five training records excluded and weighted loss reported",
+    "stopping": "engineering n=12 x 3 x 5 x 1 fixed; no outcome-driven extension; real pilot size and main-run power not derived from deterministic mock variance",
+    "structural": "empty/duplicate/incomplete assignment, changed party prior, request mismatch or cached-score disagreement rejects the run"
+  },
+  "external_preregistration": "NOT_RUN",
+  "frozen_at_utc": "2026-11-03T10:40:17.782609+00:00",
+  "instrument": {
+    "change_range": [
+      -200,
+      200
+    ],
+    "contrast_range": [
+      -400,
+      400
+    ],
+    "file": "configs/e02_instrument.json",
+    "fixed_party": "V241221",
+    "gap_range": [
+      -100,
+      100
+    ],
+    "human_admin_equivalence": "adapted instructions, not established",
+    "normalization": "divide by 100; not SD standardization",
+    "primary_parties": [
+      "D",
+      "R"
+    ],
+    "response_domain": "each item 0..100 or null; unknown, refusal and invalid values not imputed",
+    "thermometers": [
+      "V241166",
+      "V241167"
+    ]
+  },
+  "live_execution": {
+    "approval": "affirmative owner budget and independent protocol/population/source gates required",
+    "approved_spend_usd": 0,
+    "credentials": "previously exposed credentials must be rotated and securely validated by owner; not used by worker",
+    "enabled": false,
+    "main_sample_size": "BLOCKED until genuine bounded model-pilot variance, budget and registered power/precision simulation are available",
+    "model_provider": "not approved/frozen for a live run",
+    "pricing": "fresh exact-provider snapshot and worst-case dispatch reservations required"
+  },
+  "population": {
+    "base_prior": "ANES fresh combined pre-election weighted, 25+, coarsened supported joint cells",
+    "calibration": "2024 ACS five-year region-age and region-education resident margins; race/income audit-only",
+    "engineering_profiles": 12,
+    "holdout": "fixed seed at survey PSU/stratum cluster level",
+    "mapping": "configs/e02_population_mapping.json",
+    "model_seed": 20261103,
+    "regions": 4,
+    "scientific_gate": "BLOCKED: citizen/resident mismatch and substantial unsupported survey mass; no representative electorate inference"
+  },
+  "primary_estimand": {
+    "formula": "mean((gap_post-gap_pre)_C2 - (gap_post-gap_pre)_C1)",
+    "independents": "retained for quality/absolute-gap secondary outputs; excluded from in-party primary by definition",
+    "party_prior": "fixed before exposure; never reclassified from post response",
+    "unit": "profile x stimulus x repetition",
+    "weighting": "equal complete eligible finite-pool units; no national average interpretation"
+  },
+  "primary_hypothesis": {
+    "alternative": "Two-sided nonzero paired mean difference. No directional success criterion is chosen from observed outcomes.",
+    "null": "Equal mean before/after in-party warmth-gap change under C2 and C1 for the same eligible profile-stimulus-repeat units."
+  },
+  "protocol_id": "E02-OFFICIAL-TEXT-FRAMING-v3",
+  "provenance": {
+    "definitions_change_rule": "version and log any post-freeze change; a changed lock blocks verification; never rewrite prior run artifacts",
+    "draft_is_not_registration": true,
+    "independent_auditor": "separate implementing agent; no self-certification"
+  },
+  "schema_version": 3,
+  "status": "FROZEN_DEFINITION_DRAFT_PENDING_INDEPENDENT_AUDIT",
+  "stimulus_selection": {
+    "candidate_corpus": "configs/e02_official_stimuli.json",
+    "corpus_hash": "e02-official-statutes-2024-v1",
+    "count": 3,
+    "forecast_reuse": "DISALLOWED; publication clock unknown and no independent pre-results archive",
+    "independent_content_and_rights_review": "PENDING",
+    "rule": "purposive public-domain original federal statute paragraphs, feasibility only"
+  },
+  "study_scope": "Synthetic response behavior on a finite preselected fictional profile x official-policy-text pool; no human persuasion, actual feed exposure, state-representative or current-news inference."
+}

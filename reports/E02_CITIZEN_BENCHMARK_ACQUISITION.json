@@ -1,0 +1,101 @@
+{
+  "cost_usd_actual_or_zero": 0,
+  "files_changed": [
+    "configs/e02_citizen_benchmark_acquisition.json",
+    "src/civiclab/e02/citizen_benchmark.py",
+    "tests/test_e02_citizen_benchmark.py",
+    "docs/E02_CITIZEN_BENCHMARK_ACQUISITION.md",
+    "reports/E02_CITIZEN_BENCHMARK_ACQUISITION.json"
+  ],
+  "next_unblocked_task": "Independent auditor inspect exact exported metadata/notes and unit/denominator alignment; lead registers source inventory through its own workflow",
+  "output_artifacts": [
+    "data/raw/e02_citizen_benchmarks/ACSST5Y2024.S0501_2026-11-03T054417.zip",
+    "data/raw/e02_citizen_benchmarks/S0501-public-export.png"
+  ],
+  "paid_calls": 0,
+  "preserved_definition_lock": {
+    "checks": [
+      {
+        "path": "configs/e02_analysis_plan.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_demo_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_instrument.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_official_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_population_mapping.json",
+        "status": "PASS"
+      },
+      {
+        "path": "protocols/E02_INFORMATION_EFFECTS.md",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/experiment.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/instrument.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/methods.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/population.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/stimuli.py",
+        "status": "PASS"
+      }
+    ],
+    "external_preregistration": "NOT_RUN",
+    "independent_audit": "PENDING; a hash lock is not independent scientific approval",
+    "lock_sha256": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+    "paid_execution": "BLOCKED; lock verification cannot authorize spending or credential use",
+    "status": "PASS_DEFINITION_INTEGRITY"
+  },
+  "preserved_support_implementation_sha256": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f",
+  "preserved_support_plan_sha256": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+  "recorded_at_utc": "2026-11-03T10:46:46.252358+00:00",
+  "reproduction_commands": [
+    "PYTHONPATH=src .venv/bin/python -m civiclab.e02.citizen_benchmark",
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_e02*.py' -v"
+  ],
+  "risks_and_limitations": "Proposed citizenship/age/education universe alignment and subgroup percentage units need independent review; no derived targets, fitting or promotion",
+  "source_data_and_license_notes": "Official public Census table ZIP export; exact URL and hashes in acquisition manifest; aggregate statistics, no microdata; attribution and source notes retained",
+  "source_screenshot_sha256": "65f207b40eb7f48c0d618f2bbdae75f71a7332201808a33090a5879a3686dfdf",
+  "task_id": "E02-S0501-PUBLIC-ACQUISITION-v1",
+  "tests_run_and_results": "25 E02 tests PASS, including3 portable acquisition tests",
+  "unresolved_blockers": [
+    "independent unit and universe review",
+    "rounding and uncertainty treatment",
+    "separate protocol amendment before fitting",
+    "original population scientific gates"
+  ],
+  "verification": {
+    "api_spend_usd": 0,
+    "archive_sha256": "7b3684807e87cc38c79fff3ae53154926448eea3575ea9a7f852fd6fc7876204",
+    "calibration_activation": "NOT_USED; separate amendment and independent review required",
+    "dataset": "ACSST5Y2024.S0501",
+    "geography_rows": 52,
+    "independent_universe_and_unit_review": "PENDING",
+    "manifest_sha256": "437989d6cdd3cb5211e6168843d8cf0caa76972b0b45b8c61d472aa241c6b142",
+    "paid_calls": 0,
+    "puerto_rico_rows_preserved": 1,
+    "selected_estimate_and_moe_variables": 52,
+    "states_plus_dc": 51,
+    "status": "PASS_ACQUISITION_INTEGRITY_ONLY"
+  }
+}

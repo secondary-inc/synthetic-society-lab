@@ -1,0 +1,88 @@
+{
+  "audited_at_utc": "2026-11-03T10:47:22.765719+00:00",
+  "auditor_role": "independent_auditor",
+  "code_files": {
+    "configs/e02_analysis_lock.json": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+    "configs/e02_analysis_plan.json": "9d9e195ad600f16b4a15f6879afd424596a32a308dd1cbab1bcd12765ffca3ff",
+    "configs/e02_demo_stimuli.json": "63926a3749aa5326587c197d2776edb58f25cf1aa8b78af379b82c0e8817d817",
+    "configs/e02_instrument.json": "ae506fe626928a13cbd09b0cadf402e90899048d656fa80d26b59e0b716df790",
+    "configs/e02_official_stimuli.json": "9a0980244ca8afcf0d5ee8c9349e69404a5a3464c6e1a4c83cd6eac02b8eaf9f",
+    "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+    "protocols/E02_INFORMATION_EFFECTS.md": "aa2c4b87b01b665eebb5d7bdc09d94df86c87998091e088bd32817b0ba4de573",
+    "src/civiclab/common.py": "05f75573e1099584acf5fbb65264067f868b870ba992a834d111a6ddfe74eae3",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/e02/methods.py": "e4b658bf84d8e9f20453f166aa182c57db86caa9d442af0bc7897273b005c262",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/stimuli.py": "51d92b13e58b890ff42580c606f882288cffbcf8b9aad3944de1628e48def49c",
+    "src/civiclab/jobs.py": "9fbb98860ab9e817249353162b23efc18c672bcdf83b3147641a36cf95bc7a67",
+    "tests/test_e02_experiment.py": "7974b0c922f3120ced036db31a4de596d5bd780a6836608da52418d55c408036",
+    "tests/test_e02_integration.py": "2f1ea1a58b186fd29a7c2874a1b296f7556062f9c8268ffc71b57d892e300d4c"
+  },
+  "requirements": [
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_request_remediation.json",
+          "sha256": "2ba347d8e2211471f40b79c10624adba1824a9badd375f8db06886d370959e92"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_aggregate_recalculation.json",
+          "sha256": "b430f095c8f98c6baccac02a3a16ea14be98bf303e0ff45473b54e590ebb6759"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CURRENT_TEST_EXECUTION.json",
+          "sha256": "5f7a2fad46558eacc214dd735436d1423e4f1711566b2d601194e2cbc042e727"
+        }
+      ],
+      "id": "E02_ENGINE",
+      "reason": "Offline MOCK integration only: fixed instrument, crossed assignment, context/reset and exact request binding, raw rescoring, invalid/exclusion accounting, seeded replay and integrity checks independently pass. IA-E02-001 original probes preserved and remediation verified; no real-model or human effects.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_request_remediation.json",
+          "sha256": "2ba347d8e2211471f40b79c10624adba1824a9badd375f8db06886d370959e92"
+        }
+      ],
+      "id": "E02_PROTOCOL",
+      "reason": "Version3 engineering definitions and lock reviewed, but real-run sample/model/provider and confirmatory approval/precision plan remain unresolved. Hash locking is not external preregistration.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_SUPPORT_COMPARISON.json",
+          "sha256": "ceb10613f8ba2272edc24248b3ab6bcd8e353fe8a8cdacea332a8c8235be44be"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_aggregate_recalculation.json",
+          "sha256": "b430f095c8f98c6baccac02a3a16ea14be98bf303e0ff45473b54e590ebb6759"
+        }
+      ],
+      "id": "E02_POPULATION",
+      "reason": "Independent reconstruction confirms52.20% training-weight suppression,38.74% heldout support and citizen/resident mismatch. Primary support-preserving hierarchical candidate loses to matched simpler model; no promotion.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_G7_PRELIMINARY.json",
+          "sha256": "8eed8902c560311db0200fb71f646285c63cffe499002ca4805c1055b06b4d61"
+        }
+      ],
+      "id": "E02_STIMULI",
+      "reason": "Three exact original statutory excerpts have independently checked limited US reuse/content rationale; this bounded official-document corpus does not close the original contemporary-news/feed research gate or open a real-model run.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [],
+      "id": "E02_EVALUATION",
+      "reason": "No authorized registered real-model evaluation; MOCK fixture contrasts are not findings.",
+      "status": "NOT_RUN"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Independent bounded acceptance only; original scientific and publication authorization gates remain unchanged."
+}

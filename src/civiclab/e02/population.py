@@ -121,6 +121,7 @@ def fit_population(root, seed=20261103):
     targets = acs_targets(age, education)
     grouped = defaultdict(lambda: {'weight': 0., 'squared_weight': 0., 'count': 0})
     exclusions = Counter(); heldout = []; cluster_count = set()
+    weighted_exclusions = Counter()
     with anes.open(encoding='utf-8-sig', newline='') as stream:
         reader = csv.DictReader(stream)
         if any(mapping[k] not in reader.fieldnames for k in ('weight', 'age', 'education', 'race', 'income', 'party', 'region', 'psu', 'stratum')):
@@ -132,7 +133,9 @@ def fit_population(root, seed=20261103):
             age_value, edu = number(row[mapping['age']]), number(row[mapping['education']])
             region_value = number(row[mapping['region']])
             if age_value is None or not 25 <= age_value <= 80 or edu not in range(1, 6) or region_value not in range(1, 5):
-                exclusions['age_education_or_region_missing_outside_universe'] += 1; continue
+                exclusions['age_education_or_region_missing_outside_universe'] += 1
+                weighted_exclusions['age_education_or_region_missing_outside_universe'] += weight
+                continue
             region = str(int(region_value)); age_bin = '25-44' if age_value < 45 else '45-64' if age_value < 65 else '65+'
             party_value = number(row[mapping['party']])
             party = 'D' if party_value == 1 else 'R' if party_value == 2 else 'I' if party_value in (0, 3, 5) else 'UNKNOWN'
@@ -143,7 +146,9 @@ def fit_population(root, seed=20261103):
             key = (region, age_bin, education_bin, party, race, income)
             cluster = (row[mapping['stratum']], row[mapping['psu']])
             if any(number(x) is None or number(x) < 0 for x in cluster):
-                exclusions['invalid_design_cluster'] += 1; continue
+                exclusions['invalid_design_cluster'] += 1
+                weighted_exclusions['invalid_design_cluster'] += weight
+                continue
             cluster_count.add(cluster)
             holdout = int(canonical_hash([seed, cluster])[:8], 16) % 5 == 0
             if holdout:
@@ -154,7 +159,9 @@ def fit_population(root, seed=20261103):
     cells = []
     for key, value in sorted(grouped.items()):
         if value['count'] < 5:
-            exclusions['sparse_joint_cell_below_5_records'] += value['count']; continue
+            exclusions['sparse_joint_cell_below_5_records'] += value['count']
+            weighted_exclusions['sparse_joint_cell_below_5_records'] += value['weight']
+            continue
         region, age_bin, edu, party, race, income = key
         cells.append({**value, 'region': region, 'age_bin': age_bin, 'education': edu,
                       'party': party, 'race': race, 'income': income,
@@ -167,6 +174,9 @@ def fit_population(root, seed=20261103):
                        contributing_survey_records=sum(c['count'] for c in cells),
                        exclusions=dict(exclusions), design_clusters=len(cluster_count), heldout_records=len(heldout),
                        max_calibration_factor=max(c['weight'] / (initial[i] / initial_total) for i, c in enumerate(fitted)))
+    training_weight=sum(v['weight'] for v in grouped.values())
+    diagnostics['weighted_training_mass_excluded_sparse_fraction'] = weighted_exclusions['sparse_joint_cell_below_5_records']/training_weight
+    diagnostics['weighted_exclusions_before_normalization'] = dict(weighted_exclusions)
     train_party = defaultdict(float)
     for cell in fitted:
         train_party[cell['party']] += cell['weight']
@@ -177,6 +187,9 @@ def fit_population(root, seed=20261103):
     if not test_total:
         raise ValueError('held-out survey partition empty')
     diagnostics['heldout_party_max_absolute_share_error'] = max(abs(train_party[k] - test_party[k] / test_total) for k in set(train_party) | set(test_party))
+    supported_keys={(c['region'],c['age_bin'],c['education'],c['party'],c['race'],c['income']) for c in fitted}
+    diagnostics['heldout_joint_support_coverage_fraction'] = sum(w for key,w in heldout if key in supported_keys)/test_total
+    diagnostics['support_interpretation'] = 'Marginal calibration can converge despite unsupported held-out joint cells and substantial removed survey mass. These diagnostics do not open a representative-population gate.'
     # Never export donor identifiers or individual thermometers; cells are coarsened aggregates.
     for c in fitted:
         c.pop('squared_weight')

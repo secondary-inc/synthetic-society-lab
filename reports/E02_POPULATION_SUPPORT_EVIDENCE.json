@@ -1,0 +1,246 @@
+{
+  "aggregate_sha256": "feb295f1bba9b1f186516311a1ed6539f6cc9074b3f03b27b4068a856fdd7687",
+  "api_spend_usd": 0,
+  "citizen_benchmark": {
+    "cached_artifacts": {
+      "data/raw/e02_citizen_benchmarks/S0501-data-request-MISSING_KEY.html": "ac04e3c77bd893b4b541b5f1297eaefb63a58c98f185306efa6802bb0bed0d1e",
+      "data/raw/e02_citizen_benchmarks/S0501-variables.json": "a6085ef72bb893508344bb377605a94d43368b297343aae22ec3973556195dc0"
+    },
+    "data_endpoint": "https://api.census.gov/data/2024/acs/acs5/subject",
+    "limitation": "One failed keyless API request does not prove every permitted Census channel unavailable; group metadata float types alone do not validate units or percentage conversion",
+    "metadata_url": "https://api.census.gov/data/2024/acs/acs5/subject/groups/S0501.json",
+    "observed_response": "Missing Key HTML, not count data; no credentials supplied",
+    "status": "NOT_OBTAINED_UNITS_NOT_VALIDATED"
+  },
+  "comparison": {
+    "api_spend_usd": 0,
+    "grid_cells": 2880,
+    "heldout_records": 446,
+    "kind": "EXPLORATORY_POPULATION_SUPPORT_COMPARISON",
+    "models": {
+      "Q_hierarchical": {
+        "before_calibration": {
+          "raw_weighted_joint_support_coverage": 1.0,
+          "weighted_joint_log_loss_nats": 7.1797102264627375
+        },
+        "calibration": {
+          "converged": true,
+          "effective_grid_cells": 310.8074460701489,
+          "iterations": 6,
+          "max_absolute_margin_residual": 6.477743202948361e-10,
+          "maximum_cell_probability": 0.012580003147533008
+        },
+        "raw_weighted_joint_support_coverage": 1.0,
+        "training_weight_retained_fraction": 1.0,
+        "weighted_joint_log_loss_nats": 7.161779629076086
+      },
+      "Q_independent": {
+        "before_calibration": {
+          "raw_weighted_joint_support_coverage": 1.0,
+          "weighted_joint_log_loss_nats": 6.953362071472499
+        },
+        "calibration": {
+          "converged": true,
+          "effective_grid_cells": 547.4712922819671,
+          "iterations": 1,
+          "max_absolute_margin_residual": 1.6653345369377348e-16,
+          "maximum_cell_probability": 0.00623273981100091
+        },
+        "raw_weighted_joint_support_coverage": 1.0,
+        "training_weight_retained_fraction": 1.0,
+        "weighted_joint_log_loss_nats": 6.9393607155394506
+      },
+      "Q_suppressed": {
+        "calibration": {
+          "iterations": 246,
+          "max_absolute_margin_residual": 9.698395128654447e-09
+        },
+        "raw_weighted_joint_support_coverage": 0.3874082765176828,
+        "training_weight_retained_fraction": 0.4779776112976477,
+        "weighted_joint_log_loss_nats": 19.62294597059126
+      }
+    },
+    "paid_calls": 0,
+    "plan_sha256": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+    "primary_paired_comparison": {
+      "clusters": 352,
+      "interpretation": "Exploratory resampling on an already-inspected holdout; not design-based or confirmatory inference.",
+      "mean_hierarchical_minus_independent_nats": 0.22241891353663623,
+      "percentile_95_cluster_bootstrap": [
+        0.05117678385308161,
+        0.41953460779957624
+      ],
+      "repetitions": 500
+    },
+    "representative_population_gate": "BLOCKED: citizen/resident universe mismatch, unvalidated transport, already-inspected holdout; full support is imposed by smoothing, not proof of validity.",
+    "seed": 20261103,
+    "sensitivities": {
+      "1": {
+        "models": {
+          "Q_hierarchical": {
+            "before_calibration": {
+              "raw_weighted_joint_support_coverage": 1.0,
+              "weighted_joint_log_loss_nats": 7.477992161168896
+            },
+            "calibration": {
+              "converged": true,
+              "effective_grid_cells": 296.26349368082595,
+              "iterations": 6,
+              "max_absolute_margin_residual": 6.622292020308507e-10,
+              "maximum_cell_probability": 0.012948135256910109
+            },
+            "raw_weighted_joint_support_coverage": 1.0,
+            "training_weight_retained_fraction": 1.0,
+            "weighted_joint_log_loss_nats": 7.460030688579237
+          },
+          "Q_independent": {
+            "before_calibration": {
+              "raw_weighted_joint_support_coverage": 1.0,
+              "weighted_joint_log_loss_nats": 6.953362071472499
+            },
+            "calibration": {
+              "converged": true,
+              "effective_grid_cells": 547.4712922819671,
+              "iterations": 1,
+              "max_absolute_margin_residual": 1.6653345369377348e-16,
+              "maximum_cell_probability": 0.00623273981100091
+            },
+            "raw_weighted_joint_support_coverage": 1.0,
+            "training_weight_retained_fraction": 1.0,
+            "weighted_joint_log_loss_nats": 6.9393607155394506
+          }
+        },
+        "paired_comparison": {
+          "clusters": 352,
+          "interpretation": "Exploratory resampling on an already-inspected holdout; not design-based or confirmatory inference.",
+          "mean_hierarchical_minus_independent_nats": 0.5206699730397866,
+          "percentile_95_cluster_bootstrap": [
+            0.2663525819331044,
+            0.8210435953956678
+          ],
+          "repetitions": 500
+        },
+        "selection": "No automatic promotion or best-tau choice"
+      },
+      "20": {
+        "models": {
+          "Q_hierarchical": {
+            "before_calibration": {
+              "raw_weighted_joint_support_coverage": 1.0,
+              "weighted_joint_log_loss_nats": 6.981256678664196
+            },
+            "calibration": {
+              "converged": true,
+              "effective_grid_cells": 346.3543801987291,
+              "iterations": 6,
+              "max_absolute_margin_residual": 5.965439253685645e-10,
+              "maximum_cell_probability": 0.011284040088693848
+            },
+            "raw_weighted_joint_support_coverage": 1.0,
+            "training_weight_retained_fraction": 1.0,
+            "weighted_joint_log_loss_nats": 6.963381420080076
+          },
+          "Q_independent": {
+            "before_calibration": {
+              "raw_weighted_joint_support_coverage": 1.0,
+              "weighted_joint_log_loss_nats": 6.953362071472499
+            },
+            "calibration": {
+              "converged": true,
+              "effective_grid_cells": 547.4712922819671,
+              "iterations": 1,
+              "max_absolute_margin_residual": 1.6653345369377348e-16,
+              "maximum_cell_probability": 0.00623273981100091
+            },
+            "raw_weighted_joint_support_coverage": 1.0,
+            "training_weight_retained_fraction": 1.0,
+            "weighted_joint_log_loss_nats": 6.9393607155394506
+          }
+        },
+        "paired_comparison": {
+          "clusters": 352,
+          "interpretation": "Exploratory resampling on an already-inspected holdout; not design-based or confirmatory inference.",
+          "mean_hierarchical_minus_independent_nats": 0.024020704540625413,
+          "percentile_95_cluster_bootstrap": [
+            -0.09510040496585606,
+            0.15372228205166344
+          ],
+          "repetitions": 500
+        },
+        "selection": "No automatic promotion or best-tau choice"
+      }
+    },
+    "source_hashes": {
+      "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+      "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7",
+      "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf": "fbad3417cc50b18977563e128f00dfd164ab1d50c5de694134fc57196436a799",
+      "data/raw/census/acs2024/extracted/ACSDT5Y2024.B01001-Data.csv": "526f0dccc80198920dfd0ed2719111b0db7617a5606b278222666e3628c6717e",
+      "data/raw/census/acs2024/extracted/ACSDT5Y2024.B03002-Data.csv": "444d92dbedd55de9c45c05f891be3b6d6a8606f64e943f5d84c43279a37b5ee4",
+      "data/raw/census/acs2024/extracted/ACSDT5Y2024.B15003-Data.csv": "dcc7dff36b2a3e7e0ac6513aac69ba15e650575dc51d675723521a62c0af9942",
+      "data/raw/census/acs2024/extracted/ACSDT5Y2024.B19001-Data.csv": "f8bbae6b047cb9669e62f174462a0438c7e7bd1cc0bb3d0968a7396ee53d918f"
+    },
+    "training_records": 2286
+  },
+  "definition_lock_verification": {
+    "checks": [
+      {
+        "path": "configs/e02_analysis_plan.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_demo_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_instrument.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_official_stimuli.json",
+        "status": "PASS"
+      },
+      {
+        "path": "configs/e02_population_mapping.json",
+        "status": "PASS"
+      },
+      {
+        "path": "protocols/E02_INFORMATION_EFFECTS.md",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/experiment.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/instrument.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/methods.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/population.py",
+        "status": "PASS"
+      },
+      {
+        "path": "src/civiclab/e02/stimuli.py",
+        "status": "PASS"
+      }
+    ],
+    "external_preregistration": "NOT_RUN",
+    "independent_audit": "PENDING; a hash lock is not independent scientific approval",
+    "lock_sha256": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+    "paid_execution": "BLOCKED; lock verification cannot authorize spending or credential use",
+    "status": "PASS_DEFINITION_INTEGRITY"
+  },
+  "implementation_sha256": "595db09901c43c41066f330b0d0456be55b3d0179891ce6f1bc4890584884b6f",
+  "original_gate": "BLOCKED; no candidate automatically promoted",
+  "paid_calls": 0,
+  "plan_sha256": "9b93a86c85cb224b26d69b152dd2b50e7ef516ed04994dfcd336001e4627f42e",
+  "replay_run_id": "e02-06300b9b21d14dac927e702ec7851f56",
+  "run_id": "e02-247f0495823245aab66a877d623ea310",
+  "status": "RECORDED_PENDING_INDEPENDENT_AUDIT",
+  "task_id": "E02-POPULATION-SUPPORT-EXPLORATORY-v1",
+  "tests": "22 E02 tests PASS"
+}

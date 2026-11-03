@@ -50,7 +50,7 @@ class BudgetLedger:
 
     def reserve(self, module, amount):
         p = self.policy
-        if not p.enabled or not p.approval_id or module not in ("E01", "E02"):
+        if p.enabled is not True or not isinstance(p.approval_id,str) or not p.approval_id.strip() or module not in ("E01", "E02"):
             raise ExecutionBlocked("paid execution disabled or explicit approval missing")
         requested = micros(amount)
         if requested <= 0:
@@ -193,9 +193,11 @@ class OpenRouter:
             output = json.loads(content)
             if not isinstance(output, dict):
                 raise ExecutionBlocked("structured object required")
-        except Exception as error:
+        except BaseException as error:
             self.ledger.record(receipt,{'error_type':type(error).__name__})
             self.ledger.settle(receipt, actual=reported_cost, uncertain=True)
+            if not isinstance(error,Exception):
+                raise
             raise ExecutionBlocked("request failed or accounting uncertain; no retry; ledger halted (" + type(error).__name__ + ")") from None
         self.ledger.settle(receipt, actual=cost)
         return {"output": output, "receipt": receipt, "model": response["model"],

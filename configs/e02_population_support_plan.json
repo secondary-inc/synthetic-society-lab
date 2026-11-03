@@ -1,0 +1,61 @@
+{
+  "approved_budget_usd": 0,
+  "candidates": {
+    "Q_hierarchical": "weighted conditional model P(region,age,education) P(party|region,age,education) P(race,income|region,age,education,party); parent-node Dirichlet smoothing retains all eligible training weight and preserves supported associations",
+    "Q_independent": "positive smoothed product of training marginals, then the same age/education calibration; simpler comparator",
+    "Q_suppressed": "original 5-record full-joint suppression model; no changes to its fit or unfavorable results"
+  },
+  "citizen_benchmark": {
+    "active_calibration": "unchanged resident ACS benchmarks until valid citizen data obtained and independently reviewed",
+    "candidate": "2024 ACS subject S0501 Native C02 plus Naturalized Citizen C04 age and 25+ education; inspect count/percentage units and rounding before use",
+    "data_access_observed": "metadata accessible; keyless data request returned Missing Key HTML, not data; no key bypass"
+  },
+  "implementation_details": {
+    "base_joint": "36 region-age-education cells smoothed toward product of global smoothed marginals",
+    "before_calibration": "report same proper score before calibration for independent and hierarchical candidates to expose resident-benchmark transport changes",
+    "bootstrap": "paired per-record log-loss differences aggregated by original heldout PSU/stratum cluster, then uniform cluster resampling; descriptive only",
+    "grid_categories": "region 4, age 3, education 3, party 4, race 5, income 4; 2880 cells",
+    "party_backoff": "global party -> region -> region,education -> region,age,education",
+    "race_income_backoff": "global joint race-income smoothed toward product of global marginals -> party -> region,party -> region,education,party -> region,age,education,party",
+    "weight_scale": "training survey weights rescaled to sum to eligible training record count for prior-record pseudo-counts"
+  },
+  "limitations": [
+    "citizen/resident mismatch remains",
+    "calibrated finite synthetic profiles are not representative humans",
+    "already-inspected holdout limits inferential claims",
+    "hierarchical smoothing trades bias/variance and must be evaluated rather than assumed superior",
+    "no formal anonymity or differential-privacy guarantee; no identifiers or actual response rows exported"
+  ],
+  "matching": {
+    "data": "same registered ANES fresh 25+ sample, exact recodes and survey weights",
+    "evaluation_space": "same complete six-variable coarsened grid and identical held-out weighted records",
+    "holdout": "same seed 20261103 PSU/stratum cluster split as original; already-inspected split, hence retrospective exploratory validation, not untouched confirmatory test",
+    "targets": "same ACS 2024 five-year regional age and educational resident margins for all candidate post-calibrations"
+  },
+  "original_reference": "configs/e02_population_mapping.json; full joint-cell suppression >=5 remains unchanged as Q_suppressed",
+  "original_target_preserved": "Fictional 25+ profile joint region x age x education x party x race x income distribution; no narrower model declared complete.",
+  "outcomes": [
+    "weighted held-out full-joint negative log probability, nats per held-out record",
+    "weighted held-out support coverage",
+    "paired cluster-resampled hierarchical-minus-independent log-loss difference",
+    "training survey weight retained",
+    "post-calibration residuals and effective grid weight concentration"
+  ],
+  "paid_calls": 0,
+  "parameters": {
+    "cluster_bootstrap_repetitions": 500,
+    "common_log_score_floor_mass": 1e-09,
+    "global_marginal_half_count": 0.5,
+    "primary_smoothing_prior_records": 5,
+    "seed": 20261103,
+    "sensitivity_smoothing_prior_records": [
+      1,
+      20
+    ]
+  },
+  "registered_at_utc": "2026-11-03T10:38:25.274769+00:00",
+  "schema_version": 1,
+  "scoring_floor": "Evaluate every candidate on q=(1-epsilon)*p+epsilon/number_of_grid_cells. Report zero raw-support mass separately. This common scoring regularization is not a silent forecast alteration.",
+  "selection": "Primary tau=5 fixed before metrics; tau=1 and tau=20 sensitivity only. No best-outcome picking or automatic promotion. New data/independent audit needed before representative claims.",
+  "status": "EXPLORATORY_SUPPORT_COMPARISON_PREDECLARED_BEFORE_CANDIDATE_METRICS"
+}
