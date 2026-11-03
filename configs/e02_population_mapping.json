@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "weight": "V240103a",
+  "psu": "V240103c",
+  "stratum": "V240103d",
+  "sample": "V240003",
+  "sample_values": [2, 3],
+  "region": "V243007",
+  "age": "V241458x",
+  "education": "V241465x",
+  "race": "V241501x",
+  "income": "V241567x",
+  "party": "V241221",
+  "codebook": "May 19 2026, printed pp. 13-14,23-24,102,192,195,216,241,611",
+  "population": "Fictional 25+ profiles, ANES fresh combined pre-election weighted joint-cell priors, age/education matched to ACS resident benchmarks within Census region. Not a representative electorate.",
+  "fit_dimensions": ["region_age", "region_education"],
+  "age_bins": ["25-44", "45-64", "65+"],
+  "education_recode": {"1": "HS_OR_LESS", "2": "HS_OR_LESS", "3": "SOME_COLLEGE", "4": "BA_PLUS", "5": "BA_PLUS"},
+  "support_rule": "Coarsened joint region x age x education x party x race x income cells; minimum five training records per cell. Sparse cells excluded and counted, never imputed. Five-category education was infeasible with this support rule; three-category mapping frozen for exploratory pilot before model execution.",
+  "audit_only": ["B03002 all-age race distribution", "B19001 household income distribution"],
+  "limitations": ["ANES citizen universe differs from ACS resident universe", "Race table is all ages, income table counts households; do not force either as 25+ person marginals", "No individual survey variance estimates; calibration diagnostics are descriptive", "State inference unavailable from small region-stratified pilot", "State labels not generated", "Cross-tabs suppressed below five contributing survey records"]
+}

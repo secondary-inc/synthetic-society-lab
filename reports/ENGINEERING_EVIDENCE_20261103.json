@@ -1,0 +1,245 @@
+{
+  "artifacts": {
+    "e01_audit": {
+      "checksums_sha256": "444849974cc879fb2cee336a3066c207bbcce14cd7987cd6af93a6ce2c535922",
+      "run_id": "e01-9a8489feb9454b56922fb0fad75ea5bf",
+      "summary": {
+        "blockers": [
+          "2024 House target lacks 2022 House returns on validated matching geography.",
+          "2022 and 2024 regular Senate returns are different seat classes; need 2018 for a 2024 same-seat lag.",
+          "Official candidate manifests, exact map vintage verification and state-specific aggregation policies remain missing."
+        ],
+        "claims": "Structural real-data audit only; no forecast or election performance result.",
+        "cost_usd": 0,
+        "files_audited": 3,
+        "status": "BLOCKED_REAL_BASELINE"
+      }
+    },
+    "e01_demo": {
+      "checksums_sha256": "00efd79ab3536073c1dc0c80c42b61b0654fc0680b216fed9950634fdb8846e3",
+      "run_id": "e01-110607c664824f57a1428aaf24a40115",
+      "summary": {
+        "by_office": {
+          "HOUSE": {
+            "macro_mae_pp": 2.0,
+            "max_absolute_error_pp": 2.0,
+            "min_absolute_error_pp": 2.0,
+            "n": 1
+          },
+          "SENATE": {
+            "macro_mae_pp": 1.0,
+            "max_absolute_error_pp": 1.0,
+            "min_absolute_error_pp": 1.0,
+            "n": 1
+          }
+        },
+        "claims": "Invented toy values test engineering only; not electoral forecasting evidence.",
+        "cost_usd": 0,
+        "dataset_kind": "DEMO",
+        "prediction_sha256": "d39234b7a8fbd940d88fbf2482047b3252a8da690d5f25ffca755ca5c1592399",
+        "status": "DEMO_COMPLETE"
+      }
+    },
+    "e01_demo_replay": {
+      "checksums_sha256": "87447ee6312f34bbacf8655d08969c1e1db1a879120985088aaba5dac33ac0b2",
+      "run_id": "e01-913f314a5fc14a04a07428126b23b3cf",
+      "summary": {
+        "by_office": {
+          "HOUSE": {
+            "macro_mae_pp": 2.0,
+            "max_absolute_error_pp": 2.0,
+            "min_absolute_error_pp": 2.0,
+            "n": 1
+          },
+          "SENATE": {
+            "macro_mae_pp": 1.0,
+            "max_absolute_error_pp": 1.0,
+            "min_absolute_error_pp": 1.0,
+            "n": 1
+          }
+        },
+        "claims": "Invented toy values test engineering only; not electoral forecasting evidence.",
+        "cost_usd": 0,
+        "dataset_kind": "DEMO",
+        "prediction_sha256": "d39234b7a8fbd940d88fbf2482047b3252a8da690d5f25ffca755ca5c1592399",
+        "status": "DEMO_COMPLETE"
+      }
+    },
+    "pilot": {
+      "checksums_sha256": "4d628511f94f8aa739eb72cfcd81d0fb55e0542dc3b53acfbe8b563262d4697b",
+      "run_id": "e02-6e36d3b01e1949c7a4f3b67a66dbf7b1",
+      "summary": {
+        "advanced_gates": {
+          "assistant": "MOCK_SCRIPT_ONLY; live matched-compute comparison NOT_RUN",
+          "demographics": "BLOCKED: no persona-free comparison",
+          "real_news": "BLOCKED: no permitted corpus",
+          "swarms": "BLOCKED: independent equal-compute baseline NOT_RUN"
+        },
+        "analysis": {
+          "arm_counts": {
+            "C0": 36,
+            "C1": 36,
+            "C2": 36,
+            "C3": 36,
+            "C4": 36
+          },
+          "estimate_thermometer_points": 2,
+          "excluded_units": {
+            "missing_invalid_or_nonpartisan_primary": 12
+          },
+          "interval_95_crossed_bootstrap": [
+            2.0,
+            2.0
+          ],
+          "invalid_counts": {},
+          "kind": "MOCK_ENGINEERING_ONLY",
+          "paired_units": 24,
+          "primary_contrast": "(post-pre) C2 minus C1",
+          "primary_weighting": "equal matched profile-stimulus-repeat units; describes this engineering pool, not a national estimate",
+          "responses": 180,
+          "scale_standardization": "divide thermometer points by 100",
+          "uncertainty_label": "Resampling interval of deterministic mock outputs; no human or model-effect inference."
+        },
+        "kind": "MOCK",
+        "mock_calls": 360,
+        "paid_calls": 0,
+        "reproducibility_hash": "8675da5f1ae4dd5cb4226f5b9b8997234abf8b9626f646d634d9508c747a077a",
+        "spent_usd": 0,
+        "status": "PASS_MOCK_PILOT",
+        "units": 180
+      }
+    },
+    "pilot_replay": {
+      "checksums_sha256": "1aa7b81d5dca0ef66469aceeaadfc3ef79e299da96e187497e8a34857a44411b",
+      "run_id": "e02-15c0797e5f824d978eade032c311b923",
+      "summary": {
+        "advanced_gates": {
+          "assistant": "MOCK_SCRIPT_ONLY; live matched-compute comparison NOT_RUN",
+          "demographics": "BLOCKED: no persona-free comparison",
+          "real_news": "BLOCKED: no permitted corpus",
+          "swarms": "BLOCKED: independent equal-compute baseline NOT_RUN"
+        },
+        "analysis": {
+          "arm_counts": {
+            "C0": 36,
+            "C1": 36,
+            "C2": 36,
+            "C3": 36,
+            "C4": 36
+          },
+          "estimate_thermometer_points": 2,
+          "excluded_units": {
+            "missing_invalid_or_nonpartisan_primary": 12
+          },
+          "interval_95_crossed_bootstrap": [
+            2.0,
+            2.0
+          ],
+          "invalid_counts": {},
+          "kind": "MOCK_ENGINEERING_ONLY",
+          "paired_units": 24,
+          "primary_contrast": "(post-pre) C2 minus C1",
+          "primary_weighting": "equal matched profile-stimulus-repeat units; describes this engineering pool, not a national estimate",
+          "responses": 180,
+          "scale_standardization": "divide thermometer points by 100",
+          "uncertainty_label": "Resampling interval of deterministic mock outputs; no human or model-effect inference."
+        },
+        "kind": "MOCK",
+        "mock_calls": 360,
+        "paid_calls": 0,
+        "reproducibility_hash": "8675da5f1ae4dd5cb4226f5b9b8997234abf8b9626f646d634d9508c747a077a",
+        "spent_usd": 0,
+        "status": "PASS_MOCK_PILOT",
+        "units": 180
+      }
+    },
+    "population": {
+      "checksums_sha256": "6b9dfe4cc180c8e4282060d2e3f16544f7c4c0e30e2f30921f9d47171a580044",
+      "run_id": "e02-d582225a8e5247b69273373412f143ed",
+      "summary": {
+        "confirmatory_status": "BLOCKED: citizen/resident universe mismatch, sparse support exclusions, unvalidated transport and state inference",
+        "diagnostics": {
+          "contributing_survey_records": 1253,
+          "converged": true,
+          "design_clusters": 1856,
+          "effective_survey_sample_size": 352.0802922531969,
+          "exclusions": {
+            "age_education_or_region_missing_outside_universe": 373,
+            "outside_fresh_weighted_sample": 2416,
+            "sparse_joint_cell_below_5_records": 1033
+          },
+          "heldout_party_max_absolute_share_error": 0.05701106632164965,
+          "heldout_records": 446,
+          "iterations": 246,
+          "max_absolute_margin_residual": 9.698395128654447e-09,
+          "max_calibration_factor": 5.401487619245175,
+          "supported_joint_cells": 139
+        },
+        "paid_calls": 0,
+        "spent_usd": 0,
+        "status": "PASS_EXPLORATORY_FIT"
+      }
+    }
+  },
+  "milestones": {
+    "D0": {
+      "scope": "recorded local run viewer, integrity checks and browser inspection",
+      "status": "PASS"
+    },
+    "E01A": {
+      "scope": "DEMO S0, validation and separate evaluation; actual real baseline BLOCKED",
+      "status": "PASS"
+    },
+    "E02A": {
+      "scope": "exploratory instrument and joint population engineering; representative-population validation BLOCKED",
+      "status": "PASS"
+    },
+    "E02B": {
+      "scope": "12-profile mocked pilot and exact replay only",
+      "status": "PASS"
+    },
+    "F0": {
+      "scope": "offline installation, integrity, provenance, checkpoints, mocked budget enforcement",
+      "status": "PASS"
+    }
+  },
+  "recorded_at_utc": "2026-11-03T10:18:25.837603+00:00",
+  "research_gates": {
+    "E03": "NOT_RUN",
+    "E04": "NOT_RUN",
+    "actual_historical_forecast": "BLOCKED",
+    "equal_compute_swarm_comparison": "NOT_RUN",
+    "external_preregistration": "NOT_RUN",
+    "live_assistant": "NOT_RUN",
+    "paid_execution_approval": "BLOCKED",
+    "permitted_real_stimuli": "BLOCKED",
+    "prospective_forecast": "BLOCKED",
+    "representative_population_validity": "BLOCKED"
+  },
+  "runs": {
+    "e01_audit": "e01-9a8489feb9454b56922fb0fad75ea5bf",
+    "e01_demo": "e01-110607c664824f57a1428aaf24a40115",
+    "e01_demo_replay": "e01-913f314a5fc14a04a07428126b23b3cf",
+    "mock_reproducibility_hash": "8675da5f1ae4dd5cb4226f5b9b8997234abf8b9626f646d634d9508c747a077a",
+    "paid_calls": 0,
+    "pilot": "e02-6e36d3b01e1949c7a4f3b67a66dbf7b1",
+    "pilot_replay": "e02-15c0797e5f824d978eade032c311b923",
+    "population": "e02-d582225a8e5247b69273373412f143ed",
+    "spent_usd": 0
+  },
+  "scope": "Engineering acceptance only; no scientific main-run completion",
+  "source_integrity": {
+    "checks": 90,
+    "receipt_sha256": "1e28d78a6fcc7180693b0b47d26d364423d5a151c81f3b05000df9a0e65b4a5c",
+    "status": "PASS"
+  },
+  "tests": {
+    "ci_status": "Workflow added; remote CI not yet observed",
+    "count": 46,
+    "environments": [
+      "editable Python 3.12.14",
+      "clean wheel Python 3.12.14"
+    ],
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "instrument_id": "party-thermometers-v1",
+  "status": "FROZEN_FOR_OFFLINE_ENGINEERING_PILOT",
+  "research_status": "EXPLORATORY_NOT_PREREGISTERED",
+  "source": "ANES 2024 May 19 2026 codebook, printed pp. 82-83 and 102",
+  "items": [
+    {"id": "democratic_party", "anes_variable": "V241166", "question": "How would you rate the Democratic Party?", "minimum": 0, "maximum": 100},
+    {"id": "republican_party", "anes_variable": "V241167", "question": "How would you rate the Republican Party?", "minimum": 0, "maximum": 100}
+  ],
+  "instructions": "Use a 0 to 100 feeling thermometer. Zero is very cold or unfavorable, 50 is neutral, and 100 is very warm or favorable. Return null for a refusal or unknown answer. This instruction is adapted for synthetic model administration.",
+  "primary": "in_party_minus_out_party_change",
+  "primary_population": "Profiles whose fixed prior party identification is Democrat or Republican; independents remain in quality and secondary measures but not this primary estimand.",
+  "party_variable": "V241221; 1 Democrat, 2 Republican, 0/3/5 non-major-party; negative codes missing",
+  "units": "thermometer points: time-point gap -100..100, before-after change -200..200, difference-in-changes -400..400; range-normalized score = raw / 100, not an SD effect size",
+  "primary_contrast": "mean[(post-pre)_C2 - (post-pre)_C1] on exactly the same profile x stimulus units",
+  "secondary": "absolute party gap change for all profiles; no multiplicity-adjusted confirmatory secondary claims",
+  "missing": "Both items required per time point; invalid/missing/refusal pairs excluded from numeric contrast with counts and reasons retained. No imputation. ANES negative codes excluded; 998/999 invalid.",
+  "uncertainty": "Seeded crossed profile/stimulus bootstrap, equal profile weights for randomized engineering pool. Intervals describe resampling of mock outputs only.",
+  "not_validated_for": ["human persuasion", "state-representative effects", "ideological extremity", "institutional trust"]
+}

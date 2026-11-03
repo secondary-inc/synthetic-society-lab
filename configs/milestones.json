@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "stage_order": ["F0", "E02A", "E02B", "E01A", "D0"],
+  "milestones": {
+    "F0": {"requires": [], "acceptance": ["clean editable install on Python >=3.11", "fixture and registered source integrity validation", "immutable checksummed runs and resumable job receipts", "default network denial; atomic total/module budget reservations", "offline tests exercise failures and concurrency"]},
+    "E02A": {"requires": ["F0"], "acceptance": ["versioned primary instrument and scoring", "ANES/codebook mappings", "ACS-aware joint population fit with diagnostics", "no respondent identifiers in generated profiles"]},
+    "E02B": {"requires": ["E02A"], "acceptance": ["matched text and attribution across arms", "random assignments and fresh contexts", "12-profile mocked reproducible pilot", "before-after scores and profile/stimulus uncertainty", "failures retained and explicit MOCK labels"]},
+    "E01A": {"requires": ["F0"], "acceptance": ["strict race/candidate/geography manifests", "deterministic S0", "predictions sealed before separate evaluation", "matched race comparisons", "real-data blockers reported; retrospective only"]},
+    "D0": {"requires": ["E02B", "E01A"], "acceptance": ["dashboard consumes checksummed recorded runs", "uncertainty and provenance visible", "no invented replay results", "MOCK and retrospective labels retained"]}
+  },
+  "advanced": {
+    "demographics": "must compare to persona-free baseline on same units",
+    "real_news": "permitted, dated text and matched exposure required",
+    "social_feeds": "must compare identical content with same source attribution",
+    "assistant": "C3/C4 exploratory only until matched prompts and compute budgets verified",
+    "swarms": "blocked until equal-compute independent ensemble comparison",
+    "E03": "deferred until core pipelines pass; separate protocol required",
+    "E04": "deferred until core pipelines pass; authoritative cases and separate protocol required"
+  }
+}
