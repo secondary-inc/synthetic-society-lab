@@ -1,0 +1,63 @@
+{
+  "accepted_readiness_roster_states_remain": 8,
+  "audited_at_utc": "2026-11-03T14:18:12.429635+00:00",
+  "auditor_role": "independent_auditor",
+  "cost_usd": 0,
+  "final_ballots_accepted": 0,
+  "finding": {
+    "cause": "Every nonblank line is split and required tohave exactlyfivefields; newpositivefixture omitsactualaddress-columncontinuation.",
+    "expected": "Parseexactlythreecompletecandidateobservationswithoutimportingaddresscontinuationsorotherofficecontent;stillrejectunknownname/party/shifted/ambiguouslayouts.",
+    "id": "IA-E01-V1_6-NH-CONTINUATION-001",
+    "location": "src/civiclab/e01/ballot_formats_v1_6.py:50",
+    "nonprivate_layout_evidence": {
+      "header_columns": {
+        "Candidate Address": 54,
+        "Candidate Name": 0,
+        "City/State/Zip": 93,
+        "Domicile": 31,
+        "Party": 130
+      },
+      "nonblank_field_counts": [
+        5,
+        5,
+        1,
+        5
+      ],
+      "one_field_line_start_end_columns": [
+        55,
+        64
+      ]
+    },
+    "observed": "validate_readinessonexact29-sourcev1.6configraisesValueError New Hampshire candidate row layout differs. No RunStore invoked by auditor.",
+    "required_remediation": [
+      "Preserveoriginalv1.6code/test/config/evidenceassnapshot;separatelyversionnarrowfix.",
+      "Addactual-shapeauthoredcontinuationpositivewithprecisecolumn/precedingrowbinding;no blanketignoreofone-fieldlines. Unknownname/party/overlap/firstline/ambiguouscontinuationsmustrefuse.",
+      "IndependentlyrerunactualcachedNHparserandall29sourcepreflightbeforeanyrecordedreadinessrun;rawreconciliationstayslocal."
+    ],
+    "severity": "HIGH_FOR_STAGE_ACCEPTANCE",
+    "status": "OPEN",
+    "trigger": "Exactcached46pageNHgeneralPDFSHA9e4f505d9bf236691d6ee2618a35d32b1270efdf4f91a08f5dc17e794802b02e contains a one-field continuation line between the second and third five-column Senate records."
+  },
+  "model_calls": 0,
+  "new_network_requests": 0,
+  "other_checks": {
+    "actualIAstandalone3rows_positive": true,
+    "all4codeconfigtest_and29sourcepins_exact": true,
+    "v1_5_predecessor_snapshot_manifest_retained": true
+  },
+  "raw_candidate_names_contacts_or_continuation_literal_in_report": false,
+  "recorded_readiness_execution_authorized": false,
+  "reviewed_files": {
+    "configs/e01_ballot_readiness_v1_6.json": "71816d8ffb72c24adebaa5df6642ee9ed90040656a45562b10c20db5bffa988b",
+    "src/civiclab/e01/ballot_formats_v1_6.py": "b2ff13e5da6db1f8b3a69e7c7c9233b6104c8d62dc60313468b6c68fa2935906",
+    "src/civiclab/e01/ballots.py": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec",
+    "tests/test_e01_ballot_formats_v1_6.py": "1ceabe066d5c48cc8216ca5b3524fb272ca171816f19a3349e51ff01d84a6671"
+  },
+  "schema_version": 1,
+  "source_hashes_verified": 29,
+  "status": "BLOCKED_V1_6_ACTUAL_NEW_HAMPSHIRE_LAYOUT_MISMATCH",
+  "targeted_tests_independently_passed": 75,
+  "tests_scope": "All69prior+6newauthoredtestsPASS;doesnotestablishactualnew-sourceparsercompatibility.",
+  "unfinished_readiness_jobs_remain": 25,
+  "worker_fixture_receipt_sha256": "53a47c8353635a285d5980dcc41ad0b1e61ea572f52503bc2b51272ba5ba49eb"
+}

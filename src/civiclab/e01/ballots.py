@@ -18,6 +18,7 @@ from civiclab.common import RunStore,canonical_hash,sha256_file
 from civiclab.e01.ballot_formats_v1_3 import extract_co_senate,extract_va_senate,extract_wy_senate
 from civiclab.e01.ballot_capture_formats_v1_4 import extract_ks_senate,extract_ak_senate
 from civiclab.e01.maine_v1_5 import reconcile as reconcile_maine
+from civiclab.e01.ballot_formats_v1_6 import extract_ia_senate,extract_nh_senate
 
 CLASS_II_STATES=tuple('AK AL AR CO DE GA IA ID IL KS KY LA MA ME MI MN MS MT NC NE NH NJ NM OK OR RI SC SD TN TX VA WV WY'.split())
 CONTEXT_IDS={'2026-OH-SENATE-C3','2026-FL-SENATE-C3','2026-FL-HOUSE-20'}
@@ -153,7 +154,8 @@ def verify_source(root,source):
         raise ValueError('unknown capture representation')
     if source['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION',
         'OFFICIAL_CAPTURE_CONTEXT','OFFICIAL_CANDIDATE_INDEX','OFFICIAL_CANDIDATE_LIST_XLSX',
-        'OFFICIAL_WITHDRAWAL_REPLACEMENT_LIST','OFFICIAL_DECLARED_WRITE_IN_LIST','OFFICIAL_OFFICE_CODE_KEY','OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
+        'OFFICIAL_WITHDRAWAL_REPLACEMENT_LIST','OFFICIAL_DECLARED_WRITE_IN_LIST','OFFICIAL_OFFICE_CODE_KEY',
+        'OFFICIAL_FILING_WITHDRAWAL_CONTEXT','OFFICIAL_POST_PRIMARY_VACANCY_CONTEXT','OFFICIAL_CLASS_IDENTITY','OFFICIAL_VACANCY_LAW','OFFICIAL_APPOINTMENT_REGISTER','OFFICIAL_GENERAL_NOTICE'}:
         raise ValueError('finance registration or unknown source role is not ballot evidence')
     if not isinstance(source['response_headers'],dict) or set(source['response_headers'])-{'Date','Last-Modified','ETag','Content-Type'}:
         raise ValueError('only limited noncredential response headers may be recorded')
@@ -220,6 +222,12 @@ def validate_readiness(root,config):
                 raise ValueError('Maine source roles differ')
             if [sources[k]['capture_kind'] for k in refs]!=['BROWSER_DOWNLOAD_BYTES']*4+['BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES']:
                 raise ValueError('Maine capture representation differs')
+        elif row['state']=='IA':
+            if refs!=['ia_general','ia_index_browser'] or [sources[k]['source_role'] for k in refs]!=['OFFICIAL_CANDIDATE_LIST','OFFICIAL_CANDIDATE_INDEX'] or [sources[k]['capture_kind'] for k in refs]!=['BROWSER_DOWNLOAD_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES']:
+                raise ValueError('Iowa exact references/roles/representations differ')
+        elif row['state']=='NH':
+            if refs!=['nh_general','nh_index_browser','nh_post_primary_vacancies','nh_withdrawals'] or [sources[k]['source_role'] for k in refs]!=['OFFICIAL_CANDIDATE_LIST','OFFICIAL_CANDIDATE_INDEX','OFFICIAL_POST_PRIMARY_VACANCY_CONTEXT','OFFICIAL_FILING_WITHDRAWAL_CONTEXT'] or [sources[k]['capture_kind'] for k in refs]!=['BROWSER_DOWNLOAD_BYTES','BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES','BROWSER_DOWNLOAD_BYTES','BROWSER_DOWNLOAD_BYTES']:
+                raise ValueError('New Hampshire exact references/roles/representations differ')
         elif any(sources[k]['source_role'] not in {'OFFICIAL_CANDIDATE_LIST','OFFICIAL_NOMINEE_CERTIFICATION','OFFICIAL_CAPTURE_CONTEXT'} for k in refs):
             raise ValueError('candidate reference is not official roster/certification evidence')
         if row['state']=='ME':
@@ -243,6 +251,11 @@ def validate_readiness(root,config):
                     'historical_replacement_count':reconciled['historical_replacement_count'],
                     'maine_reconciliation':reconciled,'writein_pdf_edition':'2026-10-15','writein_index_display_date':'2026-10-16',
                     'completeness_claim':'SOURCE_LOCAL_CONSISTENCY_NOT_LATEST_AMENDMENT_OR_FINAL_BALLOT_ACCEPTANCE'}
+        elif row['state']=='IA':
+            roster=extract_ia_senate(pdf_pages(paths['ia_general']),paths['ia_index_browser'].read_text())
+        elif row['state']=='NH':
+            roster=extract_nh_senate(pdf_pages(paths['nh_general']),paths['nh_index_browser'].read_text(),
+                                    pdf_pages(paths['nh_post_primary_vacancies']),pdf_pages(paths['nh_withdrawals']))
         elif row['state']=='NJ' and 'nj_senate' in refs:
             roster=extract_nj_senate(pdf_pages(paths['nj_senate']))
             if 'nj_nominee_certification' in refs:
