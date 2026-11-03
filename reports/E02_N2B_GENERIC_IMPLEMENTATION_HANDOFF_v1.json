@@ -1,0 +1,270 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "development_compute": "UNPRICED",
+    "experimental_spend_usd": 0,
+    "model_calls": 0,
+    "real_network_calls": 0
+  },
+  "FILES_CHANGED": {
+    "configs/e02_n2b_generic_state_import_v1.json": "70261cd95372b1020cea46cb1b2881a99ef4c0db1f3256185e371cfc5b3fafda",
+    "docs/E02_N2B_GENERIC_IMPLEMENTATION_v1.md": "9a005368e26dddfed05f994559e0db204a5b918c764b718bb32d7b3a1a18c020",
+    "reports/E02_N2B_FINAL_TESTS_311_v1.txt": "f14c7e8c4482574f5a554220b88c20672296afda6015075a0714c5ceb5a93903",
+    "reports/E02_N2B_FINAL_TESTS_312_v1.txt": "d4bee9d9a898b915d47209aed1a0001e25698e234e9710181c11ea297baec104",
+    "reports/E02_N2B_INITIAL_FULL_312_v1.txt": "4a4cf525f9f50fcb025cdcf71f9e313da08233cb8f1f9eee65c3040b2041471b",
+    "reports/E02_N2B_INITIAL_SMOKE_v1.txt": "982094965c79d8dfbf7803b0f05805a808eaee4c5bb7789f06d343209ac4026d",
+    "reports/E02_N2B_INITIAL_SYMLINK_FAILURE_311_v1.txt": "75b56e3d08cb761fd0db444d7071edd8e310bc88d6ec110a14d21f738d056bc1",
+    "reports/E02_N2B_INITIAL_SYMLINK_FAILURE_312_v1.txt": "2fbdbfca6ce88cccd412cb7eea655a40c198300bec542c1b7e608f8f6504c7a4",
+    "reports/E02_N2B_PASS_QUOTA_SMOKE_v1.txt": "c73cf70cf660d44f2b365f7f359c0709ffd74890a0a6d73a7f0bbdfdf1e9c29e",
+    "reports/E02_N2B_PREHASH_TESTS_311_v1.txt": "03ee5d7227492da94f1df7d74f202113a640754d7c5a6d9417ea2ee7ab9ebaee",
+    "reports/E02_N2B_PREHASH_TESTS_312_v1.txt": "691e553badbae857df26ab857994e868368580736dcf22404b2b3d210b04cdd5",
+    "src/civiclab/e02/n2b_admission_v1.py": "6380f4431111b1c024f93dbe8a0cfb5c58267e679aa345e15ef3934002b7fb51",
+    "src/civiclab/e02/n2b_assembly_v1.py": "e0a8b37d1557835efdc2ee04e93cfd48b5dd6191540644de621ead8f538cea37",
+    "src/civiclab/e02/n2b_control_v1.py": "1f55bede87ebc5580718087d168243fb3f3c8c5aba31b77ab6f5d5261950d3f6",
+    "src/civiclab/e02/n2b_parts_v1.py": "f7908a77c6bf94980da8cc8a48552b59cff1d87a117a600b4d1e4919e21a532e",
+    "src/civiclab/e02/n2b_runner_v1.py": "c659317df55584c622d76dc89372764a6edf86f37c793059558fbacbb2d24fe5",
+    "src/civiclab/e02/n2b_source_v1.py": "09e7c7c7f8b92203967b2ccc431036eecb55f336220f6c4e5cf0fe3303f44c7b",
+    "tests/test_e02_n2b_generic_v1.py": "247d5641c6d80ac6e0997f6b0ffd4ee4c04f09f990eb554f4cd3e9489d00bc72"
+  },
+  "NEXT_UNBLOCKED_TASK": "Independent exact candidate code/privacy/lifecycle/retained-authored arithmetic/resource audit. Lead owns STATUS/Git and any later particular actual metadata/release or explicit resource amendment. Candidate now held unchanged.",
+  "OUTPUT_ARTIFACTS": {
+    "authored_cases": {
+      "crash_unknown": {
+        "old_saved_parts_unchanged": true,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "source_reads": {
+          "BIND": {
+            "metadata": 0,
+            "person": 0
+          }
+        },
+        "stages": {
+          "BIND": "UNKNOWN"
+        },
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 0,
+            "DC_REPLAY_part": 0,
+            "core": 5299,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0
+        }
+      },
+      "invalid_child_failure": {
+        "old_saved_parts_unchanged": true,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "source_reads": {
+          "BIND": {
+            "metadata": 1,
+            "person": 0
+          },
+          "DC_PRIMARY": {
+            "metadata": 1,
+            "person": 1
+          }
+        },
+        "stages": {
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "FAILED"
+        },
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 0,
+            "ASSEMBLE_REPLAY_canonical_data": 0,
+            "DC_PRIMARY_part": 0,
+            "DC_REPLAY_part": 0,
+            "core": 11376,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0
+        }
+      },
+      "success": {
+        "known_F_cells": 144,
+        "old_saved_parts_unchanged": true,
+        "reservation": {
+          "expanded_bytes": 134724553,
+          "ops": 24000000,
+          "rows": 65010,
+          "seconds": 1500
+        },
+        "retry_unchanged": true,
+        "source_reads": {
+          "ASSEMBLE_PRIMARY": {
+            "metadata": 0,
+            "person": 0
+          },
+          "ASSEMBLE_REPLAY": {
+            "metadata": 0,
+            "person": 0
+          },
+          "BIND": {
+            "metadata": 1,
+            "person": 0
+          },
+          "DC_PRIMARY": {
+            "metadata": 2,
+            "person": 1
+          },
+          "DC_REPLAY": {
+            "metadata": 2,
+            "person": 1
+          }
+        },
+        "stages": {
+          "ASSEMBLE_PRIMARY": "COMPLETED",
+          "ASSEMBLE_REPLAY": "COMPLETED",
+          "BIND": "COMPLETED",
+          "DC_PRIMARY": "COMPLETED",
+          "DC_REPLAY": "COMPLETED"
+        },
+        "storage": {
+          "new": {
+            "ASSEMBLE_PRIMARY_canonical_data": 6628927,
+            "ASSEMBLE_REPLAY_canonical_data": 6628916,
+            "DC_PRIMARY_part": 5385849,
+            "DC_REPLAY_part": 5385848,
+            "core": 24182,
+            "scratch": 0
+          },
+          "old_core": 0,
+          "old_data": 0,
+          "old_raw": 0
+        },
+        "unknown_F_cells": 3528
+      }
+    },
+    "earlier_authored_bundles_preserved": [
+      "data/processed/e02_F_local_fixture/n2b-generic-v1-20261103-01",
+      "data/processed/e02_F_local_fixture/n2b-generic-v1-20261103-02"
+    ],
+    "final_authored_index": {
+      "indexed_files": 136,
+      "path": "data/processed/e02_F_local_fixture/n2b-generic-v1-20261103-03/AUTHORED_EVIDENCE_INDEX.json",
+      "sha256": "ddc74c4c7d476112c6f4b7ad30057aeacab59afb6664d9aa401e0472d4f74729"
+    },
+    "policy_sha256": "3cfbd02ede0aa9688bc12ce3e4fe95a331d73b372728aca7def9e925b830f1b9"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_n2b_generic_v1 -v",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_e02_n2b_generic_v1 -v",
+    "PYTHONPATH=src:tests .venv/bin/python -c 'from pathlib import Path; from test_e02_n2b_generic_v1 import retain_authored_evidence; print(retain_authored_evidence(Path(\"data/processed/e02_F_local_fixture/n2b-review-reproduction\")))'"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Implementer fixtures do not certify exact candidate; independent code/privacy/lifecycle/resource/authored evidence review remains required.",
+    "No actual DC row import/state/universe/personCRC/hash validation or generic actualWY parsing. Savedpart bridge tests are authored only.",
+    "Fixture clock is explicitly simulated within historical window. Actual run must fit complete1500s before min(originalWY1793741015.473082,originalN2abatch,newt0+1500); no reset or window amendment implemented.",
+    "Whole old/native quotas preserved; actual current prior roots/space were not inspected. Historical artifact lower bounds do not establish feasibility.",
+    "Full oldWY1800s/58594rows/50975766bytes/12Mops and DC300smetadata/180snetwork/8MiB reservation retained; whole new1500s/65010rows/134724553bytes/24Mops held even after failure.",
+    "Cooperative sampled resource/time/cancel and trusted retained history, not hard OS/process/wire/hostile-store/powerloss guarantees.",
+    "Unknown49states remain null. No campaign, populationfit/ANESalignment/behavior/humanvalidity/disclosure/dashboard/national/scientific adoption.",
+    "Original symlink refusal raised OSError through standalone API; both failing40-test logs retained, safe Blocked wrapping fixed before final43 tests.",
+    "Original WY source_part_sha256 is file bytes from sha256_file; production binding now checks byte SHA separately from canonical-object SHA; pure metadata regression distinguishes them.",
+    "Earlier local-01/-02 bundles and earlier smoke/25test/40test logs retained but not final exact evidence."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only isolated authored ZIP rows/accepted-format WY parts/scripts/control clocks and copies of public repository metadata. No actual cache/private respondent/part/control/ZIP/source filesystem stat/read/hash or model/key/network operations. Inert authored companion only. Existing Census raw provenance is metadata reference, not new row validity. All actual outputs remain private/unreleased.",
+  "TASK_ID": "E02_N2B_GENERIC_STATE_IMPORT_IMPLEMENTATION_V1_AUTHORED",
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_admission_import_execution": "NOT_RUN",
+    "additional_adversarial_methods": 18,
+    "all_retained_indexed_files_rehashed": true,
+    "disabled_config_matches_final_pinned_template": true,
+    "final": {
+      "311": {
+        "log": "reports/E02_N2B_FINAL_TESTS_311_v1.txt",
+        "seconds": 94.5,
+        "sha256": "f14c7e8c4482574f5a554220b88c20672296afda6015075a0714c5ceb5a93903",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 43
+      },
+      "312": {
+        "log": "reports/E02_N2B_FINAL_TESTS_312_v1.txt",
+        "seconds": 104.501,
+        "sha256": "d4bee9d9a898b915d47209aed1a0001e25698e234e9710181c11ea297baec104",
+        "status": "PASS_IMPLEMENTER_AUTHORED_ONLY",
+        "tests": 43
+      }
+    },
+    "frozen_prior_pins": {
+      "configs/e02_F_WY_ACTUAL_BOOTSTRAP_IMPLEMENTATION_v1.json": {
+        "mismatches": [],
+        "pins_checked": 9
+      },
+      "configs/e02_F_WY_LOCAL_IMPLEMENTATION_v1_1.json": {
+        "mismatches": [],
+        "pins_checked": 38
+      },
+      "configs/e02_n2a_dc_collector_v1.json": {
+        "mismatches": [],
+        "pins_checked": 12
+      }
+    },
+    "independent_code_or_raw_fixture_audit": "NOT_RUN",
+    "methods_public_pins_verified": 23,
+    "planned_fixture_ids": [
+      "N2B01",
+      "N2B02",
+      "N2B03",
+      "N2B04",
+      "N2B05",
+      "N2B06",
+      "N2B07",
+      "N2B08",
+      "N2B09",
+      "N2B10",
+      "N2B11",
+      "N2B12",
+      "N2B13",
+      "N2B14",
+      "N2B15",
+      "N2B16",
+      "N2B17",
+      "N2B18",
+      "N2B19",
+      "N2B20",
+      "N2B21",
+      "N2B22",
+      "N2B23",
+      "N2B24",
+      "N2B25"
+    ]
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact new code/config/test/retained-authored-control acceptance.",
+    "Particular DC private source manifest/currentidentity/literal central descriptors/receipt and accepted WY savedpart resource/source metadata review plus finite lead execution release remain null.",
+    "Original remaining window may be expired/insufficient; only explicit separately reviewed additive capacity/window amendment carrying full history could change it. None issued.",
+    "Full national campaign/storage/reservation amendment, remaining49source coverage and original scientific completion contract remain outstanding."
+  ],
+  "actual_approvals": {
+    "code_review": null,
+    "execution": null,
+    "source_review": null
+  },
+  "actual_authority": 0,
+  "actual_source_private_control_operations": 0,
+  "created_utc": "2026-11-03T20:25:10.588980+00:00",
+  "independent_milestone_certification": false,
+  "methods_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_N2B_GENERIC_STATE_IMPORT_METHODS_v1.json",
+    "sha256": "f69fdd3973f8fb099b76b92554547c2e5b52e54910315147b3c94549504375d6"
+  },
+  "status": "IMPLEMENTATION_CANDIDATE_AWAITING_INDEPENDENT_CODE_AUTHORED_EVIDENCE_REVIEW"
+}
