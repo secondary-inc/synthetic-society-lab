@@ -1,0 +1,608 @@
+{
+  "$defs": {
+    "private": {
+      "additionalProperties": false,
+      "properties": {
+        "derived_office_contexts": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "independent_literal_audit_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "office_family_key": {
+                "const": "US_SENATE_DOCUMENT_CONTEXT"
+              },
+              "rule_id": {
+                "type": "string"
+              },
+              "rule_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "source_occurrence_index": {
+                "maximum": 5,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "source_office_utf8_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "independent_literal_audit_sha256",
+              "office_family_key",
+              "rule_id",
+              "rule_sha256",
+              "source_occurrence_index",
+              "source_office_utf8_sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array"
+        },
+        "exclusions_by_page_role": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "physical_pdf_page_1_based": {
+                "type": "integer"
+              },
+              "role_office_observation": {
+                "type": "string"
+              },
+              "source_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "physical_pdf_page_1_based",
+              "role_office_observation",
+              "source_id"
+            ],
+            "type": "object"
+          },
+          "maxItems": 41,
+          "minItems": 41,
+          "type": "array"
+        },
+        "independent_literal_audit_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "occurrences": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "date_evidence": {
+                "type": "object"
+              },
+              "historical": {
+                "type": "boolean"
+              },
+              "name_utf8_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "office_label_literal": {
+                "type": "string"
+              },
+              "office_utf8_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "official_name_literal": {
+                "type": "string"
+              },
+              "party_context": {
+                "type": "string"
+              },
+              "physical_pdf_page_1_based": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "record_role": {
+                "type": "string"
+              },
+              "render_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "source_id": {
+                "type": "string"
+              },
+              "source_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "transcription_method": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "date_evidence",
+              "historical",
+              "name_utf8_sha256",
+              "office_label_literal",
+              "office_utf8_sha256",
+              "official_name_literal",
+              "party_context",
+              "physical_pdf_page_1_based",
+              "record_role",
+              "render_sha256",
+              "source_id",
+              "source_sha256",
+              "transcription_method"
+            ],
+            "type": "object"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array"
+        },
+        "reconciled_document_entries": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "occurrence_indexes": {
+                "items": {
+                  "maximum": 5,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "office_family_key": {
+                "const": "US_SENATE_DOCUMENT_CONTEXT"
+              },
+              "official_name_literal": {
+                "type": "string"
+              },
+              "party_context": {
+                "enum": [
+                  "Democratic",
+                  "Republican"
+                ]
+              },
+              "record_role": {
+                "const": "DOCUMENT_SUPPORTED_CERTIFICATION_ENTRY_ONLY"
+              },
+              "source_office_literal_variants": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "typed_unknowns": {
+                "additionalProperties": false,
+                "properties": {
+                  "declared_write_in": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "const": "UNKNOWN"
+                      },
+                      "reason": {
+                        "const": "NO_WRITEIN_ADJUDICATION_IN_THIS_SCOPE"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "latest_amendment_complete": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "const": "UNKNOWN"
+                      },
+                      "reason": {
+                        "const": "LATER_CORRECTIVE_ACTION_RESERVED_AND_UPSTREAM_COMPLETENESS_UNVERIFIED"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "legal_nominee": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "const": "UNKNOWN"
+                      },
+                      "reason": {
+                        "const": "SOURCE_ASSERTION_NOT_INDEPENDENT_LEGAL_ADJUDICATION"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "reason"
+                    ],
+                    "type": "object"
+                  },
+                  "printed_on_final_ballot": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "const": "UNKNOWN"
+                      },
+                      "reason": {
+                        "const": "DOCUMENT_CERTIFICATION_IS_NOT_FINAL_PRINTED_BALLOT_PROOF"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "reason"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "declared_write_in",
+                  "latest_amendment_complete",
+                  "legal_nominee",
+                  "printed_on_final_ballot"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "occurrence_indexes",
+              "office_family_key",
+              "official_name_literal",
+              "party_context",
+              "record_role",
+              "source_office_literal_variants",
+              "typed_unknowns"
+            ],
+            "type": "object"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "scope": {
+          "const": "AL_SOURCE_BOUND_SENATE_OFFICE_LABEL_RECONCILIATION_ONLY"
+        },
+        "source_record_canonical_sha256": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "maxItems": 6,
+          "minItems": 6,
+          "type": "array"
+        },
+        "source_snapshot_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_transcript_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "typed_unknowns": {
+          "additionalProperties": false,
+          "properties": {
+            "declared_write_in": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "NO_WRITEIN_ADJUDICATION_IN_THIS_SCOPE"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "latest_amendment_complete": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "LATER_CORRECTIVE_ACTION_RESERVED_AND_UPSTREAM_COMPLETENESS_UNVERIFIED"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "legal_nominee": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "SOURCE_ASSERTION_NOT_INDEPENDENT_LEGAL_ADJUDICATION"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "printed_on_final_ballot": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "DOCUMENT_CERTIFICATION_IS_NOT_FINAL_PRINTED_BALLOT_PROOF"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "declared_write_in",
+            "latest_amendment_complete",
+            "legal_nominee",
+            "printed_on_final_ballot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "derived_office_contexts",
+        "exclusions_by_page_role",
+        "independent_literal_audit_sha256",
+        "occurrences",
+        "reconciled_document_entries",
+        "schema_version",
+        "scope",
+        "source_record_canonical_sha256",
+        "source_snapshot_sha256",
+        "source_transcript_sha256",
+        "typed_unknowns"
+      ],
+      "type": "object"
+    },
+    "public": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_coverage_promoted": {
+          "const": false
+        },
+        "cost_usd": {
+          "const": 0
+        },
+        "cross_literal_exception_count": {
+          "const": 1
+        },
+        "document_role_counts": {
+          "additionalProperties": false,
+          "properties": {
+            "AMENDED_STATE_PACKAGE_SENATE_TABLE": {
+              "const": 1
+            },
+            "AUGUST24_PARTY_AMENDMENT_TABLE": {
+              "const": 1
+            },
+            "AUGUST28_PARTY_AMENDMENT_CERTIFICATION": {
+              "const": 1
+            },
+            "HISTORICAL_JULY1_CERTIFICATION_LETTER": {
+              "const": 1
+            },
+            "HISTORICAL_JULY1_TABLE": {
+              "const": 1
+            },
+            "STATE_PACKAGE_JUNE24_PARTY_CERTIFICATION": {
+              "const": 1
+            }
+          },
+          "required": [
+            "AMENDED_STATE_PACKAGE_SENATE_TABLE",
+            "AUGUST24_PARTY_AMENDMENT_TABLE",
+            "AUGUST28_PARTY_AMENDMENT_CERTIFICATION",
+            "HISTORICAL_JULY1_CERTIFICATION_LETTER",
+            "HISTORICAL_JULY1_TABLE",
+            "STATE_PACKAGE_JUNE24_PARTY_CERTIFICATION"
+          ],
+          "type": "object"
+        },
+        "document_supported_name_group_count": {
+          "const": 2
+        },
+        "final_ballots_accepted": {
+          "const": 0
+        },
+        "historical_occurrence_count": {
+          "const": 2
+        },
+        "model_calls": {
+          "const": 0
+        },
+        "office_family_rule_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "office_literal_form_count": {
+          "const": 3
+        },
+        "physical_page_count": {
+          "const": 47
+        },
+        "schema_version": {
+          "const": 2
+        },
+        "scope": {
+          "const": "AL_SOURCE_BOUND_SENATE_OFFICE_LABEL_RECONCILIATION_ONLY"
+        },
+        "senate_occurrence_count": {
+          "const": 6
+        },
+        "source_adoption": {
+          "const": false
+        },
+        "source_count": {
+          "const": 5
+        },
+        "source_hashes": {
+          "additionalProperties": false,
+          "properties": {
+            "al_party_democratic_amended": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "al_party_republican_amended": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "al_state_democratic": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "al_state_independent": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "al_state_republican": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "al_party_democratic_amended",
+            "al_party_republican_amended",
+            "al_state_democratic",
+            "al_state_independent",
+            "al_state_republican"
+          ],
+          "type": "object"
+        },
+        "state": {
+          "const": "AL"
+        },
+        "typed_unknowns": {
+          "additionalProperties": false,
+          "properties": {
+            "declared_write_in": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "NO_WRITEIN_ADJUDICATION_IN_THIS_SCOPE"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "latest_amendment_complete": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "LATER_CORRECTIVE_ACTION_RESERVED_AND_UPSTREAM_COMPLETENESS_UNVERIFIED"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "legal_nominee": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "SOURCE_ASSERTION_NOT_INDEPENDENT_LEGAL_ADJUDICATION"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "printed_on_final_ballot": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "const": "UNKNOWN"
+                },
+                "reason": {
+                  "const": "DOCUMENT_CERTIFICATION_IS_NOT_FINAL_PRINTED_BALLOT_PROOF"
+                }
+              },
+              "required": [
+                "kind",
+                "reason"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "declared_write_in",
+            "latest_amendment_complete",
+            "legal_nominee",
+            "printed_on_final_ballot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accepted_coverage_promoted",
+        "cost_usd",
+        "cross_literal_exception_count",
+        "document_role_counts",
+        "document_supported_name_group_count",
+        "final_ballots_accepted",
+        "historical_occurrence_count",
+        "model_calls",
+        "office_family_rule_sha256",
+        "office_literal_form_count",
+        "physical_page_count",
+        "schema_version",
+        "scope",
+        "senate_occurrence_count",
+        "source_adoption",
+        "source_count",
+        "source_hashes",
+        "state",
+        "typed_unknowns"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Structural contract only. Python admission additionally requires externally pinned bytes, six exact record/rule witnesses, fixed policy and independent literal review. Does not grant source execution.",
+  "title": "AL exact-six office context v1.1 payloads (schema2)"
+}
