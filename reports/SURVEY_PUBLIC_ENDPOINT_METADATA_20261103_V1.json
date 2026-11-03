@@ -1,0 +1,105 @@
+{
+  "api_spend_usd": 0,
+  "approved_endpoint": null,
+  "capture_source": {
+    "path": "data/raw/openrouter_endpoint_metadata_20261103_v1/capture_source.local.txt",
+    "scope": "Exact successful one-off capture script, not a certified general network client or future model endpoint.",
+    "sha256": "fee6484ac6744a66ae4db326b722f3e46e59b6266333c35f64a07d7530f56806"
+  },
+  "complete_price_quote": false,
+  "cost_scope": "Public unauthenticated metadata GET only; development/compute/storage/labor unpriced. Web-tool preview was a separate public metadata access; native receipt counts only this1GET.",
+  "credential_reads": 0,
+  "endpoint_observations": [
+    {
+      "max_completion_tokens": 942818,
+      "max_prompt_tokens": null,
+      "model_id": "openai/gpt-4.1-nano",
+      "pricing": {
+        "completion": "0.0000004",
+        "discount": 0,
+        "input_cache_read": "0.00000003",
+        "prompt": "0.0000001",
+        "web_search": "0.01"
+      },
+      "provider_name": "Azure",
+      "service_tier": null,
+      "supported_parameters": [
+        "temperature",
+        "top_p",
+        "max_completion_tokens",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "seed"
+      ],
+      "supports_implicit_caching": true,
+      "tag": "azure"
+    },
+    {
+      "max_completion_tokens": 942818,
+      "max_prompt_tokens": null,
+      "model_id": "openai/gpt-4.1-nano",
+      "pricing": {
+        "completion": "0.00000044",
+        "discount": 0,
+        "input_cache_read": "0.000000033",
+        "prompt": "0.00000011",
+        "web_search": "0.01"
+      },
+      "provider_name": "Azure",
+      "service_tier": null,
+      "supported_parameters": [
+        "temperature",
+        "top_p",
+        "max_completion_tokens",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "seed"
+      ],
+      "supports_implicit_caching": true,
+      "tag": "azure/swedencentral"
+    }
+  ],
+  "independent_review": "PENDING",
+  "limitations": [
+    "One catalog snapshot, not endpoint parameter/serving/billing observation or scientific/model selection approval.",
+    "Request pricing is absent in observed objects: not automatically assumed zero; web-search and caching fields are present and cannot be silently discarded.",
+    "Catalog advertises max_completion_tokens; existing fake client uses max_tokens. Alias/parameter compatibility remains unverified.",
+    "Implicit caching is advertised; complete fee/caching/nonreasoning/hidden-context contracts require review. No actual provider statistics available.",
+    "No protected owner, fresh human approval, study/population/attrition release or actual inference. All budget remains zero.",
+    "Runtime/body observations exclude wire/TLS/hidden buffering and are cooperative, not absolute network or OS limits.",
+    "Cached body is ignored/local; future public metadata may differ. No exact historical reacquisition or complete price freshness guarantee."
+  ],
+  "live_compatibility_verified": false,
+  "model_calls": 0,
+  "plan_path": "data/raw/openrouter_endpoint_metadata_20261103_v1/plan.local.json",
+  "plan_sha256": "a3fe209819e18ff8829b014824b7e48402946b790211e721096cef2ba3602ed9",
+  "production_terms_created": false,
+  "schema_version": 1,
+  "source_GETs_native_capture": 1,
+  "source_path": "data/raw/openrouter_endpoint_metadata_20261103_v1/endpoints.body",
+  "source_receipt": {
+    "actual_model_calls": 0,
+    "api_spend_usd": 0,
+    "authenticated_requests": 0,
+    "body_bytes": 2358,
+    "body_sha256": "96d389f791fcd706c60f96ac67bfb7c0e9854f51000261ac9a6fd7b3870527ed",
+    "elapsed_seconds": 0.08920325001236051,
+    "finished_at_utc": "2026-11-03T16:51:09.267819+00:00",
+    "headers": {
+      "Content-Length": null,
+      "Content-Type": "application/json",
+      "Date": "Tue, 03 Nov 2026 16:51:09 GMT",
+      "ETag": null,
+      "Last-Modified": null
+    },
+    "scope": "PUBLIC_UNAUTHENTICATED_ENDPOINT_METADATA_NOT_MODEL_INFERENCE",
+    "started_at_utc": "2026-11-03T16:51:09.178486+00:00",
+    "status": 200,
+    "url": "https://openrouter.ai/api/v1/models/openai/gpt-4.1-nano/endpoints"
+  },
+  "status": "UNRELEASED_PUBLIC_ENDPOINT_METADATA_ONLY"
+}

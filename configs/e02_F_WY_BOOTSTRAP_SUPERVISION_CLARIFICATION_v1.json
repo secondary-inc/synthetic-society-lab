@@ -1,0 +1,71 @@
+{
+  "absolute_wall_rss_or_scheduling_guarantee": false,
+  "actual_approvals": {
+    "adapter_code": null,
+    "disclosure": null,
+    "exact_source": null,
+    "execution": null,
+    "fit": null
+  },
+  "actual_authority": 0,
+  "actual_inspector_backend": "UNAVAILABLE_REFUSE_BEFORE_SOURCE_ACCESS",
+  "actual_native_runtime_backend": "UNAVAILABLE_REFUSE_BEFORE_ADMISSION_OR_LAUNCH",
+  "clarification_doc": {
+    "path": "docs/E02_F_WY_BOOTSTRAP_SUPERVISION_CLARIFICATION_v1.md",
+    "sha256": "200991695a7627b96ddadaa10955e557e0c5057139312a5c3823405ff71f7324"
+  },
+  "clarified_fixture_specs": [
+    {
+      "id": "S01",
+      "status": "NOT_RUN_SPECIFICATION_ONLY"
+    },
+    {
+      "id": "S02",
+      "status": "NOT_RUN_SPECIFICATION_ONLY"
+    },
+    {
+      "id": "S03",
+      "status": "NOT_RUN_SPECIFICATION_ONLY"
+    },
+    {
+      "id": "S04",
+      "status": "NOT_RUN_SPECIFICATION_ONLY"
+    },
+    {
+      "id": "S05",
+      "status": "NOT_RUN_SPECIFICATION_ONLY"
+    },
+    {
+      "id": "S06",
+      "status": "NOT_RUN_SPECIFICATION_ONLY"
+    }
+  ],
+  "deadline_seconds": 10800,
+  "future_implementation_gate": "Independent methods decision before any new executable code; authored topology only. Original full runtime completion remains blocked until independently reviewed compatible backend.",
+  "implementation_authority": null,
+  "inspection_authorization": null,
+  "native_caps_changed": false,
+  "observed_native_helper": {
+    "path": "src/civiclab/e02/national_population.py",
+    "sha256": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "topology": "fork child calls os.setsid; child RSS ps sampling; controlling parent finally cleanup"
+  },
+  "original_B06_B09_rewritten": false,
+  "owner_death_before_GO": "No input access; W cancels and confirms supported-child exit or records SHUTDOWN_UNKNOWN.",
+  "parent_methods_config": {
+    "path": "configs/e02_F_WY_BOOTSTRAP_METHODS_PROPOSAL_v1.json",
+    "sha256": "86d41835b3d7a419ba88d4d5425e6480e9413936697d9fdc11955bae8138eb0b"
+  },
+  "parent_methods_doc": {
+    "path": "docs/E02_F_WY_BOOTSTRAP_METHODS_PROPOSAL_v1.md",
+    "sha256": "e20784ac3f954959b316655f6a323d4f56143bc9ec05cbf3a6cf8f080440a894"
+  },
+  "schema_version": 1,
+  "source_continuation_changed": false,
+  "stage_seconds": 300,
+  "status": "METHODS_CLARIFICATION_ONLY_NO_CODE_OR_ACCESS",
+  "supported_proposed_topology": "AUTHORED_ONLY_FIXED_COOPERATIVE_NO_DESCENDANT_STAGE_WITH_INDEPENDENT_READY_WATCHDOG",
+  "target_poll_seconds": 0.1,
+  "unknown_shutdown_policy": "Preserve full charges/block further work; do not claim process termination. Independent cleanup evidence required.",
+  "watchdog_survival_assumption": "Independent W survives requesting O; W/host loss is unsupported and cannot certify shutdown."
+}

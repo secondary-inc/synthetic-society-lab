@@ -1,0 +1,40 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "experimental_api_spend_usd": 0,
+    "local_compute_storage_labor": "UNPRICED",
+    "network_model_calls": 0
+  },
+  "FILES_CHANGED": [
+    "docs/E02_F_WY_BOOTSTRAP_NATIVE_COOPERATIVE_PROCEDURE_v1.md",
+    "configs/e02_F_WY_BOOTSTRAP_NATIVE_COOPERATIVE_PROCEDURE_v1.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent review of this exact chosen native cooperative procedure; implement minimal inspector/accounting/launcher and authored fixtures only after decision.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_F_WY_BOOTSTRAP_NATIVE_COOPERATIVE_PROCEDURE_v1.json": "77863a124f4d418a93465ec715d972f9501cda7849190d848b82bcb1cbd6f0dd",
+    "docs/E02_F_WY_BOOTSTRAP_NATIVE_COOPERATIVE_PROCEDURE_v1.md": "00edf24fcc8235f33b9905830a377504b23e8b68ccc428c3b32f647d82f88bd2"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "python3 -c \"import hashlib,json,pathlib; c=json.loads(pathlib.Path('configs/e02_F_WY_BOOTSTRAP_NATIVE_COOPERATIVE_PROCEDURE_v1.json').read_text()); assert all(hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()==v for p,v in (c['prior_refs']|c['runtime_required_files']).items())\""
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Sampled/cooperative limits cannot guarantee resource shutdown after controller death.",
+    "UNKNOWN shutdown requires independent cleanup review without clearing native barriers or replenishing budget.",
+    "No daemon/new hostile-host containment or arbitrary-descendant support is required/claimed."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Repository methods/audits/code metadata only; no actual source filesystem access, source reuse or transferred permissions.",
+  "TASK_ID": "E02_F_WY_BOOTSTRAP_NATIVE_COOPERATIVE_METHODS_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_source_operations": 0,
+    "fixture_tests": "NOT_RUN_SPECIFICATION_ONLY",
+    "frozen_runtime_hashes_verified": 38,
+    "prior_refs_verified": 5
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent chosen-native-procedure methods decision before minimal new code.",
+    "Independent authored implementation review then distinct exact-source inspection scope and fresh K/S/E/runtime releases."
+  ],
+  "accepted_files_modified": false,
+  "approvals_populated": false,
+  "new_executable_code_written": false,
+  "status": "READY_FOR_INDEPENDENT_METHODS_DECISION"
+}
