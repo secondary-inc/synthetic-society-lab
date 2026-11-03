@@ -81,14 +81,15 @@ class PackageTests(unittest.TestCase):
             self.assertFalse((root/'pack.zip').exists())
 
     def test_local_project_cannot_be_registry_bootstrap_dependency(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp);(root/'pyproject.toml').write_text('[project]\nname="my-local.project"\n')
-            config=root/'configs';config.mkdir()
-            lock=config/'runtime_python312_20261103.txt';lock.write_text('my_local-project==0.1.0\n')
-            with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO'})
-            with self.assertRaisesRegex(ValueError,'local project'):
-                build_package(root,root/'pack.zip',[run.run_id])
-            self.assertFalse((root/'pack.zip').exists())
+        for name in ('runtime_python312_20261103.txt','runtime_python312_geometry_20261103.txt'):
+            with self.subTest(name=name), tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp);(root/'pyproject.toml').write_text('[project]\nname="my-local.project"\n')
+                config=root/'configs';config.mkdir()
+                lock=config/name;lock.write_text('my_local-project==0.1.0\n')
+                with RunStore(root,'E01',{},kind='MOCK') as run:run.finish({'status':'DEMO'})
+                with self.assertRaisesRegex(ValueError,'local project'):
+                    build_package(root,root/'pack.zip',[run.run_id])
+                self.assertFalse((root/'pack.zip').exists())
 
     def test_new_test_or_report_cannot_silently_escape_snapshot(self):
         from civiclab.dashboard import verified_run
@@ -104,3 +105,18 @@ class PackageTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError,'file set changed'):
                         build_package(root,root/'pack.zip',[run.run_id])
                 self.assertFalse((root/'pack.zip').exists())
+
+    def test_geometry_lock_precedence_is_explicit_in_reproduction_commands(self):
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'pyproject.toml').write_text('[project]\nname="local-project"\n')
+            (root/'configs').mkdir()
+            (root/'configs/runtime_python312_20261103.txt').write_text('pypdf==6.10.0\n')
+            (root/'configs/runtime_python312_geometry_20261103.txt').write_text('pypdf==6.10.0\npdfplumber==0.11.9\n')
+            with RunStore(root,'E01',{},kind='MOCK') as run: run.finish({'status':'MOCK'})
+            output=root/'geometry.zip'; build_package(root,output,[run.run_id])
+            with zipfile.ZipFile(output) as archive:
+                manifest=json.loads(archive.read('REPRODUCIBILITY_MANIFEST.json'))
+            install=manifest['reproduction'][1]
+            self.assertIn('configs/runtime_python312_geometry_20261103.txt',install)
+            self.assertIn('configs/runtime_python312_20261103.txt',manifest['files'])

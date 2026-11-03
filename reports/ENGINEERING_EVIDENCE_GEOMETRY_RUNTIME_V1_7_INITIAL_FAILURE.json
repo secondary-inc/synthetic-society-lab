@@ -1,0 +1,141 @@
+{
+  "dependency_files": {
+    ".github/workflows/offline.yml": "eca085d8d3303a3e8292ce79d0bf2b5fe2d959ac87c9951090f6b1877c29c51b",
+    "configs/runtime_python312_geometry_20261103.txt": "169054497926df845d715fd3c8caeb1b3260c334a2c2ad7c09b2e5a953242435",
+    "pyproject.toml": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764",
+    "src/civiclab/reproduction.py": "991f6a98fa12bd5601bd93e4e6d6cca4eac2b15165057496d3071acb10a85335",
+    "tests/test_reproduction.py": "5871e38026f71d3b94b2f5efe503e82051b6eb56dc326358e656c57b6856de80"
+  },
+  "experimental_model_api_spend_usd": 0,
+  "experimental_model_calls": 0,
+  "initial_harness_attempt": "Aborted during source copy before runtime/source execution because tests/__init__.py does not exist; subsequent copy correctly preserves namespace-package layout.",
+  "remote_ci": "NOT_OBSERVED",
+  "runtimes": {
+    "3.11": {
+      "commands": [
+        {
+          "args": [
+            "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+            "-m",
+            "venv",
+            "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.11"
+          ],
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tail": []
+        },
+        {
+          "args": [
+            "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.11/bin/python",
+            "-m",
+            "pip",
+            "install",
+            "--disable-pip-version-check",
+            "--index-url",
+            "https://pypi.org/simple",
+            "-e",
+            ".[geometry]"
+          ],
+          "exit_code": 0,
+          "log_sha256": "1769f5a0d9893867344f2f513a28427ca1f9ed718939500f2c9a278888166c2d",
+          "tail": [
+            "  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-opxo4j8m/wheels/55/68/b6/62a8f75290e3dd50b6d766816e4d3f80bed842cea23b7bd622",
+            "Successfully built synthetic-society-lab",
+            "Installing collected packages: synthetic-society-lab, pypdfium2, pycparser, Pillow, charset-normalizer, cffi, cryptography, pdfminer.six, pdfplumber",
+            "Successfully installed Pillow-13.0.0 cffi-2.1.1 charset-normalizer-3.5.2 cryptography-50.0.2 pdfminer.six-20251230 pdfplumber-0.11.9 pycparser-3.12 pypdfium2-5.14.0 synthetic-society-lab-0.1.0"
+          ]
+        },
+        {
+          "args": [
+            "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.11/bin/python",
+            "-m",
+            "unittest",
+            "tests.test_e01_delaware_v1_7",
+            "tests.test_e01_nebraska_v1_7",
+            "-q"
+          ],
+          "exit_code": 1,
+          "log_sha256": "e1a38862ab5331f7ad8afe20a97dc86f49bd33499a7cf426d58011f1808dbe97",
+          "tail": [
+            "----------------------------------------------------------------------",
+            "Ran 2 tests in 0.000s",
+            "",
+            "FAILED (errors=2)"
+          ]
+        }
+      ],
+      "status": "FAILED"
+    },
+    "3.12": {
+      "commands": [
+        {
+          "args": [
+            "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+            "-m",
+            "venv",
+            "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.12"
+          ],
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tail": []
+        },
+        {
+          "args": [
+            "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.12/bin/python",
+            "-m",
+            "pip",
+            "install",
+            "--disable-pip-version-check",
+            "--index-url",
+            "https://pypi.org/simple",
+            "-e",
+            ".[geometry]"
+          ],
+          "exit_code": 0,
+          "log_sha256": "6ce8b5682c8c1254552b2df364bac0333d7ff9b399456a26efc2a51f46faa14b",
+          "tail": [
+            "  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-a2cf62nt/wheels/b5/d4/ba/ba7f2fba17e5f697f42759bdcec56d54f52de67e5321841403",
+            "Successfully built synthetic-society-lab",
+            "Installing collected packages: synthetic-society-lab, pypdfium2, pycparser, Pillow, charset-normalizer, cffi, cryptography, pdfminer.six, pdfplumber",
+            "Successfully installed Pillow-13.0.0 cffi-2.1.1 charset-normalizer-3.5.2 cryptography-50.0.2 pdfminer.six-20251230 pdfplumber-0.11.9 pycparser-3.12 pypdfium2-5.14.0 synthetic-society-lab-0.1.0"
+          ]
+        },
+        {
+          "args": [
+            "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.12/bin/python",
+            "-m",
+            "unittest",
+            "tests.test_e01_delaware_v1_7",
+            "tests.test_e01_nebraska_v1_7",
+            "-q"
+          ],
+          "exit_code": 1,
+          "log_sha256": "d835661b66bb7fcf9af48c25855266823d8b5939fb794d8a822782a60e1f9306",
+          "tail": [
+            "----------------------------------------------------------------------",
+            "Ran 2 tests in 0.000s",
+            "",
+            "FAILED (errors=2)"
+          ]
+        }
+      ],
+      "status": "FAILED"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Copied exact standalone helper dependency subset and tests, not a full current-tree snapshot/bootstrap. Fresh3.11/3.12venvs optionalgeometry install and actualcachedsourcepreflight; no readiness RunStore, source GET, inference, candidate name or contact export. Original13-pin lock/old archives unchanged.",
+  "source_files": {
+    "pyproject.toml": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764",
+    "src/civiclab/__init__.py": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e01/__init__.py": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83",
+    "src/civiclab/e01/ballot_formats_v1_3.py": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916",
+    "src/civiclab/e01/delaware_v1_7.py": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6",
+    "src/civiclab/e01/maine_v1_5.py": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179",
+    "src/civiclab/e01/nebraska_v1_7.py": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e",
+    "tests/test_e01_delaware_v1_7.py": "be6e0a6bf4c4201ee9ede037a9049c714d545071b053ccd494581d6e0fabd087",
+    "tests/test_e01_nebraska_v1_7.py": "0f44be65d8bd0f8045f2f4699d2fca11715e32aabbaf6160784fbbe943b2a110"
+  },
+  "status": "LEAD_SCOPED_CLEAN_GEOMETRY_RESULTS_PENDING_INDEPENDENT_ACCEPTANCE",
+  "temporary_workspace": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq"
+}

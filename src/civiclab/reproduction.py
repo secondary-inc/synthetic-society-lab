@@ -61,7 +61,9 @@ def build_package(root, output, run_ids):
         content=path.read_bytes()
         if SECRET.search(content):raise ValueError('credential-like value; package refused')
         payloads[name]=content
-    runtime_lock='configs/runtime_python312_20261103.txt'
+    runtime_lock=('configs/runtime_python312_geometry_20261103.txt'
+                  if 'configs/runtime_python312_geometry_20261103.txt' in payloads
+                  else 'configs/runtime_python312_20261103.txt')
     project=tomllib.loads(payloads.get('pyproject.toml',b'').decode())
     if runtime_lock in payloads:
         local_name=re.sub(r'[-_.]+','-',project.get('project',{}).get('name','')).lower()

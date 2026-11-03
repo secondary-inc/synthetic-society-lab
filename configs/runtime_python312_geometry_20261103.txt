@@ -1,0 +1,25 @@
+# Observed Python 3.12 macOS research environment, November 3 2026.
+# Includes optional selection/source/figure tools; install project editable separately.
+# NumPy 2.5 requires Python >=3.12; this is not the Python 3.11 CI lock.
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.68.0
+kiwisolver==1.5.1
+matplotlib==3.10.7
+numpy==2.5.4
+packaging==26.3
+pillow==13.0.0
+pyparsing==3.3.3
+pypdf==6.10.0
+python-dateutil==4.0.0
+scipy==1.16.3
+tzdata==2026.6
+
+# Optional physical-PDF geometry runtime, added without changing the original13-pin lock.
+cffi==2.1.1
+charset-normalizer==3.5.2
+cryptography==50.0.2
+pdfminer.six==20251230
+pdfplumber==0.11.9
+pycparser==3.12
+pypdfium2==5.14.0
