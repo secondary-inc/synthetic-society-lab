@@ -44,7 +44,7 @@ Every state remains visible, including those where persistence performed worse. 
 
 The program now separates implementation and audit across specialized chats. The independent auditor found failures that the original tests missed: a string value could enable a policy, a cancelled request could leave uncertain billing without stopping later calls, and a crash could leave a completed result without its final integrity ledger. Those issues were corrected and retested independently.
 
-That is the kind of autonomy we want: routine work continues without repeated permission questions, while claims, spending and publication still have explicit boundaries. The approved model budget remains zero, and no paid model experiment has run.
+That is the kind of autonomy we want: routine work continues without repeated permission questions, while claims, spending and publication still have explicit boundaries. The owner has approved one separate nonpolitical API check with a $0.001 cap. Its first attempt stopped before any model request, with $0 consumed; it has not been retried. The larger research studies still have no paid execution budget, and no paid model experiment has run.
 
 ## What still has to earn a place
 

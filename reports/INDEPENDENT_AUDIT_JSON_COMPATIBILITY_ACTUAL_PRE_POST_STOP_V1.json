@@ -1,0 +1,143 @@
+{
+  "actual_AL_E02_source_access": 0,
+  "audit_harness_note": "Initial audit script used packet release instead of compatibility_release and stopped with KeyError before owner access; corrected field name; no output receipt/source/key/network activity in initial failure.",
+  "auditor_role": "independent_auditor",
+  "checks": {
+    "actual_charges": 0,
+    "actual_reservations": 0,
+    "all_reviewed_owner_handoff_journal_bytes_unchanged": true,
+    "approved_lifetime_dispatches": 1,
+    "approved_lifetime_microusd": 1000,
+    "handoff_files": 8,
+    "initial_allowance": 0,
+    "journal_events": [
+      "EXECUTION_STARTED",
+      "PUBLIC_METADATA_PREPARATION_INTENT",
+      "FAILED_OR_UNCERTAIN",
+      "TERMINAL"
+    ],
+    "owner_consumed": {
+      "dispatches": 0,
+      "module_dispatches": {
+        "E01": 0,
+        "E02": 0
+      },
+      "modules": {
+        "E01": 0,
+        "E02": 0
+      },
+      "total": 0
+    },
+    "owner_directory_mode": "0700",
+    "owner_event_chain_materialization_anchor_verified": true,
+    "owner_events": [
+      "GENESIS",
+      "APPROVAL",
+      "PRICE_PROOF"
+    ],
+    "owner_files_mode": "0600",
+    "request_envelope_microusd": 340,
+    "retained_model_POST_attempts": 0,
+    "retained_statistics_GET_attempts": 0,
+    "run_files": 7,
+    "same_create_once_owner_retained": true,
+    "statistics_claims": 0
+  },
+  "compatibility_success": "NOT_RUN",
+  "continuation_authority_issued": false,
+  "development_costs": "UNPRICED",
+  "experimental_api_spend_usd_for_this_attempt": 0,
+  "failure_diagnosis": {
+    "independent_confidence": "CONSISTENT_INFERENCE_NOT_EXACTLY_OBSERVED_STACK_LOCATION",
+    "reason": "Factory suppresses underlying error details. Owner check_dispatch has no durable completion event; a later retained-proof PASS cannot independently exclude a transient earlier owner/check/clock/filesystem refusal. No key reread or request replay was attempted.",
+    "reported_remaining_boundary": "ENVIRONMENT_CREDENTIAL_GATE",
+    "retained_error_type": "ExecutionBlocked",
+    "verified_stop_boundary": "After retained price-proof registration, before reservation/POST intent in reviewed execution path."
+  },
+  "human_authority": "Root-reported direct approval, exact captured affirmative budget/setup replies and nonzero assertion bindings verified; no independent cryptographic human identity claim.",
+  "limits": [
+    "Original stopped attempt/owner/approval/history preserved; do not reset, retry, create another owner or replenish lifetime cap. Any separately authorized continuation must preserve these records and revalidate freshness/expiry without silent substitutes.",
+    "Human setup assertion is not proof the dispatch process inherited a valid credential. Auditor did not read key value/environment variable/.env or inspect account funding.",
+    "No credit purchase, topup, account changes, larger E01/E02 paid study, source/scientific/serving-provider success or publication approval follows.",
+    "Trusted local writer/store retained-history boundary remains; file modes/byte pins are not hostile-host or ACL guarantees."
+  ],
+  "new_key_or_dotenv_read": false,
+  "new_owner_key_transport_or_model_calls": 0,
+  "owner_file_hashes_private_scope": {
+    "openrouter-v4-bootstrap.local.json": "920278f3258c856f60959cf7bd380a944cc09d797084552698dd7ae7024a54e9",
+    "owner-v4-guard.local.json": "9f2ab0b4e44e10191fbad96dc5fca41eb79aaba6ca3066a2d9351de57d3f6d0a",
+    "owner-v4-head.local.json": "87893274a56156ec56b34e1625049a9aac393135df273eef376720eedb144775",
+    "owner-v4.local.sqlite": "c07b224a5008beb53947f0159346edce3eecde940b58c750f166b58adbda4903"
+  },
+  "price_observation_limit": "Stored PRICE_PROOF contains URL/bodySHA/semanticHash/time, not full fetched catalog body or TLS/wire evidence. This audit validates retained proof binding and prePOST accounting only, not a separately reconstructed fresh catalog or actual provider compatibility.",
+  "retained_handoff_run_pins": {
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/approval.local.json": {
+      "bytes": 1138,
+      "sha256": "c22418b8684e77fa8ff638ff24e2a12b337c2865cdf60323e76fcf5789e45b2b"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/approved-owner-snapshot.local.json": {
+      "bytes": 1726,
+      "sha256": "253371006e18bbcde7ed3ba24eaa4044abab7007447a17ad891fb635d799fe68"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/failure.local.json": {
+      "bytes": 94,
+      "sha256": "20a74a0247e80cf76d67ab873709b0fdddb2f5e899e4ed80a7d3ecf404588173"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/final-owner-snapshot.local.json": {
+      "bytes": 1800,
+      "sha256": "20a251fd8746d804121566cbc78998c7a5890edc2eef97ec2e5fa5869a3c25e1"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/human-decision.local.json": {
+      "bytes": 591,
+      "sha256": "e355106e0915a2231ecb6ba1786a941ab3adb81175c2b42f61a3b57b36e7aa5f"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/read-only-diagnosis.local.json": {
+      "bytes": 243,
+      "sha256": "6f1a8cac8666b7c14ed856f9edf7ecc9f4ffba3a548535582a4d8dbfbee7e82c"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/registration.local.json": {
+      "bytes": 592,
+      "sha256": "86d984f5e270120a15e1b5ef13b275f86268f81baefdc5da57c003114cada039"
+    },
+    "data/processed/compatibility_operator_handoff/actual-20261103-01/zero-owner-snapshot.local.json": {
+      "bytes": 471,
+      "sha256": "5ea4bc0b23751b075a3c7abb0c117032786f45ccfc6675eb4b47a62143d9f311"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/checksums.local.json": {
+      "bytes": 576,
+      "sha256": "9d0a1484a27906745b6841a6dad73d56314db57ddca578d3f0b9cc8f462d5fbd"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000001.local.json": {
+      "bytes": 127,
+      "sha256": "3f6f74b8c93e612f382ceb4fd76430ecf37f1522244dc34a34bb1943496a9eb1"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000002.local.json": {
+      "bytes": 206,
+      "sha256": "62bafdb6ad22ec3f41a31a6f558670fc3ab66ec134355e27f1a7db4ac4c1adb3"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000003.local.json": {
+      "bytes": 246,
+      "sha256": "e66e08412e095f142f30faa2eb3ac7e206d92bb90f7fba33cb59aa2c474005c5"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/event-000004.local.json": {
+      "bytes": 215,
+      "sha256": "6d7f1a318255a0d354e50c2108a79b90e08b0d198507f5f771c0a29872bdcf7a"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/manifest.local.json": {
+      "bytes": 3096,
+      "sha256": "7ef88b7a8ded0c65a16932ba08fbd9cb89234160743e937c17a215ec0862a8ed"
+    },
+    "data/processed/compatibility_runs/compatibility-20261103-gpt41nano-01/summary.local.json": {
+      "bytes": 240,
+      "sha256": "4885478c38dbdfd5a2de162bd2392a3d42ba0c70aeb62da00543542c9fe49a68"
+    }
+  },
+  "reviewed_at_utc": "2026-11-03T18:40:12.798167+00:00",
+  "reviewed_report": {
+    "path": "reports/JSON_COMPATIBILITY_ACTUAL_PRE_POST_STOP_V1.json",
+    "sha256": "cec0c62c912d09f7ff8648268fc3b93366865e9ff64aa9ab1d3026a54af744ce"
+  },
+  "schema_version": 1,
+  "source_of_network_count": "Reviewed exact code path plus retained journal/owner records; not external provider/account-wide network audit.",
+  "status": "PASS_RETAINED_ACTUAL_PRE_POST_STOP_ZERO_DISPATCH_ZERO_CONSUMPTION"
+}
