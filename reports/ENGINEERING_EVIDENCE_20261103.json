@@ -1,8 +1,8 @@
 {
   "artifacts": {
     "e01_audit": {
-      "checksums_sha256": "444849974cc879fb2cee336a3066c207bbcce14cd7987cd6af93a6ce2c535922",
-      "run_id": "e01-9a8489feb9454b56922fb0fad75ea5bf",
+      "checksums_sha256": "87b783b24d45229c45ff6aeb788ad8da7cecab110ee6ffbc78bcc985a79bd762",
+      "run_id": "e01-066654cf38c64c5a97913d828bd00058",
       "summary": {
         "blockers": [
           "2024 House target lacks 2022 House returns on validated matching geography.",
@@ -16,8 +16,8 @@
       }
     },
     "e01_demo": {
-      "checksums_sha256": "00efd79ab3536073c1dc0c80c42b61b0654fc0680b216fed9950634fdb8846e3",
-      "run_id": "e01-110607c664824f57a1428aaf24a40115",
+      "checksums_sha256": "e42a4046e9f85d7452faa427a12d67cc8b1dcc2f41eec9ddf9157cc6352064b5",
+      "run_id": "e01-291abe736b0648acb08a9254d4880017",
       "summary": {
         "by_office": {
           "HOUSE": {
@@ -41,8 +41,8 @@
       }
     },
     "e01_demo_replay": {
-      "checksums_sha256": "87447ee6312f34bbacf8655d08969c1e1db1a879120985088aaba5dac33ac0b2",
-      "run_id": "e01-913f314a5fc14a04a07428126b23b3cf",
+      "checksums_sha256": "aca27e5587a1730baa772ebed50af61abc2ed6aeefb5a71b2f795b30a8d1a24d",
+      "run_id": "e01-34e1aa5529d54eb598ff645dd0b4d0fc",
       "summary": {
         "by_office": {
           "HOUSE": {
@@ -66,8 +66,8 @@
       }
     },
     "pilot": {
-      "checksums_sha256": "4d628511f94f8aa739eb72cfcd81d0fb55e0542dc3b53acfbe8b563262d4697b",
-      "run_id": "e02-6e36d3b01e1949c7a4f3b67a66dbf7b1",
+      "checksums_sha256": "d48e5e0e0cdfd473ddb62236477cbcb21ea9ba1a9eab7489494a78804749d568",
+      "run_id": "e02-0121548188194f04936b85c984ee677f",
       "summary": {
         "advanced_gates": {
           "assistant": "MOCK_SCRIPT_ONLY; live matched-compute comparison NOT_RUN",
@@ -110,8 +110,8 @@
       }
     },
     "pilot_replay": {
-      "checksums_sha256": "1aa7b81d5dca0ef66469aceeaadfc3ef79e299da96e187497e8a34857a44411b",
-      "run_id": "e02-15c0797e5f824d978eade032c311b923",
+      "checksums_sha256": "eefd5411b77cb8bde9b0883e806c62896a362672ba634f3afe52f55358e3ca50",
+      "run_id": "e02-f1b88b12ebe34884974116336625ef04",
       "summary": {
         "advanced_gates": {
           "assistant": "MOCK_SCRIPT_ONLY; live matched-compute comparison NOT_RUN",
@@ -154,8 +154,8 @@
       }
     },
     "population": {
-      "checksums_sha256": "6b9dfe4cc180c8e4282060d2e3f16544f7c4c0e30e2f30921f9d47171a580044",
-      "run_id": "e02-d582225a8e5247b69273373412f143ed",
+      "checksums_sha256": "81eada163011f24f0b48c0403c755b980467c89ae343d5ecbc4ca0ddecd510b5",
+      "run_id": "e02-ad2ad153c5ea480d8a9b7f39433927e7",
       "summary": {
         "confirmatory_status": "BLOCKED: citizen/resident universe mismatch, sparse support exclusions, unvalidated transport and state inference",
         "diagnostics": {
@@ -181,6 +181,11 @@
       }
     }
   },
+  "code_evidence": {
+    "dirty": false,
+    "git_sha": "675b0c14c80905852fe743cf6a1b6df1cc2fbc1d",
+    "source_tree_sha256": "0d63efa8d15b879163386aff9373720863fa651cb75775a97c34402e251b85a6"
+  },
   "milestones": {
     "D0": {
       "scope": "recorded local run viewer, integrity checks and browser inspection",
@@ -203,7 +208,7 @@
       "status": "PASS"
     }
   },
-  "recorded_at_utc": "2026-11-03T10:18:25.837603+00:00",
+  "recorded_at_utc": "2026-11-03T10:19:59.259957+00:00",
   "research_gates": {
     "E03": "NOT_RUN",
     "E04": "NOT_RUN",
@@ -217,14 +222,14 @@
     "representative_population_validity": "BLOCKED"
   },
   "runs": {
-    "e01_audit": "e01-9a8489feb9454b56922fb0fad75ea5bf",
-    "e01_demo": "e01-110607c664824f57a1428aaf24a40115",
-    "e01_demo_replay": "e01-913f314a5fc14a04a07428126b23b3cf",
+    "e01_audit": "e01-066654cf38c64c5a97913d828bd00058",
+    "e01_demo": "e01-291abe736b0648acb08a9254d4880017",
+    "e01_demo_replay": "e01-34e1aa5529d54eb598ff645dd0b4d0fc",
     "mock_reproducibility_hash": "8675da5f1ae4dd5cb4226f5b9b8997234abf8b9626f646d634d9508c747a077a",
     "paid_calls": 0,
-    "pilot": "e02-6e36d3b01e1949c7a4f3b67a66dbf7b1",
-    "pilot_replay": "e02-15c0797e5f824d978eade032c311b923",
-    "population": "e02-d582225a8e5247b69273373412f143ed",
+    "pilot": "e02-0121548188194f04936b85c984ee677f",
+    "pilot_replay": "e02-f1b88b12ebe34884974116336625ef04",
+    "population": "e02-ad2ad153c5ea480d8a9b7f39433927e7",
     "spent_usd": 0
   },
   "scope": "Engineering acceptance only; no scientific main-run completion",
