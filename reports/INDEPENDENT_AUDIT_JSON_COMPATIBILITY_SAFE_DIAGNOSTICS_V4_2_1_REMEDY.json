@@ -1,0 +1,134 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1_REMEDY.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Exact frozen stage6 actual package review.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1_REMEDY.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests <python> -m unittest tests.test_production_compatibility_v4_2_1 tests.test_compatibility_safe_diagnostics_v4_2_1 -q"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored fixtures only; no private raw/person/source reads.",
+  "TASK_ID": "INDEPENDENT_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1",
+  "UNRESOLVED_BLOCKERS": [
+    "Existing paid compatibility uncertainty barrier; no live release/authority."
+  ],
+  "additional_evidence": [
+    {
+      "bytes": 1789,
+      "path": "/tmp/civiclab-independent-v421-reservation-lost-ack.py",
+      "sha256": "23648016144f262bfc6575a8a9f48b7234181215e31c4701d550cac7c6db4df7"
+    },
+    {
+      "bytes": 672,
+      "path": "/tmp/civiclab-independent-v421-reservation-lost-ack.json",
+      "sha256": "ed2e54fab75847a76a56779e5db91ed78d17ccc9680e3b5509c473079c06c6ef"
+    },
+    {
+      "bytes": 1974,
+      "path": "/tmp/civiclab-independent-v421-closure-oracles.py",
+      "sha256": "a3237ccb85dedb083dfce71a4bed2ad0abdb42aa8945e2904e79b7200228f8c0"
+    },
+    {
+      "bytes": 449,
+      "path": "/tmp/civiclab-independent-v421-closure-oracles.json",
+      "sha256": "8a44ef7a2f96f45919663ba65032023b5b26ba9b9dff11316acac5dd6c391923"
+    }
+  ],
+  "direct_evidence": [
+    "Read exact executor diff: only version/review identity, policy and tri-state reservation observation change; transport unchanged.",
+    "Own original lost-ack probe adapted to new executor reports null/UNKNOWN_AT_RESERVATION_BOUNDARY while actual authored ledger retains STARTED, reserved=charged491 microUSD and dispatch1; fake POST0/statistics0.",
+    "Both before-write failure and committed-but-unacknowledged reservation report unknown amounts; known receipt true and unreachable reservation false. No recovery write, refund, reservation retry or new authority.",
+    "Own extra fake HTTP402/503/boolean/string statuses retain exact int or null, close unread error bodies, suppress canary body/reason/header/URL; old V4_2 executor review refuses before dispatch.",
+    "41 tests on each runtime include cancellation/close, arbitrary exception class names, HTTP failures, settlement/child death/concurrency and unknown financial state."
+  ],
+  "files": [
+    {
+      "bytes": 2777,
+      "path": "docs/JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1.md",
+      "sha256": "7b4f4da15f1656793026cc8366ef3ea0302b5f70088b18a8c750934e5ef91d5c"
+    },
+    {
+      "bytes": 8351,
+      "path": "reports/JSON_COMPATIBILITY_DIAGNOSTICS_V4_2_1_TESTS_311.txt",
+      "sha256": "a42762225d6ccdf0635e101fe566020f865560c99e691bc6e7d5d82c7e8b1c0c"
+    },
+    {
+      "bytes": 8351,
+      "path": "reports/JSON_COMPATIBILITY_DIAGNOSTICS_V4_2_1_TESTS_312.txt",
+      "sha256": "7db460b7936501c5fdbadae9498e93693fb85bc1c6d9a8b4a8263849d1ade27f"
+    },
+    {
+      "bytes": 21542,
+      "path": "src/civiclab/production_compatibility_v4_2_1.py",
+      "sha256": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a"
+    },
+    {
+      "bytes": 12722,
+      "path": "tests/test_compatibility_safe_diagnostics_v4_2_1.py",
+      "sha256": "06e07fe769af9c102b00554324354124215161d45c801f1de5d4e670945ff464"
+    },
+    {
+      "bytes": 25060,
+      "path": "tests/test_production_compatibility_v4_2_1.py",
+      "sha256": "2ef330b153de36f42bd3c14ed7e8f712eadf8fb05eb653e5550e2576235975df"
+    }
+  ],
+  "finding_disposition": "Original v4.2 remains BLOCKED and preserved. Lost-ack truthfulness finding CLOSED only for exact v4.2.1.",
+  "handoff": {
+    "bytes": 2156,
+    "path": "reports/JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_1_HANDOFF.json",
+    "sha256": "0a9963129e62786c3a4a3bb6683d2ee11dfdb0a7da43ba3b2be1c41e79f4fc03"
+  },
+  "limitations": [
+    "No original run03 cause recovered; no API compatibility success, representative population, scientific effect or human persuasion evidence.",
+    "Actual run03 retains one exhausted dispatch and unfinished uncertain phase, conservative340 microUSD held, actual provider charge unknown. No retry/statistics lookup/reset/refund/new approval authorized.",
+    "Trusted bound helper inputs and cooperative closure; no hard OS timing or always-writable diagnostic guarantee."
+  ],
+  "operations": {
+    "actual_owner_or_key_or_credential_env_access": 0,
+    "api_spend_usd": 0,
+    "fixture_fake_OS_home_writes_only": true,
+    "implementation_edits": false,
+    "network_or_model_requests": 0
+  },
+  "original_finding": {
+    "bytes": 10676,
+    "path": "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_FINDING.json",
+    "sha256": "57d9a1d0099d1afe7486e8f55d6ac012b54a9e7e6a17e41cf26f36002a4618c6"
+  },
+  "schema_version": 1,
+  "scope": "Versioned diagnostic component only; no full research or live execution acceptance",
+  "status": "PASS_EXACT_OFFLINE_COMPONENT_REMEDY_NO_LIVE_AUTHORITY",
+  "tests": [
+    {
+      "count": 41,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-v421-py312.log",
+        "sha256": "e01f5524f6fd5340e269d247bb18ea4f41a8f21511b5f38f47bddd75be22fbf3"
+      },
+      "runtime": "Python3.12",
+      "seconds": 4.45,
+      "status": "PASS"
+    },
+    {
+      "count": 41,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-v421-py311.log",
+        "sha256": "9b82272329413b074c0c60209a9b9c27fa8204fccd691d3242761051372f2efc"
+      },
+      "runtime": "Python3.11",
+      "seconds": 4.247,
+      "status": "PASS"
+    }
+  ],
+  "transport": {
+    "bytes": 7665,
+    "path": "src/civiclab/production_compatibility_transport_v4_2.py",
+    "sha256": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0"
+  }
+}

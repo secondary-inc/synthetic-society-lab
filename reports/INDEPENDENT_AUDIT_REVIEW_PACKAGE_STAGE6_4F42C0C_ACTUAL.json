@@ -1,0 +1,170 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_REVIEW_PACKAGE_STAGE6_4F42C0C_ACTUAL.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Refresh only genuinely supported draft/visual completion clauses with current exact evidence.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_REVIEW_PACKAGE_STAGE6_4F42C0C_ACTUAL.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python /tmp/civiclab-independent-stage6-check.py",
+    "Exact restoredPython/explicit environment /tmp/civiclab-independent-stage6-figures-http.py"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only exact review-package public source/output allowlist; no new raw data or rights acceptance.",
+  "TASK_ID": "INDEPENDENT_STAGE6_4F42C0C_ACTUAL_ENGINEERING_RESTORE",
+  "TESTS_RUN_AND_RESULTS": "Retained865 PASS; independent12 PASS plus runtime/fixture/figures/HTTP/byte+Git checks PASS.",
+  "UNRESOLVED_BLOCKERS": [
+    "Full research completion and full real-data reproducibility/remote CI remain unproven."
+  ],
+  "archive": {
+    "bytes": 10356472,
+    "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage6-4f42c0c-20261103.zip",
+    "sha256": "51a1e516a454b851150ed0e7f91150e3169709a45ead8e93e7641f5383282df0"
+  },
+  "evidence": [
+    {
+      "bytes": 5141,
+      "path": "/tmp/civiclab-independent-stage6-check.py",
+      "sha256": "420aaf69fc5bd152e17290a695d9b451f195f9207cea53defcf6fa7bb200354a"
+    },
+    {
+      "bytes": 670,
+      "path": "/tmp/civiclab-independent-stage6-check.json",
+      "sha256": "bfa521ca1036e721a9440ae8f42e62d6f0c26513d99a24d0b8aaf8fc132b958e"
+    },
+    {
+      "bytes": 1644,
+      "path": "/tmp/civiclab-independent-stage6-runtime.log",
+      "sha256": "2625e1c9387aaffc18a3ff0bae169bb55a4a37e9e58d7a1565ff38d4b6b91f4e"
+    },
+    {
+      "bytes": 98,
+      "path": "/tmp/civiclab-independent-stage6-targeted-tests.log",
+      "sha256": "615cd08f19653c007a321383202b315e488326cc49e8f6d814142c7d1a7f6611"
+    },
+    {
+      "bytes": 32,
+      "path": "/tmp/civiclab-independent-stage6-fixture.log",
+      "sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5"
+    },
+    {
+      "bytes": 2949,
+      "path": "/tmp/civiclab-independent-stage6-figures-http.py",
+      "sha256": "b3e9ee8449a43a634645457d6fb4016fd6a794693a1e3a024efc8181a997c65b"
+    },
+    {
+      "bytes": 1044,
+      "path": "/tmp/civiclab-independent-stage6-figures-http.log",
+      "sha256": "69a6331006b694f04001501c788f52d6c3df0038b19ce1e21b9330ad73b469d8"
+    }
+  ],
+  "findings": [],
+  "independent_checks": {
+    "actual_owner_raw_key_network_model_access": 0,
+    "all_checkout_tracked_source_files_matching_git": 1097,
+    "archive_bytes": 10356472,
+    "archive_members": 1363,
+    "archive_sha256": "51a1e516a454b851150ed0e7f91150e3169709a45ead8e93e7641f5383282df0",
+    "archived_source_files_matching_exact_git": 1082,
+    "exact_public_receipts": 6,
+    "manifest_files": 1362,
+    "restored_payloads_identical": true,
+    "retained_lead_full_tests": {
+      "count": 865,
+      "seconds": 556.802,
+      "status": "PASS_RETAINED_LOG_NOT_INDEPENDENT_FULL_RERUN"
+    },
+    "retained_logs_rehashed": 10,
+    "run_members": 280,
+    "safe_runs": 21,
+    "status": "PASS_EXACT_ARCHIVE_GIT_RESTORE_METADATA"
+  },
+  "independent_figures_http": {
+    "archived_payload_files_unchanged": 1362,
+    "external_requests": 0,
+    "figures": [
+      {
+        "all_provenance_and_output_hashes_equal": true,
+        "figure": "population-record-disposition",
+        "run_id": "e02-ad2ad153c5ea480d8a9b7f39433927e7"
+      },
+      {
+        "all_provenance_and_output_hashes_equal": true,
+        "figure": "e01-historical-errors",
+        "run_id": "e01-ed5b716aa76145258ece94c3df6b4188"
+      },
+      {
+        "all_provenance_and_output_hashes_equal": true,
+        "figure": "e02-citizen-primary-comparison",
+        "run_id": "e02-1be3718699e54d7380755be1f9d87e6d"
+      }
+    ],
+    "loopback_checks": [
+      {
+        "route": "/",
+        "status": 200
+      },
+      {
+        "route": "/snapshot.json",
+        "status": 200
+      },
+      {
+        "route": "/data/raw/secret",
+        "status": 404
+      },
+      {
+        "route": "/../pyproject.toml",
+        "status": 404
+      },
+      {
+        "route": "/snapshot.json?extra=1",
+        "status": 404
+      }
+    ],
+    "model_requests": 0,
+    "raw_source_reads": 0,
+    "scope": "Same21savedpublicruns/exactfrozen4fsource only. No new science/currentcandidate acceptance.",
+    "status": "PASS_INDEPENDENT_SAVED_OUTPUT_REPLAY_LOOPBACK"
+  },
+  "independent_runtime": {
+    "exact_third_party_pins": 20,
+    "explicit_credential_free_child_environment": true,
+    "fixture_only_source_checks": 1,
+    "local_editable_import_verified": true,
+    "python": "3.12.14",
+    "restored_verify_package": "PASS_PACKAGE_INTEGRITY",
+    "targeted_package_and_cli_tests": 12,
+    "targeted_tests_seconds": 1.18
+  },
+  "lead_report": {
+    "bytes": 5269,
+    "path": "reports/REVIEW_PACKAGE_STAGE6_4F42C0C_LEAD.json",
+    "sha256": "d8e48954e1df75a555d51692586db8eb37048aeee92ebec4acc2c9d1a4235b05"
+  },
+  "limitations": [
+    "865-test full suite accepted from exact rehashed retained clean-environment execution; auditor independently reran12 package/CLI tests, runtime/pins/import/fixture, threefigure replay and loopback, not another full865 tests.",
+    "1082 archived non-run files match Git blobs; all1097 tracked checkout files independently match Git.280 run members have original checksum closure; all1362 restored manifest payloads unchanged after checks.",
+    "Older source snapshot intentionally excludes run03 uncertain outcome, N2b, Clerk2020 methods/M1 and safe diagnostics; no acceptance of later source or artifacts implied.",
+    "The manifest budget-zero statement applies to this offline package and larger-study authority; actual later separate run03 holds340microUSD conservatively, provider charge unknown.",
+    "Raw/private/person/owner histories and credentials excluded. Full permitted upstream reacquisition/import/rights, original scientific validity, remote authentication/CI/push and publication approval remain incomplete.",
+    "Runtime versions pinned; transient build dependencies/wheel hashes/platform differences not completely locked. Resource timing and disk checks are cooperative.",
+    "Initial supplemental relative-script-path failure preserved separately; corrected run did not replace archive. Older package assembly failures and audit findings remain preserved."
+  ],
+  "operations": {
+    "actual_raw_person_owner_key_or_credential_env_reads": 0,
+    "api_spend_usd": 0,
+    "external_or_model_requests": 0,
+    "implementation_or_status_or_git_mutations": false,
+    "loopback_only_http_checks": 5
+  },
+  "schema_version": 1,
+  "scope": "Immutable source4f42c0c7f233c6895f32d8f5a39787dd6dbd5457 plus21 selected safe recorded runs. Not complete research contract/current worktree/real source restoration.",
+  "status": "PASS_EXACT_FROZEN_ENGINEERING_PACKAGE_ONLY",
+  "supplement": {
+    "bytes": 2194,
+    "path": "reports/REVIEW_PACKAGE_STAGE6_4F42C0C_FIGURE_HTTP_REPLAY.json",
+    "sha256": "8ce631f85325304818baf6ee3558ff76fe0ef67fdf745b1c46f32d23a0b7cea9"
+  },
+  "visual_inspection": "Auditor viewed all3 independently regenerated PNGs: labels, scales, sources, conditional historical denominator, uncertainty caveats and population-blocked disclaimer visible; no new browser-interaction QA."
+}

@@ -1,0 +1,196 @@
+{
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_FINDING.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separateofflineversionedackuncertaintyremedy; auditoractualstage6engineeringpackage reviewnext.",
+  "TASK_ID": "INDEPENDENT_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2",
+  "UNRESOLVED_BLOCKERS": [
+    "False durable-reservation absence after lostack inexactv4.2.",
+    "Existingrealone-dispatchapprovalexhausted/uncertaintynotresolved; no newpaidexecution authority."
+  ],
+  "additional_closure": {
+    "actual_owner_key_network_model_operations": 0,
+    "checks": [
+      "EXACT_STATUS_OR_NULL_NO_ERROR_BODY_REASON_HEADER_URL_LEAK",
+      "EXACT_STATUS_OR_NULL_NO_ERROR_BODY_REASON_HEADER_URL_LEAK",
+      "EXACT_STATUS_OR_NULL_NO_ERROR_BODY_REASON_HEADER_URL_LEAK",
+      "EXACT_STATUS_OR_NULL_NO_ERROR_BODY_REASON_HEADER_URL_LEAK",
+      "OLD_EXECUTOR_KIND_REFUSED_BEFORE_JOURNAL_DISPATCH"
+    ],
+    "status": "PASS_BOUNDED_ADDITIONAL_OFFLINE_CLOSURE_ORACLES_NOT_FULL_CANDIDATE_ACCEPTANCE"
+  },
+  "additional_scripts_results": [
+    {
+      "bytes": 1970,
+      "path": "/tmp/civiclab-independent-v42-closure-oracles.py",
+      "sha256": "cc2ea01ac3443025e6fd3af8b5527c39526964db82b72db2d9b73e39087ce790"
+    },
+    {
+      "bytes": 449,
+      "path": "/tmp/civiclab-independent-v42-closure-oracles.json",
+      "sha256": "8a44ef7a2f96f45919663ba65032023b5b26ba9b9dff11316acac5dd6c391923"
+    }
+  ],
+  "auditor_role": "independent_auditor",
+  "executed_five_code_pins_unchanged": {
+    "scripts/continue_json_compatibility_once_v2.py": "49e1d242b6faec3074d43be3a3501c59abe4f0d22b7b2ad19cc9151d48167b92",
+    "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+    "src/civiclab/production_compatibility_transport_v4.py": "9235dc5a62c8c1d028e86908b834490b5ad156d6c6b6037d3f94c5405eff711f",
+    "src/civiclab/production_compatibility_v4_1.py": "35f71e5de47ed920f224c8500311786575022104d9ebbc7b33dabb9f5abeb1c6",
+    "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf"
+  },
+  "files": [
+    {
+      "bytes": 3773,
+      "path": "docs/JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2.md",
+      "sha256": "cfa95e4ebe0a16452aa5ae88ff3a9ad2b8a62446ca2742854c9f9ce667c993a7"
+    },
+    {
+      "bytes": 7899,
+      "path": "publications/BLOG_DRAFT.md",
+      "sha256": "f7b6ab2002d10798e9f238731c4b8779a55de043e3a7a83045f802e6febb2bf9"
+    },
+    {
+      "bytes": 12897,
+      "path": "publications/LIMITATIONS.md",
+      "sha256": "4e22fb2d068277e1c5d20f65868a439c073d2d22993ba2752d17c302993e6fa2"
+    },
+    {
+      "bytes": 25789,
+      "path": "publications/TECHNICAL_PAPER_DRAFT.md",
+      "sha256": "a75336fc5b23788942112239880328f32dd5e4d7703ee971d893b213c2466494"
+    },
+    {
+      "bytes": 7841,
+      "path": "reports/JSON_COMPATIBILITY_DIAGNOSTICS_V4_2_TESTS_311.txt",
+      "sha256": "06dae6fe0ad355fb362cddf5039db8ce58bc14a226f13a1a2c7ca1194a199227"
+    },
+    {
+      "bytes": 7841,
+      "path": "reports/JSON_COMPATIBILITY_DIAGNOSTICS_V4_2_TESTS_312.txt",
+      "sha256": "f576de992426362531467bf185ba42ecd180382711442691bc60666f0395c150"
+    },
+    {
+      "bytes": 7665,
+      "path": "src/civiclab/production_compatibility_transport_v4_2.py",
+      "sha256": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0"
+    },
+    {
+      "bytes": 21224,
+      "path": "src/civiclab/production_compatibility_v4_2.py",
+      "sha256": "df6e64e367b4ffbecbb0cc6dbffd4e1a67818eedec2ff676d876cc4c6ff7560c"
+    },
+    {
+      "bytes": 9289,
+      "path": "tests/test_compatibility_safe_diagnostics_v4_2.py",
+      "sha256": "2fee65ec06b90d11533496a8eb1cc9eac17415254c19bc42d68f2c74385cba85"
+    },
+    {
+      "bytes": 25052,
+      "path": "tests/test_production_compatibility_v4_2.py",
+      "sha256": "e3fe4845617b4de7522b595bd977bc61f391dc77075a8b44c0cba55755d9c9a3"
+    }
+  ],
+  "finding": {
+    "id": "COMPAT_V4_2_RESERVATION_FALSE_AFTER_DURABLE_LOST_ACK",
+    "impact": "Diagnostic confuses absence of caller acknowledgment with absence of durable reservation. Financialowner correctly holdsfullcharge/dispatch, so this is no budgetbypass; the newdiagnostic nevertheless gives a falseaccounting assertion at a requiredcrashboundary.",
+    "location": "src/civiclab/production_compatibility_v4_2.py:242",
+    "observed": "Own fakeOS_HOME financialfixture calls originalrealreserve then raisesOSError. Journal/raised diagnostic stageRESERVATION says reservation_recorded false and amounts null, while actualauthoredowner has STARTED/reserved=charged491microusd/dispatch1; fakePOST/statistics0. Reproduced on3.12and3.11.",
+    "required_remedy": "Preserveexactv4.2. Use UNKNOWN/null for unproved durable reservation at enteredRESERVATION with no receipt, or independently verified context-bound readonly ownerproof; nofalse absence from callerreceiptNone. Pre-reservation unreachable stages may befalse, acknowledgedreceipt true. Test both before-writefailure and committed-then-lostack with noPOST, fullretainedchargeswherecommitted, no refund/retry/reset.",
+    "severity": "MEDIUM",
+    "trigger": "Existing owner.reserve completes durable STARTED reservation, then raises before returning receipt to executor."
+  },
+  "handoff": {
+    "bytes": 3004,
+    "path": "reports/JSON_COMPATIBILITY_SAFE_DIAGNOSTICS_V4_2_HANDOFF.json",
+    "sha256": "a37fd2def65006743aae150c664d3a20682bf144e9d4238897346860da5537fc"
+  },
+  "limitations": [
+    "Exactcandidate component blocked until findingremedied/reviewed. Positiveclosedlogging observations are not fullcomponent acceptance.",
+    "No original HTTPstatus/errorcause canberecoveredretroactively. Offline fakeerrors are not observed serviceerrors, provideravailability or authenticationproof.",
+    "Privateprogram helperinputs assume trustedbound code; hostile wholeprocess/store replacement notcovered. Cooperative network/resourceclosure, not hardOS or alwayswritable diagnostics guarantees.",
+    "Actualrun03owner remainsunchangedbyreviewer, fullreservationheld/dispatch1of1exhausted and unfinishedphase1. No replacement live request/statisticslookup/newcap/reset/refund/approval authority issued.",
+    "Newversion mustpreserveexecutedv4/v4.1 andv4.2candidate/finding, sourcepins and allretained01/02/03history; no in-placefix or statusupgrade. Developmentcompute/laborunpriced."
+  ],
+  "lost_ack_evidence": {
+    "actual_authored_dispatches": 1,
+    "actual_authored_owner_row_status": "STARTED",
+    "actual_authored_reservation_microusd": 491,
+    "actual_production_owner_key_network_model_operations": 0,
+    "diagnostic": {
+      "automatic_retry": false,
+      "conservative_charged_microusd": null,
+      "dispatch_outcome": "PRE_POST_STOP",
+      "executor_stage": "RESERVATION",
+      "model_POST_attempts": 0,
+      "reported_provider_cost_microusd": null,
+      "reservation_recorded": false,
+      "reserved_microusd": null,
+      "statistics_GET_attempts": 0,
+      "transport": null
+    },
+    "fake_POSTs": 0,
+    "fake_statistics_GETs": 0,
+    "status": "CONFIRMED_FALSE_NO_RESERVATION_DIAGNOSTIC_AFTER_DURABLE_RESERVE_LOST_ACK"
+  },
+  "operations": {
+    "actual_live_release_or_approval_created": false,
+    "actual_owner_key_env_network_or_model_access": 0,
+    "api_spend_usd_by_reviewer": 0,
+    "fixture_OS_home_owner_writes_only": true,
+    "implementer_files_edited": false
+  },
+  "positive_observations": [
+    "Read full newtransport, executor diffagainstfrozenv4.1, all10diagnostic tests, copied29financial/crash/concurrency/HTTP regressions anddoc/3claimparagraphs. Exacthandoff10filepins match; executed5sourcefilesunchanged. Actualrun03private15files not reopened inthiscomponentreview; originalindependent5e998audit remainsprovenance.",
+    "Transport uses closedstage/category enums, exactbuiltinint100..599 statusornull, boolcloseflag; recordreturnsrevalidateexceptionattributes. Fixedendpoint/TLS/proxyoff/redirectoff/socket30scooperative/bodyframing/duplicateJSON/nonfinite/close/cancel gates inherited. HTTPerrorbody closedwithoutread; noexceptionreason/body/header/url/classname arbitrarystrings serialized.",
+    "Independentextra fake402/503/boolean/stringstatus tests confirmobservedintornull and no canarybody/reason/header/URL leakage. OldexecutorV4_1reviewkindrefuses beforedispatch undernewcontract.",
+    "Reservation-beforePOST/reconciliation/nativebilling/auxusage/uncertainty/checkpoint/globalowner barriers unchanged beyond safeerrorlabels/diagnostics. Distinctexecution/reviewkind/newsourcecontract prevents silentreuseoflivev4.1release. No new release/launcher/approval or ownerinitialization workflow provided.",
+    "Both39tests pass including realauthoredprocessdeath/concurrency/financialregressions; these do notcover missingreservationack assertion. Rootclaimdrafts correctlystate340microUSDconservativeUNCERTAIN/actualproviderchargeunknown/POSTattempt1/notserveracceptance/noID/stats0/exhausteddispatch/unfinishedbarrier/no retries; no scientificorAPIcompatibilitysuccess."
+  ],
+  "preserved_candidate_commit": "c568cd7",
+  "reproducers": [
+    {
+      "bytes": 1738,
+      "path": "/tmp/civiclab-independent-v42-reservation-lost-ack.py",
+      "sha256": "9aeb92ee5689a16c497c6590d9a92036e60377aa0c8232bc9fcc135b31fddfd0"
+    },
+    {
+      "bytes": 640,
+      "path": "/tmp/civiclab-independent-v42-reservation-lost-ack.json",
+      "sha256": "e77bfd9b0652e474b6da4a3f48b197ef8b977fa53756934b1c1328ff740510d3"
+    },
+    {
+      "bytes": 640,
+      "path": "/tmp/civiclab-independent-v42-reservation-lost-ack-py311.json",
+      "sha256": "e77bfd9b0652e474b6da4a3f48b197ef8b977fa53756934b1c1328ff740510d3"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "EXACT_OFFLINE_DIAGNOSTIC_COMPONENT_AUTHORED_FIXTURES_AND_PUBLIC_CLAIMS_ONLY",
+  "status": "BLOCKED_V4_2_FALSE_RESERVATION_DIAGNOSTIC_AFTER_LOST_ACK",
+  "test_command": "PYTHONPATH=src:tests <python> -m unittest tests.test_compatibility_safe_diagnostics_v4_2 tests.test_production_compatibility_v4_2 -q",
+  "tests": [
+    {
+      "count": 39,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-compat-diagnostics-v42-py312.log",
+        "sha256": "113442972865bc5687dca46ad672d0d505da119b17743e67aa696f06401d943a"
+      },
+      "result": "OK",
+      "runtime": "Python3.12",
+      "seconds": 5.075
+    },
+    {
+      "count": 39,
+      "log": {
+        "bytes": 98,
+        "path": "/tmp/civiclab-independent-compat-diagnostics-v42-py311.log",
+        "sha256": "163b541d9095976a0d11a9f86207dab4d97e4b15cba3ccc55fed8013192277b3"
+      },
+      "result": "OK",
+      "runtime": "Python3.11",
+      "seconds": 4.641
+    }
+  ]
+}
