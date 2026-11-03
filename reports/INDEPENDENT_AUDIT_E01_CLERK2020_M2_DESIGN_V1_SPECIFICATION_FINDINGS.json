@@ -1,0 +1,121 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_CLERK2020_M2_DESIGN_V1_SPECIFICATION_FINDINGS.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead/worker separatesrevisedM2Didentity/bootstrap/counter/sealmethods; independentreviewbeforeimplementation.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E01_CLERK2020_M2_DESIGN_V1_SPECIFICATION_FINDINGS.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python /tmp/civiclab-independent-clerk-m2-design-v1.py"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Publicreports/design/code/Git only; noactualsourcecontents/rights/quotes adopted.",
+  "TASK_ID": "INDEPENDENT_E01_CLERK2020_M2_DESIGN_V1",
+  "UNRESOLVED_BLOCKERS": [
+    "TwoM2Dspecification findings; no M2Cimplementationacceptance/sourceauthority."
+  ],
+  "audited_at_utc": "2026-11-03T22:25:42.982965+00:00",
+  "auditor_role": "independent_auditor",
+  "findings": [
+    {
+      "evidence": "Plannednamespace is data/processed/e01_clerk2020_m2_control/<future_exact_release_hash>, whileexactexternalrelease is required tobindcontrol/output/rootidentity andactualidentitysetincludescontrol_genesis_ref. No closedstaticrelease/derivedcontext/genesis/head hashprojection/order isdefined. Literalreleasecontainingitsownhash-derivedroot (or genesisthatitselfincludesreleasehash) creates acycle unless explicitlyexcluded/derived. Anewreleasehashnamespace also requires fixedcampaignlineage rules toavoidfutureextensionnewroot/reset.",
+      "id": "M2D_RELEASE_ROOT_GENESIS_HASH_GRAPH_NOT_DEFINED",
+      "locations": [
+        "configs/e01_clerk2020_m2_inspection_design_v1.json:durable_control_and_cumulative_quota.planned_namespace",
+        "configs/e01_clerk2020_m2_inspection_design_v1.json:admission_and_binding_order"
+      ],
+      "required_specification": [
+        "Defineclosedstaticrelease/outerdecision/preparedmetadata/derivedcontext/genesis/head schemas andcanonicalhashorder; explicitlyidentifyexcludedselfhash/derivedfields andwhytheyremaintransitivelybound. No implementationchoosesitsownhashprojection later.",
+        "PreferpreassignedexternallyboundcampaignID/fixedcontrolnamespace andderivedstaticreleasehash, or specifyequivalentlyacyclic formula withoutliteralfuturehashinitsownpreimage. Genesis/head are downstreamartifacts pinnedbyseparatedecisions, not self-referential releaseinputs.",
+        "Definefixedoutsidecampaignregistration/anchor identity, exactlyonegenesis/STARTED ownership andsubsequentheadbinding; laterapprovedreleaseextensionsmustreuseoldroot/history/chargedusage. Missing/truncated/cloned/crossedrootsrefuseunderdeclaredtrusted-anchor scope, notautomaticnewhashnamespace.",
+        "Allactualvalues canremainnull, but theirfieldsets/typebindings/derivationdirection andstateboundpreparation/admission order mustbeconcrete beforeM2C. No actualcontrolcreation/sourcepermission follows."
+      ],
+      "severity": "HIGH_METHODS_SPECIFICATION_BLOCKER_NOT_OBSERVED_SOURCE_ACCESS"
+    },
+    {
+      "evidence": "Designrequiresallcountedapplicationreads/effects precededbyfsyncedreservation, butorderverifiescode/runtime/publicmetadata beforecreatingjobslot/control. Initial512MiB+8MiBverificationreads cannotbeassertedwriteaheadcharged by a journal notyetcreated; repeatedfailedbootstrap also needsfiniteattempt accounting. Laterfinalseal bindscontrolhead before2MiBmetadataverification/writerACK, yetknownsettlements requirejournalwrites. No explicitstate/immutablehead rule preventsfinalverification/settlement/ACK fromchangingtheheadthatissealed.",
+      "id": "M2D_BOOTSTRAP_READ_ACCOUNTING_AND_FINAL_SEAL_HEAD_ORDER_MISSING",
+      "locations": [
+        "docs/E01_CLERK2020_M2_INSPECTION_DESIGN_v1.md:Readonly admission and cumulative accounting",
+        "configs/e01_clerk2020_m2_inspection_design_v1.json:recorder_contract.commit_order"
+      ],
+      "required_specification": [
+        "Specifya separatelybounded/externallyauthorized no-PDFbootstrap/admission envelope orfixedtrustedbootstrapreservation beforebulkverification, withimmutableattempt/chargedread/writetime/CPU accounting andfailureownership. No unmeteredrepeatpreflight or claimedpreexistingreservation inventedafterreads; initialboundedgenesis-writeauthority mustbeexplicit.",
+        "Freezeclosedjournal events/countertransition semantics forbootstrap/STARTED/source-read/page/backend/write/settlement/failure. Defineheldvsreservedvschargedvsobserved counteraxes andhowall512MiB+8MiB+source+2MiBreads, staging/failure/controlwrites drawoncefromenvelopes; no doublechargeauthority ornegativeunknownsettlements.",
+        "Defineacyclicseal/checksum/controlhead/counterflow, includingreservationforfinalseal/write/verification/ACK beforeeffects. Eitherfreezeaseal-boundcommittedhead withseparatelydefinedpostsealprotocol orcompleteallhead-changingeventsbeforeseal; no claimthatmutatedheadstillmatchesoldseal.",
+        "Statewhatread/writecountersremainconservativeheld/unknown afterlostACK/EIO/EROFS/postseal invalidation,whichimmutablebytesarecheckedbylaterread-onlyresolution, andwhatsuccessmeanswithnoalwayswritablemarker. No autoretry/reseal/newgenesis/sourcepass.",
+        "Addauthoredcrash/lostACK/concurrent/pause/clock/storage+capboundaryoracles forinitialbootstrapbeforefirsthash, eachreserve/effect/settle, lastverifieddatawrite, summary/ledger/head/seal,postsealverificationandcallerACK. KeepactualPDFstat/open zero untilallcode/runtime/control/particularmetadata gates andfiniteEXEC pass."
+      ],
+      "severity": "HIGH_METHODS_SPECIFICATION_BLOCKER_NOT_OBSERVED_QUOTA_BYPASS"
+    }
+  ],
+  "limitations": [
+    "Findings are unresolveddesignordering/identitycontracts, not observedruntimeexploit or actualsource/quota violation in nonexistentM2implementation.",
+    "Publiccoverreportpagecounts remain attributedleadobservations; no independentactualPDFpage/text/structure validation here.",
+    "ProposedlargerresourceceilingsandaggregatebytearithmeticnotactualfeasibilityorhardOSproof. Unknownlibrarybehavior/artifacts remainblockers beforeactualrun.",
+    "Originalscope/coverage13typed20unfinished12legacyfinal0,retrospectiveE01,scientificpopulation/paid/CI/publication gates unchanged;localcompute/laborunpriced."
+  ],
+  "operations": {
+    "actual_PDF_private_cover_raw_history_control_person_stat_hash_open_view": 0,
+    "api_spend_usd": 0,
+    "implementation_config_status_git_edits": false,
+    "runtime_backend_import_install_identity_probe": 0,
+    "source_helper_or_model_key_env_network": 0
+  },
+  "oracle_evidence": [
+    {
+      "bytes": 3223,
+      "path": "/tmp/civiclab-independent-clerk-m2-design-v1.py",
+      "sha256": "8bf9c3012f37c07b90151b6bb4b68165677f4a504d5248c29896b35e009b9dad"
+    },
+    {
+      "bytes": 659,
+      "path": "/tmp/civiclab-independent-clerk-m2-design-v1.json",
+      "sha256": "a2413d6e7b3232c383bf1fc31a4b9068ea1247dd096efe237b31c62757aaad71"
+    }
+  ],
+  "positive_observations": [
+    "Fullbothdesignfilesread. All17M1candidate/failurefiles match recordedSHA256andGit721a0e9 byteforebyte;7otherpublicrefs includingM0/M1review/capture/audit/coverreport/pyproject/runtimeversionmetadata match. No referenceddata/source/privatecover/controlfile followed.",
+    "TwoPDFpath/URL/role/602172+257739=859911/hashmetadata match acceptedpubliccapturehandoff.81/38pagecounts match leadcoverreportonly and mustbeverifiedunderfutureboundedinspection; independentacquisitionaudit itself didnotparsePDFs. No inventedcurrentidentity/pagedomain/candidate/votecount.",
+    "Defaultactualfactoryfalse/actualcandidateparsernull;16actualidentity/release/code/runtime/control/job/decisionfieldsnull; approvedsourcebytes/reads/pages0. Proposedruntimepypdf6.10.0/CPython3.12.14darwinarm64 is policychoicefrompublicfiles, notinstalledartifact/API/originacceptance. Separatebackend-source/generatedminimalPDFreview andruntimeartifact/dependency/cleanenvironment review required.",
+    "Source859913physicalreadreservation includes exactlyoneoverflowbyte/source andoneread/hashpass; childdigestmemoryonly.119pageattempts/transientpagehash/textstats/privatepositionwindows cap1024rawUTF8and2048serializedbytes/page; clipping/UTF8/escaping/union/omission/coverageflags required.2621443filecombinedcap includes251904privateprojection+8192public+2048provenance;247808rawchildstdouttotal;15520plannednodesbelow16384.",
+    "512MiBruntime+8MiBmetadata+859913source+2MiBrecordverification=548216585countedapplicationreadbytes.64*1024journal+57344staticmetadata+8192privatestderr=131072metadata.262144data+131072metadata=393216leaves131072under524288wholewrite ceiling forstaging/failure; feasibilitymustbeprovenbyexactserializer/countertests.",
+    "M1\u2192M2largertime/CPU/RSSlimits explicitlyproposed/prospective, notsilentfallbackorobservedsourceperformance:30s/backend120swhole,20/21CPUeach60CPUaggregate,256MiBcontroller/backendthreshold. Existingtrusted/sampledRSS/cooperativeblockingIO/nativeallocation-beforetextcap/parentdeath/OSscheduling limitations clear; no harddecoderbyte/addressspace/hardRSS promise.",
+    "Privatewindow/failedstdout/stderr artifacts remain.local./ignored; publiccloseddiagnostics forbidsnames/quotes/text/votes. No duplicatefull+partial/per-source+mergedfulltext; fragmentnotvalidpageevidence. Strictwarnings/encryption/repair/activeexternalfeaturesrefuse; noOCR/render/download/alternatebackend. BackendAPI/guardlazyresources mustbeverifiedlater, notassumedhere.",
+    "Proposed1job2sources2backendattempts119extracts/0replay/noresume, fullambiguousreservedcharges/nullunknownobservations andlaterexplicitextensioncarryinghistory preserveoldcapture/coverreceipts withoutinventedOSreadhistory. M2formatinspection doesnotopenM3grammar/M4recordsprimaryreplay/M5featuresselectiongeography/M6REALbaseline/science/publication."
+  ],
+  "public_oracle": {
+    "M1_files_matching_git_721a0e9": 17,
+    "actual_source_control_runtime_backend_key_env_network_model_operations": 0,
+    "all_actual_identities": "NULL_AUTHORITY_ZERO_DISABLED",
+    "allocated_data_plus_metadata": 393216,
+    "counted_application_read_bytes": 548216585,
+    "inspection_data_cap": 262144,
+    "other_public_refs": 7,
+    "recorder_metadata_cap": 131072,
+    "reported_page_counts_not_independently_verified": 119,
+    "source_read_reservation": 859913,
+    "sources_match_public_capture_and_reported_cover": 2,
+    "status": "PASS_PUBLIC_METADATA_PINS_AND_NUMERIC_ARITHMETIC_ONLY_NOT_METHODS_ACCEPTANCE",
+    "whole_write_cap": 524288,
+    "whole_write_headroom_for_staging_failure": 131072
+  },
+  "required_next_order": "Preserveexactv1design/finding; separatemethodssuccessor withclosedacyclicidentity+bootstrap/counter/sealprotocol -> independentM2Dreview -> separatelyversionedgeneratedPDFimplementation -> independentcode/runtime/particularmetadata -> finiteEXEC -> retainedformatinspectionreview. NoM1toggle.",
+  "reviewed": [
+    {
+      "bytes": 22595,
+      "path": "docs/E01_CLERK2020_M2_INSPECTION_DESIGN_v1.md",
+      "sha256": "6b306d48539adc3c4beb0d22ead232c8c084046bcae9e2abbbb10838353c6d7b"
+    },
+    {
+      "bytes": 28895,
+      "path": "configs/e01_clerk2020_m2_inspection_design_v1.json",
+      "sha256": "a7ef796ea2d99a708ee5d31c4eeae9809d621cc3b46f35a523fab374a10057c9"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Exactdesign/publicmetadata/code/Git review only; no actualsource/backend/runtime/privatecontrol access. Numericandprivacyintentpositive observations do notacceptM2Cimplementation.",
+  "status": "BLOCKED_M2D_ACYCLIC_IDENTITY_AND_WRITEAHEAD_FINALIZATION_PROTOCOL_UNDERSPECIFIED",
+  "tests_and_checks": "Publicpin/Git/source-metadata-reference/nullauthority/numericoraclesPASS. Noimplementation/backend/runtime/source testsrun; no libraryAPI/versionavailability claim beyond proposedpubliclockmetadata."
+}

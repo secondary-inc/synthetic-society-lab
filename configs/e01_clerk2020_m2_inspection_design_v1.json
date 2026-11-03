@@ -1,0 +1,463 @@
+{
+  "M0_methods_ref": {
+    "path": "configs/e01_clerk_2020_senate_input_methods_v1.json",
+    "sha256": "ab53c24e13f27327b623f7f0ef622de046c3308f3e139418b3b79b73563bade0"
+  },
+  "M1_all17_pins_unchanged": {
+    "configs/e01_clerk2020_m1_v1_disabled.json": "173cb3243d3c2075519db25f0c3ec1588e75829998c02dd4215e83d8ab933d43",
+    "docs/E01_CLERK2020_M1_IMPLEMENTATION_v1.md": "d5b97abad3b43fde6caa3a27084f8aecc41d64a61c41276f2607d299824b6f1d",
+    "reports/E01_CLERK2020_M1_CANDIDATE_v1.json": "6282a2db1f21f61d3c131b133503239c05728d06a5bbe81ef8fb8eed9e9937d0",
+    "reports/E01_CLERK2020_M1_FINAL_GUARDED_311_v1.txt": "b1114d3664cb3e05e7e1f78280fd86e8be0c34465226457e6eb547799fd89fad",
+    "reports/E01_CLERK2020_M1_FINAL_GUARDED_312_v1.txt": "55fbd26f1574a44a1d165205061e5da8a25219490b4f330ff990bee104595f9c",
+    "reports/E01_CLERK2020_M1_GUARDED_TEST_RECIPE_v1.py": "6407c26f63e42ecb324d093a09664229bfd16c37f12cfe8f59a7ea228eb39397",
+    "reports/E01_CLERK2020_M1_HANDOFF_v1.md": "d6eda128dd3da737e0f59655147f78e010098212cc94ba4fba8156f53ad89252",
+    "reports/E01_CLERK2020_M1_INITIAL_FAILURE_LOG_v1.txt": "16c0068c4a30a3706aa82c85cda2335a5aea1ffe077ca15418a9ae832de5268f",
+    "reports/E01_CLERK2020_M1_INITIAL_FAILURE_SOURCE_v1.json": "daee232d8cc659d978c118a29b8987b4d3c98afd24e4f49235e1bd45f22a8ce6",
+    "reports/E01_CLERK2020_M1_REAP_FINDING_LOG_v1.txt": "6c08fdf22a1e1c5ce116721fd854ca1b172248e2ed2d4bc6d4c059e680a56df3",
+    "reports/E01_CLERK2020_M1_REAP_FINDING_SOURCE_v1.json": "e802eba5cc77a235151d92c2dd51b45ccaf4154d5b32301ee4a735bef32feed7",
+    "reports/E01_CLERK2020_M1_SECOND_FAILURE_LOG_v1.txt": "c027f7457f319508ca7d894900aa4a1ac3f03c81ea99bc81285d6f2fca864ae6",
+    "reports/E01_CLERK2020_M1_SECOND_FAILURE_SOURCE_v1.json": "cea8472ddb9c1807340315e991eb07b5396ca3314bb677cd5eb970273a8f3be6",
+    "src/civiclab/e01/clerk2020_contracts_v1.py": "d27fd9bd7865d18bfcd072f6e0ddfd8f51488cb56ce6a1aab27bf5b0dd8d62be",
+    "src/civiclab/e01/clerk2020_inspection_m1_v1.py": "e68051ed4b8c6f8c06a2da60ce944f66937fadf159fd5bff170d931f9ef42df6",
+    "src/civiclab/e01/clerk2020_m1_worker_v1.py": "95aae22cfbc0839c6f3c0977e55c90829759d2d71db5bdf7e78d23bf1480cf39",
+    "tests/test_e01_clerk2020_m1_v1.py": "fce4d265b8d9c2622970151e7e1e5d6c504bc7a30e9ea19240b40c762ead8c70"
+  },
+  "M1_review_ref": {
+    "bytes": 10583,
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK2020_M1_CODE_AUTHORED_V1.json",
+    "sha256": "9655bf81b508495585a86e4b1fa1d94e0016581274c3996c78e8cd111348395a"
+  },
+  "M1_snapshot_commit": "721a0e9",
+  "accepted_acquisition_review_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL.json",
+    "sha256": "2b0e3af466645773ca00b11590d871533ee7b2d80abec27abb9b2e77cd5c3a75"
+  },
+  "actual_candidate_or_vote_parser": null,
+  "actual_factory_enabled": false,
+  "actual_identities_and_authority": {
+    "control_genesis_ref": null,
+    "control_root": null,
+    "external_expected_release_sha256": null,
+    "implementation_code_pins": null,
+    "independent_code_runtime_review_ref": null,
+    "independent_design_review_ref": null,
+    "installed_backend_tree_ref": null,
+    "interpreter_path": null,
+    "job_id": null,
+    "lead_execution_decision_ref": null,
+    "lead_preparation_decision_ref": null,
+    "particular_source_release_ref": null,
+    "prepared_metadata_ref": null,
+    "run_id": null,
+    "runtime_artifact_sha256": null,
+    "runtime_identity_manifest_ref": null
+  },
+  "admission_and_binding_order": [
+    "Independentdesignreview;implementseparatelyversionedM2andgeneratedminimalPDF/errorfixturesunderstrictMOCKscope;independentcode/resource/privacyreview. No actualsourceauthorityfromfixturePASS.",
+    "Reviewfixedruntime/bootstrapartifactmanifest andbackendorigin/version/API;allactualidentitiescurrentlynull. Bindcodefilehashes/runtimeidentity/policy/sourceIDs/paths/exacthashsizes/pagecounts/projection/quotas/controlroot/leadroles.",
+    "LeadfinitePREPARATIONdecisionmaycreateseparateprivateclosedmetadataonly;noPDFopens. Independentparticularmetadatareviewchecksacyclicsnapshot/source/runtime/recorder/counter/outerbindings.",
+    "FreshLEAD_EXECfornewkindCLERK2020_M2_READ_ONLY_FORMAT_INSPECTION_V1externallybindsexactreleasebytes/hash,onejob/twosources/119extractions/cumulativequota;noM1toggleorcaller-mintedauthority.",
+    "BeforecachedPDFstat/openorbackendlaunch:admitexactexternalbytes,publiccode/runtime/policy/metadataandoutputpaths,verifycontrolanchor/exclusiveownership;durablyconsumejobslotandreservesource/page/child/outputallowances.",
+    "ReadsourceoncewithO_RDONLY/NOFOLLOW/regular/symlink/lexical/fstatbeforeafterguards,declared+1bound,streamSHA;immutablebytesafterexacthash/sizecheckonly. Sourcepathidentityrecheckstatallowed,no secondhashpass.",
+    "Beforeeachchilddispatchdurablyreservecorrespondingparse+pagequota;workergetssnapshotandpolicyonly. Parentcontinuesmonotonic/cancel/RSS/IOchecksandjounalsknownsettlements;noNEXTsourceafterfailure.",
+    "Persistboundedprivateprojection+publicdiag+input/provenance/resource/counterhashmetadata,thenclosedledger/finalseal/read-onlyrecordmetadataverification/writerACK. Independentoriginalsaved-outputreviewnext,noautomaticextra source/parserpass."
+  ],
+  "approved_page_extractions": 0,
+  "approved_source_bytes": 0,
+  "approved_source_reads": 0,
+  "backend_structure_and_decode_policy": [
+    "Onechildperregisteredsource,sequentially,eachsourceparsedonce. Page-tree count mustequal81/38reportedexpectedbeforeanytextextraction;unknownorchangedcountrefuses,notpartialsuccess.",
+    "Rejectencrypted/passwordneeded/malformed/xrefrepair/strictwarnings/unsupportedPDFfeatures;no passwordprompt,network,permissiveparser,OCR/render,alternatebackend,downloador automaticretry.",
+    "Structuralactive/externalactions/embeddedfilesarenotexecuted. Proposedpolicyrefusescatalogaction/JavaScript/embedded/external-filefeatures ratherthanfollowingthem; exactsupportedstructurecheckstobevalidatedinfixtures/libraryreview.",
+    "Importfixedbackenddependenciesunderpinnedruntimebeforeguard;duringparse allowonlymemorysnapshot/stdinstdout/resourcequeries. Denyfilesystem/network/dynamicplugin/arbitraryimport/processcreation. Anyunknownlazy-resourceaccessrefusespendingnewreview.",
+    "Allsourcehashchecksinparentreadpass;childrecheckssnapshotdigestinmemoryonly. Noadditionalraw-sourceFDorpathinworker,no outputmutationoforiginalPDFs/covers/history.",
+    "pypdfmayallocate/decompressbeforevisitor/finaltextlimitscanbechecked. No decoderhard-byte/preallocationclaim. Boundinput/pageattempts andnativeCPU/wall/RSSthresholds;testcompressed/cyclic/largeobjectfixtures. Ifthatboundaryisinsufficient,blockratherthaninventhardcontainment.",
+    "TransientpageUTF8textonly,strictvalidUTF8/noimputation;enforce40000characters/160000UTF8bytesperreturnedpage andcumulativetextcounts. Checkvisitorcapifverifiedsupportedandfinalreturnedtextconsistency;noassumedstreamingAPIguarantee. Discardpagefulltextafterhash/stats/projection.",
+    "Nooffice/party/candidate/vote/seat/stage/date/eligibility extraction. Physicalpageindexknown,printedpage/role/layout/class/termremainUNKNOWNunlessseparatelyreviewedlater. Inspectionisformatdiscovery,notM3grammarorrecordacceptance."
+  ],
+  "capture_handoff_ref": {
+    "path": "reports/E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL_HANDOFF.json",
+    "sha256": "f7bc9f73be013fc94ff9e4f2984141f3d13a498c1c7216542254764edb6aff27"
+  },
+  "cover_report_ref": {
+    "path": "reports/E01_CLERK_INITIAL_COVER_INSPECTION_v1.json",
+    "sha256": "7ec849ff2fc10fd06a88ef6e8a70790c60d57d8084a634c6e493ebdc85216842"
+  },
+  "durable_control_and_cumulative_quota": {
+    "allocation_versus_charge": "STARTED consumesjobslotandholdswholeenvelope; per-source/dispatch/write reservationsdrawwithinthatallocation. A knownpendingeffectchargesitsreservedmaximum; corrupt/ambiguouswholeallocationchargesallremainingheldlimitsandblocks. No unusedallowancemintsanotherattempt.",
+    "authority": "Trustedlocalleadpinnedgenesis/headandreviewedwriter;hashchain/locksnotowner-authenticationorhostilehostantirollback. No MAC key from source or credentials.",
+    "continuation": "Noretry/replay/resumeunderoriginalrelease,evenifzeroeffectsuspected. Laterindependentlyreviewedleaddecisionmustpreservehistory,carryforwardallchargedusageandexplicitlifetimeextensions;no newroot/genesis/balance reset.",
+    "current_control_root": null,
+    "independent_audit_policy": "Savedmetadata/privateprojectionreviewcanbe separatelyreleasedwithoutPDFreads. AnyextraPDFhash/reextract/visualreadrequiresnewfinitecumulativeallowanceandexplicitlycountedpass;notinthisdesignauthority.",
+    "independent_audit_source_reads_default": 0,
+    "journal": "Append-onlyclosedJSONL,sequence/previoushash/contextpins,fsyncdurableevents. Max64events\u00d71024bytes=65536journalbytes. Staticrecorder metadata57344 +privatefailurestderr8192 +journal65536=131072. Reservationsdrawfromoneheldjoballocation,notdoublechargednewauthority;reservebeforeeffect,settleknownresultsafter.",
+    "known_effect": "Knownreadbytes/returnedpages/text/acceptedoutputcountssettleagainstreservation. Unusedallowancecannotmakeanotherjob/source/parserattempt;successfulterminalslotconsumed.",
+    "lifetime_axes": [
+      "jobattempts1",
+      "sourcereadattempts2",
+      "sourcephysicalreadbytes859913",
+      "backendattempts2",
+      "pageextracts119",
+      "inspectiondata262144bytes",
+      "controlmetadata131072bytes",
+      "wholeownedwrites524288bytes"
+    ],
+    "planned_namespace": "data/processed/e01_clerk2020_m2_control/<future_exact_release_hash>",
+    "quota_scope": "NewM2inspectioncampaignonly. Historicalcapture/cover permissions/observations remainseparatereceiptreferences,notresetorrecountedasinventedglobalOSreadhistory. AllM2continuationscarryM2usageforward.",
+    "single_writer": "Exclusiveadvisorylock+createoncegenesis/STARTED. Existing/unknown/symlink/corrupt/disputedcontrolrefusesbeforeanysource;no cleanup/reset/alternateroot.",
+    "unknown_effect": "Crashafterreservation/beforeunambiguoussettlementchargesfullreservedmaximumandconsumesattempt;retainunknownactualcountersnullwithconservativechargedceiling,neverinventobservedbytes/pages."
+  },
+  "explicit_M1_changes": [
+    {
+      "M1": "5soneMOCKjob",
+      "M2": "30sperPDF,120soverallincludingruntime/source/journal/commit",
+      "constraint": "childwall/wholewall",
+      "why": "StructuralPDF/font/page work differs fromMOCKJSON. Prospectivefiniteceilings forreview, not measuredsourceperformance; failure stops, never autoextends."
+    },
+    {
+      "M1": "3soft4hardseconds",
+      "M2": "20soft21hardperbackend,60saggregatewholejobCPUstopthreshold",
+      "constraint": "CPU",
+      "why": "Two strict realPDFparses needexplicit import/graph/textbudget; aggregateincludescontroller andownedchildren/probes atcheckpoints,notkernel-widehardlimit."
+    },
+    {
+      "M1": "128MiBsampled/trustedthreshold",
+      "M2": "256MiBpercontroller/backendsampled/trustedthreshold",
+      "constraint": "RSS",
+      "why": "Proposedroomforpypdfobject/font caches. Notobservedneededmemory; independentreviewmayreject. NoAS/DATA/hardRSSclaim orsilentfallback."
+    },
+    {
+      "M1": 4096,
+      "M2": 16384,
+      "constraint": "JSONnodes",
+      "why": "119privatepagerecords\u00d796nodesplus4096envelope=15520,within16384. Depth12retained."
+    },
+    {
+      "M1": "262144bytesacceptedoutput",
+      "M2": "Same262144inspection-data cap;251904privateprojection+8192public=260096. Separate131072control metadata and524288wholejobwrite ceiling declared.",
+      "constraint": "output",
+      "why": "Doesnotpretend4.76Mcharactersfit;boundedprivateexcerptprojection,notfulltextartifact."
+    },
+    {
+      "M1": "Noactualsourcesallowed",
+      "M2": "Stilldisabledinthisdesign;futureonejob/2reads/859913bytesreservation/119extracts",
+      "constraint": "raw-sourcequota",
+      "why": "Exactregistered859911bytesplus2one-byteoverflowprobes,notunrestricted2MiBfreshsourcepermit."
+    },
+    {
+      "M1": "No actualsource-runrecorder",
+      "M2": "65536journal+57344staticmetadata+8192privatefailurestderr=131072;wholeownedwrites524288",
+      "constraint": "recorder metadata partition",
+      "why": "Separatefinitedurablebookkeeping/failureheadroom,notanother262144text channel. Allcomponentscountagainstonewholebudget;noalwayswritablefailureguarantee."
+    }
+  ],
+  "implementation_fixture_acceptance": [
+    "Generatedminimalvalidone/two-pagePDFswithknowntext/order/Unicode/blankpages/rotations;mockcontextpagescanvarybutrealpolicyknown81/38/sourcehashscannotbe caller-resealed.",
+    "Malformed/xref/EOF/encrypted/wrongbackend/version/runtimeorigin/duplicateJSON/nonfinite/unknownAPI/warningbehaviorsrefuse;noautofallback/OCR/render.",
+    "Generatedcompressed/recursive/object-heavy/font/textbombfixturesexerciseCPU/wall/RSS/text/outputgates andproveclaimedthresholdbehavior;unprovenboundsblockactualadmission.",
+    "All119pagerecordsfit96nodes/2048byteswithhostileUTF8/controlcharacterescaping;omissionranges/hash/wholepage/full-documentflagscomputedcorrectly;publicstripsexcerpts/names/stderr.",
+    "Nativeblockedstdin/stdout/stderr/earlyexit/cancel/timeout/RSS/killpgdenial/reapfailure/parentdeathlimits;zeroactualsourceeffectsforinvalidmetadata.",
+    "SourceFD/path/symlink/stat/hash/size/crosssource/immutablebuffer/aliasandcoeditedmetadataadversaries;caller cannotchangebindingafteradmission orredirectchild tosourcepaths.",
+    "Realspawncrashesbefore/aftereachreservation/readsettlement/dispatch/output/ledger/seal/ACK;conservativeusage/attemptsneverdecrease,cloned/truncated/resealed/unknowncontrolsdeniedatdeclaredtrustedanchorboundary.",
+    "Twoauthorizedsourcesonly,1job/2sourceattempts/859913readbytes/119extracts/no replay;overquotaoroldrelease/reinit/newrootfailsbeforeeffect;newleadextensionscarryforwardusage.",
+    "O_EXCL/failurepartialoutput/privacy/packages/HTTPaliasguards andpublishedcloseddiagnostics;no original/candidate/protocol edits;predictions/outcomes inaccessibleand no candidate/voteprojection."
+  ],
+  "kind": "CLERK2020_M2_INSPECTION_DESIGN_ONLY_V1",
+  "limits": {
+    "api_spend_usd": 0,
+    "child_cpu_hard_seconds_each": 21,
+    "child_cpu_soft_seconds_each": 20,
+    "child_wall_seconds_each": 30,
+    "counted_application_file_read_bytes_max": 548216585,
+    "documents": 2,
+    "expected_pages_each": [
+      81,
+      38
+    ],
+    "input_packet_bytes": 4194304,
+    "inspection_data_bytes_total": 262144,
+    "job_attempts_lifetime": 1,
+    "journal_bytes_max": 65536,
+    "journal_event_bytes_max": 1024,
+    "journal_events_max": 64,
+    "json_depth": 12,
+    "json_envelope_nodes": 4096,
+    "json_nodes_each_page": 96,
+    "json_nodes_total": 16384,
+    "model_calls": 0,
+    "new_GETs": 0,
+    "other_public_metadata_bytes_total": 8388608,
+    "other_public_metadata_each_max": 1048576,
+    "other_public_metadata_files_max": 64,
+    "owned_job_write_bytes_ceiling": 524288,
+    "page_extractions_lifetime": 119,
+    "pages_each_max": 100,
+    "pages_total_max": 119,
+    "parent_and_backend_rss_stop_bytes_each": 268435456,
+    "parse_attempts_lifetime": 2,
+    "poll_seconds": 0.05,
+    "private_failure_stderr_bytes_total": 8192,
+    "private_page_projection_bytes_each": 2048,
+    "private_page_projection_bytes_total": 243712,
+    "private_projection_bytes": 251904,
+    "private_projection_envelope_bytes": 8192,
+    "private_provenance_bytes_max": 2048,
+    "public_diagnostics_bytes": 8192,
+    "record_validation_file_read_bytes_max": 2097152,
+    "recorder_control_metadata_bytes_total": 131072,
+    "registered_source_bytes_total_exact": 859911,
+    "returned_text_utf8_bytes_each_page": 160000,
+    "returned_text_utf8_bytes_total": 19040000,
+    "rss_probe_seconds": 1,
+    "runtime_integrity_files_max": 8192,
+    "runtime_integrity_hash_bytes_max": 536870912,
+    "runtime_manifest_bytes_max": 2097152,
+    "source_byte_reservation_lifetime": 859913,
+    "source_bytes_each_max": 1048576,
+    "source_bytes_total_max": 2097152,
+    "source_io_chunk_bytes": 65536,
+    "source_overflow_probe_bytes_each": 1,
+    "source_read_attempts_lifetime": 2,
+    "source_replay_attempts": 0,
+    "static_recorder_metadata_bytes_max": 57344,
+    "termination_wait_seconds": 1,
+    "text_characters_each_page": 40000,
+    "text_characters_total": 4760000,
+    "whole_job_cpu_stop_seconds": 60,
+    "whole_job_wall_seconds": 120,
+    "worker_stderr_bytes_each": 4096,
+    "worker_stdout_bytes_each_by_source": [
+      167936,
+      79872
+    ],
+    "worker_stdout_bytes_total": 247808
+  },
+  "milestone_acceptance": [
+    {
+      "criterion": "Independentreviewexacttwodesignfiles/runtime/backend/projection/resource/cumulativequota/recorder/failurelimits;noactualsourceauthority.",
+      "id": "M2D",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "ImplementnewM2modules/config/default-denyfactory usingonlyauthoredminimalPDF/error/crashfixtures;validateexactbackendAPIs andartifact/bootstrap policy.Independentcode/privacy/resource review.",
+      "id": "M2C",
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "criterion": "Independentruntimeartifact/origin/dependencyacceptanceandpreparedexactsource/code/policy/quotacontrol/outermetadatareview;allactualrefsremainnullnow.",
+      "id": "M2R",
+      "status": "BLOCKED"
+    },
+    {
+      "criterion": "FreshfiniteLEAD_EXECafterM2C/M2R;onebounded119-pageinspectionwithrecordedchargedcounts/privateprojection,thenindependentoriginalsaved-output/sourceformatreview.",
+      "id": "M2A",
+      "status": "BLOCKED"
+    },
+    {
+      "criterion": "Fullobservedformat/parser/actualrecords/sourcecountclass/round/party/unit/geography/selection/REALbaseline/outcome-evaluationgatesuntouched;inspectioncannotpassanybyitself.",
+      "id": "M3_M6",
+      "status": "BLOCKED"
+    }
+  ],
+  "new_runtime_policy": {
+    "actual_backend_entrypoint": null,
+    "artifact_hashes": null,
+    "artifact_identity": "Versions are proposed exactpolicy,notinstalledartifact acceptance. Future review mustbind interpreterbinary+stdlib/backend/projectfilemanifest+origin+wheel/distribution hashes, readonlyroot and cleanenvironment. Unknownartifact/hash/pathrefuses.",
+    "backend_id": "CLERK_PYPDF_6_10_0_TEXT_DIAGNOSTIC_V1",
+    "backend_runtime_switch": "NoM1toggle. Newseparatemodule/config/factory/worker/recorder/newreleasekind;M1actualfactorystaysrefused.",
+    "interpreter": "CPython",
+    "interpreter_version": "3.12.14",
+    "library": "pypdf",
+    "library_version": "6.10.0",
+    "planned_dependencies": "Pythonstdlib+pypdf6.10.0+exactreviewedprojectcode only; alltransitivedependencies/buildtools mustbelisted/pinnedbybootstrapreceipt beforeactualsource. No implicitpip/network.",
+    "proposed_API": "PdfReader overimmutableBytesIO snapshot,strict=True;unencrypted;fixedtext-extraction mode. ExactAPI/options/return/warning behavior mustbeverifiedinbackend-source review+minimalPDFfixtures beforeadmission; notcalledhere.",
+    "target_machine": "arm64",
+    "target_platform": "darwin",
+    "version_evidence_refs": [
+      {
+        "path": "pyproject.toml",
+        "sha256": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764"
+      },
+      {
+        "path": "configs/runtime_python312_20261103.txt",
+        "sha256": "6acb09ebaf9591cc515e8ec5d26c80c9fe57fbd44d686357d51f80ea309b7a76"
+      }
+    ]
+  },
+  "observed_design_operations": {
+    "GET_key_model_calls": 0,
+    "actual_backend_calls": 0,
+    "actual_source_private_cover_raw_history_stat_read_hash_or_helper": 0,
+    "api_spend_usd": 0,
+    "development_compute": "UNPRICED",
+    "runtime_install_or_identity_probe": 0,
+    "source_runtime_grants_or_control_created": 0
+  },
+  "original_contract": {
+    "broad_house": 24,
+    "broad_senate_max": 8,
+    "deep_house": 4,
+    "deep_senate": 2,
+    "global_coverage": "13typed/20unfinished/12legacy/final0_UNCHANGED",
+    "status": "RETROSPECTIVE"
+  },
+  "projection": {
+    "M3_use": "Identifycandidatepages/layoutquestionsviaprivateboundedwindows;contentmaybemissed,rolesUNKNOWN. M3fullformatreviewneedssourceboundevidenceandpossiblyseparatelyreleasedtargetedvisual/textaccess.",
+    "budget_arithmetic": {
+      "all_three_data_files_counted": true,
+      "combined_max": 262144,
+      "data_cap": 262144,
+      "page_records_max": 243712,
+      "private_envelope_max": 8192,
+      "private_max": 251904,
+      "private_provenance_max": 2048,
+      "public_max": 8192
+    },
+    "page_fields": [
+      "source_id",
+      "source_sha256",
+      "physical_pdf_page_1_based",
+      "printed_page_label_UNKNOWN",
+      "full_extracted_text_utf8_sha256",
+      "full_extracted_text_characters",
+      "full_extracted_text_utf8_bytes",
+      "line_count",
+      "blank_line_count",
+      "line_length_min_max",
+      "non_ascii_character_count",
+      "snippet_windows",
+      "retained_byte_intervals",
+      "omitted_text_utf8_bytes",
+      "retained_whole_page",
+      "source_role_UNKNOWN_UNREVIEWED",
+      "layout_quality_UNKNOWN_UNVERIFIED"
+    ],
+    "private_paths": [
+      "inspection_projection.local.json",
+      "inspection_partial.local.json(mutuallyexclusivewithfullprojection)",
+      "failure_stderr.local.bin"
+    ],
+    "public_allowlist": [
+      "run_id",
+      "source_id/hash/bytes",
+      "backend/runtime/code/policyhashes",
+      "page_counts",
+      "text/snippet/omittedbytecounts",
+      "UNKNOWNrole/layoutcounts",
+      "resource/counter/error/exclusiontypes",
+      "zero model/spend/adoptionflags"
+    ],
+    "public_forbidden": [
+      "text",
+      "rawquotes",
+      "names",
+      "snippetcontent",
+      "candidate/voterecords",
+      "numericvotes/margins",
+      "rawPDF/privatecovercontents",
+      "stderrmessages",
+      "secrets"
+    ],
+    "scope": "Privateboundedformatdiagnostics,notfulltextretentionorpublishedquotes",
+    "snippets": {
+      "raw_utf8_bytes_each_page_max": 1024,
+      "selection": "FixedUTF8bytewindows:prefixup256,suffixup256,centerup512,mergeoverlap;neverselectbycandidate/party/votes/content.",
+      "serialization": "AccountactualcanonicalUTF8JSONescapingbeforeacceptance. DeterministicUTF8boundaryclippingwithin1024rawbytesAND2048serializedpagebytes;reporteveryrange/truncation/omission. Mandatorymetadataoversizefails,never silentlydropsfields.",
+      "window_fields": [
+        "kind",
+        "utf8_start",
+        "utf8_end",
+        "utf8_sha256",
+        "text",
+        "truncated"
+      ],
+      "windows_each_page_max": 3
+    },
+    "whole_text_retention": "No full-document text artifact requested orguaranteed. Compute perpagecoverage and retained_full_document fromactualunionofwindows;neverclaimcomplete/incompletecoveragecontrarytobytes."
+  },
+  "readonly_input_contract": {
+    "byte_reservation": "Eachdeclaredsize+1reservedbeforeopen:602173+257740=859913. Normalexactread859911bytes;atmostoneoverflowprobebyte/source,notonefreeextraattempt.",
+    "chunk_bytes": 65536,
+    "fixed_source_set": 2,
+    "identity_checks": "Sourceandparentcomponentsregular/non-symlink/withinexactroot;fd+lexicalidentity/size/mtime/ctimecheckedbefore/afterreadandpreseal. Statidentityisnotsecondcontenthashorhostilehostproof.",
+    "open_mode": "O_RDONLY|O_NOFOLLOW;no new sourcecopy/originalwrite",
+    "snapshot": "Immutableparentbytesfedvia4MiBboundedbinary/base64packet;inputhashverifiedagaininmemorybychild,nofilepath. No retainedrawsourcecopy."
+  },
+  "recorder_contract": {
+    "actual_run_id": null,
+    "commit_order": "Payloadscomplete\u2192postsource-stat/code/runtime/control/counterchecks\u2192summary+closedledger\u2192finalsealbindsexactledger/controlhead/policy/code/input/runtime\u2192verifyownsavedmetadata(no newextract)\u2192writercompletedACK.",
+    "crash": "STARTED/partialfiles/journalchargedreservationspersist;unknownattemptsneverreset. No guaranteedfailuremarkerwhenstorage/powerunavailable;parentdeathmayleavechilduntilitsCPUlimit, noalways-on supervisionclaim.",
+    "data_files": [
+      "inspection_projection.local.json",
+      "inspection_diagnostics.json",
+      "inspection_provenance.local.json"
+    ],
+    "failure_artifacts": [
+      "failure.json(typesonly)",
+      "inspection_partial.local.json(ifno fullprojectionwritten)",
+      "failure_stderr.local.bin(max8192bytes)",
+      "inspection_terminal_failure.local.json",
+      "inspection_failure_checksums.local.json",
+      "failure_stdout.local.bin(withincombinedprivateprojectioncap,no sourcecopy)"
+    ],
+    "failure_stdout_policy": "Ifchildfails,retaincompleted-source projectiononce andboundedunparsedcurrent-childstdoutonlywithinthecombined251904privatebytesbudget;recordcapture/stored/truncatedcounts andhashes,nevertreatfragmentasvalidpageevidence. No duplicatefull+partial artifacts. Stderr8192countswithin131072metadata.",
+    "kind": "EXPLORATORY",
+    "metadata_files": [
+      "manifest.json",
+      "environment.json",
+      "events.jsonl",
+      "summary.json",
+      "inspection_payload_hashes.json",
+      "inspection_commit.json",
+      "checksums.json",
+      "inspection_release.json"
+    ],
+    "module": "E01",
+    "one_new_run_parent": true,
+    "privacy": "Alltextwindows/stderr/rawspans local/ignored/.local.;publicprojectionclosedallowlist;wholeprivate-runpackage/refpath/HTTPguardsmustrefuse. No externalpublication.",
+    "projection_copies": "OnlyonefullORpartialprivatepageprojection;no duplicateper-source/fulltextartifacts. Immutablecompletedoutputneverrewrittenaspartial.",
+    "role": "CLERK_M2_SOURCE_FORMAT_INSPECTION_ONLY",
+    "seal_ACK": "FinalsealnotcallerACK. Laterinvalidatingfailuremarkersdeny success. EIOafterseal/EROFS canleaveuncertainvalidcommitwithoutACK;read-onlyresolutionseparate,no autoretry.",
+    "source_input_copy_count": 0
+  },
+  "registered_input_metadata_not_authority": [
+    {
+      "body_inspected_for_this_design": false,
+      "bytes": 602172,
+      "expected_pages_reported": 81,
+      "registered_path": "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.pdf",
+      "role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76",
+      "source_id": "clerk2020_statistics",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "body_inspected_for_this_design": false,
+      "bytes": 257739,
+      "expected_pages_reported": 38,
+      "registered_path": "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.pdf",
+      "role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "sha256": "cb2e4194c88042cf22f8589fb6b8c352d29b501f96abc62a962b6cc52e2c28a8",
+      "source_id": "clerk2026_nominees",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ],
+  "remaining_limits": [
+    "Versions/APIareproposals,nottestedinstalledartifactguarantees;allruntimeidentities/admissionsremainnull.",
+    "SampledRSS/cooperativeIOboundsnotOSsandbox/decompressionpreallocationbound/powerloss/hostilehostproof.",
+    "No actualsourcegrammar/class/round/party/unit/candidate/vote/asof/geography/forecast/scienceacceptance.",
+    "Privateboundedwindowscanmisscontent;M3requiresnewsourceboundevidence,separatelyauthorizedadditionalreadsifneeded.",
+    "Oneinspectionjob0replayisproposed;M4parserprimary/replaycontractunchangedandunwaived."
+  ],
+  "schema_version": 1,
+  "scope": "READ_ONLY_PDF_FORMAT_INSPECTION_DESIGN_NOT_SOURCE_AUTHORITY_OR_ROW_PARSER",
+  "supervision": {
+    "bounds_start": "Wholedeadlinebeforecode/runtimeintegrityandreservation;childCPU/wallincludesbackendimport/page-tree/textwork. Blockingfilesystem/syscallsnotpreemptivehardwallcontained.",
+    "counted_IO": "Countedapplicationfilereads<=548216585bytes:runtimeintegrity512MiB+otherpublicmetadata8MiB+source859913+postwriteverification2MiB. Includesexplicitapplicationhash/readcalls,notOSloader/pagefault/nativeps/dynamiclibraryIOorreadonlymemoryseeks;notglobalOSIOclaim. Publicmetadataeach1MiBexcept2MiBruntimemanifest;64filesmax,total8MiB.",
+    "monitors": "Monotonicfinite/nondecreasingwhole+childdeadlines;parentownRSS+fixed/bin/ps backendPIDRSS;trustedchildgetrusagepeak;aggregateSELF+ownedCHILDRENCPUatcheckpoints;durablecancel/quotachecks.",
+    "pipe_limits": "Parentcountsrawworkerstdout/stderrwhileboundedread/write;atmostoneoverflowprobebyte,notunboundedcommunicate;publicdiagnosticsnevercontainstderrtext.",
+    "runtime_guard": "PinauthorizedPython3.12.14darwinarm64/pypdf6.10.0origins/filemanifest;no globalenvironmentfallback/user-site/dynamicpackages.",
+    "termination": "SIGKILLownedgroup;oneexplicitownedchildkillifgroupPermissionError;alwaysboundedreap. Anycontrolfailurestops. No descendant/hostileprocess/parentdeath/OSscheduling/hardRSSguarantee.",
+    "workers": "TwofixedPopenbackendchildrenmaximum,sequential,newsession,cleanemptytemporarycwd,minimalcredentialfreeenv. No arbitrarybackend/plugin/sourcepaths/model."
+  }
+}
