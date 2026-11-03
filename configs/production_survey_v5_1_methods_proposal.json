@@ -1,0 +1,910 @@
+{
+  "$defs": {
+    "AdmittedPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "derivation_seed_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "kind": {
+          "const": "ADMITTED_E02_PHASE_PLAN_V5_1"
+        },
+        "phase_proof_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "phase_proof_sha256",
+        "derivation_seed_sha256"
+      ],
+      "type": "object"
+    },
+    "DerivationSeed": {
+      "additionalProperties": false,
+      "properties": {
+        "compiled_plan_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "kind": {
+          "const": "E02_PHASE_DERIVATION_SEED_V5_1"
+        },
+        "own_pre_checkpoint_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phase": {
+          "enum": [
+            "pre",
+            "post"
+          ]
+        },
+        "release_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "unit_id": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "release_sha256",
+        "compiled_plan_sha256",
+        "unit_id",
+        "phase",
+        "own_pre_checkpoint_sha256"
+      ],
+      "type": "object"
+    },
+    "GrantReserveIntent": {
+      "additionalProperties": false,
+      "properties": {
+        "admitted_plan_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "context_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "derived_approval_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "expected_active_approval_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expected_owner_head_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "expected_receipt": {
+          "$ref": "#/$defs/digest32"
+        },
+        "intent_id": {
+          "$ref": "#/$defs/sha256"
+        },
+        "kind": {
+          "const": "E02_GRANT_PRICE_RESERVE_INTENT_V5_1"
+        },
+        "phase_proof_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "release_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "request_binding_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "run_journal_prefix_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "intent_id",
+        "phase_proof_sha256",
+        "admitted_plan_sha256",
+        "request_binding_sha256",
+        "derived_approval_sha256",
+        "context_sha256",
+        "expected_receipt",
+        "expected_owner_head_sha256",
+        "expected_active_approval_sha256",
+        "release_sha256",
+        "run_journal_prefix_sha256"
+      ],
+      "type": "object"
+    },
+    "OperatorAssertion": {
+      "additionalProperties": false,
+      "properties": {
+        "assertion": {
+          "const": "EXPLICIT_OWNER_EXECUTION_OF_REVIEWED_STUDY_AND_DERIVATION"
+        },
+        "credential_state": {
+          "const": "OWNER_ASSERTED_ROTATED_DEDICATED_KEY"
+        },
+        "delegation": {
+          "const": "DERIVE_EXACT_PHASE_BINDINGS_ONLY_WITHIN_THIS_REVIEWED_POLICY"
+        },
+        "kind": {
+          "const": "EXTERNAL_OPERATOR_E02_POLICY_EXECUTION_V5_1"
+        },
+        "operator_action_id": {
+          "$ref": "#/$defs/digest32"
+        },
+        "owner_id": {
+          "$ref": "#/$defs/digest32"
+        },
+        "parent_review_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "policy_body_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "prefunded_no_purchase_asserted": {
+          "const": true
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "operator_action_id",
+        "owner_id",
+        "policy_body_sha256",
+        "parent_review_sha256",
+        "delegation",
+        "assertion",
+        "credential_state",
+        "prefunded_no_purchase_asserted"
+      ],
+      "type": "object"
+    },
+    "ParentReview": {
+      "additionalProperties": false,
+      "properties": {
+        "compiled_study_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "derivation_code_contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "kind": {
+          "const": "INDEPENDENT_E02_POLICY_REVIEW_V5_1"
+        },
+        "policy_body_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "review_id": {
+          "$ref": "#/$defs/digest32"
+        },
+        "reviewer_role": {
+          "const": "independent_auditor"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "scope_gate_refs_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "terms_sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "review_id",
+        "reviewer_role",
+        "policy_body_sha256",
+        "derivation_code_contract_sha256",
+        "compiled_study_sha256",
+        "terms_sha256",
+        "scope_gate_refs_sha256"
+      ],
+      "type": "object"
+    },
+    "PhaseProof": {
+      "additionalProperties": false,
+      "properties": {
+        "compiled_plan_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "derivation_seed_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "envelope_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "expected_active_approval_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expected_owner_head_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "kind": {
+          "const": "E02_DERIVED_PHASE_PROOF_V5_1"
+        },
+        "operator_assertion_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "own_pre_checkpoint_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "own_pre_owner_output_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "own_pre_receipt": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/digest32"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parent_review_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "payload_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "phase": {
+          "enum": [
+            "pre",
+            "post"
+          ]
+        },
+        "phase_boot_id_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "phase_start_monotonic_ns": {
+          "$ref": "#/$defs/uint63"
+        },
+        "phase_start_utc": {
+          "$ref": "#/$defs/utc"
+        },
+        "policy_body_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "price_proof_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "release_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "run_journal_prefix_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "unit_id": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "policy_body_sha256",
+        "parent_review_sha256",
+        "operator_assertion_sha256",
+        "release_sha256",
+        "derivation_seed_sha256",
+        "compiled_plan_sha256",
+        "unit_id",
+        "phase",
+        "payload_sha256",
+        "envelope_sha256",
+        "price_proof_sha256",
+        "expected_owner_head_sha256",
+        "expected_active_approval_sha256",
+        "own_pre_receipt",
+        "own_pre_checkpoint_sha256",
+        "own_pre_owner_output_sha256",
+        "run_journal_prefix_sha256",
+        "phase_start_utc",
+        "phase_start_monotonic_ns",
+        "phase_boot_id_sha256"
+      ],
+      "type": "object"
+    },
+    "PolicyBody": {
+      "additionalProperties": false,
+      "properties": {
+        "budget": {
+          "$ref": "#/$defs/budget"
+        },
+        "compiled_study_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "delegation": {
+          "const": "DERIVE_EXACT_PHASE_BINDINGS_ONLY_WITHIN_THIS_REVIEWED_POLICY"
+        },
+        "derivation_code_contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "fixed_run_id": {
+          "$ref": "#/$defs/id128"
+        },
+        "initial_active_approval_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "initial_owner_head_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "kind": {
+          "const": "FROZEN_E02_STUDY_POLICY_BODY_V5_1"
+        },
+        "owner_header_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "owner_id": {
+          "$ref": "#/$defs/digest32"
+        },
+        "policy_id": {
+          "$ref": "#/$defs/digest32"
+        },
+        "schema_version": {
+          "const": 1
+        },
+        "scope_gate_refs_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scope_label": {
+          "enum": [
+            "ENGINEERING_MOCK",
+            "LIVE_ENGINEERING_WITH_FICTIONAL_INPUTS",
+            "PREREGISTERED_SYNTHETIC_E02_STUDY"
+          ]
+        },
+        "terms_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "unit_count": {
+          "maximum": 180,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "unit_order_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "valid_from_utc": {
+          "$ref": "#/$defs/utc"
+        },
+        "valid_until_utc": {
+          "$ref": "#/$defs/utc"
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "policy_id",
+        "owner_id",
+        "owner_header_sha256",
+        "initial_owner_head_sha256",
+        "initial_active_approval_sha256",
+        "fixed_run_id",
+        "compiled_study_sha256",
+        "derivation_code_contract_sha256",
+        "terms_sha256",
+        "scope_gate_refs_sha256",
+        "scope_label",
+        "unit_order_sha256",
+        "unit_count",
+        "budget",
+        "valid_from_utc",
+        "valid_until_utc",
+        "delegation"
+      ],
+      "type": "object"
+    },
+    "Release": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "E02_STUDY_RELEASE_V5_1"
+        },
+        "operator_assertion_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "parent_review_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "policy_body_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "policy_body_sha256",
+        "parent_review_sha256",
+        "operator_assertion_sha256"
+      ],
+      "type": "object"
+    },
+    "budget": {
+      "additionalProperties": false,
+      "properties": {
+        "module_dispatches": {
+          "$ref": "#/$defs/module_caps"
+        },
+        "module_microusd": {
+          "$ref": "#/$defs/module_caps"
+        },
+        "new_study_dispatches_max": {
+          "maximum": 360,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "new_study_microusd_cap": {
+          "$ref": "#/$defs/positive63"
+        },
+        "total_dispatches": {
+          "$ref": "#/$defs/positive63"
+        },
+        "total_microusd": {
+          "$ref": "#/$defs/positive63"
+        }
+      },
+      "required": [
+        "total_microusd",
+        "module_microusd",
+        "total_dispatches",
+        "module_dispatches",
+        "new_study_microusd_cap",
+        "new_study_dispatches_max"
+      ],
+      "type": "object"
+    },
+    "digest32": {
+      "pattern": "^[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "id128": {
+      "pattern": "^[0-9A-Za-z_-]{1,128}$",
+      "type": "string"
+    },
+    "module_caps": {
+      "additionalProperties": false,
+      "properties": {
+        "E01": {
+          "$ref": "#/$defs/uint63"
+        },
+        "E02": {
+          "$ref": "#/$defs/uint63"
+        }
+      },
+      "required": [
+        "E01",
+        "E02"
+      ],
+      "type": "object"
+    },
+    "positive63": {
+      "maximum": 9223372036854775807,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "uint63": {
+      "maximum": 9223372036854775807,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "utc": {
+      "format": "date-time",
+      "pattern": "(Z|\\+00:00)$",
+      "type": "string"
+    }
+  },
+  "additional_required_oracles": [
+    "Closedfield/type/UTC/units/modulemap/delegationexternalexpectedhashrefusals",
+    "Acyclicgraph proof rejectsselfhash/phaseproofdescendantfield injection",
+    "Wrongprecheckpoint/ownrun/unit/release/epoch cannotderivepost",
+    "CASchangedhead/activeepoch no key/grant/POST, no resnapshotretry",
+    "RealSQLiteprocessdeathbefore/aftereachtripletINSERT/commit/anchor/ack yieldszeroorallthreeevents andsafeoriginalreaderrefusalontornanchor",
+    "Original_appendmustnotbeinvoked3times; no grant-onlycommittedprefix",
+    "Lostackrow/intent diagnosticsUNKNOWN, deterministicreceiptnorepeat",
+    "TwoactualspawnedmockprocessesoneCASreservation andonefakePOSTmax",
+    "Rawresponse/nonfinite/duplicateJSON/secret/cost/provider/aux/invalidquality/clock failures",
+    "Bothsizeconstraints enforced100000encodedmessagesand262144payload independently",
+    "Phase120s includesallthree30sHTTPcalls/bookkeeping; lateaccountingandnonewlookup boundary",
+    "FulltwoMOCKpolicy720calls, initialhistoryretained, perstudyvsabsoluteceilingsandlargehistorylimits independentlyrederived"
+  ],
+  "approval_mapping": {
+    "allowed_plans": "Exactlyonekey H(AdmittedPlan), value module=E02/terms_sha256=H(T)/max_tokens=prepared.max_tokens/max_input_token_bound=prepared.input_token_bound/request_binding_hash=RB",
+    "approval_id": "derived_approval_id_formula",
+    "credential_state": "OperatorAssertion.credential_state",
+    "kind": "EXTERNAL_OPERATOR_DISPATCH_ASSERTION_V4",
+    "module_dispatches": "PB.budget.module_dispatches",
+    "module_microusd": "PB.budget.module_microusd",
+    "owner_id": "PB.owner_id",
+    "previous_approval_hash": "FP.expected_active_approval_sha256",
+    "release_hash": "H(Release)",
+    "review_hash": "H(ParentReview)",
+    "statistics_policy": "ONE_LOOKUP_ORIGINAL_AUTHORITY",
+    "total_dispatches": "PB.budget.total_dispatches",
+    "total_microusd": "PB.budget.total_microusd",
+    "valid_from_utc": "PB.valid_from_utc",
+    "valid_until_utc": "PB.valid_until_utc"
+  },
+  "atomic_owner_bridge": {
+    "before_transaction": "Persist finite phaseintent/catalogobservation/FP/A/C/GI createonce under fixed originalOwnerDir/v5-runs/PB.fixed_run_id journal anditsrunlock. No ownerSQLwrites. No workspace/outputrootoverride.",
+    "credential_stage": "Insideownerlock/SQLiteBEGIN, afterfinalCAS/policy/source/price checks, beforeeventINSERT: validateopaquecredential/transportshape with no request; recheckclock andconstruct/applyallthreeevents.",
+    "failure_truth": "SQLite rollback beforecommit ->noauthority/charge iflaterproved; dbcommit-beforeanchor ->tornstore blocksalloriginalwriters; commit+anchor/lostack ->STARTEDreservation retainsfullcharge andunfinishedbarrier. Neverinferabsencefrommissingack.",
+    "fixed_run_namespace": "Originalproduction_owner_directory()/v5-runs/<PB.fixed_run_id>, same acrossworktrees. ImmutablemarkerbindsPB/R/O/CS, existingincompleteintentcannothideundernewroot.",
+    "lock_order": "Fixedrunlock then originalowner._lock, nonblocking; no pathoverride. AllV5writers use sameorder; legacyV4uses ownerlockonly.",
+    "name": "Separatelyversionedproduction_study_owner_v5_1.append_admitted_phase; notexistinggrant_operator_authorization andnot3existing_appendcalls",
+    "no_generic_write_interface": "Privateadmittedproofcapabilityonly; no raw SQL/payload/grant hook exposed. Trustedlocalworkflow/codehash boundary, nothostileowner-process guarantee.",
+    "storage_compatibility": "SamefixedV4namespace/registration/header/event/charge schemas; existingownerreadermustverify successfultriplet. No newowner/migration/reset. Newbatchwritealgorithm requiresindependentcontrolreview.",
+    "transaction": [
+      "Acquire originalownerlock; BEGIN IMMEDIATE; original_verify fullhistory/header/anchor/materializedrows.",
+      "CAS H(expectedanchor)==FP.expected_owner_head_sha256 andactiveapproval==FP.expected_active_approval_sha256; reverifyowncheckpoint/journal/policy/lease/clock/cap; unfinishedmust0.",
+      "Constructandapplyinmemory standardAPPROVAL(A) using original_event/_apply; thenPRICE_PROOF(C); thenRESERVE(originalSTARTEDrow with deterministicreceipt). Allthree mustvalidate beforeINSERT.",
+      "INSERT exactlythreechainedstandardevents andonlyoneSTARTEDcharge row inoneSQLite transaction; commitonce. Do NOTcalloriginal_append, which commitsper-event. No APPROVAL-only committedsuccess prefix.",
+      "Publish one originalheadanchor forlasttripletevent usingacceptedatomic_json. Anycommit/head/ackfailurehalts; no repair/reset/POST.",
+      "Reread original_verify underlock andverifyexactthreeevents/charge/context/approval/proof/receipt plusunchangedpriorrows; recordprivateack. Onlynormalverifiedack returnsdispatchcapability."
+    ]
+  },
+  "authority": {
+    "actual_operator_assertion": null,
+    "actual_owner_source_key_network_or_model_access": false,
+    "actual_parent_review": null,
+    "actual_policy_body": null,
+    "api_spend_usd": 0,
+    "implementation": false,
+    "independent_methods_review": null
+  },
+  "canonical_hash_contract": {
+    "dependency_graph": {
+      "admitted_plan": [
+        "phase_proof",
+        "derivation_seed"
+      ],
+      "code_contract": [],
+      "compiled_study": [],
+      "context": [
+        "derived_approval",
+        "request_binding",
+        "admitted_plan",
+        "release",
+        "derived_payload_envelope",
+        "terms",
+        "price_proof"
+      ],
+      "derivation_seed": [
+        "release",
+        "compiled_study",
+        "own_pre_checkpoint"
+      ],
+      "derived_approval": [
+        "phase_proof",
+        "request_binding",
+        "admitted_plan",
+        "parent_review",
+        "release",
+        "policy_body",
+        "owner_snapshot"
+      ],
+      "derived_payload_envelope": [
+        "compiled_study",
+        "own_pre_checkpoint",
+        "terms"
+      ],
+      "grant_reserve_intent": [
+        "phase_proof",
+        "admitted_plan",
+        "request_binding",
+        "derived_approval",
+        "context",
+        "receipt_id",
+        "owner_snapshot",
+        "journal_prefix"
+      ],
+      "initial_owner_snapshot": [],
+      "journal_prefix": [],
+      "operator_assertion": [
+        "policy_body",
+        "parent_review"
+      ],
+      "own_pre_checkpoint": [],
+      "owner_snapshot": [],
+      "parent_review": [
+        "policy_body"
+      ],
+      "phase_proof": [
+        "policy_body",
+        "parent_review",
+        "operator_assertion",
+        "release",
+        "derivation_seed",
+        "derived_payload_envelope",
+        "price_proof",
+        "owner_snapshot",
+        "journal_prefix"
+      ],
+      "policy_body": [
+        "compiled_study",
+        "code_contract",
+        "terms",
+        "scope_gates",
+        "initial_owner_snapshot"
+      ],
+      "price_proof": [],
+      "receipt_id": [
+        "phase_proof",
+        "derived_approval"
+      ],
+      "release": [
+        "policy_body",
+        "parent_review",
+        "operator_assertion"
+      ],
+      "request_binding": [
+        "admitted_plan",
+        "release",
+        "derived_payload_envelope",
+        "terms"
+      ],
+      "scope_gates": [],
+      "terms": []
+    },
+    "derived_approval_id": "first32hex(H({kind:DERIVED_APPROVAL_ID_V5_1,phase_proof_sha256:H(FP)}))",
+    "encoding": "Existingcanonical_bytes finitebuiltinJSON/SHA256, noalternate serialization/duplicatekeys/nonfinite/coercion",
+    "intent_id": "H(FP), not H(intent) and not a selfreference",
+    "phase_proof_forbidden_dependencies": [
+      "admitted_plan_sha256",
+      "request_binding_sha256",
+      "derived_approval_sha256",
+      "context_sha256",
+      "grant_reserve_intent_sha256"
+    ],
+    "receipt_id": "first32hex(H({kind:RESERVATION_ID_V5_1,phase_proof_sha256:H(FP),approval_sha256:H(A)}))",
+    "request_binding": "Unchangedproduction_owner_v4.request_binding excludes approval_hash+price_proof. Planhash includes full PhaseProof hash, which binds priceproof/ownerhead/ownpre.",
+    "verified_topological_order": [
+      "code_contract",
+      "compiled_study",
+      "journal_prefix",
+      "own_pre_checkpoint",
+      "owner_snapshot",
+      "price_proof",
+      "scope_gates",
+      "terms",
+      "initial_owner_snapshot",
+      "derived_payload_envelope",
+      "policy_body",
+      "parent_review",
+      "operator_assertion",
+      "release",
+      "derivation_seed",
+      "phase_proof",
+      "admitted_plan",
+      "request_binding",
+      "derived_approval",
+      "context",
+      "receipt_id",
+      "grant_reserve_intent"
+    ]
+  },
+  "context_mapping": {
+    "approval_hash": "H(derivedApproval)",
+    "envelope": "prepare_phase(plan, ownverifiedpre).quote exactly",
+    "module": "E02",
+    "payload_hash": "H(rederivedfixedpayload)",
+    "phase": "Seed.phase, exactlypre/post",
+    "plan_hash": "H(AdmittedPlan)",
+    "price_proof": "BoundedfixedHTTPSobservation PP, hash=FP.price_proof_sha256",
+    "release_hash": "H(Release)",
+    "run_id": "PB.fixed_run_id",
+    "sampling": "seed=frozenpairseed/tempbuiltinint0/retriesbuiltinint0",
+    "terms": "ExactfrozenT",
+    "unit_id": "H(compiled_plan.job)"
+  },
+  "cross_field_validation": [
+    "Exactclosedfieldsets+types,UTCcalendar/UTCoffset/strictpositiveinterval, externalexpectedPB/R/Ohashes fromtrustedownerworkflow required; hash/rolelabels are notcryptographic identity.",
+    "ParentReview allboundhashes matchPB; O.owner/PB/R hashes andliteral delegation match; no runtime review/assertion creation. R bindsreviewedcodecontract andexactsource gates.",
+    "Policycodecontract binds actualseparatelyreviewedbatchwriter/admission/derivation/journal/HTTP/accounting code, schema andlimits. Null/unreviewednewcode means noimplementationacceptance.",
+    "Compiledstudy closedvalidated byfrozencompiler: 1..180distinctunits, fixedunitorder andsource/instrument/stimulus/assignment hashes, no adaptiveunit/conditionselection. new_study_dispatches_max=2*unit_count exactly.",
+    "Lifetime/modulecaptypes exactnonnegativeints<2^63, globalpositive and eachmodule<=global; eachlifetimecap coversretainedcumulativeconsumption. EverynewcallmoduleE02, newE01studyallowance0.",
+    "new_study_microusd_cap positive, fullfrozenworst pre+post reservation sum<=studycap; beforefirstrun sum alsofitsremaininglifetime+E02allowances. No runtimecapincrease/replenishment.",
+    "Beforeeveryreserve sumconservativecharges forcontextswiththisrelease +nextreservation<=newstudycap and studyrows+1<=new_study_dispatches_max; unchangedownerchecks additionally enforceallhistorical/global/modulecaps.",
+    "Firstphase owner/header/initialhead/activeepochexactPB. LaterFP capturescurrentverifiedhead/activeepoch onlybeforeintent, historymustextendinitialanchor; CAS doesnotresnapshot/substituteafterintent. Anyunexpectedchange stops, noretry.",
+    "Forpre allownprefieldsnull. Forpost allpresent, sameowner/run/unit pre PHASE_COMMITTED row/output/checkpoint/request/epoch rederived; invalidbilledpre ->SKIPPED_INVALID_PRE journalonly, no newgrant/reservation/request. Uncertainpre halts.",
+    "FP omitsallitsdescendanthashes. RecomputeSeed/payload/envelope/FP/AdmittedPlan/RB/A/AH/Context/receipt/Intent inlistedacyclicorder, detachallvalues, assertunchangedrequest_binding(finalContext)==RB.",
+    "No arbitrarymessages/answer/model/ownerpath/opener/transport orplanoverrides. Fixedprivateworkspace/runnamespace; exactopaquecredentials via reviewedfactory only.",
+    "Approvalallowedmap hasexactlyone requestbinding; originalvalidate_approval/base_context/terms/quote/row/event checks unchanged. No newfields/kinds inowner events/header/tables.",
+    "Phasework start UTC/monotonic/boot arethe recorded durableintent values; unavailable/backwards/boot drift refuses before newnetwork/authority. Policyvalidity is UTC and within exacttermswindow, lease<=43200seconds.",
+    "Encodedmessagebytes<=100000, messages<=16 andinputbound=bytes+1024*messages<=1000000; requestbytes<=262144 independently. Quote/output/nativeusage exactfrozenlimits.",
+    "No new phase on any runtimeexception even ifreadonlydiagnosis laterprovesNO_COMMIT; a reviewedoperatorcontinuation isneeded. Invalidfinanciallyverifiedanswers arepredeclaredquality dispositions andcancontinue onlyunderregisteredattrition rules.",
+    "Code/oldrow/registration/anchor schemas remainexactV4; newlyversionedatomicbatch persistence isnot the oldappend algorithm andrequiresitsowncontrols/code/crash review.",
+    "Beforephaseintent require UTCstart+120seconds<=PB.valid_until andPBinterval containedinT.validity. SamefixedOSowner V5runnamespace/marker/lock acrossallworktrees, no outputroot replacement."
+  ],
+  "full_mock_contract": {
+    "primary": "OneMOCKPB/R/O with180units/new360callcap, lifetimelimits sufficientforbothknownMOCKpolicies",
+    "prior_history": "Preserveallinitialcharges/dispatches; fixtureincludesoriginalcompat-likepriorrow forcarryforward oracle",
+    "replay": "SecondexplicitMOCKPB/R/O/fixedrunID, samecompiledstudy/terms, ownpre lineage, sameowner; another360maxcalls, lifetimecapsneverreset",
+    "study_constraints": "Eachrelease separatelyenforces360/newstudycostcap; globalownerkeepscombined720+initialcounts andcosts",
+    "total": "720POST/atmost720stats/atmost720catalogfakecalls; allfake andchargedseparately, no assertiontwoREALruns deterministic"
+  },
+  "kind": "PRODUCTION_E02_SURVEY_V5_1_CLOSED_METHODS_PROPOSAL",
+  "limits": {
+    "catalog_GETs_per_phase_max": 1,
+    "compiled_study_bytes_max": 4194304,
+    "encoded_message_bytes_max": 100000,
+    "full_MOCK_two_policy_primary_replay_POSTs": 720,
+    "http_request_bytes_max": 262144,
+    "http_response_bytes_max": 2000000,
+    "http_total_seconds_each": 30,
+    "input_token_bound_max": 1000000,
+    "late_accounting": "No newcatalog/POST/stats afterphase deadline; alreadyinflightreply localcost/accounting mayfinish underoriginalauthority. Latecompleteverifiedbilling ->chargedTIMING_FAILURE/noanalyticanswer; missingbilling ->UNCERTAIN. No newlookupclaimafterdeadline.",
+    "message_count_max": 16,
+    "minimum_initial_free_disk_bytes": 536870912,
+    "model_POSTs_per_phase_max": 1,
+    "output_tokens_max": 4096,
+    "owner_history_events_max": 10000,
+    "owner_history_rows_max": 1024,
+    "phase_deadline_semantics": "Monotonicfromdurablephaseintent includingcatalog/lock/hash/I/O/POST/stats; cooperative, notOS guarantee",
+    "phase_proof_or_intent_bytes_each_max": 131072,
+    "phase_wall_seconds": 120,
+    "policy_review_assertion_bytes_each_max": 65536,
+    "socket_seconds": 15,
+    "statistics_GETs_per_phase_max": 1,
+    "study_lease_seconds_max": 43200,
+    "study_model_POSTs_max": 360,
+    "study_units_max": 180,
+    "whole_managed_owner_run_artifacts_bytes_max": 268435456
+  },
+  "parents": {
+    "configs/production_survey_v5_methods_proposal.json": "552a392a9ad8b0af09d59df5684b0c0308377ca024fc604e5ad0982b4089ff7a",
+    "docs/PRODUCTION_SURVEY_V5_METHODS_PROPOSAL.md": "67f1fa5ae180117cf21513a0bd0a075ed4a1157e2fcda201d692c828b4cf7202",
+    "reports/INDEPENDENT_AUDIT_PRODUCTION_SURVEY_V5_METHODS_SPECIFICATION_FINDINGS.json": "da0dfa5c61d0f4ded0edf194cf4ceeb0a7a3af51b423832d046aae085a24e379"
+  },
+  "preserved_code": {
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/owner_survey_client_v3.py": "284486fd4889c8cfa62739f06035118ef67a02f08a64cc453ee8f97c6ff24826",
+    "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+    "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+    "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+    "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+    "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+    "src/civiclab/survey_envelope_v2.py": "ac210fd41f2f8bffd733fcdef8b1b1813e9035fbeecc6902e8983d2dcecfc877",
+    "src/civiclab/survey_owner_execution_v3.py": "3d9ad9cf3848941363fdcc1c46b06882a0cf883eef80f2042f86a76cc6f823e0"
+  },
+  "remaining_gates": "S5Mre-review \u2192 S5AimplementationonlyafterPASS \u2192 S5Bclient \u2192 fullS5Cfakepipeline \u2192 independentactualcompatibility/reconciliation/source/science/price/ownerbudgetandfiniteS5Lrelease. Nonegranted.",
+  "restart_protocol": [
+    "Neverbootstrap/deleteowner orchooseanotherworkspace/runroot tohideintent. Existingintentnevertriggersnewgrant/reservation/POST automatically.",
+    "Readonlydiagnosis underfixedlocks mayproveNO_COMMIT onlyiforiginalownerverified andnoexpectedtriplet/receipt; mixed/torn evidenceUNKNOWN. Noautomaticrepeat evenafterNO_COMMIT.",
+    "Commit+anchor withlostack retainsSTARTED; markhalt/unknown conservatively, neverclaimanotherreceipt or dispatchfromreconstructedack.",
+    "POST/response/statistics uncertainty leavesoriginalfullhold andglobalbarrier. No inferred0bill, generationguess or externalrecovery supplied.",
+    "IfownphasealreadyPHASE_COMMITTED andexactcheckpoint/journal agrees, preapprovedcleanresume mayfinishlocalpairedbookkeeping withoutPOST; nextnewphase getsnewCAS/intent withinoriginalpolicy. Torn/foreign/uncommitted state blocks.",
+    "Two concurrentroots/policies compare-and-swap originalhead; one winsatomictriplet, otherrefuses withoutwriting/cap-substitution. Existingglobalunfinishedpreventsanothergrantaftercommit."
+  ],
+  "schema_version": 1,
+  "state_machine": [
+    {
+      "effects": "Noactualowner/key/cataloguntilvalidexternallyboundPB/R/O; actualdefaultnullrefuses.",
+      "state": "STATIC_VALIDATED"
+    },
+    {
+      "effects": "Fixedrunlock; immutableunit/phase/priorjournal/phaseclock; noownergrant.",
+      "state": "PHASE_INTENT_DURABLE"
+    },
+    {
+      "effects": "AtmostoneboundedcatalogGET after readonlyownerunfinished/prechecks; retainexactbodycreateonce/hash/provenancewithinartifactcap.",
+      "state": "PRICE_OBSERVED"
+    },
+    {
+      "effects": "ClosedFP/A/C/Intent with expectedhead anddeterministicreceipt; noPOST.",
+      "state": "GRANT_RESERVE_INTENT_DURABLE"
+    },
+    {
+      "effects": "AtomicAPPROVAL+PRICE_PROOF+RESERVE; no returnedackdoesnotmeanunreserved.",
+      "state": "OWNER_TRIPLET_COMMITTED"
+    },
+    {
+      "effects": "Normaltriplet+anchor+chargeverify andprivateack; nogenericreservecallagain.",
+      "state": "OWNER_ACK_VERIFIED"
+    },
+    {
+      "effects": "BeforeonefixedtransportPOST; source/clock/releaseddeadline recheck; reservationalreadyheld.",
+      "state": "POST_INTENT_DURABLE"
+    },
+    {
+      "effects": "Oneinvocationmax; no retry onnetwork/content/cancel.",
+      "state": "POST_ATTEMPTED"
+    },
+    {
+      "effects": "Safeobservedcost/uniqueID/model/ownanswerrecord; ownertransitionbeforestatsclaim.",
+      "state": "RESPONSE_SEEN"
+    },
+    {
+      "effects": "Exactlyoneoriginalownerclaim thenoneboundedGET ifphase/leasepermit; noGETifinvalidID/claim/late.",
+      "state": "STATISTICS_INTENT"
+    },
+    {
+      "effects": "Nativeprovider/usage/reasoning/aux/costagreement; SETTLED underoriginalauthority evenifclockexpired afterinflight.",
+      "state": "BILLING_VERIFIED"
+    },
+    {
+      "effects": "Exactownphaseoutput andbillingrefs; no ownercommitbeforewrite.",
+      "state": "CHECKPOINT_DURABLE"
+    },
+    {
+      "effects": "Originalcommit_phase verifiesexactcheckpoint; newphaseallowedonlyfromunambiguouscommittedstate.",
+      "state": "OWNER_COMMITTED"
+    },
+    {
+      "effects": "Reconstructanalysis/quality/attrition; replaynonewmodelcall.",
+      "state": "PAIRED_STATE_DURABLE"
+    },
+    {
+      "effects": "Anyexceptionhaltsstudy, preservefullknown/reserved/tornstate, noautorenew/reservation/modelretry. Invalidverified-billedanswer isexplicitqualityrecord, notexceptionrepair.",
+      "state": "HALTED"
+    }
+  ],
+  "status": "METHODS_ONLY_NOT_IMPLEMENTATION_OR_AUTHORITY"
+}
