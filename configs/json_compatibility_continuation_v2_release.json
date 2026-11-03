@@ -1,0 +1,146 @@
+{
+  "interpretation": {
+    "applicability": {
+      "byok_disabled": true,
+      "cache_bound_mode": "SUM_ALL_INPUT_COMPONENTS",
+      "conditional_overrides_absent_or_empty_reviewed": true,
+      "input_framing_bound_reviewed": true,
+      "non_reasoning_reviewed": true,
+      "non_text_fees_inapplicable_reviewed": true,
+      "text_only": true,
+      "tools_plugins_disabled": true
+    },
+    "catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+    "evidence_sha256": [
+      "64edb98d77fa918a303cd38dfa939e4a0b0d4c32d8f908e22ccc06c20849765b",
+      "33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e",
+      "d1dd5faa335a0f1a3e76b998893bba807d7456541fdab968519f46f41a9ac908",
+      "f9b2b473541a387a37b4630bc29ddc217f355f1ac3f2fb898201bff07c90a81e",
+      "2bd3dbdfc3f46f3b8aa9bd65cdc86e0e3170afe2610dc7b6596233864d04754f",
+      "4e443581146d5bfba5500dba17cf76a40d272d5441089dec70c0a527e51428da"
+    ],
+    "kind": "EXTERNAL_TEXT_PRICE_INTERPRETATION_V4",
+    "missing_prices": {
+      "azure": {
+        "input_cache_write": "0",
+        "input_cache_write_1h": "0",
+        "internal_reasoning": "0",
+        "request": "0"
+      },
+      "azure/swedencentral": {
+        "input_cache_write": "0",
+        "input_cache_write_1h": "0",
+        "internal_reasoning": "0",
+        "request": "0"
+      }
+    },
+    "model": "openai/gpt-4.1-nano",
+    "reported_provider": "Azure",
+    "requested_route": "azure",
+    "route_scope": "PROVIDER_FAMILY",
+    "valid_from_utc": "2026-11-03T18:09:08.802914+00:00",
+    "valid_until_utc": "2026-11-04T18:10:08.802914+00:00"
+  },
+  "kind": "NONPOLITICAL_JSON_COMPATIBILITY_RELEASE_V4",
+  "request": {
+    "envelope": {
+      "encoded_message_bytes": 228,
+      "input_token_bound": 2276,
+      "max_tokens": 32,
+      "message_count": 2,
+      "request_hash": "21215033b9732a8eb4c1019f1db76abe5790ad8feadaa47fb0b08a33528cb296",
+      "reserved_microusd": 340
+    },
+    "module": "E02",
+    "payload": {
+      "max_completion_tokens": 32,
+      "messages": [
+        {
+          "content": "This is a nonpolitical API compatibility check. Respond only in JSON.",
+          "role": "system"
+        },
+        {
+          "content": "Return exactly one JSON object with the key ok and the boolean value true. Do not add text.",
+          "role": "user"
+        }
+      ],
+      "model": "openai/gpt-4.1-nano",
+      "plugins": [],
+      "provider": {
+        "allow_fallbacks": false,
+        "max_price": {
+          "completion": 0.44,
+          "prompt": 0.11,
+          "request": 0.0
+        },
+        "only": [
+          "azure"
+        ],
+        "require_parameters": true
+      },
+      "response_format": {
+        "type": "json_object"
+      },
+      "seed": 20261103,
+      "stream": false,
+      "temperature": 0,
+      "tool_choice": "none",
+      "tools": []
+    },
+    "phase": "compatibility",
+    "plan_hash": "b718b69ad938cbbc78cb04d779eefab134b1ea34537a08d0ff56006c416af1ff",
+    "run_id": "compatibility-20261103-gpt41nano-03",
+    "sampling": {
+      "retries": 0,
+      "seed": 20261103,
+      "temperature": 0
+    },
+    "unit_id": "json-compatibility-v4"
+  },
+  "schema_version": 1,
+  "source_pins": {
+    "civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+    "civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+    "civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+    "civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+    "civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+  },
+  "terms": {
+    "components_by_tag": {
+      "azure": {
+        "completion": "0.0000004",
+        "input_cache_read": "0.00000003",
+        "input_cache_write": "0",
+        "input_cache_write_1h": "0",
+        "internal_reasoning": "0",
+        "prompt": "0.0000001",
+        "request": "0"
+      },
+      "azure/swedencentral": {
+        "completion": "0.00000044",
+        "input_cache_read": "0.000000033",
+        "input_cache_write": "0",
+        "input_cache_write_1h": "0",
+        "internal_reasoning": "0",
+        "prompt": "0.00000011",
+        "request": "0"
+      }
+    },
+    "initial_catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+    "input_usd_per_token": "0.000000143",
+    "interpretation_hash": "01f8e4c0d2403d091baca34da6b246f34fe44deccacfa8d9ceb4e3a6d053c94d",
+    "kind": "REVIEWED_TEXT_PRICE_CONTRACT_V4",
+    "metadata_semantic_hash": "0bcf5eede902a12a3e9385daed89c2166400934b7d0d0269e0c7fe91eaf870e6",
+    "model": "openai/gpt-4.1-nano",
+    "output_parameter": "max_completion_tokens",
+    "output_usd_per_token": "0.00000044",
+    "reported_provider": "Azure",
+    "request_fee_usd": "0",
+    "requested_route": "azure",
+    "route_scope": "PROVIDER_FAMILY",
+    "valid_from_utc": "2026-11-03T18:09:08.802914+00:00",
+    "valid_until_utc": "2026-11-04T18:10:08.802914+00:00"
+  }
+}
