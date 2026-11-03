@@ -1,0 +1,249 @@
+{
+  "accepted_coverage_promoted": false,
+  "accepted_document_states_remain": 12,
+  "artifact_hash_ledger": {
+    "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/artifact_hashes.local.json",
+    "sha256": "100b23ae7876307c180950bd364d41a295be1a8236815a510cc70a63f83a387b"
+  },
+  "artifact_hashes": {
+    "full_nine_cell_projection.local.json": "59f90ab697f87dca31d5fe897206d6098d32fe7dc95482fb919d79687aa4145a",
+    "manifest.local.json": "52e7eb6f097534442658139bd1bf6c5f839bad53ddf61d3feb96d49abf37135f",
+    "primary_diagnostics.local.json": "02a02643f3dded40faec287ba18eb8c5a8fbeaecf2d9e203d9f4c2d3a88a26a7",
+    "primary_records.local.json": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea",
+    "replay_diagnostics.local.json": "02a02643f3dded40faec287ba18eb8c5a8fbeaecf2d9e203d9f4c2d3a88a26a7",
+    "replay_records.local.json": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea",
+    "safe_diagnostics_pair.local.json": "c91c83102cbbe63a91f43e6c8156f3a1fa0eb7e90717ac8ba3b2100d5fd2df69",
+    "verification.local.json": "4ffb6ee1aa397ac1076f761f839fc433b1067395681f509387ea6c0102177850"
+  },
+  "candidate_or_source_adoption": false,
+  "checks": {
+    "all5_full_record_objects_and_nine_cell_projection_replay_equal": true,
+    "all5_source_bytes_equal_frozen_contract": true,
+    "all_local_artifact_filenames_marked_local": true,
+    "all_typed_UNKNOWN_states_preserved": true,
+    "byte_exact_diagnostics_replay": true,
+    "byte_exact_local_records_replay": true,
+    "cost_usd": 0,
+    "four_Approved_one_Withdrawn_preserved": true,
+    "full_nine_cell_projection_canonical_sha256": "e92b68b5b18dc716263504e4a5286db64150f1362f68f3fd464f095b3f94051e",
+    "hash_ledger_sha256_independently_rechecked_by_worker": true,
+    "implementation_and_release_pins_before_after_equal": true,
+    "local_artifact_directory_ignored_by_git": true,
+    "model_calls": 0,
+    "outcomes": [
+      {
+        "phase": "primary",
+        "status": "COMPLETED_SOURCE_LOCAL_CHECK"
+      },
+      {
+        "phase": "replay",
+        "status": "COMPLETED_SOURCE_LOCAL_CHECK"
+      }
+    ],
+    "public_report_candidate_name_literal_scan_clear": true,
+    "recorded_readiness_runs": 0,
+    "source_party_status_date_and_blank_fields_preserved": true,
+    "source_pre_post_hashes_equal": true
+  },
+  "cost_usd": 0,
+  "details_or_hidden_API_calls": 0,
+  "external_ocr_calls": 0,
+  "final_ballots_accepted": 0,
+  "geography_accepted": false,
+  "helper": "civiclab.e01.idaho_v1_8_1.read_sources",
+  "implementation_release_pins": {
+    "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json": "cd90a92c4ba3a6984ccbe2e6f9b5180c0cb0de09f9bfe4cab3ccf152add5683b",
+    "docs/E01_ID_STANDALONE_READER_V1_8_1_REMEDIATION.md": "ea2e72ecec8d023a0762c42ee45bf802961df4fc5fdca631efb0a50ea1fd81bd",
+    "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_1_REMEDIATION.json": "15787bab21e2405f59dbdc13c2cfe3dcf31201d0b818f57c30e190a53142e958",
+    "src/civiclab/e01/idaho_v1_8_1.py": "1413f9a6e784e88d82b0ffe0beb2e8323775c5a8b55a1f5fc223f4a2505c2bb7",
+    "tests/test_e01_idaho_v1_8_1.py": "65b58cca8603c5b44afdfe2b09de624b4d8dfc9389b9ee67f566a5f19146ab73"
+  },
+  "input_hashes_after": {
+    "id_browser_federal": {
+      "bytes": 68620,
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875"
+    },
+    "id_browser_senate": {
+      "bytes": 29871,
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30"
+    },
+    "id_browser_visible": {
+      "bytes": 203250,
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0"
+    },
+    "id_candidate_search": {
+      "bytes": 15841,
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a"
+    },
+    "id_general_index": {
+      "bytes": 218881,
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4"
+    }
+  },
+  "input_hashes_before": {
+    "id_browser_federal": {
+      "bytes": 68620,
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875"
+    },
+    "id_browser_senate": {
+      "bytes": 29871,
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30"
+    },
+    "id_browser_visible": {
+      "bytes": 203250,
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0"
+    },
+    "id_candidate_search": {
+      "bytes": 15841,
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a"
+    },
+    "id_general_index": {
+      "bytes": 218881,
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4"
+    }
+  },
+  "latest_upstream_completeness_accepted": false,
+  "local_artifact_directory": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1",
+  "model_calls": 0,
+  "new_GETs": 0,
+  "new_browser_calls": 0,
+  "outer_writer": "New ignored local directory; exclusive creates; helper itself read-only/no RunStore",
+  "preflight_id": "e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1",
+  "private_named_records_unbundled": true,
+  "public_candidate_or_contact_literals_exported": false,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "readiness_run": false,
+  "readiness_schema_integration": false,
+  "release": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_ID_V1_8_1_REMEDIATION.json",
+    "sha256": "15787bab21e2405f59dbdc13c2cfe3dcf31201d0b818f57c30e190a53142e958"
+  },
+  "runtime_contract": {
+    "path": "configs/e01_id_standalone_runtime_contract_v1_8_1_candidate.json",
+    "sha256": "cd90a92c4ba3a6984ccbe2e6f9b5180c0cb0de09f9bfe4cab3ccf152add5683b"
+  },
+  "safe_allowlisted_diagnostics": {
+    "Approved_count": 4,
+    "Withdrawn_count": 1,
+    "all_three_full_nine_cell_tuples_agree": true,
+    "blank_source_district_and_writein_cells_preserved": true,
+    "candidate_name_input_evidence": [
+      {
+        "kind": "UNKNOWN",
+        "reason": "INPUT_VALUE_NOT_CAPTURED"
+      },
+      {
+        "kind": "UNKNOWN",
+        "reason": "INPUT_VALUE_NOT_CAPTURED"
+      },
+      {
+        "kind": "UNKNOWN",
+        "reason": "INPUT_VALUE_NOT_CAPTURED"
+      }
+    ],
+    "capture_observed_clocks_utc": [
+      "2026-11-03T15:22:51.233000+00:00",
+      "2026-11-03T15:23:56.646000+00:00",
+      "2026-11-03T15:24:13.622000+00:00"
+    ],
+    "capture_pagination": [
+      "1 – 50 of 592",
+      "1 – 15 of 15",
+      "1 – 5 of 5"
+    ],
+    "cost_usd": 0,
+    "final_ballots_accepted": 0,
+    "header_semantic_columns": [
+      "BALLOT NAME",
+      "DISTRICT TYPE",
+      "OFFICE",
+      "DISTRICT",
+      "PARTY",
+      "DATE FILED",
+      "WRITE-IN",
+      "STATUS",
+      "ACTIONS"
+    ],
+    "model_calls": 0,
+    "readiness_integration": false,
+    "safe_literal_party_status_date_inventory": [
+      {
+        "date_filed": "02/23/2026",
+        "party": "Democratic",
+        "status": "Withdrawn"
+      },
+      {
+        "date_filed": "02/25/2026",
+        "party": "Independent",
+        "status": "Approved"
+      },
+      {
+        "date_filed": "02/26/2026",
+        "party": "Independent",
+        "status": "Approved"
+      },
+      {
+        "date_filed": "02/27/2026",
+        "party": "Libertarian",
+        "status": "Approved"
+      },
+      {
+        "date_filed": "02/23/2026",
+        "party": "Republican",
+        "status": "Approved"
+      }
+    ],
+    "scope": "OBSERVED_SOURCE_LOCAL_STATUS_HISTORY_ONLY",
+    "source_adoption": false,
+    "source_election_context": "November 03, 2026 - 2026 GENERAL",
+    "source_hashes": {
+      "id_browser_federal": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+      "id_browser_senate": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+      "id_browser_visible": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+      "id_candidate_search": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+      "id_general_index": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4"
+    },
+    "source_local_row_count": 5,
+    "source_title_role": "SOURCE_LABEL_NOT_FINAL_ACCEPTANCE",
+    "status_checkbox_evidence": [
+      {
+        "kind": "UNKNOWN",
+        "reason": "INITIAL_ARTIFACT_HAS_NO_CHECKBOX_STATE_ARRAY"
+      },
+      {
+        "kind": "OBSERVED_BOTH_SELECTED",
+        "labels": [
+          "Approved",
+          "Withdrawn"
+        ]
+      },
+      {
+        "kind": "OBSERVED_BOTH_SELECTED",
+        "labels": [
+          "Approved",
+          "Withdrawn"
+        ]
+      }
+    ],
+    "typed_unknown_reasons": {
+      "latest_amendment_completeness": "CAPTURED_PORTAL_CONTEXT_NOT_LATEST_UPSTREAM_COMPLETENESS_CERTIFICATE",
+      "legal_nomination_status": "NO_INDEPENDENT_LEGAL_NOMINATION_ADJUDICATION",
+      "printed_ballot_status": "PORTAL_APPROVAL_AND_FINAL_TITLE_ARE_NOT_PRINTED_BALLOT_CERTIFICATION",
+      "write_in_status": "BLANK_SOURCE_CELL_DOES_NOT_ESTABLISH_BOOLEAN_FALSE"
+    },
+    "unfiltered_global_completeness": "UNKNOWN_NOT_CAPTURED"
+  },
+  "status": "WORKER_EXACT_SOURCE_PREFLIGHT_AND_REPLAY_PENDING_INDEPENDENT_SOURCE_RESULT_PRIVACY_REVIEW",
+  "task_id": "E01_ID_STANDALONE_V1_8_1_ACTUAL_PREFLIGHT",
+  "unfinished_document_jobs_remain": 21
+}
