@@ -1,0 +1,77 @@
+{
+  "api_spend_usd": 0,
+  "argv": [
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/civiclab",
+    "--root",
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-anes-selected-restore-i5az1wo3",
+    "restore-inputs",
+    "--from",
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/raw/anes_upstream_reacquisition",
+    "--only",
+    "anes_timeseries_2024_csv_20260519.zip",
+    "--apply"
+  ],
+  "isolated_root": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-anes-selected-restore-i5az1wo3",
+  "model_calls": 0,
+  "restored_file_hashes": {
+    "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf": "fbad3417cc50b18977563e128f00dfd164ab1d50c5de694134fc57196436a799"
+  },
+  "results": [
+    {
+      "apply": true,
+      "checks": [
+        {
+          "kind": "source",
+          "path": "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip",
+          "status": "IMPORTED"
+        },
+        {
+          "kind": "member",
+          "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf",
+          "status": "EXTRACTED"
+        },
+        {
+          "kind": "member",
+          "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv",
+          "status": "EXTRACTED"
+        }
+      ],
+      "inventory_scope": "Explicit selected inputs only; not complete inventory restoration",
+      "limits": "Local registered-download restoration only. It does not establish upstream release authenticity, rights, or complete public reacquisition.",
+      "selected_inputs": [
+        "anes_timeseries_2024_csv_20260519.zip"
+      ],
+      "status": "PASS_SELECTED_LOCAL_RESTORE"
+    },
+    {
+      "apply": true,
+      "checks": [
+        {
+          "kind": "source",
+          "path": "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip",
+          "status": "VERIFIED_EXISTING"
+        },
+        {
+          "kind": "member",
+          "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf",
+          "status": "VERIFIED_EXISTING"
+        },
+        {
+          "kind": "member",
+          "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv",
+          "status": "VERIFIED_EXISTING"
+        }
+      ],
+      "inventory_scope": "Explicit selected inputs only; not complete inventory restoration",
+      "limits": "Local registered-download restoration only. It does not establish upstream release authenticity, rights, or complete public reacquisition.",
+      "selected_inputs": [
+        "anes_timeseries_2024_csv_20260519.zip"
+      ],
+      "status": "PASS_SELECTED_LOCAL_RESTORE"
+    }
+  ],
+  "scope": "Actual independently matched upstream ANES archive restored into an otherwise empty source workspace, exact replay verified. Selected source only; other inventory inputs remain absent. No whole-inventory or scientific acceptance.",
+  "status": "PASS_LEAD_SELECTED_RESTORE_PENDING_INDEPENDENT_REVIEW"
+}

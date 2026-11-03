@@ -11,9 +11,20 @@ import zipfile
 from .common import sha256_file
 
 
-def restore_inputs(root, source_directory, apply=False):
+def restore_inputs(root, source_directory, apply=False, only=None):
     root=Path(root).resolve();source_directory=Path(source_directory).resolve()
     inventory=json.loads((root/'configs/SOURCE_INVENTORY.json').read_text())
+    entries=inventory['archives']+inventory.get('documents',[])
+    selected=None
+    if only is not None:
+        if not isinstance(only,(list,tuple)) or not only or any(not isinstance(n,str) or not n for n in only):
+            raise ValueError('selected inputs must be a nonempty filename list')
+        if len(set(only))!=len(only):raise ValueError('duplicate selected input')
+        selected=set(only)
+        for name in selected:
+            matches=[e for e in entries if e.get('supplied_filename')==name and e.get('local_archive',e.get('local_path'))]
+            if len(matches)!=1:raise ValueError('selected input missing or ambiguous in inventory: '+name)
+        entries=[e for e in entries if e.get('supplied_filename') in selected]
     checks=[]
     def destination(name):
         p=(root/name).resolve()
@@ -33,7 +44,7 @@ def restore_inputs(root, source_directory, apply=False):
             status='IMPORTED'
         checks.append({'path':str(target.relative_to(root)),'status':status,'kind':label})
         return status in ('VERIFIED_EXISTING','IMPORTED')
-    for entry in inventory['archives']+inventory.get('documents',[]):
+    for entry in entries:
         name=entry.get('local_archive',entry.get('local_path'))
         if not name:continue
         target=destination(name)
@@ -58,6 +69,8 @@ def restore_inputs(root, source_directory, apply=False):
                         with path.open('xb') as dst:dst.write(raw);dst.flush();os.fsync(dst.fileno())
                         status='EXTRACTED'
                     checks.append({'path':str(path.relative_to(root)),'kind':'member','status':status})
-    return {'status':'BLOCKED' if any(c['status'].startswith('BLOCKED') for c in checks) else 'PASS_LOCAL_RESTORE' if apply else 'PLAN',
+    return {'status':'BLOCKED' if any(c['status'].startswith('BLOCKED') for c in checks) else ('PASS_SELECTED_LOCAL_RESTORE' if selected else 'PASS_LOCAL_RESTORE') if apply else 'PLAN',
             'apply':apply,'checks':checks,
+            'selected_inputs':sorted(selected) if selected else None,
+            'inventory_scope':'Explicit selected inputs only; not complete inventory restoration' if selected else 'All registered inputs',
             'limits':'Local registered-download restoration only. It does not establish upstream release authenticity, rights, or complete public reacquisition.'}

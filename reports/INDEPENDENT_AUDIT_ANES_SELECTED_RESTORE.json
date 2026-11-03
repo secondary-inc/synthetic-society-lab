@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:05:18.756481+00:00",
+  "status": "PASS_SELECTED_ANES_LOCAL_RESTORE_DELTA",
+  "independent_workspace": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-anes-restore-9ujt1wuq",
+  "actual_cli_plan_apply_replay": [
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/civiclab",
+        "--root",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-anes-restore-9ujt1wuq/restored",
+        "restore-inputs",
+        "--from",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/raw/anes_upstream_reacquisition",
+        "--only",
+        "anes_timeseries_2024_csv_20260519.zip"
+      ],
+      "exit_code": 0,
+      "result": {
+        "status": "PLAN",
+        "apply": false,
+        "checks": [
+          {
+            "path": "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip",
+            "status": "READY_TO_IMPORT",
+            "kind": "source"
+          }
+        ],
+        "selected_inputs": [
+          "anes_timeseries_2024_csv_20260519.zip"
+        ],
+        "inventory_scope": "Explicit selected inputs only; not complete inventory restoration",
+        "limits": "Local registered-download restoration only. It does not establish upstream release authenticity, rights, or complete public reacquisition."
+      }
+    },
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/civiclab",
+        "--root",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-anes-restore-9ujt1wuq/restored",
+        "restore-inputs",
+        "--from",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/raw/anes_upstream_reacquisition",
+        "--only",
+        "anes_timeseries_2024_csv_20260519.zip",
+        "--apply"
+      ],
+      "exit_code": 0,
+      "result": {
+        "status": "PASS_SELECTED_LOCAL_RESTORE",
+        "apply": true,
+        "checks": [
+          {
+            "path": "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip",
+            "status": "IMPORTED",
+            "kind": "source"
+          },
+          {
+            "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf",
+            "kind": "member",
+            "status": "EXTRACTED"
+          },
+          {
+            "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv",
+            "kind": "member",
+            "status": "EXTRACTED"
+          }
+        ],
+        "selected_inputs": [
+          "anes_timeseries_2024_csv_20260519.zip"
+        ],
+        "inventory_scope": "Explicit selected inputs only; not complete inventory restoration",
+        "limits": "Local registered-download restoration only. It does not establish upstream release authenticity, rights, or complete public reacquisition."
+      }
+    },
+    {
+      "argv": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/civiclab",
+        "--root",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-independent-anes-restore-9ujt1wuq/restored",
+        "restore-inputs",
+        "--from",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/raw/anes_upstream_reacquisition",
+        "--only",
+        "anes_timeseries_2024_csv_20260519.zip",
+        "--apply"
+      ],
+      "exit_code": 0,
+      "result": {
+        "status": "PASS_SELECTED_LOCAL_RESTORE",
+        "apply": true,
+        "checks": [
+          {
+            "path": "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip",
+            "status": "VERIFIED_EXISTING",
+            "kind": "source"
+          },
+          {
+            "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf",
+            "kind": "member",
+            "status": "VERIFIED_EXISTING"
+          },
+          {
+            "path": "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv",
+            "kind": "member",
+            "status": "VERIFIED_EXISTING"
+          }
+        ],
+        "selected_inputs": [
+          "anes_timeseries_2024_csv_20260519.zip"
+        ],
+        "inventory_scope": "Explicit selected inputs only; not complete inventory restoration",
+        "limits": "Local registered-download restoration only. It does not establish upstream release authenticity, rights, or complete public reacquisition."
+      }
+    }
+  ],
+  "restored_exact_files": {
+    "data/raw/anes_2024/anes_timeseries_2024_csv_20260519.zip": "31082da127f1ebcfb1d2736ba650d52cd67a4a6ab13fbe639c2db2515779773c",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_userguidecodebook_20260519.pdf": "fbad3417cc50b18977563e128f00dfd164ab1d50c5de694134fc57196436a799",
+    "data/raw/anes_2024/extracted/anes_timeseries_2024_csv_20260519.csv": "f80a276e64a5653abd6a9d1dcd96b94717367d39b21152630fa9e30c46cf30d7"
+  },
+  "invalid_selection_guards": [
+    {
+      "selection": [],
+      "rejected_before_writes": true
+    },
+    {
+      "selection": [
+        "anes_timeseries_2024_csv_20260519.zip",
+        "anes_timeseries_2024_csv_20260519.zip"
+      ],
+      "rejected_before_writes": true
+    },
+    {
+      "selection": [
+        "notregistered.zip"
+      ],
+      "rejected_before_writes": true
+    },
+    {
+      "selection": [
+        "anes_timeseries_2024_csv_20260519.zip",
+        "notregistered.zip"
+      ],
+      "rejected_before_writes": true
+    },
+    {
+      "selection": "ambiguous exact filename",
+      "rejected_before_writes": true
+    },
+    {
+      "selection": "CLI duplicate",
+      "rejected_before_writes": true
+    }
+  ],
+  "existing_drift_preserved": true,
+  "default_full_inventory_still_BLOCKED_when_other_inputs_missing": true,
+  "targeted_tests": 3,
+  "code_files": {
+    "src/civiclab/intake.py": "bb46a96c1d88f366476f809b7dcb0477c4c40902235848f9d01ad88e9fc3e0cd",
+    "src/civiclab/cli.py": "9c696f80051e32ebaa3e19ec67ba91828ed19f2a6a948d5812b3b9d84f8c87e0",
+    "tests/test_intake.py": "ad21897d96ba00dd2c158ed8f0718d6aebd243e7740f5cba7342cedcd660a49f",
+    "docs/ANES_UPSTREAM_REACQUISITION.md": "38dba2e90470727566348f2396488c04a84bf5f1e50928664dfeb13c9490ae26"
+  },
+  "scope": "Selected archive and registered two members only; complete inventory/remote CI/scientific acceptance not inferred. No source download performed.",
+  "model_calls": 0,
+  "cost_usd": 0
+}

@@ -20,6 +20,7 @@ def main():
     restore=commands.add_parser('restore-inputs')
     restore.add_argument('--from',type=Path,required=True,dest='source_directory')
     restore.add_argument('--apply',action='store_true')
+    restore.add_argument('--only',action='append',dest='selected_inputs',help='Exact registered supplied filename; repeat for an explicit subset')
     completion=commands.add_parser('completion')
     completion.add_argument('--out',type=Path,default=Path('data/processed/orchestration/completion.json'))
     pack=commands.add_parser('repro-pack')
@@ -64,7 +65,7 @@ def main():
         return
     if args.command=='restore-inputs':
         from .intake import restore_inputs
-        result=restore_inputs(args.root,args.source_directory,args.apply)
+        result=restore_inputs(args.root,args.source_directory,args.apply,only=args.selected_inputs)
         print(json.dumps(result,indent=2))
         if result['status']=='BLOCKED':raise SystemExit(2)
         return
