@@ -1,0 +1,99 @@
+{
+  "actual_model_calls": 0,
+  "archive": {
+    "bytes": 6992183,
+    "path": "data/processed/reproducibility/current-a856b96-20261103/committed-source.zip",
+    "sha256": "1862da650222bc81161dbf5523b394d9db30fbfd1ec442ac9814f6154219bfc3"
+  },
+  "changed_git_archive_files": [],
+  "checkout": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-current-a856b96-xphp83lp/checkout",
+  "commit": "a856b96e3833d516c6bef3c8c1bc5b4bed7704f4",
+  "controller_receipts_renewed": false,
+  "development_compute_unpriced": true,
+  "fix_status": "SEPARATE_TEST_ONLY_CORRECTION_PENDING_INDEPENDENT_REVIEW",
+  "fixture_source_validation": {
+    "exit_code": 0,
+    "log": "data/processed/reproducibility/current-a856b96-20261103/fixture-source-validation.log",
+    "sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5"
+  },
+  "fixture_tests": {
+    "cause": "Frozen historical proposal absolute lexical path was compared to relocated current checkout root; metadata is explicitly not a release or filesystem observation.",
+    "errors": 0,
+    "failure": "test_e02_f_wy_release_proposal_v1.ProposalTests.test_output_is_lexical_and_new_proposal_only",
+    "failures": 1,
+    "log": "reports/CLEAN_RESTORE_A856B96_767_FIXTURES_FAILURE_LOG.txt",
+    "seconds": 370.189,
+    "sha256": "b25a2c57337e36d94ccfdb0e729660e0272412ce559819839c50ddf224f4e108",
+    "tests": 767
+  },
+  "model_API_spend_usd": 0,
+  "original_test_preservation": {
+    "path": "tests/fixtures/historical/e02_f_wy_release_proposal_v1_test_original.py.txt",
+    "sha256": "24d795a3753d215ecacab0d05e4fefa4c68d34ecdbd07913b4128a2b80a4c180"
+  },
+  "prior_360_test_archive_unchanged": true,
+  "private_sources_runs_or_credential_environment_copied": false,
+  "recorded_at_utc": "2026-11-03T18:50:06.907605+00:00",
+  "runtime": {
+    "packages": {
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "contourpy": "1.4.0",
+      "cryptography": "50.0.2",
+      "cycler": "0.12.1",
+      "fonttools": "4.68.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pdfminer.six": "20251230",
+      "pdfplumber": "0.11.9",
+      "pillow": "13.0.0",
+      "pip": "25.0.1",
+      "pycparser": "3.12",
+      "pyparsing": "3.3.3",
+      "pypdf": "6.10.0",
+      "pypdfium2": "5.14.0",
+      "python-dateutil": "4.0.0",
+      "scipy": "1.16.3",
+      "synthetic-society-lab": "0.1.0",
+      "tzdata": "2026.6"
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "source_origin": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-current-a856b96-xphp83lp/checkout/src/civiclab/__init__.py"
+  },
+  "schema_version": 1,
+  "scope": "CLEAN_COMMITTED_ENGINEERING_FIXTURES_ONLY_NOT_SCIENCE_OR_REMOTE_CI",
+  "status": "FAIL_CLEAN_RESTORATION_ONE_HISTORICAL_PROPOSAL_PATH_ASSERTION",
+  "steps": [
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-a856b96-20261103/create-venv.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "create-venv",
+      "seconds": 0.8848292090115137
+    },
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-a856b96-20261103/install-runtime.log",
+      "log_sha256": "890c4388a538810843369571db4db1f5df7b02b61e9dea54a8874811776f2882",
+      "name": "install-runtime",
+      "seconds": 4.6911052920040675
+    },
+    {
+      "exit_code": 0,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-a856b96-20261103/install-project.log",
+      "log_sha256": "3c23cf50bb1d8fdb5fe5e9cab78757aa6ab48a6d0d68d239f99fda1a6439f99c",
+      "name": "install-project",
+      "seconds": 0.9541000829776749
+    },
+    {
+      "exit_code": 1,
+      "log": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/current-a856b96-20261103/fixture-tests.log",
+      "log_sha256": "b25a2c57337e36d94ccfdb0e729660e0272412ce559819839c50ddf224f4e108",
+      "name": "fixture-tests",
+      "seconds": 370.5446848749998
+    }
+  ],
+  "unchanged_git_archive_files": 963
+}

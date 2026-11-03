@@ -92,7 +92,17 @@ class ProposalTests(unittest.TestCase):
         self.assertFalse(relative.is_absolute())
         self.assertNotIn('..', relative.parts)
         self.assertEqual(relative.parts[:3], ('data','processed','e02_F_wy_private'))
-        self.assertEqual(str(ROOT/relative), self.p['proposed_canonical_output_directory'])
+        # This frozen proposal records its author's historical lexical path.
+        # A restored checkout must not relabel that string as a fresh location
+        # observation or rewrite it to match the current machine.
+        self.assertEqual(digest(PROPOSAL), 'f39e262dd8b706569092def719711cdbefdafd7efaf20aa2d97a3206605e8aa5')
+        historical = Path(self.p['proposed_canonical_output_directory'])
+        self.assertTrue(historical.is_absolute())
+        self.assertNotIn('..', historical.parts)
+        self.assertEqual(historical.parts[-len(relative.parts):], relative.parts)
+        self.assertEqual(self.p['status'], 'PROPOSAL_ONLY_NOT_A_RELEASE')
+        original = 'tests/fixtures/historical/e02_f_wy_release_proposal_v1_test_original.py.txt'
+        self.assertEqual(digest(original), '24d795a3753d215ecacab0d05e4fefa4c68d34ecdbd07913b4128a2b80a4c180')
         self.assertFalse(self.p['output_existence_and_canonicalization_verified'])
 
     def test_bootstrap_and_enforcement_remain_blocked(self):
