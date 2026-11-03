@@ -18,7 +18,7 @@ The production factory always refuses before any key lookup or transport. No rea
 
 ## Execution and evidence
 
-Run `.venv/bin/python -m unittest tests.test_live_billing_v2 tests.test_survey_execution tests.test_budget -q`. The candidate has16 new tests and runs alongside the existing24 bridge/adapter tests. No source/person data, credentials or real inference are used. Positive policy amounts, rates, native usage and charges in these cases are authored simulation only; actual experimental model/API spending is zero.
+Run `.venv/bin/python -m unittest tests.test_live_billing_v2 tests.test_survey_execution tests.test_budget -q`. The initial v1.0 candidate had16 new tests alongside the existing24 bridge/adapter tests. The v1.1 remediation totals are recorded in the versioned section below. No source/person data, credentials or real inference are used. Positive policy amounts, rates, native usage and charges in these cases are authored simulation only; actual experimental model/API spending is zero.
 
 Cases cover owner-wide cross-run/module ceilings and restart; create-once/missing-state refusal; exact phase deduplication under changed request/seed/terms; reservation-before-POST; billing-versus-durable-phase distinction; serving/null/ID/native-token/fee checks; timeout/cancellation and preserved overruns; malformed/refused answers without retries; unsafe metadata omission; counter corruption; torn anchor persistence; exact phase checkpoint; actual spawned-process death before POST, before stats, after settlement and between database/anchor commit; two-process reservation race; nullable chat cost and foreign-generation cost; and disabled production factory. Zero extra transport calls are asserted on refusal.
 
