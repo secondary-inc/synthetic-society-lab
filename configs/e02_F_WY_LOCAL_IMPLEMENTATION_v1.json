@@ -1,0 +1,3001 @@
+{
+  "actual_approvals": {
+    "adapter_code": null,
+    "disclosure": null,
+    "exact_source": null,
+    "execution": null,
+    "fit": null
+  },
+  "actual_authority": 0,
+  "limits": {
+    "archive_body_bytes": 402653184,
+    "batch_elapsed_seconds": 10800,
+    "body_bytes": 3221225472,
+    "companion_bytes": 2097152,
+    "free_disk_bytes": 1073741824,
+    "line_bytes": 65536,
+    "log_bytes": 71303168,
+    "members": 4,
+    "minimum_initial_free_disk_bytes": 5771362304,
+    "network_seconds": 7200,
+    "processing_seconds": 3600,
+    "request_seconds": 1800,
+    "requests": 50,
+    "retained_bytes": 4294967296,
+    "rss_stop_bytes": 536870912,
+    "state_processing_seconds": 300,
+    "state_rows": 3000000,
+    "state_uncompressed_bytes": 2147483648,
+    "sweep_rows": 17000000,
+    "sweep_uncompressed_bytes": 17179869184,
+    "two_sweep_rows": 34000000,
+    "two_sweep_uncompressed_bytes": 34359738368,
+    "unique_source_bytes": 3221225472,
+    "watchdog_poll_seconds": 0.1
+  },
+  "metadata_hashes": {
+    "accuracy_pdf": "edbc9973f8cdf1a6528bb9acc450d83e230edc66421aa708ec9892a087b86447",
+    "dictionary_txt": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+    "file_index": "156a5263721b09cb60d8ed9a1bbbcc21b8ef156f4b7bdc5a8c27f4c4df9ca507",
+    "record_counts_csv": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+    "user_guide_pdf": "77f9b74efef7cb9d3eb8ffa4dc875df9e15765432d6134ead3691a5fe8b35e1a"
+  },
+  "metadata_sources": {
+    "accuracy_pdf": {
+      "bytes": 434590,
+      "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+      "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/accuracy_pdf.pdf",
+      "retrieved_at_utc": "2026-11-03T12:31:44.866892+00:00",
+      "sha256": "edbc9973f8cdf1a6528bb9acc450d83e230edc66421aa708ec9892a087b86447",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2020_2024AccuracyPUMS.pdf"
+    },
+    "dictionary_txt": {
+      "bytes": 307894,
+      "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+      "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/dictionary_txt.txt",
+      "retrieved_at_utc": "2026-11-03T12:31:44.479287+00:00",
+      "sha256": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.txt"
+    },
+    "file_index": {
+      "bytes": 58152,
+      "http_last_modified": "Sun, 01 Nov 2026 15:48:13 GMT",
+      "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/file_index.html",
+      "retrieved_at_utc": "2026-11-03T12:31:44.137346+00:00",
+      "sha256": "156a5263721b09cb60d8ed9a1bbbcc21b8ef156f4b7bdc5a8c27f4c4df9ca507",
+      "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/"
+    },
+    "record_counts_csv": {
+      "bytes": 4782,
+      "http_last_modified": "Thu, 05 Mar 2026 12:30:03 GMT",
+      "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/record_counts_csv.csv",
+      "retrieved_at_utc": "2026-11-03T12:31:44.302611+00:00",
+      "sha256": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_20_24.csv"
+    },
+    "user_guide_pdf": {
+      "bytes": 474159,
+      "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+      "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/user_guide_pdf.pdf",
+      "retrieved_at_utc": "2026-11-03T12:31:44.684447+00:00",
+      "sha256": "77f9b74efef7cb9d3eb8ffa4dc875df9e15765432d6134ead3691a5fe8b35e1a",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/2020_2024ACS_PUMS_User_Guide.pdf"
+    }
+  },
+  "parent_provenance": {
+    "approval_transferred": false,
+    "old_C_data_or_ledger_imported": false,
+    "old_GET_charge_refunded": false,
+    "old_attempt": "wy-05da99bbf77c454e9e616b4ba624fa61",
+    "old_source_archive_sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73",
+    "source_contract_sha256": "f5cc616cf06fcd6904bc8cbf11b63f243b5b28883130dca9f37d104601db4d4d"
+  },
+  "period": "2020-2024 five-year",
+  "proposal": "configs/e02_F_WY_LOCAL_SOURCE_PROPOSAL_v1.json",
+  "protocol": "E02_F_WY_LOCAL_IMPLEMENTATION_V1",
+  "record_schemas": "configs/e02_F_WY_LOCAL_RECORD_SCHEMAS_v1.json",
+  "required_fields": [
+    "RT",
+    "STATE",
+    "AGEP",
+    "CIT",
+    "SCHL",
+    "RELSHIPP",
+    "PWGTP",
+    "PWGTP1",
+    "PWGTP2",
+    "PWGTP3",
+    "PWGTP4",
+    "PWGTP5",
+    "PWGTP6",
+    "PWGTP7",
+    "PWGTP8",
+    "PWGTP9",
+    "PWGTP10",
+    "PWGTP11",
+    "PWGTP12",
+    "PWGTP13",
+    "PWGTP14",
+    "PWGTP15",
+    "PWGTP16",
+    "PWGTP17",
+    "PWGTP18",
+    "PWGTP19",
+    "PWGTP20",
+    "PWGTP21",
+    "PWGTP22",
+    "PWGTP23",
+    "PWGTP24",
+    "PWGTP25",
+    "PWGTP26",
+    "PWGTP27",
+    "PWGTP28",
+    "PWGTP29",
+    "PWGTP30",
+    "PWGTP31",
+    "PWGTP32",
+    "PWGTP33",
+    "PWGTP34",
+    "PWGTP35",
+    "PWGTP36",
+    "PWGTP37",
+    "PWGTP38",
+    "PWGTP39",
+    "PWGTP40",
+    "PWGTP41",
+    "PWGTP42",
+    "PWGTP43",
+    "PWGTP44",
+    "PWGTP45",
+    "PWGTP46",
+    "PWGTP47",
+    "PWGTP48",
+    "PWGTP49",
+    "PWGTP50",
+    "PWGTP51",
+    "PWGTP52",
+    "PWGTP53",
+    "PWGTP54",
+    "PWGTP55",
+    "PWGTP56",
+    "PWGTP57",
+    "PWGTP58",
+    "PWGTP59",
+    "PWGTP60",
+    "PWGTP61",
+    "PWGTP62",
+    "PWGTP63",
+    "PWGTP64",
+    "PWGTP65",
+    "PWGTP66",
+    "PWGTP67",
+    "PWGTP68",
+    "PWGTP69",
+    "PWGTP70",
+    "PWGTP71",
+    "PWGTP72",
+    "PWGTP73",
+    "PWGTP74",
+    "PWGTP75",
+    "PWGTP76",
+    "PWGTP77",
+    "PWGTP78",
+    "PWGTP79",
+    "PWGTP80",
+    "FAGEP",
+    "FCITP",
+    "FSCHLP",
+    "FRELSHIPP"
+  ],
+  "required_files": {
+    "configs/e02_F_WY_LOCAL_RECORD_SCHEMAS_v1.json": "7b6656b46d0ab8cfba34561e707dec014bef29919cae852305aa9faaf9345619",
+    "configs/e02_F_WY_LOCAL_SOURCE_PROPOSAL_v1.json": "f5cc616cf06fcd6904bc8cbf11b63f243b5b28883130dca9f37d104601db4d4d",
+    "configs/e02_full_adult_benchmark_u1_v1_1.json": "3d71a83dc88d3f0622ec4db536030ab0f42ff46520659e514853eb00be813fdf",
+    "configs/e02_full_adult_engine_v1_2.json": "f27811a5b9a66b0b779ebb364ddb621a6451cefaac2a2b88000df96339aa6d7b",
+    "configs/e02_pums_wy_local_reuse_v1.json": "696e4812dec34e702c940e5adb589641ad2f93ca343d2ee634d03b6ab5418d2b",
+    "configs/e02_pums_wy_local_reuse_v1_1_consumed.json": "300d93c14762930294627dbc6ba0718d7b514e2c03a0e12518685aa76c15cf71",
+    "docs/E02_FULL_ADULT_BENCHMARK_U1_SPEC_V1_1.md": "90759d9e9718b98703d2a9d0353dad3a25b426311fa29fc70e6e630db6d4a2d2",
+    "docs/E02_FULL_ADULT_ENGINE_V1_2_REMEDIATION.md": "accf14513079d610d27f7d762692fddca8e06a2942aa86fcf439b61b13f10644",
+    "docs/E02_F_ACTUAL_SOURCE_WY_LOCAL_METHODS_v1.md": "c4e3cbcd31e6ca16c8227707acba99120072d073bde5dbc62d19faf382a3a98c",
+    "reports/E02_PUMS_METADATA_RECONSTRUCTION.json": "c261f870b6a891785f7bfe1205c3bfc725b6410627df622f4e366a5dadde1876",
+    "reports/E02_PUMS_WY_LOCAL_REUSE_ACTUAL_EVIDENCE.json": "79deda17cede5bf55fe9d287bfc2fba560a0e588931eb44dc99cf3c3fab022a2",
+    "reports/INDEPENDENT_AUDIT_E02_F_V1_2_ORIGINAL_REMEDIATIONS.json": "24c718479e4e4fb241c47f86e243ba3be5e4d79fcdc3f9f8410e5296cad55e78",
+    "reports/INDEPENDENT_AUDIT_E02_F_V1_2_SCOPE_CORRECTION.json": "9598bd41417141a794ead4da17d2ffa1a9ffa97f1fc3c077a6fe65ddfcb8fab2",
+    "reports/INDEPENDENT_AUDIT_E02_F_WY_LOCAL_METHODS_V1.json": "7d23300df43720c4dea60197798df1ffd3483c4937274ae0af7094f48947f4fb",
+    "reports/INDEPENDENT_AUDIT_E02_N1_V1_1_REMEDIATION.json": "a5cddcdd8fdcc85300b62256aae3cb1dbb2c4f3e463ff68a0e98a491e24404b5",
+    "reports/INDEPENDENT_AUDIT_E02_NATIONAL_PUMS_N0_FREEZE.json": "f24380cd8d9b8f664b7549fbe6c27a8e7e8a9fc2323a3164eb1bda9c9b6c49e9",
+    "reports/INDEPENDENT_AUDIT_E02_PUMS_WY_ACTUAL.json": "01b56ddd99b0f464517b51c4f4fc329241eb813baef8fc0f706046bd98dbdc89",
+    "reports/INDEPENDENT_AUDIT_E02_U1_V1_1_SPEC.json": "326028829f931912ddf582ab2344c28424c548bd6b03ef28a86bf3c2e0da0439",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/f_actual_admission_v1.py": "735429a82b5b0431a10653d8a2ea2dff9614c020e533b30a989d2f3d28017a10",
+    "src/civiclab/e02/f_actual_ledger_v1.py": "c53a495ec9e52a1fc69b479a33010e03fc6c9c55a4ec33a96757237f3933c8dc",
+    "src/civiclab/e02/f_census_transport_v1.py": "d5ccd4b4c75b8f0eb83c7696ce113429cd91176d2dd55a67acf79e437bd4db53",
+    "src/civiclab/e02/f_wy_local_pilot_v1.py": "06e85debf59bdc4c9b3d931e920ec7b4b7eefd428a0774a7a4ade5cb69ce1657",
+    "src/civiclab/e02/f_wy_source_v1.py": "4a113ac41ee7cf39e9618cd381aec658e00733e71d238c135ff47dd73590fff9",
+    "src/civiclab/e02/full_adult_analysis_v1_2.py": "708cbc9738ace3d8e1b8e0d94292fcdbcfcf53b8aaa63dcf2d153b8970b5e830",
+    "src/civiclab/e02/full_adult_codec_v1_2.py": "5db259515a4a0386b29becc617a7738d648a825dc2127fc2865e06dce5dcb0ad",
+    "src/civiclab/e02/full_adult_control_v1_2.py": "f0ea905e4ace69dfb1434f539dbfbac7dd4fd43c9d93953baa042d1fb4a554cd",
+    "src/civiclab/e02/full_adult_engine_v1_2.py": "05fb18c30eb9b873be1cd627401907b42a821a9db149c4a7d935ec00341fb40e",
+    "src/civiclab/e02/full_adult_queries_v1_2.py": "256033d0d85ea98977b875e7d95bc0728ec95d2ade2baf5d75a34edc90410b3d",
+    "src/civiclab/e02/full_adult_runtime_v1_2.py": "2a36dfe2b8fa0a06cbe350f4b824a6ac2cc390415dfd489b8ce3dd8d33c818b6",
+    "src/civiclab/e02/full_adult_types_v1_2.py": "c7e3ac3d4044e9dfc76193da820edfa298bb00ffff376a8d4d8eaa75e73acd33",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_f_wy_local_v1.py": "aaabacbd27f7287b6745bf8e4ae9c5bda2bc616c8319ee0395e2dc4271ed5d2c",
+    "tests/test_e02_full_adult_v1_2.py": "fa403e5f623017773e9c9bbd1a25226849ac79fa6b48b5fa3b8d178b6102dc1d"
+  },
+  "scope": "CODE_AUTHORED_FIXTURES_ONLY",
+  "spec": {
+    "WY_raw_candidate": {
+      "bytes": 4202266,
+      "companion": "ACS2020_2024_PUMS_README.pdf",
+      "companion_bytes": 99489,
+      "companion_sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b",
+      "expected_unfiltered_rows": 29297,
+      "future_C_consistency": "UndernewFcache-executionapproval,independentlycomparethenewF-derivedCsliceagainsttheprevioussame-sourceauditedCpoint/80replicate/allocation/uncertaintyresults. OldCaggregateisreferenceonly,neverinputsubstituteforF.",
+      "future_use": "OnlyfreshindependentlyapprovedFparser/localexecutionscope;newlocalrunandfullreplay,noGET/sourceoverwrite;oldCaggregatesnotrelabelled/reconstructed",
+      "header_bytes": 1876,
+      "header_columns": 285,
+      "header_sha256": "4232ff33d8ef453a59ed659d662a98bbb510421d7c001aabffcd5ec292f20604",
+      "path": "data/raw/e02_pums_wy/QUARANTINED-20f0ff6a0b674edc916272fd8b41ff4d.zip",
+      "person_member": "psam_p56.csv",
+      "person_member_bytes": 18928161,
+      "person_member_sha256": "233da94393faa13ed45b9274d2d7f98f7d7b36223aceced1634820ea6978b24d",
+      "sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73"
+    },
+    "acceptance_gates": {
+      "DISCLOSURE": "SeparateF-specificreviewbeforeprojection/bundling",
+      "MODEL_HUMAN": "U3/U4/U5identification/validation/estimandgatesunchanged;broaderadultgoalunwaived",
+      "U1_IMPLEMENTATION": "NewversionedFcode+authoredfixturesF01..F20independentlyreviewed;typedquerycontracts/ledger/artifactenvelopeacceptedbeforeimplementation;noN1Cautomaticpromotion",
+      "U1_SPEC": "Freshindependentschema/resource/methodsreviewbeforeimplementation",
+      "U1_WY_LOCAL": "FreshapprovednewFparserandcache-specificlocalexecution/replayonly,notcurrentauthority",
+      "U2_NATIONAL": "All51actualsource/partition/resource/arithmetic/replayauditbeforeacceptedtargets"
+    },
+    "amendment": {
+      "previous_config": "configs/e02_full_adult_benchmark_u1_v1_0.json",
+      "previous_config_sha256": "89fcb0ebb3c5d3e69085d851619bb71f468c6929e54772d378a0e356b773e407",
+      "previous_document": "docs/E02_FULL_ADULT_BENCHMARK_U1_SPEC_V1_0.md",
+      "previous_document_sha256": "429fd569ac1b7558f98f3d217b83d2d4e56c5f778bcbf5e31c689565e23f0f7b",
+      "scope": "Specificationclarificationsonly:replicateversustotalpayload;separateversionedcountcovariance/signedlinearcontrastcontractsanddurablequeryreceipts;explicitnewcandidateartifactenvelope. Noimplementationoractualauthority."
+    },
+    "authority": {
+      "actual_local_source_enrollment": false,
+      "actual_person_parse": false,
+      "approved_api_spend_usd": 0,
+      "external_publication": false,
+      "implementation_approval": null,
+      "local_WY_F_parser_execution_approval": null,
+      "model_calls": false,
+      "person_GETs": 0,
+      "population_fit": false
+    },
+    "chronology": "U0draft/historyunchanged;separatelyissuedN1v1.1receiptacceptsCauthoredengineeringonly,notFschema/parser/resourcesorrealWYreuse.",
+    "covariance_policy": {
+      "analysis_logical_scalar_unit_ceiling": 64000000,
+      "dense_entries": 13483584,
+      "dense_float64_payload_bytes": 107868672,
+      "full_dense_matrix_default": "REFUSE_BEFORE_ALLOCATION_NOT_REQUIRED",
+      "mandatory_uncertainty": "Cellanddeclaredderivedsummarydiagonalsandmatched-denominatorratiosonly",
+      "maximum_predeclared_extra_covariance_pairs": 4096,
+      "maximum_predeclared_extra_scalar_contrasts": 128,
+      "operation_unit": "ALGORITHM_SCALAR_OP_V1_1:oneinteger/floatmultiply,add,subtract,divide,sqrtorzero-comparisonoraxis-membershiptest=1logicalunit;notCPUinstructions/FLOP/walltime. Hash/serialization/validationI/Ochargedtobytes/time,notthisarithmeticcounter.",
+      "primitive_int64_replicate_payload_bytes": 2350080,
+      "quota_semantics": "Rawrow80weightaggregationchargedtorow/timebudget,notanalysisqueryoperationbudget;analysisqueriesreserveworstcaseworkbeforeexecution;noall-pairsfallback",
+      "representation": "Storepointvector+3672x80signedreplicatevectors;D_ir=R_ir-X_i,countcovariance=D*transpose(D)/20;rank<=80"
+    },
+    "expected_all_age_person_rows": 16095728,
+    "fixture_execution_status": "F01_TO_F20_NOT_RUN_SPECIFICATION_ONLY",
+    "fixture_specifications": [
+      {
+        "case": "Sixadultdomainswithpointweights1..6;6childrowswithpoint+all80weights1each",
+        "expected": "Fpoint21,Cpoint1,adultcount6,all-agecount12,under18count6,all-agepoint27;oddCrep-1/even3otheradultrepspoint=>Frep19/23,all-agerep25/29;Ccountvariance16andFcountvariance16withnumerator320/20;noncit/GQadultsretained",
+        "id": "F01"
+      },
+      {
+        "case": "51states eachsixadultdomainsand6childrenpoint1;citHHoddrep-1/even3others1",
+        "expected": "Sourcecount612,adult306,C51,3672cellswith306positive-countand3366released-zero;80componentspercell=293760;Fpoint306,reps204/408,variance41616;sumstatevariances816isNOTnationalvariance",
+        "id": "F02"
+      },
+      {
+        "case": "Duplicate/crossedCviewandFcombinedorchildselection",
+        "expected": "F=sum6,Cexactsubset,allage=under18+Fforeachpoint/80replicate;rejectdoublecount",
+        "id": "F03"
+      },
+      {
+        "case": "Domainboundaryandrequiredfieldmatrixinclunder3blankSCHL,18/24/25/44/45/64/65/99,CIT1..5,REL20..38,SCHL1/17/18/20/21/24",
+        "expected": "Eachvalidadultroutedexactlyonce;allrequiredmalformedRT/state/weight/flags/schemafailBEFOREagefilter;notbypassbyunder18/noncit/GQ",
+        "id": "F04"
+      },
+      {
+        "case": "Missingstate/member/rowvsprocessedzero,positiveunsupportedpoliticaldomain",
+        "expected": "Null80componentsandPARTIALstatusforunknownsource;zerokeptonlyknownreleasedsample;noinventedpoliticalpriors",
+        "id": "F05"
+      },
+      {
+        "case": "All3672cells/293760components,maxboundweights/checkedintegeroverflowandbigintvariance",
+        "expected": "Exactsigned-replicateintegerpayload2350080bytes;TOTALprimitivebinarypayload2680560bytesincludingotherarrays/masks;noint64quadraticoverflow;independentintegeroracleforcounts/covariance",
+        "id": "F06"
+      },
+      {
+        "case": "Same-indexcrossstatecovariance,ratios,zero/negative/missingreplicatedenominators,zeroSE",
+        "expected": "Aggregate80numerators/denominatorsbeforeSDR;noindependentstatevariance;typedBLOCKEDintervalsandreviewflags,noimputation/clipping;positiveFpoint2/Cpoint1withC_rep3/other_rep-1=>replicateshare1.5kept;separateF_rep<=0blocksinterval",
+        "id": "F07"
+      },
+      {
+        "case": "Dense3672squaredcovarianceorquery/contrast/op/bytequotaoverrun",
+        "expected": "RefuseBEFOREallocation/work;persistfailedconfiguration;factorformandselectedqueriesmatchsmallindependentoracle",
+        "id": "F08"
+      },
+      {
+        "case": "PRIMARY/REPLAYall51shuffledsourceorderandchangedstatecheckpoint",
+        "expected": "Exactdeterministicprimitiveandderiveddatahashes,unchangedinputbytes;rejectduplicate/mixedsource/period/partial/tamperedcheckpoint",
+        "id": "F09"
+      },
+      {
+        "case": "Counter4to0,ownresourcecoedit,genesis/event/torncommit,crashread/persistence",
+        "expected": "NewFledgersemantic+chainrefusal,nocounterreset;fullunknowncharges;oldCledgersnevermutated",
+        "id": "F10"
+      },
+      {
+        "case": "Two-processreservation/cancel/restart/expired/clockrollback/failedURLretry",
+        "expected": "Singleowner,immutablecreated/design,consumedusagecarried;noautomaticretry/quotareplenishment",
+        "id": "F11"
+      },
+      {
+        "case": "Free0beforeenroll/parse/union/queryandafterworkbeforecheckpoint;disk/log/retained/atomicwritefailure",
+        "expected": "Noacceptedcheckpoint/refund;priorfullreservationpending/tornblockeduntilspacerestored;unknownrecoveryfullcharge",
+        "id": "F12"
+      },
+      {
+        "case": "FakeBODYencoding/status/declaredtruncation/partialdelivery/bufferoverrun/maxreadEOFedge",
+        "expected": "Applicationchannelcounteronly,nofalsewirecap;fullfailedallowanceandhalt;unknowntransportblocks",
+        "id": "F13"
+      },
+      {
+        "case": "Archiveextra/path/symlink/encrypted/duplicatecase/memberhash/CRC/header/count/byte/duringparsemutation",
+        "expected": "Strictsourceenrollmentandprepostidentityfail;sourcekept,noacceptedaggregate",
+        "id": "F14"
+      },
+      {
+        "case": "Expandedfull-shapestress+parentRSS/elapsed/childabruptkill/log/artifactatomicstaging",
+        "expected": "MeasureFfixtureRSS/time,keepwithinproposedboundsorBLOCK;samplestopswithovershootrecorded;noautolimitincrease",
+        "id": "F15"
+      },
+      {
+        "case": "RawID/unusedcolumn/privateexceptioncontentandlow-supportreleaseattempt",
+        "expected": "NoID/rawrecord/credentialexports;type/statusonlyfailures;allactualF/C/replicateslocalpendingnewdisclosurereview;threshold30notpermission",
+        "id": "F16"
+      },
+      {
+        "case": "Actualsourcepath/WYcachepresent/oldCapprovaloroldCaggregatepassedtospec-onlyguard",
+        "expected": "NoGET/enrollment/parse/fit;freshFimplementationandlocalexecutionapprovalrequired;noCaggregateconversion",
+        "id": "F17"
+      },
+      {
+        "case": "Fixtureoverridestoproductionexpectedcounts/sourcehashes/schemaorunsupportedopinions",
+        "expected": "SeparateMOCKfixturedesigncannotself-enableproduction;alloriginalsourcecounts/pins/unknown50hashespreserved;party/effectsremainunknown",
+        "id": "F18"
+      },
+      {
+        "case": "Versionedquery/selector/coefficient/source-configbindingandtypedanticorrelatedcountresults",
+        "expected": "SeparateCOUNT_COVARIANCEsigned-320/20=-16fromCOUNT_LINEARvariance1280/20=64;refusecovasnonnegativecountvariance/mixedkind/units/unsignednumerator/changedhash/vector/selector;negativecontrastpointpreserved",
+        "id": "F19"
+      },
+      {
+        "case": "Logicalopplanbound,both-sweeproundtrip/resultbyte/receipt/staging/counter/crashfailure",
+        "expected": "ExactcostformulasandcapsreserveBEFOREevaluation;nooptimizer/replay/failedrefund;successonlyresultbyteproofrelease;typedNULLfailedresultsandcommitted-IDassembly;canonicalresultreplaybyteequal,receiptsseparate;allnewartifactpartitionsand128MiBtotalcheck",
+        "id": "F20"
+      }
+    ],
+    "frozen_primary_metadata": {
+      "accuracy_pdf": {
+        "bytes": 434590,
+        "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+        "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/accuracy_pdf.pdf",
+        "retrieved_at_utc": "2026-11-03T12:31:44.866892+00:00",
+        "sha256": "edbc9973f8cdf1a6528bb9acc450d83e230edc66421aa708ec9892a087b86447",
+        "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2020_2024AccuracyPUMS.pdf"
+      },
+      "dictionary_txt": {
+        "bytes": 307894,
+        "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+        "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/dictionary_txt.txt",
+        "retrieved_at_utc": "2026-11-03T12:31:44.479287+00:00",
+        "sha256": "17245502a012c973e7965e4b7decc2d8d2abb3121611b28a980c16f9620eaa38",
+        "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2020-2024.txt"
+      },
+      "file_index": {
+        "bytes": 58152,
+        "http_last_modified": "Sun, 01 Nov 2026 15:48:13 GMT",
+        "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/file_index.html",
+        "retrieved_at_utc": "2026-11-03T12:31:44.137346+00:00",
+        "sha256": "156a5263721b09cb60d8ed9a1bbbcc21b8ef156f4b7bdc5a8c27f4c4df9ca507",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/"
+      },
+      "record_counts_csv": {
+        "bytes": 4782,
+        "http_last_modified": "Thu, 05 Mar 2026 12:30:03 GMT",
+        "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/record_counts_csv.csv",
+        "retrieved_at_utc": "2026-11-03T12:31:44.302611+00:00",
+        "sha256": "d96120501b2d12586a8d6e79b5e5e41974f4c6c33b7b51822a4b66f680b49624",
+        "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/estimates/pums_record_count_20_24.csv"
+      },
+      "user_guide_pdf": {
+        "bytes": 474159,
+        "http_last_modified": "Thu, 05 Mar 2026 12:15:03 GMT",
+        "retained_path": "data/raw/e02_pums_metadata/metadata-3618b8ca5a204201b6c1a518b196c96b/user_guide_pdf.pdf",
+        "retrieved_at_utc": "2026-11-03T12:31:44.684447+00:00",
+        "sha256": "77f9b74efef7cb9d3eb8ffa4dc875df9e15765432d6134ead3691a5fe8b35e1a",
+        "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/2020_2024ACS_PUMS_User_Guide.pdf"
+      }
+    },
+    "identities": [
+      "all_age=under18+Fbycount,pointweight,all80replicates",
+      "F=disjointsumcitizenship2xresidence3ineachstate-age-edu",
+      "C=exactcitizenhouseholdsliceofF;notaddedtoFagain",
+      "nation=sum51statesandregions;Cpointcount<=Fpointcount,notrequiredforSIGNEDreplicates",
+      "allocatedcountandweighttotalsderivefromsamepartition;sourcezeroandmissingsourcearedistinct",
+      "PRIMARYandREPLAYindependentcomputationalcohorts,samepopulationinputsonceineachsweep"
+    ],
+    "ledger_control_requirements": [
+      "NewFdesign/target/schema/sourcepins;neveropenoldCledgerasF",
+      "AcceptedN1semanticreconciliationandgenesis/event/statechainprinciples;nofakeauthorthistoryorcounterreset",
+      "FullattemptBODY/timebeforeGET,readinflight/partialreceipts,success-onlyprovenEOFclosurehashreconcile;failed/unknown/crashfullcharge",
+      "Resourceenrollment/parse/union/query/persistencebudgetbeforeaction;disk/retained/log/atomicheadroomateveryreservation/checkpoint",
+      "SourceURL/release/state/literalmanifest/header/bytehash/CRC/domain/count/prepostfileidentity;unknownfirsthashreviewbeforeparse",
+      "Immutableprimary/replaycheckpointswithresult/source/designhashes;complete51andpartitionidentitiesbeforenationalacceptance",
+      "Currentstoragefailurecannotcommit/refund;unwritablediagnosticsleavepriorfullreservation/tornstateblocked;recoveryonlyafterstoragereturnswithoutrefund"
+    ],
+    "output_contract": {
+      "MOCK_label_required": true,
+      "accepted_benchmark_label": "SOURCE_PERIOD_DEMOGRAPHICS_ONLY_NOT_POLITICAL_VALIDITY",
+      "all_age_accounting": [
+        "valid_all_age_count",
+        "valid_under18_count",
+        "valid_adult_count",
+        "point_weight_sums_all_age_under18_adult",
+        "same_index_replicate_sums_all_age_under18_adult"
+      ],
+      "artifact_limit_semantics": "Allcapsindependent,mayblockbeforeBODYquota. Explicitv1.1candidateartifact128MiBbudgetneedsfreshaudit;doesnotchangeN1orauthorizeexecution. Noallmaximumthroughputguarantee;F01-F20testsrequired.",
+      "binary_files": {
+        "allocation_counts.i64le": {
+          "bytes": 117504,
+          "dtype": "signedint64littleendian2scomplement",
+          "header_bytes": 0,
+          "layout": "C-row-major",
+          "padding_bytes": 0,
+          "shape": [
+            3672,
+            4
+          ]
+        },
+        "allocation_weights.i64le": {
+          "bytes": 117504,
+          "dtype": "signedint64littleendian2scomplement",
+          "header_bytes": 0,
+          "layout": "C-row-major",
+          "padding_bytes": 0,
+          "shape": [
+            3672,
+            4
+          ]
+        },
+        "count.i64le": {
+          "bytes": 29376,
+          "dtype": "signedint64littleendian2scomplement",
+          "header_bytes": 0,
+          "layout": "C-row-major",
+          "padding_bytes": 0,
+          "shape": [
+            3672
+          ]
+        },
+        "point.i64le": {
+          "bytes": 29376,
+          "dtype": "signedint64littleendian2scomplement",
+          "header_bytes": 0,
+          "layout": "C-row-major",
+          "padding_bytes": 0,
+          "shape": [
+            3672
+          ]
+        },
+        "replicates.i64le": {
+          "bytes": 2350080,
+          "dtype": "signedint64littleendian2scomplement",
+          "header_bytes": 0,
+          "layout": "C-row-major",
+          "padding_bytes": 0,
+          "shape": [
+            3672,
+            80
+          ]
+        },
+        "source_status.u8": {
+          "bytes": 3672,
+          "dtype": "uint8",
+          "header_bytes": 0,
+          "padding_bytes": 0,
+          "shape": [
+            3672
+          ]
+        },
+        "sum_squared.i64le": {
+          "bytes": 29376,
+          "dtype": "signedint64littleendian2scomplement",
+          "header_bytes": 0,
+          "layout": "C-row-major",
+          "padding_bytes": 0,
+          "shape": [
+            3672
+          ]
+        },
+        "support_status.u8": {
+          "bytes": 3672,
+          "dtype": "uint8",
+          "header_bytes": 0,
+          "padding_bytes": 0,
+          "shape": [
+            3672
+          ]
+        }
+      },
+      "file_decode_rejection": "Unknownextra/missingfile,wrongbytecount/endian/axes/hash,invalidmask/support/padding,overfloworNaNrefuse;noautoformatrepair.",
+      "null_encoding": "source_status0requiresallnumeric/replicate/allocationslots0asUNOBSERVEDPADDING;logicaldecoderMUSTexposenullnotzero. source_status1exposesmeasuredintegers,evenallzero. Status/supportcoherenceandpaddingcheckedbeforeuse;unknownpoliticsalwaysnullregardlesssource_status.",
+      "point_count_storage": "signed64checkednonnegative;rejectoverflow;processingcohortsneversummedaspopulation",
+      "political_fields": "Noopinion/party/effectvaluesfromPUMS;allpriorsNOT_IDENTIFIED_BY_PUMS;CpotentialANESframeoverlaponly",
+      "primary_format": "Exactheaderlessrawbinaryfilesdescribedbybinary_filesplusUTF8JSONmanifest;noBOMorpadding. JSONsort_keys,indent2,LFterminalnewline,finitevaluesonly.",
+      "primitive_binary_payload_total_bytes": 2680560,
+      "raw_variance_covariance_numerators": "Arbitraryprecisionintegersserializedcanonicaldecimalstrings;denominator20;neverint64multiplyoverflow",
+      "record_checks": {
+        "AGEP": [
+          0,
+          99
+        ],
+        "CIT": [
+          1,
+          5
+        ],
+        "PWGTP": [
+          1,
+          9999
+        ],
+        "PWGTP1_to_80": [
+          -9999,
+          9999
+        ],
+        "RELSHIPP": [
+          20,
+          38
+        ],
+        "RT": "P",
+        "SCHL": "1..24;blankonlyage<3",
+        "STATE": "expectedfrozenstate",
+        "allocation_flags": [
+          0,
+          1
+        ]
+      },
+      "required_JSON_artifacts": {
+        "contrast_results_v1_1.jsonl": "SeparateCOUNT_LINEAR_SIGNEDtypedcanonicalJSONL,2048bytes/record;negativepointvalid,varianceNUMnonnegative",
+        "covariance_results_v1_1.jsonl": "SeparateCOUNT_COVARIANCEtypedcanonicalJSONL,2048bytes/record,sourcebound;NOvariance/SE/MOEfields",
+        "manifest.json": "Schema/spec/code/inputhashes,period/universe,orderedaxes/endian/shapes,allfilebytes+SHA,MOCKvsactualkind,sourcecoverageandstrictscopeflags;verifybeforedecode",
+        "query_catalogs_and_execution_manifest": "Versionedselectors.json,coefficients.json,query_plan.json,execution_manifest.jsonwithcommoncomplete-source/config/hashbinding;3MiBmetadataallowancepersweep",
+        "query_receipts_v1_1.jsonl": "Separateoperationalreceiptlog,1024bytes/record,20MiBbothsweepswithinledger/trace;notindataresultreplayequality",
+        "source_receipts.json": "51intendedstateswithexpectedpublishedallagerows;observedcounts/allage-under18-Fpoint+80accounting,header/member/sourcehashes/statusorNULLwhenunknown;dates/rights;noindividualrecords",
+        "uncertainty.json": "ONLY mandatory COUNT_TOTAL/PROPORTION uncertainty contract;nevercovariance/signedcontrastrecords. Queryoutputs/receiptsinseparateversionedcontainers.",
+        "views.json": "DeterministicFsum6/CcitHHslice,state/region/nationselectorsanddenominatorreferences;viewsnotaddedbacktounion"
+      },
+      "required_fields": [
+        "RT",
+        "STATE",
+        "AGEP",
+        "CIT",
+        "SCHL",
+        "RELSHIPP",
+        "PWGTP",
+        "PWGTP1",
+        "PWGTP2",
+        "PWGTP3",
+        "PWGTP4",
+        "PWGTP5",
+        "PWGTP6",
+        "PWGTP7",
+        "PWGTP8",
+        "PWGTP9",
+        "PWGTP10",
+        "PWGTP11",
+        "PWGTP12",
+        "PWGTP13",
+        "PWGTP14",
+        "PWGTP15",
+        "PWGTP16",
+        "PWGTP17",
+        "PWGTP18",
+        "PWGTP19",
+        "PWGTP20",
+        "PWGTP21",
+        "PWGTP22",
+        "PWGTP23",
+        "PWGTP24",
+        "PWGTP25",
+        "PWGTP26",
+        "PWGTP27",
+        "PWGTP28",
+        "PWGTP29",
+        "PWGTP30",
+        "PWGTP31",
+        "PWGTP32",
+        "PWGTP33",
+        "PWGTP34",
+        "PWGTP35",
+        "PWGTP36",
+        "PWGTP37",
+        "PWGTP38",
+        "PWGTP39",
+        "PWGTP40",
+        "PWGTP41",
+        "PWGTP42",
+        "PWGTP43",
+        "PWGTP44",
+        "PWGTP45",
+        "PWGTP46",
+        "PWGTP47",
+        "PWGTP48",
+        "PWGTP49",
+        "PWGTP50",
+        "PWGTP51",
+        "PWGTP52",
+        "PWGTP53",
+        "PWGTP54",
+        "PWGTP55",
+        "PWGTP56",
+        "PWGTP57",
+        "PWGTP58",
+        "PWGTP59",
+        "PWGTP60",
+        "PWGTP61",
+        "PWGTP62",
+        "PWGTP63",
+        "PWGTP64",
+        "PWGTP65",
+        "PWGTP66",
+        "PWGTP67",
+        "PWGTP68",
+        "PWGTP69",
+        "PWGTP70",
+        "PWGTP71",
+        "PWGTP72",
+        "PWGTP73",
+        "PWGTP74",
+        "PWGTP75",
+        "PWGTP76",
+        "PWGTP77",
+        "PWGTP78",
+        "PWGTP79",
+        "PWGTP80",
+        "FAGEP",
+        "FCITP",
+        "FSCHLP",
+        "FRELSHIPP"
+      ],
+      "share_rules": "Pointdenominatorandall80matchingreplicatedenominatorsmustbeknownandpositive;otherwiseNULLvariance/SE/MOE+typedBLOCKED,noimputation/clipping. Signedreplicatesharesmaylieoutside0..1. Finitefloat64arithmeticwithdeclaredtolerance.",
+      "shares_required": [
+        "primitive_cell_share_of_F_state",
+        "derived_F_age_edu_share_of_F_state",
+        "nested_C_age_edu_share_of_C_state",
+        "C_state_share_of_F_state"
+      ],
+      "source_partition_or_partial_status": [
+        "PARTIAL_SOURCE_COVERAGE_NOT_NATIONAL_ACCEPTED",
+        "COMPLETE_SOURCE_ARITHMETIC_PENDING_INDEPENDENT_AUDIT"
+      ],
+      "source_row_validation": "Everyall-agepersonrow/all91requiredfieldsandCSVwidthvalidatedbeforeadultselection;under3SCHLblankonlydocumentedexception;invalidrequiredvaluesblocksource",
+      "status_encoding": {
+        "source_status.u8": {
+          "0": "SOURCE_NOT_PROCESSED",
+          "1": "VALIDATED_SOURCE"
+        },
+        "support_status.u8": {
+          "0": "UNKNOWN_SOURCE",
+          "1": "NO_RELEASED_CONTRIBUTORS_NOT_POPULATION_ZERO",
+          "2": "LOW_SOURCE_SUPPORT_NOT_SHARING_PERMISSION",
+          "3": "SOURCE_SUPPORT_RECORDED_NOT_POLITICAL_VALIDITY"
+        }
+      },
+      "zero_missing_policy": "Processedcount0=>knownreleasedsamplezero+reviewflag,notstructuralpopulationzero;unprocessed=>nullall80components/nocounterfeitzeros;invalidrequiredfield=>failedsource,notdrop/impute"
+    },
+    "primitive_cell_json_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "else": {
+            "properties": {
+              "allocation_counts": {
+                "properties": {
+                  "FAGEP": {
+                    "type": "integer"
+                  },
+                  "FCITP": {
+                    "type": "integer"
+                  },
+                  "FRELSHIPP": {
+                    "type": "integer"
+                  },
+                  "FSCHLP": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "allocation_point_weight_sums": {
+                "properties": {
+                  "FAGEP": {
+                    "type": "integer"
+                  },
+                  "FCITP": {
+                    "type": "integer"
+                  },
+                  "FRELSHIPP": {
+                    "type": "integer"
+                  },
+                  "FSCHLP": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "point_weight_squared_sum": {
+                "type": "integer"
+              },
+              "point_weight_sum": {
+                "type": "integer"
+              },
+              "replicate_sums": {
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "support_status": {
+                "enum": [
+                  "NO_RELEASED_CONTRIBUTORS_NOT_POPULATION_ZERO",
+                  "LOW_SOURCE_SUPPORT_NOT_SHARING_PERMISSION",
+                  "SOURCE_SUPPORT_RECORDED_NOT_POLITICAL_VALIDITY"
+                ]
+              },
+              "unweighted_count": {
+                "type": "integer"
+              }
+            }
+          },
+          "if": {
+            "properties": {
+              "source_status": {
+                "const": "SOURCE_NOT_PROCESSED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allocation_counts": {
+                "properties": {
+                  "FAGEP": {
+                    "type": "null"
+                  },
+                  "FCITP": {
+                    "type": "null"
+                  },
+                  "FRELSHIPP": {
+                    "type": "null"
+                  },
+                  "FSCHLP": {
+                    "type": "null"
+                  }
+                }
+              },
+              "allocation_point_weight_sums": {
+                "properties": {
+                  "FAGEP": {
+                    "type": "null"
+                  },
+                  "FCITP": {
+                    "type": "null"
+                  },
+                  "FRELSHIPP": {
+                    "type": "null"
+                  },
+                  "FSCHLP": {
+                    "type": "null"
+                  }
+                }
+              },
+              "point_weight_squared_sum": {
+                "type": "null"
+              },
+              "point_weight_sum": {
+                "type": "null"
+              },
+              "replicate_sums": {
+                "items": {
+                  "type": "null"
+                }
+              },
+              "support_status": {
+                "const": "UNKNOWN_SOURCE"
+              },
+              "unweighted_count": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_status": {
+                "const": "VALIDATED_SOURCE"
+              },
+              "unweighted_count": {
+                "const": 0
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "allocation_counts": {
+                "properties": {
+                  "FAGEP": {
+                    "const": 0
+                  },
+                  "FCITP": {
+                    "const": 0
+                  },
+                  "FRELSHIPP": {
+                    "const": 0
+                  },
+                  "FSCHLP": {
+                    "const": 0
+                  }
+                }
+              },
+              "allocation_point_weight_sums": {
+                "properties": {
+                  "FAGEP": {
+                    "const": 0
+                  },
+                  "FCITP": {
+                    "const": 0
+                  },
+                  "FRELSHIPP": {
+                    "const": 0
+                  },
+                  "FSCHLP": {
+                    "const": 0
+                  }
+                }
+              },
+              "point_weight_squared_sum": {
+                "const": 0
+              },
+              "point_weight_sum": {
+                "const": 0
+              },
+              "replicate_sums": {
+                "items": {
+                  "const": 0
+                }
+              },
+              "support_status": {
+                "const": "NO_RELEASED_CONTRIBUTORS_NOT_POPULATION_ZERO"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_status": {
+                "const": "VALIDATED_SOURCE"
+              },
+              "unweighted_count": {
+                "maximum": 29,
+                "minimum": 1
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "point_weight_sum": {
+                "minimum": 1
+              },
+              "support_status": {
+                "const": "LOW_SOURCE_SUPPORT_NOT_SHARING_PERMISSION"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source_status": {
+                "const": "VALIDATED_SOURCE"
+              },
+              "unweighted_count": {
+                "minimum": 30
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "point_weight_sum": {
+                "minimum": 30
+              },
+              "support_status": {
+                "const": "SOURCE_SUPPORT_RECORDED_NOT_POLITICAL_VALIDITY"
+              }
+            }
+          }
+        }
+      ],
+      "properties": {
+        "age_bin": {
+          "enum": [
+            "18-24",
+            "25-44",
+            "45-64",
+            "65+"
+          ]
+        },
+        "allocation_counts": {
+          "additionalProperties": false,
+          "properties": {
+            "FAGEP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "FCITP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "FRELSHIPP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "FSCHLP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "FAGEP",
+            "FCITP",
+            "FSCHLP",
+            "FRELSHIPP"
+          ],
+          "type": "object"
+        },
+        "allocation_point_weight_sums": {
+          "additionalProperties": false,
+          "properties": {
+            "FAGEP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "FCITP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "FRELSHIPP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "FSCHLP": {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "FAGEP",
+            "FCITP",
+            "FSCHLP",
+            "FRELSHIPP"
+          ],
+          "type": "object"
+        },
+        "citizenship_bin": {
+          "enum": [
+            "CITIZEN",
+            "NONCITIZEN"
+          ]
+        },
+        "education_bin": {
+          "enum": [
+            "HS_OR_LESS",
+            "SOME_COLLEGE",
+            "BA_PLUS"
+          ]
+        },
+        "point_weight_squared_sum": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "point_weight_sum": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "political_prior_status": {
+          "const": "NOT_IDENTIFIED_BY_PUMS"
+        },
+        "replicate_sums": {
+          "items": {
+            "maximum": 9223372036854775807,
+            "minimum": -9223372036854775808,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "maxItems": 80,
+          "minItems": 80,
+          "type": "array"
+        },
+        "residence_bin": {
+          "enum": [
+            "HOUSEHOLD",
+            "INSTITUTIONAL_GQ",
+            "NONINSTITUTIONAL_GQ"
+          ]
+        },
+        "source_status": {
+          "enum": [
+            "SOURCE_NOT_PROCESSED",
+            "VALIDATED_SOURCE"
+          ]
+        },
+        "state_fips": {
+          "enum": [
+            "01",
+            "02",
+            "04",
+            "05",
+            "06",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "53",
+            "54",
+            "55",
+            "56"
+          ]
+        },
+        "support_status": {
+          "enum": [
+            "UNKNOWN_SOURCE",
+            "NO_RELEASED_CONTRIBUTORS_NOT_POPULATION_ZERO",
+            "LOW_SOURCE_SUPPORT_NOT_SHARING_PERMISSION",
+            "SOURCE_SUPPORT_RECORDED_NOT_POLITICAL_VALIDITY"
+          ]
+        },
+        "unweighted_count": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "state_fips",
+        "age_bin",
+        "education_bin",
+        "citizenship_bin",
+        "residence_bin",
+        "source_status",
+        "unweighted_count",
+        "point_weight_sum",
+        "point_weight_squared_sum",
+        "replicate_sums",
+        "allocation_counts",
+        "allocation_point_weight_sums",
+        "support_status",
+        "political_prior_status"
+      ],
+      "type": "object"
+    },
+    "proposed_future_resource_envelope_NOT_AUTHORIZATION": {
+      "CSV_physical_line_bytes": 65536,
+      "WY_cached_reuses_per_sweep": 1,
+      "all_artifacts_and_logs_bytes": 134217728,
+      "all_processing_including_enrollment_union_analysis_persistence_seconds": 3600,
+      "application_delivered_BODY_bytes_all_attempts": 3221225472,
+      "archive_BODY_bytes": 402653184,
+      "archive_members_max": 4,
+      "artifact_partition": {
+        "core_ledger_trace_and_atomic_ledger_headroom_bytes": 71303168,
+        "mandatory_benchmark_data_bytes_per_sweep": 8388608,
+        "query_catalog_manifest_and_refusal_bytes_per_sweep": 3145728,
+        "query_receipts_bytes_both_sweeps": 20971520,
+        "query_results_bytes_per_sweep": 9437184,
+        "scratch_includes_pending_query_results_and_all_old_new_atomic_files": true
+      },
+      "automatic_retries": 0,
+      "companion_file_bytes_max": 2097152,
+      "cumulative_request_seconds": 7200,
+      "data_artifacts_bytes_per_sweep": 20971520,
+      "enrollment_inspection_seconds": 300,
+      "free_disk_reserve_bytes": 1073741824,
+      "future_new_person_GET_attempts_max": 50,
+      "header_columns_max": 512,
+      "http_range_resume": false,
+      "ledger_and_trace_bytes": 92274688,
+      "minimum_initial_free_bytes": 5771362304,
+      "network_concurrency": 1,
+      "overall_elapsed_seconds": 10800,
+      "parent_RSS_stop_bytes": 536870912,
+      "per_source_delivered_uncompressed_bytes": 2147483648,
+      "per_source_processing_seconds": 300,
+      "per_sweep_delivered_uncompressed_bytes": 17179869184,
+      "request_socket_timeout_seconds": 10,
+      "retained_raw_partial_staging_and_referenced_cache_bytes": 4294967296,
+      "scratch_atomic_staging_bytes": 268435456,
+      "semantics": "Prospectivepolicychoices,notmeasuredFguarantees. ApplicationBODY/deliveredZIPvsunmeteredwire/read-ahead;sampledRSS/timewithovershoot;logicalfilecountersplusactualfree-reserve;allcache/partial/atomicstagingincluded. Actualauthorityallzero.",
+      "source_request_elapsed_seconds": 1800,
+      "source_rows_max": 3000000,
+      "sweep_all_age_rows_max": 17000000,
+      "target_worker_RSS_bytes": 268435456,
+      "two_sweep_data_artifacts_bytes": 41943040,
+      "two_sweeps_all_age_rows_max": 34000000,
+      "two_sweeps_and_enrollment_delivered_uncompressed_bytes": 34359738368,
+      "union_analysis_seconds_per_sweep": 300,
+      "unique_compressed_sources_including_WY_bytes": 3221225472,
+      "watchdog_poll_seconds": 0.1
+    },
+    "query_contract": {
+      "actual_execution_authorized": false,
+      "artifact_accounting": {
+        "attempt_max_two_sweeps": 8448,
+        "candidate_envelope_change": "ExplicitproposedU1v1.1artifactenvelope128MiB=40MiBdata+88MiBledger,initialfree5GiB+384MiB;notautomaticrelaxationofN1orprevious64MiBcandidate,andnoexecutionauthority.",
+        "catalog_metadata": "Per-sweep3MiBsharedallowanceforquery_plan,selectors,coefficients,commonexecutionmanifest,hashindexesandatmostone4096byteplan_refusal.jsonpersweep.",
+        "contrast_result_line_max_bytes": 2048,
+        "covariance_result_line_max_bytes": 2048,
+        "logical_query_max": 4224,
+        "query_receipt_cap_both_sweeps": 20971520,
+        "query_result_container_cap_per_sweep": 9437184,
+        "receipt_line_max_bytes": 1024,
+        "receipt_lines_max_bytes_both_sweeps": 17301504,
+        "receipt_storage": "Queryreceipts20MiBwithin88MiBledger/trace;remaining68MiBcoverscore/sourceledgerandqueryledgerstate+atomic-stateheadroom. Queryreceiptstheauthoritativequerytransitionevents,notduplicateunbudgetedlogs.",
+        "receipts_per_attempt_max": 2,
+        "result_lines_max_bytes_per_sweep": 8650752,
+        "results": "Per-sweepcovariance_results_v1_1.jsonl and contrast_results_v1_1.jsonl,evenemptywithmanifestrowcount0. PlannedIDsresultorcanonicaltyped-nullfailure;noorphanpayloadexposedascommitted. EmptycontainersvalidONLYforadmittedzero-queryplan;refusedplanhasnoacceptedresultcontainer,onlyboundedrefusalstatus.",
+        "staging": "Pendingresultfiles<=2048byteseach,snapshotold/newcopiesandassemblytempcount256MiBscratch+free-spacechecks;committedcanonicalresultscharge9MiB/sweep. Stagingneverexcludedfromactualdiskinventory."
+      },
+      "catalogs": {
+        "coefficients.json": {
+          "compile": "For eachentryterm,row:oneinteger multiply+oneadd=2logicalops;compiled3672signedint8twos-complementbytes;zeroallowedonlyaftercancellation.",
+          "definition_hash": "CanonicalJSON({coefficient_id,terms})",
+          "entry_fields": [
+            "coefficient_id",
+            "terms",
+            "coefficient_definition_sha256",
+            "compiled_vector_sha256"
+          ],
+          "max_entries": 256,
+          "max_terms_per_entry": 8,
+          "terms": "Sortedunique selector_id with integer coefficient exactly-1or+1;nozeros/float/NaN. Sumalltermsoneveryrow;rejectanycompiledvalueoutside{-1,0,1}andallzerovector.",
+          "vector_hash": "SHA256raw3672compiledsignedint8bytes;duplicatecompiledvectorsrefusedevenifaliasesdiffer. Vectorsneednotbeserializedinthecatalog.",
+          "version": "E02_U1_COEFFICIENT_CATALOG_V1_1"
+        },
+        "query_plan.json": {
+          "fields": [
+            "schema_version",
+            "query_plan_id",
+            "spec_config_sha256",
+            "target_axes_sha256",
+            "selectors_file_sha256",
+            "coefficients_file_sha256",
+            "queries",
+            "frozen_before_person_parse"
+          ],
+          "freeze": "Canonicalselector/coefficient/querydefinitionsfrozenbeforeANYactualFpersonparse;unknownsourcefirsthashesnotinvented.",
+          "limits": "Atmost4096distinctcovariancequeriesand128distinctscalarqueriesacrossBATCH. SameIDsineachPRIMARY/REPLAY;atmost8448attempts,not4224newqueriesineachsweep.",
+          "query_fields": [
+            "query_id",
+            "query_kind",
+            "x_coefficient_id",
+            "y_coefficient_id",
+            "query_definition_sha256"
+          ],
+          "query_rules": "IDs1..32ASCIIalnum/_/-,unique;scalarhasy_coefficient_id=null;covarianceordersoperandcompiled-vectorhasheslexically. Definitionhashbindskind+orderedoperandvectorhashes+units+targetschema. Duplicatekind/definition/symmetricreversepairsrefused.",
+          "version": "E02_U1_QUERY_PLAN_V1_1"
+        },
+        "selectors.json": {
+          "axis_filters": "Eachof5primitivecellaxeshasanexplicitnonemptyuniquevalue-listdrawnfromfrozenorderedaxes;noarbitrarySQL/code/politicalfilter. AselectorisoneCartesianintersection.",
+          "compile": "Always5membershiptestsper3672rowperselector(state,age,education,citizenship,residence);replicatenumberisNOTaselectableaxisandall80indicesremainbound. No short-circuitquota credit;mask3672uint8(0/1),hashrawbytes,noheader.",
+          "definition_hash": "CanonicalJSON({selector_id,axis_filters})",
+          "duplicate_policy": "DuplicateIDsoridenticalcompiledmasksrefused",
+          "entry_fields": [
+            "selector_id",
+            "axis_filters",
+            "selector_definition_sha256",
+            "compiled_mask_sha256"
+          ],
+          "id_pattern": "^[A-Za-z0-9_-]{1,32}$",
+          "max_entries": 256,
+          "version": "E02_U1_SELECTOR_CATALOG_V1_1"
+        }
+      },
+      "contrast_result_JSON_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "else": {
+              "properties": {
+                "moe90": {
+                  "type": "null"
+                },
+                "point_signed_decimal": {
+                  "type": "null"
+                },
+                "replicates_sha256": {
+                  "type": "null"
+                },
+                "standard_error": {
+                  "type": "null"
+                },
+                "variance_denominator": {
+                  "type": "null"
+                },
+                "variance_numerator_nonnegative_decimal": {
+                  "type": "null"
+                },
+                "variance_sdr": {
+                  "type": "null"
+                }
+              }
+            },
+            "if": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "RECORDED_SDR_CONDITIONAL_ONLY",
+                    "REVIEW_ZERO_ESTIMATE_OR_SE"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "moe90": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "point_signed_decimal": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "replicates_sha256": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "standard_error": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "variance_denominator": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "variance_numerator_nonnegative_decimal": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "variance_sdr": {
+                  "not": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "properties": {
+          "coefficient_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "execution_manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "moe90": {
+            "minimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "point_signed_decimal": {
+            "anyOf": [
+              {
+                "pattern": "^(0|-[1-9][0-9]*|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "query_definition_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "query_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,32}$",
+            "type": "string"
+          },
+          "query_kind": {
+            "const": "COUNT_LINEAR_SIGNED"
+          },
+          "replicates_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "schema_version": {
+            "const": "E02_U1_CONTRAST_RESULTS_V1_1"
+          },
+          "standard_error": {
+            "minimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "RECORDED_SDR_CONDITIONAL_ONLY",
+              "REVIEW_ZERO_ESTIMATE_OR_SE",
+              "BLOCKED_STORAGE",
+              "BLOCKED_QUERY_BUDGET",
+              "BLOCKED_INTEGRITY",
+              "BLOCKED_NONFINITE_OR_OVERFLOW",
+              "FAILED_WORKER_OR_CANCELLED",
+              "UNKNOWN_AFTER_CRASH"
+            ]
+          },
+          "units": {
+            "const": "PUMS_WEIGHTED_PERSONS"
+          },
+          "variance_denominator": {
+            "enum": [
+              20,
+              null
+            ]
+          },
+          "variance_numerator_nonnegative_decimal": {
+            "anyOf": [
+              {
+                "pattern": "^(0|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "variance_sdr": {
+            "minimum": 0,
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "variance_units": {
+            "const": "PUMS_WEIGHTED_PERSONS_SQUARED"
+          }
+        },
+        "required": [
+          "query_id",
+          "execution_manifest_sha256",
+          "query_definition_sha256",
+          "schema_version",
+          "query_kind",
+          "coefficient_sha256",
+          "replicates_sha256",
+          "point_signed_decimal",
+          "variance_numerator_nonnegative_decimal",
+          "variance_denominator",
+          "variance_sdr",
+          "standard_error",
+          "moe90",
+          "units",
+          "variance_units",
+          "status"
+        ],
+        "type": "object"
+      },
+      "covariance_result_JSON_schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "else": {
+              "properties": {
+                "covariance_denominator": {
+                  "type": "null"
+                },
+                "covariance_numerator_signed_decimal": {
+                  "type": "null"
+                },
+                "covariance_sdr": {
+                  "type": "null"
+                },
+                "x_point_signed_decimal": {
+                  "type": "null"
+                },
+                "x_replicates_sha256": {
+                  "type": "null"
+                },
+                "y_point_signed_decimal": {
+                  "type": "null"
+                },
+                "y_replicates_sha256": {
+                  "type": "null"
+                }
+              }
+            },
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "RECORDED_SDR_CONDITIONAL_ONLY"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "covariance_denominator": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "covariance_numerator_signed_decimal": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "covariance_sdr": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "x_point_signed_decimal": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "x_replicates_sha256": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "y_point_signed_decimal": {
+                  "not": {
+                    "type": "null"
+                  }
+                },
+                "y_replicates_sha256": {
+                  "not": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "properties": {
+          "covariance_denominator": {
+            "enum": [
+              20,
+              null
+            ]
+          },
+          "covariance_numerator_signed_decimal": {
+            "anyOf": [
+              {
+                "pattern": "^(0|-[1-9][0-9]*|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "covariance_sdr": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "execution_manifest_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "query_definition_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "query_id": {
+            "pattern": "^[A-Za-z0-9_-]{1,32}$",
+            "type": "string"
+          },
+          "query_kind": {
+            "const": "COUNT_COVARIANCE"
+          },
+          "schema_version": {
+            "const": "E02_U1_COVARIANCE_RESULTS_V1_1"
+          },
+          "status": {
+            "enum": [
+              "RECORDED_SDR_CONDITIONAL_ONLY",
+              "BLOCKED_STORAGE",
+              "BLOCKED_QUERY_BUDGET",
+              "BLOCKED_INTEGRITY",
+              "BLOCKED_NONFINITE_OR_OVERFLOW",
+              "FAILED_WORKER_OR_CANCELLED",
+              "UNKNOWN_AFTER_CRASH"
+            ]
+          },
+          "units": {
+            "const": "PUMS_WEIGHTED_PERSONS_SQUARED"
+          },
+          "x_coefficient_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "x_point_signed_decimal": {
+            "anyOf": [
+              {
+                "pattern": "^(0|-[1-9][0-9]*|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "x_replicates_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "y_coefficient_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "y_point_signed_decimal": {
+            "anyOf": [
+              {
+                "pattern": "^(0|-[1-9][0-9]*|[1-9][0-9]*)$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "y_replicates_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "query_id",
+          "execution_manifest_sha256",
+          "query_definition_sha256",
+          "schema_version",
+          "query_kind",
+          "x_coefficient_sha256",
+          "y_coefficient_sha256",
+          "x_replicates_sha256",
+          "y_replicates_sha256",
+          "x_point_signed_decimal",
+          "y_point_signed_decimal",
+          "covariance_numerator_signed_decimal",
+          "covariance_denominator",
+          "covariance_sdr",
+          "units",
+          "status"
+        ],
+        "type": "object"
+      },
+      "disclosure": "Allqueryrequests/selectors/coefficients/results/receiptsLOCALONLYuntilF-specificreview;mayrevealcoarsesmallgroups,notimplicitsharingpermission. Noopinion/party/effectquerytypeoractualpersonaccessinthisversion.",
+      "durable_protocol": [
+        "Freezeandvalidatecatalogs/planhashesbeforepersonparse;bindcomplete51-source/primitivebundlebeforeextraanalysis;invalid/incompleteplanwritesoneboundedplan-refusal,NOqueryresultorqueryexecution.",
+        "Beforeattemptwrite/fsyncRESERVEDreceiptandatomicledger:queryid/sweep/source-config-planbinding,fulllogicalops,resultbyteallowance2048andstorageheadroom. Anattemptedkeycanneverbererunorrenamedtoeraseusage.",
+        "Computeonlyfromboundvalidatedarraysandcompiledvector;hash80replicateestimates;writependingcanonicaltypedresult<=2048bytesatomicallyandfsync. Unknownpartialresultisnotcommitteddata. Pre-workquota/storage/integrityrefusalexecutesnoqueryandcharges0logicalopsbutanywrittenNULL-result/receiptbytesstillcharged;cannotwriteproof=>batchblocked,nofabricatedterminal.",
+        "COMMITTEDreceiptrequiresresultSHA/bytesandbinding/resourceproofdurable;thenatomicledgertransition. Successconsumesfulllogicalopcostandactualresultbytes;onlyunusedresultbyteallowancemaybereleasedafterproof. Failure/crashconsumesfulllogicalops+full2048byteallowanceandemitsorrecoversFAILED_OR_UNKNOWNreceiptwithtypedNULLresult,neverrefund.",
+        "Tornreceipt/state/resultpersistenceblocks;unwritablestorageleavespriorfullreservationcharged. RecoveryafterspacerestoredmayrecordUNKNOWNwithoutre-execution/refund. AtmostRESERVED+oneTERMINAL/RECOVEREDreceipt; no repeatedrecoveryspambeyondcaps.",
+        "AssemblefinalJSONLONLYfromledger-committedpendingresults/canonicalfailureprojections,samequery_idorder. Canonicalresultfilesexcludedynamicrunclock/sweep/attemptidsandreferenceCOMMONexecutionmanifest,soPRIMARY/REPLAYdatafilesbyte-identicalonmatchedsuccess. Receiptscarryactualsweep/attemptusageandneednotmatchbytewise. FinalmanifestvalidatescommittedIDsetandfilehashesbeforedecode."
+      ],
+      "execution_manifest.json": {
+        "common_to_both_sweeps": true,
+        "hash_definition": "SHA256rawexecution_manifest.jsonbytes;ALLresultandreceiptrecordsbindthisdigest. Source/config/selector/coefficienthashesareexplicitinthisimmutablemanifestandtransitivelyboundineachrecord,notomittedorimplicitlyinferred.",
+        "primitive_bundle_hash": "CanonicalJSONoforderedprimitivefilenames/dtypes/shapes/lengths/rawSHA256. PRIMARY/REPLAYmustmatchbeforeusingcommonmanifest;source/mask/hashdriftblocks.",
+        "required_fields": [
+          "schema_version",
+          "batch_id",
+          "source_period",
+          "target_schema_version",
+          "spec_config_file_sha256",
+          "runtime_config_sha256",
+          "code_tree_sha256",
+          "source_bundle_sha256",
+          "primitive_bundle_sha256",
+          "target_axes_sha256",
+          "query_plan_file_sha256",
+          "selectors_file_sha256",
+          "coefficients_file_sha256",
+          "catalog_operation_bound_per_sweep",
+          "mandatory_operation_reservation_per_sweep",
+          "query_operation_bounds",
+          "planned_total_operation_reservation_both_sweeps",
+          "required_execution_approval_ref",
+          "scope_kind"
+        ],
+        "scope": "Complete-sourceLOCALdemographicqueryonly,notdisclosure/model/humanvalidation. CurrentSPECcannotinstantiateactualexecution;MOCKrequiresauthoredfuturefixtures.",
+        "source_bundle_hash": "CanonicalJSONsortbyFIPSof51enrolledstate/sourceperiod/archive/member/header/primarymetadatahashidentities;completeandvalidatedbeforeextraanalysis. Missinghashes=>planrefusal,notzerofill.",
+        "version": "E02_U1_QUERY_EXECUTION_MANIFEST_V1_1"
+      },
+      "hash_and_encoding": {
+        "JSONL": "UTF8canonicalcompactobjectperline+LF,noheader/blankline/BOM;onekindpercontainer,sortedquery_idinfinalresults",
+        "canonical_definition_JSON": "UTF8sortedkeys,compactseparators,noNaN/Infinity",
+        "document_file_JSON": "UTF8sortedkeys,indent2,LFterminalnewline,noBOM",
+        "replicate_vector_hash": "SHA256of80signedint64littleendianreplicateestimates,640bytes,noheader;regeneratefromhashedprimitive+compiledcoefficients,notanopaqueunreproduciblereceipt",
+        "sha256_domain": "64lowercasehex;rawfilehashdistinctfromcanonicaldefinitionhash"
+      },
+      "numeric_semantics": {
+        "coefficient_bindings": "Result x/y/coefficient_sha256 means COMPILED_VECTOR_SHA256,notdefinitionhash;canonicaldefinition/filehashesbindthroughcatalogsincommonexecutionmanifest. Everypoint/replicateestimatecheckedsignedint64;covariance/variancenumeratorsarbitraryprecision.",
+        "contrast": "CompiledintegercountLmaybenegative;pointcanonicalSIGNEDdecimaland80signedreplicates. VarianceNUM=sum((Lr-L)^2)NONNEGATIVEdecimal,den20;SE=sqrt(NUM/20),MOE=1.645SE. DoNOTabs/clip point. Numeratorsbigintsnotint64products.",
+        "covariance": "ForcompiledintegercountsX/Y,NUM=sum_r((Xr-X)*(Yr-Y)),SIGNEDarbitraryprecisioncanonicaldecimal;cov=NUM/20finitefloat64. Negative/zeroallowed;NOabs/clamp/sqrt/SE/MOEorCOUNT_TOTALvarianceinterpretation.",
+        "hand_oracle_NOT_RUN": "Xpoint1/reps-1,3 andYpoint1/reps3,-1=>covNUM-320,den20,cov-16persons^2. L=X-Ypoint0/reps-4,4=>varianceNUM1280/20=64,SE8,MOE13.16. L=-Xpoint-1mustremainnegative,variance16.",
+        "record_numeric_rules": "Successfulvaluesfinite;noNaN/Infinity/-0decimal;failureallcomputedvaluesNULLnotzero. Units/version/kind/hashscreeneveryrecord;unknownextra/mixed-kindfieldsrefuse."
+      },
+      "operation_accounting": {
+        "catalog_and_mandatory_failure_rule": "CompileandmandatoryphasesreservefullspecifiedboundbeforeworkintheCOREledger. Invalidcompiledcatalogmayproduceplanrefusalbutcatalogcostremainscharged. Admissibilitymetadata/type/hashchecksarebyte/time-metered;NOqueryevaluationwithoutitsownreservation.",
+        "catalog_compile_cost_per_sweep": "5*3672*n_selectors + 2*3672*sum(coefficient_term_counts)",
+        "charging": "Reserveexactdeclaredlogicalcostdurablybeforeeachattempt;fullreservedlogicalcostremainschargedonSUCCESSorFAILED/CANCELLED/UNKNOWN. Nooptimization/cache/replayrefund. Mandatoryanalysisreserves6000000/sweepandmustinstrument<=boundorhalt;fullreservationcharged. Eachcatalog/eachqueryhasoneattemptkeypersweep.",
+        "count_covariance_cost": "162*(m_x+m_y)+321,where m is nonzero compiledrowcount:81estimates*2ops/term;80replicatepairdeviations/products/sums=320;finalnumerator/20floatdivision=1.",
+        "count_scalar_cost": "162*m+245:81estimates*2ops/term;80subtract/square/sum=240;variance/20,sqrt,MOEmultiplyandtwozerocomparisons=5. Bothzero-comparisonsalwayscounted.",
+        "failure_policy": "Unprovableworkretainsfullreservation;noreset/automaticretry/silentpartial80replicates. Continuationonlyunattemptedkeysundernewexact-stateapprovalandremainingbudget.",
+        "global_analysis_logical_op_limit_both_sweeps": 64000000,
+        "mandatory_analysis_full_reservation_per_sweep": 6000000,
+        "physical_scope": "Logicalreference-algorithmwork,notphysicalCPU/machineinstructionquota. Wall/RSS/serialization/hashbytecapsremainindependent.",
+        "planned_batch_cost": "2*(6000000+catalogcost+sum(query_costs));mustfit64000000BEFOREextraquerydispatch. Querycountsandoperationcapsallapply;maximumwidequeriesnotguaranteed.",
+        "zero_comparison_rule": "ScalarreferencepathalwayschecksL==0andSE==0as2logicalunits,no short-circuitcredit. Type/finite/hash/serializationvalidationchargedtobytes/time,notlogicalarithmeticunits."
+      },
+      "plan_refusal_statuses": [
+        "REJECTED_SCHEMA_OR_VERSION",
+        "REJECTED_UNKNOWN_BINDING",
+        "REJECTED_DUPLICATE_ID_OR_DEFINITION",
+        "REJECTED_SELECTOR_OR_COEFFICIENT",
+        "REJECTED_UNSUPPORTED_KIND_OR_UNITS",
+        "BLOCKED_INCOMPLETE_SOURCE_BUNDLE",
+        "BLOCKED_PLAN_OPERATION_QUOTA",
+        "BLOCKED_ARTIFACT_QUOTA",
+        "BLOCKED_STORAGE",
+        "BLOCKED_INTEGRITY",
+        "REJECTED_ZERO_OR_DUPLICATE_COMPILED_VECTOR"
+      ],
+      "receipt_contract": {
+        "constraints": "Noarbitraryerror/descriptiontext;1024UTF8bytesmaximumincludingLF. Receipt/m-state chainplussemanticper-keycounterreconciliationrequired;notadversarialauthentication. Pre-workrefusalcanuseoneREFUSED_BEFORE_RESERVATIONreceiptwitho=0,noevaluation;itscanonicalNULLresultneedsboundedbyte/storageproof. AkeyhasoneREFUSEDreceiptORoneRESERVED+oneTERMINAL/RECOVERED_UNKNOWN,neverboth. Catalog/mandatoryanalysisreceiptsarecoreledgerrecords,notqueryreceiptduplicates.",
+        "domains": {
+          "b": "chargedresultbytesnonnegativeint<=2048",
+          "d": "query_definitionSHA256",
+          "h": "canonicalreceipthashwithout h",
+          "m": "commonexecution_manifestSHA256",
+          "o": "chargedlogicalopsnonnegativeint<=declaredbound",
+          "phase": {
+            "enum": [
+              "RESERVED",
+              "TERMINAL",
+              "RECOVERED_UNKNOWN",
+              "REFUSED_BEFORE_RESERVATION"
+            ]
+          },
+          "prev": "previousreceiptSHA256ornullforfirst",
+          "q": "query_idpattern1..32",
+          "rb": "observedresultbytes0..2048ornullifunprovable",
+          "rh": "resultSHA256ornullbeforeproof",
+          "seq": "monotonicnonnegativeinteger",
+          "state": "committedledger-stateSHA256",
+          "status": {
+            "enum": [
+              "RESERVED",
+              "RECORDED_SDR_CONDITIONAL_ONLY",
+              "REVIEW_ZERO_ESTIMATE_OR_SE",
+              "BLOCKED_STORAGE",
+              "BLOCKED_QUERY_BUDGET",
+              "BLOCKED_INTEGRITY",
+              "BLOCKED_NONFINITE_OR_OVERFLOW",
+              "FAILED_WORKER_OR_CANCELLED",
+              "UNKNOWN_AFTER_CRASH"
+            ]
+          },
+          "v": "literal1.1",
+          "w": "PRIMARYorREPLAY"
+        },
+        "file": "query_receipts_v1_1.jsonl",
+        "operation_fields_rule": "o=fulldeclaredlogicalquerycostforreserved/finished/failed/unknownattempt;neverrefundafterevaluation. b=2048untilsuccessproofthenactualresultbytes;failed/unknownretain2048. Pre-workrefusalo=0andbchargesonlyboundedprovenNULL-resultbytes;receiptbytesalwaysincludedin20MiBtracecap.",
+        "required_fields": [
+          "v",
+          "seq",
+          "q",
+          "w",
+          "phase",
+          "m",
+          "d",
+          "o",
+          "b",
+          "rh",
+          "rb",
+          "status",
+          "prev",
+          "state",
+          "h"
+        ],
+        "version": "E02_U1_QUERY_RECEIPTS_V1_1"
+      },
+      "status": "SPEC_ONLY_NOT_IMPLEMENTED",
+      "supported_query_kinds": [
+        "COUNT_COVARIANCE",
+        "COUNT_LINEAR_SIGNED"
+      ],
+      "unsupported_kinds": "Proportioncovariance/proportioncontrast/correlation/generalnonintegercoefficientqueriesREFUSEDinv1.1;mandatoryproportionuncertaintyremainsinuncertainty.jsononly.",
+      "version": "E02_U1_QUERY_CONTRACT_V1_1"
+    },
+    "recodes": {
+      "AGEP": {
+        "18-24": [
+          18,
+          24
+        ],
+        "25-44": [
+          25,
+          44
+        ],
+        "45-64": [
+          45,
+          64
+        ],
+        "65+": [
+          65,
+          99
+        ]
+      },
+      "CIT": {
+        "CITIZEN": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "NONCITIZEN": [
+          5
+        ]
+      },
+      "RELSHIPP": {
+        "HOUSEHOLD": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "INSTITUTIONAL_GQ": [
+          37
+        ],
+        "NONINSTITUTIONAL_GQ": [
+          38
+        ]
+      },
+      "SCHL": {
+        "BA_PLUS": [
+          21,
+          24
+        ],
+        "HS_OR_LESS": [
+          1,
+          17
+        ],
+        "SOME_COLLEGE": [
+          18,
+          20
+        ]
+      }
+    },
+    "required_references_sha256": {
+      "configs/e02_national_controls_v1.json": "fe67b984eeb4527eb9858b89e225c2988a1790ee4c55fccd945f136659fec895",
+      "docs/E02_FULL_ADULT_STATE_UNIVERSE_FIDELITY_PROPOSAL.md": "2cd68afd31ed5bbc9cbf668e908f4342212a095cbf1e9b0146640bcf186b0535",
+      "reports/E02_NATIONAL_PUMS_N1_EVIDENCE.json": "002e9718b4252e17709419fe9c1621c20f4a9524488520563ce4a18d2104ff90",
+      "reports/E02_NATIONWIDE_PUMS_RESOURCE_METHODS_PROPOSAL.json": "0025b29d5b34ee818a955fec0c88c48c4027f9070f0727909374e297796b9f59",
+      "reports/E02_PUMS_METADATA_RECONSTRUCTION.json": "c261f870b6a891785f7bfe1205c3bfc725b6410627df622f4e366a5dadde1876",
+      "reports/INDEPENDENT_AUDIT_E02_FULL_ADULT_UNIVERSE_METHODS.json": "1318a424ea582441e15a2336c594a5b3816808abf7442d4d21a4e8188bbef6f0",
+      "reports/INDEPENDENT_AUDIT_E02_N1_V1_1_REMEDIATION.json": "a5cddcdd8fdcc85300b62256aae3cb1dbb2c4f3e463ff68a0e98a491e24404b5"
+    },
+    "revision_checks_status": "Staticshape/payload/artifactpartition/cost/signedtoy/referencehashassertionsPASS;JSONSchemaenginevalidationNOT_RUN(localjsonschemapackageabsent,nopackageinstalled);F01-F20implementationfixturesNOT_RUN.",
+    "schema_version": 1,
+    "shape": {
+      "C_nested_age_education_cells": 612,
+      "F_derived_age_education_cells": 612,
+      "F_domain_cells": 3672,
+      "age_bins": 4,
+      "citizenship_bins": 2,
+      "education_bins": 3,
+      "primitive_row_order": "stateFIPSascending,ageorder,educationorder,citizenshiporder,residenceorder",
+      "replicate_component_index_formula": "row_index*80+(replicate_number-1)",
+      "replicate_count": 80,
+      "residence_bins": 3,
+      "row_index_formula": "((((s*4+a)*3+e)*2+c)*3+r)",
+      "signed_replicate_components": 293760,
+      "states": 51
+    },
+    "source_registry": [
+      {
+        "abbreviation": "al",
+        "exact_archive_bytes": null,
+        "filename": "csv_pal.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "33M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 247375,
+        "published_recordcount_name": "PSAM_P01",
+        "published_state_name": "Alabama",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "01",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pal.zip"
+      },
+      {
+        "abbreviation": "ak",
+        "exact_archive_bytes": null,
+        "filename": "csv_pak.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "4.5M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 33490,
+        "published_recordcount_name": "PSAM_P02",
+        "published_state_name": "Alaska",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "02",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pak.zip"
+      },
+      {
+        "abbreviation": "az",
+        "exact_archive_bytes": null,
+        "filename": "csv_paz.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "48M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 351919,
+        "published_recordcount_name": "PSAM_P04",
+        "published_state_name": "Arizona",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "04",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_paz.zip"
+      },
+      {
+        "abbreviation": "ar",
+        "exact_archive_bytes": null,
+        "filename": "csv_par.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "20M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 149858,
+        "published_recordcount_name": "PSAM_P05",
+        "published_state_name": "Arkansas",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "05",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_par.zip"
+      },
+      {
+        "abbreviation": "ca",
+        "exact_archive_bytes": null,
+        "filename": "csv_pca.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "256M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 1867063,
+        "published_recordcount_name": "PSAM_P06",
+        "published_state_name": "California",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "06",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pca.zip"
+      },
+      {
+        "abbreviation": "co",
+        "exact_archive_bytes": null,
+        "filename": "csv_pco.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "39M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 290012,
+        "published_recordcount_name": "PSAM_P08",
+        "published_state_name": "Colorado",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "08",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pco.zip"
+      },
+      {
+        "abbreviation": "ct",
+        "exact_archive_bytes": null,
+        "filename": "csv_pct.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "24M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 178245,
+        "published_recordcount_name": "PSAM_P09",
+        "published_state_name": "Connecticut",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "09",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pct.zip"
+      },
+      {
+        "abbreviation": "de",
+        "exact_archive_bytes": null,
+        "filename": "csv_pde.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "6.4M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 46820,
+        "published_recordcount_name": "PSAM_P10",
+        "published_state_name": "Delaware",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "10",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pde.zip"
+      },
+      {
+        "abbreviation": "dc",
+        "exact_archive_bytes": null,
+        "filename": "csv_pdc.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "4.5M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 32505,
+        "published_recordcount_name": "PSAM_P11",
+        "published_state_name": "District of Columbia",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "11",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pdc.zip"
+      },
+      {
+        "abbreviation": "fl",
+        "exact_archive_bytes": null,
+        "filename": "csv_pfl.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "137M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 982868,
+        "published_recordcount_name": "PSAM_P12",
+        "published_state_name": "Florida",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "12",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pfl.zip"
+      },
+      {
+        "abbreviation": "ga",
+        "exact_archive_bytes": null,
+        "filename": "csv_pga.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "67M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 493651,
+        "published_recordcount_name": "PSAM_P13",
+        "published_state_name": "Georgia",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "13",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pga.zip"
+      },
+      {
+        "abbreviation": "hi",
+        "exact_archive_bytes": null,
+        "filename": "csv_phi.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "10M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 74850,
+        "published_recordcount_name": "PSAM_P15",
+        "published_state_name": "Hawaii",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "15",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_phi.zip"
+      },
+      {
+        "abbreviation": "id",
+        "exact_archive_bytes": null,
+        "filename": "csv_pid.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "13M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 94622,
+        "published_recordcount_name": "PSAM_P16",
+        "published_state_name": "Idaho",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "16",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pid.zip"
+      },
+      {
+        "abbreviation": "il",
+        "exact_archive_bytes": null,
+        "filename": "csv_pil.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "84M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 627720,
+        "published_recordcount_name": "PSAM_P17",
+        "published_state_name": "Illinois",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "17",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pil.zip"
+      },
+      {
+        "abbreviation": "in",
+        "exact_archive_bytes": null,
+        "filename": "csv_pin.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "45M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 336293,
+        "published_recordcount_name": "PSAM_P18",
+        "published_state_name": "Indiana",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "18",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pin.zip"
+      },
+      {
+        "abbreviation": "ia",
+        "exact_archive_bytes": null,
+        "filename": "csv_pia.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "22M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 166364,
+        "published_recordcount_name": "PSAM_P19",
+        "published_state_name": "Iowa",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "19",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pia.zip"
+      },
+      {
+        "abbreviation": "ks",
+        "exact_archive_bytes": null,
+        "filename": "csv_pks.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "20M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 149553,
+        "published_recordcount_name": "PSAM_P20",
+        "published_state_name": "Kansas",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "20",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pks.zip"
+      },
+      {
+        "abbreviation": "ky",
+        "exact_archive_bytes": null,
+        "filename": "csv_pky.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "30M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 226512,
+        "published_recordcount_name": "PSAM_P21",
+        "published_state_name": "Kentucky",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "21",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pky.zip"
+      },
+      {
+        "abbreviation": "la",
+        "exact_archive_bytes": null,
+        "filename": "csv_pla.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "28M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 211225,
+        "published_recordcount_name": "PSAM_P22",
+        "published_state_name": "Louisiana",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "22",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pla.zip"
+      },
+      {
+        "abbreviation": "me",
+        "exact_archive_bytes": null,
+        "filename": "csv_pme.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "9.5M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 71199,
+        "published_recordcount_name": "PSAM_P23",
+        "published_state_name": "Maine",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "23",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pme.zip"
+      },
+      {
+        "abbreviation": "md",
+        "exact_archive_bytes": null,
+        "filename": "csv_pmd.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "41M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 299422,
+        "published_recordcount_name": "PSAM_P24",
+        "published_state_name": "Maryland",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "24",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmd.zip"
+      },
+      {
+        "abbreviation": "ma",
+        "exact_archive_bytes": null,
+        "filename": "csv_pma.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "48M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 349867,
+        "published_recordcount_name": "PSAM_P25",
+        "published_state_name": "Massachusetts",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "25",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pma.zip"
+      },
+      {
+        "abbreviation": "mi",
+        "exact_archive_bytes": null,
+        "filename": "csv_pmi.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "67M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 505689,
+        "published_recordcount_name": "PSAM_P26",
+        "published_state_name": "Michigan",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "26",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmi.zip"
+      },
+      {
+        "abbreviation": "mn",
+        "exact_archive_bytes": null,
+        "filename": "csv_pmn.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "38M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 291030,
+        "published_recordcount_name": "PSAM_P27",
+        "published_state_name": "Minnesota",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "27",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmn.zip"
+      },
+      {
+        "abbreviation": "ms",
+        "exact_archive_bytes": null,
+        "filename": "csv_pms.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "19M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 138521,
+        "published_recordcount_name": "PSAM_P28",
+        "published_state_name": "Mississippi",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "28",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pms.zip"
+      },
+      {
+        "abbreviation": "mo",
+        "exact_archive_bytes": null,
+        "filename": "csv_pmo.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "41M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 314740,
+        "published_recordcount_name": "PSAM_P29",
+        "published_state_name": "Missouri",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "29",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmo.zip"
+      },
+      {
+        "abbreviation": "mt",
+        "exact_archive_bytes": null,
+        "filename": "csv_pmt.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "7.4M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 55180,
+        "published_recordcount_name": "PSAM_P30",
+        "published_state_name": "Montana",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "30",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pmt.zip"
+      },
+      {
+        "abbreviation": "ne",
+        "exact_archive_bytes": null,
+        "filename": "csv_pne.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "13M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 99920,
+        "published_recordcount_name": "PSAM_P31",
+        "published_state_name": "Nebraska",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "31",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pne.zip"
+      },
+      {
+        "abbreviation": "nv",
+        "exact_archive_bytes": null,
+        "filename": "csv_pnv.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "20M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 146223,
+        "published_recordcount_name": "PSAM_P32",
+        "published_state_name": "Nevada",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "32",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnv.zip"
+      },
+      {
+        "abbreviation": "nh",
+        "exact_archive_bytes": null,
+        "filename": "csv_pnh.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "9.3M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 69093,
+        "published_recordcount_name": "PSAM_P33",
+        "published_state_name": "New Hampshire",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "33",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnh.zip"
+      },
+      {
+        "abbreviation": "nj",
+        "exact_archive_bytes": null,
+        "filename": "csv_pnj.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "61M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 444940,
+        "published_recordcount_name": "PSAM_P34",
+        "published_state_name": "New Jersey",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "34",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnj.zip"
+      },
+      {
+        "abbreviation": "nm",
+        "exact_archive_bytes": null,
+        "filename": "csv_pnm.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "13M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 97126,
+        "published_recordcount_name": "PSAM_P35",
+        "published_state_name": "New Mexico",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "35",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnm.zip"
+      },
+      {
+        "abbreviation": "ny",
+        "exact_archive_bytes": null,
+        "filename": "csv_pny.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "134M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 984474,
+        "published_recordcount_name": "PSAM_P36",
+        "published_state_name": "New York",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "36",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pny.zip"
+      },
+      {
+        "abbreviation": "nc",
+        "exact_archive_bytes": null,
+        "filename": "csv_pnc.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "70M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 515641,
+        "published_recordcount_name": "PSAM_P37",
+        "published_state_name": "North Carolina",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "37",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnc.zip"
+      },
+      {
+        "abbreviation": "nd",
+        "exact_archive_bytes": null,
+        "filename": "csv_pnd.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "5.3M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 40395,
+        "published_recordcount_name": "PSAM_P38",
+        "published_state_name": "North Dakota",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "38",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pnd.zip"
+      },
+      {
+        "abbreviation": "oh",
+        "exact_archive_bytes": null,
+        "filename": "csv_poh.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "78M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 586936,
+        "published_recordcount_name": "PSAM_P39",
+        "published_state_name": "Ohio",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "39",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_poh.zip"
+      },
+      {
+        "abbreviation": "ok",
+        "exact_archive_bytes": null,
+        "filename": "csv_pok.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "26M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 193866,
+        "published_recordcount_name": "PSAM_P40",
+        "published_state_name": "Oklahoma",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "40",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pok.zip"
+      },
+      {
+        "abbreviation": "or",
+        "exact_archive_bytes": null,
+        "filename": "csv_por.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "28M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 209205,
+        "published_recordcount_name": "PSAM_P41",
+        "published_state_name": "Oregon",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "41",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_por.zip"
+      },
+      {
+        "abbreviation": "pa",
+        "exact_archive_bytes": null,
+        "filename": "csv_ppa.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "87M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 660142,
+        "published_recordcount_name": "PSAM_P42",
+        "published_state_name": "Pennsylvania",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "42",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ppa.zip"
+      },
+      {
+        "abbreviation": "ri",
+        "exact_archive_bytes": null,
+        "filename": "csv_pri.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "7.0M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 49825,
+        "published_recordcount_name": "PSAM_P44",
+        "published_state_name": "Rhode Island",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "44",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pri.zip"
+      },
+      {
+        "abbreviation": "sc",
+        "exact_archive_bytes": null,
+        "filename": "csv_psc.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "34M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 256164,
+        "published_recordcount_name": "PSAM_P45",
+        "published_state_name": "South Carolina",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "45",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_psc.zip"
+      },
+      {
+        "abbreviation": "sd",
+        "exact_archive_bytes": null,
+        "filename": "csv_psd.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "6.1M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 46191,
+        "published_recordcount_name": "PSAM_P46",
+        "published_state_name": "South Dakota",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "46",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_psd.zip"
+      },
+      {
+        "abbreviation": "tn",
+        "exact_archive_bytes": null,
+        "filename": "csv_ptn.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "46M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 341131,
+        "published_recordcount_name": "PSAM_P47",
+        "published_state_name": "Tennessee",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "47",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ptn.zip"
+      },
+      {
+        "abbreviation": "tx",
+        "exact_archive_bytes": null,
+        "filename": "csv_ptx.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "182M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 1326295,
+        "published_recordcount_name": "PSAM_P48",
+        "published_state_name": "Texas",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "48",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_ptx.zip"
+      },
+      {
+        "abbreviation": "ut",
+        "exact_archive_bytes": null,
+        "filename": "csv_put.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "22M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 172453,
+        "published_recordcount_name": "PSAM_P49",
+        "published_state_name": "Utah",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "49",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_put.zip"
+      },
+      {
+        "abbreviation": "vt",
+        "exact_archive_bytes": null,
+        "filename": "csv_pvt.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "4.6M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 33731,
+        "published_recordcount_name": "PSAM_P50",
+        "published_state_name": "Vermont",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "50",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pvt.zip"
+      },
+      {
+        "abbreviation": "va",
+        "exact_archive_bytes": null,
+        "filename": "csv_pva.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "58M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 422692,
+        "published_recordcount_name": "PSAM_P51",
+        "published_state_name": "Virginia",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "51",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pva.zip"
+      },
+      {
+        "abbreviation": "wa",
+        "exact_archive_bytes": null,
+        "filename": "csv_pwa.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "53M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 389529,
+        "published_recordcount_name": "PSAM_P53",
+        "published_state_name": "Washington",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "53",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwa.zip"
+      },
+      {
+        "abbreviation": "wv",
+        "exact_archive_bytes": null,
+        "filename": "csv_pwv.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "12M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 86575,
+        "published_recordcount_name": "PSAM_P54",
+        "published_state_name": "West Virginia",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "54",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwv.zip"
+      },
+      {
+        "abbreviation": "wi",
+        "exact_archive_bytes": null,
+        "filename": "csv_pwi.zip",
+        "first_archive_sha256": null,
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "40M",
+        "intended_source_action": "NOT_ACQUIRED",
+        "literal_member_manifest": null,
+        "published_person_rows": 307291,
+        "published_recordcount_name": "PSAM_P55",
+        "published_state_name": "Wisconsin",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "55",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwi.zip"
+      },
+      {
+        "abbreviation": "wy",
+        "companion_sha256": "3ef59cf7b5eab13a49b9c9518a850eb06637ef103c463b4ea592484fdda1842b",
+        "exact_archive_bytes": 4202266,
+        "filename": "csv_pwy.zip",
+        "first_archive_sha256": "e80900d6826c8fef4c6f7230f3c967457aa86f06e750f050d8cf406888d19b73",
+        "index_display_modified": "2026-03-05 07:10",
+        "index_display_size": "4.0M",
+        "intended_source_action": "REUSE_EXACT_REVIEWED_LOCAL_QUARANTINE_PENDING_NEW_BATCH_APPROVAL",
+        "literal_member_manifest": [
+          {
+            "compressed_bytes": 4107368,
+            "crc32": 1864538888,
+            "declared_uncompressed_bytes": 18928161,
+            "name": "psam_p56.csv"
+          },
+          {
+            "compressed_bytes": 94540,
+            "crc32": 1962583236,
+            "declared_uncompressed_bytes": 99489,
+            "name": "ACS2020_2024_PUMS_README.pdf"
+          }
+        ],
+        "published_person_rows": 29297,
+        "published_recordcount_name": "PSAM_P56",
+        "published_state_name": "Wyoming",
+        "row_count_status": "RECONSTRUCTED_PUBLIC_METADATA_COUNT_PENDING_INDEPENDENT_REVIEW",
+        "state_fips": "56",
+        "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/5-Year/csv_pwy.zip"
+      }
+    ],
+    "specification_id": "E02-U1-FULL-ADULT-BENCHMARK-v1.1",
+    "stage": "METHODS_SCHEMA_RESOURCE_FIXTURE_SPEC_ONLY_NOT_IMPLEMENTED",
+    "uncertainty_record_contract": {
+      "blocked_value_rule": "Missing/invalidpointdenominator=>point_valueanduncertaintynull;validpointwithinvalidreplicatedenominator=>retainpoint_valuebutvariance/SE/MOEnull;neverusepartialreplicates/zeroimputation. Knownzeropoint/SEretaincomputedlocalvaluesbutreviewstatus,nointervalorcertaintyclaim.",
+      "container_version": "E02_U1_COUNT_RATIO_UNCERTAINTY_V1_1",
+      "denominator_ref": "nullforcounts;explicitF_STATE/C_STATE/F_NATIONAL/C_NATIONALreferenceforproportions",
+      "exact_count_variance_denominator": "20forvalidCOUNT_TOTAL,otherwisenull",
+      "exact_count_variance_numerator_decimal": "canonicalnonnegativedecimalstringforvalidCOUNT_TOTAL,nullforratio/unknown",
+      "extra_fields_allowed": false,
+      "numerator_ref": "Frozenprimitive/viewselectoronly,noarbitrarycodeeval",
+      "point_value": "finitefloat64ornull;rawintegercountpointalsoexactlyavailablefromprimitive/view",
+      "quantity_kind": [
+        "COUNT_TOTAL",
+        "PROPORTION"
+      ],
+      "rejected_query_kinds": [
+        "COUNT_COVARIANCE",
+        "COUNT_LINEAR_SIGNED",
+        "PROPORTION_COVARIANCE",
+        "PROPORTION_CONTRAST",
+        "CORRELATION"
+      ],
+      "required_fields": [
+        "quantity_id",
+        "quantity_kind",
+        "numerator_ref",
+        "denominator_ref",
+        "point_value",
+        "exact_count_variance_numerator_decimal",
+        "exact_count_variance_denominator",
+        "variance_sdr",
+        "standard_error",
+        "moe90",
+        "status"
+      ],
+      "status": [
+        "SDR_CONDITIONAL_SAMPLING_ERROR_ONLY",
+        "REVIEW_ZERO_ESTIMATE_OR_SE",
+        "BLOCKED_MISSING_SOURCE",
+        "BLOCKED_NONPOSITIVE_POINT_DENOMINATOR",
+        "BLOCKED_NONPOSITIVE_REPLICATE_DENOMINATOR",
+        "BLOCKED_NONFINITE_OR_OVERFLOW",
+        "BLOCKED_QUERY_BUDGET"
+      ],
+      "variance_sdr_standard_error_moe90": "finite_nonnegative_float64_or_null"
+    },
+    "universe": {
+      "C_selector": {
+        "citizenship_bin": "CITIZEN",
+        "residence_bin": "HOUSEHOLD"
+      },
+      "F": "AlladultresidentsrepresentedbyPUMSin50statesDCinclnoncitizensandbothGQtypes",
+      "adult_age_minimum": 18,
+      "age_dictionary_maximum_topcoded": 99,
+      "ages": [
+        "18-24",
+        "25-44",
+        "45-64",
+        "65+"
+      ],
+      "citizenship": [
+        "CITIZEN",
+        "NONCITIZEN"
+      ],
+      "education": [
+        "HS_OR_LESS",
+        "SOME_COLLEGE",
+        "BA_PLUS"
+      ],
+      "excluded_state_fips": [
+        "72"
+      ],
+      "original_broader_scope": "UNWAIVED_SCIENTIFIC_COMPLETION_BLOCKED",
+      "period": "2020-2024 five-year",
+      "residence": [
+        "HOUSEHOLD",
+        "INSTITUTIONAL_GQ",
+        "NONINSTITUTIONAL_GQ"
+      ],
+      "state_fips": [
+        "01",
+        "02",
+        "04",
+        "05",
+        "06",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "53",
+        "54",
+        "55",
+        "56"
+      ]
+    }
+  },
+  "spec_sha256": "3d71a83dc88d3f0622ec4db536030ab0f42ff46520659e514853eb00be813fdf",
+  "states": [
+    "01",
+    "02",
+    "04",
+    "05",
+    "06",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "53",
+    "54",
+    "55",
+    "56"
+  ],
+  "storage": {
+    "all_artifacts": 134217728,
+    "caps": {
+      "PRIMARY:base": 8388608,
+      "PRIMARY:catalog": 3145728,
+      "PRIMARY:query": 9437184,
+      "REPLAY:base": 8388608,
+      "REPLAY:catalog": 3145728,
+      "REPLAY:query": 9437184,
+      "core": 71303168,
+      "raw": 4294967296,
+      "receipts": 20971520,
+      "scratch": 268435456
+    },
+    "data_both": 41943040,
+    "free": 1073741824,
+    "initial_free": 5771362304,
+    "logs": 92274688
+  }
+}

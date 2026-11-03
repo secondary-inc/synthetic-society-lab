@@ -1,0 +1,238 @@
+from copy import deepcopy
+import csv
+import hashlib
+import json
+import multiprocessing
+import os
+from pathlib import Path
+import tempfile
+import time
+import unittest
+from unittest.mock import patch
+from civiclab.common import canonical_hash,sha256_file
+from civiclab.e02.national_budget import Blocked
+from civiclab.e02.f_actual_admission_v1 import load_config,create_fixture,FixtureAdmission,ActualAdmission,require_fixture,require_admission,admit_actual
+from civiclab.e02.f_actual_ledger_v1 import PilotLedger,Storage
+from civiclab.e02.f_wy_source_v1 import inspect_source,parse_source,validate_part
+from civiclab.e02.f_wy_local_pilot_v1 import PartialWYPilot,read_partial,execute_actual,admit_public_output
+from civiclab.e02.f_census_transport_v1 import dispatch
+from civiclab.e02.full_adult_types_v1_2 import AdultMatrix
+from civiclab.e02.full_adult_analysis_v1_2 import uncertainty,Ops,moments
+
+
+def rows(full=False):
+    out=[]
+    for age in ([18,25,45,65] if full else [18]):
+        for edu in ([17,20,24] if full else [17]):
+            for d in range(6):
+                row={'RT':'P','STATE':'56','AGEP':str(age),'CIT':'1' if d<3 else '5','RELSHIPP':str([20,37,38][d%3]),'SCHL':str(edu),'PWGTP':str(d+1),'SERIALNO':'PRIVATE_AUTHORED_WY_ONLY'}
+                for i in range(80):row['PWGTP'+str(i+1)]=str([-1,3][i%2] if d==0 else d+1)
+                for f in ('FAGEP','FCITP','FSCHLP','FRELSHIPP'):row[f]='0'
+                out.append(row)
+    for d in range(6):
+        row=dict(out[d]);row.update(AGEP='2',SCHL='',PWGTP='1')
+        for i in range(80):row['PWGTP'+str(i+1)]='1'
+        out.append(row)
+    return out
+
+
+def fixture(tmp,**kwargs):return create_fixture(Path(tmp)/'pilot',rows(kwargs.pop('full',False)),**kwargs)
+
+
+class AdmissionTests(unittest.TestCase):
+    def test_actual_default_refusal_before_stat_hash_open_socket_or_old_permission(self):
+        path='/actual/cache/MUST_NOT_TOUCH.zip'
+        with patch('pathlib.Path.stat',side_effect=AssertionError('actualstat')),patch('pathlib.Path.open',side_effect=AssertionError('actualopen')),patch('socket.socket.connect',side_effect=AssertionError('socket')):
+            for f in (admit_actual,execute_actual,dispatch):
+                with self.assertRaises(Blocked):f(path,actual_authority=1,old_C_approval={'status':'PASS'})
+        with self.assertRaises(Blocked):require_fixture({'authored_fixture':True,'path':path})
+        missing=load_config();missing.update(actual_authority=1,scope='NEW_F_WY_LOCAL_ACTUAL_ENGINEERING')
+        with patch('pathlib.Path.stat',side_effect=AssertionError('actualstat')),patch('pathlib.Path.open',side_effect=AssertionError('actualopen')):
+            with self.assertRaises(Blocked):admit_actual(missing)
+        with self.assertRaises(Blocked):admit_public_output(path)
+    def test_native_config_and_new_capability_not_external_path_flag(self):
+        c=load_config();self.assertEqual(c['limits']['body_bytes'],3*1024**3);self.assertEqual(c['storage']['all_artifacts'],128*1024**2)
+        self.assertTrue(all(v is None for v in c['actual_approvals'].values()))
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);self.assertEqual(a.manifest['origin'],'AUTHORED_WY_LOCAL_V1')
+            fake=FixtureAdmission(a.root,a.path,a.manifest_json,a.config_json,object())
+            with self.assertRaises(Blocked):PartialWYPilot(fake)
+            fake_actual=ActualAdmission(a.root,a.path,a.manifest_json,a.config_json,object())
+            with self.assertRaises(Blocked):require_admission(fake_actual)
+            with self.assertRaises(Blocked):create_fixture(a.root,rows())
+
+
+class SourceTests(unittest.TestCase):
+    def test_six_domain_child_adult_weights_replicates_and_private_ids(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=parse_source(a);m=validate_part(p,a)
+            self.assertEqual(p['accounting']['all']['count'],12);self.assertEqual(p['accounting']['adult']['point'],21);self.assertEqual(p['accounting']['all']['point'],27)
+            self.assertEqual(p['accounting']['adult']['replicates'],[19,23]*40);self.assertEqual([d['adult']['count'] for d in p['domains'].values()],[1]*6)
+            self.assertEqual(sum(m.present),72);self.assertIsNone(m.record(0,a.config['spec'])['point_weight_sum']);self.assertNotIn('PRIVATE_AUTHORED',json.dumps(p))
+    def test_missing_extra_width_each_age_domain_and_valid_empty_unused(self):
+        for target in range(12):
+            for kind in ('missing','extra'):
+                with self.subTest(target=target,kind=kind),tempfile.TemporaryDirectory() as tmp:
+                    a=fixture(tmp,edit=(kind,target));inspect_source(a)
+                    with self.assertRaises(Blocked):parse_source(a)
+        with tempfile.TemporaryDirectory() as tmp:parse_source(fixture(tmp))
+    def test_strict_quoting_extra_member_bad_domain_before_child_selection(self):
+        for kind in ('quoting','member','header'):
+            with self.subTest(kind=kind),tempfile.TemporaryDirectory() as tmp:
+                a=fixture(tmp,edit=(kind,0))
+                with self.assertRaises((Blocked,csv.Error)):parse_source(a)
+        for field,value in [('PWGTP','0'),('PWGTP80','-10000'),('FAGEP','2'),('CIT','0'),('STATE','01')]:
+            with self.subTest(field=field),tempfile.TemporaryDirectory() as tmp:
+                r=rows();r[-1][field]=value;a=create_fixture(Path(tmp)/'pilot',r)
+                with self.assertRaises(Blocked):parse_source(a)
+    def test_source_drift_after_worker_before_commit_no_checkpoint_and_full_charge(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a);p.enroll()
+            def mutate(event):
+                if event=='after_worker_before_checkpoint':a.path.write_bytes(a.path.read_bytes()+b'drift')
+            with self.assertRaises(Blocked):p.parse('PRIMARY',hook=mutate)
+            s=p.ledger.snapshot();self.assertEqual(s['stages']['PRIMARY']['status'],'FAILED');self.assertEqual(s['rows'],12);self.assertTrue(s['source_halted'])
+            self.assertEqual(s['GETs'],0);self.assertEqual(s['BODY_bytes'],0);self.assertEqual(s['unique_source_bytes'],a.manifest['archive_bytes'])
+            self.assertNotIn('PRIVATE_AUTHORED',(a.root/'PRIMARY.failure.local.json').read_text())
+
+
+class PilotTests(unittest.TestCase):
+    def test_partial_primary_replay_full_shape_unknowns_zero_and_uncertainty(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp,full=True);p=PartialWYPilot(a);primary,replay=p.run();matrix,manifest,u=primary
+            self.assertEqual(matrix.blobs(),replay[0].blobs());self.assertEqual(u,replay[2]);self.assertEqual(sum(matrix.present),72)
+            self.assertEqual(sum(matrix.data['count.i64le']),72);self.assertEqual(manifest['unknown_F_cells'],3600);self.assertEqual(manifest['unknown_C_cells'],600)
+            records={r['quantity_id']:r for r in u['records']};self.assertIsNone(records['F_NATIONAL']['point_value']);self.assertEqual(records['F_STATE:56']['point_value'],252)
+            s=p.ledger.snapshot();self.assertEqual(s['ops'],12000000);self.assertEqual(s['rows'],156);self.assertLess(s['seconds'],5*300)
+            self.assertEqual(s['expanded_bytes'],p.ledger.expanded+2*p.ledger.parse_bytes);self.assertEqual(s['network_seconds'],0)
+            self.assertEqual(sum(d['ops'] for d in p.ledger.descriptors.values()),12000000)
+            for sweep in ('PRIMARY','REPLAY'):
+                with self.assertRaises(Blocked):admit_public_output(a.root/sweep)
+            self.assertEqual(len(p.resources),5)
+            from civiclab.dashboard import verified_run
+            with self.assertRaises(ValueError):verified_run(a.root)
+    def test_known_sample_zero_vs_unknown_and_disabled_extra_queries(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);part=parse_source(a);m=validate_part(part,a);s=a.config['states'].index('56');self.assertEqual(m.record(s*72+6,a.config['spec'])['point_weight_sum'],0)
+            with self.assertRaises(Blocked):m.dot([1]*3672)
+            v=[0]*3672;v[s*72]=1;point,reps=m.dot(v);self.assertEqual(moments(point,reps,Ops(300))[1],16)
+            contrast=[0]*3672;contrast[s*72]=-1;self.assertEqual(m.dot(contrast)[0],-1)
+            self.assertEqual(sum((x-point)*(y-point) for x,y in zip(reps,[3,-1]*40))/20,-16)
+            rec=uncertainty('ratio',1,[3]*80,Ops(1000),denominator=('F',2,[-1]*80));self.assertIsNone(rec['variance_sdr'])
+    def test_output_corruption_or_orphan_not_accepted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a)
+            with self.assertRaises(Blocked):read_partial(a,'PRIMARY')
+            p.enroll();p.parse('PRIMARY');p.finalize('PRIMARY')
+            path=a.root/'PRIMARY/source_status.u8';path.write_bytes(bytes(3672))
+            with self.assertRaises(Blocked):read_partial(a,'PRIMARY')
+
+
+class LedgerTests(unittest.TestCase):
+    def test_query_analysis_failure_permanent_source_continuation_separate_no_refund(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a);p.enroll();p.ledger.reserve('PRIMARY');p.ledger.recover_unknown();before=p.ledger.snapshot()
+            with self.assertRaises(Blocked):p.ledger.reserve('REPLAY')
+            audit={'kind':'AUTHORED_EXACT_SOURCE_CONTINUATION','design':p.ledger.design,'state_sha256':canonical_hash(before),'preserve_charges':True};p.ledger.continue_source(audit)
+            after=p.ledger.snapshot();self.assertEqual(before['rows'],after['rows']);self.assertEqual(before['expanded_bytes'],after['expanded_bytes']);self.assertEqual(before['seconds'],after['seconds'])
+            with self.assertRaises(Blocked):p.ledger.reserve('PRIMARY')
+            p.parse('REPLAY');p.ledger.reserve('FINALIZE_REPLAY');p.ledger.recover_unknown();s=p.ledger.snapshot();self.assertTrue(s['analysis_halted']);self.assertEqual(s['ops'],6000000)
+            with patch('civiclab.e02.f_wy_local_pilot_v1.supervise_fixture',side_effect=AssertionError('futurework')):
+                with self.assertRaises(Blocked):p.finalize('REPLAY')
+            self.assertEqual(s,p.ledger.snapshot())
+    def test_current_counter_or_halt_reset_refused_against_transition_replay(self):
+        for field in ('expanded_bytes','seconds','source_halted'):
+            with self.subTest(field=field),tempfile.TemporaryDirectory() as tmp:
+                a=fixture(tmp);l=PilotLedger(a);l.reserve('ENROLL');l.recover_unknown();path=l.path/'state.json';s=json.loads(path.read_text());s[field]=False if field=='source_halted' else 0;path.write_text(json.dumps(s))
+                with self.assertRaises(Blocked):PilotLedger(a)
+    def test_real_process_crash_unknown_and_torn_event_no_reset(self):
+        ctx=multiprocessing.get_context('fork')
+        for boundary in ('after_reservation','after_event_before_state'):
+            with self.subTest(boundary=boundary),tempfile.TemporaryDirectory() as tmp:
+                a=fixture(tmp);p=PartialWYPilot(a)
+                def crash():
+                    child=PartialWYPilot(a)
+                    def hook(event):
+                        if event==boundary:os._exit(27)
+                    child.enroll(hook=hook)
+                proc=ctx.Process(target=crash);proc.start();proc.join(5);self.assertEqual(proc.exitcode,27)
+                if boundary=='after_reservation':
+                    before=p.ledger.snapshot();p.ledger.recover_unknown();after=p.ledger.snapshot();self.assertEqual(before['expanded_bytes'],after['expanded_bytes']);self.assertEqual(after['seconds'],300)
+                else:
+                    with self.assertRaises(Blocked):PilotLedger(a)
+    def test_two_process_owner_and_free_space_failure_before_and_after_work(self):
+        ctx=multiprocessing.get_context('fork')
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);l=PilotLedger(a);event=ctx.Event();queue=ctx.Queue()
+            def reserve():
+                event.wait(3)
+                try:PilotLedger(a).reserve('ENROLL');queue.put('RESERVED')
+                except Blocked:queue.put('BLOCKED')
+            children=[ctx.Process(target=reserve) for _ in range(2)]
+            for c in children:c.start()
+            event.set();self.assertEqual(sorted([queue.get(timeout=5) for _ in children]),['BLOCKED','RESERVED'])
+            for c in children:c.join(5)
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a)
+            with patch('civiclab.e02.f_actual_ledger_v1.shutil.disk_usage',return_value=SimpleNamespace(free=0)):
+                with self.assertRaises(Blocked):p.enroll()
+            self.assertEqual(p.ledger.snapshot()['stages'],{})
+            patcher=patch('civiclab.e02.f_actual_ledger_v1.shutil.disk_usage',return_value=SimpleNamespace(free=0))
+            try:
+                with self.assertRaises(Blocked):p.enroll(hook=lambda e:patcher.start() if e=='after_worker_before_checkpoint' else None)
+            finally:patcher.stop()
+            self.assertEqual(p.ledger.snapshot()['stages']['ENROLL']['status'],'RESERVED');p.ledger.recover_unknown();self.assertEqual(p.ledger.snapshot()['seconds'],300)
+
+
+class AdditionalBoundaryTests(unittest.TestCase):
+    def test_different_finalization_after_unknown_refuses_before_any_worker(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a);p.enroll();p.parse('PRIMARY');p.parse('REPLAY');p.ledger.reserve('FINALIZE_PRIMARY');p.ledger.recover_unknown();before=p.ledger.snapshot()
+            with patch('civiclab.e02.f_wy_local_pilot_v1.supervise_fixture',side_effect=AssertionError('futureanalysis')) as worker:
+                with self.assertRaises(Blocked):p.finalize('REPLAY')
+                self.assertEqual(worker.call_count,0)
+            self.assertEqual(before,p.ledger.snapshot());self.assertEqual(before['ops'],6000000)
+            path=p.ledger.path/'state.json';edited=deepcopy(before);edited['analysis_halted']=False;path.write_text(json.dumps(edited))
+            with self.assertRaises(Blocked):PilotLedger(a)
+    def test_same_bytes_replaced_file_refuses_against_enrolled_identity(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a);p.enroll();replacement=a.root/'same-bytes.tmp';replacement.write_bytes(a.path.read_bytes());os.replace(replacement,a.path)
+            with self.assertRaises(Blocked):p.parse('PRIMARY')
+            self.assertEqual(p.ledger.snapshot()['stages']['PRIMARY']['status'],'FAILED')
+    def test_resource_stop_expiry_and_native_partition_projections(self):
+        from civiclab.e02.national_population import supervise_fixture as original
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);p=PartialWYPilot(a)
+            def stop(work,**limits):
+                limits['rss_bytes']=1
+                def slow():time.sleep(.1);return work()
+                return original(slow,**limits)
+            with patch('civiclab.e02.f_wy_local_pilot_v1.supervise_fixture',side_effect=stop):
+                with self.assertRaises(Blocked):p.enroll()
+            self.assertEqual(p.ledger.snapshot()['seconds'],300)
+            for category,cap in a.config['storage']['caps'].items():
+                with self.subTest(category=category),self.assertRaises(Blocked):Storage(a).check(category,cap+1)
+            created=p.ledger.snapshot()['created'];p.ledger.clock=lambda:created+a.config['limits']['batch_elapsed_seconds']+1
+            with self.assertRaises(Blocked):p.ledger.snapshot()
+    def test_schema_origin_and_closed_record_no_actual_relabel(self):
+        from civiclab.e02.full_adult_types_v1_2 import schema_check
+        with tempfile.TemporaryDirectory() as tmp:
+            a=fixture(tmp);part=parse_source(a);schemas=json.loads((Path(__file__).resolve().parents[1]/'configs/e02_F_WY_LOCAL_RECORD_SCHEMAS_v1.json').read_text())
+            schema_check(part,schemas['AUTHORED_STATE_PART'])
+            with self.assertRaises(Blocked):schema_check(part,schemas['ACTUAL_STATE_PART'])
+            relabeled={**part,'origin':'ACTUAL'}
+            with self.assertRaises(Blocked):validate_part(relabeled,a)
+            with self.assertRaises(Blocked):validate_part({**part,'SERIALNO':'PRIVATE_UNEXPECTED'},a)
+
+
+
+def record_fixture_run(root):
+    from datetime import datetime,timezone
+    begin=time.monotonic();a=create_fixture(root,rows(full=True));p=PartialWYPilot(a);primary,replay=p.run();state=p.ledger.snapshot();m=primary[0]
+    receipt={'kind':'MOCK_AUTHORED_PARTIAL_WY_V1','run_id':a.root.name,'completed_at_utc':datetime.now(timezone.utc).isoformat(),'elapsed_wall_seconds':time.monotonic()-begin,'origin':'AUTHORED','source_manifest_sha256':canonical_hash(a.manifest),'config_sha256':canonical_hash(a.config),'code_test_reference_pins':a.config['required_files'],'all_age_authored_rows_per_sweep':78,'adult_authored_rows_per_sweep':72,'authored_F_point_per_sweep':252,'known_F_cells':72,'unknown_F_cells':3600,'known_C_cells':12,'unknown_C_cells':600,'primary_replay_primitive_bytes_equal':primary[0].blobs()==replay[0].blobs(),'primary_replay_uncertainty_equal':primary[2]==replay[2],'logical_ops_charged':state['ops'],'processing_rows_charged':state['rows'],'expanded_bytes_charged':state['expanded_bytes'],'processing_seconds_charged_once':state['seconds'],'unique_source_bytes':state['unique_source_bytes'],'retained_source_bytes':state['retained_source_bytes'],'GETs':0,'BODY_bytes':0,'network_seconds':0,'model_calls':0,'actual_person_rows_processed':0,'spent_usd':0,'private_outputs':'NOT_ADMITTED_FOR_PACKAGE_VIEWER_DISCLOSURE_FIT','resources':p.resources,'native_limits':a.config['limits'],'native_storage':a.config['storage'],'storage_before_receipt':p.ledger.storage.check(),'independent_implementation_review':'PENDING'}
+    p.ledger.storage.json(a.root/'receipt.local.json',receipt)
+    files={str(f.relative_to(a.root)):sha256_file(f) for f in sorted(a.root.rglob('*')) if f.is_file()}
+    p.ledger.storage.json(a.root/'index.local.json',{'kind':'MOCK_AUTHORED_PRIVATE_ONLY','files':files})
+    print(json.dumps({'run_id':a.root.name,'receipt_sha256':sha256_file(a.root/'receipt.local.json'),'index_sha256':sha256_file(a.root/'index.local.json'),'elapsed_seconds':receipt['elapsed_wall_seconds'],'max_sampled_child_rss_bytes':max(r['sampled_peak_rss_bytes'] for r in p.resources),'ops':state['ops'],'rows':state['rows'],'storage':p.ledger.storage.check()},sort_keys=True))
+    return receipt

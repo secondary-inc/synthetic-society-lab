@@ -1,0 +1,124 @@
+{
+  "ACTUAL_STATE_PART": {
+    "additionalProperties": false,
+    "properties": {
+      "accounting": {
+        "type": "object"
+      },
+      "actual_person_rows_processed": {
+        "minimum": 1,
+        "type": "integer"
+      },
+      "csv_bytes": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "domains": {
+        "type": "object"
+      },
+      "expanded_bytes": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "origin": {
+        "const": "ACTUAL"
+      },
+      "primitive_bundle": {
+        "type": "object"
+      },
+      "rows": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "schema": {
+        "const": "E02_F_WY_ACTUAL_STATE_PART_V1"
+      },
+      "source_identity": {
+        "type": "object"
+      },
+      "source_manifest_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "state": {
+        "const": "56"
+      }
+    },
+    "required": [
+      "schema",
+      "origin",
+      "actual_person_rows_processed",
+      "state",
+      "source_manifest_sha256",
+      "source_identity",
+      "rows",
+      "csv_bytes",
+      "expanded_bytes",
+      "accounting",
+      "domains",
+      "primitive_bundle"
+    ],
+    "type": "object"
+  },
+  "AUTHORED_STATE_PART": {
+    "additionalProperties": false,
+    "properties": {
+      "accounting": {
+        "type": "object"
+      },
+      "actual_person_rows_processed": {
+        "const": 0
+      },
+      "csv_bytes": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "domains": {
+        "type": "object"
+      },
+      "expanded_bytes": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "origin": {
+        "const": "AUTHORED"
+      },
+      "primitive_bundle": {
+        "type": "object"
+      },
+      "rows": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "schema": {
+        "const": "E02_F_WY_AUTHORED_STATE_PART_V1"
+      },
+      "source_identity": {
+        "type": "object"
+      },
+      "source_manifest_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "state": {
+        "const": "56"
+      }
+    },
+    "required": [
+      "schema",
+      "origin",
+      "actual_person_rows_processed",
+      "state",
+      "source_manifest_sha256",
+      "source_identity",
+      "rows",
+      "csv_bytes",
+      "expanded_bytes",
+      "accounting",
+      "domains",
+      "primitive_bundle"
+    ],
+    "type": "object"
+  },
+  "scope": "Wire shape only; ACTUAL shape does not mint source/execution admission and is not emitted by this candidate"
+}
