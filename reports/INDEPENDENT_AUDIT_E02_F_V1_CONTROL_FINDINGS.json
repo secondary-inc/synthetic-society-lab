@@ -1,0 +1,86 @@
+{
+  "actual_person_source_opened": false,
+  "actual_source_requests": 0,
+  "audited_at_utc": "2026-11-03T14:53:34.169815+00:00",
+  "auditor_role": "independent_auditor",
+  "candidate_evidence_sha256": "5fc9f32f3f6811a44725cf9c2f635b958c80a55db18910641b154f2471fb5825",
+  "candidate_receipt_sha256": "c50f9a121311e4e925de7e16d06dc25c89f4872619bb5332eebadd2912f03ca7",
+  "controller_receipts_renewed": false,
+  "cost_usd": 0,
+  "findings": [
+    {
+      "cause": "Semanticvalidationrederivestotalsfrommutableadmittedcostsbutdoesnotderivethemfromthefrozencompiledselector/coefficient/queryplanorboundexecutionmanifest. Eventafterhashesdonotproveintermediatecostsemantics.",
+      "id": "IA-E02-F-V1-QUERY-COST-001",
+      "implication": "Consumedlogicalworkisrefundedandnextqueryreservesdespiteunchangedfrozenplan. Violatesno-success/failure/replay-refundandsemanticreopencontract.",
+      "location": "src/civiclab/e02/full_adult_queries_v1.py:60",
+      "observed": {
+        "accepted": true,
+        "charged_query_cost": 0,
+        "frozen_plan_unchanged": true,
+        "genesis_unchanged": true,
+        "next_query_reserved": true,
+        "original_ops": 74085,
+        "original_query_cost": 645,
+        "reopened_ops": 73440
+      },
+      "required_remediation": [
+        "Preservev1candidate/evidence/tests/runs;separateversionednarrowfix.",
+        "Rederiveexactquerydefinitions/vectors/nonzerocount/costs,totalboth-sweepboundandper-keychargesfromindependentlyfrozenplan/code/spec/bindingonwriteandsemanticreopen,notself-consistentmutableadmissioncopies.",
+        "Probezero/one-less/changedkind/definition/costandcoeditedreceipt/event/statevariantswithoutchanginggenesisorplan;assertnoadditionalqueryevaluation/reservationafterrefusal."
+      ],
+      "severity": "HIGH_FOR_IMPLEMENTATION_ACCEPTANCE",
+      "status": "OPEN",
+      "trigger": "Finishonecorrectauthored645-unitcovariancequery;coeditadmittedcost/currentquerycostto0,reduceops/declaredtwo-sweepplanbound,andresealmutablequeryreceipt/event/currentstatehashchains. Leaveimmutableplan_input/runtime/genesisunchanged."
+    },
+    {
+      "cause": "DictReaderfillsmissingunusedfieldwithNone;parse_personchecksNone-key/extracolumnsandrequiredprojectiontypesbutnotallrecordfields/width.",
+      "id": "IA-E02-F-V1-CSV-WIDTH-002",
+      "implication": "Malformedall-agerecordpassesstrictsourcewidthgateevenbeforeadultselection. Discardingunusedvaluesdoesnotwaiveexactrecordwidth.",
+      "location": "src/civiclab/e02/full_adult_types_v1.py:111",
+      "observed": {
+        "accepted": true,
+        "adults": 6,
+        "all_age_rows": 12,
+        "first_record_columns": 284,
+        "header_columns": 285
+      },
+      "required_remediation": [
+        "Rejectanyrowwithmissingorextracolumnsrelativetofrozenheaderbeforeage/domainselection,includingmissingunusedtrailingfields.",
+        "Addadultandunder18/sixdomaintruncation/extraquoted-field/validempty-unusedpositivefixturesandactualauthoredprocess_Fprobes. Retainfailuremanifest/consumptionnoprivateroworerrorvalue."
+      ],
+      "severity": "MEDIUM_SOURCE_INTEGRITY",
+      "status": "OPEN",
+      "trigger": "Authored285-columnCSVheader,firstpersonrecordtruncatedto284fieldsbymissinglastunusedfield;updatelegitimateauthoredZIP/memberhashmanifestbeforeenrollment."
+    }
+  ],
+  "frozen_reference_pins_verified": {
+    "configs/e02_full_adult_benchmark_u1_v1_1.json": "3d71a83dc88d3f0622ec4db536030ab0f42ff46520659e514853eb00be813fdf",
+    "configs/e02_national_controls_v1.json": "fe67b984eeb4527eb9858b89e225c2988a1790ee4c55fccd945f136659fec895",
+    "docs/E02_FULL_ADULT_BENCHMARK_U1_SPEC_V1_1.md": "90759d9e9718b98703d2a9d0353dad3a25b426311fa29fc70e6e630db6d4a2d2",
+    "docs/E02_FULL_ADULT_STATE_UNIVERSE_FIDELITY_PROPOSAL.md": "2cd68afd31ed5bbc9cbf668e908f4342212a095cbf1e9b0146640bcf186b0535",
+    "docs/E02_NATIONAL_PUMS_N1_CONTROLS.md": "f082af68e1e911714e4b3f857e8470464ef5c9fbffa9c385c9b5468b04e88875",
+    "reports/E02_NATIONAL_PUMS_N1_EVIDENCE.json": "002e9718b4252e17709419fe9c1621c20f4a9524488520563ce4a18d2104ff90",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_national_controls.py": "f872e98b8d90ade71488ebbef6fca11c78f5ebe7db4689b02ef066274eb7530d"
+  },
+  "model_calls": 0,
+  "new_F_tests_in_that_suite": 18,
+  "review_scope": "Authoredimplementationreviewonly;twoadversarialreprosblockacceptancedespite93passingE02tests. Source/scientific/actualF/WYreuse/disclosure/fit/modelauthorityremainsabsent. Retainedrunarithmetic/hashinspectioncontinuesaspositiveevidence,notacceptance.",
+  "reviewed_files": {
+    "configs/e02_full_adult_engine_v1.json": "d9247357f3de38fa893af798d0c6486e76b3f0dd0258668607bd3f43bbdf61b7",
+    "docs/E02_FULL_ADULT_ENGINE_V1.md": "0fb540b94cfd88d6eddb7e8704b751e83b253df0d3e2b47a32a907a4607cec11",
+    "src/civiclab/e02/full_adult_analysis_v1.py": "39c2bf7d52b68f58d795dc112cb413b2eef80208e8d07126b5fd36c2a66cb940",
+    "src/civiclab/e02/full_adult_codec_v1.py": "9fc02d93b9168ca8f3fcba9faa69a3a0dfe33d4e83cdccffa6372661c354b62a",
+    "src/civiclab/e02/full_adult_control_v1.py": "019f6c45a48c727b3f6f985743ce1aa67bf8c25b5d2a9aa7d184c9244230fa32",
+    "src/civiclab/e02/full_adult_engine_v1.py": "6ffd5b5109c2f392221917fed0181ea11ac38462f916f069710f5c638d424b94",
+    "src/civiclab/e02/full_adult_queries_v1.py": "ca8eb2af22c2aaa1c575b6293af0ab1643381e1d9162ff6c11b027396c165b0a",
+    "src/civiclab/e02/full_adult_runtime_v1.py": "19bc80c0301bc9c8259cd859c675a32bfee1e8064c3275ee64eea475d4cb01dc",
+    "src/civiclab/e02/full_adult_types_v1.py": "7d9953766c8ebc786b7bc8c61022b92bd687ed42c21a990c4cfd90e3d4eeac5e",
+    "tests/test_e02_full_adult_v1.py": "6779cd2501a70baaa81baf799cd462091b854694e646ab7841e3bb1ffe09c7ca"
+  },
+  "schema_version": 1,
+  "status": "BLOCKED_F_V1_QUERY_COST_RECONCILIATION_AND_CSV_WIDTH",
+  "targeted_E02_tests_independently_passed": 93
+}

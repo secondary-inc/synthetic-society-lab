@@ -1,0 +1,240 @@
+{
+  "actual_approvals": {
+    "fit": null,
+    "parse": null,
+    "source": null
+  },
+  "actual_person_rows_processed": 0,
+  "actual_source_requests": 0,
+  "api_model_cost_usd": 0,
+  "canonical_oracles": {
+    "F01": {
+      "C_point": 1,
+      "F_point": 21,
+      "F_replicates_odd_even": [
+        19,
+        23
+      ],
+      "adult_count": 6,
+      "all_count": 12,
+      "all_point": 27,
+      "under18_count": 6
+    },
+    "F02": {
+      "C_count": 51,
+      "F_count": 306,
+      "F_replicates_odd_even": [
+        204,
+        408
+      ],
+      "all_count": 612,
+      "national_variance": 41616,
+      "sum_state_variances_is_not_national": 816
+    },
+    "F19": {
+      "contrast_variance": 64,
+      "contrast_variance_numerator": 1280,
+      "covariance": -16,
+      "covariance_numerator": -320,
+      "denominator": 20
+    }
+  },
+  "files": {
+    "configs/e02_full_adult_engine_v1.json": "d9247357f3de38fa893af798d0c6486e76b3f0dd0258668607bd3f43bbdf61b7",
+    "docs/E02_FULL_ADULT_ENGINE_V1.md": "0fb540b94cfd88d6eddb7e8704b751e83b253df0d3e2b47a32a907a4607cec11",
+    "src/civiclab/e02/full_adult_analysis_v1.py": "39c2bf7d52b68f58d795dc112cb413b2eef80208e8d07126b5fd36c2a66cb940",
+    "src/civiclab/e02/full_adult_codec_v1.py": "9fc02d93b9168ca8f3fcba9faa69a3a0dfe33d4e83cdccffa6372661c354b62a",
+    "src/civiclab/e02/full_adult_control_v1.py": "019f6c45a48c727b3f6f985743ce1aa67bf8c25b5d2a9aa7d184c9244230fa32",
+    "src/civiclab/e02/full_adult_engine_v1.py": "6ffd5b5109c2f392221917fed0181ea11ac38462f916f069710f5c638d424b94",
+    "src/civiclab/e02/full_adult_queries_v1.py": "ca8eb2af22c2aaa1c575b6293af0ab1643381e1d9162ff6c11b027396c165b0a",
+    "src/civiclab/e02/full_adult_runtime_v1.py": "19bc80c0301bc9c8259cd859c675a32bfee1e8064c3275ee64eea475d4cb01dc",
+    "src/civiclab/e02/full_adult_types_v1.py": "7d9953766c8ebc786b7bc8c61022b92bd687ed42c21a990c4cfd90e3d4eeac5e",
+    "tests/test_e02_full_adult_v1.py": "6779cd2501a70baaa81baf799cd462091b854694e646ab7841e3bb1ffe09c7ca"
+  },
+  "frozen_reference_files_unchanged": {
+    "configs/e02_full_adult_benchmark_u1_v1_1.json": "3d71a83dc88d3f0622ec4db536030ab0f42ff46520659e514853eb00be813fdf",
+    "configs/e02_national_controls_v1.json": "fe67b984eeb4527eb9858b89e225c2988a1790ee4c55fccd945f136659fec895",
+    "docs/E02_FULL_ADULT_BENCHMARK_U1_SPEC_V1_1.md": "90759d9e9718b98703d2a9d0353dad3a25b426311fa29fc70e6e630db6d4a2d2",
+    "docs/E02_FULL_ADULT_STATE_UNIVERSE_FIDELITY_PROPOSAL.md": "2cd68afd31ed5bbc9cbf668e908f4342212a095cbf1e9b0146640bcf186b0535",
+    "docs/E02_NATIONAL_PUMS_N1_CONTROLS.md": "f082af68e1e911714e4b3f857e8470464ef5c9fbffa9c385c9b5468b04e88875",
+    "reports/E02_NATIONAL_PUMS_N1_EVIDENCE.json": "002e9718b4252e17709419fe9c1621c20f4a9524488520563ce4a18d2104ff90",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_national_controls.py": "f872e98b8d90ade71488ebbef6fca11c78f5ebe7db4689b02ef066274eb7530d"
+  },
+  "git_base": "46ef6c761fe34f094f1a14de2bc6cf242b224a1f",
+  "independent_acceptance": "NOT_REQUESTED_DIRECTLY_BY_WORKER; LEAD_ROUTES_REVIEW",
+  "model_calls": 0,
+  "preserved_refusal": {
+    "actual_person_rows": 0,
+    "files": {
+      ".AUTHORED_F_ONLY": "6a8d9649f2992571a7ecbf56608697aa0424f22457633e56f54e44848771bbb0",
+      "PRIMARY/plan_refusal.json": "a86a2bfe9c6582420d0d911a963a6c6aa3a4557fa5e2b426ca4669f6105a5e25",
+      "analysis/.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "analysis/events.jsonl": "38a5dd3284c1531d083858aea9ef29331bed70a6ea9ede7d9202f5d0f0424747",
+      "analysis/genesis.json": "e9ce5e72c2265ebcd1178e916898cf6fa9ca59679f615c1d52a425ce7fdeadac",
+      "analysis/plan_input.json": "836ee0cfb89b22000ced16f882727d6f825c130619867aff8e4514f361f66815",
+      "analysis/runtime_config.json": "3ac1ac5823ff36c593ee856e6adf70fb7bd9ea9fb215f1037c1c00fc21e1248e",
+      "analysis/state.json": "e1d6a413e6c97086bea1c329de8d4c1c23aaa8e1e0579c9ae2fff10c3b022059"
+    },
+    "halted": true,
+    "ops_charged": 1083240,
+    "query_attempts": 0,
+    "run_id": "F-refusal-v1-20261103-01",
+    "scope": "MOCK_INTENTIONAL_64M_PLAN_REFUSAL"
+  },
+  "recorded_at_utc": "2026-11-03T14:48:26.301146+00:00",
+  "required_source_and_reference_pins": {
+    "configs/e02_full_adult_benchmark_u1_v1_1.json": "3d71a83dc88d3f0622ec4db536030ab0f42ff46520659e514853eb00be813fdf",
+    "docs/E02_FULL_ADULT_BENCHMARK_U1_SPEC_V1_1.md": "90759d9e9718b98703d2a9d0353dad3a25b426311fa29fc70e6e630db6d4a2d2",
+    "reports/INDEPENDENT_AUDIT_E02_N1_V1_1_REMEDIATION.json": "a5cddcdd8fdcc85300b62256aae3cb1dbb2c4f3e463ff68a0e98a491e24404b5",
+    "reports/INDEPENDENT_AUDIT_E02_U1_V1_1_SPEC.json": "326028829f931912ddf582ab2344c28424c548bd6b03ef28a86bf3c2e0da0439",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/full_adult_analysis_v1.py": "39c2bf7d52b68f58d795dc112cb413b2eef80208e8d07126b5fd36c2a66cb940",
+    "src/civiclab/e02/full_adult_codec_v1.py": "9fc02d93b9168ca8f3fcba9faa69a3a0dfe33d4e83cdccffa6372661c354b62a",
+    "src/civiclab/e02/full_adult_control_v1.py": "019f6c45a48c727b3f6f985743ce1aa67bf8c25b5d2a9aa7d184c9244230fa32",
+    "src/civiclab/e02/full_adult_engine_v1.py": "6ffd5b5109c2f392221917fed0181ea11ac38462f916f069710f5c638d424b94",
+    "src/civiclab/e02/full_adult_queries_v1.py": "ca8eb2af22c2aaa1c575b6293af0ab1643381e1d9162ff6c11b027396c165b0a",
+    "src/civiclab/e02/full_adult_runtime_v1.py": "19bc80c0301bc9c8259cd859c675a32bfee1e8064c3275ee64eea475d4cb01dc",
+    "src/civiclab/e02/full_adult_types_v1.py": "7d9953766c8ebc786b7bc8c61022b92bd687ed42c21a990c4cfd90e3d4eeac5e",
+    "src/civiclab/e02/national_budget.py": "247a125556b4032fb7df8ecb01126624a45e8c0cfea4cb00d9def4720a53c788",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/pums_wy_local_reuse_v1.py": "a6aa0aa9f53dc91bdbddc82c7d2f9f522b031b9e381ad10e2ff53303d222d718",
+    "src/civiclab/e02/pums_wy_pilot_v1.py": "7299e9ad9ba4c4c56899ed4d7a2ea12cda867ec9689f6fe5f2e5ad2ef15f7401",
+    "tests/test_e02_full_adult_v1.py": "6779cd2501a70baaa81baf799cd462091b854694e646ab7841e3bb1ffe09c7ca"
+  },
+  "resource_limits": "logical budgets, sampled child RSS and cooperative stopping; not national throughput, absolute OS/wire/physical-block guarantees",
+  "runs": [
+    {
+      "C_rows_per_sweep": 612,
+      "adults_per_sweep": 3672,
+      "artifact_index_path": "data/processed/e02_F_authored/F-mock-v1-20261103-01/artifact_hashes.json",
+      "artifact_index_sha256": "e76fa69d85b9c39e646a0a98ab3c1abb5a7547d08f91b015fd5b9cc739011fa2",
+      "child_resource_observations": 161,
+      "config_revision": "preliminary inherited-metadata config, preserved",
+      "elapsed_seconds": 27.415197833033744,
+      "indexed_file_count": 111,
+      "max_sampled_child_rss_bytes": 25673728,
+      "primary_replay_byte_equality": {
+        "allocation_counts.i64le": true,
+        "allocation_weights.i64le": true,
+        "contrast_results_v1_1.jsonl": true,
+        "count.i64le": true,
+        "covariance_results_v1_1.jsonl": true,
+        "execution_manifest.json": true,
+        "point.i64le": true,
+        "replicates.i64le": true,
+        "source_status.u8": true,
+        "sum_squared.i64le": true,
+        "support_status.u8": true,
+        "uncertainty.json": true,
+        "views.json": true
+      },
+      "query_ops": 12150122,
+      "receipt_path": "data/processed/e02_F_authored/F-mock-v1-20261103-01/fixture_receipt.json",
+      "receipt_sha256": "a321ea285e5617cac82ef42895fe9f05687e4d14c0be630a8ce16870fba1d7d8",
+      "rows_per_sweep": 3978,
+      "run_id": "F-mock-v1-20261103-01",
+      "scope": "MOCK_AUTHORED_ONLY"
+    },
+    {
+      "C_rows_per_sweep": 612,
+      "adults_per_sweep": 3672,
+      "artifact_index_path": "data/processed/e02_F_authored/F-mock-v1-20261103-02/artifact_hashes.json",
+      "artifact_index_sha256": "9d09278ecfe12ca6bdc99d35fec1da4edd779ede23276d7f030a8ae4f03f2dcc",
+      "child_resource_observations": 161,
+      "config_revision": "final F-scoped config",
+      "elapsed_seconds": 28.402069541974925,
+      "indexed_file_count": 111,
+      "max_sampled_child_rss_bytes": 31195136,
+      "primary_replay_byte_equality": {
+        "allocation_counts.i64le": true,
+        "allocation_weights.i64le": true,
+        "contrast_results_v1_1.jsonl": true,
+        "count.i64le": true,
+        "covariance_results_v1_1.jsonl": true,
+        "execution_manifest.json": true,
+        "point.i64le": true,
+        "replicates.i64le": true,
+        "source_status.u8": true,
+        "sum_squared.i64le": true,
+        "support_status.u8": true,
+        "uncertainty.json": true,
+        "views.json": true
+      },
+      "query_ops": 12150122,
+      "receipt_path": "data/processed/e02_F_authored/F-mock-v1-20261103-02/fixture_receipt.json",
+      "receipt_sha256": "537501a4becb4d2d79ab814868fb6dd35e3e46ab40500395c23cf7da267de1d0",
+      "rows_per_sweep": 3978,
+      "run_id": "F-mock-v1-20261103-02",
+      "scope": "MOCK_AUTHORED_ONLY"
+    }
+  ],
+  "runtime_config_sha256": "d9247357f3de38fa893af798d0c6486e76b3f0dd0258668607bd3f43bbdf61b7",
+  "schema_validation": "standard-library closed-vocabulary subset + semantic validation; no full JSON Schema-engine conformance claimed",
+  "scientific_limitations": [
+    "MOCK arithmetic only; no actual national population benchmark/fit",
+    "No state political priors or values outside ANES frame inferred",
+    "No human treatment-effect or prospective forecasting claim",
+    "No actual source/reuse/disclosure/fit authority or paid/publication release"
+  ],
+  "status": "IMPLEMENTER_TESTS_PASS_INDEPENDENT_REVIEW_PENDING",
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "src/civiclab/e02/full_adult_analysis_v1.py",
+      "src/civiclab/e02/full_adult_codec_v1.py",
+      "src/civiclab/e02/full_adult_control_v1.py",
+      "src/civiclab/e02/full_adult_engine_v1.py",
+      "src/civiclab/e02/full_adult_queries_v1.py",
+      "src/civiclab/e02/full_adult_runtime_v1.py",
+      "src/civiclab/e02/full_adult_types_v1.py",
+      "tests/test_e02_full_adult_v1.py",
+      "configs/e02_full_adult_engine_v1.json",
+      "docs/E02_FULL_ADULT_ENGINE_V1.md",
+      "reports/E02_FULL_ADULT_ENGINE_V1_EVIDENCE.json",
+      "reports/E02_FULL_ADULT_ENGINE_V1_RECEIPT.md",
+      "reports/E02_FULL_ADULT_ENGINE_V1_TEST_LOG.txt"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Lead routes exact pinned F candidate to separate independent auditor; worker addresses evidence-backed findings without altering historical approvals.",
+    "OUTPUT_ARTIFACTS": [
+      "seven separate F modules",
+      "pinned F-scoped config",
+      "18 authored methods",
+      "two retained MOCK runs, final is -02",
+      "one retained intentional plan refusal",
+      "documentation and implementation evidence"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "see docs/E02_FULL_ADULT_ENGINE_V1.md"
+    ],
+    "RISKS_AND_LIMITATIONS": "Scoped schema validator, sampled/cooperative limits, small authored row volume, trusted-code integrity anchors, independent review pending; original full scientific contract unfulfilled.",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authored fictional ZIP/CSV only. Existing public metadata references reused without new GET. No respondent/publisher data exported. Actual F outputs local-only pending new disclosure review.",
+    "TASK_ID": "E02-U1-F-ENGINE-v1-AUTHORED",
+    "TESTS_RUN_AND_RESULTS": "18 focused F methods OK; final93 E02 methods OK;13 primary/replay files independently byte-compared by evidence writer; all retained indexed hashes verified",
+    "UNRESOLVED_BLOCKERS": "Independent F implementation/resource/source review; separate actual adapter/cache execution and disclosure/fit permissions; political identification and later study/live-spend gates."
+  },
+  "task_id": "E02-U1-F-ENGINE-v1-AUTHORED",
+  "tests": [
+    {
+      "command": "PYTHONPATH=src:tests .venv/bin/python -m unittest discover -s tests -p test_e02_full_adult_v1.py -v",
+      "log_sha256": "2a555ee3f978ed7b065128ac5ae919904b20273db7495f6c6c1c1db49b810ef8",
+      "methods": 18,
+      "result": "OK",
+      "scope": "focused recode/quadratic/counter/partition fixtures before final config metadata simplification; final suite below covers final scoped config",
+      "seconds": 36.526
+    },
+    {
+      "command": "PYTHONPATH=src:tests .venv/bin/python -m unittest discover -s tests -p 'test_e02*.py' -v",
+      "log_path": "reports/E02_FULL_ADULT_ENGINE_V1_TEST_LOG.txt",
+      "log_sha256": "be7530206575f4f63382de1f49b11eb3568be493a8dd4f24c50b8626fa185099",
+      "methods": 93,
+      "result": "OK",
+      "scope": "final pinned modules/test/F-scoped config, 75 existing E02 +18 new F methods",
+      "seconds": 42.976
+    }
+  ],
+  "worktree": "dirty shared checkout; exact owned source/config/test pins below, not a committed or remote CI certificate"
+}
