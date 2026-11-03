@@ -1,0 +1,64 @@
+{
+  "actual_model_api_spend_usd": 0,
+  "actual_model_calls": 0,
+  "completed_at_utc": "2026-11-03T15:33:14.133194+00:00",
+  "development_compute_and_assistance_pricing": "NOT_PRICED_NOT_INCLUDED",
+  "error": "assembly failed; preserved log /var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/assembly.log",
+  "error_type": "RuntimeError",
+  "package_registry": "Pip may access official PyPI; runtime version lock does not pin transient isolated build tools.",
+  "schema_version": 1,
+  "scope": "Exact isolated committed snapshot; changing primary-worktree actualF adapter and publisher WIP excluded. Original21 explicitly selected disclosure-safe runs only; private global survey/ballot/person/source originals excluded. No rawsource restoration, actual model execution, remote CI or full scientific acceptance.",
+  "source_checkout": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout",
+  "source_commit": "ef5e37c701210d1a518d3758ae3d9389e5062764",
+  "source_http_requests": 0,
+  "status": "FAILED_PRESERVED_EVIDENCE",
+  "steps": [
+    {
+      "args": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/clone.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "clone",
+      "tail": []
+    },
+    {
+      "args": [
+        "git",
+        "checkout",
+        "--quiet",
+        "--detach",
+        "ef5e37c701210d1a518d3758ae3d9389e5062764"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "checkout",
+      "tail": []
+    },
+    {
+      "args": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-c",
+        "from pathlib import Path\nimport civiclab.reproduction as r,json,subprocess,zipfile\nroot=Path.cwd().resolve();assert Path(r.__file__).resolve().is_relative_to((root/'src').resolve())\nvalue=r.build_package(root,Path('/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip'),['e02-ad2ad153c5ea480d8a9b7f39433927e7', 'e02-0121548188194f04936b85c984ee677f', 'e02-f1b88b12ebe34884974116336625ef04', 'e02-4d4b679fe0c743a989b0e811fdb72692', 'e02-869b271141994c468232e90b6efa83cb', 'e01-ed5b716aa76145258ece94c3df6b4188', 'e01-9a3e3305877f40b3a84e63bd5ca5ed1c', 'e02-247f0495823245aab66a877d623ea310', 'e02-06300b9b21d14dac927e702ec7851f56', 'e01-291abe736b0648acb08a9254d4880017', 'e01-34e1aa5529d54eb598ff645dd0b4d0fc', 'e02-edf2b36e269442748f4721ef7f479876', 'e02-457e2e2a4e3a47eebc80e1f4a8adcd15', 'e01-6a67d910c8b6460b88c08adda45c5e90', 'e01-a6da256293dc48ffb56feaab3d1d7125', 'e01-32a3512931fc47d98b77a68cc3149158', 'e02-1be3718699e54d7380755be1f9d87e6d', 'e02-ab4188e6c75d46a18179cb81dfde156c', 'e02-70827a2bc8ef49b0bd5f808a00064f74', 'e02-775f7460965047e0999ddb81083fee6b', 'e02-b99863e7664f4af19386526bd5f438ef'])\nwith zipfile.ZipFile('/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip') as z:\n manifest=json.loads(z.read('REPRODUCIBILITY_MANIFEST.json'));nonrun=[n for n in manifest['files'] if not n.startswith('data/processed/runs/')]\n for n in nonrun:assert z.read(n)==subprocess.check_output(['git','show','ef5e37c701210d1a518d3758ae3d9389e5062764'+':'+n])\n value['nonrun_files_match_exact_git_blobs']=len(nonrun);value['manifest_files']=len(manifest['files']);value['source_code']=manifest['source_code'];value['reproduction']=manifest['reproduction']\nprint(json.dumps(value))\n"
+      ],
+      "exit_code": 1,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/assembly.log",
+      "log_sha256": "c3688c4014536006fa7deac2a6c8ae1c48487b504db426a4ca384fb6ab293e3b",
+      "step": "assembly",
+      "tail": [
+        "Traceback (most recent call last):",
+        "  File \"<string>\", line 8, in <module>",
+        "KeyError: 'source_code'"
+      ]
+    }
+  ],
+  "temporary_workspace": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834"
+}

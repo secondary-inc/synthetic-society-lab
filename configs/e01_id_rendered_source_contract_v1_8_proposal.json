@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "proposal_version": "1.8",
+  "scope": "ID_STANDALONE_RENDERED_CAPTURE_READER_METHODS_SOURCE_CONTRACT_PROPOSAL_ONLY",
+  "implementation_exists": false,
+  "pipeline_enabled": false,
+  "source_adoption": false,
+  "accepted_coverage_promotion": false,
+  "prepared_at_utc": "2026-11-03T15:33:28.598648+00:00",
+  "proposed_module": "src/civiclab/e01/idaho_v1_8.py",
+  "proposed_fixture_module": "tests/test_e01_idaho_v1_8.py",
+  "network_allowed": false,
+  "runtime": "Python standard library only; no new dependency proposed",
+  "inputs": [
+    {
+      "source_id": "id_general_index",
+      "path": "data/raw/e01_ballots_batch06_v1/id_general_index.body",
+      "bytes": 218881,
+      "sha256": "55e5a2897f4ac49169aca72ccdb9f3810c065fb31a32eccadf7445d2415f4cb4",
+      "url": "https://voteidaho.gov/idaho-general-election/",
+      "final_url": "https://voteidaho.gov/idaho-general-election/",
+      "retrieved_at_utc": "2026-11-03T15:21:15.392647+00:00",
+      "status": 200,
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:15 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 15:12:45 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "role": "OFFICIAL_GENERAL_ELECTION_LINK_INDEX"
+    },
+    {
+      "source_id": "id_candidate_search",
+      "path": "data/raw/e01_ballots_batch06_v1/id_candidate_search.body",
+      "bytes": 15841,
+      "sha256": "5c3444cb1b6fa7f611831b434e31b1f921a7b8d0d8611c92579abf9b803ae52a",
+      "url": "https://run.voteidaho.gov/search",
+      "final_url": "https://run.voteidaho.gov/search",
+      "retrieved_at_utc": "2026-11-03T15:21:45.685699+00:00",
+      "status": 200,
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 15:21:45 GMT",
+        "Last-Modified": "Mon, 17 Aug 2026 14:26:50 GMT",
+        "Content-Type": "text/html"
+      },
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "role": "OFFICIAL_CANDIDATE_PORTAL_INITIAL_HTML_SHELL_NOT_RENDERED_TABLE"
+    },
+    {
+      "source_id": "id_browser_visible",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_visible.local.json",
+      "bytes": 203250,
+      "sha256": "14dc84750bf14bc10e20db2ffac00f52a9b3ef8c48657bcb48944fd69cbd41b0",
+      "url": "https://run.voteidaho.gov/search",
+      "captured_at_utc": "2026-11-03T15:22:51.233Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT",
+      "http_headers": "UNAVAILABLE",
+      "wire_bytes": false,
+      "data_schema_keys": [
+        "body",
+        "selects",
+        "tables"
+      ],
+      "visible_rows": 50,
+      "selected_total": 592,
+      "global_total": 592,
+      "pagination_literal": "1 \u2013 50 of 592",
+      "control_snapshot": [
+        {
+          "disabled": "false",
+          "id": "mat-select-0",
+          "text": "November 03, 2026 - 2026 GENERAL"
+        },
+        {
+          "disabled": "false",
+          "id": "mat-select-1",
+          "text": "Select District Type"
+        },
+        {
+          "disabled": "false",
+          "id": "partyAffiliation",
+          "text": "Select Party"
+        },
+        {
+          "disabled": "false",
+          "id": "mat-select-3",
+          "text": "50"
+        }
+      ],
+      "status_checkbox_evidence": "MISSING_IN_THIS_ARTIFACT; both status values present in rows, initial live AX observation separate from persisted checkbox state",
+      "candidate_name_input_value": "NOT_CAPTURED; do not invent blank-input evidence"
+    },
+    {
+      "source_id": "id_browser_federal",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_federal.local.json",
+      "bytes": 68620,
+      "sha256": "a406c30676b747132c68e1a7d6c76679d24b4aece85389f98ca156862dcda875",
+      "url": "https://run.voteidaho.gov/search",
+      "captured_at_utc": "2026-11-03T15:23:56.646Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT",
+      "http_headers": "UNAVAILABLE",
+      "wire_bytes": false,
+      "data_schema_keys": [
+        "body",
+        "checkboxes",
+        "selected",
+        "table"
+      ],
+      "visible_rows": 15,
+      "selected_total": 15,
+      "global_total": 592,
+      "pagination_literal": "1 \u2013 15 of 15",
+      "control_snapshot": [
+        {
+          "id": "mat-select-0",
+          "text": "November 03, 2026 - 2026 GENERAL"
+        },
+        {
+          "id": "mat-select-1",
+          "text": "Federal"
+        },
+        {
+          "id": "mat-select-4",
+          "text": "Select Office"
+        },
+        {
+          "id": "partyAffiliation",
+          "text": "Select Party"
+        },
+        {
+          "id": "mat-select-3",
+          "text": "50"
+        }
+      ],
+      "status_checkbox_evidence": [
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-0-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-1-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-2-input"
+        }
+      ],
+      "candidate_name_input_value": "NOT_CAPTURED; do not invent blank-input evidence"
+    },
+    {
+      "source_id": "id_browser_senate",
+      "path": "data/raw/e01_ballots_batch06_v1/id_browser_senate.local.json",
+      "bytes": 29871,
+      "sha256": "acd2a3163ca969aa6bb139be8ecdab3b47cfb18312850a36d4aa86c877107b30",
+      "url": "https://run.voteidaho.gov/search",
+      "captured_at_utc": "2026-11-03T15:24:13.622Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_AND_RENDERED_TABLE_DOM_NOT_HTTP_WIRE",
+      "role": "OBSERVED_RENDERED_GENERAL_CONTEXT_STATUS_HISTORY_NOT_LEGAL_FINAL_BALLOT",
+      "http_headers": "UNAVAILABLE",
+      "wire_bytes": false,
+      "data_schema_keys": [
+        "body",
+        "checkboxes",
+        "selected",
+        "table"
+      ],
+      "visible_rows": 5,
+      "selected_total": 5,
+      "global_total": 592,
+      "pagination_literal": "1 \u2013 5 of 5",
+      "control_snapshot": [
+        {
+          "id": "mat-select-0",
+          "text": "November 03, 2026 - 2026 GENERAL"
+        },
+        {
+          "id": "mat-select-1",
+          "text": "Federal"
+        },
+        {
+          "id": "mat-select-4",
+          "text": "United States Senator"
+        },
+        {
+          "id": "partyAffiliation",
+          "text": "Select Party"
+        },
+        {
+          "id": "mat-select-3",
+          "text": "50"
+        }
+      ],
+      "status_checkbox_evidence": [
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-0-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-1-input"
+        },
+        {
+          "checked": true,
+          "id": "mat-mdc-checkbox-2-input"
+        }
+      ],
+      "candidate_name_input_value": "NOT_CAPTURED; do not invent blank-input evidence"
+    }
+  ],
+  "batch06_source_role_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_BATCH06_SOURCE_ROLES.json",
+    "sha256": "fed3f144d53bab5e0f1314d135cb1d6a6b19149c0efa19a69c505928004f3162"
+  },
+  "proposed_resource_limits": {
+    "each_input_bytes_max": 1048576,
+    "all_five_input_bytes_max": 5242880,
+    "HTML_chars_max_per_capture": 750000,
+    "DOM_nodes_max": 100000,
+    "DOM_depth_max": 64,
+    "data_rows_max_per_capture": [
+      50,
+      15,
+      5
+    ],
+    "metadata_top_keys_exact": [
+      "url",
+      "capture_kind",
+      "captured_at_utc",
+      "data"
+    ],
+    "JSON_duplicate_keys_or_nonfinite_numbers": "REFUSE",
+    "paths": "Five exact pinned source paths under ignored data/raw, regular nonsymlink files only; no globbing or fetch."
+  },
+  "header_contract": {
+    "table_role": "table",
+    "table_aria_describedby": "SmartTableGrid",
+    "caption": "Smart Table",
+    "table_count_per_capture": 1,
+    "column_count": 9,
+    "exact_normalized_DOM_header_text": [
+      "BALLOT NAMEHeader",
+      "DISTRICT TYPEHeader",
+      "OFFICEHeader",
+      "DISTRICTHeader",
+      "PARTYHeader",
+      "DATE FILEDHeader",
+      "WRITE-INHeader",
+      "STATUSHeader",
+      "ACTIONS"
+    ],
+    "exact_column_class_tokens": [
+      "cdk-column-ballotName",
+      "cdk-column-districtType",
+      "cdk-column-office",
+      "cdk-column-district",
+      "cdk-column-party",
+      "cdk-column-filedDate",
+      "cdk-column-isWriteIn",
+      "cdk-column-status",
+      "cdk-column-actions"
+    ],
+    "canonical_semantic_columns": [
+      "BALLOT NAME",
+      "DISTRICT TYPE",
+      "OFFICE",
+      "DISTRICT",
+      "PARTY",
+      "DATE FILED",
+      "WRITE-IN",
+      "STATUS",
+      "ACTIONS"
+    ],
+    "Header_suffix_rule": "Only map the exact eight observed DOM header literals/classes to semantic columns; do not globally delete Header substrings from rows or unknown headers."
+  },
+  "context_contract": {
+    "visible_title": "FINAL CANDIDATES LIST",
+    "title_meaning": "SOURCE_TITLE_ONLY_NOT_OUR_FINAL_ACCEPTANCE",
+    "all_selected_election_text": "November 03, 2026 - 2026 GENERAL",
+    "all_party_control_text": "Select Party",
+    "all_items_per_page": "50",
+    "first_capture_district": "Select District Type",
+    "federal_capture_district": "Federal",
+    "federal_capture_office": "Select Office",
+    "senate_capture_district": "Federal",
+    "senate_capture_office": "United States Senator",
+    "last_two_checkbox_ids_checked": [
+      "mat-mdc-checkbox-0-input",
+      "mat-mdc-checkbox-1-input",
+      "mat-mdc-checkbox-2-input"
+    ],
+    "checkbox_label_binding": "Visible Filing Status section order Select All,Approved,Withdrawn; exact IDs/true values in federal/Senator artifacts. Initial artifact lacks checkbox array and must remain explicitly unknown rather than copied forward.",
+    "selected_count_literals": [
+      "592 Candidate(s) Found of 592 total",
+      "15 Candidate(s) Found of 592 total",
+      "5 Candidate(s) Found of 592 total"
+    ],
+    "capture_clocks": "UTC-aware strictly increasing observed capture clocks, not independent publisher/asof timestamps.",
+    "candidate_name_filter_value": "NOT_CAPTURED_DIRECTLY; no unfiltered name-input or global-completeness assertion"
+  },
+  "cross_capture_contract": {
+    "Senator_rows_per_capture": 5,
+    "office_literal": "United States Senator",
+    "district_type_literal": "Federal",
+    "district_literal": "",
+    "write_in_cell_literal": "",
+    "same_all_nine_cell_tuples_in_source_order": true,
+    "full_names_compared": "Full normalized BALLOT NAME strings locally, never first/last fragments or normalized-party classes alone.",
+    "actions_cell_expected": "View Details; compare as observed UI text, exclude from candidate output, never invoke details.",
+    "row_uniqueness": "Five unique full ballot-name strings within each capture, no partial-name dedupe across offices; exact ordered tuple equality across all3captures.",
+    "retain_raw_DOM_and_raw_date": "Original byte-pinned capture preserved; output stores source name/date/label literals locally, plus parsed dates with explicit format.",
+    "filing_date_format": "%m/%d/%Y; all five known dates in February2026 and not later than observed November3 capture date.",
+    "safe_party_status_date_inventory": [
+      {
+        "party_label": "Democratic",
+        "status_literal": "Withdrawn",
+        "date_filed_literal": "02/23/2026"
+      },
+      {
+        "party_label": "Independent",
+        "status_literal": "Approved",
+        "date_filed_literal": "02/25/2026"
+      },
+      {
+        "party_label": "Independent",
+        "status_literal": "Approved",
+        "date_filed_literal": "02/26/2026"
+      },
+      {
+        "party_label": "Libertarian",
+        "status_literal": "Approved",
+        "date_filed_literal": "02/27/2026"
+      },
+      {
+        "party_label": "Republican",
+        "status_literal": "Approved",
+        "date_filed_literal": "02/23/2026"
+      }
+    ]
+  },
+  "proposed_typed_record_schema": {
+    "record_role": "OBSERVED_GENERAL_CONTEXT_CANDIDACY_STATUS_HISTORY",
+    "official_name": "LOCAL_ONLY full normalized source ballot-name string",
+    "source_party_label": "Exact source label, not legal party/adoption inference",
+    "source_status_literal": "Approved|Withdrawn only for this captured version",
+    "date_filed_literal": "Exact source date string",
+    "date_filed_iso": "Parsed ISO date, no conflation with certification/publication/capture date",
+    "source_district_type_literal": "Federal",
+    "source_office_literal": "United States Senator",
+    "source_district_literal": "",
+    "source_write_in_cell_literal": "",
+    "write_in_status": {
+      "kind": "UNKNOWN",
+      "reason": "BLANK_SOURCE_CELL_DOES_NOT_ESTABLISH_BOOLEAN_FALSE"
+    },
+    "printed_ballot_status": {
+      "kind": "UNKNOWN",
+      "reason": "PORTAL_APPROVAL_AND_FINAL_TITLE_ARE_NOT_PRINTED_BALLOT_CERTIFICATION"
+    },
+    "legal_nomination_status": {
+      "kind": "UNKNOWN",
+      "reason": "NO_INDEPENDENT_LEGAL_NOMINATION_ADJUDICATION"
+    },
+    "latest_amendment_completeness": {
+      "kind": "UNKNOWN",
+      "reason": "CAPTURED_PORTAL_CONTEXT_NOT_LATEST_UPSTREAM_COMPLETENESS_CERTIFICATE"
+    },
+    "source_locations": "All3capture IDs and one-based data-row locators retained locally",
+    "forbidden_inferred_fields": [
+      "printed_on_ballot boolean",
+      "declared_write_in boolean",
+      "active_Democratic_candidate imputation",
+      "legal_nominee boolean",
+      "final_ballot_accepted true",
+      "party_class-based replacement of literal party labels"
+    ]
+  },
+  "public_diagnostic_schema": {
+    "allowed": [
+      "Input hashes/representation/source clocks",
+      "Visible context/filter/pagination labels and statuses",
+      "Counts and safe party/status/date/blanks inventory",
+      "Crosscapture tuple-agreement boolean",
+      "Typed UNKNOWN reasons",
+      "Gate/failure-type labels and zero costs"
+    ],
+    "forbidden": [
+      "Candidate name or contact/address/residence/detail literals",
+      "Full candidate tuple dumps",
+      "Named source rows in report/dashboard/bundle",
+      "Claims of statewide/latest-upstream legal completeness or prospective asof"
+    ]
+  },
+  "review_gates": [
+    "G_ID0 independent methods/source-contract review of this proposal",
+    "G_ID1 separate exact code/fixture/runtime/input/privacy/lifecycle review before actual helper preflight",
+    "G_ID2 independently reviewed actual-source helper preflight; no recorded readiness or source adoption",
+    "G_ID3 separately versioned readiness schema/integration review if typed UNKNOWN status records can be represented without changing earlier state semantics",
+    "G_ID4 separately authorized actual recorded readiness/replay and independent post-run review before coverage promotion"
+  ],
+  "acceptance_criteria": [
+    "Future helper reads only5 exact artifacts; no network, browser, hidden API, details or filesystem writes.",
+    "Exact JSON/schema/URL/clock/bytes/hashes, table/header/9columns, filters/status/pagination and five ordered full tuples independently checked.",
+    "First capture checkbox-state and all captures name-input-state omissions remain explicit, not backfilled.",
+    "Four Approved and one Withdrawn records retained; no approvedD fabricated; blank district/writein preserved; no printed/writeinbool forced.",
+    "Authored fixtures use names prefixed DEMO and synthetic IDs; real names/contacts never leave local ignored inputs/outputs.",
+    "Admitted hash/parser/runtime/cancel failures must not yield partial successful candidate/report artifacts; future persistence only seals exception type and static code, not raw values.",
+    "Prior readers/configs/base admission remain unchanged; original source role/rights/asof/latest/final/geography/selection gates stay separate."
+  ],
+  "negative_test_plan": [
+    "Missing/extra/corrupt input, source digest drift, wrong approved contract digest, symlink/parent-symlink/path traversal and source mutation during parse.",
+    "Duplicate JSON keys, nonfinite values, unsupported top/data keysets, malformed UTC clocks and reordered clocks.",
+    "Wrong URL/capturekind, source header/role substitution, official link mismatch, primary/general/date/title mismatch.",
+    "Missing/duplicate/reordered tables/header/rows/cells; wrong9columns, unknown header chrome or class tokens, nested table/contact content in candidate span.",
+    "Wrong selected party/district/office/election/page-size, dropped/unchecked/extra federal/Senator status checkbox, initial omission silently treated as checked.",
+    "Wrong totals/ranges, truncated50/15/5tables, duplicate/missing Senate row or missing next-office boundary in mixed captures.",
+    "Crosscapture full-name/party/status/date/district/writein/actions mismatch, same-initial/different-full-name cases and coordinated resealing of mutable capture files against immutableapproved pins.",
+    "Invalid/future date, Approved-to-Withdrawn swap, unknownparty/status, nonblank district/writein, non-Federal Senate row and stateSenator contamination.",
+    "Private name/contact sentinel in public diagnostics/error messages/bundles, unsupported printed/writeinboolean coercion.",
+    "KeyboardInterrupt/SystemExit/parser failure at first/middle/last input and after tuple extraction before result return; no partial successful artifact/output."
+  ],
+  "open_methods_questions": [
+    "Is the five-artifact record with explicit missing name-input state sufficient for source-local bounded extraction only? Proposal says yes for observed tuples, no for unfiltered/global/upstream completeness.",
+    "Can future readiness admit OBSERVED_GENERAL_CONTEXT_CANDIDACY_STATUS_HISTORY records and typed unknown ballot/writein status in a separately versioned route? No change proposed to acceptedbaseadmission now."
+  ],
+  "new_GETs": 0,
+  "new_browser_calls": 0,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "actual_helper_execution": false,
+  "actual_readiness_execution": false,
+  "candidate_or_source_policy_adoption": false,
+  "final_ballots_accepted": 0
+}

@@ -1,0 +1,313 @@
+{
+  "actual_model_api_spend_usd": 0,
+  "actual_model_calls": 0,
+  "archive": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip",
+  "clean_environment": {
+    "PYTHONPATH_unset": true,
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "runtime_versions": {
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "contourpy": "1.4.0",
+      "cryptography": "50.0.2",
+      "cycler": "0.12.1",
+      "fonttools": "4.68.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pdfminer.six": "20251230",
+      "pdfplumber": "0.11.9",
+      "pillow": "13.0.0",
+      "pycparser": "3.12",
+      "pyparsing": "3.3.3",
+      "pypdf": "6.10.0",
+      "pypdfium2": "5.14.0",
+      "python-dateutil": "4.0.0",
+      "scipy": "1.16.3",
+      "tzdata": "2026.6"
+    },
+    "source_origin": "/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout/src/civiclab/__init__.py"
+  },
+  "completed_at_utc": "2026-11-03T15:36:51.890811+00:00",
+  "development_compute_and_assistance_pricing": "NOT_PRICED_NOT_INCLUDED",
+  "fixture_source_check": {
+    "checks": 1,
+    "status": "PASS"
+  },
+  "harness_correction": "Archive was constructed before metadata-only KeyError: source_code. Actual manifest uses code. Continuing same immutable archive/checkout; no replacement/rebuild. No runtime installation occurred during initial failure.",
+  "initial_failure_preserved": "REVIEW_PACKAGE_STAGE5_INITIAL_HARNESS_FAILURE.json",
+  "integrity": {
+    "files": 922,
+    "manifest_files": 921,
+    "nonrun_files_match_exact_git_blobs": 641,
+    "reproduction": [
+      "python3.12 -m venv .venv",
+      ".venv/bin/python -m pip install -r configs/runtime_python312_geometry_20261103.txt",
+      ".venv/bin/python -m pip install -e . --no-deps",
+      ".venv/bin/python -m unittest discover -s tests -v",
+      ".venv/bin/civiclab validate-sources --fixture-only",
+      ".venv/bin/civiclab dashboard"
+    ],
+    "run_ids": [
+      "e02-ad2ad153c5ea480d8a9b7f39433927e7",
+      "e02-0121548188194f04936b85c984ee677f",
+      "e02-f1b88b12ebe34884974116336625ef04",
+      "e02-4d4b679fe0c743a989b0e811fdb72692",
+      "e02-869b271141994c468232e90b6efa83cb",
+      "e01-ed5b716aa76145258ece94c3df6b4188",
+      "e01-9a3e3305877f40b3a84e63bd5ca5ed1c",
+      "e02-247f0495823245aab66a877d623ea310",
+      "e02-06300b9b21d14dac927e702ec7851f56",
+      "e01-291abe736b0648acb08a9254d4880017",
+      "e01-34e1aa5529d54eb598ff645dd0b4d0fc",
+      "e02-edf2b36e269442748f4721ef7f479876",
+      "e02-457e2e2a4e3a47eebc80e1f4a8adcd15",
+      "e01-6a67d910c8b6460b88c08adda45c5e90",
+      "e01-a6da256293dc48ffb56feaab3d1d7125",
+      "e01-32a3512931fc47d98b77a68cc3149158",
+      "e02-1be3718699e54d7380755be1f9d87e6d",
+      "e02-ab4188e6c75d46a18179cb81dfde156c",
+      "e02-70827a2bc8ef49b0bd5f808a00064f74",
+      "e02-775f7460965047e0999ddb81083fee6b",
+      "e02-b99863e7664f4af19386526bd5f438ef"
+    ],
+    "scope": "Byte integrity only; not scientific or publication acceptance.",
+    "sha256": "42c93d3eef65aeb554843726850ed72da6b1fd1c9a2666fb188d782087b30533",
+    "source_code": {
+      "dirty": false,
+      "git_sha": "ef5e37c701210d1a518d3758ae3d9389e5062764",
+      "source_tree_sha256": "496c418cd7706ca894d3eb2a789af3fa1bc56f0ae8be35a1290f128771cb07ec"
+    },
+    "status": "PASS_PACKAGE_INTEGRITY"
+  },
+  "package_registry": "Pip may access official PyPI; runtime version lock does not pin transient isolated build tools.",
+  "schema_version": 1,
+  "scope": "Exact isolated committed snapshot; changing primary-worktree actualF adapter and publisher WIP excluded. Original21 explicitly selected disclosure-safe runs only; private global survey/ballot/person/source originals excluded. No rawsource restoration, actual model execution, remote CI or full scientific acceptance.",
+  "selected_run_ids": [
+    "e02-ad2ad153c5ea480d8a9b7f39433927e7",
+    "e02-0121548188194f04936b85c984ee677f",
+    "e02-f1b88b12ebe34884974116336625ef04",
+    "e02-4d4b679fe0c743a989b0e811fdb72692",
+    "e02-869b271141994c468232e90b6efa83cb",
+    "e01-ed5b716aa76145258ece94c3df6b4188",
+    "e01-9a3e3305877f40b3a84e63bd5ca5ed1c",
+    "e02-247f0495823245aab66a877d623ea310",
+    "e02-06300b9b21d14dac927e702ec7851f56",
+    "e01-291abe736b0648acb08a9254d4880017",
+    "e01-34e1aa5529d54eb598ff645dd0b4d0fc",
+    "e02-edf2b36e269442748f4721ef7f479876",
+    "e02-457e2e2a4e3a47eebc80e1f4a8adcd15",
+    "e01-6a67d910c8b6460b88c08adda45c5e90",
+    "e01-a6da256293dc48ffb56feaab3d1d7125",
+    "e01-32a3512931fc47d98b77a68cc3149158",
+    "e02-1be3718699e54d7380755be1f9d87e6d",
+    "e02-ab4188e6c75d46a18179cb81dfde156c",
+    "e02-70827a2bc8ef49b0bd5f808a00064f74",
+    "e02-775f7460965047e0999ddb81083fee6b",
+    "e02-b99863e7664f4af19386526bd5f438ef"
+  ],
+  "source_checkout": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout",
+  "source_commit": "ef5e37c701210d1a518d3758ae3d9389e5062764",
+  "source_http_requests": 0,
+  "status": "LEAD_CLEAN_COMMITTED_STAGE5_PASS_PENDING_INDEPENDENT_AUDIT",
+  "steps": [
+    {
+      "args": [
+        "git",
+        "clone",
+        "--quiet",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/clone.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "clone",
+      "tail": []
+    },
+    {
+      "args": [
+        "git",
+        "checkout",
+        "--quiet",
+        "--detach",
+        "ef5e37c701210d1a518d3758ae3d9389e5062764"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "checkout",
+      "tail": []
+    },
+    {
+      "args": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-c",
+        "from pathlib import Path\nimport civiclab.reproduction as r,json,subprocess,zipfile\nroot=Path.cwd().resolve();assert Path(r.__file__).resolve().is_relative_to((root/'src').resolve())\nvalue=r.build_package(root,Path('/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip'),['e02-ad2ad153c5ea480d8a9b7f39433927e7', 'e02-0121548188194f04936b85c984ee677f', 'e02-f1b88b12ebe34884974116336625ef04', 'e02-4d4b679fe0c743a989b0e811fdb72692', 'e02-869b271141994c468232e90b6efa83cb', 'e01-ed5b716aa76145258ece94c3df6b4188', 'e01-9a3e3305877f40b3a84e63bd5ca5ed1c', 'e02-247f0495823245aab66a877d623ea310', 'e02-06300b9b21d14dac927e702ec7851f56', 'e01-291abe736b0648acb08a9254d4880017', 'e01-34e1aa5529d54eb598ff645dd0b4d0fc', 'e02-edf2b36e269442748f4721ef7f479876', 'e02-457e2e2a4e3a47eebc80e1f4a8adcd15', 'e01-6a67d910c8b6460b88c08adda45c5e90', 'e01-a6da256293dc48ffb56feaab3d1d7125', 'e01-32a3512931fc47d98b77a68cc3149158', 'e02-1be3718699e54d7380755be1f9d87e6d', 'e02-ab4188e6c75d46a18179cb81dfde156c', 'e02-70827a2bc8ef49b0bd5f808a00064f74', 'e02-775f7460965047e0999ddb81083fee6b', 'e02-b99863e7664f4af19386526bd5f438ef'])\nwith zipfile.ZipFile('/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip') as z:\n manifest=json.loads(z.read('REPRODUCIBILITY_MANIFEST.json'));nonrun=[n for n in manifest['files'] if not n.startswith('data/processed/runs/')]\n for n in nonrun:assert z.read(n)==subprocess.check_output(['git','show','ef5e37c701210d1a518d3758ae3d9389e5062764'+':'+n])\n value['nonrun_files_match_exact_git_blobs']=len(nonrun);value['manifest_files']=len(manifest['files']);value['source_code']=manifest['source_code'];value['reproduction']=manifest['reproduction']\nprint(json.dumps(value))\n"
+      ],
+      "exit_code": 1,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/assembly.log",
+      "log_sha256": "c3688c4014536006fa7deac2a6c8ae1c48487b504db426a4ca384fb6ab293e3b",
+      "step": "assembly",
+      "tail": [
+        "Traceback (most recent call last):",
+        "  File \"<string>\", line 8, in <module>",
+        "KeyError: 'source_code'"
+      ]
+    },
+    {
+      "args": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-c",
+        "from pathlib import Path\nimport civiclab.reproduction as r,json,subprocess,zipfile\nroot=Path.cwd().resolve();assert Path(r.__file__).resolve().is_relative_to((root/'src').resolve())\nvalue=r.verify_package(Path('/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip'))\nwith zipfile.ZipFile('/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/reproducibility/owner-review-stage5-ef5e37c-20261103.zip') as z:\n manifest=json.loads(z.read('REPRODUCIBILITY_MANIFEST.json'));nonrun=[n for n in manifest['files'] if not n.startswith('data/processed/runs/')]\n for n in nonrun:assert z.read(n)==subprocess.check_output(['git','show','ef5e37c701210d1a518d3758ae3d9389e5062764'+':'+n])\n value['nonrun_files_match_exact_git_blobs']=len(nonrun);value['manifest_files']=len(manifest['files']);value['source_code']=manifest['code'];value['reproduction']=manifest['reproduction']\nprint(json.dumps(value))\n"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/assembly-recovery-check.log",
+      "log_sha256": "72ef7bb8f9caff57438c0f790f038c59dca651a260ab1e8606681401aab66ab3",
+      "step": "assembly-recovery-check",
+      "tail": [
+        "{\"status\": \"PASS_PACKAGE_INTEGRITY\", \"files\": 922, \"sha256\": \"42c93d3eef65aeb554843726850ed72da6b1fd1c9a2666fb188d782087b30533\", \"run_ids\": [\"e02-ad2ad153c5ea480d8a9b7f39433927e7\", \"e02-0121548188194f04936b85c984ee677f\", \"e02-f1b88b12ebe34884974116336625ef04\", \"e02-4d4b679fe0c743a989b0e811fdb72692\", \"e02-869b271141994c468232e90b6efa83cb\", \"e01-ed5b716aa76145258ece94c3df6b4188\", \"e01-9a3e3305877f40b3a84e63bd5ca5ed1c\", \"e02-247f0495823245aab66a877d623ea310\", \"e02-06300b9b21d14dac927e702ec7851f56\", \"e01-291abe736b0648acb08a9254d4880017\", \"e01-34e1aa5529d54eb598ff645dd0b4d0fc\", \"e02-edf2b36e269442748f4721ef7f479876\", \"e02-457e2e2a4e3a47eebc80e1f4a8adcd15\", \"e01-6a67d910c8b6460b88c08adda45c5e90\", \"e01-a6da256293dc48ffb56feaab3d1d7125\", \"e01-32a3512931fc47d98b77a68cc3149158\", \"e02-1be3718699e54d7380755be1f9d87e6d\", \"e02-ab4188e6c75d46a18179cb81dfde156c\", \"e02-70827a2bc8ef49b0bd5f808a00064f74\", \"e02-775f7460965047e0999ddb81083fee6b\", \"e02-b99863e7664f4af19386526bd5f438ef\"], \"scope\": \"Byte integrity only; not scientific or publication acceptance.\", \"nonrun_files_match_exact_git_blobs\": 641, \"manifest_files\": 921, \"source_code\": {\"dirty\": false, \"git_sha\": \"ef5e37c701210d1a518d3758ae3d9389e5062764\", \"source_tree_sha256\": \"496c418cd7706ca894d3eb2a789af3fa1bc56f0ae8be35a1290f128771cb07ec\"}, \"reproduction\": [\"python3.12 -m venv .venv\", \".venv/bin/python -m pip install -r configs/runtime_python312_geometry_20261103.txt\", \".venv/bin/python -m pip install -e . --no-deps\", \".venv/bin/python -m unittest discover -s tests -v\", \".venv/bin/civiclab validate-sources --fixture-only\", \".venv/bin/civiclab dashboard\"]}"
+      ]
+    },
+    {
+      "args": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-m",
+        "venv",
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "step": "venv",
+      "tail": []
+    },
+    {
+      "args": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--index-url",
+        "https://pypi.org/simple",
+        "-r",
+        "configs/runtime_python312_geometry_20261103.txt"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/runtime-install.log",
+      "log_sha256": "fbb93d32c4848ee2835699631bd8913fea3adfc204eea9a7b09a0a024eda5c95",
+      "step": "runtime-install",
+      "tail": [
+        "Using cached pdfplumber-0.11.9-py3-none-any.whl (60 kB)",
+        "Using cached pycparser-3.12-py3-none-any.whl (62 kB)",
+        "Using cached pypdfium2-5.14.0-py3-none-macosx_13_0_arm64.whl (3.5 MB)",
+        "Installing collected packages: tzdata, pypdfium2, pypdf, pyparsing, pycparser, pillow, packaging, numpy, kiwisolver, fonttools, cycler, charset-normalizer, scipy, python-dateutil, contourpy, cffi, matplotlib, cryptography, pdfminer.six, pdfplumber",
+        "Successfully installed cffi-2.1.1 charset-normalizer-3.5.2 contourpy-1.4.0 cryptography-50.0.2 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.10.7 numpy-2.5.4 packaging-26.3 pdfminer.six-20251230 pdfplumber-0.11.9 pillow-13.0.0 pycparser-3.12 pyparsing-3.3.3 pypdf-6.10.0 pypdfium2-5.14.0 python-dateutil-4.0.0 scipy-1.16.3 tzdata-2026.6"
+      ]
+    },
+    {
+      "args": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--index-url",
+        "https://pypi.org/simple",
+        "-e",
+        ".",
+        "--no-deps"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/local-project-install.log",
+      "log_sha256": "c269c77c44732bab3d4494c7d81e56ed61d7d55b40a4a59266238fe02d2e4d55",
+      "step": "local-project-install",
+      "tail": [
+        "  Created wheel for synthetic-society-lab: filename=synthetic_society_lab-0.1.0-0.editable-py3-none-any.whl size=1838 sha256=47dd4dcaa4f627475576711f10b9354055567a5e06a830ddf70e36da74adecd9",
+        "  Stored in directory: /private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/pip-ephem-wheel-cache-cefl9v3y/wheels/fe/46/ea/b157435014331207d906460ceb5c239bc64fb78b1e979cef16",
+        "Successfully built synthetic-society-lab",
+        "Installing collected packages: synthetic-society-lab",
+        "Successfully installed synthetic-society-lab-0.1.0"
+      ]
+    },
+    {
+      "args": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv/bin/python",
+        "-c",
+        "from pathlib import Path\nimport civiclab,importlib.metadata,json,sys\nroot=Path.cwd().resolve();assert Path(civiclab.__file__).resolve().is_relative_to((root/'src').resolve())\nversions={}\nfor line in Path('configs/runtime_python312_geometry_20261103.txt').read_text().splitlines():\n if line and not line.startswith('#'):\n  n,v=line.split('==');actual=importlib.metadata.version(n);assert actual==v,(n,actual,v);versions[n]=actual\nprint(json.dumps({'python':sys.version,'source_origin':str(Path(civiclab.__file__).resolve()),'runtime_versions':versions,'PYTHONPATH_unset':True}))\n"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/origin-runtime-check.log",
+      "log_sha256": "f975faf44b38ed013e556c5b699703873b26f6235df621024e387892505241d7",
+      "step": "origin-runtime-check",
+      "tail": [
+        "{\"python\": \"3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]\", \"source_origin\": \"/private/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/checkout/src/civiclab/__init__.py\", \"runtime_versions\": {\"contourpy\": \"1.4.0\", \"cycler\": \"0.12.1\", \"fonttools\": \"4.68.0\", \"kiwisolver\": \"1.5.1\", \"matplotlib\": \"3.10.7\", \"numpy\": \"2.5.4\", \"packaging\": \"26.3\", \"pillow\": \"13.0.0\", \"pyparsing\": \"3.3.3\", \"pypdf\": \"6.10.0\", \"python-dateutil\": \"4.0.0\", \"scipy\": \"1.16.3\", \"tzdata\": \"2026.6\", \"cffi\": \"2.1.1\", \"charset-normalizer\": \"3.5.2\", \"cryptography\": \"50.0.2\", \"pdfminer.six\": \"20251230\", \"pdfplumber\": \"0.11.9\", \"pycparser\": \"3.12\", \"pypdfium2\": \"5.14.0\"}, \"PYTHONPATH_unset\": true}"
+      ]
+    },
+    {
+      "args": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/whole-tests.log",
+      "log_sha256": "49960eb2cc08cd4e9d53614a3bb4f041bbe4c85c1ecd12b5cc014090c446a846",
+      "step": "whole-tests",
+      "tail": [
+        "  self.pid = os.fork()",
+        "----------------------------------------------------------------------",
+        "Ran 360 tests in 167.456s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "args": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv/bin/civiclab",
+        "validate-sources",
+        "--fixture-only"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/fixture-source-check.log",
+      "log_sha256": "5782d4b00591e0c780eaf8802b25c729dfde1388332fc3fce2b50e47fb20ccd5",
+      "step": "fixture-source-check",
+      "tail": [
+        "{\"status\": \"PASS\", \"checks\": 1}"
+      ]
+    },
+    {
+      "args": [
+        "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/venv/bin/python",
+        "scripts/offline_global_survey_pilot_v2.py",
+        "--scope-id",
+        "clean-preview",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "log_path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834/wrapper-dry-run.log",
+      "log_sha256": "17916ffaac6eecd50b31e67fa4fe7cd78601674a9140c8b3e179e00188c9e781",
+      "step": "wrapper-dry-run",
+      "tail": [
+        "{\"mode\": \"MOCK_ONLY_DRY_RUN\", \"units_per_run\": 180, \"fake_calls_per_run\": 360, \"planned_runs\": 2, \"actual_budget_usd\": 0, \"writes\": 0}"
+      ]
+    }
+  ],
+  "temporary_workspace": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-stage5-snapshot-yevdp834",
+  "wrapper_dry_run": {
+    "actual_budget_usd": 0,
+    "fake_calls_per_run": 360,
+    "mode": "MOCK_ONLY_DRY_RUN",
+    "planned_runs": 2,
+    "units_per_run": 180,
+    "writes": 0
+  }
+}
