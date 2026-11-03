@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_OFFICIAL_BALLOT_ACQUISITION_BATCH05_V1",
+  "status": "WORKER_ACQUIRED_PENDING_INDEPENDENT_SOURCE_ROLE_REVIEW",
+  "created_at_utc": "2026-11-03T14:12:17.563441+00:00",
+  "current_v1_5_source_code_config_tests_runs_unchanged": true,
+  "capture_count": 9,
+  "obtained_captures": [
+    {
+      "source_id": "de_index",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/",
+      "retrieved_at_utc": "2026-11-03T14:09:34.233195+00:00",
+      "status": 200,
+      "final_url": "https://elections.delaware.gov/candidates/candidatelist/",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Fri, 14 Aug 2026 18:57:24 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/de_index.html",
+      "bytes": 45230,
+      "sha256": "a81f9845ff5c3c54941bbc9782eaffddc3ae82b158a4d1f1c15e8c32a665dbd9",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_CANDIDATE_INDEX"
+    },
+    {
+      "source_id": "de_general",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/genl_fcddt_2026.html",
+      "retrieved_at_utc": "2026-11-03T14:09:34.344760+00:00",
+      "status": 200,
+      "final_url": "https://elections.delaware.gov/candidates/candidatelist/genl_fcddt_2026.html",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Sat, 31 Oct 2026 00:00:01 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/de_general.html",
+      "bytes": 139922,
+      "sha256": "ccc92e779eb0c49574d468ba55af40a11e3733630214ac0734a3c44907425ab7",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_GENERAL_FILED_CANDIDATE_STATUS_HTML"
+    },
+    {
+      "source_id": "ne_index",
+      "url": "https://sos.nebraska.gov/elections",
+      "retrieved_at_utc": "2026-11-03T14:09:34.417649+00:00",
+      "status": 200,
+      "final_url": "https://sos.nebraska.gov/elections",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Mon, 02 Nov 2026 22:44:00 GMT",
+        "ETag": "W/\"1793659440\"",
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/ne_index.html",
+      "bytes": 73911,
+      "sha256": "9b0f766299e388995b4bccdfdc45e5867a1acc7a61deaeff69268bd76b23efd1",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_ELECTION_CANDIDATE_INDEX"
+    },
+    {
+      "source_id": "ok_filing_index",
+      "url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information.html",
+      "retrieved_at_utc": "2026-11-03T14:09:34.578384+00:00",
+      "status": 200,
+      "final_url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information.html",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 14:09:34 GMT",
+        "ETag": "W/\"28a89-65f5fcfe756ec\"",
+        "Content-Type": "text/html;charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/ok_filing_index.html",
+      "bytes": 166523,
+      "sha256": "e13f5610cc3d307dc02e55971abb796e7610111e1cce0f42aaa081d37d85f72b",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_2026_CANDIDATE_FILING_INDEX"
+    },
+    {
+      "source_id": "de_writeins",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/genl_wcddt_2026.html",
+      "offered_by_source_id": "de_index",
+      "retrieved_at_utc": "2026-11-03T14:09:51.840771+00:00",
+      "status": 200,
+      "final_url": "https://elections.delaware.gov/candidates/candidatelist/genl_wcddt_2026.html",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:51 GMT",
+        "Last-Modified": "Sat, 31 Oct 2026 00:00:02 GMT",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/de_writeins.html",
+      "bytes": 63448,
+      "sha256": "cba02ad4bbf824e5db9ebe1fdeda7b05f66074087fa66426a46f94ef0d0291ed",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_DECLARED_WRITE_IN_STATUS_HTML"
+    },
+    {
+      "source_id": "de_general_xlsx",
+      "url": "https://elections.delaware.gov/candidates/candidatelist/genl_fcddt_2026.xlsx",
+      "offered_by_source_id": "de_general",
+      "retrieved_at_utc": "2026-11-03T14:09:51.899798+00:00",
+      "status": 200,
+      "final_url": "https://elections.delaware.gov/candidates/candidatelist/genl_fcddt_2026.xlsx",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "Last-Modified": "Sat, 31 Oct 2026 00:00:01 GMT",
+        "ETag": "\"4d90-65f1798273bd4\"",
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/de_general_xlsx.xlsx",
+      "bytes": 19856,
+      "sha256": "9d212a9575eb6fb4d178930ece50a2f89e34c7e1e8e476d977447dcb7a9c2afa",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_LINKED_GENERAL_FILED_CANDIDATE_WORKBOOK"
+    },
+    {
+      "source_id": "ne_general",
+      "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_Statewide_General_Candidate_Filing_List_9.11.26.pdf",
+      "offered_by_source_id": "ne_index",
+      "retrieved_at_utc": "2026-11-03T14:09:52.087971+00:00",
+      "status": 200,
+      "final_url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_Statewide_General_Candidate_Filing_List_9.11.26.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "Last-Modified": "Wed, 16 Sep 2026 21:48:23 GMT",
+        "ETag": "\"6aab0ea7-1d6af\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/ne_general.pdf",
+      "bytes": 120495,
+      "sha256": "d27a071715896b8c82b8cce8d48200b4207ba10c44f1778f56f92c4efcd7cf96",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_FINAL_TITLED_GENERAL_CANDIDATE_LIST_PDF_NOT_AUTOMATIC_FINAL_ACCEPTANCE"
+    },
+    {
+      "source_id": "ok_filing_book",
+      "url": "https://oklahoma.gov/content/dam/ok/en/elections/candidate-filing-archives/2026-candidate-filing-archives/2026-candidate-list-book.pdf",
+      "offered_by_source_id": "ok_filing_index",
+      "retrieved_at_utc": "2026-11-03T14:09:52.178779+00:00",
+      "status": 200,
+      "final_url": "https://oklahoma.gov/content/dam/ok/en/elections/candidate-filing-archives/2026-candidate-filing-archives/2026-candidate-list-book.pdf",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "Last-Modified": "Mon, 06 Apr 2026 14:32:49 GMT",
+        "ETag": "\"419477-64ecb8a7c6640\"",
+        "Content-Type": "application/pdf"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/ok_filing_book.pdf",
+      "bytes": 4297847,
+      "sha256": "c5e56857e341527dba9535d13be7c109ccadebe575f5f71f2000d3467c8ff5fe",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "INITIAL_CANDIDATE_FILING_BOOK_NOT_AUTOMATIC_NOVEMBER_NOMINEE_LIST"
+    },
+    {
+      "source_id": "ok_withdrawals",
+      "url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information/2026-candidate-withdrawals.html",
+      "offered_by_source_id": "ok_filing_index",
+      "retrieved_at_utc": "2026-11-03T14:09:52.504393+00:00",
+      "status": 200,
+      "final_url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information/2026-candidate-withdrawals.html",
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "Last-Modified": "Tue, 03 Nov 2026 14:09:52 GMT",
+        "ETag": "W/\"1ff6d-65f5fd0f710c9\"",
+        "Content-Type": "text/html;charset=utf-8"
+      },
+      "path": "data/raw/e01_ballots_batch05_v1/ok_withdrawals.html",
+      "bytes": 130911,
+      "sha256": "77d7dc7ce27040a88af0f09ecb39f87d104c3061c54352f3b644f36ebcf7d491",
+      "capture_kind": "HTTP_RESPONSE_BODY_BYTES",
+      "proposed_document_role": "OFFICIAL_CANDIDATE_WITHDRAWAL_PAGE_STAGE_REQUIRES_RECONCILIATION"
+    }
+  ],
+  "request_errors": [],
+  "observations": {
+    "DE": {
+      "general_header": "General Election 11/3/2026",
+      "general_last_updated_printed": "2026-10-30 07:56 PM (timezone not stated)",
+      "general_USSenator_rows_observed": 2,
+      "general_literal_party_labels": [
+        "Democratic",
+        "Republican"
+      ],
+      "general_status_literals": [
+        "Qualified",
+        "Qualified"
+      ],
+      "writein_exact_five_column_desktop_candidate_rows": 3,
+      "writein_status": "Qualified on three desktop rows; no party column or party affiliation inferred",
+      "duplicate_caution": "Raw HTML includes9additional nested/repeatedtr withUSSenator text; NOT12candidates. OnlymainfivecolumnOffice/County/Candidate/Status/Filed records considered preliminary. IndependentDOM/visible/layoutreviewneeded.",
+      "workbook": "OfferedactualXLSX, oneSheetnamedSheet, inlineStrstorage/no sharedStrings.xml,20headersincludingOffice/BallotName/Party/WithdrawalDate/DisplayedStatus andcontactfields;2literalUSSenatorrows,noformulas. Neverexecuteformulasorimportcontactfields.",
+      "caution": "PrintedQualified is source status, not our finalamendment/ballotacceptance. Indexnotes filersmovebetweenprimary/general; no primarycandidate substitution."
+    },
+    "NE": {
+      "pdf_pages": 24,
+      "printed_title": "Final Statewide General Candidate List - November3,2026GeneralElection",
+      "filename_and_printed_edition": "2026-09-11",
+      "PDF_creation_and_modification_metadata": "D:20260916164704-05'00'",
+      "firstpage_visual_USSenator_rows": 5,
+      "firstpage_literal_party_or_designation_labels": [
+        "Republican",
+        "Legal Marijuana NOW",
+        "Nebraska Working People",
+        "America First",
+        "By Petition"
+      ],
+      "firstpage_term_vote_for_cells": "Term6/VoteFor1 in allfiveobservedSenatorrows",
+      "caution": "NoDemocraticSenatorrowobserved inobtainedfirstpagescope; do notinventoneorrelabelpetitions/minorlabels. RotatedPDFtext extractiondefaultincomplete; strip_rotatedFalse layoutstilldegraded. FirstpagePopplervisualobservationsonly, noparser/finalamendmentacceptance. PrintedFinaltitle not our finalballotapproval orindependentasofarchive."
+    },
+    "OK": {
+      "book_pdf_pages": 66,
+      "PDF_creation_metadata": "D:20260406081937-05'00'",
+      "PDF_modification_metadata": "D:20260406082038-05'00'",
+      "source_index": "2026CandidateFilingInformation offersfilingbook/withdrawals/contests; generalwithdrawaldeadlineAugust28not itselfnomineelist",
+      "caution": "Initialfilingbookpredatesprimary/runoff. NoNovemberSenaterosterclaimed, no primarywinners/returnsused toselect. Stage-specificwithdrawals andgeneralcandidateevidencestillneedreview. Publicportal/ViewCandidates linkobservedbutnotqueriedorfetchedasgeneralsubstitute."
+    }
+  },
+  "local_inspection_failures_preserved_in_notes": [
+    "pdftotextbinaryunavailable; noPDFtextfilefabricated, usedexistingpypdfandPopplerrenderinstead",
+    "DEsharedStringsassumptionKeyError; recoveredviaactualinlineStrXMLstorage,no workbookmodification or libraryinstallation"
+  ],
+  "source_rights_notes": "OrdinarypublicprimarygovernmentGETsobservedfromofficialpages. Rawcandidatecontacts/residences/phone/emailremainignoredlocal. LimitedHTTPheadersrecorded,exactbodybytes/hashes; no browserrepresentationmislabeling. Initialrequests2MBHTMLbound;offereddownloadrequests5MBbound,20stimeouts,noautomaticretry. No authentication, challenge, guessed links, hiddenendpoint, outreach or resultsfollowup.",
+  "source_hash_checks": 9,
+  "new_reader_code_or_tests": false,
+  "readiness_incorporation": false,
+  "source_policy_adoption": false,
+  "actual_selection": false,
+  "new_recorded_readiness_runs": 0,
+  "final_ballots_accepted": 0,
+  "2026_outcomes_used": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "next_unblocked_task": "Independentroles/source/currentstatusreview;separatelyversionedDEHTMLinlineXLSXwritein/NErotatedtablefixturesonlyafterreview. OKgeneralnomineeevidencestillunacquired;othermissingstatejobscontinue."
+}
