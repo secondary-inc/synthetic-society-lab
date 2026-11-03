@@ -40,6 +40,9 @@ def build_package(root, output, run_ids):
         if not path.is_relative_to(root/'data/processed/runs'):
             raise ValueError('run path escapes store')
         run=verified_run(path)
+        if any(marker in name.casefold() for name in run['artifacts']
+               for marker in ('-local-only.','.local.')):
+            raise ValueError('run contains local-only artifacts; a separately reviewed disclosure-safe derived run is required')
         for name in list(run['artifacts'])+['checksums.json']:
             p=path/name;inputs[str(p.relative_to(root))]=p
     payloads={}

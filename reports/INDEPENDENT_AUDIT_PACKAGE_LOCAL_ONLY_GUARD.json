@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T12:07:46.320131+00:00",
+  "status": "PASS_KNOWN_LOCAL_ONLY_ARTIFACT_PACKAGE_GUARD",
+  "code_files": {
+    "src/civiclab/reproduction.py": "b086615f6458ea9fddc136509f30bd5c6740d47da4d13c9c82a8fd507fb8c71e",
+    "tests/test_reproduction.py": "bc7ab8d79dcd3dce64d3de6db2a70f016ef34430e10e26438fee164161709afc"
+  },
+  "independent_probes": [
+    {
+      "artifact": "aggregate-local-only.json",
+      "refused_without_archive": true,
+      "ledger_unchanged": true
+    },
+    {
+      "artifact": "candidate_rosters.local.json",
+      "refused_without_archive": true,
+      "ledger_unchanged": true
+    },
+    {
+      "artifact": "nested/AGGREGATE-LOCAL-ONLY.JSON",
+      "refused_without_archive": true,
+      "ledger_unchanged": true
+    },
+    {
+      "artifact": "nested/ROSTERS.LOCAL.JSON",
+      "refused_without_archive": true,
+      "ledger_unchanged": true
+    }
+  ],
+  "configuration_only_name_allowed": true,
+  "scope": "CurrentPUMSaggregate-local-only.jsonandcandidate_rosters.local.jsonarepreventedfrombundlingasnamed,includingnested/casevariations. Wholeledgerretainedandnooutputcreated;share-safederivedrunneedsseparatereview.",
+  "limits": "Filenameconventionguard,notcontentclassificationoradversarialDLP. Renaming/newartifacttypesrequiremaintainers toretaincorrectlocal-onlymarkersandreviews;nofullscientific/disclosure/publicationapproval.",
+  "cost_usd": 0,
+  "model_calls": 0
+}

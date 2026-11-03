@@ -37,6 +37,23 @@ class PackageTests(unittest.TestCase):
             with self.assertRaises(ValueError):build_package(tmp,Path(tmp)/'pack.zip',[])
             with self.assertRaises(ValueError):build_package(tmp,Path(tmp)/'pack.zip',['../../outside'])
 
+    def test_local_only_run_artifacts_cannot_enter_review_bundle(self):
+        from civiclab.dashboard import verified_run
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            for i,name in enumerate(('aggregate-local-only.json','candidate_rosters.local.json','nested/PRIVATE.LOCAL.JSON')):
+                with self.subTest(name=name):
+                    with RunStore(root,'E02',{},kind='MOCK') as run:
+                        run.write(name,{'private_marker':'RETAIN_ONLY_LOCALLY'});run.finish({'status':'MOCK'})
+                    output=root/f'refused-{i}.zip'
+                    with self.assertRaisesRegex(ValueError,'local-only'):
+                        build_package(root,output,[run.run_id])
+                    self.assertFalse(output.exists());self.assertFalse(output.with_suffix('.zip.writing').exists())
+                    self.assertEqual(verified_run(run.path)['integrity'],'PASS')
+            with RunStore(root,'E02',{},kind='MOCK') as safe:
+                safe.write('local-reuse-config.json',{'network_requests':0});safe.finish({'status':'MOCK'})
+            self.assertEqual(build_package(root,root/'safe.zip',[safe.run_id])['status'],'PASS_PACKAGE_INTEGRITY')
+
     def test_source_added_after_enumeration_cannot_create_mixed_snapshot(self):
         from civiclab.dashboard import verified_run
         with tempfile.TemporaryDirectory() as tmp:
