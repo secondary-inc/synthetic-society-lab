@@ -1,0 +1,44 @@
+{
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-04",
+  "actual_owner_or_raw_source_or_credentials_or_env_access": 0,
+  "network_model_calls": 0,
+  "spending_usd": 0,
+  "kind": "INDEPENDENT_E02_EXPLORATORY_LIVE_PILOT_V1_METHODS_FINDING",
+  "status": "BLOCKED",
+  "sources": [
+    {
+      "path": "docs/E02_EXPLORATORY_LIVE_PILOT_V1.md",
+      "sha256": "67e73fa18c72b7a4c2487c82ec5c6c0e070c5fce6c3a96667b6e2cdaefb767cb",
+      "bytes": 12642
+    },
+    {
+      "path": "configs/e02_exploratory_live_pilot_v1.json",
+      "sha256": "a7e2c3e808b6382c1e7f1dc52f26640ef4bebdbfbb62a5be772a88a6b76e2367",
+      "bytes": 36352
+    },
+    {
+      "path": "src/civiclab/survey_execution.py",
+      "sha256": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c",
+      "bytes": 20587
+    },
+    {
+      "path": "configs/e02_instrument.json",
+      "sha256": "ae506fe626928a13cbd09b0cadf402e90899048d656fa80d26b59e0b716df790",
+      "bytes": 2033
+    }
+  ],
+  "finding": {
+    "id": "E02-PILOT-V1-MOCK-METADATA-ADMINISTRATION",
+    "severity": "MEDIUM",
+    "problem": "Proposed future live request.survey copies whole offline instrument including status FROZEN_FOR_OFFLINE_ENGINEERING_PILOT and uncertainty literal mock outputs only. These are administered as model context, not merely report labels. A real response would be elicited with stale research/provenance instructions.",
+    "independent_evidence": "Rebuilt all16 V1 pre messages using pinned assignments/pre_request/messages; all contain offline status and mock outputs only. post_request also copies full instrument.",
+    "required_remedy": "Separate versioned administration projection retaining exact item/instruction wording and scoring; explicitly bind new projection/prompt hash in new admission, preserve old guard; retain true DEMO/authored content labels. No live release inherited."
+  },
+  "not_a_result": "No actual pilot responses, no paid execution, no claim the metadata caused a measured effect.",
+  "reproduction": {
+    "path": "/tmp/civiclab-independent-e02-exploratory-v11-methods.py",
+    "sha256": "78ba9a8da6d4678f1c900ebaedb50a8e562a2d933fbb92a33209b615e14ad559",
+    "bytes": 4214
+  }
+}

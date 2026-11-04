@@ -1,0 +1,869 @@
+{
+  "protocol_id": "E02_EXPLORATORY_LIVE_PILOT_V1",
+  "schema_version": 1,
+  "status": "METHODS_CANDIDATE_NO_EXECUTION_RELEASE",
+  "actual_authority": false,
+  "scope": "EXPLORATORY_AI_OUTPUTS_ONLY; fixed authored fictional party-prior cohort, not nationwide ANES/ACS fitted study",
+  "question": "Within this fixed cohort and two authored notices, how does a synthetic social post wrapper versus a news card wrapper change the pre/post in-party minus out-party thermometer gap?",
+  "source_pins_sha256": {
+    "configs/e02_instrument.json": "ae506fe626928a13cbd09b0cadf402e90899048d656fa80d26b59e0b716df790",
+    "configs/e02_demo_stimuli.json": "63926a3749aa5326587c197d2776edb58f25cf1aa8b78af379b82c0e8817d817",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c",
+    "src/civiclab/survey_envelope_v2.py": "ac210fd41f2f8bffd733fcdef8b1b1813e9035fbeecc6902e8983d2dcecfc877",
+    "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+  },
+  "budget_consent_reference": "reports/COORDINATION.json budget_consent: direct owner answer $5 total; metadata is not a runtime release",
+  "seed": 20261103,
+  "profiles": [
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-01",
+      "party": "D"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-02",
+      "party": "D"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-03",
+      "party": "R"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-04",
+      "party": "R"
+    }
+  ],
+  "profile_selection": "Fixed authored 2D/2R balanced party-prior engineering replicates; no demographic attributes, source sampling, weights or donor linkage. IDs do not make independent human respondents.",
+  "instrument": {
+    "instrument_id": "party-thermometers-v1",
+    "status": "FROZEN_FOR_OFFLINE_ENGINEERING_PILOT",
+    "research_status": "EXPLORATORY_NOT_PREREGISTERED",
+    "source": "ANES 2024 May 19 2026 codebook, printed pp. 82-83 and 102",
+    "items": [
+      {
+        "id": "democratic_party",
+        "anes_variable": "V241166",
+        "question": "How would you rate the Democratic Party?",
+        "minimum": 0,
+        "maximum": 100
+      },
+      {
+        "id": "republican_party",
+        "anes_variable": "V241167",
+        "question": "How would you rate the Republican Party?",
+        "minimum": 0,
+        "maximum": 100
+      }
+    ],
+    "instructions": "Use a 0 to 100 feeling thermometer. Zero is very cold or unfavorable, 50 is neutral, and 100 is very warm or favorable. Return null for a refusal or unknown answer. This instruction is adapted for synthetic model administration.",
+    "primary": "in_party_minus_out_party_change",
+    "primary_population": "Profiles whose fixed prior party identification is Democrat or Republican; independents remain in quality and secondary measures but not this primary estimand.",
+    "party_variable": "V241221; 1 Democrat, 2 Republican, 0/3/5 non-major-party; negative codes missing",
+    "units": "thermometer points: time-point gap -100..100, before-after change -200..200, difference-in-changes -400..400; range-normalized score = raw / 100, not an SD effect size",
+    "primary_contrast": "mean[(post-pre)_C2 - (post-pre)_C1] on exactly the same profile x stimulus units",
+    "secondary": "absolute party gap change for all profiles; no multiplicity-adjusted confirmatory secondary claims",
+    "missing": "Both items required per time point; invalid/missing/refusal pairs excluded from numeric contrast with counts and reasons retained. No imputation. ANES negative codes excluded; 998/999 invalid.",
+    "uncertainty": "Seeded crossed profile/stimulus bootstrap, equal profile weights for randomized engineering pool. Intervals describe resampling of mock outputs only.",
+    "not_validated_for": [
+      "human persuasion",
+      "state-representative effects",
+      "ideological extremity",
+      "institutional trust"
+    ]
+  },
+  "stimuli": [
+    {
+      "id": "DEMO-library",
+      "kind": "DEMO",
+      "text": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+      "source_label": "Authored fictional engineering fixture",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "published_at_utc": null,
+      "qa": {
+        "question": "Has the proposal been adopted?",
+        "answer": "The text says a public review is scheduled before a decision; adoption is not stated."
+      }
+    },
+    {
+      "id": "DEMO-transit",
+      "kind": "DEMO",
+      "text": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+      "source_label": "Authored fictional engineering fixture",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "published_at_utc": null,
+      "qa": {
+        "question": "Does the draft report measured effects?",
+        "answer": "No. The text states that no measured effects are reported yet."
+      }
+    }
+  ],
+  "arms": [
+    "C1",
+    "C2"
+  ],
+  "repeats": 1,
+  "assignment_method": "Existing assignments(profiles, stimuli, seed, repeats=1), filter C1/C2 preserving shuffled order, then reindex execution_order; all eight profile x stimulus blocks receive both arms.",
+  "assignments": [
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 3706561889,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 0
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 1618514641,
+      "item_order": [
+        "democratic_party",
+        "republican_party"
+      ],
+      "execution_order": 1
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 234617157,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 2
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 1618514641,
+      "item_order": [
+        "democratic_party",
+        "republican_party"
+      ],
+      "execution_order": 3
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 1717242548,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 4
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 1074688155,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 5
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 3418344653,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 6
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 3418344653,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 7
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 1074688155,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 8
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 1717242548,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 9
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 197566041,
+      "item_order": [
+        "democratic_party",
+        "republican_party"
+      ],
+      "execution_order": 10
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 393921285,
+      "item_order": [
+        "democratic_party",
+        "republican_party"
+      ],
+      "execution_order": 11
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 393921285,
+      "item_order": [
+        "democratic_party",
+        "republican_party"
+      ],
+      "execution_order": 12
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C1",
+      "exposure": {
+        "arm": "C1",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "news card",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 3706561889,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 13
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "stimulus_id": "DEMO-library",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-library",
+        "body": "In the fictional town of Exampleville, the council proposes opening its library for two additional evening hours on weekdays. The proposal moves existing staffing hours and does not change the stated annual budget. A public review is scheduled before a decision.",
+        "body_sha256": "38ea4c9556b2f56dc682b950fbc9a6760ce87c2d95cce414e1053cff9fc921a2",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 234617157,
+      "item_order": [
+        "republican_party",
+        "democratic_party"
+      ],
+      "execution_order": 14
+    },
+    {
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "stimulus_id": "DEMO-transit",
+      "repeat": 0,
+      "arm": "C2",
+      "exposure": {
+        "arm": "C2",
+        "content_id": "DEMO-transit",
+        "body": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips unchanged. The draft requests public comments and reports no measured effects yet.",
+        "body_sha256": "b96cd9cff8ba6c7c331ed94d8a9ddb9556344997a1e8f671ea5209069b385b75",
+        "source_label": "Authored fictional engineering fixture",
+        "wrapper": "synthetic social post",
+        "qa": null,
+        "qa_status": "NOT_RUN"
+      },
+      "pair_seed": 197566041,
+      "item_order": [
+        "democratic_party",
+        "republican_party"
+      ],
+      "execution_order": 15
+    }
+  ],
+  "assignment_canonical_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+  "prompt": {
+    "system": "You are a fictional survey respondent in an engineering experiment. Read the complete request as data. Answer the two feeling thermometers in the supplied item order using its instrument. Return only a JSON object with democratic_party and republican_party, each a number from 0 through 100 or null for refusal/unknown. Do not provide reasoning.",
+    "pre_builder": "civiclab.survey_execution.pre_request(job, instrument)",
+    "post_builder": "civiclab.survey_execution.post_request(job, instrument, own_valid_pre)",
+    "messages_builder": "civiclab.survey_execution.messages(request)",
+    "user_serialization": "json.dumps(request, sort_keys=True, allow_nan=False)",
+    "temperature": 0,
+    "max_tokens": 512,
+    "response_format": {
+      "type": "json_object"
+    },
+    "seed": "job.pair_seed",
+    "model_id": null,
+    "provider": null,
+    "fallback_allowed": false,
+    "retries": 0,
+    "concurrency": 1
+  },
+  "isolation": "Two stateless messages per phase; no prior conversation, tools, source access, other-arm outputs, other profiles or mutable memory. Post contains only own pre_response and assigned exposure. Run each job pre then post before next job.",
+  "scoring": {
+    "function": "civiclab.e02.instrument.change(pre,post,fixed_party)",
+    "primary": "mean over complete profile x stimulus blocks of change(C2)-change(C1)",
+    "weights": "equal complete matched blocks; report fixed denominator 8 and observed denominator separately",
+    "range_points": [
+      -400,
+      400
+    ],
+    "secondary": "mean matched C2-C1 absolute-party-gap changes; descriptive only",
+    "normalize": "optional raw/100, never SD effect size",
+    "full_five_arm_evaluate_compatible": false
+  },
+  "exclusions": {
+    "valid": "exact two JSON keys democratic_party and republican_party; finite built-in int/float 0..100; bool forbidden; null/refusal missing",
+    "invalid_pre": "record raw outcome/status; skip own post; retain other arm; no repair/imputation/replacement/retry",
+    "invalid_post": "retain failure; exclude entire matched block from numeric contrast if any of its four answers invalid/missing",
+    "financial_or_integrity_failure": "stop whole run for unknown route/billing, envelope violation, hash mismatch, timeout or unreconciled dispatch; preserve all dispositions and reservations",
+    "numeric_encoding": "post baseline values must each serialize to <=32 JSON characters; otherwise stop envelope failure",
+    "zero_complete_blocks": "estimate and interval null, NOT_ESTIMABLE"
+  },
+  "uncertainty": {
+    "method": "descriptive crossed profile/stimulus percentile bootstrap of complete matched block differences",
+    "seed": 20261103,
+    "replicates": 2000,
+    "algorithm": "Sort unique complete profile IDs and stimulus IDs; Random(seed).choices each list with replacement at its original length on each replicate; weight each observed complete block by product of selected profile/stimulus multiplicities; skip zero-weight replicates; sort nonempty draws; endpoints at floor((n-1)*0.025) and floor((n-1)*0.975).",
+    "minimum_clusters": "At least 2 distinct complete profiles and 2 distinct complete stimuli, otherwise interval null. Record nonempty bootstrap draws.",
+    "limitations": "Only four authored profiles and two purposive stimuli, with repeated same-party priors; interval is unstable descriptive resampling, not human, population, model-universe or confirmatory coverage. No p-value or significance claim.",
+    "sensitivity": "report eight block differences (or missing reasons), D/R descriptive means, leave-one-profile-out means, leave-one-stimulus-out means and arm/phase validity counts; no post hoc selected result"
+  },
+  "envelope": {
+    "arm_units": 16,
+    "matched_blocks": 8,
+    "maximum_model_posts": 32,
+    "maximum_statistics_gets": 32,
+    "model_retries": 0,
+    "statistics_retries": 0,
+    "input_token_bound_per_call": 8192,
+    "output_tokens_per_call": 512,
+    "maximum_input_tokens": 262144,
+    "maximum_output_tokens": 16384,
+    "maximum_total_tokens": 278528,
+    "number_text_bound": 32,
+    "exact_pre_and_post_surrogate_bounds": [
+      {
+        "execution_order": 0,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "72d69a97668a7e57b4df7a49f89d6c6f85e05712d7359f60b9ffe991aed9ea55",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5434,
+          "max_tokens": 512,
+          "request_hash": "b31a04bcb2dabf156e523bbc4e852ed126e5347e0a446f63ded2d6f261d57611",
+          "encoded_message_bytes": 3386
+        }
+      },
+      {
+        "execution_order": 1,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "28fbedde3e882685f921dac9646d2fad474a13f2859d0a87d8c2cad1817845b4",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5459,
+          "max_tokens": 512,
+          "request_hash": "009fdf518caca737aa8041e6bf087f996dcc8268ade991e442d1798265cf668c",
+          "encoded_message_bytes": 3411
+        }
+      },
+      {
+        "execution_order": 2,
+        "pre": {
+          "input_token_bound": 4761,
+          "max_tokens": 512,
+          "request_hash": "6aa405a5d58c6fbf50e2f778c11b6330e50fff5a263b7c1f72bcf9972e0d58af",
+          "encoded_message_bytes": 2713
+        },
+        "post_surrogate": {
+          "input_token_bound": 5446,
+          "max_tokens": 512,
+          "request_hash": "6f2ce500f15db26bf4175689cd817f18ec6a1c2067e534fa58289e746aaf1050",
+          "encoded_message_bytes": 3398
+        }
+      },
+      {
+        "execution_order": 3,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "28fbedde3e882685f921dac9646d2fad474a13f2859d0a87d8c2cad1817845b4",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5447,
+          "max_tokens": 512,
+          "request_hash": "e91e26435320308399f112c94e7a61a9a0dee38ca32902ba775e9650cb3a4262",
+          "encoded_message_bytes": 3399
+        }
+      },
+      {
+        "execution_order": 4,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "35e409841a19e9e9594c5baffebf490c8ed5cd98f6a1b15f5234696c897adb76",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5447,
+          "max_tokens": 512,
+          "request_hash": "94e9a010d44d02e589ed6102dc888c210569c27cbfe05b76d18941e1901d4f22",
+          "encoded_message_bytes": 3399
+        }
+      },
+      {
+        "execution_order": 5,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "1fc8674571995668b315b4dd40a880225505a0047bfd312fa554b52c6b6ce4e3",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5434,
+          "max_tokens": 512,
+          "request_hash": "6e0486b4132508fd87f88a630f75ca303efdf129081d63fac02054112da5e8b9",
+          "encoded_message_bytes": 3386
+        }
+      },
+      {
+        "execution_order": 6,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "1263185927802a4ed42e358577f0e4c09fa0b5b4355317a247fa53a110c34fd2",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5447,
+          "max_tokens": 512,
+          "request_hash": "bb07dfe3d04d170b048ef8d909c261e22a221b7893c272767350e0b55d02f5f7",
+          "encoded_message_bytes": 3399
+        }
+      },
+      {
+        "execution_order": 7,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "1263185927802a4ed42e358577f0e4c09fa0b5b4355317a247fa53a110c34fd2",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5459,
+          "max_tokens": 512,
+          "request_hash": "ad308567d5ae792db1bda2539d5e82c8343df13ff99e99eca49c92bed59b1acd",
+          "encoded_message_bytes": 3411
+        }
+      },
+      {
+        "execution_order": 8,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "1fc8674571995668b315b4dd40a880225505a0047bfd312fa554b52c6b6ce4e3",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5422,
+          "max_tokens": 512,
+          "request_hash": "f8b8803fcad84e78da9ee2d95decd0c44c6c44552b77d5f70b91738925d2945c",
+          "encoded_message_bytes": 3374
+        }
+      },
+      {
+        "execution_order": 9,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "35e409841a19e9e9594c5baffebf490c8ed5cd98f6a1b15f5234696c897adb76",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5459,
+          "max_tokens": 512,
+          "request_hash": "7a9ea07cb7dfe3d72f3ff2ba19b71530e50727923806cc600a0c3e9bdd4f872a",
+          "encoded_message_bytes": 3411
+        }
+      },
+      {
+        "execution_order": 10,
+        "pre": {
+          "input_token_bound": 4761,
+          "max_tokens": 512,
+          "request_hash": "08a26d3a581a57eaa73354a6dd35160adac358d3ec76303200cf7dc23d0befae",
+          "encoded_message_bytes": 2713
+        },
+        "post_surrogate": {
+          "input_token_bound": 5421,
+          "max_tokens": 512,
+          "request_hash": "828dd24fda6dbf8fef1232f4ca4dbcbd3ffe91207eb18831499f0b894582f714",
+          "encoded_message_bytes": 3373
+        }
+      },
+      {
+        "execution_order": 11,
+        "pre": {
+          "input_token_bound": 4761,
+          "max_tokens": 512,
+          "request_hash": "6584b40a7d1418dedbe7f7382ea889f9cf8e67de3a068d41720ba986729c4a5d",
+          "encoded_message_bytes": 2713
+        },
+        "post_surrogate": {
+          "input_token_bound": 5421,
+          "max_tokens": 512,
+          "request_hash": "cf4bebceaa01e074c2cd14cee14345c44449958ba49bbc7c808aca222d37f2b2",
+          "encoded_message_bytes": 3373
+        }
+      },
+      {
+        "execution_order": 12,
+        "pre": {
+          "input_token_bound": 4761,
+          "max_tokens": 512,
+          "request_hash": "6584b40a7d1418dedbe7f7382ea889f9cf8e67de3a068d41720ba986729c4a5d",
+          "encoded_message_bytes": 2713
+        },
+        "post_surrogate": {
+          "input_token_bound": 5433,
+          "max_tokens": 512,
+          "request_hash": "919e3c5c09c1a8ca0709d6366bb39d0f1129c10da88a0e2643664cf7c2ea940d",
+          "encoded_message_bytes": 3385
+        }
+      },
+      {
+        "execution_order": 13,
+        "pre": {
+          "input_token_bound": 4762,
+          "max_tokens": 512,
+          "request_hash": "72d69a97668a7e57b4df7a49f89d6c6f85e05712d7359f60b9ffe991aed9ea55",
+          "encoded_message_bytes": 2714
+        },
+        "post_surrogate": {
+          "input_token_bound": 5422,
+          "max_tokens": 512,
+          "request_hash": "9f1c646b2ed3760574a27d3b13aa38c813f7da04f796b0473de45036df1521f1",
+          "encoded_message_bytes": 3374
+        }
+      },
+      {
+        "execution_order": 14,
+        "pre": {
+          "input_token_bound": 4761,
+          "max_tokens": 512,
+          "request_hash": "6aa405a5d58c6fbf50e2f778c11b6330e50fff5a263b7c1f72bcf9972e0d58af",
+          "encoded_message_bytes": 2713
+        },
+        "post_surrogate": {
+          "input_token_bound": 5458,
+          "max_tokens": 512,
+          "request_hash": "48ab4d6878c27b860e0bc3a2c1a281553d309e619de5fad695e0caa32e0fb2a9",
+          "encoded_message_bytes": 3410
+        }
+      },
+      {
+        "execution_order": 15,
+        "pre": {
+          "input_token_bound": 4761,
+          "max_tokens": 512,
+          "request_hash": "08a26d3a581a57eaa73354a6dd35160adac358d3ec76303200cf7dc23d0befae",
+          "encoded_message_bytes": 2713
+        },
+        "post_surrogate": {
+          "input_token_bound": 5433,
+          "max_tokens": 512,
+          "request_hash": "a16e65b4961ccb34661749357bdea049928a1d0e95f5ccae7becd59a9602ae9f",
+          "encoded_message_bytes": 3385
+        }
+      }
+    ],
+    "quote_requirement": "Before dispatch, independently reviewed fresh actual route-specific all-in quote must bound encoded input plus message overhead, output, reasoning, routing and every charge; refuse unknown billing. Existing byte+overhead helper is a planning bound, not a universal tokenizer/context proof. Supported route/context must independently attest a sufficient bound; otherwise BLOCKED."
+  },
+  "budget": {
+    "currency": "USD",
+    "shared_owner_ceiling_microusd": 5000000,
+    "old_uncertain_hold_microusd": 340,
+    "proposed_pilot_subceiling_microusd": 1000000,
+    "maximum_all_in_reservation_per_call_microusd": 31250,
+    "remaining_before_new_connectivity_microusd": 4999660,
+    "connectivity_consumption_microusd": null,
+    "other_global_consumption_microusd": null,
+    "price_terms": null,
+    "live_grant": null,
+    "owner_ledger_reference": null,
+    "release_reference": null,
+    "condition": "At every dispatch global consumed + unreconciled reservations (including old340 exactly once) + new reservation <=5000000; pilot consumed+pending+new<=1000000 and call reservation<=31250; no refund of old uncertain hold without separately reviewed reconciliation. If residual headroom insufficient for entire frozen pilot reservation, do not begin; no cohort truncation to fit cost.",
+    "cost_formula": "ceil_microUSD(8192*all_in_input_USD_per_token + 512*all_in_output_USD_per_token + all other worst-case per-call charges) <=31250, then <=1000000 for 32 calls; actual route-specific bound must be accepted. This is a maximum envelope, not a price estimate or authorization.",
+    "actual_model_calls": 0,
+    "actual_spend_microusd": 0
+  },
+  "recording": [
+    "run_id",
+    "code and config hashes",
+    "assignment and prompt hashes",
+    "seed",
+    "actual model and serving provider",
+    "generation IDs",
+    "raw bounded answers and parse status",
+    "phase/unit dispositions",
+    "token usage",
+    "reservations and reconciled charges",
+    "errors and exclusions",
+    "cancellation/checkpoints",
+    "input/stimulus provenance"
+  ],
+  "release_gates": [
+    "independent protocol acceptance",
+    "bounded connectivity accepted; old accounting preserved/resolved per reviewed policy",
+    "root integration implementing this two-arm subset with independent tests (five-arm evaluator must not be reused directly)",
+    "exact model/provider/revision route pinned without fallback before data collection; no choice based on pilot outcomes",
+    "fresh known all-in prices, route context/token support and full frozen-pilot reservation fit verified",
+    "reviewed owner-wide ledger/grant/client/bridge and exact run release",
+    "independent mock reconstruction of assignments, requests, score and failure dispositions",
+    "new version and review for any substantive protocol change"
+  ],
+  "gated": [
+    "nationwide population inference",
+    "confirmatory inference",
+    "real news",
+    "actual social feeds",
+    "assistant interaction",
+    "swarms",
+    "external publication"
+  ],
+  "results": null
+}

@@ -1,0 +1,65 @@
+# E02 exploratory live pilot v1 — methods candidate
+
+Status: **METHODS CANDIDATE; NO EXECUTION RELEASE.** Actual model calls and spend for this protocol: zero. The machine-readable freeze is `configs/e02_exploratory_live_pilot_v1.json`. Independent methods and implementation review remain required. This document creates no grant, ledger allowance, credential access or network activity.
+
+## Question and scope
+
+For a fixed authored fictional cohort, does presenting the same fictional notice as a “synthetic social post” rather than a “news card” change the pre/post in-party minus out-party feeling-thermometer gap? The target is recorded AI outputs under one pinned route and these exact prompts. This is an exploratory text-wrapper and operational-feasibility pilot, not visual feed exposure, real journalism, a human persuasion experiment or a nationally representative study.
+
+The original nationwide, state-stratified ANES/ACS study and its full completion contract remain required and blocked where unmet. This smaller sub-study supplies no demographic fitting, calibration, real-source validity or confirmatory acceptance. It does not promote more complex configurations. News, demographics, assistants, feeds and swarms still require simpler matched comparisons; swarms require equal-compute independent controls.
+
+## Frozen cohort and content
+
+Four fixed profiles have only a fictional ID and a prior party: EXPLORATORY-FICTIONAL-01 and -02 are D; -03 and -04 are R. These are authored party-prior engineering replicates, not sampled people or independent human respondents. The duplicate party priors are intentional technical replication; IDs alone confer no substantive population variation. No demographic attributes, raw respondents, donor identifiers, source sampling or weights are used.
+
+Select the first two preexisting `configs/e02_demo_stimuli.json` notices, DEMO-library and DEMO-transit, before any live responses. Exact text, attribution, questions and content hashes are copied/pinned in the config. Both are project-authored fictional engineering fixtures with PROJECT_AUTHORED_FIXTURE rights. They retain DEMO labels even if a future response comes from a real model. No publisher text or respondent data is transmitted. These neutral notices may cause little relevant party-affect movement; null movement is an acceptable observation, not a reason to replace stimuli after seeing answers.
+
+Use only C1 and C2 from `civiclab.e02.experiment.treatment`: identical story and source attribution, “news card” versus “synthetic social post” wrapper, no Q&A. The eight profile × stimulus blocks each receive both arms: 16 arm units, one pre and one post per unit, at most 32 model POSTs. There is no shared baseline across arms, multi-exposure, live assistant, feed or interaction.
+
+## Instrument, prompts and assignment
+
+Reuse the exact pinned instrument `party-thermometers-v1`: “How would you rate the Democratic Party?” (ANES V241166) and “How would you rate the Republican Party?” (V241167), each 0–100 with the existing adapted thermometer instructions. Fixed party priors govern scoring; do not infer them from model answers. This is synthetic administration, not the original human interview.
+
+The config copies the exact existing `survey_execution.SYSTEM`, instrument and job objects. Pre/post messages use `pre_request`, `post_request` and `messages`: one system message and one JSON user message, sorted keys, finite JSON, no reasoning request. Post receives only its own valid baseline and its assigned exposure. No previous conversation, cross-arm outputs, tools or memory enters either phase. Execute each job pre then post before moving to the next job. This explicitly measures an own-baseline-conditioned post response; it is not an unconditioned repeated survey.
+
+Freeze seed 20261103 and `assignments(profiles, stimuli, seed, repeats=1)`, then retain only C1/C2 in the existing shuffled order and reindex execution_order. The config contains all 16 resulting assignments and their canonical hash. Per-block item order and pair_seed are shared across arms; separate calls remain separate draws. Provider seeds do not guarantee real-model reproducibility. Temperature 0, maximum completion 512 tokens, JSON-object format, no fallback, no retries and concurrency 1 are fixed. Exact model ID/revision and actual serving provider remain null and must be pinned by independently reviewed release before any outcome collection. Selection must be independent of pilot outcomes; changing research inputs requires a new version.
+
+## Scoring, estimand and failure handling
+
+Reuse `civiclab.e02.instrument.score/change`, independently recomputing from saved raw values. A valid answer has exactly democratic_party/republican_party keys with finite built-in numeric values 0–100; booleans, text, unexpected fields, missing/null and refusals fail validity. Enforce the existing adaptive-post numerical serialization bound of 32 JSON characters per baseline number. An encoding overflow stops the envelope gate. Malformed or truncated JSON is a quality failure, never repaired with another model call.
+
+For D, gap = Democratic warmth minus Republican warmth; reverse for R. For each arm, change = post gap minus pre gap. Each matched block contributes change(C2) minus change(C1), range -400 to 400 points. Primary estimate is the equal-weight mean over complete blocks. Report all eight planned blocks, observed complete count, every exclusion and arm/phase denominators. Optional division by 100 is range normalization, never a standardized SD effect size. The matched absolute-gap contrast is descriptive secondary analysis only.
+
+If pre is invalid, record it and skip that arm's post. Continue the independently scheduled other arm if all financial/integrity controls remain valid. A numeric block requires all four answers valid; otherwise exclude that entire block from the numeric contrast without imputation, replacement or retries. Report arm/party-specific attrition; the complete-block mean can be selection-biased and does not identify the full-cohort contrast under informative missingness. If zero complete blocks, report NOT_ESTIMABLE and null estimate/interval.
+
+Unknown route/billing, timeout, unreconciled dispatch, integrity mismatch or budget/envelope violation stops the whole run. Preserve reservations, raw bounded output, failed configuration and dispositions, including unattempted jobs. A cancellation is not a completed 32-call experiment. No unknown dispatch is automatically repeated.
+
+## Uncertainty and sensitivity
+
+Freeze a descriptive crossed profile/stimulus bootstrap, seed 20261103, 2,000 draws. Sort unique complete profile/stimulus IDs. In each draw, independently sample each list with replacement at its original length using Python Random(seed).choices; weight observed complete-block differences by the product of profile/stimulus multiplicities. Skip zero-total draws and record their count. Sort nonempty draws; percentile endpoints use floor((n−1)×0.025) and floor((n−1)×0.975). Require at least two distinct complete profiles and two distinct complete stimuli; otherwise interval is null. This reproduces the existing crossed-bootstrap algorithm while explicitly handling the two-arm subset.
+
+Only four authored profiles and two purposive notices make these ranges unstable descriptive diagnostics. Repeated party priors are technical replicates, not four independently sampled people. No p-values, significance claims, model-universe coverage or human/population inference follow. Report block-level values, D/R descriptive means, leave-one-profile-out and leave-one-stimulus-out means, plus invalid counts and their reasons. Do not choose a favorable subset or relabel a failed configuration as a successful effect.
+
+The existing five-arm `experiment.evaluate` rejects incomplete five-arm coverage and labels outputs MOCK. It **cannot** directly score this two-arm real-model candidate. Root integration must implement and independently verify the exact subset analysis and honest EXPLORATORY_REAL_MODEL labeling. The existing deterministic MockSurvey is only a fixture, with an injected known effect; its values are never treated as live evidence.
+
+## Maximum financial and request envelope
+
+Owner consent metadata in `reports/COORDINATION.json` records a **shared $5 total** for bounded connectivity plus initial pilot. Preserve the old uncertain 340 microdollars ($0.000340) exactly once. Before any new connectivity consumption, residual shared headroom is $4.999660. This protocol proposes an additional pilot subceiling of **$1**, not new spending authority. Connectivity and all other consumed/pending amounts must be known and reserved under the same reviewed owner-wide ceiling.
+
+Maximum 32 model POSTs; maximum one statistics GET per dispatched generation (32 total); no retries. Per-call input planning ceiling 8,192 tokens, output 512, hence total input ≤262,144, output ≤16,384 and combined ≤278,528. Every phase's exact pre or conservative post-surrogate message envelope is recorded in the config. Current helper maximum is 5,459 input units; the larger fixed 8,192 ceiling leaves planning headroom. The helper counts encoded bytes plus message overhead. It is not universal proof of a serving model's tokenizer/context or unpriced reasoning bounds. Independent actual-route admission must establish sufficient context and a defensible all-billable-token bound; unknown terms fail closed.
+
+The all-in reservation ceiling is 31,250 microdollars ($0.031250) per call, totaling at most 1,000,000 microdollars. Before release, fresh authenticated/authoritative route-specific prices and every possible fee must support:
+
+`ceil_microUSD(8192 × all_in_input_USD_per_token + 512 × all_in_output_USD_per_token + all_other_worst_case_call_charges) ≤ 31250`.
+
+No model price, serving route, successful connectivity, authentic quote or actual spend is invented. Reserve before dispatch and reconcile provider usage afterward; disallow silent route fallback and unknown billing. At every dispatch require both shared consumed + pending + new ≤5,000,000 microdollars and pilot consumed + pending + new ≤1,000,000. Any old uncertain amount remains conservative consumption until separately reviewed reconciliation. Confirm headroom for the entire frozen maximum pilot before starting; insufficient residual budget blocks the run rather than silently shrinking the sample. Simultaneous external spending must not bypass the shared ledger. Underspend does not grant retries, replacement profiles or additional arms.
+
+## Milestone acceptance and handoff
+
+1. **Protocol:** independent reviewer reproduces source pins, exact cohort/content/questions, 16 assignments/eight paired blocks, prompt templates, scoring, exclusions, uncertainty and arithmetic; records PASS/BLOCKED/NOT_RUN. Author checks are not independent acceptance.
+2. **Integration:** root-owned two-arm bridge reproduces config hashes and requests, stateless isolation, invalid-pre skips, immutable dispositions, numerical bounds and recomputed scores; independently tests corruption, route/cost failures, cancellation and no-retry accounting. Existing five-arm runner acceptance is not inherited automatically.
+3. **Financial release:** accepted connectivity, fresh route/prices/context bounds, old-hold treatment, reviewed owner-ledger/client/bridge, full-envelope affordability and exact independent run release. All actual authority fields remain false/null here. Credential presence or paid flag alone does not pass this milestone.
+4. **Actual pilot:** preserve run ID, exact code/input/config/prompt/assignment hashes, serving provider/model, generation IDs, usage/reservations/reconciliation, errors, exclusions and checkpoints. Output must distinguish real-model responses from DEMO content and MOCK controls. No results are asserted now.
+5. **Analysis:** a separate reviewer reconstructs contrasts, attrition, intervals and sensitivity directly from validated raw outputs and reports exact limited scope and actual costs. Preserve failures. No external publication or claim of nationwide/human persuasion follows.
+
+Source code/config pins establish the reused definitions at preparation time; accepted runtime integration and its exact Git/source hashes must be recorded separately. This protocol does not edit earlier accepted artifacts or certify its own milestone. Real responses, analysis results and serving-route decisions remain absent. Root owns integration, coordination and STATUS updates; the independent auditor owns review findings.
