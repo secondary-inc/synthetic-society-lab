@@ -1,0 +1,122 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_FINDING",
+  "status": "BLOCKED",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-04",
+  "scope": "Frozen private authored readonly collector only; actualcollect_actual remains unconditionaldenial beforearguments/OS",
+  "sources": [
+    {
+      "path": "src/civiclab/additional_compatibility_preflight_v1.py",
+      "sha256": "2db115b5e49ea31da29a0e9fb51b4bd302c866ecddf85429832d0260ffcbf910",
+      "bytes": 4205
+    },
+    {
+      "path": "tests/test_additional_compatibility_preflight_v1.py",
+      "sha256": "b179c20f79c7ac244b1636374b4a8f3e4f5cd99539a309f358afb2078ba1ae41",
+      "bytes": 2911
+    },
+    {
+      "path": "reports/ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_HANDOFF.json",
+      "sha256": "1ab1eb2cf1236610a349c37eaa83b1636744e68318ad881c5c4334b12e6976ab",
+      "bytes": 2923
+    }
+  ],
+  "tests": {
+    "Python3.12": {
+      "count": 5,
+      "seconds": 0.088,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-preflight-v1-py312.log",
+        "sha256": "d45c406b552565c09c2b9acd6dee7668e68dbf25f0591122776858cd74ba3e9f",
+        "bytes": 97
+      }
+    },
+    "Python3.11": {
+      "count": 5,
+      "seconds": 0.083,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-preflight-v1-py311.log",
+        "sha256": "af66d230cd8b755a9ef70019b1cb8b2166890728d195006cfb8ddee662241db3",
+        "bytes": 97
+      }
+    }
+  },
+  "finding": {
+    "id": "PREFLIGHT-V1-UNBOUNDED-SQLITE-SIDECARS",
+    "severity": "MEDIUM",
+    "location": "src/civiclab/additional_compatibility_preflight_v1.py:42",
+    "problem": "SQLite mode=ro/query_only constrainsSQLdatabasewrites, but doesnotbind fileaccess to mainDB. Collector bounds/hashesonlyregistration/guard/anchor/mainDB; nojournalheader/sidecarchecks beforeSQLite. Validoriginalhistory inWALmode isaccepted withadditional-wal/-shm files outsidefourfileenvelope.",
+    "independent_reproduction": {
+      "kind": "AUTHORED_PREFLIGHT_V1_WAL_BOUNDARY_PROBE",
+      "journal_mode": "wal",
+      "sidecars": {
+        "-wal": {
+          "exists": true,
+          "bytes": 8272
+        },
+        "-shm": {
+          "exists": true,
+          "bytes": 32768
+        }
+      },
+      "collector_accepted": "ORIGINAL_OWNER_READONLY_SNAPSHOT_V1",
+      "declared_files": [
+        "registration",
+        "guard",
+        "anchor",
+        "database"
+      ],
+      "actual_access": 0,
+      "network_calls": 0,
+      "spend": 0
+    },
+    "impact": "Declaredfinitefourfileboundary notenforced; SQLitecanconsult unboundedWAL/sharedmemory andordinarymode=ro doesnotguaranteeno filesystemsideeffects. Probeprovesacceptancewithexisting8272Bwal/32768Bshm, notthatcollectorcreatedthesefiles. Theirbytes/hash/mutationareoutsidebefore/afterintegritychecks. Noactualownerreadorinvoiceissueclaimed.",
+    "required_remedy": "Preservefrozenv1 andcreateaparticularsuccessor thatrefusesWAL/SHM/rollbackjournal sidecars beforeSQLite andrequiresboundedverifiedrollbackDBheader mode18/19=1, or explicitlyversions/scopes/boundsallSQLitefileswithoutweakeningreadonlyrequirement. Maintaincooperativefixedguardlock, sidecarabsencebefore/after, noautomaticcleanup/repair/retry/replacementsnapshot. AddWAL/hotjournal/symlink/oversizedsidecarrefusalsbeforeSQLite and normalunchangedfourfilepathregression. Actualentrymuststaydenieduntilseparaterelease."
+  },
+  "partial_evidence": [
+    "FixedOSownerpaths andregularfilesizechecks beforeconstructor",
+    "Guardlock openedrb; URI mode=ro/query_only andexplicitconnectionclose",
+    "Originalownerverifier reconstructsfullhistoryandrequiresoneoldUNCERTAIN340/unfinished1/dispatch1/knownbillnull/statclaimsempty",
+    "Fourdeclaredbytes/hashbeforeafterconsistent inexistingfixtures",
+    "Missingcontrolnotrecreated, successorhistoryrefused, actualentrydenial tested"
+  ],
+  "additional_evidence": [
+    {
+      "path": "/tmp/civiclab-independent-preflight-v1-wal.py",
+      "sha256": "5b2b6f8b305008622822abd235598f76180570225bced3a057a8260d619dc440",
+      "bytes": 1005
+    },
+    {
+      "path": "/tmp/civiclab-independent-preflight-v1-wal.json",
+      "sha256": "64c4888cb5e3e3d95869cc6f16fe29a56f825286b7b8c4cfe5d30aec0785667a",
+      "bytes": 439
+    }
+  ],
+  "remaining": [
+    "FiniteSQLitefileboundaryfix andindependentsuccessorreview",
+    "Separatelyscopedactualreadonlyparticularrelease; noactualcollect_actualorprivatecollectorinvocationauthorizedbythisaudit",
+    "Exactactualterminal/M/R/A/O/E/currentpricebindings andownerunknownbillamendmentacceptance",
+    "Connectivityactualresponse/provider/usage/billreviewandE02realpilotbridge"
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_model_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_FINDING.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_additional_compatibility_preflight_v1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-preflight-v1-wal.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "5targetedtestsPASSbothruntimes; independentWALprobeconfirmsundeclaredsidecaracceptance",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authoredtemporaryfakeowneronly",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Finiteprivatecomponentblocked; actualentrydenied; nohostilehost/powerlossguarantee",
+    "UNRESOLVED_BLOCKERS": "SQLitefileaccessboundary andseparateactualrelease",
+    "NEXT_UNBLOCKED_TASK": "Leadpreparesseparatesuccessorwithheader/sidecarfailclosedchecks; auditindependently"
+  }
+}

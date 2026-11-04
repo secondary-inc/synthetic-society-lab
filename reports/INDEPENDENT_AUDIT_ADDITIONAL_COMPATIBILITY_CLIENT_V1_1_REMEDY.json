@@ -1,0 +1,209 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY",
+  "status": "PASS",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-04",
+  "scope": "Frozen successor private client/component and retained authored mock evidence only. Actualentry remains denied and no financial/terminal authority granted.",
+  "sources": [
+    {
+      "path": "src/civiclab/additional_compatibility_client_v1_1.py",
+      "sha256": "b5c834b2fe81da4c7c2bc8c513a481be46001170ffff681388a9be3df2de2975",
+      "bytes": 17787
+    },
+    {
+      "path": "tests/test_additional_compatibility_client_v1_1.py",
+      "sha256": "579dbaa76b8fb5670f1bbe42fbbb3efa0efd192cabf0deedd2b775f09565ced8",
+      "bytes": 24908
+    },
+    {
+      "path": "reports/ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY_HANDOFF.json",
+      "sha256": "9af1997fffa04cef6810fe7799199f523ce8a638df6b290bf39e8aa6197970f4",
+      "bytes": 5210
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_FINDINGS.json",
+      "sha256": "415e4a42a0588d0b8625498c1d030127284a84edc26a2263b6b49e5da41e132a",
+      "bytes": 10254
+    }
+  ],
+  "tests": {
+    "Python3.12": {
+      "count": 72,
+      "seconds": 8.8,
+      "result": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-additional-client-v11-py312.log",
+        "sha256": "054a55da0185e93924c85ed9254a1b3c9e3347ab203882c446e7f167ba10b15d",
+        "bytes": 98
+      }
+    },
+    "Python3.11": {
+      "count": 72,
+      "seconds": 8.091,
+      "result": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-additional-client-v11-py311.log",
+        "sha256": "3c161c42833f34a7dba74fc7090794374be0311c85449c8364ba84f1fa2c6abd",
+        "bytes": 98
+      }
+    },
+    "coverage": "17successorclient+14owner+41previousdiagnosticmethods; retained10nativeclientcrashboundaries andtwoprocesssamefixedrunrace, previousatomicownercrashes/races andsafeerror/cancellation guards"
+  },
+  "finding_dispositions": [
+    {
+      "id": "CLIENT-V1-ALIAS-AUTHORITY-DRIFT",
+      "status": "CLOSED_FOR_V1_1_COMPONENT_ONLY",
+      "evidence": "One finiteJSON freeze captures whole external M/R/A/O/release/expected/E/expectedEhash packet before OS/catalog. All later references detached; validate_bundle returns assigned. Full E/code/M/O/release closure and unchanged captured M/R/A/O compared at finalgrant, then validate_bundle again. NewdistinctV1_1client/Ekind andcontract. Independently adapted originalcoherent300\u2192599leasecallback reproducer on312/311: callerpolicy changes, but manifest/E/durableledger policy stayoriginal,1fakePOST approvedpayload. Additional implementation regression mutatescallerpayload/seed/E/expectedE while approvedsentbytes remainfixed. No claim of safetyagainsthostileinprocess monkeypatch/reflection."
+    },
+    {
+      "id": "CLIENT-V1-LATE-BILLING-METHODS-MISMATCH",
+      "status": "CLOSED_FOR_V1_1_COMPONENT_ONLY",
+      "evidence": "Original connectivity rule preserved withoutnewmethodsexception. Verified121secondlate bill transitions newrowUNCERTAIN/full340\u00b5,observedcost1\u00b5 andbillingretained; TIMING_FAILUREsummary distinguishescharged340 fromreported1; no phasecheckpoint/PHASE_COMMITTED/no furtherHTTP. Retainedold340 unchanged,total680,dispatch2. Timely verifiednewbill maysettleonlynewrow1\u00b5,total341; oldbillstillUNKNOWN."
+    }
+  ],
+  "retained_mock_evidence": {
+    "index": {
+      "path": "data/processed/compatibility_authored_fixture/additional-client-v1_1-20261104-01/AUTHORED_EVIDENCE_INDEX.json",
+      "sha256": "b4e50c61f4ff9f7be69bc5d736967c59b2067ec0843eb3465035c160f8aa189d",
+      "bytes": 23079
+    },
+    "verification": {
+      "verified_file_count": 99,
+      "cases": {
+        "ack-failure": {
+          "journal_events_verified": 3,
+          "ledger_events_verified": 9,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 0,
+          "statistics": 0,
+          "old_row_unchanged": true
+        },
+        "alias-mutation": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 12,
+          "new_status": "PHASE_COMMITTED",
+          "new_charged_microusd": 1,
+          "total_charged_microusd": 341,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        },
+        "invalid-billing": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 11,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        },
+        "late-billing": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 11,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        },
+        "post-error": {
+          "journal_events_verified": 4,
+          "ledger_events_verified": 9,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 1,
+          "statistics": 0,
+          "old_row_unchanged": true
+        },
+        "success": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 12,
+          "new_status": "PHASE_COMMITTED",
+          "new_charged_microusd": 1,
+          "total_charged_microusd": 341,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        }
+      },
+      "actual_access": 0,
+      "spending_usd": 0
+    },
+    "checks": "Rehash99files; copy authoredhomes only to resolvedtemp paths; acceptedownerverifier replays eachfullledger/head andsnapshot equalsretainedrecord. Independentlyrederivejournal seq/previoushashes, requestpayload/release andmanifest/Epolicybinding, dispatch/statclaims/chargearithmetic andoldrowexactidentity. Aliasrecord shows changedcallerpolicy butsameoriginalledger/manifest. Latebillobserved1,billpresent,checkpointnull,phasefileabsent. Fakecredential notinrunjournals. Noactualowneraccess.",
+    "probe_note": "Initial successor retainedprobe expected billcost string0.000001 but actualfixture numeric1e-06; corrected comparison only, no productchange. Earlier V1probe temporarypath/statusoracle corrections remain documented in original audit."
+  },
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v11-retained.py",
+      "sha256": "b14dcd994c9c3f75693c809b4ca4e7ca6c1332922e05983f52d956362ef496d8",
+      "bytes": 3442
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v11-retained.json",
+      "sha256": "1463c3d0213ed1dd11d3c0d19847cdb231f6ab1805b2616daa92c85f35d89786",
+      "bytes": 1769
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v11-alias.py",
+      "sha256": "6aeddbbe029ec4ca348cc45e49b108347dd04f666ebc311e8b6919157bebbb1c",
+      "bytes": 2213
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v11-alias.json",
+      "sha256": "ae4843a93329275ea97e1a9e84d3b35e0e525dbd6d777996ede299cc70c157e7",
+      "bytes": 1238
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v11-alias-py311.json",
+      "sha256": "ae4843a93329275ea97e1a9e84d3b35e0e525dbd6d777996ede299cc70c157e7",
+      "bytes": 1238
+    }
+  ],
+  "preservation_checks": "Successorhandoffallsource/test/logpins andruntimecodecontract/dependencypins rehashed. OriginalV1handoff source/tests/logs/previousauditpin unchanged; original81fileindex unchanged. Corefc8b8605 unchanged; independentowner acceptance60c94ae3 retained. Newversion uses same fixedowner andadditional-test-v1 runnamespace, nofinancialreset/thirdrequest authority.",
+  "operational_scope": [
+    "Actualopen_actual unconditionalrefusalbeforeargs/home tested",
+    "OnecatalogGET,onePOST,onestatisticsGETmaximum,retries0;120phase/30HTTP/15socket; fullleasefit andgatechecks retained",
+    "Singleusecapability consumesdurablejournal beforePOSTintent; no reconstructedlostACK",
+    "Unknown/invalid/latebilling conservativenewhold, immutableoldhold and permanent2dispatchcount remain",
+    "Knownoverrunsnotclipped; provider/nativeusage/model/generation/billsecret validations andsafeerrorcategories inheritedandtested"
+  ],
+  "remaining_blocked": [
+    "Separately authorized bounded actualreadonlyowner/currenthistory/price metadata snapshot",
+    "Exact actualfactory/credential/transport sealing and independently reviewed terminalpacket",
+    "Explicit concrete owner retainedunknownbill exceptionacceptance and secure rotateddedicatedprefundedcredential assertion; shared5consent isnotanoldledgerrewrite",
+    "Actualone-shotconnectivityresponse/provider/nativeusage/bill audit",
+    "ProductiontwoarmE02bridge/projection/analysis andexactpilotfinancialrelease",
+    "Full originalresearchcontract, realpopulation/source/scientific/remoteCI/push gates"
+  ],
+  "limitations": [
+    "Cooperative localclocks/locks/disk/trustedhost, nothardrealtime orhostilehost/powerlossguarantee",
+    "Externalreviewrole/hash remains trustedworkflowbinding, notcryptographicownerauthentication",
+    "Mockone-microusdreply costs areauthoredfixtures, notactualinvoice/connectivity/science",
+    "OriginalV1blockedfinding preserved; acceptanceappliesonlyexactV1_1bytes"
+  ],
+  "actual_owner_or_raw_source_or_key_or_env_access": 0,
+  "network_model_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_additional_compatibility_client_v1_1 tests.test_additional_compatibility_owner_v1 tests.test_production_compatibility_v4_2_1 tests.test_compatibility_safe_diagnostics_v4_2_1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-additional-client-v11-alias.py",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-additional-client-v11-retained.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "72targetedtests eachPythonruntimePASS; originalaliasprobe reversed correctlybothruntimes;99retainedfiles/sixmockledgers verified",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authoredfakehome/catalog/credentials/repliesonly",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Privatecomponent acceptance only, actualentrydenied; noactualorfullscientificmilestone",
+    "UNRESOLVED_BLOCKERS": "Finiteactualmetadata/terminalrelease andindependentactualresults; E02realbridgepending",
+    "NEXT_UNBLOCKED_TASK": "Lead prepares separately bounded actualreadonlypreflight andterminalpacket, auditorreviewsbeforeexecution"
+  }
+}

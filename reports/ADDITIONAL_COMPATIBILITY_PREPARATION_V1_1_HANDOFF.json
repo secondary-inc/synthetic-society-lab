@@ -1,0 +1,68 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1_HANDOFF",
+  "status": "CANDIDATE_CODE_ONLY_PENDING_INDEPENDENT_REVIEW_NO_ACTUAL_PACKET",
+  "files": {
+    "src/civiclab/additional_compatibility_preflight_v1_1.py": {
+      "sha256": "21ceea38e6bdd10eb703a8d5eb4df080118f6d1a19d0614920e31fc0946e6919",
+      "bytes": 5313
+    },
+    "tests/test_additional_compatibility_preflight_v1_1.py": {
+      "sha256": "c3dbeeb5150d4f6b36ced95422edc01451c5922c7c363f20904e45977ec4c918",
+      "bytes": 5599
+    },
+    "src/civiclab/additional_compatibility_terminal_v1.py": {
+      "sha256": "cd0db284e162958458e5240eeacb6811ee828b321ba1d9ca5dc54fd03de34139",
+      "bytes": 9143
+    },
+    "scripts/run_additional_json_compatibility_once_v1.py": {
+      "sha256": "2415ef15c5024d7b16b9acb8db10408d5f2cdc3ff8aab274fe1eda1aa167fc3f",
+      "bytes": 1791
+    },
+    "tests/test_additional_compatibility_terminal_v1.py": {
+      "sha256": "dfdafde9a5e58ea35e32579c31e027e0e5dab3b2162ab74e26f201f16ab828f0",
+      "bytes": 7581
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1_TESTS_312.txt": {
+      "sha256": "d4eefb9f08e50a37ced755208fa247170f0e7319bce284ed4b94b66250547a2e",
+      "bytes": 98
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1_TESTS_311.txt": {
+      "sha256": "c67ef6b4605cf7d603789f47651f27a3a7c97e5a1b4adf822675ef27ffe30294",
+      "bytes": 98
+    }
+  },
+  "predecessor_findings": {
+    "readonly_WAL": "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_FINDING.json",
+    "sha256": "d6789d1d79ca7338ec42d21869b1ea5dad558a7d9b0f3a07823c45471dc59023"
+  },
+  "tests": {
+    "Python3.12": {
+      "tests": 17,
+      "seconds": 0.434,
+      "result": "PASS"
+    },
+    "Python3.11": {
+      "tests": 17,
+      "seconds": 0.4,
+      "result": "PASS"
+    }
+  },
+  "readonly_remedy": [
+    "Separate v1.1 rejects every existing/dangling-symlink -wal/-shm/-journal beforeSQLite; requires exact20byte SQLite header magic and read/write versions1/1",
+    "Same sidecar/header checks under original guard lock and afterexplicitDBclose; mode=ro&immutable=1 plus query_only, nooriginalDB/guard/event changes",
+    "Bounds remain fourfixedoriginalfiles(DB2MiB/others64KiB), oneoldrow/<=9996events; no actualowner/raw/key/environment read in these authored checks",
+    "Original v1/finding preserved; no silent mode switch, WAL checkpoint, journal cleanup or repair"
+  ],
+  "terminal_gate": [
+    "Closed bounded fullpacket/externalexpectedbytehash, codecontract/clientbindings/independentreadiness review and fixed1000/2/340limits",
+    "Only exactTrue human assertions for retainedunknownbill+oneadditionalrequest, rotateddedicatedkey andprefunded/no purchase; flagsmissing refusenobeforeowner",
+    "Actual JSONpacket is ABSENT; no actualM/R/A/O/executor/readiness authority minted. Script is codecandidate only; no live command issued",
+    "Safeclosedstdout; exceptionstrings discarded; noalternatepacketpath/outputowner/root/keyautoloader/retries",
+    "prepare_original_metadata requires separatelyissuedindependent finiteROrelease boundtofullterminalcodecontract; createsonceintent/private snapshot in reviewedcheckout andnevermutatesfour financialcontrolfiles",
+    "ROrelease maxoneoperation is trustedworkflow plus createoncepercheckout; not globalenforcement acrossclonedcheckouts or hostilehost"
+  ],
+  "specific_review_request": "If exactcode passes, issue a finite independent readonly release for ONE original owner snapshot via prepare_original_metadata under the existing human request to prepare the test. This is no spending/credential/catalog/model authority. Paid packet still requires exact currentM/R/A/O/E/terminal review and human unknown-billing amendment acceptance.",
+  "actual_owner_key_env_source_network_access": 0,
+  "actual_snapshot_or_terminal_packet_created": false,
+  "spending_usd": 0
+}
