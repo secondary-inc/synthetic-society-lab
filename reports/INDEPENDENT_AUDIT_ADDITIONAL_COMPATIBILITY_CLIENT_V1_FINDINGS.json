@@ -1,0 +1,202 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_FINDINGS",
+  "status": "BLOCKED",
+  "scope": "Frozen private candidate client and retained authored evidence; no actual factory, owner, credentials, catalog or network access",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-04",
+  "sources": [
+    {
+      "path": "src/civiclab/additional_compatibility_client_v1.py",
+      "sha256": "f5ad9ffefe55fdaf04f395aac9084d868583a0d578535c1f019e59b8a8ba5171",
+      "bytes": 15353
+    },
+    {
+      "path": "tests/test_additional_compatibility_client_v1.py",
+      "sha256": "558133211d8056fb8eb56942f224bc3608594cd99c6f09d3ee054981c720d323",
+      "bytes": 20545
+    },
+    {
+      "path": "reports/ADDITIONAL_COMPATIBILITY_CLIENT_V1_HANDOFF.json",
+      "sha256": "b25cce65fa48e780ced4fa09dc7918ff59326ced9dbc7226ded2eca3df0b6dc7",
+      "bytes": 6060
+    },
+    {
+      "path": "src/civiclab/additional_compatibility_owner_v1.py",
+      "sha256": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+      "bytes": 20485
+    },
+    {
+      "path": "docs/JSON_COMPATIBILITY_ADDITIONAL_TEST_V1_CONTROL_ADDENDUM.md",
+      "sha256": "37d75da9ec21d0294e8ceb68dbac7d0141ba616921d984062ac0a7a6e6a6a346",
+      "bytes": 10010
+    }
+  ],
+  "tests": {
+    "Python3.12": {
+      "count": 70,
+      "seconds": 8.46,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-additional-client-v1-py312.log",
+        "sha256": "2f2da997e41067298df249a354bf8c59f1c81f36a7fdeda409571cdf02682e07",
+        "bytes": 98
+      }
+    },
+    "Python3.11": {
+      "count": 70,
+      "seconds": 7.775,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-additional-client-v1-py311.log",
+        "sha256": "28a8a87f1cded904ebb07c41c283b319a6a7013f8db0bf425d20b18a19b73421",
+        "bytes": 98
+      }
+    },
+    "scope": "15 client +14 core +41 diagnostic/previous tests; includes ten native crash boundaries and two-client fixed-run race; passing regression suite does not resolve extra audit findings"
+  },
+  "findings": [
+    {
+      "id": "CLIENT-V1-ALIAS-AUTHORITY-DRIFT",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "location": "src/civiclab/additional_compatibility_client_v1.py:127",
+      "problem": "execute_authored ignores validate_bundle detached return; M/R/A/O/release/expected/executor_review remain caller-owned aliases. External executor review closure is checked once before catalog work and not revalidated at final grant.",
+      "independent_reproduction": "In fake public-catalog callback extend M lease from T0+300 to T0+599 (600seconds inclusive startT0-1), coherently update R/A/O and expected hashes without modifying original executor review E or expectedEhash. Both Python runtimes dispatch exactly one fake POST and return COMPATIBLE. Journal manifest/E policy hash stays old; durable owner amendment policy hash changes.",
+      "impact": "The client can grant/dispatch under a policy different from the independently reviewed and manifested policy. The frozen owner still enforces1000\u00b5 lifetime/2 dispatches/340\u00b5 added reservation; no unbounded-cost claim. Private authored API and unreleased actual entry limit present reachability; future actual integration must not inherit this gap.",
+      "required_remedy": "Separate frozen successor: detach all external bundle/release/expected/E values at entry; consistently use detached copies; recheck exact review/code/policy closure at final grant. Adversarial coherent caller-alias mutation must either be irrelevant to fixed copies or refuse before new grant/POST. Preserve v1."
+    },
+    {
+      "id": "CLIENT-V1-LATE-BILLING-METHODS-MISMATCH",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "location": "docs/JSON_COMPATIBILITY_ADDITIONAL_TEST_V1_CONTROL_ADDENDUM.md:37",
+      "problem": "Accepted connectivity methods require missing/latebilling retained UNCERTAIN. Client fully verified late fixture (121s) settles1\u00b5 and PHASE_COMMITTED with summary TIMING_FAILURE.",
+      "impact": "Implementation and accepted methods disagree on a deadline accounting disposition. Fully verified late reconciliation may be acceptable local bookkeeping, but needs explicit separately reviewed connectivity methods; do not silently import unrelated survey v5.1 semantics.",
+      "required_remedy": "Explicit successor amendment defining verified late local reconciliation versus missing/invalid bill, no further HTTP, timing-invalid outcome, immutable old340hold and no authority renewal; otherwise enforce existing UNCERTAIN rule."
+    }
+  ],
+  "additional_probe": [
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v1-alias.py",
+      "sha256": "73091f9d662e8995a49f31a28733a080594b03034bda5c1da2ad7391fa5b01b6",
+      "bytes": 2201
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v1-alias.json",
+      "sha256": "22be292a6332b5d7506fe8f40b5b135f507e037079303189ea1a30b218a11c01",
+      "bytes": 1227
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-client-v1-alias-py311.json",
+      "sha256": "22be292a6332b5d7506fe8f40b5b135f507e037079303189ea1a30b218a11c01",
+      "bytes": 1227
+    }
+  ],
+  "retained_evidence": {
+    "index": {
+      "path": "data/processed/compatibility_authored_fixture/additional-client-v1-20261103-01/AUTHORED_EVIDENCE_INDEX.json",
+      "sha256": "999be0b93b75a9a2e0d5776e1e4f3947fd116211b5fd5d5f710ffe1f25c34d63",
+      "bytes": 18827
+    },
+    "verification": {
+      "verified_file_count": 81,
+      "cases": {
+        "ack-failure": {
+          "journal_events_verified": 3,
+          "ledger_events_verified": 9,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 0,
+          "statistics": 0,
+          "old_row_unchanged": true
+        },
+        "invalid-billing": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 11,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        },
+        "late-billing": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 12,
+          "new_status": "PHASE_COMMITTED",
+          "new_charged_microusd": 1,
+          "total_charged_microusd": 341,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        },
+        "post-error": {
+          "journal_events_verified": 4,
+          "ledger_events_verified": 9,
+          "new_status": "UNCERTAIN",
+          "new_charged_microusd": 340,
+          "total_charged_microusd": 680,
+          "POSTs": 1,
+          "statistics": 0,
+          "old_row_unchanged": true
+        },
+        "success": {
+          "journal_events_verified": 5,
+          "ledger_events_verified": 12,
+          "new_status": "PHASE_COMMITTED",
+          "new_charged_microusd": 1,
+          "total_charged_microusd": 341,
+          "POSTs": 1,
+          "statistics": 1,
+          "old_row_unchanged": true
+        }
+      },
+      "actual_access": 0,
+      "spending_usd": 0
+    },
+    "script": {
+      "path": "/tmp/civiclab-independent-additional-client-v1-retained.py",
+      "sha256": "79dbc982c93289c219ae9e944ef7f668418e7ee07863288c796868bb48ec7913",
+      "bytes": 2977
+    },
+    "checks": "Rehash81files; copy only authored homes to temporary resolved paths; accepted core independently replays full stored ledger and exact snapshot; compare oldrow; independently rederive journal sequence/previous hashes, request payload, manifest/E policy binding, claim/dispatch counts and total charge arithmetic. Check fake credential absent from journals. No actual owner touched.",
+    "auditor_script_corrections": "Initial temporary path traversed macOS /tmp symlink and safely refused; corrected by resolving temp directory. Initial oracle mistakenly called final status COMPLETED rather than actual PHASE_COMMITTED; corrected oracle only. These were probe mistakes, not product findings; initial script preserved."
+  },
+  "accepted_partial_evidence": [
+    "Actual open_actual denies before argument/home access",
+    "Finite once-only private capability consumes journal receipt before POST",
+    "Native crash and fixed-run concurrency guards pass",
+    "Unknown/invalid cases retain conservative new340\u00b5; old340\u00b5 row byte-equivalent in all five cases",
+    "No silent retries; one fake catalog/POST/statistics maximum; safe failure diagnostics retained"
+  ],
+  "not_accepted": [
+    "Full client milestone pending both findings",
+    "Any actual owner snapshot, new approval, actual connectivity or execution release",
+    "Actual provider bill or oldrun03 zero-cost inference",
+    "Scientific effect, representative population, prospective election forecast",
+    "Remote push/CI or full completion contract"
+  ],
+  "actual_owner_or_raw_source_or_key_or_env_access": 0,
+  "network_model_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_CLIENT_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_FINDINGS.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_additional_compatibility_client_v1 tests.test_additional_compatibility_owner_v1 tests.test_production_compatibility_v4_2_1 tests.test_compatibility_safe_diagnostics_v4_2_1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-additional-client-v1-alias.py",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-additional-client-v1-retained.py"
+    ],
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authored mock homes/catalog/replies only; no publisher/respondent inputs",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "UNRESOLVED_BLOCKERS": [
+      "Detached authorization bindings",
+      "Connectivity late verified billing disposition",
+      "Separate actual terminal release and owner exception acceptance"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Review independent separate successor and queued E02 pilot v1.1 methods"
+  }
+}

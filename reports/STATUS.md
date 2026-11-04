@@ -4,6 +4,8 @@ Updated November 3, 2026. **IN PROGRESS: full original research contract incompl
 
 ## Current acceptance and engineering
 
+**Current connectivity remedy:** independent clientv1 review preserved authorization-alias drift and late-billing methods mismatch (`INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_FINDINGS.json`, SHA415e4a42...). Originalv1/source/81mockfiles remain unchanged and BLOCKED. Separatev1.1 captures/detaches the complete external packet at entry, rechecks full review closure before reservation, and retains late billing as UNCERTAIN/full340 newhold with observedcost/billing separately recorded.72targeted tests PASS per runtime (3.12:9.598s,3.11:8.800s);99retained authored files include an explicit caller-alias mutation case (`ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY_HANDOFF.json`). Independent exact successor review requested; no actual entry or terminal release. Corrected E02v1.1 administration-projection methods independently passed (b2fbe137...), retaining exact questions/instructions/scoring and truthful authored DEMO inputs; bridge implementation remains root-owned and pending.
+
 ### Immediate live-readiness checklist
 
 1. **Root — connectivity client:** financial core independently accepted (60c94ae3); integrated client c93eec9 passes70targeted tests per runtime with retained81-file mocked outcomes. **Active:** independent exact client/raw-mock review. **Next:** reviewed finite actual snapshot/price bindings and terminal packet; no repeated old launcher.

@@ -1,0 +1,105 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY_HANDOFF",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_EXACT_CODE_AND_RETAINED_MOCK_REVIEW",
+  "files": {
+    "src/civiclab/additional_compatibility_client_v1_1.py": {
+      "sha256": "b5c834b2fe81da4c7c2bc8c513a481be46001170ffff681388a9be3df2de2975",
+      "bytes": 17787
+    },
+    "tests/test_additional_compatibility_client_v1_1.py": {
+      "sha256": "579dbaa76b8fb5670f1bbe42fbbb3efa0efd192cabf0deedd2b775f09565ced8",
+      "bytes": 24908
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_TESTS_312.txt": {
+      "sha256": "1b085d54016a7a929a132d9403a809c619b03faf2a6b052bca40c270823f4a61",
+      "bytes": 98
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_TESTS_311.txt": {
+      "sha256": "054a55da0185e93924c85ed9254a1b3c9e3347ab203882c446e7f167ba10b15d",
+      "bytes": 98
+    }
+  },
+  "client_contract": {
+    "kind": "ADDITIONAL_COMPATIBILITY_CLIENT_V1_1",
+    "owner_contract": {
+      "kind": "ADDITIONAL_COMPATIBILITY_OWNER_CODE_V1",
+      "pins": {
+        "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+        "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+        "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+        "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+        "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+        "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+        "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+      },
+      "methods": "4053bff6833993a01e9d0dd58e82fa2fa840ba3ae5dbf690449200100418960e",
+      "live_factory": "DENIED_UNRELEASED",
+      "extra_POSTs": 1
+    },
+    "pins": {
+      "src/civiclab/additional_compatibility_client_v1_1.py": "b5c834b2fe81da4c7c2bc8c513a481be46001170ffff681388a9be3df2de2975",
+      "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+      "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+      "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+      "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8"
+    },
+    "limits": {
+      "whole_phase_seconds": 120,
+      "HTTP_seconds": 30,
+      "socket_seconds": 15,
+      "catalog_GETs": 1,
+      "POSTs": 1,
+      "statistics_GETs": 1,
+      "retries": 0
+    },
+    "actual_entry": "DENIED_UNRELEASED"
+  },
+  "predecessor_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_FINDINGS.json",
+    "sha256": "415e4a42a0588d0b8625498c1d030127284a84edc26a2263b6b49e5da41e132a"
+  },
+  "tests": {
+    "Python3.12": {
+      "tests": 72,
+      "seconds": 9.598,
+      "result": "PASS"
+    },
+    "Python3.11": {
+      "tests": 72,
+      "seconds": 8.8,
+      "result": "PASS"
+    },
+    "new_client_methods": 17,
+    "prior_control_and_diagnostic_methods": 55
+  },
+  "retained_authored_evidence": {
+    "path": "data/processed/compatibility_authored_fixture/additional-client-v1_1-20261104-01/AUTHORED_EVIDENCE_INDEX.json",
+    "sha256": "b4e50c61f4ff9f7be69bc5d736967c59b2067ec0843eb3465035c160f8aa189d",
+    "files": 99,
+    "cases": [
+      "success",
+      "ack-failure",
+      "post-error",
+      "invalid-billing",
+      "late-billing",
+      "alias-mutation"
+    ]
+  },
+  "remedies": [
+    "Freeze one whole M/R/A/O/release/expected/E/expected-E-hash packet at entry, use detached copies consistently, consume validate_bundle frozen return",
+    "Recheck complete E/code/M/O/release closure at reservation boundary",
+    "New distinct client/E kinds and source contract; old v1 files/index immutable",
+    "Coedited caller lease300->599 and all M/R/A/O/expected aliases cannot change ledger policy or manifest E; caller payload/E changes cannot change sent bytes",
+    "Late verified bill leaves new row UNCERTAIN charged340 with observedcost/billing1 retained separately; TIMING_FAILURE and no checkpoint/PHASE_COMMITTED, total680 including old340"
+  ],
+  "scoped_limits": [
+    "No new methods exception for late billing; implements original accepted connectivity rule",
+    "All native crash/race/secret/HTTP/invalid-billing regressions retained",
+    "Fixed original owner/run namespace unchanged; no alternate allowance or retry via successor version",
+    "Actual entry stays unconditional deny; no actual terminal release or live authority"
+  ],
+  "actual_owner_key_env_source_network_access": 0,
+  "actual_spending_usd": 0,
+  "next": "Independent exact successor review, then finite readonly metadata and exact terminal packet gates. Shared5 consent already verified; no repeat budget question."
+}
