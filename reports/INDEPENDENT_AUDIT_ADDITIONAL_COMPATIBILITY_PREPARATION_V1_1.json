@@ -1,0 +1,210 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1",
+  "status": "PASS",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-04",
+  "scope": "Exact successor preflight and terminal preparation code, authored tests and one finite readonly particular release. No paid terminal packet or dispatch release.",
+  "sources": [
+    {
+      "path": "src/civiclab/additional_compatibility_preflight_v1_1.py",
+      "sha256": "21ceea38e6bdd10eb703a8d5eb4df080118f6d1a19d0614920e31fc0946e6919",
+      "bytes": 5313
+    },
+    {
+      "path": "tests/test_additional_compatibility_preflight_v1_1.py",
+      "sha256": "c3dbeeb5150d4f6b36ced95422edc01451c5922c7c363f20904e45977ec4c918",
+      "bytes": 5599
+    },
+    {
+      "path": "src/civiclab/additional_compatibility_terminal_v1.py",
+      "sha256": "cd0db284e162958458e5240eeacb6811ee828b321ba1d9ca5dc54fd03de34139",
+      "bytes": 9143
+    },
+    {
+      "path": "scripts/run_additional_json_compatibility_once_v1.py",
+      "sha256": "2415ef15c5024d7b16b9acb8db10408d5f2cdc3ff8aab274fe1eda1aa167fc3f",
+      "bytes": 1791
+    },
+    {
+      "path": "tests/test_additional_compatibility_terminal_v1.py",
+      "sha256": "dfdafde9a5e58ea35e32579c31e027e0e5dab3b2162ab74e26f201f16ab828f0",
+      "bytes": 7581
+    },
+    {
+      "path": "reports/ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1_TESTS_312.txt",
+      "sha256": "d4eefb9f08e50a37ced755208fa247170f0e7319bce284ed4b94b66250547a2e",
+      "bytes": 98
+    },
+    {
+      "path": "reports/ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1_TESTS_311.txt",
+      "sha256": "c67ef6b4605cf7d603789f47651f27a3a7c97e5a1b4adf822675ef27ffe30294",
+      "bytes": 98
+    },
+    {
+      "path": "reports/ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1_HANDOFF.json",
+      "sha256": "2b5effbac7b9ba2ca9b60445a15d7e1a1d1676c33d98e38f463fb8ef145005cb",
+      "bytes": 3862
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_FINDING.json",
+      "sha256": "d6789d1d79ca7338ec42d21869b1ea5dad558a7d9b0f3a07823c45471dc59023",
+      "bytes": 5754
+    }
+  ],
+  "code_contract": {
+    "kind": "ADDITIONAL_COMPATIBILITY_TERMINAL_CODE_V1",
+    "client_contract": {
+      "kind": "ADDITIONAL_COMPATIBILITY_CLIENT_V1_1",
+      "owner_contract": {
+        "kind": "ADDITIONAL_COMPATIBILITY_OWNER_CODE_V1",
+        "pins": {
+          "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+          "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+          "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+          "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+          "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+          "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+          "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+          "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3"
+        },
+        "methods": "4053bff6833993a01e9d0dd58e82fa2fa840ba3ae5dbf690449200100418960e",
+        "live_factory": "DENIED_UNRELEASED",
+        "extra_POSTs": 1
+      },
+      "pins": {
+        "src/civiclab/additional_compatibility_client_v1_1.py": "b5c834b2fe81da4c7c2bc8c513a481be46001170ffff681388a9be3df2de2975",
+        "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+        "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+        "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+        "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8"
+      },
+      "limits": {
+        "whole_phase_seconds": 120,
+        "HTTP_seconds": 30,
+        "socket_seconds": 15,
+        "catalog_GETs": 1,
+        "POSTs": 1,
+        "statistics_GETs": 1,
+        "retries": 0
+      },
+      "actual_entry": "DENIED_UNRELEASED"
+    },
+    "pins": {
+      "src/civiclab/additional_compatibility_terminal_v1.py": "cd0db284e162958458e5240eeacb6811ee828b321ba1d9ca5dc54fd03de34139",
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+      "src/civiclab/additional_compatibility_preflight_v1_1.py": "21ceea38e6bdd10eb703a8d5eb4df080118f6d1a19d0614920e31fc0946e6919",
+      "scripts/run_additional_json_compatibility_once_v1.py": "2415ef15c5024d7b16b9acb8db10408d5f2cdc3ff8aab274fe1eda1aa167fc3f"
+    },
+    "limits": {
+      "absolute_lifetime_microusd": 1000,
+      "absolute_lifetime_dispatches": 2,
+      "old_uncertain_hold_microusd": 340,
+      "new_reservation_max_microusd": 340,
+      "new_POSTs": 1,
+      "new_statistics_GETs": 1,
+      "new_catalog_GETs": 1,
+      "retries": 0,
+      "purchases": 0,
+      "shared_authorized_budget_microusd": 5000000
+    },
+    "owner_action": "ACCEPT_PRIOR_UNKNOWN_BILL_AND_ONE_ADDITIONAL_REQUEST_WITH_ROTATED_DEDICATED_KEY_PREFUNDED",
+    "same_original_owner": true,
+    "automatic_retry": false
+  },
+  "code_contract_canonical_sha256": "e4bcc35bc6bbfe33cc262eace783f5f0d62274460508ab5d9fdc366cb17586ca",
+  "tests": {
+    "Python3.12": {
+      "count": 17,
+      "seconds": 0.412,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-preparation-v11-py312.log",
+        "sha256": "728013f1c7a3d092b44db2c861faffb4dd3a59fef4ca4f405e2c4f3126600f48",
+        "bytes": 98
+      }
+    },
+    "Python3.11": {
+      "count": 17,
+      "seconds": 0.38,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-preparation-v11-py311.log",
+        "sha256": "daffa3a36022cf0273f0410ba076a52b1f414ffeda7e8ed0530d7841cff67824",
+        "bytes": 98
+      }
+    },
+    "coverage": "9ROremedy+8terminal/preparation methods, fakeOS and mocked transport only"
+  },
+  "additional_oracles": {
+    "status": "PASS_AUTHORED_ONLY",
+    "oracles": [
+      "original WAL reproducer refused before SQLite",
+      "sidecar appearing before held-lock check refused before SQLite",
+      "failed snapshot retains consumed local intent and prevents repeat"
+    ],
+    "actual_owner_or_key_or_source_access": 0,
+    "network_calls": 0,
+    "spending_usd": 0
+  },
+  "finding_disposition": {
+    "PREFLIGHT-V1-UNBOUNDED-SQLITE-SIDECARS": "CLOSED_FOR_EXACT_V1_1_COMPONENT; originalv1/finding preserved. Any-wal/-shm/-journal incldanglingsymlinkrefuses beforeSQLite; exact20byteheader magic androllbackread/write1/1 mandatory beforeconstructor/insideguard/afterDBclose. ro&immutable=1/query_only avoidsSQLite sidecars undertrustedcooperativefixedguard. Samefourfilefinitebounds andbefore/afterhashes; noWALcheckpoint/cleanup/modechange/recovery. IndependentoriginalWALreproducer nowrefusesbeforeSQLite; injectedbetweeninitial/heldlockjournal also refuses."
+  },
+  "preparation_review": {
+    "admission": "Closedexternalreadonlyrelease bindsfullterminalcodecontract/externalexpectedcanonicalhash, exactscope/predecessor, maxinvocations1int, ownerwritesfalse, credentialreadsfalse, HTTP0int andindependentrole/32hexID. Invalidrelease refuses beforepreparationoutput/owner. Sourcesanddependencies allfrozenhashverified.",
+    "intent": "Fixedcheckoutprivatebase, symlinkancestorsrefused, createonce0600xbintent fsyncedbeforecollector; sameIDcannotrepeat aftersuccess orfailure. Snapshotbounded524288/fsynced0600 createonce, returnspath/hash/count. Thiswritesonlylocalpreparationintent/output, neverfourfinancialcontrolfiles. Trustedworkflowenforcesonce globally; clonedcheckouts/hostilehost notclaimed.",
+    "terminal_code": "Closedpacket512KiB/maxrawread524289, strictduplicate/nonfiniteJSON refusal, externalexactbytehash, frozenbundle/executorclosure/readinessinputs hash/codecontract/fixedhistoricalaudit/caps/actions. ExactTrue ownerflags required beforepaths; intsubstitutesrefuse. Fixedpacketpath noalternatekey/output/owner/retries. Terminalcalls acceptedprivateclient onlyafterpacketvalidation andhumanflags; existingunconditionalcollect_actual denial remains. RealpacketABSENT, so codeacceptancecreates noactualdispatchauthority.",
+    "financial_limits": "Terminalpacketfixed1000\u00b5 lifetime/2dispatches/oldhold340/newmax340;1newcatalog/POST/statGET/retries0/purchases0 andshared5,000,000\u00b5 consentmetadata. Ownerretainedunknownexception/rotateddedicatedkey/prefundassertions stillrequired. Noassertionsmintedbythisaudit.",
+    "logging": "Launcherclosedstatus/errorcategory/validatedsummary with noexceptiontext/key/rawresponse output; boundedprivateevidencekept. CLI/testcode acceptance isnotanactualproviderbillresult."
+  },
+  "readonly_particular_release": {
+    "file": {
+      "path": "reports/INDEPENDENT_AUDIT_ORIGINAL_OWNER_READONLY_RELEASE_V1_1.json",
+      "sha256": "a39344834ca5d8835d540738e863d9a40cbb319f2a8b2448d577e7e55e1aa7ca",
+      "bytes": 481
+    },
+    "canonical_expected_review_hash": "96cf950a67648640a383496c44eb4d59bbe1a195760024883c4fb2f0d1968010",
+    "authorization_basis": "Existing owner request to prepare the bounded test and coordinate project, plus exact lead-scoped one-time readonly preparation request; routine read-only engineering. This review doesnotamend moneyorunknown-billingexception.",
+    "operation": "Lead may invoke prepare_original_metadata once with this exactrelease andcanonicalexpectedhash in reviewedcheckout. FixedOSoriginalregistration/guard/anchor/database only (DB<=2MiB,eachother<=64KiB), <=9996events,exactoneoldUNCERTAIN340row, noWAL/SHM/journal. Preserve oldhead/history/row; returnprivatecurrentbindingmetadata. Stoponmissing/drift/successor/WAL/failedintent; noalternateroot/replacementretry.",
+    "excluded": "No credentials/processsecret env/.env, rawsource/respondents/publishers, network/catalog/model/statistics, financialgrant/reservation/reconciliation/transition, purchase, externalpublication. Noactualsnapshotperformedbyauditor."
+  },
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-preparation-v11-extra.py",
+      "sha256": "f5f8290a6532f0c393850c4046d1241a61b02a506d193662c90a1260f2305b71",
+      "bytes": 2951
+    },
+    {
+      "path": "/tmp/civiclab-independent-preparation-v11-extra.json",
+      "sha256": "6fb4cee5e5637ea2fc3e0a021d79498118ef95e72d752792d3095559298c9ca8",
+      "bytes": 340
+    }
+  ],
+  "remaining": [
+    "Independent verification of actualfinitepreparationsnapshot with separately exactreadscope afterleadexecution",
+    "FinalcurrentM/R/A/O/E/readinesspacket with actualvalidroute/pricewindow; noactualinstancesexistyet",
+    "Ownerexplicitunknownbilloneadditionalrequest exception androtateddedicatedprefundedkey assertion",
+    "Actualone-shotconnectivityprovider/usage/billing audit andseparateE02realbridge/pilotrelease",
+    "Fulloriginalresearchcontract/source/population/evaluationgates"
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_model_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1.json",
+      "reports/INDEPENDENT_AUDIT_ORIGINAL_OWNER_READONLY_RELEASE_V1_1.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_additional_compatibility_preflight_v1_1 tests.test_additional_compatibility_terminal_v1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-preparation-v11-extra.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "17testsPASS eachruntime and3independentoraclesPASS; hashesallmatch; actualterminalpacketabsent",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authoredfakeownerdataonly; sourcecode/evidence noactualprivateinputs",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Trustedlocalhost/cooperativelock/fixedcheckout; nohardIO/powerloss/hostilehost/globalcloneonceguarantee",
+    "UNRESOLVED_BLOCKERS": "Actualparticularcurrentmetadata/finalpaidpacket/ownerassertions; E02integration",
+    "NEXT_UNBLOCKED_TASK": "LeadperformsoneacceptedfiniteROpreparation; preserveprivateoutput andreportboundedmetadata fornextpacketreview"
+  }
+}
