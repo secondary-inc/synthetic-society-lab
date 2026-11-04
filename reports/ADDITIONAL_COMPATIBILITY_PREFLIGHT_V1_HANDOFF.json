@@ -1,0 +1,61 @@
+{
+  "kind": "ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_HANDOFF",
+  "status": "AUTHORED_READONLY_COMPONENT_PENDING_INDEPENDENT_REVIEW",
+  "files": {
+    "src/civiclab/additional_compatibility_preflight_v1.py": {
+      "sha256": "2db115b5e49ea31da29a0e9fb51b4bd302c866ecddf85429832d0260ffcbf910",
+      "bytes": 4205
+    },
+    "tests/test_additional_compatibility_preflight_v1.py": {
+      "sha256": "b179c20f79c7ac244b1636374b4a8f3e4f5cd99539a309f358afb2078ba1ae41",
+      "bytes": 2911
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_TESTS_312.txt": {
+      "sha256": "e239e3991218f54425e2dc56149166ddd6dfe0c839cfe114e31f43fb909f26d4",
+      "bytes": 97
+    },
+    "reports/ADDITIONAL_COMPATIBILITY_PREFLIGHT_V1_TESTS_311.txt": {
+      "sha256": "423a904f076887e05286708e740f18fc54173056902b8f5ac6d0da6a7547088f",
+      "bytes": 97
+    }
+  },
+  "tests": {
+    "Python3.12": {
+      "tests": 5,
+      "seconds": 0.119,
+      "result": "PASS"
+    },
+    "Python3.11": {
+      "tests": 5,
+      "seconds": 0.116,
+      "result": "PASS"
+    }
+  },
+  "scope": "Finite original same-owner metadata only; required to bind final M to current actual head/history rather than guess from stale reports. Not reconciliation, budget approval, actual run or new allowance.",
+  "bounds": {
+    "files": 4,
+    "database_bytes_max": 2097152,
+    "each_other_file_bytes_max": 65536,
+    "events_max": 9996,
+    "rows_exact": 1,
+    "event_data_bytes_max": 65536,
+    "sqlite_timeout_seconds": 1
+  },
+  "semantics": [
+    "Only fixed OS-account owner registration/guard/anchor/database; regularfiles/no symlink/no callerpath",
+    "Size checks before original owner constructor reads; original header/history/row verifier under original guard lock",
+    "SQLite URI mode=ro plus query_only, no _append or transition; explicit closing of DB on success/error",
+    "Before/after hashes+sizes of all four files equal or reject; no replacement snapshot/recovery/repair",
+    "Exact original old UNCERTAIN340/unfinished1/dispatch1/no generation/observed/billing/checkpoint; original reader refuses migrated successor history",
+    "Returns private snapshot candidate metadata only; caller must not publish owner rows. No actual invocation in preparation."
+  ],
+  "non_guarantees": [
+    "Read-only file content invariant, not filesystem access-time immutability",
+    "Trusted localhost/cooperative filesystem/SQLite, no hostilehost or hard IO/clock/directory-powerloss guarantee",
+    "This is authored component only; actual collect_actual entry unconditionally denies before arguments/OS",
+    "No full live terminal packet/authority produced"
+  ],
+  "initial_fixture_correction": "Read-only connect test used a parameter called uri conflicting with sqlite3 uri keyword. Renamed local parameter; production method always passed mode=ro. Explicit close verified.",
+  "actual_owner_key_env_source_network_access": 0,
+  "spending_usd": 0
+}
