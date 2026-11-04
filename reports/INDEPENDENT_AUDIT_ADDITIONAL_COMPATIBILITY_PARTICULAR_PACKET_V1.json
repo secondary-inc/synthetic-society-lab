@@ -1,0 +1,90 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PARTICULAR_PACKET_V1",
+  "status": "PASS_FOR_OWNER_REVIEW_ONLY",
+  "reviewed_at_utc": "2026-11-04T05:24:21.692518+00:00",
+  "policy_hash": "4dcb604a64ec68886f68862cefd00681751bfa27394dba8fcbb3035050b6a4ef",
+  "release_hash": "0c7af4e5542adefa92fdf36d992c56605bf344def856a9c6df80509e22b9d464",
+  "snapshot_sha256": "8fac1c5bc607690a66e0e632e7db93f1e0a86613c0b0f356a4b4488048330fb3",
+  "lease_from_utc": "2026-11-04T05:22:26.460163+00:00",
+  "lease_until_utc": "2026-11-04T05:32:26.460163+00:00",
+  "unchanged_lease": true,
+  "outputs": {
+    "independent-review.local.json": {
+      "sha256": "1ff11c2c7823d786eb35d6d9d659e25b8ccb43f7e535381f59ae137fdfa5f68c",
+      "bytes": 381
+    },
+    "approval-CANDIDATE-NOT-ASSERTED.local.json": {
+      "sha256": "7780fded76f9b08b6c58146655b1d4599e0ffc7e9ed74843a9319599d5c3db6d",
+      "bytes": 1054
+    },
+    "owner-assertion-CANDIDATE-NOT-ASSERTED.local.json": {
+      "sha256": "903a421821a3ea5b71eb0252b4f3ebfd91126838f440805f2aba0ecaea4182a6",
+      "bytes": 543
+    },
+    "executor-review.local.json": {
+      "sha256": "3e30e2d28d9719b4c8065832bc81e6baec36524c8312f6ce99cfde6bf3b71101",
+      "bytes": 494
+    },
+    "terminal-packet-CANDIDATE-NOT-ASSERTED.local.json": {
+      "sha256": "68b800070214e1cbb6161a366eb7aa8c7affc616aec0495a4c7c1a7578d8d57e",
+      "bytes": 9913
+    }
+  },
+  "owner_assertion_status": "PROSPECTIVE_CANDIDATES_NOT_OWNER_ASSERTED; three exact human CLI flags required",
+  "validation": "Exact pure terminal validator PASS; owner discovery/dispatch patched to fail if touched",
+  "live_gates": [
+    "Exactpacketfilebytehash",
+    "Currentoriginalhead/history/rowCAS",
+    "Full120secondleasefit atstart and phase deadlines",
+    "Runtimefreshcatalogsemanticpriceproof<=900secondsold",
+    "Secure rotateddedicatedkey andprefund/no purchase ownerassertions",
+    "OneoldUNKNOWN340plusnew<=340,2lifetimedispatchmaximum, noautretry"
+  ],
+  "limitations": [
+    "Savedcollectoroutput reviewed; actualownerfiles/history NOT reopened or independently replayed here",
+    "No new price/catalog verification; originalacceptedterms/interpretation only, runtimefreshcatalog mandatory",
+    "Candidates contain assertion schema strings for review, not testimony that keysetup/owneracceptance occurred",
+    "Ifexpired preserveexactcandidate; no shiftedlease/retry/newauthority"
+  ],
+  "actual_original_owner_or_key_env_access": 0,
+  "network_calls": 0,
+  "financial_writes": 0,
+  "spending_usd": 0,
+  "reviewer_role": "independent_auditor",
+  "acceptance_scope": "Exact saved snapshot binding and candidate static packet only; no confirmation of owner setup/acceptance, no actual source ledger replay or paid execution",
+  "independent_checks": [
+    "Saved snapshot bytehash8fac1c5b exact; nineeventcount/head8, originalUNCERTAIN340/count1/nullgeneration/bill/checkpoint preserved inreportedoutput",
+    "AllM predecessor/header/active/head/history/statistics/row/contexthashes equal exactsavedoutput; originalfinancialfiles notopened",
+    "Release0c7af4e5 recompiles exactly fromsameoldacceptedterms/interpretation/newrun; current7sourcepins verified;2276input/32outputworstcaseceil340\u00b5 independentlycomputed",
+    "600secondMleaseunmodified andinsideacceptedpricewindow, >120sremainingatreview;runtime freshness/CAS/time gatesstillmandatory",
+    "OwnercoreR/executorE/fullterminalRRclosedbindings andexternalexpectedhashes generated; prospectiveA/O only",
+    "Exact15fieldA,7fieldO,7fieldE andclosedpacket validated withoutOSowner/dispatch; rawcandidatehash68b800070214e1cbb6161a366eb7aa8c7affc616aec0495a4c7c1a7578d8d57e"
+  ],
+  "source_evidence": {
+    "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1.json": {
+      "sha256": "ab7e326ccf0bdca378bc7b19ae03d23a56a0841dfa5ca04ed7bd0df7d720564a",
+      "bytes": 12620
+    },
+    "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_CLIENT_V1_1_REMEDY.json": {
+      "sha256": "9994bc176c4f72efa71aab8dc22534e6275c7e440ed11a5c68093605a020e9cd",
+      "bytes": 10913
+    },
+    "/tmp/civiclab-independent-additional-particular-packet-v1.py": {
+      "sha256": "ef7e9961c4ca0eacbb82202a09d706d257d7ac2d429cb86fe32190e4117f07bc",
+      "bytes": 9956
+    }
+  },
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PARTICULAR_PACKET_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PARTICULAR_PACKET_V1.json",
+      "Privateproposal5closedR/A-CANDIDATE/O-CANDIDATE/E/packetfiles aslistedbyhash"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Purecompiledrelease/bundle/terminalvalidation andexplicitbindingsPASS; noactualowner/key/env/network",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authorizedsavedownerpreparationmetadata only; nooriginalowner/rawpublisher/respondents",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Reviewdependsacceptedcollectoroutput,notfreshindependentreplay; oldbillUNKNOWN; noownerassertionfromcandidate",
+    "UNRESOLVED_BLOCKERS": "Humanexactthreeassertions; fixedpacketexactbytes/currentCAS/freshcatalog/fullleasefit runtimegates",
+    "NEXT_UNBLOCKED_TASK": "Leadinstallexactignoredfixedpacketandshowownerconcretecommand; noautomaticpaidexecution"
+  }
+}
