@@ -1,0 +1,124 @@
+{
+  "kind": "INDEPENDENT_E02_EXPLORATORY_RESPONSE_V1_COMPONENT",
+  "status": "PASS",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Purequestionnairequalityparseronly, notprivacy/identity/auxiliary/billing/commit/dispatchvalidation",
+  "sources": [
+    {
+      "path": "src/civiclab/e02/exploratory_response_v1.py",
+      "sha256": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+      "bytes": 2876
+    },
+    {
+      "path": "tests/test_e02_exploratory_response_v1.py",
+      "sha256": "767c3c45c09aa5982209a57eb23f9cdc0acfb2397143236c69acda7471918985",
+      "bytes": 3669
+    },
+    {
+      "path": "src/civiclab/common.py",
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "bytes": 8476
+    },
+    {
+      "path": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_CLOSED_ADDENDUM.md",
+      "sha256": "e06ce00f675c4b90140b4fb4ba64e87d0f01ba5f5170af673dcb9d87cdb0f1ac",
+      "bytes": 14484
+    },
+    {
+      "path": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_1_ORDERING_ADDENDUM.md",
+      "sha256": "7e66b4c9c1c173707d56c0c6485b4f9ed9b8c159bcb0b9b3df880401db10c64f",
+      "bytes": 2298
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_1_COMPOSITE_METHODS.json",
+      "sha256": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+      "bytes": 8627
+    }
+  ],
+  "tests": {
+    "Python3.12": {
+      "count": 6,
+      "seconds": 0.001,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-response-v1-py312.log",
+        "sha256": "ad4845a8fa3955cc63ab8f4dc861853157ab18c946284c46dc48731af545300c",
+        "bytes": 97
+      }
+    },
+    "Python3.11": {
+      "count": 6,
+      "seconds": 0.0,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-response-v1-py311.log",
+        "sha256": "e370c111a98df15085a51db84a4800db4905f4468cc42b60a06c44b78e22f3e1",
+        "bytes": 97
+      }
+    }
+  },
+  "independent_oracles": {
+    "kind": "INDEPENDENT_E02_RESPONSE_V1_ORACLES",
+    "status": "PASS_PURE_PARSER_ONLY",
+    "bad_bound_cases_refused": 8,
+    "invalid_survey_semantics_preserved": 7,
+    "unicode_retained_answer": {
+      "content_UTF8_bytes": 2007,
+      "canonical_phase_record_bytes": 6070,
+      "required_client_export_guard_ceiling": 3072,
+      "outcome": "ParseracceptsvalidboundedJSON; futureclientMUSTenforcedeclaredexportcap andpreserveNOT_RUNfailure, cannotassumeASCIItestprovesallanswersfit"
+    },
+    "actual_owner_key_env_network_access": 0,
+    "spending_usd": 0
+  },
+  "review": {
+    "shape_and_bounds": "Builtindictresponse/exactonechoicelist/dictmessage/stringcontent,unexpectedreasoningfixederror. UTF8<=2048, strictoneJSONvalue/noextratext/duplicates/nonfinite,depth<=8,keylen<=64,stringlen<=256,int/floatcanonicalrepr<=32finite. JSONtextbyteboundlimitsparsework; errorsfixedenumsnocopiedexceptiontext.",
+    "semantics": "ANSWERmeansboundedparsedJSONonly; exactnull/bool/list/otherkeys/out-of-range valuespreservedasinvalidsurveyinputsfordownstreamscore, neverrepaired/imputed. ParsefailstatusPARSE_ERROR/answernull. Originalresponseobjectnotmodified;parsedanswerdetachedbyJSONparse. Returns3fieldsstatus/answer/diagnosticwithnofinancial/authorityclaim.",
+    "ordering_projection": "Clientmustconstructexact{status,answer,response_raw_sha256}outputforimmutableRESPONSE_SEENhash. Parserdiagnosticprivateonly, notextraoutput. rawresponsehashsuppliedbyseparatebodyretention, statisticsrawhashlaterW, authenticidentity/monetaryobservation/usage/auxiliary/privacychecks alloutsideparser.",
+    "export_guard_scope": "ASCIItestnamedlargestretainedanswersfitisnotuniversalproof. Independentvalid2007UTF8array2\u00d7250astralcharsparseANSWERbecomes6070canonicalbytereccord>3072. Parseracceptancecorrectunderspecifiedparsebounds; actualclientMUSTcheckdeclaredexportrecord/wholepacketcapandfollowpreserveNOT_RUN/no truncation/nofurtherdispatch path. Thiscomponentdoesnotimplementexportguard."
+  },
+  "findings": [],
+  "limitations": [
+    "ParserUNEXPECTED_REASONINGqualityerrorcannotreplaceupstreamunsupportedauxiliary/reasoning/privacyfinancialstop; parentclientmustenforcethisseparately",
+    "No provider/generation/nativeusage/actualbilling/ownprewitness authenticity",
+    "No guaranteethateveryacceptedinvalidJSONanswerfitsclientexportcap; Unicodecaseexplicitlytestedandmustremainafailurefixture",
+    "No modelresponses/externalvalidity/scientificeffectfromtheseauthoredoracles"
+  ],
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-response-v1-extra.py",
+      "sha256": "9c7e5655eaf03e70a6edb7de6ff1bf3b2a2211a8556838ebb51dcdef5a1dd470",
+      "bytes": 1901
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-response-v1-extra.json",
+      "sha256": "4481bd22dbc9fc1dc64419a37d5ee4cf1789bb19fc4cd7642a5d136e4a1c0937",
+      "bytes": 546
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-response-v1-extra-py311.json",
+      "sha256": "4481bd22dbc9fc1dc64419a37d5ee4cf1789bb19fc4cd7642a5d136e4a1c0937",
+      "bytes": 546
+    }
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_EXPLORATORY_RESPONSE_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_RESPONSE_V1_COMPONENT.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_exploratory_response_v1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-response-v1-extra.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "6methodseachruntimePASS;8extraboundrefusals/7invalidsurveysemanticspreserved/Unicodecounterexample bothruntimes",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authoredstringsonly",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Purequalityparser, nofinancialorprovenanceauthority",
+    "UNRESOLVED_BLOCKERS": "Rootfullclient/owner/identity/billing/exportguardintegration",
+    "NEXT_UNBLOCKED_TASK": "Rootintegratesexactparserunderseparatelyreviewedfiniteclient, testsordering/Unicode/export andupstreamfinancialprivacygates"
+  }
+}
