@@ -1,14 +1,123 @@
 {
-  "lead_thread":"01a18903-4f62-7403-ab36-e69e5a8f48d8",
-  "maximum_specialized_workers":3,
-  "coordination_mode":"User-authorized forked Codex chats sharing one checkout; disjoint file ownership and independent audit",
-  "workers":[
-    {"thread_id":"01a1a0ee-b07e-7263-9a52-2f72975cffbc","role":"E02 methods, population, data and stimuli","ownership":["src/civiclab/e02/","tests/test_e02*.py","configs/e02*","protocols/E02*","docs/E02*","reports/E02*"],"status_at_dispatch":"active"},
-    {"thread_id":"01a1a0ee-d568-7861-93f8-9ad1a720a5f8","role":"E01 election engineer and data steward","ownership":["src/civiclab/e01/","tests/test_e01.py","tests/test_isolation.py","configs/e01*","protocols/E01*","docs/E01*","reports/E01*"],"status_at_dispatch":"active"},
-    {"thread_id":"01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c","role":"Independent milestone auditor","ownership":["reports/INDEPENDENT_AUDIT*","reports/AUDIT_*"],"implementation_access":"read only","status_at_dispatch":"active"}
+  "lead_thread": "01a18903-4f62-7403-ab36-e69e5a8f48d8",
+  "maximum_specialized_workers": 3,
+  "coordination_mode": "User-authorized forked Codex chats sharing one checkout; disjoint file ownership and independent audit",
+  "workers": [
+    {
+      "thread_id": "01a1a0ee-b07e-7263-9a52-2f72975cffbc",
+      "role": "E02 methods, population, data and stimuli",
+      "ownership": [
+        "src/civiclab/e02/",
+        "tests/test_e02*.py",
+        "configs/e02*",
+        "protocols/E02*",
+        "docs/E02*",
+        "reports/E02*"
+      ],
+      "status_at_dispatch": "active"
+    },
+    {
+      "thread_id": "01a1a0ee-d568-7861-93f8-9ad1a720a5f8",
+      "role": "E01 election engineer and data steward",
+      "ownership": [
+        "src/civiclab/e01/",
+        "tests/test_e01.py",
+        "tests/test_isolation.py",
+        "configs/e01*",
+        "protocols/E01*",
+        "docs/E01*",
+        "reports/E01*"
+      ],
+      "status_at_dispatch": "active"
+    },
+    {
+      "thread_id": "01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c",
+      "role": "Independent milestone auditor",
+      "ownership": [
+        "reports/INDEPENDENT_AUDIT*",
+        "reports/AUDIT_*"
+      ],
+      "implementation_access": "read only",
+      "status_at_dispatch": "active"
+    }
   ],
-  "lead_ownership":["shared infrastructure","CLI","completion contract/dashboard","publications/","reports/STATUS.md","integration and version control"],
-  "state_note":"Dispatch status is historical, not proof of current liveness. Use wait_threads for authoritative current status.",
-  "publication_permission":false,
-  "approved_model_spend_usd":0
+  "lead_ownership": [
+    "shared infrastructure",
+    "CLI",
+    "completion contract/dashboard",
+    "publications/",
+    "reports/STATUS.md",
+    "integration and version control"
+  ],
+  "state_note": "Dispatch status is historical, not proof of current liveness. Use wait_threads for authoritative current status.",
+  "publication_permission": false,
+  "approved_model_spend_usd": 5,
+  "budget_consent": {
+    "amount_usd": 5,
+    "shared_total_ceiling": true,
+    "e02_subceiling_usd": 5,
+    "e01_subceiling_usd": 0,
+    "scope": "Next bounded connectivity test and initial E02 exploratory pilot together; not additive budgets.",
+    "provenance": {
+      "source": "Direct owner reply in current coordinating chat",
+      "question": "What total dollar limit do you authorize for the next bounded connectivity test and initial pilot? The project\u2019s current total, E01, and E02 caps are all $0.",
+      "answer": "$5 total",
+      "corroborating_record": "reports/STATUS.md (Subsequent explicit owner budget paragraph)"
+    },
+    "runtime_effect": "Consent metadata only. No ledger cap/grant, dispatch allowance, settlement, price release, credential verification or release is created by this file.",
+    "live_release_enabled": false,
+    "old_compatibility_lifetime_cap_usd": 0.001,
+    "old_compatibility_dispatch_allowance": 1,
+    "old_uncertain_hold_microusd": 340,
+    "old_uncertain_hold_preserved": true,
+    "requires": "Reviewed implementation, final exact release and concrete financial controls; old exhausted request authority remains exhausted unless separately valid successor amendment is accepted."
+  },
+  "pilot_delivery_plan": [
+    {
+      "task_id": "PILOT_CONNECTIVITY",
+      "responsible_thread_id": "01a18903-4f62-7403-ab36-e69e5a8f48d8",
+      "assignment_status": "LEAD_CONFIRMED_ACTIVE_IMPLEMENTATION",
+      "scope": "Replacement one-use connectivity control, client/ACK integration and bounded fixtures, then independent exact-code/packet review before any request.",
+      "reviewer_thread_id": "01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c",
+      "evidence": "Lead coordination reply to readiness repair worker in current chat; implementation completion and live success not asserted.",
+      "complete": false
+    },
+    {
+      "task_id": "PILOT_PROTOCOL",
+      "responsible_thread_id": "01a1a0ee-b07e-7263-9a52-2f72975cffbc",
+      "assignment_status": "LEAD_CONFIRMED_ASSIGNED",
+      "scope": "Freeze small exploratory E02 matched-control protocol and call-cost envelope.",
+      "owned_files": [
+        "docs/E02_EXPLORATORY_LIVE_PILOT_V1.md",
+        "configs/e02_exploratory_live_pilot_v1.json"
+      ],
+      "reviewer_thread_id": "01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c",
+      "evidence": "Lead explicitly confirms dispatch through coordinating parent message; not acceptance or completion.",
+      "complete": false
+    },
+    {
+      "task_id": "PILOT_INTEGRATION_AND_RUN",
+      "responsible_thread_id": "01a18903-4f62-7403-ab36-e69e5a8f48d8",
+      "assignment_status": "PROPOSED_ROUTING_NOT_CONFIRMED_DISPATCH",
+      "scope": "After connectivity and protocol acceptance, integrate a bounded real-model pilot under shared $5 ceiling, price/reservation/provider/usage reconciliation and no automatic retries.",
+      "depends_on": [
+        "PILOT_CONNECTIVITY",
+        "PILOT_PROTOCOL"
+      ],
+      "reviewer_thread_id": "01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c",
+      "complete": false
+    },
+    {
+      "task_id": "PILOT_ANALYSIS",
+      "responsible_thread_id": "01a1a0ee-b07e-7263-9a52-2f72975cffbc",
+      "assignment_status": "PROPOSED_ROUTING_NOT_CONFIRMED_DISPATCH",
+      "scope": "Analyze actual validated model outcomes, matched-control comparison, uncertainty, failures/exclusions and feasibility limitations; no human persuasion/population claims.",
+      "depends_on": [
+        "PILOT_INTEGRATION_AND_RUN"
+      ],
+      "reviewer_thread_id": "01a1a0ee-fb4f-74e1-93ca-12d4b4adac3c",
+      "complete": false
+    }
+  ],
+  "metadata_updated_at_utc": "2026-11-03T22:49:07.297849+00:00"
 }

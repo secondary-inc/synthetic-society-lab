@@ -1,0 +1,1929 @@
+{
+  "M0_methods_ref": {
+    "path": "configs/e01_clerk_2020_senate_input_methods_v1.json",
+    "sha256": "ab53c24e13f27327b623f7f0ef622de046c3308f3e139418b3b79b73563bade0"
+  },
+  "M1_all17_pins_unchanged": {
+    "configs/e01_clerk2020_m1_v1_disabled.json": "173cb3243d3c2075519db25f0c3ec1588e75829998c02dd4215e83d8ab933d43",
+    "docs/E01_CLERK2020_M1_IMPLEMENTATION_v1.md": "d5b97abad3b43fde6caa3a27084f8aecc41d64a61c41276f2607d299824b6f1d",
+    "reports/E01_CLERK2020_M1_CANDIDATE_v1.json": "6282a2db1f21f61d3c131b133503239c05728d06a5bbe81ef8fb8eed9e9937d0",
+    "reports/E01_CLERK2020_M1_FINAL_GUARDED_311_v1.txt": "b1114d3664cb3e05e7e1f78280fd86e8be0c34465226457e6eb547799fd89fad",
+    "reports/E01_CLERK2020_M1_FINAL_GUARDED_312_v1.txt": "55fbd26f1574a44a1d165205061e5da8a25219490b4f330ff990bee104595f9c",
+    "reports/E01_CLERK2020_M1_GUARDED_TEST_RECIPE_v1.py": "6407c26f63e42ecb324d093a09664229bfd16c37f12cfe8f59a7ea228eb39397",
+    "reports/E01_CLERK2020_M1_HANDOFF_v1.md": "d6eda128dd3da737e0f59655147f78e010098212cc94ba4fba8156f53ad89252",
+    "reports/E01_CLERK2020_M1_INITIAL_FAILURE_LOG_v1.txt": "16c0068c4a30a3706aa82c85cda2335a5aea1ffe077ca15418a9ae832de5268f",
+    "reports/E01_CLERK2020_M1_INITIAL_FAILURE_SOURCE_v1.json": "daee232d8cc659d978c118a29b8987b4d3c98afd24e4f49235e1bd45f22a8ce6",
+    "reports/E01_CLERK2020_M1_REAP_FINDING_LOG_v1.txt": "6c08fdf22a1e1c5ce116721fd854ca1b172248e2ed2d4bc6d4c059e680a56df3",
+    "reports/E01_CLERK2020_M1_REAP_FINDING_SOURCE_v1.json": "e802eba5cc77a235151d92c2dd51b45ccaf4154d5b32301ee4a735bef32feed7",
+    "reports/E01_CLERK2020_M1_SECOND_FAILURE_LOG_v1.txt": "c027f7457f319508ca7d894900aa4a1ac3f03c81ea99bc81285d6f2fca864ae6",
+    "reports/E01_CLERK2020_M1_SECOND_FAILURE_SOURCE_v1.json": "cea8472ddb9c1807340315e991eb07b5396ca3314bb677cd5eb970273a8f3be6",
+    "src/civiclab/e01/clerk2020_contracts_v1.py": "d27fd9bd7865d18bfcd072f6e0ddfd8f51488cb56ce6a1aab27bf5b0dd8d62be",
+    "src/civiclab/e01/clerk2020_inspection_m1_v1.py": "e68051ed4b8c6f8c06a2da60ce944f66937fadf159fd5bff170d931f9ef42df6",
+    "src/civiclab/e01/clerk2020_m1_worker_v1.py": "95aae22cfbc0839c6f3c0977e55c90829759d2d71db5bdf7e78d23bf1480cf39",
+    "tests/test_e01_clerk2020_m1_v1.py": "fce4d265b8d9c2622970151e7e1e5d6c504bc7a30e9ea19240b40c762ead8c70"
+  },
+  "M1_review_ref": {
+    "bytes": 10583,
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK2020_M1_CODE_AUTHORED_V1.json",
+    "sha256": "9655bf81b508495585a86e4b1fa1d94e0016581274c3996c78e8cd111348395a"
+  },
+  "M1_snapshot_commit": "721a0e9",
+  "acceptance_gates": [
+    {
+      "criterion": "Independent exactsuccessormethodsreview; originalfindingsremainuntilseparateauditor disposition.",
+      "id": "M2D_v1_1",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Separateversioneddisabledcode +authoredminimalPDF/counter/graph/nativecrashfixture implementation andindependentcode/resource/privacyreview.",
+      "id": "M2C",
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "criterion": "Exactruntime/bootstrapTCB/registrar artifacts +particularpreparedmetadatareview;allactualidentityslotsnullnow.",
+      "id": "M2R",
+      "status": "BLOCKED"
+    },
+    {
+      "criterion": "SeparatelyissuedfiniteBOOTthenEXECasdefined,sourceformatinspectionandindependentretainedreview;notauthorityfromthisdesign.",
+      "id": "M2A",
+      "status": "BLOCKED"
+    },
+    {
+      "criterion": "Allsource-record/class/round/party/unit/geography/selection/REALbaseline/outcome gates remainunwaived.",
+      "id": "M3_M6",
+      "status": "BLOCKED"
+    }
+  ],
+  "accepted_acquisition_review_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL.json",
+    "sha256": "2b0e3af466645773ca00b11590d871533ee7b2d80abec27abb9b2e77cd5c3a75"
+  },
+  "actual_factory_enabled": false,
+  "actual_identities_and_authority": {
+    "anchor_id": null,
+    "bootstrap_decision_ref": null,
+    "bootstrap_issued_envelope_ref": null,
+    "bootstrap_receipt_ref": null,
+    "campaign_id": null,
+    "code_pins": null,
+    "control_root": null,
+    "current_anchor_ref": null,
+    "derived_context_ref": null,
+    "execution_decision_ref": null,
+    "execution_issued_envelope_ref": null,
+    "external_expected_envelope_sha256": null,
+    "genesis_ref": null,
+    "independent_successor_review_ref": null,
+    "job_id": null,
+    "lead_bootstrap_approval": null,
+    "lead_execution_approval": null,
+    "prepared_metadata_ref": null,
+    "registration": null,
+    "registration_ref": null,
+    "run_id": null,
+    "runtime_identity": null,
+    "runtime_origin_manifest_ref": null,
+    "source_set_id": null,
+    "static_spec_ref": null
+  },
+  "additional_required_oracles": [
+    "Firstreadspy:wrong/missingexternalenvelope causes0filesystembyte reads;validBOOTcreatesexactfixedreservationbeforeanymetadata/code/runtimebodyread. Failed/partialreservationconsumesissuedslot andno sources.",
+    "TwoBOOTcontrollers/same orcrossedtoken/root/source-set/genesis/anchor cloning/truncation/reseal;oneowner,allusagecarried,firstregistrationcannotbeusedascontinuation ornewrootreset.",
+    "Countervectororacles forallALLOCATE/RESERVE/KNOWN/UNKNOWN/PRECHARGEtransitions,disjointstagepartitions,global/categoryintersection,no doublechargeauthority,no negativebalances/no sourcezero inferenceoncrash.",
+    "Spawncrashbefore/afterinitialreserve/G0/firstcodehash/metadatareadsettlement/BOOT_COMMIT/receipt/anchor/EXECtoken/anchoradmit/eachsourceread/page-dispatch/readsettle;knowncapschargedunknownconservatively.",
+    "Directedhashgraphoracle verifiesexactclosedfields/projections andDAG;future ownhash/root/genesis/derivedcontext/ACK/tail references injectedupstreamrefuse.",
+    "Finalizationcrash/storage/clock/pauseoracles aroundlastdatawrite/reserve2MiB/X/summary/L/H/prefixanchor/S/postsealverification/Tail1/A/Tail2/completedanchor/callerreturn/optionalINVALIDATE. H/L/X/Snevermutate afterprefix/seal.",
+    "Readboundarystops:511MiBBOOT+1MiBhotcode,256KiBdelivery+6MiBBOOT+1.75MiBEXECmetadata,859913source+2MiBclosingreads=548216585. No repeatedunmeteredpreflight orfullruntimehash outsideallocation.",
+    "Allwrite-slots/JSONmaxima includingpartialfailure/stderr/sidecars fitprecharged524288/262144/131072;terminalslots18432<=24576;current-eventbytesunobservedratherthanselfreferentialcounters.",
+    "LostACK/postsealEROFS acceptsneithernormalcallerreturnnorautoretry;read-onlyresolutionreportcannotrewriteoldACK/charges/objects orgrantnewsourcepass."
+  ],
+  "approved_page_extractions": 0,
+  "approved_source_bytes": 0,
+  "approved_source_reads": 0,
+  "backend_structure_and_decode_policy": [
+    "Onechildperregisteredsource,sequentially,eachsourceparsedonce. Page-tree count mustequal81/38reportedexpectedbeforeanytextextraction;unknownorchangedcountrefuses,notpartialsuccess.",
+    "Rejectencrypted/passwordneeded/malformed/xrefrepair/strictwarnings/unsupportedPDFfeatures;no passwordprompt,network,permissiveparser,OCR/render,alternatebackend,downloador automaticretry.",
+    "Structuralactive/externalactions/embeddedfilesarenotexecuted. Proposedpolicyrefusescatalogaction/JavaScript/embedded/external-filefeatures ratherthanfollowingthem; exactsupportedstructurecheckstobevalidatedinfixtures/libraryreview.",
+    "Importfixedbackenddependenciesunderpinnedruntimebeforeguard;duringparse allowonlymemorysnapshot/stdinstdout/resourcequeries. Denyfilesystem/network/dynamicplugin/arbitraryimport/processcreation. Anyunknownlazy-resourceaccessrefusespendingnewreview.",
+    "Allsourcehashchecksinparentreadpass;childrecheckssnapshotdigestinmemoryonly. Noadditionalraw-sourceFDorpathinworker,no outputmutationoforiginalPDFs/covers/history.",
+    "pypdfmayallocate/decompressbeforevisitor/finaltextlimitscanbechecked. No decoderhard-byte/preallocationclaim. Boundinput/pageattempts andnativeCPU/wall/RSSthresholds;testcompressed/cyclic/largeobjectfixtures. Ifthatboundaryisinsufficient,blockratherthaninventhardcontainment.",
+    "TransientpageUTF8textonly,strictvalidUTF8/noimputation;enforce40000characters/160000UTF8bytesperreturnedpage andcumulativetextcounts. Checkvisitorcapifverifiedsupportedandfinalreturnedtextconsistency;noassumedstreamingAPIguarantee. Discardpagefulltextafterhash/stats/projection.",
+    "Nooffice/party/candidate/vote/seat/stage/date/eligibility extraction. Physicalpageindexknown,printedpage/role/layout/class/termremainUNKNOWNunlessseparatelyreviewedlater. Inspectionisformatdiscovery,notM3grammarorrecordacceptance."
+  ],
+  "bootstrap_and_authority_states": [
+    "DISABLED_NO_CURRENT_AUTHORITY",
+    "EXTERNALLY_ISSUED_BOOT_SLOT",
+    "PREFIX_PRECHARGED_AND_RESERVED_BEFORE_READ",
+    "REGISTRATION_GENESIS_CREATED_OR_PRIOR_VERIFIED",
+    "BULK_READ_RESERVATIONS_DURABLE",
+    "BOOT_VERIFIED_OR_FAILED_UNKNOWN",
+    "PREPARED_METADATA_REVIEWED",
+    "EXTERNALLY_ISSUED_EXEC_SLOT",
+    "EXEC_METADATA_PRECHARGED_BEFORE_READ",
+    "ANCHOR_RUNTIME_ADMITTED_AND_SOURCE_HELD",
+    "SOURCE_EFFECTS_WITH_WRITEAHEAD_RESERVES",
+    "FINALIZATION_PRECHARGED",
+    "IMMUTABLE_PREFIX_COMMITTED",
+    "SEALED_VERIFY_UNKNOWN",
+    "VERIFY_OK_OR_FAILED",
+    "WRITER_ACK_COMMITTED_OR_UNKNOWN",
+    "EXTERNAL_TERMINAL_ANCHOR",
+    "CALLER_RETURN_OBSERVED_OR_DELIVERY_UNKNOWN"
+  ],
+  "capture_handoff_ref": {
+    "path": "reports/E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL_HANDOFF.json",
+    "sha256": "f7bc9f73be013fc94ff9e4f2984141f3d13a498c1c7216542254764edb6aff27"
+  },
+  "closed_hash_DAG": {
+    "edges": [
+      [
+        "SourceSet",
+        "Registration"
+      ],
+      [
+        "Registration",
+        "StaticSpec"
+      ],
+      [
+        "StaticSpec",
+        "BootstrapDecision"
+      ],
+      [
+        "BootstrapDecision",
+        "BOOTIssued"
+      ],
+      [
+        "BOOTIssued",
+        "BOOTReservation"
+      ],
+      [
+        "BOOTReservation",
+        "Genesis"
+      ],
+      [
+        "Genesis",
+        "BOOTJournal"
+      ],
+      [
+        "BOOTJournal",
+        "BOOTCounterSnapshot"
+      ],
+      [
+        "BOOTCounterSnapshot",
+        "BOOTCommitPrefix"
+      ],
+      [
+        "BOOTCommitPrefix",
+        "BootstrapReceipt"
+      ],
+      [
+        "BootstrapReceipt",
+        "BOOTAnchor"
+      ],
+      [
+        "BOOTAnchor",
+        "PreparedMetadata"
+      ],
+      [
+        "PreparedMetadata",
+        "ExecutionDecision"
+      ],
+      [
+        "ExecutionDecision",
+        "EXECIssued"
+      ],
+      [
+        "EXECIssued",
+        "EXECReservation"
+      ],
+      [
+        "EXECReservation",
+        "DerivedContext"
+      ],
+      [
+        "ExecutionDecision",
+        "DerivedContext"
+      ],
+      [
+        "DerivedContext",
+        "EXECAdmissionPrefix"
+      ],
+      [
+        "EXECAdmissionPrefix",
+        "ActiveAnchor"
+      ],
+      [
+        "ActiveAnchor",
+        "SourceData"
+      ],
+      [
+        "SourceData",
+        "FinalizationReservation"
+      ],
+      [
+        "FinalizationReservation",
+        "PrefixCounterSnapshot"
+      ],
+      [
+        "PrefixCounterSnapshot",
+        "Summary"
+      ],
+      [
+        "Summary",
+        "PrefixLedger"
+      ],
+      [
+        "PrefixCounterSnapshot",
+        "PrefixLedger"
+      ],
+      [
+        "PrefixLedger",
+        "CommitPrefix"
+      ],
+      [
+        "CommitPrefix",
+        "PrefixAnchor"
+      ],
+      [
+        "CommitPrefix",
+        "FinalSeal"
+      ],
+      [
+        "PrefixLedger",
+        "FinalSeal"
+      ],
+      [
+        "FinalSeal",
+        "VerifyTail"
+      ],
+      [
+        "VerifyTail",
+        "WriterAck"
+      ],
+      [
+        "WriterAck",
+        "AckTail"
+      ],
+      [
+        "AckTail",
+        "CompletedAnchor"
+      ],
+      [
+        "CompletedAnchor",
+        "InvalidateTail"
+      ],
+      [
+        "InvalidateTail",
+        "InvalidatedAnchor"
+      ],
+      [
+        "CompletedAnchor",
+        "CallerObservation"
+      ]
+    ],
+    "nodes": [
+      "SourceSet",
+      "Registration",
+      "StaticSpec",
+      "BootstrapDecision",
+      "BOOTIssued",
+      "BOOTReservation",
+      "Genesis",
+      "BOOTJournal",
+      "BOOTCounterSnapshot",
+      "BOOTCommitPrefix",
+      "BootstrapReceipt",
+      "BOOTAnchor",
+      "PreparedMetadata",
+      "ExecutionDecision",
+      "EXECIssued",
+      "EXECReservation",
+      "DerivedContext",
+      "EXECAdmissionPrefix",
+      "ActiveAnchor",
+      "SourceData",
+      "FinalizationReservation",
+      "PrefixCounterSnapshot",
+      "Summary",
+      "PrefixLedger",
+      "CommitPrefix",
+      "PrefixAnchor",
+      "FinalSeal",
+      "VerifyTail",
+      "WriterAck",
+      "AckTail",
+      "CompletedAnchor",
+      "InvalidateTail",
+      "InvalidatedAnchor",
+      "CallerObservation"
+    ],
+    "scope": "Initialcampaign flow shown. Continuations referenceonlypriorimmutableanchors/specs/genesis/envelopes,neverfutureobjects. No literalreleasehashinregistration/controlroot or ownpreimage."
+  },
+  "closed_schemas": {
+    "AnchorState": {
+      "additional_properties": false,
+      "constraints": [
+        "Protected outside campaign journal; trusted registrar CAS pins one currentchain. Workers cannot choose/copy another root or reset currenthead.",
+        "Anchorstates are downstream snapshots; referenced prefix/receipt/seal/tail objects never include their futureanchor hash.",
+        "Prefix references explicitly frozen byteprefix,not a claim that entire latergrownjournalfile is unchanged.",
+        "Reconstructcurrentcounters fromsnapshotbasis/externalreservation plusclosedprefixevents up toanchoredhead;sequencecannotclaimfutureeventstate."
+      ],
+      "field_types": {
+        "active_context_sha256": "hex64_or_null",
+        "bootstrap_receipt_sha256": "hex64_or_null",
+        "campaign_id": "id",
+        "counter_snapshot_sequence": "uint",
+        "counter_snapshot_sha256": "hex64",
+        "current_static_spec_sha256": "hex64",
+        "genesis_sha256": "hex64",
+        "kind": "M2_PROTECTED_ANCHOR_STATE_V1_1",
+        "last_issued_envelope_sha256": "hex64",
+        "prefix_bytes": "uint",
+        "prefix_file_sha256": "hex64",
+        "prefix_head_sha256": "hex64",
+        "previous_anchor_sha256": "hex64_or_null",
+        "registration_sha256": "hex64",
+        "schema_version": "const1",
+        "seal_sha256": "hex64_or_null",
+        "source_set_sha256": "hex64",
+        "state": "closed_anchor_state_enum",
+        "tail_head_sha256": "hex64_or_null",
+        "writer_ack_sha256": "hex64_or_null"
+      },
+      "nullable_fields": [
+        "previous_anchor_sha256",
+        "bootstrap_receipt_sha256",
+        "active_context_sha256",
+        "seal_sha256",
+        "tail_head_sha256",
+        "writer_ack_sha256"
+      ],
+      "required": [
+        "active_context_sha256",
+        "bootstrap_receipt_sha256",
+        "campaign_id",
+        "counter_snapshot_sha256",
+        "current_static_spec_sha256",
+        "genesis_sha256",
+        "kind",
+        "last_issued_envelope_sha256",
+        "prefix_bytes",
+        "prefix_file_sha256",
+        "prefix_head_sha256",
+        "previous_anchor_sha256",
+        "registration_sha256",
+        "schema_version",
+        "seal_sha256",
+        "source_set_sha256",
+        "state",
+        "tail_head_sha256",
+        "writer_ack_sha256",
+        "counter_snapshot_sequence"
+      ]
+    },
+    "BootstrapDecision": {
+      "additional_properties": false,
+      "constraints": [
+        "CREATE_ONCE only first registered ordinal1 with nullprior refs; otherwise VERIFY_EXISTING exactsame registration/root and preserved chargedusage.",
+        "No future genesis/current anchor/body/ref hash in first decision."
+      ],
+      "field_types": {
+        "backend_import_or_parse": "constfalse",
+        "bootstrap_attempt_id": "externally_preassigned_id",
+        "bootstrap_ordinal": "positive_uint",
+        "campaign_id": "id",
+        "expected_genesis_ref": "Ref_or_null",
+        "expected_prior_anchor_ref": "Ref_or_null",
+        "genesis_action": "CREATE_ONCE_or_VERIFY_EXISTING",
+        "kind": "M2_BOOTSTRAP_ONLY_V1_1",
+        "new_registration_allowed": "bool",
+        "phase_budget": "fixed_BOOT_slice",
+        "registration_ref": "Ref",
+        "schema_version": "const1",
+        "source_pages": "const0",
+        "source_reads": "const0",
+        "static_spec_ref": "Ref"
+      },
+      "nullable_fields": [
+        "expected_prior_anchor_ref",
+        "expected_genesis_ref"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "registration_ref",
+        "static_spec_ref",
+        "bootstrap_attempt_id",
+        "bootstrap_ordinal",
+        "genesis_action",
+        "expected_prior_anchor_ref",
+        "expected_genesis_ref",
+        "phase_budget",
+        "source_reads",
+        "source_pages",
+        "backend_import_or_parse",
+        "new_registration_allowed"
+      ]
+    },
+    "BootstrapReceipt": {
+      "additional_properties": false,
+      "constraints": [
+        "No completedbootstrapanchor ref; completedanchor references this receipt afterward.",
+        "BOOT_COMMIT event doesnot reference this laterreceipt."
+      ],
+      "field_types": {
+        "bootstrap_decision_sha256": "hex64",
+        "bootstrap_prefix_bytes": "uint",
+        "bootstrap_prefix_file_sha256": "hex64",
+        "bootstrap_prefix_head_sha256": "hex64",
+        "campaign_id": "id",
+        "counter_snapshot_ref": "Ref",
+        "genesis_sha256": "hex64",
+        "issued_envelope_sha256": "hex64",
+        "kind": "M2_BOOTSTRAP_RECEIPT_V1_1",
+        "outcome": "VERIFIED_or_FAILED_orUNCERTAIN",
+        "registration_sha256": "hex64",
+        "reservation_sha256": "hex64",
+        "schema_version": "const1",
+        "static_spec_sha256": "hex64",
+        "verified_code_set_sha256": "hex64",
+        "verified_metadata_set_sha256": "hex64",
+        "verified_runtime_manifest_sha256": "hex64"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "registration_sha256",
+        "static_spec_sha256",
+        "bootstrap_decision_sha256",
+        "issued_envelope_sha256",
+        "reservation_sha256",
+        "genesis_sha256",
+        "bootstrap_prefix_head_sha256",
+        "bootstrap_prefix_file_sha256",
+        "bootstrap_prefix_bytes",
+        "counter_snapshot_ref",
+        "verified_code_set_sha256",
+        "verified_runtime_manifest_sha256",
+        "verified_metadata_set_sha256",
+        "outcome"
+      ]
+    },
+    "CallerObservation": {
+      "additional_properties": false,
+      "constraints": [
+        "Separate trustedcaller observation,not source/ledger authority. Missingdelivery remainsUNKNOWN,notretroactivelynormalreturn."
+      ],
+      "field_types": {
+        "context_sha256": "hex64",
+        "error_type": "safe_enum_or_null",
+        "kind": "M2_CALLER_OBSERVATION_V1_1",
+        "returned_normally": "bool",
+        "schema_version": "const1",
+        "seal_sha256": "hex64_or_null",
+        "terminal_anchor_sha256": "hex64_or_null",
+        "writer_ack_sha256": "hex64_or_null"
+      },
+      "nullable_fields": [
+        "seal_sha256",
+        "writer_ack_sha256",
+        "terminal_anchor_sha256",
+        "error_type"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "context_sha256",
+        "seal_sha256",
+        "writer_ack_sha256",
+        "terminal_anchor_sha256",
+        "returned_normally",
+        "error_type"
+      ]
+    },
+    "CampaignRegistration": {
+      "additional_properties": false,
+      "constraints": [
+        "Contains no static-spec/decision/genesis/current-head/own hash.",
+        "Same study/source_set digest maps to one campaign in protected registry; no caller-chosen new ID after failure."
+      ],
+      "field_types": {
+        "anchor_id": "externally_preassigned_id",
+        "campaign_id": "externally_preassigned_id",
+        "control_namespace": "fixed_path_formula",
+        "kind": "M2_CAMPAIGN_REGISTRATION_V1_1",
+        "registry_namespace": "fixed_path_formula",
+        "repository_root_sha256": "hex64",
+        "schema_version": "const1",
+        "source_registry_ref": "Ref",
+        "source_set_id": "externally_preassigned_id",
+        "source_set_index_path": "fixed_path_formula",
+        "source_set_sha256": "hex64",
+        "study_id": "fixed_study_name"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "study_id",
+        "campaign_id",
+        "source_set_id",
+        "source_set_sha256",
+        "repository_root_sha256",
+        "registry_namespace",
+        "control_namespace",
+        "source_set_index_path",
+        "anchor_id",
+        "source_registry_ref"
+      ]
+    },
+    "CounterAxis": {
+      "additional_properties": false,
+      "constraints": [
+        "charged+reserved+held<=ceiling; available=ceiling-charged-reserved-held.",
+        "observed_known_sum<=charged;uncertain_charged<=charged;anyuncertain=>observednull;never negative or invented complete observation.",
+        "Precharged write/finalization tokens authorize bounded closed schedule despite charged cap; they do not restore available credit."
+      ],
+      "field_types": {
+        "ceiling": "uint",
+        "charged": "uint",
+        "held": "uint",
+        "observed": "uint_or_null",
+        "observed_known_sum": "uint",
+        "reserved": "uint",
+        "uncertain_charged": "uint"
+      },
+      "nullable_fields": [
+        "observed"
+      ],
+      "required": [
+        "ceiling",
+        "held",
+        "reserved",
+        "charged",
+        "observed",
+        "observed_known_sum",
+        "uncertain_charged"
+      ]
+    },
+    "CounterState": {
+      "additional_properties": false,
+      "constraints": [
+        "Exactlythe declared15axes; unknownstatenever lowers chargedusage.",
+        "Snapshot observations describe completed effects through declared earliersequence, never its own write/unknown terminaleffects.",
+        "Headnullonlyinitialinlinegenesisstate;otherwise snapshot binds prior knownhead+externaltoken. Counterreconstruction replays exactlythat token+events,nevertrusts an arbitraryolderstate ascurrent."
+      ],
+      "field_types": {
+        "axes": "exact_15_named_CounterAxis",
+        "campaign_id": "id",
+        "external_reservation_sha256": "hex64",
+        "journal_head_before_snapshot_sha256": "hex64_or_null",
+        "kind": "M2_COUNTER_STATE_V1_1",
+        "observed_through_sequence": "uint",
+        "registration_sha256": "hex64",
+        "schema_version": "const1",
+        "source_set_sha256": "hex64",
+        "static_spec_sha256": "hex64"
+      },
+      "nullable_fields": [
+        "journal_head_before_snapshot_sha256"
+      ],
+      "required": [
+        "axes",
+        "campaign_id",
+        "kind",
+        "observed_through_sequence",
+        "schema_version",
+        "source_set_sha256",
+        "registration_sha256",
+        "static_spec_sha256",
+        "external_reservation_sha256",
+        "journal_head_before_snapshot_sha256"
+      ]
+    },
+    "DerivedContext": {
+      "additional_properties": false,
+      "constraints": [
+        "Computed afterEXEC/envelope/token; EXEC_STARTED binds H(context). No own hash or futureseal.",
+        "PreassignedjobIDfromEXEC;runIDhashderivationfullyfixedinpolicy;newrecordercannotchooseanotherRunStoreUUID/path."
+      ],
+      "field_types": {
+        "campaign_id": "id",
+        "derivation_rule": "M2_CONTEXT_V1_1",
+        "execution_decision_sha256": "hex64",
+        "genesis_sha256": "hex64",
+        "issued_envelope_sha256": "hex64",
+        "job_id": "id",
+        "kind": "M2_DERIVED_CONTEXT_V1_1",
+        "output_path": "derived_output_base_plus_runid",
+        "preissued_anchor_sha256": "hex64",
+        "prepared_metadata_sha256": "hex64",
+        "registration_sha256": "hex64",
+        "reservation_token_sha256": "hex64",
+        "run_id": "derived_e01_hex32",
+        "schema_version": "const1",
+        "source_set_sha256": "hex64",
+        "static_spec_sha256": "hex64"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "source_set_sha256",
+        "registration_sha256",
+        "static_spec_sha256",
+        "prepared_metadata_sha256",
+        "execution_decision_sha256",
+        "issued_envelope_sha256",
+        "reservation_token_sha256",
+        "genesis_sha256",
+        "preissued_anchor_sha256",
+        "job_id",
+        "run_id",
+        "output_path",
+        "derivation_rule"
+      ]
+    },
+    "ExecutionDecision": {
+      "additional_properties": false,
+      "constraints": [
+        "No own hash, issued-envelope ref, derived context, derived run path, terminal prefix/seal/tail/ACK ref.",
+        "Expectedprioranchor is the completed pre-issuance anchor, not a future self-referencing issued anchor."
+      ],
+      "field_types": {
+        "bootstrap_receipt_ref": "Ref",
+        "campaign_id": "id",
+        "context_derivation_rule": "M2_CONTEXT_V1_1",
+        "execution_ordinal": "positive_uint",
+        "expected_genesis_ref": "Ref",
+        "expected_prior_anchor_ref": "Ref",
+        "job_id": "externally_preassigned_id",
+        "kind": "M2_SOURCE_EXECUTION_V1_1",
+        "page_extracts": "const119",
+        "phase_budget": "fixed_EXEC_slice_and_lifetimeceilings",
+        "predecessor_execution_ref": "Ref_or_null",
+        "prepared_metadata_ref": "Ref",
+        "registration_ref": "Ref",
+        "replay": "const0",
+        "schema_version": "const1",
+        "source_bytes": "const859913",
+        "source_job_attempts": "const1",
+        "source_reads": "const2",
+        "static_spec_ref": "Ref"
+      },
+      "nullable_fields": [
+        "predecessor_execution_ref"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "registration_ref",
+        "static_spec_ref",
+        "prepared_metadata_ref",
+        "bootstrap_receipt_ref",
+        "expected_prior_anchor_ref",
+        "expected_genesis_ref",
+        "job_id",
+        "execution_ordinal",
+        "predecessor_execution_ref",
+        "phase_budget",
+        "source_job_attempts",
+        "source_reads",
+        "source_bytes",
+        "page_extracts",
+        "replay",
+        "context_derivation_rule"
+      ]
+    },
+    "FinalSeal": {
+      "additional_properties": false,
+      "constraints": [
+        "No own seal hash, terminalhead,ACK or lateranchorref. Binds only immutableprefix+prechargedterminalprotocol."
+      ],
+      "field_types": {
+        "context_sha256": "hex64",
+        "counter_snapshot_ref": "Ref",
+        "execution_decision_sha256": "hex64",
+        "finalization_reservation_sha256": "hex64",
+        "genesis_sha256": "hex64",
+        "issued_envelope_sha256": "hex64",
+        "kind": "M2_FINAL_SEAL_V1_1",
+        "prefix_ledger_ref": "Ref",
+        "registration_sha256": "hex64",
+        "schema_version": "const1",
+        "sealed_prefix_bytes": "uint",
+        "sealed_prefix_file_sha256": "hex64",
+        "sealed_prefix_head_sha256": "hex64",
+        "sealed_prefix_last_sequence": "uint",
+        "static_spec_sha256": "hex64",
+        "terminal_protocol": "M2_TERMINAL_TAIL_V1_1"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "context_sha256",
+        "registration_sha256",
+        "static_spec_sha256",
+        "execution_decision_sha256",
+        "issued_envelope_sha256",
+        "genesis_sha256",
+        "prefix_ledger_ref",
+        "sealed_prefix_head_sha256",
+        "sealed_prefix_file_sha256",
+        "sealed_prefix_bytes",
+        "sealed_prefix_last_sequence",
+        "counter_snapshot_ref",
+        "finalization_reservation_sha256",
+        "terminal_protocol"
+      ]
+    },
+    "FinalizationReservation": {
+      "additional_properties": false,
+      "constraints": [
+        "Reserved/fullyconservativelycharged before ledgerhash/read/seal/verification/ACKeffects; no later refund needed.",
+        "Writequota alreadyprechargedunderfixedslots; this activates its terminalsubset,not an additional owned-write debit.",
+        "RESERVE_FINALIZATION referencespre-reserveknowncounterhash,notfuturePrefixCounterSnapshot. LaterXreferencesthecompleteRESERVEeventhead;no two-wayhashlink."
+      ],
+      "field_types": {
+        "context_sha256": "hex64",
+        "kind": "M2_FINALIZATION_RESERVATION_V1_1",
+        "no_source_backend_or_reseal": "consttrue",
+        "normal_journal_freeze_rule": "COMMIT_PREFIX_FINAL",
+        "record_verification_read_bytes": "const2097152",
+        "schema_version": "const1",
+        "tail_events_max": "const3",
+        "terminal_write_slots_bytes": "const24576"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "context_sha256",
+        "record_verification_read_bytes",
+        "terminal_write_slots_bytes",
+        "tail_events_max",
+        "normal_journal_freeze_rule",
+        "no_source_backend_or_reseal"
+      ]
+    },
+    "Genesis": {
+      "additional_properties": false,
+      "constraints": [
+        "Downstreamofregistration/spec/BOOT/envelope/token. Has no own hash, futureEXEC/context/seal/headref.",
+        "Onegenesis forever; continuation verifies originalhash, never constructs new one."
+      ],
+      "field_types": {
+        "anchor_id": "id",
+        "campaign_id": "id",
+        "initial_bootstrap_decision_sha256": "hex64",
+        "initial_counter_state": "CounterState",
+        "initial_issued_envelope_sha256": "hex64",
+        "initial_reservation_sha256": "hex64",
+        "initial_static_spec_sha256": "hex64",
+        "kind": "M2_GENESIS_V1_1",
+        "previous": "constnull",
+        "registration_sha256": "hex64",
+        "schema_version": "const1",
+        "source_set_sha256": "hex64"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "source_set_sha256",
+        "registration_sha256",
+        "initial_static_spec_sha256",
+        "initial_bootstrap_decision_sha256",
+        "initial_issued_envelope_sha256",
+        "initial_reservation_sha256",
+        "anchor_id",
+        "initial_counter_state",
+        "previous"
+      ]
+    },
+    "IssuedEnvelope": {
+      "additional_properties": false,
+      "constraints": [
+        "Trusted registrar durably issues one slot before handoff; external caller supplies expected H(envelope), not embedded selfhash.",
+        "Decision never references its downstream issued envelope; replayed same ordinal/slot O_EXCL refuses."
+      ],
+      "field_types": {
+        "allowed_initial_write_slots": "closed_slot_ids",
+        "anchor_id": "id",
+        "attempt_id": "id",
+        "campaign_id": "id",
+        "decision_kind": "BOOT_or_EXEC",
+        "decision_sha256": "hex64",
+        "kind": "M2_EXTERNALLY_ISSUED_PHASE_ENVELOPE_V1_1",
+        "one_shot": "consttrue",
+        "ordinal": "positive_uint",
+        "precharged_prefix": "fixed_counter_projection",
+        "preissued_anchor_ref": "Ref_or_null",
+        "previous_issued_ref": "Ref_or_null",
+        "schema_version": "const1",
+        "source_set_sha256": "hex64"
+      },
+      "nullable_fields": [
+        "previous_issued_ref",
+        "preissued_anchor_ref"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "source_set_sha256",
+        "anchor_id",
+        "decision_kind",
+        "decision_sha256",
+        "attempt_id",
+        "ordinal",
+        "previous_issued_ref",
+        "preissued_anchor_ref",
+        "precharged_prefix",
+        "allowed_initial_write_slots",
+        "one_shot"
+      ]
+    },
+    "JournalEvent": {
+      "additional_properties": false,
+      "constraints": [
+        "Firstprev=H(genesis), then exactprevious H(event). Canonical line+newline; eventhash excludes newline only.",
+        "BOOT_COMMIT and COMMIT_PREFIX are closed specialpayloads and do not reference their future receipt/seal.",
+        "After finalCOMMIT_PREFIX normaljournal append is permanently denied."
+      ],
+      "field_types": {
+        "campaign_id": "id",
+        "effect_id": "id",
+        "event_type": "closed_event_enum",
+        "kind": "M2_PREFIX_EVENT_V1_1",
+        "payload": "event_specific_closed_payload",
+        "phase": "BOOT_or_EXEC",
+        "previous_event_sha256": "hex64",
+        "schema_version": "const1",
+        "sequence": "positive_uint"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "sequence",
+        "previous_event_sha256",
+        "phase",
+        "event_type",
+        "effect_id",
+        "payload"
+      ]
+    },
+    "PhasePacket": {
+      "additional_properties": false,
+      "constraints": [
+        "Atmost262144deliverybytes; memory-only parse/hash validates externally supplied expected-envelope SHA and all decision/spec/registration links before explicit file reads.",
+        "No arbitrary prepared bytes, source bytes, code callbacks or packet selfhash."
+      ],
+      "field_types": {
+        "decision_bytes_b64": "bounded_canonical_object",
+        "issued_envelope_bytes_b64": "bounded_canonical_object",
+        "kind": "M2_PHASE_PACKET_V1_1",
+        "registration_bytes_b64": "bounded_canonical_object",
+        "schema_version": "const1",
+        "static_spec_bytes_b64": "bounded_canonical_object"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "registration_bytes_b64",
+        "static_spec_bytes_b64",
+        "decision_bytes_b64",
+        "issued_envelope_bytes_b64"
+      ]
+    },
+    "PrefixLedger": {
+      "additional_properties": false,
+      "constraints": [
+        "Exactly10filenamesmappingtorawfileSHA256;ledgerfilenamechecksums.json. Contextiscrosscheckedinsealedmanifest/summary/X,notfreeledgerfields.",
+        "Excludesquota-prefixjournal,itsH/seal/tail/ACK/anchorobjectsandledgeritself;nevermutableafterL.",
+        "events.jsonl is boundedrunlog,frozenbeforeL,NOTauthoritativequota-prefixjournal. AllpostLerrorsonlyterminaltail/sidecars."
+      ],
+      "field_types": {
+        "counters.prefix.local.json": "hex64",
+        "environment.json": "hex64",
+        "events.jsonl": "hex64",
+        "inspection_commit.json": "hex64",
+        "inspection_diagnostics.json": "hex64",
+        "inspection_payload_hashes.json": "hex64",
+        "inspection_projection.local.json": "hex64",
+        "inspection_provenance.local.json": "hex64",
+        "manifest.json": "hex64",
+        "summary.json": "hex64"
+      },
+      "nullable_fields": [],
+      "required": [
+        "manifest.json",
+        "environment.json",
+        "events.jsonl",
+        "summary.json",
+        "inspection_projection.local.json",
+        "inspection_diagnostics.json",
+        "inspection_provenance.local.json",
+        "inspection_payload_hashes.json",
+        "inspection_commit.json",
+        "counters.prefix.local.json"
+      ]
+    },
+    "PreparedMetadata": {
+      "additional_properties": false,
+      "constraints": [
+        "Prepared afterBOOTreceipt/anchor andbeforeEXECdecision. No EXEC/envelope/context/run/terminalrefs."
+      ],
+      "field_types": {
+        "bootstrap_receipt_ref": "Ref",
+        "campaign_id": "id",
+        "completed_bootstrap_anchor_ref": "Ref",
+        "counter_snapshot_ref": "Ref",
+        "genesis_ref": "Ref",
+        "kind": "M2_PREPARED_METADATA_V1_1",
+        "output_base": "fixed_relative_scope",
+        "planned_job_id": "id",
+        "registration_ref": "Ref",
+        "schema_version": "const1",
+        "source_set_sha256": "hex64",
+        "static_spec_ref": "Ref"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "registration_ref",
+        "static_spec_ref",
+        "genesis_ref",
+        "bootstrap_receipt_ref",
+        "completed_bootstrap_anchor_ref",
+        "counter_snapshot_ref",
+        "planned_job_id",
+        "source_set_sha256",
+        "output_base"
+      ]
+    },
+    "Ref": {
+      "additional_properties": false,
+      "constraints": [],
+      "field_types": {
+        "bytes": "positive_uint",
+        "path": "normalized_relative_path",
+        "sha256": "hex64"
+      },
+      "nullable_fields": [],
+      "required": [
+        "path",
+        "sha256",
+        "bytes"
+      ]
+    },
+    "ReservationToken": {
+      "additional_properties": false,
+      "constraints": [
+        "Created O_EXCL at fixed registry attempt slot before bulk reads; initialwriteauthorityexplicitin issued envelope.",
+        "Token no selfhash, no future genesis/hash/reader permission; partial/unknownpersist consumes slot, no reset."
+      ],
+      "field_types": {
+        "attempt_id": "id",
+        "campaign_id": "id",
+        "decision_sha256": "hex64",
+        "expected_prior_anchor_sha256": "hex64_or_null",
+        "issued_envelope_sha256": "hex64",
+        "kind": "M2_FIXED_REGISTRY_RESERVATION_V1_1",
+        "phase": "BOOT_or_EXEC_ADMISSION",
+        "precharged_axes": "CounterProjection",
+        "schema_version": "const1",
+        "source_access_before_admission": "constfalse",
+        "source_set_sha256": "hex64",
+        "static_spec_sha256": "hex64"
+      },
+      "nullable_fields": [
+        "expected_prior_anchor_sha256"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "campaign_id",
+        "source_set_sha256",
+        "static_spec_sha256",
+        "decision_sha256",
+        "issued_envelope_sha256",
+        "attempt_id",
+        "phase",
+        "precharged_axes",
+        "expected_prior_anchor_sha256",
+        "source_access_before_admission"
+      ]
+    },
+    "StaticSpec": {
+      "additional_properties": false,
+      "constraints": [
+        "No own hash, release-derived root, genesis/head, future decision/context/run/seal/ACK ref.",
+        "Projection hash is H(policy.projection); budget hash is H({limits,stage_partitions,counter_protocol,write_slot_schedule}) exactkeys; no implementer-selected projection."
+      ],
+      "field_types": {
+        "backend_policy_ref": "Ref",
+        "budget_policy_sha256": "hex64",
+        "code_set_ref": "Ref",
+        "context_derivation_rule": "M2_CONTEXT_V1_1",
+        "kind": "M2_STATIC_SPEC_V1_1",
+        "output_base": "fixed_relative_scope",
+        "policy_ref": "Ref",
+        "predecessor_static_spec_ref": "Ref_or_null",
+        "projection_policy_sha256": "hex64",
+        "registered_sources": "exact_2_source_records",
+        "registration_ref": "Ref",
+        "runtime_manifest_ref": "Ref",
+        "schema_version": "const1",
+        "source_set_sha256": "hex64",
+        "write_slot_schedule_sha256": "hex64"
+      },
+      "nullable_fields": [
+        "predecessor_static_spec_ref"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "registration_ref",
+        "predecessor_static_spec_ref",
+        "source_set_sha256",
+        "registered_sources",
+        "code_set_ref",
+        "runtime_manifest_ref",
+        "backend_policy_ref",
+        "policy_ref",
+        "projection_policy_sha256",
+        "budget_policy_sha256",
+        "output_base",
+        "context_derivation_rule",
+        "write_slot_schedule_sha256"
+      ]
+    },
+    "TerminalTailEvent": {
+      "additional_properties": false,
+      "constraints": [
+        "Index1prev=H(seal);subsequentprev=H(previoustail). No append tosealednormaljournal.",
+        "Onlylegalpaths: VERIFY_OK\u2192ACK_COMMITTED\u2192optionalINVALIDATE; VERIFY_FAILEDterminal; VERIFY_OK\u2192INVALIDATE.",
+        "Every observationexcludesits own currenteventserialization/write;chargedfullcapsremainfrozen."
+      ],
+      "field_types": {
+        "context_sha256": "hex64",
+        "error_type": "safe_enum_or_null",
+        "event_type": "VERIFY_OK_orVERIFY_FAILED_orACK_COMMITTED_orINVALIDATE",
+        "index": "uint1to3",
+        "kind": "M2_TERMINAL_TAIL_EVENT_V1_1",
+        "observed_before_this_event": "closed_known_or_null_terminal_observations",
+        "previous_sha256": "hex64",
+        "schema_version": "const1",
+        "seal_sha256": "hex64",
+        "sealed_prefix_head_sha256": "hex64",
+        "terminal_reservation_sha256": "hex64",
+        "writer_ack_sha256": "hex64_or_null"
+      },
+      "nullable_fields": [
+        "writer_ack_sha256",
+        "error_type"
+      ],
+      "required": [
+        "schema_version",
+        "kind",
+        "context_sha256",
+        "seal_sha256",
+        "sealed_prefix_head_sha256",
+        "terminal_reservation_sha256",
+        "index",
+        "previous_sha256",
+        "event_type",
+        "observed_before_this_event",
+        "writer_ack_sha256",
+        "error_type"
+      ]
+    },
+    "WriterAck": {
+      "additional_properties": false,
+      "constraints": [
+        "Created afterVERIFY_OK; no ownhash/ACK_COMMITTEDtail/currentanchor ref. ACK_COMMITTEDevent binds H(ACK) afterward."
+      ],
+      "field_types": {
+        "context_sha256": "hex64",
+        "counter_snapshot_sha256": "hex64",
+        "kind": "M2_WRITER_ACK_V1_1",
+        "schema_version": "const1",
+        "seal_sha256": "hex64",
+        "sealed_prefix_head_sha256": "hex64",
+        "terminal_reservation_sha256": "hex64",
+        "verified_tail_event_sha256": "hex64"
+      },
+      "nullable_fields": [],
+      "required": [
+        "schema_version",
+        "kind",
+        "context_sha256",
+        "seal_sha256",
+        "sealed_prefix_head_sha256",
+        "verified_tail_event_sha256",
+        "counter_snapshot_sha256",
+        "terminal_reservation_sha256"
+      ]
+    }
+  },
+  "counter_protocol": {
+    "axes": [
+      "bootstrap_attempts",
+      "execution_admission_attempts",
+      "source_jobs",
+      "source_read_attempts",
+      "source_read_bytes",
+      "backend_attempts",
+      "page_extractions",
+      "code_integrity_read_bytes",
+      "metadata_read_bytes",
+      "record_verification_read_bytes",
+      "inspection_data_write_bytes",
+      "recorder_control_write_bytes",
+      "owned_write_bytes",
+      "active_time_ms",
+      "cpu_ms"
+    ],
+    "charged": "SettledknownactualORconservativeunknownmaximum,nevernegative/decreased. No extraneoussecondchargefromnestedallocation.",
+    "current_event_observation": "Snapshots/eventsmeasurethroughpreviouscompleteeffect/sequence,nevercurrentserialization/fsyncorlastunknownACK. Prefixchargescoverfutureterminaleffectsconservatively.",
+    "external_reservation_basis": "A snapshot aftermetadata/tokenadmission caninclude the externallydurabletoken delta withpriorjournalhead;its external_reservation_sha ismandatory. Reconstructthat token+prior/currentclosedprefixevents exactly; no assertion that unseenfutureevent was observed.",
+    "failure_and_continuation": "BOOT/EXECuniqueattemptconsumedbeforebulkread;failed/unknownslotcannotreplay. Allhistoricalchargesincludinguncertainmaxcarriedforwardinnewreviewedceilingextension,sameregistration/root/source-set. No sourcezero inference solelyfrommissingmarker aftercrash.",
+    "held": "Budgetallocatedtoonescope,notpendingeffectorconsumed;drawfromavailableonce.",
+    "initial_ceilings": {
+      "active_time_ms": 120000,
+      "backend_attempts": 2,
+      "bootstrap_attempts": 1,
+      "code_integrity_read_bytes": 536870912,
+      "cpu_ms": 60000,
+      "execution_admission_attempts": 1,
+      "inspection_data_write_bytes": 262144,
+      "metadata_read_bytes": 8388608,
+      "owned_write_bytes": 524288,
+      "page_extractions": 119,
+      "record_verification_read_bytes": 2097152,
+      "recorder_control_write_bytes": 131072,
+      "source_jobs": 1,
+      "source_read_attempts": 2,
+      "source_read_bytes": 859913
+    },
+    "normal_snapshot_binding": "Each snapshot carries registration/static-spec/external-reservation hash and prior knownjournalhead;initialinlineGstate headnull. Normalpayloadcounter-beforehashesreferupstreamderivedstates;COMMIT_PREFIXreferencesan alreadywrittenXwhoseheadispriorRESERVE_FINALIZATION,neveritself.",
+    "observed": "Knownsettledeffects onlythroughdeclaredpriorsequence;nullifanyconsumedcomponentunobservedoruncertain,withseparateknownsum. Neverfabricateactualbytes/pagesfrommaxreservation.",
+    "read_accounting": "Metadata8MiBsplitdelivery/BOOT/EXEC;code512MiBsplit511MiBBOOT+1MiBhotchecks. Source859913onlyEXEC;verification2MiBprechargedbeforefinalization. Countedtotal548216585unchanged;readonlymemory/OSloaderIOexcludedasv1.",
+    "reserved": "Writeaheadpending-effectamount,drawnfromheld;recordfsyncmustprecedeeffect.",
+    "transitions": {
+      "ALLOCATE": "available-=n;held+=n",
+      "PRECHARGE_SCHEDULE": "held/reservedtransferredtochargedmaxbeforeeffects;oneclosedprepaidtoken authorizesonlyitsfixedslots, noavailablecreditrestored",
+      "RESERVE": "held-=n;reserved+=n",
+      "SETTLE_KNOWN": "reserved-=r;charged+=actual;held+=r-actual;observed_known_sum+=actual",
+      "SETTLE_UNKNOWN": "reserved-=r;charged+=r;uncertain_charged+=r;observed=null",
+      "STOP_AMBIGUOUS_ALLOCATION": "Allunprovedheld/reserved amountsconservativelycharged;no additional effects"
+    },
+    "write_accounting": "IssuedBOOTprecharges ownedwritecap524288,data262144,control131072once;closedfile/eventslotsbelowconstrainremainingeffectpermissions. No recursivejournalentryneededtochargeitsownwrite. Samewriteenforcesglobal+categorycaps(intersection),notaddedtwiceinto globaltotal. Actualwriteobservationscanremainnull;no refunds/postsealheadmutation."
+  },
+  "cover_report_ref": {
+    "path": "reports/E01_CLERK_INITIAL_COVER_INSPECTION_v1.json",
+    "sha256": "7ec849ff2fc10fd06a88ef6e8a70790c60d57d8084a634c6e493ebdc85216842"
+  },
+  "explicit_M1_changes": [
+    {
+      "M1": "5soneMOCKjob",
+      "M2": "30sperPDF,120soverallincludingruntime/source/journal/commit",
+      "constraint": "childwall/wholewall",
+      "why": "StructuralPDF/font/page work differs fromMOCKJSON. Prospectivefiniteceilings forreview, not measuredsourceperformance; failure stops, never autoextends."
+    },
+    {
+      "M1": "3soft4hardseconds",
+      "M2": "20soft21hardperbackend,60saggregatewholejobCPUstopthreshold",
+      "constraint": "CPU",
+      "why": "Two strict realPDFparses needexplicit import/graph/textbudget; aggregateincludescontroller andownedchildren/probes atcheckpoints,notkernel-widehardlimit."
+    },
+    {
+      "M1": "128MiBsampled/trustedthreshold",
+      "M2": "256MiBpercontroller/backendsampled/trustedthreshold",
+      "constraint": "RSS",
+      "why": "Proposedroomforpypdfobject/font caches. Notobservedneededmemory; independentreviewmayreject. NoAS/DATA/hardRSSclaim orsilentfallback."
+    },
+    {
+      "M1": 4096,
+      "M2": 16384,
+      "constraint": "JSONnodes",
+      "why": "119privatepagerecords\u00d796nodesplus4096envelope=15520,within16384. Depth12retained."
+    },
+    {
+      "M1": "262144bytesacceptedoutput",
+      "M2": "Same262144inspection-data cap;251904privateprojection+8192public=260096. Separate131072control metadata and524288wholejobwrite ceiling declared.",
+      "constraint": "output",
+      "why": "Doesnotpretend4.76Mcharactersfit;boundedprivateexcerptprojection,notfulltextartifact."
+    },
+    {
+      "M1": "Noactualsourcesallowed",
+      "M2": "Stilldisabledinthisdesign;futureonejob/2reads/859913bytesreservation/119extracts",
+      "constraint": "raw-sourcequota",
+      "why": "Exactregistered859911bytesplus2one-byteoverflowprobes,notunrestricted2MiBfreshsourcepermit."
+    },
+    {
+      "M1": "No actualsource-runrecorder",
+      "M2": "65536journal+57344staticmetadata+8192privatefailurestderr=131072;wholeownedwrites524288",
+      "constraint": "recorder metadata partition",
+      "why": "Separatefinitedurablebookkeeping/failureheadroom,notanother262144text channel. Allcomponentscountagainstonewholebudget;noalwayswritablefailureguarantee."
+    }
+  ],
+  "fixed_namespace": {
+    "attempt_slot": "<registry_namespace>/attempts/<phase>-<externally_preassigned_attempt_id>.reservation.local.json",
+    "continuation": "SameA0/genesis/root/source-set/indexforever;newC refs predecessorC,newBOOTVERIFY_EXISTING,newEXEC refs predecessor/currentanchor. Carryforwardallcharged/unknownusage;explicitceilingextensiononly. Missing/crossed/cloned/truncated/unknownstateblocks,newgenesis/rootforbidden.",
+    "control_namespace": "data/processed/e01_clerk2020_m2_control/<campaign_id>",
+    "identity_validation": "A0root/source-set/study/campaign/index/controlpaths mustmatch exactformulas andexternalregistration; no alternatepath/releasehashsuffix/caller-root/changingIDafterfailure.",
+    "protected_anchor": "Fixedoutside-campaign-journal registry has one registrar-owned currentAnchorState chain and immutableissued/reservation slots. Trustedlocalwriter/CAS boundary,not hostilehost rollbackproof.",
+    "registration_assignment": "Trustedregistrar preassignscampaign_id/source_set_id/anchor_id; no actualvalues now.",
+    "registry_namespace": "data/processed/e01_clerk2020_m2_registry/<campaign_id>",
+    "source_set_index_path": "data/processed/e01_clerk2020_m2_registry/source_sets/<source_set_id>.local.json"
+  },
+  "hash_rules": {
+    "canonical": "C14N=json.dumps(obj,sort_keys=True,separators=(comma,colon),ensure_ascii=False,allow_nan=False).encodeUTF8;reject duplicatekeys/nonbuiltin/nonfinite/bool-as-int. No Unicode normalization.",
+    "excluded_downstream_values": [
+      "ownhashes",
+      "futuregenesis ininitialBOOT",
+      "issuedenvelopehash initsdecision",
+      "derivedcontext/runID inEXEC",
+      "bootstrapanchor inBootstrapReceipt",
+      "COMMIT_PREFIXhead initsCounterSnapshot/ledger",
+      "futureseal inprefixledger/H",
+      "terminaltail/ACK/latestanchor inseal"
+    ],
+    "journal_framing": "Eachnormal/tailJSONLrecord isC14N(record)+newline. Chainhash H(record)excludesnewline;file/prefixRef.sha256 hashes exactrawbytes includingframing.",
+    "output_path": "StaticSpec.output_base + slash +derivedrun_id; StaticSpec/EXEC contain outputbase/derivationrule only,never futureliteralrunpath.",
+    "record_hash": "H(obj)=SHA256(C14N(obj)); canonical single-object files exactlyC14N withno newline. No object contains its own hash.",
+    "run_id": "e01- + H({kind:M2_RUN_ID_V1_1,campaign_id:registration.campaign_id,job_id:ExecutionDecision.job_id,execution_decision_sha256:H(ExecutionDecision)}) first32hex.",
+    "source_set_projection": "H(sorted exact registered source records bysource_id using keys source_id,registered_path,url,sha256,bytes,expected_pages_reported,role));exclude only design-local body_inspected flag.",
+    "static_spec_hash": "H(StaticSpec); no self/derivedfield omitted by implementation. Allfieldsrequiredandhashed.",
+    "why_bound": "Everyexcludedvalue derivesdownstreamandisboundbythe next requiredrecord/reference;none is freecaller metadata. Fixedregistration/root isupstream,not derivedfromreleasehash."
+  },
+  "implementation_fixture_acceptance": [
+    "Generatedminimalvalidone/two-pagePDFswithknowntext/order/Unicode/blankpages/rotations;mockcontextpagescanvarybutrealpolicyknown81/38/sourcehashscannotbe caller-resealed.",
+    "Malformed/xref/EOF/encrypted/wrongbackend/version/runtimeorigin/duplicateJSON/nonfinite/unknownAPI/warningbehaviorsrefuse;noautofallback/OCR/render.",
+    "Generatedcompressed/recursive/object-heavy/font/textbombfixturesexerciseCPU/wall/RSS/text/outputgates andproveclaimedthresholdbehavior;unprovenboundsblockactualadmission.",
+    "All119pagerecordsfit96nodes/2048byteswithhostileUTF8/controlcharacterescaping;omissionranges/hash/wholepage/full-documentflagscomputedcorrectly;publicstripsexcerpts/names/stderr.",
+    "Nativeblockedstdin/stdout/stderr/earlyexit/cancel/timeout/RSS/killpgdenial/reapfailure/parentdeathlimits;zeroactualsourceeffectsforinvalidmetadata.",
+    "SourceFD/path/symlink/stat/hash/size/crosssource/immutablebuffer/aliasandcoeditedmetadataadversaries;caller cannotchangebindingafteradmission orredirectchild tosourcepaths.",
+    "Realspawncrashesbefore/aftereachreservation/readsettlement/dispatch/output/ledger/seal/ACK;conservativeusage/attemptsneverdecrease,cloned/truncated/resealed/unknowncontrolsdeniedatdeclaredtrustedanchorboundary.",
+    "Twoauthorizedsourcesonly,1job/2sourceattempts/859913readbytes/119extracts/no replay;overquotaoroldrelease/reinit/newrootfailsbeforeeffect;newleadextensionscarryforwardusage.",
+    "O_EXCL/failurepartialoutput/privacy/packages/HTTPaliasguards andpublishedcloseddiagnostics;no original/candidate/protocol edits;predictions/outcomes inaccessibleand no candidate/voteprojection."
+  ],
+  "journal_event_payload_schemas": {
+    "BACKEND_RESERVE": {
+      "additional_properties": false,
+      "field_types": {
+        "attempts": "const1",
+        "effect_id": "id",
+        "page_allowance": "81_or38",
+        "resource_slice": "fixedchildslice",
+        "source_id": "id"
+      },
+      "required": [
+        "effect_id",
+        "source_id",
+        "attempts",
+        "page_allowance",
+        "resource_slice"
+      ]
+    },
+    "BACKEND_SETTLE": {
+      "additional_properties": false,
+      "field_types": {
+        "charged_pages": "uint",
+        "effect_id": "id",
+        "observed_cpu_ms": "uint_or_null",
+        "observed_pages": "uint_or_null",
+        "outcome": "COMPLETE_orFAILED_orUNCERTAIN"
+      },
+      "required": [
+        "effect_id",
+        "observed_pages",
+        "charged_pages",
+        "observed_cpu_ms",
+        "outcome"
+      ]
+    },
+    "BOOT_COMMIT": {
+      "additional_properties": false,
+      "field_types": {
+        "counter_snapshot_sha256": "hex64",
+        "verified_code_set_sha256": "hex64",
+        "verified_metadata_set_sha256": "hex64",
+        "verified_runtime_manifest_sha256": "hex64"
+      },
+      "required": [
+        "counter_snapshot_sha256",
+        "verified_code_set_sha256",
+        "verified_runtime_manifest_sha256",
+        "verified_metadata_set_sha256"
+      ]
+    },
+    "BOOT_RESERVE": {
+      "additional_properties": false,
+      "field_types": {
+        "counter_before_sha256": "hex64",
+        "phase_slice": "fixed_BOOT_slice",
+        "reservation_token_sha256": "hex64"
+      },
+      "required": [
+        "reservation_token_sha256",
+        "counter_before_sha256",
+        "phase_slice"
+      ]
+    },
+    "CODE_RUNTIME_RESERVE": {
+      "additional_properties": false,
+      "field_types": {
+        "axis": "code_or_metadata",
+        "effect_id": "id",
+        "max_amount": "uint"
+      },
+      "required": [
+        "effect_id",
+        "axis",
+        "max_amount"
+      ]
+    },
+    "COMMIT_PREFIX": {
+      "additional_properties": false,
+      "field_types": {
+        "context_sha256": "hex64",
+        "counter_snapshot_sha256": "hex64",
+        "finalization_reservation_sha256": "hex64",
+        "normal_journal_frozen": "consttrue",
+        "prefix_ledger_sha256": "hex64"
+      },
+      "required": [
+        "context_sha256",
+        "prefix_ledger_sha256",
+        "counter_snapshot_sha256",
+        "finalization_reservation_sha256",
+        "normal_journal_frozen"
+      ]
+    },
+    "DATA_WRITE_SLOT": {
+      "additional_properties": false,
+      "field_types": {
+        "observed_prior_slot_bytes": "uint_or_null",
+        "remaining_slot_permission": "fixedslotstate",
+        "slot_id": "closedprepaidid"
+      },
+      "required": [
+        "slot_id",
+        "observed_prior_slot_bytes",
+        "remaining_slot_permission"
+      ]
+    },
+    "EXEC_ADMISSION": {
+      "additional_properties": false,
+      "field_types": {
+        "context_sha256": "hex64",
+        "counter_snapshot_sha256": "hex64",
+        "held_source_envelope": "fixed_EXEC_source_slice",
+        "reservation_token_sha256": "hex64"
+      },
+      "required": [
+        "context_sha256",
+        "reservation_token_sha256",
+        "counter_snapshot_sha256",
+        "held_source_envelope"
+      ]
+    },
+    "FAIL_STOP": {
+      "additional_properties": false,
+      "field_types": {
+        "charged_state_sha256": "hex64",
+        "effect_id": "id",
+        "observed_scope": "PRIOR_COMPLETE_EFFECTS_ONLY",
+        "safe_error_type": "enum"
+      },
+      "required": [
+        "effect_id",
+        "safe_error_type",
+        "charged_state_sha256",
+        "observed_scope"
+      ]
+    },
+    "READ_SETTLE": {
+      "additional_properties": false,
+      "field_types": {
+        "charged_bytes": "uint",
+        "effect_id": "id",
+        "input_hash_verified": "bool_or_null",
+        "observed_bytes": "uint_or_null"
+      },
+      "required": [
+        "effect_id",
+        "observed_bytes",
+        "charged_bytes",
+        "input_hash_verified"
+      ]
+    },
+    "RESERVE_FINALIZATION": {
+      "additional_properties": false,
+      "field_types": {
+        "counter_before_reserve_sha256": "hex64",
+        "finalization_reservation_sha256": "hex64"
+      },
+      "required": [
+        "finalization_reservation_sha256",
+        "counter_before_reserve_sha256"
+      ]
+    },
+    "SOURCE_RESERVE": {
+      "additional_properties": false,
+      "field_types": {
+        "bytes_max": "declaredplus1",
+        "effect_id": "id",
+        "read_attempts": "const1",
+        "source_id": "exactregisteredid"
+      },
+      "required": [
+        "effect_id",
+        "source_id",
+        "read_attempts",
+        "bytes_max"
+      ]
+    },
+    "SOURCE_SETTLE": {
+      "additional_properties": false,
+      "field_types": {
+        "charged_bytes": "uint",
+        "effect_id": "id",
+        "observed_bytes": "uint_or_null",
+        "outcome": "VERIFIED_orFAILED_orUNCERTAIN",
+        "source_sha256": "hex64_or_null"
+      },
+      "required": [
+        "effect_id",
+        "observed_bytes",
+        "charged_bytes",
+        "source_sha256",
+        "outcome"
+      ]
+    }
+  },
+  "kind": "CLERK2020_M2_INSPECTION_DESIGN_ONLY_V1_1",
+  "limits": {
+    "api_spend_usd": 0,
+    "child_cpu_hard_seconds_each": 21,
+    "child_cpu_soft_seconds_each": 20,
+    "child_wall_seconds_each": 30,
+    "counted_application_file_read_bytes_max": 548216585,
+    "documents": 2,
+    "expected_pages_each": [
+      81,
+      38
+    ],
+    "input_packet_bytes": 4194304,
+    "inspection_data_bytes_total": 262144,
+    "job_attempts_lifetime": 1,
+    "journal_bytes_max": 49152,
+    "journal_event_bytes_max": 1024,
+    "journal_events_max": 48,
+    "json_depth": 12,
+    "json_envelope_nodes": 4096,
+    "json_nodes_each_page": 96,
+    "json_nodes_total": 16384,
+    "model_calls": 0,
+    "new_GETs": 0,
+    "other_public_metadata_bytes_total": 8388608,
+    "other_public_metadata_each_max": 1048576,
+    "other_public_metadata_files_max": 64,
+    "owned_job_write_bytes_ceiling": 524288,
+    "page_extractions_lifetime": 119,
+    "pages_each_max": 100,
+    "pages_total_max": 119,
+    "parent_and_backend_rss_stop_bytes_each": 268435456,
+    "parse_attempts_lifetime": 2,
+    "poll_seconds": 0.05,
+    "private_failure_stderr_bytes_total": 8192,
+    "private_page_projection_bytes_each": 2048,
+    "private_page_projection_bytes_total": 243712,
+    "private_projection_bytes": 251904,
+    "private_projection_envelope_bytes": 8192,
+    "private_provenance_bytes_max": 2048,
+    "public_diagnostics_bytes": 8192,
+    "record_validation_file_read_bytes_max": 2097152,
+    "recorder_control_metadata_bytes_total": 131072,
+    "registered_source_bytes_total_exact": 859911,
+    "returned_text_utf8_bytes_each_page": 160000,
+    "returned_text_utf8_bytes_total": 19040000,
+    "rss_probe_seconds": 1,
+    "runtime_integrity_files_max": 8192,
+    "runtime_integrity_hash_bytes_max": 536870912,
+    "runtime_manifest_bytes_max": 2097152,
+    "source_byte_reservation_lifetime": 859913,
+    "source_bytes_each_max": 1048576,
+    "source_bytes_total_max": 2097152,
+    "source_io_chunk_bytes": 65536,
+    "source_overflow_probe_bytes_each": 1,
+    "source_read_attempts_lifetime": 2,
+    "source_replay_attempts": 0,
+    "static_recorder_metadata_bytes_max": 73728,
+    "termination_wait_seconds": 1,
+    "text_characters_each_page": 40000,
+    "text_characters_total": 4760000,
+    "whole_job_cpu_stop_seconds": 60,
+    "whole_job_wall_seconds": 120,
+    "worker_stderr_bytes_each": 4096,
+    "worker_stdout_bytes_each_by_source": [
+      167936,
+      79872
+    ],
+    "worker_stdout_bytes_total": 247808
+  },
+  "new_runtime_policy": {
+    "actual_backend_entrypoint": null,
+    "artifact_hashes": null,
+    "artifact_identity": "Versions are proposed exactpolicy,notinstalledartifact acceptance. Future review mustbind interpreterbinary+stdlib/backend/projectfilemanifest+origin+wheel/distribution hashes, readonlyroot and cleanenvironment. Unknownartifact/hash/pathrefuses.",
+    "backend_id": "CLERK_PYPDF_6_10_0_TEXT_DIAGNOSTIC_V1",
+    "backend_runtime_switch": "NoM1toggle. Newseparatemodule/config/factory/worker/recorder/newreleasekind;M1actualfactorystaysrefused.",
+    "interpreter": "CPython",
+    "interpreter_version": "3.12.14",
+    "library": "pypdf",
+    "library_version": "6.10.0",
+    "planned_dependencies": "Pythonstdlib+pypdf6.10.0+exactreviewedprojectcode only; alltransitivedependencies/buildtools mustbelisted/pinnedbybootstrapreceipt beforeactualsource. No implicitpip/network.",
+    "proposed_API": "PdfReader overimmutableBytesIO snapshot,strict=True;unencrypted;fixedtext-extraction mode. ExactAPI/options/return/warning behavior mustbeverifiedinbackend-source review+minimalPDFfixtures beforeadmission; notcalledhere.",
+    "target_machine": "arm64",
+    "target_platform": "darwin",
+    "version_evidence_refs": [
+      {
+        "path": "pyproject.toml",
+        "sha256": "7bb38d90e9ecee432d1519864dc27ebf3880c94ce899a463abd55906640fc764"
+      },
+      {
+        "path": "configs/runtime_python312_20261103.txt",
+        "sha256": "6acb09ebaf9591cc515e8ec5d26c80c9fe57fbd44d686357d51f80ea309b7a76"
+      }
+    ]
+  },
+  "numeric_partition_changes_v1_1": [
+    "Globalsource/code/metadata/read/data/control/write/time/CPU/RSSbudgets unchanged fromv1;onlyclosedstage/subfileallocationmadeexplicit.",
+    "BOOTcode511MiB+EXEChot1MiB=512MiB;delivery256KiB+BOOT6MiB+EXEC1.75MiB=8MiBmetadata.",
+    "ActiveBOOT45s+EXEC75s=120s excludingreviewidle;CPU10s+50s=60s;notonecontinuousreviewspanningclock.",
+    "Normaljournal48*1024=49152;staticBOOT24576+EXECpre24576+terminal24576=73728;stderr8192=>131072control. Genesisup8192andinitialslots14336<=16384includedinBOOT24576.",
+    "Knownterminalslots18432<=24576;allcontrol/data/staging/failurewritesdrawfromprecharged524288,notextraneousauthority."
+  ],
+  "observed_design_operations": {
+    "GET_key_env_network_model": 0,
+    "actual_source_control_genesis_grants_or_reservations_created": 0,
+    "actual_source_private_cover_raw_history_control_stat_read_hash_or_helper": 0,
+    "api_spend_usd": 0,
+    "development_compute": "UNPRICED",
+    "runtime_install_import_identity_probe": 0
+  },
+  "original_contract": {
+    "broad_house": 24,
+    "broad_senate_max": 8,
+    "deep_house": 4,
+    "deep_senate": 2,
+    "global_coverage": "13typed/20unfinished/12legacy/final0_UNCHANGED",
+    "status": "RETROSPECTIVE"
+  },
+  "predecessor_design_refs": [
+    {
+      "path": "configs/e01_clerk2020_m2_inspection_design_v1.json",
+      "sha256": "a7ef796ea2d99a708ee5d31c4eeae9809d621cc3b46f35a523fab374a10057c9"
+    },
+    {
+      "path": "docs/E01_CLERK2020_M2_INSPECTION_DESIGN_v1.md",
+      "sha256": "6b306d48539adc3c4beb0d22ead232c8c084046bcae9e2abbbb10838353c6d7b"
+    }
+  ],
+  "projection": {
+    "M3_use": "Identifycandidatepages/layoutquestionsviaprivateboundedwindows;contentmaybemissed,rolesUNKNOWN. M3fullformatreviewneedssourceboundevidenceandpossiblyseparatelyreleasedtargetedvisual/textaccess.",
+    "budget_arithmetic": {
+      "all_three_data_files_counted": true,
+      "combined_max": 262144,
+      "data_cap": 262144,
+      "page_records_max": 243712,
+      "private_envelope_max": 8192,
+      "private_max": 251904,
+      "private_provenance_max": 2048,
+      "public_max": 8192
+    },
+    "page_fields": [
+      "source_id",
+      "source_sha256",
+      "physical_pdf_page_1_based",
+      "printed_page_label_UNKNOWN",
+      "full_extracted_text_utf8_sha256",
+      "full_extracted_text_characters",
+      "full_extracted_text_utf8_bytes",
+      "line_count",
+      "blank_line_count",
+      "line_length_min_max",
+      "non_ascii_character_count",
+      "snippet_windows",
+      "retained_byte_intervals",
+      "omitted_text_utf8_bytes",
+      "retained_whole_page",
+      "source_role_UNKNOWN_UNREVIEWED",
+      "layout_quality_UNKNOWN_UNVERIFIED"
+    ],
+    "private_paths": [
+      "inspection_projection.local.json",
+      "inspection_partial.local.json(mutuallyexclusivewithfullprojection)",
+      "failure_stderr.local.bin"
+    ],
+    "public_allowlist": [
+      "run_id",
+      "source_id/hash/bytes",
+      "backend/runtime/code/policyhashes",
+      "page_counts",
+      "text/snippet/omittedbytecounts",
+      "UNKNOWNrole/layoutcounts",
+      "resource/counter/error/exclusiontypes",
+      "zero model/spend/adoptionflags"
+    ],
+    "public_forbidden": [
+      "text",
+      "rawquotes",
+      "names",
+      "snippetcontent",
+      "candidate/voterecords",
+      "numericvotes/margins",
+      "rawPDF/privatecovercontents",
+      "stderrmessages",
+      "secrets"
+    ],
+    "scope": "Privateboundedformatdiagnostics,notfulltextretentionorpublishedquotes",
+    "snippets": {
+      "raw_utf8_bytes_each_page_max": 1024,
+      "selection": "FixedUTF8bytewindows:prefixup256,suffixup256,centerup512,mergeoverlap;neverselectbycandidate/party/votes/content.",
+      "serialization": "AccountactualcanonicalUTF8JSONescapingbeforeacceptance. DeterministicUTF8boundaryclippingwithin1024rawbytesAND2048serializedpagebytes;reporteveryrange/truncation/omission. Mandatorymetadataoversizefails,never silentlydropsfields.",
+      "window_fields": [
+        "kind",
+        "utf8_start",
+        "utf8_end",
+        "utf8_sha256",
+        "text",
+        "truncated"
+      ],
+      "windows_each_page_max": 3
+    },
+    "whole_text_retention": "No full-document text artifact requested orguaranteed. Compute perpagecoverage and retained_full_document fromactualunionofwindows;neverclaimcomplete/incompletecoveragecontrarytobytes."
+  },
+  "registered_input_metadata_not_authority": [
+    {
+      "body_inspected_for_this_design": false,
+      "bytes": 602172,
+      "expected_pages_reported": 81,
+      "registered_path": "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.pdf",
+      "role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76",
+      "source_id": "clerk2020_statistics",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "body_inspected_for_this_design": false,
+      "bytes": 257739,
+      "expected_pages_reported": 38,
+      "registered_path": "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.pdf",
+      "role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "sha256": "cb2e4194c88042cf22f8589fb6b8c352d29b501f96abc62a962b6cc52e2c28a8",
+      "source_id": "clerk2026_nominees",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ],
+  "remaining_limits": [
+    "Versions/APIareproposals,nottestedinstalledartifactguarantees;allruntimeidentities/admissionsremainnull.",
+    "SampledRSS/cooperativeIOboundsnotOSsandbox/decompressionpreallocationbound/powerloss/hostilehostproof.",
+    "No actualsourcegrammar/class/round/party/unit/candidate/vote/asof/geography/forecast/scienceacceptance.",
+    "Privateboundedwindowscanmisscontent;M3requiresnewsourceboundevidence,separatelyauthorizedadditionalreadsifneeded.",
+    "Oneinspectionjob0replayisproposed;M4parserprimary/replaycontractunchangedandunwaived."
+  ],
+  "schema_type_bounds": {
+    "Ref_bytes": "exact0<bytes<=relevantknowncomponentceiling",
+    "canonical_schema": "Allrequiredfieldsalwayspresent;nullonlylistednullablefields/constnull;unknownextrafieldsrefuse. Payloadunionfieldsareclosedbyevent_type.",
+    "fixed_study_name": "E01_CLERK2020_M2_FORMAT_INSPECTION",
+    "hex64": "exactlowercaseSHA256hex",
+    "id": "ASCII[A-Za-z0-9_-],1..64chars,assignedexternallywheremarked",
+    "normalized_relative_path": "<=256UTF8bytes,noabsolute/dotdot/NUL/symlink;fixednamespace/effectallowlist",
+    "safe_error_enum": [
+      "CONTRACT_REFUSED",
+      "INTEGRITY_STOP",
+      "QUOTA_STOP",
+      "CLOCK_STOP",
+      "RESOURCE_STOP",
+      "CANCELLED",
+      "IO_UNKNOWN",
+      "BACKEND_REFUSED"
+    ],
+    "uint": "builtinint_not_bool,0..declaredaxisceiling"
+  },
+  "schema_version": 1,
+  "scope": "SEPARATE_METHODS_SUCCESSOR_NOT_IMPLEMENTATION_OR_AUTHORITY",
+  "sealed_file_policy": {
+    "exact_ledger_keys": [
+      "manifest.json",
+      "environment.json",
+      "events.jsonl",
+      "summary.json",
+      "inspection_projection.local.json",
+      "inspection_diagnostics.json",
+      "inspection_provenance.local.json",
+      "inspection_payload_hashes.json",
+      "inspection_commit.json",
+      "counters.prefix.local.json"
+    ],
+    "frozen_after_ledger": [
+      "manifest.json",
+      "environment.json",
+      "events.jsonl",
+      "summary.json",
+      "inspection_projection.local.json",
+      "inspection_diagnostics.json",
+      "inspection_provenance.local.json",
+      "inspection_payload_hashes.json",
+      "inspection_commit.json",
+      "counters.prefix.local.json",
+      "checksums.json"
+    ],
+    "hash_artifacts": "inspection_payload_hashes covers exactly3inspectiondatafiles. Counters.prefix bindsupstreamreservation+priorjournalhead,neverH/L/S.",
+    "inspection_commit_status": "PAYLOADS_COMPLETE_AWAITING_PREFIX_SEAL",
+    "prefix_ledger_filename": "checksums.json",
+    "quota_journal": "<control_namespace>/quota_prefix.local.jsonl",
+    "recorder": "NewversionedM2recorder ownsderivedrun_id andcontext;mayreuse reviewedlowlevelhelpers butmustnotpatchfrozenRunStore/coretochooseIDs ormutatesealedlogs.",
+    "separate_run_log": "events.jsonl is includedinL;quota-prefixandterminaltailarenot. No lateappendtomakefailuremessagesinoldrunlog.",
+    "summary_and_commit_exclude": [
+      "future_commit_prefix_head",
+      "seal_sha256",
+      "terminal_tail_head",
+      "writer_ack_sha256",
+      "latest_anchor_sha256"
+    ],
+    "summary_status": "PAYLOADS_CLOSED_AWAITING_SEAL",
+    "terminal_tail": "<control_namespace>/terminal_tail.local.jsonl"
+  },
+  "specification_finding_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK2020_M2_DESIGN_V1_SPECIFICATION_FINDINGS.json",
+    "sha256": "520b5d9fddbc03acc555bfa2d27969add79ad1642a32a47a5955bcaef7054bb8"
+  },
+  "stage_partitions": {
+    "BOOT": {
+      "active_time_ms": 45000,
+      "attempts": 1,
+      "backend_calls": 0,
+      "close_before_receipt": "BeforeBOOTcounter snapshot/BOOT_COMMIT, close remaining BOOT-read/time reservations conservatively if observationsunknown. Subsequentreceipt/anchor writes use prepaidfixedslots withno normalcounter/head mutation. BRdoesnotpinitsfutureanchor.",
+      "cpu_ms": 10000,
+      "metadata_read_bytes": 6291456,
+      "read_reservation": "Aftermemory-onlypacketvalidation,createfixedoutside-registryattemptreservationbeforeexisting-anchor/metadata/code/runtimefile reads;thenG0/bootstrapjournalRESERVE eventsbeforebulkreads. Initialwritesexplicitlyprepaid;partialslot/unknownrequiresstop.",
+      "runtime_integrity_read_bytes": 535822336,
+      "source_reads": 0
+    },
+    "EXEC": {
+      "active_time_ms": 75000,
+      "admission_attempts": 1,
+      "cpu_ms": 50000,
+      "hot_code_checkpoints": 2,
+      "hot_code_read_bytes": 1048576,
+      "hot_code_reads_each_checkpoint_bytes": 524288,
+      "jobs": 1,
+      "metadata_read_bytes": 1835008,
+      "pre_read_reservation": "Executionissuedenvelope+packetprovidedinmemory. O_EXCLfixedexternalregistryslot beforeanynewmetadataread;admissionreserves sourcejob/envelopeandverifiesexpectedprioranchor/genesis/BOOT/runtimeidentity beforeactualPDFstat/read/backend.",
+      "record_verification_read_bytes": 2097152,
+      "source_read_bytes": 859913
+    },
+    "deadline_change": "120secondsmeanssumofseparatelyauthorizedcontinuousBOOT45s+EXEC75sactiveworkwindows;independentreviewidle timeexcludedandnotmisrepresentedassinglecontinuousmonotonicjob. No unmeteredrepeatpreflight.",
+    "delivery_registration": {
+      "authority": "IssuedBOOTenvelope explicitlyallows firstO_EXCLreservation/registration/genesis/anchorwrites beforebulkread. Trustedregistrar durablyissues one unique slot beforehandoff; onlocalwritefailurethatissuedattemptremainsconsumed, no retry.",
+      "initial_write_slots_max": 16384,
+      "max_packet_bytes": 262144,
+      "metadata_read_charge_upfront": 262144,
+      "source_operations": 0,
+      "wall_seconds_within_BOOT": 5
+    },
+    "partition_equalities": [
+      "262144+6291456+1835008=8388608metadata",
+      "535822336+1048576=536870912code",
+      "45000+75000=120000active_ms",
+      "10000+50000=60000cpu_ms"
+    ],
+    "root_of_trust": "Pre-reviewed minimal bootstrapTCB+trustedregistrar and out-of-band expectedIssuedEnvelopeSHA. Authoritydelivery/rootTCBstartup are explicit boundary,not a journal inventedbeforeitexists. No pypdf/backendimportinBOOT.",
+    "runtime_rechecks": "Onefull511MiBmanifesthashallowanceinBOOT;2hotcodecheckssum1MiBinEXEC. Otherreadonlyruntimeartifactsgetidentity/stat/originchecksagainstverifiedimmutablemanifest,notclaimedfullrehash. Anydrift/unknownrefuses;newfullhashpassrequiresnewbudgetedBOOTextension."
+  },
+  "terminal_protocol": {
+    "failure_after_H_before_S": "Normalprefixstaysfrozen;reservedterminalfailureartifact/failedanchor mayreferenceHwithnullS/tail/ACK. No success. No normaljournalsettle/refund.",
+    "failure_storage_unavailable": "MayleavevalidcommitwithoutmarkerorACK. Preserveavailablebytes/slots;independentreadonlyresolutionunderseparatefiniteobserverauthority,not an inventedwritabletombstone.",
+    "immutable_prefix": "Seal binds a definedjournalbyteprefix,notmutablelatesthead. BOOTreceiptlikewisebindsitsbyteprefixwhile laterEXECprefixmayappend. SourceCOMMIT_PREFIXforbidsalllaternormalappend.",
+    "lost_ACK": "Seal-only/partialtail/missingACK/missingcompletedanchor/postpersistEIO allremainSEALED_OR_ACK_UNKNOWN. Chargesstaymax/observationsnullable;neverauto rerun/reseal/newgenesis. Avalidwritercommitwithoutcallerdeliverydoesnotprove normalreturn. Postsealread observationsliveonlyintail;chargedprefixneverrefunded orrewritten evenifknownactualslowerthan2MiB.",
+    "readonly_resolution": "InspectoriginalA0/G/prefix/L/X/S/tail/A/currentprotectedanchorandcallerobservation onlyunderseparateboundedauthority;no PDF/backend/source/reseal/counterrefund/normaljournalmutation. Notgrantedbythisdesign.",
+    "rule_id": "M2_TERMINAL_TAIL_V1_1",
+    "steps": [
+      "Beforeclosingreads/summary/ledger/seal/ACK,RESERVE_FINALIZATIONfullycharges2MiBverificationandactivatesprepaid24576terminalwriteenvelope;no laterrefundrequired.",
+      "FreezeCounterSnapshotX fromknownpriorsequence;terminalreads/writes remainchargedmax/observednull. Xcontainsno futureledger/H/seal/tail/ACKhash.",
+      "Writeimmutable summaryPAYLOADS_CLOSED_AWAITING_SEAL,inspectioncommit,andclosed10-filePrefixLedgerL includingX/data/runlogrefs. Excludequota journal/H/seal/tail/ACK/anchors. Allclosinghashreadsdrawprecharged2MiB;alllistedfilesandrunlogfreezeafterL.",
+      "AppendfinalnormalCOMMIT_PREFIXeventHbindingL/X/terminalreservation/context;normaljournalpermanentlyfreezesatthisbyteoffset/head. Publishprefixanchor downstreamH,notbackreferencedbyH.",
+      "WriteFinalSealSbindingH/head+exactprefixrawhash/bytes/lastseq,L,Xandterminalprotocol. Scontainsnoownhash/tail/ACK/latestanchor.",
+      "Performboundedpostsealverification(noPDF/source/backend);writeTail1VERIFY_OKorVERIFY_FAILED,prev=H(S). Eventrecordscompletedobservationsthroughbeforeitsownwrite;no prefix/counter rewrite.",
+      "OnlyVERIFY_OK:writeACKA referencingTail1/S/H/X;thenTail2ACK_COMMITTED referencingH(A),prev=H(Tail1);thenpublishcompletedexternalAnchorState referencingS/H/Tail2/A/X. Allwritesprepaid;no claimexactselfwriteobservation.",
+      "Returnnormallyonlyafterdurablecompletedanchorandnoinvalidatingtail. Trustedcallerobservationseparate. Anyerrorstop;mayappendatmostTail3INVALIDATE+invalidanchorifstorageandreservedslotspermit;nooverwrite/reseal/source rerun."
+    ],
+    "tail_success": "WriterACKexists+validVERIFY_OK\u2192ACK_COMMITTEDtail+completedprotectedanchor+noINVALIDATE is writerterminal success. Caller delivery requiresseparate normalreturnobservation."
+  },
+  "write_slot_schedule": {
+    "BOOT_static_actual_slot_sum_max": 22528,
+    "BOOT_static_additional_slots": [
+      {
+        "max_bytes": 2048,
+        "slot": "BOOT_receipt_OR_failure"
+      },
+      {
+        "max_bytes": 2048,
+        "slot": "BOOT_completed_OR_failed_anchor"
+      },
+      {
+        "max_bytes": 4096,
+        "slot": "BOOT_counter_snapshot"
+      }
+    ],
+    "BOOT_static_total_max": 24576,
+    "EXEC_precommit_static_total_max": 24576,
+    "equalities": [
+      "BOOTstatic24576+EXECprecommit24576+terminal24576=73728static",
+      "normaljournal49152+static73728+stderr8192=131072control",
+      "data262144+control131072=393216<=524288;staging/failureheadroom131072"
+    ],
+    "initial_registration_slots": [
+      {
+        "max_bytes": 2048,
+        "slot": "registration"
+      },
+      {
+        "max_bytes": 2048,
+        "slot": "BOOT_reservation"
+      },
+      {
+        "max_bytes": 8192,
+        "slot": "genesis"
+      },
+      {
+        "max_bytes": 2048,
+        "slot": "initial_anchor"
+      }
+    ],
+    "initial_registration_total_max": 14336,
+    "normal_journal_event_bytes": 1024,
+    "normal_journal_events": 48,
+    "overwrite_rule": "Createoncefixedslots;appendonlyboundedjournal/tail. Atomicregistrarcurrentanchor CAS publishes onlynewimmutableAnchorState records. Originalsource/genesis/oldreceipt/oldprefixneverrewritten. Partialslotconsumed,nocleanup/retry/newpath.",
+    "private_failure_stderr": 8192,
+    "scope": "Allslotsnormal+terminalandstaging boundedbyalreadycharged owned524288/data262144/control131072;no actualwritesnow.",
+    "terminal_slot_sum_max": 18432,
+    "terminal_slots": [
+      {
+        "max_bytes": 2048,
+        "slot": "prefix_anchor"
+      },
+      {
+        "max_bytes": 4096,
+        "slot": "seal"
+      },
+      {
+        "max_bytes": 1024,
+        "slot": "tail_VERIFY"
+      },
+      {
+        "max_bytes": 1024,
+        "slot": "writer_ACK"
+      },
+      {
+        "max_bytes": 1024,
+        "slot": "tail_ACK"
+      },
+      {
+        "max_bytes": 2048,
+        "slot": "completed_anchor"
+      },
+      {
+        "max_bytes": 1024,
+        "slot": "tail_INVALIDATE"
+      },
+      {
+        "max_bytes": 2048,
+        "slot": "invalidated_anchor"
+      },
+      {
+        "max_bytes": 4096,
+        "slot": "terminal_failure_sidecars"
+      }
+    ],
+    "terminal_write_envelope": 24576
+  }
+}

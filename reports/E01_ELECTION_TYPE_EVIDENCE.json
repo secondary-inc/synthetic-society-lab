@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_INSIDE_ELECTIONS_AMENDMENT_AND_ELECTION_TYPE_PROPOSAL",
+  "recorded_at_utc": "2026-11-03T11:39:06.854312+00:00",
+  "independent_review": "PENDING",
+  "findings": {
+    "OH_SENATE": {
+      "status": "PRIMARY_INDEXED_OFFICIAL_TEXT_SUPPORTS_SPECIAL_BODY_HASH_PENDING",
+      "date": "2026-11-03",
+      "term_end": "2029-01-03",
+      "directive_url": "https://www.ohiosos.gov/globalassets/elections/directives/2025/directive-2025-54---writ-of-special-election-for-united-states-senate-election.pdf",
+      "writ_url": "https://www.ohiosos.gov/assets/writ-of-election-us-senate-may-2026.pdf",
+      "local_pdf_bytes_verified": false,
+      "browser_pdf_visual": "BLANK_NOT_VERIFIED"
+    },
+    "FL_SENATE": {
+      "status": "PENDING_SPECIFIC_OFFICIAL_VACANCY_TERM_STAGE_EVIDENCE",
+      "regular_class_II_roster_member": false,
+      "appointment_status_alone_proves_special_classification": false,
+      "publisher_special_false_is_authoritative": false
+    },
+    "FL_20_HOUSE": {
+      "status": "OFFICIAL_GENERAL_NOTICE_INCLUDES_DISTRICT_20_CONFLICT_REQUIRES_ADJUDICATION",
+      "notice_date": "2026-05-26",
+      "election_date": "2026-11-03",
+      "publisher_flag": true,
+      "automatic_exclusion": false,
+      "final_candidate_term_later_amendment_review": "PENDING",
+      "visual_page_1_checked": true
+    }
+  },
+  "official_download_receipts": [
+    {
+      "id": "oh_writ",
+      "url": "https://www.ohiosos.gov/assets/writ-of-election-us-senate-may-2026.pdf",
+      "status": "HTTPError",
+      "error": "HTTP Error 403: Forbidden",
+      "retry": false
+    },
+    {
+      "id": "oh_directive",
+      "url": "https://www.ohiosos.gov/globalassets/elections/directives/2025/directive-2025-54---writ-of-special-election-for-united-states-senate-election.pdf",
+      "status": "HTTPError",
+      "error": "HTTP Error 403: Forbidden",
+      "retry": false
+    },
+    {
+      "id": "fl_broward_notice",
+      "url": "https://dos.fl.gov/media/710691/2026_nge_bro_english.pdf",
+      "status": "DOWNLOADED_OFFICIAL_PDF",
+      "bytes": 29306,
+      "sha256": "d3cd02e9306c66478b2e043914dda24e5c7bd7a8c7a041518a9192f2bda51922",
+      "path": "data/raw/e01_election_type/fl_broward_notice.pdf",
+      "retrieved_at_utc": "2026-11-03T11:35:19.710441+00:00",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 11:35:19 GMT",
+        "Content-Type": "application/pdf",
+        "ETag": "0x8DEBB342B987B37",
+        "Last-Modified": "Tue, 26 May 2026 14:36:27 GMT"
+      }
+    },
+    {
+      "id": "fl_palm_notice",
+      "url": "https://dos.fl.gov/media/710950/2026_nge_pal_english.pdf",
+      "status": "DOWNLOADED_OFFICIAL_PDF",
+      "bytes": 115597,
+      "sha256": "db2c0916d0d3128a4798463880742ef3ab0944052a4504feaf5a6ba1c15933d0",
+      "path": "data/raw/e01_election_type/fl_palm_notice.pdf",
+      "retrieved_at_utc": "2026-11-03T11:35:19.832575+00:00",
+      "headers": {
+        "Date": "Tue, 03 Nov 2026 11:35:19 GMT",
+        "Content-Type": "application/pdf",
+        "ETag": "0x8DEC7467622210E",
+        "Last-Modified": "Wed, 10 Jun 2026 23:17:37 GMT"
+      }
+    }
+  ],
+  "proposal_path": "docs/E01_INSIDE_ELECTIONS_AMENDMENT_PROPOSAL.md",
+  "source_adopted": false,
+  "real_selector_enabled": false,
+  "actual_races_selected": 0,
+  "2026_returns_opened_or_used": false,
+  "cost_usd": 0,
+  "model_calls": 0,
+  "external_publication": false
+}

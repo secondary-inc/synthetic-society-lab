@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "task_id": "E01_INSIDE_ELECTIONS_ASOF_PROVENANCE_CHECK",
+  "recorded_at_utc": "2026-11-03T11:42:29.357605+00:00",
+  "independent_review": "PENDING",
+  "original_cutoff_utc": "2026-11-03T04:59:59Z",
+  "version_observations": [
+    {
+      "office": "HOUSE",
+      "v": "1793388069",
+      "v_decoded_as_unix_utc": "2026-10-30T19:21:09+00:00",
+      "publisher_generated_at": "2026-10-30T19:21:09+00:00",
+      "exact_time_match": true,
+      "publisher_last_updated": "2026-10-29T13:05:00-05:00",
+      "semantic_inference": "Both observed v values equal generated_at Unix seconds; consistent with generation/cache-busting marker, not evidence of immutable version or content addressing",
+      "publisher_documented_immutability": "NOT_FOUND_IN_INSPECTED_PUBLIC_EXPORT_OR_RATINGS_PAGE",
+      "url_or_v_variants_tested": false,
+      "captured_text_sha256": "50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909",
+      "captured_text_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES"
+    },
+    {
+      "office": "SENATE",
+      "v": "1793297246",
+      "v_decoded_as_unix_utc": "2026-10-29T18:07:26+00:00",
+      "publisher_generated_at": "2026-10-29T18:07:26+00:00",
+      "exact_time_match": true,
+      "publisher_last_updated": "2026-10-29T13:05:00-05:00",
+      "semantic_inference": "Both observed v values equal generated_at Unix seconds; consistent with generation/cache-busting marker, not evidence of immutable version or content addressing",
+      "publisher_documented_immutability": "NOT_FOUND_IN_INSPECTED_PUBLIC_EXPORT_OR_RATINGS_PAGE",
+      "url_or_v_variants_tested": false,
+      "captured_text_sha256": "7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b",
+      "captured_text_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES"
+    }
+  ],
+  "archive_api_documentation": "https://archive.org/help/wayback_api.php",
+  "api_scope_note": "Read-only exact URL closest-capture requests; no SavePageNow, login, paid archive, URL wildcard or guessed endpoint",
+  "archive_checks": [
+    {
+      "office": "HOUSE",
+      "original_exact_offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json?v=1793388069",
+      "request_url": "https://archive.org/wayback/available?url=https%3A%2F%2Finsideelections.com%2Fwp-content%2Fthemes%2Finside-elections%2Fcache%2Fratings_latest_house_year%3D2026_district%3Dall_clean.json%3Fv%3D1793388069&timestamp=20261103045959",
+      "requested_at_utc": "2026-11-03T11:42:28.428519+00:00",
+      "target_cutoff_utc": "2026-11-03T04:59:59Z",
+      "method": "Internet Archive documented public Availability API",
+      "retry": false,
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:42:29 GMT",
+        "Content-Type": "application/json"
+      },
+      "response_bytes": 204,
+      "response_sha256": "803fe03e0cb14e362577f8d67061baa5e3ab24930dbe30ab5b6f48fd92c9e1bd",
+      "response": {
+        "url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_house_year=2026_district=all_clean.json?v=1793388069",
+        "archived_snapshots": {},
+        "timestamp": "20261103045959"
+      },
+      "status": "PUBLIC_INDEX_RESPONSE",
+      "precutoff_candidate_reported": false,
+      "retrieved_at_utc": "2026-11-03T11:42:29.091987+00:00"
+    },
+    {
+      "office": "SENATE",
+      "original_exact_offered_url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year=2026_district=all_clean.json?v=1793297246",
+      "request_url": "https://archive.org/wayback/available?url=https%3A%2F%2Finsideelections.com%2Fwp-content%2Fthemes%2Finside-elections%2Fcache%2Fratings_latest_senate_year%3D2026_district%3Dall_clean.json%3Fv%3D1793297246&timestamp=20261103045959",
+      "requested_at_utc": "2026-11-03T11:42:28.428785+00:00",
+      "target_cutoff_utc": "2026-11-03T04:59:59Z",
+      "method": "Internet Archive documented public Availability API",
+      "retry": false,
+      "response_headers": {
+        "Date": "Tue, 03 Nov 2026 11:42:29 GMT",
+        "Content-Type": "application/json"
+      },
+      "response_bytes": 205,
+      "response_sha256": "ee29edc4cce740a1146694ea3f6fbaff946bf78b6df21665788657e2d3f5a449",
+      "response": {
+        "url": "https://insideelections.com/wp-content/themes/inside-elections/cache/ratings_latest_senate_year=2026_district=all_clean.json?v=1793297246",
+        "archived_snapshots": {},
+        "timestamp": "20261103045959"
+      },
+      "status": "PUBLIC_INDEX_RESPONSE",
+      "precutoff_candidate_reported": false,
+      "retrieved_at_utc": "2026-11-03T11:42:29.357126+00:00"
+    }
+  ],
+  "exact_archived_body_identity_verified": false,
+  "independent_pre_cutoff_binding": "NOT_ESTABLISHED",
+  "source_policy_changed": false,
+  "actual_selection": false,
+  "2026_returns_inspected": false,
+  "cost_usd": 0,
+  "model_calls": 0
+}

@@ -1,0 +1,241 @@
+{
+  "task_id": "PILOT_READINESS_DECISION_AUDIT_20261103",
+  "recorded_at_utc": "2026-11-03T22:49:50.581179+00:00",
+  "auditor_role": "Independent read-only decision/readiness reviewer; no implementation ownership",
+  "overall_status": "BLOCKED",
+  "scope": "Finite readiness audit of successor connectivity -> separate exploratory matched E02 pilot -> raw-response analysis. No full scientific completion, exact successor-code certification or live authority granted.",
+  "source_hashes": {
+    "AGENTS.md": "918c603138eabeed9bfa0d2e18889ed6dc04b336226d0a1d941ce196e2b1707b",
+    "AUTONOMOUS_RESEARCH_ORCHESTRATION.md": "a6848545d0c322de22f350e1452a93925b84270941f2aa113f44f24cc9c086dd",
+    "CODEX_MASTER_EXECUTION.md": "ab9abe84aac90f43341b36c45663a9c76215c7e357df80052f41e25c860db7fe",
+    "reports/INDEPENDENT_AUDIT_G0.md": "728b1c60c8b4b4e65564403ee7004550fcbbc0c2df0af1e0fbd447b02c756d67",
+    "reports/STATUS.md": "8d5286f356f4649b61c3b937a6ce43f3f2495d82a68f4e6694ad370cac7f7a9c",
+    "reports/COORDINATION.json": "f0b59906bbc44380b3f22873823dc7441827f5e34fbab9781a852bd2f8c81572",
+    "reports/COORDINATION_LIVE_QUEUE.json": "322844af7aa16237ccd0193145a07443556d34725c8ff31d293b79eef09d7009",
+    "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+    "src/civiclab/owner_survey_client_v3.py": "284486fd4889c8cfa62739f06035118ef67a02f08a64cc453ee8f97c6ff24826",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/e02/stimuli.py": "51d92b13e58b890ff42580c606f882288cffbcf8b9aad3944de1628e48def49c",
+    "tests/test_owner_survey_client_v3.py": "fcc1a2b53a89b12102d89958e504b4b397a98c221118d98fed86b056ea033d2c",
+    "tests/test_e02_stimuli.py": "3fca8e8e7b0d2d825d7aa694645150b78d160ef4aae3846b8a7ec0f7efebab0a",
+    "tests/test_e02_experiment.py": "7974b0c922f3120ced036db31a4de596d5bd780a6836608da52418d55c408036",
+    "tests/test_e02_methods.py": "04b7a99fe6935d091f79c8d502c0e1d872c2b7a0906a6ae89f0f0cab1db5f291",
+    "configs/e02_analysis_plan.json": "9d9e195ad600f16b4a15f6879afd424596a32a308dd1cbab1bcd12765ffca3ff",
+    "configs/e02_instrument.json": "ae506fe626928a13cbd09b0cadf402e90899048d656fa80d26b59e0b716df790",
+    "configs/production_survey_v5_1_methods_proposal.json": "a4d6f1de66aca964508ba4a283249ba3aa551ab6fd23dba772968a5c9dda4edc",
+    "configs/json_compatibility_additional_test_v1_proposal.json": "d1e2ef944c574917a606a269d6f1d19da7af6a529830aa98365d39498a1601a6",
+    "protocols/E02_INFORMATION_EFFECTS.md": "aa2c4b87b01b665eebb5d7bdc09d94df86c87998091e088bd32817b0ba4de573"
+  },
+  "authority": {
+    "owner_total_usd": 5,
+    "e02_share_within_total_usd": 5,
+    "e01_usd": 0,
+    "not_additive": true,
+    "source": "Direct human reply supplied to this audit and reports/STATUS.md:11; .env not accessed by auditor",
+    "old_unknown_hold_microusd": 340,
+    "old_lifetime_microusd": 1000,
+    "old_dispatches_consumed": 1,
+    "old_dispatch_allowance_exhausted": true,
+    "actual_owner_store_access": "NOT_RUN",
+    "credential_access": "NOT_RUN",
+    "network_model_calls": 0,
+    "api_spend_usd": 0
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "status": "PASS",
+      "decision": "Preserve uncertain old charge and exhausted allowance; negative Activity evidence does not establish zero cost",
+      "evidence": [
+        "reports/STATUS.md:9",
+        "configs/json_compatibility_additional_test_v1_proposal.json:12-28",
+        "configs/json_compatibility_additional_test_v1_proposal.json:40-62"
+      ],
+      "limit": "Read public retained summaries only; no fresh account or private-store inspection."
+    },
+    {
+      "id": "R2",
+      "status": "BLOCKED",
+      "decision": "Successor component has appeared but actual factory remains unreleased; methods acceptance is not execution readiness",
+      "evidence": [
+        "src/civiclab/additional_compatibility_owner_v1.py:125-126",
+        "reports/STATUS.md:15"
+      ],
+      "required": "Finish separate frozen successor, independent crash/concurrency/replay/clock/code and concrete packet review, authentic fresh price and secure credential setup, exact same-owner amendment authority retaining old340 hold; one new request only. Existing $5 consent alone does not mutate the old ledger."
+    },
+    {
+      "id": "R3",
+      "status": "BLOCKED",
+      "decision": "Production survey bridge remains an implementation blocker after connectivity",
+      "evidence": [
+        "src/civiclab/owner_survey_client_v3.py:20-21",
+        "src/civiclab/owner_survey_client_v3.py:133-134",
+        "configs/production_survey_v5_1_methods_proposal.json:909",
+        "src/civiclab/e02/experiment.py:196-208"
+      ],
+      "required": "Implement finite production-admitted survey requests using same-owner reservations, reconciliation and immutable checkpoints; independently verify complete fake pipeline plus denial/failure/cancel/invalid-response handling before any live pilot. Do not flip the DEMO mock runner into a live runner."
+    },
+    {
+      "id": "R4",
+      "status": "BLOCKED",
+      "decision": "Existing frozen definitions are engineering-only; exact live exploratory sample/protocol/cost plan absent at inspection",
+      "evidence": [
+        "protocols/E02_INFORMATION_EFFECTS.md:3",
+        "protocols/E02_INFORMATION_EFFECTS.md:35-37",
+        "configs/e02_instrument.json:3",
+        "configs/e02_analysis_plan.json:88-104",
+        "configs/e02_analysis_plan.json:124-133"
+      ],
+      "assignment_update": "Initially missing from durable queue; parent lead subsequently confirms existing E02 worker assigned docs/E02_EXPLORATORY_LIVE_PILOT_V1.md and configs/e02_exploratory_live_pilot_v1.json. Assignment confirmed by lead message only; content not yet reviewed.",
+      "required": "Freeze exact question/estimand/scoring, fictional priors/population interpretation, source/right/bytes, C1/C2 identical text, simpler matched persona comparator if demographics used, all units/seed/order/no carryover, exclusions/invalid pre skips, finite dispatch/token envelope, stopping/no retries and uncertainty before live outcomes. Separate exploratory pilot cannot satisfy original nationwide contract."
+    },
+    {
+      "id": "R5",
+      "status": "PASS",
+      "decision": "Current consent propagation and pilot routing metadata independently repaired/verified; original stale-zero observation preserved as history",
+      "evidence": [
+        "reports/COORDINATION.json:18",
+        "reports/COORDINATION_LIVE_QUEUE.json:2",
+        "reports/STATUS.md:11"
+      ],
+      "required": "No further narrow metadata repair required. Runtime release, exact production survey implementation and real results remain blocked."
+    },
+    {
+      "id": "R6",
+      "status": "NOT_RUN",
+      "decision": "Real pilot, verified live responses and independent real-effect analysis have not occurred",
+      "evidence": [
+        "reports/STATUS.md:97",
+        "src/civiclab/e02/experiment.py:242-243"
+      ],
+      "required": "Only after R2-R4 and shared budget enforcement: one reviewed live run with actual provider/id/usage/cost/errors, then independent raw rescoring, missingness and matched contrasts, finite-cohort uncertainty/limitations; no human or state-representative effects inferred."
+    }
+  ],
+  "tests": {
+    "initial_attempt": {
+      "modules": [
+        "test_owner_survey_client_v3",
+        "test_e02_stimuli",
+        "test_e02_experiment",
+        "test_e02_methods"
+      ],
+      "tests": 26,
+      "failures": 0,
+      "errors": 3,
+      "result": "HARNESS_OVERRESTRICTION",
+      "reason": "Guard rejected authored temporary data/raw fixture paths by substring; not an implementation defect. No actual raw data touched. Source hashes unchanged."
+    },
+    "corrected_attempt": {
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "result": "PASS",
+      "elapsed_seconds": 0.417,
+      "guard_events": [],
+      "source_hashes_unchanged": true,
+      "fixture_root": "/private/tmp/pilot-readiness-audit-corrected-xez03cvw",
+      "guard": "env -i strips credentials; sys audit hook rejects socket connect/getaddrinfo/bind, .env, repository data/raw and owner/config paths; writes allowed only in authored temp root; PYTHONDONTWRITEBYTECODE=1"
+    },
+    "independent_entrypoint_probes": [
+      {
+        "entrypoint": "additional_compatibility_owner_v1.open_actual",
+        "status": "PASS_FAIL_CLOSED_BEFORE_TRAP_ARGUMENT_INSPECTION"
+      },
+      {
+        "entrypoint": "owner_survey_client_v3.create_live_owner_survey_client",
+        "status": "PASS_FAIL_CLOSED_BEFORE_TRAP_ARGUMENT_INSPECTION"
+      }
+    ],
+    "limits": "26 checks cover fake transport and authored stimuli/scoring only. No successor exact-code review, all-suite or live service evidence claimed."
+  },
+  "finite_acceptance_checklist": [
+    {
+      "order": 1,
+      "owner": "Lead shared-engineering chat",
+      "reviewer": "Existing independent milestone auditor",
+      "acceptance": "Freeze successor compatibility code/candidate and independently test preserved old hold, two lifetime dispatches, one new request, no third request/retry, price bounds, failure/cancellation/crash/replay/lease cases."
+    },
+    {
+      "order": 2,
+      "owner": "Lead shared-engineering chat",
+      "reviewer": "Existing independent milestone auditor",
+      "acceptance": "Concrete final successor packet retains original unknown340, exact same owner/history, clock/price/key assertions and one-shot grant; resolve precise amendment consent only if necessary from actual packet. Then one bounded request with provider/id/usage/cost, preserve all failures."
+    },
+    {
+      "order": 3,
+      "owner": "Existing E02 worker",
+      "reviewer": "Existing independent milestone auditor",
+      "acceptance": "Separate exact exploratory live protocol and population/stimulus admissibility reviewed before outcomes. No advanced condition without simpler matched comparator; no national/human claim or original contract waiver."
+    },
+    {
+      "order": 4,
+      "owner": "Lead shared-engineering chat",
+      "reviewer": "Existing independent milestone auditor",
+      "acceptance": "Production survey bridge implementation and complete fake full-pilot test: reservation before each request, actual provider/cost accounting, one shared5 ceiling across connectivity and pilot, frozen finite request count, cancellation/checkpoints, no retries/fallback, invalid answers retained."
+    },
+    {
+      "order": 5,
+      "owner": "Lead integration with E02 worker",
+      "reviewer": "Existing independent milestone auditor",
+      "acceptance": "Exact live release price/code/input/request hashes, full worst-case cost envelope <= remaining shared cap, stop on unknown billing. Credentials securely supplied without printing or source upload."
+    },
+    {
+      "order": 6,
+      "owner": "Reviewed run operator",
+      "reviewer": "Independent raw-result auditor",
+      "acceptance": "Execute fixed pilot only, preserve id/provider/usage/cost/failures and all requested units; no outcome-selected extensions."
+    },
+    {
+      "order": 7,
+      "owner": "E02 analysis worker",
+      "reviewer": "Independent raw-result auditor",
+      "acceptance": "Recompute matched raw-response scores/invalids/contrasts and uncertainty; repeat analysis without new calls; save exploratory scope, provenance, costs and limitations."
+    }
+  ],
+  "deferrable_for_this_limited_pilot_only": [
+    "E03/E04",
+    "Swarm and live-assistant arms",
+    "Full nationwide scaling/state-representative claims; original requirement remains BLOCKED",
+    "New visual polish or full publication/reproducibility package refresh before first finite pilot",
+    "Completion of separate original2026 E01 workflow; continue independently",
+    "Remote publication/push; remote CI remains contract requirement, no waiver"
+  ],
+  "obstacle_policy": "No claim that every obstacle is eliminated or that unknown future failures cannot occur. Broad adult/state validity is not a live-output engineering prerequisite if a separately reviewed finite synthetic cohort is scientifically defensible, but existing full-population and frozen-pilot gates must not be relabeled PASS.",
+  "files_changed": [
+    "reports/PILOT_READINESS_DECISION_AUDIT_20261103.json"
+  ],
+  "next_unblocked_task": "Existing owners finish successor connectivity candidate and exact exploratory protocol in parallel under disjoint ownership; independent reviewer audits each exact handoff. Coordination metadata repair can close immediately.",
+  "metadata_repair_independent_review": {
+    "status": "PASS",
+    "checks": {
+      "exact_c_hash": true,
+      "exact_q_hash": true,
+      "consent_same": true,
+      "top_caps_5": true,
+      "nonadditive": true,
+      "e01_zero_e02_5": true,
+      "release_false": true,
+      "old_authority_unchanged": true,
+      "plan_equal": true,
+      "independent_reviews": true,
+      "no_false_completion": true,
+      "protocol_assignment_accurate": true,
+      "later_routing_not_claimed_dispatched": true,
+      "activity_inconclusive": true,
+      "publication_false": true,
+      "same_three_existing_workers": true
+    },
+    "checks_passed": 16,
+    "reviewed_artifact_hashes": {
+      "reports/COORDINATION.json": "f0b59906bbc44380b3f22873823dc7441827f5e34fbab9781a852bd2f8c81572",
+      "reports/COORDINATION_LIVE_QUEUE.json": "322844af7aa16237ccd0193145a07443556d34725c8ff31d293b79eef09d7009",
+      "reports/PILOT_READINESS_REPAIR_HANDOFF_20261103.json": "b088c0dbb6837d04efe88a16498993c4559cb23b67e640e83aab0c26308b3a3f"
+    },
+    "scope": "Exact metadata diff and authored handoff verified only. Old runtime authority, code, ledger, frozen historical protocol and completion gates not promoted. Broader working-tree changes belong to concurrent workers and not certified.",
+    "evidence": "git diff of both coordination files inspected, JSON parsed, independent semantic assertions rerun; assignment provenance is parent lead confirmation, not independent worker liveness."
+  },
+  "source_hashes_after_metadata_repair": {
+    "reports/COORDINATION.json": "f0b59906bbc44380b3f22873823dc7441827f5e34fbab9781a852bd2f8c81572",
+    "reports/COORDINATION_LIVE_QUEUE.json": "322844af7aa16237ccd0193145a07443556d34725c8ff31d293b79eef09d7009"
+  }
+}

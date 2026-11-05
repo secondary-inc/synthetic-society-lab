@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "auditor_role": "independent_auditor",
+  "audited_at_utc": "2026-11-03T11:29:15.785066+00:00",
+  "status": "PASS_CAPTURE_INTEGRITY_AND_METADATA_COUNTS_ONLY",
+  "source_report_sha256": "24bc55c6536cbb5506015ba0fb632cf55cb277bd5d0f023706cd721f88dc097b",
+  "results": [
+    {
+      "office": "HOUSE",
+      "sha256": "50ef7281ee891a19577ea3d80c17cb1c2192ca5e8c25856f7a9ecaa2a90ad909",
+      "bytes": 321964,
+      "rows": 435,
+      "unique_seat_class_tuples": 435,
+      "publisher_total": 435,
+      "rating_counts": {
+        "Solid Democrat": 190,
+        "Likely Democrat": 5,
+        "Lean Democrat": 7,
+        "Tilt Democrat": 22,
+        "Toss-up": 13,
+        "Tilt Republican": 5,
+        "Lean Republican": 11,
+        "Likely Republican": 19,
+        "Solid Republican": 163
+      },
+      "year_counts": {
+        "2026": 435
+      },
+      "class_counts": {
+        "House": 435
+      },
+      "special_flags": {
+        "False": 434,
+        "True": 1
+      },
+      "directional_rating_opposes_party": 27
+    },
+    {
+      "office": "SENATE",
+      "sha256": "7ab9276a9ca574be5a10787e4857c3548240f77c42ab27834aedcf7db64c9f2b",
+      "bytes": 86042,
+      "rows": 100,
+      "unique_seat_class_tuples": 100,
+      "publisher_total": 100,
+      "rating_counts": {
+        "Tilt Democrat": 4,
+        "Likely Democrat": 1,
+        "Toss-up": 4,
+        "Tilt Republican": 2,
+        "Likely Republican": 3,
+        "Lean Democrat": 2,
+        "Solid Republican": 10,
+        "Not Up This Cycle": 65,
+        "Solid Democrat": 9
+      },
+      "year_counts": {
+        "2026": 75,
+        "2024": 25
+      },
+      "class_counts": {
+        "III": 34,
+        "II": 33,
+        "I": 33
+      },
+      "special_flags": {
+        "False": 100
+      },
+      "directional_rating_opposes_party": 3,
+      "year2026_not_up_this_cycle": 40,
+      "rated_class_counts": {
+        "III": 2,
+        "II": 33
+      }
+    }
+  ],
+  "unanalysed_fields": [
+    "electoral_votes",
+    "incumbent",
+    "incumbent_name",
+    "note",
+    "flipped",
+    "previous_rating",
+    "shift"
+  ],
+  "findings": [
+    "Year2026 is not a valid Senate cycle filter; independently verify official contest identity and regular/special status.",
+    "Party is structured metadata, distinct from rating-favored party; neither implicitly defines tossup side.",
+    "Tilt category requires reviewed mapping; no implicit collapse or selection.",
+    "Current browser-visible UTF8 hashes are not HTTP wire-byte hashes or independent pre-cutoff evidence.",
+    "Chamber seat counts do not replace district/ballot/amendment validation.",
+    "Top-level NOT_RUN_NO_JSON_ACQUIRED and stop_action remain historical pre-browser strings without clear historical labels; clarify without erasing initial failure."
+  ],
+  "source_adoption": "NOT_ACCEPTED",
+  "actual_selection": "NOT_RUN",
+  "original_E01_gate": "BLOCKED",
+  "cost_usd": 0,
+  "model_calls": 0,
+  "count_definition_note": "House27 rating-side-versus-held-party differences includes one Independent-held seat; worker26 counts only D/R opposition. These distinct definitions are compatible. All Senate special flags false despite two ratedClassIII contests; official cycle/special evidence is required."
+}

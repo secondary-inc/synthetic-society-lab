@@ -1,0 +1,255 @@
+{
+  "task_id": "OWNER_PROGRESS_CHECKPOINT_20261105",
+  "date_local": "2026-11-05",
+  "scope": "Local Git checkpoint of pending work; no scientific or live release certification",
+  "parent_commit_observed": "de489634b17dfb50577dddd9faa74859167b0ae8",
+  "historical_log_through": "7370f95f190214cb298becb708b19bb2b4961b8a",
+  "concurrent_saved_work": {
+    "commit": "de48963",
+    "subject": "Integrate reviewed finite E02 request sequence and analysis",
+    "note": "Saved by another chat during checkpoint; preserved as ancestor, not duplicated as pending edits."
+  },
+  "tests": {
+    "status": "PASS",
+    "count": 103,
+    "runtime": "Python 3.12",
+    "elapsed_seconds": 1.911,
+    "modules": [
+      "test_clerk2020_m2_v1_1",
+      "test_e01_typed_readiness_v1_9_1_identity_proposal",
+      "test_e02_exploratory_live_requests_v1",
+      "test_e02_exploratory_pilot_analysis_v1",
+      "test_e02_exploratory_sequence_v1"
+    ],
+    "guards": "env -i; bytecode disabled; socket operations and data/raw,data/processed,.env reads denied",
+    "limits": "Targeted authored checks only; no full suite, clean restoration, remote CI or live inference"
+  },
+  "independent_review": "reports/INDEPENDENT_AUDIT_PROGRESS_CHECKPOINT_20261105.json",
+  "api_model_calls_this_task": 0,
+  "api_spend_usd_this_task": 0,
+  "credentials_and_raw_data_included": false,
+  "remote_push": "NOT_RUN",
+  "pending_file_hashes": [
+    {
+      "path": "configs/e01_clerk2020_m2_inspection_design_v1_1.json",
+      "bytes": 78955,
+      "sha256": "7e87d6844ca5bec346af91359d38a9c7a612503962d13b4749fd93d3811fb0e6"
+    },
+    {
+      "path": "configs/e01_inside_elections_acquisition.json",
+      "bytes": 3404,
+      "sha256": "f24226c1ab2937a31d647a2a50effb22a500455f139dadc60f15cf6a62d1c10d"
+    },
+    {
+      "path": "docs/E01_CLERK2020_M2_INSPECTION_DESIGN_v1_1.md",
+      "bytes": 26457,
+      "sha256": "8aed6e69cb890c49152c7d991665e147482d9b921d7104fad6c1775dcc3c33f9"
+    },
+    {
+      "path": "docs/E01_INSIDE_ELECTIONS_ACQUISITION.md",
+      "bytes": 9267,
+      "sha256": "1beec23bbaefe47091ad8442156025ca6a63c2c7cbf218d2acb3782ce6b14e9f"
+    },
+    {
+      "path": "docs/E01_INSIDE_ELECTIONS_AMENDMENT_PROPOSAL.md",
+      "bytes": 8814,
+      "sha256": "fb5bcc15c7dd378fc8d212a77f318d2765e1647a1c98c4c0f30f23350996865e"
+    },
+    {
+      "path": "docs/E01_TYPED_READINESS_V1_9_1_NARROW_IDENTITY_PROPOSAL.md",
+      "bytes": 3915,
+      "sha256": "21f8d97ea8132d725482edaabf7f221b892b1fa13c0623a1ac84c778ea4cbe6c"
+    },
+    {
+      "path": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_PROPOSAL.md",
+      "bytes": 9004,
+      "sha256": "c68107efeef67899de6ec7e3782048e75569b579ba0a70541e4831bd6a65d8e0"
+    },
+    {
+      "path": "docs/clerk2020_m2_v1_1_component.md",
+      "bytes": 8383,
+      "sha256": "1ffaccd0ddea61eeb8344fa0ac18f19458341d16f036e80931fd6b1da8f0854e"
+    },
+    {
+      "path": "reports/COORDINATION.json",
+      "bytes": 5325,
+      "sha256": "f0b59906bbc44380b3f22873823dc7441827f5e34fbab9781a852bd2f8c81572"
+    },
+    {
+      "path": "reports/COORDINATION_LIVE_QUEUE.json",
+      "bytes": 7762,
+      "sha256": "322844af7aa16237ccd0193145a07443556d34725c8ff31d293b79eef09d7009"
+    },
+    {
+      "path": "reports/E01_ELECTION_TYPE_EVIDENCE.json",
+      "bytes": 3406,
+      "sha256": "c644ff582bff584a7c16cab9d5f70b61913a80251bc5895fb2d0a53f5d9c2be2"
+    },
+    {
+      "path": "reports/E01_ELECTION_TYPE_EVIDENCE.md",
+      "bytes": 4152,
+      "sha256": "d73207a25c3028da725a45e254a3b17e82421caa67263dc84b32c74591d98d2b"
+    },
+    {
+      "path": "reports/E01_INSIDE_ELECTIONS_ACQUISITION.json",
+      "bytes": 15073,
+      "sha256": "ed81c41bc7924d343b9c8977d43983f52d1d128f15916b225cafcbf08df16924"
+    },
+    {
+      "path": "reports/E01_INSIDE_ELECTIONS_ASOF.json",
+      "bytes": 4961,
+      "sha256": "c3123526f705d05f80c2f21f9734ea7d46a4d9fb44af84d43698874b12f0c78f"
+    },
+    {
+      "path": "reports/E01_INSIDE_ELECTIONS_ASOF.md",
+      "bytes": 4998,
+      "sha256": "3e0e21078ecbc5d3f8104003010a115a6400a381d4aaf9ff2d5500c7f9cb0741"
+    },
+    {
+      "path": "reports/GIT_HISTORY_THROUGH_7370F95_20261105.txt",
+      "bytes": 20023,
+      "sha256": "710307d881458969509a061c7f7acef6fa91d200821e3c663511addcb1a47270"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_CLERK2020_M2_DESIGN_V1_1_METHODS.json",
+      "bytes": 8656,
+      "sha256": "c4d0539514dda630926661f5f0492c0807d629f7dbeeb1e77a2e3e5c04d5d075"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_INSIDE_CAPTURE_METADATA.json",
+      "bytes": 3263,
+      "sha256": "9b75e7a868676f292b491f0129ea158b5aa0315f29d186acad133360a6b76f80"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_PROGRESS_CHECKPOINT_20261105.json",
+      "bytes": 12119,
+      "sha256": "ed904d666c852839a14b0a6bc67dd11ffc5a0238e2958d0dfd667a167ed8d0da"
+    },
+    {
+      "path": "reports/JSON_COMPATIBILITY_RUN03_ACTIVITY_OBSERVATION_V1.json",
+      "bytes": 1123,
+      "sha256": "053bb9bf31afccc8d9933525f60befce8b805d049870bea642a431d765c3fe70"
+    },
+    {
+      "path": "reports/PILOT_READINESS_DECISION_AUDIT_20261103.json",
+      "bytes": 14400,
+      "sha256": "4dfa6b233bb2e397a1a73cf12071d1255f0f423cbe09d3163ed967c6517555ed"
+    },
+    {
+      "path": "reports/PILOT_READINESS_REPAIR_HANDOFF_20261103.json",
+      "bytes": 4276,
+      "sha256": "b088c0dbb6837d04efe88a16498993c4559cb23b67e640e83aab0c26308b3a3f"
+    },
+    {
+      "path": "reports/PROGRESS_2026-11-05.md",
+      "bytes": 5336,
+      "sha256": "d836686be92e0bb1673faa0b14e3526e3ea1bfbaa74a7c855c0809fa2d7e81bd"
+    },
+    {
+      "path": "reports/STATUS.md",
+      "bytes": 90154,
+      "sha256": "f0df91a983784b1609daf554730c0b5f714908f53b7b8ad8df37029f8e580d2d"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_authored_fixture_311.json",
+      "bytes": 130090,
+      "sha256": "290508e301f78b013f55a94309daf219872bb9eb3f97dc41e8f708f6b59ddaf0"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_authored_fixture_312.json",
+      "bytes": 130090,
+      "sha256": "3e9484f3617cc5fa307668e3d6013807f1e64e31f16beb0e6b41d23409475600"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_authored_fixture_final_311.json",
+      "bytes": 131132,
+      "sha256": "420792223cf6afdca52404a22fb699093ae099e3dff57efbbb2c2320eaa164b5"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_authored_fixture_final_312.json",
+      "bytes": 131132,
+      "sha256": "81c5f661512395fffd81f05cb61075c4fc35ead7dc43120f3189736d40bf8c1b"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_candidate_tests_312.txt",
+      "bytes": 6702,
+      "sha256": "e0e881076e4cdd9a354886157f414bbecd387bd3bac661ada0d3f3004f318f9e"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_candidate_tests_312_b.txt",
+      "bytes": 7140,
+      "sha256": "e0cb623e79f841f55443c7e4171ff7a20f814b6096fbf442844c466b2089b69a"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_candidate_tests_312_c.txt",
+      "bytes": 7996,
+      "sha256": "6d053ecb079fb8ca6ed1ce256d4baf4d6d3e47d5cf880476bf66a48a4b64a98f"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_component_handoff.json",
+      "bytes": 7437,
+      "sha256": "21cbb5b4f848ebd8dc13a3f85cf7e6200ea403f04598241ac12b65c45e757635"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_final_guarded_311.txt",
+      "bytes": 8234,
+      "sha256": "7170e53bc2cc16d7969c9a84946f70f975708097c255c3b929e3e739c4a37fcb"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_final_guarded_312.txt",
+      "bytes": 8234,
+      "sha256": "ed08f9cd8074f02c7f3f2eebbc5590d24f29b710a2c71a0869fe2162bce6fc4e"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_final_guarded_with_provenance_311.txt",
+      "bytes": 8234,
+      "sha256": "d562dda947c97e32f7c6956c2ac8a3176971bde289775daf6de030ce29af8831"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_final_guarded_with_provenance_312.txt",
+      "bytes": 8234,
+      "sha256": "fd0a7ddb2495ac4bc50351f7519f4ad5246fa604def88e4b6137ab9a06b7e1a2"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_guarded_fixture_recipe.py",
+      "bytes": 4160,
+      "sha256": "527744805ef53af1a7dbc0eb9029e419d5ce79919af6d123722d0f7b580d1755"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_initial_source.json",
+      "bytes": 65224,
+      "sha256": "6a80c4cca277db5cb00f18e96f40f343a12a06a7015f3cc453eedf4132a7459d"
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_initial_tests.txt",
+      "bytes": 11227,
+      "sha256": "8b85cdbbaa56d472d62d4eaaf75d2848b88d042e5bdecc146ea21117890d0f0e"
+    },
+    {
+      "path": "src/civiclab/e01/clerk2020_m2_v1_1_backend.py",
+      "bytes": 9548,
+      "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+    },
+    {
+      "path": "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py",
+      "bytes": 8142,
+      "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+    },
+    {
+      "path": "src/civiclab/e01/clerk2020_m2_v1_1_control.py",
+      "bytes": 25788,
+      "sha256": "56d3f6a481b4c6f9141577b1c3825c7fd96e3a35f099fc83fbb6bb7b6136bbef"
+    },
+    {
+      "path": "tests/test_clerk2020_m2_v1_1.py",
+      "bytes": 28921,
+      "sha256": "48ffc545892257822dc339c0172ce5a6acca1e74dcfd22f75437496a70e52a59"
+    },
+    {
+      "path": "tests/test_e01_typed_readiness_v1_9_1_identity_proposal.py",
+      "bytes": 6039,
+      "sha256": "b098984afdaf3c349c17ddacf8d227a1bbf8391a0c976e626acb9c107752c881"
+    }
+  ],
+  "self_hash": "Excluded to avoid circularity"
+}
