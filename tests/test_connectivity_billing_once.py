@@ -93,6 +93,41 @@ class CollectorTests(unittest.TestCase):
                 directory=root/'data/processed/connectivity_billing_once'/c.MANIFEST['run_id']
                 self.assertEqual(out['provider_body'],'MISSING')
                 self.assertFalse(any(b'AUTHORED_BILLING_CREDENTIAL' in p.read_bytes() for p in directory.iterdir()))
+    def test_safe_cost_survives_body_write_and_unrelated_privacy_failure(self):
+        for boundary in ('write','privacy'):
+            with self.subTest(boundary=boundary),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp).resolve();stub=Stub();stub.reply['data']['total_cost']='0.001'
+                if boundary=='privacy':stub.reply['secret']='AUTHORED_BILLING_CREDENTIAL'
+                native=c._write
+                def write(path,value):
+                    if boundary=='write' and path.name=='statistics.local.json':raise OSError('authored retention failure')
+                    return native(path,value)
+                with patch.object(c,'_write',side_effect=write):out=self.case(root,stub)
+                self.assertEqual(out['status'],'STOPPED_NO_RETRY')
+                self.assertEqual(out['provider_body'],'MISSING')
+                self.assertEqual(out['observed_total_cost_microusd'],1000)
+                self.assertTrue(out['observed_cost_exceeds_original_hold'])
+                self.assertEqual(len(stub.calls),1);self.assertFalse(out['financial_state_changed'])
+                directory=root/'data/processed/connectivity_billing_once'/c.MANIFEST['run_id']
+                retained=json.loads((directory/'diagnostic.local.json').read_bytes())
+                self.assertEqual(retained['observed_total_cost_microusd'],1000)
+                self.assertFalse(any(b'AUTHORED_BILLING_CREDENTIAL' in p.read_bytes() for p in directory.iterdir()))
+    def test_credential_in_monetary_scalar_never_recorded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp).resolve();stub=Stub()
+            stub.reply['data']['total_cost']='0.001AUTHORED_BILLING_CREDENTIAL'
+            out=self.case(root,stub)
+            self.assertIsNone(out['observed_total_cost_microusd'])
+            self.assertEqual(out['provider_body'],'MISSING');self.assertEqual(out['status'],'STOPPED_NO_RETRY')
+            directory=root/'data/processed/connectivity_billing_once'/c.MANIFEST['run_id']
+            self.assertFalse((directory/'statistics.local.json').exists())
+            self.assertFalse(any(b'AUTHORED_BILLING_CREDENTIAL' in p.read_bytes() for p in directory.iterdir()))
+    def test_foreign_generation_cannot_contribute_observed_cost(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            stub=Stub();stub.reply['data'].update(id='gen-foreign',total_cost='0.1')
+            out=self.case(Path(tmp).resolve(),stub)
+            self.assertIsNone(out['observed_total_cost_microusd'])
+            self.assertEqual(out['status'],'STOPPED_NO_RETRY')
     def test_contract_or_manifest_tamper_prevents_key_or_network(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(c,'_credential',side_effect=AssertionError('credential touched')):
             with self.assertRaises(c.ExecutionBlocked):c.collect_once(c.MANIFEST,root=Path(tmp),expected_contract_hash='0'*64,owner_approved=True)

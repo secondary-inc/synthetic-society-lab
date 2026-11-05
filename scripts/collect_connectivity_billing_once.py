@@ -22,7 +22,7 @@ from civiclab.common import canonical_bytes,canonical_hash
 from civiclab.model import ExecutionBlocked
 from civiclab.production_admission_v4 import _Credential
 from civiclab.production_compatibility_transport_v4_2 import _CompatibilityTransportV4_2,_SafeTransportFailure
-from civiclab.production_compatibility_v4_2_1 import _no_secret,_cost,_auxiliary_observation,_safe_error_kind
+from civiclab.production_compatibility_v4_2_1 import _no_secret,_cost,_observed_cost,_auxiliary_observation,_safe_error_kind
 
 # Identity supplied by the lead from its finite retained-journal observation.
 # No original-owner path is opened by this script. The exact original request
@@ -149,11 +149,16 @@ def collect_once(manifest,*,expected_contract_hash,owner_approved=False,root=ROO
     try:
         credential=_credential(root);transport=_transport(credential)
         attempts=1;response=transport.statistics(m['generation_id'])
-        _no_secret(response,credential)
         data=response.get('data') if type(response) is dict else None
+        # A safe scalar belonging to this exact generation survives unrelated
+        # privacy/storage failures. Credential-bearing monetary values refuse
+        # here, before any body hashing or persistence.
+        if (type(data) is dict and type(data.get('id')) is str and
+            data['id']==m['generation_id'] and data.get('total_cost') is not None):
+            try:observed_cost=_observed_cost(data['total_cost'],credential)
+            except (ValueError,TypeError,ArithmeticError):pass  # Invalid cost is not an observation.
+        _no_secret(response,credential)
         _write(output/'statistics.local.json',response);body='RETAINED_CANONICAL_COMPLETE'
-        if type(data) is dict and data.get('id')==m['generation_id'] and data.get('total_cost') is not None:
-            observed_cost=_cost(data['total_cost'])
         diagnostic=validate_statistics(response,m)
     except BaseException as error:
         diagnostic={'status':'STOPPED_NO_RETRY','error_type':_safe_error_kind(error)}
