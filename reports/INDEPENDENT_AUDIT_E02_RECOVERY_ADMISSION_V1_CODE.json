@@ -1,0 +1,311 @@
+{
+  "actual_api_calls": 0,
+  "actual_credential_reads": 0,
+  "actual_owner_reads_or_writes": 0,
+  "code_contract": {
+    "assignment_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+    "kind": "LIMITED_PILOT_CODE_V1",
+    "limits": {
+      "HTTP_seconds": 30,
+      "artifact_bytes": 2000000,
+      "authority_seconds": 7200,
+      "catalog_GETs": 1,
+      "concurrency": 1,
+      "event_bytes": 65536,
+      "event_limit": 10000,
+      "input_bound": 8192,
+      "journal_artifacts": 256,
+      "journal_bytes": 268435456,
+      "lifetime_dispatches": 34,
+      "minimum_free_bytes": 536870912,
+      "module_microusd": {
+        "E01": 0,
+        "E02": 5000000
+      },
+      "output_tokens": 512,
+      "per_call_microusd": 31250,
+      "phase_seconds": 120,
+      "price_age_seconds": 900,
+      "retries": 0,
+      "row_limit": 1024,
+      "shared_microusd": 5000000,
+      "socket_seconds": 15,
+      "study_dispatches": 32,
+      "study_microusd": 1000000,
+      "study_statistics_GETs": 32
+    },
+    "methods": {
+      "base_composite_review": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+      "provider_representation_review": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a",
+      "recovery_methods": "97ed5a2f20f38b357983b37ecc5eb27d571e3952a684670ed09903d16a7a2db9",
+      "recovery_review": "c87d3063e61d14015efdca3a4090b08bb37d9d52ca46a8fd9727ba48fe8f0586",
+      "representation": "CANONICAL_PARSED_PROVIDER_OBJECT_V1"
+    },
+    "pins": {
+      "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/e02/exploratory_live_client_v1.py": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22",
+      "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+      "src/civiclab/e02/exploratory_metadata_v1.py": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8",
+      "src/civiclab/e02/exploratory_owner_v1.py": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756",
+      "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+      "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+      "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+      "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+      "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+      "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+      "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+      "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+      "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+      "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+      "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+      "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c"
+    },
+    "projection_sha256": "1ad387de7ec320720849b1cacbcbbd4291b091cf0541cc43a8b39dc065172a5b",
+    "protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+  },
+  "code_contract_hash": "f4f09633c761dab48cc5b5a1a610b6eb7013e0583ebb080ac54f46f410ae54ad",
+  "evidence_packaging": {
+    "auditor_harness_correction": "Initial fake-key grep incorrectly included authored probe source containing its own test literal; corrected to inspect retained artifacts rather than authored Python source. All byte/hash checks passed; no source defect.",
+    "final_index": "Final464file manifest verified, excluding logs and provisional index. Closed developer logs may be separately bound in lead handoff.",
+    "provisional_index": "Preserved as initial packaging artifact; live log race was identified and excluded from finalmanifest. Not acceptance evidence."
+  },
+  "findings": [
+    {
+      "decision": "Recovery admission checks verified immutable old row and complete predecessor/head/rows/claim bindings, failed second row with full340/no checkpoint, exact generation/output-shape witness/bill7. Real unfinished2 and680/count2 captured without clearing historical state; third unfinished study row blocks subsequent grant.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Normalizer preserves raw metadata, exact dated alias, literal streamed discrepancy, default tier and null/missing/zero distinctions. Positive/negative/malformed unsupported activity, wrong identity/provider/BYOK/native/tier/cancelled/streaming domains and overrun refuse. Internal eight-field normalized billing is labeled and independently rederived at owner commit.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Client harvests safe monetary observations before body refusal; affirmative response tools/media/search and reasoning stop before unsafe retention. Owner independently repeats raw response activity checks at commit. Explicit retained/missing bodies and all32 dispositions preserved.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Fixed initial10-second wait follows response retention before sole statistics claim/GET. Monotonic/UTC/cancellation/remaining-budget checks occur through bounded wait; false progress, rollback, expiry, insufficient phase time and interruption stop without GET/retry. Legacy policy does not gain new alias/null/wait admission.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Retained6case primary/replay/failure histories independently folded from SQLite, hashchains/head/materialized rows/counters checked, then candidate replayed under copied authored OS homes.64 successful committed request/response/statistics/checkpoint/dispatch/witness bindings reconstructed and manual8-block mock contrasts verified. Original2 rows unchanged; failures retain trueunfinished3.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Caller closes external provenance gap: exact fixed caller/packet/export/metadata/audit/model/helper source bytes and saved-state predecessor checked before create-once intent/key/client. Duplicate intent/source changes/foreign provenance/expiry refuse before secret or dispatch. Process credential environment restored on success and exceptions.",
+      "status": "PASS"
+    }
+  ],
+  "frozen_evidence_index": {
+    "excluded": [
+      "initial index.json (provisional log hash race; retained)",
+      "*.log (bound separately after writers close)"
+    ],
+    "harness_correction": "Initial fake-key grep incorrectly included authored probe source containing its own test literal; corrected to inspect retained artifacts rather than authored Python source. All byte/hash checks passed; no source defect.",
+    "index_bytes": 97284,
+    "index_sha256": "ffb066e7af593dbcfa59a42c41cdd255e17fbc3eaa07823f2f33e84fb06a3d11",
+    "status": "PASS_FINAL_FROZEN_EVIDENCE_INDEX",
+    "verified_files": 464
+  },
+  "independent_commit_refusal_oracles": {
+    "actual_network_key_owner_access": 0,
+    "cases": [
+      {
+        "commit_refused": true,
+        "field": "tool_calls",
+        "next_grant_refused": true,
+        "rows_unchanged": true,
+        "true_unfinished": 3
+      },
+      {
+        "commit_refused": true,
+        "field": "audio",
+        "next_grant_refused": true,
+        "rows_unchanged": true,
+        "true_unfinished": 3
+      },
+      {
+        "commit_refused": true,
+        "field": "annotations",
+        "next_grant_refused": true,
+        "rows_unchanged": true,
+        "true_unfinished": 3
+      }
+    ],
+    "kind": "INDEPENDENT_RECOVERY_OWNER_COMMIT_RESPONSE_ORACLES_V1",
+    "spend_usd": 0,
+    "status": "PASS_AUTHORED_ONLY"
+  },
+  "independent_extra_oracles": {
+    "exact_saved_metadata_rederived": true,
+    "kind": "INDEPENDENT_E02_RECOVERY_EXTRA_ORACLES_V1",
+    "metadata_domain_and_rounding_cases": 64,
+    "network_or_key_or_owner_access": 0,
+    "raw_metadata_unchanged": true,
+    "response_activity_cases": 28,
+    "spend_usd": 0,
+    "status": "PASS_AUTHORED_AND_SAVED_METADATA_ONLY"
+  },
+  "independent_retained_replay_and_raw_reconstruction": {
+    "actual_owner_key_env_network_access": 0,
+    "cases": {
+      "cancel_wait": {
+        "analysis_status": "READY",
+        "committed_witnesses_raw_request_bindings_verified": 0,
+        "ledger_events": 17,
+        "manual_complete_blocks": 0,
+        "old340_unchanged": true,
+        "study_charged_fixture_microusd": 340,
+        "study_dispatches": 1,
+        "terminal_dispositions": 32,
+        "total_fixture_microusd": 1020,
+        "unfinished": 3
+      },
+      "overrun": {
+        "analysis_status": "READY",
+        "committed_witnesses_raw_request_bindings_verified": 0,
+        "ledger_events": 18,
+        "manual_complete_blocks": 0,
+        "old340_unchanged": true,
+        "study_charged_fixture_microusd": 100000,
+        "study_dispatches": 1,
+        "terminal_dispositions": 32,
+        "total_fixture_microusd": 100680,
+        "unfinished": 3
+      },
+      "primary": {
+        "analysis_status": "READY",
+        "committed_witnesses_raw_request_bindings_verified": 32,
+        "ledger_events": 205,
+        "manual_complete_blocks": 8,
+        "old340_unchanged": true,
+        "study_charged_fixture_microusd": 32,
+        "study_dispatches": 32,
+        "terminal_dispositions": 32,
+        "total_fixture_microusd": 712,
+        "unfinished": 2
+      },
+      "replay": {
+        "analysis_status": "READY",
+        "committed_witnesses_raw_request_bindings_verified": 32,
+        "ledger_events": 205,
+        "manual_complete_blocks": 8,
+        "old340_unchanged": true,
+        "study_charged_fixture_microusd": 32,
+        "study_dispatches": 32,
+        "terminal_dispositions": 32,
+        "total_fixture_microusd": 712,
+        "unfinished": 2
+      },
+      "tool_activity": {
+        "analysis_status": "READY",
+        "committed_witnesses_raw_request_bindings_verified": 0,
+        "ledger_events": 16,
+        "manual_complete_blocks": 0,
+        "old340_unchanged": true,
+        "study_charged_fixture_microusd": 340,
+        "study_dispatches": 1,
+        "terminal_dispositions": 32,
+        "total_fixture_microusd": 1020,
+        "unfinished": 3
+      },
+      "unknown_tier": {
+        "analysis_status": "READY",
+        "committed_witnesses_raw_request_bindings_verified": 0,
+        "ledger_events": 18,
+        "manual_complete_blocks": 0,
+        "old340_unchanged": true,
+        "study_charged_fixture_microusd": 340,
+        "study_dispatches": 1,
+        "terminal_dispositions": 32,
+        "total_fixture_microusd": 1020,
+        "unfinished": 3
+      }
+    },
+    "kind": "INDEPENDENT_E02_RECOVERY_V1_RETAINED_EVIDENCE",
+    "primary_replay_analysis_and_envelope_equal": true,
+    "spending_usd": 0,
+    "status": "PASS_AUTHORED_ONLY",
+    "verified_files": 464
+  },
+  "independent_tests": [
+    {
+      "log": "/tmp/civiclab-independent-e02-recovery-v1-py312.log",
+      "modules": [
+        "tests.test_e02_exploratory_owner_v1",
+        "tests.test_e02_recovery_owner_v1",
+        "tests.test_e02_exploratory_live_client_v1",
+        "tests.test_e02_exploratory_metadata_v1"
+      ],
+      "result": "PASS",
+      "runtime": "Python3.12.14",
+      "seconds": 338.957,
+      "tests": 86
+    },
+    {
+      "log": "/tmp/civiclab-independent-e02-recovery-v1-py311.log",
+      "result": "PASS",
+      "runtime": "Python3.11.17",
+      "same_four_modules": true,
+      "seconds": 332.782,
+      "tests": 86
+    },
+    {
+      "module": "tests.test_e02_reviewed_caller_v1",
+      "result": "PASS",
+      "runtime311_seconds": 0.015,
+      "runtime312_seconds": 0.009,
+      "tests_per_runtime": 4
+    }
+  ],
+  "limits": [
+    "PASS is exact engineering/fixture acceptance only, not new budget or actual release. Particular packet/caller and existing human consent must be separately ratified.",
+    "Canonical provider-object bytes are not HTTP wire bytes. Missing original compatibility response/checkpoint remains missing; RecoveryR output hash witness is narrower evidence.",
+    "Provider streamed telemetry remains unresolved; matching controlled client settings are not proof of upstream equality. Optional unknown counters are not observed zero.",
+    "Trusted cooperative local filesystem/process/clock and strict HTTP component assumptions remain; no hostile-host or absolute socket termination claim.",
+    "Only fake owner homes and retained saved export/metadata accessed. No actual financial store, key, model/account endpoint or paid API accessed by auditor."
+  ],
+  "methods_review": "reports/INDEPENDENT_AUDIT_E02_RECOVERY_ADMISSION_V1_METHODS.json",
+  "next_unblocked_task": "Finalize exact independent particular packet/caller consent projection and bounded execution gate; no third connectivity prompt.",
+  "recorded_at_utc": "2026-11-05T10:05:32.028821+00:00",
+  "scope": "Recovery owner, pure metadata normalizer, finite client wait/response activity checks, exact source-bound caller and their offline tests. Independent auditor did not implement source or author tests being certified. No actual pilot results inferred.",
+  "source_hashes": {
+    "scripts/run_e02_reviewed_once.py": {
+      "bytes": 5606,
+      "sha256": "18e8ce2ea1dcc1cf3eba2c1e1f0501124d49a1325b50bfdfb562fd9cc04fdb10"
+    },
+    "src/civiclab/e02/exploratory_live_client_v1.py": {
+      "bytes": 28676,
+      "sha256": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22"
+    },
+    "src/civiclab/e02/exploratory_metadata_v1.py": {
+      "bytes": 5678,
+      "sha256": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8"
+    },
+    "src/civiclab/e02/exploratory_owner_v1.py": {
+      "bytes": 39024,
+      "sha256": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756"
+    },
+    "tests/test_e02_exploratory_live_client_v1.py": {
+      "bytes": 46700,
+      "sha256": "f0a7602aa722e16b3d5da861c82a5d9b63241d4efa5d4eb2b92679bc7effe236"
+    },
+    "tests/test_e02_exploratory_metadata_v1.py": {
+      "bytes": 6458,
+      "sha256": "66bb8339b80ad5f50b6b24157ded09ac2dd22ab68ae490f94505a0961aa58a4d"
+    },
+    "tests/test_e02_recovery_owner_v1.py": {
+      "bytes": 9745,
+      "sha256": "c05602660bd61428d3a514eacda868a605ba655604063790b0cf641566080b1e"
+    },
+    "tests/test_e02_reviewed_caller_v1.py": {
+      "bytes": 5816,
+      "sha256": "29e26ae178bb9a7d67cb69133b54746cc98352921d3476981192dd087ed80b4a"
+    }
+  },
+  "spend_usd": 0,
+  "status": "PASS_EXACT_OFFLINE_COMPOSITE_AND_RETAINED_AUTHORED_INTEGRATION",
+  "task_id": "INDEPENDENT_AUDIT_E02_RECOVERY_ADMISSION_V1_CODE"
+}
