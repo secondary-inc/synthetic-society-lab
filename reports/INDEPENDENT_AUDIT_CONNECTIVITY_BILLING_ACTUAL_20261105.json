@@ -1,0 +1,125 @@
+{
+  "auditor_actual_API_calls": 0,
+  "auditor_actual_credential_reads": 0,
+  "auditor_actual_owner_reads": 0,
+  "auditor_actual_owner_writes": 0,
+  "auditor_cost_usd": 0,
+  "contract_hash": "958d0832ce341aebec2fdc1c4973bf2fdb5a1f720046df858fc1f355a15f0faf",
+  "files": {
+    "diagnostic.local.json": {
+      "bytes": 414,
+      "mode": "0o600",
+      "sha256": "5371dd9f4ddde3a49c5ee7ff5c360ed259688842858ff7eed98c49514891ea3f"
+    },
+    "intent.local.json": {
+      "bytes": 733,
+      "mode": "0o600",
+      "sha256": "14723e8ddd5b029e6102d493dc37f14747749a31aa0657a9af739b2470dec66a"
+    },
+    "statistics.local.json": {
+      "bytes": 1384,
+      "mode": "0o600",
+      "sha256": "af51fa8c450e25b6801622d3804a22e5132ad7dbf819437b8597223cfe85e33c"
+    }
+  },
+  "findings": [
+    {
+      "decision": "All three exact hashes, byte sizes and canonical representations verified; fixed manifest and current reviewed contract match. Recorded one GET and zero POST; private complete parsed metadata retained despite strict refusal.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Same-generation Azure/non-BYOK native counts 46/6/0 are within original 2276/32/0 envelope. Parsed total_cost and usage are 7 microdollars, agreeing with earlier upward-rounded response observation. This is metadata evidence, not original response recovery or financial settlement.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Collector correctly refuses dated reported model under exact base-model equality. Counterfactual original auxiliary validation also refuses nullable counters, default service tier and streamed true. These are independently reproduced policy mismatches, not missing metadata.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Study admission requires a separately versioned reviewed RecoveryR methods/code path. Do not silently amend existing validators, aliases, strict auxiliary policy, original claims/checkpoint/history or both uncertain rows.",
+      "status": "BLOCKED"
+    }
+  ],
+  "human_authorization": {
+    "answer": "Approve one billing-only lookup",
+    "message_id": "01a1ab15-1f1f-7a41-9d5e-0bc1aa8307fc",
+    "scope": "One additional read, no model POST, no retries, holds unchanged",
+    "thread_id": "01a18903-4f62-7403-ab36-e69e5a8f48d8"
+  },
+  "limits": [
+    "One-GET occurrence is retained diagnostic plus reviewed one-shot implementation and lead observation; no independent network capture.",
+    "Metadata canonicalizes parsed numeric values and is not original HTTP wire data or retained decimal lexeme.",
+    "Auditor did not reread original financial owner, so unchanged holds are a retained prior-state requirement and lead assertion, not fresh store measurement.",
+    "No model quality, study effects, external validity or human persuasion inferred."
+  ],
+  "observed": {
+    "GET_attempts": 1,
+    "POSTs": 0,
+    "auxiliary_policy": {
+      "admitted_under_reviewed_request_applicability": false,
+      "fields": {
+        "cancelled": {
+          "status": "OBSERVED_FALSE",
+          "value": false
+        },
+        "native_tokens_completion_images": {
+          "status": "OBSERVED_ZERO",
+          "value": 0
+        },
+        "num_fetches": {
+          "status": "UNSUPPORTED_OR_NULL_DOMAIN"
+        },
+        "num_input_audio_prompt": {
+          "status": "UNSUPPORTED_OR_NULL_DOMAIN"
+        },
+        "num_media_completion": {
+          "status": "OBSERVED_ZERO",
+          "value": 0
+        },
+        "num_media_prompt": {
+          "status": "UNSUPPORTED_OR_NULL_DOMAIN"
+        },
+        "num_search_results": {
+          "status": "UNSUPPORTED_OR_NULL_DOMAIN"
+        },
+        "service_tier": {
+          "status": "UNRELEASED_NON_NULL_VALUE"
+        },
+        "streamed": {
+          "status": "UNSUPPORTED_OR_TRUE_DOMAIN"
+        },
+        "web_search_engine": {
+          "status": "NULL_REPORTED_NO_IDENTITY_CLAIM"
+        }
+      },
+      "policy": "TEXT_ONLY_OBSERVABLE_AUXILIARY_FIELDS_V4_1"
+    },
+    "collector_status": "STOPPED_NO_RETRY",
+    "finish_reason": "stop",
+    "generation_matches": true,
+    "is_byok": false,
+    "native_finish_reason": "completed",
+    "native_tokens_completion": 6,
+    "native_tokens_prompt": 46,
+    "native_tokens_reasoning": 0,
+    "original_policy_refusal": "serving identity or billing mode unverified",
+    "provider": "Azure",
+    "provider_response_count": 1,
+    "reported_model": "openai/gpt-4.1-nano-2025-04-14",
+    "reported_total_cost_microusd": 7,
+    "requested_model": "openai/gpt-4.1-nano",
+    "rounded_response_cost_agrees": true
+  },
+  "offline_recovery_constraints": [
+    "Preserve complete original metadata bytes and hash. Separate requested base model from observed dated model; only an exact independently documented alias/permaslug pair may be admitted, never prefix matching or arbitrary family substitution.",
+    "Preserve NULL_REPORTED_UNKNOWN for nullable auxiliary counters. Missing/null are not observed zero. Admission, if justified, must state bounded text-only request applicability and outstanding telemetry limitations.",
+    "streamed true is affirmative reported telemetry and conflicts with the existing stream-false policy. Preserve it verbatim; official semantics or an explicitly justified changed method is required before admission. service_tier default is a literal value, not absent or null.",
+    "RecoveryR may bind fixed generation/receipt/request, saved 16-event export/head/two rows/claim and output-shape hash witness plus exact metadata and policy/source hashes. It cannot fabricate a PHASE_COMMITTED event, checkpoint, original usage or original full response.",
+    "Retain both original uncertain340-microdollar rows, total conservative680, lifetime dispatch2 and true unfinished2. A future separate study authority must enforce real counters/limits; it must not masquerade as the accepted successful-compatibility entry.",
+    "No further HTTP or financial-owner operation is necessary to implement and test an offline evidence-only recovery receipt. Actual pilot remains separately gated."
+  ],
+  "recorded_at_utc": "2026-11-05T09:43:24.361995+00:00",
+  "scope": "Exact three retained billing-only artifacts, existing collector validators, and direct human authorization message. No original owner store/environment/key/network accessed.",
+  "status": "PASS_RETAINED_METADATA_AND_STRICT_STOP_RECOVERY_METHODS_PENDING",
+  "task_id": "INDEPENDENT_AUDIT_CONNECTIVITY_BILLING_ACTUAL_20261105"
+}

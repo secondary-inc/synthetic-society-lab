@@ -1,0 +1,94 @@
+{
+  "actual_account_GETs_during_implementation": 0,
+  "actual_financial_owner_access_during_implementation": 0,
+  "actual_model_POSTs_during_implementation": 0,
+  "code_contract_hash": "f4f09633c761dab48cc5b5a1a610b6eb7013e0583ebb080ac54f46f410ae54ad",
+  "cost_usd_during_implementation": 0,
+  "files": {
+    "scripts/run_e02_reviewed_once.py": {
+      "bytes": 5606,
+      "sha256": "18e8ce2ea1dcc1cf3eba2c1e1f0501124d49a1325b50bfdfb562fd9cc04fdb10"
+    },
+    "src/civiclab/e02/exploratory_live_client_v1.py": {
+      "bytes": 28676,
+      "sha256": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22"
+    },
+    "src/civiclab/e02/exploratory_metadata_v1.py": {
+      "bytes": 5678,
+      "sha256": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8"
+    },
+    "src/civiclab/e02/exploratory_owner_v1.py": {
+      "bytes": 39024,
+      "sha256": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756"
+    },
+    "tests/test_e02_exploratory_live_client_v1.py": {
+      "bytes": 46700,
+      "sha256": "f0a7602aa722e16b3d5da861c82a5d9b63241d4efa5d4eb2b92679bc7effe236"
+    },
+    "tests/test_e02_exploratory_metadata_v1.py": {
+      "bytes": 6458,
+      "sha256": "66bb8339b80ad5f50b6b24157ded09ac2dd22ab68ae490f94505a0961aa58a4d"
+    },
+    "tests/test_e02_exploratory_owner_v1.py": {
+      "bytes": 23149,
+      "sha256": "23230133dd7c1e7288f81615fc31635323f2cf1aafc39c243943be92c0cb84b0"
+    },
+    "tests/test_e02_recovery_owner_v1.py": {
+      "bytes": 9745,
+      "sha256": "c05602660bd61428d3a514eacda868a605ba655604063790b0cf641566080b1e"
+    },
+    "tests/test_e02_reviewed_caller_v1.py": {
+      "bytes": 5816,
+      "sha256": "29e26ae178bb9a7d67cb69133b54746cc98352921d3476981192dd087ed80b4a"
+    }
+  },
+  "kind": "E02_RECOVERY_INTEGRATION_20261105_HANDOFF",
+  "limitations": [
+    "Authored results only; zero injected contrast is an arithmetic oracle, not scientific evidence.",
+    "Original failed compatibility remains failed; both uncertain340 holds remain.",
+    "Canonical provider objects are not original HTTP wire bytes; optional null telemetry is unknown and streamed discrepancy unresolved.",
+    "Particular candidate exists but must receive independent exact review before use.",
+    "Initial provisional index included changing logs; it remains preserved. The final464filemanifest explicitly excludes logs and initialindex; closed logs are separately hashed here."
+  ],
+  "retained_mock_evidence": {
+    "both_historical_rows_unchanged": true,
+    "bytes": 97284,
+    "cases": [
+      "primary",
+      "replay",
+      "unknown_tier",
+      "overrun",
+      "cancel_wait",
+      "tool_activity"
+    ],
+    "files": 464,
+    "mock_primary_GETs": 32,
+    "mock_primary_POSTs": 32,
+    "mock_primary_consumed_microusd": 712,
+    "mock_primary_lifetime_dispatches": 34,
+    "mock_primary_unfinished": 2,
+    "mock_primary_wait_seconds": 320,
+    "path": "data/processed/e02_recovery_authored_20261105_01/final-index.json",
+    "primary_replay_identical": true,
+    "sha256": "ffb066e7af593dbcfa59a42c41cdd255e17fbc3eaa07823f2f33e84fb06a3d11"
+  },
+  "status": "AUTHOR_TESTS_PASS_INDEPENDENT_RELEASE_PENDING",
+  "tests": {
+    "Python3.11": {
+      "bytes": 100,
+      "count": 90,
+      "log": "data/processed/e02_recovery_authored_20261105_01/tests311.log",
+      "seconds": 331.04,
+      "sha256": "5c557602208e2d26ada9c5d7bcc259a9ca42ddd0bd89dab2fa6799c0a303208c",
+      "status": "PASS"
+    },
+    "Python3.12": {
+      "bytes": 100,
+      "count": 90,
+      "log": "data/processed/e02_recovery_authored_20261105_01/tests312.log",
+      "seconds": 339.671,
+      "sha256": "ef83f068a42d748b39a9240ef52e7005add6a2b615c9a6b1212210c9a093e415",
+      "status": "PASS"
+    }
+  }
+}

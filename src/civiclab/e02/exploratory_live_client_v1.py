@@ -25,6 +25,7 @@ from ..production_compatibility_v4_2_1 import (
     _no_secret, _observed_cost, _cost, _usage_bounds, _auxiliary_observation,
     _safe_error_kind, _failure_diagnostic, _SafeExecutionFailure)
 from .exploratory_response_v1 import parse_survey_response as parse_survey
+from .exploratory_metadata_v1 import normalize_statistics,response_model_allowed
 from .exploratory_owner_v1 import AnalysisRepresentationBound
 from .exploratory_live_requests_v1 import PROTOCOL_SHA, PROJECTION_SHA, ASSIGNMENT_SHA, _protocol
 from .exploratory_sequence_v1 import next_action
@@ -81,6 +82,38 @@ def _no_provider_reasoning(response):
                 value=container[key]
                 if value is not None and not(type(value) is list and not value):
                     raise ExecutionBlocked('unsupported provider reasoning content')
+
+
+def _no_unsupported_response_activity(response):
+    """Recovery-only guard for affirmative tools/media/search observations."""
+    fields=('tool_calls','function_call','tool_output','tool_outputs','tool_results',
+            'audio','images','image','annotations','citations','search_results','web_search_results')
+    counts=('num_search_results','num_fetches','num_media_prompt','num_media_completion',
+            'num_input_audio_prompt','native_tokens_completion_images','num_tool_calls')
+    containers=[response]
+    if type(response.get('choices')) is list:
+        for choice in response['choices']:
+            if type(choice) is dict:
+                containers.append(choice)
+                for key in ('message','delta'):
+                    if type(choice.get(key)) is dict:containers.append(choice[key])
+    for item in containers:
+        if item.get('role') in ('tool','function'):
+            raise ExecutionBlocked('unsupported tool response role')
+        for key in fields:
+            if key not in item:continue
+            value=item[key]
+            if value is None or (type(value) in (str,list,dict) and not value):continue
+            raise ExecutionBlocked('unsupported response tools/media/search activity')
+        for key in counts:
+            if key in item and item[key] is not None and not(type(item[key]) is int and item[key]==0):
+                raise ExecutionBlocked('unsupported response activity counter')
+        content=item.get('content')
+        if type(content) is list:
+            for part in content:
+                if type(part) is dict and part.get('type') in ('image','image_url','input_audio','audio','output_audio',
+                    'tool_use','tool_result','function_call','web_search','search_result'):
+                    raise ExecutionBlocked('unsupported structured response activity')
 
 
 def phase_record(compiled, parsed):
@@ -151,22 +184,39 @@ class _Journal:
 
 class _Phase:
     def __init__(self,packet,proof):
-        self.started=time.monotonic();self.maximum_utc=new_operation_time()
+        self.started=time.monotonic();self.maximum_mono=self.started;self.maximum_utc=new_operation_time()
+        self.statistics_waited=False
         self.packet=packet;self.proof=proof
         self.gate(full=True)
 
-    def gate(self,*,full=False):
-        now=new_operation_time();elapsed=time.monotonic()-self.started
+    def gate(self,*,full=False,reserve_seconds=0):
+        now=new_operation_time();mono=time.monotonic();elapsed=mono-self.started
         policy=self.packet['policy'];terms=self.packet['price_release']['terms']
-        remaining=120 if full else 0
+        remaining=120 if full else reserve_seconds
         deadlines=[utc(policy['valid_until_utc']),utc(terms['valid_until_utc'])]
         observed=utc(self.proof['observed_at_utc'])
-        if (not 0<=elapsed<120 or now<self.maximum_utc or
+        if (not 0<=reserve_seconds<=120 or not 0<=elapsed<120-reserve_seconds or
+            mono<self.maximum_mono or now<self.maximum_utc or
             not utc(policy['valid_from_utc'])<=now or not utc(terms['valid_from_utc'])<=now or
             any((end-now).total_seconds()<=remaining for end in deadlines) or
             not 0<=(now-observed).total_seconds()<=900-remaining):
             raise ExecutionBlocked('phase, price or authority deadline; no further dispatch')
-        self.maximum_utc=now
+        self.maximum_utc=now;self.maximum_mono=mono
+
+    def wait_for_statistics(self):
+        """One fixed initial visibility allowance, not a GET retry schedule."""
+        if self.statistics_waited:raise ExecutionBlocked('visibility allowance already used')
+        self.statistics_waited=True
+        self.gate(reserve_seconds=50)  # 10 wait + 30 HTTP + 10 checkpoint.
+        start=time.monotonic()
+        for _ in range(12):
+            remaining=10-(time.monotonic()-start)
+            if remaining<=0:
+                self.gate(reserve_seconds=40)
+                return
+            self.gate(reserve_seconds=40+remaining)
+            time.sleep(min(1,remaining))
+        raise ExecutionBlocked('visibility clock did not progress; no lookup')
 
 
 class _Capability:
@@ -262,6 +312,7 @@ def execute_authored(packet,*,expected_packet_hash,response_provenance='MOCK'):
     if canonical_hash(packet)!=expected_packet_hash:
         raise ExecutionBlocked('detached packet hash differs')
     protocol_bytes=_protocol_bytes();terms=packet['price_release']['terms']
+    recovery=packet['policy'].get('kind')=='LIMITED_PILOT_RECOVERY_POLICY_V1'
     # Verify accepted protocol and full maximum finite envelope before I/O.
     next_action(protocol_bytes,terms,b'[]')
     now=new_operation_time()
@@ -336,6 +387,7 @@ def execute_authored(packet,*,expected_packet_hash,response_provenance='MOCK'):
             _no_secret(response,credential)
             if type(response) is not dict:raise ValueError('response must be an object')
             _no_provider_reasoning(response)
+            if recovery:_no_unsupported_response_activity(response)
             identity=response.get('id')
             if type(identity) is str and re.fullmatch(r'gen-[A-Za-z0-9-]{1,124}',identity) and len(identity)<=128:
                 generation=identity
@@ -351,12 +403,16 @@ def execute_authored(packet,*,expected_packet_hash,response_provenance='MOCK'):
             if known is not None and known>context['envelope']['reserved_microusd']:
                 owner.transition(receipt,'UNCERTAIN',observed_cost=known,generation_id=generation,error_type='ObservedChargeOverrun')
                 raise ExecutionBlocked('known response overrun; no lookup')
-            if generation is None or response.get('model')!=terms['model']:
+            valid_model=(response_model_allowed(response.get('model'),terms['model']) if recovery
+                         else response.get('model')==terms['model'])
+            if generation is None or not valid_model:
                 raise ValueError('unverified generation/model')
             output={'status':parsed['status'],'answer':parsed['answer'],
                     'response_raw_sha256':hashlib.sha256(response_raw).hexdigest()}
             owner.transition(receipt,'RESPONSE_SEEN',generation_id=generation,
                              output_hash=canonical_hash(output),observed_cost=known)
+            if recovery:
+                stage='STATISTICS_VISIBILITY_WAIT';phase.wait_for_statistics()
             stage='STATISTICS_CLAIM';phase.gate();owner.claim_statistics_lookup(receipt)
             phase.gate();stage='STATISTICS_GET'
             if statistics_attempts>=32:raise ExecutionBlocked('statistics request count exceeded')
@@ -373,21 +429,27 @@ def execute_authored(packet,*,expected_packet_hash,response_provenance='MOCK'):
             if known is not None and known>context['envelope']['reserved_microusd']:
                 owner.transition(receipt,'OVERRUN',observed_cost=known)
                 raise ExecutionBlocked('reported generation overrun')
-            if (stats.get('model')!=terms['model'] or stats.get('provider_name')!=terms['reported_provider'] or
-                stats.get('is_byok') is not False):
-                raise ValueError('actual provider/billing unverified')
-            for field,bound in (('native_tokens_prompt',context['envelope']['input_token_bound']),
-                                ('native_tokens_completion',512),('native_tokens_reasoning',0)):
-                if type(stats.get(field)) is not int or not 0<=stats[field]<=bound:
-                    raise ValueError('native usage outside released bound')
-            auxiliary,valid=_auxiliary_observation(stats)
-            if not valid:raise ExecutionBlocked('unsupported auxiliary activity')
+            if recovery:
+                normalized=normalize_statistics(stats,generation_id=generation,requested_model=terms['model'],
+                    reported_provider=terms['reported_provider'],input_bound=context['envelope']['input_token_bound'],
+                    output_bound=context['envelope']['max_tokens'],reserved_microusd=context['envelope']['reserved_microusd'])
+                billing=normalized['billing'];auxiliary=normalized['telemetry']
+            else:
+                if (stats.get('model')!=terms['model'] or stats.get('provider_name')!=terms['reported_provider'] or
+                    stats.get('is_byok') is not False):
+                    raise ValueError('actual provider/billing unverified')
+                for field,bound in (('native_tokens_prompt',context['envelope']['input_token_bound']),
+                                    ('native_tokens_completion',512),('native_tokens_reasoning',0)):
+                    if type(stats.get(field)) is not int or not 0<=stats[field]<=bound:
+                        raise ValueError('native usage outside released bound')
+                auxiliary,valid=_auxiliary_observation(stats)
+                if not valid:raise ExecutionBlocked('unsupported auxiliary activity')
+                billing={k:stats[k] for k in ('id','model','provider_name','total_cost','native_tokens_prompt',
+                    'native_tokens_completion','native_tokens_reasoning','is_byok')}
             _usage_bounds(usage,context['envelope'])
             amount=_cost(stats['total_cost'])
             if type(usage) is dict and usage.get('cost') is not None and Decimal(str(usage['cost']))!=Decimal(str(stats['total_cost'])):
                 raise ValueError('response/generation billing disagreement')
-            billing={k:stats[k] for k in ('id','model','provider_name','total_cost','native_tokens_prompt',
-                'native_tokens_completion','native_tokens_reasoning','is_byok')}
             journal.write(receipt+'-quality.json',{'diagnostic':parsed['diagnostic'],'auxiliary':auxiliary,
                 'provider_representation':PROVIDER_REPRESENTATION})
             stage='REPRESENTATION';phase_record(compiled,parsed)

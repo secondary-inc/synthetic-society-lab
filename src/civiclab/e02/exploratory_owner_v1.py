@@ -40,6 +40,35 @@ P_FIELDS = set(('kind owner_id predecessor compatibility_receipt run_id protocol
     'valid_from_utc valid_until_utc').split())
 W_FIELDS = set(('kind execution_order phase receipt context_hash payload_sha256 generation_id '
     'response_raw_sha256 statistics_raw_sha256 checkpoint_sha256 status answer').split())
+RECOVERY_METHODS_SHA = '97ed5a2f20f38b357983b37ecc5eb27d571e3952a684670ed09903d16a7a2db9'
+RECOVERY_REVIEW_SHA = 'c87d3063e61d14015efdca3a4090b08bb37d9d52ca46a8fd9727ba48fe8f0586'
+MODEL_IDENTITY_SHA = 'e234cd7362756b3bfe4411471f6966bec6a2be7ef81bff131f6a4c30ea9164be'
+R_FIELDS = set(('kind source_export_sha256 predecessor_hash compatibility_receipt '
+    'generation_id statistics_raw_sha256 statistics decoded_output_witness '
+    'original_response_retained historical_unfinished historical_consumed_microusd '
+    'model_identity_source_sha256 methods_sha256 evidence_audit_sha256').split())
+
+
+def recovery_mode(policy):
+    return policy.get('kind') == 'LIMITED_PILOT_RECOVERY_POLICY_V1'
+
+
+def _recovery_shape(recovery, policy):
+    r = _closed(recovery, R_FIELDS)
+    for name in ('source_export_sha256', 'predecessor_hash', 'statistics_raw_sha256',
+                 'model_identity_source_sha256', 'methods_sha256', 'evidence_audit_sha256'):
+        digest(r[name])
+    if (r['kind'] != 'CONNECTIVITY_RECOVERY_EVIDENCE_V1'
+        or r['predecessor_hash'] != canonical_hash(policy['predecessor'])
+        or r['compatibility_receipt'] != policy['compatibility_receipt']
+        or r['original_response_retained'] is not False
+        or type(r['historical_unfinished']) is not int or r['historical_unfinished'] != 2
+        or type(r['historical_consumed_microusd']) is not int or r['historical_consumed_microusd'] != 680
+        or r['model_identity_source_sha256'] != MODEL_IDENTITY_SHA
+        or r['methods_sha256'] != RECOVERY_METHODS_SHA
+        or hashlib.sha256(canonical_bytes(r['statistics'])).hexdigest() != r['statistics_raw_sha256']):
+        raise ExecutionBlocked('exact reviewed recovery evidence required')
+    return r
 
 
 class AnalysisRepresentationBound(ExecutionBlocked):
@@ -61,11 +90,15 @@ def code_contract():
     files += ['src/civiclab/e02/'+name+'.py' for name in (
         'instrument', 'exploratory_owner_v1', 'exploratory_live_client_v1',
         'exploratory_response_v1', 'exploratory_sequence_v1',
-        'exploratory_live_requests_v1', 'exploratory_pilot_analysis_v1')]
+        'exploratory_live_requests_v1', 'exploratory_pilot_analysis_v1', 'exploratory_metadata_v1')]
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        or sha256_file(ROOT/'reports/INDEPENDENT_AUDIT_E02_RECOVERY_ADMISSION_V1_METHODS.json') != RECOVERY_REVIEW_SHA):
+        raise ExecutionBlocked('recovery methods or independent acceptance changed')
     return {'kind':'LIMITED_PILOT_CODE_V1', 'pins':{p:sha256_file(ROOT/p) for p in files},
             'methods':{
                 'base_composite_review':'de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b',
                 'provider_representation_review':'265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a',
+                'recovery_methods':RECOVERY_METHODS_SHA, 'recovery_review':RECOVERY_REVIEW_SHA,
                 'representation':'CANONICAL_PARSED_PROVIDER_OBJECT_V1'},
             'protocol_sha256':PROTOCOL_SHA, 'projection_sha256':PROJECTION_SHA,
             'assignment_sha256':ASSIGNMENT_SHA, 'limits':deepcopy(LIMITS)}
@@ -79,7 +112,9 @@ def validate_packet(packet, *, expected_packet_hash):
     if len(canonical_bytes(q))>524288 or canonical_hash(q)!=expected_packet_hash or q['kind']!='LIMITED_PILOT_PACKET_V1':
         raise ExecutionBlocked('externally expected exact study packet required')
     p,r,o,a,l,t = (q[k] for k in ('policy','review','owner_assertion','authority','price_release','terminal_review'))
-    _closed(p,P_FIELDS); _closed(l,('kind','terms','interpretation'))
+    _closed(p, P_FIELDS | ({'recovery'} if recovery_mode(p) else set()))
+    if recovery_mode(p): _recovery_shape(p['recovery'], p)
+    _closed(l,('kind','terms','interpretation'))
     validate_terms(l['terms']); validate_decision(l['interpretation'])
     terms, decision = l['terms'], l['interpretation']
     if (l['kind']!='LIMITED_PILOT_PRICE_RELEASE_V1'
@@ -89,7 +124,7 @@ def validate_packet(packet, *, expected_packet_hash):
             'route_scope','valid_from_utc','valid_until_utc'))):
         raise ExecutionBlocked('complete matching price release required')
     digest(p['owner_id'],32); digest(p['compatibility_receipt'],32)
-    if (p['kind']!='LIMITED_PILOT_POLICY_V1' or type(p['run_id']) is not str
+    if (p['kind'] not in ('LIMITED_PILOT_POLICY_V1','LIMITED_PILOT_RECOVERY_POLICY_V1') or type(p['run_id']) is not str
         or re.fullmatch(r'[0-9A-Za-z_-]{1,128}',p['run_id']) is None
         or p['protocol_sha256']!=PROTOCOL_SHA or p['projection_sha256']!=PROJECTION_SHA
         or p['assignment_sha256']!=ASSIGNMENT_SHA
@@ -179,12 +214,16 @@ class StudyOwnerV1(_AdditionalOwnerV1):
             or extra.get('batch_stage')!='COMPLETE' or extra.get('receipt')!=p['compatibility_receipt']
             or old is None or old['status']!='UNCERTAIN' or old['reserved']!=340 or old['charged']!=340
             or canonical_hash(old)!=state['_amendment_bundle']['policy']['predecessor_row_hash']
-            or compat is None or compat['status']!='PHASE_COMMITTED'
-            or compat['billing'] is None or compat['observed_cost'] is None
-            or state['unfinished']!=1 or state['consumed']['dispatches']!=2
+            or compat is None or state['consumed']['dispatches']!=2
             or p['run_id'] in (old['context']['run_id'],compat['context']['run_id'])
             or len(state['_prefix_events'])+193>10000 or len(state['rows'])+32>1024):
             raise ExecutionBlocked('exact immutable unknown plus committed connectivity prefix required')
+        if recovery_mode(p):
+            self._recovery_entry(state, p, compat)
+            return
+        if (compat['status']!='PHASE_COMMITTED' or compat['billing'] is None
+            or compat['observed_cost'] is None or state['unfinished']!=1):
+            raise ExecutionBlocked('committed compatibility prefix required')
         # A charged, committed compatibility failure is not successful JSON
         # compatibility. Read only the accepted client's fixed, bounded path and
         # authenticate its complete checkpoint against the original owner row.
@@ -207,6 +246,33 @@ class StudyOwnerV1(_AdditionalOwnerV1):
             or canonical_hash(_answer({'choices':[{'message':{'content':answer.get('raw_text')}}]}))
                !=canonical_hash(answer)):
             raise ExecutionBlocked('successful bound JSON compatibility is required')
+
+    def _recovery_entry(self, state, p, compat):
+        """Admit separate evidence; never settle/reopen either historical row."""
+        from .exploratory_metadata_v1 import normalize_statistics
+        r = _recovery_shape(p['recovery'], p)
+        c = compat['context']; witness = r['decoded_output_witness']
+        if (compat['status'] != 'UNCERTAIN' or compat['reserved'] != 340 or compat['charged'] != 340
+            or compat['billing'] is not None or compat['checkpoint_hash'] is not None
+            or state['unfinished'] != 2
+            or state['consumed'] != {'total':680, 'modules':{'E01':0,'E02':680},
+                'dispatches':2,'module_dispatches':{'E01':0,'E02':2}}
+            or set(state['statistics_claims']) != {compat['id']}
+            or r['generation_id'] != compat['generation_id']
+            or canonical_hash(witness) != compat['output_hash']
+            or type(witness) is not dict or witness.get('status') != 'VALID'
+            or canonical_hash(witness.get('parsed')) != canonical_hash({'ok':True})
+            or canonical_hash(_answer({'choices':[{'message':{'content':witness.get('raw_text')}}]}))
+                != canonical_hash(witness)):
+            raise ExecutionBlocked('historical recovery identity, holds, claims or output witness differs')
+        stats = r['statistics'].get('data') if type(r['statistics']) is dict else None
+        normalized = normalize_statistics(stats, generation_id=compat['generation_id'],
+            requested_model=c['terms']['model'], reported_provider=c['terms']['reported_provider'],
+            input_bound=c['envelope']['input_token_bound'], output_bound=c['envelope']['max_tokens'],
+            reserved_microusd=compat['reserved'])
+        if (type(compat['observed_cost']) is not int or compat['observed_cost'] != 7
+            or normalized['observed_cost_microusd'] != compat['observed_cost']):
+            raise ExecutionBlocked('recovery bill and earlier rounded observation disagree')
 
     def _study_transition(self,event,state):
         """Reuse original predicates with an explicit study-only authority view.
@@ -264,14 +330,15 @@ class StudyOwnerV1(_AdditionalOwnerV1):
             self._entry(state,q['policy']); self._new_clock(event,state,q['policy'],payload['fresh_proof'])
             study={'packet':q,'proof':payload['fresh_proof'],'witnesses':[], 'receipts':[],
                    'pending':None,'initial':True,'stopped':False,'failure_reason':None,
-                   'prefix_total':state['consumed']['total'],'phase_started':{}}
+                   'prefix_total':state['consumed']['total'],'phase_started':{},
+                   'historical_unfinished':state['unfinished']}
             state['study']=study
             state['study_authorities']={canonical_hash(q['authority']):q['authority']}
             return
         if study is None:return super()._apply(event,state)
         if kind==GRANT:
             _closed(payload,('plan','context','receipt'))
-            if study['pending'] is not None or study['stopped'] or state['unfinished']!=1:
+            if study['pending'] is not None or study['stopped'] or state['unfinished']!=study['historical_unfinished']:
                 raise ExecutionBlocked('unfinished or stopped study forbids another grant')
             compiled=_next(study)
             if compiled['status']!='REQUEST_READY_NOT_ADMITTED':raise ExecutionBlocked('study complete')
@@ -426,24 +493,40 @@ class StudyOwnerV1(_AdditionalOwnerV1):
             # exact pinned text-only activity guard at the final commit boundary.
             from .exploratory_live_client_v1 import _no_provider_reasoning
             _no_provider_reasoning(values['response'])
+            if recovery_mode(study['packet']['policy']):
+                from .exploratory_live_client_v1 import _no_unsupported_response_activity
+                _no_unsupported_response_activity(values['response'])
             answer=parse_survey_response(values['response'])
             output={'status':answer['status'],'answer':answer['answer'],
                     'response_raw_sha256':hashlib.sha256(raw['response']).hexdigest()}
             expected={'schema_version':1,'run_id':c['run_id'],'unit_id':c['unit_id'],'phase':c['phase'],
                 'receipt':receipt,'request_hash':c['envelope']['request_hash'],'output':output}
             stats=values['statistics'].get('data') if type(values['statistics']) is dict else None
+            recovery = recovery_mode(study['packet']['policy'])
+            if recovery:
+                from .exploratory_metadata_v1 import normalize_statistics, response_model_allowed
+                if not response_model_allowed(values['response'].get('model'), c['terms']['model']):
+                    raise ExecutionBlocked('unreviewed response model identity')
+                projection = normalize_statistics(stats, generation_id=row['generation_id'],
+                    requested_model=c['terms']['model'], reported_provider=c['terms']['reported_provider'],
+                    input_bound=c['envelope']['input_token_bound'], output_bound=512,
+                    reserved_microusd=row['reserved'])['billing']
+            else:
+                projection = ({k:stats[k] for k in row['billing']}
+                    if type(stats) is dict and row['billing'] is not None
+                    and set(row['billing']) <= set(stats) else None)
             if (row['status']!='SETTLED' or canonical_hash(values['checkpoint'])!=canonical_hash(expected)
                 or canonical_hash(output)!=row['output_hash'] or type(stats) is not dict
-                or row['billing'] is None or not set(row['billing'])<=set(stats)
-                or canonical_hash({k:stats[k] for k in row['billing']})!=canonical_hash(row['billing'])
+                or row['billing'] is None or projection is None
+                or canonical_hash(projection)!=canonical_hash(row['billing'])
                 or values['response'].get('id')!=row['generation_id']
-                or values['response'].get('model')!=c['terms']['model']):
+                or (not recovery and values['response'].get('model')!=c['terms']['model'])):
                 raise ExecutionBlocked('raw response/billing/checkpoint binding differs')
             # Independently recheck complete retained observations. In particular,
             # Python value equality must not equate JSON true with 1 or 0 with false,
             # and an added auxiliary counter cannot hide outside the billing subset.
-            validate_row({**row,'billing':{k:stats[k] for k in row['billing']}})
-            if not _auxiliary_observation(stats)[1]:
+            validate_row({**row,'billing':projection})
+            if not recovery and not _auxiliary_observation(stats)[1]:
                 raise ExecutionBlocked('unsupported retained auxiliary activity')
             usage=values['response'].get('usage')
             _usage_bounds(usage,c['envelope'])

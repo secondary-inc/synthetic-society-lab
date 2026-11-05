@@ -1,3 +1,5 @@
+> Executed once after explicit owner approval on November 5. Same-generation metadata was retained; strict metadata validation stopped. See `reports/INDEPENDENT_AUDIT_CONNECTIVITY_BILLING_ACTUAL_20261105.json`. This command is consumed and must not be rerun. Both original holds remain unchanged.
+
 # One billing-only recovery lookup
 
 Status: independently reviewed and ready for separate owner approval; not executed.

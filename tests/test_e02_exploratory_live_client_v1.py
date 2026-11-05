@@ -508,6 +508,104 @@ class ClientTests(unittest.TestCase):
 
 
 @contextmanager
+def recovery_client_case():
+    from test_additional_compatibility_owner_v1 import materials
+    from test_additional_compatibility_client_v1_1 import raw_catalog
+    from test_e02_exploratory_metadata_v1 import saved_shape
+    with case() as values:
+        p,o,t,fetch,key,mono,clock,owner_factory=values
+        release,_=materials('AUTHORED_RECOVERY_CLIENT')
+        p['policy']['kind']='LIMITED_PILOT_RECOVERY_POLICY_V1'
+        p['price_release']={'terms':release['terms'],'interpretation':release['interpretation']}
+        raw=raw_catalog()
+        metadata={'url':'https://openrouter.ai/api/v1/models/'+release['terms']['model']+'/endpoints',
+                  'body_sha256':hashlib.sha256(raw).hexdigest(),'observed_at_utc':T0.isoformat()}
+        fetch.return_value=(raw,metadata)
+        def stats(result):
+            modern=saved_shape();modern.update(id=result['data']['id'],total_cost='0.000001',
+                                             native_tokens_prompt=1,native_tokens_completion=1)
+            result['data']=modern
+        t.stats_hook=stats
+        with patch.object(client.time,'sleep',side_effect=lambda seconds:mono.__setitem__(0,mono[0]+seconds)) as sleep:
+            yield values,sleep
+
+
+class RecoveryClientTests(unittest.TestCase):
+    def test_full_authored_sequence_waits_once_per_get_preserves_raw_alias_and_unknowns(self):
+        with recovery_client_case() as (values,sleep):
+            p,o,t,fetch,key,mono,*_=values
+            t.post_hook=lambda r,q:r.update(model='openai/gpt-4.1-nano-2025-04-14')
+            out=execute(p)
+            self.assertEqual((t.posts,t.gets),(32,32));self.assertEqual(mono[0],320)
+            self.assertEqual(sum(call.args[0] for call in sleep.call_args_list),320)
+            self.assertEqual(out['analysis']['estimate_thermometer_points'],0)
+            self.assertTrue(all(r['billing']['model']=='openai/gpt-4.1-nano' for r in o.rows.values()))
+            path=Path(out['path']);stats=json.loads(next(path.glob('*-statistics.json')).read_bytes())['data']
+            self.assertEqual(stats['model'],'openai/gpt-4.1-nano-2025-04-14');self.assertIsNone(stats['num_fetches'])
+            quality=json.loads(next(path.glob('*-quality.json')).read_bytes())['auxiliary']
+            self.assertTrue(quality['streamed_discrepancy']);self.assertEqual(quality['reported_streamed'],True)
+            self.assertEqual(quality['optional_counters']['num_fetches']['status'],'REPORTED_NULL_UNKNOWN')
+    def test_wait_starts_only_after_response_retention_and_before_claim(self):
+        with recovery_client_case() as (values,sleep):
+            p,o,t,fetch,key,mono,*_=values
+            calls=[0]
+            def wait(seconds):
+                calls[0]+=1
+                if calls[0]==1:
+                    row=next(iter(o.rows.values()))
+                    self.assertEqual(row['status'],'RESPONSE_SEEN');self.assertEqual(len(o.claims),0)
+                    directory=o.directory/'limited-pilot-v1'/p['policy']['run_id']
+                    self.assertTrue((directory/(row['id']+'-response.json')).exists())
+                mono[0]+=seconds
+            sleep.side_effect=wait;execute(p)
+            self.assertEqual(t.gets,32)
+    def test_wait_cancel_expiry_clock_stall_or_budget_blocks_get_without_retry(self):
+        for mode in ('cancel','expired','rollback','stalled','insufficient'):
+            with self.subTest(mode=mode),recovery_client_case() as (values,sleep):
+                p,o,t,fetch,key,mono,clock,*_=values
+                if mode=='cancel':sleep.side_effect=KeyboardInterrupt()
+                elif mode=='expired':sleep.side_effect=lambda sec:clock.__setitem__(0,T0+timedelta(seconds=901))
+                elif mode=='rollback':sleep.side_effect=lambda sec:mono.__setitem__(0,-1)
+                elif mode=='stalled':sleep.side_effect=lambda sec:None
+                else:t.post_hook=lambda r,q:mono.__setitem__(0,75)
+                expected=KeyboardInterrupt if mode=='cancel' else ExecutionBlocked
+                with self.assertRaises(expected):execute(p)
+                self.assertEqual((t.posts,t.gets),(1,0));self.assertEqual(len(o.claims),0)
+                row=next(iter(o.rows.values()));self.assertEqual(row['status'],'UNCERTAIN')
+                self.assertEqual(row['charged'],row['reserved'])
+                self.assertLessEqual(sleep.call_count,12)
+    def test_response_tools_media_search_cannot_hide_behind_null_statistics(self):
+        cases=[('tool_calls',[{'function':{'name':'AUTHORED_TOOL'}}]),('function_call',{'name':'AUTHORED_TOOL'}),
+               ('audio',{'data':'AUTHORED_AUDIO'}),('images',[{'image_url':'AUTHORED_IMAGE'}]),
+               ('annotations',[{'type':'url_citation'}]),('search_results',[{'title':'AUTHORED_SEARCH'}]),
+               ('num_fetches',1),('content',[{'type':'image_url','image_url':'AUTHORED_IMAGE'}])]
+        for field,value in cases:
+            with self.subTest(field=field),recovery_client_case() as (values,sleep):
+                p,o,t,*_=values
+                t.post_hook=lambda r,q:r['choices'][0]['message'].update({field:value})
+                with self.assertRaises(ExecutionBlocked):execute(p)
+                self.assertEqual((t.posts,t.gets),(1,0));sleep.assert_not_called()
+                row=next(iter(o.rows.values()));self.assertEqual(row['observed_cost'],1)
+                self.assertEqual(row['charged'],row['reserved'])
+                self.assertIsNone(row['output_hash'])
+                path=o.directory/'limited-pilot-v1'/p['policy']['run_id']
+                self.assertFalse(any(path.glob('*-response.json')))
+    def test_nondefault_or_malformed_recovery_stats_stop_after_only_one_lookup(self):
+        for field,value in [('service_tier',None),('streamed',None),('num_search_results',1),('cancelled',0)]:
+            with self.subTest(field=field),recovery_client_case() as (values,sleep):
+                p,o,t,*_=values;native=t.stats_hook
+                def stats(result):native(result);result['data'][field]=value
+                t.stats_hook=stats
+                with self.assertRaises(ExecutionBlocked):execute(p)
+                self.assertEqual((t.posts,t.gets),(1,1))
+    def test_legacy_packets_do_not_gain_aliases_null_tolerance_or_visibility_wait(self):
+        with case() as (p,o,t,*_),patch.object(client.time,'sleep',side_effect=AssertionError('legacy wait changed')):
+            t.post_hook=lambda r,q:r.update(model='openai/gpt-4.1-nano-2025-04-14')
+            with self.assertRaises(ExecutionBlocked):execute(p)
+            self.assertEqual((t.posts,t.gets),(1,0))
+
+
+@contextmanager
 def real_owner_case():
     from types import SimpleNamespace
     from test_e02_exploratory_owner_v1 import study_case
