@@ -1,3 +1,5 @@
+> **Historical November 3, 2026 handoff — not a current runbook.** Preserve the blueprint below as research context. Election-Day wording, example paths/commands and test counts describe that handoff and must not be treated as current execution evidence. E01 is retrospective. Use [README.md](README.md), [reports/STATUS.md](reports/STATUS.md), and the checked-in CLI for current setup and readiness. The versioned GDELT fixture is `tests/fixtures/gdelt/20261103090000.gkg.csv.zip`.
+
 # RUN FIRST — for Codex and the human operator
 
 **This package is a local overlay to your existing `secondary-inc/synthetic-society-lab` repository, not a replacement for uncommitted GitHub work.** GitHub access was not confirmed in this chat. Inspect existing files and reconcile changes before copying, branching or pushing.

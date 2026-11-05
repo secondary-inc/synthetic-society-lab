@@ -1,0 +1,56 @@
+{
+  "kind": "INDEPENDENT_ORIGINAL_OWNER_READONLY_PARTICULAR_RELEASE_20261105_01",
+  "status": "PASS_ONE_READONLY_PREPARATION_ONLY",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "sources": [
+    {
+      "path": "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PREPARATION_V1_1.json",
+      "sha256": "ab7e326ccf0bdca378bc7b19ae03d23a56a0841dfa5ca04ed7bd0df7d720564a",
+      "bytes": 12620
+    }
+  ],
+  "release": {
+    "path": "reports/INDEPENDENT_AUDIT_ORIGINAL_OWNER_READONLY_RELEASE_20261105_01_V1_1.json",
+    "sha256": "522171a0b6569f9ecfb13426fc50161855a2b9af57dcef801e756609a6936ae8",
+    "bytes": 481
+  },
+  "canonical_expected_review_hash": "f0b6d313e6f109131e4450e9a9341cf1a16da5d20a2a6ccbe722085409fc4687",
+  "code_contract_hash": "e4bcc35bc6bbfe33cc262eace783f5f0d62274460508ab5d9fdc366cb17586ca",
+  "review_id": "889212ff67414934a0da5ba51c7353f2",
+  "code_contract_unchanged_from_accepted_preparation": true,
+  "all_three_pin_groups_rehashed": true,
+  "authority_basis": "Owner explicitly requested resolve obstacles; lead scoped one fresh read-only snapshot to determine old-only prefix/additional request use. ExistingNov4readonlyrelease consumed and not reused. This is a new finite particular scope, not history/redating/replenishment.",
+  "permitted_operation": "Root may invoke unchanged prepare_original_metadata once with exact newrelease andcanonicalexpectedhash in reviewedcheckout. Collector restricted to fixedOS originalregistration/guard/anchor/database; DB<=2MiB, other3<=64KiB, no-wal/-shm/-journal,rollback1/1header,readonlyimmutable/query_only,guardlock,before/afterfourfilehashesunchanged. Requiresold-onlyoneUNKNOWN340row/dispatch1/statclaimsempty/fulloriginalhistoryvalid. Ifadditionalpacketwasused/currentstorechanged, failclosed.",
+  "private_outputs": "Create-once0600/fsyncedintent andboundedprivate snapshot underfixedreviewedcheckoutpreparationbase; existinghistoricalintent/snapshotunmodified. Reportsourcedoesnotreadactualstore. Root must preserve returnedbytes/hash orfailedintent andnotifyauditor scoped savedoutputonly. No replacement snapshot/retry/repair/newroot afterfailure.",
+  "excluded": [
+    "Noactualstore read by auditor",
+    "No key/.env/credential or process-secret environment access",
+    "No network/catalog/model/generation-statistics calls",
+    "No financialgrants/reservations/ledgertransitions/reconciliation/refunds or purchases",
+    "No renewed/editedexpiredconnectivitypacket or inferred paidrequestconsent",
+    "No externalpublication or fullproject/scientificgatepromotion"
+  ],
+  "existing_limits": "Trusted localworkflow/createonceperreviewID inreviewedcheckout; not globalanti-cloneorhostilehost/rollbackproof. Multipleauthorizationsnotcombinedintoautomaticretries.",
+  "not_run": [
+    "Actualprepare_original_metadata andactualstore snapshot",
+    "Completeowner/clientintegrationreview andliveexecution"
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_calls": 0,
+  "financial_writes": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ORIGINAL_OWNER_READONLY_20261105_01",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ORIGINAL_OWNER_READONLY_RELEASE_20261105_01_V1_1.json",
+      "reports/INDEPENDENT_AUDIT_ORIGINAL_OWNER_READONLY_20261105_01_SCOPE.json"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Fullcodecontractequality andall3transitivepinmapsrehashedagainstacceptedab7e326c\u2026; noimplementationchanges, noredundantregressionrerun",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Acceptedpublicsource/auditonly; nooriginalprivatefilesread",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Readonlyparticularscopeonly; failsclosedifprefixno longerold-only",
+    "UNRESOLVED_BLOCKERS": "Currentactualsavedmetadata unobserved andanyfreshconnectivitypaidpacketrequiresseparatereview/authority",
+    "NEXT_UNBLOCKED_TASK": "Root invokesonce; preserveprivateoutputorfailedintent; reporthash/limitedmetadatafornextindependentreview"
+  }
+}
