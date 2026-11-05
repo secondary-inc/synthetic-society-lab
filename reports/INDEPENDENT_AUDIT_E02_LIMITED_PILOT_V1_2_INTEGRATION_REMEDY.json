@@ -1,0 +1,417 @@
+{
+  "kind": "INDEPENDENT_E02_LIMITED_PILOT_V1_2_INTEGRATION_REMEDY",
+  "status": "PASS",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Exactfrozencompleteowner/clientAUTHOREDintegration+retainedMOCKevidenceonly;NOTactualpilot/particularrelease/connectivityoutcomeacceptance",
+  "handoff": {
+    "path": "reports/E02_LIMITED_PILOT_V1_2_REMEDIATION_HANDOFF.json",
+    "sha256": "66f38dbe862ddc40ed1a035c99b9c2f6806f9162cb9d7818140bb7ab54b3360d",
+    "bytes": 11917
+  },
+  "sources": [
+    {
+      "bytes": 33317,
+      "path": "src/civiclab/e02/exploratory_owner_v1.py",
+      "sha256": "ab68ad6b257239afe1ede5c72d166107de9100a5e84fe4d84eba405e6eb803af"
+    },
+    {
+      "bytes": 23149,
+      "path": "tests/test_e02_exploratory_owner_v1.py",
+      "sha256": "23230133dd7c1e7288f81615fc31635323f2cf1aafc39c243943be92c0cb84b0"
+    },
+    {
+      "bytes": 24902,
+      "path": "src/civiclab/e02/exploratory_live_client_v1.py",
+      "sha256": "eaca8bd3204c6fe9155e766aa36642f4704a754378c8fa15da20b7c7a99fa6c7"
+    },
+    {
+      "bytes": 40101,
+      "path": "tests/test_e02_exploratory_live_client_v1.py",
+      "sha256": "277d3f099269538841294a90877ce3e2672c593ea12406eddf683796dac3f51e"
+    },
+    {
+      "bytes": 17897,
+      "path": "reports/E02_LIMITED_PILOT_V1_2_REMEDIATION_TESTS_311.txt",
+      "sha256": "1c0b87dfb7c1a55f80b7333527d636e39984b93359e514662fa1ab93d8987a70"
+    },
+    {
+      "bytes": 18447,
+      "path": "reports/E02_LIMITED_PILOT_V1_2_REMEDIATION_TESTS_312.txt",
+      "sha256": "c1543235a35af3ad9a181be8a90958d9c976c0025f4fc228b8ecd603fc5a7824"
+    },
+    {
+      "bytes": 11069,
+      "path": "reports/INDEPENDENT_AUDIT_E02_COMPLETE_INTEGRATION_PRELIMINARY_FINDINGS.json",
+      "sha256": "adb7d89b0f40754091196747deff577caf450fd061c7a36d9350181d6d8124a6"
+    },
+    {
+      "bytes": 3299,
+      "path": "docs/E02_LIMITED_PILOT_V1_2_PROVIDER_OBJECT_REPRESENTATION.md",
+      "sha256": "5ecc8105651e3c1f1bbf53a76b3b6c8dda4fb01920324f3d92b8dad83c1cd369"
+    },
+    {
+      "bytes": 4945,
+      "path": "reports/INDEPENDENT_AUDIT_E02_LIMITED_PILOT_V1_2_PROVIDER_OBJECT_REPRESENTATION_METHODS.json",
+      "sha256": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a"
+    }
+  ],
+  "code_contract": {
+    "assignment_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+    "kind": "LIMITED_PILOT_CODE_V1",
+    "limits": {
+      "HTTP_seconds": 30,
+      "artifact_bytes": 2000000,
+      "authority_seconds": 7200,
+      "catalog_GETs": 1,
+      "concurrency": 1,
+      "event_bytes": 65536,
+      "event_limit": 10000,
+      "input_bound": 8192,
+      "journal_artifacts": 256,
+      "journal_bytes": 268435456,
+      "lifetime_dispatches": 34,
+      "minimum_free_bytes": 536870912,
+      "module_microusd": {
+        "E01": 0,
+        "E02": 5000000
+      },
+      "output_tokens": 512,
+      "per_call_microusd": 31250,
+      "phase_seconds": 120,
+      "price_age_seconds": 900,
+      "retries": 0,
+      "row_limit": 1024,
+      "shared_microusd": 5000000,
+      "socket_seconds": 15,
+      "study_dispatches": 32,
+      "study_microusd": 1000000,
+      "study_statistics_GETs": 32
+    },
+    "methods": {
+      "base_composite_review": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+      "provider_representation_review": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a",
+      "representation": "CANONICAL_PARSED_PROVIDER_OBJECT_V1"
+    },
+    "pins": {
+      "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+      "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+      "src/civiclab/e02/exploratory_live_client_v1.py": "eaca8bd3204c6fe9155e766aa36642f4704a754378c8fa15da20b7c7a99fa6c7",
+      "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+      "src/civiclab/e02/exploratory_owner_v1.py": "ab68ad6b257239afe1ede5c72d166107de9100a5e84fe4d84eba405e6eb803af",
+      "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+      "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+      "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+      "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+      "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+      "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+      "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+      "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+      "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+      "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+      "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+      "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c"
+    },
+    "projection_sha256": "1ad387de7ec320720849b1cacbcbbd4291b091cf0541cc43a8b39dc065172a5b",
+    "protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+  },
+  "independent_tests": {
+    "Python3.12": {
+      "count": 104,
+      "seconds": 229.621,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-v12-py312.log",
+        "sha256": "f27e17d45bce6b95aa6dddd28b6c7b0858f0cc7fe95421a1f2c607ff2c84b538",
+        "bytes": 101
+      }
+    },
+    "Python3.11": {
+      "count": 104,
+      "seconds": 225.587,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-v12-py311.log",
+        "sha256": "b5307cbd2a735578cde359bfe472bbb46ee00fe6d42441339c4a7a87fbd4c4f7",
+        "bytes": 101
+      }
+    },
+    "command": "PYTHONPATH=src:tests <runtime> -m unittest tests.test_e02_exploratory_owner_v1 tests.test_e02_exploratory_live_client_v1 tests.test_e02_exploratory_live_requests_v1 tests.test_e02_exploratory_pilot_analysis_v1 tests.test_e02_exploratory_response_v1 tests.test_e02_exploratory_sequence_v1 -q",
+    "excluded": "Author3.12count107includes3separatekey-setuphelpertests; thosearenotneededforthisintegrationreviewandwerenotrerun. Authorlogsretainedasscopeddevelopmentdata."
+  },
+  "finding_dispositions": {
+    "E02-OWNER-V1-COMMIT-RAW-BILLING-TYPE-AUXILIARY-GAP": "CLOSED_EXACT_REMEDY: canonicalbillingprojectionequalitydistinguishesJSONbool/int/float, validatesoriginalrow/native/is_byok/auxiliary/responseusage/cost atcommit. IndependentthreeoriginaltamperprobesnowrefuseCOMMITandnextgrant, preserveSETTLEDrowpendingclientuncertainhandling. Retainedtypedtamperclientcasefull340hold/stop/noW.",
+    "E02-OWNER-V1-COMPATIBILITY-QUALITY-ENTRY-GAP": "CLOSED_EXACT_REMEDY: fixedregularboundedcompatibilitycheckpointpath+bytehash/context/outputhash+reparsedVALID/exactoktrue. Actualacceptedadditionalmockclient{\"ok\":false}qualityfailurenowrefusedstudyadmissionwith2dispatchesunchanged. Missing/tamper/symlink/typefixturespass.",
+    "E02-CLIENT-V1-UNSUPPORTED-REASONING-QUALITY-DOWNGRADE": "CLOSED_EXACT_REMEDY: strictproviderreasoninggateafterknownmoneyharvest/beforecompletebodyretention, acrossmessage/choice/delta/top-levelandstructuredaliases. Independentoriginalreasoningcase1POST/0GET/fullhold/observed1,noresponsefile/bodiesMISSING. Ownercommitrechecksactivity. Noquestionnairemissdowngrade.",
+    "E02-OWNER-V1-AUTHORITY-MAP-METHODS-DEVIATION": "CLOSED_EXACT_REMEDY: study_authoritiesseparate; originalapprovals/active/IDsunchanged. Pureoriginaltransitionpredicate gets transientexplicitresolvedauthorityviewonly, preservingtruefullrows/counters/unfinished; nofakecleanstate/maskedallowedplans/prefixmutation. Independentbefore-aftermapassertionspass.",
+    "E02-CLIENT-V1-NOT-RUN-TERMINAL-DISPOSITIONS-MISSING": "CLOSED_EXACT_REMEDY: authenticatecommittedprefix/currentfailed-nullidentity, deriveall32financialdispositionsandpriorinvalid-preskipswhileanalysisNone/NOT_RUN; neverexportoversizeduncommittedanswer. IndependentoriginalUnicodeprobe1FAILED_UNCERTAIN/null+31NOT_ATTEMPTED, all32records; retainedrealownerUnicodecaseconfirms."
+  },
+  "independent_remedy_probes": {
+    "kind": "INDEPENDENT_E02_V1_2_REMEDY_PROBES",
+    "status": "PASS_AUTHORED_ONLY",
+    "probes": {
+      "native_bool": {
+        "commit_refused": true,
+        "unchanged_financial_row_status": "SETTLED",
+        "next_grant_refused": true
+      },
+      "byok_integer": {
+        "commit_refused": true,
+        "unchanged_financial_row_status": "SETTLED",
+        "next_grant_refused": true
+      },
+      "auxiliary_activity": {
+        "commit_refused": true,
+        "unchanged_financial_row_status": "SETTLED",
+        "next_grant_refused": true
+      },
+      "compatibility_quality": {
+        "actual_mock_compat_summary": "CHARGED_QUALITY_FAILURE",
+        "study_admission_refused": true,
+        "lifetime_dispatches_remain": 2
+      },
+      "authority_map": {
+        "original_map_active_ids_unchanged": true,
+        "study_map_separate": true
+      },
+      "reasoning": {
+        "POSTs": 1,
+        "GETs": 0,
+        "no_response_retained": true,
+        "full_hold": true,
+        "observed_cost": 1,
+        "bodies": {
+          "response": "MISSING",
+          "statistics": "MISSING"
+        }
+      },
+      "terminal_notrun": {
+        "all32dispositions": true,
+        "failed_null": 1,
+        "remaining_notattempted": 31,
+        "analysis": "NOT_RUN_NONE",
+        "raw_finance_preserved": true
+      }
+    },
+    "actual_owner_key_env_network_access": 0,
+    "spending_usd": 0
+  },
+  "retained_evidence": {
+    "index": {
+      "bytes": 148208,
+      "path": "data/processed/e02_limited_pilot_v1_2_authored_remediation_20261105_01/index.json",
+      "sha256": "8a1f9bf33784a7b83120d09be42967faeba81f7a8369d63fb755a371d1e44f94"
+    },
+    "verification": {
+      "kind": "INDEPENDENT_E02_V1_2_RETAINED_EVIDENCE",
+      "status": "PASS_AUTHORED_ONLY",
+      "verified_files": 725,
+      "cases": {
+        "crash_anchor": {
+          "ledger_events": 16,
+          "status": "ACTIVE",
+          "study_dispatches": 1,
+          "study_hold": 340,
+          "native_exitcode": 94
+        },
+        "crash_charge": {
+          "ledger_events": 13,
+          "status": "NOT_STARTED",
+          "study_dispatches": 0,
+          "study_hold": 0,
+          "native_exitcode": 92
+        },
+        "crash_commit": {
+          "ledger_events": 16,
+          "torn_head_refused": true,
+          "native_exitcode": 93
+        },
+        "crash_insert_1": {
+          "ledger_events": 13,
+          "status": "NOT_STARTED",
+          "study_dispatches": 0,
+          "study_hold": 0,
+          "native_exitcode": 91
+        },
+        "crash_insert_2": {
+          "ledger_events": 13,
+          "status": "NOT_STARTED",
+          "study_dispatches": 0,
+          "study_hold": 0,
+          "native_exitcode": 91
+        },
+        "crash_insert_3": {
+          "ledger_events": 13,
+          "status": "NOT_STARTED",
+          "study_dispatches": 0,
+          "study_hold": 0,
+          "native_exitcode": 91
+        },
+        "crash_return_lost": {
+          "ledger_events": 16,
+          "status": "ACTIVE",
+          "study_dispatches": 1,
+          "study_hold": 340,
+          "native_exitcode": 95
+        },
+        "invalid_pre": {
+          "ledger_events": 200,
+          "old340_unchanged": true,
+          "unfinished": 1,
+          "study_dispatches": 31,
+          "study_charged_fixture_microusd": 31,
+          "total_fixture_microusd": 372,
+          "committed_witnesses_raw_request_bindings_verified": 31,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 7,
+          "analysis_status": "READY"
+        },
+        "overrun": {
+          "ledger_events": 19,
+          "old340_unchanged": true,
+          "unfinished": 2,
+          "study_dispatches": 1,
+          "study_charged_fixture_microusd": 100000,
+          "total_fixture_microusd": 100341,
+          "committed_witnesses_raw_request_bindings_verified": 0,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 0,
+          "analysis_status": "READY"
+        },
+        "primary": {
+          "ledger_events": 206,
+          "old340_unchanged": true,
+          "unfinished": 1,
+          "study_dispatches": 32,
+          "study_charged_fixture_microusd": 32,
+          "total_fixture_microusd": 373,
+          "committed_witnesses_raw_request_bindings_verified": 32,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 8,
+          "analysis_status": "READY"
+        },
+        "reasoning": {
+          "ledger_events": 17,
+          "old340_unchanged": true,
+          "unfinished": 2,
+          "study_dispatches": 1,
+          "study_charged_fixture_microusd": 340,
+          "total_fixture_microusd": 681,
+          "committed_witnesses_raw_request_bindings_verified": 0,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 0,
+          "analysis_status": "READY"
+        },
+        "replay": {
+          "ledger_events": 206,
+          "old340_unchanged": true,
+          "unfinished": 1,
+          "study_dispatches": 32,
+          "study_charged_fixture_microusd": 32,
+          "total_fixture_microusd": 373,
+          "committed_witnesses_raw_request_bindings_verified": 32,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 8,
+          "analysis_status": "READY"
+        },
+        "typed_stats_tamper": {
+          "ledger_events": 20,
+          "old340_unchanged": true,
+          "unfinished": 2,
+          "study_dispatches": 1,
+          "study_charged_fixture_microusd": 340,
+          "total_fixture_microusd": 681,
+          "committed_witnesses_raw_request_bindings_verified": 0,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 0,
+          "analysis_status": "READY"
+        },
+        "unicode": {
+          "ledger_events": 19,
+          "old340_unchanged": true,
+          "unfinished": 2,
+          "study_dispatches": 1,
+          "study_charged_fixture_microusd": 340,
+          "total_fixture_microusd": 681,
+          "committed_witnesses_raw_request_bindings_verified": 0,
+          "terminal_dispositions": 32,
+          "manual_complete_blocks": 0,
+          "analysis_status": "NOT_RUN"
+        }
+      },
+      "primary_replay_analysis_and_envelope_equal": true,
+      "actual_owner_key_env_network_access": 0,
+      "spending_usd": 0
+    },
+    "checks": "Rehashall725regularfiles/sizesandindex; copiedonly14AUTHOREDcontrolstoresintoisolatedmockOShomes. Independentlyrederiveall14SQL eventsequence/previous/canonicaldigestchains/materializedrows/immutableevidence/costmonotonicity andanchor(tornCOMMITexpected). Candidatefullreplay/snapshotmatchesstoredobservations. Originaloldrowcanonicalhashmatchespre-amendmentbindingforallcases.95committedstudyW/request/rawbody/checkpoint/dispatchfilesindependentlybound; perrequestrecompilefromfrozenprotocol/ownpre, J/c/receipt derivations andstatsnative/provider/billingcanonicaltypes verified. Manualscoringfromrawanswers, completeblockcounts/0oracleCI andprimary/replayequal; unsafe/failedcasesnotpromotedtoparsedactualresults.",
+    "primary_replay": "Each32authoredPOST/32stats,32W,206financialevents,34lifetimedispatches,total373fixture\u00b5=old340+compat1+study32,trueunfinished1. Eightcompleteblocks/equal0MOCKoracleand[0,0]bootstrapdiagnostic,notanobservedmodelnullresult.",
+    "invalid_pre": "31authoredPOST/31stats,31W,200events,total372fixture\u00b5/count33,trueunfinished1,32dispositions/7completeblocks. Invalidprepaidandpreserved,itsownpostskipped,no replacement.",
+    "failure_cases": "Overrun100000fixture\u00b5newhold,total100341,count3,stoppeduncertain/overrunnoW; reasoning/Unicode/typedtampernew340hold,total681,count3,trueunfinished2,noW. Knownobservationsretained; full32failuredispositions; UnicodeanalysisNOT_RUN. Unsupportedreasoningresponse/statisticsbodieshonestlyMISSING,no unsafecompletebody.",
+    "native_crashes": "INSERT1/2/3orchargeinsert exitbeforecommit\u219213eventoriginalprefix/no study/nocharge; SQLCOMMITexit\u219216eventsbutoldanchor, replayrefuses; ANCHOR/RETURN_LOST\u219216events/STARTED340/fullhold/one studyreservation, no reconstructibleACK/capability. Nativefreshsame-phase2processraceoneRESERVED/oneREFUSEDinreruntests. NoactualPOSTfromcrashfixtures."
+  },
+  "code_review": {
+    "static_admission": "DetachedclosedQ/P/R/O/A/L/T+expectedpacketcanonicalhash/codeK; originalownerfactory/actualclientfactorydenied. Trustedworkflowroles/hashesnotcryptographichumanidentity. Futureactualcaller/packetrequiresseparateauthority.",
+    "successor_replay": "OriginalV4+oneadditionalamendmentprefix unchanged; exactoldUNKNOWN340+successfulcompatibilityPHASE_COMMITTED/tworeceipts andfullhead/history/claims/rows. SeparateAmap, trueoldunfinished1. NewSTART+GRANT+RESERVEorGRANT+RESERVEatomicbatch/inmemoryvalidation/onecommit/anchor/readback; pendingpartialgrammarrefuses. Perstudy/wholemoney/count/type/gen/statclaim/oldrowtargetguards retained.",
+    "phase_authentication": "NrecomputedfromvalidatedWprefix, owncommittedpreonly, JbindsA/protocol/unit/phase/payload/W; cexactoriginalclosed12fields anddderivedhash. Packet/proofcannotchange/renew. Immutable3fieldresponseoutputbeforestatistics; strictcanonicalrawfiles/W/checkpoint/output/usage/bill atcustomCOMMIT; originalcommit_phaseandordinaryPHASE_COMMITTEDpathsrefusedforstudy.",
+    "timing_and_capacity": "NewkindUTCrollback/lease/currentprice/full120fit, clientmonotonic/UTC andfull120proofagefit,30HTTP/15socket; missing/latebillingorlatecheckpointfullholdstop. Finite32POST/stats/onecatalog,no refresh/retries/purchase/fallback.256MiB/256artifacts/2M+512MiBfree checks;193event32row upfrontcapacity andperappend64KiB/10000history guards. Cooperative/trustedhost,notrealtime/diskspaceexclusivityguarantee.",
+    "representation_privacy": "Canonicalcompleteparsedproviderobjects,notwirebytes; preserveunknownmembers/hash exactretainedbytes/recanonicalstrict equality. Harvestknownmoneybeforeprivacy/size/domainrefusal; decodedquestionnairesecretandproviderreasoninggatesbeforepersistence; explicitMISSINGversusRETAINED_CANONICAL_COMPLETE. Separatequalityparse/finiteJSONand3072/131072exportguards; nounsafe rawclaim/repair/truncation.",
+    "accounting_and_results": "Knownoverrunretainedhighernotclipped; unknown/latefullholdandno nextphase; onegenerationlookupclaim perreceipt. AuthenticatedterminalenvelopeconstructedfromownerW/financialfailuretail; realprovenancecannotbeinheritedbyrelabelingMOCKanalysis. Configuredresponse_provenanceisatrustedfuturecallerinput,soauthenticactualrelease/outcomeauditstillrequired."
+  },
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-v12-remedy-probes.py",
+      "sha256": "240f3a2464499c2ecc829106e416356c8a242cd609bbc72ee6d81f791fcdc6bb",
+      "bytes": 5326
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-v12-remedy-probes.json",
+      "sha256": "7b5c7d84fe664ec46ee80a583b482bdb18d7b7467962106c6ca2c1baf9e89bd4",
+      "bytes": 1324
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-v12-retained.py",
+      "sha256": "c000c5ff5d31c204625eb4a96790d6e499ab024da48078a588dd042f5b1c3808",
+      "bytes": 10579
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-v12-retained.json",
+      "sha256": "1d14ebe6f3ce65e4d0d93b5b5c76e4981881ca739a572ac7c94e582f131a478e",
+      "bytes": 4078
+    }
+  ],
+  "limitations": [
+    "All725indexedtrials/authoredcosts/answersareMOCKengineeringevidence,notactualmodel/humanresults orphysicalrequestattestation. No fundedaccount/realprovider/invoiceproof.",
+    "Trustedlocalhost/filesystem/SQLite/locks/clocks; nohostilehost/clone/absoluteOSdeadline/powerlossguarantee. Fixedsource/runtimeassumptionsremain.",
+    "CompleteprojectnationalANES/ACS/source/geography/baseline/holdout/repro/remoteCI/publishingclausesnotpromoted. NoG0/full23requirementcontrollerreceiptchangedbyauditor.",
+    "Newactualconnectivityexecutionisaseparateoutcome: notacceptedassuccessfulhere, itsfailuredoesnotbecomePASSbecauseMOCKintegrationpasses. Livepilotentrymuststillseesuccessfulboundcompatibilitycheckpoint andcurrentparticularrelease."
+  ],
+  "remaining": [
+    "Independentactualadditionalconnectivityresponse/nativebilling/provider/qualityoutcomeandanyseparatelyreviewedrecovery",
+    "ExactE02studycurrenthead/price/model/provider/context/code/humanassertion/affordabilityparticularrelease",
+    "Actualretainedpilotnativeusage/bills/rawresults+independentrescoringanduncertainty/provenance",
+    "Fulloriginalresearchcompletioncontract"
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_model_calls": 0,
+  "financial_writes_actual": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_LIMITED_PILOT_V1_2_REMEDIATION",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_LIMITED_PILOT_V1_2_INTEGRATION_REMEDY.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "See104-testcommandaboveforeachruntime",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-v12-remedy-probes.py",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-v12-retained.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "104testseachruntimePASS; fiveoriginalfindingscorrected; all725hashes/14fakeledgers/95W/7nativecrashes andrawmanualscoringverified",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Exactfrozenpublicsource+retainedAUTHOREDfakecontrol/providerresponsesonly, noactualowner/key/network",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Integrationengineeringonly, notactualfinancial/scientificrelease",
+    "UNRESOLVED_BLOCKERS": "Actualcompatibilityoutcome/recovery andexactstudyrelease; fullresearchgates",
+    "NEXT_UNBLOCKED_TASK": "Leadpreservesactualconnectivityfailure, pursuesfiniteaccounting-onlyrecoveryreviewandthenexactstudyreleasewhenallentryrequirementsmet; noautomaticextraPOST"
+  }
+}

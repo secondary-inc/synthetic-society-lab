@@ -1,0 +1,130 @@
+{
+  "kind": "ADDITIONAL_CONNECTIVITY_ACTUAL_NOV5_LEAD_OBSERVATION",
+  "date": "2026-11-05",
+  "run_id": "compatibility-additional-20261105-01",
+  "receipt": "ddf80d6eb0222d75ad3ff5e42253534d",
+  "generation_id": "gen-1793870664-fiuZqWWWJpQTEUx4ZrXe",
+  "execution": {
+    "automatic_retry": false,
+    "diagnostic": {
+      "automatic_retry": false,
+      "conservative_charged_microusd": 340,
+      "dispatch_outcome": "POST_ATTEMPTED",
+      "executor_stage": "STATISTICS_GET",
+      "model_POST_attempts": 1,
+      "reported_provider_cost_microusd": 7,
+      "reservation_observation": "RECEIPT_ACKNOWLEDGED",
+      "reservation_recorded": true,
+      "reserved_microusd": 340,
+      "statistics_GET_attempts": 1,
+      "transport": {
+        "category": "HTTP_STATUS",
+        "close_failed": false,
+        "http_status": 404,
+        "stage": "HTTP_STATUS"
+      }
+    },
+    "error_type": "UnclassifiedFailure",
+    "status": "STOPPED_NO_RETRY"
+  },
+  "source_files": [
+    {
+      "name": "acknowledgement.local.json",
+      "bytes": 751,
+      "sha256": "3f64cb0d92cb823f1cdc0cb39dfc768763b4fe7103e9d4dd1e15daac28b3bcbb"
+    },
+    {
+      "name": "dispatch-consumed.local.json",
+      "bytes": 491,
+      "sha256": "f441fa994c96a4f0dcf7c0f3f6a3eb6da2838de95015f85e3ea0a221dd2abbdc"
+    },
+    {
+      "name": "event-000000.local.json",
+      "bytes": 105,
+      "sha256": "dc67dffd3f3ecdb27f766d0374f8f2501b2a2aab0e0b6b4d3637dcf383f78e81"
+    },
+    {
+      "name": "event-000001.local.json",
+      "bytes": 165,
+      "sha256": "49c134ec5cb05f56087938542171f748cb7d56908bcd78585f8fccbddd046489"
+    },
+    {
+      "name": "event-000002.local.json",
+      "bytes": 209,
+      "sha256": "355a770e1629ebfdb93e4254c24257ed55e88cf9af27afe9b89c0ed97a1d1907"
+    },
+    {
+      "name": "event-000003.local.json",
+      "bytes": 267,
+      "sha256": "22dec282dfbe2f3b0331c9e8b0a9af12fb2becd802c1387d541af3da66e3530f"
+    },
+    {
+      "name": "event-000004.local.json",
+      "bytes": 183,
+      "sha256": "6124d1f0b9dc3b13925734cc4415090518b61884796ef01eeeb9671ed25514ed"
+    },
+    {
+      "name": "failure.local.json",
+      "bytes": 499,
+      "sha256": "e55a7c3d0bbe5168b8d32199a0003dc8922af1e61dac95d7fb7ce69e76b60290"
+    },
+    {
+      "name": "manifest.local.json",
+      "bytes": 968,
+      "sha256": "152e4b1e1b813f99e549aa4043f3108238ecf45d0fd78f454eca57f29c5131a4"
+    },
+    {
+      "name": "request.local.json",
+      "bytes": 2677,
+      "sha256": "44969824c6bcdb5832cdfea8917301baa737f280f0496235a685db93ea97673b"
+    },
+    {
+      "name": "run.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "model": "openai/gpt-4.1-nano",
+  "actual_serving_provider": "NOT_VERIFIED_WITH_NATIVE_STATISTICS",
+  "new_conservative_hold_usd": "0.000340",
+  "old_conservative_hold_usd": "0.000340",
+  "model_response_body_retained": false,
+  "compatibility_success": false,
+  "E02_live_pilot_started": false,
+  "automatic_retry": false,
+  "independent_actual_outcome_review": {
+    "status": "PASS_RETAINED_FAILURE_ACCOUNTING_ONLY",
+    "path": "reports/INDEPENDENT_AUDIT_ADDITIONAL_CONNECTIVITY_ACTUAL_20261105.json",
+    "sha256": "ed84a24b363a4c097b7c372483d927b1a96bf9176f5de53469d528ed13d80e75",
+    "compatibility_success": false
+  },
+  "billing_availability_evidence": {
+    "url": "https://openrouter.ai/blog/tutorials/choose-best-ai-model/",
+    "section": "Step 5. Measure cost per completed task",
+    "observation": "Official source says an immediate generation lookup may return 404 until its record becomes available a few seconds later.",
+    "interpretation": "Consistent with this immediate lookup failure; not proof of its exact cause."
+  },
+  "next_action": "Prepare one separate billing-only lookup for explicit owner approval; do not resend model prompt, alter original authority, settle holds, or claim compatibility from missing response body.",
+  "post_stop_readonly_store_export": {
+    "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/post-stop-owner-export.local.json",
+    "sha256": "54f13061a4d0191fcd685358a1f1c789ecd80ba5cbfca7a1734da54a97e57cf9",
+    "bytes": 41571,
+    "event_count": 16,
+    "lifetime_dispatches": 2,
+    "unfinished": 2,
+    "total_conservative_hold_usd": "0.000680",
+    "owner_files_unchanged_during_export": true
+  },
+  "decoded_output_hash_witness": {
+    "expected_parsed_value": {
+      "ok": true
+    },
+    "expected_parser_status": "VALID",
+    "matches_saved_output_hash": true,
+    "scope": "Hash-bound expected decoded output; not a retained original response body, completion-usage object, serving-provider proof, or committed checkpoint."
+  },
+  "completion_reported_cost_rounded_up_usd": "0.000007",
+  "exact_completion_reported_decimal_cost_retained": false,
+  "additional_authenticated_API_requests_since_failure": 0,
+  "public_documentation_reads_after_failure": true
+}

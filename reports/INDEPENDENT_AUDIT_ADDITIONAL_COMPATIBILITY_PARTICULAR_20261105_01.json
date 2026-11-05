@@ -1,0 +1,163 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_COMPATIBILITY_PARTICULAR_PACKET_20261105_01",
+  "status": "PASS_ONE_EXACT_ROOT_EXECUTION_UNDER_DIRECT_HUMAN_AUTHORIZATION",
+  "reviewed_at_utc": "2026-11-05T09:21:14.984672+00:00",
+  "policy_hash": "e1bebe88d791ad8cc78ec2cf1d6df5e0cc6bb53a566045ae713136f4c85c2ffa",
+  "release_hash": "b926bbae815bc3a1def471d9866890bcd1a86636518d8847e8ad4f3cd0c897c3",
+  "snapshot_sha256": "8fac1c5bc607690a66e0e632e7db93f1e0a86613c0b0f356a4b4488048330fb3",
+  "lease_from_utc": "2026-11-05T09:19:45.720532+00:00",
+  "lease_until_utc": "2026-11-05T09:29:45.720532+00:00",
+  "unchanged_lease": true,
+  "outputs": {
+    "independent-review.local.json": {
+      "sha256": "e8b63ef85254d3a992ec1957ec96a633754a394b74a4524911e683bbe56f5b54",
+      "bytes": 381
+    },
+    "approval-CANDIDATE-NOT-ASSERTED.local.json": {
+      "sha256": "e89a6368f96f4ae6a86507036ff67bc009c73be4589dfce87d8556f248a9e2c8",
+      "bytes": 1054
+    },
+    "owner-assertion-CANDIDATE-NOT-ASSERTED.local.json": {
+      "sha256": "3ece08e15b508da5e179bbdc6a7ccac6b4f1539d89a2df8fe84ae66268123783",
+      "bytes": 543
+    },
+    "executor-review.local.json": {
+      "sha256": "24c28df252f134ecb8e860bf5538a5d5254786808f71cbf8a81454f99ebab563",
+      "bytes": 494
+    },
+    "terminal-packet-DIRECT-OWNER-AUTHORIZED.local.json": {
+      "sha256": "13cee5f8f1596216b88e7c2dd6512e11f193ca7d4b37494db012829cd18972d4",
+      "bytes": 9635
+    }
+  },
+  "owner_assertion_status": "EXISTING_HUMAN_ASSERTIONS_AND_DIRECT_RUN_COMMAND_PROJECTED_BY_ROOT_ONCE; no new assertions minted by auditor",
+  "validation": "Exact pure terminal validator PASS; owner discovery/dispatch patched to fail if touched",
+  "live_gates": [
+    "Exactpacketfilebytehash",
+    "Currentoriginalhead/history/rowCAS",
+    "Full120secondleasefit atstart and phase deadlines",
+    "Runtimefreshcatalogsemanticpriceproof<=900secondsold",
+    "Secure rotateddedicatedkey andprefund/no purchase ownerassertions",
+    "OneoldUNKNOWN340plusnew<=340,2lifetimedispatchmaximum, noautretry"
+  ],
+  "limitations": [
+    "Savedcollectoroutput reviewed; actualownerfiles/history NOT reopened or independently replayed here",
+    "NewNov5priceinterpretation3921e82b\u2026/terms5ea7ccad\u2026 independentlyadoptedprice-only; particularreviewperformsnoadditionalnetworkcapture; actualruntimefreshcatalogmandatory.",
+    "Existing setup/prefund assertions remain owner-attested, not independently verified funding. Root may project those existing assertions into exactTrue flags under directhuman delegation; auditor does not access key or execute.",
+    "Ifexpired preserveexactcandidate; no shiftedlease/retry/newauthority"
+  ],
+  "actual_original_owner_or_key_env_access": 0,
+  "network_calls": 0,
+  "financial_writes": 0,
+  "spending_usd": 0,
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "actual_execution_by_auditor": false,
+  "caller": {
+    "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/execute-reviewed-once.py",
+    "sha256": "3006e5ff02f2a574d3811d5670c9a9f2943bb70baab4a4bd5ffe14739230bd3e",
+    "bytes": 3341
+  },
+  "exact_packet": {
+    "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/terminal-packet-DIRECT-OWNER-AUTHORIZED.local.json",
+    "sha256": "13cee5f8f1596216b88e7c2dd6512e11f193ca7d4b37494db012829cd18972d4",
+    "bytes": 9635
+  },
+  "source_proposals": [
+    {
+      "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/direct-owner-execution-proposal.local.json",
+      "sha256": "ca4afda45eaa1ea195192d8a5ed4348bbffef86295de9fb180d6eb201bcf1b17",
+      "bytes": 1642
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/policy-proposal.local.json",
+      "sha256": "e1bebe88d791ad8cc78ec2cf1d6df5e0cc6bb53a566045ae713136f4c85c2ffa",
+      "bytes": 1765
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/release-proposal.local.json",
+      "sha256": "b926bbae815bc3a1def471d9866890bcd1a86636518d8847e8ad4f3cd0c897c3",
+      "bytes": 3916
+    }
+  ],
+  "primary_price_review": {
+    "path": "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_PRICE_INTERPRETATION_20261105.json",
+    "sha256": "b5242c1ff70ff2ebf79e26ddc851265af0977d6d5ba234aac7cecb5ebd944c83",
+    "bytes": 9481
+  },
+  "actor_interpretation": {
+    "status": "ACCEPT_ONE_ROOT_EXECUTION_BY_EXPLICIT_HUMAN_DELEGATION",
+    "direct_evidence": {
+      "thread_id": "01a18903-4f62-7403-ab36-e69e5a8f48d8",
+      "run_now_message_id": "01a1aafe-63a6-7d52-8659-8177734a9fac",
+      "run_now_text": "run experiments now",
+      "saved_followup_message_id": "01a1aaf7-04d3-7080-a56f-1ca30c342d06",
+      "saved_followup_text": "saved",
+      "obstacles_message_id": "01a1aadb-e60b-7b90-a2b3-ec46b2bf44d2",
+      "obstacles_text": "resolve any obstacles now",
+      "scope": "Independentread_thread userMessage evidence; ambientUI omitted andnotapprovalsource"
+    },
+    "basis": "Ownernowdirectlydelegatesexecutiontorootwithinexistingreviewedoneadditionalrequest/retainedoldUNKNOWN/$5combinedscope. Three exactTruebooleanvaluesprojectexistinghumanacceptedassertions,notroot-originatedclaimsornewbudget. Priorhumanrotateddedicatedprefunded/no-purchaseassertionsretainedintheproposalandtrustedcoordination; actualfundingnotindependentlyverified. Currentdirecthumaninstructiontakesprecedenceoverearlierhuman-physical-terminalworkflowassumption; frozencomment/codeunchanged. Noadditionalapprovalquestionrequiredforthisalreadyauthorizedboundedaction.",
+    "limits": "Onlythisexactpacket/caller/run/window; noautomaticsecondattempt/refund/newowner/expiredpacketreuse/leaseextension/purchase/extraAPItest. RootmustnotclaimHTTP200authenticationprovesfundingoroldbillzero."
+  },
+  "caller_review": {
+    "fixed_paths": "Resolvedrepositoryrootfromreviewedscriptlocation; exactignoredconfigs packet; proposal-local createonceintent, noalternatekey/owner/outputparams. ExternalexpectedpacketSHAvalidatedbyacceptedpure_read_exact_packet/currentfull120leasefit beforeintent/keyread.",
+    "credential_scope": "ONLYrootruntime underdirectauthorizationmayreadprivate.regularsameUID/max65536/no-group-worldpermissions/Gitignored .env, exactone strict sk-or-v1-format assignment, no shellsource/eval; nootherkeys exported/printed. OnlyprocessOPENROUTER_API_KEYtemporaryinjectionandfinallyrestoration. Auditorneverinvokedactualmain/runtime/privatefile.",
+    "single_use": "Createonce0600fsyncedlocalintentconsumedbeforecredentialload/run_once; run_onceoncewithexactthreeexistinghumanassertions; unchangedoriginalowner/clientstillenforceexacthead/history/CAS/price/window/reservation/count. Anyfailureconsumescallerintentandstops; nosilentregeneration.",
+    "stdout": "Onlyreviewedrun_onceclosedsummaryorsafeerrorcategory/validateddiagnostic; exceptionstringsdiscarded. Financialoutcomemustbejudgedfromretainedreceipt+summary,notassumedfromprocessreturncode.",
+    "hash_binding": "CallernewexternalreviewpinnedHEREbyrawSHA; notinsertedintofrozenKtoavoidchangingoldpacketcodeclosure. RootmustverifycallerSHAandfixedpacketSHAimmediatelybeforeexactonecall. Sourcechangeinvalidatesparticularacceptance."
+  },
+  "caller_authored_probes": {
+    "kind": "INDEPENDENT_EXACT_CALLER_AUTHORED_ORACLES_20261105",
+    "status": "PASS_MOCKED_ONLY",
+    "cases": [
+      {
+        "failure_path": false,
+        "one_run_once_call": true,
+        "only_one_key_exported": true,
+        "process_environment_restored": true,
+        "second_invocation_refused": true,
+        "intent_no_key": true
+      },
+      {
+        "failure_path": true,
+        "one_run_once_call": true,
+        "only_one_key_exported": true,
+        "process_environment_restored": true,
+        "second_invocation_refused": true,
+        "intent_no_key": true
+      }
+    ],
+    "actual_owner_or_credential_file_or_process_secret_env_access": 0,
+    "network_calls": 0,
+    "spending_usd": 0
+  },
+  "caller_evidence": [
+    {
+      "path": "/tmp/civiclab-independent-connectivity-caller-20261105.py",
+      "sha256": "480635f8208515b3b4c98ef4fada381598580734bbfd9ffab1c63178af5529c8",
+      "bytes": 2809
+    },
+    {
+      "path": "/tmp/civiclab-independent-connectivity-caller-20261105.json",
+      "sha256": "761e3c42a4f97033c34e0f9b35946a926c1f707e99ae7c0ce2bf76189f7bfa27",
+      "bytes": 677
+    }
+  ],
+  "latest_start_utc": "2026-11-05T09:27:45.720532+00:00",
+  "execution_readiness": "PASS_EXACT_ONE_ROOT_INVOCATION_AFTER_BOTH_SOURCE_AND_PACKET_HASH_CHECKS_WITHIN_UNCHANGED_WINDOW; actualhead/CAS/runtimeprice/credentialchecks maystillrefuse. Noresult/billclaimed.",
+  "integration_scope": "CorrectedE02studyintegrationreviewstillinprogressandNOTapprovedbythisconnectivitypacket; limitedpilotcannotrunfromthisauthority.",
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_CONNECTIVITY_PARTICULAR_20261105_01",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PARTICULAR_20261105_01.json",
+      "PrivateproposalR/E/A/O/packetfileslistedbyhash"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Pureexactrelease/bundle/terminalvalidationPASS, snapshotbytebinding/price/sourcehashverified; twoAUTHOREDcallerhappypath/failureenvironmentrestore/onceintentprobesPASS. Noactualowner/key/env/network/modelcall.",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authorizedsavedownerpreparationandlocalproposals/publicsource; userauthorizationreadfromtrustedthreaduserMessages",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Trustedlocalworkflow/caller, nofunding/actualprovideravailabilityguarantee, oldbillUNKNOWN",
+    "UNRESOLVED_BLOCKERS": "Runtimefreshprice/currenthead/CAS/full120fit/validkey/prefundchecks; independentactualoutcomeauditafteronerequest",
+    "NEXT_UNBLOCKED_TASK": "Rootverifyexactcaller+packetbytehashes,installfixedpacketandinvokeONCEunderexistingdirecthumancommand; preservealloutcomesandstopnoretry"
+  }
+}

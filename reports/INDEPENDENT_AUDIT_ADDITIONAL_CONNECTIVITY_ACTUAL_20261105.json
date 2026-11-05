@@ -1,0 +1,166 @@
+{
+  "kind": "INDEPENDENT_ADDITIONAL_CONNECTIVITY_ACTUAL_20261105",
+  "status": "PASS_RETAINED_STOPPED_ACCOUNTING_COMPATIBILITY_BLOCKED",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Exactsavedactualrunjournalandboundedreadonlypoststopownerexport;nofurtherproviderHTTP/actualownerDB/key/environmentreadorownerwrites",
+  "sources": [
+    {
+      "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/execution-summary.local.json",
+      "sha256": "52235639af37c09deb5a791fecd94e5abe0cf4216201dadf14e7045dad655aa3",
+      "bytes": 558
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/additional-release-20261105-01/post-stop-owner-export.local.json",
+      "sha256": "54f13061a4d0191fcd685358a1f1c789ecd80ba5cbfca7a1734da54a97e57cf9",
+      "bytes": 41571
+    },
+    {
+      "path": "reports/ADDITIONAL_CONNECTIVITY_ACTUAL_20261105.json",
+      "sha256": "45c484aa4ecf63a81cb401303e646210dbf87de38958a144be2376ec2e30101d",
+      "bytes": 4698
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_ADDITIONAL_COMPATIBILITY_PARTICULAR_20261105_01.json",
+      "sha256": "9048eb50482e23216443e54f556840a1c61b6e8dbc40847e8165dcc484e7ba6c",
+      "bytes": 9960
+    },
+    {
+      "path": "src/civiclab/additional_compatibility_client_v1_1.py",
+      "sha256": "b5c834b2fe81da4c7c2bc8c513a481be46001170ffff681388a9be3df2de2975",
+      "bytes": 17787
+    },
+    {
+      "path": "src/civiclab/production_compatibility_v4_2_1.py",
+      "sha256": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+      "bytes": 21542
+    }
+  ],
+  "independent_checks": {
+    "kind": "INDEPENDENT_ADDITIONAL_ACTUAL_20261105_ORACLES",
+    "status": "PASS_RETAINED_FAILURE_ACCOUNTING_ONLY",
+    "financial_events": 16,
+    "event_kinds": {
+      "GENESIS": 1,
+      "APPROVAL": 4,
+      "PRICE_PROOF": 4,
+      "RESERVE": 2,
+      "TRANSITION": 3,
+      "ADDITIONAL_COMPATIBILITY_AMENDMENT_V1": 1,
+      "STATISTICS_CLAIM": 1
+    },
+    "run_journal_files_verified": 11,
+    "run_journal_events_verified": 5,
+    "old_row_unchanged": true,
+    "new_status": "UNCERTAIN",
+    "old_hold_microusd": 340,
+    "new_hold_microusd": 340,
+    "total_hold_microusd": 680,
+    "lifetime_model_dispatches": 2,
+    "new_model_POST_attempts": 1,
+    "new_statistics_GET_attempts": 1,
+    "lookup_HTTP_status": 404,
+    "observed_response_cost_ceil_microusd": 7,
+    "provider_reported_native_bill": "UNKNOWN",
+    "raw_response_retained": false,
+    "checkpoint_retained": false,
+    "generation_id_retained": true,
+    "generation_id_sha256": "659b3bf84f77cb14085d4aecf4ec82a49f18b539b204ef8b525bfefdca7bf998",
+    "expected_answer_hash_proof": {
+      "kind": "EXPECTED_CANDIDATE_HASH_MATCH_NOT_RETAINED_RESPONSE",
+      "expected_output": {
+        "status": "VALID",
+        "parsed": {
+          "ok": true
+        },
+        "raw_text": "{\"ok\": true}"
+      },
+      "canonical_hash": "125959a6a60a15aa9631fcbb035f4df8d87e6854d9d48e2bfaad464f51a685b4",
+      "matches_recorded_output_hash": true,
+      "supports": "NarrowVALID/oktruecontent-binding underreviewedexecutedcode/SHA256assumption; notoriginalproviderbody,usageorcheckpointretention"
+    },
+    "actual_serving_provider": "NOT_VERIFIED",
+    "full_compatibility_gate": "BLOCKED",
+    "actual_owner_database_or_key_env_access": 0,
+    "new_HTTP_calls_by_auditor": 0,
+    "owner_writes": 0,
+    "spending_by_auditor_usd": 0
+  },
+  "financial_assessment": {
+    "owner_history": "16fullouterevents/canonicalpreviousheadchain andhistoryhashrederived; first9matchadmittedoldprefixhash,AMENDMENTclosedbundlematchesacceptedM/R/A/O. FoldRESERVE/TRANSITION priorhash/context/immutableevidence/monotoniccost andstrictrowmathmatchall2exportedmaterializedrows. Finalheadseq15/hash/headerandactiveAhashmatch. Originalregistration/DBfilesnotopened; exportdeclaresreadonlyhash-stable4filesunderacceptedreader,notindependentlyrepeatedDBcapture.",
+    "holds": "OldrowunchangedUNKNOWN340/knowncostnull/genidnull; newrowUNCERTAIN/reservedcharged340/observedresponsecostceil7/genid+outputhashpresent/billingcheckpointnull. Totalconservative680\u00b5=0.000680USD,count2,trueunfinished2. Onecurrentstatisticsclaim; allowanceconsumed. No SETTLED/PHASE_COMMITTED/newcredit/refund.",
+    "cost_interpretation": "7\u00b5isupward-roundedobservedcompletionusage.costconvertedbyreviewedexecutor,notverifiednativeproviderinvoice/exactoriginalUSDvalue. Originalresponseusageobjectnotretained. ActualproviderbillingremainsUNKNOWN; nozerocostorold340reconciliationinferred.",
+    "attempts_and_error": "ExactlyonePOST/onegenerationstatisticsGETreportedbycloseddiagnosticanddurableintent/claim evidence; GETHTTP404atSTATISTICS_GET/HTTP_STATUS,close_failedfalse,no retryrecorded. Processreturncode0onlyreflectscallersafesummarywrapper,notcompatibilitysuccess."
+  },
+  "retention_assessment": {
+    "generation_id": "RetainedinprivateSTATISTICS_GET_INTENTandfinancialexport row; itsSHA256 is659b3bf84f77cb14085d4aecf4ec82a49f18b539b204ef8b525bfefdca7bf998. Privateevent sourcehash22dec282dfbe2f3b0331c9e8b0a9af12fb2becd802c1387d541af3da66e3530f.",
+    "journal": "11exactfileshashes/sizesmatchleadreport;5seq/previoushashchain eventsverifiedincludingPOSTandstatisticsintent/terminal. Requestpayload/context/ACKreceipt+contexthash matchadmittedpacketandnewrow.",
+    "missing": "Nooriginalmodelresponse/providerJSONbody, responseusage, generationstatisticsbody, billingartifact orphasecheckpointretained. Nooriginalraw reconstructionclaimed. The originalone-shotclientretainedsafeaccounting/intents/outputhash, notanswercontentonthisfailurepath."
+  },
+  "narrow_quality_hash_evidence": {
+    "kind": "EXPECTED_CANDIDATE_HASH_MATCH_NOT_RETAINED_RESPONSE",
+    "expected_output": {
+      "status": "VALID",
+      "parsed": {
+        "ok": true
+      },
+      "raw_text": "{\"ok\": true}"
+    },
+    "canonical_hash": "125959a6a60a15aa9631fcbb035f4df8d87e6854d9d48e2bfaad464f51a685b4",
+    "matches_recorded_output_hash": true,
+    "supports": "NarrowVALID/oktruecontent-binding underreviewedexecutedcode/SHA256assumption; notoriginalproviderbody,usageorcheckpointretention"
+  },
+  "quality_conclusion": "Expectedcanonical_answerforvisibletext{\"ok\": true}hashmatchesrecordedimmutableoutput_hash, supportingnarrowVALID/exactoktruecontentbindingunderexecutedreviewedcodeandSHA256assumption. ItisNOToriginalresponseevidenceornewlycreatedcheckpoint; cannotvalidateunhashedprovider/usagefields. FullcompatibilitygateBLOCKED(rowUNCERTAIN/nativebill/provider/checkpointmissing). NoE02actualrunallowedbythisaudit.",
+  "causal_assessment": "Exact404causeNOT_DETERMINEDfromretaineddiagnostic. RootreportsprimaryOpenRoutertutorialdescribingbriefgeneration-recordavailabilitydelayforimmediatelookup; timingisconsistent,but noHTTPbody/providertraceproofhere. ThisauditdoesnotmakeanextraAPI/docsrequestorclaimthecausedefinitelywasdelay.",
+  "attributed_primary_delay_reference": {
+    "url": "https://openrouter.ai/blog/tutorials/choose-best-ai-model/",
+    "section": "Step5costpercompletedtask",
+    "scope": "Rootreportedofficialreading,notindependentlyfetchedinthisnoHTTPactualaudit; advisorymechanismonly"
+  },
+  "permitted_recovery_preparation": [
+    "Prepareseparatehash-boundoneGETsamegenerationbilling-onlycollector/caller+offlineindependentreview; noPOST/newprompt/newowner/retry/purchase/settlement.",
+    "Originallookupcount1alreadyconsumed. OneadditionalbillingGETneedsnewexplicitownerpermissionforextendingthatreadallowance,afterconcretescope/code/identity/outputreview; do notasknewmodelbudgetasif5Mconsentlost.",
+    "Retainsameimmutableold/newrows/full680/count2/claims/history. Newreadmetadatafilesseparatefromoriginalevidence; no pretendoldrawresponse/checkpointrestoration orbackdatedsuccess.",
+    "Anyfuturealternativepilotadmissionrequiresseparatelyversionedclosedmethods/code+particularreview bindingrecoveryevidence/currenthead/twoexactquarantinedrows. CurrentacceptedstudyentryrequiresPHASE_COMMITTEDcompatibilityandtrueunfinished1, so cannotbeweakenedbytoggles/hashmatchalone.",
+    "ForfuturemodelphasesconsiderdocumentedboundedwaitBEFOREsingleGETwithin120sdeadline; noextraHTTP/retryinferred. Thisrequiresnewexactsource/tests/review, notretroactivechangeofthisrun."
+  ],
+  "prohibited_without_separate_review": [
+    "AnysecondmodelPOSTtorecoverbilling orretrycurrentrequest",
+    "AnyautomaticsecondstatisticsGETundertheconsumedpacket",
+    "AnyownertransitionfromterminalUNCERTAIN/refund/reopen/settlement/newauthority/reset",
+    "Fabricatedoriginalresponse,checkpoint,actualAzureprovider/nativeusageorzero-billclaim",
+    "ActualE02pilotfrommockintegrationPASS/hash-boundqualitymatchalone"
+  ],
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-additional-actual-20261105.py",
+      "sha256": "cc1d139f939a2582448c4e6bc14d6ea64c2fe91b8b3eed3a44e863478df5871a",
+      "bytes": 6076
+    },
+    {
+      "path": "/tmp/civiclab-independent-additional-actual-20261105.json",
+      "sha256": "a2ad1e2617318d251f223e61bb1778d9f852e60a2593bcf27d7f80d9acffb101",
+      "bytes": 1713
+    }
+  ],
+  "actual_owner_database_or_key_env_access": 0,
+  "new_HTTP_calls_by_auditor": 0,
+  "owner_writes": 0,
+  "spending_by_auditor_usd": 0,
+  "project_actual_spend": "UNKNOWN_NATIVE_BILL; responsecostceil7\u00b5observed,newhold340\u00b5+oldhold340\u00b5 retained",
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_ADDITIONAL_CONNECTIVITY_ACTUAL_20261105",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_ADDITIONAL_CONNECTIVITY_ACTUAL_20261105.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-additional-actual-20261105.py (readsONLYsavedexportandexactnewrunjournal)"
+    ],
+    "TESTS_RUN_AND_RESULTS": "16savedfinancialevents/2rows/oldprefixhash/11journalfiles/5eventchain/counters/expectedanswerhash independentlyPASS; fullcompatibilityBLOCKED",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authorizedactualprojectoperationalmetadataonly,nokey/.env/rawrespondents/publishers; generationIDretainedprivately",
+    "COST_USD_ACTUAL_OR_ZERO": "Auditor0,newactualinvoiceUNKNOWN; recordedresponseceil0.000007/newhold0.000340",
+    "RISKS_AND_LIMITATIONS": "SavedexportvsactualDB,hash-boundshapevsoriginalrawmissing,unknownserving/nativebill/cause",
+    "UNRESOLVED_BLOCKERS": "Billing-onlynewreadpermission+code review; recoveryevidence; separatelyversionedstudyadmission",
+    "NEXT_UNBLOCKED_TASK": "Independentlyreviewexactone-billing-GETcollectorandpresentownerconcreteone-readapproval; noexecutionfromthisaudit"
+  }
+}
