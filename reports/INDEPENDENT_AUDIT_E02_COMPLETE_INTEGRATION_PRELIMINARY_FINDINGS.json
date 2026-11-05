@@ -1,0 +1,172 @@
+{
+  "kind": "INDEPENDENT_E02_COMPLETE_INTEGRATION_PRELIMINARY_FINDINGS",
+  "status": "BLOCKED",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Preliminaryexactsource/authoredprobe reviewofdevelopmentcandidatewhileauthorregressiontestsfinish;NOTfinalfrozenhandoff/retainedrunacceptance",
+  "original_source_pins": {
+    "src/civiclab/e02/exploratory_owner_v1.py": {
+      "sha256": "4063276692794a0b618f56704e512975ec3ed73971dcf3bc250a0fe8e00e829f",
+      "bytes": 29045
+    },
+    "src/civiclab/e02/exploratory_live_client_v1.py": {
+      "sha256": "c23e8c85132de5472d20e89f77ba4db02b47313307a1c436e18e6b514d87662d",
+      "bytes": 20768
+    }
+  },
+  "preserved_source_copies": [
+    {
+      "path": "/tmp/civiclab-preliminary-exploratory_owner_v1-40632766.py",
+      "sha256": "4063276692794a0b618f56704e512975ec3ed73971dcf3bc250a0fe8e00e829f",
+      "bytes": 29045
+    },
+    {
+      "path": "/tmp/civiclab-preliminary-exploratory_live_client_v1-c23e8c85.py",
+      "sha256": "c23e8c85132de5472d20e89f77ba4db02b47313307a1c436e18e6b514d87662d",
+      "bytes": 20768
+    }
+  ],
+  "findings": [
+    {
+      "id": "E02-OWNER-V1-COMMIT-RAW-BILLING-TYPE-AUXILIARY-GAP",
+      "severity": "HIGH",
+      "status": "BLOCKED",
+      "location": "exploratory_owner_v1.py commit_survey statistics comparison",
+      "problem": "PersistedstatisticsbodycomparedtofinancialbillingusingPythonvalueequalityforsubsetfieldsonly; strictnativetypes/is_byok/auxiliarychecksnotrepeatedatownercommit. JSONtrue==int1andint0==Falsepass; extraunsupportedauxiliarycountersignored.",
+      "independent_probe": {
+        "native_bool": {
+          "tampered_retained_statistics_committed": true,
+          "status": "PHASE_COMMITTED"
+        },
+        "byok_integer": {
+          "tampered_retained_statistics_committed": true,
+          "status": "PHASE_COMMITTED"
+        },
+        "auxiliary_activity": {
+          "tampered_retained_statistics_committed": true,
+          "status": "PHASE_COMMITTED"
+        }
+      },
+      "impact": "AftercorrectSETTLEDrow, swappingretainedstatisticsnative_tokens_prompt\u2192true, is_byok\u21920, oraddingnum_search_results1 isacceptedPHASE_COMMITTEDandboundinnewW. Bodyevidencecancontradictstrictreviewedbilling/auxiliarydomain. No unboundedcostbypassorhostilehostresistanceclaim; testchangesauthoredtemporaryfilesbeforecommit.",
+      "required_remedy": "Ownercommit muststrictlyrevalidatecompletecanonicalstatistics/responseidentity,nativebuiltintypes/bounds,is_byokisFalse,auxiliaryallowedfields/domains,andcostconsistencywithrow+responseusage. Preserveknownmonetaryobservations/fullhold/stoponbodymismatch. Adddirectownertamperfixtures,notonlyclientprewritevalidation."
+    },
+    {
+      "id": "E02-OWNER-V1-COMPATIBILITY-QUALITY-ENTRY-GAP",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "location": "exploratory_owner_v1.py _entry",
+      "problem": "FinancialPHASE_COMMITTEDcompatibilitystatus/billproofnotasuccessfulJSONcompatibilityoutcome. _entryneverreads/verifiesfixedcompatibilitycheckpoint/statusVALID/exactoktrue.",
+      "independent_probe": {
+        "actual_mock_compat_summary": "CHARGED_QUALITY_FAILURE",
+        "study_admission_after_failed_quality": "RESERVED",
+        "study_authority_inserted_into_original_approvals_map": true
+      },
+      "impact": "Reviewedadditionalclientwithmockresponse{\"ok\":false}returnsCHARGED_QUALITY_FAILUREbutfinanciallycommits; StudyOwneracceptsnextRESERVED. Thisbypassestheacceptedmethodssuccessfuladditionalconnectivitycheckgate; doesnotsettle/refundold340.",
+      "required_remedy": "Beforeinitialstudygrant, verifyfixedboundedregularcompatibilitycheckpoint/rawhashbindingtoitsPHASE_COMMITTEDrow andacceptedcompatibilityoutputshape/statusVALID/exactparsedoktrue, usingacceptedfixedpaths,noarbitrarycallerstatus. Refusemissing/tampered/invalid/latecheckpoints. CorrectfixtureusingPARSED_OBJECTgenerichelperintotruereviewedcompatibilityoutput; retainnegativequalitycase."
+    },
+    {
+      "id": "E02-CLIENT-V1-UNSUPPORTED-REASONING-QUALITY-DOWNGRADE",
+      "severity": "HIGH",
+      "status": "BLOCKED",
+      "location": "exploratory_live_client_v1.py RESPONSE_VALIDATION parse_survey handling",
+      "problem": "parse_surveyUNEXPECTED_REASONINGisusedasanordinaryPARSE_ERROR; clientstorescompletebodywithunexpectedreasoningandcontinuesbilling/commits/nextunitsifreportednative_reasoning0.",
+      "independent_probe": {
+        "client_terminal": "COMPLETE",
+        "POSTs": 16,
+        "GETs": 16,
+        "complete_blocks": 0,
+        "unsupported_reasoning_retained_in_all_response_files": true,
+        "actual_authority": false
+      },
+      "impact": "Mockmessage.reasoningnonemptyyieldsCOMPLETEafter16POST/16GET,0completeblocks,unsupportedreasoningretainedinallresponsefiles. Acceptedmethodssaysunsupportedreasoning/auxiliaryactivitystopsfinancially/fullholdbeforeunsafecompletebodyretention; parserqualityerrorisnotthatgate. Noactualprivatereasoning/model/keydatausedintheprobe.",
+      "required_remedy": "Explicitclientunsupportedreasoning/privacy/domaingateafterknownmoneyharvestandbeforecompletebodyretention/RESPONSE_SEEN/statGET. Failclosedwithsafeenum/explicitbodymissing/fullhold/stop,noqualitycommit/nextPOST. Noauxiliaryfailuremaybedowngradedtoquestionnairemiss. Testreasoning/reasoning_details independentlyofnativeusagecounters."
+    },
+    {
+      "id": "E02-OWNER-V1-AUTHORITY-MAP-METHODS-DEVIATION",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "location": "exploratory_owner_v1.py START derived state",
+      "problem": "STARTinsertsH(studyA)\u2192Aintooriginalstate.approvals; acceptedclosedmethodsrequireseparatestudyauthoritymapandoriginalapprovalsuntouched. _bindingtypeoverrideprovidesseparatebehaviorbutdoesnotmeettheclosedstateseparationcontract.",
+      "independent_probe": {
+        "study_authority_inserted_into_original_approvals_map": true
+      },
+      "impact": "Implementationdepartsmethodsindependenceoforiginalapprovalmap/replaypredicates; no observedoldrow/capresetorfinancialbypass. Physicalmapmembershipconfirmedafterinitialbatch.",
+      "required_remedy": "Keeporiginalapprovals/activeprefixsemanticsunchanged; installnewAinseparatestudymapandexplicitlyreusepureoriginalrowmathwithsuccessorauthoritylookup,withouttemporarystate masking orfakeV4approval. Directassertionsfororiginalapprovalmapbefore/afterwholepilot."
+    },
+    {
+      "id": "E02-CLIENT-V1-NOT-RUN-TERMINAL-DISPOSITIONS-MISSING",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "location": "exploratory_live_client_v1.py _terminal earlyanalysis_statusNOT_RUN branch",
+      "problem": "AnalysisRepresentationBoundfinancialfailureearlyreturnsnapshotwithout32recordresponseenvelope; onlysubmittedfinancialprefixtranscriptisretainedinterminaloutput.",
+      "independent_probe": {
+        "kind": "INDEPENDENT_E02_NOT_RUN_TERMINAL_EXPORT_PROBE",
+        "client_sha256": "c23e8c85132de5472d20e89f77ba4db02b47313307a1c436e18e6b514d87662d",
+        "failure": "AnalysisRepresentationBound",
+        "model_POSTs": 1,
+        "statistics_GETs": 1,
+        "analysis_status": "NOT_RUN",
+        "terminal_response_envelope_present": false,
+        "only_prefix_transcript_records": 1,
+        "required_total_dispositions": 32,
+        "actual_owner_key_env_network_access": 0,
+        "spending_usd": 0
+      },
+      "impact": "1POST/1GETUnicodefixturecorrectlykeepsfullUNCERTholdandNOT_RUNanalysisbutterminalfailurecontains1transcriptrecord/no31unattempteddispositions. Violatesacceptedonterminationall32dispositionsreproducibility/failuredenominatorcontract; no numericresultinvented.",
+      "required_remedy": "Derivefull32financialdispositionsfromauthenticatedcommittedprefix/currentFAILED_UNCERTAINorCANCELLED/nullandremainingNOT_ATTEMPTEDevenwhenanalysisNOT_RUN; analysis staysNone. Donotexport/truncateoversizeduncommittedanswer; originalraw/knownbillpreserved. Addfake+realownerterminaltests."
+    }
+  ],
+  "independent_testing": {
+    "probes": "3retainedstatisticsmutations+realacceptedmockcompatibilityqualityfailureadmission+unsupportedreasoningclientflow+UnicodeNOT_RUNterminalexport; allconfirmed exactoldpins usingtemporaryauthoredhomes/fakecredential/transport.",
+    "full_suite": "NOT_RERUN_FOR_PRELIMINARY; rootreported96PASS/223.917sPython3.12andworker93PASS/221.025sPython3.11aredevelopmentobservationsonly,notindependentacceptanceandnotfixvalidation.",
+    "frozen_final_handoff_and_retained_mock_evidence": "NOT_REVIEWED_NOT_READY"
+  },
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-integration-preliminary.py",
+      "sha256": "9d25c6b940b8dce786ab3cc547426b70c51737ce9ab2d2fea49a581fa2488ee8",
+      "bytes": 3671
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-integration-preliminary.json",
+      "sha256": "94a293d29bfb5b6aec59093b8d2fdd60f309cec090491e848277c393ae38eca9",
+      "bytes": 1385
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-terminal-notrun-probe.py",
+      "sha256": "1aad6fee3117925d78daa92509088f7ddd02aa2c9f22efafc186f27b6d21ec14",
+      "bytes": 1343
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-terminal-notrun-probe.json",
+      "sha256": "8b88674484d2b4518398b1389fe66de8a6516a681d39d92ab1ebe1eb983f0388",
+      "bytes": 457
+    }
+  ],
+  "positive_partial_scope": [
+    "Staticpacketdetachment/finiteQ/L/K/P/R/O/A/Tcodeclosure,newgrantclocks,oldrowquarantine andcapsimplemented ascandidate",
+    "AtomicSTART/GRANT/RESERVE/newcommitpaths andopaqueoneusePOSTintentpresent",
+    "Knownoverrun/nonzero nativeusage/costidentity/latehold/privacyencodedquestionnaireandUnicodeguards coveredbyauthorfixtures",
+    "Originalmethods/transport/sourcecodeunchanged; theseobservationsarenotfullcomponentPASS"
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_model_calls": 0,
+  "financial_writes_actual": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_INTEGRATION_PRELIMINARY_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_COMPLETE_INTEGRATION_PRELIMINARY_FINDINGS.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-integration-preliminary.py",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-terminal-notrun-probe.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Sixauthoredscenariosconfirmfivefindings; oldsourcecopiespreserved; noPASS",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "AuthoredtemporaryfakeOS/credential/providerobjects only; noactualmodel/privatechain-of-thought/rawpeople/publisherinputs",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Preliminarydevelopmentcandidateonly; rootfixesmaychangeallcodepinsandrequirefreshfinalreview",
+    "UNRESOLVED_BLOCKERS": "Fiveconcretefixes; finalfrozenhandoff+fulltests+retainedMOCKprimary/replay/crashes",
+    "NEXT_UNBLOCKED_TASK": "Root/E02workerfixinownedfileswithoutmethodrelaxation; auditorreviewsnewcompletefrozencandidateandretainedmockevidencebeforeanyliveauthority"
+  }
+}

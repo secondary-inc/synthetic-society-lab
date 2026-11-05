@@ -1,0 +1,156 @@
+{
+  "kind": "INDEPENDENT_JSON_COMPATIBILITY_PRICE_INTERPRETATION_20261105",
+  "status": "PASS_PRICE_ONLY_EXACT_CONDITIONAL_REQUEST_NO_DISPATCH_AUTHORITY",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "sources": [
+    {
+      "path": "configs/json_compatibility_price_interpretation_20261105_proposal.json",
+      "sha256": "11c05a1f811449c94303a78ef67cd6e59280a1092219c59a74a0be2c44f4ecfb",
+      "bytes": 6644
+    },
+    {
+      "path": "reports/CONNECTIVITY_CURRENT_PRIMARY_PRICE_POLICY_20261105.json",
+      "sha256": "4043323e6d54897380a44563587832b83f6bd4cdc4667dcdd8a9666b9765a148",
+      "bytes": 4302
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/connectivity-price-20261105-01/catalog.json",
+      "sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+      "bytes": 2359
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/connectivity-price-20261105-01/catalog-metadata.json",
+      "sha256": "e6c9560367542724745df596e5b8f2dbcdb428cd5ee852a105a2cf4162c568d7",
+      "bytes": 223
+    },
+    {
+      "path": "src/civiclab/production_price_v4.py",
+      "sha256": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+      "bytes": 12646
+    },
+    {
+      "path": "src/civiclab/production_admission_v4.py",
+      "sha256": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+      "bytes": 15343
+    }
+  ],
+  "accepted_price_decision": {
+    "interpretation_canonical_sha256": "3921e82ba255982939e8667147e509c96e84fd922ed11a1fda3de646f5f2d859",
+    "terms_canonical_sha256": "5ea7ccad7a32d5ec38e6a101c9e4da3c07243a098ae83b381c86abf00efe8c07",
+    "compiled_release_canonical_sha256": "b926bbae815bc3a1def471d9866890bcd1a86636518d8847e8ad4f3cd0c897c3",
+    "valid_from_utc": "2026-11-05T09:09:48+00:00",
+    "valid_until_utc": "2026-11-06T09:09:48+00:00",
+    "status": "NEW_EXPLICIT_PRICE_DECISION_ADOPTED_FOR_EXACT_COMPATIBILITY_REQUEST_ONLY",
+    "new_record_not_redating": true,
+    "independent_audit_is_downstream": "Do not add thisreporthash backintoalreadyadopteddecisionevidencelist; source\u2192decision\u2192thisreview isacyclic. Externallyexpecteddecisionhashbindstheadoptedobject."
+  },
+  "primary_sources_independently_read": [
+    {
+      "url": "https://openrouter.ai/pricing",
+      "read_date": "2026-11-05",
+      "supports": "Providerlistinferencepricing; platformchargesarecreditpurchasechargesratherthanindividualrequests. Supportsflatrequest0forprefundednonBYOKscope,notzeroaccount/purchase/tax/Enterprisefees.",
+      "location": "BillingandPricing,lines88-94"
+    },
+    {
+      "url": "https://openrouter.ai/support/",
+      "read_date": "2026-11-05",
+      "supports": "Providercostpassthroughandcreditbalanceusage; BYOKhasseparatefeeapplicability. Noactualprefund/balance/accountclaim.",
+      "location": "UsagebillingandPricing/Fees,lines55-71"
+    },
+    {
+      "url": "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+      "read_date": "2026-11-05",
+      "supports": "CachewritesforpreGPT5.6modelshavenoadditionalcachewritecharge; explicitnewermodelcachecontrols do notapplytofixedGPT4.1nano/no-cache-controlpayload. Azurecachereadratesremainnativecatalogvalues.",
+      "location": "OpenAIcaching,lines272-289and415"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/prompt-caching",
+      "read_date": "2026-11-05",
+      "supports": "AzurepreGPT5.6modelsnoadditionalcachewritecharge; earliermodelretentionpoliciesuse samecachepricing. Supports0additionalcache-writeand1hcomponentsasexplicitfixedoldermodelapplicabilityinference.",
+      "location": "Intro/Importantlines32-35,retentionlines117-118",
+      "access_scope": "Publicwebreaderreturnedarticlealongsideauthorizationbanner; no sign-in/bypass/privatefetchperformed."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/model-choice-guide",
+      "read_date": "2026-11-05",
+      "supports": "MicrosoftcomparisonclassifiesGPT4.1asnonreasoningandlistsGPT4.1nanoasfamilyvariant. Supportsno-separately-billablereasoninginterpretation; actualservingmetadata/usage muststillverify0reasoningandrefuseunexpectedreasoningbody.",
+      "location": "Comparisonlines41-55",
+      "access_scope": "Publicwebreaderreturnedarticlealongsideauthorizationbanner; no signin/bypass/privatefetchperformed."
+    }
+  ],
+  "source_representation": "Scopedindependentprimarywebreadings/paraphrases,notfullpagearchive,rawHTTP/TLScaptureorguaranteeagainstexternalserviceviolatingpublishedterms. No extendedquotes. PrimaryURLsreadwithwebtoolonly; no nativeproviderinference/billing/keyrequests.",
+  "interpretation_assessment": {
+    "request0": "ACCEPT_CONDITIONAL_PROVIDER_LIST_RATE_PREFUNDED_NONBYOK_SCOPE; nopurchase/topup/tax/accountfeeautomaticspend",
+    "cache_write_and_1h0": "ACCEPT_CONDITIONAL_CURRENT_AZURE_PRE_GPT5_6_POLICY; notzerosinferredfromabsentcatalogfields",
+    "internal_reasoning0": "ACCEPT_CONDITIONAL_FIXED_NONREASONING_FAMILY_APPLICABILITY; runtime0native reasoning/unsupportedbodygates mandatory",
+    "nontext_auxiliary": "INAPPLICABLEONLYexacttextmessages/tools=[]/plugins=[]/tool_choice=none/nononline/noimageaudiofile; runtimeauxiliaryunknown/nonzeropoliciesremainfailclosed",
+    "input_framing": "Existingreviewedfixed2messagebyte+1024permessageengineeringbound; nogenericproviderhiddeninputguarantee; nativeusagereconciliationmandatory"
+  },
+  "independent_math": {
+    "catalog_bytes": 2359,
+    "catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+    "semantic_hash": "0bcf5eede902a12a3e9385daed89c2166400934b7d0d0269e0c7fe91eaf870e6",
+    "both_family_tags_bounded": [
+      "azure",
+      "azure/swedencentral"
+    ],
+    "input_per_M_USD": "0.143",
+    "output_per_M_USD": "0.44",
+    "input_bound": 2276,
+    "output_limit": 32,
+    "request_fee_USD": "0",
+    "exact_microusd": "84887/250",
+    "ceil_reserved_microusd": 340,
+    "source_pins_verified": 7,
+    "compiled_terms_and_release": "EXACT"
+  },
+  "fixed_request_scope": {
+    "run_id": "compatibility-additional-20261105-01",
+    "model": "openai/gpt-4.1-nano",
+    "requested_route": "azure",
+    "reported_provider": "Azure",
+    "route_scope": "PROVIDER_FAMILY",
+    "no_region_or_hardware_revision_claim": true,
+    "seed": 20261103,
+    "temperature": 0,
+    "output_parameter": "max_completion_tokens",
+    "output_limit": 32,
+    "json_object_only": true,
+    "tools_plugins_disabled": true,
+    "fallback": false,
+    "retries": 0
+  },
+  "current_evidence_gap_disposition": "Threeearliercurrentprimaryfee-policygapsin c9d3ed45\u2026 closedforthisNEWprice-onlydecision byindependentcurrentofficialreadings; earlierdatedassessmentandexpireddecision/packetsnotmodified. ThisdoesnotchangetheoldUNKNOWNbill or authorizeanadditionalrequest.",
+  "runtime_and_authority_gates": [
+    "Freshactualendpointcatalogreceipt<=900seconds atnewdispatch, exactsemantic/params/prices/applicability/window match; changedorexpiredrefuses",
+    "Originalregisteredowner/currenthead/prefix/oldUNKNOWN340/dispatch1mustmatchseparatereviewedoneadditionalpolicy; noreset/newowner/refund",
+    "Combinedcompatibilityceiling1000\u00b5,oneadditionalreservation<=340\u00b5and2lifetimedispatches remain; shared5Mconsentnotadditive",
+    "SeparateexactR/A/O/E/readiness/terminalpacketreview andaffirmativeownerunknownbill/setupassertions,securevalidrotateddedicatedprefundedcredential",
+    "OneactualPOSTandonegenerationstatisticslookupmax,noautomaticretry/purchase; reconcileactualmodel/provider/nativeusage/auxiliary/bill andpreservefailurehold",
+    "SuccessfulcompatibilityqualitygateandcompleteE02owner/clientreviewneededbeforepilot; thispricedecisiondoesnotadoptstudy512output/requestoritsauthenticitypipeline"
+  ],
+  "credential_and_funding_scope": "Rootreportedseparateread-onlycurrentkeyHTTP200; noauditorcredentialreport/key/.env/account/balanceaccess. Authenticationdoesnotproveprefund/balanceorhistoricalcost. Old340UNKNOWNunchanged.",
+  "actual_dispatch_authorization": null,
+  "actual_owner_or_key_env_or_raw_respondent_publisher_access": 0,
+  "native_provider_model_or_billing_calls": 0,
+  "model_POSTs": 0,
+  "financial_writes": 0,
+  "spending_usd": 0,
+  "independent_primary_web_readings": true,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_PRICE_INTERPRETATION_20261105",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_PRICE_INTERPRETATION_20261105.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "Purecontract_from_catalog/compile_compatibility_releasewithexactproposal+savedcatalog; nofresh_prooforHTTPexecution"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Fiveofficialprimarypagesindependentlyread; twoevidencehashes/7sourcepins/contract+releaseexactrecompile/Fractionceil340verified",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Officialpublicprimarydocsandauthorizedsavedpubliccatalogonly; scopedparaphrases/noarchives",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Priceonlyconditionalpublishedpolicyinferences,actualprovideravailability/nativeusage/fundingunobserved",
+    "UNRESOLVED_BLOCKERS": "Currentexactowner/terminalrelease+funding/setupassertions+authenticoutcome; E02integrationfinalauditpending",
+    "NEXT_UNBLOCKED_TASK": "Rootpreparesnewexactadditionalconnectivityownerpacketusingaccepted3921e82b\u2026decisionandseparatevalidcurrentMlease; auditorreviewsbeforeactualactivation"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "CURRENT_PRIMARY_POLICY_READINGS_FOR_PRICE_REVIEW",
+  "status": "OBSERVATIONS_AND_EXPLICIT_INFERENCES_NOT_PRICE_AUTHORITY",
+  "observed_date": "2026-11-05",
+  "recorded_at_utc": "2026-11-05T09:09:48+00:00",
+  "representation": "Scoped paraphrases of public primary pages returned by the web reader; not an immutable full-page archive, original HTTP body, or TLS attestation",
+  "sources": [
+    {
+      "url": "https://openrouter.ai/pricing",
+      "section": "Billing and Pricing: provider markup and billing structure",
+      "observation": "Inference uses provider list pricing. Standard and Business platform fees apply when buying credits, rather than to individual requests. Each inference request deducts its model cost from the credit balance.",
+      "scope": "Supports zero additional OpenRouter per-request surcharge for a prefunded non-BYOK request. No purchase, top-up, tax, Enterprise contract, balance, or availability assertion."
+    },
+    {
+      "url": "https://openrouter.ai/support/",
+      "section": "Pricing and Fees",
+      "observation": "The FAQ separately describes credit-purchase fees and provider inference pricing passed through without markup; BYOK has a distinct policy."
+    },
+    {
+      "url": "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+      "section": "OpenAI; Explicit prompt caching; Disabling prompt caching",
+      "observation": "The current guide distinguishes models preceding GPT-5.6, which have no cache-write charge, from GPT-5.6 and later with paid cache writes. Explicit OpenAI cache breakpoints are supported only on GPT-5.6 and later.",
+      "scope": "Do not substitute the generic OpenAI cache-read multiplier for the Azure endpoint prices retained in the actual catalog."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/prompt-caching",
+      "section": "Prompt caching introduction and supported models",
+      "observation": "Microsoft states that models before GPT-5.6 have no additional cache-write charges. Earlier model cache pricing is the same across retention policies; paid TTL-dependent cache writes apply to GPT-5.6 and later.",
+      "scope": "Applying this Azure policy to the fixed GPT-4.1-nano request supports zero additional input_cache_write and input_cache_write_1h components. The request contains no cache controls. This is an explicit applicability inference, not an assertion that missing catalog fields report zero."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/model-choice-guide",
+      "section": "GPT-5 vs GPT-4.1 comparison",
+      "observation": "Microsoft classifies the GPT-4.1 family as non-reasoning and explicitly includes GPT-4.1-nano among its variants.",
+      "scope": "Supports the proposed internal_reasoning-inapplicable interpretation for this fixed model. Runtime must still reject unsupported reasoning traces and require native reasoning count zero; no Azure deployment availability claim."
+    }
+  ],
+  "catalog": {
+    "path": "data/processed/compatibility_operator_handoff/connectivity-price-20261105-01/catalog.json",
+    "sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+    "observed_at_utc": "2026-11-05T08:50:04.511270+00:00",
+    "runtime_refresh_required": true
+  },
+  "proposed_missing_component_interpretation": {
+    "request": "0 under the stated prefunded non-BYOK request scope",
+    "input_cache_write": "0 additional charge under the applicable Azure earlier-model policy",
+    "input_cache_write_1h": "0 additional charge under the same policy; no requested cache controls",
+    "internal_reasoning": "0/inapplicable under the fixed non-reasoning model and runtime rejection rules"
+  },
+  "limits": [
+    "Independent review must adopt any new decision/window; these observations grant no model execution.",
+    "Old expired interpretation and terminal packets remain unchanged and unusable.",
+    "A fresh matching runtime catalog, exact request and retained original financial history remain required.",
+    "Credential authentication succeeded in a separate read-only diagnostic; it does not prove account credit balance or settle the historical unknown bill."
+  ],
+  "actual_model_POSTs": 0,
+  "financial_writes": 0
+}

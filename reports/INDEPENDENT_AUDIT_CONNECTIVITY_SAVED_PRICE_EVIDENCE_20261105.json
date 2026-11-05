@@ -1,0 +1,158 @@
+{
+  "kind": "INDEPENDENT_CONNECTIVITY_SAVED_PRICE_EVIDENCE_20261105",
+  "status": "PASS_CATALOG_AND_CONDITIONAL_ARITHMETIC_NOT_NEW_PRICE_RELEASE",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Savedpubliccatalog/receiptandpreservedpublicproposal/auditevidenceonly; noindependentnetworkcapture/actualowner/keycheck/currentpolicyconfirmation",
+  "sources": [
+    {
+      "path": "data/processed/compatibility_operator_handoff/connectivity-price-20261105-01/catalog.json",
+      "sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+      "bytes": 2359
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/connectivity-price-20261105-01/catalog-metadata.json",
+      "sha256": "e6c9560367542724745df596e5b8f2dbcdb428cd5ee852a105a2cf4162c568d7",
+      "bytes": 223
+    },
+    {
+      "path": "data/processed/compatibility_operator_handoff/connectivity-price-20261105-01/catalog-intent.json",
+      "sha256": "6ceb30422d2509132931a10d8999a2e88dea7f92b05389c39890b76b7a910402",
+      "bytes": 69
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_PRICE_INTERPRETATION_V1_PROPOSAL.json",
+      "sha256": "f9b2b473541a387a37b4630bc29ddc217f355f1ac3f2fb898201bff07c90a81e",
+      "bytes": 7911
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_PUBLIC_ENDPOINT_METADATA_20261103_V2.json",
+      "sha256": "2bd3dbdfc3f46f3b8aa9bd65cdc86e0e3170afe2610dc7b6596233864d04754f",
+      "bytes": 4918
+    },
+    {
+      "path": "configs/json_compatibility_price_interpretation_v1_proposal.json",
+      "sha256": "2ddc20de246c68c3fb40ceb9ddf5164558fd28178a07fb1c805c4af438b49411",
+      "bytes": 9034
+    },
+    {
+      "path": "docs/JSON_COMPATIBILITY_PRICE_INTERPRETATION_V1_PROPOSAL.md",
+      "sha256": "64edb98d77fa918a303cd38dfa939e4a0b0d4c32d8f908e22ccc06c20849765b",
+      "bytes": 5753
+    },
+    {
+      "path": "src/civiclab/production_price_v4.py",
+      "sha256": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+      "bytes": 12646
+    }
+  ],
+  "independent_checks": {
+    "kind": "INDEPENDENT_SAVED_CATALOG_20261105_PRICE_ORACLE",
+    "catalog_bytes": 2359,
+    "catalog_sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9",
+    "observed_at_utc": "2026-11-05T08:50:04.511270+00:00",
+    "reported_capture_not_repeated": true,
+    "semantic_hash": "0bcf5eede902a12a3e9385daed89c2166400934b7d0d0269e0c7fe91eaf870e6",
+    "same_as_prior_semantics": true,
+    "endpoint_tags": [
+      "azure",
+      "azure/swedencentral"
+    ],
+    "missing_components_by_tag": {
+      "azure": [
+        "input_cache_write",
+        "input_cache_write_1h",
+        "internal_reasoning",
+        "request"
+      ],
+      "azure/swedencentral": [
+        "input_cache_write",
+        "input_cache_write_1h",
+        "internal_reasoning",
+        "request"
+      ]
+    },
+    "conditional_rates_USD_per_M": {
+      "input_sum_max": "0.143",
+      "output_sum_max": "0.44"
+    },
+    "conditional_exact_microusd": "84887/250",
+    "conditional_ceil_microusd": 340,
+    "new_catalog_does_not_reactivate_expired_decision": true,
+    "actual_owner_key_env_network_access": 0,
+    "spending_usd": 0
+  },
+  "assessment": {
+    "present_price_fields": "FreshlyreportedNov5savedcapture2359B/SHA59c4fcc5exactpriorbody; selectedsemantic0bcf5eedexactprior.Azure0.10/0.40/0.03andSwedenfamily0.11/0.44/0.033USDperMprompt/completion/cacheread. Exactrequiredparams/no-native-tools/nulltier/nodefaultoverridesboundbysemanticreview. Capturereceipttrustedworkflow,notTLS/wireforensicproof ornewauditGET.",
+    "arithmetic": "Sameproposedexplicitzeroassumptions yield maxinputprompt+cachedread0.143/M,maxoutput0.44/M,2276input+32output=>84887/250microUSD=339.548\u2192ceil340. Conditionalworstcasequoteonly; notactualbill/accountbalance/routeavailabilityproof.",
+    "proposal_support": "CurrentcaptureandpreservedNov3conditionaldecision supportpreparingaNEWexplicitinterpretationproposalwithdatedsourceprovenance/unchangedscope. Do notcopynewdatesintoolddecision/expiredpacket orclaimthatcurrentcatalogreportsomittedfees.",
+    "current_zero_fee_confirmation": "NOT_VERIFIED_FROM_SAVED_INPUTS. Missingcatalogrequest/input_cache_write/input_cache_write_1h/internal_reasoningfieldsremainabsent. PreservedindependentreviewcontainsnamedprimaryURLreadings/observationsfromNov3butexplicitlysaysadvisory/notimmutablefullsourcearchive. Thisauditreadssavedmaterialsonly; itcannotclaimnewlyconfirmedcurrentprimarypolicyorprovider/accountapplicability.",
+    "old_window": "Expiredpricecontractremainsunusable; independentfresh_proofcheckwithcurrentcatalogreceiptandoldtermsrefusesnewdispatchpriceevidencenotcurrent. No validitywindoworprice/executorreleaseissuedbythisaudit."
+  },
+  "exact_primary_evidence_gap_for_new_current_decision": [
+    {
+      "decision": "Flatrequestfee0",
+      "needed": "CurrentprimaryOpenRouterpricing/support policyconfirming no perrequest surcharge for exactprefundednonBYOKStandardtext request; distinguishcreditpurchase/tax/accountplanfee. Actualprefund/nonBYOK/Standardroute applicabilityremainowner/providerassertions/runtimechecks.",
+      "primary_urls": [
+        "https://openrouter.ai/pricing",
+        "https://openrouter.ai/support/"
+      ]
+    },
+    {
+      "decision": "input_cache_write0 andinput_cache_write_1h0",
+      "needed": "CurrentprimarycachingpolicyexplicitlyapplicabletoAzureGPT4.1nano/oldermodel/noexplicitcachecontrols, supportingnoadditionalwritesincluding1hcomponent. KeepactualAzurecachereadratesfromcatalog,notsubstituteOpenAIratio.",
+      "primary_urls": [
+        "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+        "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/prompt-caching"
+      ]
+    },
+    {
+      "decision": "internal_reasoning0/inapplicable",
+      "needed": "PrimaryfixedGPT4.1nanomodeldescription/nonreasoningpolicyapplicability; notmissingcatalogfieldalone. Actualreasoningnativecountmustbe0andunknown/nonzero/auxiliaryactivityrefuses. DirectOpenAImodelstatusnotAzuredeploymentavailabilityproof.",
+      "primary_urls": [
+        "https://developers.openai.com/api/docs/models/gpt-4.1-nano"
+      ]
+    }
+  ],
+  "minimal_next_step": "RootmayperformauthorizednarrowofficialpublicpolicyconfirmationandretainURL/date/exactscopedobservations/hashreceipts,orprepareproposalclearlyrelyingondatedNov3inferencesfornewindependentdecisionreview. No broadnewdoccorpus,forbidden403pathretry,credential/scraping/loginbypassorpaidcall needed. Finalpriceinterpretationmustexplicitlydeclarebasis/window/evidenceandnotassumemissingfee0. Thisauditdoesnotmintthatnewdecision.",
+  "subsequent_gates": [
+    "Newindependentlyreviewedexactinterpretation/terms/window andprice+requestrecompile",
+    "Runtimecatalogrefresh<=900secondswithcurrentsemanticmatch; expiredorchangedmeaningrefuses",
+    "Exactcurrenthead/oldUNKNOWN340accounting/oneadditionaldispatchrelease, notnewowner/reset",
+    "Securevalidrotateddedicatedcredential/prefund/ownerunknownbillassertions andterminalpacketreview",
+    "Authenticproviderresponse/nativeusage/generationbillingreconciliation; noautretry"
+  ],
+  "separate_401_observation": "Rootreportscurrentprivate.envcredential401; notindependentlytestedhere. It suppliesnooldgeneration/cost/invoiceproof anddoesnotsettle/refundold340UNKNOWN. Credentialrotation/validkeyremainoperatoraction; nopaidcallfromreport.",
+  "owner_snapshot_scope": "Rootreportedfreshold-onlyfourfilesnapshotidenticaltoNov4; originalownerandprivatesavedrowsnotopenedforthispriceassessment. Metadata/storedhistoryfinancialreleaseunchanged.",
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-connectivity-price-20261105.py",
+      "sha256": "be6b4894239dbf5daf47918c602d5152e418ea7cafc4e257000aefa8e4bd3f02",
+      "bytes": 2820
+    },
+    {
+      "path": "/tmp/civiclab-independent-connectivity-price-20261105.json",
+      "sha256": "f5d1b65770286264122d3e8335fd102d66b201fbeddc402a5686060bedcdde4a",
+      "bytes": 1064
+    }
+  ],
+  "actual_owner_or_key_env_or_raw_respondent_publisher_access": 0,
+  "network_calls": 0,
+  "financial_writes": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_CONNECTIVITY_PRICE_EVIDENCE_20261105",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_CONNECTIVITY_SAVED_PRICE_EVIDENCE_20261105.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-connectivity-price-20261105.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Savedbody/receipt/schema/semanticprojection/FractionmathPASS; oldwindowfreshproofrefusesasrequired; currentprimarypolicyNOT_RECHECKED",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Authorizedsavedofficialpublicmetadataandpublicproposal/auditrecords; nofullsourcearchiveclaim",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Datedconditionaldefaultinferences; noactualpriceauthority oravailability/accountproof",
+    "UNRESOLVED_BLOCKERS": "Newexplicitindependentdefault-fee/currentwindowdecision andownercredential/terminalrelease",
+    "NEXT_UNBLOCKED_TASK": "Rootpreparesnewpriceinterpretationwithpreciseprimarypolicybasis andsubmitsforindependentparticularreview"
+  }
+}
