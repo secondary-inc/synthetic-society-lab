@@ -1,0 +1,127 @@
+{
+  "kind": "INDEPENDENT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_METHODS_FINDINGS",
+  "status": "BLOCKED",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Methods-only proposal, not implemented control/actualrelease. No actual financial bypass, model result or source access claimed.",
+  "sources": [
+    {
+      "path": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_PROPOSAL.md",
+      "sha256": "c68107efeef67899de6ec7e3782048e75569b579ba0a70541e4831bd6a65d8e0",
+      "bytes": 9004
+    },
+    {
+      "path": "src/civiclab/production_owner_v4.py",
+      "sha256": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "bytes": 33110
+    },
+    {
+      "path": "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+      "sha256": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "bytes": 11270
+    },
+    {
+      "path": "src/civiclab/e02/exploratory_sequence_v1.py",
+      "sha256": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+      "bytes": 4678
+    },
+    {
+      "path": "configs/e02_exploratory_live_pilot_v1_1.json",
+      "sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b",
+      "bytes": 37508
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT.json",
+      "sha256": "565bb24e1adb553bb12fcb80a389d9b1075e468631cedd33f7b05638e3e9feee",
+      "bytes": 6587
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_SEQUENCE_V1_COMPONENT.json",
+      "sha256": "cdc52f558b6ad303fb5b91b293137a01c14ac573b614a333c96f297cd64f9af4",
+      "bytes": 7576
+    }
+  ],
+  "findings": [
+    {
+      "id": "LIMITED-ADAPTER-V1-UNCLOSED-AUTHORITY-PHASE-GRAMMAR",
+      "severity": "HIGH",
+      "status": "BLOCKED",
+      "location": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_PROPOSAL.md:65",
+      "problem": "NamedupstreamP/R/O/A/terminalgraph isdirectionallyacyclic butnotclosed/admissibleaswritten. No exactfieldsets/types/hashprojections/externalexpectedhashmapping forauthority/phasegrant/context/ownprewitness/receipt/commit. Phasegrant+reservation andsingularstudyA aredescribed, butexactnewkindpayloads andtheir replaypredicates/mappings intoexisting12fieldV4context/approvalbinding arenotfixed. Original_clock onlyspecificallychecksrollbackforitsknownnewauthoritykinds; newkinds needexplicitclock/leasevalidation.",
+      "impact": "Independentreviewcannotderiveoneexactauthorizedphasecontextandpostwitnessbinding, reconstruct auniqueeventbatch/receipt orshownewgrantsreplayclock/capsandquarantinedoldrow correctly. Implementationwouldnecessarilyinventunreviewedauthoritysemantics. This is a specificationgap,notanobservedvulnerability inabsentcode.",
+      "required_remedy": "Preservev1; freeze separate closedmethods successor withexactP/R/O/A/terminal/currenthead/snapshotfieldsets andexternalexpectedhashflow. Define phaseproof/contextmapping (whichhashoccupies approval_hash/release_hash/plan_hash), ownprecheckpoint/disposition hash, request/envelope/payload/receiptderivation, neweventkinds/closedpayloads/order andinmemoryvalidation-before-insert transaction. Specify nativecrash/lostACK/anchor/readback/concurrentsamephase semantics andpernewkindUTC/rollback/full120fit/freshcatalog/timingcommit gates. NoactualIDs ornewinfrastructureframework needed; thesearefiniteadaptercontracts."
+    },
+    {
+      "id": "LIMITED-ADAPTER-V1-WITNESS-ANALYSIS-REPRESENTATION-BOUNDS",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "location": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_PROPOSAL.md:59",
+      "problem": "Privatejournal16MiB/perartifact2MiB limits andexactrawparsedanswerwitness retention are notmapped tofinancial64KiBevent/acceptedanalysis131072byteenvelope,depth20,key256/string8192 bounds. No fixedboundedparse/encodingqualitydisposition guarantees all32recordsserialize foraccepted evaluator withouttruncation orlosingvalidbilling/accounting.",
+      "independent_reproduction": {
+        "kind": "E02_ADAPTER_V1_REPRESENTATION_BOUNDARY_ORACLE",
+        "all_32_dispositions": true,
+        "invalid_post_answers": 16,
+        "each_string_characters": 8192,
+        "each_answer_bytes_below_64KiB": true,
+        "response_envelope_bytes": 135249,
+        "accepted_evaluator_ceiling_bytes": 131072,
+        "actual_evaluator_result": "ValueError bounded JSON bytes required; numeric quality/exclusions never reached",
+        "interpretation": "Methods need cumulative analysis-envelope budget and explicit bounded-parse/disposition/witness encoding, despite individual answers fitting private artifact/financial event/string ceilings. This is an authored illustration, not an actual provider output or claimed token count.",
+        "actual_owner_or_key_env_network_access": 0,
+        "spending_usd": 0
+      },
+      "impact": "Authored32recordswith16validpres and16invalidpostobjects, eachstring8192 andeachanswer<64KiB, total135249bytes: evaluatorrefuseswholeenvelope beforequality/exclusionanalysis, despiteeachrecordfittingnamedindividualceilings. Thisillustratesunresolvedrepresentationcontract,notactualprovideroutput/tokencount. Oversize/deep/extra-keyinvalidparsedpre mayalsoexceedfinancialcommitwitnessenvelope unlessstorage/referencebounds defined.",
+      "required_remedy": "Specify boundedrawresponse/parsedanswer/node/depth/key/string/finiteJSONlimits andcumulativeanalysispacketbudget beforeliveuse, withclosedwitness/checkpointserialization orboundedimmutablefileref+hash verifiedonreplay. Defineexplicitqualityparse/validationfailures andretainedoriginalraw/provenance/knownbill semantics forout-of-boundsanswers; never silentlytruncate/relabelactualdata, infer0cost, droparesponseorretry. Preserve acceptedquestion/scoring/protocol anduse separatelyreviewedrepresentation amendmentifneeded."
+    }
+  ],
+  "positive_methods_scope": [
+    "Originalsameowner/prefix replay andimmutableold340UNKNOWN; additionalcompatibilitymustbePHASE_COMMITTED first",
+    "Trueunfinished1oldrow exceptiononly; anyotherunfinishedphase blocksnextdispatch",
+    "Shared5,000,000\u00b5/study1,000,000\u00b5/32studydispatches/34lifetime/perphase31,250\u00b5 andoldconsumptionnotreset",
+    "No fallback/replacement/retry/purchase, concurrency1,32statisticsclaimsmax",
+    "AtmostonecatalognonauthGET,proofage<=900s,expiredstopnoinrunrenewal; finite<=2hourstudywindow/full120secondsfit",
+    "Owncommittedprerequired,invalidpreskip/invalidpostexclude,verifiedbillingandcheckpointbeforenextphase;unknown/latestrictfullhold/knownoverrunnonclipped",
+    "Oneatomicphasegrant/reservation+materializedrow andpostcommit/readbacksingleusecapability intent; legacyreaderrefusessuccessorgrammar",
+    "Realresponse/DEMOstimulus/MOCKfixtureprovenance keptdistinct;fullnational/human/confirmatoryclaimsunwaived"
+  ],
+  "checks": {
+    "proposal_read": "Complete144lines",
+    "pure_representation_probe": "PASS demonstratesspecificationmismatch; noinference",
+    "actual_adapter_implementation": "NOT_RUN_NOT_IMPLEMENTED",
+    "particular_release": "NOT_RUN_NO_AUTHORITY"
+  },
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-accounting-v1-size-probe.py",
+      "sha256": "4fd355b7f2aaac8b8fe4d08e92cc07e6c0d338c341f00c43d5c2388eaf85a546",
+      "bytes": 1445
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-accounting-v1-size-probe.json",
+      "sha256": "5e8d5407964a3904715f02139c405a8fdbecbb58b0f4dc0630b078b4e57cb33b",
+      "bytes": 764
+    }
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_calls": 0,
+  "financial_writes": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_METHODS",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_METHODS_FINDINGS.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-accounting-v1-size-probe.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Methodsmanualhash/grammarreview andpureauthoredserializationoracle; implementationtestsNOT_RUN",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Publicmethods/codeandprojectauthoredMOCKanswers only",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Proposalonly; nofinancialexploit/scientificeffectobserved",
+    "UNRESOLVED_BLOCKERS": [
+      "Exactclosedauthority/phase/replaygrammar",
+      "Boundedresponse/witness/analysisserializationcontract"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Rootfreezesseparatemethodssuccessor closingthesefinitecontracts forindependentreview beforeadoptingowneradapter; proceedotheracceptedpurework"
+  }
+}

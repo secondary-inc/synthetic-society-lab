@@ -1,0 +1,122 @@
+{
+  "kind": "INDEPENDENT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_CLOSED_ADDENDUM_FINDING",
+  "status": "BLOCKED",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Composite proposal+closedaddendum METHODSONLY; no implementation/liveauthority/actualstate accepted",
+  "sources": [
+    {
+      "path": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_PROPOSAL.md",
+      "sha256": "c68107efeef67899de6ec7e3782048e75569b579ba0a70541e4831bd6a65d8e0",
+      "bytes": 9004
+    },
+    {
+      "path": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_CLOSED_ADDENDUM.md",
+      "sha256": "e06ce00f675c4b90140b4fb4ba64e87d0f01ba5f5170af673dcb9d87cdb0f1ac",
+      "bytes": 14484
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_METHODS_FINDINGS.json",
+      "sha256": "7420ebe3b5b9be3bab87d499e15586f633a9f0fdc732e31ff990c9b6039eebb0",
+      "bytes": 8655
+    },
+    {
+      "path": "src/civiclab/production_owner_v4.py",
+      "sha256": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+      "bytes": 33110
+    },
+    {
+      "path": "src/civiclab/additional_compatibility_owner_v1.py",
+      "sha256": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+      "bytes": 20485
+    },
+    {
+      "path": "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+      "sha256": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "bytes": 11270
+    }
+  ],
+  "original_findings": {
+    "LIMITED-ADAPTER-V1-UNCLOSED-AUTHORITY-PHASE-GRAMMAR": "Substantivelyaddressedbycomposite:exactL/K/P/predecessor/limits/R/O/A/T/Q/J/c/d/W/eventsetsandnewclocks; fullcompositeacceptanceremainsblockedbynewforwarddependencybelow. Originalfindingnotedited.",
+    "LIMITED-ADAPTER-V1-WITNESS-ANALYSIS-REPRESENTATION-BOUNDS": "Substantivelyaddressedbymethodsamendment:2048UTF8qualityparse/depth8/key64/string256/numeric32\u2192PARSE_ERRORwithouttruncatingraw,3072perexportrecord/131072totalexplicitbounds andNOT_RUNonunexpectedserializationfailure. Raw2Mprivate/hashwitnessrecording/256MiBjournal/512MiBfree andnativeeventboundsdefined; parsercodeNOTreviewedhere. Originalfindingnotedited."
+  },
+  "finding": {
+    "id": "LIMITED-CLOSED-V1-OUTPUT-HASH-FUTURE-STATISTICS-DEPENDENCY",
+    "severity": "HIGH",
+    "status": "BLOCKED",
+    "location": "docs/E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_CLOSED_ADDENDUM.md:169",
+    "problem": "Checkpoint.outputincludesstatistics_raw_sha256 whileaddendumrequiresoriginalcommit_phase/outputimmutability. RESPONSE_SEENmusthave nonnullrow.output_hash beforeSTATISTICS_CLAIM; STATISTICS_CLAIMrequiresRESPONSE_SEEN; statisticshashonlyknownafterensuingGET. Originaltransitionforbidsreplacingnonnulloutput_hash andcommit_phase requiresH(checkpoint.output)==row.output_hash. W\u2192checkpointitselfisacyclic,butresponse\u2192statisticsclaim\u2192statisticsbytes\u2192checkpointoutput\u2192earlierRESPONSE_SEENhashintroducesaforwarddependency.",
+    "independent_evidence": {
+      "kind": "INDEPENDENT_CLOSED_ADDENDUM_OUTPUT_HASH_ORACLE",
+      "status": "SPECIFICATION_CONTRADICTION_CONFIRMED_AUTHORED",
+      "response_seen_requires_output_hash_before_statistics_claim": true,
+      "later_stats_hash_changes_checkpoint_output_hash": true,
+      "replace_output_hash_refused": "observed evidence replaced",
+      "commit_four_field_future_stats_output_refused": "durable checkpoint binding mismatch",
+      "commit_three_field_response_only_output": "PASS original immutable semantics",
+      "actual_owner_key_env_network_access": 0,
+      "spending_usd": 0
+    },
+    "impact": "No compliant successfulimplementationunderallstatedrules: itmustknowfuturestatisticsbytesbeforeGET,changeimmutableevidence,oruseadifferentcheckpointoutputconvention. This is a methods contradictionprovenusingauthoredtemporaryowner; noactualowner/provider/modelreadorfinancialexploitclaimed.",
+    "required_remedy": "Freezeaseparatesmallcorrection: RESPONSE_SEENoutput/checkpoint.outputexactly{status,answer,response_raw_sha256},allevidencealreadyknownbeforestatisticsclaim. Keepstatistics_raw_sha256inlaterWanditsbilling/rawstatsvalidationbindings; WcanalsobindB(checkpoint)withoutcycle. Preserveoriginalnonnulloutputhashimmutability/commit_phaseconvention andsourcecode. Alternativewouldneedexplicitseparatereviewofnewtransitionsemantics; noimplicitevidenceoverwrite."
+  },
+  "positive_review": {
+    "authority": "ClosedupstreamL/K\u2192P\u2192R\u2192O\u2192A; Qcontainsparents/T, TbindsQwithoutT andcode; externalrawpacketbytehash. Exactpredecessorfullheader/head/history/activerowsclaims,2rowsold340+successfulcompatibility,trueunfinished1, nofilteredcleanstate. Aseparateauthoritymap,nooriginalfakeapproval orallowedplansmutation.",
+    "phase_mapping": "JbindsA/protocol/executionorder/phase/unit/payload/ownprewitness; original12fieldcontext usesH(A)/H(J)/H(L)/C andexactNprice/sampling/payload; dfirst32H(authority/plan/context). Sameunitpreonlywitness, nullforpre; recompilenextfromauthenticatedretainedstate.",
+    "transactions": "InitialSTART+GRANT+RESERVE/laterGRANT+RESERVE, nointermediateACK; guard+BEGINIMMEDIATE/inmemoryfullbatchvalidate/oneSQLcommit/oneanchor/readback; pendinggrantmustexactnextRESERVE. ExactSTART andGRANTpayloads, originalrowshape,counterswithoutmaskingoldrow. FullnewkindclockstatusOK/noUTCrollback/currentPterms/full120fit/prooffresh<=900 explicitlydefined; bookkeepingbadtimestampsblockfuturegrants.",
+    "witness": "ExactWclosed12fieldsandCOMMIT3fields, boundedcheckpoint/rawfilevalidationunderlock, Wanswervaluesinfinancialevent forlaterprebaseline reconstruction; ordinaryTRANSITIONPHASE_COMMITTEDdeniedstudyrows. Actualbadclock/latecheckpoint behaviorandnativecrashesmustbeimplemented/tested; nomilestonefromspecificationalone.",
+    "quality_and_storage": "Questionnairequalityparseisseparatefromidentity/monetaryharvest, unsupportedfees/credentialcontent/transportoverflowstopfinancially; boundedqualityfailurePARSE_ERRORpreservesrawandhonestdisposition. Originalquestions/scoringunchanged, parseramendmentexplicit. Retainknownoverrun,highercost,lateUNKNOWNfullhold. AllowedJSONescapingmaystillhitanexportcap; declaredanalysisNOT_RUNfailclosedmustpreserveallbytesinsteadoftruncation.",
+    "arithmetic": {
+      "raw_64_bodies": 128000000,
+      "32_request_max_bytes": 8388608,
+      "32_checkpoint_max_bytes": 2097152,
+      "32_witness_max_bytes": 2097152,
+      "metadata_bytes": 33554432,
+      "event_journal_bytes": 8388608,
+      "sum_bytes": 182525952,
+      "journal_cap_bytes": 268435456,
+      "minimum_free_bytes": 536870912,
+      "financial_event_reservation": 193,
+      "new_rows": 32,
+      "per_record_32_total_bytes": 98304,
+      "analysis_envelope_ceiling": 131072
+    },
+    "limits": "Shared5M/study1M/32POSTs/34lifetimedispatches, old340quarantine,oncecatalog/oneclaimpergeneration/128chargenerationmatchestransport; nofallback/retry/replacement/authorityrenewal. Actualsource/state/prices/credential/humanassertionsabsent."
+  },
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-closed-addendum-outputhash.py",
+      "sha256": "e1507afe0afb7b403f6f568f9bd659b9114323aa2380c3b8cb1cdfde2b7cfa91",
+      "bytes": 2173
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-closed-addendum-outputhash.json",
+      "sha256": "ad344d7df6e7d55473daa7ff936c200919c10e61e2bbe9ddd5b0a6a156ec96e0",
+      "bytes": 554
+    }
+  ],
+  "not_run": [
+    "Actualadapter/clientimplementation/code/crash/retainedMOCKreview",
+    "Newpureparsercomponentreview",
+    "Actualowner/key/env/catalog/model/providerbilling operations",
+    "Actualparticularreleaseorhumanassertions"
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_LIMITED_ACCOUNTING_CLOSED_ADDENDUM_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_LIMITED_PILOT_ACCOUNTING_ADAPTER_V1_CLOSED_ADDENDUM_FINDING.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-closed-addendum-outputhash.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "Authoredproofrejectsoutputhashreplacement/fourfieldcheckpoint;threefieldresponseoutputcommitsunderoriginalrules. Staticcapacity/mathchecksPASS,compositeMETHODSBLOCKED",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Publicmethods/codeandtemporaryauthoredMOCKowneronly",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Specificationcontradiction,notactualexecutionfailure/exploit",
+    "UNRESOLVED_BLOCKERS": "Futurestatisticshashinearlyimmutableoutput",
+    "NEXT_UNBLOCKED_TASK": "Rootfreezesseparatesmallcheckpointoutput/witnessdependencycorrection, thenindependentcompositereview"
+  }
+}
