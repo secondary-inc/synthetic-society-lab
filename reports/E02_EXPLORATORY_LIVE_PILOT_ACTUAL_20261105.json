@@ -1,0 +1,148 @@
+{
+  "accounting": {
+    "control_hashes_unchanged_during_readonly_export": true,
+    "historical_rows_unchanged": true,
+    "lifetime_dispatches": 18,
+    "read_only_export_HTTP_requests": 0,
+    "read_only_export_owner_writes": 0,
+    "true_unfinished": 3
+  },
+  "code_commit": "ccd6dac",
+  "code_contract_hash": "f4f09633c761dab48cc5b5a1a610b6eb7013e0583ebb080ac54f46f410ae54ad",
+  "costs": {
+    "combined_conservative_total_microusd": 2136,
+    "completion_reported_cost_all16_usd": "0.0007178",
+    "completion_reported_total_not_fully_reconciled": true,
+    "failed_phase_held_microusd": 788,
+    "failed_phase_response_observed_ceil_microusd": 54,
+    "historical_holds_microusd": 680,
+    "ledger_settled_microusd": 668,
+    "shared_authorized_ceiling_microusd": 5000000,
+    "study_conservative_total_microusd": 1456,
+    "study_subceiling_microusd": 1000000,
+    "verified_generation_bills_usd": "0.0006647"
+  },
+  "execution": {
+    "billing_metadata_retained": 15,
+    "complete_responses_retained": 16,
+    "credit_purchases": 0,
+    "failed_uncertain_phases": 1,
+    "model_POST_attempts": 16,
+    "not_attempted_phases": 16,
+    "phases_committed": 15,
+    "planned_phases": 32,
+    "public_catalog_GET_attempts": 1,
+    "retries": 0,
+    "statistics_GET_attempts": 16
+  },
+  "failure": {
+    "continuation_authorized_by_this_report": false,
+    "diagnostic": {
+      "automatic_retry": false,
+      "conservative_charged_microusd": 788,
+      "dispatch_outcome": "POST_ATTEMPTED",
+      "executor_stage": "STATISTICS_GET",
+      "model_POST_attempts": 1,
+      "reported_provider_cost_microusd": 54,
+      "reservation_observation": "RECEIPT_ACKNOWLEDGED",
+      "reservation_recorded": true,
+      "reserved_microusd": 788,
+      "statistics_GET_attempts": 1,
+      "transport": {
+        "category": "HTTP_STATUS",
+        "close_failed": false,
+        "http_status": 404,
+        "stage": "HTTP_STATUS"
+      }
+    },
+    "execution_order": 7,
+    "generation_id": "gen-1793873410-17Xn9RsYhfAyAy5B0lou",
+    "phase": "post",
+    "provider_body_status": {
+      "response": "RETAINED_CANONICAL_COMPLETE",
+      "statistics": "MISSING"
+    },
+    "reason": "One generation-statistics GET returned HTTP404 after fixed10s initial wait. Cause not established; record may have delayed availability.",
+    "receipt": "07c60fe627276fa0be6bf972b9e0faee"
+  },
+  "independent_outcome_review": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_RECOVERY_ACTUAL_PARTIAL_20261105.json",
+    "reviewed_aggregate_retained_at": "data/processed/e02_actual_release_20261105_01/aggregate-before-outcome-review.local.json",
+    "reviewed_aggregate_sha256": "1a9dc876d33b76eaa3e602c95ef3ddf2639e1dfb513b6ff012647c55b72ebd8a",
+    "sha256": "6bb69e6c83d873a9c9901b373f18c4536bf1ffe95f47ee20b81154c9a408a397",
+    "status": "PASS_PARTIAL_ACTUAL_EVIDENCE_ACCOUNTING_AND_RESCORING_FULL_PILOT_STOPPED"
+  },
+  "kind": "E02_EXPLORATORY_LIVE_PILOT_ACTUAL_20261105",
+  "limitations": [
+    "Fixed one-model four-fictional-profile/two-authored-notice technical pilot; no human anchor or representative population.",
+    "Original HTTP wire bytes not retained; complete canonical parsed response objects retained.",
+    "Optional null/missing auxiliary telemetry remains unknown; reported streaming discrepancy remains unresolved.",
+    "Outer failure analysis is NOT_RUN; separate nested complete-case descriptive calculation is retained, not a completed study.",
+    "One failed response has a reported completion cost but lacks independently reconciled generation billing. Original older uncertain rows remain held.",
+    "No retry or answer-adaptive replacement request, no claims of prospective forecasting or human political persuasion."
+  ],
+  "next_step": "Resolve generation-statistics availability/reconciliation with a separately reviewed bounded continuation; preserve this partial run and never rerun its consumed launcher.",
+  "partial_analysis": {
+    "complete_case_point_difference": 0.0,
+    "complete_matched_blocks": 1,
+    "descriptive_interval_95": null,
+    "excluded_blocks": 7,
+    "input_stimulus_provenance": "DEMO / PROJECT_AUTHORED_FIXTURE",
+    "interpretation": "One complete matched block is insufficient for an effect or no-effect conclusion. Other incomplete blocks remain excluded. No human or population inference.",
+    "nested_authenticated_terminal_analysis_status": "READY",
+    "outer_failure_analysis_status": "NOT_RUN",
+    "phase_counts": {
+      "FAILED_UNCERTAIN": 1,
+      "NOT_ATTEMPTED": 16,
+      "VALID": 15
+    },
+    "planned_matched_blocks": 8
+  },
+  "release_commit": "a119d2e",
+  "response_provenance": "EXPLORATORY_REAL_MODEL",
+  "retained_evidence": {
+    "caller_summary": {
+      "bytes": 559,
+      "path": "data/processed/e02_actual_release_20261105_01/execution-summary.local.json",
+      "sha256": "772a14aafc1d1bfe976610247c953dcf256f727c5d3082d29a9cb7a62a58a4ed"
+    },
+    "failure_record": {
+      "bytes": 14857,
+      "path": "data/processed/e02_actual_release_20261105_01/retained-journal/failure.json",
+      "sha256": "d9a122db556e20023b0c6c6ece201b803aa65a2c013b8689066732b7b9aff0a4"
+    },
+    "journal_index": {
+      "bytes": 13745,
+      "path": "data/processed/e02_actual_release_20261105_01/retained-journal-index.local.json",
+      "sha256": "1afe0a8f4a3a940f9954b594044aef822d44ae7d7c57bf83851444ec3b9d57a7"
+    },
+    "owner_export": {
+      "bytes": 361287,
+      "path": "data/processed/e02_actual_release_20261105_01/post-run-owner-export.local.json",
+      "sha256": "517d18d1595983e5ffbfbc6f0dc5223cf228534904720eefdc9db21aad545a32"
+    }
+  },
+  "run_id": "e02-exploratory-live-20261105-01",
+  "source_protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b",
+  "status": "PARTIAL_STOPPED_BILLING_404_NO_RETRY",
+  "verified_generation_metadata_only": {
+    "count": 15,
+    "native_completion_tokens": 270,
+    "native_prompt_tokens": 5567,
+    "native_reasoning_tokens": 0,
+    "reported_models": {
+      "openai/gpt-4.1-nano-2025-04-14": 15
+    },
+    "reported_providers": {
+      "Azure": 15
+    },
+    "reported_service_tiers": {
+      "default": 15
+    },
+    "streamed_true_count": 15
+  },
+  "window_utc": {
+    "ended": "2026-11-05T10:10:22.347363+00:00",
+    "started": "2026-11-05T10:07:00.259960+00:00"
+  }
+}

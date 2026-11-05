@@ -1,6 +1,8 @@
 # First limited E02 live pilot
 
-Status: prepared for independent code and exact execution review; not a result.
+Status: executed once after independent review. Sixteen requests ran; fifteen
+phases committed and the next stopped on billingHTTP404. No retries. See
+`reports/E02_LIVE_PILOT_20261105.md` for the independently reviewed partial outcome.
 
 Run ID: `e02-exploratory-live-20261105-01`.
 
