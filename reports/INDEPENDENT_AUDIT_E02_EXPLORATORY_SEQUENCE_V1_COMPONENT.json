@@ -1,0 +1,138 @@
+{
+  "kind": "INDEPENDENT_E02_EXPLORATORY_SEQUENCE_V1_COMPONENT",
+  "status": "PASS",
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "scope": "Exactpure16unit/32phasesequencer only; noactualrunner/ownerauthority/HTTPbridge/transcriptauthenticity acceptance",
+  "sources": [
+    {
+      "path": "src/civiclab/e02/exploratory_sequence_v1.py",
+      "sha256": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+      "bytes": 4678
+    },
+    {
+      "path": "tests/test_e02_exploratory_sequence_v1.py",
+      "sha256": "1f36be4f86cf5c8b2c8dcfd3ebd1029667a0d64686d8de9cb208fb190bb60e9e",
+      "bytes": 6489
+    },
+    {
+      "path": "src/civiclab/e02/exploratory_live_requests_v1.py",
+      "sha256": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+      "bytes": 4516
+    },
+    {
+      "path": "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+      "sha256": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "bytes": 11270
+    },
+    {
+      "path": "configs/e02_exploratory_live_pilot_v1_1.json",
+      "sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b",
+      "bytes": 37508
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_LIVE_REQUESTS_V1_COMPONENT.json",
+      "sha256": "40947b47ca69deff540aa85535da97e88f007c70a97d0744265eb48c345aef08",
+      "bytes": 6624
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT.json",
+      "sha256": "565bb24e1adb553bb12fcb80a389d9b1075e468631cedd33f7b05638e3e9feee",
+      "bytes": 6587
+    }
+  ],
+  "tests": {
+    "Python3.12": {
+      "count": 33,
+      "seconds": 1.39,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-sequence-v1-py312.log",
+        "sha256": "6a5a93f70638a4a53caf8b2bab8e3a4b6ec59c12c0a77dc354f6795c21813baf",
+        "bytes": 98
+      }
+    },
+    "Python3.11": {
+      "count": 33,
+      "seconds": 1.356,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-sequence-v1-py311.log",
+        "sha256": "cbfcbd4c67279a92c64cd5367f685fd0b1382d4ada3b02f14438b1df67b5b864",
+        "bytes": 98
+      }
+    },
+    "coverage": "7sequencer+6compiler+20evaluator methods, authoredanswers/priceonly"
+  },
+  "independent_oracles": {
+    "kind": "INDEPENDENT_E02_SEQUENCE_V1_ORACLES",
+    "status": "PASS_AUTHORED_ONLY",
+    "prefix_positions_verified": 32,
+    "stop_positions_and_dispositions_verified": 64,
+    "invalidpre_skip_positions_verified": 16,
+    "allinvalid16submissions32dispositions_verified": true,
+    "response_provenance": "MOCK",
+    "actual_owner_key_env_access": 0,
+    "network_calls": 0,
+    "spending_usd": 0
+  },
+  "review": {
+    "bounds": "Exactacceptedprotocolbytes andproductiontermsshapes viaacceptedpurecompiler; strictboundedJSONarray<=131072,<=32submittedrecords, duplicate/nonfinite/depth/string/keyguard fromreviewedevaluatorloader. Closed5fieldrecords execution_order builtinint, exactphase/unit/currentpayloadhash/status/answer. OnlyANSWER/PARSE_ERROR/FAILED_UNCERTAIN/CANCELLED submitted, otherdispositionsderived.",
+    "ordering": "Walks16fixedunits pre/post; recompilesentireprefixwithcurrentfrozenprotocol/suppliedterms. Earlierpayloadhashmismatch refuses; nextonlyoneREQUEST_READY_NOT_ADMITTED whenprefixends. SharedmatchedarmprepayloadsarebydesignnotuniqueresponseIDs; order/unitmetadataandexternalauthenticitymustbothhold.",
+    "ownbaseline": "PostderivedfromthatunitsownpreviousANSWERonly; invalidorparseerrorpre makescompilerSKIP_INVALID_PREthenaddsderivedSKIPPED_INVALID_PREwithoutcall. No suppliedskippedrecord/replacementprofile/repair. Mutatedearlierbaseline invalidatespreviouslycompiledpostpayloadhash.",
+    "stop": "FAILED_UNCERTAIN/CANCELLED consumesclaimedphase, globallyfillsremainingrecordsNOT_ATTEMPTED. Anyextraresponseafterstoporcomplete refuses. Successfulcompletionorstopreturnsfull32dispositionenvelopeandreusedreviewedevaluator. AlloutputswithresponsesareMOCKandactual_authorityfalse, provenanceauthenticityexplicitREQUIRED_EXTERNALLY.",
+    "independent_positions": "Independentlycompiledcorrect32requests, checkedall32prefixnextstates/requestobjectsandconsumedcounts; for32positions\u00d72stopstatusesverifiedsuffixallNOT_ATTEMPTED/noextrareplies; all16invalidprepositionsderivenextunitorexcludedterminalblock; all16parseerrorpresyield16submissions/32derivedrecords/NOT_ESTIMABLE. Bothruntimesmatched.",
+    "noactualentry": "create_actual_runner unconditionalExecutionBlocked; noowner/credential/environment/filesystem/transport/ledgercallsinmodule. Extraoraclespatchnetworkandownerdiscoverytofail."
+  },
+  "findings": [],
+  "limitations": [
+    "Payloadhash/contentsequencevalidationdoesnotauthenticateproviderresponse/generation/caller/actualcost/claimedcheckpoint",
+    "POSTmayonlybedispatchedbya separatelyreviewedrootbridgeafterdurableownerauthority/reservationandpriorrecordauthentication;REQUEST_READY_NOT_ADMITTED isnotcapability",
+    "Termscallerprovided andstructuralquotevalidationonly; currentcatalog/route/context/nativeusage/financialproofoutsidecomponent",
+    "PuresequencerterminalCOMPLETE meansalldispositionsderived,notallvalidanswers/scientificsuccess; evaluatorNOT_ESTIMABLE/attritionretained",
+    "AlwaysMOCKoutput cannotberelabeledrealwithoutseparatelyreviewedauthenticintegration; nohuman/national/confirmatory inference"
+  ],
+  "remaining_blocked": [
+    "Separateactualpilotcumulativeledger/admission/checkpoint/cancellation/HTTPbridgecodeandreviews",
+    "Exactfreshprice/provider/model/contextandsufficientwholepilotbudget",
+    "Authenticactualrun/response/nativeusage/billingretentionandreconciliation",
+    "Independentrawrescoring/uncertainty/provenance/resultreview",
+    "Fulloriginalnationalpopulation/source/comparatorexperimentsandothercompletionclauses"
+  ],
+  "evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-sequence-v1-extra.py",
+      "sha256": "25735dd8a333757d5965a50ff010b3ffa39fedea5c35c3f9900d48341f57387e",
+      "bytes": 3839
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-sequence-v1-extra.json",
+      "sha256": "ec8a1f0dd53461f809c9abab839a7a70d51b6cef52cffd85efea633c0840cabb",
+      "bytes": 385
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-sequence-v1-extra-py311.json",
+      "sha256": "ec8a1f0dd53461f809c9abab839a7a70d51b6cef52cffd85efea633c0840cabb",
+      "bytes": 385
+    }
+  ],
+  "actual_owner_or_raw_source_or_key_env_access": 0,
+  "network_calls": 0,
+  "spending_usd": 0,
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_EXPLORATORY_SEQUENCE_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_SEQUENCE_V1_COMPONENT.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_exploratory_sequence_v1 tests.test_e02_exploratory_live_requests_v1 tests.test_e02_exploratory_pilot_analysis_v1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-sequence-v1-extra.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "33testsperruntime plus32prefix/64stop/16skipposition/allinvalidoraclesPASS",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "AuthoredMOCKresponses+acceptedDEMOprotocolonly",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "RISKS_AND_LIMITATIONS": "Puredataonly, authenticity/financialbridgeexternal",
+    "UNRESOLVED_BLOCKERS": "Separateliveaccounting/checkpoint/HTTPbridge",
+    "NEXT_UNBLOCKED_TASK": "Rootimplements/reviewsfiniteauthenticbridgewithoutpromotingtheseMOCKresultstoliveacceptance"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "actual_runner": "NOT_IMPLEMENTED_NOT_RELEASED",
+  "actual_spend_usd": 0,
+  "artifact_root": "data/processed/e02_exploratory_sequence/authored-20261105-01",
+  "artifacts": {
+    "result.json": {
+      "bytes": 13070,
+      "sha256": "5fe459ef376996f66186dd9a2247f0f7e4a2338e89e492a9683a4c1475e609c5"
+    },
+    "transcript.json": {
+      "bytes": 6205,
+      "sha256": "2675b9446ba383b1c0fcb0bb0ddcac71b7fe65bc91583b02b0e3194ddc012ccb"
+    }
+  },
+  "authored_oracle": {
+    "complete_blocks": 8,
+    "expected_contrast": 4,
+    "observed_authored_contrast": 4.0,
+    "phases": 32
+  },
+  "date": "2026-11-05",
+  "kind": "E02_EXPLORATORY_SEQUENCE_AUTHORED_HANDOFF_V1",
+  "lead_checks": {
+    "Python3.11": {
+      "seconds": 1.329,
+      "status": "PASS",
+      "tests": 33
+    },
+    "Python3.12": {
+      "seconds": 1.356,
+      "status": "PASS",
+      "tests": 33
+    }
+  },
+  "network_requests": 0,
+  "pins": {
+    "configs/e02_exploratory_live_pilot_v1_1.json": {
+      "bytes": 37508,
+      "sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+    },
+    "src/civiclab/e02/exploratory_live_requests_v1.py": {
+      "bytes": 4516,
+      "sha256": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd"
+    },
+    "src/civiclab/e02/exploratory_pilot_analysis_v1.py": {
+      "bytes": 11270,
+      "sha256": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf"
+    },
+    "src/civiclab/e02/exploratory_sequence_v1.py": {
+      "bytes": 4678,
+      "sha256": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769"
+    },
+    "tests/test_e02_exploratory_live_requests_v1.py": {
+      "bytes": 3682,
+      "sha256": "a4affa97c66c779330bb2f01b4a8b89ee10e8261c34ca5ed31ecc89171db7026"
+    },
+    "tests/test_e02_exploratory_pilot_analysis_v1.py": {
+      "bytes": 10842,
+      "sha256": "3c964bb4dc781701c4be7cf954193ff63da4c077c0031d64d5e668b81a3ce33a"
+    },
+    "tests/test_e02_exploratory_sequence_v1.py": {
+      "bytes": 6489,
+      "sha256": "1f36be4f86cf5c8b2c8dcfd3ebd1029667a0d64686d8de9cb208fb190bb60e9e"
+    }
+  },
+  "reproduction": "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_exploratory_live_requests_v1 tests.test_e02_exploratory_pilot_analysis_v1 tests.test_e02_exploratory_sequence_v1 -v",
+  "scope": "MOCK only; no live model or financial authority"
+}

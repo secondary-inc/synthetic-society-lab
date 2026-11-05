@@ -1,0 +1,121 @@
+{
+  "reviewer_role": "independent_auditor",
+  "date": "2026-11-05",
+  "status": "PASS",
+  "scope": "Exact pure authored component only; no authentic live transcript, financial admission, orchestration bridge or actual execution accepted",
+  "tests": {
+    "Python3.12": {
+      "count": 33,
+      "seconds": 0.123,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-pure-v1-py312.log",
+        "sha256": "868b5640ad0cd458d0ef3392d4a3491e4a7221e004e93d99941ef041465ef90c",
+        "bytes": 98
+      }
+    },
+    "Python3.11": {
+      "count": 33,
+      "seconds": 0.128,
+      "status": "PASS",
+      "log": {
+        "path": "/tmp/civiclab-independent-e02-pure-v1-py311.log",
+        "sha256": "dc63e98a819610f437e3d9bfb4a29d0ae5b07210fba6f0757036a3b5a1a7e15c",
+        "bytes": 98
+      }
+    },
+    "scope": "20evaluator+7existingexperiment/methods+6compiler tests; no actualcalls"
+  },
+  "independent_evidence": [
+    {
+      "path": "/tmp/civiclab-independent-e02-pure-v1-oracles.py",
+      "sha256": "9457c3bdc096d1ba89d289eb013080e25524a20e6bbba430b00de00aabd5283a",
+      "bytes": 7040
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-pure-v1-oracles.json",
+      "sha256": "ba6e41095c7ae165c4ea12cf77fcee7f8fbc08eab3f1f7d1bded8b896771e892",
+      "bytes": 4543
+    },
+    {
+      "path": "/tmp/civiclab-independent-e02-pure-v1-oracles-py311.json",
+      "sha256": "432bf80bac5b53fb8d12cf3148e64a073cbaedefaaf3e63f8f2181d6ee3b8650",
+      "bytes": 459
+    }
+  ],
+  "source_data_and_license_notes": "Exactacceptedprotocol/projectauthoredDEMOinputs; allresponsevaluesauthoredMOCKoracles. No rawrespondents/publisher/actualresponse inputs.",
+  "actual_owner_or_key_env_or_raw_source_access": 0,
+  "network_calls": 0,
+  "spending_usd": 0,
+  "findings": [],
+  "full_research_contract": "Notpromoted; nationwidepopulation,realnews,demographics,assistant,feed,swarm,confirmatoryandhumanclaimsremain gated",
+  "kind": "INDEPENDENT_E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT",
+  "sources": [
+    {
+      "path": "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+      "sha256": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "bytes": 11270
+    },
+    {
+      "path": "tests/test_e02_exploratory_pilot_analysis_v1.py",
+      "sha256": "3c964bb4dc781701c4be7cf954193ff63da4c077c0031d64d5e668b81a3ce33a",
+      "bytes": 10842
+    },
+    {
+      "path": "reports/E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT_HANDOFF.json",
+      "sha256": "d7740ee37dbd65f9ad81adadda3f4a8ef26c20f8d1be1848a4e5292ec41eb9ef",
+      "bytes": 4777
+    },
+    {
+      "path": "reports/E02_EXPLORATORY_PILOT_ANALYSIS_V1_PY311_ADDITIONAL_RECEIPT.json",
+      "sha256": "2d8a3f768738cee7803a6fcb8d6912b18cb645b30cf243ccd5ae5f69337b2367",
+      "bytes": 1364
+    },
+    {
+      "path": "configs/e02_exploratory_live_pilot_v1_1.json",
+      "sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b",
+      "bytes": 37508
+    },
+    {
+      "path": "src/civiclab/e02/instrument.py",
+      "sha256": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+      "bytes": 1446
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_LIVE_PILOT_V1_1_METHODS.json",
+      "sha256": "b2fbe137c614caed084bc80b4d6f4376ad4bbd760783ab1589f438cd058142e1",
+      "bytes": 7397
+    }
+  ],
+  "review": {
+    "input_binding": "Exactprotocol37508byteSHAa76e3f89/projection/assignmentconstants; boundedresponse131072,strictduplicates/nonfinite/depth20/strings8192/keys256; closed5fieldresponseenvelope,exact32uniquepre/postclosed4fieldrecords,executionorderbuiltinint0..15. ProvenanceMOCKorEXPLORATORY_REAL_MODELisdeclaredonly, explicitunverifiedwarning.",
+    "semantics": "Closedstatuses,nonanswernull,invalidpreANSWERorPARSE_ERRORrequiresSKIPPED_INVALID_PRE; failed/cancelled/unattemptedpre requiresNOT_ATTEMPTEDpost; subsequentattemptafterstoprefuses. Exacttwofinitebuiltinnumerics0..100,noextra/bool/refusal/missing; baselineencoding<=32chars. Fouranswerscompleteperblock,all8blocksretainedwitheacharmquality/exclusion; noimputation/replacement. All32arm/phase/partycounts sumcorrectly.",
+    "scoring": "ManualD/Rorientation,postgap-pregap,C2change-C1change[-400,400],equalcompleteblocks; absolutegapcontrastseparatesecondary. ZeroobservedblocksNOT_ESTIMABLE/nullestimate/CI, observeddenominator/planned8andfailuresretained. Partymeansandallleave-one-profile/stimulusmeansindependentlymatched.",
+    "uncertainty": "2000crossedprofile/stimulusdraws seed20261103,uniquesortedcompleteaxes; multiplicityproduct/observedcellweight,zero-weightdrawsrecorded; floorpercentileindices and>=2profiles/2stimulirequired. IndependentexpandedCartesianresamplingmatchedall24heterogeneous/missingpatterns (includingnone/all/diagonal/single-stimulus). Bothruntimesmatched.",
+    "preservation": "FrozenhandoffSHA d7740ee37dbd65f9ad81adadda3f4a8ef26c20f8d1be1848a4e5292ec41eb9ef andallsource/test/protocol/instrument/auditpins exact. Additional311receiptacceptedasscopedauthorobservation; own311tests rerun."
+  },
+  "limitations": [
+    "No filesystem/network/ownerfunctions inanalysis; purefunctions stilldependontrustedPython/localruntime",
+    "Responseprovenance/status/answerssuppliedbycaller,notgeneration/request/accountingattestations",
+    "Tinytechnicalreplicates/purposiveDEMOstimuli,completecaseattritionbias,unstabledescriptiveintervals; nohuman/national/confirmatory/model-universecoverage",
+    "Engineeringoraclesarenotactualeffectresults; no actualanalysis run data accepted"
+  ],
+  "remaining_blocked": [
+    "Rootauthentictranscript/request/committedpre/financialbindingbridge",
+    "Exactlivefinancialreleaseandretainedactualresponses",
+    "Independentrealrawrescoring/resultprovenance/costreview"
+  ],
+  "task_contract": {
+    "TASK_ID": "INDEPENDENT_E02_EXPLORATORY_PILOT_ANALYSIS_V1",
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_e02_exploratory_pilot_analysis_v1 tests.test_e02_experiment tests.test_e02_methods tests.test_e02_exploratory_live_requests_v1 -q",
+      "PYTHONPATH=src:tests .venv/bin/python /tmp/civiclab-independent-e02-pure-v1-oracles.py"
+    ],
+    "TESTS_RUN_AND_RESULTS": "33testsperruntimeand24independentheterogeneousmissing/bootstraporaclesPASS",
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "NEXT_UNBLOCKED_TASK": "Review separate puresequencer and later actualaccountingbridge; no component authority inheritance"
+  }
+}

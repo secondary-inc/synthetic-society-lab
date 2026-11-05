@@ -1,0 +1,93 @@
+{
+  "TASK_ID": "E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT",
+  "FILES_CHANGED": [
+    "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+    "tests/test_e02_exploratory_pilot_analysis_v1.py",
+    "reports/E02_EXPLORATORY_PILOT_ANALYSIS_V1_COMPONENT_HANDOFF.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "src/civiclab/e02/exploratory_pilot_analysis_v1.py": {
+      "sha256": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+      "bytes": 11270
+    },
+    "tests/test_e02_exploratory_pilot_analysis_v1.py": {
+      "sha256": "3c964bb4dc781701c4be7cf954193ff63da4c077c0031d64d5e668b81a3ce33a",
+      "bytes": 10842
+    },
+    "src/civiclab/e02/instrument.py": {
+      "sha256": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+      "bytes": 1446
+    },
+    "configs/e02_exploratory_live_pilot_v1_1.json": {
+      "sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b",
+      "bytes": 37508
+    },
+    "reports/INDEPENDENT_AUDIT_E02_EXPLORATORY_LIVE_PILOT_V1_1_METHODS.json": {
+      "sha256": "b2fbe137c614caed084bc80b4d6f4376ad4bbd760783ab1589f438cd058142e1",
+      "bytes": 7397
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e02_exploratory_pilot_analysis_v1 -v",
+    "PYTHONPATH=src .venv/bin/python -m unittest tests.test_e02_exploratory_pilot_analysis_v1 tests.test_e02_experiment tests.test_e02_methods -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "new_component_tests": 20,
+    "combined_tests": 27,
+    "combined_elapsed_seconds": 0.092,
+    "runtime": "Python 3.12.14",
+    "result": "PASS_AUTHOR_TESTS_ONLY",
+    "independent_review": "NOT_RUN",
+    "python311": "NOT_RUN; no executable found in tested PATH or guessed standard uv location; no installation attempted"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Pure deterministic evaluator reads no filesystem or environment. Caller supplies exact accepted protocol bytes and bounded closed JSON envelope. Tests read only repository config; all answers authored MOCK arithmetic oracles. No raw respondent/publisher source data used. DEMO authored stimulus provenance retained.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Exact accepted fixed cohort only; no generic runner or full national evaluation.",
+    "Response provenance is caller-declared; authentic real bridge, generation, request and financial verification remain root integration duties, explicitly unverified by this pure function.",
+    "Descriptive tiny-cluster crossed resampling and complete-case attrition bias; no actual effects, human inference, representative or confirmatory conclusions.",
+    "All 32 explicit phase dispositions required, including unattempted/skipped phases; no inferred omitted observations."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact-code/adversarial component review.",
+    "Root live bridge/compiler/financial/retained outcome integration and accepted release remain separate.",
+    "No actual pilot responses or real-result analysis exists."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent component review, then root integration of analyze(protocol_bytes,response_bytes); no edits to frozen protocols/STATUS or root bridge.",
+  "api": {
+    "call": "civiclab.e02.exploratory_pilot_analysis_v1.analyze(protocol_bytes, response_bytes)",
+    "protocol": "Exact pinned accepted v1.1 JSON bytes",
+    "response_envelope_fields": [
+      "response_provenance",
+      "protocol_sha256",
+      "projection_sha256",
+      "assignment_sha256",
+      "records"
+    ],
+    "response_provenance": [
+      "MOCK",
+      "EXPLORATORY_REAL_MODEL"
+    ],
+    "records": "exactly32unique closed {execution_order:int0..15,phase:pre/post,status,answer}; raw parsed JSON in ANSWER, null otherwise",
+    "statuses": [
+      "ANSWER",
+      "PARSE_ERROR",
+      "SKIPPED_INVALID_PRE",
+      "NOT_ATTEMPTED",
+      "FAILED_UNCERTAIN",
+      "CANCELLED"
+    ],
+    "limits": {
+      "protocol_bytes": 65536,
+      "response_bytes": 131072,
+      "JSON_depth": 20,
+      "string_characters": 8192,
+      "key_characters": 256
+    },
+    "stop_semantics": "Invalid pre or parse-error requires SKIPPED_INVALID_PRE post. Failed/cancelled/unattempted pre requires NOT_ATTEMPTED post. Stop disposition prohibits later attempted phase. Invalid answer does not trigger financial stop.",
+    "output": "Bound protocol/projection/assignment and response-byte hashes, declared provenance, eight block dispositions and arm phase quality, primary/absolute-gap contrasts, party and leave-one-out sensitivity, 2000-draw crossed descriptive interval, nonempty/zero-draw counts, arm/phase/party quality counts, no-data null masks; no grant."
+  },
+  "authority_created": false,
+  "network_calls": 0,
+  "actual_responses": 0
+}
