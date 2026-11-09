@@ -9,6 +9,7 @@ Research project exploring whether demographic grounding, information exposure, 
 
 - [Complete progress report — November 3, 2026](reports/PROGRESS_2026-11-03.md)
 - [Current orchestration status](reports/STATUS.md)
+- [Completed exploratory live E02 sample — November 8, 2026](reports/E02_LIVE_PILOT_COMPLETE_20261108.md)
 - [Full completion contract](configs/completion_contract.json)
 - [Master execution blueprint](CODEX_MASTER_EXECUTION.md)
 - [Original start-here handoff](START_HERE.md)
@@ -62,11 +63,11 @@ The viewer serves only its generated index/snapshot at loopback `127.0.0.1:8765`
 
 ## Scientific and financial gates
 
-All E02 responses so far are explicitly MOCK, using project-authored fictional notices and a deliberate known mock effect. Scripted Q&A tests C3/C4 plumbing; it is not live assistant research. The ACS/ANES universe mismatch and sparse population support prohibit representative-electorate claims. Real-news text/rights, population review and preregistration remain unresolved.
+E02 now has a [completed 32-response exploratory live sample](reports/E02_LIVE_PILOT_COMPLETE_20261108.md): four fictional party-prior profiles, two authored notices, C1/C2 wrappers and eight complete matched comparisons. All measured within-arm partisan-gap changes were zero; the tiny sample and cross-batch timing do not support equivalence, human-persuasion or representative-population claims. [Independent outcome review passed](reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json) for the retained evidence, accounting and descriptive scoring. Existing offline outputs remain explicitly MOCK, including their deliberate known mock effect. Scripted Q&A tests C3/C4 plumbing; it is not live assistant research. The ACS/ANES universe mismatch and sparse population support prohibit representative-electorate claims. Real-news text/rights, population review and confirmatory preregistration remain unresolved.
 
 E01 includes a real 2018→2024 regular Senate diagnostic with 30 matched states, official-count adjudications and S_ZERO/S0 baselines. Its recorded arithmetic and replay have [scoped independent acceptance](reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json); this post-hoc diagnostic does not complete the original 2026 House/Senate and agent study. The separate DEMO uses invented fixtures. Local outcome separation is a tested feature-flow boundary, not an OS sandbox or independent timestamp. No prospective forecast claim is permitted. See the [historical runbook](docs/E01_HISTORICAL_RUNBOOK.md).
 
-Paid model inference remains disabled, with $0 approved spend and no paid calls. OpenRouter is the only network inference adapter. It requires a fixed model/provider, fresh pricing evidence, an explicit approval ID and positive total/module caps. Atomic reservations count pending requests; unknown billing halts the ledger, known charges are retained even for malformed outputs, and there are no automatic retries/fallbacks. The adapter is mocked in tests; live behavior and billing are not verified. Credentials remain local and untracked; no Meta/X access was exercised.
+Unapproved paid inference defaults to zero. Standing owner authorization permits bounded research under a shared $5 cumulative ceiling, a $1 current E02 pilot ceiling and $0 E01 paid inference. OpenRouter is the only network inference adapter. The completed research sample has $0.0014340 in verified charges; the shared ledger conservatively counts $0.002857 including unchanged historical holds. Exact request counts, fresh prices, fixed model/provider constraints, reservations, checkpoints and reconciliation remain enforced. There are no model-request retries or silent fallbacks. The separately reviewed continuation allowed at most three billing lookups per new generation, retrying only closed HTTP404 responses; each actual lookup succeeded first time. Credentials and raw evidence remain local and untracked; no Meta/X access was exercised. The original stopped run remains preserved, and consumed launchers must not be rerun.
 
 Advanced demographics, news/social content, live assistants and swarms need matched simpler comparisons; swarms require equal-compute independent controls. See `configs/milestones.json`. A passing engineering test does not demonstrate scientific superiority.
 
@@ -107,4 +108,4 @@ The new citizen-target stage is separate from population fitting:
 
 It records approximate normalized ACS citizen25+ targets, original MOEs, rounding bounds and source/review lineage. Independent arithmetic acceptance is required before any new fit. Prior v3 runs and resident-calibrated models remain unchanged. See [the target runbook](docs/E02_CITIZEN_TARGETS_V1_RUNBOOK.md).
 
-[Cost planning](docs/COST_PLANNING.md) uses the same conservative request envelope and per-call reservation rounding as the adapter. `civiclab cost-plan --spec PATH` produces a review-only estimate for exact frozen calls; it never loads credentials, dispatches requests or authorizes spend. No real priced run proposal is accepted yet.
+[Cost planning](docs/COST_PLANNING.md) uses the same conservative request envelope and per-call reservation rounding as the adapter. `civiclab cost-plan --spec PATH` produces a review-only estimate for exact frozen calls; it never loads credentials, dispatches requests or authorizes spend. This planning estimator supplies no execution authority. The separately reviewed priced continuation and its actual outcome are recorded in the [completed live pilot report](reports/E02_LIVE_PILOT_COMPLETE_20261108.md).

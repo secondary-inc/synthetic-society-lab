@@ -1,6 +1,6 @@
 # Testing Whether Synthetic Societies Earn Their Complexity Draft
 
-Owner-review draft, November 3, 2026. Not published.
+Owner-review draft, updated November 9, 2026 UTC. Not published.
 
 A simulation can contain detailed people, convincing conversations and busy social feeds without predicting anything well. Synthetic Society Lab starts with a narrower question: what useful evidence does each extra layer add?
 
@@ -44,13 +44,21 @@ Every state remains visible, including those where persistence performed worse. 
 
 The program now separates implementation and audit across specialized chats. The independent auditor found failures that the original tests missed: a string value could enable a policy, a cancelled request could leave uncertain billing without stopping later calls, and a crash could leave a completed result without its final integrity ledger. Those issues were corrected and retested independently.
 
-Routine work continues while spending and publication retain explicit boundaries. The owner approved one separate nonpolitical API check with a $0.001 cap. Two early executions stopped before sending a model request. A later execution attempted one request but saved no generation ID or confirmed bill. The ledger conservatively retains $0.000340 as uncertain consumption, and the one-request allowance is exhausted. We cannot infer the underlying failure from the generic error. An [independent audit](../reports/INDEPENDENT_AUDIT_JSON_COMPATIBILITY_RUN03_UNCERTAIN_V1.json) confirms that accounting; further work on diagnostics is offline. The larger research studies still have no paid execution budget or completed live-model result.
+Routine work proceeds under the owner's standing authority with a shared $5 ceiling, a $1 current E02 pilot ceiling and no paid E01 inference. The earlier failed compatibility checks remain in the record; their uncertain charges were not erased to make the live pilot possible. The ledger now conservatively counts $0.002857, including historical holds. Every new batch needs a fixed request count, hard bounds and an independent technical review. Publication remains subject to owner approval.
 
 We have also verified the downloaded bytes and limited metadata of a DC Census archive and two official election documents. This is preparation work: no DC person rows have been imported, the population is not nationally validated, and the new documents do not establish final ballots or a2026 forecasting result. An independent reviewer also caught a race in review-package assembly; the corrected builder now binds archived data to the original verified run seal.
 
+## The first live sample is complete
+
+We now have 32 real model responses from a small controlled pilot: four fictional party-prior profiles, two authored civic notices and matching news/social wrappers. Every answer was valid, and all eight planned comparisons were scored. The measured partisan thermometer gap did not change before versus after either wrapper in any unit. That is a result for this particular model, prompt and sample—not evidence that presentation never affects models or people.
+
+The result also exposes limits of the test. The notices may have little bearing on partisan warmth, and each post prompt supplied the model's own baseline answer. Half the matched comparisons cross a multi-day gap after the original run stopped following a billing lookup that returned HTTP404. The calculated `[0,0]` bootstrap interval simply reflects all-zero observed contrasts; it does not prove equivalence. The next useful step is to examine measurement sensitivity and baseline anchoring under a frozen matched design, not repeat the same sample in search of a different answer.
+
+All 32 research bills were verified and total $0.0014340. An independent auditor checked the raw evidence, preserved financial history and scores. The [live report](../reports/E02_LIVE_PILOT_COMPLETE_20261108.md) records what ran and its limitations. The original stopped run is still preserved, and no missing response was invented or resent.
+
 ## What still has to earn a place
 
-The next steps include reviewed real-text stimuli, a defensible population scope, a frozen analysis plan and an authorized bounded model pilot. Demographic detail must outperform a simpler control on the same task. A social wrapper must be compared with identical words and attribution. Assistant interaction needs a matched comparison. A group of agents must justify itself against independent agents using comparable computation.
+The next steps include reviewed real-text stimuli, a defensible population scope, a human-study anchor, model-family robustness and a separately frozen sensitivity design beyond the completed limited pilot. Demographic detail must outperform a simpler control on the same task. A social wrapper must be compared with identical words and attribution. Assistant interaction needs a matched comparison. A group of agents must justify itself against independent agents using comparable computation.
 
 No amount of visual realism can satisfy those tests on its own. A negative result would still be useful if the comparison is reproducible and its limits are clear.
 

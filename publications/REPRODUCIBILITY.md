@@ -78,6 +78,12 @@ The viewer renders every saved configuration and failure, all paired contrasts a
 
 The completion status consumes independently authored audit receipts. Empty, duplicate, stale, unsupported or unreviewed requirements cannot produce an accepted complete program. The role declaration is a workflow assertion rather than a cryptographic identity. The lead must not write its own audit PASS findings. The preview server binds only to loopback and serves only the generated index/snapshot.
 
+## Completed limited live E02 sample
+
+The [live report](../reports/E02_LIVE_PILOT_COMPLETE_20261108.md) contains a read-only rescoring command for the combined 32-response sample and identifies the frozen protocol. It requires the locally retained private journal; it sends no model or billing requests. The [aggregate receipt](../reports/E02_EXPLORATORY_CONTINUATION_ACTUAL_20261108.json) binds code, protocol, original ancestry, continuation evidence, costs and scores. The [independent audit](../reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json) verifies those actual artifacts. The original stopped run is not overwritten.
+
+These financial journals have a separate storage/validation format from the earlier sealed `data/processed/runs/` outputs. They are not automatically included in the existing dashboard or review-package commands. A fresh clone contains aggregate evidence and code, not the private raw responses or owner database; full raw rescoring needs the retained local artifacts. No new clean-restoration or dashboard-acceptance claim is made for this live result. Do not rerun any consumed paid launcher to reproduce a result.
+
 ## Build a review package
 
 The current `repro-pack` command routes to the versioned builder. It requires six exact public evidence receipts, including both preserved pre-POST compatibility stops, and binds captured run artifacts and checksum bytes to the original verified seal. The historical builder remains unchanged for prior evidence; its demonstrated capture race is preserved in the independent finding and original-source fixture. The six-receipt extension passed independent review (`reports/INDEPENDENT_AUDIT_REVIEW_PACKAGE_SIXTH_RECEIPT_EXTENSION_V1.json`); no new archive is claimed by these instructions.

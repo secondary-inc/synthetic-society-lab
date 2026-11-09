@@ -55,3 +55,13 @@ and continuation batches are separated in time; identical request settings do
 not prove identical model internals or temporal conditions. Report that gap.
 One model family, eight matched blocks and no human-study anchor cannot establish
 human political persuasion, population representativeness or forecasting skill.
+
+Actual outcome: the one reviewed continuation completed November 9, 2026,
+04:53:38–04:57:24 UTC (November 8 EST), with sixteen new valid responses and
+sixteen verified bills. The combined sample has 32 valid answers/eight matched
+blocks, zero exclusions and zero observed partisan-gap changes. Independent
+actual-evidence/accounting/scoring review passed in
+`reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json`. The original
+stopped run and all three holds remain unchanged. The readable result is
+`reports/E02_LIVE_PILOT_COMPLETE_20261108.md`. This consumed caller must not be
+rerun; acceptance supplies no additional dispatch allowance.
