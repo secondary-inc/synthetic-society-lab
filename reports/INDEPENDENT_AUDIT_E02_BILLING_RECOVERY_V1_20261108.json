@@ -1,0 +1,205 @@
+{
+  "auditor_actual_key_owner_access": 0,
+  "auditor_authenticated_network_calls": 0,
+  "auditor_model_POSTs": 0,
+  "auditor_spend_usd": 0,
+  "execution_contract": {
+    "HTTP_seconds": 30,
+    "POSTs": 0,
+    "base_code": {
+      "assignment_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+      "kind": "LIMITED_PILOT_CODE_V1",
+      "limits": {
+        "HTTP_seconds": 30,
+        "artifact_bytes": 2000000,
+        "authority_seconds": 7200,
+        "catalog_GETs": 1,
+        "concurrency": 1,
+        "event_bytes": 65536,
+        "event_limit": 10000,
+        "input_bound": 8192,
+        "journal_artifacts": 256,
+        "journal_bytes": 268435456,
+        "lifetime_dispatches": 34,
+        "minimum_free_bytes": 536870912,
+        "module_microusd": {
+          "E01": 0,
+          "E02": 5000000
+        },
+        "output_tokens": 512,
+        "per_call_microusd": 31250,
+        "phase_seconds": 120,
+        "price_age_seconds": 900,
+        "retries": 0,
+        "row_limit": 1024,
+        "shared_microusd": 5000000,
+        "socket_seconds": 15,
+        "study_dispatches": 32,
+        "study_microusd": 1000000,
+        "study_statistics_GETs": 32
+      },
+      "methods": {
+        "base_composite_review": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+        "provider_representation_review": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a",
+        "recovery_methods": "97ed5a2f20f38b357983b37ecc5eb27d571e3952a684670ed09903d16a7a2db9",
+        "recovery_review": "c87d3063e61d14015efdca3a4090b08bb37d9d52ca46a8fd9727ba48fe8f0586",
+        "representation": "CANONICAL_PARSED_PROVIDER_OBJECT_V1"
+      },
+      "pins": {
+        "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+        "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "src/civiclab/e02/exploratory_live_client_v1.py": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22",
+        "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+        "src/civiclab/e02/exploratory_metadata_v1.py": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8",
+        "src/civiclab/e02/exploratory_owner_v1.py": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756",
+        "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+        "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+        "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+        "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+        "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+        "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+        "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+        "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+        "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+        "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+        "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+        "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+        "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+        "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c"
+      },
+      "projection_sha256": "1ad387de7ec320720849b1cacbcbbd4291b091cf0541cc43a8b39dc065172a5b",
+      "protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+    },
+    "deadline_seconds": 150,
+    "export_sha256": "517d18d1595983e5ffbfbc6f0dc5223cf228534904720eefdc9db21aad545a32",
+    "generation_id": "gen-1793873410-17Xn9RsYhfAyAy5B0lou",
+    "hold_microusd": 788,
+    "kind": "E02_EXISTING_GENERATION_BILLING_RECOVERY_V1",
+    "maximum_GETs": 3,
+    "output": "data/processed/e02_continuation_20261108_01/billing-recovery",
+    "owner_writes": 0,
+    "pins": {
+      "scripts/collect_connectivity_billing_once.py": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7",
+      "scripts/recover_e02_billing_v1.py": "c39bcc58f84faef6f7dd5b849d6d2d52b64975b1c5c51afe459bb508f5d6344d"
+    },
+    "receipt": "07c60fe627276fa0be6bf972b9e0faee",
+    "response_sha256": "2f36a4e37fd46b16c6022f4e4f30cd5c7150feb67ddebffe13013eb86ef02302",
+    "retry_statuses": [
+      404
+    ],
+    "retry_waits_seconds": [
+      10,
+      20
+    ]
+  },
+  "execution_contract_hash": "ede7a888d6e06a583e8e5bc092b418b1e885184775c114317dbb2b2244a83233",
+  "findings": [
+    {
+      "decision": "Externally reviewed contract binds exact collector/helper/basecode and fixedreceipt/generation/export/response/output. Current saved export andresponse hashes/reparsedoutput/currenthold788/observed54/count18/total2136/unfinished3 independently reverified without originalowner/key access.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Create-once outputdirectory and durableintent beforecredential/network. At most3GETs for exactoriginal generation, zeroPOST, only explicitly observedHTTP404 withcloseverified can retry, fixed10/20second waits, monotonicrollback/deadline checks within150seconds and bounded30secondHTTP. 401/429/timeout/cancel/closefailure/policyrefusal no retry.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Safe exactgeneration scalar harvested before deadline/privacy/write, foreigngeneration/secret scalar notobserved. Fullcanonicalmetadata retained only after privacy; overrun/costmismatch/native/model/provider/tier/aux/cancel identity rejects without financialstatechange. Missingbody status and safe diagnostic preservelimits.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Successful evidence requires exact frozen modelalias/Azure/nonBYOK/default tier/nativebounds/zeroreasoning/supportedauxiliary policy and exactDecimal(responseusagecost)==Decimal(generationtotalcost). Alloriginalrows/history/claims/hold remain unchanged; verified evidence alone does not settle or relabel originalrun.",
+      "status": "PASS"
+    }
+  ],
+  "independent_tests": {
+    "Python3.11": "12PASS0.080s",
+    "Python3.12": "12PASS0.081s",
+    "independent_original_boundary_reprobes": {
+      "actual_key_owner_network_access": 0,
+      "cases": [
+        {
+          "GETs": 1,
+          "boundary": "privacy",
+          "hold_unchanged": true,
+          "raw_body_retained": false,
+          "recorded_cost": 10000,
+          "safe_same_generation_cost_microusd": 10000
+        },
+        {
+          "GETs": 1,
+          "boundary": "body_write",
+          "hold_unchanged": true,
+          "raw_body_retained": false,
+          "recorded_cost": 10000,
+          "safe_same_generation_cost_microusd": 10000
+        },
+        {
+          "GETs": 1,
+          "boundary": "late_response",
+          "hold_unchanged": true,
+          "raw_body_retained": false,
+          "recorded_cost": 10000,
+          "safe_same_generation_cost_microusd": 10000
+        }
+      ],
+      "spend_usd": 0,
+      "status": "SAFE_COST_OBSERVATION_RETAINED_ALL_BOUNDARIES_AUTHORED"
+    },
+    "independent_unsafe_monetary_probes": {
+      "count": 3,
+      "status": "PASS_NO_OBSERVATION_SECRET_LEAK_OR_OVERRUN_FLAG",
+      "values": "Authoredcredentialbearingnumericstring/boolean/nonfiniteNan"
+    }
+  },
+  "limits": [
+    "Pricefreshness is not required merely toread existinggenerationbill; newmodeldispatch stillrequires acceptednewpricelease/freshcatalog.",
+    "Codeuses existingcooperativefilesystem/process/HTTP/socket assumptions; nohostilehostor absoluteOStermination guarantee.",
+    "Finalresultwritefailure may leave durableintent/partial evidence and refuse; no automaticretry or stateadoption.",
+    "No exact accounting reconciliation/holdrelease or 16phase modelcontinuation accepted here.",
+    "Audit tests use authoredtempcredentials/transports only; sourceevidence is savedprivateexport/response, no actual.env orownerstore opened."
+  ],
+  "next_unblocked_task": "Lead executes this boundedcollector once and retainsactualevidence while continuationcode review proceeds independently.",
+  "owner_local_date": "2026-11-08",
+  "preceding_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_BILLING_RECOVERY_V1_INITIAL_FINDING_20261108.json",
+    "reason": "Safe samegeneration totalcost now harvested before deadline/privacy/persistence; resultretains safeobservedcost/overrun whilefull788hold unchanged.",
+    "sha256": "be8849b55ca2761126e9e538c28ce15833acecdaf52956ad6601c83ca092577d",
+    "status": "CLOSED_FOR_EXACT_SUCCESSOR"
+  },
+  "recorded_at_utc": "2026-11-09T04:45:46.711046+00:00",
+  "release_conditions": {
+    "after_collection": "Lead supplies exact retainedmetadata/result/intent hashes; auditor independently validatesactualevidence before latercontinuation packet/code release.",
+    "fixed_retry_wait_seconds": [
+      10,
+      20
+    ],
+    "generation_id": "gen-1793873410-17Xn9RsYhfAyAy5B0lou",
+    "invocation": "scripts/recover_e02_billing_v1.py with exact execution_contract_hash as sole argument, once, or collect(exacthash) once under reviewed rootcaller. Never selfcompute changedexpectedhash atlaunch.",
+    "maximum_GETs": 3,
+    "maximum_elapsed_seconds": 150,
+    "maximum_model_POSTs": 0,
+    "no_repeat": "Any consumed outputdirectory/intent prevents rerun, including afterfailure; preserve all attempts/body/result.",
+    "original_hold_microusd": 788,
+    "output_directory": "data/processed/e02_continuation_20261108_01/billing-recovery",
+    "owner_reads": 0,
+    "owner_writes": 0,
+    "receipt": "07c60fe627276fa0be6bf972b9e0faee",
+    "retry_HTTP_statuses": [
+      404
+    ],
+    "standing_authority": "CurrentAGENTS/responsible-autonomy bounded existinggenerationbillinginvestigation within unchanged$5combined/$1pilot, no further routinehumanquestion required."
+  },
+  "scope": "One new finite billing-recovery batch for original interrupted E02 generation only. Root may invoke collector once with this externally expected hash under recorded standing owner autonomy. No model prompt, owner store access/mutation, newbudget or automatic continuation authority.",
+  "source_hashes": {
+    "scripts/recover_e02_billing_v1.py": {
+      "bytes": 7663,
+      "sha256": "c39bcc58f84faef6f7dd5b849d6d2d52b64975b1c5c51afe459bb508f5d6344d"
+    },
+    "tests/test_e02_billing_recovery_v1.py": {
+      "bytes": 7325,
+      "sha256": "0075efa484f66f82570b35f5d5f25d3e4b5c0679ce05016add391f99f5db73c9"
+    }
+  },
+  "status": "PASS_EXACT_BOUNDED_BILLING_ONLY_BATCH_UNDER_STANDING_AUTHORITY",
+  "task_id": "INDEPENDENT_AUDIT_E02_BILLING_RECOVERY_V1_20261108"
+}

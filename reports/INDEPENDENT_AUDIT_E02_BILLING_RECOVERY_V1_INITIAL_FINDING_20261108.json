@@ -1,0 +1,89 @@
+{
+  "actual_network_calls": 0,
+  "actual_owner_key_access": 0,
+  "auditor_spend_usd": 0,
+  "author_tests_independently_rerun": {
+    "Python3.11": "10PASS0.060s",
+    "Python3.12": "10PASS0.057s"
+  },
+  "contract_hash": "2143291043dbfa4f976036d91806c8c1429f6876f00a9dc7377742f2c97df1d1",
+  "finding": {
+    "decision": "A safely readable exact-generation total_cost must be harvested with existing credential-safe _observed_cost before deadline/privacy/bodywrite refusal. Current failure path stores neither fullbody nor scalar, losing observed overrun while788hold remains.",
+    "direct_evidence": {
+      "actual_key_owner_network_access": 0,
+      "cases": [
+        {
+          "GETs": 1,
+          "boundary": "privacy",
+          "hold_unchanged": true,
+          "raw_body_retained": false,
+          "recorded_cost": null,
+          "safe_same_generation_cost_microusd": 10000
+        },
+        {
+          "GETs": 1,
+          "boundary": "body_write",
+          "hold_unchanged": true,
+          "raw_body_retained": false,
+          "recorded_cost": null,
+          "safe_same_generation_cost_microusd": 10000
+        },
+        {
+          "GETs": 1,
+          "boundary": "late_response",
+          "hold_unchanged": true,
+          "raw_body_retained": false,
+          "recorded_cost": null,
+          "safe_same_generation_cost_microusd": 10000
+        }
+      ],
+      "spend_usd": 0,
+      "status": "SAFE_COST_OBSERVATION_DROPPED_CONFIRMED_AUTHORED"
+    },
+    "location": "scripts/recover_e02_billing_v1.py: successful statistics return before gate/privacy/persistence",
+    "minimal_required_fix": [
+      "After statistics returns, harvest only safe exact-generation total_cost via existing _observed_cost before gate/_no_secret/_write.",
+      "Retain safe observed_cost_microusd and exceeds788 flag on STOPPED/CANCELLED as evidence only, no settlement/hold release/newGET.",
+      "Secret monetary scalar and foreign-generation cost must never be retained; add regression coverage for privacy/bodywrite/deadline and those refusals."
+    ],
+    "scope": "One finite patch, not new financial protocol or human permission gate.",
+    "severity": "MEDIUM"
+  },
+  "next_unblocked_task": "Lead applies tinycollector/test correction and freezes successor; auditor reruns10+regressions and exactprobes promptly. Standing authorization covers finite actualbilling recovery after technical acceptance, no further owner prompt.",
+  "other_review": {
+    "POSTs": 0,
+    "cost_match": "Exact Decimal response versus bill comparison present",
+    "createonce": true,
+    "deadline_seconds": 150,
+    "finite_GETs": 3,
+    "owner_reads_or_writes": 0,
+    "retry_HTTP_status": 404,
+    "source_hash_guard": "Expected reviewed contract checked before saved evidence/key/network",
+    "status": "Otherwise adequate pending exact remedy review",
+    "waits_seconds": [
+      10,
+      20
+    ]
+  },
+  "recorded_at_utc": "2026-11-09T04:44:49.475340+00:00",
+  "source_evidence_verification": {
+    "actual_owner_or_key_read": false,
+    "fixed_receipt_generation": true,
+    "held_microusd": 788,
+    "observed_response_cost_ceil_microusd": 54,
+    "response_usage_cost": "5.31e-05",
+    "saved_export_and_response_hashes_verified": true
+  },
+  "sources": {
+    "scripts/recover_e02_billing_v1.py": {
+      "bytes": 7112,
+      "sha256": "019908eb9a5f1ecdbd034a759efb6081f10822545ccb0bce065feddffc15b8fb"
+    },
+    "tests/test_e02_billing_recovery_v1.py": {
+      "bytes": 6107,
+      "sha256": "c047d203e274491f13a88f26bc0680d0046a23958d47adce82c32cd64b4f0158"
+    }
+  },
+  "status": "BLOCKED_ONE_NARROW_COST_OBSERVATION_ORDERING_DEFECT",
+  "task_id": "INDEPENDENT_AUDIT_E02_BILLING_RECOVERY_V1_INITIAL_FINDING_20261108"
+}
