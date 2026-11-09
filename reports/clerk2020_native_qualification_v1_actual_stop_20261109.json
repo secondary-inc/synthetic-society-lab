@@ -1,0 +1,142 @@
+{
+  "status": "RECORDED_ACTUAL_QUALIFICATION_STOP_UNKNOWN_PREDICATE_NOT_ACCEPTANCE",
+  "TASK_ID": "E01_CLERK2020_GENERATED_QUALIFICATION_V1_ACTUAL_FAILURE_HANDOFF",
+  "FILES_CHANGED": [
+    "reports/clerk2020_native_qualification_v1_actual_stop_20261109.json",
+    "src/civiclab/e01/clerk2020_qualification_failure_context_v1.py",
+    "tests/test_clerk2020_qualification_failure_context_v1.py",
+    "reports/clerk2020_qualification_failure_context_v1_tests_312_20261109.txt",
+    "reports/clerk2020_qualification_failure_context_v1_tests_311_20261109.txt"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "read_only_copied_control_records": [
+      {
+        "path": "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/STARTED.json",
+        "bytes": 660,
+        "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378",
+        "raw_utf8": "{\"actual_source_authority\":false,\"consumed\":true,\"kind\":\"CLERK_NATIVE_GENERATED_QUALIFICATION_RELEASE_V1\",\"limits\":{\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":119,\"reader_attempts\":4,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"no_retry\":true,\"plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\"}"
+      },
+      {
+        "path": "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/OUTCOME.json",
+        "bytes": 775,
+        "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca",
+        "raw_utf8": "{\"actual_source_reads\":0,\"cost_usd\":0,\"full_limits_consumed\":{\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":119,\"reader_attempts\":4,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"model_calls\":0,\"native_attempt_observed\":true,\"observed_code_bytes\":92546,\"plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"reader_attempts_observed\":null,\"reserved_code_bytes\":92555,\"status\":\"QUALIFICATION_STOPPED_UNKNOWN_NO_RETRY\"}"
+      },
+      {
+        "path": "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/partial_stdout.local.bin",
+        "bytes": 114,
+        "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d",
+        "raw_utf8": "{\"actual_source_reads\":0,\"error_type\":\"Refused\",\"stage\":\"RUNTIME_MANIFEST\",\"status\":\"NATIVE_FIXTURE_UNKNOWN_STOP\"}"
+      }
+    ],
+    "separate_optional_authored_diagnostic_proposal": [
+      {
+        "path": "src/civiclab/e01/clerk2020_qualification_failure_context_v1.py",
+        "sha256": "b69621cbfdac31d04bb815c366d2df23aad6d72488d265e24c85afc873d93e05",
+        "bytes": 3198
+      },
+      {
+        "path": "tests/test_clerk2020_qualification_failure_context_v1.py",
+        "sha256": "0bb39ec5a3423c788c0a74e0ab613e6516cf1c9384b27629589ddce6c6023e03",
+        "bytes": 3234
+      },
+      {
+        "path": "reports/clerk2020_qualification_failure_context_v1_tests_312_20261109.txt",
+        "sha256": "21580a5668f5e6c8811cb5f11414a77d5fdba9dc298d73af279b12980b72171c",
+        "bytes": 1251
+      },
+      {
+        "path": "reports/clerk2020_qualification_failure_context_v1_tests_311_20261109.txt",
+        "sha256": "21580a5668f5e6c8811cb5f11414a77d5fdba9dc298d73af279b12980b72171c",
+        "bytes": 1251
+      }
+    ]
+  },
+  "REPRODUCTION_COMMANDS": [
+    "Recompute SHA256 of embedded raw_utf8 control records; do not rerun consumed qualification-v1.",
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_clerk2020_qualification_failure_context_v1.py -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "saved_record_hashes": "3 matching records,1549bytes; no mutation observed between two bounded reads",
+    "known_slots_absent_on_first_read": [
+      "worker.json",
+      "stderr.local.bin"
+    ],
+    "qualified_whole_scope_enumeration": false,
+    "new_optional_memory_context_tests": "7 PASS each Python3.12/3.11, authored exceptions only",
+    "frozen_caller_sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f",
+    "existing30tests_rerun": false
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only five explicitly scoped known control/output slots checked read-only, plus public code and new authored exception fixtures. Three metadata bodies copied here contain no source text/runtime paths/credentials. No actual Clerk PDF/private history, new runtime inventory/probe, library import, native phase, network/model or source acquisition by this diagnostic.",
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "api_content_model_usd": 0,
+    "development_compute": "UNPRICED",
+    "financial_ledger_changes": false
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Exact rejecting predicate/module/path is NOT recorded and remains unknown. No package/version/library or installation conclusion follows.",
+    "Saved RUNTIME_MANIFEST/Refused stage is narrower than a generic child failure; it is not native runtime/fixture/output acceptance.",
+    "Parent reader_attempts_observed stays null and full limits stay consumed; code ordering is not used to refund or rewrite counters.",
+    "Optional helper cannot reconstruct the discarded original traceback; its module context is last-iteration context, not automatically the cause."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Consumed qualification-v1 cannot be rerun/reset.",
+    "No native qualification acceptance or M2 source/runtime/BOOT/EXEC release.",
+    "Concrete predicate diagnosis needs new reviewed bounded diagnostic authority if root chooses it; none supplied/executed now."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Root retains this stop for delivery; existing auditor may review copied public metadata. Optional small traceback-memory helper can be reviewed separately; any future diagnostic is explicitly linked, bounded and root-scheduled, with no origin-policy weakening or source permission.",
+  "observed_failure": {
+    "child": {
+      "actual_source_reads": 0,
+      "error_type": "Refused",
+      "stage": "RUNTIME_MANIFEST",
+      "status": "NATIVE_FIXTURE_UNKNOWN_STOP"
+    },
+    "parent_status": "QUALIFICATION_STOPPED_UNKNOWN_NO_RETRY",
+    "native_attempt_observed": true,
+    "observed_code_bytes": 92546,
+    "reserved_code_bytes": 92555,
+    "reader_attempts_observed": null,
+    "actual_source_reads": 0,
+    "plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e"
+  },
+  "spent_bounds_unchanged": {
+    "child_cpu_hard_seconds": 11,
+    "child_cpu_soft_seconds": 10,
+    "child_wall_seconds": 30,
+    "code_read_bytes": 1048576,
+    "model_calls": 0,
+    "native_import_attempts": 1,
+    "network_requests": 0,
+    "owned_write_bytes": 131072,
+    "packet_bytes": 32768,
+    "page_extractions": 119,
+    "reader_attempts": 4,
+    "rss_peak_bytes": 268435456,
+    "runtime_files": 1024,
+    "runtime_hash_bytes": 536870912,
+    "runtime_manifest_bytes": 98304,
+    "source_reads": 0,
+    "stderr_bytes": 4096,
+    "stdout_bytes": 114688,
+    "wall_ms": 45000
+  },
+  "root_execution_attribution": {
+    "source": "Direct lead message, not independently timed by worker",
+    "code_commit_reported": "19926ff",
+    "reported_elapsed_seconds": 0.149,
+    "root_reported_exception": "QualificationStopped at line333"
+  },
+  "minimal_proposal": {
+    "kind": "SEPARATE_AUTHORED_DIAGNOSTIC_HELPER_ONLY_NOT_INTEGRATED",
+    "purpose": "Record frozen qualification function/line and bounded last-iteration module category from an exception already in memory in a future approved diagnostic.",
+    "filesystem_network_runtime_io_added_by_helper": 0,
+    "exceptions_or_full_paths_retained": false,
+    "actual_traceback_available": false,
+    "original_failure_inferred_cause": null,
+    "origin_policy_change": false,
+    "new_native_run_or_source_grant": null,
+    "consumed_namespace_change": false
+  },
+  "no_frozen_caller_packet_original_scope_E02_STATUS_shared_or_auditor_edits": true
+}

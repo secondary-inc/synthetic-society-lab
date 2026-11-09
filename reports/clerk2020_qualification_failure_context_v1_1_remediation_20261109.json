@@ -1,0 +1,133 @@
+{
+  "status": "SEPARATE_OFFLINE_REMEDIATION_CANDIDATE_AWAITING_INDEPENDENT_REVIEW",
+  "TASK_ID": "E01_QUALIFICATION_FAILURE_CONTEXT_V1_1_DESCRIPTOR_REMEDIATION",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py",
+    "tests/test_clerk2020_qualification_failure_context_v1_1.py",
+    "reports/clerk2020_qualification_failure_context_v1_1_tests_312_20261109.txt",
+    "reports/clerk2020_qualification_failure_context_v1_1_tests_311_20261109.txt",
+    "reports/clerk2020_qualification_failure_context_v1_1_final_312_20261109.txt",
+    "reports/clerk2020_qualification_failure_context_v1_1_final_311_20261109.txt",
+    "data/processed/e01_clerk2020_qualification_failure_context_candidates/v1_1_20261109/clerk2020_qualification_failure_context_v1.py",
+    "data/processed/e01_clerk2020_qualification_failure_context_candidates/v1_1_20261109/test_clerk2020_qualification_failure_context_v1.py",
+    "data/processed/e01_clerk2020_qualification_failure_context_candidates/v1_1_20261109/preserved_original_manifest.local.json",
+    "reports/clerk2020_qualification_failure_context_v1_1_remediation_20261109.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "successor_refs": [
+      {
+        "path": "src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py",
+        "sha256": "730440fa2090865e94b81fcd42320094f4981023b2adb0b22ed37a4eb7ea4ab9",
+        "bytes": 3881
+      },
+      {
+        "path": "tests/test_clerk2020_qualification_failure_context_v1_1.py",
+        "sha256": "2039ee260047aeb6c670150f1b78b9be33a68b6796069242a5e7a4fa643c6711",
+        "bytes": 5950
+      },
+      {
+        "path": "reports/clerk2020_qualification_failure_context_v1_1_tests_312_20261109.txt",
+        "sha256": "c1ebe929c417bc20dfe010e653c8de67310766ba52284d0ab057122c2242e55e",
+        "bytes": 2013
+      },
+      {
+        "path": "reports/clerk2020_qualification_failure_context_v1_1_tests_311_20261109.txt",
+        "sha256": "c1ebe929c417bc20dfe010e653c8de67310766ba52284d0ab057122c2242e55e",
+        "bytes": 2013
+      },
+      {
+        "path": "reports/clerk2020_qualification_failure_context_v1_1_final_312_20261109.txt",
+        "sha256": "264a2f810e7b9d6e3e368cbf5abc63200e62205e062fc7b386f0dd3cbf9702a3",
+        "bytes": 2383
+      },
+      {
+        "path": "reports/clerk2020_qualification_failure_context_v1_1_final_311_20261109.txt",
+        "sha256": "264a2f810e7b9d6e3e368cbf5abc63200e62205e062fc7b386f0dd3cbf9702a3",
+        "bytes": 2383
+      }
+    ],
+    "private_preserved_original_refs": [
+      {
+        "path": "data/processed/e01_clerk2020_qualification_failure_context_candidates/v1_1_20261109/clerk2020_qualification_failure_context_v1.py",
+        "sha256": "b69621cbfdac31d04bb815c366d2df23aad6d72488d265e24c85afc873d93e05",
+        "bytes": 3198
+      },
+      {
+        "path": "data/processed/e01_clerk2020_qualification_failure_context_candidates/v1_1_20261109/test_clerk2020_qualification_failure_context_v1.py",
+        "sha256": "0bb39ec5a3423c788c0a74e0ab613e6516cf1c9384b27629589ddce6c6023e03",
+        "bytes": 3234
+      },
+      {
+        "path": "data/processed/e01_clerk2020_qualification_failure_context_candidates/v1_1_20261109/preserved_original_manifest.local.json",
+        "sha256": "e7a86609d90b4aba22126180317bfceccfd853ae8e6a89e7ebf427971b45af14",
+        "bytes": 838
+      }
+    ],
+    "unchanged_predecessor_refs": [
+      {
+        "path": "src/civiclab/e01/clerk2020_qualification_failure_context_v1.py",
+        "sha256": "b69621cbfdac31d04bb815c366d2df23aad6d72488d265e24c85afc873d93e05",
+        "bytes": 3198
+      },
+      {
+        "path": "tests/test_clerk2020_qualification_failure_context_v1.py",
+        "sha256": "0bb39ec5a3423c788c0a74e0ab613e6516cf1c9384b27629589ddce6c6023e03",
+        "bytes": 3234
+      },
+      {
+        "path": "reports/clerk2020_native_qualification_v1_actual_stop_20261109.json",
+        "sha256": "ae8215d5c3e7a6c5cf9fdfa4fb76015614d7fc32598ea2755278f1c3fb7e9643",
+        "bytes": 8551
+      },
+      {
+        "path": "reports/INDEPENDENT_AUDIT_E01_QUALIFICATION_STOP_HANDOFF_20261109.json",
+        "sha256": "7b97eaabfe57fc24863b5dad59633373a2cd71a50725eedb8c892a2e807c8c10",
+        "bytes": 3418
+      },
+      {
+        "path": "src/civiclab/e01/clerk2020_native_qualification_v1.py",
+        "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f",
+        "bytes": 22083
+      }
+    ]
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_clerk2020_qualification_failure_context_v1_1.py -v",
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p test_clerk2020_qualification_failure_context_v1_1.py -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final_tests": 13,
+    "python312": "13 PASS,0.001s",
+    "python311": "13 PASS,0.001s",
+    "earlier_logs": "11-case intermediate observations preserved",
+    "descriptor_sentinels": "Custom object __dict__, ModuleType subclass __dict__, exception subclass __traceback__, exception/path metaclass hash hooks never called",
+    "real_runtime_source_native_tests": "NOT_RUN; no old passing suites rerun"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only public code/audit/failure metadata and newly owned private source-copy preservation. All traceback frames/exception/module/path fixtures authored in memory; no actual qualified-run traceback available. No actual PDFs, original control scope, native runtime/source probes, library import, network/key/model or new execution calls.",
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "api_content_model_usd": 0,
+    "development_compute": "UNPRICED"
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Optional helper only; not integrated into frozen caller, no execution entry or source permission.",
+    "Exact known Refused/listed builtin exception classes only; arbitrary subclasses refuse without attribute/hash hooks. Exact ModuleType context only; arbitrary objects/subclasses omitted.",
+    "Identity tests avoid custom metaclass hash/equality during type refusal.",
+    "Recorded module category is last-iteration context, not proven cause; original lost traceback and exact native failure cause remain unknown.",
+    "This is passive metadata extraction for reviewed code frames, not a hostile-code/global-monkeypatch security sandbox."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact v1.1 remedy review pending; originalv1P2finding remains preserved.",
+    "No new native phase authorized; originalqualification-v1 consumed/full limits unchanged.",
+    "M2 runtime/source/caller/actual-source/statistical gates remain pending."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Existing auditor reviews only this separate exact helper/code/test remediation; root may deliver accepted saved-failure handoff without waiting. Do not rerun qualification or activate diagnostic execution.",
+  "minimal_changes": [
+    "Exact ModuleType before dictionary access; otherwise omit module context.",
+    "Exact known safe exception types, using identity comparisons; BaseException builtin traceback access only after admission.",
+    "Exact path-class identity comparisons and string-type checks before filename/function comparisons.",
+    "Descriptor and metaclass sentinel regressions plus original privacy/no-I/O/unknown traceback oracles."
+  ],
+  "frozen_caller_packet_scope_actual_failure_handoff_and_E02_STATUS_auditor_unchanged": true,
+  "native_execution_or_probe": false,
+  "original_failure_predicate": null
+}
