@@ -28,6 +28,12 @@ waiting 10, 10 and 20 seconds before successive attempts, and retries only an
 observed HTTP404 with successful connection closure. A new uncertain dispatch
 stops the continuation; all responses and failed dispositions remain retained.
 
+The inherited packet's 32-statistics field remains the legacy single logical
+claim per original phase. The reviewed continuation contract explicitly replaces
+the physical lookup allowance for its new batch with at most 48 GET attempts;
+the original run's sixteen GETs and at most thirty-two combined logical study
+claims remain separately recorded.
+
 Acceptance criteria:
 
 - Billing recovery: same generation/provider/model, exact response-versus-bill
