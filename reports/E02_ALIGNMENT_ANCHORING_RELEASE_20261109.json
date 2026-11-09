@@ -1,0 +1,50 @@
+{
+  "actual_outcome_acceptance": "NOT_RUN_AT_RELEASE",
+  "code_contract_hash": "fa5148434517729766209f8cef0069de995fda91d72fca540d9ce63314141e15",
+  "finite_window_utc": [
+    "2026-11-09T05:22:09.229676+00:00",
+    "2026-11-09T07:22:09.229676+00:00"
+  ],
+  "independent_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_CODE_PARTICULAR_V1_20261109.json",
+    "sha256": "b61eb0da97d9be98950b77a4f7795c7327534e0c1ce697caeca866feab413bf7"
+  },
+  "kind": "E02_ALIGNMENT_ANCHORING_REVIEWED_RELEASE_V1",
+  "limits": {
+    "E01_microusd": 0,
+    "GET_retry_statuses": [
+      404
+    ],
+    "GET_waits_seconds": [
+      10,
+      10,
+      20
+    ],
+    "GETs_per_generation": 3,
+    "POST_retries": 0,
+    "authority_seconds": 7200,
+    "concurrency": 1,
+    "cumulative_E02_microusd": 1000000,
+    "input_tokens": 8192,
+    "journal_artifacts": 384,
+    "lifetime_dispatches": 62,
+    "new_batch_microusd": 50000,
+    "new_model_POSTs": 28,
+    "new_statistics_GETs": 84,
+    "output_tokens": 256,
+    "per_call_microusd": 1785,
+    "phase_seconds": 120,
+    "price_age_seconds": 900,
+    "shared_microusd": 5000000
+  },
+  "maximum_new_quote_microusd": 35980,
+  "original_evidence_unchanged": true,
+  "owner_authority": "Standing bounded research request; no new spending ceiling",
+  "packet_sha256": "dee1e2cd4aa74291a6a292f5c8eeb4bd4f2a04349e65a1da638f3bfca6469619",
+  "price_release_sha256": "cadf0fd82af676cb7b1ef0a8ce20d8098470a9b2fc4eac68991eacfd988a140b",
+  "prior_all_charges_and_holds_microusd": 2857,
+  "recorded_at_utc": "2026-11-09T05:29:08.733254+00:00",
+  "run_id": "e02-alignment-anchoring-live-20261109-01",
+  "source_commit": "2396fdabb1ff7df702a1dfcf1affaab2885098b8",
+  "status": "READY_NOT_YET_DISPATCHED"
+}

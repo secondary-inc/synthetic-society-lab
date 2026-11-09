@@ -1,0 +1,227 @@
+{
+  "actual_model_calls_observed_in_this_review": 0,
+  "actual_study_status": "NOT_RUN_IN_THIS_REVIEW",
+  "all_in_quoted_max_microusd": 38837,
+  "ancestor_events": 209,
+  "ancestor_holds_and_charges_microusd": 2857,
+  "ancestor_rows": 34,
+  "cap_not_quote_all_in_microusd": 52837,
+  "contract": {
+    "kind": "ALIGNMENT_STUDY_CODE_V1",
+    "limits": {
+      "E01_microusd": 0,
+      "GET_retry_statuses": [
+        404
+      ],
+      "GET_waits_seconds": [
+        10,
+        10,
+        20
+      ],
+      "GETs_per_generation": 3,
+      "POST_retries": 0,
+      "authority_seconds": 7200,
+      "concurrency": 1,
+      "cumulative_E02_microusd": 1000000,
+      "input_tokens": 8192,
+      "journal_artifacts": 384,
+      "lifetime_dispatches": 62,
+      "new_batch_microusd": 50000,
+      "new_model_POSTs": 28,
+      "new_statistics_GETs": 84,
+      "output_tokens": 256,
+      "per_call_microusd": 1785,
+      "phase_seconds": 120,
+      "price_age_seconds": 900,
+      "shared_microusd": 5000000
+    },
+    "pins": {
+      "scripts/collect_connectivity_billing_once.py": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7",
+      "scripts/run_alignment_anchoring_once.py": "84b584d3cbbac537a3d34e2081e624e7bd36a6a513ef453a933c97f64ce66c2f",
+      "scripts/run_e02_continuation_once.py": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e",
+      "src/civiclab/e02/alignment_anchoring_client_v1.py": "118f2fe420f8edb3a0d5ddc3c75079327ab89f002817e7385eb4b7d29f9d43fc",
+      "src/civiclab/e02/alignment_anchoring_owner_v1.py": "c37f21dd71d8426be4906799143de38f4ec35a097a8e5ffc0b3cad48d5802301",
+      "src/civiclab/e02/alignment_anchoring_v1.py": "b09050ae0f35f94f2bd204ddb12a1221d2a00e17d880d5283e25e071e5b2b2fc"
+    },
+    "predecessor": {
+      "base": {
+        "assignment_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+        "kind": "LIMITED_PILOT_CODE_V1",
+        "limits": {
+          "HTTP_seconds": 30,
+          "artifact_bytes": 2000000,
+          "authority_seconds": 7200,
+          "catalog_GETs": 1,
+          "concurrency": 1,
+          "event_bytes": 65536,
+          "event_limit": 10000,
+          "input_bound": 8192,
+          "journal_artifacts": 256,
+          "journal_bytes": 268435456,
+          "lifetime_dispatches": 34,
+          "minimum_free_bytes": 536870912,
+          "module_microusd": {
+            "E01": 0,
+            "E02": 5000000
+          },
+          "output_tokens": 512,
+          "per_call_microusd": 31250,
+          "phase_seconds": 120,
+          "price_age_seconds": 900,
+          "retries": 0,
+          "row_limit": 1024,
+          "shared_microusd": 5000000,
+          "socket_seconds": 15,
+          "study_dispatches": 32,
+          "study_microusd": 1000000,
+          "study_statistics_GETs": 32
+        },
+        "methods": {
+          "base_composite_review": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+          "provider_representation_review": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a",
+          "recovery_methods": "97ed5a2f20f38b357983b37ecc5eb27d571e3952a684670ed09903d16a7a2db9",
+          "recovery_review": "c87d3063e61d14015efdca3a4090b08bb37d9d52ca46a8fd9727ba48fe8f0586",
+          "representation": "CANONICAL_PARSED_PROVIDER_OBJECT_V1"
+        },
+        "pins": {
+          "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+          "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+          "src/civiclab/e02/exploratory_live_client_v1.py": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22",
+          "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+          "src/civiclab/e02/exploratory_metadata_v1.py": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8",
+          "src/civiclab/e02/exploratory_owner_v1.py": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756",
+          "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+          "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+          "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+          "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+          "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+          "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+          "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+          "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+          "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+          "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+          "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+          "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+          "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+          "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c"
+        },
+        "projection_sha256": "1ad387de7ec320720849b1cacbcbbd4291b091cf0541cc43a8b39dc065172a5b",
+        "protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+      },
+      "kind": "E02_CONTINUATION_CODE_V1",
+      "limits": {
+        "GET_retry_statuses": [
+          404
+        ],
+        "GET_waits_seconds": [
+          10,
+          10,
+          20
+        ],
+        "GETs_per_generation": 3,
+        "POST_retries": 0,
+        "concurrency": 1,
+        "lifetime_dispatches": 34,
+        "new_POSTs": 16,
+        "new_statistics_GETs": 48,
+        "phase_seconds": 120,
+        "shared_microusd": 5000000,
+        "study_microusd": 1000000
+      },
+      "pins": {
+        "src/civiclab/e02/exploratory_continuation_owner_v1.py": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256",
+        "src/civiclab/e02/exploratory_continuation_v1.py": "8523f8384b56a3487542488aa3d62987e1869a14090493dbb6408aa0886a22ca"
+      }
+    },
+    "protocol_sha256": "ccdb1f374924173e37a1d385715e7fa7d2aea1d5eb5daa17a403b0e9e09efb6d"
+  },
+  "contract_hash": "fa5148434517729766209f8cef0069de995fda91d72fca540d9ce63314141e15",
+  "cost_usd_auditor": 0,
+  "execution_conditions": [
+    "Root may use only this unchanged exact v2 packet/caller once within its existing finite lease and standing cumulative caps.",
+    "Fresh matching public catalog <=900s and actual same-owner state must pass runtime validation; in-memory authored proof is not a catalog observation.",
+    "No reuse/retime of consumed or development launchers; stopped uncertain batches require separately reviewed append-only recovery.",
+    "No conclusion about actual live responses/costs or study outcome until independent closed saved-evidence audit."
+  ],
+  "genesis_registration_external_lease": "NOT_REREAD_PRIOR_ACCEPTANCE",
+  "maximum_quote_per_call_microusd": 1285,
+  "methods_receipt": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_METHODS_PURE_V1_20261109.json",
+    "sha256": "27c206c29a35f23ed862406da071744eddec0898f11cc70ad4e4739e4f5c0b37"
+  },
+  "new_28_quote_microusd": 35980,
+  "new_model_POSTs": 0,
+  "new_statistics_GETs": 0,
+  "packet": {
+    "authority_window_utc": [
+      "2026-11-09T05:22:09.229676+00:00",
+      "2026-11-09T07:22:09.229676+00:00"
+    ],
+    "consent_evidence_hash": "a8920bbe75d18dd5c5a737c99bc68502e6ad221208370db24c2a0cca351f1097",
+    "path": "data/processed/e02_alignment_anchoring_actual_20261109_01/packet.candidate-v2.local.json",
+    "review_id": "f00746cccfc84244bcaa12522acafbe4",
+    "run_id": "e02-alignment-anchoring-live-20261109-01",
+    "sha256": "dee1e2cd4aa74291a6a292f5c8eeb4bd4f2a04349e65a1da638f3bfca6469619"
+  },
+  "packet_sha256": "dee1e2cd4aa74291a6a292f5c8eeb4bd4f2a04349e65a1da638f3bfca6469619",
+  "preserved_development_findings": [
+    "Earlier missingusage guard corrected with typed usage check; finalintegration exercises missing response usage followed by valid generation billing.",
+    "Redundant209-event literal removed from generic START only; exact predecessor completehead/history/rows/study/continuation/claims/consumed and34row/dispatch counters remain. Actualcaller continues fixed45c07a7c209-event export pin. Authored206-event fixture uses relative+169 not forged events.",
+    "Initial development candidate remains invalidated/preserved, not reviewed for dispatch."
+  ],
+  "real_owner_construction_or_read": false,
+  "research_limitations": [
+    "Exploratory authored fictionalcontent,4technicalcontexts/2parties,customunvalidated supportscale,oneissue/onemodel/providerfamily.",
+    "Ownbaseline manipulation showsallfouranswers; directionalinteraction alone doesnotprove psychologicalanchoring.",
+    "No inferential intervals/humanpersuasion/prospectiveforecast/populationvalidity or fullnationalE02 completion claim.",
+    "Old originalstoppedstudy/financialholds and priorzeroresult remain preserved.",
+    "Engineering mocks prove controls/arithmetic, not model task sensitivity."
+  ],
+  "review_findings": [
+    "Distinct append-only START/GRANT/COMMIT, exact ancestor witnesses and same owner; no historical approval map reset.",
+    "All34 antecedent rows and completed32-answer original study immutable;3 preexisting uncertain holds retained.",
+    "28POST/84GET/3GETpergeneration, only closed404 retries and10/10/20 waits;120sphase and fixed2hlease; zeroPOSTretry.",
+    "Exact4ownbaselines then24seededposts; own-baseline witness bound into each post financial context.",
+    "8192input/256output/1785percall/50000batch, cumulativeE02one-million/sharedfive-million/E01zero/lifetime62 enforced.",
+    "Private384-file bounded exclusive0600/fsyncedjournal, redaction/bodypresence/failure/checkpoint retention.",
+    "Same accepted metadata/prices, fresh900s catalog proof at runtime, provider/model/reasoning/usage/cost reconciliation.",
+    "Missing response usage accepted only with independent authoritative generation bill; mismatched/unknown/overrun refuse.",
+    "Exact caller/export/helper pins, durable one-use intent before credential; environment restored; no purchase, fallback or owner bootstrap."
+  ],
+  "reviewer_role": "independent_auditor",
+  "source_pins": {
+    "scripts/run_alignment_anchoring_once.py": "84b584d3cbbac537a3d34e2081e624e7bd36a6a513ef453a933c97f64ce66c2f",
+    "src/civiclab/e02/alignment_anchoring_client_v1.py": "118f2fe420f8edb3a0d5ddc3c75079327ab89f002817e7385eb4b7d29f9d43fc",
+    "src/civiclab/e02/alignment_anchoring_owner_v1.py": "c37f21dd71d8426be4906799143de38f4ec35a097a8e5ffc0b3cad48d5802301",
+    "tests/test_alignment_anchoring_caller_v1.py": "25989fb4c86f70cf0dc45472dca9a89abdcd3a898816e06dec9a5774bec888f2",
+    "tests/test_alignment_anchoring_execution_v1.py": "7326b0eb2bce1db96f0cdb06c56e3817023c12d01f98089b22e58d1ad25edf1f"
+  },
+  "status": "PASS_EXACT_FROZEN_FINANCIAL_CLIENT_CALLER_AND_V2_PARTICULAR_FOR_ONE_BOUNDED_STANDING_AUTHORIZED_STUDY",
+  "tests": {
+    "auditor_Python312": "7 PASS 368.372s",
+    "coverage": [
+      "Changed ancestry/count/money/expired lease refused before newrows.",
+      "Complete28POST/30GET including2safe404 thencorrectbill withmissingresponseusage; all28 analytical dispositions MOCK.",
+      "Exact old event prefix/rows/study/continuation unchanged, lifetime62dispatches,3oldunfinished, no replay or foreignrow alteration.",
+      "Exhausted404 after1POST/3GET preservesfullhold, marksstopped/4unfinished, no successorrequest.",
+      "One-shot durablecallerintent, credential preflight refusal, environmentrestoration on success/error, wrongbytes/symlink rejection."
+    ],
+    "log_pins": {
+      "auditor_Python312": {
+        "path": "/tmp/civiclab-independent-alignment-financial-312-20261109.log",
+        "sha256": "72de328acad840ed3237950692f39d259df187a46c467ec0ee83f8718d80871e"
+      },
+      "root_Python311": {
+        "path": "data/processed/e02_alignment_anchoring_actual_20261109_01/root-tests-final-311.log",
+        "sha256": "44620e412005ef9e61e3d547574191489c4dbf039f3f94ac421a548b7dd03f72"
+      },
+      "root_Python312": {
+        "path": "data/processed/e02_alignment_anchoring_actual_20261109_01/root-tests-final-312.log",
+        "sha256": "abe5e22d5c303f4e6258c4c611d7972f7e3740995adce58c12057c8f5a4b70cc"
+      }
+    },
+    "root_Python311": "7 PASS 373.612s",
+    "root_Python312": "7 PASS 380.378s"
+  },
+  "tests_status": "PASS"
+}
