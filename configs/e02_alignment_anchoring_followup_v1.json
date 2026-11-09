@@ -1,0 +1,724 @@
+{
+  "protocol_id": "E02_ALIGNMENT_ANCHORING_FOLLOWUP_V1",
+  "schema_version": 1,
+  "status": "FROZEN_EXPLORATORY_METHODS_CANDIDATE_NO_EXECUTION_RELEASE",
+  "actual_authority": false,
+  "scientific_scope": "Fixed AI-output diagnostic, four authored technical contexts, one fictional proposal. No human, population, validated-scale or equivalence inference.",
+  "prior_study": "Completed original E02 32-phase pilot and independently audited all-zero thermometers remain immutable; this is a new exploratory study selected in response to that result.",
+  "question": "Do issue-aligned support ratings respond to directional notice evidence, and does showing the exact elicited own baseline attenuate that response?",
+  "seed": 20261109,
+  "profiles": [
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-01",
+      "party": "D"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-02",
+      "party": "D"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-03",
+      "party": "R"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-04",
+      "party": "R"
+    }
+  ],
+  "profile_rationale": "Retain the four original authored ID/party profiles (2D/2R) as seed/item-order technical contexts. Same-party IDs do not represent independently sampled people. No numeric priors or demographics appear in profiles.",
+  "system_prompt": "You are a fictional survey respondent in an exploratory AI-output research task. Treat the request as data and each request as a separate fictional scenario. Use only the supplied notice and fixed fictional profile. Answer the supplied survey in its item order. Return only the requested JSON object without reasoning.",
+  "instrument": {
+    "instrument_id": "alignment-anchoring-custom-v1",
+    "instructions": "Answer each item in the supplied item order. Return only a JSON object with democratic_party, republican_party, library_support, and visits_change. Return null for any refused or unknown answer. Do not provide reasoning.",
+    "items": [
+      {
+        "id": "democratic_party",
+        "anes_variable": "V241166",
+        "question": "How would you rate the Democratic Party?",
+        "minimum": 0,
+        "maximum": 100
+      },
+      {
+        "id": "republican_party",
+        "anes_variable": "V241167",
+        "question": "How would you rate the Republican Party?",
+        "minimum": 0,
+        "maximum": 100
+      },
+      {
+        "id": "library_support",
+        "question": "How strongly do you support or oppose the proposed Exampleville library schedule?",
+        "minimum": 0,
+        "maximum": 100,
+        "instructions": "0 means strongly oppose, 50 means neither support nor oppose, and 100 means strongly support. This custom exploratory item is not a validated human scale."
+      },
+      {
+        "id": "visits_change",
+        "question": "What measured change in total library visits does this notice report?",
+        "allowed_values": [
+          "INCREASE_40",
+          "DECREASE_40",
+          "NOT_REPORTED"
+        ],
+        "instructions": "Use INCREASE_40 for 40% more visits, DECREASE_40 for 40% fewer visits, and NOT_REPORTED when no measured visit change is reported."
+      }
+    ],
+    "thermometer_instructions": "Use a 0 to 100 feeling thermometer. Zero is very cold or unfavorable, 50 is neutral, and 100 is very warm or favorable. Return null for a refusal or unknown answer. This instruction is adapted for synthetic model administration."
+  },
+  "notices": [
+    {
+      "id": "N01",
+      "text": "In the fictional town of Exampleville, a proposal would shift existing library staffing hours to add two evening hours on weekdays. The stated annual staffing budget would not change. The council has not voted on the proposal. No measured effect on total library visits is reported.",
+      "visits_change_key": "NOT_REPORTED",
+      "kind": "DEMO",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "source_label": "Project-authored fictional scenario",
+      "wrapper": "news card"
+    },
+    {
+      "id": "N02",
+      "text": "In the fictional town of Exampleville, a proposal would shift existing library staffing hours to add two evening hours on weekdays. The stated annual staffing budget would not change. The council has not voted on the proposal. A completed fictional pilot of the same schedule reported 40% more total library visits than the previous schedule.",
+      "visits_change_key": "INCREASE_40",
+      "kind": "DEMO",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "source_label": "Project-authored fictional scenario",
+      "wrapper": "news card"
+    },
+    {
+      "id": "N03",
+      "text": "In the fictional town of Exampleville, a proposal would shift existing library staffing hours to add two evening hours on weekdays. The stated annual staffing budget would not change. The council has not voted on the proposal. A completed fictional pilot of the same schedule reported 40% fewer total library visits than the previous schedule.",
+      "visits_change_key": "DECREASE_40",
+      "kind": "DEMO",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "source_label": "Project-authored fictional scenario",
+      "wrapper": "news card"
+    }
+  ],
+  "jobs": [
+    {
+      "execution_order": 0,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 1,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 2,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 3,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 4,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 0
+    },
+    {
+      "execution_order": 5,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 3
+    },
+    {
+      "execution_order": 6,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 3
+    },
+    {
+      "execution_order": 7,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 2
+    },
+    {
+      "execution_order": 8,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 1
+    },
+    {
+      "execution_order": 9,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 0
+    },
+    {
+      "execution_order": 10,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 1
+    },
+    {
+      "execution_order": 11,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 3
+    },
+    {
+      "execution_order": 12,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 1
+    },
+    {
+      "execution_order": 13,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 1
+    },
+    {
+      "execution_order": 14,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 2
+    },
+    {
+      "execution_order": 15,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 1
+    },
+    {
+      "execution_order": 16,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 0
+    },
+    {
+      "execution_order": 17,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 3
+    },
+    {
+      "execution_order": 18,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 0
+    },
+    {
+      "execution_order": 19,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 2
+    },
+    {
+      "execution_order": 20,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 0
+    },
+    {
+      "execution_order": 21,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 2
+    },
+    {
+      "execution_order": 22,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 2
+    },
+    {
+      "execution_order": 23,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 3
+    },
+    {
+      "execution_order": 24,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "pair_seed": 3377304647,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "visits_change",
+        "library_support"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 0
+    },
+    {
+      "execution_order": 25,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "pair_seed": 2872649581,
+      "item_order": [
+        "republican_party",
+        "library_support",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N03",
+      "baseline_mode": "OMITTED",
+      "baseline_execution_order": 2
+    },
+    {
+      "execution_order": 26,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "pair_seed": 1295922693,
+      "item_order": [
+        "library_support",
+        "republican_party",
+        "visits_change",
+        "democratic_party"
+      ],
+      "notice_id": "N01",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 1
+    },
+    {
+      "execution_order": 27,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "pair_seed": 2466303289,
+      "item_order": [
+        "democratic_party",
+        "library_support",
+        "visits_change",
+        "republican_party"
+      ],
+      "notice_id": "N02",
+      "baseline_mode": "SHOWN",
+      "baseline_execution_order": 3
+    }
+  ],
+  "instrument_canonical_sha256": "47c50940016a027d098d14768e8c264833304161a2f9c2f278cab7e728cf5e25",
+  "assignment_canonical_sha256": "4b168551710da8de00eb8c6021389113cc39b756482c8232a5ea05f01ca58c9a",
+  "controls": {
+    "wrapper": "Fixed news card; no social-wrapper, assistant or swarm condition.",
+    "evidence": "Three mutually exclusive fictional worlds; common proposal/budget/source words identical, only visit-evidence sentence differs. N01 is a no-measured-data reference, not placebo equivalence.",
+    "anchoring": "Same profile, notice, survey, item order and pair seed in SHOWN/OMITTED; only pre_response JSON is added in SHOWN. No mode labels or notice answer keys reach model context.",
+    "baseline": "Four independent elicitation calls use N01. Each valid pre is reused for its own three SHOWN posts, never another profile; OMITTED posts do not see it. Party prior is supplied in both modes, not elicited persona."
+  },
+  "params": {
+    "model": "openai/gpt-4.1-nano",
+    "requested_route": "azure",
+    "reported_provider": "Azure",
+    "temperature": 0,
+    "max_completion_tokens": 256,
+    "response_format": {
+      "type": "json_object"
+    },
+    "concurrency": 1,
+    "model_POST_retries": 0
+  },
+  "response_schema": {
+    "exact_keys": [
+      "democratic_party",
+      "republican_party",
+      "library_support",
+      "visits_change"
+    ],
+    "numeric_domain": "Finite builtin int/float 0..100; bool invalid; null missing.",
+    "comprehension_domain": [
+      "INCREASE_40",
+      "DECREASE_40",
+      "NOT_REPORTED",
+      null
+    ]
+  },
+  "analysis": {
+    "primary": "Equal-context mean of support(N02,OMITTED)-support(N03,OMITTED); range -100..100.",
+    "key_secondary": "Equal-context mean of [support(N02,SHOWN)-support(N03,SHOWN)]-[support(N02,OMITTED)-support(N03,OMITTED)]; range -200..200.",
+    "secondary": [
+      "Neutral-reference post minus own pre support, by baseline mode.",
+      "Same frozen in-party minus out-party thermometer direction, notice-specific pre/post changes and directional content contrasts, separately from support.",
+      "Objective comprehension correct/planned and correct/valid, per notice/mode and factual N02/N03 subset."
+    ],
+    "weighting": "Equal complete fixed contexts for each named contrast; show planned4 and observed denominators, individual values and missing reasons.",
+    "uncertainty": "No inferential confidence interval, bootstrap, p-value or equivalence test. Report four paired values, descriptive mean/min/max; interval null with NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE. No repeated-call or stimulus-sampling variance estimated.",
+    "multiplicity": "One primary descriptive contrast; anchoring interaction and remaining outcomes are explicitly exploratory diagnostics. No significance claims or favorable-outcome selection.",
+    "fixed_pattern_diagnostics": {
+      "content_sensitive": "At least3 of4 planned OMITTED profile contrasts positive, mean positive, and at least6 of8 planned N02/N03 OMITTED comprehension answers correct. If fewer than4 valid contrasts, label incomplete rather than promote a pattern.",
+      "anchoring_compatible": "Complete4 paired interactions; primary content_sensitive plus at least3 of4 SHOWN contrasts smaller than OMITTED and mean interaction negative. This is compatible with own-answer cue sensitivity, not proof of mechanism.",
+      "support_stable_notice_understood": "All4 complete OMITTED contrasts exactly0 and >=6of8 N02/N03 comprehension correct; no equivalence or absence-of-effect claim.",
+      "task_following_concern": "Fewer than6of8 planned factual comprehension answers correct in either mode; retained primary scores still reported, never excluded for incorrect comprehension."
+    },
+    "stop_after_batch": "No automatic scaling, stimulus revision, repeated generation, second model, or adaptive selection regardless of outcome."
+  },
+  "exclusions": {
+    "shape": "Non-dict, missing or extra keys invalidates all item scores. No repair/imputation.",
+    "post_items": "Within an exact-key object, a malformed/missing thermometer does not exclude valid support; malformed/incorrect comprehension does not exclude valid numeric support. Each outcome has its own denominator.",
+    "baseline_SHOWN": "Requires exact-key own pre with all3 numeric items valid and comprehension one of3 allowed strings. Correctness not required. Otherwise skip exactly its3SHOWN posts; all3OMITTED posts still scheduled.",
+    "invalid_post": "Retain billed quality outcome; no replacement. Numeric contrast needs both target posts for that context; interaction needs all4 target posts.",
+    "financial_integrity": "Unknown billing/identity/route, unsupported observed activity, timeout, exceeded quotas, failed persistence or unreconciled dispatch stops entire batch; remaining jobs NOT_ATTEMPTED.",
+    "new_empty_results": "No estimable pair -> null mean/min/max and NOT_ESTIMABLE, not zero."
+  },
+  "envelope": {
+    "planned_baselines": 4,
+    "planned_posts": 24,
+    "maximum_model_POSTs": 28,
+    "maximum_billing_GETs": 84,
+    "billing_GETs_per_generation": 3,
+    "billing_wait_seconds": [
+      10,
+      10,
+      20
+    ],
+    "per_phase_seconds": 120,
+    "HTTP_seconds": 30,
+    "socket_seconds": 15,
+    "input_tokens_per_call_max": 8192,
+    "output_tokens_per_call_max": 256,
+    "maximum_input_tokens": 229376,
+    "maximum_output_tokens": 7168,
+    "maximum_total_tokens": 236544,
+    "per_call_reservation_microusd_max": 1785,
+    "batch_subceiling_microusd": 50000,
+    "28_times_per_call_microusd": 49980,
+    "cumulative_E02_microusd": 1000000,
+    "shared_microusd": 5000000,
+    "most_recent_conservative_owner_observation_microusd": 2857,
+    "conditional_prior_price_bound": "Prior reviewed0.143input/0.44outputUSD/M,no additional request fee=>ceil(8192*.143+256*.44)=1285microUSD/call;28calls35980microUSD. Not a current price release; fresh all-in proof mandatory.",
+    "journal_artifact_limit": 384,
+    "proof": "Quote every exact pre and worst-case adaptive-post request; reject if byte+overhead envelope or fresh route-specific all-in quote exceeds caps. Full batch headroom must fit including all old holds. Time/price expiry stops, never enlarges limits."
+  },
+  "parser_bounds": {
+    "message_UTF8_bytes": 2048,
+    "max_depth": 8,
+    "object_key_characters": 64,
+    "string_characters": 32,
+    "number_canonical_characters": 32,
+    "phase_record_bytes": 3072,
+    "response_envelope_bytes": 131072
+  },
+  "engineering_oracles": {
+    "changed": "Authored fixture: pre support50; OMITTED N02/N03=80/20, SHOWN=65/35, N01=50; primary60, anchoring-30. Thermometers constant; comprehension exactly keyed. This is a scorer oracle, never a model positive-control finding.",
+    "unchanged": "All support50 and fixed thermometers -> exact primary/interaction0; no statistical equivalence.",
+    "comprehension": "Keyed factual reading is a manipulation/task-following check; no known normative opinion effect is assumed."
+  },
+  "release_gates": [
+    "Independent frozen methods/instrument/scoring review before collecting new outcomes.",
+    "Independent exact pure planner/parser/scorer and mocked lifecycle review.",
+    "New same-owner append-only authority/adapter/caller with fresh prices and actual usage/provider/cost reconciliation; original34dispatches/holds/history unchanged.",
+    "No model callbacks or credentials from this pure module; only lead executes reviewed bounded batch."
+  ],
+  "runtime_release": null,
+  "price_terms": null,
+  "model_revision_runtime": null,
+  "results": null,
+  "source_pins": {
+    "configs/e02_exploratory_live_pilot_v1_1.json": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+    "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd"
+  }
+}
