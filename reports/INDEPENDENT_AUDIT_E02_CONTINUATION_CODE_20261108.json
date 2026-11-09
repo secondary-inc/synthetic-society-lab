@@ -1,0 +1,268 @@
+{
+  "additional_saved_ancestry_and_authored_event_probe": {
+    "actual_ancestry_response_statistics_price_consent_bindings": true,
+    "actual_owner_key_network_access": 0,
+    "authored_continuation_event_preserves_all18rows": true,
+    "bundle_sha256": "c66b8c517be4c46508e411e97f11eddca1b04c69138c6bd967b4820a082c3537",
+    "caller_sha256": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e",
+    "code_contract_hash": "fb29ba8815102f42733859b8298b63b80bc949c110890a777ba28bf459144df6",
+    "combined_upperbound_microusd": 24488,
+    "exact_inherited_prefix": 16,
+    "genesis_external_registration_not_reread": true,
+    "lifetime_count_before_newphase": 18,
+    "new16upperbound_microusd": 22352,
+    "next_original_slot": [
+      8,
+      "pre"
+    ],
+    "next_payload_and_reservation_identical_original_design": true,
+    "original112events_hashchecked_and111runtime_replayed": true,
+    "percall_upperbound_microusd": 1397,
+    "runtime_freshprice_required": true,
+    "spend_usd": 0,
+    "status": "PASS_SAVED_PARTICULAR_AND_AUTHORED_CONTINUATION_EVENT_GATE",
+    "true_unfinished": 3,
+    "unchanged_conservative_total_microusd": 2136
+  },
+  "auditor_actual_owner_key_network_access": 0,
+  "auditor_spend_usd": 0,
+  "code_contract": {
+    "base": {
+      "assignment_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+      "kind": "LIMITED_PILOT_CODE_V1",
+      "limits": {
+        "HTTP_seconds": 30,
+        "artifact_bytes": 2000000,
+        "authority_seconds": 7200,
+        "catalog_GETs": 1,
+        "concurrency": 1,
+        "event_bytes": 65536,
+        "event_limit": 10000,
+        "input_bound": 8192,
+        "journal_artifacts": 256,
+        "journal_bytes": 268435456,
+        "lifetime_dispatches": 34,
+        "minimum_free_bytes": 536870912,
+        "module_microusd": {
+          "E01": 0,
+          "E02": 5000000
+        },
+        "output_tokens": 512,
+        "per_call_microusd": 31250,
+        "phase_seconds": 120,
+        "price_age_seconds": 900,
+        "retries": 0,
+        "row_limit": 1024,
+        "shared_microusd": 5000000,
+        "socket_seconds": 15,
+        "study_dispatches": 32,
+        "study_microusd": 1000000,
+        "study_statistics_GETs": 32
+      },
+      "methods": {
+        "base_composite_review": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+        "provider_representation_review": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a",
+        "recovery_methods": "97ed5a2f20f38b357983b37ecc5eb27d571e3952a684670ed09903d16a7a2db9",
+        "recovery_review": "c87d3063e61d14015efdca3a4090b08bb37d9d52ca46a8fd9727ba48fe8f0586",
+        "representation": "CANONICAL_PARSED_PROVIDER_OBJECT_V1"
+      },
+      "pins": {
+        "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+        "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "src/civiclab/e02/exploratory_live_client_v1.py": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22",
+        "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+        "src/civiclab/e02/exploratory_metadata_v1.py": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8",
+        "src/civiclab/e02/exploratory_owner_v1.py": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756",
+        "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+        "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+        "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+        "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+        "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+        "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+        "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+        "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+        "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+        "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+        "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+        "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+        "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+        "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c"
+      },
+      "projection_sha256": "1ad387de7ec320720849b1cacbcbbd4291b091cf0541cc43a8b39dc065172a5b",
+      "protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+    },
+    "kind": "E02_CONTINUATION_CODE_V1",
+    "limits": {
+      "GET_retry_statuses": [
+        404
+      ],
+      "GET_waits_seconds": [
+        10,
+        10,
+        20
+      ],
+      "GETs_per_generation": 3,
+      "POST_retries": 0,
+      "concurrency": 1,
+      "lifetime_dispatches": 34,
+      "new_POSTs": 16,
+      "new_statistics_GETs": 48,
+      "phase_seconds": 120,
+      "shared_microusd": 5000000,
+      "study_microusd": 1000000
+    },
+    "pins": {
+      "src/civiclab/e02/exploratory_continuation_owner_v1.py": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256",
+      "src/civiclab/e02/exploratory_continuation_v1.py": "8523f8384b56a3487542488aa3d62987e1869a14090493dbb6408aa0886a22ca"
+    }
+  },
+  "code_contract_hash": "fb29ba8815102f42733859b8298b63b80bc949c110890a777ba28bf459144df6",
+  "engineering_handoff": {
+    "path": "reports/E02_CONTINUATION_ENGINEERING_20261108.json",
+    "sha256": "574bfad753a94da683f430cc7596967dfe672e8af782cdc4b82060b6baed58ac"
+  },
+  "findings": [
+    {
+      "decision": "Same-owner append-only CONTINUE event binds exacthead/history/all18rows/originalstudy/claimshashes. Fifteen original committedwitnesses plus separately authenticated same-generation recoveredanswer enter analyticalprefix; rawresponse/outputhash/nativebill/exactDecimalcost revalidated. No original successfulcheckpoint fabricated for recoveredanswer.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Originalstudy preserved as stoppedancestor, all18row values and threeholds remain unchanged. Trueunfinished3 captured; original16receipts count toward32totalstudy/34lifetimedispatches and$1/$5caps. Actualcore terminalstatuses prohibit historicalrowchanges. Newuncertainty reachesunfinished4 and preventsanother reservation.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Inheritedprefix independentlycompiles to unit8pre with exactoriginalpayload/reservation. Client independentlychecks eachACK against unattemptedtail and refuses units0..7/foreign/tampered prefix. Atmost16newPOSTs, no modelretries/creditpurchase/newowner.",
+      "status": "PASS"
+    },
+    {
+      "decision": "One logicalclaim pernewreceipt, atmost3physicalGETs/generation and48newbatchGETs. OnlyexactsafeclosedHTTP404 retries, initial/retrywaits10/10/20 charged tosame120secondphase with monotonic/UTC/remainingHTTP+checkpoint bounds. Othererrors/closefailure/subclassdiagnostic/cancel/expiry/exhaustion stop and preservefullhold.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Continuation outertypedcontract deliberatelysupersedes legacyphysicallookupallowance onlyfornewbatch. Nestedpacket32statistics field is legacy logicalperoriginalphase claim bound; oldrun16physicalGET history unchanged. Physicalstudylookup maximum is16original+48new=64, plus separately recorded1recoveryGET; no silentreinterpretation of consumedoldlauncher.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Existingprivacy/knowncost/responseactivity/rawcanonical/nativeusage/normalizer/quality/scoring/checkpoint bounds retained. Safeobservedcost preserved beforeprivacy/storage/policyrefusal; missingbody and32terminaldispositions explicit. Original held788 remains even with verified54ceilbill.",
+      "status": "PASS"
+    },
+    {
+      "decision": "Caller validates externallyexpectedcaller/bundle, exactsavedexport/failedresponse/recoveredmetadata and helper pins beforecreateonceintent/key. Finitelease, context/environmentrestoration, source tamper/refusal and consumedintent covered; exactparticularreview separatelyrequired.",
+      "status": "PASS"
+    }
+  ],
+  "independent_tests": {
+    "Python3.11": {
+      "log": "/tmp/civiclab-independent-continuation-20261108-311.log",
+      "result": "PASS",
+      "seconds": 189.651,
+      "tests": 26
+    },
+    "Python3.12": {
+      "log": "/tmp/civiclab-independent-continuation-20261108-312.log",
+      "result": "PASS",
+      "seconds": 195.378,
+      "tests": 26
+    },
+    "modules": [
+      "tests.test_e02_continuation_v1",
+      "tests.test_e02_continuation_owner_v1",
+      "tests.test_e02_continuation_integration_v1",
+      "tests.test_e02_continuation_caller_v1"
+    ]
+  },
+  "limitations": [
+    "Engineering/fixture acceptance only; no new budget oractualrunrelease fromcodeaudit alone.",
+    "Fourmatchedblocks crossbatches, twooriginal andtwocontinuation. Registeredall8analysis retained; no uninterruptedrun/model-internal/causaltemporal equivalence claim.",
+    "Canonicalparsedobjects are notHTTPwirebytes; reportedstreamed discrepancy andoptionalnullunknowns remain explicit.",
+    "Originalrun staysSTOPPED despite futurecombinedanalyticalcompletion, oldheldcosts remain actualconservative accounting.",
+    "Cooperative localfilesystem/process/clocks and existing strictHTTP/socket assumptions; nohostilehostorhardOStermination guarantee.",
+    "Initialunfrozen developmenthash/import failures preserved in root handoff and not counted asacceptance."
+  ],
+  "next_unblocked_task": "Independent exactbundle/caller consentprojection ratification underexistingstandingauthority, thenleadoneboundedcontinuation invocation withfreshprice/currenthead gates.",
+  "owner_local_date": "2026-11-08",
+  "recorded_at_utc": "2026-11-09T04:52:19.965959+00:00",
+  "retained_client_fixture_index": {
+    "cases": [
+      {
+        "case": "primary",
+        "fake_GETs": 16,
+        "fake_POSTs": 16,
+        "fake_wait_seconds": 160.0,
+        "original_rows_unchanged": true,
+        "status": "COMPLETE_AUTHORED_MOCK"
+      },
+      {
+        "case": "replay",
+        "fake_GETs": 16,
+        "fake_POSTs": 16,
+        "fake_wait_seconds": 160.0,
+        "original_rows_unchanged": true,
+        "status": "COMPLETE_AUTHORED_MOCK"
+      },
+      {
+        "case": "third_get_success",
+        "fake_GETs": 48,
+        "fake_POSTs": 16,
+        "fake_wait_seconds": 640.0,
+        "original_rows_unchanged": true,
+        "status": "COMPLETE_AUTHORED_MOCK"
+      },
+      {
+        "case": "three_404_stop",
+        "fake_GETs": 3,
+        "fake_POSTs": 1,
+        "fake_wait_seconds": 40.0,
+        "original_rows_unchanged": true,
+        "status": "STOPPED_AUTHORED_MOCK"
+      }
+    ],
+    "files_verified": 445,
+    "limits": "Fake client accounting oracle and mocked transports; separate real isolated-owner integration independently rerun byauditor26suite and root9suite.",
+    "path": "data/processed/e02_continuation_client_authored_20261108_01/AUTHORED_EVIDENCE_INDEX.json",
+    "sha256": "595cee6b4e3ced6918bb7c4e421b7dfdba48d3adaa15d695d1d7e82317686896"
+  },
+  "scope": "Exact separately versioned continuation owner/client/caller and four offline testmodules. No actual model dispatch or owner/key/network access byauditor. Historical accepted components reused unchanged.",
+  "sources": {
+    "scripts/run_e02_continuation_once.py": {
+      "bytes": 4459,
+      "sha256": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e"
+    },
+    "src/civiclab/e02/exploratory_continuation_owner_v1.py": {
+      "bytes": 10858,
+      "sha256": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256"
+    },
+    "src/civiclab/e02/exploratory_continuation_v1.py": {
+      "bytes": 22186,
+      "sha256": "8523f8384b56a3487542488aa3d62987e1869a14090493dbb6408aa0886a22ca"
+    },
+    "tests/test_e02_continuation_caller_v1.py": {
+      "bytes": 3918,
+      "sha256": "1e03e9f28062726b57dcd114c33c44399e6771084e0dbe86ecec02be8168aac6"
+    },
+    "tests/test_e02_continuation_integration_v1.py": {
+      "bytes": 3719,
+      "sha256": "42e190234686ebaf432920d0c279f1bf07551c556e269d5b16a4028495c7a55d"
+    },
+    "tests/test_e02_continuation_owner_v1.py": {
+      "bytes": 6803,
+      "sha256": "46847e59d0d587b0a6506da93cbc363b0976ca7bd89c26bedb5273210234c8af"
+    },
+    "tests/test_e02_continuation_v1.py": {
+      "bytes": 14893,
+      "sha256": "9389cda825d0f302bb457f9d556fc7ab38d6e91688953b9013c843478c86380b"
+    }
+  },
+  "status": "PASS_EXACT_CONTINUATION_CODE_AND_OFFLINE_INTEGRATION",
+  "task_id": "INDEPENDENT_AUDIT_E02_CONTINUATION_CODE_20261108",
+  "temporal_partition": {
+    "boundary": "execution_order0..7 ancestor,8..15 continuation",
+    "matched_blocks": {
+      "all_Nov5": 2,
+      "all_continuation": 2,
+      "cross_batch": 4
+    },
+    "status": "FROZEN_ASSIGNMENT_TEMPORAL_PARTITION_NOT_NEW_EXCLUSIONS",
+    "warning": "Crossbatch arms confounded with model/time changes; keep registered analysis and expose this limitation. Any samebatch sensitivity is exploratory."
+  }
+}
