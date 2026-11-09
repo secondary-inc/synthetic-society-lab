@@ -1,0 +1,174 @@
+{
+  "status": "PREPARED_AUTHORED_ONLY_HOLD_PER_LEAD_NO_ACTUAL_RELEASE",
+  "TASK_ID": "E01_CLERK2020_NATIVE_INVENTORY_V1_20261109",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/clerk2020_native_inventory_v1.py",
+    "tests/test_clerk2020_native_inventory_v1.py",
+    "reports/clerk2020_native_inventory_v1_authored_initial_20261109.txt",
+    "reports/clerk2020_native_inventory_v1_authored_final_312_20261109.txt",
+    "reports/clerk2020_native_inventory_v1_authored_final_311_20261109.txt",
+    "reports/clerk2020_native_inventory_v1_authored_corrected_311_20261109.txt",
+    "reports/clerk2020_m2_v1_1_resume_guarded_20261109.txt",
+    "reports/clerk2020_native_inventory_v1_handoff_20261109.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "src/civiclab/e01/clerk2020_native_inventory_v1.py",
+      "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487",
+      "bytes": 8768
+    },
+    {
+      "path": "tests/test_clerk2020_native_inventory_v1.py",
+      "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d",
+      "bytes": 12468
+    },
+    {
+      "path": "reports/clerk2020_native_inventory_v1_authored_initial_20261109.txt",
+      "sha256": "1877e3479831ef2599c45b0b697816808b9a916b341ce47df24cf6ebeba1cc1e",
+      "bytes": 3217
+    },
+    {
+      "path": "reports/clerk2020_native_inventory_v1_authored_final_312_20261109.txt",
+      "sha256": "37eea0e3ba968de2024bd51bc1a6e7c690d9fb342fb5494335e360cbf876e403",
+      "bytes": 3217
+    },
+    {
+      "path": "reports/clerk2020_native_inventory_v1_authored_final_311_20261109.txt",
+      "sha256": "98f89c98b15faf3ca398ee456011fce27974106a02f3d1917770d4f7dd6755d8",
+      "bytes": 1318
+    },
+    {
+      "path": "reports/clerk2020_native_inventory_v1_authored_corrected_311_20261109.txt",
+      "sha256": "1877e3479831ef2599c45b0b697816808b9a916b341ce47df24cf6ebeba1cc1e",
+      "bytes": 3217
+    },
+    {
+      "path": "reports/clerk2020_m2_v1_1_resume_guarded_20261109.txt",
+      "sha256": "3c893a7b1746066e6ae00fe214f2c38f3ff54587cfb3a7d384b19e5e70e9e5e3",
+      "bytes": 8234
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_clerk2020_native_inventory_v1.py -v",
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p test_clerk2020_native_inventory_v1.py -v",
+    ".venv/bin/python reports/clerk2020_m2_v1_1_guarded_fixture_recipe.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "new_reader_double_tests": 22,
+    "python312": "22 PASS",
+    "python311_corrected": "22 PASS",
+    "prior_guarded_component": "64 PASS on existing Python3.12.14; all prior candidate/output pins unchanged",
+    "native_library_import_or_fixture_parse": "NOT_RUN",
+    "actual_source_inspection": "NOT_RUN",
+    "independent_review": "PENDING, existing auditor queue controlled by lead",
+    "failed_python311_command_preserved": {
+      "command": "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p test_clerk2020_native_inventory_v1.py -v",
+      "error": "ModuleNotFoundError: civiclab before tests",
+      "remedy": "Explicit PYTHONPATH=src; no code change, installation or source access",
+      "source_pins": "Same exact current source/test refs in OUTPUT_ARTIFACTS"
+    }
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public blueprint/audit/status/code only plus authored generated PDF bytes and reader doubles. No actual Clerk PDF/private cover/raw/history/control stat/read/hash/helper, no pypdf/runtime inspection or import, no .env/key/network/model. Raw publisher/respondent data absent. Existing source hashes copied from independently accepted public metadata only.",
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "api_content_model_usd": 0,
+    "development_compute": "UNPRICED",
+    "E01_paid_inference_ceiling_usd": 0
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Pathless adapter is not a source reader, grant validator, TCB, durable registrar or native supervisor.",
+    "Reader-double tests and generated xref offsets do not establish real pypdf API behavior or source format validity.",
+    "Native source factory stays unconditionally disabled; reviewed reader dependency and finite caller authority are required before real bytes reach adapter.",
+    "Projection reuses preserved prior v1.1 component and adds strict reader/warning/structure checks; this dependency still requires independent component review.",
+    "All per-page roles/layout/date adoption stay UNKNOWN; snippets may omit candidate tables/footnotes. Zero candidate/vote records are parsed or adopted.",
+    "Original full 24House/up8Senate plus4/2deep, selection/geography, REAL integration and2026outcome-custody gates remain incomplete; old2018to2024diagnostic is not substituted."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "LEAD_COORDINATION_HOLD: finish preparation then stop; root must resume work and schedule existing auditor.",
+    "Independent exact adapter/component review and finite native generated-fixture/runtime identity review absent.",
+    "Native durable BOOT/EXEC caller/TCB/counter/recording linkage remains unimplemented/unaccepted under existing methods.",
+    "Exact finite source/runtime release absent. No actual read, parse, source-format review or statistical feature adoption follows from this handoff."
+  ],
+  "NEXT_UNBLOCKED_TASK": "HOLD now. On explicit lead resume, route exact minimal adapter/dependencies to existing auditor, complete only necessary native/runtime/caller fixes, then root alone schedules reviewed finite M2 actual inventory; use its private2020format output for M3 observed-format parser review, not an invented baseline.",
+  "implementation_boundary": {
+    "purpose": "Small strict-reader/source-format adapter, no new framework or acquisition",
+    "fixed_reader_call": "reader_factory(BytesIO(raw), strict=True), extraction_mode=plain",
+    "private_output": "Per-source bounded position-window page inventory; printed dates/roles unadopted",
+    "public_output": "Only safe hash/size/page/text/omission/UNKNOWN/zero-adoption counts; no source text",
+    "refusals": "Changed source bytes/page count, encrypted PDF, warning/log output, active/external structures, unsupported objects, oversized text/projection, reader mutation; no retry/fallback",
+    "structure_limit": {
+      "unique_objects": 16384,
+      "depth": 32,
+      "container_items": 4096
+    },
+    "actual_source_factory": "UNCONDITIONALLY_DISABLED"
+  },
+  "frozen_next_actual_output_milestone": {
+    "label": "PROPOSED_FINITE_M2_INVENTORY_NO_EXECUTION_AUTHORITY",
+    "primary_output": "Private physical-page/format inventory for acquired2020statistics, enabling observed Senate-table grammar review.",
+    "other_source": "2026nominees only under its distinct dated-nominee role, no outcome/feature or final-ballot adoption.",
+    "source_ids": [
+      "clerk2020_statistics",
+      "clerk2026_nominees"
+    ],
+    "finite_actual_io_if_later_released": {
+      "source_jobs": 1,
+      "source_path_read_attempts": 2,
+      "normal_raw_bytes": 859911,
+      "raw_read_reservation_with_overflow_probes": 859913,
+      "parse_attempts": 2,
+      "page_extractions": 119,
+      "expected_pages": [
+        81,
+        38
+      ],
+      "new_network_requests": 0,
+      "model_calls": 0,
+      "inspection_data_bytes_max": 262144,
+      "recorder_control_bytes_max": 131072,
+      "owned_write_bytes_max": 524288,
+      "code_integrity_read_bytes_max": 536870912,
+      "metadata_read_bytes_max": 8388608,
+      "closing_verification_read_bytes_max": 2097152
+    },
+    "acceptance_criteria": [
+      "Exact code/dependencies reviewed independently; old v1/M1/candidate pins preserved.",
+      "Finite genuine generated-PDF pass verifies native strict API and two negative cases under reviewed runtime before any source byte read.",
+      "Runtime/code origin and source/campaign/one-shot caller/limits/counter/recording preflight match reviewed exact authority; root issues actual release.",
+      "One parent source hash/read pass per exact acquired source, memory-only parser snapshots, no automatic retry/render/OCR/alternate parser.",
+      "Recorded119page inventory obeys private projections and public disclosure bounds; failed/UNKNOWN pages remain explicit, no vote or source/feature adoption.",
+      "Independent source-format/output review precedes observed-format parser and separate baseline feature/evaluation gates."
+    ],
+    "grant_or_plan_or_actual_campaign_ids": null,
+    "original_full_M2_contract_complete": false
+  },
+  "future_native_fixture_phase_NOT_AUTHORIZED": {
+    "function": "tests/test_clerk2020_native_inventory_v1.py:exercise_native_generated_pdf",
+    "reader_attempts": 4,
+    "positive_pages": [
+      81,
+      38
+    ],
+    "maximum_expected_text_extractions": 119,
+    "negative_cases": [
+      "1page active JavaScript/OpenAction catalog",
+      "malformed PDF object graph"
+    ],
+    "actual_Clerk_source_reads": 0,
+    "fixture_descriptors": [
+      {
+        "label": "AUTHORED_GENERATED_BYTES_NOT_NATIVE_PARSE_VALIDATED",
+        "pages_declared": 81,
+        "bytes": 23543,
+        "sha256": "ed789a1c04189230bd9d1b7807e3f7703bf32da928691ce5a337f3dd476754b1"
+      },
+      {
+        "label": "AUTHORED_GENERATED_BYTES_NOT_NATIVE_PARSE_VALIDATED",
+        "pages_declared": 38,
+        "bytes": 11153,
+        "sha256": "2fb2821f6c689b764d737e7ccfcc96f5081a7ceef68dde7f7662585ae66b2be6"
+      }
+    ]
+  },
+  "no_shared_E02_status_auditor_git_edits": true,
+  "paused_by_lead_for_concurrency_not_owner_cancellation": true
+}

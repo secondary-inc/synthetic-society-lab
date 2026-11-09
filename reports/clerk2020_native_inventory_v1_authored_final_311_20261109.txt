@@ -1,0 +1,21 @@
+test_clerk2020_native_inventory_v1 (unittest.loader._FailedTest.test_clerk2020_native_inventory_v1) ... ERROR
+
+======================================================================
+ERROR: test_clerk2020_native_inventory_v1 (unittest.loader._FailedTest.test_clerk2020_native_inventory_v1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_clerk2020_native_inventory_v1
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/loader.py", line 419, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/loader.py", line 362, in _get_module_from_name
+    __import__(name)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_native_inventory_v1.py", line 9, in <module>
+    from civiclab.e01.clerk2020_native_inventory_v1 import (
+ModuleNotFoundError: No module named 'civiclab'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

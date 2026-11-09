@@ -1,0 +1,83 @@
+{
+  "label": "MOCK_DURABLE_PARENT_WITH_STUB_WORKER_NOT_NATIVE_PDF_QUALIFICATION",
+  "actual_pypdf_imports": 0,
+  "actual_Clerk_source_reads": 0,
+  "actual_runtime_artifact_inventory": false,
+  "model_calls": 0,
+  "cost_usd": 0,
+  "scenarios": [
+    {
+      "label": "AUTHORED_PARENT_SUCCESS_WITH_STUB_WORKER",
+      "all_authority_records_and_native_responses_are_authored": true,
+      "root_sha256": "ce6580a98a844824b1d1b0cb210522e81f774e5d3f7a66761a48faaa99c357db",
+      "plan_sha256": "0a35578c9884b3ee2f6d9ebe1827e5251a228d56dba8bf8ee1f7c160649b9ac6",
+      "result": {
+        "status": "GENERATED_QUALIFICATION_RECORDED_NOT_ADMITTED",
+        "plan_sha256": "0a35578c9884b3ee2f6d9ebe1827e5251a228d56dba8bf8ee1f7c160649b9ac6",
+        "worker_sha256": "853a5fee2cea39325d1f2e045f89fee70a9162af697fab9072ee462b32453943",
+        "observed_code_bytes": 591,
+        "reserved_code_bytes": 600,
+        "sampled_child_peak_rss_bytes": null,
+        "actual_source_reads": 0,
+        "runtime_and_backend_admission": false,
+        "model_calls": 0,
+        "cost_usd": 0
+      },
+      "files": [
+        {
+          "name": "OUTCOME.json",
+          "bytes": 401,
+          "sha256": "b1f8dc84fce3218f27bdfe7d81f0f6aae88b8d4f074306d11b71ea94f1d60300",
+          "authored_content_utf8": "{\"actual_source_reads\":0,\"cost_usd\":0,\"model_calls\":0,\"observed_code_bytes\":591,\"plan_sha256\":\"0a35578c9884b3ee2f6d9ebe1827e5251a228d56dba8bf8ee1f7c160649b9ac6\",\"reserved_code_bytes\":600,\"runtime_and_backend_admission\":false,\"sampled_child_peak_rss_bytes\":null,\"status\":\"GENERATED_QUALIFICATION_RECORDED_NOT_ADMITTED\",\"worker_sha256\":\"853a5fee2cea39325d1f2e045f89fee70a9162af697fab9072ee462b32453943\"}"
+        },
+        {
+          "name": "STARTED.json",
+          "bytes": 660,
+          "sha256": "aad3aa2de592097d9f5dd2e99b5a5ea08b1b03959de6218de817494a0c7fdd6e",
+          "authored_content_utf8": "{\"actual_source_authority\":false,\"consumed\":true,\"kind\":\"CLERK_NATIVE_GENERATED_QUALIFICATION_RELEASE_V1\",\"limits\":{\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":119,\"reader_attempts\":4,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"no_retry\":true,\"plan_sha256\":\"0a35578c9884b3ee2f6d9ebe1827e5251a228d56dba8bf8ee1f7c160649b9ac6\"}"
+        },
+        {
+          "name": "worker.json",
+          "bytes": 848,
+          "sha256": "853a5fee2cea39325d1f2e045f89fee70a9162af697fab9072ee462b32453943",
+          "authored_content_utf8": "{\"actual_source_reads\":0,\"expected_page_extractions\":119,\"guard\":\"Cooperative Python event guard after imports; not an OS sandbox or decoder allocation bound\",\"interpreter_implementation\":\"cpython\",\"label\":\"MOCK_GENERATED_PDF_ONLY\",\"machine\":\"arm64\",\"model_calls\":0,\"negative_cases_refused\":2,\"platform\":\"darwin\",\"positive_page_counts\":[81,38],\"pypdf\":\"6.10.0\",\"python\":\"3.12.14\",\"reader_attempts\":4,\"runtime_hash_bytes_observed\":1,\"runtime_hash_bytes_reserved\":2,\"runtime_manifest\":[[\"REPO/src/civiclab/__init__.py\",1,\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"]],\"runtime_manifest_scope\":\"Observed loaded origin/cache files plus interpreter; not complete native dependency admission\",\"runtime_manifest_sha256\":\"d50ab45454a5cdba62c4bc8122bea2eccd8d434e719e62007538c7c0d9695562\",\"status\":\"NATIVE_GENERATED_FIXTURES_COMPLETE\"}"
+        }
+      ]
+    },
+    {
+      "label": "AUTHORED_PARENT_STOP_WITH_PARTIAL_STUB_WORKER",
+      "all_authority_records_and_native_responses_are_authored": true,
+      "root_sha256": "ec01b86eb42e57b6708b1304337b625d46773c5cbec61bb9cccd373c1102a76b",
+      "plan_sha256": "3c5dfd9a5623dbacc085d7d24bfc2925351057825452533263357d9c34402367",
+      "result": {
+        "label": "MOCK_EXPECTED_STOP"
+      },
+      "files": [
+        {
+          "name": "OUTCOME.json",
+          "bytes": 771,
+          "sha256": "d21cb5c768dcce6afb7ba70a89475942c2987bd75e9ba44f6eb680d29e3b4179",
+          "authored_content_utf8": "{\"actual_source_reads\":0,\"cost_usd\":0,\"full_limits_consumed\":{\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":119,\"reader_attempts\":4,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"model_calls\":0,\"native_attempt_observed\":true,\"observed_code_bytes\":591,\"plan_sha256\":\"3c5dfd9a5623dbacc085d7d24bfc2925351057825452533263357d9c34402367\",\"reader_attempts_observed\":null,\"reserved_code_bytes\":600,\"status\":\"QUALIFICATION_STOPPED_UNKNOWN_NO_RETRY\"}"
+        },
+        {
+          "name": "STARTED.json",
+          "bytes": 660,
+          "sha256": "feb019f2a1989812f7ecec8b06f8a92844d26c85165b60e169b9241f27f23afc",
+          "authored_content_utf8": "{\"actual_source_authority\":false,\"consumed\":true,\"kind\":\"CLERK_NATIVE_GENERATED_QUALIFICATION_RELEASE_V1\",\"limits\":{\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":119,\"reader_attempts\":4,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"no_retry\":true,\"plan_sha256\":\"3c5dfd9a5623dbacc085d7d24bfc2925351057825452533263357d9c34402367\"}"
+        },
+        {
+          "name": "partial_stdout.local.bin",
+          "bytes": 21,
+          "sha256": "a8f084a3040d6ba5f6058ebb345ca5dd762f0181220cf85b6f4aff825a87b5dd",
+          "authored_content_utf8": "AUTHORED_PARTIAL_ONLY"
+        },
+        {
+          "name": "stderr.local.bin",
+          "bytes": 20,
+          "sha256": "96fc2386d77894717cd34d70462ae8b4f0b17bf807a437310e5cff8278846d57",
+          "authored_content_utf8": "AUTHORED_STDERR_ONLY"
+        }
+      ]
+    }
+  ]
+}
