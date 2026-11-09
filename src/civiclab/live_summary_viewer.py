@@ -12,6 +12,9 @@ from pathlib import Path
 AUDIT = 'reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json'
 AUDIT_SHA256 = '8764359767c8ade7ad2da42d8c8f27faa19aff2a27f001cec22367c2c3bf3d8e'
 AUDIT_STATUS = 'PASS_ACTUAL_LIMITED_PILOT_COMBINED_EVIDENCE_ACCOUNTING_AND_DESCRIPTIVE_RESCORING'
+FOLLOWUP_AUDIT = 'reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json'
+FOLLOWUP_SHA256 = 'cf2bed0882f71d33efd3cd755ace36cf3e58aaef0759b881c0361488a0ec7246'
+FOLLOWUP_STATUS = 'PASS_ACTUAL_CLOSED_EVIDENCE_ACCOUNTING_REGISTERED_ARITHMETIC_AND_EXCLUSIONS'
 START = '<!-- LIVE_SUMMARY_START -->'
 END = '<!-- LIVE_SUMMARY_END -->'
 
@@ -57,6 +60,77 @@ def projection(root):
     }
 
 
+def followup_projection(root):
+    """Only accepted aggregate outcomes, not raw answers or financial rows."""
+    with (Path(root) / FOLLOWUP_AUDIT).open('rb') as stream:
+        raw = stream.read(1_000_001)
+    if len(raw) > 1_000_000 or hashlib.sha256(raw).hexdigest() != FOLLOWUP_SHA256:
+        raise ValueError('Follow-up audit is changed or unreviewed')
+    a = json.loads(raw)
+    if a['status'] != FOLLOWUP_STATUS:
+        raise ValueError('Follow-up outcome is not independently accepted')
+    return {
+        'status': 'COMPLETE_WITH_PRESPECIFIED_SKIPS',
+        'source_audit': FOLLOWUP_AUDIT,
+        'source_audit_sha256': FOLLOWUP_SHA256,
+        'planned_slots': a['planned_slots'],
+        'actual_responses': a['observed_answers'],
+        'skipped_posts': len(a['rule_derived_skipped_slots']),
+        'primary_contrasts': a['primary_context_values'],
+        'primary_mean': a['primary_mean_points'],
+        'primary_contexts': len(a['primary_context_values']),
+        'shown_contrasts': a['shown_eligible_context_values'],
+        'paired_omitted_contrasts': a['matched_eligible_omitted_context_values'],
+        'paired_omitted_mean': a['matched_eligible_omitted_mean_points'],
+        'paired_interaction_mean': a['interaction_mean_points'],
+        'paired_contexts': len(a['interaction_context_values']),
+        'asked_comprehension_correct': a['factual_correct_all_asked'],
+        'research_cost_usd': a['new_verified_generation_USD'],
+        'conservative_total_microusd': a['conservative_owner_microusd'],
+        'unchanged_holds_microusd': a['unchanged_uncertain_holds'],
+        'intervals': a['intervals'],
+        'anchoring_pattern_met': a['anchoring_compatible_frozen_pattern'],
+    }
+
+
+def render_followup(s):
+    h = lambda x: escape(str(x), quote=True)
+    rows = ''.join(
+        f'<div class="live-result-row"><span>Context {i + 1}</span>'
+        f'<span class="live-evidence-track"><span style="width:{float(v)}%"></span></span>'
+        f'<strong>{h(v)} points</strong></div>'
+        for i, v in enumerate(s['primary_contrasts'])
+    )
+    paired = ''.join(
+        f'<tr><td>Context {i + 1}</td><td>{h(omitted)}</td><td>{h(shown)}</td><td>{h(shown - omitted)}</td></tr>'
+        for i, (omitted, shown) in enumerate(zip(s['paired_omitted_contrasts'], s['shown_contrasts']))
+    )
+    exposure = format(Decimal(s['conservative_total_microusd']) / Decimal(1_000_000), '.6f')
+    return f'''<main class="live-main" id="followup-summary">
+<style>.live-evidence-track{{height:8px;background:#e7eee7;border-radius:8px;overflow:hidden}}.live-evidence-track>span{{display:block;height:100%;background:#326951}}.live-study-divider{{max-width:1200px;margin:10px auto;border:0;border-top:1px solid #cbd8cf}}</style>
+<div class="live-topline"><span class="live-kicker">Latest real experiment · November 9, 2026 · Eastern time</span><span class="live-pill">COMPLETE WITH SKIPS · AUDIT PASSED</span></div>
+<h2>Proposal support responded to the supplied evidence.</h2>
+<p class="live-deck">A separate follow-up tested three fictional versions of one library proposal, with earlier answers shown or omitted. It changes the question and outcome from the first pilot; the two studies are not pooled.</p>
+<div class="live-cards">
+<div class="live-card"><div class="live-value">{h(s['actual_responses'])} / {h(s['planned_slots'])}</div><div class="live-label">Actual real-model responses</div></div>
+<div class="live-card"><div class="live-value">{h(s['skipped_posts'])} skipped</div><div class="live-label">Prespecified incomplete-baseline rule</div></div>
+<div class="live-card"><div class="live-value">+{h(s['primary_mean'])} points</div><div class="live-label">Positive minus negative evidence · 4 contexts</div></div>
+<div class="live-card"><div class="live-value">${h(s['research_cost_usd'])}</div><div class="live-label">Verified follow-up charges</div></div>
+</div><div class="live-grid"><section class="live-panel"><h3>Content comparison · baseline answer omitted</h3>
+<p class="live-note">Support on a 0–100 scale: positive visit evidence minus negative visit evidence, in the same fictional proposal. All four technical contexts have a usable contrast.</p>{rows}
+<p class="live-note">Mean +56.25 points; observed range +50 to +75. No confidence interval, significance test or population estimate is reported.</p></section>
+<section class="live-panel"><h3>Baseline-answer cue · only 2 eligible pairs</h3>
+<table><thead><tr><th>Technical context</th><th>Omitted</th><th>Shown</th><th>Shown − omitted</th></tr></thead><tbody>{paired}</tbody></table>
+<p class="live-note">On these same two contexts, the omitted-cue mean is <strong>+62.5</strong>, shown-cue mean is <strong>0</strong>, and mean interaction is <strong>−62.5 points</strong>. The four-context +56.25 mean is not the comparator for this two-context result.</p>
+<div class="live-warning"><strong>Why only two pairs?</strong><br>Both R-prior baseline questionnaires returned a null Democratic-party thermometer. Their six SHOWN posts were skipped under the frozen rule. Only the two D-prior contexts remain paired. This does not establish a party difference or an anchoring mechanism; the full prespecified anchoring pattern was not met.</div></section></div>
+<section class="live-panel"><h3>What we learned—and what remains uncertain</h3>
+<p>In this fixed model task, an issue-specific support question responded to the fictional evidence. Showing the model its entire previous answer coincided with a smaller response in the two eligible pairs. This is descriptive evidence from one model, one authored issue and four technical contexts, not a human experiment.</p>
+<p class="live-note">All {h(s['asked_comprehension_correct'])} asked factual questions were answered correctly. The six skipped posts are missing planned answers, not observed comprehension mistakes. Some party thermometers were missing even when support and comprehension were usable.</p>
+<p class="live-note"><strong>Current conservative ledger exposure: ${exposure}</strong>, including unchanged historical holds. Shared cap $5; cumulative E02 cap $1; E01 paid inference $0. No automatic sample extension or next paid run is implied.</p>
+<details><summary>Independent follow-up audit and scope</summary><p class="live-audit">{h(s['source_audit'])}<br>SHA-256 {h(s['source_audit_sha256'])}</p><p class="live-note">Only a pinned public outcome audit is projected here. Private journals, raw answers, credentials and owner stores are not read. Full nationwide E02 and original E01 completion remain incomplete.</p></details>
+</section></main><hr class="live-study-divider">'''
+
+
 def render(summary):
     """Static, accessible presentation; no raw responses or remote resources."""
     h = lambda x: escape(str(x), quote=True)
@@ -67,6 +141,10 @@ def render(summary):
         f'<span class="live-zero-line" aria-hidden="true"></span><strong>{h(value)} points</strong></div>'
         for i, value in enumerate(summary['block_contrasts'])
     )
+    if summary.get('followup_result'):
+        followup_section = '<section class="live-panel"><h3>First pilot retained separately</h3><p class="live-note">The completed follow-up is shown above. This earlier wrapper pilot keeps its original outcome, sample and historical accounting checkpoint. Its zero result has not been replaced or pooled with the follow-up.</p></section>'
+    else:
+        followup_section = f'<section class="live-panel live-next"><div class="live-next-text"><span class="live-kicker">Next research step</span><h3>Test measurement alignment and baseline anchoring.</h3><p>{h(summary["followup"]["question"])}</p><p class="live-note">Proposed 28-call follow-up: four baselines and 24 post-exposure answers. Design and execution review are still required. No follow-up results are displayed here.</p></div><span class="live-pill live-neutral">DESIGN IN REVIEW · NOT RUN</span></section>'
     return f'''{START}
 <style>
 .live-main{{max-width:1248px;margin:auto;padding:28px 24px}}
@@ -114,8 +192,8 @@ def render(summary):
 <p>The bounded live pipeline completed its sample: real inference, retained responses, verified billing and independently checked scoring.</p>
 <p class="live-note">{h(summary['fictional_profiles'])} fictional profiles · {h(summary['authored_notices'])} authored DEMO notices · {h(summary['model'])} through {h(summary['provider'])}. These are real model answers to fictional content, not human study results.</p>
 <div class="live-warning"><strong>Interpretation limits</strong><br>{h(summary['cross_batch_comparisons'])} of eight comparisons cross execution dates. Baseline-answer anchoring and weak content–measure alignment remain possible. No human, national, causal wrapper-effect or confirmatory claim is supported.</div>
-<p class="live-note"><strong>Conservative ledger exposure: {exposure}</strong><br>Includes retained historical holds; this is distinct from verified research charges. Existing shared cap $5; E02 cap $1; E01 paid inference $0.</p></section></div>
-<section class="live-panel live-next"><div class="live-next-text"><span class="live-kicker">Next research step</span><h3>Test measurement alignment and baseline anchoring.</h3><p>{h(summary['followup']['question'])}</p><p class="live-note">Proposed 28-call follow-up: four baselines and 24 post-exposure answers. Design and execution review are still required. No follow-up results are displayed here.</p></div><span class="live-pill live-neutral">DESIGN IN REVIEW · NOT RUN</span></section>
+<p class="live-note"><strong>Ledger exposure at first-pilot checkpoint: {exposure}</strong><br>Historical checkpoint including retained holds, distinct from verified research charges and the latest total above. Existing shared cap $5; E02 cap $1; E01 paid inference $0.</p></section></div>
+{followup_section}
 <details class="live-panel" style="margin-top:18px"><summary>Independent evidence and scope</summary><p class="live-note">This section reads one pinned, accepted public outcome audit. Private journals, credentials and respondent records are not read or exported. This page is a saved snapshot, not a live experiment controller.</p><p class="live-audit">{h(summary['source_audit'])}<br>SHA-256 {h(summary['source_audit_sha256'])}</p></details>
 </main>
 {END}'''
@@ -127,12 +205,15 @@ def build(root, output):
     index = output / 'index.html'
     archive = output / 'historical-preview.html'
     summary = projection(root)  # Refuse altered evidence before touching files.
+    followup = followup_projection(root)
+    summary['followup_result'] = followup
+    summary['followup']['status'] = followup['status']
     source = archive if archive.exists() else index
     original_bytes = source.read_bytes()
     base = original_bytes.decode('utf-8')
     if START in base or base.count('<main>') != 1 or base.count('</main>') != 1:
         raise ValueError('Unexpected historical preview structure')
-    page = base.replace('<main>', render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
+    page = base.replace('<main>', render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
     # The new overlay has its own main; close only the historical main.
     pos = page.rfind('</main>')
     page = page[:pos] + '</main></details>' + page[pos + len('</main>'):]

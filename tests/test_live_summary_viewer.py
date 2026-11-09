@@ -60,7 +60,9 @@ class LiveSummaryTests(unittest.TestCase):
             self.assertEqual((out / 'snapshot.json').read_bytes(), b'{"historical":true}\n')
             self.assertEqual(first.count(viewer.START.encode()), 1)
             self.assertIn(b'Historical snapshot', first)
-            self.assertIn(b'No follow-up results are displayed', first)
+            self.assertIn(b'First pilot retained separately', first)
+            self.assertNotIn(b'DESIGN IN REVIEW', first)
+            self.assertIn(b'COMPLETE WITH SKIPS', first)
             self.assertEqual(viewer.build(ROOT, out).read_bytes(), first)
 
     def test_projection_fields_are_html_escaped(self):
@@ -79,6 +81,48 @@ class LiveSummaryTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 viewer.build(ROOT, out)
             self.assertEqual((out / 'index.html').read_text(), 'unrecognized page')
+
+    def test_followup_keeps_matched_denominators_and_missingness(self):
+        s = viewer.followup_projection(ROOT)
+        self.assertEqual((s['actual_responses'], s['skipped_posts']), (22, 6))
+        self.assertEqual(s['primary_mean'], 56.25)
+        self.assertEqual(s['paired_omitted_mean'], 62.5)
+        self.assertEqual(s['paired_interaction_mean'], -62.5)
+        self.assertEqual((s['primary_contexts'], s['paired_contexts']), (4, 2))
+        self.assertEqual(s['asked_comprehension_correct'], 22)
+        self.assertFalse(s['anchoring_pattern_met'])
+        page = viewer.render_followup(s)
+        self.assertIn('six skipped posts are missing planned answers', page)
+        self.assertIn('four-context +56.25 mean is not the comparator', page)
+        self.assertIn('full prespecified anchoring pattern was not met', page)
+        self.assertNotIn('data/processed/', json.dumps(s))
+
+    def test_followup_reads_only_accepted_public_audit(self):
+        original = Path.open
+        opened = []
+        def checked(path, *args, **kwargs):
+            opened.append(path)
+            if path != ROOT / viewer.FOLLOWUP_AUDIT:
+                raise AssertionError('Undeclared file read')
+            return original(path, *args, **kwargs)
+        with patch.object(Path, 'open', checked):
+            viewer.followup_projection(ROOT)
+        self.assertEqual(opened, [ROOT / viewer.FOLLOWUP_AUDIT])
+
+    def test_changed_followup_refuses_before_preview_writes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            original = root / viewer.AUDIT
+            original.parent.mkdir(parents=True)
+            original.write_bytes((ROOT / viewer.AUDIT).read_bytes())
+            (root / viewer.FOLLOWUP_AUDIT).write_text('{}')
+            out = root / 'preview'
+            out.mkdir()
+            (out / 'index.html').write_text('<main>original</main>')
+            with self.assertRaises(ValueError):
+                viewer.build(root, out)
+            self.assertEqual((out / 'index.html').read_text(), '<main>original</main>')
+            self.assertEqual([p.name for p in out.iterdir()], ['index.html'])
 
 
 if __name__ == '__main__':
