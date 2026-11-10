@@ -1,0 +1,121 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E01_WARMUP_QUALIFICATION_ACTUAL_STOP_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_RETAINED_STOP_METADATA_ONLY",
+  "qualification_status": "BLOCKED_BOOTSTRAP_DIRECTORY_REFUSAL",
+  "scope": "Onlythree root-authorizedclosed safe records; no actualnative/library/runtime/PDF/source/owner/key access or rerun. ActiveE02 financialstore/journals untouched.",
+  "records": {
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/STARTED.json": {
+      "bytes": 1160,
+      "sha256": "ce80552d7780bd5de0c245cf62dd01b014cc81b607801a64e6f5722a7dd14a9e"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/OUTCOME.json": {
+      "bytes": 1134,
+      "sha256": "0b86767385e0488783ca2442281e9a06dec98d124db8f10dfbd7494e54c26180"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/partial_stdout.local.bin": {
+      "bytes": 669,
+      "sha256": "d6da02b3acd9da4aa3bf17e7aa1d5fe5638110ec6d62b897a94222a9d20cc6a4"
+    }
+  },
+  "packet_sha256": "250b04633863c3a37d569753020edc57f158083cf1e69f4395302038101a5bc1",
+  "profile_sha256": "f41aae5472755ea69c1597a76aa82a02218b0433e59277ad867a30a76a1da777",
+  "root_reported_execution_commit": "1d2608d",
+  "execution_attribution": "Rootreported actualonce; no independentinvocation/timing observation.",
+  "observations": {
+    "parent_status": "WARMUP_QUALIFICATION_UNKNOWN_STOP_NO_RETRY",
+    "worker_stage": "IMPORT_IDENTITY",
+    "warmup_refusal": {
+      "event": "os.listdir",
+      "phase": "BOOTSTRAP",
+      "predicate": "ORIGIN_NOT_DECLARED"
+    },
+    "warmup_counters": {
+      "directory_events": 3,
+      "file_open_events": 1,
+      "import_events": 2,
+      "read_bytes_reserved": 1524
+    },
+    "generated_progress": {},
+    "warmup_progress": {},
+    "worker_exception": {
+      "frames": [
+        {
+          "function": "_worker",
+          "line": 652
+        },
+        {
+          "function": "warmup_guard",
+          "line": 305
+        },
+        {
+          "function": "warmup_path",
+          "line": 173
+        },
+        {
+          "function": "warmup_deny",
+          "line": 154
+        }
+      ],
+      "traceback_truncated": false,
+      "type": "QualificationStopped"
+    },
+    "parent_reader_attempts_observed": null,
+    "full_limits_consumed": {
+      "ancestor_read_bytes_reserved": 17354,
+      "ancestor_record_reads": 24,
+      "child_cpu_hard_seconds": 11,
+      "child_cpu_soft_seconds": 10,
+      "child_wall_seconds": 30,
+      "code_read_bytes": 1048576,
+      "hash_open_events": 2048,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "network_requests": 0,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "page_extractions": 238,
+      "reader_attempts": 8,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "source_reads": 0,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "stderr_bytes": 4096,
+      "stdout_bytes": 114688,
+      "strict_page_extractions": 119,
+      "strict_reader_attempts": 4,
+      "wall_ms": 45000,
+      "warmup_directory_events": 256,
+      "warmup_file_open_attempts": 512,
+      "warmup_import_events": 512,
+      "warmup_page_extractions": 119,
+      "warmup_read_bytes_reserved": 67108864,
+      "warmup_reader_attempts": 4
+    },
+    "credit_restored": 0,
+    "source_reads_reported": 0,
+    "model_calls_reported": 0,
+    "cost_USD_reported": 0
+  },
+  "interpretation": [
+    "BOOTSTRAP/IMPORT_IDENTITY stopped onos.listdir ORIGIN_NOT_DECLARED before recordedgenerated-reader progress; firstrefusal and boundedcodeidentityframes retained. Exactdenieddirectoryunknown.",
+    "2import/3directory/1open events and1524fullfilebytesreserved are auditcounter observations, notruntimecontent/hash validation. No successful runtime manifest/strict orwarmup qualification retained.",
+    "Parentreader_attempts_observed remainsnull; emptyprogress and sourceordered IMPORT_IDENTITY stage do notsupply an8reader/238page observation. All8/238limitsremain consumed, no refund/reset.",
+    "No actualsourceformat/M2/parser/feature/statisticalacceptance. Source/model/$0 are recordedprojectphase claims, nothost/account-wideattestation."
+  ],
+  "static_followup_not_actual_diagnosis": [
+    "Candidate lists exactsrc/tests/site-packages directories butomits declaredCODE_PATHS packageparentdirectories.",
+    "Exactnameddependency packageROOTdirectory relpypdf lacks trailing slash andmisses MODULE_PREFIXES pypdf/ file-prefixpolicy; all5package roots needexplicitlistingreview.",
+    "These are reproducible staticpolicy omissions, notproof whichdirectory causedthisactualstop. A freshsuccessor mustkeep readonlyfinite listings separatefromfileaccess/source exclusion and record safe denied-directory classification."
+  ],
+  "prior_exact_code_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_WARMUP_QUALIFICATION_METHODS_CODE_REMEDY_V1_20261110.json",
+    "sha256": "d6af7d0481f7837fa61346b77d525bddd8a9f12f64412930377e643b87dd1345"
+  },
+  "next_gate": "Preserve5pastscopes/fullcaps and15exactancestorrecords; separatelyversionedfinite directoryclosure/classification methods/code/authoredtests/packet requireindependentreview before rootsolefreshgeneratedqualification. No broadproject/dependency file grant oractualsource access.",
+  "auditor_actual_native_library_runtime_source_key_network_model_access": 0,
+  "auditor_API_cost_USD": 0
+}

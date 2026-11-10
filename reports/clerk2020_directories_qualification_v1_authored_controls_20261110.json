@@ -1,0 +1,86 @@
+{
+  "label": "MOCK_AUTHORED_CONTROLS_NOT_REAL_LIBRARY_QUALIFICATION",
+  "scenarios": [
+    {
+      "label": "AUTHORED_COMPLETE",
+      "authored_stub_only": true,
+      "actual_native_source_model_calls": 0,
+      "all_fifteen_ancestors_unchanged": true,
+      "stopped": false,
+      "artifacts": [
+        {
+          "slot": "OUTCOME.json",
+          "bytes": 693,
+          "sha256": "5d135fc5e434dc8089891b97900802d008fd4baa7027b168c39bf5c82ba09065",
+          "raw_utf8": "{\"ancestor_bytes_observed\":23256,\"ancestor_bytes_reserved\":23286,\"ancestor_limits_not_reduced\":true,\"ancestor_unchanged\":true,\"code_bytes_observed\":129950,\"code_bytes_reserved\":129964,\"cost_usd\":0,\"credit_restored\":0,\"model_calls\":0,\"plan_sha256\":\"3b7cdac2ca7a13bd4da3aeca06326f5d28070e32dccf4af2a86913a4e1247605\",\"profile_sha256\":\"b9dcd668be6ea712cdd4a7a21c4d5080289eed325e2df09f9b084261454a2d9b\",\"sampled_child_peak_rss_bytes\":null,\"source_reads\":0,\"static_bytes_observed\":936,\"static_bytes_reserved\":947,\"status\":\"FRESH_GENERATED_QUALIFICATION_RECORDED_NOT_SOURCE_ADMISSION\",\"text_marker_pages_checked\":119,\"worker_sha256\":\"ecb81b78e1125f8daa08487e50db1c9d3336ecd9cc6004c5c4620ddf692891db\"}"
+        },
+        {
+          "slot": "STARTED.json",
+          "bytes": 1165,
+          "sha256": "80bfa8dcd54431b4d5ff0ec87e566a343e91eaa1ebfd542c681b058d9826e8a0",
+          "raw_utf8": "{\"ancestor_limits_not_reduced\":true,\"credit_restored\":0,\"kind\":\"CLERK2020_DIRECTORIES_QUALIFICATION_RELEASE_V1\",\"limits\":{\"ancestor_read_bytes_reserved\":23286,\"ancestor_record_reads\":30,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"hash_open_events\":2048,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":238,\"reader_attempts\":8,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"static_profile_reads\":11,\"static_read_bytes_reserved\":47738,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"strict_page_extractions\":119,\"strict_reader_attempts\":4,\"wall_ms\":45000,\"warmup_directory_events\":256,\"warmup_file_open_attempts\":512,\"warmup_import_events\":512,\"warmup_page_extractions\":119,\"warmup_read_bytes_reserved\":67108864,\"warmup_reader_attempts\":4},\"no_retry\":true,\"plan_sha256\":\"3b7cdac2ca7a13bd4da3aeca06326f5d28070e32dccf4af2a86913a4e1247605\",\"profile_sha256\":\"b9dcd668be6ea712cdd4a7a21c4d5080289eed325e2df09f9b084261454a2d9b\",\"source_authority\":false}"
+        },
+        {
+          "slot": "worker.json",
+          "bytes": 1777,
+          "sha256": "ecb81b78e1125f8daa08487e50db1c9d3336ecd9cc6004c5c4620ddf692891db",
+          "raw_utf8": "{\"actual_source_reads\":0,\"dependency_profile_sha256\":\"b9dcd668be6ea712cdd4a7a21c4d5080289eed325e2df09f9b084261454a2d9b\",\"eager_pillow_version\":\"13.0.0\",\"expected_page_extractions\":119,\"guard\":\"Cooperative Python event guard after imports; not an OS sandbox or decoder allocation bound\",\"guard_first_event\":null,\"interpreter_implementation\":\"cpython\",\"label\":\"MOCK_GENERATED_PDF_ONLY\",\"machine\":\"arm64\",\"model_calls\":0,\"native_backend_loaded_and_hash_matched\":false,\"negative_cases_refused\":2,\"negative_failure_stages\":[\"STRUCTURE\",\"READER_CONSTRUCTION\"],\"platform\":\"darwin\",\"positive_page_counts\":[81,38],\"preloaded_module_origin\":\"REPO/.venv/lib/python3.12/site-packages/pypdf/_codecs/core_font_metrics.py\",\"pypdf\":\"6.10.0\",\"python\":\"3.12.14\",\"reader_attempts\":4,\"runtime_hash_bytes_observed\":2,\"runtime_hash_bytes_reserved\":4,\"runtime_manifest\":[[\"REPO/src/civiclab/__init__.py\",1,\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"],[\"REPO/.venv/lib/python3.12/site-packages/pypdf/_codecs/core_font_metrics.py\",1,\"4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015\"]],\"runtime_manifest_scope\":\"Observed loaded origin/cache files plus interpreter; not complete native dependency admission\",\"runtime_manifest_sha256\":\"8b159a695ed47570e12b142f2f3f2230ba36e0d4e921c06589a61ee2d1247664\",\"selected_crypto_provider\":[\"cryptography\",\"50.0.2\"],\"status\":\"NATIVE_GENERATED_FIXTURES_COMPLETE\",\"text_marker_pages_checked\":119,\"warmup\":{\"directory_events\":0,\"directory_labels_observed\":[],\"file_open_events\":0,\"first_refusal\":null,\"hash_descriptor_events\":2,\"hash_files_opened\":2,\"hash_open_events\":4,\"hash_read_bytes_reserved\":4,\"import_events\":0,\"missing_bytecode_probes\":0,\"page_extractions\":119,\"read_bytes_reserved\":0,\"read_files\":0,\"reader_attempts\":4}}"
+        }
+      ]
+    },
+    {
+      "label": "AUTHORED_DIRECTORY_STOP",
+      "authored_stub_only": true,
+      "actual_native_source_model_calls": 0,
+      "all_fifteen_ancestors_unchanged": true,
+      "stopped": true,
+      "artifacts": [
+        {
+          "slot": "OUTCOME.json",
+          "bytes": 1139,
+          "sha256": "b9de924edad6a51061277671f461cb0612c7f306f45140ed6d785ccc177bb986",
+          "raw_utf8": "{\"ancestor_limits_not_reduced\":true,\"cost_usd\":0,\"credit_restored\":0,\"full_new_limits_consumed\":{\"ancestor_read_bytes_reserved\":23286,\"ancestor_record_reads\":30,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"hash_open_events\":2048,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":238,\"reader_attempts\":8,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"static_profile_reads\":11,\"static_read_bytes_reserved\":47738,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"strict_page_extractions\":119,\"strict_reader_attempts\":4,\"wall_ms\":45000,\"warmup_directory_events\":256,\"warmup_file_open_attempts\":512,\"warmup_import_events\":512,\"warmup_page_extractions\":119,\"warmup_read_bytes_reserved\":67108864,\"warmup_reader_attempts\":4},\"model_calls\":0,\"plan_sha256\":\"0833c7c924beec160c291f452c785a4234689f94245174ad75c03802dd796342\",\"reader_attempts_observed\":null,\"source_reads\":0,\"status\":\"DIRECTORIES_QUALIFICATION_UNKNOWN_STOP_NO_RETRY\"}"
+        },
+        {
+          "slot": "STARTED.json",
+          "bytes": 1165,
+          "sha256": "b963c2a694d5ccf406149477cc22886c84c37880cb40b5cc852ff54a93dab730",
+          "raw_utf8": "{\"ancestor_limits_not_reduced\":true,\"credit_restored\":0,\"kind\":\"CLERK2020_DIRECTORIES_QUALIFICATION_RELEASE_V1\",\"limits\":{\"ancestor_read_bytes_reserved\":23286,\"ancestor_record_reads\":30,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"hash_open_events\":2048,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":238,\"reader_attempts\":8,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"static_profile_reads\":11,\"static_read_bytes_reserved\":47738,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"strict_page_extractions\":119,\"strict_reader_attempts\":4,\"wall_ms\":45000,\"warmup_directory_events\":256,\"warmup_file_open_attempts\":512,\"warmup_import_events\":512,\"warmup_page_extractions\":119,\"warmup_read_bytes_reserved\":67108864,\"warmup_reader_attempts\":4},\"no_retry\":true,\"plan_sha256\":\"0833c7c924beec160c291f452c785a4234689f94245174ad75c03802dd796342\",\"profile_sha256\":\"b9dcd668be6ea712cdd4a7a21c4d5080289eed325e2df09f9b084261454a2d9b\",\"source_authority\":false}"
+        },
+        {
+          "slot": "partial_stdout.local.bin",
+          "bytes": 473,
+          "sha256": "d85c17a17da7d787775bf9864fb7480c67d16c21959ae313be838aaf4fed99da",
+          "raw_utf8": "{\"generated_progress\":{},\"guard_first_event\":null,\"inventory_first_exception\":null,\"model_calls\":0,\"origin_refusal\":null,\"source_reads\":0,\"stage\":\"IMPORT_IDENTITY\",\"status\":\"DIRECTORIES_QUALIFICATION_WORKER_STOP\",\"warmup_progress\":{},\"warmup_refusal\":{\"directory_label\":\"UNDECLARED_PROJECT_CODE_DIRECTORY\",\"event\":\"os.listdir\",\"phase\":\"BOOTSTRAP\",\"predicate\":\"ORIGIN_NOT_DECLARED\"},\"worker_exception\":{\"frames\":[],\"traceback_truncated\":false,\"type\":\"QualificationStopped\"}}"
+        }
+      ]
+    },
+    {
+      "label": "AUTHORED_STRICT_STOP",
+      "authored_stub_only": true,
+      "actual_native_source_model_calls": 0,
+      "all_fifteen_ancestors_unchanged": true,
+      "stopped": true,
+      "artifacts": [
+        {
+          "slot": "OUTCOME.json",
+          "bytes": 1139,
+          "sha256": "f5df8b063414638e1e6d18f1d07ef5c83dbb4433d012fbb50d6b2b5568d06c7c",
+          "raw_utf8": "{\"ancestor_limits_not_reduced\":true,\"cost_usd\":0,\"credit_restored\":0,\"full_new_limits_consumed\":{\"ancestor_read_bytes_reserved\":23286,\"ancestor_record_reads\":30,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"hash_open_events\":2048,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":238,\"reader_attempts\":8,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"static_profile_reads\":11,\"static_read_bytes_reserved\":47738,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"strict_page_extractions\":119,\"strict_reader_attempts\":4,\"wall_ms\":45000,\"warmup_directory_events\":256,\"warmup_file_open_attempts\":512,\"warmup_import_events\":512,\"warmup_page_extractions\":119,\"warmup_read_bytes_reserved\":67108864,\"warmup_reader_attempts\":4},\"model_calls\":0,\"plan_sha256\":\"6881acaa07b391bde025e7609b5d5f1cc36ff1ac48fe26a77ee76629628fbb63\",\"reader_attempts_observed\":null,\"source_reads\":0,\"status\":\"DIRECTORIES_QUALIFICATION_UNKNOWN_STOP_NO_RETRY\"}"
+        },
+        {
+          "slot": "STARTED.json",
+          "bytes": 1165,
+          "sha256": "e56fce459aebc5dfca3b103636b3e086d1286cee732d8a522ce973ae295c4b00",
+          "raw_utf8": "{\"ancestor_limits_not_reduced\":true,\"credit_restored\":0,\"kind\":\"CLERK2020_DIRECTORIES_QUALIFICATION_RELEASE_V1\",\"limits\":{\"ancestor_read_bytes_reserved\":23286,\"ancestor_record_reads\":30,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"hash_open_events\":2048,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":238,\"reader_attempts\":8,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"static_profile_reads\":11,\"static_read_bytes_reserved\":47738,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"strict_page_extractions\":119,\"strict_reader_attempts\":4,\"wall_ms\":45000,\"warmup_directory_events\":256,\"warmup_file_open_attempts\":512,\"warmup_import_events\":512,\"warmup_page_extractions\":119,\"warmup_read_bytes_reserved\":67108864,\"warmup_reader_attempts\":4},\"no_retry\":true,\"plan_sha256\":\"6881acaa07b391bde025e7609b5d5f1cc36ff1ac48fe26a77ee76629628fbb63\",\"profile_sha256\":\"b9dcd668be6ea712cdd4a7a21c4d5080289eed325e2df09f9b084261454a2d9b\",\"source_authority\":false}"
+        },
+        {
+          "slot": "partial_stdout.local.bin",
+          "bytes": 579,
+          "sha256": "1ae123f3977e0e878f268adbc5928451bf415d573b4adf8f1628ba43b310b548",
+          "raw_utf8": "{\"generated_progress\":{\"negative_failure_stages\":[],\"reader_attempts_entered\":1,\"text_marker_pages_checked\":0},\"guard_first_event\":{\"event\":\"import\"},\"inventory_first_exception\":null,\"model_calls\":0,\"origin_refusal\":null,\"source_reads\":0,\"stage\":\"GUARDED_GENERATED_FIXTURES\",\"status\":\"DIRECTORIES_QUALIFICATION_WORKER_STOP\",\"warmup_progress\":{\"negative_failure_stages\":[\"STRUCTURE\",\"READER_CONSTRUCTION\"],\"reader_attempts_entered\":4,\"text_marker_pages_checked\":119},\"warmup_refusal\":null,\"worker_exception\":{\"frames\":[],\"traceback_truncated\":false,\"type\":\"QualificationStopped\"}}"
+        }
+      ]
+    }
+  ]
+}

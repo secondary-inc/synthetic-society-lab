@@ -1,0 +1,370 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E01_DIRECTORIES_QUALIFICATION_METHODS_CODE_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_EXACT_FRESH_GENERATED_QUALIFICATION_CODE_ONLY",
+  "handoff": {
+    "path": "reports/clerk2020_directories_qualification_v1_handoff_20261110.json",
+    "sha256": "5611555c037f1695b635a67dd1549a6bac01f40f03f99cba1909e9418816bf78"
+  },
+  "phase_binding": {
+    "kind": "CLERK2020_DIRECTORIES_QUALIFICATION_CODE_BINDING_V1",
+    "status": "PASS_EXACT_FRESH_GENERATED_QUALIFICATION_ONLY",
+    "reviewer_role": "independent_auditor",
+    "code_refs": {
+      "src/civiclab/__init__.py": {
+        "bytes": 106,
+        "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+      },
+      "src/civiclab/e01/__init__.py": {
+        "bytes": 422,
+        "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+      },
+      "src/civiclab/e01/pipeline.py": {
+        "bytes": 22533,
+        "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+      },
+      "src/civiclab/common.py": {
+        "bytes": 8476,
+        "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+      },
+      "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+        "bytes": 22083,
+        "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f"
+      },
+      "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+        "bytes": 8768,
+        "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487"
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+        "bytes": 8142,
+        "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+        "bytes": 9548,
+        "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+      },
+      "tests/test_clerk2020_native_inventory_v1.py": {
+        "bytes": 12468,
+        "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d"
+      },
+      "src/civiclab/e01/clerk2020_crypto_qualification_v1.py": {
+        "bytes": 24747,
+        "sha256": "6f75bf204c0c7334a892d6cbb3d52d1cd3cdb4535a90da2771dabc627ad6f50e"
+      },
+      "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py": {
+        "bytes": 8606,
+        "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+      },
+      "src/civiclab/e01/clerk2020_guard_qualification_v1.py": {
+        "bytes": 29304,
+        "sha256": "347530c29836cefb0c1bd4b35e7e48748b45758bfa1c5bc200fb9cc806b5769f"
+      },
+      "src/civiclab/e01/clerk2020_warmup_qualification_v1.py": {
+        "bytes": 44722,
+        "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+      },
+      "src/civiclab/e01/clerk2020_directories_qualification_v1.py": {
+        "bytes": 50599,
+        "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+      }
+    },
+    "profile_sha256": "c9939227df7ab08ec0a1882157532c4a5a965e94747ca60012045c8738a54c08",
+    "ancestor_records": {
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/OUTCOME.json": {
+        "bytes": 775,
+        "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/STARTED.json": {
+        "bytes": 660,
+        "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/partial_stdout.local.bin": {
+        "bytes": 114,
+        "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/OUTCOME.json": {
+        "bytes": 700,
+        "sha256": "f3cb2f09411d57c39e5df72da5f81e86303dfe3ed15a57ff085c7fbf7187fe65"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/STARTED.json": {
+        "bytes": 861,
+        "sha256": "c76b9daa10f3d98ec41803dfc6a90f5e75a48a16bfd595a681956f30c5451bc6"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/worker.json": {
+        "bytes": 1232,
+        "sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/STARTED.json": {
+        "bytes": 894,
+        "sha256": "3301ad2dc40d52fc4fce83c544c5876e4d4d842cb19fbc7e268f6829eef4ca1a"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/OUTCOME.json": {
+        "bytes": 868,
+        "sha256": "1cc8e0ce5f3e53292d18b2ffc32f7a7c9fe10148d2566c4ea9139d0bf4835d90"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/partial_stdout.local.bin": {
+        "bytes": 137,
+        "sha256": "e19e56386a4e917f2a07e1c3e2968ff45a6ad315dfde98f0c52db5b39f68bbf0"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/STARTED.json": {
+        "bytes": 894,
+        "sha256": "6da9d2b8b708078b49c7a90544213a2d7f741fa282991d85bd23a3a555324103"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/OUTCOME.json": {
+        "bytes": 868,
+        "sha256": "512772036b7b8caf1c45c9e1999daea3dac53e10d0037e9067d88787e2979d4f"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/partial_stdout.local.bin": {
+        "bytes": 662,
+        "sha256": "cc58809f9f6de2ef85836482356f02a1a2632594198e8ecf6b87f95c9294c9c1"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/STARTED.json": {
+        "bytes": 1160,
+        "sha256": "ce80552d7780bd5de0c245cf62dd01b014cc81b607801a64e6f5722a7dd14a9e"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/OUTCOME.json": {
+        "bytes": 1134,
+        "sha256": "0b86767385e0488783ca2442281e9a06dec98d124db8f10dfbd7494e54c26180"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/partial_stdout.local.bin": {
+        "bytes": 669,
+        "sha256": "d6da02b3acd9da4aa3bf17e7aa1d5fe5638110ec6d62b897a94222a9d20cc6a4"
+      }
+    },
+    "past_limits": {
+      "qualification-v1": {
+        "child_cpu_hard_seconds": 11,
+        "child_cpu_soft_seconds": 10,
+        "child_wall_seconds": 30,
+        "code_read_bytes": 1048576,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "network_requests": 0,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "page_extractions": 119,
+        "reader_attempts": 4,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "source_reads": 0,
+        "stderr_bytes": 4096,
+        "stdout_bytes": 114688,
+        "wall_ms": 45000
+      },
+      "runtime-diagnostic-v1": {
+        "ancestor_read_bytes_reserved": 3104,
+        "ancestor_record_reads": 6,
+        "child_cpu_hard_seconds": 11,
+        "child_cpu_soft_seconds": 10,
+        "child_wall_seconds": 30,
+        "code_read_bytes": 1048576,
+        "collector_passes": 1,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "network_requests": 0,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "page_extractions": 0,
+        "reader_attempts": 0,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "source_reads": 0,
+        "stderr_bytes": 4096,
+        "stdout_bytes": 114688,
+        "wall_ms": 45000
+      },
+      "qualification-crypto-v1": {
+        "source_reads": 0,
+        "network_requests": 0,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "reader_attempts": 4,
+        "page_extractions": 119,
+        "wall_ms": 45000,
+        "child_wall_seconds": 30,
+        "child_cpu_soft_seconds": 10,
+        "child_cpu_hard_seconds": 11,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "code_read_bytes": 1048576,
+        "stdout_bytes": 114688,
+        "stderr_bytes": 4096,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "static_profile_reads": 11,
+        "static_read_bytes_reserved": 47738,
+        "ancestor_record_reads": 12,
+        "ancestor_read_bytes_reserved": 8696
+      },
+      "qualification-guard-v1": {
+        "source_reads": 0,
+        "network_requests": 0,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "reader_attempts": 4,
+        "page_extractions": 119,
+        "wall_ms": 45000,
+        "child_wall_seconds": 30,
+        "child_cpu_soft_seconds": 10,
+        "child_cpu_hard_seconds": 11,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "code_read_bytes": 1048576,
+        "stdout_bytes": 114688,
+        "stderr_bytes": 4096,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "static_profile_reads": 11,
+        "static_read_bytes_reserved": 47738,
+        "ancestor_record_reads": 18,
+        "ancestor_read_bytes_reserved": 12500
+      },
+      "qualification-warmup-v1": {
+        "ancestor_read_bytes_reserved": 17354,
+        "ancestor_record_reads": 24,
+        "child_cpu_hard_seconds": 11,
+        "child_cpu_soft_seconds": 10,
+        "child_wall_seconds": 30,
+        "code_read_bytes": 1048576,
+        "hash_open_events": 2048,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "network_requests": 0,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "page_extractions": 238,
+        "reader_attempts": 8,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "source_reads": 0,
+        "static_profile_reads": 11,
+        "static_read_bytes_reserved": 47738,
+        "stderr_bytes": 4096,
+        "stdout_bytes": 114688,
+        "strict_page_extractions": 119,
+        "strict_reader_attempts": 4,
+        "wall_ms": 45000,
+        "warmup_directory_events": 256,
+        "warmup_file_open_attempts": 512,
+        "warmup_import_events": 512,
+        "warmup_page_extractions": 119,
+        "warmup_read_bytes_reserved": 67108864,
+        "warmup_reader_attempts": 4
+      }
+    },
+    "credit_restored": 0,
+    "limits": {
+      "ancestor_read_bytes_reserved": 23286,
+      "ancestor_record_reads": 30,
+      "child_cpu_hard_seconds": 11,
+      "child_cpu_soft_seconds": 10,
+      "child_wall_seconds": 30,
+      "code_read_bytes": 1048576,
+      "hash_open_events": 2048,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "network_requests": 0,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "page_extractions": 238,
+      "reader_attempts": 8,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "source_reads": 0,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "stderr_bytes": 4096,
+      "stdout_bytes": 114688,
+      "strict_page_extractions": 119,
+      "strict_reader_attempts": 4,
+      "wall_ms": 45000,
+      "warmup_directory_events": 256,
+      "warmup_file_open_attempts": 512,
+      "warmup_import_events": 512,
+      "warmup_page_extractions": 119,
+      "warmup_read_bytes_reserved": 67108864,
+      "warmup_reader_attempts": 4
+    },
+    "source_authority": false
+  },
+  "phase_binding_canonical_sha256": "4b006220efb7380278537c76fff3e73cd1a7d3c75ee9c6c3783e2cbe6a09d03f",
+  "artifact_refs": [
+    {
+      "path": "src/civiclab/e01/clerk2020_directories_qualification_v1.py",
+      "bytes": 50599,
+      "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+    },
+    {
+      "path": "tests/test_clerk2020_directories_qualification_v1.py",
+      "bytes": 49721,
+      "sha256": "ff031bded50eeef0ce06ce6318f890e070385b5089faf63a803eebe1de056927"
+    },
+    {
+      "path": "reports/clerk2020_directories_qualification_v1_initial_312_20261110.txt",
+      "bytes": 8650,
+      "sha256": "9c7642acf6787e4d416ab67c573e92d37f99ccd7cf3b6d15ba9376016b6289eb"
+    },
+    {
+      "path": "reports/clerk2020_directories_qualification_v1_expanded_312_20261110.txt",
+      "bytes": 10525,
+      "sha256": "0ff83e7054738c18ed537fc68bd4151df3b83a715372df57d49850de767056e6"
+    },
+    {
+      "path": "reports/clerk2020_directories_qualification_v1_final_311_20261110.txt",
+      "bytes": 10525,
+      "sha256": "6f41be4dd0981537d9a719e13b22e0f73f2ef3223e70b8519e5864719bc8d2fc"
+    },
+    {
+      "path": "reports/clerk2020_directories_qualification_v1_authored_controls_20261110.json",
+      "bytes": 12536,
+      "sha256": "27455c84321f0136d801733afee3b1d2e13f41450987eca9814e25187d33b163"
+    }
+  ],
+  "independent_checks": {
+    "python312": {
+      "tests": 54,
+      "seconds": 1.547,
+      "status": "PASS"
+    },
+    "python311": {
+      "tests": 54,
+      "seconds": 1.519,
+      "status": "PASS"
+    },
+    "real_FileFinder_audit_hook_authored_only": "PASS independentlyexecuted in eachsuite: tenactualFileFinder instances over ten authoredtempdirs;10os.listdir events,0fileopens, nosourcemoduleexecution, no pypdf/native/library import. Closedknownlabels retained.",
+    "independent_AST_equivalence": "PASS versus frozen d894 warmup: _origin_allowed/runtime_inventory/generated_checks/worker_failure_context and WarmupGuard.transition/admit_hash identical AST. New14-pathcodeclosure separatelyhashbound; generalfilepermission logic unchanged.",
+    "all14code_refs": "Currentbytes/hashmatch; caller900dc060/50599B, earlierd894callerpreserved",
+    "all6artifact_refs": "Byte/hashmatch",
+    "profile_delta": "Oldf41profile plus exactfinder-directory refs/closeddiagnosticlabels only; static11files/backend/routing/versions unchanged, installedcontentsnot reread",
+    "ancestry_limits": "15exactrecords/5pastscopes, allfullcaps preserved/0refund.30recordreads23286reserved versus23256expectedactualbytes. Othercurrentlimits exactlyoldwarmup unchanged.",
+    "authored_parent_controls": "3stubscenarios/9embeddedobjects byte/hash/JSONverified,15ancestorcopiesunchanged. Not realqualification."
+  },
+  "methods_acceptance": {
+    "listing_only_change": "PASS scopedmethods. Concretefinderclosure = src,src/civiclab,src/civiclab/e01,tests; exactsite-packages finderroot;5exactnameddependency roots. Directorydescendants retainprevious namedpackage/Pythonorigin policy. No repositoryroot/ANYproject directory or genericfilegrant.",
+    "retained_integrity": "Symlink/dotdot/source/.env/unlistedorigin/file/readwrite/fd/counter/stickyrefusal controls and completewarmup-opened-file union unchanged. Runtimehash/capture/STRICT noimport/open semantics preserved; codeclosure admits onlynewreviewedentry inadditiontoantecedentfiles.",
+    "safe_diagnostics": "OnlyclosedfixedDECLARED relative refs/coarsePYTHON_BASE/package/source/credential/unlisted/outside/unknownclasses retained. Labelcounts inttyped/finite/unique withsum==directoryevents; unknown/rawpath labels refused. HASH directoryrefusal retainsfixedclassification.",
+    "preserved_stop": "Actualpriorwarmupdenieddirectory remainsunknown. Staticomissions fordeclaredprojectpackageparents/5exactpackageroots motivatedsuccessor; no retroactiveactualcause claim orsuccessfulscope relabel.",
+    "resources": "Same4reader119warmup+4reader119strict,newtotal8/238,10soft11hardCPU/30schild45sphase/sampledRSS256MiB/512opens64MiBwarmup/512imports256dirs/1024files512MiBhash2048events/98KiBmanifest/ownedwrites unchanged. Network/model/acquiredsource0."
+  },
+  "actual_qualification": "NOT_RUN_BY_AUDITOR. Rootsolefreshcreate-oncepacket/invocation, followed by specificallyscopedclosedactualoutputs/manifest review; no actualruntime/source acceptance fromthiscodebinding.",
+  "limitations": [
+    "CooperativePythonaudit guards, nothostilehost/OSsandbox orattestationofallnative-loader/kernelI/O; directoryresultallocation andconcurrentmutation limitsremainexplicit.",
+    "AuthoredFileFinder tests prove finderdiscovery ondeclaredtemproots, not actuallibrarybootstrap/dependencyqualification.",
+    "ExactgeneratedASCII/font/negative tests donotvalidateacquiredsourceformats/layouts/counts/ballots/features/statisticalorprospectiveforecasts.",
+    "ActiveE02financialowner/journals notread. E02actualresults requireseparateclosed-evidenceaudit."
+  ],
+  "auditor_actual_installed_native_library_runtime_source_key_network_model_access": 0,
+  "auditor_API_cost_USD": 0
+}
