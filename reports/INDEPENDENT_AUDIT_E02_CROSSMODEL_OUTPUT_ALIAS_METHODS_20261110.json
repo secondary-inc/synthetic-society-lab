@@ -1,0 +1,63 @@
+{
+  "auditor_API_spend_USD": 0,
+  "auditor_authenticated_requests": 0,
+  "auditor_model_POSTs": 0,
+  "catalog": {
+    "advertised_output_parameter": "max_tokens",
+    "model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "other_required_request_parameters_advertised": [
+      "response_format",
+      "seed",
+      "temperature",
+      "tool_choice"
+    ],
+    "path": "data/processed/e02_crossmodel_price_20261110_01/1-catalog.json",
+    "receipt": {
+      "body_sha256": "413fe60e1bebe171b97e0097244e372846ea4589e3abaae6b575df7460f662c5",
+      "observed_at_utc": "2026-11-10T18:26:02.735063+00:00",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3-30b-a3b-instruct-2507/endpoints"
+    },
+    "reported_provider": "Nebius",
+    "route": "nebius/fp8",
+    "sha256": "413fe60e1bebe171b97e0097244e372846ea4589e3abaae6b575df7460f662c5",
+    "supports_tool_choice_none": true
+  },
+  "conditional_acceptable_choice": [
+    "Separateversioned interpretation only for exactmodel qwen/qwen3-30b-a3b-instruct-2507 + exactroute nebius/fp8 + Nebius and frozenrequestshape.",
+    "Map only advertised max_tokens capability to canonical max_completion_tokens; require everyotherrequiredparameter and supportsnone/tier/tools/prices/quantization/route constraints unchanged.",
+    "Preserve original rawcatalogbytes/bodySHA/observationreceipt; bind explicit aliasversion and raw+normalizedsemantic projections to freshproof/interpretation. Do not present normalized data as original provider metadata.",
+    "Keep onlyonebounded max_completion_tokens wireparameter, require_parameters true, exactprovider only/no fallbacks, no tools/plugins/reasoning.",
+    "Runtime rejecton alias/routing incompatibility, unknownusage/reasoning/price/provider, retain reservations andfailureevidence, no promptretry orautomaticalternatewire/provider.",
+    "Exact code/tests/currentprice/allinfees/newpacket/sameowner/allholds/caps require their own focusedreview. This observation alone grantsnone."
+  ],
+  "minimal_alternative_if_runtime_rejects": "Stop boundedbatch andpreserveevidence; separatelyfreeze reviewedoutput-wire/pricecontractchange or preselectanotheradvertised-compatible route before anyfutureoutcomes. Do not silently drop require_parameters or switchwire/provider.",
+  "not_established": [
+    "Gateway require_parameters filtering recognizes this exact alias on Nebius route.",
+    "Actual provider outputbound/JSON/seed fidelity or determinism.",
+    "Completecurrentfees/cachepricing or exactfinancialrelease.",
+    "Scientific secondmodel validity or matched56job design."
+  ],
+  "observed_at_utc": "2026-11-10T18:28:11.134886+00:00",
+  "primary_sources": [
+    {
+      "observation": "API schema documents max_completion_tokens as completion bound and deprecates max_tokens in its favor.",
+      "url": "https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion"
+    },
+    {
+      "observation": "Model parameter documentation still lists max_tokens as response-length limiting capability; parameter names are not uniform across catalog/API presentation.",
+      "url": "https://openrouter.ai/docs/guides/overview/models"
+    },
+    {
+      "observation": "require_parameters true restricts routing to supporting providers; unknownparameters may otherwise be ignored; provider variant suffix selects specific endpoint.",
+      "url": "https://openrouter.ai/docs/guides/routing/provider-selection"
+    },
+    {
+      "observation": "Official Qwen FP8 card identifies nonthinking-only mode without think blocks. This doesnot independentlyprove servingprovider exactimplementation or zeroactualreasoningusage.",
+      "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507-FP8"
+    }
+  ],
+  "public_web_access": "Primarydocumentation read throughwebtool; savedpubliccatalog only, no new directcatalog/API/key/owner access.",
+  "reviewer_role": "independent_auditor",
+  "scope": "Assess exactQwen/Nebius metadata output-token alias against current primary docs; no actualroutecompatibility test or financial admission.",
+  "status": "PASS_CONDITIONAL_NARROW_ALIAS_METHODS_INTERPRETATION_NOT_CODE_PRICE_OR_EXECUTION_RELEASE"
+}

@@ -1,0 +1,145 @@
+{
+  "auditor_API_spend_USD": 0,
+  "auditor_authenticated_requests": 0,
+  "auditor_model_POSTs": 0,
+  "auditor_owner_access": 0,
+  "candidate": {
+    "path": "data/processed/e02_crossmodel_price_20261110_01/price-release.candidate.json",
+    "releases": {
+      "A": {
+        "canonical_hash": "1466589a185e67abe168a3f75ff50b27c162f0507f6cc9cae6cb01693b29f407",
+        "interpretation_hash": "9b47e36b9f04b34fa66480d217016fec1bb1d251b5bcbbb66af53625d34e0a0b",
+        "terms_hash": "b27a9d43cb63688436f347352c89e0dcc6b73a2843f455cd07660354c4b1307a",
+        "valid_from_utc": "2026-11-10T18:29:43.477827+00:00",
+        "valid_until_utc": "2026-11-11T18:29:43.477827+00:00"
+      },
+      "B": {
+        "canonical_hash": "8d18c03dc93f422954589d3040c9e2f10b6d9bb4905cd04d33a1f798b9681796",
+        "interpretation_hash": "32357df685ceeb9570dbf9ace2fe1caf4b201c49272c69b6bf1dc15e9ff957d4",
+        "terms_hash": "8c8e16f2d7632e8a5e0c4c656c087843c7ae591fb130043d9cd18e25e90754d9",
+        "valid_from_utc": "2026-11-10T18:29:43.477827+00:00",
+        "valid_until_utc": "2026-11-11T18:29:43.477827+00:00"
+      }
+    },
+    "sha256": "8e9acf31c211c89f4e73e8bf99fa3574b8e8637d27932007553ad3239535688f"
+  },
+  "evidence": [
+    {
+      "bytes": 226540,
+      "file": "data/processed/e02_crossmodel_price_20261110_01/openrouter-chat.md",
+      "observed_at_utc": "2026-11-10T18:27:29.695595+00:00",
+      "sha256": "9e1b05d0f3d805da49b1ac33259b107b05f85c136b10e0a6924c4f0ac3d6c6d3",
+      "url": "https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion.md"
+    },
+    {
+      "bytes": 260173,
+      "file": "data/processed/e02_crossmodel_price_20261110_01/openrouter-support.html",
+      "observed_at_utc": "2026-11-10T18:27:30.369055+00:00",
+      "sha256": "2e0cef1b3bfffa62d16d730178c4cdf4eaa31679d9f5757b84ef2d3b1bb787ba",
+      "url": "https://openrouter.ai/support"
+    },
+    {
+      "bytes": 29374,
+      "file": "data/processed/e02_crossmodel_price_20261110_01/openrouter-caching.md",
+      "observed_at_utc": "2026-11-10T18:27:30.811987+00:00",
+      "sha256": "f9449ef50eb73dd2909d6dfe79afa39e27c1707b3a91aa464593622aaf3c1599",
+      "url": "https://openrouter.ai/docs/guides/best-practices/prompt-caching.md"
+    },
+    {
+      "bytes": 9530,
+      "file": "data/processed/e02_crossmodel_price_20261110_01/qwen-card.md",
+      "observed_at_utc": "2026-11-10T18:27:31.123852+00:00",
+      "sha256": "7ac46d2beb770a466cf11220cacd8b770dc1dbbd25262348c7eeec289ae45a8f",
+      "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507-FP8/raw/main/README.md"
+    },
+    {
+      "bytes": 32764,
+      "file": "data/processed/e02_crossmodel_price_20261110_01/nebius-models.json",
+      "observed_at_utc": "2026-11-10T18:27:31.623857+00:00",
+      "sha256": "c1a62624019cc8840784d5f1336b14d6b03b97052d14101f211be100e9cb203a",
+      "url": "https://tokenfactory.nebius.com/api/public/models_info"
+    }
+  ],
+  "independent_tests": {
+    "additional_savedprice_and_authored_mutations": {
+      "actual_model_or_key_owner_network_access": 0,
+      "explicit_assertion_cases": 90,
+      "max8192input_quotes_microusd": {
+        "A": {
+          "256": 1285,
+          "512": 1397
+        },
+        "B": {
+          "256": 1716,
+          "512": 1792
+        }
+      },
+      "maximum56quotes_by_output": {
+        "256": 84028,
+        "512": 89292
+      },
+      "old4473_plus_max56quotes_by_output": {
+        "256": 88501,
+        "512": 93765
+      },
+      "status": "PASS_FOCUSED_SAVED_PRICE_AND_AUTHORED_BILLING_MUTATIONS"
+    },
+    "existing_metadata_suite_retargeted_to_new_parser_Python312": "9 PASS0.001s; exactmodel/tier/nativebounds/optionaltypedunknown/cost/cancellation guards preserved",
+    "new_components_Python311": "4 PASS0.004s",
+    "new_components_Python312": "4 PASS0.003s"
+  },
+  "limitations": [
+    "Publishedschedulesnotexhaustiveproof againstfutureorundocumentedproviderbillingchanges;conditionalinterpretation mustneverbelabeledobservedzeros.",
+    "Sameconfiguredseed/temperature andmaxoutput acrossfamilies doesnotprove identicaltokenization/compute/determinism/servingweights.",
+    "Qwenmodelcardnonthinkingdoesnotprove allhiddenactivityabsent;observedmandatoryreasoningzero retained.",
+    "fresh_proof assumesexactreviewedterms/decision pair suppliedbyauthenticatedpacket; runvalidator mustcross-bindallidentity/windows/initialcatalog/interpretation ratherthanallowcaller-inventedterms.",
+    "NoactualQwenresponse/billing/routecompatibilityorpaidpilot/successcientificresult observed."
+  ],
+  "price_interpretation_findings": [
+    {
+      "scope": "A nano/Azure family retains bothadvertisedroute rates, maximumsuminput.143/M andoutput.44/M; refreshedrawcatalogreceipt andnewdistinct24hpricewindow, not retimedoldrelease.",
+      "status": "PASS_CONDITIONAL"
+    },
+    {
+      "scope": "B exactQwen/Nebiusfp8 savedOpenRouter andproviderownpublicschedule agree input.1/M,cachedinput.1/M,output.3/M,fp8. Conservativeinputsum.20/M andoutput.3/M adopted.",
+      "status": "PASS_CONDITIONAL"
+    },
+    {
+      "scope": "Missingrequest/cachewrite/cachewrite1h/internalreasoning zeros are externalstandard-token-schedule applicability interpretations. OpenRouterpassesproviderinferencepricingwithoutmarkup,creditpurchase/BYOKfees excluded underprefunded/no-purchase/non-BYOK request. NonthinkingonlyQwencard and exactoldernano/noexplicitcachecontrol supportscope; omissions alone are notproof ofzero.",
+      "status": "PASS_EXPLICIT_INTERPRETATION_NOT_RAW_ZERO"
+    },
+    {
+      "scope": "OnlyexactBmodel/route/provider permitslegacymax_tokens capability normalization; originalrawunchanged andrawSHA retained. Semanticprojectionbindsobservedparameterlist+explicitinterpretationlabel; allotheroldrequiredparameter/none/tools/tier/route/pricecomponentchecks reused. Nativewiremax_completion_tokens remainsbounded.",
+      "status": "PASS_NARROW_ALIAS_CODE"
+    },
+    {
+      "scope": "Exacttwofamilymodels/provider/non-BYOK mapping; nativeprompt/completion observedintegerbounds andliteralreasoningzero mandatory. Defaulttier/stream/cancel typed; optionalabsent/nullunknown distinctfromobservedzero, positive/malformedactivity rejected. Allintotalcost finite andwithinreservation;normalized8fieldbillingexplicitlynotraw.",
+      "status": "PASS_CLOSED_BILLING_COMPONENT"
+    }
+  ],
+  "primary_web_sources_independently_consulted": [
+    "https://openrouter.ai/docs/api/api-reference/chat/create-a-chat-completion",
+    "https://openrouter.ai/docs/guides/overview/models",
+    "https://openrouter.ai/docs/guides/routing/provider-selection",
+    "https://openrouter.ai/support",
+    "https://openrouter.ai/docs/guides/best-practices/prompt-caching",
+    "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507-FP8",
+    "https://tokenfactory.nebius.com/api/public/models_info"
+  ],
+  "required_execution_conditions": [
+    "Onlyfrozenreviewedpriceinterpretations andmatchingcodeclosure in exactnewrunpacket; owner/client/caller/publication/scientificmethods notacceptedhere.",
+    "Exacttextonly/nonthinking/no tools/plugins/explicitcache_control/BYOK/tieroverride/creditpurchase. No unsupportedfeeorpricefield, fallback or silentparameterdrop.",
+    "Providerrequire_parameters true, exactnebius/fp8 route andno fallback. Gatewayaliasfilter acceptance remains empiricallyunproven; onrejectionstop/preservehold,no retry.",
+    "Freshmatchingrawcatalogproof<=900s withinthese24hterms; finitecount/schedule refreshes independentlybound inrun. Nooldexpiredprice/proofreuse.",
+    "Runtimeauthoritativegenerationmetadata andreportedtotalbill required; unknownnativebilling/reasoning/tier/provider/model/unsupportedactivity failsclosedwithfullconservativehold.",
+    "Preserveallold4473microexposure/3holds; batchcount/cap/pendingholds/phase/reservation/reconciliation/one-shotentry requireindependentexactfinancialreview.",
+    "At8192input/512outputQwenquote1792\u00b5 exceedsold1785callcap. Anynew512configurationmustexplicitlyreviewhigherfinitecaporloweroutputbound; donotreuseoldcapincorrectly."
+  ],
+  "reviewer_role": "independent_auditor",
+  "source_pins": {
+    "src/civiclab/e02/crossmodel_metadata_v1.py": "16f2b405795d16031660ae892de041f625b17050080128269adeb9b2ec1ff05e",
+    "src/civiclab/e02/crossmodel_price_v1.py": "41994cca7d8ea639ed660991b0ab75b79e0c3b23c2f49fee675571905a1b7746",
+    "tests/test_crossmodel_price_metadata_v1.py": "bd0b651b6805eba2787eb066e25b6a12c333a50dd657a1feb6a46fc84e0d57d5"
+  },
+  "status": "PASS_EXACT_CONDITIONAL_PRICE_INTERPRETATIONS_AND_PRICE_METADATA_COMPONENTS_NOT_EXECUTION_RELEASE"
+}
