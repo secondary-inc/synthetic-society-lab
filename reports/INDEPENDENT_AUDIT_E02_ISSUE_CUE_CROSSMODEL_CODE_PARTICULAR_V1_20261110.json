@@ -1,0 +1,298 @@
+{
+  "accepted_methods_receipt": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_METHODS_PURE_V1_20261110.json",
+    "sha256": "35330eaeb78e8fcef360e4632b93176be07f81f8bffa2db7c8e1f4a38034ebdf"
+  },
+  "accepted_price_metadata_receipt": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_CROSSMODEL_PRICE_METADATA_COMPONENTS_20261110.json",
+    "sha256": "d6d738a10ebe7aa5ff5b34c9c44c1d6d37fdcf3a8c10f69e874bcef5e791df76"
+  },
+  "actual_model_or_billing_requests_by_auditor": 0,
+  "actual_new_study_status": "NOT_RUN_IN_THIS_REVIEW",
+  "actual_owner_or_key_model_network_access": 0,
+  "advancingNov9toNov10_clock_start_pass": true,
+  "all_prior_namespaces_rows_holds_unchanged_by_start": true,
+  "auditor_API_spend_USD": 0,
+  "auditor_real_owner_or_key_access": 0,
+  "catalog_proof_scope": "Savedpublicobservations valid atAUTHOREDlease-start replaytime only; freshactualruntimecatalog stillrequired.",
+  "clock_finding_remedy": {
+    "finding_status": "CLOSED_FOR_EXACT_SUCCESSOR_ONLY",
+    "initial_finding_receipt": "reports/INDEPENDENT_AUDIT_E02_CROSSMODEL_CLOCK_FINDING_20261110.json",
+    "initial_finding_sha256": "77670e8cc611c2b0fdb56cec0f8035a2a07e1941a27b43aa1ff94d6fa345f178",
+    "preservation": "Original319eowner/initialtestlog/unexecutedf6c6382cpacket retainedasfailedcandidate; notretimed/erased/promoted.",
+    "remedy": "START/REFRESH authenticateeach eventclockonce; validatebothproofidentities/ages withsameUTC. AdvancingSTART/REFRESH, Bstale/futureandrollback negativechecksPASSeachruntime; actualcopied342eventSTARTprobePASS."
+  },
+  "contract": {
+    "kind": "CROSSMODEL_STUDY_CODE_V1",
+    "limits": {
+      "E01_microusd": 0,
+      "GET_retry_statuses": [
+        404
+      ],
+      "GET_waits_seconds": [
+        10,
+        10,
+        20
+      ],
+      "GETs_per_generation": 3,
+      "POST_retries": 0,
+      "authority_seconds": 7200,
+      "catalog_GETs": 4,
+      "catalog_refresh_before_slot": 28,
+      "concurrency": 1,
+      "cumulative_E02_microusd": 1000000,
+      "input_tokens": 8192,
+      "journal_artifacts": 768,
+      "lifetime_dispatches": 112,
+      "new_batch_microusd": 100000,
+      "new_model_POSTs": 56,
+      "new_statistics_GETs": 168,
+      "output_tokens": 256,
+      "per_call_microusd": 1785,
+      "phase_seconds": 120,
+      "price_age_seconds": 900,
+      "shared_microusd": 5000000
+    },
+    "pins": {
+      "scripts/collect_connectivity_billing_once.py": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7",
+      "scripts/run_e02_continuation_once.py": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e",
+      "scripts/run_issue_cue_crossmodel_once.py": "d0101e94489cc7a69c5ee3059b3194c4b5f8b256eb0b244cc82c93804a9613a6",
+      "src/civiclab/e02/crossmodel_metadata_v1.py": "16f2b405795d16031660ae892de041f625b17050080128269adeb9b2ec1ff05e",
+      "src/civiclab/e02/crossmodel_price_v1.py": "41994cca7d8ea639ed660991b0ab75b79e0c3b23c2f49fee675571905a1b7746",
+      "src/civiclab/e02/issue_cue_crossmodel_client_v1.py": "6f3d19eaadc777cde6fbd3d69f0db699f8f92690a72c6a56ef200f8f7b387543",
+      "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": "0322944250e3236c7a08a9b0e15780f0a9247ee29d22ee15762595ab41a9c84b",
+      "src/civiclab/e02/issue_cue_crossmodel_v1.py": "041a423c37951e32352bd57582cfb6ba65133a536c19ff7de7119588c56892a2"
+    },
+    "predecessor": {
+      "kind": "ALIGNMENT_STUDY_CODE_V1",
+      "limits": {
+        "E01_microusd": 0,
+        "GET_retry_statuses": [
+          404
+        ],
+        "GET_waits_seconds": [
+          10,
+          10,
+          20
+        ],
+        "GETs_per_generation": 3,
+        "POST_retries": 0,
+        "authority_seconds": 7200,
+        "concurrency": 1,
+        "cumulative_E02_microusd": 1000000,
+        "input_tokens": 8192,
+        "journal_artifacts": 384,
+        "lifetime_dispatches": 62,
+        "new_batch_microusd": 50000,
+        "new_model_POSTs": 28,
+        "new_statistics_GETs": 84,
+        "output_tokens": 256,
+        "per_call_microusd": 1785,
+        "phase_seconds": 120,
+        "price_age_seconds": 900,
+        "shared_microusd": 5000000
+      },
+      "pins": {
+        "scripts/collect_connectivity_billing_once.py": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7",
+        "scripts/run_alignment_anchoring_once.py": "84b584d3cbbac537a3d34e2081e624e7bd36a6a513ef453a933c97f64ce66c2f",
+        "scripts/run_e02_continuation_once.py": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e",
+        "src/civiclab/e02/alignment_anchoring_client_v1.py": "118f2fe420f8edb3a0d5ddc3c75079327ab89f002817e7385eb4b7d29f9d43fc",
+        "src/civiclab/e02/alignment_anchoring_owner_v1.py": "c37f21dd71d8426be4906799143de38f4ec35a097a8e5ffc0b3cad48d5802301",
+        "src/civiclab/e02/alignment_anchoring_v1.py": "b09050ae0f35f94f2bd204ddb12a1221d2a00e17d880d5283e25e071e5b2b2fc"
+      },
+      "predecessor": {
+        "base": {
+          "assignment_sha256": "15fbe5b3b87ed800600e5044a31fe970f405165297f63807ea2b8ed04087bafd",
+          "kind": "LIMITED_PILOT_CODE_V1",
+          "limits": {
+            "HTTP_seconds": 30,
+            "artifact_bytes": 2000000,
+            "authority_seconds": 7200,
+            "catalog_GETs": 1,
+            "concurrency": 1,
+            "event_bytes": 65536,
+            "event_limit": 10000,
+            "input_bound": 8192,
+            "journal_artifacts": 256,
+            "journal_bytes": 268435456,
+            "lifetime_dispatches": 34,
+            "minimum_free_bytes": 536870912,
+            "module_microusd": {
+              "E01": 0,
+              "E02": 5000000
+            },
+            "output_tokens": 512,
+            "per_call_microusd": 31250,
+            "phase_seconds": 120,
+            "price_age_seconds": 900,
+            "retries": 0,
+            "row_limit": 1024,
+            "shared_microusd": 5000000,
+            "socket_seconds": 15,
+            "study_dispatches": 32,
+            "study_microusd": 1000000,
+            "study_statistics_GETs": 32
+          },
+          "methods": {
+            "base_composite_review": "de2bb25aba3e0e8ba6c8653de60ef15e8f723586afa8b70ad3ac6c05e571993b",
+            "provider_representation_review": "265a343466405aa606bb9d46004590bd7bcc288b8ecd302f3cbaea5bb406684a",
+            "recovery_methods": "97ed5a2f20f38b357983b37ecc5eb27d571e3952a684670ed09903d16a7a2db9",
+            "recovery_review": "c87d3063e61d14015efdca3a4090b08bb37d9d52ca46a8fd9727ba48fe8f0586",
+            "representation": "CANONICAL_PARSED_PROVIDER_OBJECT_V1"
+          },
+          "pins": {
+            "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+            "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+            "src/civiclab/e02/exploratory_live_client_v1.py": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22",
+            "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+            "src/civiclab/e02/exploratory_metadata_v1.py": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8",
+            "src/civiclab/e02/exploratory_owner_v1.py": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756",
+            "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+            "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+            "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+            "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+            "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+            "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+            "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+            "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+            "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+            "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+            "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+            "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+            "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+            "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c"
+          },
+          "projection_sha256": "1ad387de7ec320720849b1cacbcbbd4291b091cf0541cc43a8b39dc065172a5b",
+          "protocol_sha256": "a76e3f8924c568e58960a99822f6e5665df4c95e38bb6e00e8d3075f71a5847b"
+        },
+        "kind": "E02_CONTINUATION_CODE_V1",
+        "limits": {
+          "GET_retry_statuses": [
+            404
+          ],
+          "GET_waits_seconds": [
+            10,
+            10,
+            20
+          ],
+          "GETs_per_generation": 3,
+          "POST_retries": 0,
+          "concurrency": 1,
+          "lifetime_dispatches": 34,
+          "new_POSTs": 16,
+          "new_statistics_GETs": 48,
+          "phase_seconds": 120,
+          "shared_microusd": 5000000,
+          "study_microusd": 1000000
+        },
+        "pins": {
+          "src/civiclab/e02/exploratory_continuation_owner_v1.py": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256",
+          "src/civiclab/e02/exploratory_continuation_v1.py": "8523f8384b56a3487542488aa3d62987e1869a14090493dbb6408aa0886a22ca"
+        }
+      },
+      "protocol_sha256": "ccdb1f374924173e37a1d385715e7fa7d2aea1d5eb5daa17a403b0e9e09efb6d"
+    },
+    "protocol_sha256": "ccedb7aa9989fd0e1e96cb8c0e132e154c4383cf63210a599bc51ab683ace1e8"
+  },
+  "contract_hash": "13392f0e6c9915f446d15da4ae5f1c0bcdb91d4565539e654496c2eb22d6aff9",
+  "execution_document_pin": {
+    "path": "docs/E02_CROSSMODEL_EXECUTION_V1.md",
+    "sha256": "305eb1f3265ec47a9214c2186d4fb7729b0d5c866c38992913abbbd082f4f156"
+  },
+  "fast_independent_tests": {
+    "Python311": "6PASS0.004s (2clock/4caller)",
+    "Python312": "6PASS0.005s (2clock/4caller)"
+  },
+  "full_independent_integration": {
+    "Python311": "2 PASS829.886s",
+    "asserted_scope": [
+      "Full56modelPOST/58billingGET with2closed404thenvalidbill,4catalogcalls A/Bstart+A/Bscheduledrefresh,all56MOCKdispositions.",
+      "Exactprior56row/prefix/study/continuation/alignment preservation; final112dispatches/3unfinished,chargesreconciled,foreignrowmutation/replay/repeatedrefresh refused.",
+      "Alteredancestry/count/provider/expiredlease refusedbefore newrows.",
+      "Exhaustedbillingafter1POST/3GET stopswholebatch,fullhold retained/4unfinished,no nextdispatch."
+    ],
+    "log_path": "/tmp/civiclab-independent-crossmodel-integration-311-20261110.log",
+    "log_sha256": "a07a438c1a3bf22efa2c2b0252908b029e8e10a56318d6525882e9164744667c",
+    "root_Python312": "2 PASS850.184s",
+    "root_log_sha256": "fd4c732c242223f7de3db0b2e9d613babd3583f4e6070a9fce75b5e1d0769660"
+  },
+  "genesis_external_registration_lease": "NOT_REREAD_PRIOR_ACCEPTANCE",
+  "lease_utc": [
+    "2026-11-10T18:33:50.898906+00:00",
+    "2026-11-10T20:33:50.898906+00:00"
+  ],
+  "limits": {
+    "E01_microusd": 0,
+    "POST_retries": 0,
+    "batch_cap_microusd": 100000,
+    "concurrency": 1,
+    "cumulative_E02_cap_microusd": 1000000,
+    "input_token_bound": 8192,
+    "journal_artifacts": 768,
+    "lifetime_dispatches": 112,
+    "max_billing_GETs": 168,
+    "max_catalog_GETs": 4,
+    "max_model_POSTs": 56,
+    "output_tokens": 256,
+    "per_call_cap_microusd": 1785,
+    "phase_seconds": 120,
+    "proof_age_seconds": 900,
+    "shared_cap_microusd": 5000000
+  },
+  "packet_sha256": "b231744120371337b39b5ea197d27cbc29f5185e56f95e1125d60ca4f159a7a3",
+  "predecessor_conservative_microusd": 4473,
+  "predecessor_events": 342,
+  "predecessor_rows": 56,
+  "predecessor_unfinished": 3,
+  "price_maxima": {
+    "A_per_call_quote_microusd": 1285,
+    "B_per_call_quote_microusd": 1716,
+    "all_in_batch_cap_plus4473_old_microusd": 104473,
+    "all_in_quote_plus4473_old_microusd": 88501,
+    "full56_quote_microusd": 84028
+  },
+  "required_actual_conditions": [
+    "Leadmaypromoteonlythisunchangedexactb231packet/callerd0101e94 oncewithincurrentlease18:33:50.898906\u201320:33:50.898906UTCNov10. Standingownerpaidcapsalreadyapply; no furtherownerquestionforroutineexecution.",
+    "NewruntimepubliccatalogA/Bproofs mustmatchacceptedraw+aliassemantics andage<=900s atentry/dispatch; savedoldobservationsinpureprobe do not countasfreshactualobservations.",
+    "Keeprequire_parameters=true/exactprovider/nofallback andmax_completion_tokens256; gatewayQwenaliasactualcompatibilitynotproven. Anyfailurestopswithboundedretention,nosilentwirechange/retry.",
+    "Actualsameownerpredecessor muststillmatch32cfbeclosedexport; anyancestry/integrity/drift rejects.",
+    "Consumedoldlaunchers andinitialfailedcandidate neverrerun. Failedactualruns cannot silentlyresume; separatelyreviewedappend-onlyrecovery only.",
+    "Noactualoutcome/cost/successclaimuntilclosedcopiedjournal/index/export andindependentrecomputation. No furtherpaidbatchorpublicationauthority automaticallyfollows."
+  ],
+  "research_limits": [
+    "Fourexactfictionaltechnicalcontexts/oneissue/twofixedmodel-provider-quantizationconfigs; no humans/population/architecture-familycausalclaim.",
+    "Supportonlycue isdifferentfromoldwholeanswercueintervention; preserveoldexclusions/results, no pooling.",
+    "Signedprimaryinteractioncanincludesignreversal,notnecessarilyabsolutemagnitudecontractionorpsychologicalanchoring; commoncompletecontextdenominators mandatory.",
+    "NoCI/pvalue/equivalence/humanvalidation/generalizedpersuasion/prospectiveforecast/originalfullresearchcompletion."
+  ],
+  "reviewer_role": "independent_auditor",
+  "root_full_integration": {
+    "Python312": "2PASS850.184s",
+    "log_sha256": "fd4c732c242223f7de3db0b2e9d613babd3583f4e6070a9fce75b5e1d0769660"
+  },
+  "source_pins": {
+    "scripts/collect_connectivity_billing_once.py": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7",
+    "scripts/run_e02_continuation_once.py": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e",
+    "scripts/run_issue_cue_crossmodel_once.py": "d0101e94489cc7a69c5ee3059b3194c4b5f8b256eb0b244cc82c93804a9613a6",
+    "src/civiclab/e02/crossmodel_metadata_v1.py": "16f2b405795d16031660ae892de041f625b17050080128269adeb9b2ec1ff05e",
+    "src/civiclab/e02/crossmodel_price_v1.py": "41994cca7d8ea639ed660991b0ab75b79e0c3b23c2f49fee675571905a1b7746",
+    "src/civiclab/e02/issue_cue_crossmodel_client_v1.py": "6f3d19eaadc777cde6fbd3d69f0db699f8f92690a72c6a56ef200f8f7b387543",
+    "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": "0322944250e3236c7a08a9b0e15780f0a9247ee29d22ee15762595ab41a9c84b",
+    "src/civiclab/e02/issue_cue_crossmodel_v1.py": "041a423c37951e32352bd57582cfb6ba65133a536c19ff7de7119588c56892a2"
+  },
+  "static_controls_reviewed": [
+    "Separatetypednewnamespace/START/GRANT/COMMIT/REFRESH preservingall56oldrows/3holds; exactold32cfbeexporthead/history/allstudyhashes/claims/consumed.",
+    "Frozen56jobcompiler+role-specificmodel/provider/priceproof+ownrolebaselinewitness+completewitnessprefix binds each financialcontext/request/checkpoint.",
+    "Everygrantchecks112lifetime/56new/1785call/100000batch/$1E02/$5shared/E01zero includingcharged/heldrows; no reset/refund.",
+    "Exactlyonecatalogrefreshbeforefirstadmittedslot>=28, fourphysicalcatalogGETmax, no proofageextension; onlyclosed404billingretry10/10/20,120sphase/2hwindow,zeroPOSTretry.",
+    "Canonicalredactedprivatejournal768files withboundedbytes/freecapacity,exclusive0600/fsync. Response/statistics/quality/checkpoint/failure/terminaldispositions retained,unknownbodypresence explicit.",
+    "Exactmodel/provider/nonBYOK/tier/reasoning/nativeusage/allinbill revalidated before settlement+commit; unknownauxiliarycountersnotinventedzeros,overrun/unknown retainsfullholdandstops.",
+    "Callerhash/packet/canonicalbytes/predecessorexport/credentialreader pins;durableoneuseintentbeforecredential;processenv restored; no purchase/fallback/reusablelauncher."
+  ],
+  "status": "PASS_EXACT_CLOCK_REMEDY_FINANCIAL_CLIENT_CALLER_AND_CLOCKFIX_PARTICULAR_FOR_ONE_BOUNDED_STANDING_AUTHORIZED_STUDY",
+  "test_pins": {
+    "tests/test_crossmodel_clock_v1.py": "9d3790867fe29d9ad433d5a39d81df01e4b925d3ab50a82c5fbfb0f805bf86b1",
+    "tests/test_issue_cue_crossmodel_caller_v1.py": "87cc63d802f82314620a034ddffa541f92c182866ca87336af09e78c36cf0837",
+    "tests/test_issue_cue_crossmodel_execution_v1.py": "919d33b91c3246094f36f3a0880afc4ca00f5f3812072977d80febb9f4661975"
+  }
+}

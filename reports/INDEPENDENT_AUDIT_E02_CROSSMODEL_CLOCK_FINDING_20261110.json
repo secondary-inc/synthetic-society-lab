@@ -1,0 +1,26 @@
+{
+  "actual_model_requests": 0,
+  "auditor_API_spend_USD": 0,
+  "finding": {
+    "cause": "Each role calls inherited _new_clock for the sameevent. It calls _clock andadvances state.max_clock. Secondrole thencompares originalevent.prior_clock_max_utc againstalreadyadvancedstate andrefuses priorclockmaximumchanged.",
+    "file": "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py",
+    "impact": "Realadvancingclock preventsstart/refresh evenwithvalidfreshproofs; fixedT0mockancestry canmaskdefect. Noactualdispatchperformed inthisreview.",
+    "independent_probe": "object.__new__(CrossmodelOwnerV1),state.max_clockNov9,eventNov10,valid2hpolicy/currentproof. First_new_clockPASS,secondraisesValueError(priorclockmaximumchanged),0I/O.",
+    "locations": [
+      "START fresh_proofs loop",
+      "REFRESH fresh_proofs loop"
+    ],
+    "minimal_remedy": "Authenticate/mutateeventclock exactlyonce; independentlycheckbothroleproofidentity/age<=900sagainstthesameeventUTC withoutsecondclockmutation. Preservelease/fullphase/rollback checks; addadvancingUTCSTARTandREFRESHregressions.",
+    "severity": "P1"
+  },
+  "initial_candidate_pins": {
+    "scripts/run_issue_cue_crossmodel_once.py": "d0101e94489cc7a69c5ee3059b3194c4b5f8b256eb0b244cc82c93804a9613a6",
+    "src/civiclab/e02/issue_cue_crossmodel_client_v1.py": "6f3d19eaadc777cde6fbd3d69f0db699f8f92690a72c6a56ef200f8f7b387543",
+    "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": "319e3785230f5f03693889601670a437b98fc1de89c9a46f8c0a513dd9c60022"
+  },
+  "preservation": "Rootacknowledgedpreservingcandidatefiles/testlogs andunexecutedpacketf6c6382c,thenminimalremedy; auditor findingimmutable.",
+  "price_metadata_components": "UNCHANGED_ACCEPTED_d6d738a1",
+  "reviewer_role": "independent_auditor",
+  "scope": "Staticfinancialcandidate plusauthoredclockprobe only; noactualpacketrelease/native/model/key/ownerstore access.",
+  "status": "BLOCKED_P1_DUPLICATE_EVENT_CLOCK_MUTATION_BEFORE_ACTUAL_ENTRY"
+}

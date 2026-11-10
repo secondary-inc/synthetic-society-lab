@@ -1,0 +1,84 @@
+{
+  "accepted_code_receipt": {
+    "bytes": 8107,
+    "path": "reports/INDEPENDENT_AUDIT_E01_RUNTIME_DIAGNOSTIC_CODE_V1_20261110.json",
+    "sha256": "c60184683765d32e90c54e0d31016aa11674ec5c39c6f018fe6009c0b6867d32"
+  },
+  "auditor_API_spend_USD": 0,
+  "auditor_actual_private_scope_runtime_source_key_network_model_access": 0,
+  "copied_records": [
+    {
+      "bytes": 861,
+      "path": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/STARTED.json",
+      "sha256": "c76b9daa10f3d98ec41803dfc6a90f5e75a48a16bfd595a681956f30c5451bc6"
+    },
+    {
+      "bytes": 1232,
+      "path": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/worker.json",
+      "sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8"
+    },
+    {
+      "bytes": 700,
+      "path": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/OUTCOME.json",
+      "sha256": "f3cb2f09411d57c39e5df72da5f81e86303dfe3ed15a57ff085c7fbf7187fe65"
+    }
+  ],
+  "findings": [
+    "Threecanonicalembeddedrecordsverified sizes/hashes; START/OUTCOMEplanidentityandworkerbodyhash cross-bound.",
+    "Childclosedstatus/site/context/manifest validatedbyexactreviewedpurevalidator; line366 checkedagainstfrozen29ffcollector originallowlist assertion.",
+    "Onecollectorpass,0PDFreader/source/extraction/model/network recorded; originalancestorfullspentbounds and3104reservedmetadatareadallowance preserved.",
+    "Elevenreviewedcodefilebytes116521+11EOFprobes116532 matchrecordedparent totals; sampledRSSwithin256MiB.",
+    "Newscopeconsumed/no retry, exact2fileprojectoverlay andnoexternaloriginrelaxation/noexcludedmodules preserved.",
+    "Nullruntimeobserved/reservedbytecounts retainedunknown, notinferredzero orrefundedpermission.",
+    "Actualdiagnosticrecordingcompletedwithrejection; neitheroriginalqualificationsuccess nornewruntime/source/statisticaladmission claimed."
+  ],
+  "handoff": {
+    "path": "reports/clerk2020_runtime_diagnostic_v1_actual_20261110.json",
+    "sha256": "cd3e0fa724b7024dc2648f95a944c7098c9a5ce0018bbb98eed669a34ab6a0f8"
+  },
+  "last_iteration_context_not_original_cause": [
+    {
+      "function": "_runtime_inventory",
+      "last_iteration_module_not_proven_cause": "cryptography.__about__",
+      "last_iteration_origin_category_not_proven_cause": "VENV_OTHER_PACKAGE",
+      "line": 366
+    }
+  ],
+  "limitations": [
+    "Onlypubliccopiedmetadata andacceptedpubliccode read; noactualnew/originalprivatescope enumeration, artifact/runtime/source reads, independenttiming or modelcalls.",
+    "Actualpacket397fbytes/rootassignment notreadinthisscope; expectedplanhash supportedbyleadexecutionmessage andcopiedrecords.",
+    "Parentancestryunchanged/bodycounts arecross-boundrecordedevidence, not anindependentreopeningofoldprivatecontrols.",
+    "cryptography.__about__/VENV_OTHER_PACKAGE iscontextofthenewrejection, notproof oforiginaldiscardedfailurecause or blanketpermissionfordependencyoriginexpansion.",
+    "Underlyingqualification-v1 remainsSTOPPED/notaccepted; runtime-diagnostic-v1 recordsarefinalconsumed. Furtherdependencyclosure/qualification/source workrequiresexactseparatereview."
+  ],
+  "next_unblocked_task": "Worker may assembleboundedstaticdependency evidence and minimalexplicitclosure proposal underleadassignment; no native rerun/sourceparse or broadsite-packagesallowance followsfromthisreceipt.",
+  "observed_new_predicate": {
+    "function": "_runtime_inventory",
+    "line": 366,
+    "predicate": "ORIGIN_ALLOWLIST"
+  },
+  "observed_parent": {
+    "ancestor_full_limits_remain_consumed": true,
+    "ancestor_metadata_bytes_observed": 3098,
+    "ancestor_metadata_bytes_reserved": 3104,
+    "ancestor_plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e",
+    "ancestor_unchanged": true,
+    "code_bytes_observed": 116521,
+    "code_bytes_reserved": 116532,
+    "cost_usd": 0,
+    "diagnostic_status": "REJECTION_RECORDED",
+    "model_calls": 0,
+    "page_extractions": 0,
+    "plan_sha256": "397f846443d3e2495056b05b9fb24c60a74fdc7b8a3f3b2ebad0d6b9ec05ba46",
+    "reader_attempts": 0,
+    "sampled_child_peak_rss_bytes": 44941312,
+    "source_reads": 0,
+    "status": "DIAGNOSTIC_RECORDED_NOT_QUALIFICATION_OR_SOURCE_ADMISSION",
+    "worker_sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8"
+  },
+  "observed_plan_sha256": "397f846443d3e2495056b05b9fb24c60a74fdc7b8a3f3b2ebad0d6b9ec05ba46",
+  "reviewer_role": "independent_auditor",
+  "status": "PASS_COPIED_ACTUAL_ZERO_PDF_DIAGNOSTIC_REJECTION_EVIDENCE_AND_CLAIMS_NOT_RUNTIME_QUALIFICATION",
+  "verified_record_bytes": 2793,
+  "verified_record_count": 3
+}

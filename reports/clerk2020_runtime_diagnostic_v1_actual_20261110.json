@@ -1,0 +1,109 @@
+{
+  "status": "ACTUAL_ZERO_PDF_DIAGNOSTIC_REJECTION_RECORDED_AWAITING_INDEPENDENT_OUTPUT_REVIEW",
+  "TASK_ID": "E01_RUNTIME_DIAGNOSTIC_V1_ACTUAL_20261110",
+  "FILES_CHANGED": [
+    "reports/clerk2020_runtime_diagnostic_v1_actual_20261110.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/STARTED.json",
+      "bytes": 861,
+      "sha256": "c76b9daa10f3d98ec41803dfc6a90f5e75a48a16bfd595a681956f30c5451bc6",
+      "raw_utf8": "{\"ancestor_full_limits_remain_consumed\":true,\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"kind\":\"CLERK2020_RUNTIME_DIAGNOSTIC_RELEASE_V1\",\"limits\":{\"ancestor_read_bytes_reserved\":3104,\"ancestor_record_reads\":6,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"collector_passes\":1,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":0,\"reader_attempts\":0,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"no_retry\":true,\"plan_sha256\":\"397f846443d3e2495056b05b9fb24c60a74fdc7b8a3f3b2ebad0d6b9ec05ba46\",\"qualification_or_source_authority\":false}"
+    },
+    {
+      "path": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/worker.json",
+      "bytes": 1232,
+      "sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8",
+      "raw_utf8": "{\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"collector_passes_attempted\":1,\"context\":{\"exception_message_retained\":false,\"extra_runtime_or_source_io\":0,\"frozen_source\":\"src/civiclab/e01/clerk2020_native_qualification_v1.py\",\"kind\":\"PROPOSED_FUTURE_FAILURE_CONTEXT_V1_1_NOT_ORIGINAL_RUN_DIAGNOSIS\",\"permits_retry_or_policy_change\":false,\"qualified_frames\":[{\"function\":\"_runtime_inventory\",\"last_iteration_module_not_proven_cause\":\"cryptography.__about__\",\"last_iteration_origin_category_not_proven_cause\":\"VENV_OTHER_PACKAGE\",\"line\":366}],\"traceback_truncated\":false},\"error_type\":\"Refused\",\"excluded_modules\":0,\"external_origin_rules_changed\":false,\"kind\":\"CLERK2020_RUNTIME_DIAGNOSTIC_RESULT_V1\",\"manifest\":null,\"model_calls\":0,\"network_requests\":0,\"page_extractions\":0,\"project_overlay\":[\"src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py\",\"src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py\"],\"qualification_or_source_admission\":false,\"reader_attempts\":0,\"runtime_bytes_observed\":null,\"runtime_bytes_reserved\":null,\"site\":{\"function\":\"_runtime_inventory\",\"line\":366,\"predicate\":\"ORIGIN_ALLOWLIST\"},\"source_reads\":0,\"stage\":\"COLLECTOR\",\"status\":\"REJECTION_RECORDED\"}"
+    },
+    {
+      "path": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/OUTCOME.json",
+      "bytes": 700,
+      "sha256": "f3cb2f09411d57c39e5df72da5f81e86303dfe3ed15a57ff085c7fbf7187fe65",
+      "raw_utf8": "{\"ancestor_full_limits_remain_consumed\":true,\"ancestor_metadata_bytes_observed\":3098,\"ancestor_metadata_bytes_reserved\":3104,\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"ancestor_unchanged\":true,\"code_bytes_observed\":116521,\"code_bytes_reserved\":116532,\"cost_usd\":0,\"diagnostic_status\":\"REJECTION_RECORDED\",\"model_calls\":0,\"page_extractions\":0,\"plan_sha256\":\"397f846443d3e2495056b05b9fb24c60a74fdc7b8a3f3b2ebad0d6b9ec05ba46\",\"reader_attempts\":0,\"sampled_child_peak_rss_bytes\":44941312,\"source_reads\":0,\"status\":\"DIAGNOSTIC_RECORDED_NOT_QUALIFICATION_OR_SOURCE_ADMISSION\",\"worker_sha256\":\"6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8\"}"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Verify embedded3canonical metadata records against listed hashes/counts and reviewed code/site map; DO NOT rerun either spent namespace."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "saved_control_records": "3hashes match,2793Btotal",
+    "existing_tests_rerun": false,
+    "actual_collector_site": {
+      "function": "_runtime_inventory",
+      "line": 366,
+      "predicate": "ORIGIN_ALLOWLIST"
+    },
+    "original_cause_reconstructed": false
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "OnlyexactnewSTARTED/worker/OUTCOME copied read-only; no originalprivatecontrolscope, acquiredPDF/source, runtimeartifact, credentials/network/model probes byworker. Safe metadata/code-module context only; no source text or full runtimepaths.",
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "recorded_api_content_model_usd": 0,
+    "development_compute": "UNPRICED"
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Newdiagnostic/currentenvironment evidence, notproofoldlostfailurecause.",
+    "cryptography.__about__ is retainedlast-iterationcontext; no broaddependency/libraryaccuracy/sourceadoption conclusion.",
+    "Null runtime byte observations staynull; no inferredzero/refund/newqualificationcredit.",
+    "Recordedancestryunchanged isparentverificationevidence, not workerreopeningoldprivatescope.",
+    "No actualPDFparse/qualification/M2source/statisticalacceptance follows."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independentnewoutput/site/claimsreview pending",
+    "Boundedstaticdependency evidence and separately reviewed explicit dependencyclosure remedy/freshqualification still needed",
+    "Acquiredsource permissions and originalstatisticalgates remainblocked"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditorreviews publiccopiedmetadata; workerchecksboundedinstalledstaticdependency/sourceevidence withoutimports, thenproposesminimalexplicitpackageclosure support andfreshqualificationlinkedtoallspentancestors. Rootsoleactualentry; no rerun.",
+  "observed": {
+    "newdiagnostic_status": "REJECTION_RECORDED",
+    "predicate": {
+      "function": "_runtime_inventory",
+      "line": 366,
+      "predicate": "ORIGIN_ALLOWLIST"
+    },
+    "last_iteration_context": [
+      {
+        "function": "_runtime_inventory",
+        "last_iteration_module_not_proven_cause": "cryptography.__about__",
+        "last_iteration_origin_category_not_proven_cause": "VENV_OTHER_PACKAGE",
+        "line": 366
+      }
+    ],
+    "collector_passes_attempted": 1,
+    "runtime_bytes_observed": null,
+    "runtime_bytes_reserved": null,
+    "parent": {
+      "ancestor_full_limits_remain_consumed": true,
+      "ancestor_metadata_bytes_observed": 3098,
+      "ancestor_metadata_bytes_reserved": 3104,
+      "ancestor_plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e",
+      "ancestor_unchanged": true,
+      "code_bytes_observed": 116521,
+      "code_bytes_reserved": 116532,
+      "cost_usd": 0,
+      "diagnostic_status": "REJECTION_RECORDED",
+      "model_calls": 0,
+      "page_extractions": 0,
+      "plan_sha256": "397f846443d3e2495056b05b9fb24c60a74fdc7b8a3f3b2ebad0d6b9ec05ba46",
+      "reader_attempts": 0,
+      "sampled_child_peak_rss_bytes": 44941312,
+      "source_reads": 0,
+      "status": "DIAGNOSTIC_RECORDED_NOT_QUALIFICATION_OR_SOURCE_ADMISSION",
+      "worker_sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8"
+    }
+  },
+  "root_execution_attribution": {
+    "reported_HEAD": "0bc90c0",
+    "reported_elapsed_seconds": 0.062,
+    "attribution": "Directrootmessage,notindependentlytimedbyworker"
+  },
+  "reviewed_code_receipt": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_RUNTIME_DIAGNOSTIC_CODE_V1_20261110.json",
+    "sha256": "c60184683765d32e90c54e0d31016aa11674ec5c39c6f018fe6009c0b6867d32",
+    "bytes": 8107
+  },
+  "new_scope_consumed_no_retry": true,
+  "original_scope_full_consumed_bounds_unchanged": true,
+  "no_original_or_new_scope_writes_E02_STATUS_shared_auditor_or_Git_edits": true
+}
