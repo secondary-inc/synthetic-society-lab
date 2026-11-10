@@ -1,0 +1,158 @@
+{
+  "POST_retries": 0,
+  "acceptance": {
+    "actual_stop_audit": "PENDING",
+    "full_E02_contract": "INCOMPLETE"
+  },
+  "billing": {
+    "E01_paid_cap_microusd": 0,
+    "E02_cap_microusd": 1000000,
+    "both_generation_reported_USD": "0.0001441",
+    "conservative_total_exposure_microusd": 5553,
+    "first_generation_accepted_USD": "0.0000715",
+    "new_uncertain_hold_microusd": 1008,
+    "previous_holds_microusd": [
+      340,
+      340,
+      788
+    ],
+    "second_generation_reported_not_accepted_by_v1_USD": "0.0000726",
+    "shared_cap_microusd": 5000000
+  },
+  "credit_purchases": 0,
+  "diagnostic": {
+    "automatic_retry": false,
+    "conservative_charged_microusd": 1008,
+    "dispatch_outcome": "POST_ATTEMPTED",
+    "executor_stage": "STATISTICS_VALIDATION",
+    "model_POST_attempts": 1,
+    "reported_provider_cost_microusd": 73,
+    "reservation_observation": "RECEIPT_ACKNOWLEDGED",
+    "reservation_recorded": true,
+    "reserved_microusd": 1008,
+    "statistics_GET_attempts": 2,
+    "transport": null
+  },
+  "diagnostic_scope_note": "Nested diagnostic counters describe failing phase; batch totals are in dispatch.",
+  "dispatch": {
+    "catalog_GET_attempts": 2,
+    "model_POST_attempts": 2,
+    "statistics_GET_attempts": 4
+  },
+  "kind": "E02_ISSUE_CUE_CROSSMODEL_ACTUAL_STOP_V1",
+  "last_owner_event_at_utc": "2026-11-10T19:18:38.506422+00:00",
+  "ledger": {
+    "consumed": {
+      "dispatches": 58,
+      "module_dispatches": {
+        "E01": 0,
+        "E02": 58
+      },
+      "modules": {
+        "E01": 0,
+        "E02": 5553
+      },
+      "total": 5553
+    },
+    "events": 354,
+    "original_342_event_prefix_unchanged": true,
+    "original_56_rows_unchanged": true,
+    "original_alignment_unchanged": true,
+    "original_continuation_unchanged": true,
+    "original_journals_unchanged": true,
+    "original_study_unchanged": true,
+    "readonly_export_owner_writes": 0,
+    "rows": 58,
+    "unfinished": 4
+  },
+  "limitations": [
+    "Only two baseline responses; no treatment comparisons estimable.",
+    "Raw null tier remains unknown, not evidence of default tier.",
+    "No human or population inference."
+  ],
+  "next_step": "Separately reviewed nullable-tier metadata interpretation and exact saved-baseline admission; new finite continuation only for54unattempted jobs, no automatic rerun or old hold release.",
+  "no_effect_or_human_claim": true,
+  "observations": [
+    {
+      "conservative_row_charge_microusd": 72,
+      "execution_order": 0,
+      "generation_metadata_sha256": "bbe88e3148560bbc0212843a4826d9886448558f87b1c529f48f6ac1c2dda097",
+      "is_byok": false,
+      "native_completion_tokens": 35,
+      "native_prompt_tokens": 575,
+      "native_reasoning_tokens": 0,
+      "old_validator_accepted": false,
+      "provider": "Azure",
+      "reported_cancelled": false,
+      "reported_model": "openai/gpt-4.1-nano-2025-04-14",
+      "reported_service_tier": "default",
+      "reported_streamed": true,
+      "reported_total_cost_USD": "0.0000715",
+      "request_sha256": "9d3813ce53903c0dee0f621ca60d6aa052e1f92fa0479fa53a39a42ee18973ce",
+      "requested_model": "openai/gpt-4.1-nano",
+      "reservation_microusd": 778,
+      "response_and_generation_cost_equal": true,
+      "response_sha256": "e3bc3b91baa1cbf3c0381f8783542355f1bf808663c5ea7ba49aaa0713e6d05d",
+      "row_status": "PHASE_COMMITTED"
+    },
+    {
+      "conservative_row_charge_microusd": 1008,
+      "execution_order": 1,
+      "generation_metadata_sha256": "4c1eb3c6b94f8163374d8960892871c549208be1036703b13df069ef68138824",
+      "is_byok": false,
+      "native_completion_tokens": 38,
+      "native_prompt_tokens": 612,
+      "native_reasoning_tokens": 0,
+      "old_validator_accepted": false,
+      "provider": "Nebius",
+      "reported_cancelled": false,
+      "reported_model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "reported_service_tier": null,
+      "reported_streamed": true,
+      "reported_total_cost_USD": "0.0000726",
+      "request_sha256": "dfd23dca11564bc17250a0727a4983f704f6813dfcaf2e5aae383b39e86cbb8c",
+      "requested_model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "reservation_microusd": 1008,
+      "response_and_generation_cost_equal": true,
+      "response_sha256": "5abde5b2b16bb41d8491e44614d53e0d8b840adc488e0f17b32b801cf54b142a",
+      "row_status": "UNCERTAIN"
+    }
+  ],
+  "offline_reproduced_rejection": "Qwen generation metadata has service_tier null; crossmodel_metadata_v1 requires observed literal default.",
+  "original_frozen_phase_counts": {
+    "ANSWER": 1,
+    "FAILED_UNCERTAIN": 1,
+    "NOT_ATTEMPTED": 54
+  },
+  "planned_jobs": 56,
+  "preexecution_review": {
+    "reports/INDEPENDENT_AUDIT_E02_CROSSMODEL_PRICE_METADATA_COMPONENTS_20261110.json": "d6d738a10ebe7aa5ff5b34c9c44c1d6d37fdcf3a8c10f69e874bcef5e791df76",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_CODE_PARTICULAR_V1_20261110.json": "1f4f626e28370deee07f938d59765b772560473baa1e4e8c81202a7f0b1bb0ae",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_METHODS_PURE_V1_20261110.json": "35330eaeb78e8fcef360e4632b93176be07f81f8bffa2db7c8e1f4a38034ebdf"
+  },
+  "private_evidence_sha256": {
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/build_stop_receipt.py": "08098ab54e87309d4bfe83ba20aa036214efc10e74c21451fb8c83c05ca44093",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/collect_closed_evidence.py": "d66972f168db92da3768b7b4af1a7747a03d166bdd2a9c7552d960244439825a",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/execution-intent.local.json": "40f6a0879dc913384ea711717d1aff4673778e663a6a84f5c95758d1d236e7f3",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/execution-summary.local.json": "3ce01d10471a10e746f1702b848d83009613a4ccc7310b4ccc846e3571c4340d",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/packet.local.json": "b231744120371337b39b5ea197d27cbc29f5185e56f95e1125d60ca4f159a7a3",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/post-run-owner-export.local.json": "92e444dde4ce61f985f90441d56214f780eab4aee5df053a6bd17ef8b7fdef2c",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/retained-journal-index.local.json": "e2a5849c54d0bd22a4b55c35d77abccbfed1614bce3016f1b351ef3b7499f8ca",
+    "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/retained-journal/failure.json": "76ba4f8ae327284b43d2ae590ad1089fb37073f04ecc8fe628019a49df5b96e9"
+  },
+  "recorded_at_utc": "2026-11-10T19:21:07.184219+00:00",
+  "release_commit": "e1a36d9760c1244a79f5ae19561fcb9e2ec77425",
+  "retained_complete_model_responses": 2,
+  "retention": {
+    "journal_bytes": 83952,
+    "journal_files": 23,
+    "private_raw_git_ignored": true
+  },
+  "run_id": "e02-issue-cue-crossmodel-live-20261110-01",
+  "same_questionnaire_scoring_preserved": true,
+  "scientific_status": "NOT_ESTIMABLE",
+  "source_commit": "e958e132438ce4cfb82a3b0b448286e2d02f95b1",
+  "started_at_utc": "2026-11-10T19:17:45.275479+00:00",
+  "status": "STOPPED_PENDING_INDEPENDENT_ACTUAL_AUDIT",
+  "unattempted_jobs": 54
+}
