@@ -1,0 +1,86 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E01_GUARD_QUALIFICATION_ACTUAL_STOP_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_RETAINED_STOP_METADATA_AND_TRUSTED_BREADCRUMBS",
+  "qualification_status": "BLOCKED_IMPORT_GUARD_NOT_QUALIFIED",
+  "scope": "Exactly root-authorized safe START/OUTCOME/partial records. No actual runtime/native/library/source/PDF/owner access or rerun. Public workerhandoff may separately copy these exactbytes.",
+  "records": {
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/STARTED.json": {
+      "bytes": 894,
+      "sha256": "6da9d2b8b708078b49c7a90544213a2d7f741fa282991d85bd23a3a555324103"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/OUTCOME.json": {
+      "bytes": 868,
+      "sha256": "512772036b7b8caf1c45c9e1999daea3dac53e10d0037e9067d88787e2979d4f"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/partial_stdout.local.bin": {
+      "bytes": 662,
+      "sha256": "cc58809f9f6de2ef85836482356f02a1a2632594198e8ecf6b87f95c9294c9c1"
+    }
+  },
+  "packet_sha256": "8b043c683daeab52e82ec71de4f19d7cad249c0d30a8881066183f1550549f69",
+  "profile_sha256": "ae2090c1489362815edc27cf9ce0ffffff71c28421a466f50d16fefe8577dba9",
+  "root_reported_execution_commit": "aeebd7d",
+  "root_reported_wall_seconds": 0.369,
+  "timing_execution_attribution": "Root-reported, not independently timed or observed invocation.",
+  "observations": {
+    "parent_disposition": "GUARD_QUALIFICATION_UNKNOWN_STOP_NO_RETRY",
+    "full_new_limits_consumed_unchanged": true,
+    "ancestor_limits_not_reduced": true,
+    "credit_restored": 0,
+    "worker_stage": "GUARDED_GENERATED_FIXTURES",
+    "first_guard": {
+      "event": "import"
+    },
+    "inventory_first_exception": {
+      "frames": [
+        {
+          "function": "inspect_snapshot",
+          "line": 114
+        },
+        {
+          "function": "parse_guard",
+          "line": 47
+        }
+      ],
+      "page": 1,
+      "stage": "PAGE_EXTRACTION",
+      "traceback_truncated": false,
+      "type": "QualificationStopped"
+    },
+    "worker_exception": {
+      "frames": [
+        {
+          "function": "_worker",
+          "line": 431
+        },
+        {
+          "function": "generated_checks",
+          "line": 248
+        }
+      ],
+      "traceback_truncated": false,
+      "type": "InventoryRefused"
+    },
+    "generated_progress": {
+      "negative_failure_stages": [],
+      "reader_attempts_entered": 1,
+      "text_marker_pages_checked": 0
+    },
+    "runtime_manifest_retained": false
+  },
+  "interpretation": [
+    "Preciseguard category import was recorded while attempting firstreader/page1 text extraction; markercheckscompleted0, nonegativecontrolscompleted. It is not119-page or source qualification.",
+    "Boundedtrusted codeframes identify inspect_snapshot114/parse_guard47 and outer _worker431/generated_checks248 against the separately reviewed frozen c37d/347530 sourcebytes. No importidentifier/path/arguments/message/locals were retained. Exact new module remains unknown.",
+    "The strictguard deliberately refused the import; this is different from proof that fontmetricspreload was absent or a particular othermodule was requested. The staticfontpath remedy is not a reconstructedactualcause.",
+    "Parentreader_attempts_observed remainsnull; partialprogress records1entry into generated readerwrapper, not completepage extraction. All4reader/119page resourceceilings fullyconsumed and notrefunded.",
+    "No successful runtime manifest was retained or independentlyaccepted. Source-orderstageprogress doesnot supply a runtime/source/M2grant."
+  ],
+  "prior_exact_code_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_QUALIFICATION_CODE_PROFILE_V1_20261110.json",
+    "sha256": "4d7471f8a2537556b40b2f333a84331f4237ae1b64c75b45ffc2d6065719ac89"
+  },
+  "next_gate": "Root requested separatelybounded generatedwarmup-beforehash successor with explicit allowedruntimeorigins/no-source/no-network control, fixedadditionalwarmupcount/resources, unchanged strict4reader119checks and all4pastscopes/fullbounds/12ancestorrecords preserved. Concrete design/code/authoredtests/exactpacket stillrequiresindependentreview. No actualwarmup execution byworker/auditor.",
+  "auditor_actual_native_library_runtime_source_key_network_model_access": 0,
+  "auditor_cost_USD": 0
+}

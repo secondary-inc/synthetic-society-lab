@@ -1,0 +1,152 @@
+{
+  "TASK_ID": "E02_CROSSMODEL_RECOVERY_V1",
+  "status": "WORKER_TESTED_CANDIDATE_PENDING_INDEPENDENT_FINAL_ACCEPTANCE",
+  "FILES_CHANGED": [
+    "docs/E02_CROSSMODEL_RECOVERY_V1.md",
+    "src/civiclab/e02/crossmodel_recovery_metadata_v1.py",
+    "src/civiclab/e02/crossmodel_saved_pair_v1.py",
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py",
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_client_v1.py",
+    "scripts/run_issue_cue_crossmodel_recovery_once.py",
+    "tests/test_crossmodel_recovery_metadata_v1.py",
+    "tests/test_issue_cue_crossmodel_recovery_caller_v1.py",
+    "tests/test_issue_cue_crossmodel_recovery_execution_v1.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "docs/E02_CROSSMODEL_RECOVERY_V1.md": {
+      "sha256": "8969e6942a5970b67cd09ef8cc04556eff36af30b999881765d7862ebd257c6e",
+      "bytes": 9326
+    },
+    "src/civiclab/e02/crossmodel_recovery_metadata_v1.py": {
+      "sha256": "e2c39d06702a466166a79fce538292eb373d78893bdbb8effaa20e1f5238956e",
+      "bytes": 8041
+    },
+    "src/civiclab/e02/crossmodel_saved_pair_v1.py": {
+      "sha256": "b96780ecb522e95115d384d36069aaa2f42e8188142cdca4b7585ef6b0e3395a",
+      "bytes": 7817
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py": {
+      "sha256": "6093e5e5b190f0a3ff7569ba52b5ff66c14b38fc66e569e3013986d4382d112d",
+      "bytes": 29544
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_client_v1.py": {
+      "sha256": "aa817253dc9d9a098ed545cebc236d84279eb16ae45806fddf50593d12e60e45",
+      "bytes": 19964
+    },
+    "scripts/run_issue_cue_crossmodel_recovery_once.py": {
+      "sha256": "da5fcb398d4b3419bd01533a1791528c5bd46b11e2b224da17675845fb2155d9",
+      "bytes": 4019
+    },
+    "tests/test_crossmodel_recovery_metadata_v1.py": {
+      "sha256": "63af5f737ec24d7a9e12b37b8d06cafe98302b008a26762654029d5cff3013f8",
+      "bytes": 4914
+    },
+    "tests/test_issue_cue_crossmodel_recovery_caller_v1.py": {
+      "sha256": "1e5bdf33086958a297cc6fe998eaf786d60bac97efa0aad25f6a1b4463ad9aa2",
+      "bytes": 3976
+    },
+    "tests/test_issue_cue_crossmodel_recovery_execution_v1.py": {
+      "sha256": "fcbfdc0b8f2a060ed9584f66a59dc9c61141ae1bd4f6a86b857640fb01559226",
+      "bytes": 13575
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest test_crossmodel_recovery_metadata_v1 test_issue_cue_crossmodel_recovery_caller_v1 -q",
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest test_issue_cue_crossmodel_recovery_execution_v1 -q",
+    "Repeat each using data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "fast_python312": {
+      "tests": 10,
+      "status": "PASS",
+      "seconds": 0.172
+    },
+    "fast_python311": {
+      "tests": 10,
+      "status": "PASS",
+      "seconds": 0.088
+    },
+    "full_python312": {
+      "status": "PASS",
+      "tests": 3,
+      "seconds": 927.309,
+      "executor": "E02 implementation worker, not independent auditor",
+      "log": "data/processed/e02_crossmodel_recovery_candidates/final_disjoint_ids_20261110/worker_full_312.log",
+      "log_sha256": "b81d474636d76f53f3e82bfd1b2ba271608dfd8d6eb56ba466f507ffcb2673c1"
+    },
+    "full_python311": {
+      "status": "PASS",
+      "tests": 3,
+      "seconds": 903.651,
+      "executor": "E02 implementation worker, not independent auditor",
+      "log": "data/processed/e02_crossmodel_recovery_candidates/final_disjoint_ids_20261110/worker_full_311.log",
+      "log_sha256": "4bb29baee5ebf68684fcddd6d2556bfc55ef64292d29d8fb813bc63279f5b94c"
+    },
+    "closed_copy_pure_validation": {
+      "status": "VALIDATED_OFFLINE",
+      "witnesses": 2,
+      "new_POSTs": 0,
+      "new_GETs": 0,
+      "financial_transitions": 0
+    },
+    "full_assertions_verified": [
+      "Two saved baseline witnesses admitted with no POST/GET/financial transition.",
+      "Exactly54newPOSTs/56billingGETs in delayed-success mock;8catalogGETs at initial and16/30/44.",
+      "All56scientific dispositions exported asMOCK;54newgenerationIDs unique and disjoint from old rows.",
+      "112lifetime rows/dispatches;4historical unfinished holds;all58oldrows/eventprefix/study/continuation/alignment/oldcrossmodel namespaces unchanged.",
+      "Original stopped-study1080microUSD exposure retained and original100000microUSD cap respected; renewed start and foreign old-row transition refused.",
+      "Failure path1newPOST/3x404GETs stops;newfullreservation retained,unfinished5;oldstate preserved and nextdispatchblocked."
+    ],
+    "raw_fixture_retention_limitation": "Full unittest temporary accounts/journals/control stores auto-clean at context exit. No retained full raw-control export is claimed. Durable worker logs, exact source/test snapshots and assertions are retained; independent auditor has separately scoped copied-prefix/pure-fold evidence."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored test inputs only; one authorized closed-copy saved-pair validation. Cached official OpenRouter schema hash33c53c85504e0f3a314d834a179c731597493d24ad68d4f0ba0193824184012e independently verified with string|null and upstream-not-reported wording. No publisher/respondent data imported.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "network_calls_by_worker": 0,
+  "real_credential_or_live_owner_access": false,
+  "RISKS_AND_LIMITATIONS": [
+    "Present null tier remains UNKNOWN, not default or zero; absent/nondefault tiers refused.",
+    "Two saved baselines predate continuation: cross-batch serving/time gap retained.",
+    "Original study cap100000 includes1080 old charged/held; new remaining allowance98920. E021/shared5/E01zero unchanged.",
+    "54newPOST/162newbillingGET;8newcatalogGET at initial and fixed global16/30/44; aggregate old+new catalog10, explicit finite recovery exception.",
+    "Saved old Qwen1008hold and all4unfinished remain immutable; no old GET/POST, reconciliation or success relabel.",
+    "No human effects, external validity or model-family causal claim."
+  ],
+  "preserved_initial_candidate": {
+    "path": "data/processed/e02_crossmodel_recovery_candidates/initial_four_catalog_20261110",
+    "reason": "Four-catalog development candidate interrupted during authored setup before edits after lead required fixed8-observation schedule for real timing headroom. Source/docs/tests/hash manifest and interrupted traceback preserved."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent final exact recovery code/mock and packet acceptance.",
+    "Lead-only finite actual execution and separate actual-result audit."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead forwards exact handoff/log/source hashes to independent auditor for final code/particular review, then handles finite current window and actual execution. No worker execution or permission request.",
+  "preserved_failed_full_candidate": {
+    "path": "data/processed/e02_crossmodel_recovery_candidates/failed_duplicate_generation_mock_20261110",
+    "python312": {
+      "tests": 2,
+      "seconds": 411.249,
+      "errors": 1,
+      "failures": 1
+    },
+    "python311": {
+      "tests": 2,
+      "seconds": 407.297,
+      "errors": 1,
+      "failures": 1
+    },
+    "cause": "Authored RecoveryTransport reused saved generation IDs because its per-transport counter restarted at1; frozen owner correctly refuses generation already consumed owner-wide before billing GET. Harness-only correction gives recovery its own ID namespace and lookup mapping; no production source, packet or financial guard changed.",
+    "correction_checks": "Fast disjoint-ID/lookup regression passes both runtimes; full lifecycle now also asserts all54new generation IDs unique and disjoint from old rows."
+  },
+  "preserved_original_pins_verified": {
+    "configs/e02_issue_cue_crossmodel_v1.json": "ccedb7aa9989fd0e1e96cb8c0e132e154c4383cf63210a599bc51ab683ace1e8",
+    "src/civiclab/e02/issue_cue_crossmodel_v1.py": "041a423c37951e32352bd57582cfb6ba65133a536c19ff7de7119588c56892a2",
+    "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": "0322944250e3236c7a08a9b0e15780f0a9247ee29d22ee15762595ab41a9c84b",
+    "src/civiclab/e02/issue_cue_crossmodel_client_v1.py": "6f3d19eaadc777cde6fbd3d69f0db699f8f92690a72c6a56ef200f8f7b387543",
+    "scripts/run_issue_cue_crossmodel_once.py": "d0101e94489cc7a69c5ee3059b3194c4b5f8b256eb0b244cc82c93804a9613a6"
+  },
+  "independent_review_attribution": {
+    "source": "auditor messages; independent findings remain auditor-owned",
+    "checks": "10fast tests,156metadata mutations,exact copied START/GRANT/corruption/foreign-row probes,pure54-slot owner fold; full unittest execution above belongs toworker.",
+    "final_code_packet_receipt": "PENDING"
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_CODE_PARTICULAR_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_EXACT_RECOVERY_METHODS_CODE_AND_PARTICULAR_NOT_ACTUAL_RESULTS",
+  "review_scope": "Separately versioned null-tier metadata policy, pure exact saved-pair admission, fixed same-owner54-call continuation, single-use caller and exact new packet. No actual run certification.",
+  "files_reviewed": {
+    "docs/E02_CROSSMODEL_RECOVERY_V1.md": {
+      "sha256": "8969e6942a5970b67cd09ef8cc04556eff36af30b999881765d7862ebd257c6e",
+      "bytes": 9326
+    },
+    "src/civiclab/e02/crossmodel_recovery_metadata_v1.py": {
+      "sha256": "e2c39d06702a466166a79fce538292eb373d78893bdbb8effaa20e1f5238956e",
+      "bytes": 8041
+    },
+    "src/civiclab/e02/crossmodel_saved_pair_v1.py": {
+      "sha256": "b96780ecb522e95115d384d36069aaa2f42e8188142cdca4b7585ef6b0e3395a",
+      "bytes": 7817
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py": {
+      "sha256": "6093e5e5b190f0a3ff7569ba52b5ff66c14b38fc66e569e3013986d4382d112d",
+      "bytes": 29544
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_client_v1.py": {
+      "sha256": "aa817253dc9d9a098ed545cebc236d84279eb16ae45806fddf50593d12e60e45",
+      "bytes": 19964
+    },
+    "scripts/run_issue_cue_crossmodel_recovery_once.py": {
+      "sha256": "da5fcb398d4b3419bd01533a1791528c5bd46b11e2b224da17675845fb2155d9",
+      "bytes": 4019
+    },
+    "tests/test_crossmodel_recovery_metadata_v1.py": {
+      "sha256": "63af5f737ec24d7a9e12b37b8d06cafe98302b008a26762654029d5cff3013f8",
+      "bytes": 4914
+    },
+    "tests/test_issue_cue_crossmodel_recovery_caller_v1.py": {
+      "sha256": "1e5bdf33086958a297cc6fe998eaf786d60bac97efa0aad25f6a1b4463ad9aa2",
+      "bytes": 3976
+    },
+    "tests/test_issue_cue_crossmodel_recovery_execution_v1.py": {
+      "sha256": "fcbfdc0b8f2a060ed9584f66a59dc9c61141ae1bd4f6a86b857640fb01559226",
+      "bytes": 13575
+    }
+  },
+  "independent_tests": {
+    "python312_fast": {
+      "tests": 9,
+      "seconds": 0.084,
+      "status": "PASS"
+    },
+    "python311_fast": {
+      "tests": 9,
+      "seconds": 0.079,
+      "status": "PASS"
+    },
+    "additional_authored_metadata_refusals": {
+      "cases": 156,
+      "status": "PASS",
+      "cases_scope": "Missing/null/container mutations for10 mandatory fields acrossbothroles;8nonzero/malformedtypes for6activitycounters acrossbothroles"
+    },
+    "copied354_event_replay_and_authored_START": {
+      "status": "PASS_EXACT_RECOVERY_CANDIDATE_COPIED354_EVENT_START_AND_ADVERSE_PROBES",
+      "packet_sha256": "91f3ace244f5cb95e480213a2c2a68ea9f211e9c4dc27608c3451387edef6f41",
+      "code_contract_hash": "8cc63adfb937cd572c00971fa0623200ff718096964f484293df5a2106edd8a2",
+      "lease": [
+        "2026-11-10T19:27:32.293118+00:00",
+        "2026-11-10T21:27:32.293118+00:00"
+      ],
+      "predecessor_events": 354,
+      "predecessor_rows": 58,
+      "conservative_microusd": 5553,
+      "unchanged_historical_holds": 4,
+      "saved_witnesses": 2,
+      "first_unattempted_slot": 2,
+      "adverse_probes_passed": [
+        "rehashed saved generation corruption",
+        "missing historical statistics claim",
+        "premature refresh at slot2",
+        "foreign old financial transition"
+      ],
+      "all_prior_financial_namespaces_unchanged_by_START": true,
+      "proof_scope": "AUTHORED proof timestamps over unchanged catalog identities for pure START only; no new observed catalog, fresh actual observations still required",
+      "actual_owner_key_network_model_access": 0,
+      "spend_USD": 0,
+      "genesis_external_registration": "NOT_REREAD_PRIOR_ACCEPTANCE"
+    },
+    "corrected_disjoint_generation_fast_suite": {
+      "python312": {
+        "tests": 10,
+        "seconds": 0.105,
+        "status": "PASS"
+      },
+      "python311": {
+        "tests": 10,
+        "seconds": 0.106,
+        "status": "PASS"
+      }
+    },
+    "pure_all54_owner_lifecycle": {
+      "status": "PASS_INDEPENDENT_PURE54_SLOT_OWNER_EVENT_LIFECYCLE",
+      "scope": "In-memory _apply only on exact closed354-event prefix; allnewresponses/stats/checkpoint hashes/proof clocks explicitly AUTHORED, not provider outputs/journals/client dispatch. No actualstore or filetransactions.",
+      "slots": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "scheduled_refreshes": [
+        16,
+        30,
+        44
+      ],
+      "final_rows": 112,
+      "lifetime_dispatches": 112,
+      "historical_unfinished": 4,
+      "simulated_consumed_microusd": 5607,
+      "all58historical_rows_and_namespaces_unchanged": true,
+      "original_study1080_exposure_preserved": true,
+      "restart_refused": true,
+      "actual_calls_cost": 0,
+      "not_certified": "FullHTTP/client/journal/capability integration still requires mocked lifecycle tests."
+    },
+    "duplicate_generation_probe": {
+      "status": "PASS",
+      "refusal": "ValueError: generation already consumed owner-wide",
+      "rows_unchanged": true,
+      "scope": "Pure copiedstate, authored newreservation/transition; no actualowner/journal/network"
+    }
+  },
+  "methods_review": {
+    "status": "PASS_CONDITIONAL_EXACT_COMPONENT_AND_MATCHED_SCIENCE",
+    "null_tier": "Only present null for exact Qwen/Nebius admitted as UNKNOWN, never literaldefault, observedzero or feeidentity. Azure remains literaldefault; absent/nondefault tiers refused. Cachedprimaryschema33c53c supports upstreamnotreported meaning; fresh schema GET403 not repaired or retried.",
+    "saved_pair": "Full exact canonical retained request/response/statistics/dispatch bodies+hashes/rowclaims and generation/cost/output binding, frozen protocol compiler and original terms. Zero repeated baselinePOST/GET or settlement. OldAcommit72/oldBfull1008hold stay.",
+    "same_science": "Frozen configccedb7/engine041a42; primary withinrole and commoncomplete crossrole contrast methods accepted separately35330e. No sample/cue/scoring/seed/provider/model/outputbound retuning. Crossbatchtime/serving limitation mandatory.",
+    "caps": "54newPOST,162newbillingGET(404-only3pergeneration),8newcatalog atstart/global16/30/44. Preserve4oldbillingGET and2oldcatalogGET: cumulative166billing\u2264168original and10catalog explicitfiniteexception. Originalstudy100000\u00b5 minus1080oldexposure=98920new; at54*1785 physicalmaximum96390 tighter. Global112/shared5/E021/E01zero unchanged.",
+    "timing": "120sphase,900spriceage/fullphaseadmission780s,2hlease. Orderedoneusefixedrefreshstages, no rollback/extraadaptivecatalogrefresh. STOP retainsfullholds.",
+    "applicability_dependency": "Metadata helper alone validates two-message list length, not text content/max_pricevalues. Accepted integrated caller/owner/saved-pair compile and bind exact unchanged two-text-message payload/price terms. No standalone arbitrary-message applicability accepted."
+  },
+  "exact_packet": {
+    "sha256": "91f3ace244f5cb95e480213a2c2a68ea9f211e9c4dc27608c3451387edef6f41",
+    "code_contract_hash": "8cc63adfb937cd572c00971fa0623200ff718096964f484293df5a2106edd8a2",
+    "lease_utc": [
+      "2026-11-10T19:27:32.293118+00:00",
+      "2026-11-10T21:27:32.293118+00:00"
+    ],
+    "closed_predecessor_export_sha256": "92e444dde4ce61f985f90441d56214f780eab4aee5df053a6bd17ef8b7fdef2c",
+    "fresh_runtime_catalog_requirement": "NOT_RUN_BY_AUDITOR; required at actualstart and fixedbarriers",
+    "particular_scope": "Exactcandidate91f3/contract8cc63/callerda5fcb read-only checked, copied354history replayed to58rows/5553\u00b5/4holds and STARTadmittedtwo savedwitnesses without financialchange. Independentroot actualhead/intent/codepins/freshcatalog checks still required atsoleexecution.",
+    "caller_sha256": "da5fcb398d4b3419bd01533a1791528c5bd46b11e2b224da17675845fb2155d9"
+  },
+  "preserved_failed_evidence": [
+    "Original null-tier stoppedrun remains failed and NOT_ESTIMABLE",
+    "Initial four-catalog candidate preserved byworker, no execution authority",
+    "Auditor first pureproof harness correctly rejected historicalstale timestamps; preserved/tmp/civiclab-independent-recovery-particular-staleproof-20261110.py; successor uses explicitly AUTHORED proof timestamps solely for offlineSTART, not new observations.",
+    "Both initialfullmockruns failed because new fake transport reused oldfakegenerationIDs; 3.12 2tests411.249s and3.11 2tests407.297s,1error/1failureeach. Financialowner correctlyrefused beforebillingGET. Source/docs/logs preserved byworker; onlymockIDnamespace+lookupmapping/regression changed. Production source and91f3/8cc63 packetbinding unchanged."
+  ],
+  "not_certified": [
+    "Actual network compatibility/remaining54-runcompletion",
+    "Scientific crossmodel effect or external/humanvalidity",
+    "Source/wheel/hostcompleteattestation",
+    "New financial settlement of anyhistoricalhold",
+    "Prospective E01 forecast or externalpublication",
+    "Full workerMOCK raw owner/journal retention; fixtures clean them, only exactterminal logs/test assertions reviewed."
+  ],
+  "auditor_actual_owner_key_network_model_access": 0,
+  "auditor_API_cost_USD": 0,
+  "full_mock_evidence_attribution": "Fullclient/disk/journal integration suites were executed byworker; auditor independently reviewed terminal logbytes/testcode/currentfilehashes and ran own10fast/adverse/copiedSTART/pure54owner checks. No auditor duplicate fullsuite execution. TemporaryMOCKowner/journals cleaned byfixturecontext, not retained fullMOCKraws. Actualoldclosed354event export was independently replayed.",
+  "candidate_handoff_at_review": {
+    "path": "reports/E02_CROSSMODEL_RECOVERY_V1_HANDOFF_20261110.json",
+    "sha256": "dce848017f710c8ae09c73f0a1b65e2a71745d0f7506f4850278c8d11be57540",
+    "scope": "File refs reviewed and exact currentbytes verified. Fulltest terminal logs below independently read even if handoff status update follows."
+  },
+  "worker_full_mock_checks": {
+    "python312": {
+      "status": "PASS",
+      "tests": 3,
+      "seconds": 927.309,
+      "log_path": "/tmp/e02_recovery_disjoint_ids_312.log",
+      "bytes": 99,
+      "sha256": "b81d474636d76f53f3e82bfd1b2ba271608dfd8d6eb56ba466f507ffcb2673c1",
+      "scope": "Disjointgeneration harness regression; full54newPOST/56mockbillingGET/8catalog/56scientificdispositions; separate1POST/3GETexhaustion with fullhold and nofollowingdispatch. Mockonly."
+    },
+    "python311": {
+      "status": "PASS",
+      "tests": 3,
+      "seconds": 903.651,
+      "log_path": "/tmp/e02_recovery_disjoint_ids_311.log",
+      "bytes": 99,
+      "sha256": "4bb29baee5ebf68684fcddd6d2556bfc55ef64292d29d8fb813bc63279f5b94c",
+      "scope": "Disjointgeneration harness regression; full54newPOST/56mockbillingGET/8catalog/56scientificdispositions; separate1POST/3GETexhaustion with fullhold and nofollowingdispatch. Mockonly."
+    }
+  },
+  "acceptance_criteria": {
+    "conditional_nullable_metadata_and_frozen_matched_science": "PASS scoped methods above",
+    "exact_saved_pair_admission_and_corruption_guards": "PASS independentcopiedSTART/probes+workerfullmocks",
+    "financial_caps_ancestry_holds_refresh_stop": "PASS independentpure54owner+workerfulljournal tests",
+    "single_use_caller_and_credential_lifetime": "PASS independentfastguards authoredcredentials only",
+    "exact_packet_code_and_protocol_binding": "PASS currentcandidateonly; freshactualcatalog/head guard stillenforced",
+    "actual_remaining54_execution_and_results": "NOT_RUN_BY_AUDITOR; separatelyaudited closedoutputs required",
+    "full_original_E02_research_contract": "NOT_COMPLETE"
+  },
+  "independent_test_evidence_paths": [
+    "/tmp/civiclab-independent-recovery-particular-20261110.py",
+    "/tmp/civiclab-independent-recovery-particular-20261110.json",
+    "/tmp/civiclab-independent-recovery-owner54-20261110.py",
+    "/tmp/civiclab-independent-recovery-owner54-20261110.json"
+  ]
+}
