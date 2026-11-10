@@ -1,0 +1,66 @@
+{
+  "actual_dispatch": "NOT_YET_INVOKED_AT_THIS_RECORD",
+  "bounds": {
+    "E01_microusd": 0,
+    "GET_retry_statuses": [
+      404
+    ],
+    "GET_waits_seconds": [
+      10,
+      10,
+      20
+    ],
+    "GETs_per_generation": 3,
+    "POST_retries": 0,
+    "authority_seconds": 7200,
+    "catalog_GETs": 8,
+    "catalog_refresh_before_slots": [
+      16,
+      30,
+      44
+    ],
+    "concurrency": 1,
+    "cumulative_E02_microusd": 1000000,
+    "input_tokens": 8192,
+    "journal_artifacts": 768,
+    "lifetime_dispatches": 112,
+    "new_batch_microusd": 98920,
+    "new_model_POSTs": 54,
+    "new_statistics_GETs": 162,
+    "original_study_exposure_microusd": 1080,
+    "original_study_subceiling_microusd": 100000,
+    "output_tokens": 256,
+    "per_call_microusd": 1785,
+    "phase_seconds": 120,
+    "price_age_seconds": 900,
+    "shared_microusd": 5000000
+  },
+  "caller_sha256": "da5fcb398d4b3419bd01533a1791528c5bd46b11e2b224da17675845fb2155d9",
+  "closed_predecessor_export_sha256": "92e444dde4ce61f985f90441d56214f780eab4aee5df053a6bd17ef8b7fdef2c",
+  "code_contract_sha256": "8cc63adfb937cd572c00971fa0623200ff718096964f484293df5a2106edd8a2",
+  "cross_batch_limitation": "Two baseline responses predate continuation; retain temporal and serving gap.",
+  "full_envelope_new_quote_microusd": 81027,
+  "historical_Qwen_hold_released": false,
+  "independent_audit": {
+    "reports/INDEPENDENT_AUDIT_E02_CROSSMODEL_PRICE_METADATA_COMPONENTS_20261110.json": "d6d738a10ebe7aa5ff5b34c9c44c1d6d37fdcf3a8c10f69e874bcef5e791df76",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_METHODS_PURE_V1_20261110.json": "35330eaeb78e8fcef360e4632b93176be07f81f8bffa2db7c8e1f4a38034ebdf",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_CODE_PARTICULAR_V1_20261110.json": "0e6daa14cce6544f97c4cad19f509620f1b2aae2f6c25910f027236328923fdc"
+  },
+  "kind": "E02_ISSUE_CUE_CROSSMODEL_RECOVERY_RELEASE_V1",
+  "maximum_owner_exposure_at_full_quote_microusd": 86580,
+  "null_tier_interpretation": "Reported null remains UNKNOWN, not default or zero.",
+  "original_study_exposure_microusd": 1080,
+  "outcomes": "NOT_YET_OBSERVED",
+  "packet_sha256": "91f3ace244f5cb95e480213a2c2a68ea9f211e9c4dc27608c3451387edef6f41",
+  "prior_owner_exposure_microusd": 5553,
+  "recorded_at_utc": "2026-11-10T19:52:33.726847+00:00",
+  "run_id": "e02-issue-cue-crossmodel-recovery-live-20261110-01",
+  "saved_baselines_reused": 2,
+  "saved_pair_sha256": "15f7dcd7708610fe46f714f252035ec51e330847c4bb293ec9a52988a8c94124",
+  "scope": "Same frozen support-only cue experiment, two fixed model/provider configurations, four fictional contexts, one authored issue; only global slots2\u201355 are eligible for new dispatch.",
+  "source_commit": "80ee535b1aab3b1ba292ee929d8dac51d4c20cc1",
+  "standing_authority": "Owner-directed bounded recovery; unchanged cumulative shared $5, E02 $1, E01 paid $0. Existing $0.10 study subceiling includes stopped-attempt charges and holds.",
+  "status": "EXACT_REVIEWED_ONE_SHOT_RELEASE_NOT_ACTUAL_RESULT",
+  "valid_from_utc": "2026-11-10T19:27:32.293118+00:00",
+  "valid_until_utc": "2026-11-10T21:27:32.293118+00:00"
+}
