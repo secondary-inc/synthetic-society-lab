@@ -1,0 +1,139 @@
+{
+  "status": "STATIC_FOLLOWUP_ONLY_NO_IMPORT_BINARY_OR_PDF_EXECUTION",
+  "full_static_read": {
+    "kind": "BOUNDED_EAGER_OPTIONAL_IMAGE_IMPORT_STATIC_EVIDENCE",
+    "files": 3,
+    "read_bytes_cap": 65536,
+    "read_bytes_observed": 12436,
+    "records": [
+      {
+        "path": ".venv/lib/python3.12/site-packages/pypdf/__init__.py",
+        "bytes": 1283,
+        "sha256": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c",
+        "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-eager-image-01/0-__init__.py.static.local",
+        "selected_static_lines": [
+          "13: from ._page import PageObject, Transformation",
+          "16: from ._version import __version__",
+          "25:     pil_version = PIL.__version__",
+          "30:     f\"pypdf=={__version__}, {crypt_provider=}, PIL={pil_version}\"",
+          "44:     \"__version__\","
+        ]
+      },
+      {
+        "path": ".venv/lib/python3.12/site-packages/PIL/__init__.py",
+        "bytes": 2035,
+        "sha256": "7361b6ad3878589affe5956e4a4da24d71398b0891fd3a8c15e9362217b4ca01",
+        "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-eager-image-01/1-__init__.py.static.local",
+        "selected_static_lines": [
+          "11: Use PIL.__version__ for this Pillow version.",
+          "22: # Use __version__ instead.",
+          "23: __version__ = _version.__version__"
+        ]
+      },
+      {
+        "path": ".venv/lib/python3.12/site-packages/pillow-13.0.0.dist-info/METADATA",
+        "bytes": 9118,
+        "sha256": "dba7fdfe24e302f46bae562f55d66cc367c0618abae9894a1ebec93dc8f0e511",
+        "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-eager-image-01/2-METADATA.static.local",
+        "selected_static_lines": [
+          "2: Name: pillow",
+          "3: Version: 13.0.0",
+          "35: Requires-Dist: furo; extra == \"docs\"",
+          "36: Requires-Dist: olefile; extra == \"docs\"",
+          "37: Requires-Dist: sphinx>=8.2; extra == \"docs\"",
+          "38: Requires-Dist: sphinx-autobuild; extra == \"docs\"",
+          "39: Requires-Dist: sphinx-copybutton; extra == \"docs\"",
+          "40: Requires-Dist: sphinx-inline-tabs; extra == \"docs\"",
+          "41: Requires-Dist: sphinxext-opengraph; extra == \"docs\"",
+          "43: Requires-Dist: olefile; extra == \"fpx\"",
+          "45: Requires-Dist: olefile; extra == \"mic\"",
+          "47: Requires-Dist: arro3-compute; extra == \"test-arrow\"",
+          "48: Requires-Dist: arro3-core; extra == \"test-arrow\"",
+          "49: Requires-Dist: nanoarrow; extra == \"test-arrow\"",
+          "50: Requires-Dist: pyarrow; extra == \"test-arrow\"",
+          "52: Requires-Dist: coverage>=7.4.2; extra == \"tests\"",
+          "53: Requires-Dist: defusedxml; extra == \"tests\"",
+          "54: Requires-Dist: markdown2; extra == \"tests\"",
+          "55: Requires-Dist: olefile; extra == \"tests\"",
+          "56: Requires-Dist: packaging; extra == \"tests\"",
+          "57: Requires-Dist: psutil; (sys_platform == \"linux\" or sys_platform == \"darwin\") and extra == \"tests\"",
+          "58: Requires-Dist: pytest; extra == \"tests\"",
+          "59: Requires-Dist: pytest-cov; extra == \"tests\"",
+          "60: Requires-Dist: pytest-timeout; extra == \"tests\"",
+          "61: Requires-Dist: pytest-xdist; extra == \"tests\"",
+          "62: Requires-Dist: setuptools; extra == \"tests\"",
+          "63: Requires-Dist: trove-classifiers>=2024.10.12; extra == \"tests\"",
+          "65: Requires-Dist: defusedxml; extra == \"xmp\""
+        ]
+      }
+    ],
+    "installed_prefix_failed_attempt_preserved": "data/processed/e01_clerk2020_dependency_evidence/20261110-import-prefixes-01/stopped_manifest.local.json",
+    "no_imports_or_binary_reads": true
+  },
+  "partial_prefix_read": {
+    "kind": "BOUNDED_STATIC_PREFIX_ATTEMPT_STOPPED_THIRD_KNOWN_PATH_ABSENT",
+    "completed_prefixes": 2,
+    "installed_bytes_read": 32768,
+    "attempted_files": 3,
+    "missing_path": ".venv/lib/python3.12/site-packages/pypdf/_xobj_image_helpers.py",
+    "error_type": "FileNotFoundError",
+    "no_import_or_native_execution": true,
+    "records": [
+      {
+        "installed_path": ".venv/lib/python3.12/site-packages/pypdf/_reader.py",
+        "prefix_bytes": 16384,
+        "prefix_sha256": "0a7144b56150ae96bc7882abbced6c130f52e3bb24cdcec4e86751f0b31762ba",
+        "full_file_hash_claimed": false,
+        "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-import-prefixes-01/0-_reader.py.prefix.local",
+        "selected_import_lines": [
+          "92:     from ._page import PageObject"
+        ]
+      },
+      {
+        "installed_path": ".venv/lib/python3.12/site-packages/pypdf/_page.py",
+        "prefix_bytes": 16384,
+        "prefix_sha256": "d29690cb3c194f077c9fdd7cd62117a71b27e35018f57cac19937197125bfe4b",
+        "full_file_hash_claimed": false,
+        "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-import-prefixes-01/1-_page.py.prefix.local",
+        "selected_import_lines": [
+          "84:     from PIL.Image import Image",
+          "346:     Data as PIL image.",
+          "356:         Replace the image with a new PIL image.",
+          "359:             new_image (PIL.Image.Image): The new PIL image to replace the existing image.",
+          "365:             TypeError: If `new_image` is not a PIL Image.",
+          "382:         from .generic._image_xobject import _xobj_to_image  # noqa: PLC0415",
+          "389:             raise TypeError(\"new_image shall be a PIL Image\")"
+        ]
+      }
+    ],
+    "no_automatic_alternate_path": true
+  },
+  "observations": {
+    "pypdf_initializer": "Directly imports PageObject from ._page and directly tries PIL to report pil_version.",
+    "page_prefix": "try from PIL.Image import Image occurs at module scope, with ImportError fallback. This is eager when existing Pillow is installed, even for text-only calls.",
+    "installed_pillow_distribution_version": "13.0.0",
+    "initial_crypto_only_proposal_revision": "Earlier79c7267staticreport excludedimageextra. This newsourceevidence justifies explicitly supporting existing eagerPILimport; priorreport is preserved, notactualadmission.",
+    "declared_pillow_runtime_requirements": "No mandatory Requires-Dist observed; listed additional dependencies are extra-gated.",
+    "new_complete_profile_named_roots": [
+      "pypdf/",
+      "cryptography/",
+      "cffi/",
+      "pycparser/",
+      "PIL/"
+    ],
+    "no_arbitrary_site_packages_permission": true,
+    "no_hidden_optional_module_pruning": true
+  },
+  "limits_and_reads": {
+    "first_static_batch": "8fullfiles35291B,cap262144",
+    "import_prefix_batch": "2prefixes32768B,thirdknownpathabsent,stoppedandpreserved; no alternateexecuted",
+    "followup_static_batch": "3fullfiles12436B,cap65536",
+    "complete_profile_reverification": "11fullfiles47727observed/47738reserved, excludespartialprefixes"
+  },
+  "actual_imports": 0,
+  "native_binary_reads": 0,
+  "actual_PDF_reads": 0,
+  "network_model_calls": 0,
+  "cost_usd": 0,
+  "requires_independent_profile_and_fresh_qualification_release": true
+}

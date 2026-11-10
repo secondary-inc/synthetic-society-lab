@@ -1,0 +1,134 @@
+{
+  "status": "BOUNDED_STATIC_EVIDENCE_NOT_NATIVE_RUNTIME_OR_SOURCE_ADMISSION",
+  "date": "2026-11-10",
+  "read_scope": {
+    "max_files": 8,
+    "files_read": 8,
+    "read_bytes_cap": 262144,
+    "read_bytes_observed": 35291,
+    "directory_entries_cap": 4096,
+    "directory_entries_observed": 51
+  },
+  "source_refs": [
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_crypt_providers/__init__.py",
+      "bytes": 3054,
+      "sha256": "2b767a02e5e15d579780b7adf93ba4ab682df47eba3a076ea6cbf1212d429a42",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/0-__init__.py.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_crypt_providers/_cryptography.py",
+      "bytes": 4460,
+      "sha256": "f733a4933312b17e1a974454934a8cd1d29f7dc1e47b8c1f9845caf64c28450f",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/1-_cryptography.py.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/cryptography/__about__.py",
+      "bytes": 445,
+      "sha256": "95184137751279e4ccc0ababa44ed8bc380fbcdd5ba584f0407c5d14e31c109d",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/2-__about__.py.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf-6.10.0.dist-info/METADATA",
+      "bytes": 7112,
+      "sha256": "74db615a83dee1980ab4c4a73609d53cebf557e80ee822e9ac363cd575f7a61a",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/3-METADATA.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/cryptography-50.0.2.dist-info/METADATA",
+      "bytes": 4394,
+      "sha256": "047cfc71226409de4318b360aef15c63a2adf609731e3dcf7fe932f14ea042ee",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/4-METADATA.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA",
+      "bytes": 2527,
+      "sha256": "558bafb9093a8e790175d9ecff9688382981d744877dad86fd6770db0f4dc918",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/5-METADATA.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA",
+      "bytes": 9709,
+      "sha256": "ad8db5fe2b0e0a3b0e8419fe5041b80be92470a40b06bd9c1462a0a8bb637c92",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/6-METADATA.static.local"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/cffi-2.1.1.dist-info/RECORD",
+      "bytes": 3590,
+      "sha256": "244456e894b5ea7812f60d8c0272e694e40999028412323b3aedee4987b07e19",
+      "private_copy": "data/processed/e01_clerk2020_dependency_evidence/20261110-01/7-RECORD.static.local"
+    }
+  ],
+  "observed_declared_versions": {
+    "pypdf": "6.10.0",
+    "cryptography": "50.0.2",
+    "cffi": "2.1.1",
+    "pycparser": "3.12"
+  },
+  "static_import_evidence": {
+    "provider_module": "pypdf._crypt_providers",
+    "first_provider_import": "pypdf._crypt_providers._cryptography",
+    "provider_source_imports": [
+      "cryptography.__version__",
+      "cryptography.hazmat.primitives.ciphers.algorithms.AES",
+      "cryptography.hazmat.primitives.padding.PKCS7",
+      "cryptography.hazmat.decrepit.ciphers.algorithms.ARC4",
+      "cryptography.hazmat.primitives.ciphers.base.Cipher",
+      "cryptography.hazmat.primitives.ciphers.modes.CBC",
+      "cryptography.hazmat.primitives.ciphers.modes.ECB"
+    ],
+    "provider_declares_tuple": [
+      "cryptography",
+      "__version__"
+    ],
+    "fallbacks": "Static code catches ImportError then tries PyCryptodome/builtin fallback; proposed qualification must require observed cryptography provider, not silently fall back."
+  },
+  "declared_required_closure_for_target": {
+    "pypdf_crypto_extra": "cryptography",
+    "cryptography_50_0_2": "cffi>=2.0.0 when platform_python_implementation != PyPy",
+    "cffi_2_1_1": "pycparser when implementation_name != PyPy",
+    "conditional_typing_extensions": "Conditions below Python3.11 do not apply to proposed CPython3.12.14",
+    "excluded_extras": [
+      "ssh/bcrypt",
+      "Pillow/image/full",
+      "PyCryptodome fallback",
+      "dev/docs tools"
+    ]
+  },
+  "native_backend_declaration": {
+    "path": ".venv/lib/python3.12/site-packages/_cffi_backend.cpython-312-darwin.so",
+    "bytes": 229552,
+    "sha256": "90177c34e639a067ee1f5a2028320b3af2940d47dfaf9583727b59abf0b3263f",
+    "basis": "Installed cffi RECORD declaration only; native binary NOT read/hashed in this step"
+  },
+  "minimal_proposal": {
+    "explicit_package_roots": [
+      ".venv/lib/python3.12/site-packages/cryptography/",
+      ".venv/lib/python3.12/site-packages/cffi/",
+      ".venv/lib/python3.12/site-packages/pycparser/"
+    ],
+    "exact_native_backend": {
+      "path": ".venv/lib/python3.12/site-packages/_cffi_backend.cpython-312-darwin.so",
+      "bytes": 229552,
+      "sha256": "90177c34e639a067ee1f5a2028320b3af2940d47dfaf9583727b59abf0b3263f",
+      "basis": "Installed cffi RECORD declaration only; native binary NOT read/hashed in this step"
+    },
+    "no_any_venv_exception": true,
+    "all_loaded_origin_cache_and_interpreter_hashes_required": true,
+    "loaded_native_backend_hash_must_match_record_before_fixtures": true,
+    "metadata_provider_sources_must_remain_hash_identical": true,
+    "static_files_verification_future_bound": {
+      "files": 8,
+      "reserved_bytes": 35299
+    },
+    "no_hidden_module_pruning_or_crypto_fallback": true,
+    "requires_separate_profile_code_review_and_fresh_qualification_release": true
+  },
+  "interpretation_limit": "New diagnostic reports origin predicate and cryptography.__about__ context; static evidence supports an omitted optional-provider dependency closure in the current proposed environment. It does not reconstruct the original lost failure or accept native cryptographic correctness/whole OS dependencies/source data.",
+  "package_imports": 0,
+  "native_binary_reads": 0,
+  "actual_pdf_reads": 0,
+  "network_model_calls": 0,
+  "cost_usd": 0,
+  "copies_private_excluded_from_git": true
+}
