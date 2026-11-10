@@ -1,0 +1,412 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E01_WARMUP_QUALIFICATION_METHODS_CODE_REMEDY_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_EXACT_REMEDIATED_FRESH_GENERATED_QUALIFICATION_CODE_ONLY",
+  "handoff": {
+    "path": "reports/clerk2020_warmup_qualification_v1_remediation_handoff_20261110.json",
+    "sha256": "643d6da980704925278cb66a4ac34e27105fbae4f06ce24c6774406fec943375"
+  },
+  "phase_binding": {
+    "kind": "CLERK2020_WARMUP_QUALIFICATION_CODE_BINDING_V1",
+    "status": "PASS_EXACT_FRESH_GENERATED_QUALIFICATION_ONLY",
+    "reviewer_role": "independent_auditor",
+    "code_refs": {
+      "src/civiclab/__init__.py": {
+        "bytes": 106,
+        "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+      },
+      "src/civiclab/e01/__init__.py": {
+        "bytes": 422,
+        "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+      },
+      "src/civiclab/e01/pipeline.py": {
+        "bytes": 22533,
+        "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+      },
+      "src/civiclab/common.py": {
+        "bytes": 8476,
+        "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+      },
+      "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+        "bytes": 22083,
+        "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f"
+      },
+      "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+        "bytes": 8768,
+        "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487"
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+        "bytes": 8142,
+        "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+        "bytes": 9548,
+        "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+      },
+      "tests/test_clerk2020_native_inventory_v1.py": {
+        "bytes": 12468,
+        "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d"
+      },
+      "src/civiclab/e01/clerk2020_crypto_qualification_v1.py": {
+        "bytes": 24747,
+        "sha256": "6f75bf204c0c7334a892d6cbb3d52d1cd3cdb4535a90da2771dabc627ad6f50e"
+      },
+      "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py": {
+        "bytes": 8606,
+        "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+      },
+      "src/civiclab/e01/clerk2020_guard_qualification_v1.py": {
+        "bytes": 29304,
+        "sha256": "347530c29836cefb0c1bd4b35e7e48748b45758bfa1c5bc200fb9cc806b5769f"
+      },
+      "src/civiclab/e01/clerk2020_warmup_qualification_v1.py": {
+        "bytes": 44722,
+        "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+      }
+    },
+    "profile_sha256": "f41aae5472755ea69c1597a76aa82a02218b0433e59277ad867a30a76a1da777",
+    "ancestor_records": {
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/OUTCOME.json": {
+        "bytes": 775,
+        "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/STARTED.json": {
+        "bytes": 660,
+        "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/partial_stdout.local.bin": {
+        "bytes": 114,
+        "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/OUTCOME.json": {
+        "bytes": 700,
+        "sha256": "f3cb2f09411d57c39e5df72da5f81e86303dfe3ed15a57ff085c7fbf7187fe65"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/STARTED.json": {
+        "bytes": 861,
+        "sha256": "c76b9daa10f3d98ec41803dfc6a90f5e75a48a16bfd595a681956f30c5451bc6"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/worker.json": {
+        "bytes": 1232,
+        "sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/STARTED.json": {
+        "bytes": 894,
+        "sha256": "3301ad2dc40d52fc4fce83c544c5876e4d4d842cb19fbc7e268f6829eef4ca1a"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/OUTCOME.json": {
+        "bytes": 868,
+        "sha256": "1cc8e0ce5f3e53292d18b2ffc32f7a7c9fe10148d2566c4ea9139d0bf4835d90"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/partial_stdout.local.bin": {
+        "bytes": 137,
+        "sha256": "e19e56386a4e917f2a07e1c3e2968ff45a6ad315dfde98f0c52db5b39f68bbf0"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/STARTED.json": {
+        "bytes": 894,
+        "sha256": "6da9d2b8b708078b49c7a90544213a2d7f741fa282991d85bd23a3a555324103"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/OUTCOME.json": {
+        "bytes": 868,
+        "sha256": "512772036b7b8caf1c45c9e1999daea3dac53e10d0037e9067d88787e2979d4f"
+      },
+      "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/partial_stdout.local.bin": {
+        "bytes": 662,
+        "sha256": "cc58809f9f6de2ef85836482356f02a1a2632594198e8ecf6b87f95c9294c9c1"
+      }
+    },
+    "past_limits": {
+      "qualification-v1": {
+        "child_cpu_hard_seconds": 11,
+        "child_cpu_soft_seconds": 10,
+        "child_wall_seconds": 30,
+        "code_read_bytes": 1048576,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "network_requests": 0,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "page_extractions": 119,
+        "reader_attempts": 4,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "source_reads": 0,
+        "stderr_bytes": 4096,
+        "stdout_bytes": 114688,
+        "wall_ms": 45000
+      },
+      "runtime-diagnostic-v1": {
+        "ancestor_read_bytes_reserved": 3104,
+        "ancestor_record_reads": 6,
+        "child_cpu_hard_seconds": 11,
+        "child_cpu_soft_seconds": 10,
+        "child_wall_seconds": 30,
+        "code_read_bytes": 1048576,
+        "collector_passes": 1,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "network_requests": 0,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "page_extractions": 0,
+        "reader_attempts": 0,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "source_reads": 0,
+        "stderr_bytes": 4096,
+        "stdout_bytes": 114688,
+        "wall_ms": 45000
+      },
+      "qualification-crypto-v1": {
+        "source_reads": 0,
+        "network_requests": 0,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "reader_attempts": 4,
+        "page_extractions": 119,
+        "wall_ms": 45000,
+        "child_wall_seconds": 30,
+        "child_cpu_soft_seconds": 10,
+        "child_cpu_hard_seconds": 11,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "code_read_bytes": 1048576,
+        "stdout_bytes": 114688,
+        "stderr_bytes": 4096,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "static_profile_reads": 11,
+        "static_read_bytes_reserved": 47738,
+        "ancestor_record_reads": 12,
+        "ancestor_read_bytes_reserved": 8696
+      },
+      "qualification-guard-v1": {
+        "source_reads": 0,
+        "network_requests": 0,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "reader_attempts": 4,
+        "page_extractions": 119,
+        "wall_ms": 45000,
+        "child_wall_seconds": 30,
+        "child_cpu_soft_seconds": 10,
+        "child_cpu_hard_seconds": 11,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "code_read_bytes": 1048576,
+        "stdout_bytes": 114688,
+        "stderr_bytes": 4096,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768,
+        "static_profile_reads": 11,
+        "static_read_bytes_reserved": 47738,
+        "ancestor_record_reads": 18,
+        "ancestor_read_bytes_reserved": 12500
+      }
+    },
+    "credit_restored": 0,
+    "limits": {
+      "source_reads": 0,
+      "network_requests": 0,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "reader_attempts": 8,
+      "page_extractions": 238,
+      "wall_ms": 45000,
+      "child_wall_seconds": 30,
+      "child_cpu_soft_seconds": 10,
+      "child_cpu_hard_seconds": 11,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "code_read_bytes": 1048576,
+      "stdout_bytes": 114688,
+      "stderr_bytes": 4096,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "ancestor_record_reads": 24,
+      "ancestor_read_bytes_reserved": 17354,
+      "warmup_reader_attempts": 4,
+      "warmup_page_extractions": 119,
+      "strict_reader_attempts": 4,
+      "strict_page_extractions": 119,
+      "warmup_file_open_attempts": 512,
+      "warmup_read_bytes_reserved": 67108864,
+      "warmup_directory_events": 256,
+      "warmup_import_events": 512,
+      "hash_open_events": 2048
+    },
+    "source_authority": false
+  },
+  "phase_binding_canonical_sha256": "0b73d9f8184478774a2805854631659ad27bbb7698617355eabda4dcd1a0be5b",
+  "artifact_refs": [
+    {
+      "path": "src/civiclab/e01/clerk2020_warmup_qualification_v1.py",
+      "bytes": 44722,
+      "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+    },
+    {
+      "path": "tests/test_clerk2020_warmup_qualification_v1.py",
+      "bytes": 40648,
+      "sha256": "fb15b5812c258e383f2860ead25ad06b34a8cf56eed93381be40b5c57aeee711"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_authored_controls_20261110.json",
+      "bytes": 12489,
+      "sha256": "08d9d0a0e2d523dfd1df5e458dbfda89d68cda8c23add7eb6a802df117ce85e3"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_initial_312_20261110.txt",
+      "bytes": 4992,
+      "sha256": "08422262e8d9b0a83dd117ca44e2769a23c627fbb243d11e4a47f188706247e7"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_expanded_312_20261110.txt",
+      "bytes": 7150,
+      "sha256": "cd44877981167c5fd884896488884aeaaedc4f83236146e50baaf5be0d957a01"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_final_312_20261110.txt",
+      "bytes": 7727,
+      "sha256": "c1e348b2e2790e9f30ace6709a883a089778db6a24d59ff78cc3bb1a8349c6eb"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_final_311_20261110.txt",
+      "bytes": 7727,
+      "sha256": "82fb8499358d982947a6660fa59d03d1e8c516eeb89d943f13da227d33d8e8a6"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_cache_probe_312_20261110.txt",
+      "bytes": 7940,
+      "sha256": "a681c654b45d91b20e2c6ee730dde1d2cad4f0ef7e78634340505773b46ce123"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_cache_probe_311_20261110.txt",
+      "bytes": 7940,
+      "sha256": "9227f3563a27572ad677d4f873b815d6905911879ef1d2a24a77595b96e87247"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_pre_sticky_fix_source_20261110.json",
+      "bytes": 85554,
+      "sha256": "8aa0e0669905b07f428d069f1ef709f622386f8f2abdca98143194125ea69bc5"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_pre_backend_fix_source_20261110.json",
+      "bytes": 86414,
+      "sha256": "5b0cf52fb5c98b32731a64e9ec1c125004d3b8fcb45fd003fc1e19afa536d777"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_sticky_fix_312_20261110.txt",
+      "bytes": 8101,
+      "sha256": "fc9590a68cf4fb5861ebc181a0abc895c0df6599c6bd6015b5a46266482826c5"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_sticky_fix_311_20261110.txt",
+      "bytes": 8101,
+      "sha256": "6528d58e3e91d0165b584303d399f268fb3bf11c8171f1dd4964bffd35068b2f"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_backend_fix_312_20261110.txt",
+      "bytes": 8288,
+      "sha256": "76fa5572e0378ec956ad08fac43972c2d2acf1193cef946c24e6c9757d5448f8"
+    },
+    {
+      "path": "reports/clerk2020_warmup_qualification_v1_backend_fix_311_20261110.txt",
+      "bytes": 8288,
+      "sha256": "2b91da94bb72d382e6d91acf64d843285d5238d40c79a938a87a3c9858a15a3c"
+    }
+  ],
+  "supplemental_refs": {
+    "tests/test_clerk2020_warmup_adverse_v1.py": {
+      "bytes": 2553,
+      "sha256": "48253ab9a6556c7c284eca66e408c20fe81dd41037cee2e360e1fe3705b96d15"
+    },
+    "reports/clerk2020_warmup_adverse_v1_312_20261110.txt": {
+      "bytes": 304,
+      "sha256": "ad6f87a164559461edcb8070aee5242cc68a9cce34c583508ab0c547e5d95fc0"
+    },
+    "reports/clerk2020_warmup_adverse_v1_311_20261110.txt": {
+      "bytes": 304,
+      "sha256": "ad6f87a164559461edcb8070aee5242cc68a9cce34c583508ab0c547e5d95fc0"
+    }
+  },
+  "independent_checks": {
+    "python312_final": {
+      "tests": 46,
+      "seconds": 0.26,
+      "status": "PASS",
+      "scope": "45 main plus1supplemental/3swallowed-cache subcases"
+    },
+    "python311_final": {
+      "tests": 46,
+      "seconds": 0.261,
+      "status": "PASS"
+    },
+    "initial43checks": "PASS .171/.170; doesnotaccept initialcandidate because laternarrow findingspreserved below",
+    "genuine_Python_audit_events_authored_only": {
+      "status": "PASS",
+      "fixture_scope": "Two authored files and a fakeinterpreter identity/fake sysmodules set; no genuine installed/runtime/native/PDF/source fileinventoried. ActualPython audit-hook registration tests guarded opens/fdopen, not just hand-invoked events.",
+      "warmup_opens": 1,
+      "warmup_reserved_bytes": 18,
+      "hash_files": 2,
+      "hash_open_events": 4,
+      "hash_descriptor_events": 2,
+      "hash_reserved_bytes": 42,
+      "final_phase": "STRICT",
+      "script": "/tmp/civiclab-independent-warmup-real-audit-hook-authored-20261110.py"
+    },
+    "all13code_refs": "Byte/hashmatch currentd894caller44722B and frozenancestors;199925bytes/199938reserved",
+    "all15artifact_refs_and4embedded_source_test_snapshots": "Byte/hashmatch; initial0d4d and intermediatepreserved",
+    "profile": "f41aae equalspriorcryptoprofile plusconcretefinitewarmup declaration; originalstatic11files/5namedroots/exactbackendhash retained; installedcontentsnot reread",
+    "ancestry": "12exactcontrolrecords,4pastscopes fullbounds preserved;24reads17330expectedbytes/17354reserved,0refund",
+    "authored_parent_controls": "3scenarios/9embeddedcanonicalobjects byte/hash/JSONverified;complete/strictstop/warmupstop labeledMOCK and12ancestorcopiesunchanged"
+  },
+  "preserved_pre_binding_findings": [
+    {
+      "id": "WARMUP_BACKEND_NAMESPACE_OMISSION",
+      "original_status": "P2_FUNCTIONAL_CANDIDATE_BLOCKER_NOT_ACTUAL_FAILURE",
+      "original_source_sha256": "0d4dcd41d2550af711e4950f0d791084a21a8431b901de55aa275b6d7eb33260",
+      "evidence": "Leadidentified; auditor independentlysent authored import(_cffi_backend,None) and observedIMPORT_NAMESPACE_NOT_DECLARED despite existingdeclaredbackend. No genuineimport tested.",
+      "remedy_status": "CLOSED_ONLY_FOR_d8940826",
+      "remedy": "Exactname acceptsinitialNone orfilenameevent onlyat exactdeclaredbinarypath; othernative names/wrongpath refused. Finalnativebinaryhash/size guardunchanged; no generalextension allowance."
+    },
+    {
+      "id": "WARMUP_CACHE_ALIAS_NONSTICKY_REFUSAL",
+      "original_status": "P2_GUARD_INTEGRITY_CANDIDATE_BLOCKER",
+      "original_source_sha256": "0d4dcd41d2550af711e4950f0d791084a21a8431b901de55aa275b6d7eb33260",
+      "evidence": "Workeridentified; auditor independentlyexecuted hashverifiedpreservedprojectcode with authoredsymlinkcachefixture. OldRefusedblockedread butfirst_refusal stayednull andWARMUP\u2192HASH admitted; exactcurrentcode recordsCACHE_SOURCE_ALIAS_REFUSED andrefusesHASH. No actualsourcewasread.",
+      "independent_probe": "/tmp/civiclab-independent-warmup-remedy-probe-20261110.json",
+      "remedy_status": "CLOSED_ONLY_FOR_d8940826",
+      "remedy": "Translatealiascheck Refused/OSError into stickyfixedpredicate denial. Supplementalswallowednegative alias/absentsource/malformedcache cases allprevent HASH. Originalsnapshots/logs/handoff retained."
+    }
+  ],
+  "methods_acceptance": {
+    "bounded_recovery": "PASS_DESIGN_ONLY. Root-requested completeauthoredwarmup exercises same4reader/119positivepage fixtures before runtimecapture, followed by unchangedstrict4/119. New8/238ceiling is explicitseparatefreshscope, neverretroactivecredit/replay. No source orpaidgrant.",
+    "bootstrap_warmup": "One-wayBOOTSTRAP\u2192WARMUP\u2192HASH\u2192STRICT. DeclaredPython/nameddependency/exactprojectorigins only;512readonlyopen/64MiB reservedfullfile bytes,512imports/256directoryevents acrossbootstrap+warmup withoutreset. Denyrawsource/.env/unlistedorigins/writes/unknownfd/path/aliases/dotdot/network/process/dlopen/chdir. Exactbackendexception describedabove.",
+    "capture": "Allactuallyopened warmup/bootstrapfileidentities inclnonmodule resources joinloadedorigins/interpreter in \u22641024files/512MiB/98KiBmanifest. Missingreadonly.pyc probes onlyfor existingdeclarednonalias source, counted1byte with no inventedhash. Unknown/incomplete/driftedcapture fails.",
+    "hash_phase": "Onlyexact admittedcandidatepaths openonce; readonlyfdopen requiresfstatidentity ofpreviouslyopenedcandidate. \u22642048events and512MiBpath-readreservation, no imports/listings/newpaths. Trusted frozencollector invokesone fdopen perfile; finaltelemetry binds descriptorcount\u2264files andsum/path/bytes to manifest. Noinactiveguardgap.",
+    "strict_phase": "Original generated-only parser/marker/hash/negative checks unchanged, imports/opensdenied. Anywarmupfirstrefusal preventsHASH evenifwrapped/swallowedasexpectednegative. StrictguardrefusalnevernegativePASS.",
+    "resources": "Same10soft/11hardCPU,30schild/45sphase,sampledRSS256MiB,stdout/stderr/write bounds, network/model/source0. Fullnewlimits consumedonunknown/stop and noautomaticretry."
+  },
+  "actual_qualification": "NOT_RUN_BY_AUDITOR; rootmustwaituntilactiveE02childcloses perlead scheduling instruction, then aloneassemble/validateexactfreshpacket/invokeonce. Separately scopedclosedactualoutputs/runtime reviewrequired.",
+  "limitations": [
+    "CooperativePythonaudit/origin controls, not hostilehost orOS sandbox; countersdonotattestallnative-loader/kernelI/O, bounddirectoryresultallocation orpreventhostileconcurrentmutation.",
+    "Runtimehashprofile observesdeclaredloadedfiles, notcompletewheel/upstream/OSsharedlibraryattestation.",
+    "Warmupexercises exactgeneratedASCII/font/negative paths only; cannotvalidateeveryacquiredPDF/font/layout/source/count.",
+    "Actual8reader/238page completion and runtimeadmission notestablishedbyauthoredtests; caps arenotobservations.",
+    "Acquiredsource/M2BOOT/EXEC/parser/feature/geography/statistical/prospectivegates remainblocked."
+  ],
+  "auditor_actual_native_library_runtime_source_key_network_model_access": 0,
+  "auditor_API_cost_USD": 0
+}
