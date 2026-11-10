@@ -1,0 +1,71 @@
+{
+  "kind": "E01_GENERATED_GUARD_STATIC_CAUSE_ASSESSMENT_NOT_EXECUTION",
+  "status": "PLAUSIBLE_DEPENDENCY_NOT_CONFIRMED_CAUSE",
+  "evidence": [
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_page.py",
+      "bytes": 90193,
+      "sha256": "f93c459a77c433dbd2541e94d1fdfa599e486ca5fe3e3efe9348eaf94552639c"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_reader.py",
+      "bytes": 57708,
+      "sha256": "9aaa6780e62c061509f0d3b658dbdac185404fecadac01f7f9d35ac009ce2024"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_cmap.py",
+      "bytes": 12572,
+      "sha256": "0b8eea205808d522a7e4bad3e222b39c6964752b58a3a3b7259904292ee09241"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_text_extraction/_text_extractor.py",
+      "bytes": 14388,
+      "sha256": "b54a9bbc2ebd305706406501b7f63caeab1535ffbcb0c171003c8a9da8b4a232"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pypdf/_font.py",
+      "bytes": 14256,
+      "sha256": "50ad53071d7979e53daa4661bf38a0e1823eb6365382007eca20b414b73767bb"
+    }
+  ],
+  "bounds": {
+    "file_cap": 5,
+    "total_bytes_cap": 524288,
+    "actual_bytes_read": 189117,
+    "all_five_reads_completed": true
+  },
+  "static_call_chain": [
+    {
+      "path": "pypdf/_page.py",
+      "line": 1718,
+      "meaning": "Plain text extraction calls Font.from_font_resource for resource fonts."
+    },
+    {
+      "path": "pypdf/_font.py",
+      "line": 224,
+      "meaning": "from_font_resource unconditionally imports pypdf._codecs.core_font_metrics before decoding the font."
+    },
+    {
+      "path": "src/civiclab/e01/clerk2020_native_qualification_v1.py",
+      "line": 388,
+      "meaning": "Frozen parse guard refuses new import and open events."
+    }
+  ],
+  "interpretation": "A late font-metrics import could be refused after runtime capture and guard installation. The saved worker stop cannot identify the actual exception; this static path is a justified preload candidate, not a reconstructed diagnosis.",
+  "successor_requirements": [
+    "Preserve all old code, scopes, packets and full spent bounds; add the latest three control records as exact ancestors.",
+    "Explicitly preload pypdf._codecs.core_font_metrics during import phase, before full runtime hashing and before parse guard. Existing named pypdf root remains the only added module origin allowance; no ANY-venv relaxation.",
+    "Use a guard with the same denied events, recording only the first fixed event category and an optional exact known import identifier; never retain paths, raw arguments, source text, messages or locals.",
+    "Capture a bounded exception breadcrumb inside a separately versioned inventory adapter before its existing sanitizing boundary discards the exception. Record known function code identity, source-bound line and a closed stage vocabulary; no generic traceback formatting.",
+    "Retain exactly four generated reader attempts and 119 positive page extractions, with original marker/hash/coverage and active/malformed controls. A guard refusal cannot count as a successful negative parser test.",
+    "Generated-only code and authored tests require independent review and a fresh create-once scope before lead invocation. No source grant, model call, native execution or runtime acceptance is implied."
+  ],
+  "worker_execution": {
+    "new_native_phases": 0,
+    "pdf_reads": 0,
+    "model_calls": 0,
+    "network_requests": 0,
+    "cost_usd": 0
+  },
+  "blocked_science": "Acquired-source format inventory, historical parser, feature admission and original E01 statistical evaluation remain blocked."
+}

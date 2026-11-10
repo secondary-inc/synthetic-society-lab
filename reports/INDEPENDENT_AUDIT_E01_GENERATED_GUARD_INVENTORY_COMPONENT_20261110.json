@@ -1,0 +1,81 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E01_GENERATED_GUARD_INVENTORY_COMPONENT_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_EXACT_AUTHORED_COMPONENT_ONLY",
+  "handoff": {
+    "path": "reports/clerk2020_generated_guard_inventory_v1_handoff_20261110.json",
+    "sha256": "3c7ea74885867a1f3653a4efb3303ef48c6bd5bcf2fd623de26ac56a8f1c3bbd"
+  },
+  "files": [
+    {
+      "path": "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py",
+      "bytes": 8606,
+      "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+    },
+    {
+      "path": "tests/test_clerk2020_generated_guard_inventory_v1.py",
+      "bytes": 6569,
+      "sha256": "ee7d0c357e07f4ff1019de72c6158600f48770394a6a372d19752fddf4fbbb3e"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_initial_312_20261110.txt",
+      "bytes": 2751,
+      "sha256": "9d71af04d279ca86fb6814ebaf244af3146afb0682baa3fd37b3dd96713db64f"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_initial_source_20261110.json",
+      "bytes": 15906,
+      "sha256": "8bb1ecb94a5c682e1dc4c7ed4db0865c0e30008a4a2f467973d468f10b6b6d0a"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_final_312_20261110.txt",
+      "bytes": 1896,
+      "sha256": "d5508e99677d1af2a42931ab6af28c7b6eb60524b144f6b4c52da9a4879e137c"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_final_311_20261110.txt",
+      "bytes": 1896,
+      "sha256": "d5508e99677d1af2a42931ab6af28c7b6eb60524b144f6b4c52da9a4879e137c"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_static_assessment_20261110.json",
+      "bytes": 3642,
+      "sha256": "5711636ec5f244848e5beb009618a0334a620894ef172fbdbd72f00ef14aa5b9"
+    },
+    {
+      "path": "reports/clerk2020_crypto_qualification_v1_actual_stop_20261110.json",
+      "bytes": 7416,
+      "sha256": "d92a045edac532bd4e15b5f33c29e62544c05ddb6ee7c0ea259bc1e567ec7d4e"
+    }
+  ],
+  "independent_tests": {
+    "python312": {
+      "tests": 11,
+      "seconds": 0.001,
+      "status": "PASS"
+    },
+    "python311": {
+      "tests": 11,
+      "seconds": 0.001,
+      "status": "PASS"
+    },
+    "independent_static_AST_comparison": "PASS: inspect_snapshot parser AST exactly matches frozen adapter after removing only telemetry assignments/observe calls, generated-only entryrequire and addedtelemetry argument, normalizing exceptionvariable and docstring. No parserpredicate/output drift.",
+    "independent_second_page_wrong_type_probe": "PASS: authored Page(3) on secondpage refuses with PAGE_PROJECTION/page2 and trusted inspect_snapshot/require identities. No library/native/PDF execution."
+  },
+  "reviewed_properties": [
+    "Import performs no auditregistration/nativeimport/reader/source operations. Entrypoint requires exactGeneratedTelemetry type and authored_fixtureTrue before reader. Acquiredsource mode unavailable.",
+    "Frozenstructure/pageprojection/strictdiagnostics reused; unchanged output/schema/size/content controls. No actualsource authority.",
+    "Exactsame denied events and socket/os.exec prefixes. Firstguard retains only fixedeventcategory, neverargs/paths/messages. Guardregistration remains futurecaller responsibility.",
+    "Exactknown exceptionclass whitelist uses identity, unknown types yield noattribute/metaclass/descriptor/tracebackread; unknownframe names/filenames/codecontent are omitted. Up to32 tracebacksteps, trustedcaptured codeobject identity yieldsfixedfunctionlabel/sourceboundline. No rawrepr/messages/locals.",
+    "Sanitizer raises InventoryRefused outside handler; originalexceptionchain not retained. Firstexception/firstguard preserved, boundedstage/page fields.",
+    "Initial brittlelineassertion failure preserved as exactinitialsource/log; finaltests use codefirstline relation. No implementationfix concealed."
+  ],
+  "limitations": [
+    "Authoredcomponentonly, no newlauncher/packet/realleader/library qualification.",
+    "Trusted singleworker implementation, not hostilehost/globalmonkeypatch sandbox. Telemetry assumes fixedownedcallback/caller state.",
+    "Fullsuccessor must preload exactfontmetrics before completeboundedruntimehash, independentlybindall9ancestors/fullconsumedbounds, and rejectANYguardevent even if sanitizerraisesInventoryRefused duringnegatives.",
+    "M2/source/historicalfeature/statistical/prospectiveacceptance remainblocked."
+  ],
+  "auditor_actual_native_library_runtime_source_network_model_access": 0,
+  "auditor_cost_USD": 0
+}

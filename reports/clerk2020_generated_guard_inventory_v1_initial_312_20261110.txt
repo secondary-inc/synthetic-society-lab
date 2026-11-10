@@ -1,0 +1,24 @@
+test_extraction_guard_survives_sanitizing_boundary (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_extraction_guard_survives_sanitizing_boundary) ... FAIL
+test_first_exception_not_overwritten (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_first_exception_not_overwritten) ... ok
+test_first_guard_is_retained_bounded (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_first_guard_is_retained_bounded) ... ok
+test_guard_event_policy_matches_frozen (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_guard_event_policy_matches_frozen) ... ok
+test_original_output_matches_exactly (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_original_output_matches_exactly) ... ok
+test_reader_failure_stage_and_no_message (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_reader_failure_stage_and_no_message) ... ok
+test_source_mode_always_refused_before_reader (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_source_mode_always_refused_before_reader) ... ok
+test_structure_predicate_has_original_code_identity (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_structure_predicate_has_original_code_identity) ... ok
+test_telemetry_subclass_refused_before_reader (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_telemetry_subclass_refused_before_reader) ... ok
+test_traceback_capped_without_untrusted_frame_names (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_traceback_capped_without_untrusted_frame_names) ... ok
+test_unknown_exception_does_not_read_descriptor (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_unknown_exception_does_not_read_descriptor) ... ok
+
+======================================================================
+FAIL: test_extraction_guard_survives_sanitizing_boundary (test_clerk2020_generated_guard_inventory_v1.GuardedInventoryTests.test_extraction_guard_survives_sanitizing_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_generated_guard_inventory_v1.py", line 72, in test_extraction_guard_survives_sanitizing_boundary
+    self.assertIn({'function': 'parse_guard', 'line': g.GeneratedTelemetry.guard.__code__.co_firstlineno + 9}, state.first_exception['frames'])
+AssertionError: {'function': 'parse_guard', 'line': 48} not found in [{'function': 'inspect_snapshot', 'line': 114}, {'function': 'parse_guard', 'line': 47}]
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+FAILED (failures=1)

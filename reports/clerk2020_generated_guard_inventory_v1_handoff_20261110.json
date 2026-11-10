@@ -1,0 +1,92 @@
+{
+  "TASK_ID": "E01_GENERATED_GUARD_INVENTORY_COMPONENT_V1_20261110",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py",
+    "tests/test_clerk2020_generated_guard_inventory_v1.py",
+    "reports/clerk2020_generated_guard_inventory_v1_initial_312_20261110.txt",
+    "reports/clerk2020_generated_guard_inventory_v1_initial_source_20261110.json",
+    "reports/clerk2020_generated_guard_inventory_v1_final_312_20261110.txt",
+    "reports/clerk2020_generated_guard_inventory_v1_final_311_20261110.txt",
+    "reports/clerk2020_generated_guard_static_assessment_20261110.json",
+    "reports/clerk2020_crypto_qualification_v1_actual_stop_20261110.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py",
+      "bytes": 8606,
+      "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+    },
+    {
+      "path": "tests/test_clerk2020_generated_guard_inventory_v1.py",
+      "bytes": 6569,
+      "sha256": "ee7d0c357e07f4ff1019de72c6158600f48770394a6a372d19752fddf4fbbb3e"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_initial_312_20261110.txt",
+      "bytes": 2751,
+      "sha256": "9d71af04d279ca86fb6814ebaf244af3146afb0682baa3fd37b3dd96713db64f"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_initial_source_20261110.json",
+      "bytes": 15906,
+      "sha256": "8bb1ecb94a5c682e1dc4c7ed4db0865c0e30008a4a2f467973d468f10b6b6d0a"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_final_312_20261110.txt",
+      "bytes": 1896,
+      "sha256": "d5508e99677d1af2a42931ab6af28c7b6eb60524b144f6b4c52da9a4879e137c"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_inventory_v1_final_311_20261110.txt",
+      "bytes": 1896,
+      "sha256": "d5508e99677d1af2a42931ab6af28c7b6eb60524b144f6b4c52da9a4879e137c"
+    },
+    {
+      "path": "reports/clerk2020_generated_guard_static_assessment_20261110.json",
+      "bytes": 3642,
+      "sha256": "5711636ec5f244848e5beb009618a0334a620894ef172fbdbd72f00ef14aa5b9"
+    },
+    {
+      "path": "reports/clerk2020_crypto_qualification_v1_actual_stop_20261110.json",
+      "bytes": 7416,
+      "sha256": "d92a045edac532bd4e15b5f33c29e62544c05ddb6ee7c0ea259bc1e567ec7d4e"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_clerk2020_generated_guard_inventory_v1.py' -v",
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p 'test_clerk2020_generated_guard_inventory_v1.py' -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "python312": "11 PASS, 0.001s",
+    "python311": "11 PASS, 0.001s",
+    "initial_failure": "1 authored test line-number assertion off by one; exact pre-correction source/log retained. No implementation change required.",
+    "coverage": [
+      "Byte-identical output versus frozen adapter on authored reader",
+      "All original blocked event categories including prefix events",
+      "First-event fixed-size retention and no raw args",
+      "Reader exception sanitization with retained stage/code line",
+      "Extraction guard exception survives sanitized boundary",
+      "Original structural require code identities",
+      "Unknown hostile exception metaclass/attribute access never invoked",
+      "First exception not overwritten",
+      "32-frame traversal cap with unknown code omitted",
+      "Source mode and telemetry subclass rejected before reader"
+    ],
+    "execution": "Authored callbacks only; no actual PDF library import, native or acquired-source operation."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Five installed source files read statically under bounded authority; copies stay private. New adapter based on repository-owned frozen implementation. Metadata handoff embeds only three root-authorized safe control records.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Component only; no launcher, runtime acceptance or source grant.",
+    "Not a hostile-host/global-monkeypatch sandbox. Trusted code identities captured before reader callback, exact exception types only.",
+    "Guard records fixed event category; no module argument/path/message/locals retained.",
+    "Full successor still must preload core_font_metrics before runtime inventory and ensure any guard event fails even in negative controls.",
+    "Original frozen native adapter, consumed callers and auditor findings unchanged."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent component review pending",
+    "Fresh create-once full generated qualification caller and packet not yet implemented",
+    "All source-format/parser/feature/statistical gates remain blocked"
+  ],
+  "NEXT_UNBLOCKED_TASK": "After independent component findings, integrate a narrow successor qualification using exactly four readers/119 positive extractions, all nine ancestor metadata records, original consumed limits, explicit preload before runtime capture and first-event rejection across negatives. Lead alone invokes reviewed fresh packet."
+}
