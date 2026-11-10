@@ -1,0 +1,26 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E02_STOP_BOOLEAN_CORRECTION_V1",
+  "status": "PASS_NARROW_SINGLE_FIELD_CORRECTION",
+  "review_date": "2026-11-10",
+  "source_receipt": {
+    "path": "reports/E02_ISSUE_CUE_CROSSMODEL_ACTUAL_STOP_20261110.json",
+    "sha256": "2a5a74dcaaf23ba6d3fe40ff4ed4038a846600cc6c009bbda5f86e9312024052",
+    "unchanged": true
+  },
+  "correction": {
+    "path": "reports/E02_ISSUE_CUE_CROSSMODEL_STOP_BOOLEAN_CORRECTION_20261110.json",
+    "sha256": "d08f14873a476222ebe02c2dcb661019b57dbdfd5cd51173b790e9e95274c067",
+    "json_pointer": "/observations/0/old_validator_accepted",
+    "recorded_value": false,
+    "corrected_value": true
+  },
+  "basis": "Previously independently replayed closed354-event export establishes A PHASE_COMMITTED with72microUSD; public aggregate status agrees. The old Boolean compared COMMITTED rather than PHASE_COMMITTED. B remains rejected under old validator.",
+  "prior_independent_audit": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_ACTUAL_STOP_20261110.json",
+    "sha256": "c427a9f1b5a928138386b9674ff6a6d7a3786dd668ac78ee87ffba4ba6d4d784",
+    "unchanged": true
+  },
+  "scope": "Boolean erratum only; no changed rows, charges, holds, counts, costs, failed-run disposition or scientific NOT_ESTIMABLE status. Original receipt and prior audit preserved.",
+  "actual_owner_key_network_model_access": 0,
+  "cost_USD": 0
+}

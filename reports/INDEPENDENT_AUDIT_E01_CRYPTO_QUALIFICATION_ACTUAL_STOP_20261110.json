@@ -1,0 +1,45 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E01_CRYPTO_QUALIFICATION_ACTUAL_STOP_V1",
+  "review_date": "2026-11-10",
+  "status": "PASS_RETAINED_STOP_METADATA_ONLY",
+  "qualification_status": "BLOCKED_UNKNOWN_STOP_NOT_QUALIFIED",
+  "scope": "Exactly three root-authorized safe records under qualification-crypto-v1, byte/hash checked. No actual runtime/native module/source/PDF/owner/credential access or rerun.",
+  "records": {
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/STARTED.json": {
+      "bytes": 894,
+      "sha256": "3301ad2dc40d52fc4fce83c544c5876e4d4d842cb19fbc7e268f6829eef4ca1a"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/OUTCOME.json": {
+      "bytes": 868,
+      "sha256": "1cc8e0ce5f3e53292d18b2ffc32f7a7c9fe10148d2566c4ea9139d0bf4835d90"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/partial_stdout.local.bin": {
+      "bytes": 137,
+      "sha256": "e19e56386a4e917f2a07e1c3e2968ff45a6ad315dfde98f0c52db5b39f68bbf0"
+    }
+  },
+  "packet_sha256": "aef639dcd5f03fd7fca05191c5ee85175f3fa06a4e1d4e4907b452b2c443303b",
+  "dependency_profile_sha256": "b55ccf86a327cbea492256a8ec01c6c8e2268370eda269d397d5b386bd1ef2b6",
+  "root_reported_execution_commit": "2658ba7eecc6f82ba39e52271579aecb9d23e814",
+  "root_reported_wall_seconds": 0.201,
+  "timing_attribution": "Root-reported, not independently timed.",
+  "independent_findings": {
+    "new_scope": "START and OUTCOME agree exactpacket/profile and no_retry/fullconsumedlimits; ancestorlimitsnotreduced,credit0,sourceauthorityfalse.",
+    "partial_worker": "CRYPTO_QUALIFICATION_WORKER_STOP at GUARDED_GENERATED_FIXTURES; origin_refusal:null.",
+    "limits_vs_observation": "Four readerattempts/119pageextractions are ceilings fullyconsumed, not observed successful counts. reader_attempts_observed:null; zero is not inferred.",
+    "missing_evidence": "No retained successful runtime manifest, preciseexception or individual marker-check records. Stage entry does not establish119textchecks or exactcause.",
+    "zero_claim_scope": "The three records report0acquiredsource reads,0modelcalls/$0. This does not independently attest host-wide activity."
+  },
+  "static_crosscheck": "Frozen reviewedsource6f75bf moves stage to GUARDED_GENERATED_FIXTURES before install_parse_guard/generated_checks. Broadcatch retainsstage and onlyOriginRefused predicates; other failures lose exactsite. No qualification pass can be derived.",
+  "prior_code_review": "reports/INDEPENDENT_AUDIT_E01_CRYPTO_QUALIFICATION_CODE_PROFILE_V1_20261110.json",
+  "required_next": "Preserve consumed originalscope and allpreviousrecords; separately versioned sanitized precise failurebreadcrumbs with authoredchecks and independentreview before anyfresh root-onlygeneratedqualification. No acquiredsource authority or statisticalcoverage follows.",
+  "not_certified": [
+    "Runtime manifest acceptance",
+    "Any119page/textmarker success",
+    "Specific parser/guard/extraction failurecause",
+    "M2BOOT/EXEC/acquiredsource validation",
+    "Prospective forecasting or statisticalresult"
+  ],
+  "auditor_actual_runtime_source_key_network_model_access": 0,
+  "auditor_cost_USD": 0
+}
