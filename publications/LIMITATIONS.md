@@ -1,6 +1,6 @@
 # Synthetic Society Lab Limitations and Failure Analysis
 
-Owner-review draft. Updated November 9, 2026 UTC. This report covers the current engineering snapshot and the full research program, including work not yet executed. Independent audit and requirement status are authoritative for completion.
+Owner-review draft. Updated November 10, 2026 UTC. This report covers the current engineering snapshot and the full research program, including work not yet executed. Independent audit and requirement status are authoritative for completion.
 
 ## Scientific scope
 
@@ -58,7 +58,7 @@ Independent audit found false-like flag handling, post-dispatch cancellation acc
 
 OpenRouter is the only network inference gateway. The limited live E02 sample has independently verified research bills totaling $0.0014340. At first-pilot completion the shared ledger counted $0.002857 conservatively, including three unchanged holds; these are budget reservations, not an invoice total. One earlier compatibility dispatch still lacks a verified provider charge. A recovered original E02 answer has verified billing but retains its original uncertain financial row and full hold. Thus analytical completeness does not erase historical financial uncertainty. Standing caps remain $5 shared, $1 current E02 pilot and $0 paid E01. New batches require tested finite plans; consumed launchers cannot be rerun. Local labor, energy and infrastructure costs are unpriced.
 
-Some received sources lack reproducible reacquisition URLs or importer evidence even though local hashes pass. Raw files excluded from Git will not reappear in a fresh clone. The review package can reproduce bundled artifacts and fixture tests, but full real-data reconstruction requires the exact permitted source inputs. Remote CI and GitHub delivery remain dependent on working repository authentication.
+Some received sources lack reproducible reacquisition URLs or importer evidence even though local hashes pass. Raw files excluded from Git will not reappear in a fresh clone. The review package can reproduce bundled artifacts and fixture tests, but full real-data reconstruction requires the exact permitted source inputs. Remote CI and GitHub delivery require separate verification for each exact source snapshot.
 
 ## Publication and organization claims
 
@@ -70,6 +70,10 @@ The DC archive acquisition validates compressed bytes and limited metadata, not 
 
 Independent review found a package capture race: an artifact could change after run verification and be archived with its stale checksum ledger. The original candidate/source/finding remain preserved. The separate v2 remedy binds captured artifact and checksum bytes to the originally verified seal, with adversarial reseal tests. Its component acceptance does not certify any newly assembled archive, full restoration, hostile-host resistance or scientific result.
 
+## November 10 election-reader qualification
+
+The [accepted generated-fixture runtime check](../reports/INDEPENDENT_AUDIT_E01_DIRECTORIES_QUALIFICATION_ACTUAL_20261110.json) covers four reader entries and 119 page markers in each of warmup and strict qualification, two expected strict negative cases, and recorded runtime/backend identities. The auditor validated closed metadata rather than independently rereading installed binaries or source PDFs. Generated fixtures do not establish extraction fidelity for acquired encodings, fonts or layouts. No actual election source was read or admitted; source-format inspection, count aggregation, final-ballot validation and forecast evaluation remain separate. Earlier failed scopes remain failed and consumed. No model cost was incurred by this qualification.
+
 ## November 9 live follow-up
 
-The new issue-aligned result uses one custom question, one fictional library issue, one model/provider family and four technical contexts. It is exploratory after the first study's zero change. Both R-prior baselines had missing Democratic-party thermometers; the frozen complete-baseline rule therefore skipped six SHOWN posts. The primary omitted-answer contrast uses four contexts, whereas the own-answer interaction uses only two D-prior contexts. Do not subtract unequal-denominator means, infer a party difference, generalize a mechanism or claim human effects. All asked factual items were correct; the planned-denominator task-following flag reflects skips. No inferential interval was estimated. Across both distinct studies, verified research cost is $0.0030424; current conservative owner exposure is $0.004473, with all three old holds unchanged. See the [follow-up report](../reports/E02_ALIGNMENT_ANCHORING_RESULT_20261109.md).
+The new issue-aligned result uses one custom question, one fictional library issue, one model/provider family and four technical contexts. It is exploratory after the first study's zero change. Both R-prior baselines had missing Democratic-party thermometers; the frozen complete-baseline rule therefore skipped six SHOWN posts. The primary omitted-answer contrast uses four contexts, whereas the own-answer interaction uses only two D-prior contexts. Do not subtract unequal-denominator means, infer a party difference, generalize a mechanism or claim human effects. All asked factual items were correct; the planned-denominator task-following flag reflects skips. No inferential interval was estimated. Across both distinct studies, verified research cost is $0.0030424; conservative owner exposure at that November 9 checkpoint was $0.004473, with all three old holds unchanged. See the [follow-up report](../reports/E02_ALIGNMENT_ANCHORING_RESULT_20261109.md).

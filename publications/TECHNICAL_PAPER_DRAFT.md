@@ -1,6 +1,6 @@
 # Synthetic Society Lab Methods and Validation Draft
 
-Draft for owner and independent scientific review. Updated November 9, 2026 UTC. No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison and a completed limited exploratory E02 live sample. The original full E01/E02 studies remain incomplete.
+Draft for owner and independent scientific review. Updated November 10, 2026 UTC. No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison and a completed limited exploratory E02 live sample. The original full E01/E02 studies remain incomplete.
 
 ## Abstract
 
@@ -142,6 +142,10 @@ Exact committed engineering snapshot `722e63a` has independent retained clean-re
 
 The [complete limitations report](LIMITATIONS.md), [current status](../reports/STATUS.md), independent audit receipts and source-specific rights notes govern interpretation. This manuscript is ready for methods review as a draft, not for a claim that the complete E01/E02 research program has finished. Further empirical sections require separately accepted real-run evidence; this bounded historical result does not certify the complete program.
 
+### November 10 election-reader qualification
+
+The election reader passed a separate generated-fixture runtime qualification: warmup and strict passes each used four reader entries and checked 119 page markers, with two expected negative cases in the strict pass. The saved manifest records 518 runtime files and a matching declared native-backend hash. The [independent evidence audit](../reports/INDEPENDENT_AUDIT_E01_DIRECTORIES_QUALIFICATION_ACTUAL_20261110.json) checked closed metadata and its bindings; it did not reread installed binaries or acquired PDFs. No election source was read and no model cost was incurred in this qualification. Actual source-format inspection remains a separate gate; no vote-count, final-ballot, baseline or forecast result follows.
+
 ## Data and software statement
 
-The project repository is [secondary-inc/synthetic-society-lab](https://github.com/secondary-inc/synthetic-society-lab). New local changes may not yet be uploaded while GitHub authentication is unresolved. No public website, paper submission, affiliation claim or external political activity has been authorized. Instructions for the local review package appear in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+The project repository is [secondary-inc/synthetic-society-lab](https://github.com/secondary-inc/synthetic-society-lab). Local changes require their own integration and delivery check. No public website, paper submission, affiliation claim or external political activity has been authorized. Instructions for the local review package appear in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).

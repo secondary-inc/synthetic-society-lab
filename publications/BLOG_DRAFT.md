@@ -1,6 +1,6 @@
 # Testing Whether Synthetic Societies Earn Their Complexity Draft
 
-Owner-review draft, updated November 9, 2026 UTC. Not published.
+Owner-review draft, updated November 10, 2026 UTC. Not published.
 
 A simulation can contain detailed people, convincing conversations and busy social feeds without predicting anything well. Synthetic Society Lab starts with a narrower question: what useful evidence does each extra layer add?
 
@@ -40,11 +40,13 @@ A separately audited historical diagnostic now compares 30 regular Senate consti
 
 Every state remains visible, including those where persistence performed worse. The [figure receipt](figures/e01-historical-errors.provenance.json) links its numbers to the sealed run.
 
+The election document reader also passed a narrower runtime check on November 10: two passes each checked 119 generated page markers, and the strict pass rejected two expected invalid cases. The [independent audit](../reports/INDEPENDENT_AUDIT_E01_DIRECTORIES_QUALIFICATION_ACTUAL_20261110.json) accepted the recorded fixture and runtime evidence. No actual election PDF was read in that check, and it produced no new election estimate. The next step is bounded inspection of the acquired documents' formats.
+
 ## Autonomy needs independent checks
 
 The program now separates implementation and audit across specialized chats. The independent auditor found failures that the original tests missed: a string value could enable a policy, a cancelled request could leave uncertain billing without stopping later calls, and a crash could leave a completed result without its final integrity ledger. Those issues were corrected and retested independently.
 
-Routine work proceeds under the owner's standing authority with a shared $5 ceiling, a $1 current E02 pilot ceiling and no paid E01 inference. The earlier failed compatibility checks remain in the record; their uncertain charges were not erased to make the live pilot possible. The ledger now conservatively counts $0.004473, including historical holds. Every new batch needs a fixed request count, hard bounds and an independent technical review. Publication remains subject to owner approval.
+Routine work proceeds under the owner's standing authority with a shared $5 ceiling, a $1 current E02 pilot ceiling and no paid E01 inference. The earlier failed compatibility checks remain in the record; their uncertain charges were not erased to make the live pilot possible. At the November 9 follow-up checkpoint, the ledger conservatively counted $0.004473, including historical holds. This is a historical checkpoint, not a current account balance. Every new batch needs a fixed request count, hard bounds and an independent technical review. Publication remains subject to owner approval.
 
 We have also verified the downloaded bytes and limited metadata of a DC Census archive and two official election documents. This is preparation work: no DC person rows have been imported, the population is not nationally validated, and the new documents do not establish final ballots or a2026 forecasting result. An independent reviewer also caught a race in review-package assembly; the corrected builder now binds archived data to the original verified run seal.
 
