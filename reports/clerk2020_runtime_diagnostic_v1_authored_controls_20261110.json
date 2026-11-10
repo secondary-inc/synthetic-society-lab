@@ -1,0 +1,90 @@
+{
+  "label": "AUTHORED_CONTROL_ONLY_NOT_NATIVE_RUNTIME_DIAGNOSIS",
+  "actual_pypdf_imports": 0,
+  "actual_native_runtime_inventory": false,
+  "actual_old_private_scope_reads": 0,
+  "source_reads": 0,
+  "model_calls": 0,
+  "scenarios": [
+    {
+      "label": "AUTHORED_REJECTION_RECORDED",
+      "all_review_releases_and_child_results_authored": true,
+      "plan_sha256": "06dcdc502e51987accc08a1da60ab58cbe68b63fcd99d8599ce057d29ed6bf93",
+      "result": {
+        "status": "DIAGNOSTIC_RECORDED_NOT_QUALIFICATION_OR_SOURCE_ADMISSION",
+        "plan_sha256": "06dcdc502e51987accc08a1da60ab58cbe68b63fcd99d8599ce057d29ed6bf93",
+        "worker_sha256": "1855c2c19354864f435a44f56bc66d930903bf030181f6872a251b361ab7a136",
+        "diagnostic_status": "REJECTION_RECORDED",
+        "ancestor_plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e",
+        "ancestor_full_limits_remain_consumed": true,
+        "ancestor_unchanged": true,
+        "ancestor_metadata_bytes_observed": 3098,
+        "ancestor_metadata_bytes_reserved": 3104,
+        "code_bytes_observed": 26544,
+        "code_bytes_reserved": 26555,
+        "sampled_child_peak_rss_bytes": null,
+        "source_reads": 0,
+        "reader_attempts": 0,
+        "page_extractions": 0,
+        "model_calls": 0,
+        "cost_usd": 0
+      },
+      "ancestor_copies_unchanged": true,
+      "artifacts": [
+        {
+          "slot": "OUTCOME.json",
+          "bytes": 694,
+          "sha256": "541db7774f852269f2d24bd55732de0441fe12b0381f06d64e6b02183685c08f",
+          "authored_utf8": "{\"ancestor_full_limits_remain_consumed\":true,\"ancestor_metadata_bytes_observed\":3098,\"ancestor_metadata_bytes_reserved\":3104,\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"ancestor_unchanged\":true,\"code_bytes_observed\":26544,\"code_bytes_reserved\":26555,\"cost_usd\":0,\"diagnostic_status\":\"REJECTION_RECORDED\",\"model_calls\":0,\"page_extractions\":0,\"plan_sha256\":\"06dcdc502e51987accc08a1da60ab58cbe68b63fcd99d8599ce057d29ed6bf93\",\"reader_attempts\":0,\"sampled_child_peak_rss_bytes\":null,\"source_reads\":0,\"status\":\"DIAGNOSTIC_RECORDED_NOT_QUALIFICATION_OR_SOURCE_ADMISSION\",\"worker_sha256\":\"1855c2c19354864f435a44f56bc66d930903bf030181f6872a251b361ab7a136\"}"
+        },
+        {
+          "slot": "STARTED.json",
+          "bytes": 861,
+          "sha256": "2b521ef19e3632ac16ed0c2e38940a3c97ce1a8696baef01c56fd02e5e4c435c",
+          "authored_utf8": "{\"ancestor_full_limits_remain_consumed\":true,\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"kind\":\"CLERK2020_RUNTIME_DIAGNOSTIC_RELEASE_V1\",\"limits\":{\"ancestor_read_bytes_reserved\":3104,\"ancestor_record_reads\":6,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"collector_passes\":1,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":0,\"reader_attempts\":0,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"no_retry\":true,\"plan_sha256\":\"06dcdc502e51987accc08a1da60ab58cbe68b63fcd99d8599ce057d29ed6bf93\",\"qualification_or_source_authority\":false}"
+        },
+        {
+          "slot": "worker.json",
+          "bytes": 1224,
+          "sha256": "1855c2c19354864f435a44f56bc66d930903bf030181f6872a251b361ab7a136",
+          "authored_utf8": "{\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"collector_passes_attempted\":1,\"context\":{\"exception_message_retained\":false,\"extra_runtime_or_source_io\":0,\"frozen_source\":\"src/civiclab/e01/clerk2020_native_qualification_v1.py\",\"kind\":\"PROPOSED_FUTURE_FAILURE_CONTEXT_V1_1_NOT_ORIGINAL_RUN_DIAGNOSIS\",\"permits_retry_or_policy_change\":false,\"qualified_frames\":[{\"function\":\"_runtime_inventory\",\"last_iteration_module_not_proven_cause\":\"AUTHORED_EXTRA\",\"last_iteration_origin_category_not_proven_cause\":\"VENV_OTHER_PACKAGE\",\"line\":366}],\"traceback_truncated\":false},\"error_type\":\"Refused\",\"excluded_modules\":0,\"external_origin_rules_changed\":false,\"kind\":\"CLERK2020_RUNTIME_DIAGNOSTIC_RESULT_V1\",\"manifest\":null,\"model_calls\":0,\"network_requests\":0,\"page_extractions\":0,\"project_overlay\":[\"src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py\",\"src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py\"],\"qualification_or_source_admission\":false,\"reader_attempts\":0,\"runtime_bytes_observed\":null,\"runtime_bytes_reserved\":null,\"site\":{\"function\":\"_runtime_inventory\",\"line\":366,\"predicate\":\"ORIGIN_ALLOWLIST\"},\"source_reads\":0,\"stage\":\"COLLECTOR\",\"status\":\"REJECTION_RECORDED\"}"
+        }
+      ]
+    },
+    {
+      "label": "AUTHORED_CHILD_PARTIAL_STOP",
+      "all_review_releases_and_child_results_authored": true,
+      "plan_sha256": "63700100ccaee06eb5262b8670e099008b7af981a7b7e3da307ef77092d46725",
+      "result": {
+        "status": "AUTHORED_EXPECTED_STOP"
+      },
+      "ancestor_copies_unchanged": true,
+      "artifacts": [
+        {
+          "slot": "OUTCOME.json",
+          "bytes": 934,
+          "sha256": "24b285c9ac0cfb2d37cef5e107b6db83c5c0df0a0077f3cab48e96886f317fd4",
+          "authored_utf8": "{\"ancestor_full_limits_remain_consumed\":true,\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"cost_usd\":0,\"model_calls\":0,\"new_full_limits_consumed\":{\"ancestor_read_bytes_reserved\":3104,\"ancestor_record_reads\":6,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"collector_passes\":1,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":0,\"reader_attempts\":0,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"observed_native_attempt\":true,\"page_extractions\":0,\"plan_sha256\":\"63700100ccaee06eb5262b8670e099008b7af981a7b7e3da307ef77092d46725\",\"reader_attempts\":0,\"source_reads\":0,\"status\":\"DIAGNOSTIC_STOP_UNKNOWN_NO_RETRY\"}"
+        },
+        {
+          "slot": "STARTED.json",
+          "bytes": 861,
+          "sha256": "8ef18b8f524b4baf4a723e585c8e79c3dfbbfd8ffedf64fd07b88fd5c4fd5980",
+          "authored_utf8": "{\"ancestor_full_limits_remain_consumed\":true,\"ancestor_plan_sha256\":\"7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e\",\"kind\":\"CLERK2020_RUNTIME_DIAGNOSTIC_RELEASE_V1\",\"limits\":{\"ancestor_read_bytes_reserved\":3104,\"ancestor_record_reads\":6,\"child_cpu_hard_seconds\":11,\"child_cpu_soft_seconds\":10,\"child_wall_seconds\":30,\"code_read_bytes\":1048576,\"collector_passes\":1,\"model_calls\":0,\"native_import_attempts\":1,\"network_requests\":0,\"owned_write_bytes\":131072,\"packet_bytes\":32768,\"page_extractions\":0,\"reader_attempts\":0,\"rss_peak_bytes\":268435456,\"runtime_files\":1024,\"runtime_hash_bytes\":536870912,\"runtime_manifest_bytes\":98304,\"source_reads\":0,\"stderr_bytes\":4096,\"stdout_bytes\":114688,\"wall_ms\":45000},\"no_retry\":true,\"plan_sha256\":\"63700100ccaee06eb5262b8670e099008b7af981a7b7e3da307ef77092d46725\",\"qualification_or_source_authority\":false}"
+        },
+        {
+          "slot": "partial_stdout.local.bin",
+          "bytes": 27,
+          "sha256": "4ad4a08e105628da232158bd41084db31f0daed13ce06a17887e8cdf0cc26693",
+          "authored_utf8": "AUTHORED_DIAGNOSTIC_PARTIAL"
+        },
+        {
+          "slot": "stderr.local.bin",
+          "bytes": 26,
+          "sha256": "9cd10184ce94e8c436111fb1fc9b887939ba698a2be13a6671f579182d9f52af",
+          "authored_utf8": "AUTHORED_DIAGNOSTIC_STDERR"
+        }
+      ]
+    }
+  ]
+}

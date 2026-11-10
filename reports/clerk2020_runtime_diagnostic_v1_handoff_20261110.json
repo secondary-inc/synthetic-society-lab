@@ -1,0 +1,442 @@
+{
+  "status": "REVIEW_READY_AUTHORED_INTEGRATION_ONLY_NO_ACTUAL_NATIVE_DIAGNOSTIC",
+  "TASK_ID": "E01_CLERK2020_RUNTIME_MANIFEST_DIAGNOSTIC_V1",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py",
+    "tests/test_clerk2020_runtime_diagnostic_v1.py",
+    "reports/clerk2020_runtime_diagnostic_v1_authored_controls_20261110.json",
+    "reports/clerk2020_runtime_diagnostic_v1_candidate_312_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_candidate_b_312_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_candidate_c_312_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_final_311_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_final_312_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_final_safe_errors_311_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_final_safe_errors_312_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_initial_312_20261110.txt",
+    "reports/clerk2020_runtime_diagnostic_v1_initial_failure_source_20261110.json",
+    "reports/clerk2020_runtime_diagnostic_v1_handoff_20261110.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py",
+      "sha256": "ff0a9cfddde60e5560bf37d0dabf45c6237ebdbd9ed3d504847a60104b66951c",
+      "bytes": 20094
+    },
+    {
+      "path": "tests/test_clerk2020_runtime_diagnostic_v1.py",
+      "sha256": "3301c9fb6df5bd49a49c140fd5b871a9a1a5056929b505cff4f242d76ce8972f",
+      "bytes": 18151
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_authored_controls_20261110.json",
+      "sha256": "68ce2d563175b08295e1801a0dcb1daf72203196e37a395e64ecf70de496d70f",
+      "bytes": 8118
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_candidate_312_20261110.txt",
+      "sha256": "1405252f8232a0e18b923e337296c29cf15355c968a3c05564031f43c7cbb0a2",
+      "bytes": 3213
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_candidate_b_312_20261110.txt",
+      "sha256": "9ed802d2cac588b6ddcaad56f64abdbf782567b5d901c2beddbdd0fb4580acb9",
+      "bytes": 3965
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_candidate_c_312_20261110.txt",
+      "sha256": "3896a3994a97ab62350dc187b82124165d7067d860af88cf3d593cea8ac2d7df",
+      "bytes": 4138
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_final_311_20261110.txt",
+      "sha256": "25f84dea796d092f1b8b19d5bffdfe1e110db2d07cc8acac388d281898f28e25",
+      "bytes": 4335
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_final_312_20261110.txt",
+      "sha256": "212ccb113f291d7ef0c641138cf7bf819b012b97f3040315a1f7caaa28d3332a",
+      "bytes": 4335
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_final_safe_errors_311_20261110.txt",
+      "sha256": "abeb0fcfb826548abc39c1af82dce458e09968c9c529d5c6c23d0f70399b6371",
+      "bytes": 4530
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_final_safe_errors_312_20261110.txt",
+      "sha256": "be50e470d53620cc10ab17fef32b797ccc73b701b2ddccc4e86d7ed9dc2201bc",
+      "bytes": 4530
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_initial_312_20261110.txt",
+      "sha256": "5a4e57794e7ac97362a614d3de28f5be68cc3d95a8b22d1e7f772feace60346d",
+      "bytes": 5371
+    },
+    {
+      "path": "reports/clerk2020_runtime_diagnostic_v1_initial_failure_source_20261110.json",
+      "sha256": "ef10d05e8bfffd5e11f7234e4a8de1ab00fad74dcab431fe5ed266975fe2f0fd",
+      "bytes": 34071
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p 'test_clerk2020_runtime_diagnostic_v1.py' -v",
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p 'test_clerk2020_runtime_diagnostic_v1.py' -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "new_tests": 25,
+    "python312": "25 PASS",
+    "python311": "25 PASS",
+    "retained_authored_scenarios": 2,
+    "retained_control_artifacts": 7,
+    "actual_native_library_or_runtime_probe": "NOT_RUN",
+    "old_actual_private_scope_reads": "NONE",
+    "old_unchanged_tests_rerun": false,
+    "initial_failure": "18tests/1error: live __code__ lookup met a mocked dependency; source+log retained, fixed by capturing immutable code identities before callbacks"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public repo code/status/audits and copied public safe failure metadata only; temporary authored code/artifacts, fake interpreter/module origins and stub child. No actual source PDFs, private original controls/history or genuine runtime artifacts inspected; no pypdf import, new phase, network, model or credentials. No source acquisition/qualification/retry/source permission granted.",
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "api_content_model_usd": 0,
+    "development_compute": "UNPRICED",
+    "E01_paid_inference_ceiling_usd": 0
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Diagnostic only: imports same proposed library/preload once, never PdfReader/extract_text or generated fixture calls.",
+    "New diagnostic observations are not reconstruction of original discarded traceback; exact original cause remains unknown.",
+    "Trusted frozen code-object identity and29ff site map identify a new rejection predicate; module field remains last-iteration context, not automatically the offending file.",
+    "Explicit approved project overlay admits exactly new diagnostic+accepted passivehelper; external origin rules unchanged, no modules hidden/pruned. Collector globals restored after call.",
+    "Python network/process event guard and cooperative file/clock/RSS bounds are not an OS/hostile-code sandbox or complete installed/native dependency attestation.",
+    "Native runtime and M2 BOOT/EXEC/source/format/parser/feature/statistical gates remain pending."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Existing independent exact integration/counter/metadata review pending.",
+    "No positive binding, valid candidate release or root actual entry yet.",
+    "No acquired PDF until subsequent appropriate qualification/source review."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Existing auditor reviews exact new integration/tests/controls and emits closed diagnostic binding if accepted; then worker prepares exact private candidate packet+one-shot root command. Root alone schedules actual zero-PDF diagnostic. After actual evidence review, make only justified minimal fix/fresh qualification; preserve old spent state.",
+  "review_binding_template_NOT_ISSUED": {
+    "kind": "CLERK2020_RUNTIME_DIAGNOSTIC_CODE_BINDING_V1",
+    "status": "NOT_ISSUED_REQUIRES_INDEPENDENT_PASS",
+    "reviewer_role": "independent_auditor",
+    "code_refs": {
+      "src/civiclab/__init__.py": {
+        "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50",
+        "bytes": 106
+      },
+      "src/civiclab/e01/__init__.py": {
+        "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83",
+        "bytes": 422
+      },
+      "src/civiclab/e01/pipeline.py": {
+        "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763",
+        "bytes": 22533
+      },
+      "src/civiclab/common.py": {
+        "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "bytes": 8476
+      },
+      "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+        "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f",
+        "bytes": 22083
+      },
+      "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+        "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487",
+        "bytes": 8768
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+        "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0",
+        "bytes": 8142
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+        "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39",
+        "bytes": 9548
+      },
+      "tests/test_clerk2020_native_inventory_v1.py": {
+        "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d",
+        "bytes": 12468
+      },
+      "src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py": {
+        "sha256": "ff0a9cfddde60e5560bf37d0dabf45c6237ebdbd9ed3d504847a60104b66951c",
+        "bytes": 20094
+      },
+      "src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py": {
+        "sha256": "730440fa2090865e94b81fcd42320094f4981023b2adb0b22ed37a4eb7ea4ab9",
+        "bytes": 3881
+      }
+    },
+    "limits": {
+      "source_reads": 0,
+      "network_requests": 0,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "reader_attempts": 0,
+      "page_extractions": 0,
+      "wall_ms": 45000,
+      "child_wall_seconds": 30,
+      "child_cpu_soft_seconds": 10,
+      "child_cpu_hard_seconds": 11,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "code_read_bytes": 1048576,
+      "stdout_bytes": 114688,
+      "stderr_bytes": 4096,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "collector_passes": 1,
+      "ancestor_record_reads": 6,
+      "ancestor_read_bytes_reserved": 3104
+    },
+    "ancestor": {
+      "scope": "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1",
+      "plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e",
+      "records": {
+        "STARTED.json": {
+          "bytes": 660,
+          "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378"
+        },
+        "OUTCOME.json": {
+          "bytes": 775,
+          "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca"
+        },
+        "partial_stdout.local.bin": {
+          "bytes": 114,
+          "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d"
+        }
+      },
+      "full_consumed_limits": {
+        "source_reads": 0,
+        "network_requests": 0,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "reader_attempts": 4,
+        "page_extractions": 119,
+        "wall_ms": 45000,
+        "child_wall_seconds": 30,
+        "child_cpu_soft_seconds": 10,
+        "child_cpu_hard_seconds": 11,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "code_read_bytes": 1048576,
+        "stdout_bytes": 114688,
+        "stderr_bytes": 4096,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768
+      },
+      "credit_restored": 0
+    },
+    "project_overlay": [
+      "src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py",
+      "src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py"
+    ],
+    "source_authority": false,
+    "qualification_authority": false
+  },
+  "packet_draft_INVALID_FOR_EXECUTION": {
+    "schema_version": 1,
+    "kind": "CLERK2020_RUNTIME_DIAGNOSTIC_RELEASE_V1",
+    "phase_id": "runtime-diagnostic-v1",
+    "root_sha256": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f",
+    "ancestor": {
+      "scope": "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1",
+      "plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e",
+      "records": {
+        "STARTED.json": {
+          "bytes": 660,
+          "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378"
+        },
+        "OUTCOME.json": {
+          "bytes": 775,
+          "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca"
+        },
+        "partial_stdout.local.bin": {
+          "bytes": 114,
+          "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d"
+        }
+      },
+      "full_consumed_limits": {
+        "source_reads": 0,
+        "network_requests": 0,
+        "model_calls": 0,
+        "native_import_attempts": 1,
+        "reader_attempts": 4,
+        "page_extractions": 119,
+        "wall_ms": 45000,
+        "child_wall_seconds": 30,
+        "child_cpu_soft_seconds": 10,
+        "child_cpu_hard_seconds": 11,
+        "rss_peak_bytes": 268435456,
+        "runtime_files": 1024,
+        "runtime_hash_bytes": 536870912,
+        "runtime_manifest_bytes": 98304,
+        "code_read_bytes": 1048576,
+        "stdout_bytes": 114688,
+        "stderr_bytes": 4096,
+        "owned_write_bytes": 131072,
+        "packet_bytes": 32768
+      },
+      "credit_restored": 0
+    },
+    "limits": {
+      "source_reads": 0,
+      "network_requests": 0,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "reader_attempts": 0,
+      "page_extractions": 0,
+      "wall_ms": 45000,
+      "child_wall_seconds": 30,
+      "child_cpu_soft_seconds": 10,
+      "child_cpu_hard_seconds": 11,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "code_read_bytes": 1048576,
+      "stdout_bytes": 114688,
+      "stderr_bytes": 4096,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "collector_passes": 1,
+      "ancestor_record_reads": 6,
+      "ancestor_read_bytes_reserved": 3104
+    },
+    "code_refs": {
+      "src/civiclab/__init__.py": {
+        "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50",
+        "bytes": 106
+      },
+      "src/civiclab/e01/__init__.py": {
+        "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83",
+        "bytes": 422
+      },
+      "src/civiclab/e01/pipeline.py": {
+        "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763",
+        "bytes": 22533
+      },
+      "src/civiclab/common.py": {
+        "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+        "bytes": 8476
+      },
+      "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+        "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f",
+        "bytes": 22083
+      },
+      "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+        "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487",
+        "bytes": 8768
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+        "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0",
+        "bytes": 8142
+      },
+      "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+        "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39",
+        "bytes": 9548
+      },
+      "tests/test_clerk2020_native_inventory_v1.py": {
+        "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d",
+        "bytes": 12468
+      },
+      "src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py": {
+        "sha256": "ff0a9cfddde60e5560bf37d0dabf45c6237ebdbd9ed3d504847a60104b66951c",
+        "bytes": 20094
+      },
+      "src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py": {
+        "sha256": "730440fa2090865e94b81fcd42320094f4981023b2adb0b22ed37a4eb7ea4ab9",
+        "bytes": 3881
+      }
+    },
+    "project_overlay": [
+      "src/civiclab/e01/clerk2020_runtime_diagnostic_v1.py",
+      "src/civiclab/e01/clerk2020_qualification_failure_context_v1_1.py"
+    ],
+    "review_bytes_b64": null,
+    "review_sha256": null
+  },
+  "expected_review_status_only_if_issued": "PASS_EXACT_RUNTIME_DIAGNOSTIC_ONLY",
+  "fixed_new_scope": "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1",
+  "new_scope_not_created_or_inspected": true,
+  "original_ancestry_and_spent_bounds": {
+    "scope": "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1",
+    "plan_sha256": "7f8cfb3889bf3306733ac8f9a9bed59fc8f1cd24c91c090adeab70f28911d54e",
+    "records": {
+      "STARTED.json": {
+        "bytes": 660,
+        "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378"
+      },
+      "OUTCOME.json": {
+        "bytes": 775,
+        "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca"
+      },
+      "partial_stdout.local.bin": {
+        "bytes": 114,
+        "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d"
+      }
+    },
+    "full_consumed_limits": {
+      "source_reads": 0,
+      "network_requests": 0,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "reader_attempts": 4,
+      "page_extractions": 119,
+      "wall_ms": 45000,
+      "child_wall_seconds": 30,
+      "child_cpu_soft_seconds": 10,
+      "child_cpu_hard_seconds": 11,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "code_read_bytes": 1048576,
+      "stdout_bytes": 114688,
+      "stderr_bytes": 4096,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768
+    },
+    "credit_restored": 0
+  },
+  "finite_new_scope_limits": {
+    "source_reads": 0,
+    "network_requests": 0,
+    "model_calls": 0,
+    "native_import_attempts": 1,
+    "reader_attempts": 0,
+    "page_extractions": 0,
+    "wall_ms": 45000,
+    "child_wall_seconds": 30,
+    "child_cpu_soft_seconds": 10,
+    "child_cpu_hard_seconds": 11,
+    "rss_peak_bytes": 268435456,
+    "runtime_files": 1024,
+    "runtime_hash_bytes": 536870912,
+    "runtime_manifest_bytes": 98304,
+    "code_read_bytes": 1048576,
+    "stdout_bytes": 114688,
+    "stderr_bytes": 4096,
+    "owned_write_bytes": 131072,
+    "packet_bytes": 32768,
+    "collector_passes": 1,
+    "ancestor_record_reads": 6,
+    "ancestor_read_bytes_reserved": 3104
+  },
+  "finite_operation_notes": {
+    "new_native_imports": 1,
+    "collector_passes": 1,
+    "pdf_reader_or_extract_calls": 0,
+    "runtime_artifact_hash_passes_each": 1,
+    "ancestor_verification": "Known3metadata records, twice,6reads/3104Breserved; no oldwrites.",
+    "delivery": "In-memory expected hash and closed binding checked before fixed directory reservation; packet32KiBmax.",
+    "first_effect": "New fixed sibling directory/STARTED fsync before ancestor/code/runtime reads.",
+    "outputs": "STARTED, worker-or-partialstdout,optionalstderr,OUTCOME;0600/0700 and131072Btotal.",
+    "failure": "Unknown observations consume full new bounds; old full4reader/119extract reservation remains intact. No retry/reset/refund.",
+    "clock_semantics": "Cooperative45sactive window with checks between operations; child30s/CPU10soft11hard and sampled256MiBRSS,not hardfilesystem/preallocation containment."
+  },
+  "site_map_frozen_source_sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f",
+  "accepted_passive_helper_sha256": "730440fa2090865e94b81fcd42320094f4981023b2adb0b22ed37a4eb7ea4ab9",
+  "future_root_call": "civiclab.e01.clerk2020_runtime_diagnostic_v1.run_phase(root,canonical_packet,external_packet_sha256)",
+  "no_original_caller_packet_scope_E02_STATUS_shared_auditor_Git_edits": true
+}
