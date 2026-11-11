@@ -1,0 +1,2187 @@
+{
+  "acceptance": {
+    "bounded_actual_dispatch": "COMPLETE",
+    "full_original_E02_research_contract": "INCOMPLETE",
+    "independent_actual_audit": "PENDING"
+  },
+  "analysis": {
+    "actual_authority": false,
+    "crossmodel_common_context_interaction_difference": {
+      "complete_contexts": 3,
+      "context_values": [
+        {
+          "A_value": -25,
+          "B_value": -55,
+          "profile_id": "EXPLORATORY-FICTIONAL-01",
+          "value": -30
+        },
+        {
+          "A_value": -25,
+          "B_value": -35,
+          "profile_id": "EXPLORATORY-FICTIONAL-02",
+          "value": -10
+        },
+        {
+          "A_value": null,
+          "B_value": -5,
+          "profile_id": "EXPLORATORY-FICTIONAL-03",
+          "value": null
+        },
+        {
+          "A_value": -50,
+          "B_value": -30,
+          "profile_id": "EXPLORATORY-FICTIONAL-04",
+          "value": 20
+        }
+      ],
+      "interval_95": null,
+      "max_points": 20,
+      "mean_points": -6.666666666666667,
+      "min_points": -30,
+      "planned_contexts": 4,
+      "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+    },
+    "kind": "EXPLORATORY_ISSUE_CUE_CROSSMODEL_V1",
+    "limitations": "Fixed AI-output diagnostic, four authored technical contexts, one fictional proposal. No human, population, validated-scale or equivalence inference. Distinct model/provider/tokenization/quantization configurations; technical seeds do not ensure deterministic or common randomness. No human mechanism, family-wide replication, inferential interval or equivalence claim. Old full-answer cue results are not pooled.",
+    "models": {
+      "A": {
+        "baseline_quality": {
+          "comprehension": {
+            "correct": 4,
+            "correct_per_planned": 1.0,
+            "correct_per_valid": 1.0,
+            "observed_factual_errors": 0,
+            "planned": 4,
+            "quality_counts": {
+              "CORRECT": 4
+            },
+            "valid": 4
+          },
+          "planned": 4,
+          "valid_for_shown": 3
+        },
+        "binding": {
+          "model": "openai/gpt-4.1-nano",
+          "output_parameter": "max_completion_tokens",
+          "reported_provider": "Azure",
+          "requested_route": "azure",
+          "route_scope": "PROVIDER_FAMILY"
+        },
+        "comprehension": {
+          "OMITTED": {
+            "by_notice": {
+              "N01": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              },
+              "N02": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              },
+              "N03": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              }
+            },
+            "correct": 12,
+            "correct_per_planned": 1.0,
+            "correct_per_valid": 1.0,
+            "directional": {
+              "correct": 8,
+              "correct_per_planned": 1.0,
+              "correct_per_valid": 1.0,
+              "observed_factual_errors": 0,
+              "planned": 8,
+              "quality_counts": {
+                "CORRECT": 8
+              },
+              "valid": 8
+            },
+            "observed_factual_errors": 0,
+            "planned": 12,
+            "quality_counts": {
+              "CORRECT": 12
+            },
+            "valid": 12
+          },
+          "SHOWN": {
+            "by_notice": {
+              "N01": {
+                "correct": 3,
+                "correct_per_planned": 0.75,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 3,
+                  "UNASKED": 1
+                },
+                "valid": 3
+              },
+              "N02": {
+                "correct": 3,
+                "correct_per_planned": 0.75,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 3,
+                  "UNASKED": 1
+                },
+                "valid": 3
+              },
+              "N03": {
+                "correct": 3,
+                "correct_per_planned": 0.75,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 3,
+                  "UNASKED": 1
+                },
+                "valid": 3
+              }
+            },
+            "correct": 9,
+            "correct_per_planned": 0.75,
+            "correct_per_valid": 1.0,
+            "directional": {
+              "correct": 6,
+              "correct_per_planned": 0.75,
+              "correct_per_valid": 1.0,
+              "observed_factual_errors": 0,
+              "planned": 8,
+              "quality_counts": {
+                "CORRECT": 6,
+                "UNASKED": 2
+              },
+              "valid": 6
+            },
+            "observed_factual_errors": 0,
+            "planned": 12,
+            "quality_counts": {
+              "CORRECT": 9,
+              "UNASKED": 3
+            },
+            "valid": 9
+          }
+        },
+        "content_contrasts": {
+          "OMITTED": {
+            "complete_contexts": 3,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": 25
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 25
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": null
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": 50
+              }
+            ],
+            "interval_95": null,
+            "max_points": 50,
+            "mean_points": 33.333333333333336,
+            "min_points": 25,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          },
+          "SHOWN": {
+            "complete_contexts": 3,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": 0
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 0
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": null
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": 0
+              }
+            ],
+            "interval_95": null,
+            "max_points": 0,
+            "mean_points": 0.0,
+            "min_points": 0,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          }
+        },
+        "item_quality_counts": [
+          {
+            "count": 9,
+            "item": "democratic_party",
+            "quality": "MISSING_NULL"
+          },
+          {
+            "count": 3,
+            "item": "democratic_party",
+            "quality": "UNASKED"
+          },
+          {
+            "count": 16,
+            "item": "democratic_party",
+            "quality": "VALID"
+          },
+          {
+            "count": 3,
+            "item": "library_support",
+            "quality": "MISSING_NULL"
+          },
+          {
+            "count": 3,
+            "item": "library_support",
+            "quality": "UNASKED"
+          },
+          {
+            "count": 22,
+            "item": "library_support",
+            "quality": "VALID"
+          },
+          {
+            "count": 3,
+            "item": "republican_party",
+            "quality": "MISSING_NULL"
+          },
+          {
+            "count": 3,
+            "item": "republican_party",
+            "quality": "UNASKED"
+          },
+          {
+            "count": 22,
+            "item": "republican_party",
+            "quality": "VALID"
+          },
+          {
+            "count": 3,
+            "item": "visits_change",
+            "quality": "UNASKED"
+          },
+          {
+            "count": 25,
+            "item": "visits_change",
+            "quality": "VALID"
+          }
+        ],
+        "neutral_reference_support_changes": [
+          {
+            "mode": "OMITTED",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 0
+          }
+        ],
+        "prespecified_patterns": {
+          "adequate_directional_factual_coverage": true,
+          "attenuation_in_this_configuration": false,
+          "content_sensitive": false,
+          "observed_factual_errors": 0
+        },
+        "primary_cue_interaction": {
+          "complete_contexts": 3,
+          "context_values": [
+            {
+              "party": "D",
+              "profile_id": "EXPLORATORY-FICTIONAL-01",
+              "value": -25
+            },
+            {
+              "party": "D",
+              "profile_id": "EXPLORATORY-FICTIONAL-02",
+              "value": -25
+            },
+            {
+              "party": "R",
+              "profile_id": "EXPLORATORY-FICTIONAL-03",
+              "value": null
+            },
+            {
+              "party": "R",
+              "profile_id": "EXPLORATORY-FICTIONAL-04",
+              "value": -50
+            }
+          ],
+          "interval_95": null,
+          "max_points": -25,
+          "mean_points": -33.333333333333336,
+          "min_points": -50,
+          "planned_contexts": 4,
+          "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+        },
+        "separate_partisan_content_contrasts": {
+          "OMITTED": {
+            "complete_contexts": 2,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": 0
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 40
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": null
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": null
+              }
+            ],
+            "interval_95": null,
+            "max_points": 40,
+            "mean_points": 20.0,
+            "min_points": 0,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          },
+          "SHOWN": {
+            "complete_contexts": 1,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": null
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 0
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": null
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": null
+              }
+            ],
+            "interval_95": null,
+            "max_points": 0,
+            "mean_points": 0.0,
+            "min_points": 0,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          }
+        },
+        "separate_partisan_gap_changes": [
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": -40
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": -40
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 40
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 40
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 40
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": null
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": null
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": null
+          }
+        ]
+      },
+      "B": {
+        "baseline_quality": {
+          "comprehension": {
+            "correct": 4,
+            "correct_per_planned": 1.0,
+            "correct_per_valid": 1.0,
+            "observed_factual_errors": 0,
+            "planned": 4,
+            "quality_counts": {
+              "CORRECT": 4
+            },
+            "valid": 4
+          },
+          "planned": 4,
+          "valid_for_shown": 4
+        },
+        "binding": {
+          "model": "qwen/qwen3-30b-a3b-instruct-2507",
+          "output_parameter": "max_completion_tokens",
+          "reported_provider": "Nebius",
+          "requested_route": "nebius/fp8",
+          "route_scope": "ENDPOINT_PREFIX"
+        },
+        "comprehension": {
+          "OMITTED": {
+            "by_notice": {
+              "N01": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              },
+              "N02": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              },
+              "N03": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              }
+            },
+            "correct": 12,
+            "correct_per_planned": 1.0,
+            "correct_per_valid": 1.0,
+            "directional": {
+              "correct": 8,
+              "correct_per_planned": 1.0,
+              "correct_per_valid": 1.0,
+              "observed_factual_errors": 0,
+              "planned": 8,
+              "quality_counts": {
+                "CORRECT": 8
+              },
+              "valid": 8
+            },
+            "observed_factual_errors": 0,
+            "planned": 12,
+            "quality_counts": {
+              "CORRECT": 12
+            },
+            "valid": 12
+          },
+          "SHOWN": {
+            "by_notice": {
+              "N01": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              },
+              "N02": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              },
+              "N03": {
+                "correct": 4,
+                "correct_per_planned": 1.0,
+                "correct_per_valid": 1.0,
+                "observed_factual_errors": 0,
+                "planned": 4,
+                "quality_counts": {
+                  "CORRECT": 4
+                },
+                "valid": 4
+              }
+            },
+            "correct": 12,
+            "correct_per_planned": 1.0,
+            "correct_per_valid": 1.0,
+            "directional": {
+              "correct": 8,
+              "correct_per_planned": 1.0,
+              "correct_per_valid": 1.0,
+              "observed_factual_errors": 0,
+              "planned": 8,
+              "quality_counts": {
+                "CORRECT": 8
+              },
+              "valid": 8
+            },
+            "observed_factual_errors": 0,
+            "planned": 12,
+            "quality_counts": {
+              "CORRECT": 12
+            },
+            "valid": 12
+          }
+        },
+        "content_contrasts": {
+          "OMITTED": {
+            "complete_contexts": 4,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": 55
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 55
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": 40
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": 55
+              }
+            ],
+            "interval_95": null,
+            "max_points": 55,
+            "mean_points": 51.25,
+            "min_points": 40,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          },
+          "SHOWN": {
+            "complete_contexts": 4,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": 0
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 20
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": 35
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": 25
+              }
+            ],
+            "interval_95": null,
+            "max_points": 35,
+            "mean_points": 20.0,
+            "min_points": 0,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          }
+        },
+        "item_quality_counts": [
+          {
+            "count": 28,
+            "item": "democratic_party",
+            "quality": "VALID"
+          },
+          {
+            "count": 28,
+            "item": "library_support",
+            "quality": "VALID"
+          },
+          {
+            "count": 28,
+            "item": "republican_party",
+            "quality": "VALID"
+          },
+          {
+            "count": 28,
+            "item": "visits_change",
+            "quality": "VALID"
+          }
+        ],
+        "neutral_reference_support_changes": [
+          {
+            "mode": "OMITTED",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 0
+          }
+        ],
+        "prespecified_patterns": {
+          "adequate_directional_factual_coverage": true,
+          "attenuation_in_this_configuration": true,
+          "content_sensitive": true,
+          "observed_factual_errors": 0
+        },
+        "primary_cue_interaction": {
+          "complete_contexts": 4,
+          "context_values": [
+            {
+              "party": "D",
+              "profile_id": "EXPLORATORY-FICTIONAL-01",
+              "value": -55
+            },
+            {
+              "party": "D",
+              "profile_id": "EXPLORATORY-FICTIONAL-02",
+              "value": -35
+            },
+            {
+              "party": "R",
+              "profile_id": "EXPLORATORY-FICTIONAL-03",
+              "value": -5
+            },
+            {
+              "party": "R",
+              "profile_id": "EXPLORATORY-FICTIONAL-04",
+              "value": -30
+            }
+          ],
+          "interval_95": null,
+          "max_points": -5,
+          "mean_points": -31.25,
+          "min_points": -55,
+          "planned_contexts": 4,
+          "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+        },
+        "separate_partisan_content_contrasts": {
+          "OMITTED": {
+            "complete_contexts": 4,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": -5
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 0
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": -10
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": -65
+              }
+            ],
+            "interval_95": null,
+            "max_points": 0,
+            "mean_points": -20.0,
+            "min_points": -65,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          },
+          "SHOWN": {
+            "complete_contexts": 4,
+            "context_values": [
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-01",
+                "value": 10
+              },
+              {
+                "party": "D",
+                "profile_id": "EXPLORATORY-FICTIONAL-02",
+                "value": 5
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-03",
+                "value": -60
+              },
+              {
+                "party": "R",
+                "profile_id": "EXPLORATORY-FICTIONAL-04",
+                "value": -20
+              }
+            ],
+            "interval_95": null,
+            "max_points": 10,
+            "mean_points": -16.25,
+            "min_points": -60,
+            "planned_contexts": 4,
+            "uncertainty_status": "NOT_ESTIMATED_PURPOSIVE_TECHNICAL_CONTEXTS_ONE_ISSUE"
+          }
+        },
+        "separate_partisan_gap_changes": [
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": -5
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 15
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": 5
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-01",
+            "value": -5
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 5
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 5
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "D",
+            "profile_id": "EXPLORATORY-FICTIONAL-02",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": 0
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": -10
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": 0
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": 10
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": -50
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-03",
+            "value": 10
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 5
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": -15
+          },
+          {
+            "mode": "OMITTED",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 50
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N01",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 50
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N02",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 40
+          },
+          {
+            "mode": "SHOWN",
+            "notice_id": "N03",
+            "party": "R",
+            "profile_id": "EXPLORATORY-FICTIONAL-04",
+            "value": 60
+          }
+        ]
+      }
+    },
+    "phase_counts": {
+      "ANSWER": 53,
+      "SKIPPED_INVALID_PRE": 3
+    },
+    "prespecified_patterns": {
+      "attenuation_across_both_fixed_configurations": false
+    },
+    "protocol_sha256": "ccedb7aa9989fd0e1e96cb8c0e132e154c4383cf63210a599bc51ab683ace1e8",
+    "response_envelope_sha256": "1a1d8b44bf39b03a70e3f284822d13d365cb0ef6e69b02d95f2372190d7518e4",
+    "response_provenance": "EXPLORATORY_REAL_MODEL",
+    "scored_phases": [
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 0,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 60,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 1,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 2,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 35,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 3,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 4,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 5,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": -20,
+        "support": 75
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 6,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 60
+      },
+      {
+        "baseline_valid": false,
+        "comprehension": "CORRECT",
+        "execution_order": 7,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "MISSING_NULL",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": null
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 8,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 9,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 40,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 10,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 35,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 11,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 60,
+        "support": 50
+      },
+      {
+        "baseline_valid": false,
+        "comprehension": "UNASKED",
+        "execution_order": 12,
+        "item_quality": {
+          "democratic_party": "UNASKED",
+          "library_support": "UNASKED",
+          "republican_party": "UNASKED",
+          "visits_change": "UNASKED"
+        },
+        "party_gap": null,
+        "support": null
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 13,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 40,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 14,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": -15,
+        "support": 75
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 15,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "VALID",
+          "republican_party": "MISSING_NULL",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": false,
+        "comprehension": "CORRECT",
+        "execution_order": 16,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "MISSING_NULL",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": null
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 17,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 18,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 40,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 19,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "MISSING_NULL",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": false,
+        "comprehension": "CORRECT",
+        "execution_order": 20,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "MISSING_NULL",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": null
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 21,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 40
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 22,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 35,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 23,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 60,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 24,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 0
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 25,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 30
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 26,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": -20,
+        "support": 75
+      },
+      {
+        "baseline_valid": false,
+        "comprehension": "UNASKED",
+        "execution_order": 27,
+        "item_quality": {
+          "democratic_party": "UNASKED",
+          "library_support": "UNASKED",
+          "republican_party": "UNASKED",
+          "visits_change": "UNASKED"
+        },
+        "party_gap": null,
+        "support": null
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 28,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 0,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 29,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 20,
+        "support": 85
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 30,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 30
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 31,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 60,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 32,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 33,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 75
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 34,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 50,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 35,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 60,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 36,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 60,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 37,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 38,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 85
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 39,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 75
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 40,
+        "item_quality": {
+          "democratic_party": "MISSING_NULL",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 41,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 20,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 42,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 35,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 43,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 44,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 45,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 35,
+        "support": 30
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 46,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 40,
+        "support": 40
+      },
+      {
+        "baseline_valid": false,
+        "comprehension": "UNASKED",
+        "execution_order": 47,
+        "item_quality": {
+          "democratic_party": "UNASKED",
+          "library_support": "UNASKED",
+          "republican_party": "UNASKED",
+          "visits_change": "UNASKED"
+        },
+        "party_gap": null,
+        "support": null
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 48,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 49,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 60
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 50,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 80
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 51,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "MISSING_NULL",
+          "visits_change": "VALID"
+        },
+        "party_gap": null,
+        "support": 50
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 52,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 75
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 53,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 30,
+        "support": 85
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 54,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": -35,
+        "support": 85
+      },
+      {
+        "baseline_valid": true,
+        "comprehension": "CORRECT",
+        "execution_order": 55,
+        "item_quality": {
+          "democratic_party": "VALID",
+          "library_support": "VALID",
+          "republican_party": "VALID",
+          "visits_change": "VALID"
+        },
+        "party_gap": 100,
+        "support": 50
+      }
+    ],
+    "status": "DESCRIPTIVE_COMPLETE_BATCH"
+  },
+  "analysis_recomputed_equal": true,
+  "billing": {
+    "E01_paid_ceiling": 0,
+    "all_research_generations_across_three_distinct_studies": 107,
+    "all_research_verified_USD": "0.0069294",
+    "by_actual_model": {
+      "openai/gpt-4.1-nano-2025-04-14": {
+        "all_non_BYOK": true,
+        "generations": 24,
+        "native_completion_tokens": 839,
+        "native_prompt_tokens": 14046,
+        "native_reasoning_tokens": 0,
+        "serving_providers": [
+          "Azure"
+        ],
+        "verified_USD": "0.0017402"
+      },
+      "qwen/qwen3-30b-a3b-instruct-2507": {
+        "all_non_BYOK": true,
+        "generations": 27,
+        "native_completion_tokens": 1058,
+        "native_prompt_tokens": 16853,
+        "native_reasoning_tokens": 0,
+        "serving_providers": [
+          "Nebius"
+        ],
+        "verified_USD": "0.0020027"
+      }
+    },
+    "conservative_owner_exposure_microusd": 9319,
+    "cumulative_E02_ceiling_microusd": 1000000,
+    "historical_holds_unchanged_microusd": [
+      340,
+      340,
+      788,
+      1008
+    ],
+    "invoice_vs_reservation_note": "Exposure includes retained uncertainty holds and rounding, not only provider invoices.",
+    "new_continuation_ceiling_microusd": 98920,
+    "old_study_charged_and_held_microusd": 1080,
+    "old_two_baselines_reported_USD": "0.0001441",
+    "original_study_ceiling_microusd": 100000,
+    "per_generation_ceil_microusd": 3766,
+    "remaining_E02_after_charges_and_holds_microusd": 990681,
+    "remaining_shared_microusd": 4990681,
+    "shared_ceiling_microusd": 5000000,
+    "verified_combined_study_USD": "0.0038870",
+    "verified_new_continuation_USD": "0.0037429"
+  },
+  "cross_batch_provenance": {
+    "continuation_dispatched_execution_orders": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "continuation_planned_execution_orders": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55
+    ],
+    "explicit_gap_not_single_continuous_run": true,
+    "old_baseline_batch_start_utc": "2026-11-10T19:17:45.275479+00:00",
+    "saved_baseline_execution_orders": [
+      0,
+      1
+    ]
+  },
+  "design": {
+    "baseline_is_reference_notice_not_unexposed": true,
+    "baseline_modes": [
+      "OMITTED",
+      "SHOWN"
+    ],
+    "crossmodel_secondary": "B minus A interaction on common eligible contexts only",
+    "fictional_technical_contexts": 4,
+    "independent_humans": 0,
+    "input_token_bound": 8192,
+    "issues": 1,
+    "model_configurations": 2,
+    "new_baselines_per_model": 3,
+    "new_continuation_POSTs_max": 54,
+    "notice_variants": 3,
+    "output_token_bound": 256,
+    "planned_total_study_model_POSTs": 56,
+    "posts_per_model": 24,
+    "primary_per_model": "signed (support positive minus negative) SHOWN minus OMITTED",
+    "reused_exact_saved_baselines": 2,
+    "shown_cue": "only own same-model/profile library_support",
+    "temperature": 0,
+    "total_baselines_per_model": 4,
+    "wrapper": "news card in all conditions"
+  },
+  "dispatch": {
+    "POST_retries": 0,
+    "automatic_sample_extensions": 0,
+    "credit_purchases": 0,
+    "new_catalog_GETs": 8,
+    "new_model_POSTs": 51,
+    "new_statistics_GETs": 53,
+    "prior_stopped_batch_POSTs": 2,
+    "prior_stopped_batch_billing_GETs": 4,
+    "prior_stopped_batch_catalog_GETs": 2,
+    "statistics_retries": 2
+  },
+  "kind": "E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_V1",
+  "last_committed_at_utc": "2026-11-10T20:13:57.941242+00:00",
+  "ledger": {
+    "events": 664,
+    "export_owner_writes": 0,
+    "lifetime_dispatches": 109,
+    "original_354_event_prefix_unchanged": true,
+    "original_58_rows_unchanged": true,
+    "original_alignment_unchanged": true,
+    "original_continuation_unchanged": true,
+    "original_journals_unchanged": true,
+    "original_stopped_crossmodel_unchanged": true,
+    "original_study_unchanged": true,
+    "row_statuses": {
+      "PHASE_COMMITTED": 105,
+      "UNCERTAIN": 4
+    },
+    "rows": 109,
+    "true_unfinished": 4
+  },
+  "limitations": [
+    "Fixed AI-output diagnostic, four authored technical contexts, one fictional proposal. No human, population, validated-scale or equivalence inference. Distinct model/provider/tokenization/quantization configurations; technical seeds do not ensure deterministic or common randomness. No human mechanism, family-wide replication, inferential interval or equivalence claim. Old full-answer cue results are not pooled.",
+    "Signed interaction is distinct from contraction of absolute response magnitude; report both contrasts.",
+    "One authored issue and four fictional contexts, without a matched human sample or nationally fitted live population.",
+    "The published human anchoring paper motivates the question; this is not a human-study replication.",
+    "Earlier full-answer and wrapper studies remain separate; no pooling or repair of old missing items.",
+    "The first two baselines predate the continuation; preserve and report that temporal gap.",
+    "Reported-null Qwen tier remains UNKNOWN; preserved raw metadata and same-generation all-in bill support bounded admission, not a default-tier claim.",
+    "The original Qwen1008microUSD financial hold remains unreleased despite analytical recovery."
+  ],
+  "preexecution_review": {
+    "reports/INDEPENDENT_AUDIT_E02_CROSSMODEL_PRICE_METADATA_COMPONENTS_20261110.json": "d6d738a10ebe7aa5ff5b34c9c44c1d6d37fdcf3a8c10f69e874bcef5e791df76",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_METHODS_PURE_V1_20261110.json": "35330eaeb78e8fcef360e4632b93176be07f81f8bffa2db7c8e1f4a38034ebdf",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_CODE_PARTICULAR_V1_20261110.json": "0e6daa14cce6544f97c4cad19f509620f1b2aae2f6c25910f027236328923fdc"
+  },
+  "private_evidence_sha256": {
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/build_public_receipt.py": "77da3ef11e647b588f4b36fa5ccd27dc3081d4e5a320ac020b204c35a8503e33",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/collect_closed_evidence.py": "ab5ebd6782e9ee3e58e69b5d2a184e9308c6163d2f70ff164de79d16f0104935",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/execution-intent.local.json": "04109897ed471ba1679f6a6bdc587f75686a198a991c254230adaa97c2c3377e",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/execution-summary.local.json": "16b91e990551b4069522eb7ec037ba943173cb86a1020d86a803816a54b291a6",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/packet.local.json": "91f3ace244f5cb95e480213a2c2a68ea9f211e9c4dc27608c3451387edef6f41",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/post-run-owner-export.local.json": "61a6ab162c464dc3bf7308ebe11f762a54f58b43b1424aa5be7c100696ed995c",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/recomputed-analysis.local.json": "a49ce5b0252475d8b091adf0ce279b9fb28297342e63eebbbe77bb169c95394c",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/retained-journal-index.local.json": "fcb4affc1a1be1e2f47b63b7ebe8e443312a78a60ac6116760a003f87c8459c1",
+    "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/retained-journal/summary.json": "2bf96604fa8c9f7758f691189ff5c94ae53cfcef8a6330b635133d69136f82a0"
+  },
+  "protocol_sha256": "ccedb7aa9989fd0e1e96cb8c0e132e154c4383cf63210a599bc51ab683ace1e8",
+  "publication_status": "OWNER_REVIEW_ONLY_NO_EXTERNAL_PAPER_BLOG_PUBLICATION",
+  "response_provenance": "EXPLORATORY_REAL_MODEL",
+  "retention": {
+    "canonical_parsed_objects_not_original_wire_bytes": true,
+    "journal_bytes": 960525,
+    "journal_files": 374,
+    "private_raw_evidence_git_ignored": true
+  },
+  "run_id": "e02-issue-cue-crossmodel-recovery-live-20261110-01",
+  "source_commit": "80ee535b1aab3b1ba292ee929d8dac51d4c20cc1",
+  "started_at_utc": "2026-11-10T19:52:57.493160+00:00",
+  "status": "COMPLETE_PENDING_INDEPENDENT_ACTUAL_AUDIT",
+  "stimulus_provenance": "PROJECT_AUTHORED_FICTIONAL_DEMO_NOTICES"
+}
