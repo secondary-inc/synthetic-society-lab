@@ -1,0 +1,52 @@
+test_new_single_proof_and_old_two_proof_replay_advance_once (tests.test_wrapper_visibility_controls_v1.ControlTests.test_new_single_proof_and_old_two_proof_replay_advance_once) ... ERROR
+test_only_closed404_can_retry_and_physical_total_is_capped (tests.test_wrapper_visibility_controls_v1.ControlTests.test_only_closed404_can_retry_and_physical_total_is_capped) ... ok
+test_stale_future_and_rollback_proofs_fail (tests.test_wrapper_visibility_controls_v1.ControlTests.test_stale_future_and_rollback_proofs_fail) ... ERROR
+
+======================================================================
+ERROR: test_new_single_proof_and_old_two_proof_replay_advance_once (tests.test_wrapper_visibility_controls_v1.ControlTests.test_new_single_proof_and_old_two_proof_replay_advance_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_visibility_controls_v1.py", line 25, in test_new_single_proof_and_old_two_proof_replay_advance_once
+    self.assertEqual(owner._new_proofs_clock(event,state,policy,proofs,{r:{'terms':{}} for r in roles}),T0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 306, in _new_proofs_clock
+    return self._new_clock(event,state,policy,proofs['B'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 295, in _new_clock
+    prior=state['max_clock']; now=self._clock(event,state)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1216, in _execute_mock_call
+    return self._mock_wraps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/production_owner_v4.py", line 246, in _clock
+    if set(event)!={'kind','recorded_at_utc','prior_clock_max_utc','clock_status','clock_error','payload'}:raise ValueError('owner event schema changed')
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: owner event schema changed
+
+======================================================================
+ERROR: test_stale_future_and_rollback_proofs_fail (tests.test_wrapper_visibility_controls_v1.ControlTests.test_stale_future_and_rollback_proofs_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_visibility_controls_v1.py", line 40, in test_stale_future_and_rollback_proofs_fail
+    owner._new_proofs_clock(event,state,policy,proof,{'B':{'terms':{}}})
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 306, in _new_proofs_clock
+    return self._new_clock(event,state,policy,proofs['B'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 295, in _new_clock
+    prior=state['max_clock']; now=self._clock(event,state)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/production_owner_v4.py", line 246, in _clock
+    if set(event)!={'kind','recorded_at_utc','prior_clock_max_utc','clock_status','clock_error','payload'}:raise ValueError('owner event schema changed')
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: owner event schema changed
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (errors=2)

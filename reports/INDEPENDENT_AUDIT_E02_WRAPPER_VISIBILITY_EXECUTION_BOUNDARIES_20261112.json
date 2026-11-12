@@ -1,0 +1,371 @@
+{
+  "task_id": "INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_EXECUTION_BOUNDARIES_20261112",
+  "review_date": "2026-11-12",
+  "status": "PASS_SCOPED_STATIC_FAST_CONTROLS_AND_AUTHORED_BOUNDARIES_ONLY",
+  "full_execution_candidate_acceptance": "PENDING_FINAL_CLOSED_LIFECYCLE_HANDOFF_NOT_RELEASED",
+  "reviewer": "Existing independent research coordination reviewer; did not implement or edit the six candidate files.",
+  "scope": "Static delta from accepted CrossmodelRecoveryOwner/client, eight independent fast controls on both Python runtimes, thirteen durable acknowledgement/cancellation/known-cost/late/overrun probes on copies of a closed authored financial prefix, and fourteen direct in-memory GRANT guard cases. No complete new40phase financial run executed by this reviewer.",
+  "source_candidate": {
+    "path": "reports/E02_WRAPPER_VISIBILITY_EXECUTION_CANDIDATE_20261112.json",
+    "sha256": "86c58c455d8de241d8d2e10db113f90062ce223807cba3479a58b1c8213d24cf",
+    "capture_status": "FROZEN_SOURCE_CANDIDATE_FOR_STATIC_REVIEW_DYNAMIC_LIFECYCLE_TESTS_RUNNING_NOT_RELEASED"
+  },
+  "reviewed_files": {
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": {
+      "bytes": 28723,
+      "sha256": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48"
+    },
+    "src/civiclab/e02/wrapper_visibility_client_v1.py": {
+      "bytes": 19693,
+      "sha256": "c35745a55384984e18bad0370c5612a9d13ee3288a4748a0258137eed52546ed"
+    },
+    "scripts/run_wrapper_visibility_once.py": {
+      "bytes": 4001,
+      "sha256": "2a7e77b3ac70dc13c20b9397177b6c3def334d52e844cdbfb856cb0245055705"
+    },
+    "tests/test_wrapper_visibility_execution_v1.py": {
+      "bytes": 11322,
+      "sha256": "1b93aa83a9d1d85e5813743744d26f25b8313935f7dbf25e1b83549df4e7ad72"
+    },
+    "tests/test_wrapper_visibility_caller_v1.py": {
+      "bytes": 4034,
+      "sha256": "2d6d3901db0fdb69f07322c16fc0e6b27fc5b9db301c3092f563367d3d66fcb5"
+    },
+    "tests/test_wrapper_visibility_controls_v1.py": {
+      "bytes": 3659,
+      "sha256": "6f719c433f473278848d76c0ca6d21d7cce5e8b6f893ca7669b434efb880ccf3"
+    }
+  },
+  "findings": [],
+  "static_checks": [
+    "Historical event replay delegates to the accepted predecessor until the distinct wrapper START; the new single-proof clock path delegates historical two-role policies back to the predecessor. Old namespace/transition bindings remain separate.",
+    "START requires the exact hash-bound completed53witness/109row/109dispatch predecessor and four historical unfinished rows; new study begins with no saved scientific witnesses and no answer reuse. All old rows, claims, namespace hashes and consumed accounting are bound in the packet.",
+    "New40slot protocol, per-call1785microUSD quote,75000batch,1000000E02,5000000shared,0E01 and149lifetime dispatch limits are checked before reservation. All three scheduled price barriers must be consumed in order, including skipped-slot jumps; missing/extra/replayed refreshes refuse.",
+    "One-use caller intent precedes credential access; exact caller/packet/predecessor/code/credential-reader bindings and finite lease are checked. Client journal is create-only and capability POST intent is durable before transport; no phase replacement or POST retry.",
+    "Global physical billing cap120, at most3attempts per generation and exact closed404-only retry with fixed10/10/20 waits; catalog cap4; phase gates reserve remaining120second/HTTP/checkpoint time without extending it.",
+    "Response and same-generation statistics costs are harvested before downstream content/model/provider refusal. Incomplete settlement/checkpoint/commit paths preserve observed charge and at least full reservation, stop client iteration and prevent journal replay.",
+    "Canonical complete response/statistics/checkpoint identity, exact request/context/payload/witness bindings and same-owner durable COMMIT are separately verified. Reported-null metadata remains unknown under accepted predecessor semantics; no silent fallback or default-tier assertion added."
+  ],
+  "closed_authored_prefix": {
+    "index_path": "data/processed/e02_wrapper_visibility_execution_authored_20261112/closed-prefix-312/index.json",
+    "index_sha256": "ed9cec1bd96a89bfc1cf0c0462981b55c01c73207a8a00b003ca76b1bec1b7f0",
+    "indexed_files": 652,
+    "history_events": 660,
+    "rows": 109,
+    "unfinished": 4,
+    "authored_hold_microusd": [
+      340,
+      340,
+      340,
+      1008
+    ],
+    "not_actual_account_hold_values": true,
+    "source_closed_cache_capture": "Lead-provided capture helper inspected statically; reviewer did not execute capture helper or search other financial homes.",
+    "all_index_file_bytes_hashes_verified_before_after_each_probe_batch": true,
+    "operations": "Only new reviewer-owned copies under temporary AUTHORED_OS_HOME trees, account(fakehome) patches with constructor directory assertion. Retained prefix was not opened for SQLite writes or modified."
+  },
+  "independent_fast_results": {
+    "312": {
+      "status": "PASS_FAST_COMPONENT_CONTROLS_ONLY",
+      "tests": 8,
+      "runtime": "3.12.14",
+      "seconds": 0.006444790997193195,
+      "guard_refusals": []
+    },
+    "311": {
+      "status": "PASS_FAST_COMPONENT_CONTROLS_ONLY",
+      "tests": 8,
+      "runtime": "3.11.17",
+      "seconds": 0.006680958002107218,
+      "guard_refusals": []
+    }
+  },
+  "independent_fault_results": [
+    {
+      "name": "lost_reservation_ack",
+      "status": "PASS",
+      "new_POSTs": 0,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "STARTED",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": null,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "dispatch_intent_ack_loss",
+      "status": "PASS",
+      "new_POSTs": 0,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": null,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "response_known_cost_refusal",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 1,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "statistics_known_cost_refusal",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 1,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 2,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "checkpoint_ack_loss",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 1,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 1,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "commit_ack_loss",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 1,
+      "catalogs": 1,
+      "row_status": "PHASE_COMMITTED",
+      "reserved": 1008,
+      "charged": 1,
+      "observed_cost": 1,
+      "unfinished": 4,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "cancel_before_POST",
+      "status": "PASS",
+      "new_POSTs": 0,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": null,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "cancel_after_response",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 1,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "cancel_after_settlement",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 1,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 1,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "lost_settlement_ack",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 1,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 1,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "wrong_ACK_payload",
+      "status": "PASS",
+      "new_POSTs": 0,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": null,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "late_commit",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 1,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 1008,
+      "observed_cost": 1,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    },
+    {
+      "name": "observed_response_overrun",
+      "status": "PASS",
+      "new_POSTs": 1,
+      "new_GETs": 0,
+      "catalogs": 1,
+      "row_status": "UNCERTAIN",
+      "reserved": 1008,
+      "charged": 2000,
+      "observed_cost": 2000,
+      "unfinished": 5,
+      "prefix_and_old_rows_unchanged": true,
+      "replay_additional_calls": 0
+    }
+  ],
+  "direct_guard_cases": {
+    "status": "PASS_COMPONENT_GUARD_ARITHMETIC_NOT_ADMISSIBLE_HISTORIES",
+    "cases": [
+      {
+        "name": "legitimate",
+        "status": "PASS"
+      },
+      {
+        "name": "unfinished",
+        "status": "PASS"
+      },
+      {
+        "name": "pending",
+        "status": "PASS"
+      },
+      {
+        "name": "stopped",
+        "status": "PASS"
+      },
+      {
+        "name": "dispatch_cap",
+        "status": "PASS"
+      },
+      {
+        "name": "shared_cap",
+        "status": "PASS"
+      },
+      {
+        "name": "E02_cap",
+        "status": "PASS"
+      },
+      {
+        "name": "E01_nonzero",
+        "status": "PASS"
+      },
+      {
+        "name": "phase_count",
+        "status": "PASS"
+      },
+      {
+        "name": "batch_cap",
+        "status": "PASS"
+      },
+      {
+        "name": "wrong_refresh_stage",
+        "status": "PASS"
+      },
+      {
+        "name": "duplicate_receipt",
+        "status": "PASS"
+      },
+      {
+        "name": "stale_proof",
+        "status": "PASS"
+      },
+      {
+        "name": "future_proof",
+        "status": "PASS"
+      }
+    ],
+    "guard_refusals": []
+  },
+  "boundary_interpretation": [
+    "Lost reservation ACK retains STARTED/full reservation and blocks next dispatch through unfinished count; this is a fail-closed unacknowledged reservation, not a settled or scientifically completed phase.",
+    "Lost commit ACK preserves exactly one PHASE_COMMITTED witness/charge. Client stops and create-only journal refuses replay. It does not automatically mark the already committed owner study stopped or supply unattended recovery.",
+    "Cancellation after observed response or settlement retains known1microUSD in the authored row and full1008microUSD hold; no retry. Scientific failure output remains the implementation authenticated FAILED_UNCERTAIN disposition; cancellation cause remains separately recorded.",
+    "Known wrong-provider statistics cost2microUSD survives refusal. Observed response overrun charges2000microUSD despite reservation1008 and makes zero billing GETs; passive charge observation is not permission to exceed limits for new dispatch.",
+    "Fourteen direct GRANT cases use independently mutated in-memory dictionaries to exercise guard arithmetic and flags, not admissible histories or alternative live owner states. They cannot replace full prefix/DB lifecycle evidence."
+  ],
+  "reviewer_harness_corrections_preserved": [
+    "Initial fast-test temporary /tmp versus /private/tmp path normalization refusal; original fast source and both failed logs retained. Only reviewer TMP normalization changed.",
+    "Initial fault harness refused sqlite file-URI path before connection; exact URI decoding corrected and old probe/log retained.",
+    "Second fault harness refused the exact predecessor recovery methods document during historical verification. Added only that document and its exact public audit to read allowlist; old probe/log and untouched fake copies retained. No reviewed implementation was changed."
+  ],
+  "temporary_artifact_index": {
+    "path": "/tmp/e02-execution-audit-ydic8xEC/independent-artifacts-index.json",
+    "sha256": "aa14c60af0dbbf9dff0096466fae78609d1b46f583d10bde8a92c6202506ca92",
+    "files": 10552
+  },
+  "temporary_reproduction": {
+    "fast_probe": "/tmp/e02-execution-audit-ydic8xEC/fast.py",
+    "fault_probe": "/tmp/e02-execution-audit-ydic8xEC/faults.py",
+    "extra_probe": "/tmp/e02-execution-audit-ydic8xEC/extra_faults.py",
+    "guard_probe": "/tmp/e02-execution-audit-ydic8xEC/caps.py",
+    "startup": "env -i PATH=/usr/bin:/bin <reviewed Python executable> -I -S <probe.py>",
+    "notes": "Create-only probe trees and consumed journals intentionally refuse replay in place. Source and all retained fake account outputs are indexed; use a separately named reviewer-owned temporary output tree for a repeated review."
+  },
+  "guard_scope": "Stripped environment, no site startup; sockets/subprocess/native dynamic-library boundary refused, exact public source/config/methods plus the closed authored prefix readable, filesystem/SQLite writes restricted to reviewer temporary subtree. No guard refusals in successful runs. Cooperative Python guard, not hostile-host OS isolation.",
+  "remaining_gates": [
+    "Exact final handoff confirming both full mocked lifecycle suites and indexed closed complete/skip/unknown-billing/refusal evidence; independent review of that evidence still pending.",
+    "Fresh actual permitted model/provider prices, exact current real same-owner head/export bindings and independently reviewed finite particular one-use release.",
+    "Actual execution and independent actual outcome/accounting/scoring audit only if separately released. No empirical result from these authored probes."
+  ],
+  "not_certified": [
+    "Full actual financial account or historical real hold values",
+    "Wholeprefix regeneration or full40phase new run by this reviewer",
+    "Live readiness/current prices, actual serving, any credential, native PDF/source admission, head-bound execution release",
+    "Full original scientific contract, population or human validity, external publication"
+  ],
+  "actual_owner_key_source_HTTP_network_model_billing_access": 0,
+  "API_cost_USD": 0,
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_EXECUTION_BOUNDARIES_20261112.json"
+  ]
+}

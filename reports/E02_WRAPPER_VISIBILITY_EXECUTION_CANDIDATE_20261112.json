@@ -1,0 +1,88 @@
+{
+  "TASK_ID": "E02_WRAPPER_VISIBILITY_EXECUTION_CANDIDATE_20261112",
+  "status": "FROZEN_SOURCE_CANDIDATE_FOR_STATIC_REVIEW_DYNAMIC_LIFECYCLE_TESTS_RUNNING_NOT_RELEASED",
+  "FILES_CHANGED": [
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py",
+    "src/civiclab/e02/wrapper_visibility_client_v1.py",
+    "scripts/run_wrapper_visibility_once.py",
+    "tests/test_wrapper_visibility_execution_v1.py",
+    "tests/test_wrapper_visibility_caller_v1.py",
+    "tests/test_wrapper_visibility_controls_v1.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": {
+      "bytes": 28723,
+      "sha256": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48"
+    },
+    "src/civiclab/e02/wrapper_visibility_client_v1.py": {
+      "bytes": 19693,
+      "sha256": "c35745a55384984e18bad0370c5612a9d13ee3288a4748a0258137eed52546ed"
+    },
+    "scripts/run_wrapper_visibility_once.py": {
+      "bytes": 4001,
+      "sha256": "2a7e77b3ac70dc13c20b9397177b6c3def334d52e844cdbfb856cb0245055705"
+    },
+    "tests/test_wrapper_visibility_execution_v1.py": {
+      "bytes": 11322,
+      "sha256": "1b93aa83a9d1d85e5813743744d26f25b8313935f7dbf25e1b83549df4e7ad72"
+    },
+    "tests/test_wrapper_visibility_caller_v1.py": {
+      "bytes": 4034,
+      "sha256": "2d6d3901db0fdb69f07322c16fc0e6b27fc5b9db301c3092f563367d3d66fcb5"
+    },
+    "tests/test_wrapper_visibility_controls_v1.py": {
+      "bytes": 3659,
+      "sha256": "6f719c433f473278848d76c0ca6d21d7cce5e8b6f893ca7669b434efb880ccf3"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_wrapper_visibility_execution_v1 tests.test_wrapper_visibility_caller_v1 tests.test_wrapper_visibility_controls_v1 -v",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_wrapper_visibility_execution_v1 tests.test_wrapper_visibility_caller_v1 tests.test_wrapper_visibility_controls_v1 -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "caller_tests": 4,
+    "clock_lookup_controls": 3,
+    "caller_controls_both_runtimes": "PASS",
+    "lifecycle_tests": 5,
+    "lifecycle_both_runtimes": "RUNNING_NOT_YET_ACCEPTED"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only earlier versioned code, public evidence metadata and entirely authored fake-account fixtures; no actual owner, key, raw-source or network use. Historical code remains unchanged.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "limits": {
+    "POST": 40,
+    "billing_GET": 120,
+    "catalog_GET": 4,
+    "catalog_barriers": [
+      10,
+      20,
+      30
+    ],
+    "batch_cap_microusd": 75000,
+    "E02_cap_microusd": 1000000,
+    "combined_cap_microusd": 5000000,
+    "E01_paid_cap": 0,
+    "same_owner_prefix_dispatches": 109,
+    "maximum_lifetime_dispatches": 149,
+    "old_uncertain_holds": 4,
+    "POST_retries": 0,
+    "phase_seconds": 120,
+    "lease_seconds": 7200,
+    "input_tokens": 8192,
+    "output_tokens": 256
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Pure-code acceptance is independent and separate. No live release or price freshness yet.",
+    "Exact completed predecessor permits53scientific witnesses/109financial rows; all prior namespaces/rows and four holds preserved, new study reuses no saved answers.",
+    "Inherited transport,canonical journal,metadata and financial semantics are unchanged; extra new event kinds use existing durable reservation/ACK/commit mechanisms.",
+    "Full mocked lifecycle outputs and hash-indexed retained fixtures will follow; do not infer PASS from this candidate snapshot.",
+    "New source files follow historical per-study ownership pattern to avoid modifying prior code-contract hashes."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Complete root lifecycle tests both runtimes.",
+    "Independent exact execution/code/raw mocked-evidence review.",
+    "Fresh catalog/current same-owner prefix validation and exact source-head-bound finite release.",
+    "Actual results independently audited only after one-shot execution."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent static review of these six exact files while root bounded lifecycle tests continue; preserve any findings under these hashes.",
+  "initial_snapshot": "data/processed/e02_wrapper_visibility_execution_authored_20261112/initial-source-snapshot.json"
+}

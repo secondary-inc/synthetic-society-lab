@@ -1,0 +1,1005 @@
+{
+  "protocol_id": "E02_WRAPPER_VISIBILITY_V1",
+  "status": "EXACT_PROTOCOL_FREEZE_CANDIDATE_PENDING_INDEPENDENT_CODE_REVIEW_NO_EXECUTION_RELEASE",
+  "frozen": true,
+  "actual_authority": false,
+  "results": null,
+  "preparation_date_America_New_York": "2026-11-12",
+  "question": "For identical authored issue information and source labels, what is the social-post minus news-article support contrast when own answers are omitted, and how does showing own support change that wrapper contrast?",
+  "scope": "Two authored civic topics,4purposive party-prior technical contexts,one fixed serving configuration; text-format-label effects only, not real feeds, sourcing credibility, human persuasion or population validity.",
+  "model": {
+    "model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "requested_route": "nebius/fp8",
+    "reported_provider": "Nebius",
+    "route_scope": "ENDPOINT_PREFIX",
+    "output_parameter": "max_completion_tokens",
+    "temperature": 0,
+    "stream": false,
+    "tools": [],
+    "plugins": [],
+    "tool_choice": "none",
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "model_selection_rationale": "Chosen prospectively for this follow-up because prior Qwen cohort had complete item coverage; outcome-informed model choice disclosed. Not chosen by a new outcome or proof of representativeness. One model minimizes diagnostic cost; second-configuration replication remains a separate earned-complexity gate.",
+  "seed": 20261112,
+  "profiles": [
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-01",
+      "party": "D"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-02",
+      "party": "D"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-03",
+      "party": "R"
+    },
+    {
+      "profile_id": "EXPLORATORY-FICTIONAL-04",
+      "party": "R"
+    }
+  ],
+  "topics": [
+    {
+      "topic_id": "LIBRARY",
+      "kind": "DEMO",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "reference_text": "In the fictional town of Exampleville, a proposal would shift existing library staffing hours to add two evening hours on weekdays. The stated annual staffing budget would not change. The council has not voted on the proposal. No measured effect on total library visits is reported.",
+      "treatment_text": "In the fictional town of Exampleville, a proposal would shift existing library staffing hours to add two evening hours on weekdays. The stated annual staffing budget would not change. The council has not voted on the proposal. A completed fictional pilot of the same schedule reported 40% more total library visits than the previous schedule.",
+      "support_question": "How strongly do you support or oppose the proposed Exampleville library schedule?",
+      "factual_question": "What measured change in total library visits does this notice report?",
+      "reference_answer": "NOT_REPORTED",
+      "treatment_answer": "INCREASE_40",
+      "reference_text_sha256": "d60d0f0d78258f0830eadae1d853164c45087609a3a2956dea4fa8070a42c2f0",
+      "treatment_text_sha256": "1fb30cd04640d93eecb7099294a4453d42b35fb8ea5d54735cbd35b9b4f51b82"
+    },
+    {
+      "topic_id": "TRANSIT",
+      "kind": "DEMO",
+      "rights": "PROJECT_AUTHORED_FIXTURE",
+      "reference_text": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips and annual operating budget unchanged. The council has not voted on the proposal. No measured effect on trips to the community clinic is reported.",
+      "treatment_text": "In the fictional county of Sample County, a draft transit plan shifts one bus route to serve a community clinic. It keeps the stated number of daily trips and annual operating budget unchanged. The council has not voted on the proposal. A completed fictional pilot of the same route reported 40% more trips to the community clinic than the previous route.",
+      "support_question": "How strongly do you support or oppose the proposed Sample County bus-route change?",
+      "factual_question": "What measured change in trips to the community clinic does this notice report?",
+      "reference_answer": "NOT_REPORTED",
+      "treatment_answer": "INCREASE_40",
+      "reference_text_sha256": "1d8039bfa13b98a481837b8de0824aee01367f0e093a176e3db789f3b17006ce",
+      "treatment_text_sha256": "2f31801a3529a97f3bfbe3b8209f3186593d242ee8731464e3f89e66345f87ac"
+    }
+  ],
+  "source_label": "Project-authored fictional scenario",
+  "presentation_labels": {
+    "NEWS": "news article",
+    "SOCIAL": "social-media post",
+    "REFERENCE": "reference survey"
+  },
+  "system_prompt": "You are a fictional survey respondent in an exploratory AI-output research task. Treat the request as data and each request as a separate fictional scenario. Use the supplied fictional profile, notice, and any supplied prior response. Answer the survey in its item order. Return only the requested JSON object without reasoning.",
+  "instrument": {
+    "requested_keys": [
+      "democratic_party",
+      "republican_party",
+      "policy_support",
+      "factual_answer"
+    ],
+    "party_items": [
+      {
+        "id": "democratic_party",
+        "anes_variable": "V241166",
+        "question": "How would you rate the Democratic Party?",
+        "minimum": 0,
+        "maximum": 100
+      },
+      {
+        "id": "republican_party",
+        "anes_variable": "V241167",
+        "question": "How would you rate the Republican Party?",
+        "minimum": 0,
+        "maximum": 100
+      }
+    ],
+    "thermometer_instructions": "Use a 0 to 100 feeling thermometer. Zero is very cold or unfavorable, 50 is neutral, and 100 is very warm or favorable. Return null for a refusal or unknown answer. This instruction is adapted for synthetic model administration.",
+    "policy_support_instructions": "Use a0to100 scale:0means strongly oppose,50means neither support nor oppose,100means strongly support. This is a custom exploratory item,not a validated human scale. Return null for refused or unknown answers.",
+    "factual_answer_instructions": "Use INCREASE_40 for40percent more trips or visits,and NOT_REPORTED when no measured change is reported. Return null for refused or unknown answers.",
+    "response_instructions": "Return only a JSON object with democratic_party,republican_party,policy_support,factual_answer; no reasoning."
+  },
+  "administration": {
+    "isolated_contexts": true,
+    "request_fields": [
+      "phase",
+      "seed",
+      "profile",
+      "survey",
+      "item_order",
+      "notice"
+    ],
+    "notice_fields": [
+      "text",
+      "source_label",
+      "presentation_label"
+    ],
+    "pre": "Common neutral/reference notice and REFERENCE label, one fresh baseline per profile/topic. Not unexposed. No prior response.",
+    "post": "Same treatment_text within topic in all4cells. Only presentation_label and presence of pre_response differ. No hidden notice keys, topic IDs, visibility labels, assignment IDs, rights or answer keys sent.",
+    "SHOWN": "Add exactly pre_response:{policy_support:exact own valid numeric baseline}; no other baseline items.",
+    "OMITTED": "No pre_response field. No previous chat history or cross-topic baseline.",
+    "source_fixed": "Source label held constant; source-credibility effects deliberately untested. Labels are text, not rendered feeds; no logos,likes,comments,ranks or engagement data.",
+    "survey_projection": "Construct survey with common response_instructions,thermometer_instructions,and ordered item definitions:the two party_items unchanged;policy_support with exact topic.support_question,min0max100 and policy_support_instructions;factual_answer with exact topic.factual_question,allowed_values INCREASE_40/NOT_REPORTED and factual_answer_instructions. Do not send topic IDs,reference/treatment answer keys,rights,hashes,selection rationale or proposal bookkeeping."
+  },
+  "jobs": [
+    {
+      "execution_order": 0,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1007379764,
+      "item_order": [
+        "republican_party",
+        "democratic_party",
+        "policy_support",
+        "factual_answer"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 1,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 4292136279,
+      "item_order": [
+        "factual_answer",
+        "policy_support",
+        "republican_party",
+        "democratic_party"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 2,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 641769666,
+      "item_order": [
+        "policy_support",
+        "republican_party",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 3,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1568282831,
+      "item_order": [
+        "democratic_party",
+        "factual_answer",
+        "policy_support",
+        "republican_party"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 4,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 18606895,
+      "item_order": [
+        "factual_answer",
+        "republican_party",
+        "democratic_party",
+        "policy_support"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 5,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 995037275,
+      "item_order": [
+        "republican_party",
+        "policy_support",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 6,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 2315288556,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 7,
+      "phase": "pre",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 401992282,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "wrapper": "REFERENCE",
+      "visibility": "ELICIT",
+      "baseline_execution_order": null
+    },
+    {
+      "execution_order": 8,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 18606895,
+      "item_order": [
+        "factual_answer",
+        "republican_party",
+        "democratic_party",
+        "policy_support"
+      ],
+      "baseline_execution_order": 4,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 9,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 18606895,
+      "item_order": [
+        "factual_answer",
+        "republican_party",
+        "democratic_party",
+        "policy_support"
+      ],
+      "baseline_execution_order": 4,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 10,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 18606895,
+      "item_order": [
+        "factual_answer",
+        "republican_party",
+        "democratic_party",
+        "policy_support"
+      ],
+      "baseline_execution_order": 4,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 11,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 18606895,
+      "item_order": [
+        "factual_answer",
+        "republican_party",
+        "democratic_party",
+        "policy_support"
+      ],
+      "baseline_execution_order": 4,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 12,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1568282831,
+      "item_order": [
+        "democratic_party",
+        "factual_answer",
+        "policy_support",
+        "republican_party"
+      ],
+      "baseline_execution_order": 3,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 13,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1568282831,
+      "item_order": [
+        "democratic_party",
+        "factual_answer",
+        "policy_support",
+        "republican_party"
+      ],
+      "baseline_execution_order": 3,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 14,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1568282831,
+      "item_order": [
+        "democratic_party",
+        "factual_answer",
+        "policy_support",
+        "republican_party"
+      ],
+      "baseline_execution_order": 3,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 15,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1568282831,
+      "item_order": [
+        "democratic_party",
+        "factual_answer",
+        "policy_support",
+        "republican_party"
+      ],
+      "baseline_execution_order": 3,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 16,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 995037275,
+      "item_order": [
+        "republican_party",
+        "policy_support",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 5,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 17,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 995037275,
+      "item_order": [
+        "republican_party",
+        "policy_support",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 5,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 18,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 995037275,
+      "item_order": [
+        "republican_party",
+        "policy_support",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 5,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 19,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 995037275,
+      "item_order": [
+        "republican_party",
+        "policy_support",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 5,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 20,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 2315288556,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 6,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 21,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 2315288556,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 6,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 22,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 2315288556,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 6,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 23,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-04",
+        "party": "R"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 2315288556,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 6,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 24,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 401992282,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 7,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 25,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 401992282,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 7,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 26,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 401992282,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 7,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 27,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 401992282,
+      "item_order": [
+        "democratic_party",
+        "republican_party",
+        "factual_answer",
+        "policy_support"
+      ],
+      "baseline_execution_order": 7,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 28,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 4292136279,
+      "item_order": [
+        "factual_answer",
+        "policy_support",
+        "republican_party",
+        "democratic_party"
+      ],
+      "baseline_execution_order": 1,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 29,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 4292136279,
+      "item_order": [
+        "factual_answer",
+        "policy_support",
+        "republican_party",
+        "democratic_party"
+      ],
+      "baseline_execution_order": 1,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 30,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 4292136279,
+      "item_order": [
+        "factual_answer",
+        "policy_support",
+        "republican_party",
+        "democratic_party"
+      ],
+      "baseline_execution_order": 1,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 31,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-01",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 4292136279,
+      "item_order": [
+        "factual_answer",
+        "policy_support",
+        "republican_party",
+        "democratic_party"
+      ],
+      "baseline_execution_order": 1,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 32,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1007379764,
+      "item_order": [
+        "republican_party",
+        "democratic_party",
+        "policy_support",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 0,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 33,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1007379764,
+      "item_order": [
+        "republican_party",
+        "democratic_party",
+        "policy_support",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 0,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 34,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1007379764,
+      "item_order": [
+        "republican_party",
+        "democratic_party",
+        "policy_support",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 0,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 35,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-03",
+        "party": "R"
+      },
+      "topic_id": "TRANSIT",
+      "pair_seed": 1007379764,
+      "item_order": [
+        "republican_party",
+        "democratic_party",
+        "policy_support",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 0,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 36,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 641769666,
+      "item_order": [
+        "policy_support",
+        "republican_party",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 2,
+      "wrapper": "SOCIAL",
+      "visibility": "SHOWN"
+    },
+    {
+      "execution_order": 37,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 641769666,
+      "item_order": [
+        "policy_support",
+        "republican_party",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 2,
+      "wrapper": "NEWS",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 38,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 641769666,
+      "item_order": [
+        "policy_support",
+        "republican_party",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 2,
+      "wrapper": "SOCIAL",
+      "visibility": "OMITTED"
+    },
+    {
+      "execution_order": 39,
+      "phase": "post",
+      "profile": {
+        "profile_id": "EXPLORATORY-FICTIONAL-02",
+        "party": "D"
+      },
+      "topic_id": "LIBRARY",
+      "pair_seed": 641769666,
+      "item_order": [
+        "policy_support",
+        "republican_party",
+        "democratic_party",
+        "factual_answer"
+      ],
+      "baseline_execution_order": 2,
+      "wrapper": "NEWS",
+      "visibility": "SHOWN"
+    }
+  ],
+  "assignment_canonical_sha256": "8124b9b130a388a794f4b8792d67ef2f7d7f6ca9562a47b86cb2f383b6facd1d",
+  "assignment_algorithm": "Shuffle8profile-topic precontexts with Random(20261112); pair_seed first8hex SHA256 canonical[seed,profile_id,topic_id]; shuffle item IDs with Random(pair_seed). Shuffle postcontexts with Random(seed+1); each consecutive quartet gets canonical4cell list rotated by rank mod4. Each cell occupies each ordinal twice across8quartets; all4posts same seed/item order. No rerandomization after invalid pre.",
+  "analysis": {
+    "primary": "For each profile-topic unit i, W_i=post_support(SOCIAL,OMITTED)-post_support(NEWS,OMITTED),range[-100,100]. Report8planned units, complete counts by topic, raw values and mean/min/max on complete pairs. Full-sample headline only with8/8; otherwise DESCRIPTIVE_PARTIAL, never equivalence.",
+    "key_secondary": "For each unit, I_i=[SOCIAL_SHOWN-NEWS_SHOWN]-[SOCIAL_OMITTED-NEWS_OMITTED],range[-200,200]. Requires own valid pre and all4post support values. Report raw I and same-unit omitted/shown contrasts on their common intersection,never subtract unmatched marginal means.",
+    "topic_sensitivity": "Report each topic separately (4planned contexts),both party strata descriptively,leave-one-topic-out values. Do not average only the topic that looks responsive. No multiple-test significance claims.",
+    "other_secondary": "Separate fixed-party in-minus-out thermometer wrapper contrasts by visibility, and post-minus-reference support drift with own valid pre. Factual correct/valid,correct/planned,observed wrong,missing/null/invalid/unasked by topic/wrapper/visibility.",
+    "masking_interpretation": "Signed interaction can reflect enhancement,reversal or attenuation. Also report |W_SHOWN|-|W_OMITTED| on matched complete units and sign-reversal count; only magnitude shrinkage without reversal is descriptively compatible with masking. No proven anchoring, memory or human mechanism.",
+    "uncertainty": "No CI,pvalue,equivalence or population/family inference. Four purposive profiles and2topics are dependent technical contexts,not8independent humans. Zero/all-identical results remain descriptive; no empirical pass threshold triggers scaling.",
+    "stop": "End at fixed manifest regardless of sign/coverage. No adaptive topic/model/seed/prompt/sample expansion; old3studies remain separate."
+  },
+  "exclusions": {
+    "shape": "Bounded object with subset of four known keys; unknown extra key invalidates all scores. Nonobject or duplicate/nonfinite JSON is parse failure. No repair/coercion/imputation.",
+    "valid_support": "Only builtin int/float finite0to100,not bool,string or null. Distinguish MISSING_KEY,MISSING_NULL,INVALID,INVALID_SHAPE.",
+    "invalid_pre": "Skip exactly2SHOWN wrapper posts for that profile/topic if own support invalid; retain both OMITTED posts and primary eligibility. Missing unrelated thermometer/comprehension never gates support.",
+    "posts": "Wrapper primary requires both OMITTED supports; interaction all4supports and valid pre. Wrong factual answer never excludes support. Report each denominator and skipped/unasked distinct from observed factual errors.",
+    "failure": "No replacements or old-launcher replay. Unknown billing,identity/route mismatch,time/price/cap/persistence failure stops entire batch; preserve holds,all remaining jobs NOT_ATTEMPTED."
+  },
+  "envelope": {
+    "maximum_model_POSTs": 40,
+    "planned_baselines": 8,
+    "planned_posts": 32,
+    "input_tokens_per_call_max": 8192,
+    "output_tokens_per_call_max": 256,
+    "maximum_input_tokens": 327680,
+    "maximum_output_tokens": 10240,
+    "maximum_total_tokens": 337920,
+    "maximum_billing_GETs": 120,
+    "GETs_per_generation": 3,
+    "GET_wait_seconds": [
+      10,
+      10,
+      20
+    ],
+    "GET_retry_statuses": [
+      404
+    ],
+    "POST_retries": 0,
+    "maximum_catalog_GETs": 4,
+    "catalog_refresh_before_global_slots": [
+      10,
+      20,
+      30
+    ],
+    "catalog_schedule": "Single model at start and before first admitted slot>=10,20,30; ordered one-use stages; skips crossing barriers consume required stages in order. No extra refresh.",
+    "phase_seconds": 120,
+    "HTTP_seconds": 30,
+    "socket_seconds": 15,
+    "maximum_authority_seconds": 7200,
+    "price_age_seconds": 900,
+    "per_call_reservation_microusd_max": 1785,
+    "maximum_arithmetic_batch_microusd": 71400,
+    "proposed_subcap_microusd": 75000,
+    "E02_cumulative_microusd": 1000000,
+    "shared_cumulative_microusd": 5000000,
+    "E01_paid_microusd": 0,
+    "public_previous_exposure_microusd": 9319,
+    "public_snapshot_remaining_E02_microusd": 990681,
+    "public_snapshot_remaining_shared_microusd": 4990681,
+    "authority_note": "Planning arithmetic only,not live ledger/price proof or spend approval. Fresh full all-in quotes and same-owner head/charges/holds checks required. No old holds refunded. Current terms/provider compatibility unknown until separately reviewed release; fail closed,no model probe/fallback."
+  },
+  "parser_bounds": {
+    "content_utf8_bytes": 2048,
+    "depth": 8,
+    "key_characters": 64,
+    "string_characters": 32,
+    "number_canonical_characters": 32,
+    "phase_record_bytes": 3072,
+    "envelope_bytes": 262144
+  },
+  "acceptance_criteria": [
+    "Independent methods review of exact instrument,text identity,orthogonality,denominators and scope before candidate freeze.",
+    "New separately reviewed pure compiler/parser/scorer and authored arithmetic/null/missing/ablation oracles; no claim existing modules implement this generic policy_support design.",
+    "Mocked same-owner lifecycle,budget,reservation,reconciliation,global caps,provider UNKNOWN semantics and scheduled refresh gates independently reviewed before any actual execution.",
+    "Exact head-bound finite packet/current model+provider prices/serving constraints and authorization checked by lead; default unapproved spend0.",
+    "Actual-evidence audit and uncertainty/missingness/provenance report; no pooling,external publication or earned-complexity promotion from smoke tests."
+  ],
+  "blocked_original_contract": [
+    "ANES/ACS representative joint population validity",
+    "licensed real-news/real-feed source generalization",
+    "appropriate matched human experimental comparison",
+    "trust/certainty and assistant/swarm effects",
+    "confirmatory multi-model multi-stimulus external validity"
+  ],
+  "source_pins": {
+    "CODEX_MASTER_EXECUTION.md": "a517ac1c7d6ce88916b49997a5f940bbba91b09ccc3902aaa57dbbd351839323",
+    "reports/PROGRESS_2026-11-03.md": "1e1cdeb494cd43f57a5216fef06b1d17a068d6f1910421c39669867814377432",
+    "docs/RESEARCH_DIRECTION_20261112.md": "4fe90a04271089e9ab464c539cdc271b0fa54871ed6795e32eb44718bd04cd2a",
+    "reports/E02_EXPLORATORY_CONTINUATION_ACTUAL_20261108.json": "45e703078e7288512e383bda9561f4346140193d4b9d254d898dc95ad22c06cb",
+    "reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json": "8764359767c8ade7ad2da42d8c8f27faa19aff2a27f001cec22367c2c3bf3d8e",
+    "reports/E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json": "c3dc9da2551ce2277a75fee46faa18e9300139998f2f8364a8e95d285b05ccf6",
+    "reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json": "cf2bed0882f71d33efd3cd755ace36cf3e58aaef0759b881c0361488a0ec7246",
+    "reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json": "b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0",
+    "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json": "ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505add4c5820bcfd",
+    "configs/e02_issue_cue_crossmodel_v1.json": "ccedb7aa9989fd0e1e96cb8c0e132e154c4383cf63210a599bc51ab683ace1e8"
+  },
+  "hypotheses": {
+    "primary": "Exploratory nondirectional question: does text-wrapper format change support when own answers are omitted? No confirmatory null test or detection threshold.",
+    "secondary": "Showing own support may reduce absolute wrapper sensitivity; signed interaction and magnitude/sign-reversal diagnostics are reported separately. No anchoring-mechanism claim."
+  },
+  "proposal_ancestry": {
+    "path": "configs/e02_wrapper_visibility_proposal_v1_20261112.json",
+    "sha256": "9ce7d5fd4755afa39f455f08a67a3b21a7e387419a7dd80e7766ba63eeed1871",
+    "review_path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_PROPOSAL_V1_20261112.json",
+    "review_sha256": "6a2afb1041da7ffc47cd2a42ba466767e80de828d6ef878ccfc46d0b9b75ee15",
+    "design_changes": [],
+    "administrative_changes": [
+      "New protocol identity and exact-byte freeze candidate status; no authority/results.",
+      "Canonical instrument/topic hashes added for replay bindings."
+    ]
+  },
+  "instrument_canonical_sha256": "b4ccb244da4e2f1fe2182e1d410e35af336e4958ec2f4ac23e0451b8290697de",
+  "topics_canonical_sha256": "c9c97add1c311003eae32b6c47438d393e07a925e5cb02ff9817b290cbad4ace"
+}

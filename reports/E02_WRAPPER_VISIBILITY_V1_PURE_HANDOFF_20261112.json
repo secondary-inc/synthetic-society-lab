@@ -1,0 +1,92 @@
+{
+  "TASK_ID": "E02_WRAPPER_VISIBILITY_V1_PURE_IMPLEMENTATION_20261112",
+  "status": "WORKER_TESTED_FREEZE_AND_CODE_CANDIDATE_PENDING_INDEPENDENT_REVIEW_NO_EXECUTION_RELEASE",
+  "FILES_CHANGED": [
+    "configs/e02_wrapper_visibility_v1.json",
+    "src/civiclab/e02/wrapper_visibility_v1.py",
+    "tests/test_e02_wrapper_visibility_v1.py",
+    "docs/E02_WRAPPER_VISIBILITY_V1.md"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "configs/e02_wrapper_visibility_v1.json": {
+      "sha256": "9c2ab0741b29091a590f224821098c2a64da6ddf6c996c81e89c194d71df9428",
+      "bytes": 35013
+    },
+    "src/civiclab/e02/wrapper_visibility_v1.py": {
+      "sha256": "0a96611f0bb308efe0f274dce140fb296635bfc49e07c45d5765456d73319953",
+      "bytes": 17465
+    },
+    "tests/test_e02_wrapper_visibility_v1.py": {
+      "sha256": "d6de8319bb372571d62c619886dd46ca4d4a51c853e92eaae2c04a29b7d3cc38",
+      "bytes": 18793
+    },
+    "docs/E02_WRAPPER_VISIBILITY_V1.md": {
+      "sha256": "136b9ab3a5f5179a010859e34ee58a3b0d9586af9189eb4e8598cae4a1985a27",
+      "bytes": 8952
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest test_e02_wrapper_visibility_v1 -q",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest test_e02_wrapper_visibility_v1 -q",
+    "PYTHONPATH=src:tests .venv/bin/python data/processed/e02_wrapper_visibility_v1_authored_20261112/final/retain_authored.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "executor": "E02 implementation worker,not independent reviewer",
+    "python312": {
+      "status": "PASS",
+      "tests": 20,
+      "seconds": 4.055
+    },
+    "python311": {
+      "status": "PASS",
+      "tests": 20,
+      "seconds": 3.545
+    },
+    "retained_replay_python311": {
+      "status": "PASS",
+      "scored_envelopes": 10,
+      "artifact_hashes": "all11scenarios/refusal files and both logs verified"
+    },
+    "retained_authored_evidence": {
+      "provenance": "MOCK_AUTHORED_NOT_EMPIRICAL",
+      "index_path": "data/processed/e02_wrapper_visibility_v1_authored_20261112/final/index.json",
+      "index_sha256": "8f605411b7d3e975624e8e0d49e038c5c3326c7b174a713419a09176ea78dc9b",
+      "scenarios": 11,
+      "logs": 2,
+      "generator_path": "data/processed/e02_wrapper_visibility_v1_authored_20261112/final/retain_authored.py",
+      "generator_sha256": "960fae7dc558a0973996fb4c54afc2036f76fba21fa214f983a99f10f94732a8"
+    },
+    "initial_failure_preserved": {
+      "path": "data/processed/e02_wrapper_visibility_v1_authored_20261112/initial",
+      "result": "20tests initially1failure1error; incomplete nonstopped export KeyError fixed to explicitExecutionBlocked, unrelated-item test drift expectation corrected. No scientific design change."
+    }
+  },
+  "PUBLIC_API": {
+    "load_protocol": "load_protocol(raw:bytes)->dict",
+    "parse_response": "parse_response(provider_response)->{status,answer,diagnostic}",
+    "valid_baseline": "valid_baseline(answer)->bool",
+    "cost_envelope": "cost_envelope(raw,terms)->dict; conditional arithmetic,not price freshness/budget authority",
+    "next_action": "next_action(raw,terms,transcript_bytes)->REQUEST_READY_NOT_ADMITTED or COMPLETE/STOPPED",
+    "response_envelope": "response_envelope(raw,terms,transcript_bytes,*,stopped=False,response_provenance='MOCK')->dict; full payload replay; no incomplete nonstopped export",
+    "analyze": "analyze(raw,envelope_bytes)->dict; fixed40dispositions,matched scores,quality and provenance"
+  },
+  "DESIGN_DEVIATIONS": [],
+  "administrative_freeze_changes": "Exact reviewed proposal copied with newidentity/status/frozenflag,proposal/review ancestry and instrument/topics canonical hashes only. Proposal/past bytes preserved.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Project-authored DEMO topic/profile/response fixtures and accepted versioned internal helpers only. No new sources,private journals,actual financial owner,credentials or provider/network reads. Newsource module has no file/key/owner/network/dispatch operations. Parser quality is distinct from future client raw-body/identity/billing validation.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "model_or_billing_or_catalog_requests": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Worker checks do not independently certify milestone.",
+    "One serving configuration,two positive-evidence authored topics,four purposive profiles; custom support scale,no population/human/real-feed/sourcing validity.",
+    "Conditional quote caps do not enforce actual ledger/proof/window; financial integration remains lead-owned.",
+    "Parsed ANSWER can still have invalid items; malformed/null/unasked/errors kept separate; no factual exclusion from support.",
+    "No CI,pvalue,equivalence,proven anchoring mechanism or automatic scaling.",
+    "Retained numbers areMOCKarithmetic,not model positive-control findings."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact freeze/pure-code/authored-evidence review.",
+    "Lead-owned separately versioned same-owner client/owner/launcher integration,full mocked financial review,fresh model/provider prices and head-bound finite release.",
+    "Actual outcome audit and original scientific/source/human/publication gates remain separate."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent reviewer checks exact source/config/test pins,protocol ancestry,compiled request-only ablations,matched scoring/null/stop cases and retained labeled authored evidence. Lead handles financial integration; no actual execution by worker."
+}
