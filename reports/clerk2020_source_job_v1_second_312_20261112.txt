@@ -1,0 +1,20 @@
+test_authored_complete_boot_exec_and_sealed_outputs (test_clerk2020_source_job_v1.SourceJobTests.test_authored_complete_boot_exec_and_sealed_outputs) ... FAIL
+test_boot_has_zero_source_reads_and_no_dispatch (test_clerk2020_source_job_v1.SourceJobTests.test_boot_has_zero_source_reads_and_no_dispatch) ... ok
+test_code_drift_after_boot_stops_before_any_source_read (test_clerk2020_source_job_v1.SourceJobTests.test_code_drift_after_boot_stops_before_any_source_read) ... ok
+test_first_child_failure_stops_source_two_and_preserves_private_partial (test_clerk2020_source_job_v1.SourceJobTests.test_first_child_failure_stops_source_two_and_preserves_private_partial) ... ok
+test_second_child_failure_keeps_first_private_projection (test_clerk2020_source_job_v1.SourceJobTests.test_second_child_failure_keeps_first_private_projection) ... ok
+test_wrong_packet_has_zero_reserved_campaign (test_clerk2020_source_job_v1.SourceJobTests.test_wrong_packet_has_zero_reserved_campaign) ... ok
+
+======================================================================
+FAIL: test_authored_complete_boot_exec_and_sealed_outputs (test_clerk2020_source_job_v1.SourceJobTests.test_authored_complete_boot_exec_and_sealed_outputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_source_job_v1.py", line 123, in test_authored_complete_boot_exec_and_sealed_outputs
+    with self.assertRaises(FileExistsError):j.run_exec(self.root,raw,h)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: FileExistsError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.263s
+
+FAILED (failures=1)

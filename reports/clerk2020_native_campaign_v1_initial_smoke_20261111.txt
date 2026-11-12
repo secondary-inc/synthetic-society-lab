@@ -1,0 +1,8 @@
+{'data': 262144, 'control': 124928, 'staging': 131072}
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/clerk2020_native_campaign_v1.py", line 98, in __init__
+    require(totals['data']<=262144 and totals['control']<=131072
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/clerk2020_m2_v1_1_contracts.py", line 16, in require
+    raise Refused()
+civiclab.e01.clerk2020_m2_v1_1_contracts.Refused: CLERK_M2_V1_1_REFUSED

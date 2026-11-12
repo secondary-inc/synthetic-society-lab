@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "kind": "E01_FIXED_SOURCE_FORMAT_NATIVE_METHODS_V1_2_CANDIDATE",
+  "status": "METHODS_AND_CODE_REVIEW_REQUIRED_NO_SOURCE_AUTHORITY",
+  "scope": "Exactly two acquired-source format inventories. No source-record/count/feature/statistical adoption; original M2/M3-M6 requirements remain explicit.",
+  "identities": {
+    "study_id": "E01_CLERK2020_M2_FORMAT_INSPECTION",
+    "campaign_id": "clerk2020_source_format_native_v1",
+    "source_set_id": "clerk2020_counts_2026_nominees_FORMAT_v1",
+    "anchor_id": "clerk2020_format_anchor_v1",
+    "job_id": "clerk2020_source_format_job1",
+    "source_set_index_path": "data/processed/e01_clerk2020_m2_registry/source_sets/clerk2020_counts_2026_nominees_FORMAT_v1.local.json",
+    "registry_namespace": "data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1",
+    "control_namespace": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1"
+  },
+  "predecessor_methods": {
+    "path": "configs/e01_clerk2020_m2_inspection_design_v1_1.json",
+    "bytes": 78955,
+    "sha256": "7e87d6844ca5bec346af91359d38a9c7a612503962d13b4749fd93d3811fb0e6"
+  },
+  "accepted_acquisition": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL.json",
+    "bytes": 6340,
+    "sha256": "2b0e3af466645773ca00b11590d871533ee7b2d80abec27abb9b2e77cd5c3a75"
+  },
+  "acquisition_handoff": {
+    "path": "reports/E01_CLERK_DOCUMENT_CAPTURE_V1_ACTUAL_HANDOFF.json",
+    "bytes": 4376,
+    "sha256": "f7bc9f73be013fc94ff9e4f2984141f3d13a498c1c7216542254764edb6aff27"
+  },
+  "qualified_runtime_actual": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_DIRECTORIES_QUALIFICATION_ACTUAL_20261110.json",
+    "bytes": 7396,
+    "sha256": "c304e68f6b6af5b7b0127ffd59648f7253337f71baac6d5bf8919db1cc12583c"
+  },
+  "qualified_worker": {
+    "path": "data/processed/e01_clerk2020_native_qualification_v1/qualification-directories-v1/worker.json",
+    "bytes": 74406,
+    "sha256": "d8abffd89b6aa90340a5b5364774c5eea74ea1a92e7a2cf1bc10f8896f990999"
+  },
+  "sources": [
+    {
+      "body_inspected_for_this_design": false,
+      "bytes": 602172,
+      "expected_pages_reported": 81,
+      "registered_path": "data/raw/e01_clerk_documents_capture_v1/clerk2020_statistics.pdf",
+      "role": "HISTORICAL_2020_OFFICIAL_COUNTS_NOT_2026_OUTCOMES",
+      "sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76",
+      "source_id": "clerk2020_statistics",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf"
+    },
+    {
+      "body_inspected_for_this_design": false,
+      "bytes": 257739,
+      "expected_pages_reported": 38,
+      "registered_path": "data/raw/e01_clerk_documents_capture_v1/clerk2026_nominees.pdf",
+      "role": "DATED_2026_OFFICIAL_NOMINEE_COMPILATION_NOT_FINAL_BALLOT_OR_LATEST_CERTIFICATE",
+      "sha256": "cb2e4194c88042cf22f8589fb6b8c352d29b501f96abc62a962b6cc52e2c28a8",
+      "source_id": "clerk2026_nominees",
+      "url": "https://clerk.house.gov/member_info/electionInfo/2026/120-nominations.pdf"
+    }
+  ],
+  "source_rights": {
+    "use": "Existing admitted public Clerk downloads, bounded local format inspection only.",
+    "raw_redistribution": false,
+    "snippet_publication": false,
+    "no_new_source_rights_or_authenticity_claim": true,
+    "role_preservation": "2020historical official counts;2026dated nominee compilation, not final ballots/latest certificate or outcomes. Roles/layout/printed dates in text remain unadopted."
+  },
+  "limits": {
+    "source_jobs": 1,
+    "source_read_attempts": 2,
+    "source_read_bytes": 859913,
+    "source_backend_attempts": 2,
+    "source_page_extractions": 119,
+    "warmup_reader_attempts": 8,
+    "warmup_page_extractions": 238,
+    "total_reader_attempts": 10,
+    "total_page_extractions": 357,
+    "inspection_data_write_bytes": 262144,
+    "recorder_control_write_bytes": 131072,
+    "owned_write_bytes": 524288,
+    "runtime_stage_bytes": 65536,
+    "worker_receipts_stage_bytes": 16384,
+    "sealed_prefix_stage_bytes": 49152,
+    "code_integrity_read_bytes": 536870912,
+    "metadata_read_bytes": 8388608,
+    "record_verification_read_bytes": 2097152,
+    "active_time_ms": 120000,
+    "cpu_ms": 60000,
+    "rss_peak_bytes": 268435456
+  },
+  "versioned_partition_adjustment": {
+    "reason": "Two cold source-isolated children need explicit warmup/file-read/full-integrity allowances in EXEC; charging these to a1MiB hot-code-only slice would be false. Total global512MiB integrity and8MiB metadata are unchanged.",
+    "BOOT": {
+      "code_integrity_bytes": 268435456,
+      "metadata_bytes": 5242880,
+      "active_time_ms": 45000,
+      "cpu_ms": 10000,
+      "source_reads": 0,
+      "backend_imports_or_parse": 0,
+      "data_or_source_access": false
+    },
+    "EXEC": {
+      "code_integrity_bytes": 268435456,
+      "metadata_bytes": 2883584,
+      "active_time_ms": 75000,
+      "cpu_ms": 50000,
+      "two_children_integrity_each": 133169152,
+      "two_hot_code_checks_each": 524288,
+      "integrity_remainder": 1048576,
+      "all_wire_bytes_max": 2097152,
+      "other_metadata_bytes": 786432,
+      "source_jobs": 1,
+      "source_reads": 2,
+      "source_bytes": 859913,
+      "source_parses": 2,
+      "source_pages": 119
+    },
+    "delivery": {
+      "metadata_precharge": 262144,
+      "initial_write_slots": 16384,
+      "packet_bytes_max": 262144
+    },
+    "equalities": [
+      "268435456+268435456=536870912code",
+      "2*133169152+2*524288+1048576=268435456EXECcode",
+      "262144+5242880+2883584=8388608metadata",
+      "2097152+786432=2883584EXECmetadata",
+      "2*119+119=357totalpageceiling",
+      "262144+131072+129024=522240<=524288ownedwrites"
+    ],
+    "old_partitions_immutable": true,
+    "requires_new_independent_methods_disposition": true
+  },
+  "lifecycle": [
+    "Root-owned fixed source-set index/registration; root path and source set bound. No newcampaign/root reset on failure.",
+    "Externally supplied exact reviewed BOOT issued-envelope hash; finiteO_EXCL reservation before any existing metadata/code/runtime body reads; initialwrites explicitlyprepaid.",
+    "BOOT source0: verify exact code and qualified518-row runtime set plus explicitly pinned own overlay, save bounded stat-identity cache by manifest index; carry six consumed qualification histories. Construct genesis/journal/counters/BOOT receipt then protected completed anchor.",
+    "Independent prepared metadata/runtime/cache/registry review before separately issued exact EXEC envelope. This is a real gate, not worker-created source authority.",
+    "EXEC uniqueO_EXCL admission before newreads; verify registration/index/genesis/BOOT receipt/currentanchor/cache/code and counters. Bind deterministic derived context/run id/output path; durable active-source envelope before source stat/open.",
+    "For each fixed source sequentially: SOURCE_RESERVE journal+fsync, onepass exact descriptor/hash snapshot withEOFprobe, SOURCE_SETTLE; then BACKEND_RESERVE before one isolated actual-source child. Stop on first failure, no second source or model retry.",
+    "Each child: no raw paths, bounded chunked JSON IPC; exactly4authored warmup readers119pages, full opened-file union+qualified nonproject equality+exact new project/cache overlay and identity checks, strict denyimport/open/network/exec, actual-only source adapter once expected81/38pages. Unknown font/resource/import/warning/active content refuses.",
+    "Prepaid data/control/staging slot writes; full original counter axes conserved and reconstructed, failures unknowncharged, no refund or inferred0.",
+    "RESERVE_FINALIZATION before2MiB closing reads, Xcounter snapshot through prior event only, close10payload ledger, appendCOMMIT_PREFIX without selfhash cycle. Prefix/seal/tailVERIFY/writerACK/tailACK/completed protected CAS anchor then caller observation; lostACK/partialwrite staysUNKNOWN and no replay."
+  ],
+  "fixed_implementation_boundaries": {
+    "native_registrar": "Only this source-set/campaign/anchor and BOOT1/EXEC1; flock/O_EXCL/fsync, immutable anchors + compare-and-set. Trusted local owner, not hostile-host rollback proof.",
+    "write_slots": "OriginalBOOT24576/EXEC24576/journal49152/terminal24576/stderr8192=131072control; private projection251904/diag8192/provenance2048=262144; extra statcache65536+childreceipts16384+sealedprefix49152=129024staging, all inside global524288.",
+    "state_cache": "Index-aligned identities bind dev/inode/mode/size/mtime/ctime; cache ref bound into completed BOOT verification result and prepared metadata. No unseen cache acceptance.",
+    "journal_hash": "Normal prefix through RESERVE_FINALIZATION stored in ledger events.jsonl; COMMIT_PREFIX is a separately precharged final normal record referencing closed ledger. Full sealed prefix is exact concatenation of these already-owned records, persisted within staging; no ledger hash of its own future COMMIT.",
+    "adapter": "New actual-only pathless memory adapter accepts only fixedSOURCES hash/size/page counts; originalactual factories remain denied; no authored=True route.",
+    "IPC": "Raw source bytes never staged/persisted again or sent externally. Base64chunks<=65536chars; sourceinput950272/491520max, eachstdout262144max, input+output2097152globalwire budget charged toEXECmetadata. Header/overlay/private payload bounds explicit; private excerpts only in private projection slots."
+  },
+  "past_consumed_qualification_records": {
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/OUTCOME.json": {
+      "bytes": 775,
+      "sha256": "691206c41eac017175b3adab3392435815cbfd07efc4fa376bb6797a65ff52ca"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/STARTED.json": {
+      "bytes": 660,
+      "sha256": "9f3b9aa63691818a550b582783b2fd5049f9db6ae79e406b3485bae8539fd378"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-v1/partial_stdout.local.bin": {
+      "bytes": 114,
+      "sha256": "d155497b8919144990a65cc3e9d9001a93be8d89298caa8ef287ebd08a21bf2d"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/OUTCOME.json": {
+      "bytes": 700,
+      "sha256": "f3cb2f09411d57c39e5df72da5f81e86303dfe3ed15a57ff085c7fbf7187fe65"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/STARTED.json": {
+      "bytes": 861,
+      "sha256": "c76b9daa10f3d98ec41803dfc6a90f5e75a48a16bfd595a681956f30c5451bc6"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/runtime-diagnostic-v1/worker.json": {
+      "bytes": 1232,
+      "sha256": "6be52b1238c9899c4bf6672ef40e3ba84cf7eb5026483dd741cc23e6ef96bfd8"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/STARTED.json": {
+      "bytes": 894,
+      "sha256": "3301ad2dc40d52fc4fce83c544c5876e4d4d842cb19fbc7e268f6829eef4ca1a"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/OUTCOME.json": {
+      "bytes": 868,
+      "sha256": "1cc8e0ce5f3e53292d18b2ffc32f7a7c9fe10148d2566c4ea9139d0bf4835d90"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-crypto-v1/partial_stdout.local.bin": {
+      "bytes": 137,
+      "sha256": "e19e56386a4e917f2a07e1c3e2968ff45a6ad315dfde98f0c52db5b39f68bbf0"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/STARTED.json": {
+      "bytes": 894,
+      "sha256": "6da9d2b8b708078b49c7a90544213a2d7f741fa282991d85bd23a3a555324103"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/OUTCOME.json": {
+      "bytes": 868,
+      "sha256": "512772036b7b8caf1c45c9e1999daea3dac53e10d0037e9067d88787e2979d4f"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-guard-v1/partial_stdout.local.bin": {
+      "bytes": 662,
+      "sha256": "cc58809f9f6de2ef85836482356f02a1a2632594198e8ecf6b87f95c9294c9c1"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/STARTED.json": {
+      "bytes": 1160,
+      "sha256": "ce80552d7780bd5de0c245cf62dd01b014cc81b607801a64e6f5722a7dd14a9e"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/OUTCOME.json": {
+      "bytes": 1134,
+      "sha256": "0b86767385e0488783ca2442281e9a06dec98d124db8f10dfbd7494e54c26180"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-warmup-v1/partial_stdout.local.bin": {
+      "bytes": 669,
+      "sha256": "d6da02b3acd9da4aa3bf17e7aa1d5fe5638110ec6d62b897a94222a9d20cc6a4"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-directories-v1/STARTED.json": {
+      "bytes": 1165,
+      "sha256": "ff15858fde3cce8d41a9b083b6b01b08640b532d9a942feaff3c91aff92112ca"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-directories-v1/worker.json": {
+      "bytes": 74406,
+      "sha256": "d8abffd89b6aa90340a5b5364774c5eea74ea1a92e7a2cf1bc10f8896f990999"
+    },
+    "data/processed/e01_clerk2020_native_qualification_v1/qualification-directories-v1/OUTCOME.json": {
+      "bytes": 701,
+      "sha256": "0dd8f937b4c6e58f79f84c2d6f32d579d3cd9b710b727041fc0d2aaf9a323e85"
+    }
+  },
+  "past_qualified_limits": {
+    "qualification-v1": {
+      "child_cpu_hard_seconds": 11,
+      "child_cpu_soft_seconds": 10,
+      "child_wall_seconds": 30,
+      "code_read_bytes": 1048576,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "network_requests": 0,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "page_extractions": 119,
+      "reader_attempts": 4,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "source_reads": 0,
+      "stderr_bytes": 4096,
+      "stdout_bytes": 114688,
+      "wall_ms": 45000
+    },
+    "runtime-diagnostic-v1": {
+      "ancestor_read_bytes_reserved": 3104,
+      "ancestor_record_reads": 6,
+      "child_cpu_hard_seconds": 11,
+      "child_cpu_soft_seconds": 10,
+      "child_wall_seconds": 30,
+      "code_read_bytes": 1048576,
+      "collector_passes": 1,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "network_requests": 0,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "page_extractions": 0,
+      "reader_attempts": 0,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "source_reads": 0,
+      "stderr_bytes": 4096,
+      "stdout_bytes": 114688,
+      "wall_ms": 45000
+    },
+    "qualification-crypto-v1": {
+      "source_reads": 0,
+      "network_requests": 0,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "reader_attempts": 4,
+      "page_extractions": 119,
+      "wall_ms": 45000,
+      "child_wall_seconds": 30,
+      "child_cpu_soft_seconds": 10,
+      "child_cpu_hard_seconds": 11,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "code_read_bytes": 1048576,
+      "stdout_bytes": 114688,
+      "stderr_bytes": 4096,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "ancestor_record_reads": 12,
+      "ancestor_read_bytes_reserved": 8696
+    },
+    "qualification-guard-v1": {
+      "source_reads": 0,
+      "network_requests": 0,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "reader_attempts": 4,
+      "page_extractions": 119,
+      "wall_ms": 45000,
+      "child_wall_seconds": 30,
+      "child_cpu_soft_seconds": 10,
+      "child_cpu_hard_seconds": 11,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "code_read_bytes": 1048576,
+      "stdout_bytes": 114688,
+      "stderr_bytes": 4096,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "ancestor_record_reads": 18,
+      "ancestor_read_bytes_reserved": 12500
+    },
+    "qualification-warmup-v1": {
+      "ancestor_read_bytes_reserved": 17354,
+      "ancestor_record_reads": 24,
+      "child_cpu_hard_seconds": 11,
+      "child_cpu_soft_seconds": 10,
+      "child_wall_seconds": 30,
+      "code_read_bytes": 1048576,
+      "hash_open_events": 2048,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "network_requests": 0,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "page_extractions": 238,
+      "reader_attempts": 8,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "source_reads": 0,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "stderr_bytes": 4096,
+      "stdout_bytes": 114688,
+      "strict_page_extractions": 119,
+      "strict_reader_attempts": 4,
+      "wall_ms": 45000,
+      "warmup_directory_events": 256,
+      "warmup_file_open_attempts": 512,
+      "warmup_import_events": 512,
+      "warmup_page_extractions": 119,
+      "warmup_read_bytes_reserved": 67108864,
+      "warmup_reader_attempts": 4
+    },
+    "qualification-directories-v1": {
+      "ancestor_read_bytes_reserved": 23286,
+      "ancestor_record_reads": 30,
+      "child_cpu_hard_seconds": 11,
+      "child_cpu_soft_seconds": 10,
+      "child_wall_seconds": 30,
+      "code_read_bytes": 1048576,
+      "hash_open_events": 2048,
+      "model_calls": 0,
+      "native_import_attempts": 1,
+      "network_requests": 0,
+      "owned_write_bytes": 131072,
+      "packet_bytes": 32768,
+      "page_extractions": 238,
+      "reader_attempts": 8,
+      "rss_peak_bytes": 268435456,
+      "runtime_files": 1024,
+      "runtime_hash_bytes": 536870912,
+      "runtime_manifest_bytes": 98304,
+      "source_reads": 0,
+      "static_profile_reads": 11,
+      "static_read_bytes_reserved": 47738,
+      "stderr_bytes": 4096,
+      "stdout_bytes": 114688,
+      "strict_page_extractions": 119,
+      "strict_reader_attempts": 4,
+      "wall_ms": 45000,
+      "warmup_directory_events": 256,
+      "warmup_file_open_attempts": 512,
+      "warmup_import_events": 512,
+      "warmup_page_extractions": 119,
+      "warmup_read_bytes_reserved": 67108864,
+      "warmup_reader_attempts": 4
+    }
+  },
+  "past_credit_restored": 0,
+  "required_adverse_oracles": [
+    "Wrong envelope0reads; uniquephase consumption/fsync crash/persistentindex/anchorCAS/no root clone; originalauthority DAG acyclic/refuse future selfrefs.",
+    "Counter all15axes transaction/reserve/known/unknown/reconstruction; no doublecategory/globalcharge, no source credit on child failure.",
+    "BOOT/EXEC cold clock/CPU/RSS/time/cancel/workercrashes, source identity/hash/size/symlink/wrongrole/crossed registry/anchor/statcache drift, failfirstno source2.",
+    "Generated positive/active/malformed source bytes tests use authored declarations only; no actualsource/library execution by worker/auditor.",
+    "IPC oversize/malformed/padding/source hash/chunk ordering/stdout truncation/wrong runtime/overlay unknown/dynamicresource/sourcepathdeny.",
+    "Finalization/verification/seal/ACK/CAS/pre/postfsync/EROFS/truncation/reseal/returnlost controls; all sealedobjects immutable/no callback source access/no authority from displaysummary."
+  ],
+  "claim_gates": {
+    "SOURCE_FORMAT_ONLY": "May complete only after independent code/particular/actual private-output checks.",
+    "M2_full_orchestration": "Only the implemented reviewed registry/counter/terminal aspects can be accepted; unimplemented original oracles remainBLOCKED, never declared waived.",
+    "M3_to_M6": "Observed grammar/record parsing, official role/unit/class/round/ballot/geography, featureadmission and REAL statistical baseline/outcomes remainblocked separately."
+  },
+  "observed_operations": {
+    "worker_actual_source_native_network_model_calls": 0,
+    "new_source_job_issued": false,
+    "new_source_authority": false
+  }
+}

@@ -1,0 +1,862 @@
+{
+  "label": "MOCK_AUTHORED_CONTROL_EVIDENCE_NOT_REAL_SOURCE_RESULTS",
+  "scenarios": [
+    {
+      "label": "MOCK_AUTHORED_COMPLETE",
+      "result": {
+        "label": "SOURCE_FORMAT_ONLY",
+        "status": "WRITER_COMMITTED_CALLER_OBSERVED",
+        "seal_ref": {
+          "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-7c5e8616c0c0963434c8bf4f94aff7f2/seal.local.json",
+          "bytes": 2665,
+          "sha256": "a7a893853f4ceef9c1d1b834c06c150eabbf21b8a24227fca4ec5c27da534fff"
+        },
+        "writer_ack_ref": {
+          "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-7c5e8616c0c0963434c8bf4f94aff7f2/writer-ACK.local.json",
+          "bytes": 490,
+          "sha256": "5c3e15cda4ce0752b093cdd14b633606de1b94a14fdac96dd608649171d22f8c"
+        },
+        "completed_anchor_ref": {
+          "path": "data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/anchor-4.local.json",
+          "bytes": 1038,
+          "sha256": "7a561b136a24f2a27c9dbc911270bb6ba2de6ccc8a1ffb20a367caa46423cf87"
+        },
+        "source_counts_or_features_adopted": false,
+        "model_calls": 0,
+        "cost_usd": 0,
+        "caller_observation_ref": {
+          "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-7c5e8616c0c0963434c8bf4f94aff7f2/caller-observation.local.json",
+          "bytes": 496,
+          "sha256": "846bee5f08894e72a0b99cdf5ba7a7b282ec3f3f731ef8aae51965051ad127fb"
+        },
+        "cpu_ms_through_final_anchor": 71
+      },
+      "worker_dispatch_stubs": 2,
+      "actual_source_native_model_calls": 0,
+      "artifacts": [
+        {
+          "slot": "source_index",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/source_index.local.bin",
+          "bytes": 524,
+          "sha256": "c6ed582dec9a5b1eb9229e92056c1fdbb0e037ee4a20c64dfd20214dec789b60"
+        },
+        {
+          "slot": "registration",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/registration.local.bin",
+          "bytes": 652,
+          "sha256": "f941a319fd1b5e0b37bb059f2a44ea78dea6b888db5cd53b4f3958c79e08affe"
+        },
+        {
+          "slot": "boot_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/boot_issued.local.bin",
+          "bytes": 877,
+          "sha256": "c58252d0c8b451e31bec77e397e0dbeed883378c41c7b0c146fad6330c46d030"
+        },
+        {
+          "slot": "boot_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/boot_reservation.local.bin",
+          "bytes": 967,
+          "sha256": "5c7758325bcfe76ad40008571127bbaa3ba62793c67eef046a7910dde7f6e8e3"
+        },
+        {
+          "slot": "genesis",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/genesis.local.bin",
+          "bytes": 4386,
+          "sha256": "2295ab4af60d868c2947276045998e533ca0f5f060de82149b80e5a683fe0160"
+        },
+        {
+          "slot": "anchor_initial",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/anchor_initial.local.bin",
+          "bytes": 721,
+          "sha256": "e6fa4b31289a020c71f4cbf2f6bdfcfeb376bc561d7dde8a83ad0be3a6d8bd5d"
+        },
+        {
+          "slot": "boot_counters",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/boot_counters.local.bin",
+          "bytes": 3665,
+          "sha256": "d0882136226b0d84324d77111a60c4d59b695a00a0d49d82cb31adf03debefd5"
+        },
+        {
+          "slot": "boot_receipt",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/boot_receipt.local.bin",
+          "bytes": 1346,
+          "sha256": "d306e11770150e158129b49b0f4110395539ee806b67143345d6039a6b36a265"
+        },
+        {
+          "slot": "anchor_boot",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/anchor_boot.local.bin",
+          "bytes": 967,
+          "sha256": "20fb23365c6a3542140f5a7ecb33b183834e8401a3056a62293c41a8c86c4374"
+        },
+        {
+          "slot": "prepared_metadata",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/prepared_metadata.local.bin",
+          "bytes": 1495,
+          "sha256": "5586627d7d458876f3d9d642f55f1779bf8f870af3861cf5d7698452878646f6"
+        },
+        {
+          "slot": "runtime_stat_cache",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/runtime_stat_cache.local.bin",
+          "bytes": 3794,
+          "sha256": "5dd7247f166da48d66048cc6d243f82ca71a9a98a916a49cf1f56d6d502aacc4"
+        },
+        {
+          "slot": "exec_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/exec_reservation.local.bin",
+          "bytes": 1034,
+          "sha256": "26fad9555479f0ed3ef1cf692508228b95f80b08b66c7c2863936fdca0aa65a8"
+        },
+        {
+          "slot": "exec_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/exec_issued.local.bin",
+          "bytes": 944,
+          "sha256": "35ae452c997a6d9c54933e30ef54855095a479690ed6bff45668f7fa346b7b6f"
+        },
+        {
+          "slot": "derived_context",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/derived_context.local.bin",
+          "bytes": 1111,
+          "sha256": "d0d532fe512d9eb8b482141f950c0e6445c5c69f0e89f92e30642ccf26dfc440"
+        },
+        {
+          "slot": "anchor_active",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/anchor_active.local.bin",
+          "bytes": 875,
+          "sha256": "490506c404f5cbb6ede4250fe77944b180e7b4ac864ccbe42937e3ec7e7bab39"
+        },
+        {
+          "slot": "source_receipt_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/source_receipt_0.local.bin",
+          "bytes": 200,
+          "sha256": "fe540133eb07fdbc398ceeafc52c9f2ab958d8eadfa9f56601b2206f2da307da"
+        },
+        {
+          "slot": "source_receipt_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/source_receipt_1.local.bin",
+          "bytes": 198,
+          "sha256": "c61b6f429528d4f61c7340e6d1e33eea275fe2c0952d73e68f059304b269bad5"
+        },
+        {
+          "slot": "child_ref_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/child_ref_0.local.bin",
+          "bytes": 116,
+          "sha256": "3522b667df3a897f8d53fb371f02ee8a56f8844ed077c2e1e2690b5d60ec931d"
+        },
+        {
+          "slot": "child_ref_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/child_ref_1.local.bin",
+          "bytes": 116,
+          "sha256": "e50b9257efaaaaacbcf559dae77b658fe6ef26c30dcf6dec371a131bc3844070"
+        },
+        {
+          "slot": "manifest",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/manifest.local.bin",
+          "bytes": 241,
+          "sha256": "85ea5611385a899e41aaec81d1af48b3f1f17e60ba15514b9808025767b5466b"
+        },
+        {
+          "slot": "environment",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/environment.local.bin",
+          "bytes": 358,
+          "sha256": "9a748cd81999f0f724726544d8d99e28dc82bede84b058eea9573f1f1ede6fc7"
+        },
+        {
+          "slot": "summary",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/summary.local.bin",
+          "bytes": 136,
+          "sha256": "ebc1f9e161ad25d7e4ccf8bbe48eb9aa03662e355fb3500e484c3253c18aec5d"
+        },
+        {
+          "slot": "payload_hashes",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/payload_hashes.local.bin",
+          "bytes": 342,
+          "sha256": "3368f8d9a7660feb9c88e5f6c3c1659e7e2db0d3dafd573e32af8f1b398ad7af"
+        },
+        {
+          "slot": "inspection_commit",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/inspection_commit.local.bin",
+          "bytes": 205,
+          "sha256": "b084e203f43102128e2fc3905f652d97220649dd81041371bb45111d38dc4de3"
+        },
+        {
+          "slot": "counter_prefix",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/counter_prefix.local.bin",
+          "bytes": 3818,
+          "sha256": "a384cece25f4347efeed4b27181673a592ebcb31d1807ba6b0471e61d97803dd"
+        },
+        {
+          "slot": "normal_journal",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/normal_journal.local.bin",
+          "bytes": 14358,
+          "sha256": "89cd2b10b91df7d673f41384123065109bf43de46d70e358172e082cb7d0864c"
+        },
+        {
+          "slot": "commit_event",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/commit_event.local.bin",
+          "bytes": 902,
+          "sha256": "2c6550fef9f6eb12d5271ca93ecd45af489b93d1b72194297b80301a2167d06d"
+        },
+        {
+          "slot": "private_projection",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/private_projection.local.bin",
+          "bytes": 3979,
+          "sha256": "133d9bd9c21e1966e00bfcce89a9804ddbba0719c5bc423ae9ba4c4039f2e973"
+        },
+        {
+          "slot": "public_diagnostics",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/public_diagnostics.local.bin",
+          "bytes": 1163,
+          "sha256": "ae4c1dcb008ebf4e2a4bb8ea473f4ebb9876bb74b9c7119dbc23c74a82b07910"
+        },
+        {
+          "slot": "private_provenance",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/private_provenance.local.bin",
+          "bytes": 1163,
+          "sha256": "05bd21c8bdc4245ff7da21bd102c3a55a0ac507a34b2350612a3f5d84251edd2"
+        },
+        {
+          "slot": "child_metadata_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/child_metadata_0.local.bin",
+          "bytes": 2055,
+          "sha256": "583f684ef0f1c41d7cedf04059ae2f7d3f312a183f667219f77b84b63489f4a3"
+        },
+        {
+          "slot": "child_metadata_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/child_metadata_1.local.bin",
+          "bytes": 2051,
+          "sha256": "2902d9a5ed7fe41fc8d2dec20ca94983709848608fdd9c77d9b08a5139f903bd"
+        },
+        {
+          "slot": "sealed_prefix",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/sealed_prefix.local.bin",
+          "bytes": 15260,
+          "sha256": "320f59465b67a81553eac1891d50b9a21c5cef0659d3509da0de38e606d86835"
+        },
+        {
+          "slot": "prefix_anchor",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/prefix_anchor.local.bin",
+          "bytes": 965,
+          "sha256": "a757bcbf29ccf0660b262c03c83734fd11b27af911e4d9bf745176acc5d5958c"
+        },
+        {
+          "slot": "seal",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/seal.local.bin",
+          "bytes": 2665,
+          "sha256": "a7a893853f4ceef9c1d1b834c06c150eabbf21b8a24227fca4ec5c27da534fff"
+        },
+        {
+          "slot": "tail_verify",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/tail_verify.local.bin",
+          "bytes": 353,
+          "sha256": "72f1d22a651b1fa5383324c61994d62c41fcfa30ca89cb09a5953d7804c432aa"
+        },
+        {
+          "slot": "writer_ack",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/writer_ack.local.bin",
+          "bytes": 490,
+          "sha256": "5c3e15cda4ce0752b093cdd14b633606de1b94a14fdac96dd608649171d22f8c"
+        },
+        {
+          "slot": "tail_ack",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/tail_ack.local.bin",
+          "bytes": 444,
+          "sha256": "a55b5ecfdfbba57e40dafebc8c4a32e6bfd19635754500af266980b9078e0d03"
+        },
+        {
+          "slot": "anchor_complete",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/anchor_complete.local.bin",
+          "bytes": 1038,
+          "sha256": "7a561b136a24f2a27c9dbc911270bb6ba2de6ccc8a1ffb20a367caa46423cf87"
+        },
+        {
+          "slot": "caller_observation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/COMPLETE/caller_observation.local.bin",
+          "bytes": 496,
+          "sha256": "846bee5f08894e72a0b99cdf5ba7a7b282ec3f3f731ef8aae51965051ad127fb"
+        }
+      ]
+    },
+    {
+      "label": "MOCK_AUTHORED_FIRST_CHILD_STOP",
+      "result": {
+        "status": "FAILED_OR_UNKNOWN_NO_RETRY",
+        "phase": "EXEC",
+        "source_format_accepted": false,
+        "model_calls": 0,
+        "cost_usd": 0
+      },
+      "worker_dispatch_stubs": 1,
+      "actual_source_native_model_calls": 0,
+      "artifacts": [
+        {
+          "slot": "source_index",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/source_index.local.bin",
+          "bytes": 524,
+          "sha256": "3d773d53ee706698c1165f527cc3629dcb8c35def94059070932df7857ff6493"
+        },
+        {
+          "slot": "registration",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/registration.local.bin",
+          "bytes": 652,
+          "sha256": "7a1c9d99183a7e73d32f394900af488a811cb5b212b13d62932ebbde5f681803"
+        },
+        {
+          "slot": "boot_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/boot_issued.local.bin",
+          "bytes": 877,
+          "sha256": "a6ba0213ab580c82e9c165a3a40a49a07037554e3cf6c21a3a8c41e4ed2a3cd8"
+        },
+        {
+          "slot": "boot_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/boot_reservation.local.bin",
+          "bytes": 967,
+          "sha256": "b07b10da482132fef26a080d2ddb632d9a232ada3c6e5cf7e4dda796b0480001"
+        },
+        {
+          "slot": "genesis",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/genesis.local.bin",
+          "bytes": 4386,
+          "sha256": "5b8832adcdb145488e8b4b46a035514150f162d70ef8ddbf301ea07f6b21a44f"
+        },
+        {
+          "slot": "anchor_initial",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/anchor_initial.local.bin",
+          "bytes": 721,
+          "sha256": "ab9afcaeca155638dba0149d0df2c8640bd2cdee74ca83983d2b7119f0feec11"
+        },
+        {
+          "slot": "boot_counters",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/boot_counters.local.bin",
+          "bytes": 3665,
+          "sha256": "d8c7309759a5a042eef793a170b34ef892eff1a6604e085e2c3fda067fbcee71"
+        },
+        {
+          "slot": "boot_receipt",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/boot_receipt.local.bin",
+          "bytes": 1346,
+          "sha256": "c95ee1cdf00de21ca1706752d7e33b8cc0f8920ee6aab187ecd6b482ce0f0f49"
+        },
+        {
+          "slot": "anchor_boot",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/anchor_boot.local.bin",
+          "bytes": 967,
+          "sha256": "43aadabc3f8956aa9ca06ad23d2d946eae9321d1a16f58cf17624df64e207b2e"
+        },
+        {
+          "slot": "prepared_metadata",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/prepared_metadata.local.bin",
+          "bytes": 1495,
+          "sha256": "81a70c44c9e35a3503adf8273cc7de8d7b265ad40b770280b72e2d5d1fef8ebf"
+        },
+        {
+          "slot": "runtime_stat_cache",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/runtime_stat_cache.local.bin",
+          "bytes": 3794,
+          "sha256": "f5134aee0e5b496bd231419ea7572933331ce4fcc559d2ea85a3bc8a0b984d26"
+        },
+        {
+          "slot": "exec_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/exec_reservation.local.bin",
+          "bytes": 1034,
+          "sha256": "a07b3ff3ea5acd06705b919d403ab1d0658ced62aa3c15a119f1352432ddce86"
+        },
+        {
+          "slot": "exec_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/exec_issued.local.bin",
+          "bytes": 944,
+          "sha256": "ea0b0b9316a2e37f83801bf16761366dbe62e49789fa50163d3ed2befc0e71d1"
+        },
+        {
+          "slot": "derived_context",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/derived_context.local.bin",
+          "bytes": 1111,
+          "sha256": "dcd82442d889cefedc3a4bac5ccf20037e5ef30ade6287491b083ebe905a6778"
+        },
+        {
+          "slot": "anchor_active",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/anchor_active.local.bin",
+          "bytes": 875,
+          "sha256": "61df55293ac1b8709ac50fd06248b640040118f2adf5043611a42b816e00627f"
+        },
+        {
+          "slot": "source_receipt_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/source_receipt_0.local.bin",
+          "bytes": 200,
+          "sha256": "fe540133eb07fdbc398ceeafc52c9f2ab958d8eadfa9f56601b2206f2da307da"
+        },
+        {
+          "slot": "child_ref_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/child_ref_0.local.bin",
+          "bytes": 115,
+          "sha256": "251e98697fcd3a76f29076df34bf8ed50405852e0226955f49690a6dac70edc9"
+        },
+        {
+          "slot": "normal_journal",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/normal_journal.local.bin",
+          "bytes": 7710,
+          "sha256": "d2f8764b18dcc693c84bd56b347d414d2a3fcc90e5705b6ad407077b03d45a10"
+        },
+        {
+          "slot": "private_projection",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/private_projection.local.bin",
+          "bytes": 98,
+          "sha256": "8700bbf787bc605b0a94457062726d0ff8ec602823d344281f95fa787799d0eb"
+        },
+        {
+          "slot": "child_metadata_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/child_metadata_0.local.bin",
+          "bytes": 432,
+          "sha256": "e0c1f7d5518e42d357c42cd7731b76b9c34244698a2725a44186b81eb02e94ff"
+        },
+        {
+          "slot": "terminal_failure",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/terminal_failure.local.bin",
+          "bytes": 210,
+          "sha256": "73195f6cea797fcb265b03519076bff71c5ee374e99065c97da11b6cd6bd48ed"
+        },
+        {
+          "slot": "private_stderr",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/FIRST_CHILD_STOP/private_stderr.local.bin",
+          "bytes": 3726,
+          "sha256": "23be055a432591a7e55f9f9ba1156f1e0b564816f82f19a86913b56b6e0be9d3"
+        }
+      ]
+    },
+    {
+      "label": "MOCK_AUTHORED_SECOND_CHILD_STOP",
+      "result": {
+        "status": "FAILED_OR_UNKNOWN_NO_RETRY",
+        "phase": "EXEC",
+        "source_format_accepted": false,
+        "model_calls": 0,
+        "cost_usd": 0
+      },
+      "worker_dispatch_stubs": 2,
+      "actual_source_native_model_calls": 0,
+      "artifacts": [
+        {
+          "slot": "source_index",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/source_index.local.bin",
+          "bytes": 524,
+          "sha256": "62879afe83441abb5f92ba315022c0e5414245f55f159288b973c8cf0958d360"
+        },
+        {
+          "slot": "registration",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/registration.local.bin",
+          "bytes": 652,
+          "sha256": "3749d2c4db0293db43b193c06db552c4aaacf1881f4d1554eb2c86902821a272"
+        },
+        {
+          "slot": "boot_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/boot_issued.local.bin",
+          "bytes": 877,
+          "sha256": "54709c07e2e94fd7b79f6a73b8ffdf49702b01e8d114342e337a3a2a4df8f0a4"
+        },
+        {
+          "slot": "boot_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/boot_reservation.local.bin",
+          "bytes": 967,
+          "sha256": "d55bcb86fb3bf4502affd78e926ff8e71e9c62bd10703df319388e74480d0b61"
+        },
+        {
+          "slot": "genesis",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/genesis.local.bin",
+          "bytes": 4386,
+          "sha256": "f9b35d0dfe888b1950b8e78dec60cda8dba3e1b940e1b6d311a9be6570e87342"
+        },
+        {
+          "slot": "anchor_initial",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/anchor_initial.local.bin",
+          "bytes": 721,
+          "sha256": "bb3adc89d44464a73144e7aab6bc41a44db5e0da4a989e121b05fe2b61efd9e4"
+        },
+        {
+          "slot": "boot_counters",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/boot_counters.local.bin",
+          "bytes": 3665,
+          "sha256": "b98376ae1e791f537c5fc01e8a4b7c7d3ce0502117d12aaca0f94fc5634149a5"
+        },
+        {
+          "slot": "boot_receipt",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/boot_receipt.local.bin",
+          "bytes": 1346,
+          "sha256": "6116b0c181989b2e462af1041c0b92022f6179cc257c8ab06dea59f39c480db6"
+        },
+        {
+          "slot": "anchor_boot",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/anchor_boot.local.bin",
+          "bytes": 967,
+          "sha256": "ce09e78220671a1c7842093189840a6df15b5246673411db9d77523a7fc0fb83"
+        },
+        {
+          "slot": "prepared_metadata",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/prepared_metadata.local.bin",
+          "bytes": 1495,
+          "sha256": "b5a9d4d32c0fb75a287d5920a001cf88cc9d6b27b2dcac25a2785003ff7d1c0a"
+        },
+        {
+          "slot": "runtime_stat_cache",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/runtime_stat_cache.local.bin",
+          "bytes": 3794,
+          "sha256": "0cb836e4ca992254a0874f61e8b14280f22b974a6e1740f80cfac9d4531955ec"
+        },
+        {
+          "slot": "exec_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/exec_reservation.local.bin",
+          "bytes": 1034,
+          "sha256": "309be5af20520b6eea830da3a9c5f8eed6106cbb23cc54d17e9fcb8ec51ee408"
+        },
+        {
+          "slot": "exec_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/exec_issued.local.bin",
+          "bytes": 944,
+          "sha256": "6bdb8bc447bddf2772fedd468dc37319568bda4ffbf50962f0e629fdf38fbbd7"
+        },
+        {
+          "slot": "derived_context",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/derived_context.local.bin",
+          "bytes": 1111,
+          "sha256": "3a8a29fd3499ec9848be100a01d287fcff934adf8436acc4ee2da602d98f0637"
+        },
+        {
+          "slot": "anchor_active",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/anchor_active.local.bin",
+          "bytes": 875,
+          "sha256": "875917975fb80fc1b79a38ca9aee5e3c1f39869c91c9abc39cabdaa1ed2e320c"
+        },
+        {
+          "slot": "source_receipt_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/source_receipt_0.local.bin",
+          "bytes": 200,
+          "sha256": "fe540133eb07fdbc398ceeafc52c9f2ab958d8eadfa9f56601b2206f2da307da"
+        },
+        {
+          "slot": "source_receipt_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/source_receipt_1.local.bin",
+          "bytes": 198,
+          "sha256": "c61b6f429528d4f61c7340e6d1e33eea275fe2c0952d73e68f059304b269bad5"
+        },
+        {
+          "slot": "child_ref_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/child_ref_0.local.bin",
+          "bytes": 116,
+          "sha256": "7000c2bb7238d323c5d772470f922c4e8c40e39900d3fe5480b48397eda4847e"
+        },
+        {
+          "slot": "child_ref_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/child_ref_1.local.bin",
+          "bytes": 115,
+          "sha256": "deb248881c888a2411ba4e0bd1648e62bfb0275811e0a94a8c1c5f67519a28e4"
+        },
+        {
+          "slot": "normal_journal",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/normal_journal.local.bin",
+          "bytes": 10763,
+          "sha256": "751494ae46e902c7458eb130f2b93bece3faa908aedd93a59f7d1704d61cd777"
+        },
+        {
+          "slot": "private_projection",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/private_projection.local.bin",
+          "bytes": 2598,
+          "sha256": "8e93e8653a900d9e3a1ca641aa18c2d09097d73dce33bd3b9c605035de9895c5"
+        },
+        {
+          "slot": "child_metadata_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/child_metadata_0.local.bin",
+          "bytes": 2055,
+          "sha256": "b00b2a8531342dc3dd558a621cc107ce43b13e462a7515ee86721cfdb10c5fda"
+        },
+        {
+          "slot": "child_metadata_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/child_metadata_1.local.bin",
+          "bytes": 430,
+          "sha256": "26de3d1b56e5cbedee30749a8c9f3fb19fcc86859160f617471bbe6dc66ff470"
+        },
+        {
+          "slot": "terminal_failure",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/terminal_failure.local.bin",
+          "bytes": 210,
+          "sha256": "8ee7fbc03198da2c7aaf3e6e7cee112e81a4ca69504abbc5a4dd0cdfbdf3c48d"
+        },
+        {
+          "slot": "private_stderr",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/SECOND_CHILD_STOP/private_stderr.local.bin",
+          "bytes": 3727,
+          "sha256": "61f6e0fba4350413dd2833299b288e0127cd904a857077c4bdf0c408cfe981db"
+        }
+      ]
+    },
+    {
+      "label": "MOCK_AUTHORED_LATE_RESOURCE_INVALIDATED",
+      "result": {
+        "status": "FAILED_OR_UNKNOWN_NO_RETRY",
+        "phase": "EXEC",
+        "source_format_accepted": false,
+        "model_calls": 0,
+        "cost_usd": 0
+      },
+      "worker_dispatch_stubs": 2,
+      "actual_source_native_model_calls": 0,
+      "artifacts": [
+        {
+          "slot": "source_index",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/source_index.local.bin",
+          "bytes": 524,
+          "sha256": "ff893a45143766ec26a7b36886f319d272bf6bbab9c871d44f5e5fb6b117be7c"
+        },
+        {
+          "slot": "registration",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/registration.local.bin",
+          "bytes": 652,
+          "sha256": "a062e2eb101b0e292d1aef3542b1015128817075cb176c2543349f8234212192"
+        },
+        {
+          "slot": "boot_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/boot_issued.local.bin",
+          "bytes": 877,
+          "sha256": "e267c0dbeb4dc1ed4ad61bf30ac29c0d28d4bc6a013441636c89f09e3c599599"
+        },
+        {
+          "slot": "boot_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/boot_reservation.local.bin",
+          "bytes": 967,
+          "sha256": "9b0376ed4f9f4bc2a695b5cb286a19bdcd49a19933ebffcc6264245bf6ab9aaa"
+        },
+        {
+          "slot": "genesis",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/genesis.local.bin",
+          "bytes": 4386,
+          "sha256": "2b36903b99656118d7f5ffe527518feae86053f426544a9fe6a6468d68967ecc"
+        },
+        {
+          "slot": "anchor_initial",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/anchor_initial.local.bin",
+          "bytes": 721,
+          "sha256": "7a056a1f4825521f07073f13d1fc88904988a2585ddafb98395f94b159106ec0"
+        },
+        {
+          "slot": "boot_counters",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/boot_counters.local.bin",
+          "bytes": 3665,
+          "sha256": "0f01665385d534450fecdaece2eb4ea340a37733d533ceded4274001c9ffcdb2"
+        },
+        {
+          "slot": "boot_receipt",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/boot_receipt.local.bin",
+          "bytes": 1346,
+          "sha256": "d7554ce4c667a16707bd8b3704195d7ffbe0b4b1ef771808a8bf1fd6ad6cb8a1"
+        },
+        {
+          "slot": "anchor_boot",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/anchor_boot.local.bin",
+          "bytes": 967,
+          "sha256": "f38536dc7ec3fe8a56331d785e509c438d1d61d5cec3e21b620d689908cf5985"
+        },
+        {
+          "slot": "prepared_metadata",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/prepared_metadata.local.bin",
+          "bytes": 1495,
+          "sha256": "bf672c778dc820376de9b7f6e2412d5e1e51d7cd8661432dbf0ec98e6fc90168"
+        },
+        {
+          "slot": "runtime_stat_cache",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/runtime_stat_cache.local.bin",
+          "bytes": 3794,
+          "sha256": "0e3b61564e1766814e6a85d2ed9f51c225ba3ed37f83be07f2900c3e78e0f502"
+        },
+        {
+          "slot": "exec_reservation",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/exec_reservation.local.bin",
+          "bytes": 1034,
+          "sha256": "ad32d5b672ab1fa24271028011403539dc5ce6cd6a36514543cebb82e344c296"
+        },
+        {
+          "slot": "exec_issued",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/exec_issued.local.bin",
+          "bytes": 944,
+          "sha256": "0cb17a6370f33a119bd7d2132e569c45819adcd30ffb1c53a2549cbbdb2e4a8d"
+        },
+        {
+          "slot": "derived_context",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/derived_context.local.bin",
+          "bytes": 1111,
+          "sha256": "7a6145d73141b222028ca9c07b969b33600697c201eec574f024d1b7d82a0ed6"
+        },
+        {
+          "slot": "anchor_active",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/anchor_active.local.bin",
+          "bytes": 875,
+          "sha256": "16819faaa555ea5ab12eb4f0c138fe6f98176c9c7fdc13c166a5ff1dc13dd625"
+        },
+        {
+          "slot": "source_receipt_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/source_receipt_0.local.bin",
+          "bytes": 200,
+          "sha256": "fe540133eb07fdbc398ceeafc52c9f2ab958d8eadfa9f56601b2206f2da307da"
+        },
+        {
+          "slot": "source_receipt_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/source_receipt_1.local.bin",
+          "bytes": 198,
+          "sha256": "c61b6f429528d4f61c7340e6d1e33eea275fe2c0952d73e68f059304b269bad5"
+        },
+        {
+          "slot": "child_ref_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/child_ref_0.local.bin",
+          "bytes": 116,
+          "sha256": "c5f8f4fc704dfbd609a77e194b24c753156ce572a0e4cef3a2b955032611c07d"
+        },
+        {
+          "slot": "child_ref_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/child_ref_1.local.bin",
+          "bytes": 116,
+          "sha256": "ddd7530106c6c5789c037c9b36f61fecf6479b65de6e8be57f17d53ea4286599"
+        },
+        {
+          "slot": "manifest",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/manifest.local.bin",
+          "bytes": 241,
+          "sha256": "85ea5611385a899e41aaec81d1af48b3f1f17e60ba15514b9808025767b5466b"
+        },
+        {
+          "slot": "environment",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/environment.local.bin",
+          "bytes": 358,
+          "sha256": "9a748cd81999f0f724726544d8d99e28dc82bede84b058eea9573f1f1ede6fc7"
+        },
+        {
+          "slot": "summary",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/summary.local.bin",
+          "bytes": 136,
+          "sha256": "ebc1f9e161ad25d7e4ccf8bbe48eb9aa03662e355fb3500e484c3253c18aec5d"
+        },
+        {
+          "slot": "payload_hashes",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/payload_hashes.local.bin",
+          "bytes": 342,
+          "sha256": "f45f7471a7af4dc82c3fe9c1c274256fc7768e70a0b435b679b74ccbc232258a"
+        },
+        {
+          "slot": "inspection_commit",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/inspection_commit.local.bin",
+          "bytes": 205,
+          "sha256": "6a7b5a60f52d53e3c224db114a224c24c5ef3b9c69026a6f77e7156be1d0b792"
+        },
+        {
+          "slot": "counter_prefix",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/counter_prefix.local.bin",
+          "bytes": 3818,
+          "sha256": "6c39b2ba2f7cfa5fec3c25378ee35217b1108cccc0246d7b0c23cac36a2b95b6"
+        },
+        {
+          "slot": "normal_journal",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/normal_journal.local.bin",
+          "bytes": 14358,
+          "sha256": "b07684e73a35cc18cbf5d0170ab2b001c05377bd77c4da80aea53e4477b1ec2a"
+        },
+        {
+          "slot": "commit_event",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/commit_event.local.bin",
+          "bytes": 902,
+          "sha256": "dcd8da6948e50e95200527681674f74d8d3fd09c76b93aaff336ba4db78e63c9"
+        },
+        {
+          "slot": "private_projection",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/private_projection.local.bin",
+          "bytes": 3979,
+          "sha256": "133d9bd9c21e1966e00bfcce89a9804ddbba0719c5bc423ae9ba4c4039f2e973"
+        },
+        {
+          "slot": "public_diagnostics",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/public_diagnostics.local.bin",
+          "bytes": 1163,
+          "sha256": "ae4c1dcb008ebf4e2a4bb8ea473f4ebb9876bb74b9c7119dbc23c74a82b07910"
+        },
+        {
+          "slot": "private_provenance",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/private_provenance.local.bin",
+          "bytes": 1163,
+          "sha256": "389514209740f1c6c9cf3b3ecaead1ae12ae7fc664870b0bb72c7425df03a145"
+        },
+        {
+          "slot": "child_metadata_0",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/child_metadata_0.local.bin",
+          "bytes": 2055,
+          "sha256": "28f1b3e343040728166a88ff9058ecdb84e558f3039c1bf0f9ebb6932f2fff14"
+        },
+        {
+          "slot": "child_metadata_1",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/child_metadata_1.local.bin",
+          "bytes": 2051,
+          "sha256": "47647ff8c961c8f5fee487dc6baeaa899510a10ac9b0587fbeb781bd75f7f4f4"
+        },
+        {
+          "slot": "sealed_prefix",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/sealed_prefix.local.bin",
+          "bytes": 15260,
+          "sha256": "0820e0b636c18ca15f4b73c6fc9a6cb843dbda1131d2a69c891e37c0d7c4061f"
+        },
+        {
+          "slot": "prefix_anchor",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/prefix_anchor.local.bin",
+          "bytes": 965,
+          "sha256": "6282eb8bcfa6c9a246826d38a998e7d7e5f3eb96a2aa10daf3a07aafced24b46"
+        },
+        {
+          "slot": "seal",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/seal.local.bin",
+          "bytes": 2665,
+          "sha256": "60473cddda4d63a449ae2a358b95626544f1e5f1450c2c4de9442dd025b828c0"
+        },
+        {
+          "slot": "tail_verify",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/tail_verify.local.bin",
+          "bytes": 353,
+          "sha256": "64aa7ac53ab7bd11ab117f9736167d07f9bfee884f902cdc84f232135d6ebd5d"
+        },
+        {
+          "slot": "writer_ack",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/writer_ack.local.bin",
+          "bytes": 490,
+          "sha256": "53ba66be8d3ae100180056f9e81eb04c9f3ee03959468fc9ebc8cd7d7b0825af"
+        },
+        {
+          "slot": "tail_ack",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/tail_ack.local.bin",
+          "bytes": 444,
+          "sha256": "c4b59ba6b70024a3e858379b3ecbb1297f934ec9f86dfe92cec171755b463876"
+        },
+        {
+          "slot": "anchor_complete",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/anchor_complete.local.bin",
+          "bytes": 1038,
+          "sha256": "60d75ad78d9e5d5121c770de7bb72b0bfbc52848cbd0eea2b38efc060aecb444"
+        },
+        {
+          "slot": "tail_invalidate",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/tail_invalidate.local.bin",
+          "bytes": 361,
+          "sha256": "3ec2e077c420e0388df22d353a9b13a62eb7207265c50958b9ebfd67c87b8fa4"
+        },
+        {
+          "slot": "anchor_invalid",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/anchor_invalid.local.bin",
+          "bytes": 1037,
+          "sha256": "3e35723ebc0ff235c4cfcecaac3ba583277591ff5c55e48cf5a37ae3f8a28bd8"
+        },
+        {
+          "slot": "terminal_failure",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/terminal_failure.local.bin",
+          "bytes": 210,
+          "sha256": "360df667bc2729430bd324068144c79928cac7c7fca899bc7928c3a4cf2bfbe8"
+        },
+        {
+          "slot": "private_stderr",
+          "path": "data/processed/e01_clerk2020_source_campaign_authored_v1_20261112/LATE_RESOURCE_INVALIDATED/private_stderr.local.bin",
+          "bytes": 3715,
+          "sha256": "fad7fb384dfde4d53db57d76e6e08e49328e6a977bbfc3afd3686af7847e4f9b"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 47039,
+      "path": "src/civiclab/e01/clerk2020_source_job_v1.py",
+      "sha256": "a6dd5f7da63163cec2fa653c0234cb619e42c3cc25ca448124dcacfee9ef1fb7"
+    },
+    {
+      "bytes": 20739,
+      "path": "tests/test_clerk2020_source_job_v1.py",
+      "sha256": "af627445b3485b0ff70faa747a91f96b398d69c3fc4c4a611c88799831c973f4"
+    },
+    {
+      "bytes": 8888,
+      "path": "scripts/prepare_e01_source_phase_v2.py",
+      "sha256": "36ef80231e3fa9774dc7ff45a837e307d628b4fe0af8600a185de0f5731186fe"
+    },
+    {
+      "bytes": 6296,
+      "path": "tests/test_clerk2020_source_packet_prepare_v2.py",
+      "sha256": "1d75e66b83a3fc3978e66c619705145fd0479f33ae6c9488b69290ceffdea335"
+    },
+    {
+      "bytes": 3509,
+      "path": "scripts/verify_e01_source_delta_authored_20261112.py",
+      "sha256": "3fa0d0277837d83ee56ba6dc59464bbc8bdac0e0f234d6a64268e0250a9b5478"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reexecutes original adverse probe and70 guarded tests; lead coordinates review and sole scheduler. Worker does not issue/run actual packet.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 15466,
+      "path": "reports/clerk2020_source_delta_frozen_312_20261112.txt",
+      "sha256": "ded202d5f0311a040c44dab99b448483ef2781fa1475880ea580b271fc657151"
+    },
+    {
+      "bytes": 15466,
+      "path": "reports/clerk2020_source_delta_frozen_311_20261112.txt",
+      "sha256": "7a2243cb22ad0567cede0f09610495ef52ffb60d5a29cb1e4b7084de892e9849"
+    },
+    {
+      "bytes": 4128,
+      "path": "reports/clerk2020_source_delta_initial_312_20261112.txt",
+      "sha256": "064fcd38acd8f0052deefe7bdc3c5892997ac38908deb62757c39183a8c94196"
+    },
+    {
+      "bytes": 12921,
+      "path": "reports/clerk2020_source_delta_final_312_20261112.txt",
+      "sha256": "786b997d23b512626edd208fa8e63869eef28a6065c720d08248429fb75e5c22"
+    },
+    {
+      "bytes": 12921,
+      "path": "reports/clerk2020_source_delta_final_311_20261112.txt",
+      "sha256": "2de5fa05a2881108ed148cbd5c7fe1e070001e95050ef5822f74edc403b8cbb8"
+    },
+    {
+      "bytes": 15466,
+      "path": "reports/clerk2020_source_delta_verified_312_20261112.txt",
+      "sha256": "b2c908e9b9a587941087816faacc74b33621c93388b3ed844fa8d48280fd850e"
+    },
+    {
+      "bytes": 15466,
+      "path": "reports/clerk2020_source_delta_verified_311_20261112.txt",
+      "sha256": "49f53c9d822661a8bd34019ad5e519962ae2344a314e58159a6b67fe67d6544a"
+    },
+    {
+      "bytes": 599,
+      "path": "reports/clerk2020_source_delta_original_probe_312_20261112.json",
+      "sha256": "7dc5b34c56fd5387669801cfad52272ce506a873def83da1c79eb8a740414902"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/clerk2020_source_delta_original_probe_311_20261112.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 79963,
+      "path": "reports/clerk2020_source_campaign_pre_delta_source_20261112.json",
+      "sha256": "2d229f8e4a29f3cb2651300d6768e9f62b0c355e8495fddbd80312ef069bebb9"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python scripts/verify_e01_source_delta_authored_20261112.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 scripts/verify_e01_source_delta_authored_20261112.py",
+    ".venv/bin/python /tmp/civiclab-auditor-e01-frozen-terminal-probe-20261112.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Worker tests are not independent acceptance.",
+    "Original full M2 crash/storage/DAG/decoder coverage limitations remain as frozen audit lists; no scientific gate is redefined.",
+    "Create-once technical scopes fail closed and remain consumed after interrupted preparation.",
+    "Original candidate/audit/helper unchanged. Only exact new controller/test source deltas and new helper/runner require re-review.",
+    "No source-format, source-role/count/ballot/geography/feature/statistical or prospective result accepted."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored temporary trees/receipts only; no acquired PDF, genuine runtime binary inspection, respondent/publisher source or private owner state used.",
+  "TASK_ID": "E01_NATIVE_FROZEN_01_02_NARROW_REMEDY_20261112",
+  "TESTS_RUN_AND_RESULTS": [
+    {
+      "log_ref": {
+        "bytes": 15466,
+        "path": "reports/clerk2020_source_delta_frozen_312_20261112.txt",
+        "sha256": "ded202d5f0311a040c44dab99b448483ef2781fa1475880ea580b271fc657151"
+      },
+      "public_refs_checked_before_and_after": 22,
+      "seconds": "6.083",
+      "status": "WORKER_PASS_NOT_INDEPENDENT_ACCEPTANCE",
+      "tests": 70
+    },
+    {
+      "log_ref": {
+        "bytes": 15466,
+        "path": "reports/clerk2020_source_delta_frozen_311_20261112.txt",
+        "sha256": "7a2243cb22ad0567cede0f09610495ef52ffb60d5a29cb1e4b7084de892e9849"
+      },
+      "public_refs_checked_before_and_after": 22,
+      "seconds": "5.981",
+      "status": "WORKER_PASS_NOT_INDEPENDENT_ACCEPTANCE",
+      "tests": 70
+    }
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent combined controller-remedy/helper review and closed technical code binding",
+    "Root-only genuine BOOT and independent prepared binding",
+    "Root-only genuine EXEC and private output review"
+  ],
+  "ancestry": {
+    "frozen_findings": {
+      "bytes": 12752,
+      "path": "reports/INDEPENDENT_AUDIT_E01_NATIVE_CAMPAIGN_FROZEN_FINDINGS_20261112.json",
+      "sha256": "a340ddaa5d6c5eca3f83f171c922d70460ad7e21c4bdc4d5273d579a2dddd857"
+    },
+    "methods_ref": {
+      "bytes": 21846,
+      "path": "configs/e01_clerk2020_source_format_native_methods_v1_3_20261111.json",
+      "sha256": "65feb37dd104062ac749278d848371a2f6319e45899ac2c05ca59d44431cc002"
+    },
+    "original_handoff": {
+      "bytes": 42366,
+      "path": "reports/clerk2020_source_campaign_combined_handoff_20261112.json",
+      "sha256": "41c32ced26145332fd67238fa992cf158dd80ed20eb90c61aee041a13ae512ea"
+    }
+  },
+  "before_after": [
+    {
+      "after": {
+        "bytes": 47039,
+        "path": "src/civiclab/e01/clerk2020_source_job_v1.py",
+        "sha256": "a6dd5f7da63163cec2fa653c0234cb619e42c3cc25ca448124dcacfee9ef1fb7"
+      },
+      "before": {
+        "bytes": 46837,
+        "sha256": "bd86a3ccc0f6441349505ce30c7f43ae4110d25c25bd876000604a5275e91d88"
+      },
+      "path": "src/civiclab/e01/clerk2020_source_job_v1.py",
+      "unified_diff": "--- frozen/src/civiclab/e01/clerk2020_source_job_v1.py\n+++ delta/src/civiclab/e01/clerk2020_source_job_v1.py\n@@ -631,7 +631,9 @@\n         journal.append('EXEC','CODE_RUNTIME_RESERVE',{'effect_id':'hot_after'},reserve={'code_integrity_read_bytes':524288})\n         observed,used=code_check(root,spec['code_refs'],524288)\n         journal.append('EXEC','READ_SETTLE',{'effect_id':'hot_after','input_hash_verified':True},settle=[['code_integrity_read_bytes',524288,observed]])\n-        require(metadata.used<=786432 and (time.monotonic()-started)*1000<=75000)\n+        require(metadata.used<=786432)\n+        if not 0<=(time.monotonic()-started)*1000<=75000:\n+            raise SourceResourceStop('SOURCE_RESOURCE_LIMIT')\n         journal.append('EXEC','READ_SETTLE',{'effect_id':'exec_metadata','input_hash_verified':True},\n             settle=[['metadata_read_bytes',2883584,metadata.observed+wire],['active_time_ms',75000,None],['cpu_ms',50000,None]])\n         projection_ref=projection_stream.finish()\n@@ -671,10 +673,12 @@\n         window.check()\n         result['status']='WRITER_COMMITTED_CALLER_OBSERVED'\n         result['caller_observation_ref']=caller_ref\n-        require((time.monotonic()-started)*1000<=75000)\n+        if not 0<=(time.monotonic()-started)*1000<=75000:\n+            raise SourceResourceStop('SOURCE_RESOURCE_LIMIT')\n         usage=resource.getrusage(resource.RUSAGE_SELF);children=resource.getrusage(resource.RUSAGE_CHILDREN)\n         cpu_ms=int((usage.ru_utime+usage.ru_stime+children.ru_utime+children.ru_stime-start_cpu)*1000)+1\n-        require(0<=cpu_ms<=50000)\n+        if not 0<=cpu_ms<=50000:\n+            raise SourceResourceStop('SOURCE_RESOURCE_LIMIT')\n         result['cpu_ms_through_final_anchor']=cpu_ms\n         return result\n     except BaseException as exc:\n"
+    },
+    {
+      "after": {
+        "bytes": 20739,
+        "path": "tests/test_clerk2020_source_job_v1.py",
+        "sha256": "af627445b3485b0ff70faa747a91f96b398d69c3fc4c4a611c88799831c973f4"
+      },
+      "before": {
+        "bytes": 18142,
+        "sha256": "aff4e5ad0d53cfc2c80cb5ba37b29069f326ae713b74bfc7ef2f5b780fd36c25"
+      },
+      "path": "tests/test_clerk2020_source_job_v1.py",
+      "unified_diff": "--- frozen/tests/test_clerk2020_source_job_v1.py\n+++ delta/tests/test_clerk2020_source_job_v1.py\n@@ -214,6 +214,48 @@\n         self.assertEqual(n.FixedRegistrar(store,j.source_set_sha()).current()[1]['state'],'anchor_invalid')\n         self.assertFalse(store.exists('caller_observation'))\n \n+    def test_final_wall_check_after_caller_observation_invalidates(self):\n+        raw,h=self.exec_packet();armed=[False];calls=[0];original=n.FixedStore.create\n+        protected={}\n+        def creating(store,slot,body):\n+            ref=original(store,slot,body)\n+            if slot in {'seal','writer_ack','caller_observation'}:protected[slot]=ref['sha256']\n+            if slot=='caller_observation':armed[0]=True\n+            return ref\n+        def clock():\n+            if armed[0]:\n+                calls[0]+=1\n+                return 0.0 if calls[0]==1 else 76.0\n+            return 0.0\n+        with patch.object(j.time,'monotonic',side_effect=clock),patch.object(n.FixedStore,'create',creating),patch.object(j,'dispatch',side_effect=self.fake_dispatch):\n+            result=j.run_exec(self.root,raw,h)\n+        self.assertEqual(result['status'],'FAILED_OR_UNKNOWN_NO_RETRY')\n+        store=self.result_store(raw)\n+        self.assertTrue(store.exists('caller_observation'));self.assertTrue(store.exists('anchor_complete'))\n+        self.assertTrue(store.exists('tail_invalidate'))\n+        self.assertEqual(n.FixedRegistrar(store,j.source_set_sha()).current()[1]['state'],'anchor_invalid')\n+        for slot,expected in protected.items():self.assertEqual(j.sha(store.path(slot).read_bytes()),expected)\n+\n+    def test_final_rounded_cpu_boundary_after_caller_observation_invalidates(self):\n+        raw,h=self.exec_packet();armed=[False];calls=[0];original=n.FixedStore.create\n+        def creating(store,slot,body):\n+            ref=original(store,slot,body)\n+            if slot=='caller_observation':armed[0]=True\n+            return ref\n+        def usage(who):\n+            if armed[0]:\n+                calls[0]+=1\n+                # First resource-window sample remains zero; the final raw\n+                # sample totals exactly50s and conservatively rounds to50001ms.\n+                if calls[0]>2:return SimpleNamespace(ru_utime=25.0,ru_stime=0.0)\n+            return SimpleNamespace(ru_utime=0.0,ru_stime=0.0)\n+        with patch.object(j.time,'monotonic',return_value=0.0),patch.object(j.resource,'getrusage',side_effect=usage),patch.object(n.FixedStore,'create',creating),patch.object(j,'dispatch',side_effect=self.fake_dispatch):\n+            result=j.run_exec(self.root,raw,h)\n+        self.assertEqual(result['status'],'FAILED_OR_UNKNOWN_NO_RETRY')\n+        store=self.result_store(raw);self.assertTrue(store.exists('caller_observation'))\n+        self.assertTrue(store.exists('tail_invalidate'))\n+        self.assertEqual(n.FixedRegistrar(store,j.source_set_sha()).current()[1]['state'],'anchor_invalid')\n+\n     def test_invalidation_write_failure_stays_unknown_without_caller_observation(self):\n         raw,h=self.exec_packet();clock=[0.0];original=n.FixedStore.create\n         def creating(store,slot,body):\n"
+    },
+    {
+      "after": {
+        "bytes": 8888,
+        "path": "scripts/prepare_e01_source_phase_v2.py",
+        "sha256": "36ef80231e3fa9774dc7ff45a837e307d628b4fe0af8600a185de0f5731186fe"
+      },
+      "before": {
+        "bytes": 8148,
+        "sha256": "ec7e13d8ecb5fa8e87be92fe88110a6b2da755c08c52b4c07c01cc2f635610ae"
+      },
+      "path": "scripts/prepare_e01_source_phase_v2.py",
+      "unified_diff": "--- frozen/scripts/prepare_e01_source_phase_v2.py\n+++ delta/scripts/prepare_e01_source_phase_v2.py\n@@ -14,11 +14,12 @@\n \n \n class TechnicalReads:\n-    def __init__(self,root,phase):\n+    def __init__(self,root,phase,allowed):\n+        self.allowed=frozenset(allowed)\n         self.root=root;self.phase=phase;self.reserved=0;self.observed=0;self.records=[]\n     def read(self,path,maximum):\n         path=path.absolute();j.n.no_alias(path)\n-        j.require(path.is_relative_to(self.root) and not path.is_relative_to(self.root/'data/raw')\n+        j.require(path in self.allowed and path.is_relative_to(self.root) and not path.is_relative_to(self.root/'data/raw')\n                   and '.env' not in path.parts and maximum>0)\n         size=path.stat().st_size\n         j.require(size+1<=maximum and len(self.records)<READ_COUNTS[self.phase]\n@@ -34,7 +35,10 @@\n \n \n def prepare(root,phase,review_path,out,boot_packet=None):\n-    root=root.resolve();review_path=review_path.absolute();out=out.absolute()\n+    root=root.absolute();review_path=review_path.absolute();out=out.absolute()\n+    if boot_packet is not None:\n+        boot_packet=boot_packet.absolute();j.n.no_alias(boot_packet)\n+        j.require(boot_packet.is_relative_to(root/'data/processed') and boot_packet.name.endswith('.local.json'))\n     j.n.no_alias(root);j.n.no_alias(review_path);j.n.no_alias(out)\n     j.require(phase in READ_COUNTS and review_path.is_relative_to(root/'reports')\n               and out.is_relative_to(root/'data/processed') and (phase=='BOOT' or boot_packet is not None))\n@@ -54,11 +58,13 @@\n         'phase':phase,'read_bytes_ceiling':READ_CAP,'read_count_ceiling':READ_COUNTS[phase],\n         'write_bytes_ceiling':WRITE_CAP,'source_reads':0,'runtime_binary_reads':0,\n         'campaign_issue_or_execution':False,'no_retry':True,'root_sha256':j.sha(str(root).encode())}))\n-    reader=TechnicalReads(root,phase);status='FAILED_UNKNOWN_NO_RETRY';result=None\n+    registry=j.n.FixedRegistrar(j.n.FixedStore(root),j.source_set_sha())\n+    allowed={review_path,root/j.METHODS} if phase=='BOOT' else {review_path,boot_packet,\n+        *(registry.store.path(slot) for slot in ('prepared_metadata','source_index','anchor_initial','anchor_boot'))}\n+    reader=TechnicalReads(root,phase,allowed);status='FAILED_UNKNOWN_NO_RETRY';result=None\n     try:\n         review_raw,review_ref=reader.read(review_path,131073)\n         review=j.metadata_json(review_raw,131072)\n-        registry=j.n.FixedRegistrar(j.n.FixedStore(root),j.source_set_sha())\n         if phase=='BOOT':\n             methods_raw,methods_ref=reader.read(root/j.METHODS,65537)\n             j.require(j.sha(methods_raw)==j.METHODS_SHA)\n@@ -77,8 +83,8 @@\n                 'expected_anchor_sha256':None}\n         else:\n             boot_raw,_=reader.read(boot_packet,129025)\n-            boot=j.decode(boot_raw,j.MAX_AUTHORITY);spec=boot['static_spec']\n-            store=registry.store;j.require(not store.exists('private_stderr') and not store.exists('exec_issued'))\n+            boot,_=j.phase_packet(root,boot_raw,j.sha(boot_raw),'BOOT');spec=boot['static_spec']\n+            store=registry.store;j.require(not store.exists('private_stderr'))\n             prepared_raw,_=reader.read(store.path('prepared_metadata'),2049)\n             prepared=j.decode(prepared_raw,2048)\n             pref={'slot':'prepared_metadata','bytes':len(prepared_raw),'sha256':j.sha(prepared_raw)}\n@@ -102,6 +108,10 @@\n                 'source_set_sha256':j.source_set_sha(),'phase_budget':j.n.PREFIX_BUDGETS[phase],\n                 'expected_anchor_sha256':anchor,'prepared_ref':pref,\n                 'prepared_review_ref':review_ref,'job_id':j.JOB}\n+        if phase=='EXEC':\n+            registry.store.bind_run(j.run_id(j.n.CAMPAIGN,j.JOB,decision))\n+            j.require(not any(registry.store.exists(slot) for slot in\n+                ('exec_issued','anchor_active','anchor_complete','anchor_invalid')))\n         issued={'kind':'CLERK_SOURCE_ISSUED_V1_2','phase':phase,'ordinal':1,'binding':registry.binding(),\n             'decision_sha256':j.digest(decision),'expected_anchor_sha256':anchor,'one_shot':True,\n             'prefix_budget':j.n.PREFIX_BUDGETS[phase]}\n"
+    }
+  ],
+  "code_refs": {
+    "src/civiclab/__init__.py": {
+      "bytes": 106,
+      "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+    },
+    "src/civiclab/common.py": {
+      "bytes": 8476,
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+    },
+    "src/civiclab/e01/__init__.py": {
+      "bytes": 422,
+      "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+    },
+    "src/civiclab/e01/clerk2020_crypto_qualification_v1.py": {
+      "bytes": 24747,
+      "sha256": "6f75bf204c0c7334a892d6cbb3d52d1cd3cdb4535a90da2771dabc627ad6f50e"
+    },
+    "src/civiclab/e01/clerk2020_directories_qualification_v1.py": {
+      "bytes": 50599,
+      "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+    },
+    "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py": {
+      "bytes": 8606,
+      "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+    },
+    "src/civiclab/e01/clerk2020_guard_qualification_v1.py": {
+      "bytes": 29304,
+      "sha256": "347530c29836cefb0c1bd4b35e7e48748b45758bfa1c5bc200fb9cc806b5769f"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+      "bytes": 9548,
+      "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+      "bytes": 8142,
+      "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+    },
+    "src/civiclab/e01/clerk2020_native_campaign_v1.py": {
+      "bytes": 39097,
+      "sha256": "4fcaa58e89a90bbaf3ef9638d3dce92bc03041ada9cf5d215cc3fcbcbb2b15f2"
+    },
+    "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+      "bytes": 8768,
+      "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487"
+    },
+    "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+      "bytes": 22083,
+      "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f"
+    },
+    "src/civiclab/e01/clerk2020_source_format_adapter_v1.py": {
+      "bytes": 8058,
+      "sha256": "4ded1cc9f46df28417e059973c990d9b1cc029df7f7c625826ca5ac9877b7ed7"
+    },
+    "src/civiclab/e01/clerk2020_source_job_v1.py": {
+      "bytes": 47039,
+      "sha256": "a6dd5f7da63163cec2fa653c0234cb619e42c3cc25ca448124dcacfee9ef1fb7"
+    },
+    "src/civiclab/e01/clerk2020_source_worker_v1.py": {
+      "bytes": 11393,
+      "sha256": "fb9125f82f8705cff0c9e747b6d2c04161f48ad7a8d05d2965a6f5342786c634"
+    },
+    "src/civiclab/e01/clerk2020_warmup_qualification_v1.py": {
+      "bytes": 44722,
+      "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+    },
+    "src/civiclab/e01/pipeline.py": {
+      "bytes": 22533,
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    },
+    "tests/test_clerk2020_native_inventory_v1.py": {
+      "bytes": 12468,
+      "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d"
+    }
+  },
+  "failed_attempt_preserved": {
+    "intermediate_harness_note": "Initial full logs have empty hash dictionaries, so their code_unchanged flag is vacuous. Corrected standalone runner checks22 exact refs before/after; use frozen logs for integrity evidence. All intermediate logs preserved.",
+    "original_probe_311_stdout": {
+      "bytes": 0,
+      "path": "reports/clerk2020_source_delta_original_probe_311_20261112.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "reason": "Original auditor probe denies every repository data path, including3.11 toolchain stdlib __future__.py. No guard weakened or rerun of this probe. Equivalent last-wall regression passes within70-test guarded3.11 suite.",
+    "status": "GUARD_REFUSAL_BEFORE_TEST_IMPORT"
+  },
+  "remedies": {
+    "E01-NATIVE-FROZEN-01": {
+      "change": "Final wall/CPU and preseal wall checks raise SourceResourceStop; existing committed invalidation path appends tail/anchor rather than rewriting prefix/seal/ACK/caller. Limits unchanged.",
+      "original_auditor_probe_312": {
+        "code_unchanged": true,
+        "hashes": {
+          "src/civiclab/e01/clerk2020_native_campaign_v1.py": "4fcaa58e89a90bbaf3ef9638d3dce92bc03041ada9cf5d215cc3fcbcbb2b15f2",
+          "src/civiclab/e01/clerk2020_source_job_v1.py": "a6dd5f7da63163cec2fa653c0234cb619e42c3cc25ca448124dcacfee9ef1fb7"
+        },
+        "observed": {
+          "anchor_complete_exists": true,
+          "anchor_invalid_exists": true,
+          "caller_observation_exists": true,
+          "post_observation_clock_calls": 2,
+          "result": "FAILED_OR_UNKNOWN_NO_RETRY",
+          "terminal_failure_exists": true
+        },
+        "scope": "FROZEN_AUTHORED_TERMINAL_LAST_BOUNDARY_PROBE"
+      },
+      "regressions": [
+        "last wall check after caller observation returns76s",
+        "final total CPU50s conservatively rounds50001ms",
+        "protected seal/ACK/caller hashes unchanged after invalidation"
+      ]
+    },
+    "E01-NATIVE-FROZEN-02": {
+      "STARTED_before_first_body_read": true,
+      "bounds": "Per-file ceilings plus fixed counts imply combined preparation read reservation464392B, below1MiB without changing any campaign counter/cap.",
+      "campaign_issuance": false,
+      "code_rereads": 0,
+      "create_once_scopes": "data/processed/e01_clerk2020_source_packet_preparation_v2/{BOOT,EXEC}",
+      "fixed_max_reserved_bytes": {
+        "BOOT": 196610,
+        "EXEC": 267782,
+        "combined": 464392
+      },
+      "no_scope_retry_or_refund": true,
+      "old_helper": {
+        "bytes": 4839,
+        "path": "scripts/prepare_e01_source_phase.py",
+        "sha256": "04b498617cccbc85cc2add4301935616d499f142ed293f17d55435d5e3998c54"
+      },
+      "read_budget_cap": 1048576,
+      "read_count": {
+        "BOOT": 2,
+        "EXEC": 6
+      },
+      "reads": "BOOT review+methods; EXEC prepared review+prior BOOT packet+prepared+index+initial/BOOT anchors. Other checks stat only. Existing reviewed refs transported; native BOOT remains responsible for code validation.",
+      "receipt_fields": [
+        "status",
+        "exact path/hash/observed/reserved per read",
+        "count",
+        "aggregate bytes",
+        "no_retry",
+        "credit_restored0"
+      ],
+      "replacement_helper": "scripts/prepare_e01_source_phase_v2.py",
+      "source_runtime_model_reads_or_calls": 0,
+      "technical_scope": "TECHNICAL_SOURCE_PACKET_PREPARATION_V2",
+      "write_cap_per_phase_bytes": 196608
+    }
+  },
+  "root_next_commands": {
+    "BOOT": [
+      "PYTHONPATH=src .venv/bin/python scripts/prepare_e01_source_phase_v2.py BOOT --review <INDEPENDENT_CLOSED_CODE_BINDING.json> --out data/processed/e01_clerk2020_source_packet_preparation_v2/boot-packet.local.json",
+      "Then root alone invokes previously documented exact BOOT stdin/hash command; no worker execution."
+    ],
+    "EXEC": [
+      "After root BOOT and separate independent prepared review only: PYTHONPATH=src .venv/bin/python scripts/prepare_e01_source_phase_v2.py EXEC --review <INDEPENDENT_PREPARED_BINDING.json> --boot-packet data/processed/e01_clerk2020_source_packet_preparation_v2/boot-packet.local.json --out data/processed/e01_clerk2020_source_packet_preparation_v2/exec-packet.local.json",
+      "Then root alone invokes previously documented exact EXEC stdin/hash command."
+    ]
+  },
+  "status": "FROZEN_DELTA_READY_FOR_INDEPENDENT_REVIEW_NO_SOURCE_RELEASE"
+}

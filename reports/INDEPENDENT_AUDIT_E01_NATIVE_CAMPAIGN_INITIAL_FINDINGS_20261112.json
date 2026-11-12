@@ -1,0 +1,89 @@
+{
+  "authority": "No implementation, tests, STATUS, previous findings, source data, owner store or Git state changed by this audit. Findings are immutable initial-candidate evidence; corrections require a separately reviewed new hash.",
+  "code_refs": {
+    "src/civiclab/e01/clerk2020_native_campaign_v1.py": "5c456da1499b0eb9c5fe950d6e2a1dba23e4061d3e07ff1764227feb4f8d99a5",
+    "src/civiclab/e01/clerk2020_source_job_v1.py": "c70583df8884e23e0eef26aa91099299f7da6b11b9b4183a69a71f22382d5822"
+  },
+  "evidence": [
+    {
+      "bytes": 1757,
+      "path": "/tmp/civiclab-auditor-e01-authored-preliminary-20261112.py",
+      "sha256": "e0c8bd88e57b4cadc1a5f321822997121304966fbc6ed0409f5853a93a6c7aad"
+    },
+    {
+      "bytes": 7027,
+      "path": "/tmp/civiclab-auditor-e01-authored-preliminary-312-20261112.txt",
+      "sha256": "8bbe4f640969723a59c71be81e7241d3c11c35ee6d439a87173fd6b179cb97d0"
+    },
+    {
+      "bytes": 2635,
+      "path": "/tmp/civiclab-auditor-e01-resource-probes-20261112.py",
+      "sha256": "6a125c7664d69c2eb7af45ba34e532257df9f4395640c5511bdb3ea2ef8eca1e"
+    },
+    {
+      "bytes": 719,
+      "path": "/tmp/civiclab-auditor-e01-resource-probes-20261112.json",
+      "sha256": "3e42fbd2010f59b5739faff5bea6795941acf025394764de046a19302c69a5a6"
+    }
+  ],
+  "findings": [
+    {
+      "acceptance": "Enforce/observe the fixed BOOT CPU and wall limits through the declared completion boundary; a late completion must remain ineligible for EXEC and retained as failed/unknown. Add authored boundary/failure oracles. The probe demonstrates missing final wall validation and absent CPU observation, not actual native CPU consumption.",
+      "file": "src/civiclab/e01/clerk2020_source_job_v1.py",
+      "function": "run_boot",
+      "id": "E01-NATIVE-INITIAL-01",
+      "issue": "BOOT checks elapsed time before receipt, protected completed BOOT anchor and prepared metadata writes, and never observes CPU usage despite a fixed 10-second CPU budget.",
+      "observed": {
+        "getrusage_calls": 0,
+        "prepared_exists": true,
+        "result": "BOOT_PREPARED_NO_SOURCE"
+      },
+      "reproduction": "Authored FixedStore.create wrapper advances a fake monotonic clock to 46 seconds only after prepared_metadata is durably written. run_boot returns BOOT_PREPARED_NO_SOURCE. A getrusage spy records zero calls.",
+      "severity": "high",
+      "status": "OPEN_AT_REVIEWED_HASH"
+    },
+    {
+      "acceptance": "The protected completion/caller protocol must consistently reject an overrun, preserve charges and forbid replay. Independently test late finalization, invalidation persistence failures, and lost return; retain the original failure evidence.",
+      "file": "src/civiclab/e01/clerk2020_source_job_v1.py",
+      "function": "run_exec / NativeTerminal.finalize",
+      "id": "E01-NATIVE-INITIAL-02",
+      "issue": "EXEC resource checks occur after NativeTerminal persists anchor_complete; a detected overrun returns failure without an invalidation anchor, leaving conflicting durable completion and failure states.",
+      "observed": {
+        "anchor_complete_exists": true,
+        "anchor_invalid_exists": false,
+        "result": "FAILED_OR_UNKNOWN_NO_RETRY",
+        "terminal_failure_exists": true
+      },
+      "reproduction": "Authored FixedStore.create wrapper advances fake monotonic time to 76 seconds after anchor_complete. run_exec returns FAILED_OR_UNKNOWN_NO_RETRY; anchor_complete and terminal_failure both exist, anchor_invalid does not.",
+      "severity": "high",
+      "status": "OPEN_AT_REVIEWED_HASH"
+    }
+  ],
+  "kind": "E01_FIXED_SOURCE_CAMPAIGN_INITIAL_CANDIDATE_INDEPENDENT_REVIEW_V1",
+  "methods_sha256": "65feb37dd104062ac749278d848371a2f6319e45899ac2c05ca59d44431cc002",
+  "not_run_or_not_accepted": [
+    "Frozen combined code/test handoff review",
+    "Complete original M2 adverse-oracle crosswalk",
+    "Independent caller-observation implementation acceptance",
+    "Actual BOOT prepared metadata/runtime/cache review",
+    "Actual source/PDF/native processing",
+    "Source-format acceptance or source feature/count adoption",
+    "M2-M6 completion",
+    "Paid/model execution"
+  ],
+  "other_preliminary_observations": [
+    "Current validate_child explicitly requires native_backend_hash_matched is True and exact nonproject catalog label equality. Corresponding adverse tests still need frozen review.",
+    "The existing 36 tests do not exercise the two independently demonstrated late-resource boundaries."
+  ],
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "scope": "Mutable pre-handoff implementation snapshot; independently authored temporary-file probes only. This record preserves findings against exact hashes and does not anticipate the final worker handoff.",
+  "status": "BLOCKED_INITIAL_CANDIDATE_RESOURCE_AND_TERMINAL_FINDINGS_NOT_FINAL_RELEASE_REVIEW",
+  "verification": {
+    "authored_existing_tests": 36,
+    "code_unchanged_during_probes": true,
+    "code_unchanged_during_tests": true,
+    "guards": "Harness refuses imports of pypdf/PIL/cryptography/_cffi_backend, project data and credential file opens, network audit events and subprocess.Popen. Temporary authored control trees only.",
+    "result": "PASS_PYTHON_3_12_ONLY_PRELIMINARY"
+  }
+}

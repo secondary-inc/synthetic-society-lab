@@ -1,0 +1,61 @@
+test_authored_complete_boot_exec_and_sealed_outputs (test_clerk2020_source_job_v1.SourceJobTests.test_authored_complete_boot_exec_and_sealed_outputs) ... FAIL
+test_boot_has_zero_source_reads_and_no_dispatch (test_clerk2020_source_job_v1.SourceJobTests.test_boot_has_zero_source_reads_and_no_dispatch) ... FAIL
+test_code_drift_after_boot_stops_before_any_source_read (test_clerk2020_source_job_v1.SourceJobTests.test_code_drift_after_boot_stops_before_any_source_read) ... ERROR
+test_first_child_failure_stops_source_two_and_preserves_private_partial (test_clerk2020_source_job_v1.SourceJobTests.test_first_child_failure_stops_source_two_and_preserves_private_partial) ... ERROR
+test_second_child_failure_keeps_first_private_projection (test_clerk2020_source_job_v1.SourceJobTests.test_second_child_failure_keeps_first_private_projection) ... ERROR
+test_wrong_packet_has_zero_reserved_campaign (test_clerk2020_source_job_v1.SourceJobTests.test_wrong_packet_has_zero_reserved_campaign) ... ok
+
+======================================================================
+ERROR: test_code_drift_after_boot_stops_before_any_source_read (test_clerk2020_source_job_v1.SourceJobTests.test_code_drift_after_boot_stops_before_any_source_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_source_job_v1.py", line 150, in test_code_drift_after_boot_stops_before_any_source_read
+    boot=self.boot();raw,h=self.packet('EXEC',boot['prepared_ref'],boot['completed_anchor_sha256'])
+                                              ~~~~^^^^^^^^^^^^^^^^
+KeyError: 'prepared_ref'
+
+======================================================================
+ERROR: test_first_child_failure_stops_source_two_and_preserves_private_partial (test_clerk2020_source_job_v1.SourceJobTests.test_first_child_failure_stops_source_two_and_preserves_private_partial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_source_job_v1.py", line 126, in test_first_child_failure_stops_source_two_and_preserves_private_partial
+    boot=self.boot();raw,h=self.packet('EXEC',boot['prepared_ref'],boot['completed_anchor_sha256'])
+                                              ~~~~^^^^^^^^^^^^^^^^
+KeyError: 'prepared_ref'
+
+======================================================================
+ERROR: test_second_child_failure_keeps_first_private_projection (test_clerk2020_source_job_v1.SourceJobTests.test_second_child_failure_keeps_first_private_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_source_job_v1.py", line 135, in test_second_child_failure_keeps_first_private_projection
+    boot=self.boot();raw,h=self.packet('EXEC',boot['prepared_ref'],boot['completed_anchor_sha256'])
+                                              ~~~~^^^^^^^^^^^^^^^^
+KeyError: 'prepared_ref'
+
+======================================================================
+FAIL: test_authored_complete_boot_exec_and_sealed_outputs (test_clerk2020_source_job_v1.SourceJobTests.test_authored_complete_boot_exec_and_sealed_outputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_source_job_v1.py", line 116, in test_authored_complete_boot_exec_and_sealed_outputs
+    boot=self.boot();self.assertEqual(boot['status'],'BOOT_PREPARED_NO_SOURCE')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FAILED_OR_UNKNOWN_NO_RETRY' != 'BOOT_PREPARED_NO_SOURCE'
+- FAILED_OR_UNKNOWN_NO_RETRY
++ BOOT_PREPARED_NO_SOURCE
+
+
+======================================================================
+FAIL: test_boot_has_zero_source_reads_and_no_dispatch (test_clerk2020_source_job_v1.SourceJobTests.test_boot_has_zero_source_reads_and_no_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_source_job_v1.py", line 110, in test_boot_has_zero_source_reads_and_no_dispatch
+    self.assertEqual(result['status'],'BOOT_PREPARED_NO_SOURCE')
+AssertionError: 'FAILED_OR_UNKNOWN_NO_RETRY' != 'BOOT_PREPARED_NO_SOURCE'
+- FAILED_OR_UNKNOWN_NO_RETRY
++ BOOT_PREPARED_NO_SOURCE
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.059s
+
+FAILED (failures=2, errors=3)
