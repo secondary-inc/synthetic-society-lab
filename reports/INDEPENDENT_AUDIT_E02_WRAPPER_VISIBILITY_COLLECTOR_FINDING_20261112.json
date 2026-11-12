@@ -1,0 +1,43 @@
+{
+  "task_id": "INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_COLLECTOR_FINDING_20261112",
+  "review_date": "2026-11-12",
+  "status": "BLOCKED_EXACT_COLLECTOR_OLD_JOURNAL_IMMUTABILITY_CLAIM",
+  "scope": "Static helper and independent authored AST-slice probe only. The prior financial static/boundary PASS remains scoped and unchanged; no actual owner or journal accessed.",
+  "reviewed_helper": {
+    "path": "data/processed/e02_wrapper_visibility_actual_v1_01/collect_closed_evidence.py",
+    "sha256": "4850c50db0734d93119baa84b1d58708cc3b3bf93ece2bc7f65a0b5ef66d67af"
+  },
+  "findings": [
+    {
+      "id": "C01",
+      "severity": "MEDIUM",
+      "status": "BLOCKED",
+      "issue": "The collector loads five historical retained-journal-index.local.json files without binding their bytes/hash/size to already accepted index identities, then declares original_journals_unchanged after iterating their self-declared files. A replaced empty files map makes all journal checks vacuously pass. A changed source path or entries could also redirect the integrity-read scope.",
+      "reproduction": {
+        "kind": "AUTHORED_STATIC_HELPER_PROBE_NOT_REAL",
+        "helper_sha256": "4850c50db0734d93119baa84b1d58708cc3b3bf93ece2bc7f65a0b5ef66d67af",
+        "modified_indexes": 5,
+        "forged_empty_index_accepted": true,
+        "journal_hash_reads": 0,
+        "finding": "Accepted index identity is not pinned before claiming original_journals_unchanged; replacing all five indexes with files:{} evades every journal hash comparison."
+      },
+      "impact": "The exported original_journals_unchanged claim is not supported against changed index metadata; it can conceal deletion/mutation of all five old journal sets or drift in the indexed read scope. No evidence indicates such mutation actually happened.",
+      "required_remedy": "Before parsing or iterating each old index, bound and hash-check its exact bytes against the independently accepted historical index digest, and constrain source/entry paths or bind a known-safe exact source identity. Validate nonempty expected membership/counts. Preserve this reviewed unexecuted helper and finding; supply a separately pinned corrected helper plus authored empty/altered/redirected-index refusal controls. Do not edit past research evidence or run any model request to repair it."
+    }
+  ],
+  "probe_evidence": {
+    "path": "/tmp/e02-execution-audit-ydic8xEC/unpinned-index-probe/finding.json",
+    "sha256": "c7562b21a548dfe875e4de577de057ace665008adeea4677fbb08d8bad568654",
+    "method": "Extracted exact oldbase loop and original_journals_unchanged assignment from AST; ran only on five new empty authored indexes under reviewer tmp root, with sha256_file trap. No helper main or real owner/journal operations executed."
+  },
+  "actual_owner_key_source_HTTP_network_model_access": 0,
+  "API_cost_USD": 0,
+  "not_certified": [
+    "Financial lifecycle completion",
+    "Particular live release",
+    "Actual old journal corruption"
+  ],
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_COLLECTOR_FINDING_20261112.json"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py",
+    "src/civiclab/e02/wrapper_visibility_client_v1.py",
+    "scripts/run_wrapper_visibility_once.py",
+    "tests/test_wrapper_visibility_execution_v1.py",
+    "tests/test_wrapper_visibility_caller_v1.py",
+    "tests/test_wrapper_visibility_controls_v1.py"
+  ],
+  "MOCK_scope": "Entirely authored accounts; historical mock holds [340,340,340,1008] differ intentionally from actual [340,340,788,1008]. No actual account restored/reset/replayed.",
+  "NEXT_UNBLOCKED_TASK": "Independent closed mock evidence and particular release review; root-only actual execution after acceptance.",
+  "OUTPUT_ARTIFACTS": {
+    "scripts/run_wrapper_visibility_once.py": {
+      "bytes": 4001,
+      "sha256": "2a7e77b3ac70dc13c20b9397177b6c3def334d52e844cdbfb856cb0245055705"
+    },
+    "src/civiclab/e02/wrapper_visibility_client_v1.py": {
+      "bytes": 19693,
+      "sha256": "c35745a55384984e18bad0370c5612a9d13ee3288a4748a0258137eed52546ed"
+    },
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": {
+      "bytes": 28723,
+      "sha256": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48"
+    },
+    "tests/test_wrapper_visibility_caller_v1.py": {
+      "bytes": 4034,
+      "sha256": "2d6d3901db0fdb69f07322c16fc0e6b27fc5b9db301c3092f563367d3d66fcb5"
+    },
+    "tests/test_wrapper_visibility_controls_v1.py": {
+      "bytes": 3659,
+      "sha256": "6f719c433f473278848d76c0ca6d21d7cce5e8b6f893ca7669b434efb880ccf3"
+    },
+    "tests/test_wrapper_visibility_execution_v1.py": {
+      "bytes": 11322,
+      "sha256": "1b93aa83a9d1d85e5813743744d26f25b8313935f7dbf25e1b83549df4e7ad72"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest tests.test_wrapper_visibility_execution_v1 tests.test_wrapper_visibility_caller_v1 tests.test_wrapper_visibility_controls_v1 -v",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest tests.test_wrapper_visibility_execution_v1 tests.test_wrapper_visibility_caller_v1 tests.test_wrapper_visibility_controls_v1 -v"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Authored engineering evidence, not real model outcomes or scientific validity.",
+    "Historical mock holds differ from actual holds; the exact actual predecessor requires separate particular review.",
+    "Fresh runtime prices, unchanged code/protocol/owner ancestry and one-shot caller remain mandatory.",
+    "A separate collector-v2 helper remedies the recorded unpinned-index finding; original helper remains unaccepted."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only earlier versioned code, public evidence metadata and entirely authored fake-account fixtures; no actual owner, key, raw-source or network use. Historical code remains unchanged.",
+  "TASK_ID": "E02_WRAPPER_VISIBILITY_EXECUTION_FINAL_AUTHORED_HANDOFF_20261112",
+  "TESTS_RUN_AND_RESULTS": {
+    "cases": [
+      "40POST42GETdelayedbilling",
+      "38POST38GETtwoSHOWNskips",
+      "1POST3GETunknownbill_fullhold",
+      "changedancestrycapmodelclock_refused",
+      "fourcatalogrefresh_skipbarriers",
+      "fourone-shotcallerchecks",
+      "threeclockGETchecks"
+    ],
+    "logs": {
+      "reports/wrapper_visibility_caller_controls_final_311_20261112.txt": {
+        "bytes": 1284,
+        "sha256": "336f60fb60da258b9020317ac2cd332055c7de799cc4a77d0dc07f8692cef290"
+      },
+      "reports/wrapper_visibility_caller_initial_312_20261112.txt": {
+        "bytes": 768,
+        "sha256": "a9b743d0ae15bea62801c67638e931f6e56b65599f39e12857955ee15918234c"
+      },
+      "reports/wrapper_visibility_controls_final_312_20261112.txt": {
+        "bytes": 614,
+        "sha256": "c6aad70ec5373acf82ee0d03c3a0f40d9c069078970b3732af0ae7e40ee4f5f4"
+      },
+      "reports/wrapper_visibility_execution_initial_312_20261112.txt": {
+        "bytes": 1066,
+        "seconds": "1739.451",
+        "sha256": "28b448126d12ae9f247f115d3c147f07338aaadcdd75ed80f477abcff552b349",
+        "status": "PASS",
+        "tests": 5
+      },
+      "reports/wrapper_visibility_execution_retained_311_20261112.txt": {
+        "bytes": 1036,
+        "seconds": "1795.386",
+        "sha256": "59165fa9fce9f15aa127c85cf343ee7a8e72c02f9900864641cfd696180549c6",
+        "status": "PASS",
+        "tests": 5
+      }
+    },
+    "new_execution_tests_per_runtime": 12,
+    "runtimes": [
+      "3.11.17",
+      "3.12.14"
+    ],
+    "status": "PASS"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent final execution and exact particular price/caller review",
+    "Actual one-shot result and evidence review not run"
+  ],
+  "actual_model_or_billing_requests": 0,
+  "actual_owner_or_credentials_access": 0,
+  "initial_snapshot": "data/processed/e02_wrapper_visibility_execution_authored_20261112/initial-source-snapshot.json",
+  "limits": {
+    "E01_paid_cap": 0,
+    "E02_cap_microusd": 1000000,
+    "POST": 40,
+    "POST_retries": 0,
+    "batch_cap_microusd": 75000,
+    "billing_GET": 120,
+    "catalog_GET": 4,
+    "catalog_barriers": [
+      10,
+      20,
+      30
+    ],
+    "combined_cap_microusd": 5000000,
+    "input_tokens": 8192,
+    "lease_seconds": 7200,
+    "maximum_lifetime_dispatches": 149,
+    "old_uncertain_holds": 4,
+    "output_tokens": 256,
+    "phase_seconds": 120,
+    "same_owner_prefix_dispatches": 109
+  },
+  "retained_mock_index": {
+    "bytes": 127894,
+    "files": 593,
+    "path": "data/processed/e02_wrapper_visibility_execution_authored_20261112/python311/index.json",
+    "sha256": "6c9685ca12cd6b5c85bbe59a5c46e661e28090be5d7d6449091ab6b59ca00515"
+  },
+  "retained_prefix_index": {
+    "bytes": 175095,
+    "path": "data/processed/e02_wrapper_visibility_execution_authored_20261112/closed-prefix-312/index.json",
+    "sha256": "ed9cec1bd96a89bfc1cf0c0462981b55c01c73207a8a00b003ca76b1bec1b7f0"
+  },
+  "source_commit": "c5d37b1f42c8edd8bce92315ca73f3bd6dfe9239",
+  "status": "AUTHORED_CHECKS_PASS_INDEPENDENT_FINAL_REVIEW_PENDING_NOT_LIVE"
+}

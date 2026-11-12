@@ -1,0 +1,70 @@
+{
+  "task_id": "INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_COLLECTOR_V2_20261112",
+  "review_date": "2026-11-12",
+  "status": "PASS_EXACT_COLLECTOR_V2_C01_REMEDY_ONLY",
+  "scope": "Static corrected evidence collector plus six independently rerun authored index/member refusal tests on each Python runtime. No collector main, actual owner/journal/credential/HTTP/model use or live execution acceptance.",
+  "reviewer": "Independent reviewer; did not implement corrected helper or authored tests.",
+  "reviewed_files": {
+    "data/processed/e02_wrapper_visibility_actual_v1_01/collect_closed_evidence.py": {
+      "sha256": "4850c50db0734d93119baa84b1d58708cc3b3bf93ece2bc7f65a0b5ef66d67af",
+      "bytes": 5782
+    },
+    "data/processed/e02_wrapper_visibility_actual_v1_01/collect_closed_evidence_v2.py": {
+      "sha256": "349cca6fda060ffaf6161a8d87dcefe713a7b3b96b8aa2dd1dd3f1814fa0e885",
+      "bytes": 8077
+    },
+    "data/processed/e02_wrapper_visibility_actual_v1_01/test_collector_v2.py": {
+      "sha256": "d4392ce4ccd9301a4587d1cecbb6367f48fed07716d6431928f561825774a497",
+      "bytes": 3291
+    }
+  },
+  "prior_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_COLLECTOR_FINDING_20261112.json",
+    "sha256": "d9398649cc70659b0b04ab2744044d1ec3c72c2f4e44110b1efa49a681c6e94f",
+    "finding": "C01",
+    "status": "RESOLVED_FOR_EXACT_V2_SUCCESSOR_ONLY_OLD_HELPER_REMAINS_BLOCKED",
+    "old_helper_unchanged": true
+  },
+  "findings": [],
+  "checks": [
+    "Five historical index digest constants independently matched their corresponding accepted historical independent audits: third-study recovery, stopped two-baseline attempt, issue-alignment follow-up, first-pilot continuation and original stopped pilot. Prior receipts remain unchanged.",
+    "Bounded exact-byte/SHA validation now precedes canonical parsing and journal iteration. Expected owner/run source identity, nonempty expected member count, byte total, exact directory membership/no extras and leaf-name path checks are enforced. Individual inputs use bounded size/SHA plus O_NOFOLLOW and symlink refusal.",
+    "Own execution of six supplied authored tests per runtime passes: original empty/altered index refuses on first index read without journal reads, re-bound empty/redirected index refused, changed/missing/extra/symlink/traversal members and index symlink refused, genuine authored index/member accepted.",
+    "Actual collector main remains static-only: nonblocking run and owner locks, readonly immutable/query-only SQLite, no sidecars and identical before/after control-file hashes, exact closed prior prefix/rows/namespaces, no inference, exclusive bounded retained outputs. Corrected historical verification gates original_journals_unchanged.",
+    "Old reviewed helper and original C01 finding are preserved; no financial/protocol/launcher implementation was changed by reviewer."
+  ],
+  "independent_results": {
+    "312": {
+      "status": "PASS_COLLECTOR_V2_AUTHORED_TESTS",
+      "runtime": "3.12.14",
+      "tests": 6,
+      "seconds": 0.006677416997263208,
+      "guard_refusals": [],
+      "helper_sha256": "349cca6fda060ffaf6161a8d87dcefe713a7b3b96b8aa2dd1dd3f1814fa0e885"
+    },
+    "311": {
+      "status": "PASS_COLLECTOR_V2_AUTHORED_TESTS",
+      "runtime": "3.11.17",
+      "tests": 6,
+      "seconds": 0.005541416998312343,
+      "guard_refusals": [],
+      "helper_sha256": "349cca6fda060ffaf6161a8d87dcefe713a7b3b96b8aa2dd1dd3f1814fa0e885"
+    }
+  },
+  "test_harness": {
+    "source_path": "/tmp/e02-execution-audit-ydic8xEC/collector_v2_tests.py",
+    "source_sha256": "9587394cdab3650f5b9b4a1cdeb0c2fc5d703e552ea719e2eb91c8e051390c02",
+    "startup": "Stripped environment and isolated no-site Python, no sockets/subprocess/SQLite/native operations, file reads restricted to exact helper/test/public source and writes to reviewer temp.",
+    "preserved_initial_harness_refusals": "Initial bytecode cache read and fd-relative tempfile cleanup were over-restricted. Original probes/logs retained. Helper/test source-only loading and absolute-path cleanup restricted to reviewer temp corrected the harness without changing implementation or assertion paths."
+  },
+  "limitations": [
+    "Function-level authored tests and static main inspection, not execution against actual journals or actual owner database.",
+    "Cooperative Python/file checks are not hostile-host or concurrent filesystem/native-loader isolation.",
+    "This collector acceptance alone does not certify both complete financial lifecycle suites, particular launch packet, price freshness, permission to dispatch or scientific validity."
+  ],
+  "actual_owner_journal_key_HTTP_model_access": 0,
+  "API_cost_USD": 0,
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_COLLECTOR_V2_20261112.json"
+  ]
+}
