@@ -1,0 +1,114 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E02_THIRD_STUDY_VIEWER_PUBLICATIONS_V1",
+  "review_date": "2026-11-12",
+  "status": "PASS_EXACT_LOCAL_RENDERER_AND_SEVEN_FILE_DRAFT_DELTA",
+  "files": {
+    "src/civiclab/live_summary_viewer.py": {
+      "sha256": "ca76cfeb13ba7458b66b6f8c4f387412187f93083dc73901ac20836d6b0216bf",
+      "bytes": 30068
+    },
+    "tests/test_live_summary_viewer.py": {
+      "sha256": "b8283ad1665b0937f4c7594c2b2c4a73352aa1d3748cdce10a290022925c8e73",
+      "bytes": 11999
+    },
+    "docs/LIVE_PREVIEW_UPDATE_20261109.md": {
+      "sha256": "585aef820a1a7b8004e15e50d2f6e914a1f92e588a75279c827f069d31d849a5",
+      "bytes": 6104
+    },
+    "publications/TECHNICAL_PAPER_DRAFT.md": {
+      "sha256": "ef544ffdbdddd674b69a875f9e33c4b3d3d33d5e980c864f7e89dd95ecb5351a",
+      "bytes": 34932
+    },
+    "publications/BLOG_DRAFT.md": {
+      "sha256": "5f6b992f6c4dd178d78df4f0347b7c92f7ffe7cf1f1a0dac3d358319ce230307",
+      "bytes": 12807
+    },
+    "publications/LIMITATIONS.md": {
+      "sha256": "70bf3a44430ffa7e443232d1a8ea067114fdcbffd54397a24e3519265ffddc45",
+      "bytes": 17212
+    },
+    "publications/REPRODUCIBILITY.md": {
+      "sha256": "adbfe255319e7e0a61081121881a9c7734a723cf0b9bc2c9e07b3d9cdd6b33ff",
+      "bytes": 14066
+    }
+  },
+  "accepted_evidence": {
+    "actual_audit": "ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505add4c5820bcfd",
+    "unchanged_build_time_aggregate": "b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0"
+  },
+  "findings": [],
+  "independent_tests": {
+    "python312": {
+      "tests": 13,
+      "seconds": 0.019,
+      "status": "PASS"
+    },
+    "python311": {
+      "tests": 13,
+      "seconds": 0.02,
+      "status": "PASS"
+    },
+    "fresh_local_build": {
+      "output": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/auditor-crossmodel-preview-20261112-sk2j4ddu",
+      "page": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/auditor-crossmodel-preview-20261112-sk2j4ddu/index.html",
+      "index_sha256": "1f0f3bd346a5d82e9db025715a26b2a34d0e93fc3fb80541c1123c984f2a0bfc",
+      "historical_sha256": "90ffa9259e181cd84315b8b55d407f703f0e013cde27d0fb2729ccb93e8064c0",
+      "snapshot_sha256": "00e6aef91998200495560c7954119f836626eadd78b787d500a2d0f3cde2d89f",
+      "summary_sha256": "2d92f32cd94a46a74eaf0730d360a2efe57f7d3440779c2fb44d08a04be7cb37",
+      "public_inputs": [
+        "reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json",
+        "reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json",
+        "reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json",
+        "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json"
+      ],
+      "all_public_reads_only": true,
+      "historical_bytes_unchanged": true,
+      "idempotent": true,
+      "required_actual_values_present": true,
+      "no_private_projection_fields": true
+    },
+    "current_local_preview_HTML_matches_fresh_build": true,
+    "scope": "Existinginterruptedreview resumed with normalrestoredworkspace access; no changedmodels/newagents/permissionbypass. No completedscientificmock orpaidlauncher reruns."
+  },
+  "source_privacy_admission_checks": [
+    "Newprojection reads exactlypinned actualaudit andaggregate, eachbounded1MB; status/path/hash crossbinding checkedbefore output. Existingtwo auditprojections retained; freshbuildinstrumentation allowedonlyfourexactpublicreportreads outsideownedtemporaryoutput. No privateowner/run/source/credential read.",
+    "Aggregateallowlist excludes scoredphase rows, rawanswers/profileIDs/generationIDs/privateevidencepaths. HistoricalHTMLandsnapshot bytepreservation andidempotence independentlyverified. Changedaudit/aggregate refuse before any output; unknownphase status refuses; escapedtext guards present.",
+    "DispositioncountsANSWER53/SKIPPED3 distinct fromFAILED_UNCERTAIN/PARSE_ERROR/CANCELLED/NOT_ATTEMPTED; authorednonzeroerror/unattemptedfixture preserved asformattingoracle, notactualoutcome.",
+    "Sourcebuild binds exactacceptedstudy only. render_crossmodel contains fixedactual-study explanatorytext; directhelperoracles testformatting, notgenericfuturescientificconditions. No arbitraryupdatedaggregate/futurestudy admission isaccepted."
+  ],
+  "scientific_display_checks": [
+    "AOMITTED33.33/SHOWN0/interaction\u221233.33n3, BOMITTED51.25/SHOWN20/interaction\u221231.25n4, commonBminusA\u22126.67n3 andmissingContext3 values match accepteddata. Differentdenominators notsubtracted.",
+    "53of56 observedanswers/3ruleskips, A25/25 andB28/28 factualcounts,3askednullsupport separatefrom3unaskedposts, common-case labels andmissinginvaliditems distinction retained.",
+    "Fullacrossconfigurationpatternnotmet, Bwithinconfigurationdescriptivepattern met, all7completepairsabsolutecontraction/noactualreversals statedasdescriptiveactualfacts; signedinteraction/reversal/mechanismlimit warning retained.",
+    "Two savedbaselines/executiongap/4historicalholds andQwenhold preserved; thirdstudy.0038870/allresearch.0069294/conservativeexposure.009319/caps unchanged. Earlierstudies separate andoldexposurehistorical.",
+    "Providerstreamedtrue versusstreamfalse unresolved, QwennulltierUNKNOWN, no defaultfee/fallback inference; no human/representativepopulation/familywide/psychologicalmechanism/significance/equivalenceclaim."
+  ],
+  "publication_delta_checks": [
+    "Allfournewdraftsections andcorrectedpaperopening/abstract checked against exactea7audit andearlierseparateacceptedstudyreports. Paperexplicitlythree distinctstudies,22answers6skips/53answers3skips, wholeanswercomparisonn2 versussupportonlyA3/B4, no pooling/humanmechanismclaim.",
+    "Newaudit/aggregate/qualificationlinks resolve; pendinglabel explicitlycapture-time snapshot supersededbylaterseparateaudit. Canonicalparsedobjects versusoriginalwire/private-reproducibility/consumedlaunchers andunknowntelemetry caveats retained.",
+    "Owner-review-only/noexternalpublication andfulloriginalresearchincomplete boundaries remain. Earlierunchangedmanuscript/surveyfit/historicalbaselineclaims notfreshlyrecertified bythisdelta."
+  ],
+  "visual_inspection": {
+    "status": "PASS_SCOPED_EXISTING_SCREENSHOTS",
+    "images": {
+      "/Users/joshua/.codex/visualizations/2026/11/03/01a1a2ef-da14-7b82-8241-bb70529ddcab/crossmodel-results-preview.png": {
+        "bytes": 82332,
+        "sha256": "9306921eaa55ea06921fb785c4bd64288bc476502c93faaaf42dd36f41985aed"
+      },
+      "/Users/joshua/.codex/visualizations/2026/11/03/01a1a2ef-da14-7b82-8241-bb70529ddcab/crossmodel-comparison-preview.png": {
+        "bytes": 75883,
+        "sha256": "317c57a0eea4685756f6b2f0a5562402d37471e42529b4ab14ab018c09cb7c10"
+      }
+    },
+    "observations": "Independentlyviewed suppliedoverview/comparisonimages: readablecards53/56,3skipped,3/4,$.0038870; A3/B4contrasttable/common3crosscomparisonsincludingNotestimableContext3; signedwarningandfactualmissingnesstable readable atsuppliedviewport. No materialoverlap/clippinginshownpanels; naturalviewportcropsnotfullpagecertification.",
+    "limits": "Imageswerecapturedbyimplementer, notnewbrowser/AXcapturesbyauditor. FreshlocalHTMLbuildhash independentlyequalscurrentpreview; mobile/allbrowser/accessibility/HTTPserverchanges not newlycertified."
+  },
+  "not_certified": [
+    "Externalpublication/deployment/currentwhole-repoCI/reproducibilityarchive",
+    "NewsourceformatcampaignnativeBOOT/EXEC/originalM2/fullE01E02scientificcompletion",
+    "Newempiricalresultsbeyondexactea7audit orarbitraryfutureaggregate rendering",
+    "Freshbrowser/mobile/wholeaccessibilityorhostileworkspaceattestation"
+  ],
+  "auditor_actual_owner_credential_provider_native_source_network_model_access": 0,
+  "auditor_API_model_cost_USD": 0
+}

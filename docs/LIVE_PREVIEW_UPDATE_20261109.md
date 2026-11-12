@@ -64,3 +64,38 @@ The reviewer reran the six tests and checked the exact source bindings. Visual
 browser inspection remains implementer evidence, not independent layout
 certification. The lead owns integration and repository commits. Private
 journals and generated preview files are not added to Git.
+
+## November 11 third-study integration
+
+The third study collected November 10 is admitted through exact outcome audit
+`INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json`
+(SHA-256 `ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505add4c5820bcfd`)
+and its exact public aggregate
+`E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json`
+(`b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0`).
+The aggregate's pending label is its original capture checkpoint, superseded by
+the separate audit; neither source is edited. Both public files are bounded and
+hash-checked before any preview writes. Only aggregate fields are exported;
+scored phase rows, private file references and generation identifiers are omitted.
+
+The new section keeps 53 answers and three skips separate from errors,
+cancellations and unattempted slots. It reports A's three-context and B's
+four-context contrasts, the secondary comparison on three common contexts,
+support-null missingness separately from factual comprehension, and the unmet
+full registered pattern. It distinguishes signed interaction from contraction,
+preserves the baseline gap and financial holds, and records unresolved provider
+streaming telemetry and unknown Qwen tiers. Earlier studies and the original
+snapshot remain separate, with old ledger totals labeled historical.
+
+Thirteen focused preview checks pass on Python 3.12, including altered audit or
+aggregate refusal before any output, two-file public-only reads, a nonzero
+NOT_ATTEMPTED/parse-error/cancellation/uncertain-failure oracle, unknown-status
+refusal, common-context arithmetic, escaping and historical-byte preservation.
+Local preview build completed. The existing in-app tab was refreshed and its
+accessibility tree verified all three study sections, the 53/56 dispositions,
+A3/B4/common3 denominators, 25/25 and 28/28 factual counts, historical ledger
+labels and telemetry limitation. Implementer screenshots of the overview and
+comparison/missingness panels are saved as crossmodel-results-preview.png and
+crossmodel-comparison-preview.png in the existing local visualization directory.
+Final independent renderer/draft review is separate; these tests and implementer
+visual checks alone do not certify scientific acceptance or independent layout. Lead retains integration and commit ownership.

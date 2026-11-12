@@ -1,6 +1,6 @@
 # Synthetic Society Lab Limitations and Failure Analysis
 
-Owner-review draft. Updated November 10, 2026 UTC. This report covers the current engineering snapshot and the full research program, including work not yet executed. Independent audit and requirement status are authoritative for completion.
+Owner-review draft. Updated November 11, 2026 UTC. This report covers the current engineering snapshot and the full research program, including work not yet executed. Independent audit and requirement status are authoritative for completion.
 
 ## Scientific scope
 
@@ -69,6 +69,14 @@ The complete contract still requires genuine E01/agent comparisons, accepted rea
 The DC archive acquisition validates compressed bytes and limited metadata, not the person records or an adult population. The dated federal nominee compilation is an additional source role, not state final-ballot certification or proof of latest amendments. The2020 historical document still needs validated event/stage/seat-class and party-line aggregation before it supplies an original2026 same-seat baseline. The earlier run02 terminal continuation stopped before any model/statistics request with independently verified zero consumption. The later run03 attempted a POST and left uncertain billing, as detailed above; neither establishes successful compatibility.
 
 Independent review found a package capture race: an artifact could change after run verification and be archived with its stale checksum ledger. The original candidate/source/finding remain preserved. The separate v2 remedy binds captured artifact and checksum bytes to the originally verified seal, with adversarial reseal tests. Its component acceptance does not certify any newly assembled archive, full restoration, hostile-host resistance or scientific result.
+
+## Support-only two-configuration study — independently audited exploratory result
+
+The [third-study aggregate captured before audit](../reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json) has separate acceptance from the [independent actual audit](../reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json); its embedded pending label is the original capture-time checkpoint. Its 53 answers and three rule-based skips must remain distinct from the previous whole-answer cue and wrapper studies. Three GPT null support items include the baseline responsible for three SHOWN skips. GPT has three complete primary contexts, Qwen four; their cross-model secondary comparison uses only three common contexts. Do not subtract the unequal-denominator means. All 53 asked factual items were correct; support missingness is a separate outcome. The full four-context cross-configuration attenuation pattern was not met. A signed negative interaction alone does not establish attenuation or a mechanism.
+
+The study has one authored issue, four fictional technical contexts, and two fixed model/provider configurations confounded with tokenization and quantization differences. Two saved baselines precede continuation and preserve an execution gap. No inferential interval, equivalence, human effect, national validation or family-wide replication follows. Reported-null Qwen service tier remains unknown. Verified financial totals are $0.0038870 for this study, $0.0069294 for 107 research generations across three studies, and $0.009319 conservative owner exposure including four unchanged holds; exposure is not an invoice total. The [independent actual audit](../reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json) checked these figures. All seven complete pairs contracted in absolute magnitude without reversals; the full registered pattern still was not met.
+
+Provider telemetry reports streaming despite the fixed non-streaming client requests. This discrepancy remains unresolved; complete parsed responses and their request/billing bindings were verified. Reported-null Qwen service tiers remain unknown, without assuming a default tier or fee.
 
 ## November 10 election-reader qualification
 

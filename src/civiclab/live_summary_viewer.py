@@ -15,6 +15,11 @@ AUDIT_STATUS = 'PASS_ACTUAL_LIMITED_PILOT_COMBINED_EVIDENCE_ACCOUNTING_AND_DESCR
 FOLLOWUP_AUDIT = 'reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json'
 FOLLOWUP_SHA256 = 'cf2bed0882f71d33efd3cd755ace36cf3e58aaef0759b881c0361488a0ec7246'
 FOLLOWUP_STATUS = 'PASS_ACTUAL_CLOSED_EVIDENCE_ACCOUNTING_REGISTERED_ARITHMETIC_AND_EXCLUSIONS'
+CROSSMODEL_AUDIT = 'reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json'
+CROSSMODEL_AUDIT_SHA256 = 'ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505add4c5820bcfd'
+CROSSMODEL_STATUS = 'PASS_SCOPED_ACTUAL_EXPLORATORY_EVIDENCE_ACCOUNTING_AND_REGISTERED_SCORES'
+CROSSMODEL_AGGREGATE = 'reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json'
+CROSSMODEL_AGGREGATE_SHA256 = 'b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0'
 START = '<!-- LIVE_SUMMARY_START -->'
 END = '<!-- LIVE_SUMMARY_END -->'
 
@@ -93,6 +98,132 @@ def followup_projection(root):
     }
 
 
+def crossmodel_projection(root):
+    """Admit an exact accepted public audit and its exact aggregate only."""
+    def read(path, digest):
+        with (Path(root) / path).open('rb') as stream:
+            raw = stream.read(1_000_001)
+        if len(raw) > 1_000_000 or hashlib.sha256(raw).hexdigest() != digest:
+            raise ValueError('Cross-model public evidence is changed or unreviewed')
+        return json.loads(raw)
+    audit = read(CROSSMODEL_AUDIT, CROSSMODEL_AUDIT_SHA256)
+    if audit['status'] != CROSSMODEL_STATUS or audit['reviewed_public_aggregate']['path'] != CROSSMODEL_AGGREGATE or audit['reviewed_public_aggregate']['sha256'] != CROSSMODEL_AGGREGATE_SHA256:
+        raise ValueError('Cross-model actual outcome is not accepted')
+    a = read(CROSSMODEL_AGGREGATE, CROSSMODEL_AGGREGATE_SHA256)
+    s = crossmodel_summary(a)
+    s.update(source_audit=CROSSMODEL_AUDIT, source_audit_sha256=CROSSMODEL_AUDIT_SHA256,
+             source_aggregate=CROSSMODEL_AGGREGATE, source_aggregate_sha256=CROSSMODEL_AGGREGATE_SHA256)
+    return s
+
+
+def crossmodel_summary(a):
+    """Project public aggregates only; receipt admission is the caller's job.
+
+    Never copy scored phase records, raw answers, generation IDs or source paths.
+    Build uses this only after exact audit and aggregate admission.
+    """
+    analysis = a['analysis']
+    phases = analysis['phase_counts']
+    allowed = {'ANSWER', 'SKIPPED_INVALID_PRE', 'FAILED_UNCERTAIN',
+               'PARSE_ERROR', 'CANCELLED', 'NOT_ATTEMPTED'}
+    if set(phases) - allowed:
+        raise ValueError('Unrecognized cross-model phase disposition')
+    models = []
+    for key, name in (('A', 'A · GPT-4.1 nano / Azure'),
+                      ('B', 'B · Qwen3-30B-A3B-Instruct-2507 / Nebius')):
+        m = analysis['models'][key]
+        factual = [m['baseline_quality']['comprehension'],
+                   m['comprehension']['OMITTED'], m['comprehension']['SHOWN']]
+        unasked = sum(f['quality_counts'].get('UNASKED', 0) for f in factual)
+        asked = sum(f['planned'] for f in factual) - unasked
+        valid = sum(f['valid'] for f in factual)
+        model = dict(name=name, factual_asked=asked,
+                     factual_correct=sum(f['correct'] for f in factual),
+                     factual_errors=sum(f['observed_factual_errors'] for f in factual),
+                     factual_missing_invalid=asked - valid, unasked_slots=unasked,
+                     support_missing_null=sum(q['count'] for q in m['item_quality_counts']
+                                              if q['item'] == 'library_support' and q['quality'] == 'MISSING_NULL'),
+                     attenuation_pattern_met=m['prespecified_patterns']['attenuation_in_this_configuration'])
+        for target, source in (('omitted', m['content_contrasts']['OMITTED']),
+                               ('shown', m['content_contrasts']['SHOWN']),
+                               ('interaction', m['primary_cue_interaction'])):
+            model[target] = dict(mean=source['mean_points'], complete=source['complete_contexts'])
+        models.append(model)
+    c = analysis['crossmodel_common_context_interaction_difference']
+    return dict(models=models, sample_dates='November 10, 2026 · Eastern time',
+                actual_responses=phases.get('ANSWER', 0), planned_slots=a['design']['planned_total_study_model_POSTs'],
+                skipped_slots=phases.get('SKIPPED_INVALID_PRE', 0),
+                failed_slots=phases.get('FAILED_UNCERTAIN', 0),
+                parse_error_slots=phases.get('PARSE_ERROR', 0),
+                cancelled_slots=phases.get('CANCELLED', 0),
+                unattempted_slots=phases.get('NOT_ATTEMPTED', 0),
+                research_cost_usd=a['billing']['verified_combined_study_USD'],
+                all_research_cost_usd=a['billing']['all_research_verified_USD'],
+                conservative_exposure_usd=format(Decimal(a['billing']['conservative_owner_exposure_microusd']) / Decimal(1_000_000), '.6f'),
+                full_pattern_met=analysis['prespecified_patterns']['attenuation_across_both_fixed_configurations'],
+                crossmodel=dict(mean=c['mean_points'], complete=c['complete_contexts'],
+                                context_values=[{k: row[k] for k in ('A_value', 'B_value', 'value')} for row in c['context_values']]),
+                recovery_note='Two exact saved baselines were reused across an execution gap; 51 new answers were collected without prompt retries. Four historical financial holds remain unchanged, including the recovered Qwen baseline hold. A reported-null Qwen service tier remains unknown.')
+
+
+def render_crossmodel(s):
+    """Render a normalized accepted aggregate; callers bind its public receipt.
+
+    This helper does not read files or compute study estimands.
+    """
+    h = lambda x: escape(str(x), quote=True)
+    def point(value):
+        if value is None:
+            return 'Not estimable'
+        return h(('+' if value > 0 else '') + format(value, '.2f').rstrip('0').rstrip('.'))
+    rows = []
+    for model in s['models']:
+        rows.append('<tr><td><strong>' + h(model['name']) + '</strong></td>' + ''.join(
+            '<td>' + point(model[key]['mean']) + '<br><span class="live-note">'
+            + h(model[key]['complete']) + ' / 4 contexts</span></td>'
+            for key in ('omitted', 'shown', 'interaction')
+        ) + '</tr>')
+    context_rows = []
+    for i, row in enumerate(s['crossmodel']['context_values']):
+        context_rows.append(f'<tr><td>Context {i + 1}</td><td>{point(row["A_value"])}</td><td>{point(row["B_value"])}</td><td>{point(row["value"])}</td></tr>')
+    factual_rows = ''.join(
+        '<tr><td>' + h(m['name']) + '</td><td>' + h(m['factual_correct']) + ' / '
+        + h(m['factual_asked']) + '</td><td>' + h(m['factual_errors'])
+        + '</td><td>' + h(m['factual_missing_invalid'])
+        + '</td><td>' + h(m['unasked_slots']) + '</td></tr>' for m in s['models']
+    )
+    return f'''<main class="live-main" id="crossmodel-summary">
+<div class="live-topline"><span class="live-kicker">Support-only cue study · {h(s['sample_dates'])}</span><span class="live-pill">REAL MODEL EVIDENCE · AUDIT PASSED</span></div>
+<h2>The same fixed design, two model configurations.</h2>
+<p class="live-deck">This separate study shows only the model's own issue-support rating, rather than its whole previous questionnaire. It does not pool its outcomes with either earlier study.</p>
+<div class="live-cards">
+<div class="live-card"><div class="live-value">{h(s['actual_responses'])} / {h(s['planned_slots'])}</div><div class="live-label">Observed answers / planned slots</div></div>
+<div class="live-card"><div class="live-value">{h(s['skipped_slots'])} skipped</div><div class="live-label">Rule-derived skips only · {h(s['failed_slots'])} failed/uncertain · {h(s['parse_error_slots'])} parse errors · {h(s['cancelled_slots'])} cancelled · {h(s['unattempted_slots'])} unattempted</div></div>
+<div class="live-card"><div class="live-value">{h(s['crossmodel']['complete'])} / 4</div><div class="live-label">Common complete contexts for B − A</div></div>
+<div class="live-card"><div class="live-value">${h(s['research_cost_usd'])}</div><div class="live-label">Verified charges for this distinct study</div></div>
+</div>
+<section class="live-panel"><h3>Signed support contrasts, in points</h3>
+<p class="live-note">Content contrast = support with positive evidence − support with negative evidence. Primary cue interaction = SHOWN contrast − OMITTED contrast. Each cell carries its own complete-case denominator.</p>
+<div style="overflow-x:auto"><table><thead><tr><th>Model / provider configuration</th><th>OMITTED content contrast</th><th>SHOWN content contrast</th><th>Primary cue interaction</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<div class="live-warning"><strong>A signed interaction is not automatically attenuation.</strong><br>A negative interaction can include a reversal of the content contrast. Inspect both signed content contrasts; no psychological anchoring mechanism or model-family effect is established here.</div></section>
+<div class="live-grid"><section class="live-panel"><h3>Cross-model comparison · common contexts only</h3>
+<p class="live-note">B − A cue-interaction difference: <strong>{point(s['crossmodel']['mean'])} points</strong>, across {h(s['crossmodel']['complete'])} common complete contexts. This is not subtraction of model means with different eligible samples.</p>
+<table><thead><tr><th>Technical context</th><th>A interaction</th><th>B interaction</th><th>B − A</th></tr></thead><tbody>{''.join(context_rows)}</tbody></table>
+<p class="live-note">No confidence interval, p-value, equivalence test or independent-person sample size is claimed.</p></section>
+<section class="live-panel"><h3>Missingness and comprehension</h3>
+<table><thead><tr><th>Configuration</th><th>Factual correct / asked</th><th>Observed factual errors</th><th>Missing / invalid factual items among asked</th><th>Unasked slots</th></tr></thead><tbody>{factual_rows}</tbody></table>
+<p class="live-note">Incorrect observed answers, missing items, rule-derived skips and unattempted slots are separate dispositions. Unrelated missing thermometer answers do not by themselves invalidate usable issue support in this study.</p>
+<p class="live-note">Configuration A returned three null issue-support answers, including one baseline that caused three SHOWN skips. Factual comprehension remained correct in those observed answers; missing support is not a factual error.</p>
+<p class="live-note">{h(s['recovery_note'])}</p></section></div>
+<section class="live-panel"><h3>Scope and accounting</h3><p class="live-note">Four authored technical contexts, one fictional issue and two fixed model/provider configurations. Provider, tokenization and quantization differences are not isolated as causal factors. No human-persuasion, nationwide-population or family-wide robustness claim follows.</p>
+<p class="live-note">The full prespecified cross-configuration attenuation pattern was not met: configuration A lacks a complete four-context primary sample. Configuration B met its within-configuration descriptive pattern. These flags do not establish an anchoring mechanism.</p>
+<p class="live-note">All seven complete pairs contracted in absolute magnitude with no observed reversal. This descriptive observation is separate from the incomplete full registered pattern. Verified research charges across the three distinct studies total <strong>${h(s['all_research_cost_usd'])}</strong>.</p>
+<p class="live-note">Provider telemetry reports streaming despite non-streaming client requests; this discrepancy remains unresolved. Complete parsed responses and their request/billing bindings were verified. Null Qwen service tiers remain unknown.</p>
+<p class="live-note">Conservative cumulative ledger exposure: <strong>${h(s['conservative_exposure_usd'])}</strong>, including retained historical holds. Shared cap $5, cumulative E02 cap $1 and E01 paid inference $0 remain unchanged.</p>
+<details><summary>Accepted public evidence</summary><p class="live-audit">{h(s['source_audit'])}<br>SHA-256 {h(s['source_audit_sha256'])}</p><p class="live-note">Aggregate allowlist only. Private responses, owner stores and credentials are not exported.</p></details></section>
+</main><hr class="live-study-divider">'''
+
+
 def render_followup(s):
     h = lambda x: escape(str(x), quote=True)
     rows = ''.join(
@@ -108,7 +239,7 @@ def render_followup(s):
     exposure = format(Decimal(s['conservative_total_microusd']) / Decimal(1_000_000), '.6f')
     return f'''<main class="live-main" id="followup-summary">
 <style>.live-evidence-track{{height:8px;background:#e7eee7;border-radius:8px;overflow:hidden}}.live-evidence-track>span{{display:block;height:100%;background:#326951}}.live-study-divider{{max-width:1200px;margin:10px auto;border:0;border-top:1px solid #cbd8cf}}</style>
-<div class="live-topline"><span class="live-kicker">Latest real experiment · November 9, 2026 · Eastern time</span><span class="live-pill">COMPLETE WITH SKIPS · AUDIT PASSED</span></div>
+<div class="live-topline"><span class="live-kicker">Earlier issue-aligned experiment · November 9, 2026 · Eastern time</span><span class="live-pill">COMPLETE WITH SKIPS · AUDIT PASSED</span></div>
 <h2>Proposal support responded to the supplied evidence.</h2>
 <p class="live-deck">A separate follow-up tested three fictional versions of one library proposal, with earlier answers shown or omitted. It changes the question and outcome from the first pilot; the two studies are not pooled.</p>
 <div class="live-cards">
@@ -126,7 +257,7 @@ def render_followup(s):
 <section class="live-panel"><h3>What we learned—and what remains uncertain</h3>
 <p>In this fixed model task, an issue-specific support question responded to the fictional evidence. Showing the model its entire previous answer coincided with a smaller response in the two eligible pairs. This is descriptive evidence from one model, one authored issue and four technical contexts, not a human experiment.</p>
 <p class="live-note">All {h(s['asked_comprehension_correct'])} asked factual questions were answered correctly. The six skipped posts are missing planned answers, not observed comprehension mistakes. Some party thermometers were missing even when support and comprehension were usable.</p>
-<p class="live-note"><strong>Current conservative ledger exposure: ${exposure}</strong>, including unchanged historical holds. Shared cap $5; cumulative E02 cap $1; E01 paid inference $0. No automatic sample extension or next paid run is implied.</p>
+<p class="live-note"><strong>Historical November 9 ledger checkpoint: ${exposure}</strong>, including unchanged historical holds. Shared cap $5; cumulative E02 cap $1; E01 paid inference $0. No automatic sample extension or next paid run is implied.</p>
 <details><summary>Independent follow-up audit and scope</summary><p class="live-audit">{h(s['source_audit'])}<br>SHA-256 {h(s['source_audit_sha256'])}</p><p class="live-note">Only a pinned public outcome audit is projected here. Private journals, raw answers, credentials and owner stores are not read. Full nationwide E02 and original E01 completion remain incomplete.</p></details>
 </section></main><hr class="live-study-divider">'''
 
@@ -206,14 +337,16 @@ def build(root, output):
     archive = output / 'historical-preview.html'
     summary = projection(root)  # Refuse altered evidence before touching files.
     followup = followup_projection(root)
+    crossmodel = crossmodel_projection(root)
     summary['followup_result'] = followup
+    summary['crossmodel_result'] = crossmodel
     summary['followup']['status'] = followup['status']
     source = archive if archive.exists() else index
     original_bytes = source.read_bytes()
     base = original_bytes.decode('utf-8')
     if START in base or base.count('<main>') != 1 or base.count('</main>') != 1:
         raise ValueError('Unexpected historical preview structure')
-    page = base.replace('<main>', render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
+    page = base.replace('<main>', render_crossmodel(crossmodel) + render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
     # The new overlay has its own main; close only the historical main.
     pos = page.rfind('</main>')
     page = page[:pos] + '</main></details>' + page[pos + len('</main>'):]

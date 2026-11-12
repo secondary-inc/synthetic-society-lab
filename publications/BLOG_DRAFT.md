@@ -1,6 +1,6 @@
 # Testing Whether Synthetic Societies Earn Their Complexity Draft
 
-Owner-review draft, updated November 10, 2026 UTC. Not published.
+Owner-review draft, updated November 11, 2026 UTC. Not published.
 
 A simulation can contain detailed people, convincing conversations and busy social feeds without predicting anything well. Synthetic Society Lab starts with a narrower question: what useful evidence does each extra layer add?
 
@@ -64,9 +64,17 @@ The next live batch made 22 requests on a fictional library proposal. When earli
 
 This is a useful model-task observation, with strong limits: the own-answer comparison covers only two D-prior contexts, the question is custom, and there is one issue and one model family. It does not demonstrate human persuasion or establish a general anchoring mechanism. The batch cost $0.0016084 and had no billing retries. The [new result report](../reports/E02_ALIGNMENT_ANCHORING_RESULT_20261109.md) preserves the exclusions and paired arithmetic; [independent actual review passed](../reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json) for retained evidence, accounting and descriptive scores.
 
+## A support-only cue comparison across two configurations
+
+**Independent scoped outcome review passed.** The next fixed study compared GPT-4.1 nano/Azure and Qwen3-30B-A3B-Instruct-2507/Nebius, showing only each model's own earlier proposal-support rating. It saved 53 answers and three planned skips. With earlier ratings omitted versus shown, the evidence contrast was 33.33 versus 0 points in GPT's three complete contexts, and 51.25 versus 20 in Qwen's four. The matched cross-model interaction difference averaged −6.67 points over their three common complete contexts; subtracting the unequal-sample model means would give a different and inappropriate comparison.
+
+One null GPT baseline caused three SHOWN skips, and two other GPT answers also lacked support ratings. All factual questions among the 53 asked prompts were answered correctly. Qwen met its within-configuration descriptive pattern, but the full planned cross-configuration pattern was not met because GPT lacked a complete four-context primary sample. This is one fictional issue, not a human experiment or evidence about whole model families. Two saved baselines predate the continuation; that interruption remains part of the record. The [aggregate captured before audit](../reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json) records study charges of $0.0038870; its [independent actual audit](../reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json) passed. All seven complete pairs contracted in absolute magnitude without reversals, a descriptive observation distinct from the unmet full registered pattern.
+
+Provider telemetry reports streaming despite the fixed non-streaming client requests. This discrepancy remains unresolved; complete parsed responses and their request/billing bindings were verified. Reported-null Qwen service tiers remain unknown, without assuming a default tier or fee.
+
 ## What still has to earn a place
 
-The next steps include reviewed real-text stimuli, a defensible population scope, a human-study anchor, model-family robustness and a prospectively revised missingness design beyond these two exploratory live batches. Demographic detail must outperform a simpler control on the same task. A social wrapper must be compared with identical words and attribution. Assistant interaction needs a matched comparison. A group of agents must justify itself against independent agents using comparable computation.
+The next steps include reviewed real-text stimuli, a defensible population scope, a human-study anchor, model-family robustness and a prospectively revised missingness design beyond these three exploratory live batches. Demographic detail must outperform a simpler control on the same task. A social wrapper must be compared with identical words and attribution. Assistant interaction needs a matched comparison. A group of agents must justify itself against independent agents using comparable computation.
 
 No amount of visual realism can satisfy those tests on its own. A negative result would still be useful if the comparison is reproducible and its limits are clear.
 
