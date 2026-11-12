@@ -1,0 +1,42 @@
+{
+  "kind": "E02_WRAPPER_VISIBILITY_PRE_DISPATCH_STOP_V1",
+  "run_id": "e02-wrapper-visibility-live-v1-01",
+  "status": "STOPPED_PRE_CREDENTIAL_PRE_OWNER_PRE_DISPATCH",
+  "observed_summary": {
+    "automatic_retry": false,
+    "error_type": "ExecutionBlocked",
+    "status": "STOPPED"
+  },
+  "diagnosis": "Pinned prior export is2285561bytes; caller used inherited2000000-byte input bound. Read-only reproduction yields ExecutionBlocked at this read.",
+  "evidence": [
+    {
+      "path": "data/processed/e02_wrapper_visibility_actual_v1_01/packet.local.json",
+      "bytes": 4859,
+      "sha256": "62a0d5312e6df7a5637efea723fec9318963013fec4618331a6d055f3b25d3b5"
+    },
+    {
+      "path": "data/processed/e02_wrapper_visibility_actual_v1_01/execution-summary.local.json",
+      "bytes": 82,
+      "sha256": "afd1fc2459c4d7b61a6a97038c77b94eb39aaae9c3d766da2551697bd2a9a7dc"
+    },
+    {
+      "path": "data/processed/e02_wrapper_visibility_actual_v1_01/execution-stderr.local.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/E02_WRAPPER_VISIBILITY_CALLER_SIZE_FAILURE_SOURCE_20261112.json",
+      "bytes": 8836,
+      "sha256": "1dd28f9e241b0bae2a95c0dfd38dda50840159282e162aa516684414759c969b"
+    }
+  ],
+  "execution_intent_present": false,
+  "new_model_requests": 0,
+  "new_billing_requests": 0,
+  "new_runtime_catalog_requests": 0,
+  "credential_access": 0,
+  "live_owner_access": 0,
+  "model_API_cost_usd": 0,
+  "basis": "Exact caller source orders this reproduced refusal before intent creation, credential access and executor entry; no provider query was made to diagnose it.",
+  "recovery": "Preserve stoppedbatch; separateversion02 fixes only pinnedexport bound and newrun/outputidentity. Sameexistingfinancialowner/caps/protocol/heldamounts; no retry of modelrequest."
+}

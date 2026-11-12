@@ -2,6 +2,7 @@
 from contextlib import contextmanager
 from pathlib import Path
 import os
+import hashlib
 import sys
 import tempfile
 import unittest
@@ -9,6 +10,7 @@ from unittest.mock import patch,Mock
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import run_wrapper_visibility_once as m
+from run_e02_continuation_once import read as real_read
 from civiclab.common import canonical_bytes,canonical_hash
 from civiclab.production_admission_v4 import _Credential
 from civiclab.e02 import wrapper_visibility_client_v1 as client
@@ -38,6 +40,34 @@ def case():
 
 
 class CallerTests(unittest.TestCase):
+    def test_exact_large_prior_export_crosses_default_reader_cap_safely(self):
+        for mode in ('exact','over_limit','wrong_hash'):
+            with self.subTest(mode=mode),case() as (base,b,secret,execute):
+                old=base/'old';old.mkdir()
+                e={'head':{},'history':[],'rows':{},'study':{},'continuation':{},
+                   'alignment_followup':{},'issue_cue_crossmodel':{},
+                   'issue_cue_crossmodel_recovery':{},'consumed':{},'statistics_claims':[],
+                   'authored_padding':''}
+                e['authored_padding']='X'*(m.EXPORT_BYTES-len(canonical_bytes(e)))
+                raw=canonical_bytes(e);self.assertEqual(len(raw),2285561)
+                path=old/'post-run-owner-export.local.json';path.write_bytes(raw)
+                digest=hashlib.sha256(raw).hexdigest()
+                with self.assertRaises(m.ExecutionBlocked):real_read(path,digest)
+                if mode=='over_limit':path.write_bytes(raw+b' ')
+                if mode=='wrong_hash':digest='0'*64
+                stub=m.read.side_effect
+                def reader(p,*args):
+                    return real_read(p,*args) if p==path else stub(p,*args)
+                m.read.side_effect=reader
+                with patch.object(m,'OLD',old),patch.object(m,'EXPORT_SHA',digest):
+                    if mode=='exact':
+                        self.assertEqual(m.main('a'*64,'b'*64),{'status':'MOCK_DONE'})
+                        secret.assert_called_once();execute.assert_called_once()
+                    else:
+                        with self.assertRaises(m.ExecutionBlocked):m.main('a'*64,'b'*64)
+                        secret.assert_not_called();execute.assert_not_called()
+                        self.assertFalse((base/'execution-intent.local.json').exists())
+
     def test_one_intent_consumed_and_environment_restored(self):
         with case() as (base,b,secret,execute),patch.dict(os.environ,{'OPENROUTER_API_KEY':'PRIOR_AUTHORED_VALUE'}):
             self.assertEqual(m.main('a'*64,'b'*64),{'status':'MOCK_DONE'})

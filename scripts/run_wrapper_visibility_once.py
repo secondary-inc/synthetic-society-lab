@@ -16,10 +16,11 @@ from civiclab.e02.wrapper_visibility_owner_v1 import validate_packet
 from collect_connectivity_billing_once import _credential,_write
 from run_e02_continuation_once import read
 
-BASE=ROOT/'data/processed/e02_wrapper_visibility_actual_v1_01'
+BASE=ROOT/'data/processed/e02_wrapper_visibility_actual_v1_02'
 OLD=ROOT/'data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01'
-RUN='e02-wrapper-visibility-live-v1-01'
+RUN='e02-wrapper-visibility-live-v1-02'
 EXPORT_SHA='61a6ab162c464dc3bf7308ebe11f762a54f58b43b1424aa5be7c100696ed995c'
+EXPORT_BYTES=2285561
 CREDENTIAL_READER_SHA='0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7'
 
 
@@ -28,7 +29,7 @@ def main(packet_sha,caller_sha):
     raw=read(BASE/'packet.local.json',packet_sha,65000);q=json.loads(raw)
     if canonical_bytes(q)!=raw:raise ExecutionBlocked('canonical exact follow-up packet required')
     q=validate_packet(q,expected_packet_hash=packet_sha)
-    e=json.loads(read(OLD/'post-run-owner-export.local.json',EXPORT_SHA))
+    e=json.loads(read(OLD/'post-run-owner-export.local.json',EXPORT_SHA,EXPORT_BYTES))
     expected={'head':e['head'],'history_hash':canonical_hash(e['history']),
         'rows_hash':canonical_hash(e['rows']),'study_hash':canonical_hash(e['study']),
         'continuation_hash':canonical_hash(e['continuation']),
