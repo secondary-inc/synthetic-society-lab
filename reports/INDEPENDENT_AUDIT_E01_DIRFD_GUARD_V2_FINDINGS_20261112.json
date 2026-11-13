@@ -1,0 +1,106 @@
+{
+  "authority": {
+    "actual_recovery_released": false,
+    "continuation_released": false,
+    "guard_installed_by_auditor": false,
+    "source_native_network_model_process_operations": 0
+  },
+  "checks": {
+    "budget_reservation_has_explicit_lock": false,
+    "exact_guard_files": [
+      {
+        "bytes": 4963,
+        "path": "scripts/e01_authored_dirfd_guard_20261112.py",
+        "sha256": "2418c34703e3428c3bf35bca24f21b57e2dcd9a023081037f6bb6e6f31b03998"
+      },
+      {
+        "bytes": 7105,
+        "path": "scripts/e01_authored_dirfd_checks_20261112.py",
+        "sha256": "89282ac295dfdaa0aa1c23062971cdde6bbcb91e7c070cd0d34eb10a37f9a2f9"
+      },
+      {
+        "bytes": 6738,
+        "path": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+        "sha256": "c2ec6da27d70432f4eced9810cdd50a15914e5ccfb3d0a384e819040bc0e7b33"
+      }
+    ],
+    "first_stop_files_unchanged": 10,
+    "guard_checks_defined": 8,
+    "handoff_sha256": "9380e905b90acc99b5c80f27f8082e642d8ece690166fca22ca8a475ee30fcec",
+    "lexical_illustration_only": {
+      "abspath": "/AUTHORED_ALLOWED/file",
+      "filesystem_symlink_or_open_executed": false,
+      "guard_candidate_loses_link_component": true,
+      "input": "/AUTHORED_ALLOWED/link/../file"
+    },
+    "new_guard_installation_or_test_process_or_source_native_model_operations": 0,
+    "old_engine_code_pins_unchanged": 18,
+    "status": "STATIC_FINDINGS_GUARD_V2_NOT_RELEASED"
+  },
+  "evidence": [
+    {
+      "bytes": 2455,
+      "path": "/tmp/civiclab-auditor-e01-dirfd-guard-v2-static-20261112.py",
+      "sha256": "3db599aad99d2ab9b1e9b780298c8a6bb1080421c6bfad9fb8aa58962e2d6d16"
+    },
+    {
+      "bytes": 1187,
+      "path": "/tmp/civiclab-auditor-e01-dirfd-guard-v2-static-20261112.json",
+      "sha256": "5667d75adc1de779431127efbaebdae86ec7068bf79430011fdeb0517b4511b0"
+    }
+  ],
+  "findings": [
+    {
+      "acceptance": "Reject raw..components before normalization/join for absolute andrelative audit/open paths. Add effect-spied link/../file subcases within the existingG7check; preserve zero protecteddata effects.",
+      "evidence": "absolute first formsPath(abspath(raw)); open joins origin/raw then callsabsolute; no_alias checks only normalizedcandidate. A raw link/../file path loseslink lexically before symlink checks. No symlink or protectedopen was executed by auditor.",
+      "file": "scripts/e01_authored_dirfd_guard_20261112.py",
+      "function": "absolute / open / event_path",
+      "id": "E01-DIRFD-GUARD-V2-01",
+      "issue": "abspath normalizes raw symlink/../file before policy/no_alias checks, erasing the symlink component. The policy candidate can differ from the unchanged syscall resolution, potentially defeating protected-path exclusion.",
+      "severity": "high",
+      "status": "OPEN_AT_THIS_FROZEN_HASH_NOT_EXECUTED"
+    },
+    {
+      "acceptance": "Use a sharedRLock around the complete reservation predicate/update and snapshot. Cover concurrent accepted increments and unchanged snapshot after over-cap refusal inside the existingG2case; no extra processes/cases/caps.",
+      "file": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+      "function": "reserve / receipt snapshot",
+      "id": "E01-DIRFD-GUARD-V2-02",
+      "issue": "Shared quota check/update and snapshots lack explicit synchronization despite threaded selfchecks/engine tests. This does not meet the stated atomic threaded-reservation requirement; no actual lost count or overrun was reproduced.",
+      "severity": "medium",
+      "status": "OPEN_CONCURRENCY_CONTRACT_GAP_NO_OBSERVED_OVERRUN"
+    }
+  ],
+  "handoff_ref": {
+    "bytes": 11645,
+    "path": "reports/clerk2020_authored_dirfd_guard_v2_frozen_handoff_20261112.json",
+    "sha256": "9380e905b90acc99b5c80f27f8082e642d8ece690166fca22ca8a475ee30fcec"
+  },
+  "kind": "E01_AUTHORED_DIRFD_GUARD_V2_FROZEN_STATIC_FINDINGS",
+  "ownership": "Newauditrecord and/tmpchecks only; no workerfiles/private state/STATUS/Git edits.",
+  "positive_static_observations": [
+    "Descriptor registration/currentfstat/origin/generation checks, readonlyunknownfailures and thread-localfinally-restored path context are present.",
+    "Originalos.open args/kwargs andabsolute-dir_fd semantics preserved; only verified conventionalDarwinaliases normalized.",
+    "Protected-path negativechecks use effect spies; no guard installation orchecks performed. Eightdefinitions are syntax-valid, not runtimePASS."
+  ],
+  "preservation": "All10first-stop source files and18oldenginepins match saved hashes. Oldscope remainsconsumed. These findings areagainstfrozen2418c347/89282ac2/c2ec6da2only; a newrevision requires separate exactreview.",
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "source_refs": [
+    {
+      "bytes": 4963,
+      "path": "scripts/e01_authored_dirfd_guard_20261112.py",
+      "sha256": "2418c34703e3428c3bf35bca24f21b57e2dcd9a023081037f6bb6e6f31b03998"
+    },
+    {
+      "bytes": 7105,
+      "path": "scripts/e01_authored_dirfd_checks_20261112.py",
+      "sha256": "89282ac295dfdaa0aa1c23062971cdde6bbcb91e7c070cd0d34eb10a37f9a2f9"
+    },
+    {
+      "bytes": 6738,
+      "path": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+      "sha256": "c2ec6da27d70432f4eced9810cdd50a15914e5ccfb3d0a384e819040bc0e7b33"
+    }
+  ],
+  "status": "BLOCKED_INITIAL_GUARD_V2_PENDING_TRAVERSAL_AND_ATOMIC_QUOTA_FIXES"
+}

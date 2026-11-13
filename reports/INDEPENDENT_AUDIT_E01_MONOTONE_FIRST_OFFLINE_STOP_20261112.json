@@ -1,0 +1,197 @@
+{
+  "actual_source_or_native_execution_released": false,
+  "audit_instrumentation_note": "Initial audit-only JSON checker assumed a top-level before_after row.path; this raisedKeyError before any engine/testexecution. Initialscript preserved in/tmp; corrected lookupafter.path, then pure metadata/diff verification passed. This is not a new project test invocation.",
+  "checks": [
+    "Verified exact first-stop handoff, STARTED/RECEIPT/log and both whole-source snapshots. Every embedded source hash/size matches; all five remedy diffs recomputed exactly. All18oldaccepted source pins unchanged and proposed test count remains58.",
+    "Retained traceback enters TemporaryDirectory.cleanup/shutil.rmtree and os.open(name,...,dir_fd=dirfd), then harness open-audit guard refuses via NO_ACTUAL_DATA_OR_CREDENTIALS. Guard computes realpath from only the relative name using cwd; it does not receive/resolve the originating directory descriptor. Worker-reported data basename is consistent with the created tree; exact numeric fd/name values were not separately retained.",
+    "Python audit hook refusal precedes underlying os.open. This is an authored cleanup false positive, not evidence actual repository data was read or a source/native run occurred. No engine test success inferred from the body preceding teardown.",
+    "Receipt successfulfalse is decisive even though its outer error_type isnull: unittest captured the teardown ScopeStop as a test error instead of raising it to the wrapper. The log records the concrete error.",
+    "Receipt reports50msCPU/62mswall and counts reads2567303/writes10985/output1875 through before its own receipt/final stdout. These are not exact whole-process final totals: later receipt/output writes continue through the same enforcing guards. No self-referential counter claim.",
+    "No3.11STARTED/RECEIPT exists for this old offline scope; no additional invocation or actual source/native/network/model operation by auditor."
+  ],
+  "code_acceptance": "NOT_ACCEPTED: broader58tests remainunvalidated; no codebinding/actualpreparation/BOOT/source allocation.",
+  "engine_findings_disposition": [
+    {
+      "evidence": "consumeBOOT now persists only issued/reservation and remembers consumed hash. After genesis/journalBOOT_RESERVE and attached metadata meter, adopt_successor takes predecessor/new locks, verifies fixed old proof via _verify_predecessor_locked before link/registration creation, then initial anchor. No nested predecessor-lock acquisition in that helper.",
+      "id": "E01-SUCCESSOR-DRAFT-01",
+      "status": "STATIC_REMEDY_OBSERVED_BROADER_TESTS_NOT_VALIDATED"
+    },
+    {
+      "evidence": "Receipt ceiling changed to8000ms, with8000accepted and8001/21000refused subcases inside the original worker test method. Those subcases were not reached by the failed one-test run.",
+      "id": "E01-SUCCESSOR-DRAFT-02",
+      "status": "STATIC_REMEDY_OBSERVED_BROADER_TESTS_NOT_VALIDATED"
+    }
+  ],
+  "evidence": [
+    {
+      "bytes": 3632,
+      "path": "/tmp/civiclab-auditor-e01-offline-first-stop-check-initial-shape-error-20261112.py",
+      "sha256": "31d97611195513a2253f2f662a538b03158dfa39714d9c26b5d193f1572d3b31"
+    },
+    {
+      "bytes": 3641,
+      "path": "/tmp/civiclab-auditor-e01-offline-first-stop-check-20261112.py",
+      "sha256": "2b203d6f68460afde0453b9d05e47a5dda44f6afad5a7bde2f9a8bdcaca499ba"
+    },
+    {
+      "bytes": 855,
+      "path": "/tmp/civiclab-auditor-e01-offline-first-stop-check-20261112.json",
+      "sha256": "88e52acec3bb5e2b7998ebe2fff3ada557a2c2eaf538d04b50f9f39678194cd2"
+    }
+  ],
+  "finite_continuation_plan": {
+    "PDF_native_imports": 0,
+    "actual_repository_data_reads": 0,
+    "before_execution": "Worker freezes newharness/guardselfchecks and exact candidate hashes for independentreview. This record approves design/implementation of the narrowguardfix; it does not certify absentcode or issue this continuation.",
+    "execution_order": "Failfast globally at first unexpected guard/testfailure; preserve currentsource/log/receipts and do not automatically start other runtime or repeat. Missing/failed receipt remainsUNKNOWN, not retrypermission.",
+    "guard_checks_per_runtime": 8,
+    "invocations_per_runtime": 1,
+    "microchecks_included_in_these_caps": true,
+    "network_model_calls": 0,
+    "paid_cost_usd": 0,
+    "per_runtime_caps": {
+      "CPU_seconds": 120,
+      "authored_temporary_write_bytes": 134217728,
+      "captured_output_bytes": 262144,
+      "task_code_metadata_read_bytes": 536870912,
+      "wall_seconds": 120
+    },
+    "runtimes": [
+      "312",
+      "311"
+    ],
+    "scope": "One newly named fixed technical continuation; per runtime eight guard checks first, then the same four modules/58unittest methods if checks pass. No rerun of the six-process CPU fixture scope.",
+    "status": "CONDITIONAL_PENDING_EXACT_NEW_FROZEN_HARNESS_REVIEW_NO_EXECUTION_YET",
+    "subprocess_or_fork": 0,
+    "unittest_methods_per_runtime": 58
+  },
+  "guard_design_constraints": [
+    "Preload guard dependencies before audit installation; avoid resolving via an unbounded helper process or reading runtime/native/data bodies.",
+    "Use stable directory identity(dev,ino,filetype), not mutable directorymtime/size that cleanup legitimately changes. Verify current descriptor/origin at each use; unknown/aliased/moved origin failsclosed.",
+    "Keep IO/output meters, repository mutation prohibitions, PDF/native imports, network/process denial and core/CPU/wall limits intact. Threaded reservations/registry access must not lose counts or leak context.",
+    "Negative forbidden-path checks must use an effect spy so even an unexpected permission decision cannot actually open real protecteddata. Only owned temporary directories/files are created.",
+    "Preserve old harness, failure source/log/STARTED/RECEIPT. New fixed technicalscope/receipts must not overwrite or reuse consumed prefixes."
+  ],
+  "guard_finding": {
+    "file": "scripts/verify_e01_monotone_successor_offline_20261112.py",
+    "id": "E01-OFFLINE-GUARD-DIRFD-01",
+    "issue": "Relativeos.open audit arguments are resolved againstcwd even when the actual syscall usesdir_fd. This misclassifies valid temporary cleanup as a repositorydata open.",
+    "required_remedy": "Separately versioned harness; verified directory descriptor origin plus stable dev/inode/directory-type checks and close/reuse invalidation; thread-local finally-restored audit context around originalos.open. Preserve original path/flags/dir_fd syscall. Absolute paths ignoredir_fd; no basename whitelist, disabled guard or blanket relative-path allowance.",
+    "severity": "medium",
+    "status": "OPEN_HARNESS_CORRECTION_REQUIRED"
+  },
+  "handoff_ref": {
+    "bytes": 23053,
+    "path": "reports/clerk2020_monotone_first_offline_stop_handoff_20261112.json",
+    "sha256": "be5d749552fb2994bac519311683794ad7ae5864403d5d3e076309deacfc16ed"
+  },
+  "kind": "E01_MONOTONE_FIRST_OFFLINE_STOP_AND_DIRFD_GUARD_CORRECTION_DESIGN_AUDIT",
+  "new_recovery_allocation_issued": false,
+  "outcome": {
+    "automatic_retry": false,
+    "code_unchanged_during_attempt": true,
+    "new_actual_recovery_scope": "NOT_ISSUED",
+    "original_technical_scope": "CONSUMED_CLOSED_NO_REPLAY",
+    "other_runtime": "311_NOT_RUN",
+    "runtime": "312",
+    "test_result": "ERROR_IN_TEARDOWN_NOT_PASS",
+    "tests_run": 1
+  },
+  "ownership": "Only newauditorrecord and/tmpmetadata check artifacts written; no fixes/private state/STATUS/Git changes by auditor.",
+  "preserved_artifact_refs": [
+    {
+      "bytes": 3229,
+      "path": "reports/clerk2020_monotone_offline_312_20261112.txt",
+      "sha256": "4521e727cb9443cecd760a90bf5f1a207169a35b3b63ba8401fc75ad51893d6b"
+    },
+    {
+      "bytes": 280,
+      "path": "reports/clerk2020_monotone_offline_312_20261112_STARTED.json",
+      "sha256": "bc756f90f74ecbc2fb22dd1a2dd21d8da6ec20bea22cf2edbac3c07897fece36"
+    },
+    {
+      "bytes": 1353,
+      "path": "reports/clerk2020_monotone_offline_312_20261112_RECEIPT.json",
+      "sha256": "d6586396974f35efccc0bd473d7318f27efea38d0aaa4994f4b51fa27f691d55"
+    },
+    {
+      "bytes": 194454,
+      "path": "reports/clerk2020_monotone_offline_first_stop_sources_20261112.json",
+      "sha256": "56ef205b04733350f105ca8dabfd4d32c2b429db8e10ccb4f24509d6af85eb76"
+    },
+    {
+      "bytes": 184773,
+      "path": "reports/clerk2020_monotone_successor_pre_remedy_sources_20261112.json",
+      "sha256": "dedf78fe1745af36c0cfe2791dea41ae52ce31593447f67b5b618c2bc1160a53"
+    }
+  ],
+  "prior_scope_audit_ref": {
+    "bytes": 15338,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_DRAFT_SCOPE_20261112.json",
+    "sha256": "08ca2ec816c08dec8cfb948cfb54e89ed3d816e1d6d6b214caff5f1ad39f0c48"
+  },
+  "required_eight_guard_checks": [
+    {
+      "check": "Known owned temporary directoryfd resolves relative data correctly and TemporaryDirectory/shutil cleanup completes.",
+      "id": "G1_OWNED_CLEANUP"
+    },
+    {
+      "check": "Same relative name under two different owned directoryfds resolves correctly, including concurrent/thread-local isolation; no global in-flight path context.",
+      "id": "G2_ORIGIN_ISOLATION"
+    },
+    {
+      "check": "Unregistered descriptor refuses before targetopen, with effect spy recording no raw targetsyscall.",
+      "id": "G3_UNKNOWN_FD"
+    },
+    {
+      "check": "Closed descriptor invalidated; reused descriptor with different fstat identity refuses until legitimately re-registered. Do not trust fd number alone.",
+      "id": "G4_CLOSED_REUSED_FD"
+    },
+    {
+      "check": "Regular-file descriptor is not accepted as a directory origin; no targetopen.",
+      "id": "G5_NOT_DIRECTORY"
+    },
+    {
+      "check": "Absolute protected data/credential path refuses even with a valid ownedtempdir_fd; originalcall is spied, never actually opens protecteddata.",
+      "id": "G6_ABSOLUTE_FORBIDDEN"
+    },
+    {
+      "check": "Ownedtemp symlink resolving into protected data/credentials refuses before effect; no actual protected body read.",
+      "id": "G7_SYMLINK_FORBIDDEN"
+    },
+    {
+      "check": "After exception/nested use, context is restored/cleared; original path, flags anddir_fd are preserved, and a later unrelated open cannot inherit stale provenance.",
+      "id": "G8_CONTEXT_AND_ARGUMENTS"
+    }
+  ],
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "scientific_acceptance": false,
+  "status": "PASS_RETAINED_STOP_INTEGRITY_AND_NARROW_GUARD_CORRECTION_DESIGN_FROZEN_HARNESS_REVIEW_REQUIRED",
+  "verification": {
+    "CPU_ms_reported": 50,
+    "actual_source_native_model_network_process_operations_by_auditor": 0,
+    "code_unchanged": true,
+    "exact_source_diffs_verified": 5,
+    "first_scope_counts_before_own_receipt_and_final_stdout": {
+      "output_bytes": 1875,
+      "reserved_read_bytes": 2567303,
+      "reserved_write_bytes": 10985
+    },
+    "fixed_test_count_remains": 58,
+    "handoff_sha256": "be5d749552fb2994bac519311683794ad7ae5864403d5d3e076309deacfc16ed",
+    "old_code_pins_unchanged": 18,
+    "other_runtime": "NOT_RUN",
+    "source_snapshots_verified": 2,
+    "status": "PASS_RETAINED_FIRST_OFFLINE_STOP_INTEGRITY_NOT_ENGINE_SUCCESS",
+    "test_count_by_module": {
+      "native_campaign_v2": 22,
+      "source_job_v2": 18,
+      "source_packet_prepare_v3": 8,
+      "source_worker_v2": 10
+    },
+    "tests_result": "ERROR_IN_TEARDOWN",
+    "tests_run": 1,
+    "wall_ms_reported": 62
+  }
+}

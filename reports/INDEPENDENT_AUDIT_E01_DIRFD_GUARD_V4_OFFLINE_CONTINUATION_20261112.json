@@ -1,0 +1,165 @@
+{
+  "accepted_finite_continuation": {
+    "PDF_native_imports": 0,
+    "actual_source_or_owner_data_reads": 0,
+    "combined_maxima": {
+      "CPU_seconds": 240,
+      "captured_output_bytes": 524288,
+      "cases": 132,
+      "invocations": 2,
+      "reserved_code_metadata_read_bytes": 1073741824,
+      "reserved_temporary_write_bytes": 268435456,
+      "wall_seconds": 240
+    },
+    "engine_tests_per_runtime": 58,
+    "exact_command_311_only_after_312_PASS": "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+    "exact_command_312": ".venv/bin/python -B scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+    "first_failure": "Stop globally at first unexpected failure, retain exact source/log/STARTED/RECEIPT. Do not start other runtime, rerun, change suffix, overwrite old artifacts or enlarge any bound. Missingreceipt isUNKNOWN, not retrypermission.",
+    "guard_checks_per_runtime": 8,
+    "guards": "Fixedactualrepo data/credential and mutation prohibitions retained, except declared3.11toolchain infrastructure and exacttechnicalreceipt paths; source-free temporaryfilesystem only.",
+    "invocations_per_runtime": 1,
+    "kind": "NEW_FIXED_TECHNICAL_AUTHORED_CONTINUATION_V4",
+    "network_model_calls": 0,
+    "paid_cost_usd": 0,
+    "per_runtime_caps": {
+      "CPU_seconds": 120,
+      "captured_output_bytes": 262144,
+      "reserved_code_metadata_read_bytes": 536870912,
+      "reserved_temporary_write_bytes": 134217728,
+      "wall_seconds": 120
+    },
+    "prefix": "reports/clerk2020_monotone_offline_v4_<runtime>_20261112_{STARTED,RECEIPT}.json",
+    "root_retains_scheduling": true,
+    "runtime_order": [
+      "312",
+      "311_only_after312PASS"
+    ],
+    "source_integrity": "Freeze currentengine/helper/58test pins from first-stop source snapshot and exactthree technicalfiles above; recordbefore/after source hashes. Any unexpected drift refuses rather than silentlytesting a differentcandidate.",
+    "subprocess_fork": 0,
+    "success_evidence": "Require66tests, successfultrue, unchangedsourcehashes, no outererror, safecomplete receipt and retainedlog. Processreturncode alone is insufficient. Counts/CPU/wall are stated at their recorded observation boundary; finalboundedreceipt/stdout remain guarded but are not self-countedexact measurements.",
+    "total_cases_per_runtime": 66
+  },
+  "checks": [
+    "Verified exact guard5143B/431fe340, checks8395B/052999a1, harness7026B/092098ce and intermediate revision ref. Allthree initialguard files, tenfirst-stop sourcefiles and18oldcodepins remain unchanged.",
+    "Reviewed complete original3file source and exact newdiffs. Thread-local finally-restored descriptorcontext, currentdescriptor/origin/generation checks, rawsyscall arguments and verifiedDarwinroot aliases are preserved. Unknown/closed/reused/non-directory/moved/symlink origins failclosed.",
+    "No data basename whitelist or relativepath bypass added. Absolute paths retain POSIXdir_fd semantics but protectedpolicy remains active. New traversal rejection also applies to non-wrapperauditpaths via absolute resolver.",
+    "Protectednegative tests replace localrawopen with assertioneffect spies; even wrong guard decisions cannot actually open protecteddata in those checks. Allpositive filesystem effects are authoredtemporaryfiles.",
+    "Eightguardchecks remain first module; alltestmodules are imported/collected under activeguard before execution, then eightchecks precede58enginecases. This is not a claim that productionmodules neverimport before checks, nor an actualcampaign run.",
+    "Globalreservation/snapshot locks prevent reliance on interpreter-specific check/update atomicity. The32test reservations are conservative bookkeeping, not a claim32additionalphysicalfile bytes were read.",
+    "Newfixedv4STARTED/RECEIPT pairs absent forbothruntimes at observation. Oldconsumedprefix and frozenrevisions untouched. No guardinstallation, selfcheck/testexecution, processspawn oractualsource/native/model/network operation by auditor."
+  ],
+  "evidence": [
+    {
+      "bytes": 3348,
+      "path": "/tmp/civiclab-auditor-e01-guard-final-static-20261112.py",
+      "sha256": "a44e8fa303aa45df68e7c5c9e432f67c0f86f148e5bfab63e9bfaf88ef8dbbee"
+    },
+    {
+      "bytes": 1336,
+      "path": "/tmp/civiclab-auditor-e01-guard-final-static-20261112.json",
+      "sha256": "b8cf67e9f137244279ebd27b7adaa41dbd3ed1f4484303ee324e8bbbb6b310db"
+    }
+  ],
+  "exact_harness_guard_check_refs": [
+    {
+      "bytes": 5143,
+      "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    {
+      "bytes": 8395,
+      "path": "scripts/e01_authored_dirfd_checks_v3_20261112.py",
+      "sha256": "052999a1356ed53bba268b9ccf57e87da0c9f37f8f5a44d2bf51071a20f7fc46"
+    },
+    {
+      "bytes": 7026,
+      "path": "scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+      "sha256": "092098cecdbebf2e709a034862a8ae3e337635c65e90cbf7c49606bfe346c146"
+    }
+  ],
+  "finding_disposition": [
+    {
+      "evidence": "Exact guard431fe340 rejects raw..components in absolute andopen beforeabspath/join. ExistingG7effect-spied checks now include absolute andrelative link/../file variants; no protectedopen occurs during staticreview.",
+      "id": "E01-DIRFD-GUARD-V2-01",
+      "status": "PASS_STATIC_FIX_RUNTIME_SUBCASES_NOT_YET_RUN"
+    },
+    {
+      "evidence": "Exact harness092098ce uses one sharedRLock for full reservation predicate/update and snapshots. ExistingG2uses the actual supplied reserve/snapshot functions: same2threads each16one-byte conservative reservations, exact32delta; typedovercaprefusal leavesentire snapshot unchanged. No globalcap increase.",
+      "id": "E01-DIRFD-GUARD-V2-02",
+      "status": "PASS_STATIC_FIX_RUNTIME_CONCURRENCY_SUBCASE_NOT_YET_RUN"
+    }
+  ],
+  "findings": [],
+  "first_stop_audit_ref": {
+    "bytes": 11484,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_FIRST_OFFLINE_STOP_20261112.json",
+    "sha256": "b405f9bdb6a67078fa1402cfb8999dda0cdcbbb2ce2c95e5e8e9c24d103747b6"
+  },
+  "handoff_ref": {
+    "bytes": 4251,
+    "path": "reports/clerk2020_authored_guard_atomic_quota_final_freeze_20261112.json",
+    "sha256": "50a83ea150522c648cba89629528717f6317f91743d30200d9d89e1886532e62"
+  },
+  "initial_guard_findings_ref": {
+    "bytes": 5426,
+    "path": "reports/INDEPENDENT_AUDIT_E01_DIRFD_GUARD_V2_FINDINGS_20261112.json",
+    "sha256": "3458f4473b9a092813b41d0387157d9aaf00241b58fb4f503530ef5a4624d5f0"
+  },
+  "kind": "E01_AUTHORED_DIRFD_GUARD_REMEDY_AND_FIXED_OFFLINE_CONTINUATION_REVIEW_V1",
+  "limitations": [
+    "Trustedlocalauthoredtestguard, not hostilehost/OSrollback or complete race-free filesystemattestation.",
+    "Initial findings were staticpolicy/concurrency gaps, not an actualprotecteddataread or measuredquotaoverrun. They remainimmutable with this separatefix disposition.",
+    "No independentruntimevalidation performed in this exactreview; future66testresults require their own retainedevidence review."
+  ],
+  "not_accepted": [
+    "No broaderenginecodebinding:58successor tests and8selfchecks remainNOT_RUN until this scheduledcontinuation.",
+    "No replay of the previousfailed authoredscope or originalactualsourcecampaign. Alloldfull20axis charges and knownfirstsource read preserved; no refund/credittransfer.",
+    "No actualtechnicalsourcepacket preparation, successorallocation, BOOT/EXEC/nativequalification/rawPDFwork or modelinference.",
+    "No originalfullM2/sourceformat/count/ballot/geography/feature/statistical/scientific acceptance. No8secondrealdecoderadequacy inference from guardedtests."
+  ],
+  "ownership": "New independentreport and/tmppurechecks only; no workerfiles/private state/STATUS/Git edits by auditor.",
+  "paid_execution_released": false,
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "scientific_acceptance": false,
+  "source_or_native_execution_released": false,
+  "status": "PASS_EXACT_STATIC_GUARD_REMEDIES_AND_FINITE_66_TEST_CONTINUATION_NOT_ENGINE_OR_SOURCE_ACCEPTANCE",
+  "verification": {
+    "engine_tests_planned": 58,
+    "exact_pins": [
+      {
+        "bytes": 5143,
+        "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+        "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+      },
+      {
+        "bytes": 8395,
+        "path": "scripts/e01_authored_dirfd_checks_v3_20261112.py",
+        "sha256": "052999a1356ed53bba268b9ccf57e87da0c9f37f8f5a44d2bf51071a20f7fc46"
+      },
+      {
+        "bytes": 7026,
+        "path": "scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+        "sha256": "092098cecdbebf2e709a034862a8ae3e337635c65e90cbf7c49606bfe346c146"
+      }
+    ],
+    "first_stop_source_files_unchanged": 10,
+    "guard_cases_defined": 8,
+    "guard_installs_or_tests_or_process_source_native_network_model_operations_by_auditor": 0,
+    "handoff": {
+      "bytes": 4251,
+      "path": "reports/clerk2020_authored_guard_atomic_quota_final_freeze_20261112.json",
+      "sha256": "50a83ea150522c648cba89629528717f6317f91743d30200d9d89e1886532e62"
+    },
+    "new_marker_pairs_absent": {
+      "311": true,
+      "312": true
+    },
+    "old_engine_pins_unchanged": 18,
+    "old_guard_files_preserved": 3,
+    "quota_reservation_and_snapshot_locked": true,
+    "raw_traversal_rejection": true,
+    "status": "PASS_STATIC_FROZEN_GUARD_REMEDIES_AND_FINITE_OFFLINE_SCOPE_NOT_RUNTIME_RESULTS",
+    "total_tests_per_runtime": 66
+  }
+}

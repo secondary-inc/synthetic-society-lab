@@ -1,0 +1,92 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 8395,
+      "path": "scripts/e01_authored_dirfd_checks_v3_20261112.py",
+      "sha256": "052999a1356ed53bba268b9ccf57e87da0c9f37f8f5a44d2bf51071a20f7fc46"
+    },
+    {
+      "bytes": 7026,
+      "path": "scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+      "sha256": "092098cecdbebf2e709a034862a8ae3e337635c65e90cbf7c49606bfe346c146"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditexactguard431fe340/checks/harness below; no executionuntilrelease.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 5143,
+      "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    {
+      "bytes": 8395,
+      "path": "scripts/e01_authored_dirfd_checks_v3_20261112.py",
+      "sha256": "052999a1356ed53bba268b9ccf57e87da0c9f37f8f5a44d2bf51071a20f7fc46"
+    },
+    {
+      "bytes": 7026,
+      "path": "scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+      "sha256": "092098cecdbebf2e709a034862a8ae3e337635c65e90cbf7c49606bfe346c146"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PROPOSED_NOT_RELEASED: .venv/bin/python -B scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+    "PROPOSED_NOT_RELEASED_AFTER_FIRSTPASS: data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B scripts/verify_e01_monotone_successor_offline_v4_20261112.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Currentguard/harnessstillrequires exactindependentreview.",
+    "No58testsPASS or realrecoveryadequacy inferred.",
+    "Counter snapshots refer to recordedmeasurementpoints; subsequentboundedreceipt/output remainenforcedby samecap."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Purecodedrafts; no actualdata/native/source/privateowner/credential reads or model/network operations. Protectednegativepaths always behindeffectspydefinitions.",
+  "TASK_ID": "E01_AUTHORED_RAW_DOTDOT_LOCKED_QUOTA_OVERFLOW_FREEZE_20261112",
+  "TESTS_RUN_AND_RESULTS": "AST/count/hash checks only. No guardinstallation/test/scopeexecution.",
+  "UNRESOLVED_BLOCKERS": [
+    "Exactreviewandwrittenfinitecontinuation release"
+  ],
+  "all_engine_and58test_pins_unchanged_since_firststop": true,
+  "all_previous_guard_check_harness_versions_preserved": true,
+  "changes": [
+    "Reuse separatelyversioned guardv2 exact431fe340 raw..beforeabspath/join and samefstat-origin-threadlocal/rawargscontrols.",
+    "Reuse exactsharedRLock reservation/snapshot machinery.",
+    "G2 same2threads each make16accepted conservative1-byte reservations afterbarrier; mainasserts exactsnapshotdelta32.",
+    "Afterconcurrentincrements, G2 uses same reservefunction witha smaller localcap toforce typedScopeStop on2-byte request; exactentiresnapshotmustremainunchanged. No capincrease, extra cases or processes.",
+    "Newchecks v3 and harnessv4 names/prefix preserve every earlier frozenrevision andfailedscope."
+  ],
+  "continuation_scope": {
+    "CPU_seconds": 120,
+    "engine_tests": 58,
+    "failfast_stop_first_unexpected_failure": true,
+    "guard_checks": 8,
+    "invocations_each": 1,
+    "output_bytes": 262144,
+    "prefix": "reports/clerk2020_monotone_offline_v4_<runtime>_20261112",
+    "read_bytes": 536870912,
+    "runtime_order": [
+      "312",
+      "311_only_after312PASS"
+    ],
+    "status": "NOT_RELEASED_PENDING_INDEPENDENT_REVIEW_AND_LEAD",
+    "subprocess_fork_source_PDF_native_network_model": 0,
+    "temporary_write_bytes": 134217728,
+    "total_tests_each": 66,
+    "wall_seconds": 120
+  },
+  "guard_v2_ref": {
+    "bytes": 5143,
+    "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+    "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+  },
+  "latest_harness_ref": {
+    "bytes": 7026,
+    "path": "scripts/verify_e01_monotone_successor_offline_v4_20261112.py",
+    "sha256": "092098cecdbebf2e709a034862a8ae3e337635c65e90cbf7c49606bfe346c146"
+  },
+  "previous_static_revision_ref": {
+    "bytes": 14434,
+    "path": "reports/clerk2020_authored_guard_traversal_quota_revision_20261112.json",
+    "sha256": "4919b54e683f7f9774d816e39aca2332ac8cf0fc2d66e9c4ed14c7cfaa5bfb46"
+  },
+  "status": "FROZEN_STATIC_ONLY_AWAIT_EXACT_REVIEW_NO_EXECUTION"
+}

@@ -1,0 +1,223 @@
+{
+  "actor": "lead",
+  "allocation": {
+    "cost_usd": 0,
+    "engineering_axes": {
+      "staging_write_bytes": 131072,
+      "total_backend_attempts": 10,
+      "total_page_extractions": 357,
+      "warmup_backend_attempts": 8,
+      "warmup_page_extractions": 238
+    },
+    "legacy_axes": {
+      "active_time_ms": 120000,
+      "backend_attempts": 2,
+      "bootstrap_attempts": 1,
+      "code_integrity_read_bytes": 536870912,
+      "cpu_ms": 60000,
+      "execution_admission_attempts": 1,
+      "inspection_data_write_bytes": 262144,
+      "metadata_read_bytes": 8388608,
+      "owned_write_bytes": 524288,
+      "page_extractions": 119,
+      "record_verification_read_bytes": 2097152,
+      "recorder_control_write_bytes": 131072,
+      "source_jobs": 1,
+      "source_read_attempts": 2,
+      "source_read_bytes": 859913
+    },
+    "model_calls": 0,
+    "network_requests": 0,
+    "new_native_source_jobs_max": 1,
+    "new_root_BOOT_max": 1,
+    "new_root_EXEC_max": 1,
+    "no_credit_transfer_from_predecessor": true,
+    "no_second_recovery_or_dynamic_campaign": true,
+    "ordinal_within_new_fixed_scope": 1,
+    "phases": {
+      "BOOT": {
+        "active_time_ms": 45000,
+        "backend_imports_or_parse": 0,
+        "code_integrity_bytes": 268435456,
+        "cpu_ms": 10000,
+        "data_or_source_access": false,
+        "metadata_bytes": 5242880,
+        "source_reads": 0
+      },
+      "EXEC": {
+        "active_time_ms": 75000,
+        "all_wire_bytes_max": 2097152,
+        "code_integrity_bytes": 268435456,
+        "cpu_ms": 50000,
+        "integrity_remainder": 1048576,
+        "metadata_bytes": 2883584,
+        "other_metadata_bytes": 786432,
+        "source_bytes": 859913,
+        "source_jobs": 1,
+        "source_pages": 119,
+        "source_parses": 2,
+        "source_reads": 2,
+        "two_children_integrity_each": 133169152,
+        "two_hot_code_checks_each": 524288
+      },
+      "delivery": {
+        "initial_write_slots": 16384,
+        "metadata_precharge": 262144,
+        "packet_bytes_max": 262144
+      },
+      "equalities": [
+        "268435456+268435456=536870912code",
+        "2*133169152+2*524288+1048576=268435456EXECcode",
+        "262144+5242880+2883584=8388608metadata",
+        "2097152+786432=2883584EXECmetadata",
+        "2*119+119=357totalpageceiling",
+        "262144+131072+131072=524288ownedwrites"
+      ],
+      "old_partitions_immutable": true,
+      "reason": "Two cold source-isolated children need explicit warmup/file-read/full-integrity allowances in EXEC; charging these to a1MiB hot-code-only slice would be false. Total global512MiB integrity and8MiB metadata are unchanged.",
+      "requires_new_independent_methods_disposition": true
+    },
+    "same_two_sources_same_order": true,
+    "status": "ALLOCATED_CEILINGS_WITH_SEPARATE_ACTUAL_PHASE_GATES"
+  },
+  "authority": {
+    "basis": "Owner standing delegation of routine decisions and justified bounded recovery; no new financial authority or external publication.",
+    "rule": {
+      "bytes": 3232,
+      "path": ".cursor/rules/responsible-autonomy.mdc",
+      "sha256": "a8920bbe75d18dd5c5a737c99bc68502e6ad221208370db24c2a0cca351f1097"
+    },
+    "source": {
+      "bytes": 3594,
+      "path": "AGENTS.md",
+      "sha256": "0457721771be617392369f0e2a6f294c98a9a16610f61b6d8e3bd0aafd5fcde1"
+    }
+  },
+  "client_date": "2026-11-12",
+  "code_audit": {
+    "bytes": 15534,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_RESULTS_V2_1_20261112.json",
+    "sha256": "5e1b9d441b3e740bee40c96efc5983381533fd4448caf630600acfc1b3610d04"
+  },
+  "code_binding": {
+    "bytes": 3957,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_BINDING_V2_1_20261112.json",
+    "sha256": "9437e2328e9eaacfc294123b90c70609c336b6f7e606a6506a7f4a372ebe7354"
+  },
+  "cumulative_original_and_successor_ceiling": {
+    "engineering_axes": {
+      "staging_write_bytes": 262144,
+      "total_backend_attempts": 20,
+      "total_page_extractions": 714,
+      "warmup_backend_attempts": 16,
+      "warmup_page_extractions": 476
+    },
+    "known_original_source_bytes": 602172,
+    "legacy_axes": {
+      "active_time_ms": 240000,
+      "backend_attempts": 4,
+      "bootstrap_attempts": 2,
+      "code_integrity_read_bytes": 1073741824,
+      "cpu_ms": 120000,
+      "execution_admission_attempts": 2,
+      "inspection_data_write_bytes": 524288,
+      "metadata_read_bytes": 16777216,
+      "owned_write_bytes": 1048576,
+      "page_extractions": 238,
+      "record_verification_read_bytes": 4194304,
+      "recorder_control_write_bytes": 262144,
+      "source_jobs": 2,
+      "source_read_attempts": 4,
+      "source_read_bytes": 1719826
+    },
+    "original_full_charges_retained": true,
+    "restored_credit": 0,
+    "scope": "Original formatcampaignv1+proposed fixed recoveryv2 ONLY; six qualification scopes remain separately fully charged in inherited history and are not omitted/zeroed. Technical preparation and authored tests have separate nonresearch scopes."
+  },
+  "external_actions": {
+    "credit_purchases": 0,
+    "model_requests": 0,
+    "network_requests": 0,
+    "publication": false
+  },
+  "financial_limits_USD": {
+    "E01_paid_inference": 0,
+    "E02_cumulative": 1,
+    "shared_cumulative": 5,
+    "this_recovery": 0
+  },
+  "identities": {
+    "anchor_id": "clerk2020_format_anchor_v2",
+    "campaign_id": "clerk2020_source_format_native_v2",
+    "control_namespace": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v2",
+    "job_id": "clerk2020_source_format_job2",
+    "registry_namespace": "data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v2",
+    "source_set_id": "clerk2020_counts_2026_nominees_FORMAT_v1",
+    "source_set_index_path": "data/processed/e01_clerk2020_m2_registry/source_sets/clerk2020_counts_2026_nominees_FORMAT_v1.successor-v2.local.json",
+    "study_id": "E01_CLERK2020_M2_FORMAT_INSPECTION"
+  },
+  "kind": "LEAD_E01_FIXED_MONOTONE_RECOVERY_ALLOCATION_V2_1",
+  "limits": {
+    "active_time_ms": 120000,
+    "code_integrity_read_bytes": 536870912,
+    "cpu_ms": 60000,
+    "inspection_data_write_bytes": 262144,
+    "metadata_read_bytes": 8388608,
+    "owned_write_bytes": 524288,
+    "record_verification_read_bytes": 2097152,
+    "recorder_control_write_bytes": 131072,
+    "rss_peak_bytes": 268435456,
+    "runtime_stage_bytes": 65536,
+    "sealed_prefix_stage_bytes": 49152,
+    "source_backend_attempts": 2,
+    "source_jobs": 1,
+    "source_page_extractions": 119,
+    "source_read_attempts": 2,
+    "source_read_bytes": 859913,
+    "staging_write_bytes": 131072,
+    "total_page_extractions": 357,
+    "total_reader_attempts": 10,
+    "warmup_page_extractions": 238,
+    "warmup_reader_attempts": 8,
+    "worker_receipts_stage_bytes": 16384
+  },
+  "methods": {
+    "bytes": 56031,
+    "path": "configs/e01_clerk2020_monotone_successor_methods_v2_1_20261112.json",
+    "sha256": "184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d"
+  },
+  "methods_audit": {
+    "bytes": 13001,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_METHODS_V2_1_20261112.json",
+    "sha256": "c59897f3e73fa09609461fb940bd2aa1a40e2ce715766c6385f80e815c990e99"
+  },
+  "phase_gates": {
+    "EXEC_preparation": "NOT_RELEASED_UNTIL_ACTUAL_BOOT_PREPARED_REVIEW",
+    "actual_BOOT": "NOT_RELEASED_UNTIL_EXACT_PACKET_REVIEW",
+    "actual_EXEC": "NOT_RELEASED_UNTIL_PREPARED_AND_PARTICULAR_EXEC_REVIEWS",
+    "original_full_M2_and_research": "INCOMPLETE",
+    "source_format_acceptance": "NOT_RUN"
+  },
+  "preservation": "All original campaign data, private source0 read receipt, full legacy/engineering charges, six qualification histories, stopped technical test scope and rejected guard drafts remain immutable. No old packet or consumed technical prefix is reset.",
+  "reason": "The original source job stopped at INPUT while attempting to raise an inherited CPU hard limit. The separate reviewed successor lowers both parent and child to 7/8 seconds, retains the original fully charged failed scope, and has passed 66 authored checks on each runtime with independent retained-evidence/code review.",
+  "recorded_at_utc": "2026-11-13T02:38:13.319446+00:00",
+  "status": "RECOVERY_ALLOCATION_RECORDED_BOOT_METADATA_PREPARATION_ONLY_RELEASED",
+  "stop_rule": "Stop the fixed successor on its first unexpected failure. No automatic replay, second recovery, cap increase, decoder fallback or refund. Real eight-second decoder adequacy remains unknown.",
+  "technical_BOOT_preparation": {
+    "campaign_issue_or_execution": false,
+    "helper": {
+      "bytes": 8888,
+      "path": "scripts/prepare_e01_source_phase_v3.py",
+      "sha256": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2"
+    },
+    "input_review": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_BINDING_V2_1_20261112.json",
+    "maximum_metadata_body_reads": 2,
+    "maximum_reserved_read_bytes": 1048576,
+    "maximum_write_bytes": 196608,
+    "no_retry": true,
+    "one_invocation": true,
+    "output": "data/processed/e01_clerk2020_source_packet_preparation_v3/boot-packet.local.json",
+    "phase": "BOOT",
+    "source_or_runtime_binary_reads": 0
+  }
+}

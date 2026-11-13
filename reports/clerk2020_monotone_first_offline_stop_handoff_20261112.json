@@ -1,0 +1,187 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 47502,
+      "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+      "sha256": "e021286d4983d526d8cac3598836b4c20d6c8b9d98268a78f14b717b6851c47a"
+    },
+    {
+      "bytes": 48537,
+      "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+      "sha256": "6c3c259bf7be9f300dbbfa4a961609f404d305dc4dc8445b9e5abf441e01856c"
+    },
+    {
+      "bytes": 16721,
+      "path": "tests/test_clerk2020_native_campaign_v2.py",
+      "sha256": "d0a8c18714669987df94687ca9af4505a392bf76b365c3e1ac4a2a080e2ddb65"
+    },
+    {
+      "bytes": 9583,
+      "path": "tests/test_clerk2020_source_worker_v2.py",
+      "sha256": "1d0629ee1cc70d3340060f8bcaf26612e7804374ec7ac2d0bc37f58634ef35c6"
+    },
+    {
+      "bytes": 25040,
+      "path": "tests/test_clerk2020_source_job_v2.py",
+      "sha256": "d7d82700920666fcc3477d6d9a31bc3815083f7830d40d168291e0d9f22d8249"
+    },
+    {
+      "bytes": 6360,
+      "path": "scripts/verify_e01_monotone_successor_offline_20261112.py",
+      "sha256": "5f8f764056207ba9e9d1f5184b06857c5fd11664792a72e8cb5ccd6273fd337b"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditor/root review preservedfirststop and narrowguardproposal; workerawaitsfinitecontinuation before any furtherexecution.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 3229,
+      "path": "reports/clerk2020_monotone_offline_312_20261112.txt",
+      "sha256": "4521e727cb9443cecd760a90bf5f1a207169a35b3b63ba8401fc75ad51893d6b"
+    },
+    {
+      "bytes": 280,
+      "path": "reports/clerk2020_monotone_offline_312_20261112_STARTED.json",
+      "sha256": "bc756f90f74ecbc2fb22dd1a2dd21d8da6ec20bea22cf2edbac3c07897fece36"
+    },
+    {
+      "bytes": 1353,
+      "path": "reports/clerk2020_monotone_offline_312_20261112_RECEIPT.json",
+      "sha256": "d6586396974f35efccc0bd473d7318f27efea38d0aaa4994f4b51fa27f691d55"
+    },
+    {
+      "bytes": 194454,
+      "path": "reports/clerk2020_monotone_offline_first_stop_sources_20261112.json",
+      "sha256": "56ef205b04733350f105ca8dabfd4d32c2b429db8e10ccb4f24509d6af85eb76"
+    },
+    {
+      "bytes": 184773,
+      "path": "reports/clerk2020_monotone_successor_pre_remedy_sources_20261112.json",
+      "sha256": "dedf78fe1745af36c0cfe2791dea41ae52ce31593447f67b5b618c2bc1160a53"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Originalonce invocation: .venv/bin/python -B scripts/verify_e01_monotone_successor_offline_20261112.py. It is consumed; do not rerun."
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Neitherremedyhasindependentacceptanceyet.",
+    "No full58testdata and no3.11evidence.",
+    "Failingharness ispreserved; futurefixmustnotweaken actualdata guards."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only authoredtmpfilesystem/purecode executed; noPDF/native, subprocess/fork/network/model or actualsource/ownerdata.",
+  "TASK_ID": "E01_MONOTONE_TWO_REMEDIES_FIRST_AUTHORED_SCOPE_STOP_20261112",
+  "TESTS_RUN_AND_RESULTS": "One3.12invocation stoppedfailfast afterfirstunexpectedteardownguardfailure; no fullsuitePASS.",
+  "UNRESOLVED_BLOCKERS": [
+    "Independent failure/harness correction review and finitecontinuation release",
+    "Broaderauthoredtests/codebinding/actualrootgates remainblocked"
+  ],
+  "before_after": [
+    {
+      "after": {
+        "bytes": 47502,
+        "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+        "sha256": "e021286d4983d526d8cac3598836b4c20d6c8b9d98268a78f14b717b6851c47a"
+      },
+      "before": {
+        "bytes": 46824,
+        "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+        "sha256": "e5250bd6c43499dbb27bfea24e905d3ed8ef5842385791b09f8d10822882abf2"
+      },
+      "diff": "--- frozen/src/civiclab/e01/clerk2020_native_campaign_v2.py\n+++ remedy/src/civiclab/e01/clerk2020_native_campaign_v2.py\n@@ -231,7 +231,7 @@\n     \"\"\"Fixed BOOT1/EXEC1; source-set/root identity and immutable CAS anchors.\"\"\"\n     def __init__(self, store, source_set_sha256):\n         require(type(store) is FixedStore and hex64(source_set_sha256))\n-        self.store=store;self.source_sha=source_set_sha256\n+        self.store=store;self.source_sha=source_set_sha256;self.boot_consumed_sha=None\n \n     def binding(self):\n         return {'campaign_id':CAMPAIGN,'source_set_id':SOURCE_SET,'source_set_sha256':self.source_sha,\n@@ -267,43 +267,58 @@\n                      'source_access_before_admission':False,'credit_restored':0,\n                      'created_at_utc':datetime.now(timezone.utc).isoformat()}\n         ref=self.store.create(slot,canonical(reservation))\n-        with self.store.predecessor_lock(),self.store.lock():\n-            if phase=='BOOT':\n-                self.store.create('source_index',canonical(self.binding()))\n-                self.store.create('registration',canonical({'kind':'CLERK_SOURCE_REGISTRATION_V2_1',\n-                                  **self.binding(),'boot_issued_sha256':expected}))\n-            else:\n+        if phase=='BOOT':\n+            # Consumed is not adopted: no successor index/registration yet.\n+            self.boot_consumed_sha=expected\n+        else:\n+            with self.store.predecessor_lock(),self.store.lock():\n                 index,_=self.store.read('source_index',2049)\n                 require(canonical(decode(index))==canonical(self.binding()))\n                 current,_=self.current()\n                 require(current==issued['expected_anchor_sha256'])\n         return issued,reservation,ref\n \n+    def adopt_successor(self, issued_sha256):\n+        \"\"\"After durable BOOT metering, validate under lock before adoption.\"\"\"\n+        require(hex64(issued_sha256) and self.boot_consumed_sha==issued_sha256\n+                and self.store.read_meter is not None)\n+        with self.store.predecessor_lock(),self.store.lock():\n+            require(not self.store.exists('source_index') and not self.store.exists('registration'))\n+            proof=self._verify_predecessor_locked()\n+            self.store.create('source_index',canonical(self.binding()))\n+            self.store.create('registration',canonical({'kind':'CLERK_SOURCE_REGISTRATION_V2_1',\n+                              **self.binding(),'boot_issued_sha256':issued_sha256}))\n+        self.boot_consumed_sha=None\n+        return proof\n+\n     def verify_predecessor(self):\n         \"\"\"Hash/read only the fixed stopped ancestor; never restarts its ledger.\"\"\"\n         with self.store.predecessor_lock():\n-            bodies={p:self.store.read_predecessor(r) for p,r in PREDECESSOR_REFS.items()}\n-            index=decode(bodies[PREDECESSOR_INDEX],2048)\n-            require(index['campaign_id']==PREDECESSOR_CAMPAIGN\n-                    and index['source_set_id']==SOURCE_SET and index['source_set_sha256']==self.source_sha\n-                    and index['repository_root_sha256']==sha(str(self.store.root).encode()))\n-            failure=decode(bodies[PREDECESSOR_FAILURE],8192)\n-            require(failure['kind']=='CLERK_SOURCE_FAILED_OR_UNKNOWN_V1_2'\n-                    and failure['phase']=='EXEC' and failure['no_retry'] is True\n-                    and failure['source_format_accepted'] is False and failure['credit_restored']==0)\n-            state=failure['state'];require(sha(canonical(state))==PREDECESSOR_STATE_SHA)\n-            exact(state['legacy_axes'],CEILINGS);exact(state['engineering_axes'],ENGINEERING_CEILINGS)\n-            for axes,ceilings in [(state['legacy_axes'],CEILINGS),(state['engineering_axes'],ENGINEERING_CEILINGS)]:\n-                for key,axis in axes.items():\n-                    require(axis['ceiling']==ceilings[key] and axis['charged']==axis['ceiling']\n-                            and axis['held']==axis['reserved']==0)\n-            # A terminal/second-source predecessor cannot become this stopped successor.\n-            absent=[PREDECESSOR_REGISTRY+'/anchor-'+str(i)+'.local.json' for i in (3,4,5)]\n-            absent += [PREDECESSOR_RUN+'/'+name for name in\n-                ('source-1-receipt.local.json','child-1.local.json','seal.local.json',\n-                 'writer-ACK.local.json','caller-observation.local.json')]\n-            for relative in absent:\n-                path=self.store.root/relative;no_alias(path);require(not path.exists())\n+            return self._verify_predecessor_locked()\n+\n+    def _verify_predecessor_locked(self):\n+        bodies={p:self.store.read_predecessor(r) for p,r in PREDECESSOR_REFS.items()}\n+        index=decode(bodies[PREDECESSOR_INDEX],2048)\n+        require(index['campaign_id']==PREDECESSOR_CAMPAIGN\n+                and index['source_set_id']==SOURCE_SET and index['source_set_sha256']==self.source_sha\n+                and index['repository_root_sha256']==sha(str(self.store.root).encode()))\n+        failure=decode(bodies[PREDECESSOR_FAILURE],8192)\n+        require(failure['kind']=='CLERK_SOURCE_FAILED_OR_UNKNOWN_V1_2'\n+                and failure['phase']=='EXEC' and failure['no_retry'] is True\n+                and failure['source_format_accepted'] is False and failure['credit_restored']==0)\n+        state=failure['state'];require(sha(canonical(state))==PREDECESSOR_STATE_SHA)\n+        exact(state['legacy_axes'],CEILINGS);exact(state['engineering_axes'],ENGINEERING_CEILINGS)\n+        for axes,ceilings in [(state['legacy_axes'],CEILINGS),(state['engineering_axes'],ENGINEERING_CEILINGS)]:\n+            for key,axis in axes.items():\n+                require(axis['ceiling']==ceilings[key] and axis['charged']==axis['ceiling']\n+                        and axis['held']==axis['reserved']==0)\n+        # A terminal/second-source predecessor cannot become this stopped successor.\n+        absent=[PREDECESSOR_REGISTRY+'/anchor-'+str(i)+'.local.json' for i in (3,4,5)]\n+        absent += [PREDECESSOR_RUN+'/'+name for name in\n+            ('source-1-receipt.local.json','child-1.local.json','seal.local.json',\n+             'writer-ACK.local.json','caller-observation.local.json')]\n+        for relative in absent:\n+            path=self.store.root/relative;no_alias(path);require(not path.exists())\n         return sha(canonical(PREDECESSOR_REFS))\n \n     def current(self):\n"
+    },
+    {
+      "after": {
+        "bytes": 48537,
+        "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+        "sha256": "6c3c259bf7be9f300dbbfa4a961609f404d305dc4dc8445b9e5abf441e01856c"
+      },
+      "before": {
+        "bytes": 48514,
+        "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+        "sha256": "2bb6a0eedd28f8781fb492ff748d38ff7abccf176536564baa675ff3da550f5e"
+      },
+      "diff": "--- frozen/src/civiclab/e01/clerk2020_source_job_v2.py\n+++ remedy/src/civiclab/e01/clerk2020_source_job_v2.py\n@@ -239,14 +239,15 @@\n         genesis={'kind':'CLERK_SOURCE_GENESIS_V2_1','binding':reg.binding(),'static_spec_sha256':digest(p['static_spec']),\n                  'decision_sha256':digest(p['decision']),'issued_sha256':digest(p['issued']),\n                  'reservation_sha256':res_ref['sha256'],'initial_state':c.snapshot(),'previous':None}\n-        gref=store.create('genesis',canonical(genesis));a0=reg.cas(None,'anchor_initial',{'genesis_sha256':gref['sha256']})\n+        gref=store.create('genesis',canonical(genesis))\n         store.create('normal_journal',b'');journal=n.NativeJournal(store,gref['sha256'],c)\n         journal.append('BOOT','BOOT_RESERVE',{'reservation_token_sha256':res_ref['sha256']},\n             reserve={'metadata_read_bytes':5242880,'code_integrity_read_bytes':268435456,\n                      'active_time_ms':45000,'cpu_ms':10000})\n         window.check()\n         budget=ReadBudget(5242880);store.read_meter=budget;spec=p['static_spec']\n-        predecessor_refs_sha=reg.verify_predecessor()\n+        predecessor_refs_sha=reg.adopt_successor(digest(p['issued']))\n+        a0=reg.cas(None,'anchor_initial',{'genesis_sha256':gref['sha256']})\n         methods=metadata_json(budget.read(root,spec['methods_ref']),65536)\n         require(methods['kind']=='E01_FIXED_SOURCE_FORMAT_MONOTONE_SUCCESSOR_METHODS_V2_1_CANDIDATE')\n         require(canonical(spec['ancestor_refs'])==canonical(methods['past_consumed_qualification_records'])\n@@ -459,7 +460,7 @@\n             and m['warmup']['first_refusal'] is None and m['source_counts_or_features_adopted'] is False\n             and m['model_calls']==0 and m['cost_usd']==0 and m['native_backend_hash_matched'] is True\n             and type(m['cpu_ms_through_private_projection']) is int\n-            and 0<m['cpu_ms_through_private_projection']<=21000)\n+            and 0<m['cpu_ms_through_private_projection']<=8000)\n     for key in ['registration_sha256','execution_decision_sha256','reservation_sha256']:\n         require(hex64(m[key]))\n     for key in ['source_bytes','source_pages','source_readers','warmup_readers','warmup_pages',\n"
+    },
+    {
+      "after": {
+        "bytes": 16721,
+        "path": "tests/test_clerk2020_native_campaign_v2.py",
+        "sha256": "d0a8c18714669987df94687ca9af4505a392bf76b365c3e1ac4a2a080e2ddb65"
+      },
+      "before": {
+        "bytes": 15908,
+        "path": "tests/test_clerk2020_native_campaign_v2.py",
+        "sha256": "de1dc18c1a7865cf287aa77ef954673a11e9e029552b2136e85075a91f8d68f8"
+      },
+      "diff": "--- frozen/tests/test_clerk2020_native_campaign_v2.py\n+++ remedy/tests/test_clerk2020_native_campaign_v2.py\n@@ -5,6 +5,7 @@\n import tempfile\n import threading\n import unittest\n+from unittest.mock import patch\n \n from civiclab.e01 import clerk2020_native_campaign_v2 as n\n \n@@ -14,7 +15,15 @@\n         self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name).resolve()\n         lock=self.root/n.PREDECESSOR_REGISTRY/'registrar.lock';lock.parent.mkdir(parents=True);lock.write_bytes(b'')\n         self.store=n.FixedStore(self.root);self.reg=n.FixedRegistrar(self.store,n.sha(b'AUTHORED_SOURCE_SET'))\n-    def tearDown(self):self.temp.cleanup()\n+        # These persistence-only tests isolate registry IO; full predecessor\n+        # validation uses real authored records in source_job_v2 tests.\n+        self.proof_patch=patch.object(n.FixedRegistrar,'_verify_predecessor_locked',return_value=n.sha(b'MOCK_PREDECESSOR_PROOF'))\n+        self.proof_patch.start()\n+    def tearDown(self):self.proof_patch.stop();self.temp.cleanup()\n+    def adopt(self,reg,store,h):\n+        store.read_meter=n.ClosingReadMeter()\n+        reg.adopt_successor(h)\n+        store.read_meter=None\n     def issued(self,phase='BOOT',anchor=None):\n         obj={'kind':'CLERK_SOURCE_ISSUED_V2_1','phase':phase,'ordinal':1,'binding':self.reg.binding(),\n              'decision_sha256':n.sha(b'AUTHORED_DECISION'),'expected_anchor_sha256':anchor,\n@@ -22,6 +31,7 @@\n         raw=n.canonical(obj);return raw,n.sha(raw)\n     def bootstrap(self):\n         raw,h=self.issued();self.reg.consume('BOOT',raw,h)\n+        self.adopt(self.reg,self.store,h)\n         a0=self.reg.cas(None,'anchor_initial',{'genesis_sha256':n.sha(b'AUTHORED_GENESIS')})\n         a1=self.reg.cas(a0['sha256'],'anchor_boot',{'receipt_sha256':n.sha(b'AUTHORED_RECEIPT')})\n         return a1['sha256']\n@@ -45,7 +55,10 @@\n         reservation,_=self.store.read('boot_reservation',2049)\n         self.assertFalse(n.decode(reservation)['source_access_before_admission'])\n         self.assertEqual(n.decode(reservation)['precharged_prefix'],n.PREFIX_BUDGETS['BOOT'])\n+        self.assertFalse(self.store.exists('source_index'));self.assertFalse(self.store.exists('registration'))\n+        self.adopt(self.reg,self.store,h)\n         self.assertEqual(self.store.path('registration').stat().st_mode&0o777,0o600)\n+        with self.assertRaises(n.Refused):self.adopt(self.reg,self.store,h)\n \n     def test_crossed_root_or_source_set_refused_before_new_state(self):\n         raw,_=self.issued();obj=n.decode(raw)\n@@ -91,7 +104,8 @@\n             if event=='registration.before':raise RuntimeError('AUTHORED_CRASH')\n         store=n.FixedStore(self.root,crash);reg=n.FixedRegistrar(store,n.sha(b'AUTHORED_SOURCE_SET'))\n         raw,h=self.issued()\n-        with self.assertRaises(RuntimeError):reg.consume('BOOT',raw,h)\n+        reg.consume('BOOT',raw,h)\n+        with self.assertRaises(RuntimeError):self.adopt(reg,store,h)\n         self.assertTrue(store.exists('boot_reservation'))\n         with self.assertRaises(FileExistsError):reg.consume('BOOT',raw,h)\n \n"
+    },
+    {
+      "after": {
+        "bytes": 9583,
+        "path": "tests/test_clerk2020_source_worker_v2.py",
+        "sha256": "1d0629ee1cc70d3340060f8bcaf26612e7804374ec7ac2d0bc37f58634ef35c6"
+      },
+      "before": {
+        "bytes": 9165,
+        "path": "tests/test_clerk2020_source_worker_v2.py",
+        "sha256": "d1cd76382346f6775b6d150842f84c28094efb0108be38908ca74070ecaebf25"
+      },
+      "diff": "--- frozen/tests/test_clerk2020_source_worker_v2.py\n+++ remedy/tests/test_clerk2020_source_worker_v2.py\n@@ -97,6 +97,11 @@\n \n     def test_parent_refuses_backend_false_unknown_metadata_or_missing_nonproject(self):\n         raw=self.valid_receipt();j.validate_child(raw,self.sid,self.context,self.catalog)\n+        boundary=j.decode(raw,262144);boundary['metadata']['cpu_ms_through_private_projection']=8000\n+        j.validate_child(j.canonical(boundary),self.sid,self.context,self.catalog)\n+        for value in (8001,21000):\n+            boundary['metadata']['cpu_ms_through_private_projection']=value\n+            with self.assertRaises(j.n.Refused):j.validate_child(j.canonical(boundary),self.sid,self.context,self.catalog)\n         for kind in ['backend','unknown','missing']:\n             obj=j.decode(raw,262144)\n             if kind=='backend':obj['metadata']['native_backend_hash_matched']=False\n"
+    },
+    {
+      "after": {
+        "bytes": 25040,
+        "path": "tests/test_clerk2020_source_job_v2.py",
+        "sha256": "d7d82700920666fcc3477d6d9a31bc3815083f7830d40d168291e0d9f22d8249"
+      },
+      "before": {
+        "bytes": 24026,
+        "path": "tests/test_clerk2020_source_job_v2.py",
+        "sha256": "f4199f3cc38d9c5740b616a6a7ba193a92469017762fc99fb036e1062a3006ba"
+      },
+      "diff": "--- frozen/tests/test_clerk2020_source_job_v2.py\n+++ remedy/tests/test_clerk2020_source_job_v2.py\n@@ -139,11 +139,26 @@\n             result=self.boot()\n         self.assertEqual(result['status'],'FAILED_OR_UNKNOWN_NO_RETRY')\n         self.assertEqual(path.read_bytes(),b'AUTHORED_DRIFT');source.assert_not_called();dispatch.assert_not_called()\n-        self.assertTrue(n.FixedStore(self.root).exists('boot_issued'))\n+        store=n.FixedStore(self.root);self.assertTrue(store.exists('boot_issued'))\n+        self.assertTrue(store.exists('boot_reservation'))\n+        self.assertFalse(store.exists('source_index'));self.assertFalse(store.exists('registration'))\n+        self.assertFalse(store.exists('anchor_initial'))\n \n     def test_successor_index_is_fixed_adjacent_same_source_set(self):\n         before=(self.root/n.PREDECESSOR_INDEX).read_bytes()\n-        result=self.boot();self.assertEqual(result['status'],'BOOT_PREPARED_NO_SOURCE')\n+        original=n.FixedStore.read_predecessor;checks=[]\n+        def before_read(store,ref):\n+            self.assertIsNotNone(store.read_meter)\n+            self.assertTrue(store.exists('boot_reservation'));self.assertTrue(store.exists('normal_journal'))\n+            self.assertFalse(store.exists('source_index'));self.assertFalse(store.exists('registration'))\n+            self.assertIn(b'BOOT_RESERVE',store.path('normal_journal').read_bytes())\n+            reserved=store.read_meter.used\n+            body=original(store,ref)\n+            self.assertEqual(store.read_meter.used-reserved,ref['bytes']+1)\n+            checks.append(ref['path']);return body\n+        with patch.object(n.FixedStore,'read_predecessor',before_read):result=self.boot()\n+        self.assertEqual(result['status'],'BOOT_PREPARED_NO_SOURCE')\n+        self.assertEqual(set(checks),set(n.PREDECESSOR_REFS))\n         self.assertEqual((self.root/n.PREDECESSOR_INDEX).read_bytes(),before)\n         self.assertEqual(n.SOURCE_INDEX,n.PREDECESSOR_INDEX.removesuffix('.local.json')+'.successor-v2.local.json')\n         index=j.decode((self.root/n.SOURCE_INDEX).read_bytes())\n"
+    }
+  ],
+  "guard_fix_proposal_only": {
+    "change": "Track directorydescriptor origins/identities in a narrow os.open wrapper and expose an in-flight auditeddirfd context; resolve auditrelativepaths against the verified directoryfd rather than cwd. Keep actualsyscall dir_fd semantics. Unknown/unmapped/reused dirfd refuses. Absoluteactualrepo data/credential prohibition remains. Do not whitelist data basename or disable guard.",
+    "checks": "Static/unit authoredtemporarydir open/cleanup must demonstrate known-dirfd resolution and realrepo data/symlink/unknownfd refusals under separatelyfinite reviewedharnessscope.",
+    "continuation": "Originalstarted/receipt/source/log immutable; newfixedtechnicalscope v2 required. No automatic3.11 or3.12run.",
+    "status": "NOT_IMPLEMENTED_NEEDS_REVIEW_AND_FINITE_CONTINUATION"
+  },
+  "observed_failure": {
+    "CPU_milliseconds": 50,
+    "actual_repository_data_access": false,
+    "cause": "Harness auditopen handler interprets relative data against repositorycwd, ignoring directorydescriptor used by shutil.rmtree; falsepositive beforeactualopen.",
+    "counts": {
+      "output_bytes": 1875,
+      "reserved_read_bytes": 2567303,
+      "reserved_write_bytes": 10985
+    },
+    "error_type": "ScopeStop",
+    "guard_reason": "NO_ACTUAL_DATA_OR_CREDENTIALS",
+    "other_runtime": "NOT_RUN",
+    "retry": "NOT_RUN",
+    "runtime": "312",
+    "successful": false,
+    "tests_run": 1,
+    "wall_milliseconds": 62,
+    "where": "test_anchor_cas_and_exec_ordinal tearDown -> TemporaryDirectory.cleanup -> shutil.rmtree -> os.open(relative name,dir_fd=temporary_directory_fd)"
+  },
+  "preserved_pre_remedy_handoff": {
+    "bytes": 66429,
+    "path": "reports/clerk2020_monotone_successor_v2_1_draft_handoff_20261112.json",
+    "sha256": "0abd078bd279eab491374f97a2278060c42e948cb585b7036a612d00fcc342e9"
+  },
+  "remedies_implemented_not_accepted": [
+    "BOOTconsume now persists only earlyissued/reservation; noindex/registration.",
+    "After durablegenesis/journalBOOT_RESERVE and attachedmetadata meter, adopt_successor holdsold/newlocks, verifiesallfixedpredecessorreads, thencreatesindex/registration; initialanchor followsadoption.",
+    "ChildCPUreceipt boundary<=8000; existingworker test checks8000acceptance,8001/21000refusal.",
+    "Existingtests adapted toseparateconsume/adopt and assertnoclaimedlinkonpredecessorfailure/metersreserve-before-read; testcount58unchanged."
+  ],
+  "scope_review_ref": {
+    "bytes": 15338,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_DRAFT_SCOPE_20261112.json",
+    "sha256": "08ca2ec816c08dec8cfb948cfb54e89ed3d816e1d6d6b214caff5f1ad39f0c48"
+  },
+  "status": "STOPPED_FIRST_UNEXPECTED_HARNESS_FAILURE_NO_RETRY"
+}

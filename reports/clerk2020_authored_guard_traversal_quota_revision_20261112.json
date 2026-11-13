@@ -1,0 +1,138 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 5143,
+      "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    {
+      "bytes": 8139,
+      "path": "scripts/e01_authored_dirfd_checks_v2_20261112.py",
+      "sha256": "00fcc2c259ae905115b5738cbba5eb540c476811d5565a0e657bfe9b9069b173"
+    },
+    {
+      "bytes": 7016,
+      "path": "scripts/verify_e01_monotone_successor_offline_v3_20261112.py",
+      "sha256": "773a447ba2630e4d5ffd7456974b910469dc597338ba64e49163d09042228e78"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Reviewnewrawdotdot andlockedquota deltas; only afterexactreview/leadrelease runfixed66scope.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 5143,
+      "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    {
+      "bytes": 8139,
+      "path": "scripts/e01_authored_dirfd_checks_v2_20261112.py",
+      "sha256": "00fcc2c259ae905115b5738cbba5eb540c476811d5565a0e657bfe9b9069b173"
+    },
+    {
+      "bytes": 7016,
+      "path": "scripts/verify_e01_monotone_successor_offline_v3_20261112.py",
+      "sha256": "773a447ba2630e4d5ffd7456974b910469dc597338ba64e49163d09042228e78"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PROPOSED_NOT_RELEASED: .venv/bin/python -B scripts/verify_e01_monotone_successor_offline_v3_20261112.py",
+    "PROPOSED_NOT_RELEASED_AFTER_FIRSTPASS: data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B scripts/verify_e01_monotone_successor_offline_v3_20261112.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Revisionneeds exactindependentreview; no claim of runtimePASS.",
+    "Existingnewenginecorrections remainstaticalonly untilbroader58testexecution.",
+    "Scopeguard protects trustedlocal authoredcode, not hostilehost/nativecontainment."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Codeonly reads, no actual source/runtimebinary/private/credential/owner data; engine/E02 files unchanged.",
+  "TASK_ID": "E01_AUTHORED_DIRFD_RAW_TRAVERSAL_AND_ATOMIC_QUOTA_REVISION_20261112",
+  "TESTS_RUN_AND_RESULTS": "ASTsyntaxonly3newfiles;8checkmethodcount; preservedpriorhashesverified. No guardinstallation/check/test/scopeinvocation.",
+  "UNRESOLVED_BLOCKERS": [
+    "Exact independent revisedguard/harnessreview",
+    "Lead writtenfinitecontinuation before execution"
+  ],
+  "diffs": [
+    {
+      "diff": "--- scripts/e01_authored_dirfd_guard_20261112.py\n+++ scripts/e01_authored_dirfd_guard_v2_20261112.py\n@@ -31,7 +31,9 @@\n     def identity(st):return st.st_dev,st.st_ino,st.st_mode\n \n     def absolute(self,value):\n-        path=Path(os.path.abspath(os.fsdecode(os.fspath(value))))\n+        raw=os.fsdecode(os.fspath(value))\n+        if '..' in Path(raw).parts:raise GuardRefused('RAW_PARENT_TRAVERSAL')\n+        path=Path(os.path.abspath(raw))\n         for alias,target in self.aliases:\n             if path.is_relative_to(alias):return target/path.relative_to(alias)\n         return path\n@@ -74,7 +76,9 @@\n         if len(args)<2:raise GuardRefused('UNBOUND_OPEN_ARGUMENTS')\n         value,flags=args[:2]\n         if type(flags) is not int:raise GuardRefused('UNBOUND_OPEN_FLAGS')\n-        raw=os.fsdecode(os.fspath(value));fd=kwargs.get('dir_fd');record=None\n+        raw=os.fsdecode(os.fspath(value))\n+        if '..' in Path(raw).parts:raise GuardRefused('RAW_PARENT_TRAVERSAL')\n+        fd=kwargs.get('dir_fd');record=None\n         if not os.path.isabs(raw) and fd is not None:\n             record=self.directory(fd)\n             candidate=self.absolute(record[0]/raw)\n",
+      "new_ref": {
+        "bytes": 5143,
+        "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+        "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+      },
+      "old_ref": {
+        "bytes": 4963,
+        "path": "scripts/e01_authored_dirfd_guard_20261112.py",
+        "sha256": "2418c34703e3428c3bf35bca24f21b57e2dcd9a023081037f6bb6e6f31b03998"
+      }
+    },
+    {
+      "diff": "--- scripts/e01_authored_dirfd_checks_20261112.py\n+++ scripts/e01_authored_dirfd_checks_v2_20261112.py\n@@ -5,7 +5,7 @@\n import threading\n import unittest\n from unittest.mock import Mock\n-from e01_authored_dirfd_guard_20261112 import DirectoryFdGuard,GuardRefused\n+from e01_authored_dirfd_guard_v2_20261112 import DirectoryFdGuard,GuardRefused\n \n ROOT=Path(__file__).resolve().parents[1]\n FORBIDDEN=ROOT/'data/raw/AUTHORED_GUARD_NEVER_OPEN'\n@@ -18,6 +18,7 @@\n \n \n class DirectoryFdChecks(unittest.TestCase):\n+    quota=None  # Exact technical harness supplies its shared locked meter.\n     def guard(self):return DirectoryFdGuard(policy)\n     def blocked_without_effect(self,guard,operation):\n         previous=guard.raw_open\n@@ -45,6 +46,8 @@\n \n     def test_two_directories_thread_local_isolation(self):\n         guard=self.guard();barrier=threading.Barrier(2);errors=[];seen=[]\n+        self.assertIsNotNone(self.quota);reserve,snapshot,cap=self.quota\n+        ready=threading.Barrier(3);go=threading.Barrier(3);done=threading.Barrier(3)\n         with tempfile.TemporaryDirectory() as folder:\n             roots=[Path(folder).resolve()/name for name in ('one','two')]\n             for root in roots:root.mkdir();(root/'file').write_bytes(b'AUTHORED')\n@@ -59,10 +62,16 @@\n                 try:\n                     opened=guard.open('file',os.O_RDONLY,dir_fd=fd);guard.close(opened)\n                     self.assertIsNone(getattr(guard.local,'pending',None))\n+                    ready.wait(timeout=2);go.wait(timeout=2)\n+                    for _ in range(16):reserve('reserved_read_bytes',1,cap)\n+                    done.wait(timeout=2)\n                 except BaseException as exc:errors.append(exc)\n             threads=[threading.Thread(target=run,args=(fd,)) for fd in fds]\n             try:\n                 for t in threads:t.start()\n+                ready.wait(timeout=2);before_quota=snapshot()['reserved_read_bytes']\n+                go.wait(timeout=2);done.wait(timeout=2)\n+                self.assertEqual(snapshot()['reserved_read_bytes']-before_quota,32)\n                 for t in threads:t.join(timeout=3)\n                 self.assertFalse(any(t.is_alive() for t in threads));self.assertEqual(errors,[])\n                 self.assertCountEqual(seen,[root/'file' for root in roots])\n@@ -116,7 +125,12 @@\n         with tempfile.TemporaryDirectory() as folder:\n             root=Path(folder).resolve();(root/'link').symlink_to(FORBIDDEN)\n             fd=guard.open(root,os.O_RDONLY)\n-            try:self.blocked_without_effect(guard,lambda:guard.open('link',os.O_RDONLY,dir_fd=fd))\n+            try:\n+                self.blocked_without_effect(guard,lambda:guard.open('link',os.O_RDONLY,dir_fd=fd))\n+                # The lexical target can differ from symlink-following syscall\n+                # resolution; reject raw traversal before normalizing either form.\n+                self.blocked_without_effect(guard,lambda:guard.open('link/../file',os.O_RDONLY,dir_fd=fd))\n+                self.blocked_without_effect(guard,lambda:guard.open(str(root)+'/link/../file',os.O_RDONLY))\n             finally:guard.close(fd)\n \n     def test_context_restoration_and_original_raw_arguments_after_error(self):\n",
+      "new_ref": {
+        "bytes": 8139,
+        "path": "scripts/e01_authored_dirfd_checks_v2_20261112.py",
+        "sha256": "00fcc2c259ae905115b5738cbba5eb540c476811d5565a0e657bfe9b9069b173"
+      },
+      "old_ref": {
+        "bytes": 7105,
+        "path": "scripts/e01_authored_dirfd_checks_20261112.py",
+        "sha256": "89282ac295dfdaa0aa1c23062971cdde6bbcb91e7c070cd0d34eb10a37f9a2f9"
+      }
+    },
+    {
+      "diff": "--- scripts/verify_e01_monotone_successor_offline_v2_20261112.py\n+++ scripts/verify_e01_monotone_successor_offline_v3_20261112.py\n@@ -12,25 +12,31 @@\n import sys\n import time\n import unittest\n-from e01_authored_dirfd_guard_20261112 import DirectoryFdGuard\n+import threading\n+from e01_authored_dirfd_guard_v2_20261112 import DirectoryFdGuard\n \n ROOT=Path(__file__).resolve().parents[1]\n sys.path[:0]=[str(ROOT/'src'),str(ROOT/'tests')]\n-MODULES=['e01_authored_dirfd_checks_20261112','test_clerk2020_native_campaign_v2','test_clerk2020_source_worker_v2',\n+MODULES=['e01_authored_dirfd_checks_v2_20261112','test_clerk2020_native_campaign_v2','test_clerk2020_source_worker_v2',\n          'test_clerk2020_source_job_v2','test_clerk2020_source_packet_prepare_v3']\n RUNTIME=str(sys.version_info.major)+str(sys.version_info.minor)\n assert RUNTIME in {'311','312'}\n READ_CAP=536870912;WRITE_CAP=134217728;OUTPUT_CAP=262144\n-PREFIX=ROOT/'reports'/('clerk2020_monotone_offline_v2_'+RUNTIME+'_20261112')\n+PREFIX=ROOT/'reports'/('clerk2020_monotone_offline_v3_'+RUNTIME+'_20261112')\n START=Path(str(PREFIX)+'_STARTED.json');RECEIPT=Path(str(PREFIX)+'_RECEIPT.json')\n clock=time.monotonic;usage=resource.getrusage\n started=clock();initial_cpu=usage(resource.RUSAGE_SELF)\n counts={'reserved_read_bytes':0,'reserved_write_bytes':0,'output_bytes':0}\n+counts_lock=threading.RLock()\n class ScopeStop(BaseException):pass\n \n def reserve(key,amount,cap):\n-    if type(amount) is not int or amount<0 or counts[key]+amount>cap:raise ScopeStop('FIXED_AUTHORED_SCOPE_EXHAUSTED')\n-    counts[key]+=amount\n+    with counts_lock:\n+        if type(amount) is not int or amount<0 or counts[key]+amount>cap:raise ScopeStop('FIXED_AUTHORED_SCOPE_EXHAUSTED')\n+        counts[key]+=amount\n+\n+def snapshot_counts():\n+    with counts_lock:return dict(counts)\n \n class NoNative(importlib.abc.MetaPathFinder):\n     def find_spec(self,fullname,path=None,target=None):\n@@ -106,12 +112,13 @@\n # Explicit task-code refs only, not actual source/runtime binary hashes.\n source_paths=['src/civiclab/e01/clerk2020_native_campaign_v2.py','src/civiclab/e01/clerk2020_source_worker_v2.py',\n               'src/civiclab/e01/clerk2020_source_job_v2.py','scripts/prepare_e01_source_phase_v3.py']\n-source_paths += ['tests/'+name+'.py' for name in MODULES if name!='e01_authored_dirfd_checks_20261112']\n-source_paths += ['scripts/e01_authored_dirfd_guard_20261112.py','scripts/e01_authored_dirfd_checks_20261112.py']\n+source_paths += ['tests/'+name+'.py' for name in MODULES if name!='e01_authored_dirfd_checks_v2_20261112']\n+source_paths += ['scripts/e01_authored_dirfd_guard_v2_20261112.py','scripts/e01_authored_dirfd_checks_v2_20261112.py']\n def hashes():return {p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in source_paths}\n before=hashes();result=None;error=None\n try:\n     suite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in MODULES)\n+    sys.modules['e01_authored_dirfd_checks_v2_20261112'].DirectoryFdChecks.quota=(reserve,snapshot_counts,READ_CAP)\n     if suite.countTestCases()!=66:raise ScopeStop('FIXED_TEST_COUNT_MISMATCH')\n     result=unittest.TextTestRunner(verbosity=2,failfast=True).run(suite)\n except BaseException as exc:\n@@ -123,7 +130,7 @@\n         'tests_run':0 if result is None else result.testsRun,\n         'successful':result is not None and result.wasSuccessful() and before==after and error is None,\n         'error_type':error,'code_unchanged':before==after,'source_hashes':after,\n-        'counts':dict(counts),'wall_milliseconds':int((clock()-started)*1000)+1,\n+        'counts':snapshot_counts(),'wall_milliseconds':int((clock()-started)*1000)+1,\n         'CPU_milliseconds':int(((end_cpu.ru_utime+end_cpu.ru_stime)-(initial_cpu.ru_utime+initial_cpu.ru_stime))*1000)+1,\n         'no_retry':True,'actual_sources':0,'subprocesses':0,'PDF_native_imports':0,'network_model_calls':0,'cost_usd':0}\n     with RECEIPT.open('x') as f:json.dump(record,f,sort_keys=True)\n",
+      "new_ref": {
+        "bytes": 7016,
+        "path": "scripts/verify_e01_monotone_successor_offline_v3_20261112.py",
+        "sha256": "773a447ba2630e4d5ffd7456974b910469dc597338ba64e49163d09042228e78"
+      },
+      "old_ref": {
+        "bytes": 6738,
+        "path": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+        "sha256": "c2ec6da27d70432f4eced9810cdd50a15914e5ccfb3d0a384e819040bc0e7b33"
+      }
+    }
+  ],
+  "previous_guard_draft_preserved": {
+    "bytes": 11645,
+    "path": "reports/clerk2020_authored_dirfd_guard_v2_frozen_handoff_20261112.json",
+    "sha256": "9380e905b90acc99b5c80f27f8082e642d8ece690166fca22ca8a475ee30fcec"
+  },
+  "previous_guard_sources_unchanged": [
+    {
+      "bytes": 4963,
+      "path": "scripts/e01_authored_dirfd_guard_20261112.py",
+      "sha256": "2418c34703e3428c3bf35bca24f21b57e2dcd9a023081037f6bb6e6f31b03998"
+    },
+    {
+      "bytes": 7105,
+      "path": "scripts/e01_authored_dirfd_checks_20261112.py",
+      "sha256": "89282ac295dfdaa0aa1c23062971cdde6bbcb91e7c070cd0d34eb10a37f9a2f9"
+    },
+    {
+      "bytes": 6738,
+      "path": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+      "sha256": "c2ec6da27d70432f4eced9810cdd50a15914e5ccfb3d0a384e819040bc0e7b33"
+    }
+  ],
+  "remedies": {
+    "atomic_quota": "Shared threading.RLock protects reserve check/update and snapshot_counts. G2 reuses the same two workerthreads and sharedharnessmeter with barriers to assert32explicit conservative1-byte reservations and an exact+32snapshotdelta; no extra test/process/cap.",
+    "raw_parent_traversal": "DirectoryFdGuard.open rejects any raw .. component before dirfdjoin/absolute normalization; absolute() independently rejects before abspath, including audit-event paths. Both absolute and relative link/../file subcases use existing protectedeffectspy, never underlying protectedopen.",
+    "scope_marker": "Newfixed reports/clerk2020_monotone_offline_v3_<runtime>_20261112_{STARTED,RECEIPT}.json. Old failedtechnicalscope and previousunexecutedharnesses remainimmutable."
+  },
+  "scope_unchanged": {
+    "CPU_seconds": 120,
+    "engine_tests": 58,
+    "failfast_globally": true,
+    "guard_checks": 8,
+    "invocations_per_runtime": 1,
+    "output_bytes": 262144,
+    "read_bytes": 536870912,
+    "released": false,
+    "runtime_order": "312then311onlyif312passes",
+    "subprocess_fork_source_PDF_native_network_model": 0,
+    "total": 66,
+    "wall_seconds": 120,
+    "write_bytes": 134217728
+  },
+  "status": "SEPARATE_NARROW_REVISION_FROZEN_NOT_EXECUTED"
+}

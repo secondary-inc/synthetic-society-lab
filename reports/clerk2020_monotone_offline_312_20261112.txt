@@ -1,0 +1,27 @@
+test_anchor_cas_and_exec_ordinal (test_clerk2020_native_campaign_v2.NativeCampaignTests.test_anchor_cas_and_exec_ordinal) ... ERROR
+
+======================================================================
+ERROR: test_anchor_cas_and_exec_ordinal (test_clerk2020_native_campaign_v2.NativeCampaignTests.test_anchor_cas_and_exec_ordinal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_clerk2020_native_campaign_v2.py", line 22, in tearDown
+    def tearDown(self):self.proof_patch.stop();self.temp.cleanup()
+                                               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/verify_e01_monotone_successor_offline_20261112.py", line 45, in guard
+    raise ScopeStop('NO_ACTUAL_DATA_OR_CREDENTIALS')
+ScopeStop: NO_ACTUAL_DATA_OR_CREDENTIALS
+
+----------------------------------------------------------------------
+Ran 1 test in 0.011s
+
+FAILED (errors=1)
+{"CPU_milliseconds": 50, "PDF_native_imports": 0, "actual_sources": 0, "code_unchanged": true, "cost_usd": 0, "counts": {"output_bytes": 1875, "reserved_read_bytes": 2567303, "reserved_write_bytes": 10985}, "error_type": null, "kind": "TECHNICAL_AUTHORED_58_TESTS_RECEIPT", "network_model_calls": 0, "no_retry": true, "runtime": "312", "source_hashes": {"scripts/prepare_e01_source_phase_v3.py": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2", "src/civiclab/e01/clerk2020_native_campaign_v2.py": "e021286d4983d526d8cac3598836b4c20d6c8b9d98268a78f14b717b6851c47a", "src/civiclab/e01/clerk2020_source_job_v2.py": "6c3c259bf7be9f300dbbfa4a961609f404d305dc4dc8445b9e5abf441e01856c", "src/civiclab/e01/clerk2020_source_worker_v2.py": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0", "tests/test_clerk2020_native_campaign_v2.py": "d0a8c18714669987df94687ca9af4505a392bf76b365c3e1ac4a2a080e2ddb65", "tests/test_clerk2020_source_job_v2.py": "d7d82700920666fcc3477d6d9a31bc3815083f7830d40d168291e0d9f22d8249", "tests/test_clerk2020_source_packet_prepare_v3.py": "a0ee7761511ee494d63973c9075dce8b5ccaa9bbc2eace476bef27203a5262ce", "tests/test_clerk2020_source_worker_v2.py": "1d0629ee1cc70d3340060f8bcaf26612e7804374ec7ac2d0bc37f58634ef35c6"}, "subprocesses": 0, "successful": false, "tests_run": 1, "wall_milliseconds": 62}

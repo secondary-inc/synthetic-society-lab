@@ -1,0 +1,352 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 46824,
+      "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+      "sha256": "e5250bd6c43499dbb27bfea24e905d3ed8ef5842385791b09f8d10822882abf2"
+    },
+    {
+      "bytes": 12172,
+      "path": "src/civiclab/e01/clerk2020_source_worker_v2.py",
+      "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+    },
+    {
+      "bytes": 48514,
+      "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+      "sha256": "2bb6a0eedd28f8781fb492ff748d38ff7abccf176536564baa675ff3da550f5e"
+    },
+    {
+      "bytes": 8888,
+      "path": "scripts/prepare_e01_source_phase_v3.py",
+      "sha256": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2"
+    },
+    {
+      "bytes": 15908,
+      "path": "tests/test_clerk2020_native_campaign_v2.py",
+      "sha256": "de1dc18c1a7865cf287aa77ef954673a11e9e029552b2136e85075a91f8d68f8"
+    },
+    {
+      "bytes": 9165,
+      "path": "tests/test_clerk2020_source_worker_v2.py",
+      "sha256": "d1cd76382346f6775b6d150842f84c28094efb0108be38908ca74070ecaebf25"
+    },
+    {
+      "bytes": 24026,
+      "path": "tests/test_clerk2020_source_job_v2.py",
+      "sha256": "f4199f3cc38d9c5740b616a6a7ba193a92469017762fc99fb036e1062a3006ba"
+    },
+    {
+      "bytes": 7613,
+      "path": "tests/test_clerk2020_source_cli_inheritance_v2.py",
+      "sha256": "2d693778d397dd18d271236b70a5ab5bda19eaa5706f2be168244f2d59853882"
+    },
+    {
+      "bytes": 6296,
+      "path": "tests/test_clerk2020_source_packet_prepare_v3.py",
+      "sha256": "a0ee7761511ee494d63973c9075dce8b5ccaa9bbc2eace476bef27203a5262ce"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditor reviews draftimplementation/6CPUresults and proposed finite broaderauthoredscope; lead authorizes test scope if aligned. No actualpreparation/BOOT/source/nativeexecution.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 1000,
+      "path": "reports/clerk2020_monotone_cpu_initial_312_20261112.txt",
+      "sha256": "2d2d6b0d9ee19c7c9352d7a9d18f3180bef44410819d1dd4bb738f71b6ca24b5"
+    },
+    {
+      "bytes": 1000,
+      "path": "reports/clerk2020_monotone_cpu_initial_311_20261112.txt",
+      "sha256": "e6f6f0d43e7e1327abec60bf88f4dfa93fc500d701ba32ee2a2fac55fb7ede49"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -m unittest discover -s tests -p test_clerk2020_source_cli_inheritance_v2.py -v",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p test_clerk2020_source_cli_inheritance_v2.py -v"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Not full independentcodeacceptance.",
+    "Broader58authoredtests and remainsNOT_RUN pending separateauthoredscope; no fullM2/scientificacceptance.",
+    "7/8CPU adequacy for realwarmup/hash/source work unknown.",
+    "Original failedcampaign and20axes/sixqualificationhistories immutable, allcharges fullyretained.",
+    "Configured24secondperprocesshardlimits sum is not an instantaneousCPUguarantee; sampledRSSnotpreallocation/OSsandbox claim."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "No actual PDFs, private projections, owner/financial state or runtime/native binary inspection. Newengine code not executed on actualdata. Fixed6CPUfixtures eachruntime use source-text AST/functionbytes only, noPDF/native imports/network/modelcalls.",
+  "TASK_ID": "E01_MONOTONE_SUCCESSOR_V2_1_DRAFT_CODE_AND_FIXED_CPU_RESULTS_20261112",
+  "TESTS_RUN_AND_RESULTS": [
+    {
+      "fixed_nested_children": 6,
+      "fixed_parent_processes": 6,
+      "log_ref": {
+        "bytes": 1000,
+        "path": "reports/clerk2020_monotone_cpu_initial_312_20261112.txt",
+        "sha256": "2d2d6b0d9ee19c7c9352d7a9d18f3180bef44410819d1dd4bb738f71b6ca24b5"
+      },
+      "reruns": 0,
+      "runtime": "312",
+      "seconds": "1.462",
+      "status": "WORKER_PASS_NOT_INDEPENDENT_ACCEPTANCE",
+      "tests": 6
+    },
+    {
+      "fixed_nested_children": 6,
+      "fixed_parent_processes": 6,
+      "log_ref": {
+        "bytes": 1000,
+        "path": "reports/clerk2020_monotone_cpu_initial_311_20261112.txt",
+        "sha256": "e6f6f0d43e7e1327abec60bf88f4dfa93fc500d701ba32ee2a2fac55fb7ede49"
+      },
+      "reruns": 0,
+      "runtime": "311",
+      "seconds": "1.285",
+      "status": "WORKER_PASS_NOT_INDEPENDENT_ACCEPTANCE",
+      "tests": 6
+    }
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent preliminarysource/CPUfixture review",
+    "Separate explicit finite execution scope for broader authoredtests (proposednextbelow)",
+    "Then independent exactcodebinding and root-only particular/prepared/actualevidence gates; no current actual recovery release"
+  ],
+  "broader_drafted_tests_NOT_RUN": {
+    "tests/test_clerk2020_native_campaign_v2.py": 22,
+    "tests/test_clerk2020_source_job_v2.py": 18,
+    "tests/test_clerk2020_source_packet_prepare_v3.py": 8,
+    "tests/test_clerk2020_source_worker_v2.py": 10
+  },
+  "code_refs": {
+    "src/civiclab/__init__.py": {
+      "bytes": 106,
+      "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+    },
+    "src/civiclab/common.py": {
+      "bytes": 8476,
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+    },
+    "src/civiclab/e01/__init__.py": {
+      "bytes": 422,
+      "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+    },
+    "src/civiclab/e01/clerk2020_crypto_qualification_v1.py": {
+      "bytes": 24747,
+      "sha256": "6f75bf204c0c7334a892d6cbb3d52d1cd3cdb4535a90da2771dabc627ad6f50e"
+    },
+    "src/civiclab/e01/clerk2020_directories_qualification_v1.py": {
+      "bytes": 50599,
+      "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+    },
+    "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py": {
+      "bytes": 8606,
+      "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+    },
+    "src/civiclab/e01/clerk2020_guard_qualification_v1.py": {
+      "bytes": 29304,
+      "sha256": "347530c29836cefb0c1bd4b35e7e48748b45758bfa1c5bc200fb9cc806b5769f"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+      "bytes": 9548,
+      "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+      "bytes": 8142,
+      "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+    },
+    "src/civiclab/e01/clerk2020_native_campaign_v2.py": {
+      "bytes": 46824,
+      "sha256": "e5250bd6c43499dbb27bfea24e905d3ed8ef5842385791b09f8d10822882abf2"
+    },
+    "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+      "bytes": 8768,
+      "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487"
+    },
+    "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+      "bytes": 22083,
+      "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f"
+    },
+    "src/civiclab/e01/clerk2020_source_format_adapter_v1.py": {
+      "bytes": 8058,
+      "sha256": "4ded1cc9f46df28417e059973c990d9b1cc029df7f7c625826ca5ac9877b7ed7"
+    },
+    "src/civiclab/e01/clerk2020_source_job_v2.py": {
+      "bytes": 48514,
+      "sha256": "2bb6a0eedd28f8781fb492ff748d38ff7abccf176536564baa675ff3da550f5e"
+    },
+    "src/civiclab/e01/clerk2020_source_worker_v2.py": {
+      "bytes": 12172,
+      "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+    },
+    "src/civiclab/e01/clerk2020_warmup_qualification_v1.py": {
+      "bytes": 44722,
+      "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+    },
+    "src/civiclab/e01/pipeline.py": {
+      "bytes": 22533,
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    },
+    "tests/test_clerk2020_native_inventory_v1.py": {
+      "bytes": 12468,
+      "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d"
+    }
+  },
+  "code_refs_bytes_plus_EOF": 366110,
+  "cpu_fixture_evidence_limits": [
+    "Exactly one6case invocation perruntime; no additional workerfixture rerun.",
+    "Logs retain casepass/failure statuses; nestedprocess JSON stdout was asserted in tests then discarded, not retained raw. No claim raw nestedtranscripts were preserved.",
+    "Tests extract exactproduction limiter source bytes with AST, execute those memory-only functions in isolatednestedprocesses and checkactualCLI/worker callplacement. They do not importproductionjob/worker modules in children or run a complete --exec campaign.",
+    "ASTwiring checks mutate missinglimitercall and require refusal, reducing detached-helper risk; this remains a limitedwiring check, not a completecontrolflow proof.",
+    "Allothernewcontroller/native/worker/helpertestmodules were drafted and syntaxparsed only, not imported/executed under CPU-only release."
+  ],
+  "diffs": [
+    {
+      "new_ref": {
+        "bytes": 46824,
+        "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+        "sha256": "e5250bd6c43499dbb27bfea24e905d3ed8ef5842385791b09f8d10822882abf2"
+      },
+      "old_ref": {
+        "bytes": 39097,
+        "path": "src/civiclab/e01/clerk2020_native_campaign_v1.py",
+        "sha256": "4fcaa58e89a90bbaf3ef9638d3dce92bc03041ada9cf5d215cc3fcbcbb2b15f2"
+      },
+      "unified_diff": "--- src/civiclab/e01/clerk2020_native_campaign_v1.py\n+++ src/civiclab/e01/clerk2020_native_campaign_v2.py\n@@ -15,12 +15,22 @@\n     Axis, CEILINGS, Counters, Refused, canonical, decode, exact, hex64, require, sha,\n )\n \n-CAMPAIGN = 'clerk2020_source_format_native_v1'\n+CAMPAIGN = 'clerk2020_source_format_native_v2'\n SOURCE_SET = 'clerk2020_counts_2026_nominees_FORMAT_v1'\n-ANCHOR = 'clerk2020_format_anchor_v1'\n+ANCHOR = 'clerk2020_format_anchor_v2'\n REGISTRY = 'data/processed/e01_clerk2020_m2_registry/' + CAMPAIGN\n CONTROL = 'data/processed/e01_clerk2020_m2_control/' + CAMPAIGN\n-SOURCE_INDEX = 'data/processed/e01_clerk2020_m2_registry/source_sets/' + SOURCE_SET + '.local.json'\n+SOURCE_INDEX = 'data/processed/e01_clerk2020_m2_registry/source_sets/' + SOURCE_SET + '.successor-v2.local.json'\n+\n+# Exact closed predecessor metadata, never raw inputs or arbitrary paths.\n+PREDECESSOR_CAMPAIGN = 'clerk2020_source_format_native_v1'\n+PREDECESSOR_REGISTRY = 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1'\n+PREDECESSOR_RUN = 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465'\n+PREDECESSOR_INDEX = 'data/processed/e01_clerk2020_m2_registry/source_sets/clerk2020_counts_2026_nominees_FORMAT_v1.local.json'\n+PREDECESSOR_FAILURE = 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/failure-stderr.local.bin'\n+PREDECESSOR_STATE_SHA = 'b66e2ff9252b72269af956eb9b904191375e828ea831e00a30a41b35ea7680b6'\n+PREDECESSOR_REFS = {'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/failure-stderr.local.bin': {'bytes': 3738, 'path': 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/failure-stderr.local.bin', 'sha256': '2f8fcd420e93e1f7ebbed23965fbcd79278d5589b8597a1c8c358a09d9ea0ff0'}, 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/child-0.local.json': {'bytes': 641, 'path': 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/child-0.local.json', 'sha256': 'f55332112475545b4c4cfa47def1716414ad121b7f069dc1f1fe32a8ed7c5571'}, 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/source-0-receipt.local.json': {'bytes': 214, 'path': 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/source-0-receipt.local.json', 'sha256': '01d727af466f2b0e388696b4e020e2c28c28d8ccc85a2ce06b78b4a99a0b6ca8'}, 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/terminal-failure.local.json': {'bytes': 210, 'path': 'data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/terminal-failure.local.json', 'sha256': '36272dead10ab5eb7186210ddf4bfe8e69291197ec1af7fc58f44c017a156a78'}, 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/EXEC-1.issued.local.json': {'bytes': 944, 'path': 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/EXEC-1.issued.local.json', 'sha256': '35c50f898f3d6eae1f9fa61b97f6d154ec997ae2694ff700f6f1c8388708ebeb'}, 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/EXEC-1.reservation.local.json': {'bytes': 1034, 'path': 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/EXEC-1.reservation.local.json', 'sha256': '26a614544f4bbf2eeca1446ca59312df4ed0cce8f93f7690deb275d89bbf0586'}, 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/anchor-2.local.json': {'bytes': 875, 'path': 'data/processed/e01_clerk2020_m2_registry/clerk2020_source_format_native_v1/anchor-2.local.json', 'sha256': '33d91c835ad96e4cbf73896f032bd38ee3558c81e3fefafe43da4a727ac6f876'}, 'data/processed/e01_clerk2020_m2_registry/source_sets/clerk2020_counts_2026_nominees_FORMAT_v1.local.json': {'bytes': 524, 'path': 'data/processed/e01_clerk2020_m2_registry/source_sets/clerk2020_counts_2026_nominees_FORMAT_v1.local.json', 'sha256': 'ee5c0dfe2ec03c36f0176bc5b50c8f3edebeb305a2014cb39574d2a711854ba8'}, 'reports/INDEPENDENT_AUDIT_E01_SOURCE_FORMAT_ACTUAL_EXEC_STOP_20261112.json': {'bytes': 19780, 'path': 'reports/INDEPENDENT_AUDIT_E01_SOURCE_FORMAT_ACTUAL_EXEC_STOP_20261112.json', 'sha256': 'f1e666f24a089f5238d4345701caa58a670622eb2fb8a6f08e7bb2d2b936a3b0'}}\n+\n # slot: relative-to-fixed-namespace, maximum, write category, phase partition\n LAYOUT = {\n  'source_index': (SOURCE_INDEX, 2048, 'control', 'BOOT'),\n@@ -125,6 +135,34 @@\n         path=self.root/relative;no_alias(path)\n         return path\n \n+    def read_predecessor(self, ref):\n+        \"\"\"Only pinned closed metadata; reservation before descriptor open.\"\"\"\n+        require(type(ref) is dict and ref.get('path') in PREDECESSOR_REFS\n+                and ref==PREDECESSOR_REFS[ref['path']] and self.read_meter is not None)\n+        path=self.root/ref['path'];no_alias(path);before=path.stat()\n+        require(stat.S_ISREG(before.st_mode) and before.st_size==ref['bytes'])\n+        self.read_meter.reserve(ref['bytes']+1)\n+        fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW)\n+        with os.fdopen(fd,'rb') as stream:\n+            require(file_identity(os.fstat(stream.fileno()))==file_identity(before))\n+            raw=stream.read(ref['bytes']+1)\n+            require(file_identity(os.fstat(stream.fileno()))==file_identity(before))\n+        require(file_identity(path.stat())==file_identity(before)\n+                and len(raw)==ref['bytes'] and sha(raw)==ref['sha256'])\n+        self.read_meter.observe(len(raw));return raw\n+\n+    @contextmanager\n+    def predecessor_lock(self):\n+        # Existing zero-byte predecessor lock; never create or rewrite it.\n+        path=self.root/PREDECESSOR_REGISTRY/'registrar.lock';no_alias(path)\n+        fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW)\n+        try:\n+            require(stat.S_ISREG(os.fstat(fd).st_mode) and os.fstat(fd).st_size==0)\n+            fcntl.flock(fd,fcntl.LOCK_EX)\n+            yield\n+        finally:\n+            fcntl.flock(fd,fcntl.LOCK_UN);os.close(fd)\n+\n     def bind_run(self, run_id):\n         require(self.run_id is None and type(run_id) is str and run_id.startswith('e01-')\n                 and len(run_id)==36 and all(c in '0123456789abcdef' for c in run_id[4:]))\n@@ -198,14 +236,18 @@\n     def binding(self):\n         return {'campaign_id':CAMPAIGN,'source_set_id':SOURCE_SET,'source_set_sha256':self.source_sha,\n                 'anchor_id':ANCHOR,'repository_root_sha256':sha(str(self.store.root).encode()),\n-                'registry_namespace':REGISTRY,'control_namespace':CONTROL}\n+                'registry_namespace':REGISTRY,'control_namespace':CONTROL,\n+                'predecessor_campaign_id':PREDECESSOR_CAMPAIGN,\n+                'predecessor_source_index_sha256':PREDECESSOR_REFS[PREDECESSOR_INDEX]['sha256'],\n+                'predecessor_stop_sha256':PREDECESSOR_REFS[PREDECESSOR_FAILURE]['sha256'],\n+                'predecessor_terminal_state_sha256':PREDECESSOR_STATE_SHA,'recovery_ordinal':1}\n \n     def consume(self, phase, issued_raw, expected):\n         require(phase in {'BOOT','EXEC'} and type(issued_raw) is bytes and hex64(expected)\n                 and sha(issued_raw)==expected)\n         issued=decode(issued_raw,8192)\n         exact(issued,{'kind','phase','ordinal','binding','decision_sha256','expected_anchor_sha256','one_shot','prefix_budget'})\n-        require(issued['kind']=='CLERK_SOURCE_ISSUED_V1_2' and issued['phase']==phase\n+        require(issued['kind']=='CLERK_SOURCE_ISSUED_V2_1' and issued['phase']==phase\n                 and type(issued['ordinal']) is int and issued['ordinal']==1\n                 and issued['one_shot'] is True and canonical(issued['binding'])==canonical(self.binding())\n                 and canonical(issued['prefix_budget'])==canonical(PREFIX_BUDGETS[phase])\n@@ -218,17 +260,17 @@\n         # creation cannot make the same ordinal available to a new controller.\n         self.store.create('boot_issued' if phase=='BOOT' else 'exec_issued',issued_raw)\n         slot='boot_reservation' if phase=='BOOT' else 'exec_reservation'\n-        reservation={'kind':'CLERK_SOURCE_RESERVATION_V1_2','phase':phase,\n+        reservation={'kind':'CLERK_SOURCE_RESERVATION_V2_1','phase':phase,\n                      'issued_sha256':expected,'binding':self.binding(),\n                      'precharged_prefix':PREFIX_BUDGETS[phase],\n                      'expected_anchor_sha256':issued['expected_anchor_sha256'],\n                      'source_access_before_admission':False,'credit_restored':0,\n                      'created_at_utc':datetime.now(timezone.utc).isoformat()}\n         ref=self.store.create(slot,canonical(reservation))\n-        with self.store.lock():\n+        with self.store.predecessor_lock(),self.store.lock():\n             if phase=='BOOT':\n                 self.store.create('source_index',canonical(self.binding()))\n-                self.store.create('registration',canonical({'kind':'CLERK_SOURCE_REGISTRATION_V1_2',\n+                self.store.create('registration',canonical({'kind':'CLERK_SOURCE_REGISTRATION_V2_1',\n                                   **self.binding(),'boot_issued_sha256':expected}))\n             else:\n                 index,_=self.store.read('source_index',2049)\n@@ -236,6 +278,33 @@\n                 current,_=self.current()\n                 require(current==issued['expected_anchor_sha256'])\n         return issued,reservation,ref\n+\n+    def verify_predecessor(self):\n+        \"\"\"Hash/read only the fixed stopped ancestor; never restarts its ledger.\"\"\"\n+        with self.store.predecessor_lock():\n+            bodies={p:self.store.read_predecessor(r) for p,r in PREDECESSOR_REFS.items()}\n+            index=decode(bodies[PREDECESSOR_INDEX],2048)\n+            require(index['campaign_id']==PREDECESSOR_CAMPAIGN\n+                    and index['source_set_id']==SOURCE_SET and index['source_set_sha256']==self.source_sha\n+                    and index['repository_root_sha256']==sha(str(self.store.root).encode()))\n+            failure=decode(bodies[PREDECESSOR_FAILURE],8192)\n+            require(failure['kind']=='CLERK_SOURCE_FAILED_OR_UNKNOWN_V1_2'\n+                    and failure['phase']=='EXEC' and failure['no_retry'] is True\n+                    and failure['source_format_accepted'] is False and failure['credit_restored']==0)\n+            state=failure['state'];require(sha(canonical(state))==PREDECESSOR_STATE_SHA)\n+            exact(state['legacy_axes'],CEILINGS);exact(state['engineering_axes'],ENGINEERING_CEILINGS)\n+            for axes,ceilings in [(state['legacy_axes'],CEILINGS),(state['engineering_axes'],ENGINEERING_CEILINGS)]:\n+                for key,axis in axes.items():\n+                    require(axis['ceiling']==ceilings[key] and axis['charged']==axis['ceiling']\n+                            and axis['held']==axis['reserved']==0)\n+            # A terminal/second-source predecessor cannot become this stopped successor.\n+            absent=[PREDECESSOR_REGISTRY+'/anchor-'+str(i)+'.local.json' for i in (3,4,5)]\n+            absent += [PREDECESSOR_RUN+'/'+name for name in\n+                ('source-1-receipt.local.json','child-1.local.json','seal.local.json',\n+                 'writer-ACK.local.json','caller-observation.local.json')]\n+            for relative in absent:\n+                path=self.store.root/relative;no_alias(path);require(not path.exists())\n+        return sha(canonical(PREDECESSOR_REFS))\n \n     def current(self):\n         previous=None;found=None;current=None;missing=False\n@@ -246,7 +315,7 @@\n             require(not missing)\n             raw,_=self.store.read(slot,2049);obj=decode(raw,2048)\n             exact(obj,{'kind','binding','state','previous_anchor_sha256','payload'})\n-            require(obj['kind']=='CLERK_SOURCE_ANCHOR_V1_2'\n+            require(obj['kind']=='CLERK_SOURCE_ANCHOR_V2_1'\n                     and canonical(obj['binding'])==canonical(self.binding())\n                     and obj['previous_anchor_sha256']==previous)\n             require(type(obj['state']) is str and obj['state']==slot and type(obj['payload']) is dict)\n@@ -259,7 +328,7 @@\n             current,_=self.current();require(current==expected)\n             occupied=[s for s in ANCHOR_SLOTS if self.store.exists(s)]\n             require(len(occupied)<len(ANCHOR_SLOTS) and slot==ANCHOR_SLOTS[len(occupied)])\n-            obj={'kind':'CLERK_SOURCE_ANCHOR_V1_2','binding':self.binding(),'state':slot,\n+            obj={'kind':'CLERK_SOURCE_ANCHOR_V2_1','binding':self.binding(),'state':slot,\n                  'previous_anchor_sha256':expected,'payload':payload}\n             return self.store.create(slot,canonical(obj))\n \n@@ -325,7 +394,7 @@\n                 self.phase_observed[phase][axis]+=n;axes[axis]=0\n \n     def snapshot(self):\n-        return decode(canonical({'schema_version':1,'kind':'CLERK_SOURCE_COUNTERS_V1_2','legacy_axes':self.legacy.snapshot(),\n+        return decode(canonical({'schema_version':1,'kind':'CLERK_SOURCE_COUNTERS_V2_1','legacy_axes':self.legacy.snapshot(),\n                 'engineering_axes':{k:v.record() for k,v in self.engineering.items()},\n                 'phase_reserved':self.phase_reserved,'phase_observed':self.phase_observed}))\n \n@@ -333,7 +402,7 @@\n     def restore(cls, record):\n         exact(record,{'schema_version','kind','legacy_axes','engineering_axes','phase_reserved','phase_observed'})\n         require(record['schema_version']==1 and type(record['schema_version']) is int\n-                and record['kind']=='CLERK_SOURCE_COUNTERS_V1_2')\n+                and record['kind']=='CLERK_SOURCE_COUNTERS_V2_1')\n         out=cls();exact(record['legacy_axes'],CEILINGS);exact(record['engineering_axes'],ENGINEERING_CEILINGS)\n         for group,ceilings in [('legacy_axes',CEILINGS),('engineering_axes',ENGINEERING_CEILINGS)]:\n             restored={}\n@@ -420,7 +489,7 @@\n         exact(obj,{'schema_version','kind','campaign_id','phase','sequence','previous_event_sha256',\n                    'event_type','payload','counter_delta','counter_before_sha256','counter_after_sha256'})\n         require(type(obj['schema_version']) is int and obj['schema_version']==1\n-                and obj['kind']=='CLERK_SOURCE_EVENT_V1_2' and obj['campaign_id']==CAMPAIGN\n+                and obj['kind']=='CLERK_SOURCE_EVENT_V2_1' and obj['campaign_id']==CAMPAIGN\n                 and obj['phase'] in {'BOOT','EXEC'} and (self.last_phase!='EXEC' or obj['phase']=='EXEC')\n                 and type(obj['sequence']) is int and obj['sequence']==self.sequence+1\n                 and obj['previous_event_sha256']==self.head and obj['event_type'] in EVENT_FIELDS)\n@@ -453,7 +522,7 @@\n         delta={'reserve':{} if reserve is None else reserve,'settle':[] if settle is None else settle,\n                'stop_unknown':stop_unknown,'activate_source':activate_source}\n         before=sha(canonical(self.counters.snapshot()));after=counter_delta(self.counters,delta,phase)\n-        obj={'schema_version':1,'kind':'CLERK_SOURCE_EVENT_V1_2','campaign_id':CAMPAIGN,\n+        obj={'schema_version':1,'kind':'CLERK_SOURCE_EVENT_V2_1','campaign_id':CAMPAIGN,\n              'phase':phase,'sequence':self.sequence+1,'previous_event_sha256':self.head,\n              'event_type':event_type,'payload':payload,'counter_delta':delta,\n              'counter_before_sha256':before,'counter_after_sha256':sha(canonical(after.snapshot()))}\n@@ -490,7 +559,7 @@\n             require(len(raw)<=LAYOUT[LEDGER_MAP[name]][1] and type(decode(raw).get('label')) is str\n                     and decode(raw)['label'] in {'REAL_SOURCE_FORMAT_INSPECTION_ONLY','SOURCE_FORMAT_ONLY','MOCK'})\n         # All future closing reads are charged unknown before any verification.\n-        reservation={'kind':'CLERK_SOURCE_FINALIZATION_RESERVATION_V1_2','context_sha256':self.context,\n+        reservation={'kind':'CLERK_SOURCE_FINALIZATION_RESERVATION_V2_1','context_sha256':self.context,\n             'record_verification_read_bytes':2097152,'terminal_write_slots_bytes':24576,\n             'no_source_backend_or_reseal':True}\n         reservation_sha=sha(canonical(reservation))\n@@ -533,18 +602,20 @@\n         prefix_anchor=self.registrar.cas(prior,'prefix_anchor',{'context_sha256':self.context,\n             'sealed_prefix_sha256':prefix_ref['sha256'],'counter_snapshot_sha256':x_sha})\n         self.check()\n-        seal={'schema_version':1,'kind':'CLERK_SOURCE_FINAL_SEAL_V1_2','context_sha256':self.context,\n+        seal={'schema_version':1,'kind':'CLERK_SOURCE_FINAL_SEAL_V2_1','context_sha256':self.context,\n             **bindings,'prefix_ledger':ledger,'prefix_ledger_sha256':ledger_sha,\n             'payload_sizes':{name:ref['bytes'] for name,ref in refs.items()},\n             'sealed_prefix_ref':prefix_ref,'sealed_prefix_head_sha256':self.journal.head,\n             'sealed_prefix_sequence':self.journal.sequence,'counter_snapshot_sha256':x_sha,\n             'finalization_reservation_sha256':reservation_sha,'prefix_anchor_sha256':prefix_anchor['sha256'],\n-            'terminal_protocol':'VERIFY_ACK_CAS_NO_SOURCE_V1_2'}\n+            'terminal_protocol':'VERIFY_ACK_CAS_NO_SOURCE_V2_1'}\n         seal_ref=self.store.create('seal',canonical(seal))\n         self.check()\n         self.store.crash('verification.before')\n         provenance=decode(owned['inspection_provenance.local.json'],2048)\n         if provenance['label']!='MOCK':\n+            require(provenance['predecessor_refs_sha256']==self.registrar.verify_predecessor()\n+                    and provenance['predecessor_state_sha256']==PREDECESSOR_STATE_SHA)\n             for ref in [provenance['stat_cache_ref'],provenance['boot_receipt_ref'],\n                         provenance['prepared_ref'],*provenance['child_metadata_refs']]:\n                 exact(ref,{'slot','bytes','sha256'})\n@@ -571,17 +642,17 @@\n         require(closing.reserved<=2097152)\n         self.verified_bytes=closing.observed\n         self.store.crash('verification.after')\n-        tail1={'kind':'CLERK_SOURCE_TAIL_V1_2','index':1,'event_type':'VERIFY_OK',\n+        tail1={'kind':'CLERK_SOURCE_TAIL_V2_1','index':1,'event_type':'VERIFY_OK',\n                'context_sha256':self.context,'seal_sha256':seal_ref['sha256'],\n                'previous_sha256':seal_ref['sha256'],'observed_before_this_event':self.verified_bytes}\n         t1=self.store.create('tail_verify',canonical(tail1))\n         self.check()\n-        ack={'kind':'CLERK_SOURCE_WRITER_ACK_V1_2','context_sha256':self.context,\n+        ack={'kind':'CLERK_SOURCE_WRITER_ACK_V2_1','context_sha256':self.context,\n              'seal_sha256':seal_ref['sha256'],'verified_tail_event_sha256':t1['sha256'],\n              'counter_snapshot_sha256':x_sha,'terminal_reservation_sha256':reservation_sha}\n         ack_ref=self.store.create('writer_ack',canonical(ack))\n         self.check()\n-        t2=self.store.create('tail_ack',canonical({'kind':'CLERK_SOURCE_TAIL_V1_2','index':2,\n+        t2=self.store.create('tail_ack',canonical({'kind':'CLERK_SOURCE_TAIL_V2_1','index':2,\n             'event_type':'ACK_COMMITTED','context_sha256':self.context,'seal_sha256':seal_ref['sha256'],\n             'previous_sha256':t1['sha256'],'writer_ack_sha256':ack_ref['sha256'],\n             'observed_before_this_event':self.verified_bytes}))\n@@ -601,7 +672,7 @@\n         result=self.completed_result\n         previous,_=self.store.read('tail_ack',1025)\n         invalid=self.store.create('tail_invalidate',canonical({\n-            'kind':'CLERK_SOURCE_TAIL_V1_2','index':3,'event_type':'INVALIDATE',\n+            'kind':'CLERK_SOURCE_TAIL_V2_1','index':3,'event_type':'INVALIDATE',\n             'context_sha256':self.context,'seal_sha256':result['seal_ref']['sha256'],\n             'previous_sha256':sha(previous),'error_type':'RESOURCE_OR_CALLER_UNKNOWN'}))\n         return self.registrar.cas(result['completed_anchor_ref']['sha256'],'anchor_invalid',{\n"
+    },
+    {
+      "new_ref": {
+        "bytes": 12172,
+        "path": "src/civiclab/e01/clerk2020_source_worker_v2.py",
+        "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+      },
+      "old_ref": {
+        "bytes": 11393,
+        "path": "src/civiclab/e01/clerk2020_source_worker_v1.py",
+        "sha256": "fb9125f82f8705cff0c9e747b6d2c04161f48ad7a8d05d2965a6f5342786c634"
+      },
+      "unified_diff": "--- src/civiclab/e01/clerk2020_source_worker_v1.py\n+++ src/civiclab/e01/clerk2020_source_worker_v2.py\n@@ -8,6 +8,7 @@\n import os\n from pathlib import Path\n import resource\n+import signal\n import sys\n import time\n \n@@ -18,10 +19,10 @@\n from civiclab.e01 import clerk2020_source_format_adapter_v1 as adapter\n from civiclab.e01.clerk2020_m2_v1_1_contracts import canonical,decode,digest,exact,hex64,require,sha\n \n-ENTRY='src/civiclab/e01/clerk2020_source_worker_v1.py'\n-OVERLAY=('src/civiclab/e01/clerk2020_native_campaign_v1.py',\n+ENTRY='src/civiclab/e01/clerk2020_source_worker_v2.py'\n+OVERLAY=('src/civiclab/e01/clerk2020_native_campaign_v2.py',\n          'src/civiclab/e01/clerk2020_source_format_adapter_v1.py',ENTRY,\n-         'src/civiclab/e01/clerk2020_source_job_v1.py')\n+         'src/civiclab/e01/clerk2020_source_job_v2.py')\n CODE_PATHS=q.CODE_PATHS+OVERLAY\n INPUT_CAPS={'clerk2020_statistics':950272,'clerk2026_nominees':491520}\n INTEGRITY_CAP=133169152\n@@ -76,7 +77,7 @@\n     p=decode(raw,950272)\n     exact(p,{'kind','source_id','source_chunks_b64','runtime_catalog','code_refs',\n              'registration_sha256','execution_decision_sha256','reservation_sha256','context_sha256'})\n-    require(p['kind']=='CLERK_SOURCE_MEMORY_REQUEST_V1_2' and type(p['source_id']) is str and p['source_id'] in INPUT_CAPS\n+    require(p['kind']=='CLERK_SOURCE_MEMORY_REQUEST_V2_1' and type(p['source_id']) is str and p['source_id'] in INPUT_CAPS\n             and len(raw)<=INPUT_CAPS[p['source_id']])\n     for key in ['registration_sha256','execution_decision_sha256','reservation_sha256','context_sha256']:\n         require(hex64(p[key]))\n@@ -143,10 +144,29 @@\n     return rows,indices,actual,reserved,backend\n \n \n+class ResourceSetupStop(RuntimeError):\n+    pass\n+\n+\n+def configure_child_limits():\n+    \"\"\"Same source-free setup used by production worker and nested CLI tests.\"\"\"\n+    try:\n+        resource.setrlimit(resource.RLIMIT_CORE,(0,0))\n+        require(resource.getrlimit(resource.RLIMIT_CORE)==(0,0))\n+        _,hard=resource.getrlimit(resource.RLIMIT_CPU)\n+        require(hard==resource.RLIM_INFINITY or hard>=8)\n+        require(signal.getsignal(signal.SIGXCPU)==signal.SIG_DFL)\n+        require(signal.SIGXCPU not in signal.pthread_sigmask(signal.SIG_BLOCK,[]))\n+        resource.setrlimit(resource.RLIMIT_CPU,(7,8))\n+        require(resource.getrlimit(resource.RLIMIT_CPU)==(7,8))\n+    except Exception:\n+        raise ResourceSetupStop('RESOURCE_LIMIT_SETUP') from None\n+\n+\n def source_worker(root,expected):\n-    stage='INPUT';telemetry=adapter.SourceTelemetry();warmup=SourceWarmup(root);progress={}\n+    stage='RESOURCE_LIMIT_SETUP';telemetry=adapter.SourceTelemetry();warmup=SourceWarmup(root);progress={}\n     try:\n-        resource.setrlimit(resource.RLIMIT_CPU,(20,21))\n+        configure_child_limits();stage='INPUT'\n         raw=sys.stdin.buffer.read(950273);p,snapshot=parse_request(raw,expected)\n         sys.path[:0]=[str(root/'src'),str(root/'tests'),str(root/q.SITE_REF)]\n         sys.addaudithook(warmup.guard);stage='IMPORT_IDENTITY'\n@@ -168,7 +188,7 @@\n         diagnostics=decode(output['public_diagnostics'],8192)\n         require(diagnostics['source_id']==p['source_id'] and diagnostics['page_count']==adapter.SOURCES[p['source_id']]['pages'])\n         cpu=resource.getrusage(resource.RUSAGE_SELF)\n-        metadata={'kind':'CLERK_SOURCE_WORKER_RECEIPT_V1_2','status':'SOURCE_FORMAT_ONLY_COMPLETE',\n+        metadata={'kind':'CLERK_SOURCE_WORKER_RECEIPT_V2_1','status':'SOURCE_FORMAT_ONLY_COMPLETE',\n             'source_id':p['source_id'],'context_sha256':p['context_sha256'],\n             'registration_sha256':p['registration_sha256'],'execution_decision_sha256':p['execution_decision_sha256'],\n             'reservation_sha256':p['reservation_sha256'],'source_sha256':sha(snapshot),'source_bytes':len(snapshot),\n@@ -185,7 +205,7 @@\n         chunks=[base64.b64encode(private[i:i+49152]).decode() for i in range(0,len(private),49152)]\n         result={'metadata':metadata,'private_projection_chunks_b64':chunks}\n     except BaseException:\n-        result={'kind':'CLERK_SOURCE_WORKER_STOP_V1_2','stage':stage,'source_format_accepted':False,\n+        result={'kind':'CLERK_SOURCE_WORKER_STOP_V2_1','stage':stage,'source_format_accepted':False,\n                 'warmup_progress':progress,'warmup_refusal':warmup.first_refusal,\n                 'source_first_refusal':telemetry.first_guard,'source_exception':telemetry.first_exception,\n                 'model_calls':0,'cost_usd':0}\n"
+    },
+    {
+      "new_ref": {
+        "bytes": 48514,
+        "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+        "sha256": "2bb6a0eedd28f8781fb492ff748d38ff7abccf176536564baa675ff3da550f5e"
+      },
+      "old_ref": {
+        "bytes": 47039,
+        "path": "src/civiclab/e01/clerk2020_source_job_v1.py",
+        "sha256": "a6dd5f7da63163cec2fa653c0234cb619e42c3cc25ca448124dcacfee9ef1fb7"
+      },
+      "unified_diff": "--- src/civiclab/e01/clerk2020_source_job_v1.py\n+++ src/civiclab/e01/clerk2020_source_job_v2.py\n@@ -9,6 +9,7 @@\n import os\n from pathlib import Path\n import resource\n+import signal\n import selectors\n import subprocess\n import sys\n@@ -17,19 +18,21 @@\n if __name__=='__main__' and len(sys.argv)==4 and sys.argv[1] in {'--boot','--exec'}:\n     sys.path.insert(0,str(Path(sys.argv[2]).absolute()/'src'))\n \n-from civiclab.e01 import clerk2020_native_campaign_v1 as n\n-from civiclab.e01 import clerk2020_source_worker_v1 as worker\n+from civiclab.e01 import clerk2020_native_campaign_v2 as n\n+from civiclab.e01 import clerk2020_source_worker_v2 as worker\n from civiclab.e01 import clerk2020_source_format_adapter_v1 as adapter\n from civiclab.e01.clerk2020_m2_v1_1_contracts import canonical,decode,digest,exact,hex64,require,sha,run_id\n \n-ENTRY='src/civiclab/e01/clerk2020_source_job_v1.py'\n-METHODS='configs/e01_clerk2020_source_format_native_methods_v1_3_20261111.json'\n-METHODS_SHA='65feb37dd104062ac749278d848371a2f6319e45899ac2c05ca59d44431cc002'\n-JOB='clerk2020_source_format_job1'\n+ENTRY='src/civiclab/e01/clerk2020_source_job_v2.py'\n+METHODS='configs/e01_clerk2020_monotone_successor_methods_v2_1_20261112.json'\n+METHODS_SHA='184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d'\n+JOB='clerk2020_source_format_job2'\n DATA_ROOT='data/raw/e01_clerk_documents_capture_v1/'\n MAX_AUTHORITY=129024\n CODE_PATHS=worker.CODE_PATHS\n SOURCE_ORDER=('clerk2020_statistics','clerk2026_nominees')\n+QUALIFIED_TOTAL=518\n+QUALIFIED_NONPROJECT=497\n \n \n class SourceResourceStop(RuntimeError):\n@@ -110,13 +113,13 @@\n     require(type(raw) is bytes and len(raw)<=MAX_AUTHORITY and hex64(expected) and sha(raw)==expected)\n     p=decode(raw,MAX_AUTHORITY)\n     exact(p,{'kind','registration','static_spec','decision','issued'})\n-    require(p['kind']=='CLERK_SOURCE_PHASE_PACKET_V1_2')\n+    require(p['kind']=='CLERK_SOURCE_PHASE_PACKET_V2_1')\n     reg=n.FixedRegistrar(n.FixedStore(root),source_set_sha())\n     require(canonical(p['registration'])==canonical(reg.binding()))\n     spec=p['static_spec']\n     exact(spec,{'kind','root_sha256','source_set_sha256','methods_ref','code_refs','qualified_ref',\n                 'runtime_review_ref','acquisition_refs','ancestor_refs','past_limits','code_review_ref'})\n-    require(spec['kind']=='CLERK_SOURCE_STATIC_SPEC_V1_2' and spec['root_sha256']==sha(str(root).encode())\n+    require(spec['kind']=='CLERK_SOURCE_STATIC_SPEC_V2_1' and spec['root_sha256']==sha(str(root).encode())\n             and spec['source_set_sha256']==source_set_sha() and spec['methods_ref']['path']==METHODS\n             and spec['methods_ref']['sha256']==METHODS_SHA)\n     exact(spec['code_refs'],CODE_PATHS)\n@@ -127,7 +130,7 @@\n     fields={'kind','phase','static_spec_sha256','source_set_sha256','phase_budget','expected_anchor_sha256'}\n     if phase=='EXEC':fields|={'prepared_ref','prepared_review_ref','job_id'}\n     exact(decision,fields)\n-    require(decision['kind']=='CLERK_SOURCE_DECISION_V1_2' and decision['phase']==phase\n+    require(decision['kind']=='CLERK_SOURCE_DECISION_V2_1' and decision['phase']==phase\n             and decision['static_spec_sha256']==digest(spec) and decision['source_set_sha256']==source_set_sha()\n             and canonical(decision['phase_budget'])==canonical(n.PREFIX_BUDGETS[phase]))\n     if phase=='BOOT':require(decision['expected_anchor_sha256'] is None)\n@@ -164,6 +167,13 @@\n         raw,charge=read_file(root/name,ref['bytes']+1);used+=charge;observed+=len(raw)\n         require(sha(raw)==ref['sha256'])\n     return observed,used\n+\n+\n+def check_qualified_rows(qualified):\n+    rows=qualified['runtime_manifest']\n+    require(len(rows)==QUALIFIED_TOTAL and sum(not r[0].startswith(('REPO/src/','REPO/tests/'))\n+            for r in rows)==QUALIFIED_NONPROJECT)\n+    return qualified\n \n \n def boot_catalog(root,spec,qualified,remaining):\n@@ -183,14 +193,14 @@\n     catalog=[row+[identity] for row,identity in zip(rows,identities)]\n     require(len(canonical(catalog))<=worker.CATALOG_CAP)\n     extras=[row for row in rows if row[0] not in expected]\n-    cache={'kind':'CLERK_SOURCE_RUNTIME_CACHE_V1_2','identities':identities,'extra_rows':extras,\n+    cache={'kind':'CLERK_SOURCE_RUNTIME_CACHE_V2_1','identities':identities,'extra_rows':extras,\n            'runtime_manifest_sha256':digest(rows),'qualified_worker_sha256':spec['qualified_ref']['sha256']}\n     require(len(canonical(cache))<=65536)\n     return rows,cache,catalog,used\n \n \n def check_code_review(review,spec):\n-    require(type(review) is dict and review.get('status')=='PASS_CLOSED_FIXED_CAMPAIGN_CODE_V1_2'\n+    require(type(review) is dict and review.get('status')=='PASS_CLOSED_FIXED_CAMPAIGN_CODE_V2_1'\n             and review.get('reviewer_role')=='independent_auditor'\n             and canonical(review.get('code_refs'))==canonical(spec['code_refs'])\n             and review.get('methods_sha256')==METHODS_SHA\n@@ -203,7 +213,7 @@\n         journal.counters.stop_unknown()\n         snapshot=journal.counters.snapshot()\n     else:snapshot=None\n-    obj={'kind':'CLERK_SOURCE_FAILED_OR_UNKNOWN_V1_2','phase':phase,'credit_restored':0,\n+    obj={'kind':'CLERK_SOURCE_FAILED_OR_UNKNOWN_V2_1','phase':phase,'credit_restored':0,\n          'source_format_accepted':False,'no_retry':True,'state':snapshot,'model_calls':0,'cost_usd':0}\n     try:\n         if not store.exists('private_stderr'):\n@@ -226,7 +236,7 @@\n         c=n.PersistentCounters();c.precharge_writes()\n         c.reserve({'bootstrap_attempts':1},'BOOT');c.settle('bootstrap_attempts',1,1,'BOOT')\n         c.reserve({'metadata_read_bytes':262144},'DELIVERY');c.settle('metadata_read_bytes',262144,None,'DELIVERY')\n-        genesis={'kind':'CLERK_SOURCE_GENESIS_V1_2','binding':reg.binding(),'static_spec_sha256':digest(p['static_spec']),\n+        genesis={'kind':'CLERK_SOURCE_GENESIS_V2_1','binding':reg.binding(),'static_spec_sha256':digest(p['static_spec']),\n                  'decision_sha256':digest(p['decision']),'issued_sha256':digest(p['issued']),\n                  'reservation_sha256':res_ref['sha256'],'initial_state':c.snapshot(),'previous':None}\n         gref=store.create('genesis',canonical(genesis));a0=reg.cas(None,'anchor_initial',{'genesis_sha256':gref['sha256']})\n@@ -236,8 +246,9 @@\n                      'active_time_ms':45000,'cpu_ms':10000})\n         window.check()\n         budget=ReadBudget(5242880);store.read_meter=budget;spec=p['static_spec']\n+        predecessor_refs_sha=reg.verify_predecessor()\n         methods=metadata_json(budget.read(root,spec['methods_ref']),65536)\n-        require(methods['kind']=='E01_FIXED_SOURCE_FORMAT_NATIVE_METHODS_V1_3_CANDIDATE')\n+        require(methods['kind']=='E01_FIXED_SOURCE_FORMAT_MONOTONE_SUCCESSOR_METHODS_V2_1_CANDIDATE')\n         require(canonical(spec['ancestor_refs'])==canonical(methods['past_consumed_qualification_records'])\n                 and canonical(spec['past_limits'])==canonical(methods['past_qualified_limits']))\n         require(canonical(spec['qualified_ref'])==canonical(methods['qualified_worker'])\n@@ -246,7 +257,7 @@\n         review=metadata_json(budget.read(root,spec['code_review_ref']),131072);check_code_review(review,spec)\n         runtime_review=metadata_json(budget.read(root,spec['runtime_review_ref']),262144)\n         require(runtime_review.get('source_authority') is not True)\n-        qualified=worker.q.validate_child(budget.read(root,spec['qualified_ref']))\n+        qualified=check_qualified_rows(worker.q.validate_child(budget.read(root,spec['qualified_ref'])))\n         for ref in spec['acquisition_refs']:budget.read(root,ref)\n         for name,ref in spec['ancestor_refs'].items():budget.read(root,dict(path=name,**ref))\n         code_observed,code_bytes=code_check(root,spec['code_refs'],524288)\n@@ -258,7 +269,7 @@\n         journal.append('BOOT','READ_SETTLE',{'effect_id':'boot_metadata','input_hash_verified':True},\n                        settle=[['metadata_read_bytes',5242880,None],\n                                ['active_time_ms',45000,None],['cpu_ms',10000,None]])\n-        snap={'kind':'CLERK_SOURCE_BOOT_COUNTERS_V1_2','state':journal.counters.snapshot(),\n+        snap={'kind':'CLERK_SOURCE_BOOT_COUNTERS_V2_1','state':journal.counters.snapshot(),\n               'observed_through_sequence':journal.sequence,'head_before_snapshot_sha256':journal.head}\n         xref=store.create('boot_counters',canonical(snap))\n         window.check()\n@@ -266,7 +277,7 @@\n             'verified_runtime_manifest_sha256':digest(rows),'verified_metadata_set_sha256':digest(spec),\n             'counter_snapshot_sha256':xref['sha256']})\n         require((time.monotonic()-started)*1000<=45000)\n-        receipt={'kind':'CLERK_SOURCE_BOOT_RECEIPT_V1_2','outcome':'VERIFIED_NO_SOURCE',\n+        receipt={'kind':'CLERK_SOURCE_BOOT_RECEIPT_V2_1','outcome':'VERIFIED_NO_SOURCE',\n             'registration_sha256':digest(reg.binding()),'static_spec_sha256':digest(spec),\n             'decision_sha256':digest(p['decision']),'issued_sha256':digest(p['issued']),\n             'reservation_ref':compact('boot_reservation',res_ref),'genesis_ref':compact('genesis',gref),\n@@ -279,7 +290,7 @@\n         a1=reg.cas(a0['sha256'],'anchor_boot',{'bootstrap_receipt_sha256':br['sha256'],\n                      'counter_snapshot_sha256':xref['sha256'],'genesis_sha256':gref['sha256']})\n         window.check()\n-        prepared={'kind':'CLERK_SOURCE_PREPARED_V1_2','binding':reg.binding(),'job_id':JOB,\n+        prepared={'kind':'CLERK_SOURCE_PREPARED_V2_1','binding':reg.binding(),'job_id':JOB,\n             'static_spec_sha256':digest(spec),'boot_receipt_ref':compact('boot_receipt',br),\n             'completed_bootstrap_anchor_sha256':a1['sha256'],'counter_ref':compact('boot_counters',xref),\n             'genesis_ref':compact('genesis',gref),'cache_ref':compact('runtime_stat_cache',cache_ref),\n@@ -298,7 +309,7 @@\n \n def reconstruct_catalog(qualified,cache):\n     exact(cache,{'kind','identities','extra_rows','runtime_manifest_sha256','qualified_worker_sha256'})\n-    require(cache['kind']=='CLERK_SOURCE_RUNTIME_CACHE_V1_2')\n+    require(cache['kind']=='CLERK_SOURCE_RUNTIME_CACHE_V2_1')\n     rows=sorted(qualified['runtime_manifest']+cache['extra_rows'])\n     require(len({r[0] for r in rows})==len(rows) and len(rows)==len(cache['identities'])\n             and digest(rows)==cache['runtime_manifest_sha256'])\n@@ -312,13 +323,11 @@\n     require(len(raw)==ref['bytes'] and sha(raw)==ref['sha256']);return raw,charge\n \n \n-def child_request(source_id,snapshot,catalog,spec,context,res_ref,decision):\n-    request={'kind':'CLERK_SOURCE_MEMORY_REQUEST_V1_2','source_id':source_id,\n+def child_request(source_id,snapshot,catalog,spec,context,res_ref,decision,registration):\n+    request={'kind':'CLERK_SOURCE_MEMORY_REQUEST_V2_1','source_id':source_id,\n         'source_chunks_b64':[base64.b64encode(snapshot[i:i+49152]).decode() for i in range(0,len(snapshot),49152)],\n         'runtime_catalog':catalog,'code_refs':spec['code_refs'],\n-        'registration_sha256':digest({'campaign_id':n.CAMPAIGN,'source_set_id':n.SOURCE_SET,\n-            'source_set_sha256':source_set_sha(),'anchor_id':n.ANCHOR,\n-            'repository_root_sha256':spec['root_sha256'],'registry_namespace':n.REGISTRY,'control_namespace':n.CONTROL}),\n+        'registration_sha256':digest(registration),\n         'execution_decision_sha256':digest(decision),'reservation_sha256':res_ref['sha256'],'context_sha256':context}\n     raw=canonical(request);require(len(raw)<=worker.INPUT_CAPS[source_id]);return raw\n \n@@ -361,15 +370,15 @@\n \n \n def safe_child_failure(raw,sid,context,stderr=b''):\n-    result={'kind':'CLERK_SOURCE_SAFE_FAILURE_V1_2','source_id':sid,'context_sha256':context,\n+    result={'kind':'CLERK_SOURCE_SAFE_FAILURE_V2_1','source_id':sid,'context_sha256':context,\n         'wire_bytes':len(raw),'wire_sha256':sha(raw),'stderr_bytes':len(stderr),'stderr_sha256':sha(stderr),\n         'raw_wire_retained':False,'source_format_accepted':False,'diagnostics':None}\n     try:\n         obj=decode(raw,8192)\n         exact(obj,{'kind','stage','source_format_accepted','warmup_progress','warmup_refusal',\n                    'source_first_refusal','source_exception','model_calls','cost_usd'})\n-        require(obj['kind']=='CLERK_SOURCE_WORKER_STOP_V1_2' and obj['source_format_accepted'] is False\n-                and obj['stage'] in {'INPUT','IMPORT_IDENTITY','GENERATED_WARMUP','RUNTIME_INTEGRITY','ACTUAL_SOURCE_FORMAT'}\n+        require(obj['kind']=='CLERK_SOURCE_WORKER_STOP_V2_1' and obj['source_format_accepted'] is False\n+                and obj['stage'] in {'RESOURCE_LIMIT_SETUP','INPUT','IMPORT_IDENTITY','GENERATED_WARMUP','RUNTIME_INTEGRITY','ACTUAL_SOURCE_FORMAT'}\n                 and type(obj['model_calls']) is int and obj['model_calls']==0\n                 and type(obj['cost_usd']) is int and obj['cost_usd']==0)\n         progress=obj['warmup_progress']\n@@ -442,7 +451,7 @@\n         'strict_first_refusal','cpu_ms_through_private_projection','public_diagnostics',\n         'private_projection_sha256','private_projection_bytes','source_counts_or_features_adopted',\n         'model_calls','cost_usd'})\n-    require(m['kind']=='CLERK_SOURCE_WORKER_RECEIPT_V1_2' and m['status']=='SOURCE_FORMAT_ONLY_COMPLETE'\n+    require(m['kind']=='CLERK_SOURCE_WORKER_RECEIPT_V2_1' and m['status']=='SOURCE_FORMAT_ONLY_COMPLETE'\n             and m['source_id']==sid and m['context_sha256']==context\n             and m['source_sha256']==adapter.SOURCES[sid]['sha256'] and m['source_bytes']==adapter.SOURCES[sid]['bytes']\n             and m['source_pages']==adapter.SOURCES[sid]['pages'] and m['source_readers']==1\n@@ -540,18 +549,19 @@\n         require(prepared['binding']==reg.binding() and prepared['source_set_sha256']==source_set_sha()\n                 and prepared['completed_bootstrap_anchor_sha256']==p['decision']['expected_anchor_sha256']\n                 and prepared['static_spec_sha256']==digest(p['static_spec']) and prepared['job_id']==JOB)\n+        predecessor_refs_sha=reg.verify_predecessor()\n         pr=metadata_json(metadata.read(root,p['decision']['prepared_review_ref']),131072)\n         require(pr.get('reviewer_role')=='independent_auditor' and pr.get('status')=='PASS_PREPARED_EXACT_SOURCE_FORMAT_JOB'\n                 and pr.get('prepared_sha256')==p['decision']['prepared_ref']['sha256']\n                 and pr.get('source_set_sha256')==source_set_sha() and pr.get('source_authority')=='EXACT_TWO_SOURCES_FORMAT_ONLY')\n-        spec=p['static_spec'];qualified=worker.q.validate_child(metadata.read(root,spec['qualified_ref']))\n+        spec=p['static_spec'];qualified=check_qualified_rows(worker.q.validate_child(metadata.read(root,spec['qualified_ref'])))\n         cache=decode(read_slot(store,prepared['cache_ref'],metadata),65536)\n         require(cache['qualified_worker_sha256']==spec['qualified_ref']['sha256'])\n         catalog=reconstruct_catalog(qualified,cache);require(digest(catalog)==prepared['runtime_catalog_sha256'])\n         genesis=decode(read_slot(store,prepared['genesis_ref'],metadata),8192)\n         receipt=decode(read_slot(store,prepared['boot_receipt_ref'],metadata),2048)\n         counter=decode(read_slot(store,prepared['counter_ref'],metadata),4096)\n-        require(counter['kind']=='CLERK_SOURCE_BOOT_COUNTERS_V1_2' and receipt['outcome']=='VERIFIED_NO_SOURCE'\n+        require(counter['kind']=='CLERK_SOURCE_BOOT_COUNTERS_V2_1' and receipt['outcome']=='VERIFIED_NO_SOURCE'\n                 and receipt['runtime_catalog_sha256']==digest(catalog))\n         prefix,charge=store.read('normal_journal',49153)\n         require(sha(prefix)==receipt['prefix_sha256'] and len(prefix)==receipt['prefix_bytes'])\n@@ -561,7 +571,7 @@\n         # BOOT snapshot intentionally precedes BOOT_COMMIT, which has no delta.\n         require(canonical(journal.counters.snapshot())==canonical(counter['state']))\n         rid=run_id(n.CAMPAIGN,JOB,p['decision']);store.bind_run(rid)\n-        context_obj={'kind':'CLERK_SOURCE_DERIVED_CONTEXT_V1_2','run_id':rid,'job_id':JOB,\n+        context_obj={'kind':'CLERK_SOURCE_DERIVED_CONTEXT_V2_1','run_id':rid,'job_id':JOB,\n             'registration':reg.binding(),'static_spec_sha256':digest(spec),\n             'execution_decision_sha256':digest(p['decision']),'issued_sha256':digest(p['issued']),\n             'reservation_sha256':res_ref['sha256'],'prepared_sha256':p['decision']['prepared_ref']['sha256']}\n@@ -593,7 +603,7 @@\n                 'page_extractions':ref['pages'],'warmup_backend_attempts':4,'warmup_page_extractions':119,\n                 'total_backend_attempts':5,'total_page_extractions':119+ref['pages'],\n                 'code_integrity_read_bytes':worker.INTEGRITY_CAP})\n-            request=child_request(sid,snapshot,catalog,spec,context,res_ref,p['decision'])\n+            request=child_request(sid,snapshot,catalog,spec,context,res_ref,p['decision'],reg.binding())\n             wire+=len(request);require(wire+worker.OUTPUT_CAP<=2097152)\n             try:\n                 response,stderr,child_peak=dispatch(root,request,started)\n@@ -643,6 +653,7 @@\n         provenance=canonical({'label':'SOURCE_FORMAT_ONLY','context_sha256':context,'source_hashes':[adapter.SOURCES[s]['sha256'] for s in SOURCE_ORDER],\n             'qualified_worker_ref':spec['qualified_ref'],'stat_cache_ref':prepared['cache_ref'],\n             'child_metadata_refs':child_refs,'boot_receipt_ref':prepared['boot_receipt_ref'],\n+            'predecessor_refs_sha256':predecessor_refs_sha,'predecessor_state_sha256':n.PREDECESSOR_STATE_SHA,\n             'prepared_ref':p['decision']['prepared_ref'],'methods_sha256':METHODS_SHA})\n         require(len(projection)<=251904 and len(public)<=8192 and len(provenance)<=2048)\n         payloads={'inspection_projection.local.json':projection,'inspection_diagnostics.json':public,\n@@ -664,7 +675,7 @@\n             prewritten={'inspection_projection.local.json':projection_ref})\n         window.check()\n         store.crash('caller.before')\n-        caller={'kind':'CLERK_SOURCE_CALLER_OBSERVATION_V1_2','context_sha256':context,\n+        caller={'kind':'CLERK_SOURCE_CALLER_OBSERVATION_V2_1','context_sha256':context,\n                 'seal_sha256':result['seal_ref']['sha256'],'writer_ack_sha256':result['writer_ack_ref']['sha256'],\n                 'terminal_anchor_sha256':result['completed_anchor_ref']['sha256'],\n                 'writer_return_observed':True,'returned_normally':True,'error_type':None,\n@@ -694,12 +705,32 @@\n         return fail_record(store,journal,'EXEC')\n \n \n+def configure_cli_limits(phase):\n+    \"\"\"Fail before input; no attempt to raise an inherited hard limit.\"\"\"\n+    try:\n+        require(phase in {'BOOT','EXEC'})\n+        resource.setrlimit(resource.RLIMIT_CORE,(0,0))\n+        require(resource.getrlimit(resource.RLIMIT_CORE)==(0,0))\n+        desired=(9,10) if phase=='BOOT' else (7,8)\n+        _,hard=resource.getrlimit(resource.RLIMIT_CPU)\n+        require(hard==resource.RLIM_INFINITY or hard>=desired[1])\n+        require(signal.getsignal(signal.SIGXCPU)==signal.SIG_DFL)\n+        require(signal.SIGXCPU not in signal.pthread_sigmask(signal.SIG_BLOCK,[]))\n+        resource.setrlimit(resource.RLIMIT_CPU,desired)\n+        require(resource.getrlimit(resource.RLIMIT_CPU)==desired)\n+    except Exception:\n+        raise worker.ResourceSetupStop('RESOURCE_LIMIT_SETUP') from None\n+\n+\n if __name__=='__main__':\n     if len(sys.argv)==4 and sys.argv[1] in {'--boot','--exec'}:\n         root=Path(sys.argv[2]).absolute()\n         import signal\n         signal.setitimer(signal.ITIMER_REAL,45 if sys.argv[1]=='--boot' else 75)\n-        resource.setrlimit(resource.RLIMIT_CPU,(9,10) if sys.argv[1]=='--boot' else (7,8))\n+        try:configure_cli_limits('BOOT' if sys.argv[1]=='--boot' else 'EXEC')\n+        except worker.ResourceSetupStop:\n+            print(canonical({'status':'RESOURCE_LIMIT_SETUP_STOP_NO_INPUT','phase':'BOOT' if sys.argv[1]=='--boot' else 'EXEC',\n+                'source_format_accepted':False,'model_calls':0,'cost_usd':0}).decode());raise SystemExit(2)\n         raw=sys.stdin.buffer.read(MAX_AUTHORITY+1)\n         result=(run_boot if sys.argv[1]=='--boot' else run_exec)(root,raw,sys.argv[3])\n         signal.setitimer(signal.ITIMER_REAL,0)\n"
+    },
+    {
+      "new_ref": {
+        "bytes": 8888,
+        "path": "scripts/prepare_e01_source_phase_v3.py",
+        "sha256": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2"
+      },
+      "old_ref": {
+        "bytes": 8888,
+        "path": "scripts/prepare_e01_source_phase_v2.py",
+        "sha256": "36ef80231e3fa9774dc7ff45a837e307d628b4fe0af8600a185de0f5731186fe"
+      },
+      "unified_diff": "--- scripts/prepare_e01_source_phase_v2.py\n+++ scripts/prepare_e01_source_phase_v3.py\n@@ -5,11 +5,11 @@\n from pathlib import Path\n import sys\n sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))\n-from civiclab.e01 import clerk2020_source_job_v1 as j\n+from civiclab.e01 import clerk2020_source_job_v2 as j\n \n READ_CAP=1048576\n READ_COUNTS={'BOOT':2,'EXEC':6}\n-TECH_BASE='data/processed/e01_clerk2020_source_packet_preparation_v2'\n+TECH_BASE='data/processed/e01_clerk2020_source_packet_preparation_v3'\n WRITE_CAP=196608\n \n \n@@ -54,7 +54,7 @@\n         with os.fdopen(fd,'wb') as stream:\n             j.require(stream.write(body)==len(body));stream.flush();os.fsync(stream.fileno())\n         j.n.fsync_dir(path.parent)\n-    write(scope/'STARTED.local.json',j.canonical({'kind':'TECHNICAL_SOURCE_PACKET_PREPARATION_V2',\n+    write(scope/'STARTED.local.json',j.canonical({'kind':'TECHNICAL_SOURCE_PACKET_PREPARATION_V3',\n         'phase':phase,'read_bytes_ceiling':READ_CAP,'read_count_ceiling':READ_COUNTS[phase],\n         'write_bytes_ceiling':WRITE_CAP,'source_reads':0,'runtime_binary_reads':0,\n         'campaign_issue_or_execution':False,'no_retry':True,'root_sha256':j.sha(str(root).encode())}))\n@@ -71,14 +71,14 @@\n             methods=j.metadata_json(methods_raw,65536)\n             # Use exact independent frozen references, never preflight code.\n             codes=review['code_refs'];j.exact(codes,j.CODE_PATHS)\n-            spec={'kind':'CLERK_SOURCE_STATIC_SPEC_V1_2','root_sha256':j.sha(str(root).encode()),\n+            spec={'kind':'CLERK_SOURCE_STATIC_SPEC_V2_1','root_sha256':j.sha(str(root).encode()),\n                 'source_set_sha256':j.source_set_sha(),'methods_ref':methods_ref,'code_refs':codes,\n                 'qualified_ref':methods['qualified_worker'],'runtime_review_ref':methods['qualified_runtime_actual'],\n                 'acquisition_refs':[methods['accepted_acquisition'],methods['acquisition_handoff']],\n                 'ancestor_refs':methods['past_consumed_qualification_records'],\n                 'past_limits':methods['past_qualified_limits'],'code_review_ref':review_ref}\n             j.check_code_review(review,spec);anchor=None\n-            decision={'kind':'CLERK_SOURCE_DECISION_V1_2','phase':phase,'static_spec_sha256':j.digest(spec),\n+            decision={'kind':'CLERK_SOURCE_DECISION_V2_1','phase':phase,'static_spec_sha256':j.digest(spec),\n                 'source_set_sha256':j.source_set_sha(),'phase_budget':j.n.PREFIX_BUDGETS[phase],\n                 'expected_anchor_sha256':None}\n         else:\n@@ -93,7 +93,7 @@\n             a0_raw,_=reader.read(store.path('anchor_initial'),1537)\n             a1_raw,_=reader.read(store.path('anchor_boot'),2049)\n             a0=j.decode(a0_raw,2048);a1=j.decode(a1_raw,2048);anchor=j.sha(a1_raw)\n-            j.require(a0['kind']==a1['kind']=='CLERK_SOURCE_ANCHOR_V1_2'\n+            j.require(a0['kind']==a1['kind']=='CLERK_SOURCE_ANCHOR_V2_1'\n                 and a0['binding']==a1['binding']==registry.binding()\n                 and a0['state']=='anchor_initial' and a1['state']=='anchor_boot'\n                 and a0['previous_anchor_sha256'] is None and a1['previous_anchor_sha256']==j.sha(a0_raw)\n@@ -104,7 +104,7 @@\n                 and review.get('prepared_sha256')==pref['sha256']\n                 and review.get('source_set_sha256')==j.source_set_sha()\n                 and review.get('source_authority')=='EXACT_TWO_SOURCES_FORMAT_ONLY')\n-            decision={'kind':'CLERK_SOURCE_DECISION_V1_2','phase':phase,'static_spec_sha256':j.digest(spec),\n+            decision={'kind':'CLERK_SOURCE_DECISION_V2_1','phase':phase,'static_spec_sha256':j.digest(spec),\n                 'source_set_sha256':j.source_set_sha(),'phase_budget':j.n.PREFIX_BUDGETS[phase],\n                 'expected_anchor_sha256':anchor,'prepared_ref':pref,\n                 'prepared_review_ref':review_ref,'job_id':j.JOB}\n@@ -112,10 +112,10 @@\n             registry.store.bind_run(j.run_id(j.n.CAMPAIGN,j.JOB,decision))\n             j.require(not any(registry.store.exists(slot) for slot in\n                 ('exec_issued','anchor_active','anchor_complete','anchor_invalid')))\n-        issued={'kind':'CLERK_SOURCE_ISSUED_V1_2','phase':phase,'ordinal':1,'binding':registry.binding(),\n+        issued={'kind':'CLERK_SOURCE_ISSUED_V2_1','phase':phase,'ordinal':1,'binding':registry.binding(),\n             'decision_sha256':j.digest(decision),'expected_anchor_sha256':anchor,'one_shot':True,\n             'prefix_budget':j.n.PREFIX_BUDGETS[phase]}\n-        packet=j.canonical({'kind':'CLERK_SOURCE_PHASE_PACKET_V1_2','registration':registry.binding(),\n+        packet=j.canonical({'kind':'CLERK_SOURCE_PHASE_PACKET_V2_1','registration':registry.binding(),\n                            'static_spec':spec,'decision':decision,'issued':issued})\n         j.phase_packet(root,packet,j.sha(packet),phase)\n         write(out,packet);status='PREPARED_NOT_EXECUTED'\n@@ -123,7 +123,7 @@\n                 'sha256':j.sha(packet),'source_reads':0,'registrar_issued':False,'model_calls':0}\n         return result\n     finally:\n-        receipt={'kind':'TECHNICAL_SOURCE_PACKET_PREPARATION_RECEIPT_V2','status':status,'phase':phase,\n+        receipt={'kind':'TECHNICAL_SOURCE_PACKET_PREPARATION_RECEIPT_V3','status':status,'phase':phase,\n             'read_count':len(reader.records),'reserved_read_bytes':reader.reserved,\n             'observed_read_bytes':reader.observed,'reads':reader.records,'packet':result,\n             'source_reads':0,'runtime_binary_reads':0,'campaign_issue_or_execution':False,\n"
+    }
+  ],
+  "frozen_original_18pins_unchanged": true,
+  "implementation_summary": [
+    "New3modules/helper, unchangedactualadapter and alloldcallers/pins. Newfixedsourceindex is adjacent originalindex.successor-v2.local.json, sameoriginalsource_set SHA/ID, fixedroot/predecessorstate/stop/index/ordinal bindings.",
+    "Existingoriginal zero-bytelock openedreadonly and flocked; oldindex/bytes not rewritten. Newmarkers remain consumed onfailure.",
+    "Ninefixedclosedmetadata refs (eight predecessorrecords+independentstopaudit) checked via descriptoridentity/hash and reservation-firstread meter in newBOOT/newEXEC/closing. Exact old20axes fullycharged, no refund.",
+    "NewBOOTledger reservations established before predecessorbodyreads; closing predecessorreads use existing2MiB verification meter.",
+    "Productionparent/child limiter functions set and verify CORE0/0 and CPU7/8, require adequateinheritedhardlimit/defaultunblockedSIGXCPU; resource stage precedesstdin. No hardraise/fallback.",
+    "Qualified manifest check distinguishes518total/497nonproject; child exactnonproject closure unchanged.",
+    "Successorregistration hashing uses full actualreg.binding memory, including predecessorproofs; predecessorhashes additionally bound in existingprivateprovenance and closing verification.",
+    "Global/perphasewrite/read/wall/CPU/RSSlimits retained; no newslots. Sizeadequacy of allnewcompositeartifacts still needs broader authoredexecution; oversizefailsclosed.",
+    "SafeSOURCESETUPstage admitted; source/exceptionmessages/locals/paths not persisted. Typedterminalwall/CPUinvalidation preserved.",
+    "Technicalhelperv3 has newcreate-oncescopes but unchanged2/6reads/<1MiBcombinedfixedmaximum/192KiBwritecaps; actualtechnicalpreparation NOT_RUN."
+  ],
+  "independent_methods_ref": {
+    "bytes": 13001,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_METHODS_V2_1_20261112.json",
+    "sha256": "c59897f3e73fa09609461fb940bd2aa1a40e2ce715766c6385f80e815c990e99"
+  },
+  "methods_ref": {
+    "bytes": 56031,
+    "path": "configs/e01_clerk2020_monotone_successor_methods_v2_1_20261112.json",
+    "sha256": "184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d"
+  },
+  "proposed_next_authored_scope": {
+    "PDF_native_imports": 0,
+    "actual_repository_data_reads": 0,
+    "exact_test_count_per_runtime": 58,
+    "failure": "Stoponfirstunexpectedtestfailure, preservecurrentcandidatesource/log beforecorrection, no extra invocation without reviewedfinitecontinuation.",
+    "guards": "Blockactualrepo data/credentials exceptPython3.11toolchainstdlib; blockallPDF/nativeimports, sockets and subprocess/fork. Newfixtures use patchedauthoredtemporarysources/receipts/OSidentities and mockeddispatch. This is not nativequalification.",
+    "invocations_per_runtime": 1,
+    "modules": [
+      "test_clerk2020_native_campaign_v2",
+      "test_clerk2020_source_worker_v2",
+      "test_clerk2020_source_job_v2",
+      "test_clerk2020_source_packet_prepare_v3"
+    ],
+    "network_model_calls": 0,
+    "per_runtime_caps": {
+      "CPU_seconds": 120,
+      "authored_temporary_write_bytes": 134217728,
+      "captured_output_bytes": 262144,
+      "task_code_metadata_read_bytes": 536870912,
+      "wall_seconds": 120
+    },
+    "runtimes": [
+      "3.12",
+      "3.11"
+    ],
+    "status": "PROPOSAL_NOT_EXECUTED",
+    "subprocesses": 0
+  },
+  "status": "FROZEN_DRAFT_IMPLEMENTATION_CPU_ONLY_TESTED_NO_SOURCE_RELEASE",
+  "syntax_only": [
+    {
+      "ast_parse": "PASS",
+      "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+      "test_methods": 0
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "src/civiclab/e01/clerk2020_source_worker_v2.py",
+      "test_methods": 0
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+      "test_methods": 0
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "scripts/prepare_e01_source_phase_v3.py",
+      "test_methods": 0
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "tests/test_clerk2020_native_campaign_v2.py",
+      "test_methods": 22
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "tests/test_clerk2020_source_worker_v2.py",
+      "test_methods": 10
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "tests/test_clerk2020_source_job_v2.py",
+      "test_methods": 18
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "tests/test_clerk2020_source_cli_inheritance_v2.py",
+      "test_methods": 6
+    },
+    {
+      "ast_parse": "PASS",
+      "path": "tests/test_clerk2020_source_packet_prepare_v3.py",
+      "test_methods": 8
+    }
+  ]
+}

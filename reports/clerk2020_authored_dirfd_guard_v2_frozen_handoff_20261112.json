@@ -1,0 +1,106 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 4963,
+      "path": "scripts/e01_authored_dirfd_guard_20261112.py",
+      "sha256": "2418c34703e3428c3bf35bca24f21b57e2dcd9a023081037f6bb6e6f31b03998"
+    },
+    {
+      "bytes": 7105,
+      "path": "scripts/e01_authored_dirfd_checks_20261112.py",
+      "sha256": "89282ac295dfdaa0aa1c23062971cdde6bbcb91e7c070cd0d34eb10a37f9a2f9"
+    },
+    {
+      "bytes": 6738,
+      "path": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+      "sha256": "c2ec6da27d70432f4eced9810cdd50a15914e5ccfb3d0a384e819040bc0e7b33"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor staticreview of newguard and8checkdefinitions; return particularofflinecontinuationscope only if accepted.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 4963,
+      "path": "scripts/e01_authored_dirfd_guard_20261112.py",
+      "sha256": "2418c34703e3428c3bf35bca24f21b57e2dcd9a023081037f6bb6e6f31b03998"
+    },
+    {
+      "bytes": 7105,
+      "path": "scripts/e01_authored_dirfd_checks_20261112.py",
+      "sha256": "89282ac295dfdaa0aa1c23062971cdde6bbcb91e7c070cd0d34eb10a37f9a2f9"
+    },
+    {
+      "bytes": 6738,
+      "path": "scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+      "sha256": "c2ec6da27d70432f4eced9810cdd50a15914e5ccfb3d0a384e819040bc0e7b33"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PROPOSED ONLY after exactreview/leadrelease: .venv/bin/python -B scripts/verify_e01_monotone_successor_offline_v2_20261112.py",
+    "PROPOSED ONLY after firstpass: data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B scripts/verify_e01_monotone_successor_offline_v2_20261112.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Exactreviewrequired; no claim guard is accepted from syntax.",
+    "Existingnewengine/adoption/CPUreceiptremedies stillawait broaderexecution/codeacceptance.",
+    "Directoryorigin/fstat checks assume trustedlocalfilesystem; race/hostilehost guarantee not claimed."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "No new data/runtimebody/native/credential inspection. Sources are purecode and previousfailedharnesssource; effects negativeprotectedpaths are unexecutedspieddefinitions.",
+  "TASK_ID": "E01_AUTHORED_DIRFD_GUARD_V2_FROZEN_REVIEW_20261112",
+  "TESTS_RUN_AND_RESULTS": "ASTsyntaxonly on3newfiles and8methodcount verified; no newtestcase,guardinstallation,scopeinvocation or actualsource/native execution.",
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exactguard/check/harnessreview",
+    "Leadfinitecontinuation release before anyexecution",
+    "Laterenginecode/actualrootgatesremainseparate"
+  ],
+  "eight_checks": [
+    "test_owned_temporary_cleanup",
+    "test_two_directories_thread_local_isolation",
+    "test_unknown_fd",
+    "test_closed_reused_or_aliased_fd",
+    "test_regular_file_fd",
+    "test_forbidden_absolute_ignores_valid_dirfd_but_still_denies",
+    "test_symlink_to_forbidden_data",
+    "test_context_restoration_and_original_raw_arguments_after_error"
+  ],
+  "guard_contract": {
+    "absolute": "Absolute paths ignore dir_fd entirely, but policy still rejects protectedpaths before rawsyscall.",
+    "negative_effect_safety": "All protectedpath negativechecks swap local raw_open with an assertion effectspy. Even an incorrect guard cannot open protecteddata in these tests. Globalharness protection remains active too.",
+    "platform_root_aliases": "Only verified conventional Darwin /var->/private/var and /tmp->/private/tmp are normalized before checking directoryorigins. This handles system temp paths; no arbitrary symlink normalization. User-created origin/targetaliases remain refused.",
+    "raw_arguments": "Calls raw_open(*args,**kwargs) unchanged, including originalpathbytes/flags/mode/dir_fd; try/finally restores previous threadlocalcontext on success/error.",
+    "registry": "Newdirectories register only after fdidentity matches currentunaliasedorigin. Close invalidates before rawclose. Unknown,closed/reused,regularfile,renamed/symlinked origin refuse. No /dev/fd or nativeinspection.",
+    "relative": "Only relative dir_fd calls receive thread-local pendingcontext. Descriptor must be registered directory with livefstatdev/inode/mode, samecurrentoriginstat, samegeneration, noaliases and stableorigin; auditresolution rechecks again.",
+    "trust_limit": "Trusted local authoredtestprocess; not malicious-host/OS-rollback protection. Every relevant os.open/close useswrapper; no new subprocess/native/source work."
+  },
+  "harness_diff": "--- consumed_harness_v1\n+++ proposed_harness_v2\n@@ -1,4 +1,4 @@\n-\"\"\"One consumed fail-fast 58-test authored scope per runtime; no actual data.\"\"\"\n+\"\"\"One consumed fail-fast 66-test authored scope per runtime; no actual data.\"\"\"\n import ast\n import builtins\n import hashlib\n@@ -12,15 +12,16 @@\n import sys\n import time\n import unittest\n+from e01_authored_dirfd_guard_20261112 import DirectoryFdGuard\n \n ROOT=Path(__file__).resolve().parents[1]\n sys.path[:0]=[str(ROOT/'src'),str(ROOT/'tests')]\n-MODULES=['test_clerk2020_native_campaign_v2','test_clerk2020_source_worker_v2',\n+MODULES=['e01_authored_dirfd_checks_20261112','test_clerk2020_native_campaign_v2','test_clerk2020_source_worker_v2',\n          'test_clerk2020_source_job_v2','test_clerk2020_source_packet_prepare_v3']\n RUNTIME=str(sys.version_info.major)+str(sys.version_info.minor)\n assert RUNTIME in {'311','312'}\n READ_CAP=536870912;WRITE_CAP=134217728;OUTPUT_CAP=262144\n-PREFIX=ROOT/'reports'/('clerk2020_monotone_offline_'+RUNTIME+'_20261112')\n+PREFIX=ROOT/'reports'/('clerk2020_monotone_offline_v2_'+RUNTIME+'_20261112')\n START=Path(str(PREFIX)+'_STARTED.json');RECEIPT=Path(str(PREFIX)+'_RECEIPT.json')\n clock=time.monotonic;usage=resource.getrusage\n started=clock();initial_cpu=usage(resource.RUSAGE_SELF)\n@@ -37,24 +38,29 @@\n             raise ScopeStop('NO_PDF_NATIVE_IMPORT')\n sys.meta_path.insert(0,NoNative())\n \n+def allowed_path(path,flags):\n+    path=Path(os.path.realpath(path))\n+    toolchain=ROOT/'data/processed/toolchains/cpython-3.11.17-macos-aarch64-none'\n+    if (path.is_relative_to(ROOT/'data') and not path.is_relative_to(toolchain)) or path.name.startswith('.env'):\n+        raise ScopeStop('NO_ACTUAL_DATA_OR_CREDENTIALS')\n+    writing=bool(flags&(os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND))\n+    if writing and path.is_relative_to(ROOT) and path not in {START,RECEIPT}:\n+        raise ScopeStop('NO_REPOSITORY_MUTATION')\n+\n+dirfds=DirectoryFdGuard(allowed_path)\n def guard(event,args):\n     if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):\n-        path=Path(os.path.realpath(os.fsdecode(args[0])))\n-        toolchain=ROOT/'data/processed/toolchains/cpython-3.11.17-macos-aarch64-none'\n-        if (path.is_relative_to(ROOT/'data') and not path.is_relative_to(toolchain)) or path.name.startswith('.env'):\n-            raise ScopeStop('NO_ACTUAL_DATA_OR_CREDENTIALS')\n+        path=dirfds.event_path(args[0])\n         flags=args[2] if len(args)>2 and type(args[2]) is int else 0\n-        writing=bool(flags&(os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND))\n-        if writing and path.is_relative_to(ROOT) and path not in {START,RECEIPT}:\n-            raise ScopeStop('NO_REPOSITORY_MUTATION')\n-        reading=not(flags&os.O_WRONLY)\n-        if reading:\n+        allowed_path(path,flags)\n+        if not(flags&os.O_WRONLY):\n             try:size=path.stat().st_size\n             except FileNotFoundError:size=0\n             reserve('reserved_read_bytes',size+1,READ_CAP)\n     if event.startswith('socket.') or event in {'subprocess.Popen','os.fork','os.forkpty','os.posix_spawn','os.system','ctypes.dlopen'}:\n         raise ScopeStop('NO_PROCESS_NETWORK_OR_NATIVE_LOAD')\n sys.addaudithook(guard)\n+os.open=dirfds.open;os.close=dirfds.close\n \n class MeteredFile:\n     def __init__(self,stream):self.stream=stream\n@@ -93,26 +99,27 @@\n resource.setrlimit(resource.RLIMIT_CORE,(0,0));resource.setrlimit(resource.RLIMIT_CPU,(119,120))\n def expired(*args):raise ScopeStop('FIXED_AUTHORED_WALL_EXHAUSTED')\n signal.signal(signal.SIGALRM,expired);signal.setitimer(signal.ITIMER_REAL,120)\n-with START.open('x') as f:json.dump({'kind':'TECHNICAL_AUTHORED_58_TESTS_STARTED','runtime':RUNTIME,'no_retry':True,\n+with START.open('x') as f:json.dump({'kind':'TECHNICAL_AUTHORED_66_TESTS_STARTED','runtime':RUNTIME,'no_retry':True,\n     'caps':{'reads':READ_CAP,'writes':WRITE_CAP,'output':OUTPUT_CAP,'wall_seconds':120,'cpu_seconds':120},\n     'subprocesses':0,'actual_sources':0,'native_imports':0,'network_model_calls':0},f,sort_keys=True)\n \n # Explicit task-code refs only, not actual source/runtime binary hashes.\n source_paths=['src/civiclab/e01/clerk2020_native_campaign_v2.py','src/civiclab/e01/clerk2020_source_worker_v2.py',\n               'src/civiclab/e01/clerk2020_source_job_v2.py','scripts/prepare_e01_source_phase_v3.py']\n-source_paths += ['tests/'+name+'.py' for name in MODULES]\n+source_paths += ['tests/'+name+'.py' for name in MODULES if name!='e01_authored_dirfd_checks_20261112']\n+source_paths += ['scripts/e01_authored_dirfd_guard_20261112.py','scripts/e01_authored_dirfd_checks_20261112.py']\n def hashes():return {p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in source_paths}\n before=hashes();result=None;error=None\n try:\n     suite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in MODULES)\n-    if suite.countTestCases()!=58:raise ScopeStop('FIXED_TEST_COUNT_MISMATCH')\n+    if suite.countTestCases()!=66:raise ScopeStop('FIXED_TEST_COUNT_MISMATCH')\n     result=unittest.TextTestRunner(verbosity=2,failfast=True).run(suite)\n except BaseException as exc:\n     error=type(exc).__name__\n finally:\n     signal.setitimer(signal.ITIMER_REAL,0)\n     after=hashes();end_cpu=usage(resource.RUSAGE_SELF)\n-    record={'kind':'TECHNICAL_AUTHORED_58_TESTS_RECEIPT','runtime':RUNTIME,\n+    record={'kind':'TECHNICAL_AUTHORED_66_TESTS_RECEIPT','runtime':RUNTIME,\n         'tests_run':0 if result is None else result.testsRun,\n         'successful':result is not None and result.wasSuccessful() and before==after and error is None,\n         'error_type':error,'code_unchanged':before==after,'source_hashes':after,\n",
+  "old_engine_remedy_sources_unchanged": true,
+  "old_scope_sources_unchanged": true,
+  "preserved_firststop": {
+    "bytes": 23053,
+    "path": "reports/clerk2020_monotone_first_offline_stop_handoff_20261112.json",
+    "sha256": "be5d749552fb2994bac519311683794ad7ae5864403d5d3e076309deacfc16ed"
+  },
+  "proposed_continuation": {
+    "broader58_NOT_RUN_again": true,
+    "caps_per_runtime": {
+      "CPU_seconds": 120,
+      "captured_output_bytes": 262144,
+      "reserved_code_metadata_read_bytes": 536870912,
+      "reserved_temporary_write_bytes": 134217728,
+      "wall_seconds": 120
+    },
+    "check_order": "8sourcefreeguardchecks first, then same4modules58methods, failfast globally; total66.",
+    "first_unexpected_failure": "Stop, preservecode/log/receipt; no automaticotherruntime/retry.",
+    "guard_checks_NOT_RUN": true,
+    "invocations_per_runtime": 1,
+    "newtechnicalmarker_prefix": "reports/clerk2020_monotone_offline_v2_<runtime>_20261112_{STARTED,RECEIPT}.json",
+    "old_started_and_receipts": "Preserved, cannot reuse.",
+    "runtime_order": [
+      "312",
+      "311_only_if312passes"
+    ],
+    "status": "NOT_RELEASED_PENDING_EXACT_REVIEW_AND_LEAD",
+    "subprocess_fork_PDF_native_source_network_model": 0,
+    "total_cases_per_runtime": 66
+  },
+  "status": "DRAFT_GUARD_AND8CHECKS_FROZEN_NOT_EXECUTED"
+}
