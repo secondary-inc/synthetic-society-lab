@@ -1,0 +1,702 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-13T02:46:27.974724+00:00",
+  "source": "https://api.github.com/repos/secondary-inc/synthetic-society-lab/dependabot/alerts?state=open&per_page=100",
+  "scope": "Read-only GitHub metadata GET; selected advisory metadata only; no install, source read, runtime import or execution. Alerts describe dependency metadata, not observed exploitation.",
+  "collection_note": "First successful GET was not retained because the local transformation expected a missing html_url field. This second GET uses advisory IDs; no service request retry occurred. Earlier initial alert inspection was also read-only.",
+  "declared_current_version": "6.10.0",
+  "count": 49,
+  "severity_counts": {
+    "high": 20,
+    "medium": 28,
+    "low": 1
+  },
+  "alerts": [
+    {
+      "number": 49,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-5849-834g-hvw5",
+      "severity": "high",
+      "summary": "pypdf has possible infinite loop when hitting EOF in standard xref table during trailer search",
+      "vulnerable_version_range": "< 6.21.4",
+      "first_patched_version": {
+        "identifier": "6.21.4"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-5849-834g-hvw5"
+    },
+    {
+      "number": 48,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-cggf-277g-3q54",
+      "severity": "high",
+      "summary": "pypdf has possible large memory usage when parsing page tree",
+      "vulnerable_version_range": "< 6.21.4",
+      "first_patched_version": {
+        "identifier": "6.21.4"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-cggf-277g-3q54"
+    },
+    {
+      "number": 47,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-mfr5-77xh-9j7h",
+      "severity": "high",
+      "summary": "pypdf has possible infinite loop when cloning dictionaries",
+      "vulnerable_version_range": "< 6.21.4",
+      "first_patched_version": {
+        "identifier": "6.21.4"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-mfr5-77xh-9j7h"
+    },
+    {
+      "number": 46,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-42gh-23hr-vphw",
+      "severity": "high",
+      "summary": "pypdf has possible long runtimes when retrieving page labels",
+      "vulnerable_version_range": "< 6.21.3",
+      "first_patched_version": {
+        "identifier": "6.21.3"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-42gh-23hr-vphw"
+    },
+    {
+      "number": 45,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-4vqv-7265-gm2w",
+      "severity": "high",
+      "summary": "pypdf has possible large memory usage for exceptions in strict mode",
+      "vulnerable_version_range": "< 6.21.3",
+      "first_patched_version": {
+        "identifier": "6.21.3"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-4vqv-7265-gm2w"
+    },
+    {
+      "number": 44,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-62m5-6wh8-28x7",
+      "severity": "high",
+      "summary": "pypdf has possible long runtimes/large memory usage for encrypted PDF files",
+      "vulnerable_version_range": "< 6.21.3",
+      "first_patched_version": {
+        "identifier": "6.21.3"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-62m5-6wh8-28x7"
+    },
+    {
+      "number": 43,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-x3rh-gjgm-fmqc",
+      "severity": "high",
+      "summary": "pypdf has possible large memory usage when parsing cross-reference streams",
+      "vulnerable_version_range": "< 6.21.3",
+      "first_patched_version": {
+        "identifier": "6.21.3"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-x3rh-gjgm-fmqc"
+    },
+    {
+      "number": 42,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-6c7f-9265-g8fw",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes for repeated references to the same missing object",
+      "vulnerable_version_range": "< 6.21.2",
+      "first_patched_version": {
+        "identifier": "6.21.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-6c7f-9265-g8fw"
+    },
+    {
+      "number": 41,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-jr96-gvgh-j3r4",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes for repeated malformed cross-reference entries (Follow-up)",
+      "vulnerable_version_range": "< 6.21.2",
+      "first_patched_version": {
+        "identifier": "6.21.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-jr96-gvgh-j3r4"
+    },
+    {
+      "number": 40,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-gmh7-3g9r-mjh5",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes for large xref table header limits",
+      "vulnerable_version_range": "< 6.21.2",
+      "first_patched_version": {
+        "identifier": "6.21.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-gmh7-3g9r-mjh5"
+    },
+    {
+      "number": 39,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-6vvc-x485-93v7",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes/large memory usage when retrieving form fields",
+      "vulnerable_version_range": "< 6.21.0",
+      "first_patched_version": {
+        "identifier": "6.21.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-6vvc-x485-93v7"
+    },
+    {
+      "number": 38,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-f54x-cmq8-qg57",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage when parsing arrays and dictionaries",
+      "vulnerable_version_range": "< 6.21.0",
+      "first_patched_version": {
+        "identifier": "6.21.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-f54x-cmq8-qg57"
+    },
+    {
+      "number": 37,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-cgf9-327m-v77c",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage when parsing content streams",
+      "vulnerable_version_range": "< 6.21.0",
+      "first_patched_version": {
+        "identifier": "6.21.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-cgf9-327m-v77c"
+    },
+    {
+      "number": 36,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-5hx5-vpf9-5wcv",
+      "severity": "low",
+      "summary": "pypdf: Unvalidated JPEG image data loading",
+      "vulnerable_version_range": "< 6.21.1",
+      "first_patched_version": {
+        "identifier": "6.21.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-5hx5-vpf9-5wcv"
+    },
+    {
+      "number": 35,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-qfv9-64jg-mh7p",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop in PdfWriter.find_outline_item",
+      "vulnerable_version_range": "< 6.20.1",
+      "first_patched_version": {
+        "identifier": "6.20.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-qfv9-64jg-mh7p"
+    },
+    {
+      "number": 34,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-9mx8-4j7g-633p",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when removing tree items",
+      "vulnerable_version_range": "< 6.20.1",
+      "first_patched_version": {
+        "identifier": "6.20.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-9mx8-4j7g-633p"
+    },
+    {
+      "number": 33,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-39mj-jf6j-2qj3",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when hitting EOF in standard xref table",
+      "vulnerable_version_range": "< 6.20.0",
+      "first_patched_version": {
+        "identifier": "6.20.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-39mj-jf6j-2qj3"
+    },
+    {
+      "number": 32,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-7mh2-4gg2-979f",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage for streams with multiple filters",
+      "vulnerable_version_range": "< 6.20.0",
+      "first_patched_version": {
+        "identifier": "6.20.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-7mh2-4gg2-979f"
+    },
+    {
+      "number": 31,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-v247-6f48-mgcj",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes with large amount of embedded files",
+      "vulnerable_version_range": "< 6.19.0",
+      "first_patched_version": {
+        "identifier": "6.19.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-v247-6f48-mgcj"
+    },
+    {
+      "number": 30,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-php9-fj8v-98fj",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes when generating appearance streams",
+      "vulnerable_version_range": "< 6.19.0",
+      "first_patched_version": {
+        "identifier": "6.19.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-php9-fj8v-98fj"
+    },
+    {
+      "number": 29,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-w23x-9jrw-r45c",
+      "severity": "high",
+      "summary": "pypdf: Possible large memory usage when retrieving alphabetical page labels",
+      "vulnerable_version_range": "< 6.19.0",
+      "first_patched_version": {
+        "identifier": "6.19.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-w23x-9jrw-r45c"
+    },
+    {
+      "number": 28,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-jw7q-gvrg-4vj3",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes for partially malformed FlateDecode streams (Follow-up)",
+      "vulnerable_version_range": "< 6.18.1",
+      "first_patched_version": {
+        "identifier": "6.18.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-jw7q-gvrg-4vj3"
+    },
+    {
+      "number": 27,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-g9cg-prrw-2r8q",
+      "severity": "high",
+      "summary": "pypdf: Possible large memory usage when parsing font data",
+      "vulnerable_version_range": "< 6.18.1",
+      "first_patched_version": {
+        "identifier": "6.18.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-g9cg-prrw-2r8q"
+    },
+    {
+      "number": 26,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-fp3h-c4fm-7vvf",
+      "severity": "high",
+      "summary": "pypdf: Possible large memory usage for large /ToUnicode streams (Follow-up 2)",
+      "vulnerable_version_range": "< 6.18.1",
+      "first_patched_version": {
+        "identifier": "6.18.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-fp3h-c4fm-7vvf"
+    },
+    {
+      "number": 25,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-5jq2-8x83-x246",
+      "severity": "high",
+      "summary": "pypdf: Possible long runtimes/large memory usage when parsing indirect objects",
+      "vulnerable_version_range": "< 6.18.0",
+      "first_patched_version": {
+        "identifier": "6.18.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-5jq2-8x83-x246"
+    },
+    {
+      "number": 24,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-qv6h-rv94-w285",
+      "severity": "high",
+      "summary": "pypdf: Possible large memory usage when retrieving Roman page labels",
+      "vulnerable_version_range": "< 6.17.0",
+      "first_patched_version": {
+        "identifier": "6.17.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-qv6h-rv94-w285"
+    },
+    {
+      "number": 23,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-fc8x-2rww-xw9m",
+      "severity": "medium",
+      "summary": "pypdf: Inefficient handling of non-whitespace inputs in read_until_whitespace",
+      "vulnerable_version_range": "< 6.15.0",
+      "first_patched_version": {
+        "identifier": "6.15.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-fc8x-2rww-xw9m"
+    },
+    {
+      "number": 22,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-23w6-3w8w-8484",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes/large memory usage when retrieving outlines",
+      "vulnerable_version_range": "< 6.16.1",
+      "first_patched_version": {
+        "identifier": "6.16.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-23w6-3w8w-8484"
+    },
+    {
+      "number": 21,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-763m-79hh-57f2",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes/large memory usage when extracting XForm objects",
+      "vulnerable_version_range": "< 6.16.1",
+      "first_patched_version": {
+        "identifier": "6.16.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-763m-79hh-57f2"
+    },
+    {
+      "number": 20,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-jp53-mhqp-8xcg",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop for TreeObject.insert_child",
+      "vulnerable_version_range": "< 6.16.0",
+      "first_patched_version": {
+        "identifier": "6.16.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-jp53-mhqp-8xcg"
+    },
+    {
+      "number": 19,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-fp3f-mc75-235c",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage for large /ToUnicode streams",
+      "vulnerable_version_range": "< 6.15.0",
+      "first_patched_version": {
+        "identifier": "6.15.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-fp3f-mc75-235c"
+    },
+    {
+      "number": 18,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-fwg2-594c-jp42",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes/large memory usage for large CID font width ranges",
+      "vulnerable_version_range": "< 6.15.0",
+      "first_patched_version": {
+        "identifier": "6.15.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-fwg2-594c-jp42"
+    },
+    {
+      "number": 17,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-g867-7843-wf8q",
+      "severity": "high",
+      "summary": "pypdf: Possible infinite loop for not terminated inline images (ASCII85 and ASCIIHex filter)",
+      "vulnerable_version_range": "< 6.14.2",
+      "first_patched_version": {
+        "identifier": "6.14.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-g867-7843-wf8q"
+    },
+    {
+      "number": 16,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-5xf7-4p34-54qr",
+      "severity": "high",
+      "summary": "pypdf: Possible infinite loop for not terminated inline images",
+      "vulnerable_version_range": "< 6.14.1",
+      "first_patched_version": {
+        "identifier": "6.14.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-5xf7-4p34-54qr"
+    },
+    {
+      "number": 15,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-55h5-xmcq-c37v",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes for repeated malformed cross-reference entries ",
+      "vulnerable_version_range": "< 6.14.0",
+      "first_patched_version": {
+        "identifier": "6.14.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-55h5-xmcq-c37v"
+    },
+    {
+      "number": 14,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-5qjq-93h5-hrgp",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage for wrong image dimensions",
+      "vulnerable_version_range": "< 6.14.0",
+      "first_patched_version": {
+        "identifier": "6.14.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-5qjq-93h5-hrgp"
+    },
+    {
+      "number": 13,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-g9xf-7f8q-9mcj",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when processing threads/articles in writer",
+      "vulnerable_version_range": "< 6.13.1",
+      "first_patched_version": {
+        "identifier": "6.13.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-g9xf-7f8q-9mcj"
+    },
+    {
+      "number": 12,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-jm82-fx9c-mx94",
+      "severity": "medium",
+      "summary": "pypdf: Missing stream length values ignore defined limits",
+      "vulnerable_version_range": "< 6.13.3",
+      "first_patched_version": {
+        "identifier": "6.13.3"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-jm82-fx9c-mx94"
+    },
+    {
+      "number": 11,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-m2v9-299j-rv96",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when processing outlines/bookmarks in writer",
+      "vulnerable_version_range": "< 6.13.0",
+      "first_patched_version": {
+        "identifier": "6.13.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-m2v9-299j-rv96"
+    },
+    {
+      "number": 10,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-52x6-gq3r-vpf4",
+      "severity": "medium",
+      "summary": "pypdf: Possible infinite loop when retrieving fonts for layout-mode text extraction",
+      "vulnerable_version_range": "< 6.13.0",
+      "first_patched_version": {
+        "identifier": "6.13.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-52x6-gq3r-vpf4"
+    },
+    {
+      "number": 9,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-j543-4vmf-qm7v",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage for form XObjects during text extraction",
+      "vulnerable_version_range": "< 6.12.2",
+      "first_patched_version": {
+        "identifier": "6.12.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-j543-4vmf-qm7v"
+    },
+    {
+      "number": 8,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-5hgr-hg42-57jg",
+      "severity": "medium",
+      "summary": "pypdf: Inefficient decoding of FlateDecode PNG predictor streams",
+      "vulnerable_version_range": "< 6.12.2",
+      "first_patched_version": {
+        "identifier": "6.12.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-5hgr-hg42-57jg"
+    },
+    {
+      "number": 7,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-wjqc-6w8f-h24c",
+      "severity": "medium",
+      "summary": "pypdf: Manipulated XMP metadata streams can exhaust RAM",
+      "vulnerable_version_range": "< 6.12.1",
+      "first_patched_version": {
+        "identifier": "6.12.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-wjqc-6w8f-h24c"
+    },
+    {
+      "number": 6,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-248m-82v9-q6g6",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes for zero-only width values in cross-reference streamsuntimes for zero-only width values in cross-reference streams",
+      "vulnerable_version_range": "< 6.12.0",
+      "first_patched_version": {
+        "identifier": "6.12.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-248m-82v9-q6g6"
+    },
+    {
+      "number": 5,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-cj93-chg6-vgv8",
+      "severity": "medium",
+      "summary": "pypdf: Possible large memory usage for large offsets for layout mode text",
+      "vulnerable_version_range": "< 6.12.0",
+      "first_patched_version": {
+        "identifier": "6.12.0"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-cj93-chg6-vgv8"
+    },
+    {
+      "number": 4,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-x284-j5p8-9c5p",
+      "severity": "medium",
+      "summary": "pypdf: Manipulated FlateDecode image dimensions can exhaust RAM",
+      "vulnerable_version_range": "< 6.10.2",
+      "first_patched_version": {
+        "identifier": "6.10.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-x284-j5p8-9c5p"
+    },
+    {
+      "number": 3,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-4pxv-j86v-mhcw",
+      "severity": "medium",
+      "summary": "pypdf: Possible long runtimes for wrong size values in incremental mode",
+      "vulnerable_version_range": "< 6.10.2",
+      "first_patched_version": {
+        "identifier": "6.10.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-4pxv-j86v-mhcw"
+    },
+    {
+      "number": 2,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-7gw9-cf7v-778f",
+      "severity": "medium",
+      "summary": "pypdf: Manipulated FlateDecode predictor parameters can exhaust RAM",
+      "vulnerable_version_range": "< 6.10.2",
+      "first_patched_version": {
+        "identifier": "6.10.2"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-7gw9-cf7v-778f"
+    },
+    {
+      "number": 1,
+      "package": "pypdf",
+      "manifest": "pyproject.toml",
+      "state": "open",
+      "ghsa_id": "GHSA-jj6c-8h6c-hppx",
+      "severity": "medium",
+      "summary": "pypdf has long runtimes for wrong size values in cross-reference and object streams",
+      "vulnerable_version_range": "< 6.10.1",
+      "first_patched_version": {
+        "identifier": "6.10.1"
+      },
+      "advisory_url": "https://github.com/advisories/GHSA-jj6c-8h6c-hppx"
+    }
+  ]
+}

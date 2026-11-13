@@ -1,0 +1,85 @@
+{
+  "actual_BOOT_executed": false,
+  "actual_EXEC_executed": false,
+  "allocation_ref": {
+    "bytes": 9193,
+    "path": "reports/E01_MONOTONE_RECOVERY_ALLOCATION_V2_1_20261112.json",
+    "sha256": "1edb31922c1bf1d8f0038184148dfda179ee585979e21d856d7b57159799359c"
+  },
+  "command": [
+    "env",
+    "-i",
+    ".venv/bin/python",
+    "-I",
+    "-B",
+    "-S",
+    "scripts/prepare_e01_source_phase_v3.py",
+    "BOOT",
+    "--review",
+    "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_BINDING_V2_1_20261112.json",
+    "--out",
+    "data/processed/e01_clerk2020_source_packet_preparation_v3/boot-packet.local.json"
+  ],
+  "cost_USD": 0,
+  "helper_exit_code": 0,
+  "helper_invocations": 1,
+  "helper_ref": {
+    "bytes": 8888,
+    "path": "scripts/prepare_e01_source_phase_v3.py",
+    "sha256": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2"
+  },
+  "kind": "LEAD_E01_SUCCESSOR_BOOT_TECHNICAL_PREPARATION_HANDOFF_V2_1",
+  "lead_readback": {
+    "bytes": 15202,
+    "ceiling": 65536,
+    "files": 3,
+    "new_technical_outputs_only": true,
+    "source_or_runtime_or_old_control_reads": 0
+  },
+  "model_calls": 0,
+  "next_gate": "Independent review of this allocation, exact packet and technical receipt before any root BOOT. Technical preparation prefix is consumed and will not be replayed.",
+  "outputs": [
+    {
+      "bytes": 13820,
+      "path": "data/processed/e01_clerk2020_source_packet_preparation_v3/boot-packet.local.json",
+      "sha256": "4c799f46f1d04faf3822dc668256078d2ab96188eadaa7b90de3887194434fc1"
+    },
+    {
+      "bytes": 320,
+      "path": "data/processed/e01_clerk2020_source_packet_preparation_v3/BOOT/STARTED.local.json",
+      "sha256": "d5d7f60266101a185bc09544c1e7137b1e7e344f94ed116d0a84bc98a320b2aa"
+    },
+    {
+      "bytes": 1062,
+      "path": "data/processed/e01_clerk2020_source_packet_preparation_v3/BOOT/RECEIPT.local.json",
+      "sha256": "d09cb00cfa4cb9444361351d832727402cb2e578d9b3c8e4ed9f677d0bc7193f"
+    }
+  ],
+  "receipt_observations": {
+    "campaign_issue_or_execution": false,
+    "credit_restored": 0,
+    "no_retry": true,
+    "observed_read_bytes": 59988,
+    "read_count": 2,
+    "reads": [
+      {
+        "observed_bytes": 3957,
+        "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_BINDING_V2_1_20261112.json",
+        "reserved_bytes": 3958,
+        "sha256": "9437e2328e9eaacfc294123b90c70609c336b6f7e606a6506a7f4a372ebe7354"
+      },
+      {
+        "observed_bytes": 56031,
+        "path": "configs/e01_clerk2020_monotone_successor_methods_v2_1_20261112.json",
+        "reserved_bytes": 56032,
+        "sha256": "184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d"
+      }
+    ],
+    "reserved_read_bytes": 59990,
+    "runtime_binary_reads": 0,
+    "source_reads": 0,
+    "status": "PREPARED_NOT_EXECUTED"
+  },
+  "source_commit": "5238f6a0c1adcc87efdd6d364590327ee9e554f6",
+  "status": "PREPARED_NOT_EXECUTED_PENDING_PARTICULAR_REVIEW"
+}

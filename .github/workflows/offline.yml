@@ -12,5 +12,9 @@ jobs:
         with:
           python-version: '${{ matrix.python }}'
       - run: python -m pip install -e '.[selection,sources,geometry]'
+      - name: Verify pypdf 7 authored PDF compatibility
+        run: |
+          export CIVICLAB_PYPDF7_FIXTURE_TARGET="$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')"
+          python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v
       - run: python -m unittest discover -s tests -v
       - run: civiclab validate-sources --fixture-only

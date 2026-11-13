@@ -1,0 +1,391 @@
+{
+  "actual_BOOT_released": false,
+  "actual_EXEC_released": false,
+  "auditor_artifacts": [
+    {
+      "bytes": 4758,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-initial-record-assumption-20261112.py",
+      "sha256": "e12afb45bdb86832eec0568665125e3f79bae6ac4ad846bac210d17448758c35"
+    },
+    {
+      "bytes": 5214,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-20261112.py",
+      "sha256": "56d79bd9cae9fb444ef194e0ba31bc4971cff2adc42bd55e3d0e39f8fce16a56"
+    },
+    {
+      "bytes": 12281,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-20261112/static.json",
+      "sha256": "0551a1fd3eee0ee90a9b9444d28dd5d609e6d279433b85c1bf8a4190e6d371a0"
+    },
+    {
+      "bytes": 3940,
+      "path": "/tmp/civiclab-auditor-pypdf7-authored-recheck-20261112.py",
+      "sha256": "8ff23c459cb7e1c88b26498a50c6ee472b681155bffda3d6ba5cdff2e2acb1ed"
+    },
+    {
+      "bytes": 136,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-20261112/RECHECK_STARTED.json",
+      "sha256": "765f5b406c1040e11672df9fe72f59c592510b09c4515d3820b730c300c9d77e"
+    },
+    {
+      "bytes": 290,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-20261112/RECHECK_RECEIPT.json",
+      "sha256": "d9f0d8443c94ca5948e9104bbfe7b5eb02173b1c6b35bada169d4e96ccc8624f"
+    },
+    {
+      "bytes": 4782,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-20261112/independent-312.log",
+      "sha256": "a4940c928d67163b22076298c4a7fefe9368afb933bc1907bc7595af4683e04b"
+    },
+    {
+      "bytes": 3989,
+      "path": "/tmp/civiclab-auditor-pypdf7-authored-recheck-continuation-20261112.py",
+      "sha256": "e7343ac11a295f844dcef78fe0d1599feb733ce6b1ce429f1e3f096c6e3993e7"
+    },
+    {
+      "bytes": 136,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-continuation-20261112/RECHECK_STARTED.json",
+      "sha256": "765f5b406c1040e11672df9fe72f59c592510b09c4515d3820b730c300c9d77e"
+    },
+    {
+      "bytes": 290,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-continuation-20261112/RECHECK_RECEIPT.json",
+      "sha256": "5c222c824ca4eb627dc3716aa1f4989a135ae27046c82f3ef3bc16b64b279e5f"
+    },
+    {
+      "bytes": 2233,
+      "path": "/tmp/civiclab-auditor-pypdf7-fresh-install-continuation-20261112/independent-312.log",
+      "sha256": "9d08ce1ac4ea63c5d9147c125c7f8ad9a8856fbb54fe0564c071dcaf04be711c"
+    }
+  ],
+  "candidate_ref": {
+    "bytes": 16344,
+    "path": "reports/E01_PYPDF_FRESH_INSTALL_UPDATE_20261112.json",
+    "sha256": "4802997cf7e69e6a0cec44878fb6789cb8b70ac7b853c212f13681aeafaf599c"
+  },
+  "checks": [
+    "Final report16344bytes SHA4802997c... and all four code/CI/test hashes match. pyproject changes only pypdf6.10.0 to7.0.1; historical.py changes only missing-extra error text. Existing extract_pdf behavior is unchanged.",
+    "Dedicated CI step is exactly inserted after existing dependency installation and before unchanged full-suite command. Removing it reproduces the committed workflow. Extracted shell body passes bash -n. sysconfig purelib target enables all six new tests against the freshly installed package; remote CI is NOT_RUN by this auditor.",
+    "Retained official version metadata and wheel hashes match the handoff. The single wheel is416136bytes SHA6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b, not yanked in saved metadata. Wheel ZIP CRC passes,64member paths are relative/nontraversing/no.pth; installed bytes match all wheel payloads except expected pip-rewritten RECORD.",
+    "Installed target has only three additional pip-generated files: INSTALLER,REQUESTED,direct_url.json. All67installedRECORDentries match actual digest/size, except RECORD self-entry intentionally has no self-hash. No download/install was repeated.",
+    "Saved install report records exactly one pypdf7.0.1distribution and matching wheel hash. Exact requirements entry contains --hash=sha256, enabling pip hash-checking; explicit --require-hashes was not in actual argv. --no-index/--no-deps/--no-compile/--only-binary and direct local wheel installation match retained code/receipts.",
+    "Retained worker logs show12checks/zero skips on Python3.12.14 and3.11.17, importing7.0.1from the isolated target. Network attempt counts/no retries are retained collector evidence, not independently traced past network traffic.",
+    "Closed before/after environment snapshots are byte-identical, recording .venv8119entries and absent .venv311. This verifies retained preservation evidence; no live old-environment inventory was reread and no independent earlier-state attestation is claimed.",
+    "All18original actual-packet code pins remain unchanged. Existing consumed preparation and actual campaign state were not opened or reset.",
+    "New tests use authored fictional three-page PDFs with genuine layout extraction, column/vote alignment, noContents blank/vector-only pages, Senate-vs-House scoping and party mismatch; genuine malformed parser refusal; distribution/import origin checks; current optional-error guidance. Benign compatibility does not establish adversarial image safety or real-source correctness."
+  ],
+  "cost_USD": 0,
+  "evidence": {
+    ".github/workflows/offline.yml": {
+      "bytes": 767,
+      "path": ".github/workflows/offline.yml",
+      "sha256": "a28b9cca83db0b415b3794d7b4524a874e77fa1274967ef8b3b1a99b46e74686"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/AUTHORED_ONLY.pdf": {
+      "bytes": 1457,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/AUTHORED_ONLY.pdf",
+      "sha256": "3a4e153b7116508d4a9d772b8556f804fa9d9bf0be1c1dd3f2a97705ead80be3"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/acquire_once.py": {
+      "bytes": 3131,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/acquire_once.py",
+      "sha256": "6368ed08697456050ea58ec837cde5d64d0cd766d9c9bcf7be17595b514c8e91"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/acquisition-result.json": {
+      "bytes": 905,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/acquisition-result.json",
+      "sha256": "816eedf8a3d8dcca2465fed97517a2ba4ccae093c0a726da266f20567476c1a6"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/environments-after.json": {
+      "bytes": 1615868,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/environments-after.json",
+      "sha256": "df2b1db94d328d8159bf0b2fd4bcbcae6cd3d1f49e36cc4a5caee4ea7a9717bb"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/environments-before.json": {
+      "bytes": 1615868,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/environments-before.json",
+      "sha256": "df2b1db94d328d8159bf0b2fd4bcbcae6cd3d1f49e36cc4a5caee4ea7a9717bb"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/install-report.json": {
+      "bytes": 9064,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/install-report.json",
+      "sha256": "c60f29d9126303803fb7156fee6d387758fc9d3fc6dadce986242bd293f23588"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/install.log": {
+      "bytes": 208,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/install.log",
+      "sha256": "0def9b3b0fdd0f9461bc04399283c0a23e18d9bad2d26776dfcf68b3afed90c1"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/local-result.json": {
+      "bytes": 1648,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/local-result.json",
+      "sha256": "66be0c127bb4d74a1f60c1dac0fd1ddf95ddb2a0a1958b257b09ed8c42d8078e"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/local_check.py": {
+      "bytes": 6022,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/local_check.py",
+      "sha256": "3cecb77c028359e9aaaec5180803239d4fb91e358972a28ca7bdc5ce175a6bf9"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pre_ci_report.json": {
+      "bytes": 14413,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pre_ci_report.json",
+      "sha256": "448d8f1bd8d3c2ef20c0cd39a666d9ac5b9bafaa563cf393d684deb4ce344a2c"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pypdf-7.0.1-py3-none-any.whl": {
+      "bytes": 416136,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pypdf-7.0.1-py3-none-any.whl",
+      "sha256": "6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pypdf-7.0.1-py3-none-any.whl.intent.json": {
+      "bytes": 244,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pypdf-7.0.1-py3-none-any.whl.intent.json",
+      "sha256": "2e3ca613db5e38e51ba2a89db265ad2c5263c7b63f467877769ac35dd0a2f3e2"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pypdf-7.0.1-py3-none-any.whl.log": {
+      "bytes": 0,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pypdf-7.0.1-py3-none-any.whl.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pypi-7.0.1.json": {
+      "bytes": 9327,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pypi-7.0.1.json",
+      "sha256": "5294de55c18b818964e15e64846df3a495fae4e8ff074f1c473b3bef95ea2280"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pypi-7.0.1.json.intent.json": {
+      "bytes": 147,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pypi-7.0.1.json.intent.json",
+      "sha256": "7f5cbe54835ad058a1f38f465cdaed0da9e59cd63ddea5040a60990f4fa65242"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/pypi-7.0.1.json.log": {
+      "bytes": 0,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/pypi-7.0.1.json.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/requirements.txt": {
+      "bytes": 153,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/requirements.txt",
+      "sha256": "41088dc080d595c5a0e87dbae28b6e1b524ca13a465a0784a218c1422888177b"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/tests-311.log": {
+      "bytes": 2241,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/tests-311.log",
+      "sha256": "e3c33623010cdcaea32bd5dd2b8248946d579508f109d6d10821e69b3fe6179b"
+    },
+    "data/processed/e01_pypdf_fresh_install_20261112/tests-312.log": {
+      "bytes": 2241,
+      "path": "data/processed/e01_pypdf_fresh_install_20261112/tests-312.log",
+      "sha256": "99da1b7bb0a11bb8c866ed5eeeaede13afbd2e77741ee48c5793d7a902f9b21a"
+    },
+    "pyproject.toml": {
+      "bytes": 580,
+      "path": "pyproject.toml",
+      "sha256": "f6f2f55b9f8fe8db5d4553a7d8c68aa10575534f35794e1294acbe829eca0e14"
+    },
+    "reports/E01_PYPDF_FRESH_INSTALL_UPDATE_20261112.json": {
+      "bytes": 16344,
+      "path": "reports/E01_PYPDF_FRESH_INSTALL_UPDATE_20261112.json",
+      "sha256": "4802997cf7e69e6a0cec44878fb6789cb8b70ac7b853c212f13681aeafaf599c"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_BINDING_V2_1_20261112.json": {
+      "bytes": 3957,
+      "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_CODE_BINDING_V2_1_20261112.json",
+      "sha256": "9437e2328e9eaacfc294123b90c70609c336b6f7e606a6506a7f4a372ebe7354"
+    },
+    "reports/pypdf_fresh_install_20261112_ci_wiring.log": {
+      "bytes": 299,
+      "path": "reports/pypdf_fresh_install_20261112_ci_wiring.log",
+      "sha256": "e0a614c04e0fea2454d5a2ba91fba82d4521c814aec3e92628a6a0fee540e068"
+    },
+    "reports/pypdf_fresh_install_20261112_install.log": {
+      "bytes": 208,
+      "path": "reports/pypdf_fresh_install_20261112_install.log",
+      "sha256": "0def9b3b0fdd0f9461bc04399283c0a23e18d9bad2d26776dfcf68b3afed90c1"
+    },
+    "reports/pypdf_fresh_install_20261112_tests-311.log": {
+      "bytes": 2241,
+      "path": "reports/pypdf_fresh_install_20261112_tests-311.log",
+      "sha256": "e3c33623010cdcaea32bd5dd2b8248946d579508f109d6d10821e69b3fe6179b"
+    },
+    "reports/pypdf_fresh_install_20261112_tests-312.log": {
+      "bytes": 2241,
+      "path": "reports/pypdf_fresh_install_20261112_tests-312.log",
+      "sha256": "99da1b7bb0a11bb8c866ed5eeeaede13afbd2e77741ee48c5793d7a902f9b21a"
+    },
+    "src/civiclab/__init__.py": {
+      "bytes": 106,
+      "path": "src/civiclab/__init__.py",
+      "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+    },
+    "src/civiclab/common.py": {
+      "bytes": 8476,
+      "path": "src/civiclab/common.py",
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+    },
+    "src/civiclab/e01/__init__.py": {
+      "bytes": 422,
+      "path": "src/civiclab/e01/__init__.py",
+      "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+    },
+    "src/civiclab/e01/clerk2020_crypto_qualification_v1.py": {
+      "bytes": 24747,
+      "path": "src/civiclab/e01/clerk2020_crypto_qualification_v1.py",
+      "sha256": "6f75bf204c0c7334a892d6cbb3d52d1cd3cdb4535a90da2771dabc627ad6f50e"
+    },
+    "src/civiclab/e01/clerk2020_directories_qualification_v1.py": {
+      "bytes": 50599,
+      "path": "src/civiclab/e01/clerk2020_directories_qualification_v1.py",
+      "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+    },
+    "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py": {
+      "bytes": 8606,
+      "path": "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py",
+      "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+    },
+    "src/civiclab/e01/clerk2020_guard_qualification_v1.py": {
+      "bytes": 29304,
+      "path": "src/civiclab/e01/clerk2020_guard_qualification_v1.py",
+      "sha256": "347530c29836cefb0c1bd4b35e7e48748b45758bfa1c5bc200fb9cc806b5769f"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+      "bytes": 9548,
+      "path": "src/civiclab/e01/clerk2020_m2_v1_1_backend.py",
+      "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+      "bytes": 8142,
+      "path": "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py",
+      "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+    },
+    "src/civiclab/e01/clerk2020_native_campaign_v2.py": {
+      "bytes": 47502,
+      "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+      "sha256": "e021286d4983d526d8cac3598836b4c20d6c8b9d98268a78f14b717b6851c47a"
+    },
+    "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+      "bytes": 8768,
+      "path": "src/civiclab/e01/clerk2020_native_inventory_v1.py",
+      "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487"
+    },
+    "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+      "bytes": 22083,
+      "path": "src/civiclab/e01/clerk2020_native_qualification_v1.py",
+      "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f"
+    },
+    "src/civiclab/e01/clerk2020_source_format_adapter_v1.py": {
+      "bytes": 8058,
+      "path": "src/civiclab/e01/clerk2020_source_format_adapter_v1.py",
+      "sha256": "4ded1cc9f46df28417e059973c990d9b1cc029df7f7c625826ca5ac9877b7ed7"
+    },
+    "src/civiclab/e01/clerk2020_source_job_v2.py": {
+      "bytes": 48537,
+      "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+      "sha256": "6c3c259bf7be9f300dbbfa4a961609f404d305dc4dc8445b9e5abf441e01856c"
+    },
+    "src/civiclab/e01/clerk2020_source_worker_v2.py": {
+      "bytes": 12172,
+      "path": "src/civiclab/e01/clerk2020_source_worker_v2.py",
+      "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+    },
+    "src/civiclab/e01/clerk2020_warmup_qualification_v1.py": {
+      "bytes": 44722,
+      "path": "src/civiclab/e01/clerk2020_warmup_qualification_v1.py",
+      "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+    },
+    "src/civiclab/e01/historical.py": {
+      "bytes": 22365,
+      "path": "src/civiclab/e01/historical.py",
+      "sha256": "ca8de92c9f0df1822c2c93e19e689e5f19a1b6e1073db53c782567455fe5c808"
+    },
+    "src/civiclab/e01/pipeline.py": {
+      "bytes": 22533,
+      "path": "src/civiclab/e01/pipeline.py",
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    },
+    "tests/test_clerk2020_native_inventory_v1.py": {
+      "bytes": 12468,
+      "path": "tests/test_clerk2020_native_inventory_v1.py",
+      "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d"
+    },
+    "tests/test_pypdf7_fresh_install_compatibility.py": {
+      "bytes": 6361,
+      "path": "tests/test_pypdf7_fresh_install_compatibility.py",
+      "sha256": "bbb1475e3a78bc905a70d7bac7dfbba3a1ef6859ba01ac9f9ee839f403d506f4"
+    }
+  },
+  "findings": [],
+  "independent_execution": {
+    "claim_limit": "No successful independent two-runtime recheck is claimed. Worker two-runtime evidence was independently inspected; independent3.12 continuation supplies12passing test bodies with failed postcheck. Both consumed reviewer scopes remain preserved; no further retry occurred.",
+    "isolation": "Independent children used -I -B -S, explicit retained target/src/tests, empty inherited environment and audit hooks refusing network/new processes/private-source paths and writes outside owned authored temporary directory. Python-level guards are not OS sandbox or hostile-host protection.",
+    "original_scope": {
+      "cause": "Requested fixture paths were resolved to /private/tmp while allowed owned root remained /tmp; write guard denied two authored fixture writes before writing. No candidate parser failure established.",
+      "python311": "NOT_RUN",
+      "python312": {
+        "guard_failures": 2,
+        "passed": 10,
+        "process_exit_code": 1,
+        "tests_run": 12
+      },
+      "receipt": {
+        "elapsed_seconds": 0.19041170799999999,
+        "no_retry": true,
+        "output_bytes": 4782,
+        "steps": [
+          {
+            "bytes": 4782,
+            "error": null,
+            "exit_code": 1,
+            "runtime": "312",
+            "sha256": "a4940c928d67163b22076298c4a7fefe9368afb933bc1907bc7595af4683e04b"
+          }
+        ]
+      },
+      "status": "FAILED_AUDITOR_WRITE_GUARD_PATH_ALIAS"
+    },
+    "separately_allocated_continuation": {
+      "authorization": "Lead explicitly authorized one new create-once scope, canonicalizing only known owned root, same pins/tests/guards, at most one3.12 then3.11 after success,120seconds/1MiB aggregate, zero network/source/install/model, stop on newfailure.",
+      "cause": "All12candidate test bodies passed, then redundant auditor tail assertion compared resolved pypdf origin to unresolved /tmp target. Candidate setup/distribution tests already canonicalize target and passed. Original error and continuation exit1 remain failures of reviewer harness, not retroactivePASS.",
+      "python311": "NOT_RUN",
+      "python312": {
+        "passed": 12,
+        "process_exit_code": 1,
+        "skips": 0,
+        "tests_run": 12,
+        "unittest_seconds": 0.121
+      },
+      "receipt": {
+        "elapsed_seconds": 0.18034791700000002,
+        "no_retry": true,
+        "output_bytes": 2233,
+        "steps": [
+          {
+            "bytes": 2233,
+            "error": null,
+            "exit_code": 1,
+            "runtime": "312",
+            "sha256": "9d08ce1ac4ea63c5d9147c125c7f8ad9a8856fbb54fe0564c071dcaf04be711c"
+          }
+        ]
+      },
+      "status": "TWELVE_TEST_BODIES_PASS_BUT_POSTCHECK_HARNESS_FAILURE"
+    }
+  },
+  "kind": "E01_PYPDF_FRESH_INSTALL_INDEPENDENT_AUDIT",
+  "model_calls": 0,
+  "ownership": "Only this new audit and /tmp evidence written. No implementation/test/STATUS/Git/technical/campaign state edits. Initial failure and continuation unchanged.",
+  "remaining_limits": [
+    "Original independent recheck and separate continuation both exited1 due auditor harness alias checks. This scoped PASS concerns reviewed code/install/retained evidence; it is not an independent clean process/two-runtime PASS.",
+    "No actual E01 acquired-source processing, complete native/runtime qualification, new campaign issuance, paid inference, owner/credential access or dependency-alert closure follows.",
+    "Historical qualified6.10.0environment remains preserved and affected; fresh optional dependency pin does not remediate that installed runtime. Runtime proposal is separately path-only accepted with future execution gates held.",
+    "No all-advisory inventory, exploit regression, supply-chain signature validation, hard native memory containment, exhaustive I/O tracing, prospective forecast or science acceptance is claimed.",
+    "Existing full-suite command is unchanged; full-suite/local clean-restore and remote CI were not rerun by auditor. All source/profile/count/ballot/statistical gates stay separate."
+  ],
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "reviewer_static_checker_correction": {
+    "initial_assumption": "Initial static checker incorrectly required installed RECORD to be identical to wheel RECORD and stopped before any authored test.",
+    "resolution": "Preserved initial checker; pure metadata correction excludes pip-rewritten RECORD from byte identity and separately verifies its entire installed hash/size table. No acquisition/install/test replay occurred for this static correction."
+  },
+  "scope": "Fresh optional dependency pin, missing-extra version guidance, authored compatibility tests and dedicated CI wiring only. Accepts exact code and retained fresh-target install/test evidence, not actual E01 runtime qualification, full CI or security completeness.",
+  "source_authority": false,
+  "status": "PASS_SCOPED_CODE_INSTALL_AND_RETAINED_COMPATIBILITY_EVIDENCE_WITH_INDEPENDENT_RECHECK_LIMITATIONS"
+}

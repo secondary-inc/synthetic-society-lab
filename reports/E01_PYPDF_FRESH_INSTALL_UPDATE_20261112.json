@@ -1,0 +1,345 @@
+{
+  "TASK_ID": "E01_PYPDF_FRESH_INSTALL_UPDATE_20261112",
+  "status": "WORKER_TESTED_FRESH_INSTALL_CANDIDATE_PENDING_INDEPENDENT_REVIEW",
+  "FILES_CHANGED": [
+    "pyproject.toml",
+    ".github/workflows/offline.yml",
+    "src/civiclab/e01/historical.py",
+    "tests/test_pypdf7_fresh_install_compatibility.py",
+    "reports/pypdf_fresh_install_20261112_install.log",
+    "reports/pypdf_fresh_install_20261112_tests-312.log",
+    "reports/pypdf_fresh_install_20261112_tests-311.log",
+    "reports/pypdf_fresh_install_20261112_ci_wiring.log"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "pyproject.toml": {
+      "bytes": 580,
+      "sha256": "f6f2f55b9f8fe8db5d4553a7d8c68aa10575534f35794e1294acbe829eca0e14"
+    },
+    "src/civiclab/e01/historical.py": {
+      "bytes": 22365,
+      "sha256": "ca8de92c9f0df1822c2c93e19e689e5f19a1b6e1073db53c782567455fe5c808"
+    },
+    "tests/test_pypdf7_fresh_install_compatibility.py": {
+      "bytes": 6361,
+      "sha256": "bbb1475e3a78bc905a70d7bac7dfbba3a1ef6859ba01ac9f9ee839f403d506f4"
+    },
+    ".github/workflows/offline.yml": {
+      "sha256": "a28b9cca83db0b415b3794d7b4524a874e77fa1274967ef8b3b1a99b46e74686",
+      "bytes": 767
+    }
+  },
+  "REPRODUCTION_COMMANDS": {
+    "do_not_repeat_acquisition": "Two packageGETs consumed;do not rerun acquire_once.py. Saved hash-verified official wheel and metadata are retained. No new HTTP request is necessary for audit.",
+    "install_exact_argv": [
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+      "-B",
+      "-c",
+      "GUARD from retained local_check.py",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "--no-cache-dir",
+      "--retries",
+      "0",
+      "--no-input",
+      "install",
+      "--no-index",
+      "--no-deps",
+      "--no-compile",
+      "--only-binary=:all:",
+      "--target",
+      "/tmp/civiclab_pypdf7_20261112/target",
+      "--report",
+      "/tmp/civiclab_pypdf7_20261112/install-report.json",
+      "-r",
+      "/tmp/civiclab_pypdf7_20261112/requirements.txt"
+    ],
+    "requirement_text": "pypdf @ file:///tmp/civiclab_pypdf7_20261112/pypdf-7.0.1-py3-none-any.whl --hash=sha256:6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b\n",
+    "hash_mode": "A --hash entry automatically enables pip hash-checking;there was no separately spelled --require-hashes flag. The wheel was also independently SHAverified before installation.",
+    "fixture_command": "CIVICLAB_PYPDF7_FIXTURE_TARGET=<isolated-target> PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=<isolated-target>:src:tests <python> -B -m unittest test_pypdf7_fresh_install_compatibility test_e01.HistoricalSourceTests -v",
+    "bounded_runner": "Retained local_check.py contains exact process-wide120s/1MiB output enforcement,network/read guards and isolated pip+two-runtime steps. Its original create-once target is already populated;do not rerun it or in-place upgrade existing environments."
+  },
+  "TESTS_RUN_AND_RESULTS": {
+    "worker_executed": true,
+    "python312": {
+      "version": "3.12.14",
+      "pypdf": "7.0.1",
+      "tests": 12,
+      "skips": 0,
+      "seconds": 0.26,
+      "status": "PASS"
+    },
+    "python311": {
+      "version": "3.11.17",
+      "pypdf": "7.0.1",
+      "tests": 12,
+      "skips": 0,
+      "seconds": 0.1,
+      "status": "PASS"
+    },
+    "coverage": [
+      "Real official-wheel import and distribution originate inside explicitly isolated target;no fallback to installed old version.",
+      "Genuine authored3-page PDF with Helvetica text/two columns,dotted candidate labels,vote counts,blank noContents page and vector-only page.",
+      "historical.extract_pdf uses real7.0.1layout extraction;page numbering,spacing/text recovery,blank/vector empty results and PDF byte preservation verified.",
+      "Real extracted authored Senate section yields100/90votes and excludes House500;wrong expectedparty refuses.",
+      "Malformed authored PDF raises realPdfReadError;missing optional dependency message names7.0.1.",
+      "Six existing authored HistoricalSourceTests cover fusion,party aliases,House exclusion,ambiguous identities,conditional major-party selection and frozen-plan rejection."
+    ],
+    "logs": {
+      "install": {
+        "path": "reports/pypdf_fresh_install_20261112_install.log",
+        "sha256": "0def9b3b0fdd0f9461bc04399283c0a23e18d9bad2d26776dfcf68b3afed90c1"
+      },
+      "tests-312": {
+        "path": "reports/pypdf_fresh_install_20261112_tests-312.log",
+        "sha256": "99da1b7bb0a11bb8c866ed5eeeaede13afbd2e77741ee48c5793d7a902f9b21a"
+      },
+      "tests-311": {
+        "path": "reports/pypdf_fresh_install_20261112_tests-311.log",
+        "sha256": "e3c33623010cdcaea32bd5dd2b8248946d579508f109d6d10821e69b3fe6179b"
+      },
+      "ci_wiring": {
+        "path": "reports/pypdf_fresh_install_20261112_ci_wiring.log",
+        "sha256": "e0a614c04e0fea2454d5a2ba91fba82d4521c814aec3e92628a6a0fee540e068"
+      }
+    },
+    "bounded_local_result": {
+      "status": "PASS_ISOLATED_AUTHORED_COMPATIBILITY_ONLY",
+      "steps": [
+        {
+          "name": "install",
+          "returncode": 0,
+          "log_path": "/tmp/civiclab_pypdf7_20261112/install.log",
+          "log_sha256": "0def9b3b0fdd0f9461bc04399283c0a23e18d9bad2d26776dfcf68b3afed90c1",
+          "output_bytes": 208,
+          "error": null
+        },
+        {
+          "name": "tests-312",
+          "returncode": 0,
+          "log_path": "/tmp/civiclab_pypdf7_20261112/tests-312.log",
+          "log_sha256": "99da1b7bb0a11bb8c866ed5eeeaede13afbd2e77741ee48c5793d7a902f9b21a",
+          "output_bytes": 2241,
+          "error": null
+        },
+        {
+          "name": "tests-311",
+          "returncode": 0,
+          "log_path": "/tmp/civiclab_pypdf7_20261112/tests-311.log",
+          "log_sha256": "e3c33623010cdcaea32bd5dd2b8248946d579508f109d6d10821e69b3fe6179b",
+          "output_bytes": 2241,
+          "error": null
+        }
+      ],
+      "install_and_test_elapsed_seconds": 0.7002118329983205,
+      "maximum_seconds": 120,
+      "output_bytes": 4690,
+      "maximum_output_bytes": 1048576,
+      "network_guard": "Python socket connect/connect_ex/create_connection/getaddrinfo denied in local child processes;not OS sandbox or security completeness",
+      "source_guard": "builtins/io.open deny raw/data processing outside toolchain,env,actualowner/local controls;authored fixtures only",
+      "environments_unchanged": {
+        ".venv": true,
+        ".venv311": true
+      },
+      "environment_manifests": {
+        ".venv": {
+          "exists": true,
+          "entries": 8119
+        },
+        ".venv311": {
+          "exists": false,
+          "entries": 0
+        }
+      },
+      "target": "/tmp/civiclab_pypdf7_20261112/target",
+      "source_builds": 0,
+      "dependency_resolution": false
+    },
+    "default_test_behavior": "Compatibility class skips without explicit fixture target in the unchanged normal full suite;the new dedicated CI step sets the current purelib target and runs the6authored checks after fresh dependency install. Explicit isolated local runs above hadzero skips.",
+    "CI_wiring": {
+      "step": "Verify pypdf 7 authored PDF compatibility",
+      "position": "After existing dependency installation,before unchanged full-suite step",
+      "target": "CIVICLAB_PYPDF7_FIXTURE_TARGET from setup-python sysconfig.get_path(\"purelib\")",
+      "command": "python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v",
+      "default_full_suite": "UNCHANGED",
+      "scope": "Only six authored compatibility tests;no new network beyond existing dependency-install step",
+      "local_validation": "Insertion/order/exactpreviousworkflow restoration and extracted /bin/bash -n PASS;local12checks already execute same six real test bodies on both runtimes",
+      "remote_execution": "NOT_RUN"
+    }
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "primary_references": [
+      {
+        "url": "https://github.com/py-pdf/pypdf/releases/tag/7.0.1",
+        "consulted_via": "web reference read,not package acquisition",
+        "scope": "Official7.0.1release notes include security and extraction/performance changes."
+      },
+      {
+        "url": "https://github.com/py-pdf/pypdf/security/advisories/GHSA-fhff-j4m8-439h",
+        "consulted_via": "web reference read,not package acquisition",
+        "scope": "Maintainer advisory lists<7.0.1affected and>=7.0.1patched for possible large memory usage with some image formats."
+      }
+    ],
+    "package_acquisition": {
+      "status": "OFFICIAL_PYPI_WHEEL_VERIFIED",
+      "metadata": {
+        "url": "https://pypi.org/pypi/pypdf/7.0.1/json",
+        "bytes": 9327,
+        "sha256": "5294de55c18b818964e15e64846df3a495fae4e8ff074f1c473b3bef95ea2280",
+        "elapsed_seconds": 0.4019637499950477,
+        "GET_attempts": 1,
+        "retries": 0
+      },
+      "wheel": {
+        "url": "https://files.pythonhosted.org/packages/d5/a9/ae11deef21eaac5113f8c3848da1c42423b7abeca0abc349bfec7abf4c4e/pypdf-7.0.1-py3-none-any.whl",
+        "bytes": 416136,
+        "sha256": "6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b",
+        "elapsed_seconds": 0.678224749994115,
+        "GET_attempts": 1,
+        "retries": 0
+      },
+      "wheel_expected_sha256": "6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b",
+      "requires_python": ">=3.10",
+      "wheel_path": "/tmp/civiclab_pypdf7_20261112/pypdf-7.0.1-py3-none-any.whl",
+      "package_GETs": 2,
+      "source_builds": 0
+    },
+    "package_GET_count": 2,
+    "web_reference_pages_consulted": 2,
+    "installer": {
+      "pip_version": "25.0.1",
+      "installed_entries": 1,
+      "direct_local_wheel": true,
+      "yanked": false,
+      "source_builds": 0,
+      "dependency_downloads_or_resolution": false,
+      "fresh_target": "/tmp/civiclab_pypdf7_20261112/target",
+      "global_or_in_place_upgrade": false
+    },
+    "preservation": {
+      "environments_unchanged": {
+        ".venv": true,
+        ".venv311": true
+      },
+      "environment_manifest_summary": {
+        ".venv": {
+          "exists": true,
+          "entries": 8119
+        },
+        ".venv311": {
+          "exists": false,
+          "entries": 0
+        }
+      },
+      "hash_inventory_scope": "File/mode/symlink hashes only;no OS-environment variable values or credentials dumped. Full inventories retained locally,not published in this report.",
+      ".venv311": "Absent before and after;not created.",
+      "historical_locks_qualification_pins": "No historical config/lock/qualification file edited;only current historical.py missing-extra error version text changed.",
+      "actual_source_qualification": "NOT_RUN;no actual research PDF/data source,campaign control,financial owner,credential or model access.",
+      "current_error_text_scope": "Only missing-extra guidance now names the fresh7.0.1pin;extract_pdf itself is not a new version gate or actual-runtime qualification."
+    },
+    "retained_evidence": {
+      "path": "data/processed/e01_pypdf_fresh_install_20261112",
+      "manifest_sha256": "b22b8d3f7cf3adc8f66f5f771ff823d705ba1f36c55cb5a1f4c3d1bbefe16b0d",
+      "artifacts": {
+        "environments-after.json": {
+          "bytes": 1615868,
+          "sha256": "df2b1db94d328d8159bf0b2fd4bcbcae6cd3d1f49e36cc4a5caee4ea7a9717bb"
+        },
+        "AUTHORED_ONLY.pdf": {
+          "bytes": 1457,
+          "sha256": "3a4e153b7116508d4a9d772b8556f804fa9d9bf0be1c1dd3f2a97705ead80be3"
+        },
+        "acquisition-result.json": {
+          "bytes": 905,
+          "sha256": "816eedf8a3d8dcca2465fed97517a2ba4ccae093c0a726da266f20567476c1a6"
+        },
+        "requirements.txt": {
+          "bytes": 153,
+          "sha256": "41088dc080d595c5a0e87dbae28b6e1b524ca13a465a0784a218c1422888177b"
+        },
+        "local_check.py": {
+          "bytes": 6022,
+          "sha256": "3cecb77c028359e9aaaec5180803239d4fb91e358972a28ca7bdc5ce175a6bf9"
+        },
+        "pypdf-7.0.1-py3-none-any.whl.intent.json": {
+          "bytes": 244,
+          "sha256": "2e3ca613db5e38e51ba2a89db265ad2c5263c7b63f467877769ac35dd0a2f3e2"
+        },
+        "environments-before.json": {
+          "bytes": 1615868,
+          "sha256": "df2b1db94d328d8159bf0b2fd4bcbcae6cd3d1f49e36cc4a5caee4ea7a9717bb"
+        },
+        "pypi-7.0.1.json.intent.json": {
+          "bytes": 147,
+          "sha256": "7f5cbe54835ad058a1f38f465cdaed0da9e59cd63ddea5040a60990f4fa65242"
+        },
+        "pypdf-7.0.1-py3-none-any.whl": {
+          "bytes": 416136,
+          "sha256": "6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b"
+        },
+        "tests-312.log": {
+          "bytes": 2241,
+          "sha256": "99da1b7bb0a11bb8c866ed5eeeaede13afbd2e77741ee48c5793d7a902f9b21a"
+        },
+        "tests-311.log": {
+          "bytes": 2241,
+          "sha256": "e3c33623010cdcaea32bd5dd2b8248946d579508f109d6d10821e69b3fe6179b"
+        },
+        "pypi-7.0.1.json": {
+          "bytes": 9327,
+          "sha256": "5294de55c18b818964e15e64846df3a495fae4e8ff074f1c473b3bef95ea2280"
+        },
+        "install.log": {
+          "bytes": 208,
+          "sha256": "0def9b3b0fdd0f9461bc04399283c0a23e18d9bad2d26776dfcf68b3afed90c1"
+        },
+        "pypdf-7.0.1-py3-none-any.whl.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "install-report.json": {
+          "bytes": 9064,
+          "sha256": "c60f29d9126303803fb7156fee6d387758fc9d3fc6dadce986242bd293f23588"
+        },
+        "acquire_once.py": {
+          "bytes": 3131,
+          "sha256": "6368ed08697456050ea58ec837cde5d64d0cd766d9c9bcf7be17595b514c8e91"
+        },
+        "pypi-7.0.1.json.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "local-result.json": {
+          "bytes": 1648,
+          "sha256": "66be0c127bb4d74a1f60c1dac0fd1ddf95ddb2a0a1958b257b09ed8c42d8078e"
+        }
+      },
+      "subsequent_pre_CI_report": {
+        "path": "data/processed/e01_pypdf_fresh_install_20261112/pre_ci_report.json",
+        "sha256": "448d8f1bd8d3c2ef20c0cd39a666d9ac5b9bafaa563cf393d684deb4ce344a2c",
+        "note": "Append-only candidate checkpoint after original wheel/local-result manifest;originalmanifest unchanged."
+      }
+    }
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "model_calls": 0,
+  "actual_E01_source_parses": 0,
+  "actual_E01_runtime_qualifications": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Fresh optional sources pin changes6.10.0to7.0.1;existing installed/historicallyqualified environments remain unchanged and are not claimed remediated.",
+    "Official named-advisory patched range is maintainer evidence,not a proof that every Dependabot alert or newer advisory is closed. No security completeness or full-suite acceptance is claimed.",
+    "Authored benign text/vector PDFs exercise current layout caller compatibility,not adversarial image decoding or broad actual-source correctness.",
+    "SHA256 matches the one observed official PyPI metadata/wheel;no separate signature or complete supply-chain attestation is claimed.",
+    "Python-level socket/read guards and parent process/time/output limits are not OS isolation or production runtime qualification.",
+    "No sourcebuild,dependencyfallback,in-place upgrade,actual source parsing,qualification reset,STATUS or other-worker edit.",
+    "The new dedicated CI step is structurally/shell-syntax checked,but no remote CI pass is claimed. Existing full-suite command remains unchanged;no acquisition/install or compatibility-body rerun followed CI wiring."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent review of exactfreshpin/CI/error/test/log/evidence changes.",
+    "Any future actual E01 pypdf/runtime qualification or historical lock migration requires its own preserved separately reviewed scope;not authorized by these compatibility checks.",
+    "Dependency-alert closure/full-project CI and broader security status are not established here."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead forwards exact changed hashes,official wheel/metadata and bounded logs to independent auditor;lead owns STATUS/Git. Preserve all old environments/locks/actual qualification records.",
+  "prepared_date_America_New_York": "2026-11-12"
+}

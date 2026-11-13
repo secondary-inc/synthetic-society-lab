@@ -97,7 +97,7 @@ def extract_pdf(path):
     try:
         from pypdf import PdfReader
     except ImportError:
-        raise RuntimeError('Official PDF verification needs optional pypdf==6.10.0 in the executing Python environment') from None
+        raise RuntimeError('Official PDF verification needs optional pypdf==7.0.1 in the executing Python environment') from None
     reader=PdfReader(path)
     return [{'pdf_page':i+1,'text':page.extract_text(extraction_mode='layout') if '/Contents' in page else ''}
             for i,page in enumerate(reader.pages)]
