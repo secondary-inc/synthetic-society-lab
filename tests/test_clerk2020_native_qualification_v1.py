@@ -1,4 +1,4 @@
-"""Temporary authored filesystem only; child/native-runtime execution is mocked."""
+"""Authored files and no-PDF pipe children only; decoder execution is mocked."""
 import base64
 from io import BytesIO
 import json
@@ -174,8 +174,51 @@ class QualificationTests(unittest.TestCase):
             self.exchange_child('import sys; sys.stdin.buffer.read(); sys.stdout.buffer.write(b"x"*114689)', b'{}')
 
     def test_native_pipe_deadline_is_stop(self):
-        with self.assertRaises(Refused):
+        # Isolate the pipe deadline from the independent /bin/ps probe deadline.
+        with patch.object(q, '_sample_rss', return_value=0), self.assertRaises(Refused):
             self.exchange_child('import sys,time; sys.stdin.buffer.read(); time.sleep(2)', b'{}', wall=1)
+
+    def test_rss_probe_timeout_stops_parent_reaps_child_and_consumes_attempt(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder).resolve()
+            raw, expected = prepare(root)
+            real_popen = subprocess.Popen
+            children = []
+            def authored_pipe_child(command, **kwargs):
+                # Keep real pipes, wait/kill/close and production _exchange;
+                # substitute only a fixed source-free Python child program.
+                process = real_popen([sys.executable, '-I', '-B', '-S', '-c',
+                    'import sys,time; sys.stdin.buffer.read(); time.sleep(2)'], **kwargs)
+                children.append(process)
+                return process
+            probe_error = subprocess.TimeoutExpired(['/bin/ps'], 0.0004)
+            with (patch.object(q.subprocess, 'Popen', side_effect=authored_pipe_child) as start,
+                  patch.object(q.subprocess, 'run', side_effect=probe_error) as probe):
+                with self.assertRaises(q.QualificationStopped):
+                    q.run_phase(root, raw, expected)
+            self.assertEqual(start.call_count, 1)
+            self.assertEqual(probe.call_count, 1)
+            self.assertEqual(probe.call_args.args[0],
+                             ['/bin/ps', '-o', 'rss=', '-p', str(children[0].pid)])
+            self.assertGreater(probe.call_args.kwargs['timeout'], 0)
+            self.assertLessEqual(probe.call_args.kwargs['timeout'], 1)
+            self.assertIsNotNone(children[0].returncode)
+            self.assertLess(children[0].returncode, 0)
+            self.assertTrue(all(s.closed for s in
+                                (children[0].stdin, children[0].stdout, children[0].stderr)))
+            scope = root / q.SCOPE
+            outcome = decode((scope / 'OUTCOME.json').read_bytes())
+            self.assertEqual(outcome['status'], 'QUALIFICATION_STOPPED_UNKNOWN_NO_RETRY')
+            self.assertEqual(outcome['full_limits_consumed'], q.LIMITS)
+            self.assertIsNone(outcome['reader_attempts_observed'])
+            self.assertTrue(outcome['native_attempt_observed'])
+            self.assertEqual(outcome['actual_source_reads'], 0)
+            self.assertFalse((scope / 'worker.json').exists())
+            self.assertFalse((root / 'data/raw').exists())
+            with patch.object(q.subprocess, 'Popen') as retry:
+                with self.assertRaises(FileExistsError):
+                    q.run_phase(root, raw, expected)
+            retry.assert_not_called()
 
     def test_native_authored_guard_denies_io_and_spawn_before_effect(self):
         source = str(Path(__file__).resolve().parents[1] / 'src')
