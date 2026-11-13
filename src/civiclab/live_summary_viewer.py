@@ -20,6 +20,12 @@ CROSSMODEL_AUDIT_SHA256 = 'ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505ad
 CROSSMODEL_STATUS = 'PASS_SCOPED_ACTUAL_EXPLORATORY_EVIDENCE_ACCOUNTING_AND_REGISTERED_SCORES'
 CROSSMODEL_AGGREGATE = 'reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json'
 CROSSMODEL_AGGREGATE_SHA256 = 'b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0'
+WRAPPER_AUDIT = 'reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json'
+WRAPPER_AGGREGATE = 'reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json'
+# Exact separate actual-evidence PASS; the aggregate retains its build-time pending field.
+WRAPPER_AUDIT_SHA256 = 'a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475'
+WRAPPER_AGGREGATE_SHA256 = 'fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964'
+WRAPPER_AUDIT_STATUS = 'PASS_SCOPED_ACTUAL_EVIDENCE_ACCOUNTING_MATCHED_SCORING_AND_LIMITATIONS'
 START = '<!-- LIVE_SUMMARY_START -->'
 END = '<!-- LIVE_SUMMARY_END -->'
 
@@ -330,6 +336,146 @@ def render(summary):
 {END}'''
 
 
+def wrapper_summary(a):
+    """Explicit public aggregate allowlist; not evidence admission or rescoring."""
+    analysis = a['analysis']
+    phases = analysis['phase_counts']
+    allowed = {'ANSWER', 'SKIPPED_INVALID_PRE', 'FAILED_UNCERTAIN', 'PARSE_ERROR', 'CANCELLED', 'NOT_ATTEMPTED'}
+    if set(phases) - allowed or any(type(v) is not int or v < 0 for v in phases.values()):
+        raise ValueError('Unrecognized wrapper disposition')
+    def summary(x):
+        return dict(mean=x['mean_points'], complete=x['complete_units'], planned=x['planned_units'])
+    def key(row):
+        return row['profile_id'], row['topic_id']
+    primary = analysis['primary_wrapper_omitted']
+    shown = analysis['wrapper_contrasts']['SHOWN']
+    interaction = analysis['visibility_interaction']
+    magnitude = analysis['absolute_wrapper_magnitude_change']
+    lookup = [{key(row): row['value'] for row in value['unit_values']}
+              for value in (shown, interaction, magnitude)]
+    if any(len(table) != len(value['unit_values']) for table, value in zip(lookup, (shown, interaction, magnitude))):
+        raise ValueError('Duplicate wrapper unit')
+    primary_keys = [key(row) for row in primary['unit_values']]
+    if len(set(primary_keys)) != len(primary_keys) or any(set(table) != set(primary_keys) for table in lookup):
+        raise ValueError('Wrapper unit identities differ')
+    topic_names = {'LIBRARY': 'Library', 'TRANSIT': 'Transit'}
+    rows = []
+    for number, row in enumerate(primary['unit_values'], 1):
+        if row['topic_id'] not in topic_names:
+            raise ValueError('Unreviewed wrapper topic')
+        k = key(row)
+        rows.append(dict(unit=number, topic=topic_names[row['topic_id']], omitted=row['value'],
+                         shown=lookup[0][k], interaction=lookup[1][k], magnitude_change=lookup[2][k]))
+    magnitude_values = [r['magnitude_change'] for r in rows if r['magnitude_change'] is not None]
+    factual = a['all_planned_factual_dispositions']
+    known_factual = {'CORRECT', 'INCORRECT', 'MISSING_KEY', 'MISSING_NULL', 'INVALID',
+                     'INVALID_SHAPE', 'PARSE_ERROR', 'FAILED_UNCERTAIN', 'CANCELLED', 'UNASKED'}
+    if set(factual) - known_factual or any(type(v) is not int or v < 0 for v in factual.values()):
+        raise ValueError('Unrecognized wrapper factual disposition')
+    planned = a['design']['maximum_model_POSTs']
+    if sum(phases.values()) != planned or sum(factual.values()) != planned:
+        raise ValueError('Wrapper planned disposition total differs')
+    correct = factual.get('CORRECT', 0)
+    errors = factual.get('INCORRECT', 0)
+    asked = planned - factual.get('UNASKED', 0)
+    return dict(sample_dates='November 12, 2026 · 7:50–8:05 p.m. EST (November 13 UTC)',
+        actual_responses=phases.get('ANSWER', 0), planned_slots=planned,
+        skipped_slots=phases.get('SKIPPED_INVALID_PRE', 0), failed_slots=phases.get('FAILED_UNCERTAIN', 0),
+        parse_error_slots=phases.get('PARSE_ERROR', 0), cancelled_slots=phases.get('CANCELLED', 0),
+        unattempted_slots=phases.get('NOT_ATTEMPTED', 0),
+        primary=summary(primary), shown=summary(shown), interaction=summary(interaction),
+        magnitude=summary(magnitude), units=rows,
+        matched_omitted=summary(analysis['matched_wrapper_contrasts']['OMITTED']),
+        matched_shown=summary(analysis['matched_wrapper_contrasts']['SHOWN']),
+        expansion_count=sum(v > 0 for v in magnitude_values),
+        contraction_count=sum(v < 0 for v in magnitude_values),
+        unchanged_magnitude_count=sum(v == 0 for v in magnitude_values),
+        reversal_count=analysis['direction_diagnostics']['sign_reversal_count'],
+        primary_by_topic=[dict(topic=topic_names[t], **summary(analysis['primary_by_topic'][t]))
+                          for t in ('LIBRARY', 'TRANSIT')],
+        all_items_valid=all(q['quality'] == 'VALID' for q in analysis['item_quality_counts']) and sum(q['count'] for q in analysis['item_quality_counts']) == phases.get('ANSWER', 0) * 4,
+        factual=dict(correct=correct, asked=asked, planned=planned, errors=errors,
+                     missing_invalid=asked - correct - errors, unasked=factual.get('UNASKED', 0)),
+        research_cost_usd=a['billing']['verified_batch_USD'],
+        all_research_generations=a['billing']['all_research_generations_across_four_distinct_studies'],
+        all_research_cost_usd=a['billing']['all_research_verified_USD'],
+        conservative_exposure_usd=format(Decimal(a['billing']['conservative_owner_exposure_microusd']) / Decimal(1_000_000), '.6f'))
+
+
+def wrapper_projection(root):
+    """Fail closed until an exact independent actual audit is accepted and pinned."""
+    if WRAPPER_AUDIT_SHA256 is None or WRAPPER_AUDIT_STATUS is None or WRAPPER_AGGREGATE_SHA256 is None:
+        raise ValueError('Wrapper actual audit is not yet pinned')
+    def read(path, digest):
+        target = Path(root) / path
+        if target.is_symlink() or target.parent.is_symlink():
+            raise ValueError('Wrapper evidence must be regular public files')
+        with target.open('rb') as stream:
+            raw = stream.read(1_000_001)
+        if len(raw) > 1_000_000 or hashlib.sha256(raw).hexdigest() != digest:
+            raise ValueError('Wrapper public evidence is changed or unreviewed')
+        return json.loads(raw)
+    audit = read(WRAPPER_AUDIT, WRAPPER_AUDIT_SHA256)
+    # The exact audited aggregate binding is checked as well as receipt bytes.
+    if audit['overall_status'] != WRAPPER_AUDIT_STATUS:
+        raise ValueError('Wrapper actual outcome is not accepted')
+    binding = audit['input_pins'][WRAPPER_AGGREGATE]
+    if binding['bytes'] != 34947 or binding['sha256'] != WRAPPER_AGGREGATE_SHA256:
+        raise ValueError('Wrapper audit aggregate binding differs')
+    a = read(WRAPPER_AGGREGATE, WRAPPER_AGGREGATE_SHA256)
+    result = wrapper_summary(a)
+    result.update(source_audit=WRAPPER_AUDIT, source_audit_sha256=WRAPPER_AUDIT_SHA256,
+                  source_aggregate=WRAPPER_AGGREGATE, source_aggregate_sha256=WRAPPER_AGGREGATE_SHA256)
+    return result
+
+
+def render_wrapper(s):
+    """Render admitted public fields only; never infer acceptance from raw data."""
+    h = lambda x: escape(str(x), quote=True)
+    def point(value):
+        return 'Not estimable' if value is None else h(('+' if value > 0 else '') + format(value, '.3f').rstrip('0').rstrip('.'))
+    def metric(key):
+        value = s[key]
+        return point(value['mean']) + '<br><span class="live-note">' + h(value['complete']) + ' / ' + h(value['planned']) + ' matched units</span>'
+    rows = ''.join('<tr><td>Unit ' + h(r['unit']) + ' · ' + h(r['topic']) + '</td>'
+                   + ''.join('<td>' + point(r[k]) + '</td>' for k in ('omitted', 'shown', 'interaction', 'magnitude_change'))
+                   + '</tr>' for r in s['units'])
+    topics = ' · '.join(h(t['topic']) + ': ' + point(t['mean']) + ' points (' + h(t['complete']) + '/' + h(t['planned']) + ')' for t in s['primary_by_topic'])
+    f = s['factual']
+    mag = s['magnitude']['mean']
+    magnitude_note = ('Mean absolute wrapper magnitude is not estimable.' if mag is None else
+                      'Mean absolute wrapper magnitude increased.' if mag > 0 else
+                      'Mean absolute wrapper magnitude decreased descriptively.' if mag < 0 else
+                      'Mean absolute wrapper magnitude was unchanged; this is not equivalence.')
+    validity_note = ('All observed responses had valid survey items.' if s['all_items_valid'] else
+                     'Observed answers and valid survey items have distinct denominators.')
+    return f'''<main class="live-main" id="wrapper-visibility-summary">
+<div class="live-topline"><span class="live-kicker">Identical-content wrapper × own-answer visibility · {h(s['sample_dates'])}</span><span class="live-pill">REAL MODEL EVIDENCE · AUDIT PASSED</span></div>
+<h2>Wrapper direction and magnitude are different outcomes.</h2>
+<p class="live-deck">A fourth separate study crosses NEWS/SOCIAL text labels with OMITTED/SHOWN own support. Four fictional contexts × two authored topics; one Qwen/Nebius configuration selected from prior item completeness. No real feed or source-credibility effect was tested.</p>
+<div class="live-cards">
+<div class="live-card"><div class="live-value">{h(s['actual_responses'])} / {h(s['planned_slots'])}</div><div class="live-label">Observed answers / planned slots · 8 fresh baselines + 32 posts</div></div>
+<div class="live-card"><div class="live-value">{point(s['primary']['mean'])}</div><div class="live-label">Primary SOCIAL − NEWS support · own answer OMITTED · {h(s['primary']['complete'])}/{h(s['primary']['planned'])} units</div></div>
+<div class="live-card"><div class="live-value">{point(s['magnitude']['mean'])}</div><div class="live-label">Mean absolute-magnitude change · SHOWN minus OMITTED</div></div>
+<div class="live-card"><div class="live-value">${h(s['research_cost_usd'])}</div><div class="live-label">Verified fourth-study charges</div></div></div>
+<section class="live-panel"><h3>Signed contrasts and magnitude are different outcomes</h3>
+<p class="live-note">All contrasts are support points on a custom 0–100 scale. Signed interaction = SHOWN wrapper contrast − OMITTED wrapper contrast, on the common eligible intersection. Magnitude change = |SHOWN| − |OMITTED| on those same units.</p>
+<table><thead><tr><th>OMITTED wrapper contrast</th><th>SHOWN wrapper contrast</th><th>Matched signed interaction</th><th>Absolute-magnitude change</th></tr></thead><tbody><tr><td>{metric('matched_omitted')}</td><td>{metric('matched_shown')}</td><td>{metric('interaction')}</td><td>{metric('magnitude')}</td></tr></tbody></table>
+<div class="live-warning"><strong>Negative signed interaction does not establish attenuation.</strong><br>{h(magnitude_note)} A shift from zero to negative is not a strict nonzero sign reversal. Read the recorded unit values and magnitude counts below; a signed decrease alone does not support general masking or an anchoring mechanism.</div>
+<div style="overflow-x:auto"><table><thead><tr><th>Technical unit</th><th>OMITTED</th><th>SHOWN</th><th>Signed interaction</th><th>Magnitude change</th></tr></thead><tbody>{rows}</tbody></table></div>
+<p class="live-note">Recorded magnitude counts: {h(s['expansion_count'])} expansion · {h(s['contraction_count'])} contraction · {h(s['unchanged_magnitude_count'])} unchanged; {h(s['reversal_count'])} strict sign reversals. Topic-specific primary contrasts: {topics}.</p></section>
+<div class="live-grid"><section class="live-panel"><h3>Coverage and factual answers</h3>
+<p class="live-note">{h(s['skipped_slots'])} skipped · {h(s['failed_slots'])} failed/uncertain · {h(s['parse_error_slots'])} parse errors · {h(s['cancelled_slots'])} cancelled · {h(s['unattempted_slots'])} unattempted.</p>
+<p class="live-note">Factual correct / asked: {h(f['correct'])}/{h(f['asked'])}; correct / planned: {h(f['correct'])}/{h(f['planned'])}. Observed wrong: {h(f['errors'])}; missing/invalid among asked: {h(f['missing_invalid'])}; unasked: {h(f['unasked'])}. These categories do not substitute for one another.</p>
+<p class="live-note">{h(validity_note)} No answer repair, replacement, sample extension or model/billing retry occurred. The preserved preflight01 and expired02 attempts are not relabeled as executed study answers.</p></section>
+<section class="live-panel"><h3>Limits and accounting</h3>
+<p class="live-note">Four purposive contexts and two positive-evidence authored topics are not eight independent people. One selected model/provider configuration and a custom support scale do not establish a human effect, equivalence or a general model mechanism. No confidence interval or p-value was estimated. The full original E02 research contract remains incomplete. Text labels do not reproduce visual feeds; source attribution stayed fixed.</p>
+<p class="live-note">Four separate research studies: {h(s['all_research_generations'])} generations / ${h(s['all_research_cost_usd'])} verified reported charges, without pooling estimands. Conservative exposure ${h(s['conservative_exposure_usd'])} retains four historical holds and is not an invoice. E02 $1 / shared $5 / E01 paid $0 remain unchanged.</p>
+<p class="live-note">Reported-null tier remains UNKNOWN. Provider streamed:true telemetry versus requested stream:false is unresolved; no default tier, streaming behavior or fallback is inferred.</p>
+<details><summary>Accepted public evidence</summary><p class="live-audit">{h(s['source_audit'])}<br>SHA-256 {h(s['source_audit_sha256'])}</p><p class="live-audit">{h(s['source_aggregate'])}<br>SHA-256 {h(s['source_aggregate_sha256'])}</p><p class="live-note">Allowlisted aggregates only; no raw answers, generation IDs, private paths, credentials or owner rows are exported. Earlier studies below retain their separate historical results and accounting checkpoints.</p></details></section></div>
+</main><hr class="live-study-divider">'''
+
+
 def build(root, output):
     """Preserve the old viewer and add a public-summary overlay, idempotently."""
     output = Path(output)
@@ -338,6 +484,9 @@ def build(root, output):
     summary = projection(root)  # Refuse altered evidence before touching files.
     followup = followup_projection(root)
     crossmodel = crossmodel_projection(root)
+    wrapper = wrapper_projection(root) if WRAPPER_AUDIT_SHA256 is not None else None
+    if wrapper is not None:
+        summary['wrapper_result'] = wrapper
     summary['followup_result'] = followup
     summary['crossmodel_result'] = crossmodel
     summary['followup']['status'] = followup['status']
@@ -346,7 +495,7 @@ def build(root, output):
     base = original_bytes.decode('utf-8')
     if START in base or base.count('<main>') != 1 or base.count('</main>') != 1:
         raise ValueError('Unexpected historical preview structure')
-    page = base.replace('<main>', render_crossmodel(crossmodel) + render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
+    page = base.replace('<main>', (render_wrapper(wrapper) if wrapper is not None else '') + render_crossmodel(crossmodel) + render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
     # The new overlay has its own main; close only the historical main.
     pos = page.rfind('</main>')
     page = page[:pos] + '</main></details>' + page[pos + len('</main>'):]

@@ -1,10 +1,41 @@
 # Synthetic Society Lab Methods and Validation Draft
 
-Draft for owner and independent scientific review. Updated November 11, 2026 UTC. No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison and three distinct completed exploratory E02 live studies. The original full E01/E02 studies remain incomplete.
+Draft for owner and independent scientific review. Updated November 12, 2026 (America/New_York). No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison and four separately and independently audited exploratory E02 live studies. The original full E01/E02 studies remain incomplete.
 
 ## Abstract
 
-Synthetic social-science systems can become more elaborate without becoming more useful. Synthetic Society Lab separates that question into electoral-margin forecasting and randomized information-framing experiments on fictional model profiles. A shared system records source provenance, frozen configurations, isolated experimental units, provider accounting and reproducible evaluation. An initial engineering snapshot includes an ANES/ACS population fit, deterministic response fixtures and a retrospective forecasting demonstration. In the recorded population fit, sparse support excluded 1,033 training records and the effective survey sample size was approximately 352 despite matching selected demographic margins closely. These observations limit representative-population claims. The deterministic response pilot verifies recovery of an authored test effect and does not estimate a language-model or human treatment effect. A subsequent independently audited live pilot produced 32 valid answers from one model family across four fictional party-prior profiles, two authored notices and two wrappers. All eight matched contrasts and all within-arm partisan-gap changes were zero. Four comparisons cross a multi-day execution gap; these observations do not establish equivalence, human effects or population validity. Two later independently audited issue-support diagnostics yielded 22 answers with six skips and 53 answers with three skips, respectively. The first found a 56.25-point positive-minus-negative evidence contrast over four technical contexts, with the whole-answer cue comparison limited to two eligible contexts. The third study showed smaller contrasts when only the earlier support rating was supplied: 33.33 versus 0 points in GPT/Azure's three complete contexts and 51.25 versus 20 in Qwen/Nebius's four; the full prespecified cross-configuration pattern was not met. These distinct exploratory results are not pooled and establish neither a human effect nor a psychological mechanism. In a separately audited post-hoc diagnostic on 30 regular Senate constituencies, 2018-margin persistence had mean absolute error 10.20 percentage points for 2024 conditional Democratic–Republican margins, versus 18.19 for a zero-margin control. This selected historical comparison is not a prospective forecast or an untouched holdout. Complexity is eligible for adoption only after a matched comparison with a simpler approach. The present contribution is the research design, reproducibility machinery and explicit account of what remains scientifically unproven.
+Synthetic social-science systems can become more elaborate without becoming more useful. Synthetic Society Lab separates that question into electoral-margin forecasting and randomized information-framing experiments on fictional model profiles. A shared system records source provenance, frozen configurations, isolated experimental units, provider accounting and reproducible evaluation. An initial engineering snapshot includes an ANES/ACS population fit, deterministic response fixtures and a retrospective forecasting demonstration. In the recorded population fit, sparse support excluded 1,033 training records and the effective survey sample size was approximately 352 despite matching selected demographic margins closely. These observations limit representative-population claims. The deterministic response pilot verifies recovery of an authored test effect and does not estimate a language-model or human treatment effect. A subsequent independently audited live pilot produced 32 valid answers from one model family across four fictional party-prior profiles, two authored notices and two wrappers. All eight matched contrasts and all within-arm partisan-gap changes were zero. Four comparisons cross a multi-day execution gap; these observations do not establish equivalence, human effects or population validity. Two later independently audited issue-support diagnostics yielded 22 answers with six skips and 53 answers with three skips, respectively. The first found a 56.25-point positive-minus-negative evidence contrast over four technical contexts, with the whole-answer cue comparison limited to two eligible contexts. The third study showed smaller contrasts when only the earlier support rating was supplied: 33.33 versus 0 points in GPT/Azure's three complete contexts and 51.25 versus 20 in Qwen/Nebius's four; the full prespecified cross-configuration pattern was not met. These distinct exploratory results are not pooled and establish neither a human effect nor a psychological mechanism. A fourth identical-content wrapper-by-visibility study recorded 40 valid answers: OMITTED +0.625, SHOWN −3.125, signed interaction −3.75 and absolute-magnitude change +2.5 points over eight complete technical units. Its negative signed interaction does not demonstrate attenuation; independent scoped actual review passed. In a separately audited post-hoc diagnostic on 30 regular Senate constituencies, 2018-margin persistence had mean absolute error 10.20 percentage points for 2024 conditional Democratic–Republican margins, versus 18.19 for a zero-margin control. This selected historical comparison is not a prospective forecast or an untouched holdout. Complexity is eligible for adoption only after a matched comparison with a simpler approach. The present contribution is the research design, reproducibility machinery and explicit account of what remains scientifically unproven.
+
+
+## Fourth study: identical-content wrapper × own-support visibility
+
+**Independent scoped actual-outcome review passed.** The new
+[report](../reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md) describes the
+separate run completed November 12, 2026, 7:50–8:05 p.m. EST (November 13 UTC).
+Four fictional contexts × two authored topics crossed NEWS/SOCIAL text labels
+with OMITTED/SHOWN own support in one Qwen/Nebius configuration, selected from
+prior observed item completeness. Eight fresh baselines plus 32 posts produced
+40 valid responses and 40 correct factual answers, without skips or retries.
+
+On the same eight complete profile-topic units, the primary OMITTED social-minus-
+news contrast averaged +0.625 points (seven zeros, one +5); SHOWN averaged −3.125
+(seven zeros, one −25). The signed interaction averaged −3.75, but absolute magnitude
+change averaged +2.5:one expansion 25, one contraction 5, six unchanged. There were
+no strict nonzero sign reversals. The negative signed interaction therefore
+does not demonstrate general attenuation or masking. Zero-to-negative expansion
+is not itself a sign reversal. No CI, p-value, equivalence, human effect or anchoring
+mechanism is claimed. Topics/source attribution were held fixed, so this is a
+text-label experiment, not a real-feed or sourcing-credibility trial. The four
+studies remain scientifically separate.
+
+Verified fourth-study charges are $0.0028919; four distinct studies contain
+147 generations/$0.0098213 reported research charges. Conservative exposure
+$0.012221 includes four unchanged historical holds and is not an invoice total.
+Reported-null tiers remain UNKNOWN and provider streamed:true versus requested
+stream:false remains unresolved. The immutable
+[aggregate](../reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) retains its
+build-time pending status; the later [separate actual audit](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) supplies scoped acceptance. Renderer and draft review remain separate.
+No external publication or full original research completion follows.
 
 ## Research question and related work
 

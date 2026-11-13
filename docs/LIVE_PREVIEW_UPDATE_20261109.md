@@ -99,3 +99,78 @@ comparison/missingness panels are saved as crossmodel-results-preview.png and
 crossmodel-comparison-preview.png in the existing local visualization directory.
 Final independent renderer/draft review is separate; these tests and implementer
 visual checks alone do not certify scientific acceptance or independent layout. Lead retains integration and commit ownership.
+
+## November 12 fourth-study preparation checkpoint
+
+The identical-content wrapper/visibility section is prepared as a candidate.
+Actual evidence is recorded in `E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json`;
+its build-time pending flag is preserved. Independent actual review is pending,
+so the new audit/aggregate pins remain unset and the generated accepted preview
+continues to contain only the three earlier studies. No new study section is
+installed or declared accepted on the basis of an authored receipt test.
+
+The fourth-study projection reads only a bounded exact public audit and its
+bounded exact public aggregate after acceptance pins exist. It exports anonymous
+unit numbers and topic labels, recorded contrasts and matched denominators,
+factual-quality counts, costs and limitations. It joins saved arrays by their
+unit identities internally and never exports profile IDs, raw answers,
+generation IDs, private paths, owner rows or arbitrary audit fields. Symlink,
+changed-byte, receipt-status, aggregate-binding and size guards fail before
+preview writes. A failed new-study gate preserves existing outputs and history.
+
+The display distinguishes primary OMITTED +0.625, SHOWN −3.125, signed interaction
+−3.75 and absolute-magnitude change +2.5. The negative signed interaction is not
+called attenuation. One magnitude expanded 25, one contracted 5 and six were
+unchanged; no strict nonzero reversal occurred. Zero-to-negative expansion is
+not a nonzero sign reversal. Coverage, observed errors, missing/invalid items and
+unasked slots remain separate, even though all 40 responses were valid/correct.
+Dates distinguish November 12 local evening from November 13 UTC. The selected
+configuration, authored topics/custom scale, source-label control and absent
+human/inferential generality are explicit. No external canvas is changed.
+
+The first three projection dictionaries and rendered HTML sections were compared
+with the previously committed viewer and remain byte/canonical-hash identical.
+Their historical accounting checkpoints remain separate; the top new section
+will carry 147 generations/$0.0098213 reported research charges and $0.012221
+conservative exposure including the four unchanged holds. The original archive
+and snapshot are preserved; adding a result does not recertify old source or
+scientific gates. New renderer/privacy/layout review is separate from actual
+outcome acceptance, and author tests alone do not certify either.
+
+### Fourth-study actual acceptance and final renderer candidate
+
+The later exact actual-evidence audit is now accepted:
+`INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json`,
+SHA-256 `a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475`.
+Its `overall_status` is
+`PASS_SCOPED_ACTUAL_EVIDENCE_ACCOUNTING_MATCHED_SCORING_AND_LIMITATIONS`.
+The exact `input_pins` entry for the public aggregate binds 34,947 bytes and
+SHA-256 `fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964`.
+The viewer now checks this particular receipt schema and aggregate binding;
+it does not assume the older study receipt field names. The aggregate's
+capture-time pending label and all prior reports remain unchanged.
+
+This supersedes only the preparation checkpoint's pending/unset-pin statements
+above. The candidate build admits six bounded public evidence files before
+writing any preview: the four earlier files and this new audit/aggregate pair.
+Twenty-five focused checks pass on both Python versions, including actual-pair
+admission, altered-new-evidence refusal before output, a six-public-file build
+allowlist, archive/snapshot preservation, idempotence, all three historical
+projection/render hashes, anonymized unit joins, quality/denominator cases and
+HTML escaping. Authored receipt tests check engineering mechanics, not actual
+scientific acceptance. The independent actual audit does not certify the new
+renderer, drafts or browser layout; those remain a separate presentation review.
+
+The accepted-evidence candidate was rebuilt locally after that exact PASS using
+`scripts/update_live_preview.py`. This writes only generated local preview files;
+it does not launch inference or read owner/credential/private research stores.
+The fourth section appears above the preserved three earlier sections. Report,
+paper, blog, limitations and reproducibility drafts now cite the separate actual
+PASS while leaving their presentation review and external release unapproved.
+
+Browser/layout inspection is **NOT_RUN**. The computer-use browser policy blocked
+opening the generated local `file://` HTML because that protocol is not allowed,
+and explicitly prohibited alternative-surface or indirect workarounds. No bypass
+or workaround was attempted. Static build/test evidence is not a substitute for
+a visual layout check; no new screenshot or independent layout certification is
+claimed. The external synthesis canvas was not changed.

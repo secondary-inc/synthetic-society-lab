@@ -85,3 +85,29 @@ The [accepted generated-fixture runtime check](../reports/INDEPENDENT_AUDIT_E01_
 ## November 9 live follow-up
 
 The new issue-aligned result uses one custom question, one fictional library issue, one model/provider family and four technical contexts. It is exploratory after the first study's zero change. Both R-prior baselines had missing Democratic-party thermometers; the frozen complete-baseline rule therefore skipped six SHOWN posts. The primary omitted-answer contrast uses four contexts, whereas the own-answer interaction uses only two D-prior contexts. Do not subtract unequal-denominator means, infer a party difference, generalize a mechanism or claim human effects. All asked factual items were correct; the planned-denominator task-following flag reflects skips. No inferential interval was estimated. Across both distinct studies, verified research cost is $0.0030424; conservative owner exposure at that November 9 checkpoint was $0.004473, with all three old holds unchanged. See the [follow-up report](../reports/E02_ALIGNMENT_ANCHORING_RESULT_20261109.md).
+
+
+## Fourth wrapper/visibility study — scoped actual review passed
+
+The fourth study has complete 8/8 profile-topic comparisons and 40 valid/factually
+correct answers, but completeness is not external validity. One Qwen/Nebius
+configuration was selected from prior item completeness; four purposive contexts
+and two authored positive-evidence topics are neither eight independent humans
+nor a random sample of topics. The custom issue-support scale is unvalidated
+for human inference. Only text-format labels varied; source attribution stayed
+fixed. No real feed, visual presentation, source credibility, human persuasion or
+general model effect was tested.
+
+OMITTED mean +0.625 and SHOWN −3.125 yield signed interaction −3.75, while mean
+absolute-magnitude change is +2.5. One unit expanded 25, one contracted 5 and six
+were unchanged, without strict nonzero reversals. Calling the signed decrease
+"attenuation" would be wrong. This does not validate the proposed general
+masking mechanism or explain the original party-warmth null. No equivalence,
+p-value or inferential interval follows from seven zero primary contrasts.
+All units, not just the nonzero ones, remain recorded. Prior studies stay separate.
+
+The run occurred November 12 local/November 13 UTC. Preserved preflight 01 and
+expired 02 scopes were not replayed or relabeled successful. Null service tier
+remains UNKNOWN; streamed:true versus stream:false remains unresolved. The
+[public aggregate](../reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) has an
+immutable capture-time pending field. [Independent scoped actual review passed](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json). Separate renderer/privacy/layout review remains pending; actual acceptance does not certify presentation or external validity.

@@ -1,0 +1,171 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [],
+  "NEXT_UNBLOCKED_TASK": "Independent review of this diagnosis and narrow composition/succession proposal; then separately authorized authored implementation only.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 324,
+      "path": "reports/clerk2020_cpu_inheritance_authored_probe_20261112.json",
+      "sha256": "f492cf66ffac89bcd09b52b6626b20b8baf704125ddb7370a269747035c5fbaf"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S /tmp/civiclab-e01-cpu-inheritance-authored-20261112.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Actual specific exception trace absent; do not invent it.",
+    "Proposed new hard-ceiling composition needs separate review and exact protocol update; current accepted code remains frozen.",
+    "Soft CPU limits and sampled aggregate checks are not precision instantaneous resource guarantees; preserve documented timing/overshoot limitations."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Read-only existing fixed metadata and public technical qualification handoff only; no raw PDFs/projections/respondents/publisher excerpts/credentials read. No PDF/native library imported or launched.",
+  "TASK_ID": "E01_ACTUAL_EXEC_INPUT_STOP_READONLY_DIAGNOSIS_20261112",
+  "TESTS_RUN_AND_RESULTS": "Single finite authored parent-child OS oracle PASS: inherited[7,8], set20/21 raisesValueError. No actual replay.",
+  "UNRESOLVED_BLOCKERS": [
+    "Independent actual-stop review",
+    "Separate successor methods/code/particular review and root scheduling; no current retry authority"
+  ],
+  "authored_oracle": {
+    "envelope": "One parent plus one isolated child; child timeout3s, stdout<=1024B, stderr required empty; no network, actual sources, decoder/native imports or model calls.",
+    "result": {
+      "actual_cost_usd": 0,
+      "child": {
+        "error_type": "ValueError",
+        "inherited_cpu_limits": [
+          7,
+          8
+        ],
+        "status": "REFUSED_BEFORE_ANY_DECODER"
+      },
+      "child_processes": 1,
+      "label": "AUTHORED_CPU_INHERITANCE_ORACLE_NOT_ACTUAL_FAILURE_TRACE",
+      "network_model_calls": 0,
+      "parent_limits": [
+        7,
+        8
+      ],
+      "pdf_native_imports": 0,
+      "raw_source_reads": 0
+    },
+    "script_ref": {
+      "bytes": 1170,
+      "path": "/tmp/civiclab-e01-cpu-inheritance-authored-20261112.py",
+      "sha256": "627995be579adc12d0e107377395b8311fa83342f6b22a892e3e08f47963f4aa"
+    },
+    "script_source": "\"\"\"One finite parent->child CPU-limit oracle; no source or decoder imports.\"\"\"\nimport json,resource,subprocess,sys\nresource.setrlimit(resource.RLIMIT_CPU,(7,8))\nchild='''import json,resource\nbefore=resource.getrlimit(resource.RLIMIT_CPU)\ntry:\n resource.setrlimit(resource.RLIMIT_CPU,(20,21))\n result={'status':'UNEXPECTED_RAISE_SUCCEEDED'}\nexcept (ValueError,PermissionError,OSError) as exc:\n result={'status':'REFUSED_BEFORE_ANY_DECODER','error_type':type(exc).__name__}\nresult['inherited_cpu_limits']=list(before)\nprint(json.dumps(result,sort_keys=True))\n'''\np=subprocess.run([sys.executable,'-I','-B','-S','-c',child],stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=3,check=True)\nassert len(p.stdout)<=1024 and not p.stderr\nresult=json.loads(p.stdout);assert result['status']=='REFUSED_BEFORE_ANY_DECODER' and result['inherited_cpu_limits']==[7,8]\nprint(json.dumps({'label':'AUTHORED_CPU_INHERITANCE_ORACLE_NOT_ACTUAL_FAILURE_TRACE','parent_limits':list(resource.getrlimit(resource.RLIMIT_CPU)),'child':result,'child_processes':1,'raw_source_reads':0,'pdf_native_imports':0,'network_model_calls':0,'actual_cost_usd':0},sort_keys=True))\n"
+  },
+  "cause": {
+    "actual_trace_limit": "Actual caught exception type/traceback was deliberately not retained. This is a static/runtime-composition explanation corroborated by an authored oracle and root-confirmed invocation, not a recovered actual exception trace.",
+    "alternative_input_scan": "Saved cache533identity rows all six nonnegative signed63bit ints; prior public qualification metadata518labels has no forbidden REPO/data or.env labels. These checks are supplemental, not a reconstruction/replay of the raw child request.",
+    "child": "source_worker line149 immediately requests RLIMIT_CPU(20,21) while stageINPUT; an unprivileged process cannot raise its inherited hard limit8 to21.",
+    "classification": "DETERMINISTIC_STATIC_COMPOSITION_DEFECT_CORROBORATED_BY_AUTHORED_OS_ORACLE",
+    "consequence": "ValueError in authored same-platform oracle. In actual code, broad catch returns INPUT STOP before parse_request, decoder import, generated checks or actual PDF reader.",
+    "inheritance": "dispatch lines418ff starts isolated child with subprocess.Popen; inherited hard CPU limit remains8 seconds across exec.",
+    "parent": "source_job CLI line702 installs RLIMIT_CPU(7,8) before dispatch."
+  },
+  "observation": {
+    "actual_child_status": "CLERK_SOURCE_WORKER_STOP_V1_2",
+    "cost_usd": 0,
+    "journal_last_event": "BACKEND_RESERVE",
+    "journal_last_sequence": 11,
+    "model_calls": 0,
+    "observed_source0_snapshot_bytes": 602172,
+    "refusals": null,
+    "source1_receipt": "ABSENT_BY_INVENTORY",
+    "source_format_accepted": false,
+    "specific_exception": null,
+    "stage": "INPUT",
+    "stderr_bytes": 0,
+    "warmup_progress": {},
+    "wire_bytes": 211,
+    "wire_sha256": "4cf13db6c79559d7e25979c165565daeab7a413745c1f3a62a454812ff5b368c"
+  },
+  "preservation": {
+    "actual_pdf_reader_attempts": "Not observed; INPUT stop precedes decoder import statically. Charged reservations are not actual attempt counts.",
+    "charged_backend_attempts": 2,
+    "charged_source_read_attempts": 2,
+    "charged_source_read_bytes": 859913,
+    "charged_total_attempts": 10,
+    "charged_total_pages": 357,
+    "charged_warmup_attempts": 8,
+    "charged_warmup_pages": 238,
+    "full_bounds_consumed_no_refund": true,
+    "observed_source_bytes": 602172,
+    "observed_source_reads": 1,
+    "original_campaign": "clerk2020_source_format_native_v1",
+    "run_id": "e01-12ab1efc0e59f97492e632663d650465",
+    "source_edits": false,
+    "source_or_campaign_replay": false
+  },
+  "proposed_separate_successor": {
+    "budget_and_scope": "No new cost authority or experimental scope. Original campaign full allocations remain consumed/no refund. A successor requires separately recorded finite engineering recovery allocation under standing owner authority, with original consumption included in cumulative history; it is not remaining original campaign allowance.",
+    "changed_local_bound_disclosure": "This changes the parent kernel hard ceiling from8 to21; do not describe it as preserving that particular hard limit. Parent soft7 remains the enforcement boundary with verified default unblocked SIGXCPU. Requires explicit independent methods/code review before adoption. This proposal does not change the consumed original launcher.",
+    "checks_required": [
+      "Parent launcher rejects inherited hard ceilings below21 rather than trying to raise them; record RESOURCE_LIMIT_SETUP stage safely before model/decoder input.",
+      "Verify SIGXCPU default disposition and unblocked mask before installing parent soft7/hard21; no ignored/blocked soft-limit path.",
+      "Bounded authored parent->child integration checks inherited7/21 then legal child20/21, and refuses attempted child hard22; no decoder imports.",
+      "Regression invokes the actual CLI boundary on an authored temporary tree or dedicated source-free entry, rather than only run_exec API.",
+      "Retain all existing wall/CPU late-invalidation and70authored regressions and independent review.",
+      "New fixed successor registry/packets/scopes must explicitly bind immutable old campaign/source-set/run, original failure evidence and all consumed bounds; never reset/delete/reissue original ordinal or reuse old packet.",
+      "Root alone allocates/schedules any separately reviewed finite successor; existing source-set index must link preserved predecessor under an explicit reviewed succession rule, never a namespace workaround."
+    ],
+    "minimal_composition": "For a separately versioned EXEC CLI, use parent soft CPU7s with inherited hard ceiling21s, explicitly default-fatal SIGXCPU, so each child may legally install its existing20/21s. Keep aggregate EXEC CPU50s, BOOT CPU10s, total60s and all wall/RSS/read/write/source bounds explicit. Parent must never install a lower inheritable hard ceiling before its source children start.",
+    "scientific_limits": "Source format only; cannot adopt counts, roles, candidates, ballots, geography or features. No research inference or prospective claim.",
+    "status": "METHODS_PROPOSAL_NOT_IMPLEMENTED_OR_RELEASED"
+  },
+  "retained_actual_metadata_refs": [
+    {
+      "bytes": 3738,
+      "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/failure-stderr.local.bin",
+      "sha256": "2f8fcd420e93e1f7ebbed23965fbcd79278d5589b8597a1c8c358a09d9ea0ff0"
+    },
+    {
+      "bytes": 7728,
+      "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/events.jsonl",
+      "sha256": "7353133923babe4197b09fac7c8190d08d671ae5dbfc33190d4945ac4a1ef384"
+    },
+    {
+      "bytes": 641,
+      "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/child-0.local.json",
+      "sha256": "f55332112475545b4c4cfa47def1716414ad121b7f069dc1f1fe32a8ed7c5571"
+    },
+    {
+      "bytes": 210,
+      "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runs/e01-12ab1efc0e59f97492e632663d650465/terminal-failure.local.json",
+      "sha256": "36272dead10ab5eb7186210ddf4bfe8e69291197ec1af7fc58f44c017a156a78"
+    },
+    {
+      "bytes": 39994,
+      "path": "data/processed/e01_clerk2020_m2_control/clerk2020_source_format_native_v1/runtime-stat-cache.local.json",
+      "sha256": "a848c10abb0355fdc274aac6d7fb0810f2db7aaa1f2cb5f0587c8338042c3216"
+    }
+  ],
+  "root_confirmed_invocation": {
+    "argv": [
+      ".venv/bin/python",
+      "-I",
+      "-B",
+      "-S",
+      "src/civiclab/e01/clerk2020_source_job_v1.py",
+      "--exec",
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab",
+      "0d2993509b6810b1cf81682ab77edf91cc7a1da9c1ad4c46b865ded6d2f76610"
+    ],
+    "evidence": "Root thread explicitly confirmed exact actual CLI command in delegation on November12; not inferred from tests.",
+    "stdin": "exact independently reviewed EXEC packet",
+    "stdout_bytes": 115,
+    "stdout_sha256": "3d3de1d176638fd539a05351d20c9ff2805049e26be13ab4ab291559c14572d5"
+  },
+  "source_refs": [
+    {
+      "bytes": 47039,
+      "path": "src/civiclab/e01/clerk2020_source_job_v1.py",
+      "sha256": "a6dd5f7da63163cec2fa653c0234cb619e42c3cc25ca448124dcacfee9ef1fb7"
+    },
+    {
+      "bytes": 11393,
+      "path": "src/civiclab/e01/clerk2020_source_worker_v1.py",
+      "sha256": "fb9125f82f8705cff0c9e747b6d2c04161f48ad7a8d05d2965a6f5342786c634"
+    }
+  ],
+  "status": "DIAGNOSIS_AND_SEPARATE_SUCCESSOR_METHODS_PROPOSAL_ONLY"
+}

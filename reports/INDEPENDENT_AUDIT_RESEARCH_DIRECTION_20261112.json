@@ -1,0 +1,147 @@
+{
+  "task_id": "INDEPENDENT_AUDIT_RESEARCH_DIRECTION_20261112",
+  "review_date": "2026-11-12",
+  "status": "PASS",
+  "scope": "Narrow documentation delta: new docs/RESEARCH_DIRECTION_20261112.md plus README introductory E01/E02 bullets and incoming link only. Not code, scientific milestone, external publication or full-contract acceptance.",
+  "reviewer": "Independent document auditor /root/direction_document_audit; did not implement reviewed files.",
+  "owner_authority_evidence": "Inherited human conversation: owner asked whether post-election timing should alter research, then answered sure to the parent recommendation. This records the direction only, not new access/spend/publication authority.",
+  "base_commit": "0084784b4dc5bd53865acd06df8142518c7f1f14",
+  "source_pins": {
+    "docs/RESEARCH_DIRECTION_20261112.md": {
+      "bytes": 5590,
+      "sha256": "4fe90a04271089e9ab464c539cdc271b0fa54871ed6795e32eb44718bd04cd2a"
+    },
+    "README.md": {
+      "bytes": 13392,
+      "sha256": "00c3b7c0cbf4008cf17b04ecc517b683bd287fc3d3cd4d66e8d4ff50a50793a0"
+    },
+    "AGENTS.md": {
+      "bytes": 3594,
+      "sha256": "0457721771be617392369f0e2a6f294c98a9a16610f61b6d8e3bd0aafd5fcde1"
+    },
+    ".cursor/rules/responsible-autonomy.mdc": {
+      "bytes": 3232,
+      "sha256": "a8920bbe75d18dd5c5a737c99bc68502e6ad221208370db24c2a0cca351f1097"
+    },
+    "AUTONOMOUS_RESEARCH_ORCHESTRATION.md": {
+      "bytes": 10354,
+      "sha256": "a6848545d0c322de22f350e1452a93925b84270941f2aa113f44f24cc9c086dd"
+    },
+    "CODEX_MASTER_EXECUTION.md": {
+      "bytes": 32390,
+      "sha256": "a517ac1c7d6ce88916b49997a5f940bbba91b09ccc3902aaa57dbbd351839323"
+    },
+    "reports/PROGRESS_2026-11-03.md": {
+      "bytes": 16784,
+      "sha256": "1e1cdeb494cd43f57a5216fef06b1d17a068d6f1910421c39669867814377432"
+    },
+    "reports/STATUS.md": {
+      "bytes": 121859,
+      "sha256": "67d33c3f726b1aee430c1f5fa969f8e1f1f67c4431c5f4dd171ef86e95922853"
+    },
+    "configs/completion_contract.json": {
+      "bytes": 4220,
+      "sha256": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075"
+    },
+    "protocols/E01_RETROSPECTIVE.md": {
+      "bytes": 5749,
+      "sha256": "63003cc9eb060a241eaf19470488453e26bfbab645a0366b1ee8ef700793cb16"
+    },
+    "reports/E02_ISSUE_CUE_CROSSMODEL_RESULT_20261110.md": {
+      "bytes": 8640,
+      "sha256": "e8bd1e8b428f3e82d6fc31b918c7b10ad56ce784f1ef0b9515f0c52c7388adde"
+    }
+  },
+  "reviewed_readme_scope": "Whole-file hash identifies reviewed snapshot; acceptance covers only exactly checked two bullet substitutions and one link addition versus base commit.",
+  "checks": [
+    {
+      "id": "D01",
+      "status": "PASS",
+      "evidence": "README equals HEAD plus exactly the two introductory bullet replacements and one new planning-note link."
+    },
+    {
+      "id": "D02",
+      "status": "PASS",
+      "evidence": "All five local links in the planning note and its new README incoming link resolve to existing repository files."
+    },
+    {
+      "id": "D03",
+      "status": "PASS",
+      "evidence": "E02 primary, independent E01 retrospective baseline and deferred E03/E04 match current AGENTS instructions."
+    },
+    {
+      "id": "D04",
+      "status": "PASS",
+      "evidence": "Original 24 House/up-to-8 Senate and 4 House/2 Senate comparison scope preserved, with missing evidence BLOCKED and no subset/future-election substitution."
+    },
+    {
+      "id": "D05",
+      "status": "PASS",
+      "evidence": "Six-clause/23-item completion contract and existing E01 protocol are byte-identical to HEAD; note grants no scientific completion."
+    },
+    {
+      "id": "D06",
+      "status": "PASS",
+      "evidence": "Known planning-chat outcome exposure, model-memory limits, lack of accepted pre-results archive, independently verifiable timestamps and retrospective classification are explicit."
+    },
+    {
+      "id": "D07",
+      "status": "PASS",
+      "evidence": "E01 same-seat historical inputs, separated features/outcomes, matched race/cutoff/outcome versions, office-specific errors and equal-compute swarm controls match existing protocol and blueprint."
+    },
+    {
+      "id": "D08",
+      "status": "PASS",
+      "evidence": "Certified final versus provisional interim scoring is explicit; revisions retained without prediction retuning. Public EAC reference is attributed; no fresh external verification is claimed by this auditor."
+    },
+    {
+      "id": "D09",
+      "status": "PASS",
+      "evidence": "Three completed E02 studies remain separate; third-study unmet across-configuration criterion and no synthetic-to-human voting inference are retained."
+    },
+    {
+      "id": "D10",
+      "status": "PASS",
+      "evidence": "Future E02 questions/samples/scoring/exclusions/matched controls/bounds require pre-execution freeze and independent review; post-election timing is distinct from prospective specification of future model responses."
+    },
+    {
+      "id": "D11",
+      "status": "PASS",
+      "evidence": "Future election is planning only; no contest/date, spending, acquisition, ledger, execution, scheduling or publication authority added; shared $5/E02 $1/E01 $0 caps include holds."
+    },
+    {
+      "id": "D12",
+      "status": "PASS",
+      "evidence": "README diff whitespace check and full new-note trailing-whitespace check passed."
+    }
+  ],
+  "local_link_targets": [
+    "../AUTONOMOUS_RESEARCH_ORCHESTRATION.md",
+    "../configs/completion_contract.json",
+    "../protocols/E01_RETROSPECTIVE.md",
+    "../reports/STATUS.md",
+    "../reports/E02_ISSUE_CUE_CROSSMODEL_RESULT_20261110.md"
+  ],
+  "findings": [],
+  "validation": {
+    "document_checks_passed": 12,
+    "all_source_pins_unchanged_at_close": true,
+    "new_application_tests": "NOT_RUN: documentation-only change; no implementation changed",
+    "git_diff_check": "PASS",
+    "local_links": "PASS"
+  },
+  "not_run": [
+    "Application or scientific execution",
+    "Full current source/CI verification",
+    "Independent reacquisition of external EAC webpage",
+    "Raw/private data or owner-ledger review",
+    "Actual candidate/count/ballot/geography adoption",
+    "Remote commit/push or external publication"
+  ],
+  "auditor_network_model_calls": 0,
+  "auditor_API_cost_USD": 0,
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_RESEARCH_DIRECTION_20261112.json"
+  ],
+  "next_unblocked_task": "Lead may integrate this exact reviewed documentation delta without advancing experimental gates; existing E01 implementation and independent review remain separate."
+}

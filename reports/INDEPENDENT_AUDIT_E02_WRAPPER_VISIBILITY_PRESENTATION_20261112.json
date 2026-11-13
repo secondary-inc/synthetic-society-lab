@@ -1,0 +1,158 @@
+{
+  "accepted_actual_evidence": {
+    "bytes": 14718,
+    "overall_status": "PASS_SCOPED_ACTUAL_EVIDENCE_ACCOUNTING_MATCHED_SCORING_AND_LIMITATIONS",
+    "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+    "sha256": "a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475"
+  },
+  "browser_layout": {
+    "reason": "Prior CUA file:// action was rejected by browser policy and explicitly prohibited alternate-surface or indirect workarounds. Reviewer made no browser attempt; static build is not visual layout verification.",
+    "screenshots": 0,
+    "status": "NOT_RUN",
+    "workaround_attempts": 0
+  },
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_PRESENTATION_20261112.json"
+  ],
+  "findings": [],
+  "generated_artifacts": {
+    "historical-preview.html": {
+      "bytes": 321174,
+      "path": "data/processed/dashboard/historical-preview.html",
+      "sha256": "90ffa9259e181cd84315b8b55d407f703f0e013cde27d0fb2729ccb93e8064c0"
+    },
+    "index.html": {
+      "bytes": 345140,
+      "path": "data/processed/dashboard/index.html",
+      "sha256": "1207aa4063ba976277fc54b095d89b5e7a12d01bd4642bace220f211028d8ee1"
+    },
+    "live-summary.json": {
+      "bytes": 8009,
+      "path": "data/processed/dashboard/live-summary.json",
+      "sha256": "ab0e88f15494aad0845d74bd74c0282ad47ff4954ef2f5339dadf7b063a9b5ca"
+    },
+    "snapshot.json": {
+      "bytes": 446680,
+      "path": "data/processed/dashboard/snapshot.json",
+      "sha256": "00e6aef91998200495560c7954119f836626eadd78b787d500a2d0f3cde2d89f"
+    }
+  },
+  "guard_scope": {
+    "environment": "env -i; isolated Python -I -S; no inherited credential environment",
+    "network_subprocess_native": "Audit hook rejects socket/subprocess/ctypes/system/spawn operations.",
+    "owner_key_model_source_operations": 0,
+    "reads": "Project source/tests, exact six public evidence files, selected generated historical/output artifacts, temporary reviewer files and Python runtime.",
+    "writes": "Reviewer temporary directory only."
+  },
+  "handoff": {
+    "bytes": 8565,
+    "path": "reports/E02_WRAPPER_VISIBILITY_PRESENTATION_HANDOFF_20261112.json",
+    "sha256": "c37c48812a27d51469974c392f582a632e288e7b246bc024a9e3321438ad3222"
+  },
+  "immutable_public_aggregate": {
+    "bytes": 34947,
+    "capture_pending_flag": "UNCHANGED;later separateaudit suppliesacceptance",
+    "path": "reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+    "sha256": "fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964"
+  },
+  "independent_checks": [
+    "Exact handoff, eight reviewed file pins, accepted actual audit, immutable aggregate and four generated artifact hashes matched before and after review.",
+    "Static review of all implementation changes and publication/preview/result content; no new inference, owner, credential, private-journal or source access path introduced.",
+    "Bounded exact accepted public audit and aggregate admission checks correct overall_status/input_pins schema; symlink, changed byte, size, status and aggregate-binding refusals covered.",
+    "All six public evidence inputs admitted before preview writes; refusal preserves original outputs. Projection exports field allowlist and anonymous unit numbers, not raw answers/private identifiers or arbitrary audit fields.",
+    "Independent actual public-vector oracle: OMITTED [0,5,0,0,0,0,0,0], SHOWN [-25,0,0,0,0,0,0,0]; means +0.625/-3.125, signed interaction -3.75, absolute change +2.5 on eight matched units.",
+    "One expansion, one contraction, six unchanged and zero strict reversals, 40/40 factual denominators and distinct missing/wrong/unasked categories displayed correctly. Null/incomplete/authored shuffled-unit/escaping/tamper cases passed.",
+    "Independent four-study accounting display checked:147 generations/$0.0098213 charges, $0.012221 conservative exposure with four historical holds, not full invoice or pooled scientific estimate.",
+    "Fresh build in reviewer temporary directory reproduced generated index SHA1207aa4063ba976277fc54b095d89b5e7a12d01bd4642bace220f211028d8ee1 exactly on both runtimes; repeat build idempotent; historical HTML/snapshot bytes unchanged.",
+    "Previous committed viewer loaded separately from saved git-show source; all first-three direct projection dictionaries and rendered section bytes independently equal current viewer outputs.",
+    "Paper/blog/result/limitations/reproducibility explicitly distinguish signed direction from magnitude, preserve outcome-informed configuration selection, authored stimuli, custom scale, no inference/human/mechanism/equivalence claim and incomplete original research."
+  ],
+  "limits": [
+    "Scoped static code/content/privacy/build acceptance only; no visual layout certification.",
+    "Pending presentation statements in frozen docs are capture-time status and may be superseded by this separate audit without modifying frozen bytes.",
+    "Full original E01/E02 science, clean restoration, full current CI and external publication are not certified."
+  ],
+  "overall_status": "PASS_SCOPED_STATIC_CODE_CONTENT_PRIVACY_AND_REPRODUCIBLE_BUILD_LAYOUT_NOT_RUN",
+  "probe_artifacts": {
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/e02-wrapper-presentation-audit-giwgq0ug/initial_guard_311.log": {
+      "bytes": 16600,
+      "sha256": "51d2e3d0aff98c99d53cb102ccf765d3361780d41e5ec374872841f872fdeedc"
+    },
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/e02-wrapper-presentation-audit-giwgq0ug/initial_guard_312.log": {
+      "bytes": 15553,
+      "sha256": "fda7ca1dcd039c3f8077dbb6811b046b8ada57c882f1b92623a9fd14cca06394"
+    },
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/e02-wrapper-presentation-audit-giwgq0ug/previous_viewer.py": {
+      "bytes": 30068,
+      "sha256": "ca76cfeb13ba7458b66b6f8c4f387412187f93083dc73901ac20836d6b0216bf"
+    },
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/e02-wrapper-presentation-audit-giwgq0ug/review.py": {
+      "bytes": 4383,
+      "sha256": "b7afc82ff1d85057bad416cc34ad436ef304b813fea7d923340f751436dc3dc2"
+    },
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/e02-wrapper-presentation-audit-giwgq0ug/review311.log": {
+      "bytes": 420,
+      "sha256": "47e34af42d91271c7293276e049aff0d4f88845fcbbc77a2882a0277cda727a2"
+    },
+    "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/e02-wrapper-presentation-audit-giwgq0ug/review312.log": {
+      "bytes": 420,
+      "sha256": "2dc41915507baa118d9fb551473442510db614d4d1d67e66e3976d85cdc2c998"
+    }
+  },
+  "recorded_at_utc": "2026-11-13T01:25:06.319682+00:00",
+  "review_harness_observation": {
+    "initial_runs": "Both initial guarded runs failed seven test cleanup checks because Python audit open events omit dir_fd and reviewer guard resolved relative cleanup names against cwd. No product failure or source change.",
+    "remedy": "Preserved initial logs; reviewer switched temporary shutil cleanup to pathname mode so every cleanup path remains guard-inspectable. Unchanged 25 tests and independent checks then passed both runtimes."
+  },
+  "reviewed_files": {
+    "docs/LIVE_PREVIEW_UPDATE_20261109.md": {
+      "bytes": 11022,
+      "sha256": "f258423bac49d295ce1fca9245930425c98a4b3f28f8dc9adc4f2c2ef4bb0d25"
+    },
+    "publications/BLOG_DRAFT.md": {
+      "bytes": 14907,
+      "sha256": "e1e84e441545e85b65a93bdd8e8fafe88d3db66e121c7c15228bd6f2d8103d07"
+    },
+    "publications/LIMITATIONS.md": {
+      "bytes": 19025,
+      "sha256": "1f4905a2293eae749ff477607c3d34b0e0f6e24bef1ad8f2f0996af5f334ed93"
+    },
+    "publications/REPRODUCIBILITY.md": {
+      "bytes": 16009,
+      "sha256": "c4965a8ff0607211cdb6a74815bf7203d6de7717d58b57424e6713a6d4c2c898"
+    },
+    "publications/TECHNICAL_PAPER_DRAFT.md": {
+      "bytes": 37392,
+      "sha256": "85caea9b838af5dd81aaaaadc0a7b866b338b99071347259cfd0f71b078f3279"
+    },
+    "reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md": {
+      "bytes": 7545,
+      "sha256": "31f06813ce6401281fbebfdef315895f9803a2aab767cb10145660afed3438d7"
+    },
+    "src/civiclab/live_summary_viewer.py": {
+      "bytes": 43854,
+      "sha256": "e1e6435f025a248a54c654809aad34dd28e1e5265a10e3df450fb20e1df13731"
+    },
+    "tests/test_live_summary_viewer.py": {
+      "bytes": 26090,
+      "sha256": "53de08f9607f9da90d08c628e6bc132e888374daaab79483693e7235dd357df9"
+    }
+  },
+  "reviewer_independence": "Reviewer did not implement these eight files; authored new audit and bounded temporary guarded probes only.",
+  "scope": "Frozen eight-file fourth-study presentation delta only. No actual evidence rerun, owner construction, source/native processing, inference, full CI, clean restoration or external publication.",
+  "task_id": "INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_PRESENTATION_20261112",
+  "tests": {
+    "python311": {
+      "focused_tests": 25,
+      "runtime": "3.11.17",
+      "seconds": 0.052,
+      "status": "PASS"
+    },
+    "python312": {
+      "focused_tests": 25,
+      "runtime": "3.12.14",
+      "seconds": 0.054,
+      "status": "PASS"
+    }
+  }
+}

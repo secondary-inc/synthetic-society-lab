@@ -2,13 +2,15 @@
 
 Research project exploring whether demographic grounding, information exposure, and agent interaction improve useful predictive or experimental results.
 
-- **E01 — Feed to Ballot:** Evaluate electoral-margin forecasts against transparent statistical baselines, subject to source-cutoff and forecast-validity checks.
-- **E02 — The Information Effect:** Measure changes in synthetic model responses under controlled, matched-content information treatments. Synthetic responses do not establish effects on human voters.
+- **E01 — Feed to Ballot:** Retrospectively evaluate electoral-margin estimates against transparent statistical baselines, with historical input cutoffs and explicit hindsight limitations. No prospective 2026 forecast is established.
+- **E02 — The Information Effect:** The primary experimental track measures changes in synthetic model responses under controlled, matched-content information treatments. Synthetic responses do not establish effects on human voters.
 
 ## Project handoff
 
 - [Complete progress report — November 3, 2026](reports/PROGRESS_2026-11-03.md)
 - [Current orchestration status](reports/STATUS.md)
+- [Owner-approved post-election research direction — November 12, 2026](docs/RESEARCH_DIRECTION_20261112.md)
+- [Live identical-content wrapper and own-answer visibility study — November 12, 2026](reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md)
 - [Live two-model issue-support cue study — November 10, 2026](reports/E02_ISSUE_CUE_CROSSMODEL_RESULT_20261110.md)
 - [Live E02 evidence-alignment and own-answer diagnostic — November 9, 2026](reports/E02_ALIGNMENT_ANCHORING_RESULT_20261109.md)
 - [Completed exploratory live E02 sample — November 8, 2026](reports/E02_LIVE_PILOT_COMPLETE_20261108.md)

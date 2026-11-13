@@ -1,0 +1,152 @@
+{
+  "TASK_ID": "E02_WRAPPER_VISIBILITY_PRESENTATION_20261112",
+  "status": "READY_FOR_INDEPENDENT_PRESENTATION_REVIEW_ACTUAL_OUTCOME_ACCEPTED_LAYOUT_NOT_RUN",
+  "FILES_CHANGED": [
+    "src/civiclab/live_summary_viewer.py",
+    "tests/test_live_summary_viewer.py",
+    "docs/LIVE_PREVIEW_UPDATE_20261109.md",
+    "publications/TECHNICAL_PAPER_DRAFT.md",
+    "publications/BLOG_DRAFT.md",
+    "publications/LIMITATIONS.md",
+    "publications/REPRODUCIBILITY.md",
+    "reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "src/civiclab/live_summary_viewer.py": {
+      "sha256": "e1e6435f025a248a54c654809aad34dd28e1e5265a10e3df450fb20e1df13731",
+      "bytes": 43854
+    },
+    "tests/test_live_summary_viewer.py": {
+      "sha256": "53de08f9607f9da90d08c628e6bc132e888374daaab79483693e7235dd357df9",
+      "bytes": 26090
+    },
+    "docs/LIVE_PREVIEW_UPDATE_20261109.md": {
+      "sha256": "f258423bac49d295ce1fca9245930425c98a4b3f28f8dc9adc4f2c2ef4bb0d25",
+      "bytes": 11022
+    },
+    "publications/TECHNICAL_PAPER_DRAFT.md": {
+      "sha256": "85caea9b838af5dd81aaaaadc0a7b866b338b99071347259cfd0f71b078f3279",
+      "bytes": 37392
+    },
+    "publications/BLOG_DRAFT.md": {
+      "sha256": "e1e84e441545e85b65a93bdd8e8fafe88d3db66e121c7c15228bd6f2d8103d07",
+      "bytes": 14907
+    },
+    "publications/LIMITATIONS.md": {
+      "sha256": "1f4905a2293eae749ff477607c3d34b0e0f6e24bef1ad8f2f0996af5f334ed93",
+      "bytes": 19025
+    },
+    "publications/REPRODUCIBILITY.md": {
+      "sha256": "c4965a8ff0607211cdb6a74815bf7203d6de7717d58b57424e6713a6d4c2c898",
+      "bytes": 16009
+    },
+    "reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md": {
+      "sha256": "31f06813ce6401281fbebfdef315895f9803a2aab767cb10145660afed3438d7",
+      "bytes": 7545
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src:tests .venv/bin/python -m unittest test_live_summary_viewer -q",
+    "PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest test_live_summary_viewer -q",
+    "PYTHONPATH=src .venv/bin/python scripts/update_live_preview.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "executor": "E02 presentation implementation worker;independent actual audit is separate",
+    "python312": {
+      "status": "PASS",
+      "tests": 25,
+      "seconds": 0.033
+    },
+    "python311": {
+      "status": "PASS",
+      "tests": 25,
+      "seconds": 0.033
+    },
+    "logs": {
+      "312": {
+        "path": "data/processed/e02_fourth_presentation_20261112/worker_tests_312.log",
+        "sha256": "c1b6eaf287cabd5cbb7edb0d2ed7dedb2d22944ee5e4fb2cc8ae2cbeefb9ea34"
+      },
+      "311": {
+        "path": "data/processed/e02_fourth_presentation_20261112/worker_tests_311.log",
+        "sha256": "c1b6eaf287cabd5cbb7edb0d2ed7dedb2d22944ee5e4fb2cc8ae2cbeefb9ea34"
+      }
+    },
+    "coverage": [
+      "Exact separate actualoverall_status and selected public input_pins binding;2bounded public file reads for new projection.",
+      "Six-public-evidence-file build allowlist;no private source,raw phase rows,generation IDs,profile IDs or arbitrary audit fields exported.",
+      "Tampered receipt/aggregate bytes,status,binding,oversize,symlink,unknown/malformed dispositions,total count,duplicate/foreign unit refusals.",
+      "Refusal before writes preserves existing index/snapshot without new outputs.",
+      "Same-unit join despite array reorder;matched/partial/null denominators;factual correct/planned and correct/asked with observed wrong/missing/unasked distinct.",
+      "HTML escaping;explicit signednegative versus magnitudepositive distinction;one expansion/onecontraction/sixunchanged/reversal0;topic counts and147costs.",
+      "First3 projection canonical hashes and3renderedHTML byte hashes identical to committed previous viewer.",
+      "Historicalarchive/snapshot byte preservation and deterministic/idempotent generatedbuild."
+    ],
+    "local_build": "PASS afterexactactualaudit;four separate studies included",
+    "worker_public_arithmetic": "Primary.625,signedinteraction-3.75,magnitude+2.5 and four-study reportedcostsum.0098213 checked independently withDecimal against public saved values;not independent actual audit.",
+    "browser_layout": "NOT_RUN_SECURITY_POLICY_BLOCK;no screenshots or layout certification"
+  },
+  "generated_local_artifacts": {
+    "index.html": {
+      "path": "data/processed/dashboard/index.html",
+      "sha256": "1207aa4063ba976277fc54b095d89b5e7a12d01bd4642bace220f211028d8ee1",
+      "bytes": 345140
+    },
+    "live-summary.json": {
+      "path": "data/processed/dashboard/live-summary.json",
+      "sha256": "ab0e88f15494aad0845d74bd74c0282ad47ff4954ef2f5339dadf7b063a9b5ca",
+      "bytes": 8009
+    },
+    "historical-preview.html": {
+      "path": "data/processed/dashboard/historical-preview.html",
+      "sha256": "90ffa9259e181cd84315b8b55d407f703f0e013cde27d0fb2729ccb93e8064c0",
+      "bytes": 321174
+    },
+    "snapshot.json": {
+      "path": "data/processed/dashboard/snapshot.json",
+      "sha256": "00e6aef91998200495560c7954119f836626eadd78b787d500a2d0f3cde2d89f",
+      "bytes": 446680
+    }
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "scope": "Public versioned aggregates/audits/code/drafts and authored engineering fixtures only. No actual owner/key/private-journal/source/provider access.",
+    "actual_audit": {
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+      "bytes": 14718,
+      "sha256": "a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475",
+      "overall_status": "PASS_SCOPED_ACTUAL_EVIDENCE_ACCOUNTING_MATCHED_SCORING_AND_LIMITATIONS"
+    },
+    "actual_aggregate": {
+      "path": "reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+      "bytes": 34947,
+      "sha256": "fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964",
+      "capture_pending_flag": "UNCHANGED;later separateaudit suppliesacceptance"
+    },
+    "stimuli": "Project-authored DEMO,not realnews/feeds;40actual modelresponses are distinct from authored tests."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "worker_provider_calls": 0,
+  "worker_actual_owner_or_credential_reads": 0,
+  "worker_external_network_requests": 0,
+  "browser_action": {
+    "requested": "Open local file:///Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/dashboard/index.html using CUA in-appbrowser",
+    "result": "BLOCKED_BEFORE_DISPLAY",
+    "exact_rejection": "Browser Use rejected this action due to browser security policy. Reason: The browser URL policy blocks this action. Browser use could not acquire authority to trigger network egress. The URL policy gate did not grant access. The requested URL protocol is not allowed. Allowed protocols: \"http:\", \"https:\". The agent must not attempt to achieve the same outcome via workaround, indirect execution, raw CDP or browser commands, alternate browser surfaces, or policy circumvention. Proceed only with a materially safer alternative that does not require this blocked browser action; if none exists, stop and request user input.",
+    "workaround_attempts": 0,
+    "external_canvas_changes": 0
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Negative signed interaction-3.75 doesnotimplyattenuation:meanabsolutechange+2.5,one25expansion,one5contraction,sixunchanged,no strictnonzerosignreversal.",
+    "One selected fixedconfiguration/twoauthoredpositivetopics/fourpurposivecontexts/customscale;no realfeed/sourcing/human/inferential/equivalence/mechanism/generalmodelclaim.",
+    "ActualNov12EST/Nov13UTC andpreservedpreflight01/expired02distinguished.",
+    "Fourresearchstudies147generations/.0098213reportedcharges not pooledscience;conservativeexposure.012221retains4holds,notinvoice;nulltierUNKNOWN/streamedtelemetryunresolved.",
+    "Actualoutcomeacceptance isnotrenderer/privacy/layoutacceptance;worker testsandstaticbuilddonotcertifytheir ownmilestone.",
+    "No externalpublication;fulloriginal researchcontractincomplete."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent frozen eight-file renderer/privacy/content review requested.",
+    "Visual layout/screenshot evidence remainsNOT_RUN due exact browser-policy block;no circumvention requested or attempted.",
+    "Externalpublication remainsowner-gated;not partof this task."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead routes exacteightfile pins/testlogs/buildhashes to separatepresentationreviewer,withactualauditacceptedandbrowserlimitationexplicit. Lead retains STATUS/Git/integration ownership. No further worker source edits pending review."
+}

@@ -1,0 +1,310 @@
+{
+  "CPU_fixture_review": {
+    "auditor_new_processes": 0,
+    "checks": [
+      "Verified exact source/fixture/log hashes and six tests per runtime. Production functions set and verify CORE0/0, preflight inheritedCPU hard bound, require default/unblockedSIGXCPU and lower CPU to7/8.",
+      "Inspected actual parent main and source_worker try paths: calls precede stdin without a production mock mode. AST mutation removes each wiring call and is required to fail; line-order check alone is not full controlflow proof.",
+      "Nested fixtures execute exact extracted limiter source bytes with stdlib resource/signal, using authored require/namespace scaffolding. They do not import complete production modules or execute a genuine full --exec campaign.",
+      "Retained1000-byte PASS logs record six cases on each runtime; raw nestedJSON was asserted then discarded. No independent assertion-by-assertion replay or precise actual CPU-usage attestation is claimed."
+    ],
+    "raw_nested_JSON_retained": false,
+    "status": "PASS_LIMITED_SOURCE_AND_WORKER_LOG_REVIEW_NOT_INDEPENDENT_REEXECUTION",
+    "worker_results": [
+      {
+        "fixed_nested_children": 6,
+        "fixed_parent_processes": 6,
+        "log_ref": {
+          "bytes": 1000,
+          "path": "reports/clerk2020_monotone_cpu_initial_312_20261112.txt",
+          "sha256": "2d2d6b0d9ee19c7c9352d7a9d18f3180bef44410819d1dd4bb738f71b6ca24b5"
+        },
+        "reruns": 0,
+        "runtime": "312",
+        "seconds": "1.462",
+        "status": "WORKER_PASS_NOT_INDEPENDENT_ACCEPTANCE",
+        "tests": 6
+      },
+      {
+        "fixed_nested_children": 6,
+        "fixed_parent_processes": 6,
+        "log_ref": {
+          "bytes": 1000,
+          "path": "reports/clerk2020_monotone_cpu_initial_311_20261112.txt",
+          "sha256": "e6f6f0d43e7e1327abec60bf88f4dfa93fc500d701ba32ee2a2fac55fb7ede49"
+        },
+        "reruns": 0,
+        "runtime": "311",
+        "seconds": "1.285",
+        "status": "WORKER_PASS_NOT_INDEPENDENT_ACCEPTANCE",
+        "tests": 6
+      }
+    ]
+  },
+  "accepted_next_authored_scope": {
+    "PDF_native_imports": 0,
+    "actual_repository_data_reads": 0,
+    "combined_maxima": {
+      "CPU_seconds": 240,
+      "authored_temporary_write_bytes": 268435456,
+      "captured_output_bytes": 524288,
+      "invocations": 2,
+      "task_code_metadata_read_bytes": 1073741824,
+      "tests": 116,
+      "wall_seconds": 240
+    },
+    "failure_policy": "No extra invocation, source pass, cap increase, namespace reset or restoration of old charges. New private preparation/BOOT/EXEC remains unissued.",
+    "modules": [
+      "test_clerk2020_native_campaign_v2",
+      "test_clerk2020_source_worker_v2",
+      "test_clerk2020_source_job_v2",
+      "test_clerk2020_source_packet_prepare_v3"
+    ],
+    "network_model_calls": 0,
+    "paid_cost_usd": 0,
+    "per_runtime_caps": {
+      "CPU_seconds": 120,
+      "authored_temporary_write_bytes": 134217728,
+      "captured_output_bytes": 262144,
+      "task_code_metadata_read_bytes": 536870912,
+      "wall_seconds": 120
+    },
+    "purpose": "Offline evidence generation for the specified successor draft and narrow fixes; not code certification or actual recovery. Lead may direct preservation then correction of the two findings, with exact before/after source hashes retained before test invocation.",
+    "required_guarding": [
+      "Deny all actual repository data/credentials except declared3.11toolchain stdlib infrastructure; allow only authored temporary trees and public code/evidence.",
+      "Deny installed pypdf/PIL/cryptography/_cffi_backend imports, sockets, subprocess/fork and other process spawning. Mock source declarations, readers, process dispatch and runtime artifacts; no actual campaign/root/preparation/qualification.",
+      "Bound and record task reads, temporary writes, output, CPU/wall; private raw/provider data is not test input. Capture exact candidate hashes before/after and preserve failed logs/configuration.",
+      "Failfast at first unexpected test failure, then preserve frozen source/log before correction. Do not automatically invoke the other runtime, rerun or extend cases after an unexpected failure without a separately reviewed finite continuation.",
+      "Boundary subcases can stay within existing58test methods; disclose any necessary test-count or candidate delta rather than claiming changed suites are the frozen58. Original six-process CPU scope is not replayed by this zero-subprocess scope."
+    ],
+    "runtimes": [
+      "3.12",
+      "3.11"
+    ],
+    "subprocess_or_fork": 0,
+    "tests_per_runtime": 58,
+    "worker_invocations_per_runtime": 1
+  },
+  "claim_limits": [
+    "No real source/native qualification or actual7/8adequacy result.",
+    "No originalfullM2/storage/DAG/hostiledecoder/scientific acceptance.",
+    "No spending authority, technical preparation, successor allocation, BOOT/EXEC or actual source release."
+  ],
+  "code_acceptance": "BLOCKED_PENDING_FINDINGS_AND_GUARDED_AUTHORED_RESULTS; no closed code binding emitted.",
+  "draft_file_refs": [
+    {
+      "bytes": 46824,
+      "path": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+      "sha256": "e5250bd6c43499dbb27bfea24e905d3ed8ef5842385791b09f8d10822882abf2"
+    },
+    {
+      "bytes": 12172,
+      "path": "src/civiclab/e01/clerk2020_source_worker_v2.py",
+      "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+    },
+    {
+      "bytes": 48514,
+      "path": "src/civiclab/e01/clerk2020_source_job_v2.py",
+      "sha256": "2bb6a0eedd28f8781fb492ff748d38ff7abccf176536564baa675ff3da550f5e"
+    },
+    {
+      "bytes": 8888,
+      "path": "scripts/prepare_e01_source_phase_v3.py",
+      "sha256": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2"
+    },
+    {
+      "bytes": 15908,
+      "path": "tests/test_clerk2020_native_campaign_v2.py",
+      "sha256": "de1dc18c1a7865cf287aa77ef954673a11e9e029552b2136e85075a91f8d68f8"
+    },
+    {
+      "bytes": 9165,
+      "path": "tests/test_clerk2020_source_worker_v2.py",
+      "sha256": "d1cd76382346f6775b6d150842f84c28094efb0108be38908ca74070ecaebf25"
+    },
+    {
+      "bytes": 24026,
+      "path": "tests/test_clerk2020_source_job_v2.py",
+      "sha256": "f4199f3cc38d9c5740b616a6a7ba193a92469017762fc99fb036e1062a3006ba"
+    },
+    {
+      "bytes": 7613,
+      "path": "tests/test_clerk2020_source_cli_inheritance_v2.py",
+      "sha256": "2d693778d397dd18d271236b70a5ab5bda19eaa5706f2be168244f2d59853882"
+    },
+    {
+      "bytes": 6296,
+      "path": "tests/test_clerk2020_source_packet_prepare_v3.py",
+      "sha256": "a0ee7761511ee494d63973c9075dce8b5ccaa9bbc2eace476bef27203a5262ce"
+    }
+  ],
+  "evidence": [
+    {
+      "bytes": 2571,
+      "path": "/tmp/civiclab-auditor-e01-successor-draft-scope-20261112.py",
+      "sha256": "5a106927395431ad518cf23ad4889d417b6f2e5b27b5cd13eaf74f492d65d45d"
+    },
+    {
+      "bytes": 1387,
+      "path": "/tmp/civiclab-auditor-e01-successor-draft-scope-20261112.json",
+      "sha256": "193c197e7294e0d4b5941490d50b92cbf86633cf73a1736d27cc476d40914220"
+    }
+  ],
+  "findings": [
+    {
+      "acceptance": "Keep early issue/reservation consumed, but defer verified link/registration adoption until metered predecessor verification under the same protected lock. Do not introduce unmetered reads, nested-lock deadlock, extra slots or retry; add an authored drift/order subcase proving reservation persists while unverified link is absent.",
+      "evidence": "Unconditional source_index/registration creates occur inside consume; first verify_predecessor call is later in run_boot after BOOT_RESERVE/read-meter setup. An invalid predecessor can therefore leave a link that has never been verified. Source access still remains gated; no actual adoption or source run was performed by auditor.",
+      "file": "src/civiclab/e01/clerk2020_native_campaign_v2.py",
+      "function": "FixedRegistrar.consume BOOT / source_job_v2.run_boot",
+      "id": "E01-SUCCESSOR-DRAFT-01",
+      "issue": "consume creates source_index successor link and registration under predecessor lock before run_boot establishes its journal/meter and later calls verify_predecessor. The accepted methods require predecessor identity/stop verification under lock before verified successor adoption.",
+      "severity": "medium",
+      "status": "OPEN_STATIC_ORDERING_DEFECT_AT_FROZEN_DRAFT"
+    },
+    {
+      "acceptance": "Align the receipt ceiling with the reviewed8second envelope and add an authored boundary/refusal subcase. Preserve conservative integer-rounding/failclosed semantics; do not expand child or aggregate limits.",
+      "evidence": "Copied predicate at validate_child remains21000, while configure_child_limits sets/verifies7/8. This does not bypass the OS hard limit, but fails to reject inconsistent child telemetry under the new protocol.",
+      "file": "src/civiclab/e01/clerk2020_source_job_v2.py",
+      "function": "validate_child",
+      "id": "E01-SUCCESSOR-DRAFT-02",
+      "issue": "Receipt validator still permits cpu_ms_through_private_projection<=21000 although successor worker hard CPU limit is8seconds.",
+      "severity": "medium",
+      "status": "OPEN_STALE_RECEIPT_BOUND_AT_FROZEN_DRAFT"
+    }
+  ],
+  "handoff_ref": {
+    "bytes": 66429,
+    "path": "reports/clerk2020_monotone_successor_v2_1_draft_handoff_20261112.json",
+    "sha256": "0abd078bd279eab491374f97a2278060c42e948cb585b7036a612d00fcc342e9"
+  },
+  "independent_methods_ref": {
+    "bytes": 13001,
+    "path": "reports/INDEPENDENT_AUDIT_E01_MONOTONE_SUCCESSOR_METHODS_V2_1_20261112.json",
+    "sha256": "c59897f3e73fa09609461fb940bd2aa1a40e2ce715766c6385f80e815c990e99"
+  },
+  "kind": "E01_MONOTONE_SUCCESSOR_DRAFT_PRELIMINARY_CODE_AND_AUTHORED_SCOPE_AUDIT_V1",
+  "methods_ref": {
+    "bytes": 56031,
+    "path": "configs/e01_clerk2020_monotone_successor_methods_v2_1_20261112.json",
+    "sha256": "184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d"
+  },
+  "new_code_refs": {
+    "src/civiclab/__init__.py": {
+      "bytes": 106,
+      "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+    },
+    "src/civiclab/common.py": {
+      "bytes": 8476,
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+    },
+    "src/civiclab/e01/__init__.py": {
+      "bytes": 422,
+      "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+    },
+    "src/civiclab/e01/clerk2020_crypto_qualification_v1.py": {
+      "bytes": 24747,
+      "sha256": "6f75bf204c0c7334a892d6cbb3d52d1cd3cdb4535a90da2771dabc627ad6f50e"
+    },
+    "src/civiclab/e01/clerk2020_directories_qualification_v1.py": {
+      "bytes": 50599,
+      "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+    },
+    "src/civiclab/e01/clerk2020_generated_guard_inventory_v1.py": {
+      "bytes": 8606,
+      "sha256": "c37d98c62598c12d94113200e1eaf7eb9fd9a20f556af168e52ba035cb242b0e"
+    },
+    "src/civiclab/e01/clerk2020_guard_qualification_v1.py": {
+      "bytes": 29304,
+      "sha256": "347530c29836cefb0c1bd4b35e7e48748b45758bfa1c5bc200fb9cc806b5769f"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_backend.py": {
+      "bytes": 9548,
+      "sha256": "c62b96414a2a3e58211c477829526a2b906aa4b4d1537ba845ab261fb64fae39"
+    },
+    "src/civiclab/e01/clerk2020_m2_v1_1_contracts.py": {
+      "bytes": 8142,
+      "sha256": "7446a58f5db17ec5c3caaa1a70a64296a9a6bc6fc7dfa54872ab4b04759ddac0"
+    },
+    "src/civiclab/e01/clerk2020_native_campaign_v2.py": {
+      "bytes": 46824,
+      "sha256": "e5250bd6c43499dbb27bfea24e905d3ed8ef5842385791b09f8d10822882abf2"
+    },
+    "src/civiclab/e01/clerk2020_native_inventory_v1.py": {
+      "bytes": 8768,
+      "sha256": "db83ec7747937483678ee21951019d6483b0f4bbbdc2784353ff1777b814e487"
+    },
+    "src/civiclab/e01/clerk2020_native_qualification_v1.py": {
+      "bytes": 22083,
+      "sha256": "29ff273b6d7a97d83a01573bfee39f060927b1f41501e2f86b4ada1c3323382f"
+    },
+    "src/civiclab/e01/clerk2020_source_format_adapter_v1.py": {
+      "bytes": 8058,
+      "sha256": "4ded1cc9f46df28417e059973c990d9b1cc029df7f7c625826ca5ac9877b7ed7"
+    },
+    "src/civiclab/e01/clerk2020_source_job_v2.py": {
+      "bytes": 48514,
+      "sha256": "2bb6a0eedd28f8781fb492ff748d38ff7abccf176536564baa675ff3da550f5e"
+    },
+    "src/civiclab/e01/clerk2020_source_worker_v2.py": {
+      "bytes": 12172,
+      "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+    },
+    "src/civiclab/e01/clerk2020_warmup_qualification_v1.py": {
+      "bytes": 44722,
+      "sha256": "d89408262e24dfceb125d162fd8980d6b1fc220f18890badbeca5d52c3516c8c"
+    },
+    "src/civiclab/e01/pipeline.py": {
+      "bytes": 22533,
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    },
+    "tests/test_clerk2020_native_inventory_v1.py": {
+      "bytes": 12468,
+      "sha256": "554f83af821e368a6960d364b118a82f2869a72ee0262c449ed6e6573cf6d61d"
+    }
+  },
+  "ownership": "Only this new independent report and/tmp checks/results written; no implementation/tests/STATUS/Git/private state edits by auditor.",
+  "preservation": [
+    "All18old code pins independently match the original accepted binding. No old production/global/factory/campaign state was modified by this review.",
+    "Exact four production/helper diffs match handoff and all nine new files syntaxparse. Broader58tests were not imported/executed by auditor; no PASS inferred from syntax.",
+    "Old failed campaign, one known602172-byte source read, all20fullcharged axes and six qualification histories remain immutable and separately accounted."
+  ],
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "static_integrity_checks": {
+    "CPU_case_logs": [
+      {
+        "retained_raw_nested_JSON": false,
+        "runtime": "312",
+        "status": "WORKER_PASS_LOG_HASH_VERIFIED_NOT_INDEPENDENTLY_REEXECUTED",
+        "tests": 6,
+        "worker_elapsed_seconds": "1.462"
+      },
+      {
+        "retained_raw_nested_JSON": false,
+        "runtime": "311",
+        "status": "WORKER_PASS_LOG_HASH_VERIFIED_NOT_INDEPENDENTLY_REEXECUTED",
+        "tests": 6,
+        "worker_elapsed_seconds": "1.285"
+      }
+    ],
+    "actual_source_native_network_model_process_operations": 0,
+    "broader_authored_tests_per_runtime": 58,
+    "exact_production_diffs_verified": 4,
+    "handoff_sha256": "0abd078bd279eab491374f97a2278060c42e948cb585b7036a612d00fcc342e9",
+    "new_code_bytes_plus_EOF": 366110,
+    "new_code_pins_verified": 18,
+    "old_code_pins_verified": 18,
+    "status": "PASS_STATIC_DRAFT_SCOPE_INTEGRITY_NOT_CODE_ACCEPTANCE",
+    "syntax_and_test_counts": {
+      "scripts/prepare_e01_source_phase_v3.py": 0,
+      "src/civiclab/e01/clerk2020_native_campaign_v2.py": 0,
+      "src/civiclab/e01/clerk2020_source_job_v2.py": 0,
+      "src/civiclab/e01/clerk2020_source_worker_v2.py": 0,
+      "tests/test_clerk2020_native_campaign_v2.py": 22,
+      "tests/test_clerk2020_source_cli_inheritance_v2.py": 6,
+      "tests/test_clerk2020_source_job_v2.py": 18,
+      "tests/test_clerk2020_source_packet_prepare_v3.py": 8,
+      "tests/test_clerk2020_source_worker_v2.py": 10
+    }
+  },
+  "status": "PASS_BOUNDED_AUTHORED_TEST_SCOPE_ONLY_WITH_OPEN_CODE_FINDINGS_NO_RECOVERY_RELEASE"
+}

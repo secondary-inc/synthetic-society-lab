@@ -72,9 +72,40 @@ One null GPT baseline caused three SHOWN skips, and two other GPT answers also l
 
 Provider telemetry reports streaming despite the fixed non-streaming client requests. This discrepancy remains unresolved; complete parsed responses and their request/billing bindings were verified. Reported-null Qwen service tiers remain unknown, without assuming a default tier or fee.
 
+
+## Fourth study: identical-content wrapper × own-support visibility
+
+**Independent scoped actual-outcome review passed.** The new
+[report](../reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md) describes the
+separate run completed November 12, 2026, 7:50–8:05 p.m. EST (November 13 UTC).
+Four fictional contexts × two authored topics crossed NEWS/SOCIAL text labels
+with OMITTED/SHOWN own support in one Qwen/Nebius configuration, selected from
+prior observed item completeness. Eight fresh baselines plus 32 posts produced
+40 valid responses and 40 correct factual answers, without skips or retries.
+
+On the same eight complete profile-topic units, the primary OMITTED social-minus-
+news contrast averaged +0.625 points (seven zeros, one +5); SHOWN averaged −3.125
+(seven zeros, one −25). The signed interaction averaged −3.75, but absolute magnitude
+change averaged +2.5:one expansion 25, one contraction 5, six unchanged. There were
+no strict nonzero sign reversals. The negative signed interaction therefore
+does not demonstrate general attenuation or masking. Zero-to-negative expansion
+is not itself a sign reversal. No CI, p-value, equivalence, human effect or anchoring
+mechanism is claimed. Topics/source attribution were held fixed, so this is a
+text-label experiment, not a real-feed or sourcing-credibility trial. The four
+studies remain scientifically separate.
+
+Verified fourth-study charges are $0.0028919; four distinct studies contain
+147 generations/$0.0098213 reported research charges. Conservative exposure
+$0.012221 includes four unchanged historical holds and is not an invoice total.
+Reported-null tiers remain UNKNOWN and provider streamed:true versus requested
+stream:false remains unresolved. The immutable
+[aggregate](../reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) retains its
+build-time pending status; the later [separate actual audit](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) supplies scoped acceptance. Renderer and draft review remain separate.
+No external publication or full original research completion follows.
+
 ## What still has to earn a place
 
-The next steps include reviewed real-text stimuli, a defensible population scope, a human-study anchor, model-family robustness and a prospectively revised missingness design beyond these three exploratory live batches. Demographic detail must outperform a simpler control on the same task. A social wrapper must be compared with identical words and attribution. Assistant interaction needs a matched comparison. A group of agents must justify itself against independent agents using comparable computation.
+The next steps include reviewed real-text stimuli, a defensible population scope, a human-study anchor, model-family robustness and a prospectively revised missingness design beyond these four exploratory live batches. Demographic detail must outperform a simpler control on the same task. A social wrapper must be compared with identical words and attribution. Assistant interaction needs a matched comparison. A group of agents must justify itself against independent agents using comparable computation.
 
 No amount of visual realism can satisfy those tests on its own. A negative result would still be useful if the comparison is reproducible and its limits are clear.
 

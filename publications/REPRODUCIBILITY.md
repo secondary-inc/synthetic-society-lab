@@ -109,3 +109,30 @@ The [public qualification handoff](../reports/clerk2020_directories_qualificatio
 ## November 9 alignment follow-up
 
 The [follow-up result report](../reports/E02_ALIGNMENT_ANCHORING_RESULT_20261109.md) gives a zero-network rescoring command for all 28 planned dispositions: 22 actual answers and six prespecified skips. Its aggregate receipt pins the private 160-file journal, read-only owner export and recomputed analysis. Source/config commit `2396fdabb1ff7df702a1dfcf1affaab2885098b8` preceded actual collection; release commit `2f8b124` records independent code/particular acceptance. Both Python versions passed 17 pure-method tests and seven accounting/caller checks, with separate independent review. [Independent actual-outcome review passed](../reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json) for the retained evidence, accounting and registered scores. Original study/continuation history and holds are preserved. Private raw artifacts are required for full rescoring and remain excluded from Git. No paid launcher should be rerun for reproduction.
+
+
+## Fourth wrapper/visibility study — public display versus private rescoring
+
+The new [public result report](../reports/E02_WRAPPER_VISIBILITY_RESULT_20261112.md)
+and [aggregate](../reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) describe
+40 fresh answers: eight baselines and 32 posts, 40 model POSTs, 40 billing GETs
+and four catalog GETs, with no retries,
+executed November 12 local/November 13 UTC at source commit
+`dbb200801e0de029309e2c195e6b7d9ab322126c`. Aggregate SHA-256 is
+`fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964`.
+The build-time pending field stays immutable; [independent actual review passed](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json). Audit SHA-256 is `a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475`; its public aggregate pin matches the exact bytes above. This does not certify the renderer or a clean restoration.
+
+The candidate viewer extension admits only the exact accepted new public audit and
+aggregate in addition to the four already admitted public files. It exports
+anonymized unit contrasts, matched denominators, magnitude/reversal counts,
+quality and accounting summaries—not raw answers, generation identifiers, private
+paths or owner rows. Original historical-preview.html and snapshot.json bytes
+and all three earlier study projections remain unchanged. Rendering recorded
+summaries does not refit a population, recompute a counterfactual or call a model.
+
+The 289-file private journal and owner export are not distributed in Git. Their
+canonical parsed objects are not original HTTP wire bytes. Public-display
+reproduction therefore differs from full raw-response rescoring and financial
+verification; no new clean restoration or raw-data reconstruction is claimed.
+Do not rerun paid launchers or reuse consumed preflight 01/expired 02/actual 03
+scopes. All four historical holds remain unchanged. Publication stays gated.

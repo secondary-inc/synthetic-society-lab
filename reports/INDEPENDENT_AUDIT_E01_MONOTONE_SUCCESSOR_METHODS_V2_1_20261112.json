@@ -1,0 +1,254 @@
+{
+  "CPU_design_ref": {
+    "bytes": 4493,
+    "path": "reports/INDEPENDENT_AUDIT_E01_CPU_COMPOSITION_RECOVERY_DESIGN_20261112.json",
+    "sha256": "82a5806665831f218110f0f3409dbaf86afea923effae5ec35507e9310e5c812"
+  },
+  "acceptance_milestones": [
+    {
+      "id": "R0_METHODS",
+      "status": "PASS_DESIGN_ONLY"
+    },
+    {
+      "id": "R1_AUTHORED_CPU",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "R2_CODE",
+      "status": "NOT_IMPLEMENTED_NOT_ACCEPTED"
+    },
+    {
+      "id": "R3_ROOT_BOOT",
+      "status": "NOT_RELEASED"
+    },
+    {
+      "id": "R4_PREPARED_EXEC",
+      "status": "NOT_RELEASED"
+    },
+    {
+      "id": "R5_SOURCE_FORMAT_OUTPUT",
+      "status": "NOT_RUN"
+    }
+  ],
+  "actual_source_or_native_execution_released": false,
+  "actual_stop_audit_ref": {
+    "bytes": 19780,
+    "path": "reports/INDEPENDENT_AUDIT_E01_SOURCE_FORMAT_ACTUAL_EXEC_STOP_20261112.json",
+    "sha256": "f1e666f24a089f5238d4345701caa58a670622eb2fb8a6f08e7bb2d2b936a3b0"
+  },
+  "authored_scope_now": {
+    "PDF_native_imports": 0,
+    "actual_source_reads": 0,
+    "allowed_work": "Draft only the specified separate production/helper/tests and execute the fixed source-free CPU regression envelope. These are authored controls, not genuine decoder qualification. Existing accepted regressions retain their separate prior authored scopes; new broader harness scope must be frozen explicitly for code review.",
+    "cost_usd": 0,
+    "fixed_cases": [
+      {
+        "child_requested": [
+          20,
+          21
+        ],
+        "expected": "Refused in source-free setup before input/decoder; exactexception type not generalized to actualfailedtrace.",
+        "id": "OLD_COMPOSITION_REFUSES",
+        "parent": [
+          7,
+          8
+        ]
+      },
+      {
+        "child_requested": [
+          7,
+          8
+        ],
+        "expected": "Source-freeCLI setup marker; noinputbody/decoder.",
+        "id": "NEW_COMPOSITION_ACCEPTS",
+        "parent": [
+          7,
+          8
+        ]
+      },
+      {
+        "child_requested": [
+          7,
+          9
+        ],
+        "expected": "Typed resource setup STOP beforeinput.",
+        "id": "CHILD_CANNOT_RAISE_HARD",
+        "parent": [
+          7,
+          8
+        ]
+      },
+      {
+        "child_requested": [
+          7,
+          8
+        ],
+        "expected": "Explicit refusal, noattempttoliftinheritedceiling.",
+        "id": "INSUFFICIENT_INHERITED_HARD",
+        "parent": [
+          6,
+          7
+        ]
+      },
+      {
+        "child_requested": [
+          7,
+          8
+        ],
+        "expected": "Assert default disposition/unblocked mask plus parent/child RLIMIT_CORE(0,0) from exact sharedfunctions beforeinput; noCPUspin.",
+        "id": "DEFAULT_UNBLOCKED_SIGXCPU",
+        "parent": [
+          7,
+          8
+        ]
+      },
+      {
+        "child_requested": [
+          1,
+          2
+        ],
+        "expected": "Bounded authoredCPU loop ends viaSIGXCPU/SIGKILL beforeparentdeadline; no retry and no corefile.",
+        "id": "FINITE_EXHAUSTION_LOWER_AUTHORED_CAP",
+        "parent": [
+          7,
+          8
+        ]
+      }
+    ],
+    "network_model_calls": 0,
+    "per_runtime": {
+      "actual_cost_usd": 0,
+      "actual_source_reads": 0,
+      "aggregate_fixture_stdout_stderr_bytes": 24576,
+      "cases": 6,
+      "max_fixture_code_metadata_read_bytes": 2097152,
+      "max_fixture_write_bytes": 262144,
+      "nested_child_timeout_seconds": 3,
+      "nested_children": 6,
+      "network_model_calls": 0,
+      "parent_case_timeout_seconds": 5,
+      "parent_children": 6,
+      "pdf_decoder_native_imports": 0,
+      "suite_cpu_reservation_seconds": 120,
+      "suite_wall_seconds": 45,
+      "total_spawned_processes": 12
+    },
+    "runtimes": [
+      "CPython3.12 existing .venv",
+      "CPython3.11 existing isolated toolchain"
+    ],
+    "two_runtime_totals": {
+      "CPU_reservation_seconds": 240,
+      "cases": 12,
+      "code_metadata_read_bytes": 4194304,
+      "fixture_write_bytes": 524288,
+      "spawned_processes": 24,
+      "wall_seconds": 90
+    }
+  },
+  "checks": [
+    "Exact revised56031-byte methods hash184aee8f... verified; complete structural comparison found only the declared row/core clarifications, version marker and predecessor-proposal reference. Original53657-byte proposal2f1566fd... remains unchanged.",
+    "All20predecessor axis records equal the independently audited failed state, including known source0602172B, unknown remainders, full charged ceilings and zero held/reserved credits. Eight exact predecessor proof refs match prior stop audit; old18metadata records/six qualification envelopes remain exact.",
+    "New finite recovery allocation is explicitly separate and PROPOSED: atmostoneBOOT,oneEXEC,onesourcejob/tworeads859913B. All15legacy/5engineering per-recovery caps remain original-sized; cumulative v1+proposedv2 caps computed for every axis, including1719826sourcebytes. No refund, claim of leftover original capacity or automatic second recovery.",
+    "Same source-set identity/hash and root. One fixed adjacent successor index/link uses the existing source_index slot under the predecessor registrar lock, bound to original index/stop/state/campaign and recovery ordinal1. No arbitrary suffix, new source set, root clone, original-index rewrite or original ordinal replay.",
+    "External exact newBOOT envelope and durable issue/reservation/precharge precede all predecessor body reads. Every ancestry read must be metered in newBOOT metadata; native registrar may not introduce hidden pre-accounting reads. Existing predecessor lock bytes stay unchanged. Interrupted adoption consumes the fixed link/scope; no restart or refund.",
+    "Newregistration/genesis/anchors/prepared/childcontext/provenance must consistently bind predecessor proof. Original index/control/counters/packets/cache/projection files remain untouched; old proof verified again throughEXEC/closing under stated budgets. Enriched bindings/refs must fit the existing2048/5120byte slots; no automatic expansion or reslicing.",
+    "ParentCPU7/8 retained; child lowered20/21to7/8 and refuses insufficient inherited hard cap before input. Configured kernel hard sum8+8+8=24<=existingEXEC50;BOOT10/overall60 and wall/RSS/read/write/source caps retained. This is configured limit arithmetic, not a precise actualCPU measurement or evidence8seconds is adequate.",
+    "New18pins comprise unchanged qualified14 plus newcampaign/job/worker and frozenadapterv1. Newthree modules/helperv3 and five tests only; no mutation of oldmodule globals/factories or original files. Allnine new production/test paths absent at review; no implementation or fixture evidence inferred.",
+    "Shared memory-only limiter functions must be invoked by realCLI/worker beforestdin; source-free nestedCPU cases call these exact functions, with wiring/mutation regression preventing tests from proving only a fake helper path. No production mock mode, configurable sourcefactory or caller-selected cap.",
+    "Technical helperv3 retains exactly2BOOT/6EXEC metadata reads with combined fixed max464392B<1MiB,192KiB writes/phase and consumed STARTED/receipts. Existing technical scopes remain history; helper transports reviewed refs and issues no campaign/source execution."
+  ],
+  "clarification_disposition": [
+    {
+      "initial_proposal": "Incorrectly said518nonproject rows.",
+      "item": "Prior qualified row count",
+      "revised": "518total=497nonproject+21project; preserve all518exact prior triples and independently enforce exact497nonproject closure. New fixed project/cache overlay remains separately pinned.",
+      "status": "PASS_REVISED_DESIGN"
+    },
+    {
+      "initial_proposal": "RLIMIT_CORE0 stated for authored fixtures only.",
+      "item": "Core output under fatal CPU/native signals",
+      "revised": "Both actual shared parent/child setup functions must set and verify RLIMIT_CORE(0,0) before input/decoder; setup/verification failure gives safeRESOURCE_LIMIT_SETUP STOP. Same fixed signal case/wiring checks cover it, with no added cases/processes/slots.",
+      "status": "PASS_REVISED_DESIGN"
+    }
+  ],
+  "evidence": [
+    {
+      "bytes": 4880,
+      "path": "/tmp/civiclab-auditor-e01-successor-methods-check-20261112.py",
+      "sha256": "a9c1f60676def3e1d6db32383362073ec696dc2d4ab38db7bb82a19945853f57"
+    },
+    {
+      "bytes": 732,
+      "path": "/tmp/civiclab-auditor-e01-successor-methods-check-20261112.json",
+      "sha256": "a0add8ff390f36c1cc775c2b334b18561e7bad5095bb7967f262a04f40d565b7"
+    },
+    {
+      "bytes": 5545,
+      "path": "/tmp/civiclab-auditor-e01-successor-methods-v2-1-check-20261112.py",
+      "sha256": "577b5e2e7fd126398fd69353053de9825968ae0555486635ab3b11b5c5d36b1c"
+    },
+    {
+      "bytes": 732,
+      "path": "/tmp/civiclab-auditor-e01-successor-methods-v2-1-check-20261112.json",
+      "sha256": "b1045dbfe4fd202a71d912ba9c36a8b0cfb40acc68101fcbd72fcd568915c966"
+    }
+  ],
+  "findings": [],
+  "handoff_ref": {
+    "bytes": 3038,
+    "path": "reports/clerk2020_monotone_successor_methods_v2_1_handoff_20261112.json",
+    "sha256": "0ff5ebf17453b5f0ded78382620fd7741ec0e4c12c2707eea2203c75949cdf93"
+  },
+  "implementation_acceptance_criteria": [
+    "No inherited hard-limit increase; safeRESOURCE_LIMIT_SETUP before input, exactCPU/core verification, no signal ignore/recovery bypass.",
+    "ActualCLI/sharedfunction wiring tested, including oldbadcomposition, legalnewcomposition, hardraise refusal, insufficient inherited ceiling, defaultunblocked signal/core0, finite lower-cap exhaustion without core files.",
+    "First-read spies establish wrong packet0bodyreads and durable metadata/code/ancestry reservation before effects. Predecessor proof cannot create an unmetered registrar preflight.",
+    "Concurrent/replayed/crossed successor/link/index/root/predecessor changes refuse; prior index/state remains byte-identical and original charges never enter a fresh-counter balance as a refund.",
+    "All old timing/terminal/invalidation/lost-return controls preserved. Max binding/provenance/journal serialization and partial-error bytes fit existing slot/category/global caps.",
+    "Independent exact methods/code/particularBOOT, actualBOOT/prepared, particularEXEC and private-output reviews remain required; root alone schedules genuine native/source actions."
+  ],
+  "kind": "E01_FIXED_MONOTONE_SUCCESSOR_METHODS_V2_1_INDEPENDENT_DESIGN_AUDIT",
+  "limits": [
+    "No source-format or originalfullM2/scientific acceptance. Original source grammar/count/officialrole/unit/class/round/ballot/geography/feature/statistical gates remain unwaived.",
+    "Unknown8second adequacy must failclosed, not trigger adaptive cap increase, retry, fallback or extra source pass.",
+    "No guarantee of hostile decoder containment/preallocation/exhaustive storage/DAG coverage. Kernel timing granularity and sampledRSS limits remain documented.",
+    "Root chooses/releases any future finite recovery allocation under standing bounded-recovery authority; this audit neither consumes original permissions nor issues newBOOT/EXEC.",
+    "Rawredistribution/snippetpublication false; same two source hashes/rights/roles, no external transmissions or named-voter work. Combined$5/E02$1/E01paid$0limits unchanged."
+  ],
+  "methods_ref": {
+    "bytes": 56031,
+    "path": "configs/e01_clerk2020_monotone_successor_methods_v2_1_20261112.json",
+    "sha256": "184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d"
+  },
+  "new_recovery_allocation_issued": false,
+  "ownership": "Auditor wrote only this new report and/tmp JSON checks/results; no implementation, fixture execution, private state, STATUS or Git changes.",
+  "paid_execution_released": false,
+  "preserved_original_proposal_ref": {
+    "bytes": 53657,
+    "path": "configs/e01_clerk2020_monotone_successor_methods_v2_20261112.json",
+    "sha256": "2f1566fdfe257d5f03b4840122a11bab52c801e046cb3c44877505ee044ac3e0"
+  },
+  "pure_checks": {
+    "actual_source_native_network_model_process_operations": 0,
+    "authored_CPU_reservation_seconds_total": 240,
+    "authored_cases_total": 12,
+    "authored_metadata_read_bytes_total": 4194304,
+    "authored_processes_total": 24,
+    "authored_wall_seconds_total": 90,
+    "authored_write_bytes_total": 524288,
+    "configured_EXEC_hard_CPU_sum_seconds": 24,
+    "cumulative_source_bytes_ceiling": 1719826,
+    "methods_sha256": "184aee8fc46985dd607e083b06b607a9daf16004e7008dc87197f9741ea6668d",
+    "new_code_and_test_paths_absent": 9,
+    "predecessor_axes": 20,
+    "predecessor_metadata_refs": 8,
+    "qualification_histories": 6,
+    "qualification_records": 18,
+    "status": "PASS_PURE_METHODS_ACCOUNTING_AND_IDENTITY_CHECKS_NOT_FINAL_DISPOSITION"
+  },
+  "review_date_client": "2026-11-12",
+  "reviewer_role": "independent_auditor",
+  "scientific_acceptance": false,
+  "status": "PASS_EXACT_DESIGN_AND_FIXED_SOURCE_FREE_AUTHORED_SCOPE_ONLY_NO_ACTUAL_RECOVERY_RELEASE"
+}
