@@ -1,0 +1,44 @@
+{
+  "task_id": "INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_CALLER_SIZE_FINDING_20261112",
+  "review_date": "2026-11-12",
+  "status": "BLOCKED_EXACT_OLD_CALLER_REAL_EXPORT_PREFLIGHT",
+  "scope": "Oldcaller2a7e77 exact size gate and retained stopped pre-intent output only. No actual owner/key/HTTP/inference entry. Financial core, protocol and prior scoped boundary audits remain unchanged.",
+  "finding": {
+    "id": "S01",
+    "severity": "MEDIUM",
+    "issue": "Old wrapper caller invokes inherited read(OLD/export,EXPORT_SHA) without an explicit limit. Default is2000000bytes but exact pinned61a6ab export is2285561bytes. This exact caller cannot reach intention/credentials/owner.",
+    "reviewed_caller_sha256": "2a7e77b3ac70dc13c20b9397177b6c3def334d52e844cdbfb856cb0245055705",
+    "reviewed_old_packet_sha256": "62a0d5312e6df7a5637efea723fec9318963013fec4618331a6d055f3b25d3b5",
+    "review_gap": "The integrated review rehashed and compared the real export but did not execute the caller preflight against its real size; existing caller tests mocked read and did not cover the inherited default. Final40e9 receipt is historical acceptance with this later blocking finding, not clearance for a replay.",
+    "required_remedy": "Preserve stopped source/packet/exclusive outputs and old finding. Narrow exact2285561-byte limit on the pinned export, separate v1_02 BASE/RUN and successor sourcecontract/packet. Add real-sized preflight regression using actual reader and fail-before-credential/intent tests. Review exact changed caller and successor candidate before one new execution; no resetting financial owner or prior consumed controls, no full historical mock regeneration merely for this local preflight fix."
+  },
+  "reproduction": {
+    "status": "REPRODUCED_PRE_CONTENT_READ_REFUSAL",
+    "reader_default_limit": 2000000,
+    "exact_closed_export_bytes": 2285561,
+    "default_content_open_calls": 0,
+    "actual_intent_exists": false,
+    "stopped_summary": {
+      "automatic_retry": false,
+      "error_type": "ExecutionBlocked",
+      "status": "STOPPED"
+    },
+    "actual_owner_key_HTTP_model_access_by_probe": 0
+  },
+  "source_snapshot": {
+    "path": "/tmp/e02-execution-audit-ydic8xEC/stopped_caller_v1.py",
+    "sha256": "2a7e77b3ac70dc13c20b9397177b6c3def334d52e844cdbfb856cb0245055705"
+  },
+  "retained_stop": {
+    "path": "data/processed/e02_wrapper_visibility_actual_v1_01/execution-summary.local.json",
+    "sha256": "afd1fc2459c4d7b61a6a97038c77b94eb39aaae9c3d766da2551697bd2a9a7dc",
+    "stderr_bytes": 0,
+    "intent_absent": true,
+    "interpretation": "Exact source order plus independent read rejection establish pre-intent stop; root reported no owner/key/model entry. No fresh live owner/account observation by reviewer."
+  },
+  "reviewer_actual_owner_key_HTTP_model_access": 0,
+  "API_cost_USD": 0,
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_CALLER_SIZE_FINDING_20261112.json"
+  ]
+}

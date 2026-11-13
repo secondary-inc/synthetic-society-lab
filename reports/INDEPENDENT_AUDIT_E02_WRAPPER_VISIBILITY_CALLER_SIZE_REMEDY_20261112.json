@@ -1,0 +1,76 @@
+{
+  "task_id": "INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_CALLER_SIZE_REMEDY_20261112",
+  "review_date": "2026-11-12",
+  "status": "PASS_EXACT_CALLER_SIZE_REMEDY_ONLY",
+  "execution_release_status": "BLOCKED_EXPIRED_PACKET_02_REQUIRES_FRESH_EXACT_REVIEW",
+  "reviewer": "Independent reviewer; did not implement or alter caller/tests.",
+  "scope": "Narrow caller-only correction from preserved2a7 source: new02BASE/RUN, exactEXPORT_BYTES2285561 and explicit bound supplied to unchanged inherited reader. No financial owner/client/pureprotocol change or slow full-prefix regeneration.",
+  "reviewed_files": {
+    "scripts/run_wrapper_visibility_once.py": {
+      "bytes": 4035,
+      "sha256": "de8d7dfcc89694091070d315e38cca3623d82a772ca315b0e4a9e5859c0fdcf0"
+    },
+    "tests/test_wrapper_visibility_caller_v1.py": {
+      "bytes": 5907,
+      "sha256": "9d3aee51a23d4a0fb9dcc4a7cfc11ee057f53e3b90c99453305032f503d5570b"
+    }
+  },
+  "source_commit": "47e86f443665de35ce73ba449ae44cb24b72839e",
+  "prior_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_CALLER_SIZE_FINDING_20261112.json",
+    "sha256": "74d9c43385b0c57ce398aa5f62c98691be41cb56442e766bda70f80521bfbe04",
+    "finding": "S01",
+    "resolution": "Resolved only for exact correctedde8 caller; old2a7 caller and stopped01 outputs remain preserved and not cleared for replay."
+  },
+  "findings": [],
+  "checks": [
+    "Exact production delta inspected against Gitc5d37 old source and preserved snapshot: only BASE/RUN02, EXPORT_BYTES constant, explicit third read argument. Export digest and inherited reader default remain unchanged. Code-contract candidate difference is only new caller pin.",
+    "Independent nine fast checks per runtime pass: five caller tests (new main-path real-reader2,285,561B authored fixture plus prior four), three clock/GET controls and refresh-stage control. Exact fixture succeeds through mocked executor; legacy default refuses, one-byte-over and wronghash stop before intention/credential/executor.",
+    "Independent exact real closed61a export preflight with current corrected caller, exact02packet, exact source/readers and no mocked read passes all source/packet/ancestor size/hash checks. With actual current clock it correctly refuses expired window before intent/key. Under explicitly MOCK as-of-valid-window clock and pre-write trap, reaches intention boundary without creating intent or invoking key/executor/owner. This is a size regression, not revival of expired authority.",
+    "Original01summary remainsSTOPPED/ExecutionBlocked/automatic_retryfalse, stderr0 and execution-intent absent. Caller source order and independent zero-content-open defaultread reproduction establish pre-intent stop; no financial transition is inferred from it.",
+    "Unchanged financial engine/protocol and previously reviewed closed MOCK evidence remain reusable within their exact scopes. No need to regenerate historical mock prefix for this local preflight change."
+  ],
+  "independent_tests": {
+    "312": {
+      "status": "PASS_FAST_COMPONENT_CONTROLS_ONLY",
+      "tests": 9,
+      "runtime": "3.12.14",
+      "seconds": 0.03382208300172351,
+      "guard_refusals": []
+    },
+    "311": {
+      "status": "PASS_FAST_COMPONENT_CONTROLS_ONLY",
+      "tests": 9,
+      "runtime": "3.11.17",
+      "seconds": 0.039823332997912075,
+      "guard_refusals": []
+    }
+  },
+  "real_export_preflight": {
+    "status": "PASS_EXACT_READER_SIZE_AS_OF_MOCK_VALID_WINDOW_ONLY_NOT_CURRENT_RELEASE",
+    "packet_sha256": "e035b6e71f15877a2e5fecfdad6b3de4f7b5d7dc8825fd76400321d8889f5b17",
+    "caller_sha256": "de8d7dfcc89694091070d315e38cca3623d82a772ca315b0e4a9e5859c0fdcf0",
+    "real_export_bytes": 2285561,
+    "exact_current_caller_packet_export_and_reader_source_checks_passed": true,
+    "stopped_at": "AUTHORED_WRITE_TRAP_BEFORE_INTENT_OR_CREDENTIAL",
+    "clock_scope": "MOCK_POLICY_START_PLUS_ONE_SECOND; actual02packetexpired",
+    "credential_calls": 0,
+    "executor_calls": 0,
+    "actual_owner_HTTP_model_calls": 0,
+    "guard_refusals": []
+  },
+  "expiry_observation": {
+    "actual_review_time_utc": "2026-11-13T00:46:14+00:00",
+    "expired_packet_sha256": "e035b6e71f15877a2e5fecfdad6b3de4f7b5d7dc8825fd76400321d8889f5b17",
+    "fixed_valid_until_utc": "2026-11-12T22:34:48.908116+00:00",
+    "current_time_attempt_result": "fresh finite follow-up window required",
+    "no_clock_or_packet_date_changed": "Actual expiry retained; only separate offline regression mock uses policy-start+1s."
+  },
+  "harness_notes": "Initial new nested-temporary cleanup triggered the same fd-relative cleanup overrestriction. Original probe/logs preserved; absolute cleanup restricted to reviewer temp reused, no production or assertion-path edits.",
+  "next_gate": "Preserve expired02candidate; separate fresh source/namespace/packet/helper bindings and exact independent review before one new invocation. No reset of owner, prior history, caps or consumed launch outputs.",
+  "reviewer_actual_live_owner_key_HTTP_network_model_access": 0,
+  "reviewer_API_cost_USD": 0,
+  "files_changed": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_CALLER_SIZE_REMEDY_20261112.json"
+  ]
+}

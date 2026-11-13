@@ -16,9 +16,9 @@ from civiclab.e02.wrapper_visibility_owner_v1 import validate_packet
 from collect_connectivity_billing_once import _credential,_write
 from run_e02_continuation_once import read
 
-BASE=ROOT/'data/processed/e02_wrapper_visibility_actual_v1_02'
+BASE=ROOT/'data/processed/e02_wrapper_visibility_actual_v1_03'
 OLD=ROOT/'data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01'
-RUN='e02-wrapper-visibility-live-v1-02'
+RUN='e02-wrapper-visibility-live-v1-03'
 EXPORT_SHA='61a6ab162c464dc3bf7308ebe11f762a54f58b43b1424aa5be7c100696ed995c'
 EXPORT_BYTES=2285561
 CREDENTIAL_READER_SHA='0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7'
