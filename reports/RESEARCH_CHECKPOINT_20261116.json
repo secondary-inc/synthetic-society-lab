@@ -25,14 +25,81 @@
     "url": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/43788494169"
   },
   "e01": {
-    "accepted_real_forecasting_result": false,
-    "acquisition": "Three actual stopped scopes preserved. Version1.3 was not executed and its metadata expired. Fresh version1.4 continuation is being prepared; no old metadata freshness is relabeled.",
+    "accepted_prospective_2026_forecast": false,
+    "acquisition": "COMPLETE and independently reviewed: seven fresh metadata requests, four companion downloads and exact cached pypdf reuse; five wheel hashes verified. All three failed scopes and their charges remain. No installation/source qualification yet.",
+    "acquisition_evidence": [
+      {
+        "bytes": 15323,
+        "path": "reports/E01_PYPDF701_V1_4_ACTUAL_ACQUISITION_20261116.json",
+        "sha256": "e709f0b7474510912ed8ecea8f1761f56825820ebf642d9d9db0c0881c1d8353"
+      },
+      {
+        "bytes": 18029,
+        "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_ACTUAL_20261116.json",
+        "sha256": "0312f01f67ee0a378270192d2353311ff3f804ad5f93e3b4d337c8c772587972"
+      },
+      {
+        "bytes": 725,
+        "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_ROOT_RECEIPT_20261116.json",
+        "sha256": "5d9c7b5d034ffd69767d09b74de85da6347d2eb7b06d66a2d15d9270f9064e13"
+      }
+    ],
+    "completed_historical_diagnostic": {
+      "S0_MAE_percentage_points": 10.199287428521943,
+      "aggregate_arithmetic_rechecked_from_public_state_rows": true,
+      "calculations": {
+        "bytes": 28510,
+        "path": "reports/INDEPENDENT_AUDIT_E01_calculations.json",
+        "sha256": "9636fe79ad6d8c85d12dc661214a95cfe076f6e00bb982d68c12cec7103aad05"
+      },
+      "evidence": {
+        "bytes": 3678,
+        "path": "reports/E01_HISTORICAL_EVIDENCE.json",
+        "sha256": "e2bb2175c826abb48c38fb93df7a6e874d6c8fb503f289894bbf794f9fdef0e2"
+      },
+      "independent_review": {
+        "bytes": 5944,
+        "path": "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json",
+        "sha256": "d63612e20155da1a9fe7f6796f07eab3e71dd68aaa6a9db1fb170ac59fd061e8"
+      },
+      "limitations": [
+        "No independent pre-results archive; not prospective or historically untouched.",
+        "Operator and selection logic read outcomes; process/input separation is an accidental-I/O control, not researcher blindness or adversarial sandbox.",
+        "Finite selected eligible cohort and leave-one-state-out sensitivity do not provide forecasting intervals or universal superiority.",
+        "No model calls, agent variants, human effects or 2026 performance evidence."
+      ],
+      "new_source_reprocessing": false,
+      "scope": "30 regular Class-I Senate constituencies,2018-to-2024; selected post-hoc conditional D-R margins",
+      "status": "PASS_BOUNDED_HISTORICAL_DIAGNOSTIC_ONLY",
+      "zero_margin_control_MAE_percentage_points": 18.188306030001055
+    },
     "current_source_document_scope": "13-state typed document union; 20 unfinished source jobs; zero accepted final ballots",
-    "dependency_upgrade": "Offline installer core passed independent review; actual installation and source qualification NOT_RUN",
+    "dependency_upgrade": "P1 complete and independently accepted. P2 actual metadata-only preflight stopped at DEPENDENCY_SCHEMA before installation; narrow header-normalization and offline pip legacy-certs remedies under review. No new environment or source processing.",
+    "fresh_acquisition_finding": {
+      "bytes": 8246,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_CODE_METHODS_20261116.json",
+      "sha256": "e9b7c5d6b055edd5cafcc8d97270b2e825ba3ad0df944c70ff19342c30ef4647"
+    },
+    "installer_diagnosis": "Saved JSON has55 valid plain-string requirement rows. Frozen wheel inspection instead returns stdlib _UnstructuredHeader string subclasses; strict exact-str dependency validation rejects this representation. Authored stdlib reproduction confirms representation difference; separate consumer remedy is pending independent review.",
     "installer_evidence": {
       "bytes": 9363,
       "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_CORE_20261115.json",
       "sha256": "d031fa33136b519a2a43829e1a232d08f450821c93bc08aa7e9753649480cc76"
+    },
+    "installer_packet": {
+      "bytes": 1526,
+      "path": "reports/E01_PYPDF701_INSTALL_V1_2_PACKET_CANDIDATE_20261116.json",
+      "sha256": "fd2e0ba2d7f47517675d6b5f96a12d20dd74155a8804e8a6c5fbd3d1fcbf7db1"
+    },
+    "installer_pip_compatibility_finding": {
+      "bytes": 7706,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_BOUND_PIP_TLS_FINDING_20261116.json",
+      "sha256": "f2d662a3ba70e6a1da967712070a2b1388b29fcd78c2aeec0e0da8ded1065207"
+    },
+    "installer_preflight": {
+      "bytes": 1075,
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_20261116.json",
+      "sha256": "e70db9ad3f1facef73885a169335c287a9bb1d53619c8285439cead19424e0e2"
     },
     "mode": "RETROSPECTIVE",
     "source_scope_evidence": {
@@ -129,11 +196,16 @@
         "bytes": 6316,
         "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_FINAL_RECEIPT_FINDING_20261116.json",
         "sha256": "85b8541662cdcf355b72a16ba9ed936f05fd9ee34433d3fc1665a463ee3c0ebb"
+      },
+      {
+        "bytes": 15973,
+        "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_REMEDY_CONTINUATION_RELEASE_20261116.json",
+        "sha256": "260bd1a0efc65ae8f424a562c86738bf0230d86dabb63663d119038b75fa38f8"
       }
     ],
     "maximum_model_requests": 80,
     "purpose": "Matched two-configuration comparison of wrapper sensitivity and own-prior-answer visibility; fresh responses in both configurations.",
-    "python311_continuation": "NOT_RUN: independent review found final-receipt clock samples bypass validation. Narrow remedy and new main-path adverse tests are in progress; original partial run and all findings retained.",
+    "python311_continuation": "RUNNING: the narrow final-clock remedy passed independent review; one fresh bounded Python3.11 MOCK continuation launched. No actual fifth-study model request.",
     "python312_functional_checks": "21 PASS; retained artifacts independently verified",
     "timing_acceptance": "BLOCKED: elapsed UTC exceeded the original bound despite monotonic time being within it; cause UNKNOWN"
   },
@@ -141,9 +213,37 @@
   "e02_verified_research_model_usage_USD": "0.0098213",
   "full_original_completion_contract": "INCOMPLETE",
   "git": {
-    "checkpoint_push": "PENDING",
+    "checkpoint_push": "BLOCKED_UNAVAILABLE_WRITE_ACCESS",
+    "current_local_head": "fadf816956d29145459b8f8b64d8149883e83a93",
+    "evidence": {
+      "bytes": 1432,
+      "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
+      "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
+    },
     "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
-    "local_head_at_checkpoint": "b6f8299599def3449e0fd87848d513c5ba0a7d93"
+    "local_head_at_delivery_attempt": "ce9a779d949067f7bae08dbeb1e33baa1f1b5f12"
+  },
+  "historical_and_human_candidate_scope_review": {
+    "bytes": 6430,
+    "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+    "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+  },
+  "human_anchor_candidate": {
+    "authors": "Agadjanian and colleagues, including Brendan Nyhan",
+    "design_summary": "The 2018 MTurk experiment enrolled3008 participants in five arms. Its direct platform contrast used website and Facebook previews of the same two news articles. The primary credibility outcome averaged accuracy, credibility and trustworthiness on1-4 scales.",
+    "doi": "10.1080/19331681.2022.2105465",
+    "primary_author_copy": "https://bpb-us-e1.wpmucdn.com/sites.dartmouth.edu/dist/5/2293/files/2022/08/social_media_effects_credibility.pdf",
+    "project_fit_inference": "A candidate for a separate human-benchmark study of presentation effects. Current E02 support/thermometer measures and text-only wrappers are not equivalent to its credibility instrument and image previews; existing results cannot be called a replication.",
+    "published_replication_link_not_acquired": "https://osf.io/6dzeu",
+    "remaining_requirements": [
+      "Verify replication files and their reuse terms; inspect exact stimuli and questionnaire.",
+      "Freeze a separate aligned outcome, presentation modality, sample and analysis before execution.",
+      "Require independent methods review and preserve current study protocols/results.",
+      "Disclose selection after current model results and possible model exposure to the published benchmark."
+    ],
+    "source_observation": "Author-hosted paper read via web tool, including Methods, Measures and Appendix references. Publisher returned403; OSF inaccessible through the tool; neither bypassed. No publisher/participant data copied into Git.",
+    "status": "LITERATURE_CANDIDATE_ONLY_NO_PROTOCOL_CHANGE_OR_REPLICATION",
+    "title": "A Platform Penalty for News? How Social Media Context Can Alter Information Credibility Online"
   },
   "kind": "LEAD_RESEARCH_CHECKPOINT_NOT_AN_INDEPENDENT_ACCEPTANCE",
   "limitations": [
@@ -155,10 +255,10 @@
   ],
   "new_model_calls_during_this_checkpoint": 0,
   "next_unblocked_work": [
-    "Review and execute the single bounded Python3.11 authored continuation; retain original timing failure.",
-    "Finish and independently review E01 fresh-metadata acquisition, then perform bounded acquisition and installation in sequence.",
-    "Commit safe completed code, logs and reports to the authorized GitHub branch; rerun remote CI once for the integrated checkpoint.",
-    "After all fifth-study release prerequisites pass, freeze the exact run packet, execute once within its cap and independently verify billing/results."
+    "Complete the running, once-only Python3.11 mock continuation and independently verify its closed artifacts; retain the original timing failure.",
+    "Prepare and independently review narrow E01 installer compatibility remedies, verify real metadata without installation, then execute one exact bounded offline installation.",
+    "Commit safe completed code, logs and reports locally; GitHub upload and integrated remote CI await restored write access.",
+    "After all fifth-study release prerequisites pass, bind the exact run packet, execute once within its cap, and independently verify billing and results."
   ],
   "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
   "owner_conservative_exposure_microusd": 12221,
@@ -174,5 +274,5 @@
     788,
     1008
   ],
-  "updated_at_UTC": "2026-11-16T10:09:34.297192+00:00"
+  "updated_at_UTC": "2026-11-16T10:31:40.210453+00:00"
 }

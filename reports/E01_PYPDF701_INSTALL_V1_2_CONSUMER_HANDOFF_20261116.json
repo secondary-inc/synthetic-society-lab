@@ -1,0 +1,106 @@
+{
+  "TASK_ID": "E01_P2_FRESH_ACQUISITION_CONSUMER_V1_2_20261116",
+  "kind": "E01_PYPDF701_INSTALL_V1_2_FROZEN_CONSUMER_HANDOFF",
+  "status": "39_GUARDED_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_DELTA_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/install_e01_pypdf701_runtime_v1_2.py",
+    "configs/e01_pypdf701_install_v1_2_20261116.json",
+    "tests/test_e01_pypdf701_install_v1_2.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/install_e01_pypdf701_runtime_v1_2.py": {
+      "bytes": 50132,
+      "sha256": "7da63c64b9427088d520fe06447431d37db8505587a23355ced5229e632c026f"
+    },
+    "configs/e01_pypdf701_install_v1_2_20261116.json": {
+      "bytes": 6830,
+      "sha256": "4023ed3d862ba69bb48f15aa95058649f72d430c8df99ae7cbe1ba188b874e09"
+    },
+    "tests/test_e01_pypdf701_install_v1_2.py": {
+      "bytes": 9105,
+      "sha256": "d372a382f314d63b48252f8c8452bd4f7787018d10afd695e3ad1010a6d1435c"
+    },
+    "reports/e01_pypdf701_install_v1_2_authored_312_initial_20261116.txt": {
+      "bytes": 5961,
+      "sha256": "7ff5a7f31f68ea0f9fa16fda68c2b0434e9e5d8bec366f9900a1976c5187a32b"
+    },
+    "reports/e01_pypdf701_install_v1_2_authored_311_initial_20261116.txt": {
+      "bytes": 5961,
+      "sha256": "ab11efc1a8af602fb75982c453159b1fff680ca90cf3d7b4451b25a768a0167a"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_install_v1_2.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_install_v1_2.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "3.12": "39 PASS,7.273 seconds,exit0",
+    "3.11": "39 PASS,4.972 seconds,exit0",
+    "invocationsPerRuntime": 1,
+    "core": "Retains the accepted30 core invariants, prior failed-ancestry cases and exact normalized AST equivalence outside verify_acquisition plus explicit identity/path literals.",
+    "newCases": "Coherently rehashed but false no-relabeling receipt refuses; duplicate fresh refs cannot satisfy seven GETs; old capture timestamp cannot replace the new epoch; final metadata charges must include all seven new bodies.",
+    "guard": "Frozen authored runner blocks actual network/process/native/source/owner/credentials.120wall/CPU,64MiBread,32MiBtemporarywrite,256KiBoutput per invocation. No actual pip/venv/native action."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only public source/config and authored temporary fixtures. Actual final hashlock, wheel/cache bodies, interpreter/pip package bodies, respondent/publisher data, research PDFs and private controls were not read.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerNetworkCalls": 0,
+  "actualInstallOrVenv": false,
+  "actualSourceRecoveryOrdinalConsumed": false,
+  "reviewedCore": {
+    "path": "scripts/install_e01_pypdf701_runtime_v1.py",
+    "bytes": 46871,
+    "sha256": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847",
+    "audit": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_CORE_20261115.json",
+      "bytes": 9363,
+      "sha256": "d031fa33136b519a2a43829e1a232d08f450821c93bc08aa7e9753649480cc76"
+    }
+  },
+  "preservedOriginalHashes": {
+    "scripts/install_e01_pypdf701_runtime_v1.py": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847",
+    "configs/e01_pypdf701_install_v1_20261115.json": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a",
+    "tests/test_e01_pypdf701_install_v1.py": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a",
+    "scripts/install_e01_pypdf701_runtime_v1_1.py": "86e473e42268dd13c3da8908295d101863dd28be77153136884d70e31d4b3364",
+    "configs/e01_pypdf701_install_v1_1_20261115.json": "32175c533202fcf63b2b8153bb7dd11fae2eb3ff781f96b403a550160f2bf2d2",
+    "tests/test_e01_pypdf701_install_v1_1.py": "ed88915ba7e0052a0c4629a5243324a0e27b1b860829cd9f6760aa307f4abe99"
+  },
+  "delta": {
+    "newStage": "data/processed/e01_pypdf701_build_v1/install-v1_2-20261116",
+    "sameTarget": ".venv-e01-pypdf-7.0.1-v1",
+    "newMethodsKind": "E01_PYPDF701_OFFLINE_INSTALL_METHODS_V1_2",
+    "P1Scope": "data/processed/e01_pypdf701_build_v1/acquisition-v1_4-20261116",
+    "P1Methods": {
+      "path": "configs/e01_pypdf701_acquisition_v1_4_20261116.json",
+      "bytes": 7395,
+      "sha256": "c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f"
+    },
+    "P1CodeSHA256": "7b749585397e6a8f609bd809f5f1a54e5124077a8d90cc6ae0c5530c3616f749",
+    "consumer": "Require P1_TERMINAL_V1_4 COMPLETE and fresh-source STARTED bindings. Preserve original/v1_1/v1_2 failed scope refs, all terminal write totals and33554432 failed-wheel bytes. v1_3 is explicitly unexecuted, never an actual predecessor. Current counts must be21GET/15metadata/6wheel.",
+    "metadata": "The hashlock must bind exactly one fresh seven-metadata receipt. Its seven unique current-scope refs must equal the five version metadata files plus current advisory and provenance, have the new STARTED timestamp, no relabeling flag, and15 cumulative metadata GETs. Final metadata bytes equal prior charges plus every new response length.",
+    "unchanged": "After enumerated version/path literal normalization, every top-level AST node except verify_acquisition is identical to independently accepted core. No guard, deadline, process, spending-independent resource, dependency closure, Python3.12 -S explicit prefix or journaling change.",
+    "packet": "Same exact six-field root-owned packet schema with external new methods and actual packet hashes. Fixed new path install-v1_2-packet-20261116.json. Actual packet and five real wheel hashes are NOT invented."
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "retainedCore": "Hashes and AST checks passed both authored runs.",
+    "newConsumer": "39 checks passed both runtimes; independent exact delta review pending.",
+    "actualP1": "Not established by worker. Producer final-write remedy requires acceptance and root actual acquisition.",
+    "actualPacketAndInstall": "NOT RUN; root only after exact review.",
+    "runtimeSourceQualification": "Later separate gates."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Mock source success is not actual artifact success, package ABI compatibility or scientific validity.",
+    "Only the consumer and explicit routing literals changed; copied versions remain deliberately immutable to preserve audits.",
+    "Original core limits still apply: cooperative Python guards, polled logical disk size, bounded but unobserved live child CPU, possible blocking-OS overshoot, no hostile-host containment or exhaustive physical I/O accounting.",
+    "Actual Requires-Dist compatibility still needs a bounded read-only preflight with the root's real final packet. Unsupported active requirements refuse.",
+    "Producer remedy and all actual evidence/installation remain separately gated; no monetary/source-recovery increase follows.",
+    "No frozen P1/P2 file, Git, STATUS or auditor finding was edited."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent P1 final-write remedy and new P2 consumer review",
+    "Root actual metadata/artifact acquisition and final packet",
+    "Read-only real metadata compatibility preflight",
+    "Root actual offline installation, then runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Root routes exact new consumer to independent reviewer. Root alone acquires and installs after accepted bindings. Worker waits for actual refs before any real metadata preflight.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/install_e01_pypdf701_runtime_v1_2.py --methods-sha256 4023ed3d862ba69bb48f15aa95058649f72d430c8df99ae7cbe1ba188b874e09 --packet-sha256 <ROOT_REVIEWED_ACTUAL_PACKET_SHA256>"
+}

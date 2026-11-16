@@ -1,0 +1,96 @@
+{
+  "auditor_artifacts": [
+    {
+      "bytes": 3005,
+      "path": "/tmp/civiclab-auditor-e01-checkpoint-historical-20261116.py",
+      "sha256": "cbba786e0bbd824be5e4bb92594984fe0c01c125e8e876d24d3f0e24df0e0ced"
+    },
+    {
+      "bytes": 1558,
+      "path": "/tmp/civiclab-auditor-e01-checkpoint-historical-20261116.json",
+      "sha256": "a0da6b8bbb141b551a97e62ae6df8b77af1d4bea976e90d0658b4d982cd7750b"
+    }
+  ],
+  "cost_USD": 0,
+  "findings": [],
+  "historical_diagnostic": {
+    "checks": [
+      "Original historical evidence SHA matches its independently accepted audit. Calculations SHA matches the same audit. Checkpoint points to exact unchanged files.",
+      "From120 pinned public D/R count crosschecks independently recomputed conditional two-party margins for2018/2024 in all30 states, persistence and zero-margin errors, paired mean and descriptive leave-one-state-out range.",
+      "Status correctly distinguishes completed historical statistical work from absent accepted prospective2026 forecast and unfinished original E01 requirements.",
+      "Old producer evidence audit_status=PENDING is a preserved historical producer field, superseded for its exact scope by separate PASS_BOUNDED_HISTORICAL_DIAGNOSTIC_ONLY audit; no old receipt edited."
+    ],
+    "independent_recomputation": {
+      "S0_MAE_pp": 10.199287428521941,
+      "S_ZERO_MAE_pp": 18.18830603000105,
+      "leave_one_out_range_pp": [
+        -8.72470437989103,
+        -6.524110162136731
+      ],
+      "paired_difference_pp": -7.98901860147911,
+      "public_candidate_count_rows": 120,
+      "states": 30
+    },
+    "limitations": [
+      "Post-hoc selected cohort; no independently pre-results archive or historically untouched holdout.",
+      "Operator/selection logic saw outcomes. Input/output separation limits accidental I/O; not blinding or an adversarial sandbox.",
+      "D-R conditional margins can exclude independent candidates, including independent winners, and are not winner probabilities.",
+      "No performance-conditioned new exclusion or sample change, source reprocessing, new candidate/ballot validation,2026 evaluation, agents or inference run by this review.",
+      "Finite-cohort MAE and leave-one-state-out sensitivity do not establish forecasting intervals, universal superiority or full E01 completion."
+    ],
+    "refs": {
+      "reports/E01_HISTORICAL_EVIDENCE.json": {
+        "bytes": 3678,
+        "path": "reports/E01_HISTORICAL_EVIDENCE.json",
+        "sha256": "e2bb2175c826abb48c38fb93df7a6e874d6c8fb503f289894bbf794f9fdef0e2"
+      },
+      "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json": {
+        "bytes": 5944,
+        "path": "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json",
+        "sha256": "d63612e20155da1a9fe7f6796f07eab3e71dd68aaa6a9db1fb170ac59fd061e8"
+      },
+      "reports/INDEPENDENT_AUDIT_E01_calculations.json": {
+        "bytes": 28510,
+        "path": "reports/INDEPENDENT_AUDIT_E01_calculations.json",
+        "sha256": "9636fe79ad6d8c85d12dc661214a95cfe076f6e00bb982d68c12cec7103aad05"
+      },
+      "reports/RESEARCH_CHECKPOINT_20261116.json": {
+        "bytes": 12707,
+        "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+        "sha256": "341cdcf4345ffd5415529b2f49972412a290d886dd18aefa0cdc8e9736654a47"
+      },
+      "reports/STATUS.md": {
+        "bytes": 144859,
+        "path": "reports/STATUS.md",
+        "sha256": "4f6f79dc5dc338036551e752f17f67160aab0ef02d214ea334fb3f719698fe58"
+      }
+    },
+    "status": "PASS_PINNED_PUBLIC_HISTORICAL_ARITHMETIC_CLARIFICATION_ONLY"
+  },
+  "human_anchor_candidate": {
+    "access_record": "Initial direct fetch timed out; normal web search/open returned author-hosted primary text. No login/paywall workaround, PDF download, raw stimulus/respondent storage or OSF acquisition. Publisher/OSF failures remain lead-reported; no access claimed here.",
+    "author_publications_page": "https://sites.dartmouth.edu/nyhan/publications/",
+    "current_checkpoint_scope": "LITERATURE_CANDIDATE_ONLY_NO_PROTOCOL_CHANGE_OR_REPLICATION is appropriate. No data-rights, general-population or completed external-validation claim is accepted.",
+    "doi": "10.1080/19331681.2022.2105465",
+    "fit_assessment_inference": "Relevant to a separate credibility/presentation benchmark. Current support/thermometer measures, text wrappers and own-answer cues do not reproduce that design. The first two arms alone would be a scoped platform comparison, not replication of all five conditions.",
+    "open_gates": "Verify replication/code/questionnaire and reuse terms; prefreeze aligned estimand, modality, sample/exclusions and analysis with simpler matched controls. Declare retrospective benchmark selection and possible model exposure to published results. No existing E02 finding gains human validity.",
+    "primary_sections_checked": "Methods/Participants; experimental conditions; Measures; AppendixC randomization/outcomes.",
+    "primary_source_url": "https://bpb-us-e1.wpmucdn.com/sites.dartmouth.edu/dist/5/2293/files/2022/08/social_media_effects_credibility.pdf",
+    "status": "PASS_AS_PREPARATORY_LITERATURE_CANDIDATE_ONLY",
+    "verified_design": "The2018 MTurk study had3008 participants and five arms. Its platform contrast compared the same two target articles in website versus Facebook visual previews. Primary credibility averaged three1\u20134 items; bias was excluded.",
+    "wording_clarification": "Replace same-preview with same target articles in different platform preview formats."
+  },
+  "kind": "INDEPENDENT_CHECKPOINT_HISTORICAL_DIAGNOSTIC_AND_HUMAN_ANCHOR_CANDIDATE_SCOPE_REVIEW",
+  "model_calls": 0,
+  "new_source_processing": 0,
+  "not_certified": [
+    "Any new human-study replication or calibrated human persuasion/attitude claim.",
+    "Exact replication material availability, rights, data provenance or questionnaire implementation.",
+    "Prospective forecasting,2026 predictive skill, original full E01/E02 completion or E03/E04 readiness.",
+    "Current remote Git/CI status or actual-owner state; those are separate lead observations/evidence."
+  ],
+  "ownership": "Independent auditor. No protocol, implementation, lead STATUS/checkpoint, original evidence/audit or stimulus changes.",
+  "raw_paper_stimulus_respondent_data_saved": false,
+  "review_date_client": "2026-11-16 America/New_York",
+  "status": "PASS_CHECKPOINT_CLARIFICATIONS_PREPARATORY_ONLY_NO_RESEARCH_GATE_RELEASE"
+}

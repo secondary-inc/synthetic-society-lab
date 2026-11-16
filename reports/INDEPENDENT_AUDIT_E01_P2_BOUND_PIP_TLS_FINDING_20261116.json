@@ -1,0 +1,137 @@
+{
+  "auditor_artifacts": [
+    {
+      "bytes": 2429,
+      "path": "/tmp/civiclab-auditor-e01-bound-pip-tls-static-20261116.py",
+      "sha256": "1f46750b6fb6a67a853c04146f60f946f1c3e5ae2f54245bb4a7d5e870a41e52"
+    },
+    {
+      "bytes": 2424,
+      "path": "/tmp/civiclab-auditor-e01-bound-pip-tls-static-initial-literal-20261116.py",
+      "sha256": "19e8c363e8dc6d8c56735f7a06d803495427daf84068a78a079da83ec154aba4"
+    },
+    {
+      "bytes": 4675,
+      "path": "/tmp/civiclab-auditor-e01-bound-pip-tls-static-20261116.json",
+      "sha256": "09c3e5c2c92334a35a556778937c16aad17736ccd2eecda6e3ad9d71f339a254"
+    }
+  ],
+  "bound_source_read_scope": "Explicit lead-requested static scan of original binding plus six exact manifest-pinned pip sources; regular O_NOFOLLOW/NONBLOCK bounded reads. No downloaded wheel or research-source body read.",
+  "component_audit_scope_preserved": {
+    "bytes": 10441,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_2_CONSUMER_20261116.json",
+    "sha256": "15df1ab5ef5e436c131444f36cd6da4c6d60a667b6de6b25e296438bc1a22eee"
+  },
+  "cost_USD": 0,
+  "finding": "The default bound pip install session initialization conflicts with unchanged GuestPolicy denial of ctypes.dlopen, independently of --no-index. This is a statically established incompatibility in the inherited core command configuration, not a new consumer ancestry bug. It was identified before any actual P2 attempt, so no failed installation is invented.",
+  "finding_id": "E01-P2-BOUND-PIP-TLS-001",
+  "kind": "INDEPENDENT_E01_BOUND_PIP_DEFAULT_TLS_STATIC_COMPATIBILITY_FINDING",
+  "model_calls": 0,
+  "native_or_network_calls": 0,
+  "not_claimed": [
+    "No observed pip execution failure, package ABI compatibility, installed runtime/source qualification or security-absence result.",
+    "Legacy option does not itself prove complete pip/guard compatibility; later bounded actual installation can still refuse elsewhere and must preserve partial evidence.",
+    "No waiver of native/network guards, financial/source ordinal, old failure charges or actual experimental restrictions."
+  ],
+  "ownership": "Independent auditor; no pip/import/installer/native execution, guard change or implementation edit.",
+  "pip_imports_or_execution": 0,
+  "proposed_narrow_remedy": "For this strictly network-disabled offline install only, explicitly select the pinned supported --use-deprecated=legacy-certs path. Preserve socket/fork/helper/ctypes/import/path/write/cost/CPU/deadline/storage/ZIP/hash controls. No permission to use this certificate choice for network access.",
+  "read_accounting": {
+    "additional_inspection": "Initial pass and small literal source follow-ups stayed in the same seven pinned files, conservatively below2MiB; not a physical I/O meter.",
+    "overall_static_inspection_limit_bytes": 2097152,
+    "reviewer_initial_probe": "Expected Darwin branch expressed as sys.platform literal; actual bound source uses platform.system. Initial assertion failure preserved; corrected source identity/control-flow check passed. No package bug inferred from that reviewer literal mismatch.",
+    "verified_single_full_pass_including_binding_bytes_charged": 262789
+  },
+  "required_before_actual_install": [
+    "Preserve accepted old core/v1.1/v1.2 source/method/tests and this finding; create separately versioned exact command/method/packet delta.",
+    "Independently prove the supported option reaches the intended pip session branch without weakening guards; compare unchanged AST outside exact versioned routing/pip argument delta.",
+    "Guarded mock tests must retain all current30 core/39 consumer cases and assert the exact option alongside no-index/no-deps/hashes/prefix and all import/network/native/helper restrictions.",
+    "Return a bounded read-only actual metadata compatibility preflight and exact new packet for particular release. No actual install on the old packet/component acceptance alone."
+  ],
+  "review_date_client": "2026-11-16 America/New_York",
+  "severity": "MEDIUM_ENGINEERING_COMPATIBILITY_BEFORE_MUTATION",
+  "source_path": {
+    "Darwin_import": {
+      "file": ".venv/lib/python3.12/site-packages/pip/_vendor/truststore/_api.py",
+      "lines": [
+        19,
+        20
+      ],
+      "observation": "platform.system()==Darwin imports _macos implementation."
+    },
+    "install_entry": {
+      "file": ".venv/lib/python3.12/site-packages/pip/_internal/commands/install.py",
+      "line": 332,
+      "observation": "Install obtains the default session before building the finder."
+    },
+    "native_load": {
+      "file": ".venv/lib/python3.12/site-packages/pip/_vendor/truststore/_macos.py",
+      "lines": [
+        43,
+        48,
+        51
+      ],
+      "observation": "ctypes CDLL in _load_cdll and module-level Security/CoreFoundation loading enter the forbidden native-loading path."
+    },
+    "session_condition": {
+      "file": ".venv/lib/python3.12/site-packages/pip/_internal/cli/index_command.py",
+      "lines": [
+        28,
+        73,
+        94,
+        95,
+        97,
+        99
+      ],
+      "observation": "Default session factory calls truststore context creation unless deprecated_features_enabled contains legacy-certs. no_index affects index URLs, not this condition. Factory imports truststore on supported Python/SSL."
+    },
+    "supported_option": {
+      "file": ".venv/lib/python3.12/site-packages/pip/_internal/cli/cmdoptions.py",
+      "lines": [
+        1017,
+        1019,
+        1020,
+        1026
+      ],
+      "observation": "Pinned pip25.0.1 explicitly supports --use-deprecated with legacy-certs and records it in deprecated_features_enabled."
+    }
+  },
+  "source_refs": {
+    ".venv/lib/python3.12/site-packages/pip/_internal/cli/cmdoptions.py": {
+      "bytes": 30116,
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/cli/cmdoptions.py",
+      "sha256": "577041db6178feffd1907699e689d69ecce16c1b63619bcd85b9fd33434ed072"
+    },
+    ".venv/lib/python3.12/site-packages/pip/_internal/cli/index_command.py": {
+      "bytes": 5677,
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/cli/index_command.py",
+      "sha256": "8bfb203653e65c2e621d4698f9d9a6ac728a4e07393b8856ce2b2be40975aebd"
+    },
+    ".venv/lib/python3.12/site-packages/pip/_internal/commands/install.py": {
+      "bytes": 29390,
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/commands/install.py",
+      "sha256": "af7c87414c6fc6dee00f98fd9facd10ec940bedc7d093ff084bb9025c92da7a3"
+    },
+    ".venv/lib/python3.12/site-packages/pip/_internal/network/session.py": {
+      "bytes": 18771,
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/network/session.py",
+      "sha256": "9ac3387acd7a2e698d118364ad8ca0f1f4dcee00076ca165b5ac1f28fdbb2ce2"
+    },
+    ".venv/lib/python3.12/site-packages/pip/_vendor/truststore/_api.py": {
+      "bytes": 10555,
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/truststore/_api.py",
+      "sha256": "19e5d13539713d9de489fe2436887a258d28138411cd319c817afa97f5ff1a4d"
+    },
+    ".venv/lib/python3.12/site-packages/pip/_vendor/truststore/_macos.py": {
+      "bytes": 20503,
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/truststore/_macos.py",
+      "sha256": "9d994b90e9accd413483aaf2470055198e423b33f2b9d72c889b4359aacce4b4"
+    },
+    "data/processed/e01_pypdf701_installer_binding_v1_20261115/binding.json": {
+      "bytes": 147770,
+      "path": "data/processed/e01_pypdf701_installer_binding_v1_20261115/binding.json",
+      "sha256": "48699591b7e734e4c103a2ba80c63940afa24258a86e57f5c45768f4800ed38e"
+    }
+  },
+  "status": "BLOCKED_ACTUAL_INSTALL_DEFAULT_PIP_COMMAND_WITH_UNCHANGED_GUEST_GUARD"
+}
