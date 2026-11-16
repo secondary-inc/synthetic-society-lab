@@ -1,0 +1,110 @@
+{
+  "actual_model_POST_attempts": 45,
+  "actual_serving_routes": [
+    {
+      "exact_backend_revision_independently_verified": false,
+      "provider": "Azure",
+      "response_model": "openai/gpt-4.1-nano",
+      "responses": 22,
+      "statistics_model": "openai/gpt-4.1-nano-2025-04-14"
+    },
+    {
+      "exact_backend_revision_independently_verified": false,
+      "provider": "Nebius",
+      "response_model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "responses": 22,
+      "statistics_model": "qwen/qwen3-30b-a3b-instruct-2507"
+    }
+  ],
+  "analysis": {
+    "automatic_partial_diagnostics_retained": true,
+    "partial_estimates_published_in_this_report": false,
+    "reason": "The planned 80-response comparison is incomplete. The retained authenticated terminal contains automatically computed stopped-prefix diagnostics; these do not establish full-study completion or an accepted scientific effect.",
+    "status": "FULL_REGISTERED_COMPARISON_NOT_RUN"
+  },
+  "automatic_retries": 0,
+  "caps_microusd": {
+    "E01_paid_inference": 0,
+    "E02": 1000000,
+    "shared": 5000000,
+    "this_batch": 200000
+  },
+  "catalog_GET_attempts": 10,
+  "closed_owner": {
+    "collector_owner_writes": 0,
+    "conservative_exposure_microusd": 16149,
+    "events": 1180,
+    "historical_journals_checked_unchanged": true,
+    "increase_microusd": 3928,
+    "old_rows_and_event_prefix_unchanged": true,
+    "prior_closed_exposure_microusd": 12221,
+    "rows": 194,
+    "total_dispatches": 194
+  },
+  "committed_responses": 44,
+  "counter_correction": "The terminal diagnostic counts the final failed request only; the retained failure record and owner delta establish 45 cumulative attempts. The lead previously inferred one total attempt and corrects that here.",
+  "evidence": [
+    {
+      "bytes": 3893676,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+      "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+    },
+    {
+      "bytes": 45733,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+      "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+    },
+    {
+      "bytes": 3033541,
+      "path": "data/processed/e02_wrapper_visibility_actual_v1_03/post-run-owner-export.local.json",
+      "sha256": "da5abbf754c6787b3073295cd6ebc54e704fa331792635a70c3d287da9cdc861"
+    },
+    {
+      "bytes": 100561,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal/failure.json",
+      "sha256": "c01dcb0c1a8c3737bce68c419e810c004230c3dd0923102065ea01ded54e7de7"
+    },
+    {
+      "bytes": 548,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/execution-summary.local.json",
+      "sha256": "4ef4b2d321dbb0ab8790313b9d6735d284f1299cc41411ae4e69e24e72802e5a"
+    }
+  ],
+  "failed_request": {
+    "actual_provider_cost": null,
+    "full_reservation_retained_microusd": 775,
+    "http_status": 402,
+    "phase": "post",
+    "specific_402_cause": "UNKNOWN; diagnostic retained HTTP status but no error metadata",
+    "status": "UNCERTAIN",
+    "successful_response": false
+  },
+  "independent_actual_review": "PENDING",
+  "kind": "LEAD_CLOSED_STOPPED_ACTUAL_EVIDENCE_NOT_INDEPENDENT_ACCEPTANCE",
+  "limitations": [
+    "Exploratory synthetic-model responses; no human persuasion, representativeness or prospective forecast claim.",
+    "The study compares model/provider configurations, not an isolated model-family effect.",
+    "Recorded usage excludes local compute, agent labor and infrastructure.",
+    "HTTP 402 does not by itself establish zero billing or identify which account limit caused rejection."
+  ],
+  "new_settled_rounded_microusd": 3153,
+  "new_verified_model_usage_USD": "0.0031376",
+  "observed_at_utc": "2026-11-16T11:11:26.474470+00:00",
+  "phase_counts": {
+    "post": 28,
+    "pre": 16
+  },
+  "planned_model_POSTs_maximum": 80,
+  "private_evidence_in_git": false,
+  "research_study_complete": false,
+  "research_totals_including_incomplete_prefix": {
+    "completed_studies": 4,
+    "incomplete_additional_studies": 1,
+    "responses": 191,
+    "verified_model_usage_USD": "0.0129589"
+  },
+  "run_id": "e02-wrapper-crossmodel-v1-20261115-01",
+  "serving_identity_note": "Response and statistics labels are recorded separately. The Azure generation-statistics model label is dated, while its response label is the undated alias. Neither label independently attests exact deployed weights.",
+  "statistics_GET_attempts": 44,
+  "status": "STOPPED_NO_RETRY"
+}

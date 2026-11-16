@@ -1,0 +1,45 @@
+{
+  "auditor_cost_USD": 0,
+  "auditor_credential_reads": 0,
+  "auditor_live_owner_accesses": 0,
+  "auditor_network_requests": 0,
+  "date": "2026-11-16",
+  "evidence": {
+    "result.json": {
+      "bytes": 929,
+      "path": "data/processed/openrouter_key_status_20261116_01/result.json",
+      "sha256": "5a45031460bc12cdb57c46954b22785e225f318330e3e6a596ecaf3ddc2cc311"
+    },
+    "started.json": {
+      "bytes": 468,
+      "path": "data/processed/openrouter_key_status_20261116_01/started.json",
+      "sha256": "565935c4b72df5cc77ba360d0e6d6eda416162a3949740c9f616ceee4ae1e25a"
+    }
+  },
+  "execution": {
+    "GET_attempts": 1,
+    "POST_attempts": 0,
+    "http_status": 200,
+    "owner_writes": 0,
+    "purchases": 0,
+    "retries": 0
+  },
+  "interpretation": [
+    "The credential authenticated for this GET and remaining key-level allowance was observed.",
+    "No account prepaid balance was supplied by this endpoint. No reason for the model HTTP402 is proven.",
+    "Aggregate key usage is not generation-specific reconciliation. No uncertain hold can be released from this response.",
+    "The endpoint key ceiling is not project spending authority: existing combined $5/E02 $1/E01 $0 limits remain."
+  ],
+  "kind": "INDEPENDENT_RETAINED_READONLY_KEY_STATUS_OUTCOME",
+  "limits": [
+    "Independent review of retained safe projection, not raw HTTP wire bytes or private credential.",
+    "No independent review here of browser account pages or third-party administrator permissions."
+  ],
+  "observations": {
+    "endpoint_reported_daily_usage_USD": 0.0031376,
+    "endpoint_reported_usage_USD": 0.0129659,
+    "key_limit_USD": 20,
+    "remaining_key_limit_USD": 19.9870341
+  },
+  "status": "PASS_SCOPED_RETAINED_OUTCOME"
+}

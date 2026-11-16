@@ -1,0 +1,151 @@
+{
+  "audit_corrections": [
+    "Early first-request interpretation was incorrect because terminal counters describe only the failed phase. Correct cumulative counts are45attempts and44committed responses.",
+    "Initial checker passed the statistics object directly to normalize_statistics, which normalizes its model alias in place. Checker corrected to deepcopy before normalization and separately verify raw labels. Raw artifacts were never modified.",
+    "Two scratch-checker stops were auditor harness issues: unsupported provenance enum corrected to EXPLORATORY_REAL_MODEL; failed transcript disposition then added before stopped-envelope comparison. No product/run changes or network retries resulted."
+  ],
+  "auditor_actions": {
+    "cost_USD": 0,
+    "credential_reads": 0,
+    "live_owner_accesses": 0,
+    "network_requests": 0,
+    "owner_writes": 0,
+    "source_implementation_edits": 0
+  },
+  "date": "2026-11-16",
+  "decision": "PASS_PARTIAL_RETAINED_EVIDENCE_ACCOUNTING_AND_REPLAY_ONLY",
+  "evidence": {
+    "configs/e02_wrapper_crossmodel_v1_20261115.json": {
+      "bytes": 82688,
+      "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/execution-summary.local.json": {
+      "bytes": 548,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/execution-summary.local.json",
+      "sha256": "4ef4b2d321dbb0ab8790313b9d6735d284f1299cc41411ae4e69e24e72802e5a"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json": {
+      "bytes": 7339,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json",
+      "sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json": {
+      "bytes": 3893676,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+      "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json": {
+      "bytes": 45733,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+      "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+    },
+    "failure.json": {
+      "bytes": 100561,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal/failure.json",
+      "sha256": "c01dcb0c1a8c3737bce68c419e810c004230c3dd0923102065ea01ded54e7de7"
+    },
+    "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json": {
+      "bytes": 4617,
+      "path": "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "sha256": "21ec7483ee0f2e91633b30c76b9fe196e27c5768c8a0131c36e0ae14ce0c6baf"
+    }
+  },
+  "full_registered_study": "BLOCKED_INCOMPLETE_HTTP402",
+  "independent_checks": [
+    "All325 exact closed journal files are regular no-follow bounded files with matching sizes/SHA256 and exact directory membership;872796 bytes.",
+    "Complete1180event hash chain/head verified; exact149row and908event historical prefix compared to independently reviewed packet predecessor hashes. Prior six study projections and old statistics claims unchanged.",
+    "New RESERVE/TRANSITION/COMMIT events replayed with exact before-hashes, immutable contexts/reservations and validated after-rows. Replayed rows equal closed194row export;44 committed witnesses match exact commit events.",
+    "All44 requests independently recompiled sequentially from frozen protocol and preceding answers, matching raw payload/context/witness hashes.",
+    "All44 unique generation IDs disjoint from historical IDs; raw response/statistics/checkpoint hashes and questionnaire parse/output bindings verified. Native billing normalized from independent deep copies, bounds/BYOK/provider/unsupported activity checks applied. Exact invoices independently summed with Decimal, per-generation rounded amounts checked against ledger.",
+    "Observed response models and raw statistics models separately retained: Azure response undated alias, raw statistics dated alias; Qwen same observed label. Exact backend revisions not independently verified.",
+    "Failed45th planned request and dispatch intent retained; HTTP402 phase-local diagnostic has1POST while cumulative retained failure has45POSTs. No response/statistics/checkpoint/provider charge claimed for failed row;775microUSD retained UNCERTAIN.",
+    "Independent transport counts45POST intents/44statistics intents/10catalog files; zero retry intent. Execution orders0\u201343 committed,44 failed,45\u201379 NOT_ATTEMPTED.",
+    "Stopped transcript independently reconstructed including FAILED_UNCERTAIN row, all80 envelope dispositions reproduced, internal automatic stopped diagnostics exactly recomputed. Full comparison incomplete; no partial contrast estimates published by this receipt.",
+    "Corrected public stop report counters, charges, model labels and inference language match independently verified closed evidence."
+  ],
+  "kind": "INDEPENDENT_CLOSED_E02_WRAPPER_CROSSMODEL_ACTUAL_REVIEW",
+  "limitations": [
+    "No full fresh owner implementation replay, live owner read, actual credential read, account GET, model request or historical raw-journal reread by auditor. Immutable historical prefixes are compared to previously independently accepted release hashes.",
+    "Old journal immutability flags are retained collector observations; this receipt does not newly reread original live journals.",
+    "Canonical parsed provider-object retention is verified; original HTTP wire bytes are not retained.",
+    "44 syntactically parsed ANSWER responses do not establish valid scores for every item, representative population, human persuasion, external validity or complete registered inference.",
+    "HTTP402 cause remains unresolved. Aggregate key-status observation cannot reconcile or release the failed775microUSD hold.",
+    "Exact serving backend weights/revisions not established solely by response/invoice aliases.",
+    "Original $5 combined/$1E02/$0E01 inference caps remain; no increase, continuation or model retry authority is created."
+  ],
+  "next_unblocked_task": "Lead records partial acceptance without claiming full study completion. E01v1.5 runtime qualification remains separately owned and independently reviewed.",
+  "reproduction": {
+    "CPU_limit_seconds": 75,
+    "bytes": 13882,
+    "bytes_limit": 16777216,
+    "closed_only_application_bytes": 4907397,
+    "command": "python3 /tmp/civiclab-auditor-e02-stopped-20261116.py",
+    "script": "/tmp/civiclab-auditor-e02-stopped-20261116.py",
+    "sha256": "1416699b7b58cbb58632adcdbc98cb6d3a85385f709f1156955078c1313f33d0",
+    "wall_alarm_seconds": 90
+  },
+  "scientific_effect_claim": "NOT_ACCEPTED",
+  "summary": {
+    "application_bytes_read": 4907397,
+    "auditor_cost_USD": 0,
+    "auditor_credential_reads": 0,
+    "auditor_live_owner_accesses": 0,
+    "auditor_network_requests": 0,
+    "automatic_partial_diagnostic_analysis_sha256": "68d625ffb2ad1d11a1139d930d0bd895ebe8a97db883a83f686d78ecf4220da8",
+    "checks_passed": 783,
+    "cumulative_consumption_microusd": 16149,
+    "events": 1180,
+    "failed_execution_order": 44,
+    "full_registered_comparison": "NOT_RUN_INCOMPLETE",
+    "historical_holds_microusd": [
+      340,
+      340,
+      788,
+      1008
+    ],
+    "journal_bytes": 872796,
+    "journal_files": 325,
+    "new_POST_attempts": 45,
+    "new_catalog_GETs": 10,
+    "new_committed_responses": 44,
+    "new_conservative_consumption_microusd": 3928,
+    "new_settled_rounded_microusd": 3153,
+    "new_statistics_GETs": 44,
+    "new_uncertain_hold_microusd": 775,
+    "new_verified_invoice_USD": "0.0031376",
+    "no_published_partial_effect_estimates": true,
+    "phase_counts": {
+      "post": 28,
+      "pre": 16
+    },
+    "quality_counts": {
+      "ANSWER": 44
+    },
+    "rows": 194,
+    "serving_routes": [
+      {
+        "committed_responses": 22,
+        "provider": "Azure",
+        "response_model": "openai/gpt-4.1-nano",
+        "statistics_model": "openai/gpt-4.1-nano-2025-04-14"
+      },
+      {
+        "committed_responses": 22,
+        "provider": "Nebius",
+        "response_model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "statistics_model": "qwen/qwen3-30b-a3b-instruct-2507"
+      }
+    ],
+    "status": "PASS_CLOSED_PARTIAL_EVIDENCE_ACCOUNTING_AND_DIAGNOSTIC_REPRODUCIBILITY",
+    "transition_counts": {
+      "RESERVE": 45,
+      "STATISTICS_CLAIM": 44,
+      "TRANSITION": 89,
+      "WRAPPER_CROSSMODEL_COMMIT_V1": 44,
+      "WRAPPER_CROSSMODEL_GRANT_V1": 45,
+      "WRAPPER_CROSSMODEL_PRICE_REFRESH_V1": 4,
+      "WRAPPER_CROSSMODEL_START_V1": 1
+    }
+  }
+}

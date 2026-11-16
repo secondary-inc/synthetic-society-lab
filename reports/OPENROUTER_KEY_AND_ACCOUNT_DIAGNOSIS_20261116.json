@@ -1,0 +1,74 @@
+{
+  "browser_observation": {
+    "account_key_identity_independently_linked": false,
+    "account_selected": "Secondary",
+    "different_account_exclusion": "An initial Personal account credit display does not establish the Secondary organization balance and is excluded.",
+    "outcome": "Redirected to Workspaces; Error 403: You have insufficient role permissions for this action.",
+    "purchase_or_budget_change": false,
+    "secondary_credit_balance": "UNKNOWN; billing page unavailable to current browser role",
+    "url": "https://openrouter.ai/settings/credits"
+  },
+  "evidence": [
+    {
+      "bytes": 468,
+      "path": "data/processed/openrouter_key_status_20261116_01/started.json",
+      "sha256": "565935c4b72df5cc77ba360d0e6d6eda416162a3949740c9f616ceee4ae1e25a"
+    },
+    {
+      "bytes": 929,
+      "path": "data/processed/openrouter_key_status_20261116_01/result.json",
+      "sha256": "5a45031460bc12cdb57c46954b22785e225f318330e3e6a596ecaf3ddc2cc311"
+    }
+  ],
+  "financial_caps_unchanged": {
+    "E01_paid_inference_USD": 0,
+    "E02_USD": 1,
+    "shared_USD": 5
+  },
+  "independent_actual_review": "PENDING",
+  "interpretation": "The saved key authenticates and reports remaining key-limit headroom. This observation does not identify the original HTTP402 cause; account credits/in-flight limits remain unresolved. A new key is not indicated by the authentication evidence.",
+  "key_status_observation": {
+    "GET_attempts": 1,
+    "POST_attempts": 0,
+    "account_credit_balance": "NOT_PROVIDED_BY_THIS_ENDPOINT",
+    "credential_logged": false,
+    "finished_at_utc": "2026-11-16T11:15:51.470682+00:00",
+    "http_status": 200,
+    "key_status": {
+      "budgets": [
+        {
+          "limit_usd": 20,
+          "remaining_usd": 19.9870341,
+          "scope": "key_limit",
+          "spend_usd": 0.0129659
+        }
+      ],
+      "effective_budget": [
+        {
+          "limit_usd": 20,
+          "remaining_usd": 19.9870341,
+          "scope": "key_limit",
+          "spend_usd": 0.0129659
+        }
+      ],
+      "include_byok_in_limit": true,
+      "is_free_tier": false,
+      "limit": 20,
+      "limit_remaining": 19.9870341,
+      "usage": 0.0129659,
+      "usage_daily": 0.0031376,
+      "usage_monthly": 0.0129659,
+      "usage_weekly": 0.0031376
+    },
+    "owner_writes": 0,
+    "purchases": 0,
+    "raw_body_retained": false,
+    "retries": 0,
+    "status": "READONLY_STATUS_OBSERVED"
+  },
+  "kind": "LEAD_READONLY_KEY_AND_ACCOUNT_ACCESS_OBSERVATION",
+  "observed_at_utc": "2026-11-16T11:17:49.403255+00:00",
+  "official_endpoint_documentation": "https://openrouter.ai/docs/api/api-reference/api-keys/get-current-api-key",
+  "owner_followup": "Secondary account administrator needs to check prepaid credits and workspace/account restrictions. GitHub repository write access also remains unavailable.",
+  "scope": "One bounded key-status GET; no model request, purchase, rotation, financial-owner mutation or uncertainty-hold release."
+}
