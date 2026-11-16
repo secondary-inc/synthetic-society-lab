@@ -1,0 +1,76 @@
+{
+  "accepted_facts": {
+    "HTTP402_root_cause": "UNKNOWN",
+    "account_prepaid_balance": "UNKNOWN",
+    "caps_microusd": {
+      "E01_paid_inference": 0,
+      "E02": 1000000,
+      "shared": 5000000
+    },
+    "completed_studies": 4,
+    "completed_study_invoices_USD": "0.0098213",
+    "completed_study_responses": 147,
+    "conservative_exposure_microusd": 16149,
+    "failed_request_actual_cost": null,
+    "failed_request_hold_microusd": 775,
+    "incomplete_additional_studies": 1,
+    "incomplete_prefix_invoices_USD": "0.0031376",
+    "incomplete_prefix_responses": 44,
+    "key_GET_authenticated": true,
+    "key_remaining_limit_USD": "19.9870341",
+    "new_POST_attempts": 45,
+    "new_catalog_GETs": 10,
+    "new_statistics_GETs": 44,
+    "retained_holds_microusd": [
+      340,
+      340,
+      775,
+      788,
+      1008
+    ],
+    "total_research_invoices_USD": "0.0129589",
+    "total_research_responses": 191
+  },
+  "checks": [
+    "Summed four completed-study counts and Decimal invoices, then added incomplete44response prefix; totals agree.",
+    "Five retained uncertainty holds, cumulative conservative exposure and unchanged caps agree with independent closed actual audit.",
+    "Key status is authenticated with remaining key-limit headroom; no prepaid balance or HTTP402 cause inferred, and no hold released.",
+    "Four checkpoint references to independent E02/key reviews and public diagnosis match exact current bytes and hashes.",
+    "Incomplete fifth-study status and unaccepted full-study effect remain explicit."
+  ],
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "PASS_SCOPED_FACTS_WITH_ATTRIBUTION_CLARIFICATION_REQUESTED",
+  "kind": "INDEPENDENT_E02_KEY_CHECKPOINT_REPORTING_ONLY_REVIEW",
+  "reporting_clarification": {
+    "finding": "The403 browser observation is stated without explicit lead-only attribution in this paragraph. JSON labels it lead_browser_observation and the linked diagnosis correctly states account/key identity is not independently linked.",
+    "location": "Top Live blocker diagnosis paragraph",
+    "path": "reports/STATUS.md",
+    "requested_change": "Attribute403 explicitly to the lead browser observation, and state account/key identity not independently linked.",
+    "severity": "LOW_ATTRIBUTION",
+    "status": "REQUESTED_FROM_LEAD_NOT_EDITED_BY_AUDITOR"
+  },
+  "scope_limits": [
+    "This receipt certifies only listed frozen E02/key facts and numerical/reporting consistency at inspected snapshots. It does not certify later mutable file versions.",
+    "E01 runtime, latest stop audit, qualification and source gates excluded; separate reviewer owns them.",
+    "Git delivery, CI, scientific validity, human anchoring and other status claims excluded.",
+    "No owner replay/read, source data work, credentials, network, or broader tests."
+  ],
+  "snapshots": [
+    {
+      "bytes": 147726,
+      "path": "reports/STATUS.md",
+      "sha256": "26cd8c931601e4e54a68411ea92e30c632259df498506695df6891103826a59f"
+    },
+    {
+      "bytes": 25085,
+      "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+      "sha256": "7bf143c963128cb2437080b3678468b38cd69bde5f72b048e118b1af6e7b6acd"
+    }
+  ],
+  "supporting_audits": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+    "reports/INDEPENDENT_AUDIT_OPENROUTER_KEY_STATUS_ACTUAL_20261116.json",
+    "reports/INDEPENDENT_AUDIT_OPENROUTER_KEY_STATUS_REPORTING_20261116.json"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "TASK_ID": "E01_P2_V1_5_SWALLOWED_REFUSAL_DIAGNOSTIC_V2_20261116",
+  "status": "17_AUTHORED_CHECKS_PASS_BOTH_RUNTIMES_CANDIDATE_FROZEN_NO_PRODUCTION_RUNNER_OR_ACTUAL_RELEASE",
+  "FILES_CHANGED": [
+    "scripts/e01_p2_refusal_observability_candidate_v2_20261116.py",
+    "tests/test_e01_p2_refusal_observability_candidate_v2_20261116.py",
+    "configs/e01_pypdf701_guard_diagnostic_v1_proposal_20261116.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_p2_refusal_observability_candidate_v2_20261116.py": {
+      "bytes": 7311,
+      "sha256": "264eb97d73d0c584a0e58f9688c1e76b293982b76aee4ea679383212ab6180ba"
+    },
+    "tests/test_e01_p2_refusal_observability_candidate_v2_20261116.py": {
+      "bytes": 10064,
+      "sha256": "9f69725f64bd9d0cf7e02e42b78e64de7ed90aabd40ca50ccd0d47d926c39787"
+    },
+    "reports/e01_p2_refusal_observability_candidate_v2_312_initial_20261116.txt": {
+      "bytes": 2251,
+      "sha256": "e517c6cd7f8af89bd90063c95b70ef473631e2322d73b62aeec147e2963480fd"
+    },
+    "reports/e01_p2_refusal_observability_candidate_v2_312_final_20261116.txt": {
+      "bytes": 2749,
+      "sha256": "b8c8af0378b60d9415ce448eda5052c59f78e1c1c987bfbd7771cf307d3a864e"
+    },
+    "reports/e01_p2_refusal_observability_candidate_v2_311_final_20261116.txt": {
+      "bytes": 2749,
+      "sha256": "ead5f3a8450351ec817978071ca542da394736b1b291493baded1db4c9ac2607"
+    },
+    "reports/E01_P2_REFUSAL_OBSERVABILITY_V1_UNSELECTED_FAILURE_20261116.json": {
+      "bytes": 18949,
+      "sha256": "fc63350f273cab5731133babae97111ee756f0514a200a89edc24776063f33d9"
+    },
+    "reports/e01_p2_refusal_observability_candidate_v1_rejected_test_20261116.py.txt": {
+      "bytes": 7915,
+      "sha256": "9fa32a39e7247800e6cbc77eaa539e8220f42a2b1952ba952aef9ab826fdfaae"
+    },
+    "reports/E01_PYPDF701_INSTALL_V1_5_ACTUAL_ROOT_CAPTURE_20261116.json": {
+      "bytes": 1535,
+      "sha256": "1c3dde5a874456abd8ce0d2a69fd2ea20dd68f0dc504b30e674743f931e89955"
+    },
+    "configs/e01_pypdf701_guard_diagnostic_v1_proposal_20261116.json": {
+      "bytes": 9126,
+      "sha256": "ed357cbe714ff3d137ac95aa1b9500f45f93b1b9a8fa2286ef6e911507078c81"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_p2_refusal_observability_candidate_v2_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_p2_refusal_observability_candidate_v2_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final": {
+      "3.12": "17 PASS in0.012 seconds",
+      "3.11": "17 PASS in0.010 seconds"
+    },
+    "initialV2": "14 PASS on3.12 in0.009 seconds before explicit diagnostic routing/argument tightening.",
+    "v2Invocations": {
+      "3.12": 2,
+      "3.11": 1
+    },
+    "scope": "Existing guarded authored runner, bounded120s/64MiB reads/32MiB temporary writes/256KiB output. Inert authored executables were discovered by metadata only, never launched.",
+    "coverage": [
+      "A broad catch of a simulated optional helper refusal still increments original policy.violations and fails the unchanged GUEST_CAUGHT_VIOLATION postcondition. Absent authored executable produces no probe.",
+      "Original helper/native/socket/exec, read/write, write/output quota denials remain enforced. Diagnostic-recording exceptions cannot suppress original refuse.",
+      "Only closed code/operation enums and bounded numeric counters serialize; arbitrary objects never coerce and raw paths/arguments are absent.16 events/4096 bytes, overflow and saturated counters tested.",
+      "Explicit instance-only diagnostic routing makes all six prior scope/target roots unowned and unreadable; preexisting or aliased diagnostic target refuses. Only diagnostic-scope writes pass.",
+      "Exact dry-run argument delta is one --dry-run flag; original offline/hash/legacy-certs order and absolute paths remain required. No pip invocation occurred.",
+      "Frozen v1.5 source hash unchanged; original guard methods always receive delegated checks."
+    ]
+  },
+  "actualObservation": {
+    "status": "V1_5_FAILED_AND_UNACCEPTED",
+    "terminal": {
+      "bytes": 7727,
+      "sha256": "c9fbe84976f3848aae49a99153523d25b2556ccc422d020c372bbc0e73277728"
+    },
+    "stdout": {
+      "bytes": 1680,
+      "sha256": "4cdc9c3e37d8a5f8766dd2e3cdddc0f5d4493219dcd84508f133b63f08332947",
+      "meaning": "Text says all five packages installed; not installation acceptance."
+    },
+    "stderr": {
+      "bytes": 814,
+      "sha256": "01045332a080b9884fbaa02c8538db0b2aa4091f17c1334a69d90e27b7a1eead",
+      "meaning": "Final GUEST_CAUGHT_VIOLATION only; swallowed refusal code/operation is absent."
+    },
+    "cause": "UNKNOWN. Pinned session.py181-188 can catch an optional rustc subprocess denial, but later metadata-only checks found no executable at any fixed guest PATH location. This branch is a disfavored hypothesis, not an identified historical event."
+  },
+  "staticInspection": {
+    "bindingBytes": 147770,
+    "sourceBytes": 156996,
+    "savedControlBytesIncludingRepeatedMetadataRead": 21546,
+    "totalReferenceBytes": 326312,
+    "declaredStaticReferenceCap": 524288,
+    "perPipSourceCap": 131072,
+    "method": "Binding pins, no symlink components, regular nofollow reads with exact sizes/hashes. No pip source executed.",
+    "sourceRefs": [
+      {
+        "path": "pip/_internal/network/session.py",
+        "bytes": 18771,
+        "sha256": "9ac3387acd7a2e698d118364ad8ca0f1f4dcee00076ca165b5ac1f28fdbb2ce2"
+      },
+      {
+        "path": "pip/_internal/utils/temp_dir.py",
+        "bytes": 9310,
+        "sha256": "e6a3977bc33825e63abda15033cebb779ce4a756d2c0c67e293e63ca698fd198"
+      },
+      {
+        "path": "pip/_internal/utils/filesystem.py",
+        "bytes": 4950,
+        "sha256": "6a3bc0faae28725896f643e9f18aae87ee2fb2c5dbbbe50a6e8e4557d5785fae"
+      },
+      {
+        "path": "pip/_internal/commands/install.py",
+        "bytes": 29390,
+        "sha256": "af7c87414c6fc6dee00f98fd9facd10ec940bedc7d093ff084bb9025c92da7a3"
+      },
+      {
+        "path": "pip/_internal/operations/install/wheel.py",
+        "bytes": 27615,
+        "sha256": "5f9233f72520e4b94ae55350f60da291ce9d711bbc10f8bf4948b98ae103460a"
+      },
+      {
+        "path": "pip/_internal/locations/_sysconfig.py",
+        "bytes": 7724,
+        "sha256": "206cddb3ad2ab059de468802fa8781698edb121de53edfefe3b90c2428505ec5"
+      },
+      {
+        "path": "pip/_internal/utils/misc.py",
+        "bytes": 23450,
+        "sha256": "0d69d8c41508b63469ee1871120e2287a3fa6292abca433ce9d6e2fc4714f124"
+      },
+      {
+        "path": "pip/_internal/req/req_install.py",
+        "bytes": 35786,
+        "sha256": "04ca6dc47620dae1bf6feec714450b3dbde7bb0d053006ee79af334eadab13bc"
+      }
+    ],
+    "sourceRoot": ".venv/lib/python3.12/site-packages/"
+  },
+  "selectedPlan": {
+    "kind": "Disabled diagnostic-only proposal, not a fourth installation.",
+    "scope": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116",
+    "execution": "Exactly one absolute bound interpreter child, pinned pip and same five hash-bound wheels/requirements. Keep PATH and optional-probe behavior unchanged. Only explicit CLI difference is --dry-run.",
+    "limits": "30 wall seconds,20 observed CPU seconds,one main child,7soft8hard CPU per parent/child,zero helper descendants/network/model calls. Retain original bounded read/write/output guards and add16MiB diagnostic-scope logical cap. Prior full360/120/9 plus30/20/1 gives finite cumulative allocated390wall/140observedCPU/10commands.",
+    "storage": "Seven-root union: all three old target/scope pairs plus new diagnostic scope share768MiB/16384 entries. The fictional prefix target remains absent, with every target write denied. Measure current occupancy; snapshot and verify six old roots before/after.",
+    "outcome": "REFUSAL_OBSERVED, NO_REFUSAL_REPRODUCED or FAILED_DIAGNOSTIC only. No outcome accepts v3, installs packages, imports downloaded/native packages, opens research PDFs or advances source campaigns.",
+    "observability": "Bounded in-memory safe journal; prospective flush to a fixed owned file remains subject to original guards and charges. Failure to flush stays failure/UNKNOWN; no quota bypass.",
+    "notSelected": "No PATH remedy, fourth full installation, old target cleanup or acceptance of pip success text."
+  },
+  "unselectedV1": {
+    "status": "Historical test-assumption failure retained separately, not selected or certified.",
+    "finding": "Initial test incorrectly assumed shutil.which(path='') searches cwd; both runtimes returned None. This was an authored test assertion failure, not actual pip/guard failure.",
+    "preservation": "Full original source, test and both failure logs retained in18949-byte JSON bundle. Exact7915-byte rejected test also archived as reports/e01_p2_refusal_observability_candidate_v1_rejected_test_20261116.py.txt, outside active test discovery. No previous production version/target/scope was edited."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public pip text and hash-bound saved control/stdout/stderr only; no installed-package imports or file bodies, research sources, respondents, publisher data or credentials. All three failed installations remain unchanged and unaccepted.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerInstallerPipPackageNativeNetworkResearchSourceActions": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "The actual swallowed denial remains unknown; no speculative fix is asserted.",
+    "A dry-run may not reproduce an installation-time refusal. No-refusal output cannot accept an old target.",
+    "Pure adapter/journal tests are not an implemented or reviewed production runner.",
+    "Cooperative guards, metadata snapshots and logical polling retain documented OS/race/RSS/physical-I/O limitations.",
+    "Diagnostic serialization/write failure can leave cause unknown; original refusal always wins."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "No independently reviewed concrete diagnostic runner and root-bound actual release exists; the frozen candidate and disabled proposal alone cannot execute."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate reviewer assesses this exact candidate and disabled methods plan while root closes the status/delivery checkpoint. Do not expand into production or actual execution without the next explicit ownership contract."
+}

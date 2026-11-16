@@ -1,0 +1,55 @@
+{
+  "accepted_facts": {
+    "HTTP402_root_cause": "UNKNOWN",
+    "account_prepaid_balance": "UNKNOWN",
+    "caps_microusd": {
+      "E01_paid_inference": 0,
+      "E02": 1000000,
+      "shared": 5000000
+    },
+    "completed_studies": 4,
+    "completed_study_invoices_USD": "0.0098213",
+    "completed_study_responses": 147,
+    "conservative_exposure_microusd": 16149,
+    "failed_request_actual_cost": null,
+    "failed_request_hold_microusd": 775,
+    "incomplete_additional_studies": 1,
+    "incomplete_prefix_invoices_USD": "0.0031376",
+    "incomplete_prefix_responses": 44,
+    "key_GET_authenticated": true,
+    "key_remaining_limit_USD": "19.9870341",
+    "new_POST_attempts": 45,
+    "new_catalog_GETs": 10,
+    "new_statistics_GETs": 44,
+    "retained_holds_microusd": [
+      340,
+      340,
+      775,
+      788,
+      1008
+    ],
+    "total_research_invoices_USD": "0.0129589",
+    "total_research_responses": 191
+  },
+  "auditor_cost_USD": 0,
+  "closure": "Lead explicitly attributes403 to its browser observation and states key/account identity unlinked, account balance and HTTP402 cause unknown. The prior LOW attribution finding is closed without modifying the historical review.",
+  "date": "2026-11-16",
+  "decision": "PASS_SCOPED_E02_KEY_REPORTING_FINDING_CLOSED",
+  "inspected_status_snapshot": {
+    "bytes": 147826,
+    "path": "reports/STATUS.md",
+    "sha256": "aaba83fdce9d128b4b5f3ec6b525ef66aa61de13baa915238c14fed906f5fca3"
+  },
+  "kind": "INDEPENDENT_E02_KEY_REPORTING_ATTRIBUTION_CLOSURE",
+  "previous_review": {
+    "bytes": 3451,
+    "path": "reports/INDEPENDENT_AUDIT_E02_KEY_CHECKPOINT_REPORTING_20261116.json",
+    "sha256": "7509f60e8c7f1e63af82e1788ec5d27e30e886fea64a65f925b80607460ed69c"
+  },
+  "scope_limits": [
+    "Only prior listed frozen E02/key numerical facts and this attribution correction accepted.",
+    "No certification of later mutable STATUS/checkpoint versions, E01 installation or qualification, Git/CI fields or new research results.",
+    "No owner/source replay, credentials, network, broader tests or worker-file edits."
+  ],
+  "verified_paragraph": "**Live blocker diagnosis:** one reviewed read-only key-status GET returned HTTP 200 and reported $19.9870341 remaining on the key\u2019s $20 provider-side limit. This does not increase our project caps or prove prepaid account credits. In the lead\u2019s browser observation, the Secondary billing page returned 403 for insufficient role permissions. The key-to-account identity has not been independently linked; the account balance and original HTTP 402 cause remain unknown. The owner has been asked for an administrator check, not a replacement key. [Diagnosis and limits](OPENROUTER_KEY_AND_ACCOUNT_DIAGNOSIS_20261116.json)."
+}

@@ -1,0 +1,145 @@
+"""Authored effects only: no process, pip, installed package or native run."""
+import importlib.util
+import json
+import os
+from pathlib import Path
+import shutil
+import tempfile
+import unittest
+from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[1]
+def load(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module
+
+c = load('refusal_candidate', ROOT/'scripts/e01_p2_refusal_observability_candidate_v1_20261116.py')
+p = load('frozen_v1_5', ROOT/'scripts/install_e01_pypdf701_runtime_v1_5.py')
+t = load('frozen_authored_runner', ROOT/'tests/test_e01_pypdf701_install_v1_3.py')
+
+
+class RefusalObservabilityTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(prefix='e01-refusal-MOCK-')
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name).resolve()
+        self.binding = {'base_prefix': str(self.root/'MOCK_BASE'), 'pip_root': 'MOCK_PIP/pip',
+                        'pip_files': [], 'pip_metadata_ref': {'path': 'MOCK_PIP/pip.dist-info/METADATA'}}
+        self.payload = {'wheels': [], 'remaining_output_bytes': 16}
+        self.policy = c.recording_policy_class(p.GuestPolicy)(self.root, self.binding, self.payload)
+
+    def decoded(self): return json.loads(self.policy.refusal_journal.packed())
+
+    def optional_probe_simulation(self, path):
+        # Same discover/catch shape as pinned pip, with only the guard callback.
+        # The fake executable is never launched.
+        found = shutil.which('rustc', path=path)
+        if found is not None:
+            try: self.policy.audit('subprocess.Popen', (found, ['rustc', '--version'], None, None))
+            except Exception: pass
+        return 0
+
+    def test_swallowed_refusal_still_fails_original_postcondition(self):
+        tools = self.root/'MOCK_BIN'; tools.mkdir()
+        executable = tools/'rustc'; executable.write_bytes(b'MOCK NEVER EXECUTE\n'); executable.chmod(0o700)
+        self.assertEqual(self.optional_probe_simulation(str(tools)), 0)
+        self.assertEqual(self.policy.violations, 1)
+        event = self.decoded()['events'][0]
+        self.assertEqual(event['code'], 'GUEST_NETWORK_HELPER_OR_CTYPES_DENIED')
+        self.assertEqual(event['operation'], 'SUBPROCESS')
+        with self.assertRaisesRegex(p.Refused, 'GUEST_CAUGHT_VIOLATION'):
+            p.need(self.policy.violations == 0, 'GUEST_CAUGHT_VIOLATION')
+
+    def test_absent_authored_executable_has_no_denial(self):
+        tools = self.root/'MOCK_EMPTY_BIN'; tools.mkdir()
+        self.assertEqual(self.optional_probe_simulation(str(tools)), 0)
+        self.assertEqual(self.policy.violations, 0)
+        self.assertEqual(self.decoded()['events'], [])
+
+    def test_non_directory_path_prevents_probe_even_with_authored_executable(self):
+        tools = self.root/'MOCK_BIN'; tools.mkdir()
+        executable = tools/'rustc'; executable.write_bytes(b'MOCK NEVER EXECUTE\n'); executable.chmod(0o700)
+        self.assertIsNotNone(shutil.which('rustc', path=str(tools)))
+        path = c.deterministic_guest_path()
+        self.assertEqual(path, '/dev/null')
+        self.assertEqual(self.optional_probe_simulation(path), 0)
+        self.assertIsNone(shutil.which('rustc', path=path))
+        self.assertEqual(self.policy.violations, 0)
+
+    def test_sentinel_path_never_falls_back_to_current_directory(self):
+        executable = self.root/'rustc'; executable.write_bytes(b'MOCK NEVER EXECUTE\n'); executable.chmod(0o700)
+        previous = Path.cwd()
+        try:
+            os.chdir(self.root)
+            self.assertIsNotNone(shutil.which('rustc', path=''))
+            self.assertIsNone(shutil.which('rustc', path=c.deterministic_guest_path()))
+        finally: os.chdir(previous)
+
+    def test_direct_absolute_helper_native_and_network_attempts_remain_denied(self):
+        for event, expected in [('subprocess.Popen', 'SUBPROCESS'), ('ctypes.dlopen', 'NATIVE_LOAD'),
+                                ('socket.connect', 'SOCKET'), ('os.fork', 'FORK'), ('os.exec', 'EXEC')]:
+            with self.assertRaisesRegex(p.Refused, 'GUEST_NETWORK_HELPER_OR_CTYPES_DENIED'):
+                self.policy.audit(event, ('MOCK_PRIVATE_ARGUMENT_MUST_NOT_BE_LOGGED',))
+            self.assertEqual(self.decoded()['events'][-1]['operation'], expected)
+        self.assertNotIn(b'MOCK_PRIVATE_ARGUMENT', self.policy.refusal_journal.packed())
+
+    def test_read_and_write_denials_preserve_guard_and_record_only_code(self):
+        for flags, expected in [(os.O_RDONLY, 'FILE_READ'), (os.O_WRONLY, 'FILE_WRITE')]:
+            with self.assertRaises(p.Refused): self.policy.path(self.root/'MOCK_PRIVATE_PATH', flags)
+            self.assertEqual(self.decoded()['events'][-1]['operation'], expected)
+        self.assertNotIn(b'MOCK_PRIVATE_PATH', self.policy.refusal_journal.packed())
+        self.assertFalse((self.root/'MOCK_PRIVATE_PATH').exists())
+
+    def test_original_write_and_output_limits_remain_enforced(self):
+        self.policy.writes = p.CAPS['guest_cumulative_write_bytes_each']
+        with self.assertRaisesRegex(p.Refused, 'GUEST_WRITE_CAP'): self.policy.charge(b'X')
+        with self.assertRaisesRegex(p.Refused, 'GUEST_OUTPUT_CAP'): self.policy.charge(b'X'*17, True)
+        self.assertEqual([event['operation'] for event in self.decoded()['events']], ['WRITE_CHARGE', 'OUTPUT'])
+
+    def test_diagnostic_error_cannot_suppress_original_refusal(self):
+        with patch.object(self.policy.refusal_journal, 'record', side_effect=RuntimeError('MOCK_DIAGNOSTIC_FAILURE')):
+            with self.assertRaisesRegex(p.Refused, 'GUEST_READ_OUTSIDE_ALLOWLIST'):
+                self.policy.path(self.root/'MOCK_PRIVATE_PATH', os.O_RDONLY)
+        self.assertEqual(self.policy.violations, 1)
+
+    def test_journal_unknown_values_never_call_user_coercion(self):
+        class Unsafe:
+            def __str__(self): raise AssertionError('NO_COERCION')
+            def __repr__(self): raise AssertionError('NO_REPR')
+        self.policy.refusal_journal.record(Unsafe(), Unsafe())
+        self.assertEqual(self.decoded()['events'][0]['code'], 'UNKNOWN_REFUSAL_CODE')
+        self.assertEqual(self.decoded()['events'][0]['operation'], 'UNKNOWN')
+
+    def test_journal_memory_and_serialization_are_finite(self):
+        for _ in range(10000): self.policy.refusal_journal.record('GUEST_READ_OUTSIDE_ALLOWLIST', 'FILE_READ')
+        value = self.decoded()
+        self.assertEqual(len(value['events']), 16)
+        self.assertEqual(value['total_events'], 10000)
+        self.assertEqual(value['dropped_events'], 9984)
+        self.assertLessEqual(len(self.policy.refusal_journal.packed()), c.MAX_JSON_BYTES)
+
+    def test_saturated_counts_remain_finite(self):
+        journal = self.policy.refusal_journal
+        journal.total = c.MAX_COUNTER; journal.dropped = c.MAX_COUNTER
+        for _ in range(c.MAX_EVENTS+1): journal.record('GUEST_OUTPUT_CAP', 'OUTPUT')
+        self.assertTrue(self.decoded()['counter_saturated'])
+        self.assertEqual(self.decoded()['total_events'], c.MAX_COUNTER)
+
+    def test_sentinel_wrong_type_refuses(self):
+        original = Path.lstat
+        def not_character(path):
+            if path == Path('/dev/null'):
+                return type('AuthoredStat', (), {'st_mode': 0o100600})()
+            return original(path)
+        with patch.object(Path, 'lstat', not_character):
+            with self.assertRaisesRegex(ValueError, 'PATH_SENTINEL_TYPE'): c.deterministic_guest_path()
+
+    def test_original_frozen_installer_unchanged(self):
+        import hashlib
+        self.assertEqual(hashlib.sha256((ROOT/'scripts/install_e01_pypdf701_runtime_v1_5.py').read_bytes()).hexdigest(),
+                         '32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4')
+
+
+if __name__ == '__main__':
+    t.g.old.guarded_test_main()

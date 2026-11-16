@@ -1,0 +1,24 @@
+test_absent_authored_executable_has_no_denial (__main__.RefusalObservabilityTests.test_absent_authored_executable_has_no_denial) ... ok
+test_diagnostic_error_cannot_suppress_original_refusal (__main__.RefusalObservabilityTests.test_diagnostic_error_cannot_suppress_original_refusal) ... ok
+test_direct_absolute_helper_native_and_network_attempts_remain_denied (__main__.RefusalObservabilityTests.test_direct_absolute_helper_native_and_network_attempts_remain_denied) ... ok
+test_journal_memory_and_serialization_are_finite (__main__.RefusalObservabilityTests.test_journal_memory_and_serialization_are_finite) ... ok
+test_journal_unknown_values_never_call_user_coercion (__main__.RefusalObservabilityTests.test_journal_unknown_values_never_call_user_coercion) ... ok
+test_non_directory_path_prevents_probe_even_with_authored_executable (__main__.RefusalObservabilityTests.test_non_directory_path_prevents_probe_even_with_authored_executable) ... ok
+test_original_frozen_installer_unchanged (__main__.RefusalObservabilityTests.test_original_frozen_installer_unchanged) ... ok
+test_original_write_and_output_limits_remain_enforced (__main__.RefusalObservabilityTests.test_original_write_and_output_limits_remain_enforced) ... ok
+test_read_and_write_denials_preserve_guard_and_record_only_code (__main__.RefusalObservabilityTests.test_read_and_write_denials_preserve_guard_and_record_only_code) ... ok
+test_saturated_counts_remain_finite (__main__.RefusalObservabilityTests.test_saturated_counts_remain_finite) ... ok
+test_sentinel_path_never_falls_back_to_current_directory (__main__.RefusalObservabilityTests.test_sentinel_path_never_falls_back_to_current_directory) ... FAIL
+
+======================================================================
+FAIL: test_sentinel_path_never_falls_back_to_current_directory (__main__.RefusalObservabilityTests.test_sentinel_path_never_falls_back_to_current_directory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_p2_refusal_observability_candidate_v1_20261116.py", line 75, in test_sentinel_path_never_falls_back_to_current_directory
+    self.assertIsNotNone(shutil.which('rustc', path=''))
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.006s
+
+FAILED (failures=1)

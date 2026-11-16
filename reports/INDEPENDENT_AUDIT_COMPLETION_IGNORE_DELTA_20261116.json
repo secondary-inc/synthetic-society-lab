@@ -1,0 +1,60 @@
+{
+  "audited_at_utc": "2026-11-16T11:24:05.717578+00:00",
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "PASS_NARROW_RECEIPT_REVALIDATION_NO_REQUIREMENT_PROMOTION",
+  "exact_delta": {
+    "added_lines": [
+      "/.venv-e01-pypdf-7.0.1-v2/",
+      "/.venv-e01-pypdf-7.0.1-v3/"
+    ],
+    "commit": "372b0a902b1ccc96c341894ea4bcdc567c461487",
+    "current_sha256": "38238aa76b1aed3980de44522892ef9792feccd8ebfeff3376af0544143810c8",
+    "meaning": "Root-anchored exclusions prevent the second and third private/partial E01 environments from entering Git. No code execution, accounting, scientific protocol or evidence validation semantics change.",
+    "path": ".gitignore",
+    "previous_sha256": "a916ce2584a2f5a56395032725561227f734e82a0be30eda46c55ed60aeb32e4"
+  },
+  "findings": {
+    "BLOCKED": 14,
+    "NOT_RUN": 7,
+    "PASS": 2,
+    "overall": "INCOMPLETE"
+  },
+  "kind": "INDEPENDENT_EXACT_IGNORE_DELTA_COMPLETION_SUCCESSOR_REVIEW",
+  "later_scoped_audits": [
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "sha256": "e856a477ae56adf13ca44b01c7f0a00f7807a305675c262117a627c09b63672d"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_OPENROUTER_KEY_STATUS_ACTUAL_20261116.json",
+      "sha256": "ad18ede4efdca8767a621bd3b8cd9a3fc5ad3246b256834b633fa3135be7091e"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_KEY_CHECKPOINT_ATTRIBUTION_CLOSURE_20261116.json",
+      "sha256": "67039007571805ca749409d20fc0d23388e1696dbe5dbd046113a775857727d3"
+    }
+  ],
+  "new_authority": "None. Standing combined5USD/E021USD/E01paid0 limits remain, no hold release.",
+  "not_run": [
+    "No full suite, fresh install, live owner/credentials, source or respondent data, model/network/package execution, financial write or publication.",
+    "No new current E01 outcome/qualification, Git delivery or STATUS acceptance; separate owners retain those tasks."
+  ],
+  "predecessor": {
+    "bytes": 26547,
+    "path": "reports/AUDIT_COMPLETION_20261116_REQUIREMENTS.json",
+    "sha256": "88d03ce38f17343d49fd00743714bbcbca35e104e071eb7e14959dde866f9cd8"
+  },
+  "scope_checks": {
+    "all_previous_receipts_preserved": true,
+    "code_files_checked": 67,
+    "evaluator_source_changed": false,
+    "intact_PASS_evidence_references": 7,
+    "only_mismatch": [
+      ".gitignore"
+    ],
+    "requirements_identical_to_predecessor": true,
+    "unchanged_other_pins": 66
+  },
+  "temporal_scope": "Requirement statuses/reasons/evidence are copied verbatim from the November16 predecessor snapshot. Legacy active/pending fifth-run and earlier E01 wording records that earlier snapshot, not a new claim about current execution. The later independently reviewed E02 partial actual stop and key observations are linked separately; they do not close original full scientific milestones. Non-PASS mutable evidence refs remain historical and are not repinned by this narrow review."
+}
