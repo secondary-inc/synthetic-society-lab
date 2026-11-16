@@ -1,0 +1,22 @@
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (__main__.InstallerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+test_base_binary_hash_change_blocks_before_mutation (__main__.InstallerFixtureTests.test_base_binary_hash_change_blocks_before_mutation) ... ok
+test_bootstrap_hash_and_extra_pip_file_are_blockers (__main__.InstallerFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers) ... ok
+test_budget_wall_rollback_and_observed_cpu_refuse (__main__.InstallerFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse) ... FAIL
+
+======================================================================
+FAIL: test_budget_wall_rollback_and_observed_cpu_refuse (__main__.InstallerFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse)
+----------------------------------------------------------------------
+p2_installer.Refused: P2_CLOCK_REGRESSION
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_pypdf701_install_v1.py", line 293, in test_budget_wall_rollback_and_observed_cpu_refuse
+    with self.assertRaisesRegex(p.Refused, 'P2_OBSERVED_AGGREGATE_CPU_LIMIT'): budget.check()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "P2_OBSERVED_AGGREGATE_CPU_LIMIT" does not match "P2_CLOCK_REGRESSION"
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.233s
+
+FAILED (failures=1)

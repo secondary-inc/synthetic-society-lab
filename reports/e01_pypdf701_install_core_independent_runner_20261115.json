@@ -1,0 +1,34 @@
+{
+  "kind": "INDEPENDENT_P2_GUARDED_AUTHORED_TEST_EXECUTION",
+  "source_pins": {
+    "reports/E01_PYPDF701_INSTALL_V1_HANDOFF_20261115.json": "c11ea1367b8b4fd2f52c83a53f95b24cf64ea9f8a7e1fb498a769447a83d4aa6",
+    "scripts/install_e01_pypdf701_runtime_v1.py": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847",
+    "configs/e01_pypdf701_install_v1_20261115.json": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a",
+    "tests/test_e01_pypdf701_install_v1.py": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a"
+  },
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_install_v1.py']\nrunpy.run_path('tests/test_e01_pypdf701_install_v1.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "reason": null,
+      "wall_seconds": 1.6967475,
+      "output_bytes": 4596,
+      "log": "reports/e01_pypdf701_install_core_independent_312_20261115.txt",
+      "sha256": "e3abb8b88fb02160b9ee9afe612781ffd26a5b066cf177db9ed61c67adc50403"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "reason": null,
+      "wall_seconds": 1.160313375,
+      "output_bytes": 4596,
+      "log": "reports/e01_pypdf701_install_core_independent_311_20261115.txt",
+      "sha256": "8ade5a13101d01d2d8260beda9a084d9c3ac313666a1012305b0281ebe6e64bf"
+    }
+  ],
+  "maximum_invocations_per_runtime": 1,
+  "wall_seconds_each": 120,
+  "captured_bytes_each": 262144,
+  "actual_package_install_or_network": 0
+}

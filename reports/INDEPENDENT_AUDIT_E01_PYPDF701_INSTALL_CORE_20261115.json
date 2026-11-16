@@ -1,0 +1,145 @@
+{
+  "kind": "INDEPENDENT_E01_PYPDF701_INSTALL_CORE_REVIEW",
+  "review_date_America_New_York": "2026-11-15",
+  "reviewer_role": "independent_auditor_not_E01_implementer",
+  "status": "PASS_CORE_STATIC_AND_GUARDED_AUTHORED_ONLY_ACTUAL_INSTALL_BLOCKED",
+  "findings": [],
+  "scope": "Frozen P2 v1 core/methods/30-test body only. No acceptance of successful P1 v1_3 consumer delta, actual wheel packet, actual package/bootstrap execution, install, native ABI, runtime/source qualification, BOOT or EXEC.",
+  "evidence": {
+    "scripts/install_e01_pypdf701_runtime_v1.py": {
+      "bytes": 46871,
+      "sha256": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847"
+    },
+    "configs/e01_pypdf701_install_v1_20261115.json": {
+      "bytes": 6226,
+      "sha256": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a"
+    },
+    "tests/test_e01_pypdf701_install_v1.py": {
+      "bytes": 23310,
+      "sha256": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a"
+    },
+    "reports/E01_PYPDF701_INSTALL_AUTHORED_INITIAL_FAILURE_20261115.json": {
+      "bytes": 77254,
+      "sha256": "15cbe4d0a27c9ab18e0f6318c2c60fd2fab347ec6cad4732067875a3aa45daaa"
+    },
+    "reports/e01_pypdf701_install_v1_authored_312_initial_20261115.txt": {
+      "bytes": 1564,
+      "sha256": "10aa62ba804d2e1cbf9135cd06dd7ef2048e2d4f6baf86c56dd7793e6a595a1d"
+    },
+    "reports/e01_pypdf701_install_v1_authored_311_initial_20261115.txt": {
+      "bytes": 1486,
+      "sha256": "d45767178ebca0a9a8ee1fe23fa93fbb4da7faf706d6fc1a1910dfbc72159b2d"
+    },
+    "reports/e01_pypdf701_install_v1_authored_312_corrected_20261115.txt": {
+      "bytes": 4436,
+      "sha256": "826208481d2fda3a5fd1f9b735c3b68c7aba38a8ce9bc3951c47fd4abdcf1612"
+    },
+    "reports/e01_pypdf701_install_v1_authored_311_corrected_20261115.txt": {
+      "bytes": 4436,
+      "sha256": "aa8c4b51ed74b827196531bc09f1a55f2f74ab75be770856c3e8f9d7bd3f7d5e"
+    },
+    "reports/e01_pypdf701_install_v1_authored_312_final_20261115.txt": {
+      "bytes": 4596,
+      "sha256": "c625a3a74423c1bfb5d3e76daa4c3b295e3199a2297477a6ed5dc5d0db18fb27"
+    },
+    "reports/e01_pypdf701_install_v1_authored_311_final_20261115.txt": {
+      "bytes": 4596,
+      "sha256": "5c5a977fdd33702b07bb9568a436cf8ce062713e6678a9f134a7f8ce71f81106"
+    },
+    "reports/E01_PYPDF701_INSTALL_V1_HANDOFF_20261115.json": {
+      "bytes": 9263,
+      "sha256": "c11ea1367b8b4fd2f52c83a53f95b24cf64ea9f8a7e1fb498a769447a83d4aa6"
+    },
+    "reports/e01_pypdf701_install_core_independent_runner_20261115.json": {
+      "bytes": 1646,
+      "sha256": "b06a3dee1573268309b386dce1bc1be60741195548632eeb46ff4da4b63b51a7"
+    },
+    "reports/e01_pypdf701_install_core_independent_312_20261115.txt": {
+      "bytes": 4596,
+      "sha256": "e3abb8b88fb02160b9ee9afe612781ffd26a5b066cf177db9ed61c67adc50403"
+    },
+    "reports/e01_pypdf701_install_core_independent_311_20261115.txt": {
+      "bytes": 4596,
+      "sha256": "8ade5a13101d01d2d8260beda9a084d9c3ac313666a1012305b0281ebe6e64bf"
+    },
+    "data/processed/e01_pypdf701_installer_binding_v1_20261115/binding.json": {
+      "bytes": 147770,
+      "sha256": "48699591b7e734e4c103a2ba80c63940afa24258a86e57f5c45768f4800ed38e"
+    }
+  },
+  "checks": [
+    "All frozen helper/method/test/handoff sizes and hashes match root assignment. All10 authored handoff artifact pins, including original failure source/logs, reverified; no E01 files modified.",
+    "CPython3.12-S path correction is explicit --prefix exacttarget plus --ignore-installed. Public sysconfig base/platbase projections must match new purelib/platlib/scripts/data; code does not trust sys.prefix after -S.",
+    "Exactly three direct serial child commands: no-pip venv, offline hash-required wheel install and metadata-only ordinary pip check. No --python reexec, index, resolver dependency fetching, builds, compile or pip cache.",
+    "Pip is loaded only from externally hash-bound package via public importlib package path, without adding oldsite parent to sys.path. Each guest -I-B-S starts without oldsite; only exact newsite added. Version25.0.1 asserted.",
+    "All binding file identities/counts/directory totals/bytes preverified; executable hash/path and complete pip manifest rechecked after commands. This audit read only the binding JSON, not its actual interpreter/pip bodies.",
+    "Five name/version distribution identities and all active parsed dependencies must close on the fixed set. Marker AST is a deliberately narrow non-eval grammar; unsupported active specs/extras/unknown variables refuse. Explicit importlib.metadata search is newsite-only, with ordinary pipcheck as an additional gate.",
+    "Input Reader charges before bounded payload read; regular type, size, noalias/O_NOFOLLOW and inode/mtime/hash comparisons reject input substitution. Output scope/target create once; no previous environment deletion or reuse.",
+    "Guest restrictions deny network, helper subprocess/fork/exec and ctypes; downloaded module families denied. Writes restricted to stage/newenv, with reused reviewed dirfd guard and prewrite charges. Logical tree quota polled; physical OS/C IO and RSS are not claimed exhaustively bounded.",
+    "Per-parent/child CPU7/8 and finite guest remaining-wall alarm; at most3 direct mainchildren and no guest helper. wait4 records reaped CPU, parent observes self+reaped with40 cutoff and declares unresolved per-child8 upperbound. Actual blocking OS overshoot remains an explicit limitation.",
+    "Bounded output pipes, parent wall checks/kill/reap, retained stopped records, STARTED/requirements/payload/reservation/command/terminal artifacts, terminal headroom and retained partialenv/refusal of repeat checked statically and by authored effects.",
+    "P1 v1_2 COMPLETE and exact preceding failures/16MiB held charge/terminal counts, wheel hashes/ZIP/tag selection/dependency metadata/external five-wheel packet all required. Actual failed v1_2 cannot satisfy the gate. P1 v1_3 needs separate narrow consumer and particular review."
+  ],
+  "independent_tests": {
+    "invocations_each": 1,
+    "results": [
+      {
+        "runtime": "312",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 1.6967475,
+        "output_bytes": 4596,
+        "log": "reports/e01_pypdf701_install_core_independent_312_20261115.txt",
+        "sha256": "e3abb8b88fb02160b9ee9afe612781ffd26a5b066cf177db9ed61c67adc50403",
+        "tests": 30,
+        "unittest_seconds": 1.614
+      },
+      {
+        "runtime": "311",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 1.160313375,
+        "output_bytes": 4596,
+        "log": "reports/e01_pypdf701_install_core_independent_311_20261115.txt",
+        "sha256": "8ade5a13101d01d2d8260beda9a084d9c3ac313666a1012305b0281ebe6e64bf",
+        "tests": 30,
+        "unittest_seconds": 1.083
+      }
+    ],
+    "guarded_file": "tests/test_e01_pypdf701_install_v1.py",
+    "extra_guard": "The frozen guarded file executed via runpy under -I-B-S with an added denial of actual os.kill/os.killpg events. This prevents unexpected fake-PID capture paths from signalling unrelated processes; mocks remain intact. No actual signal occurred.",
+    "wall_seconds_each_cap": 120,
+    "captured_bytes_each_cap": 262144,
+    "real_package_install_or_network": 0,
+    "extra_full_E02_runs": 0
+  },
+  "bootstrap_metadata_only": {
+    "binding_ref": {
+      "bytes": 147770,
+      "path": "data/processed/e01_pypdf701_installer_binding_v1_20261115/binding.json",
+      "sha256": "48699591b7e734e4c103a2ba80c63940afa24258a86e57f5c45768f4800ed38e"
+    },
+    "kind": "E01_INSTALLER_BINDING_V1",
+    "pip_version": "25.0.1",
+    "pip_file_count": 842,
+    "counts": {
+      "directories": 102,
+      "files": 844,
+      "total_bytes": 29103678
+    },
+    "actual_package_bodies_read": 0
+  },
+  "claim_limits": [
+    "No actual pip/venv/newruntime/install/native/PDF/source/owner/key/network execution. Mock Popen/wait4/killpg effects only; the only package initializer executed is the test-authored tiny MOCK pip initializer and CLI was mocked.",
+    "The exactnewsite claim is distribution/dependency metadata closure and explicit search scope, not installed-file integrity/native safety or adversarial package analysis.",
+    "Trusted-code cooperative guards are not a general OS sandbox, RSS cap, exhaustive physical IO meter or hostile concurrent-directory-race guarantee. Startup reads and blocking OS overshoot remain outside exhaustive accounting.",
+    "Actual P1 v1_2 failed; this scope does not accept any successful v1_3 consumer or actual five-wheel packet. Root must obtain separate exact delta, binding and particular install review.",
+    "Inherited guarded tests plus added signal denial were executed; this is not an actual host pip CLI/venv compatibility proof. Real newsite/ABI/parser adequacy remains NOT_RUN.",
+    "This independent review does not certify the reviewer's own E02 work; that work remains with its separate auditor."
+  ],
+  "actual_install": "BLOCKED_PENDING_SUCCESSFUL_P1_CONSUMER_DELTA_AND_PARTICULAR_REVIEW",
+  "runtime_source_qualification": "NOT_RUN",
+  "cost_USD": 0,
+  "model_calls": 0,
+  "ownership": "Only this independent audit JSON and uniquely named audit logs/runner receipt written; no implementation/config/test/STATUS/Git/private control mutations."
+}

@@ -1,0 +1,113 @@
+{
+  "TASK_ID": "E01_P2_OFFLINE_INSTALLER_ENGINEERING_V1_20261115",
+  "kind": "E01_PYPDF701_INSTALL_V1_FROZEN_AUTHORED_HANDOFF",
+  "status": "30_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_REVIEW_ACTUAL_BLOCKED",
+  "FILES_CHANGED": [
+    "scripts/install_e01_pypdf701_runtime_v1.py",
+    "configs/e01_pypdf701_install_v1_20261115.json",
+    "tests/test_e01_pypdf701_install_v1.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/install_e01_pypdf701_runtime_v1.py": {
+      "bytes": 46871,
+      "sha256": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847"
+    },
+    "configs/e01_pypdf701_install_v1_20261115.json": {
+      "bytes": 6226,
+      "sha256": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a"
+    },
+    "tests/test_e01_pypdf701_install_v1.py": {
+      "bytes": 23310,
+      "sha256": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a"
+    },
+    "reports/E01_PYPDF701_INSTALL_AUTHORED_INITIAL_FAILURE_20261115.json": {
+      "bytes": 77254,
+      "sha256": "15cbe4d0a27c9ab18e0f6318c2c60fd2fab347ec6cad4732067875a3aa45daaa"
+    },
+    "reports/e01_pypdf701_install_v1_authored_312_initial_20261115.txt": {
+      "bytes": 1564,
+      "sha256": "10aa62ba804d2e1cbf9135cd06dd7ef2048e2d4f6baf86c56dd7793e6a595a1d"
+    },
+    "reports/e01_pypdf701_install_v1_authored_311_initial_20261115.txt": {
+      "bytes": 1486,
+      "sha256": "d45767178ebca0a9a8ee1fe23fa93fbb4da7faf706d6fc1a1910dfbc72159b2d"
+    },
+    "reports/e01_pypdf701_install_v1_authored_312_corrected_20261115.txt": {
+      "bytes": 4436,
+      "sha256": "826208481d2fda3a5fd1f9b735c3b68c7aba38a8ce9bc3951c47fd4abdcf1612"
+    },
+    "reports/e01_pypdf701_install_v1_authored_311_corrected_20261115.txt": {
+      "bytes": 4436,
+      "sha256": "aa8c4b51ed74b827196531bc09f1a55f2f74ab75be770856c3e8f9d7bd3f7d5e"
+    },
+    "reports/e01_pypdf701_install_v1_authored_312_final_20261115.txt": {
+      "bytes": 4596,
+      "sha256": "c625a3a74423c1bfb5d3e76daa4c3b295e3199a2297477a6ed5dc5d0db18fb27"
+    },
+    "reports/e01_pypdf701_install_v1_authored_311_final_20261115.txt": {
+      "bytes": 4596,
+      "sha256": "5c5a977fdd33702b07bb9568a436cf8ce062713e6678a9f134a7f8ce71f81106"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_install_v1.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_install_v1.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final": {
+      "3.12": "30 PASS, 7.913 seconds, exit 0",
+      "3.11": "30 PASS, 5.791 seconds, exit 0"
+    },
+    "initial": "Both runtimes stopped after 4 tests: one test reused a budget whose clock had already advanced to 120, then reset its clock. The production rollback guard correctly refused. The CPU case received a fresh budget; complete failed source/config/test/log bytes are preserved.",
+    "intermediate": {
+      "3.12": "29 PASS, 5.647 seconds",
+      "3.11": "29 PASS, 4.150 seconds"
+    },
+    "finalChanges": "Bootstrap directory/file/byte totals are checked, and each guest receives an independent remaining-wall alarm. The final extra test verifies that an unbound empty pip directory is refused.",
+    "invocationsPerRuntime": 3,
+    "guard": "Frozen authored runner: no actual network/process/native/research data/owner/credential access. Each invocation: 120 wall/CPU seconds, 64 MiB reads, 32 MiB temporary writes, 256 KiB output.",
+    "launcherScope": "Real capture logic uses pipes with mocked Popen/wait4/killpg; zero real child processes. All venv/install outputs come from an explicit MOCK launcher. One tiny authored MOCK pip initializer is loaded, with its CLI call mocked. No existing pip body or downloaded package is imported."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only public code/config and the root-owned bootstrap binding JSON were read. Worker did not read/hash the actual interpreter binary, pip package bodies, actual wheel/cache bytes, respondent/publisher data, research PDFs, credentials or private owner controls.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualModelCalls": 0,
+  "actualNetworkCalls": 0,
+  "actualVenvOrInstall": false,
+  "actualSourceRecoveryOrdinalConsumed": false,
+  "implementation": {
+    "target": ".venv-e01-pypdf-7.0.1-v1",
+    "packet": "Separate root-owned packet must bind exact methods/root, actual P1 terminal and hashlock refs, and all five name/version/file/size/hash identities. CLI requires external methods and packet digests. No actual packet was created.",
+    "P1": "Consumes v1_2 COMPLETE only, with prefix-relative artifact refs, full wheel hash/size/ZIP/tag/selection replay, both failed ancestor ref sets, both terminal write totals and the full 16 MiB prior failed-wheel charge.",
+    "closure": "Bounded Requires-Dist parsing and safe AST markers, without eval. Known CPython 3.12.14/macOS arm64 variables only. Active unknown/unsatisfied dependencies or extras block; inactive markers remain recorded. Exact five installed distributions and metadata closure are checked independently and by ordinary pip check.",
+    "python312": "Under -S, sys.prefix may remain the base. Use explicit --prefix plus --ignore-installed; public sysconfig target paths must resolve to the new environment. Load only the hash-bound pip package through public importlib, never add its old site-packages parent to sys.path; invoke ordinary CLI using runpy.",
+    "commands": "Exactly three serial direct children: venv without pip, offline install, metadata-only check. Install includes --no-index, exact --find-links wheel directory, --no-deps, --no-compile, --no-cache-dir, --only-binary=:all:, --require-hashes. No --python reexecution, builds, dependency fallback or helpers.",
+    "limits": "120 wall seconds; 7/8 CPU seconds per parent/child; observed self plus reaped CPU cutoff 40. Three direct children imply at most 32 CPU seconds under the kernel/no-descendants assumptions. Live CPU is not sampled; each command reserves an 8-second unresolved upper bound. Child remaining-wall alarms survive parent death subject to blocking-OS overshoot.",
+    "IO": "256 KiB captured command output, 768 MiB polled logical owned tree, per-guest Python write precharges, 64 MiB file-size cap, bounded read refs, 8 MiB controls with 32 KiB terminal headroom. These are trusted-code guards, not a physical filesystem quota, RSS limit or exhaustive OS I/O meter.",
+    "guard": "All socket/fork/subprocess/ctypes activity and downloaded pypdf/PIL/cryptography/cffi/_cffi_backend/pycparser imports are denied in guests. Writes are restricted to the new environment/stage; reviewed directory-FD cleanup handling is reused.",
+    "journal": "Create-once scope and target, durable STARTED, requirements, closure, payloads, reservations, command results/logs and terminal. Failures preserve partial environments and cannot replay. Full original pip/base bootstrap is rehashed after commands."
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "mockControls": "30 checks passed on each runtime; independent review pending.",
+    "actualP1AndPacket": "BLOCKED. Actual v1_2 stopped at cffi HTTP_FRESHNESS; no five-wheel hashlock.",
+    "actualInstall": "NOT RUN. Root alone may launch after exact independent code/binding/packet review.",
+    "runtimeOrSourceQualification": "NOT RUN. P3/P4/profile/BOOT/EXEC remain separate gates."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "No actual pip/venv process was run. Mock evidence does not establish actual host compatibility, native ABI safety, parser qualification or scientific results.",
+    "Post-startup Python audits and wrappers are cooperative trusted-code guards. Startup/OS/C-path I/O is not exhaustively measured; logical owned size is polled, and signals can overshoot blocking OS operations.",
+    "Only self and reaped-child CPU are observed. Unreaped child CPU is separately bounded, and no helper descendants are permitted.",
+    "The deliberately limited dependency grammar may refuse actual metadata. Actual five-wheel hashes and Requires-Dist records are still needed for an independently reviewed offline preflight.",
+    "The current consumer expects v1_2 COMPLETE, but that actual attempt failed. A separately accepted final P1 successor requires a narrow versioned consumer/pin delta before any actual installation.",
+    "All three authored invocations per runtime have been used. Any further correction requires a separately recorded bounded continuation.",
+    "No spending increase, credential authority, external publication, source recovery ordinal or old environment changes."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent P2 core/methods/mock review",
+    "Successful final P1 acquisition and actual five-wheel packet",
+    "Final P1 consumer/pin delta and actual metadata compatibility",
+    "Actual offline install and later runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Root requested P1 v1_3 artifact freshness remedy. Preserve this P2 candidate and resume its narrow consumer adaptation after that gate; no actual install.",
+  "builderNote": "One temporary handoff-builder Python syntax error created no files and changed no source; this structured writer replaces it.",
+  "ownership": "No STATUS, Git, auditor finding or frozen P1 edits."
+}
