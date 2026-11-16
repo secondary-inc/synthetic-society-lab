@@ -1,0 +1,44 @@
+{
+  "cost_USD": 0,
+  "kind": "ACTUAL_BOOTSTRAP_W03_DIAGNOSTIC_TEST_RESULTS",
+  "limits": {
+    "UTC_and_monotonic_seconds": 120,
+    "clock_divergence_seconds": 2,
+    "output_bytes": 262144,
+    "retries": 0
+  },
+  "new_model_calls": 0,
+  "original_remote_failure_cause": "UNKNOWN",
+  "results": [
+    {
+      "UTC_elapsed_seconds": 54.821877002716064,
+      "bytes": 1061,
+      "exit_code": 0,
+      "log": "reports/e02_W03_final_312_20261116.txt",
+      "monotonic_seconds": 54.822214957999996,
+      "reason": null,
+      "runtime": "312",
+      "sha256": "ba154ff76a71eea6ea3835d143ab44accc2295ca200125f8d8eac45ff3e4a14c",
+      "source_pins_unchanged": true
+    },
+    {
+      "UTC_elapsed_seconds": 50.134795904159546,
+      "bytes": 1061,
+      "exit_code": 0,
+      "log": "reports/e02_W03_final_311_20261116.txt",
+      "monotonic_seconds": 50.13510558400001,
+      "reason": null,
+      "runtime": "311",
+      "sha256": "26cdfb62fb900138d303b4f9344f6cfb58be4d6369d8da742ba014f8f4577620",
+      "source_pins_unchanged": true
+    }
+  ],
+  "scope": "Authored fixtures only; production code/clocks unchanged",
+  "source_pins": {
+    "src/civiclab/e02/f_wy_actual_bootstrap_control_v1.py": "798414f369d2b6f717c5c6707da33713fce79e64fd32290aafb917568102f58d",
+    "src/civiclab/e02/f_wy_actual_bootstrap_launcher_v1.py": "df9ef5066b36c78e1cf4b6f074a9cf4a715a57385de3608d8afab66b06d56a4f",
+    "src/civiclab/e02/f_wy_actual_bootstrap_v1.py": "ea7aeff90ddd42b4813a8fdb854767a81dbdf79aaccd07aab3b01a0af610d0c8",
+    "tests/test_e02_f_wy_actual_bootstrap_v1.py": "51d4dfc677db2fb5aeb92b279ed95531c8185dcdcfff19ca75b5bc29acb6c3b2"
+  },
+  "tests_per_runtime": 5
+}

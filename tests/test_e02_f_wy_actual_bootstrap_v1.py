@@ -41,6 +41,52 @@ def static_spec(native,source,tag):
             'output_directory':'data/processed/e02_F_wy_private/conditional-actual-v1-20261103-01'}
 
 
+def _run_positive_with_diagnostics(context, control):
+    """Retain only closed authored-fixture diagnostics; never replace a failure."""
+    try:
+        return api.run_authorized(context)
+    except BaseException as error:
+        try:
+            names = {Blocked: 'Blocked', OSError: 'OSError', TimeoutError: 'TimeoutError',
+                     RuntimeError: 'RuntimeError', AssertionError: 'AssertionError',
+                     KeyboardInterrupt: 'KeyboardInterrupt'}
+            reasons = {
+                'sampled RSS stop threshold', 'parent sampled RSS stop threshold',
+                'sampled whole-stage/global deadline', 'stage not normally closed',
+                'known work still live/ambiguous after normal exit',
+                'stage death with pending reservation', 'process identity ambiguous',
+                'stage failed; full charges retained; shutdown may be unknown',
+                'original journal unprovable', 'control checkpoint changed',
+                'rollback or discontinuous clocks', 'clock continuity unknown',
+                'boot continuity unavailable', 'unsupported clock continuity',
+                'expired/failed/unknown control; no work', 'no exact pending stage',
+                'control transition mismatch', 'torn state/history; no reset',
+                'whole-stage/global elapsed exceeded', 'native cumulative/state/sweep limits',
+            }
+            def describe(value):
+                if value is None: return {'type': 'NONE', 'reason': 'UNAVAILABLE'}
+                reason = value.args[0] if len(value.args) == 1 else None
+                return {'type': names.get(type(value), 'OTHER'),
+                        'reason': reason if type(reason) is str and reason in reasons else 'REDACTED'}
+            note = {'kind': 'AUTHORED_ACTUAL_BOOTSTRAP_FAILURE', 'error': describe(error),
+                    'cause': describe(error.__cause__), 'context': describe(error.__context__),
+                    'inner_cause': 'UNKNOWN_UNLESS_EXPLICITLY_RETAINED', 'state': 'UNAVAILABLE'}
+            try:
+                state = control.snapshot()
+                note.update(state='AVAILABLE',
+                            shutdown=state['shutdown'] if state['shutdown'] in
+                            ('ACTIVE', 'CLOSED', 'SHUTDOWN_UNKNOWN') else 'UNKNOWN',
+                            failed=state['failed'] if type(state['failed']) is bool else 'UNKNOWN',
+                            pending=[key for key in ORDER if state['stages'].get(key, {}).get('status') == 'PENDING'],
+                            unknown=[key for key in ORDER if state['stages'].get(key, {}).get('status') == 'UNKNOWN'])
+            except BaseException as snapshot_error:
+                note['state_error'] = describe(snapshot_error)
+            error.add_note(json.dumps(note, sort_keys=True)[:2048])
+        except BaseException:
+            pass
+        raise
+
+
 class FakeRepository:
     """Never accepts a raw input path. Every person ZIP is freshly authored."""
     def __init__(self, root, *, full=False):
@@ -138,7 +184,7 @@ class ConditionalWiringTests(unittest.TestCase):
     def test_W03_positive_KSE_reaches_true_native_actual_admission_and_replay(self):
         c,o=self.env.inspect();runtime=self.env.runtime_config(c);api.admit_execution(c,runtime)
         self.assertFalse(c.runtime_root.exists());before=Control(c).snapshot()['t0']
-        state=api.run_authorized(c);self.assertEqual(state['shutdown'],'CLOSED');self.assertEqual(state['t0'],before)
+        state=_run_positive_with_diagnostics(c,Control(c));self.assertEqual(state['shutdown'],'CLOSED');self.assertEqual(state['t0'],before)
         self.assertTrue((c.runtime_root/'.F_WY_ACTUAL_LOCAL_ONLY').is_file())
         self.assertFalse((c.runtime_root/'.F_WY_AUTHORED_ONLY').exists());self.assertFalse((c.runtime_root/'inputs').exists())
         self.assertTrue((c.runtime_root/'bootstrap_inspection/observation.local.json').is_file())
@@ -149,6 +195,32 @@ class ConditionalWiringTests(unittest.TestCase):
             p=read_partial(a,'PRIMARY');r=read_partial(a,'REPLAY');self.assertEqual(p[0].blobs(),r[0].blobs());self.assertEqual(p[2],r[2])
         self.assertEqual(Control(c).storage()['raw'],c.manifest['archive_bytes'])
         self.assertEqual(state['reserved']['rows'],24)
+
+    def test_W03_failure_note_is_bounded_redacted_and_preserves_exception(self):
+        c=self.env.admit();control=Control(c,create=True);control.start('INSPECT')
+        private='/PRIVATE/fixture respondent-row token-secret '+'x'*10000
+        try:
+            try:raise OSError(private)
+            except OSError as cause:raise Blocked(private) from cause
+        except Blocked as error:original=error
+        with patch.object(api,'run_authorized',side_effect=original):
+            with self.assertRaises(Blocked) as caught:_run_positive_with_diagnostics(c,control)
+        self.assertIs(caught.exception,original);self.assertEqual(str(original),private)
+        self.assertIsInstance(original.__cause__,OSError)
+        self.assertEqual(len(original.__notes__),1);note=original.__notes__[0]
+        self.assertLessEqual(len(note),2048);value=json.loads(note)
+        self.assertEqual(value['pending'],['INSPECT']);self.assertEqual(value['unknown'],[])
+        self.assertEqual(value['error'],{'type':'Blocked','reason':'REDACTED'})
+        self.assertEqual(value['cause'],{'type':'OSError','reason':'REDACTED'})
+        for hidden in ('PRIVATE','respondent','token-secret',str(c.control_root)):
+            self.assertNotIn(hidden,note)
+        other=Blocked('sampled RSS stop threshold')
+        with patch.object(api,'run_authorized',side_effect=other),patch.object(control,'snapshot',side_effect=OSError(private)):
+            with self.assertRaises(Blocked) as caught:_run_positive_with_diagnostics(c,control)
+        self.assertIs(caught.exception,other)
+        value=json.loads(other.__notes__[0]);self.assertEqual(value['state'],'UNAVAILABLE')
+        self.assertEqual(value['error']['reason'],'sampled RSS stop threshold')
+        self.assertNotIn('PRIVATE',other.__notes__[0])
 
     def test_W03_without_execution_release_no_native_dispatch(self):
         c,o=self.env.inspect()

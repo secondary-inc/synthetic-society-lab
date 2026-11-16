@@ -1,0 +1,188 @@
+{
+  "auditor_artifacts": [
+    {
+      "bytes": 483,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116_02/RECEIPT.json",
+      "sha256": "6c5ab4a0d28b0fc8327e717ace916e1c3429a8aa124018647b311338e8654d80"
+    },
+    {
+      "bytes": 681,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116_02/STARTED.json",
+      "sha256": "d87da22e283555d9faccf5e6386aac051aabd7cddec1341b7b7446f1b3e89c65"
+    },
+    {
+      "bytes": 574,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116_02/python-311.log",
+      "sha256": "dd46439285db1602a91a53898c788dd3a82d885bf8e437d4cfb040cf95903a74"
+    },
+    {
+      "bytes": 574,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116_02/python-312.log",
+      "sha256": "dd46439285db1602a91a53898c788dd3a82d885bf8e437d4cfb040cf95903a74"
+    },
+    {
+      "bytes": 3519,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116_02/runner.py",
+      "sha256": "c4472e82d918e61d8d2f80bc591a448539bec95f9602ab87de18a38f878f71a4"
+    },
+    {
+      "bytes": 3380,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116_02/verification.json",
+      "sha256": "5b2c0dc170ac9af75014afab5e1690a9d2d882bd1c634d2aa459f242d1c0f793"
+    },
+    {
+      "bytes": 7469,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116.py",
+      "sha256": "8d1728ee7971b21af22d042372dc47fc2c55105058ec88395bf579b8a0290a7b"
+    },
+    {
+      "bytes": 7784,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-initial-20261116.py",
+      "sha256": "03da73c99c103d943b91cbc9dee3c93f92d676553f3b8b9785df1a19413942d0"
+    },
+    {
+      "bytes": 772,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-recovery-plan-20261116.json",
+      "sha256": "16e96ca57e1f638903b5d09734b6656347881750b5f34e5a3a0301591c6408e4"
+    },
+    {
+      "bytes": 248,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/RECEIPT.json",
+      "sha256": "0053f0eb1015d7bfedfc4185a68c7af1998d3ce0efba78e2899c80bf205d2122"
+    },
+    {
+      "bytes": 681,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/STARTED.json",
+      "sha256": "f0e05689f541c0ea2119bf002f98c88ccf493d99cade9677b366f85d1b98a721"
+    },
+    {
+      "bytes": 7200,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/python-312.log",
+      "sha256": "9d850517c3739426e52c8bb4ff95c24b4dcbdf636ac812c1884e80fe55107589"
+    },
+    {
+      "bytes": 3837,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/runner.py",
+      "sha256": "979e3c26ac8bf17dc03ea400c73502fb8fea312663f7cf0961ab23e8f9f4aebf"
+    }
+  ],
+  "checks": {
+    "exact_delta": "AST normalization removing only the new helper/new regression and replacing only its positive call with the original API call equals the complete original test AST. All original assertions/other tests remain unchanged.",
+    "helper": "Successful result returns unchanged without requesting a snapshot. On failure, only fixed type/reason enums and bounded stage/status fields enter the additional2048-character note; snapshot/note failures are best effort. Bare raise preserves the same exception object and original cause/context.",
+    "independent_adverse_tests": "Four helper-only checks each runtime: success/no snapshot, original exception and snapshot failure across six exception types including interrupts, add_note failure, and allowlisted state/context preservation/redaction. All8 checks clean PASS.",
+    "production": "Three reported production source hashes match Git blobs at exact source commit and current files; no production or clock alteration.",
+    "retained_focused_evidence": "Exact1061-byte logs verify five named PASS per runtime/exit0. Result report records54.822/50.135 monotonic seconds and matching UTC under120seconds; no full-suite or native-positive replay by auditor."
+  },
+  "cost_USD": 0,
+  "draft_binding_note": "DRAFT diagnostic_test_sha25669aaf862... is an intermediate draft pin. Current final accepted test source is RESULTS pin51d4dfc677db2fb5aeb92b279ed95531c8185dcdcfff19ca75b5bc29acb6c3b2. The original prior pinb211a2cc... matches the source commit. No intermediate draft pin is treated as final acceptance.",
+  "findings": [],
+  "independent_results": [
+    {
+      "UTC_elapsed_seconds": 0.05295896530151367,
+      "bytes": 574,
+      "exit_code": 0,
+      "monotonic_seconds": 0.05295975,
+      "runtime": "312",
+      "sha256": "dd46439285db1602a91a53898c788dd3a82d885bf8e437d4cfb040cf95903a74"
+    },
+    {
+      "UTC_elapsed_seconds": 0.05147075653076172,
+      "bytes": 574,
+      "exit_code": 0,
+      "monotonic_seconds": 0.051471125000000006,
+      "runtime": "311",
+      "sha256": "dd46439285db1602a91a53898c788dd3a82d885bf8e437d4cfb040cf95903a74"
+    }
+  ],
+  "kind": "INDEPENDENT_E02_W03_CI_DIAGNOSTIC_PATCH_AUDIT",
+  "limitations": [
+    "Instrumentation supplies future closed diagnostics; it does not establish or fix original remote W03 failure cause.",
+    "Only additional diagnostic note is redacted; preserving original exception intentionally retains its original args/cause/context. This wrapper is scoped to authored fixtures.",
+    "Independent checks are helper adverse tests, not a reexecution of the full five-test native-positive bundle or entire suite. Retained root bundle is explicitly distinguished.",
+    "No real source, owner, credential, network/model call, paid execution, scientific acceptance or final fifth-E02 release."
+  ],
+  "model_calls": 0,
+  "ownership": "Independent auditor reviewed root-owned patch; no implementation/test/STATUS/prior-audit edits.",
+  "refs": {
+    "reports/E02_W03_CI_DIAGNOSTIC_DRAFT_20261116.json": {
+      "bytes": 541,
+      "path": "reports/E02_W03_CI_DIAGNOSTIC_DRAFT_20261116.json",
+      "sha256": "e0314a156c867e15edf9f5597b717ccf0eb6e9aa9d7661875f5817d65b64e324"
+    },
+    "reports/E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json": {
+      "bytes": 1664,
+      "path": "reports/E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json",
+      "sha256": "841a0d73255a31ec7ee601bc00b825cfbe6bd5eff8fe68ff0e6ebbd214ae6a08"
+    },
+    "reports/e02_W03_final_311_20261116.txt": {
+      "bytes": 1061,
+      "path": "reports/e02_W03_final_311_20261116.txt",
+      "sha256": "26cdfb62fb900138d303b4f9344f6cfb58be4d6369d8da742ba014f8f4577620"
+    },
+    "reports/e02_W03_final_312_20261116.txt": {
+      "bytes": 1061,
+      "path": "reports/e02_W03_final_312_20261116.txt",
+      "sha256": "ba154ff76a71eea6ea3835d143ab44accc2295ca200125f8d8eac45ff3e4a14c"
+    },
+    "src/civiclab/e02/f_wy_actual_bootstrap_control_v1.py": {
+      "bytes": 17322,
+      "path": "src/civiclab/e02/f_wy_actual_bootstrap_control_v1.py",
+      "sha256": "798414f369d2b6f717c5c6707da33713fce79e64fd32290aafb917568102f58d"
+    },
+    "src/civiclab/e02/f_wy_actual_bootstrap_launcher_v1.py": {
+      "bytes": 13696,
+      "path": "src/civiclab/e02/f_wy_actual_bootstrap_launcher_v1.py",
+      "sha256": "df9ef5066b36c78e1cf4b6f074a9cf4a715a57385de3608d8afab66b06d56a4f"
+    },
+    "src/civiclab/e02/f_wy_actual_bootstrap_v1.py": {
+      "bytes": 23081,
+      "path": "src/civiclab/e02/f_wy_actual_bootstrap_v1.py",
+      "sha256": "ea7aeff90ddd42b4813a8fdb854767a81dbdf79aaccd07aab3b01a0af610d0c8"
+    },
+    "tests/test_e02_f_wy_actual_bootstrap_v1.py": {
+      "bytes": 35821,
+      "path": "tests/test_e02_f_wy_actual_bootstrap_v1.py",
+      "sha256": "51d4dfc677db2fb5aeb92b279ed95531c8185dcdcfff19ca75b5bc29acb6c3b2"
+    }
+  },
+  "retained_results": [
+    {
+      "UTC_elapsed_seconds": 54.821877002716064,
+      "bytes": 1061,
+      "exit_code": 0,
+      "log": "reports/e02_W03_final_312_20261116.txt",
+      "monotonic_seconds": 54.822214957999996,
+      "reason": null,
+      "runtime": "312",
+      "sha256": "ba154ff76a71eea6ea3835d143ab44accc2295ca200125f8d8eac45ff3e4a14c",
+      "source_pins_unchanged": true
+    },
+    {
+      "UTC_elapsed_seconds": 50.134795904159546,
+      "bytes": 1061,
+      "exit_code": 0,
+      "log": "reports/e02_W03_final_311_20261116.txt",
+      "monotonic_seconds": 50.13510558400001,
+      "reason": null,
+      "runtime": "311",
+      "sha256": "26cdfb62fb900138d303b4f9344f6cfb58be4d6369d8da742ba014f8f4577620",
+      "source_pins_unchanged": true
+    }
+  ],
+  "review_date_client": "2026-11-16 America/New_York",
+  "reviewer_harness_failure": {
+    "continuation": "Separately recorded bounded helper-only scope, no fixture/sysctl replay; four pure cases each runtime once,60wall/30CPU/256KiB output, no retry. Original script/log/receipt preserved.",
+    "existing_fixture_methods": "Blocked by auditor no-child-process guard at host sysctl boot-time probe; temporary cleanup relative dirfd open also misclassified as repo/data. No product finding or remote cause inferred.",
+    "four_independent_adverse_bodies": "PASS before guard errors",
+    "initial_process_exit": 1,
+    "original_failed_scope": "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116",
+    "recovery_plan": {
+      "bytes": 772,
+      "path": "/tmp/civiclab-auditor-e02-w03-diagnostic-recovery-plan-20261116.json",
+      "sha256": "16e96ca57e1f638903b5d09734b6656347881750b5f34e5a3a0301591c6408e4"
+    },
+    "runtime": "312"
+  },
+  "source_commit": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+  "status": "PASS_TEST_ONLY_DIAGNOSTIC_INSTRUMENTATION_REMOTE_CAUSE_UNKNOWN"
+}

@@ -1,0 +1,79 @@
+test_all_original_exception_types_and_snapshot_failure (__main__.Adverse.test_all_original_exception_types_and_snapshot_failure) ... ok
+test_allowlisted_state_only_and_context_preserved (__main__.Adverse.test_allowlisted_state_only_and_context_preserved) ... ok
+test_note_failure_preserves_original (__main__.Adverse.test_note_failure_preserves_original) ... ok
+test_success_return_and_snapshot_not_called (__main__.Adverse.test_success_return_and_snapshot_not_called) ... ok
+test_W03_failure_note_is_bounded_redacted_and_preserves_exception (test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W03_failure_note_is_bounded_redacted_and_preserves_exception) ... ERROR
+test_W03_failure_note_is_bounded_redacted_and_preserves_exception (test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W03_failure_note_is_bounded_redacted_and_preserves_exception) ... ERROR
+test_W01_production_rejects_null_or_test_authority_before_filesystem (test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W01_production_rejects_null_or_test_authority_before_filesystem) ... ERROR
+
+======================================================================
+ERROR: test_W03_failure_note_is_bounded_redacted_and_preserves_exception (test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W03_failure_note_is_bounded_redacted_and_preserves_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e02_f_wy_actual_bootstrap_v1.py", line 200, in test_W03_failure_note_is_bounded_redacted_and_preserves_exception
+    c=self.env.admit();control=Control(c,create=True);control.start('INSPECT')
+                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/f_wy_actual_bootstrap_control_v1.py", line 83, in __init__
+    start = stamp()
+            ^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/f_wy_actual_bootstrap_control_v1.py", line 24, in stamp
+    result = subprocess.run(['/usr/sbin/sysctl', '-n', 'kern.boottime'], capture_output=True, text=True, timeout=2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1823, in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+  File "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/runner.py", line 6, in guard
+    if event.startswith('socket.') or event in ('subprocess.Popen','os.system','os.posix_spawn'):raise RuntimeError('NO_NETWORK_OR_CHILD_PROCESS')
+                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: NO_NETWORK_OR_CHILD_PROCESS
+
+======================================================================
+ERROR: test_W03_failure_note_is_bounded_redacted_and_preserves_exception (test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W03_failure_note_is_bounded_redacted_and_preserves_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e02_f_wy_actual_bootstrap_v1.py", line 151, in tearDown
+    def tearDown(self):self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/runner.py", line 9, in guard
+    if p.startswith(str(root/'data')) and not p.startswith(str(root/'data/processed/toolchains')+'/'):raise RuntimeError('NO_ACTUAL_DATA_OWNER_SOURCE')
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: NO_ACTUAL_DATA_OWNER_SOURCE
+
+======================================================================
+ERROR: test_W01_production_rejects_null_or_test_authority_before_filesystem (test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W01_production_rejects_null_or_test_authority_before_filesystem)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e02_f_wy_actual_bootstrap_v1.py", line 151, in tearDown
+    def tearDown(self):self.tmp.cleanup()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/civiclab-auditor-e02-w03-diagnostic-20261116/runner.py", line 9, in guard
+    if p.startswith(str(root/'data')) and not p.startswith(str(root/'data/processed/toolchains')+'/'):raise RuntimeError('NO_ACTUAL_DATA_OWNER_SOURCE')
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: NO_ACTUAL_DATA_OWNER_SOURCE
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.050s
+
+FAILED (errors=3)

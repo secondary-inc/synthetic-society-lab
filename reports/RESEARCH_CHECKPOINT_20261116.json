@@ -1,0 +1,161 @@
+{
+  "caps_microusd": {
+    "E01_paid_inference": 0,
+    "E02": 1000000,
+    "shared": 5000000
+  },
+  "ci": {
+    "failure": "W03 authored bootstrap positive path; original internal cause UNKNOWN",
+    "focused_evidence": {
+      "bytes": 1664,
+      "path": "reports/E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json",
+      "sha256": "841a0d73255a31ec7ee601bc00b825cfbe6bd5eff8fe68ff0e6ebbd214ae6a08"
+    },
+    "head_sha": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+    "new_test_only_diagnostics": "Five focused checks PASS on each runtime; independent review pending; no production code or clock changes",
+    "overall": "FAILURE",
+    "python311": "FAILURE",
+    "python312": "SUCCESS",
+    "run_id": 43788494169,
+    "url": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/43788494169"
+  },
+  "e01": {
+    "accepted_real_forecasting_result": false,
+    "acquisition": "Three actual stopped scopes preserved. Version1.3 was not executed and its metadata expired. Fresh version1.4 continuation is being prepared; no old metadata freshness is relabeled.",
+    "current_source_document_scope": "13-state typed document union; 20 unfinished source jobs; zero accepted final ballots",
+    "dependency_upgrade": "Offline installer core passed independent review; actual installation and source qualification NOT_RUN",
+    "installer_evidence": {
+      "bytes": 9363,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_CORE_20261115.json",
+      "sha256": "d031fa33136b519a2a43829e1a232d08f450821c93bc08aa7e9753649480cc76"
+    },
+    "mode": "RETROSPECTIVE",
+    "source_scope_evidence": {
+      "bytes": 15513,
+      "path": "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json",
+      "sha256": "31bb4e389aad209d24a276347023de5f2eab3ed03a3e91d8745128dcfc8115e2"
+    }
+  },
+  "e02_completed_live_studies": [
+    {
+      "independent_review": {
+        "bytes": 13183,
+        "path": "reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json",
+        "sha256": "8764359767c8ade7ad2da42d8c8f27faa19aff2a27f001cec22367c2c3bf3d8e"
+      },
+      "model_generations": 32,
+      "report": {
+        "bytes": 23123,
+        "path": "reports/E02_EXPLORATORY_CONTINUATION_ACTUAL_20261108.json",
+        "sha256": "45e703078e7288512e383bda9561f4346140193d4b9d254d898dc95ad22c06cb"
+      },
+      "run_id": "e02-exploratory-continuation-20261108-01",
+      "scoped_review_status": "PASS_ACTUAL_LIMITED_PILOT_COMBINED_EVIDENCE_ACCOUNTING_AND_DESCRIPTIVE_RESCORING",
+      "study": "Exploratory continuation",
+      "verified_model_usage_USD": "0.0014340"
+    },
+    {
+      "independent_review": {
+        "bytes": 6808,
+        "path": "reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json",
+        "sha256": "cf2bed0882f71d33efd3cd755ace36cf3e58aaef0759b881c0361488a0ec7246"
+      },
+      "model_generations": 22,
+      "report": {
+        "bytes": 31516,
+        "path": "reports/E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json",
+        "sha256": "c3dc9da2551ce2277a75fee46faa18e9300139998f2f8364a8e95d285b05ccf6"
+      },
+      "run_id": "e02-alignment-anchoring-live-20261109-01",
+      "scoped_review_status": "PASS_ACTUAL_CLOSED_EVIDENCE_ACCOUNTING_REGISTERED_ARITHMETIC_AND_EXCLUSIONS",
+      "study": "Alignment and anchoring",
+      "verified_model_usage_USD": "0.0016084"
+    },
+    {
+      "independent_review": {
+        "bytes": 14156,
+        "path": "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json",
+        "sha256": "ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505add4c5820bcfd"
+      },
+      "model_generations": 53,
+      "report": {
+        "bytes": 63510,
+        "path": "reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json",
+        "sha256": "b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0"
+      },
+      "run_id": "e02-issue-cue-crossmodel-recovery-live-20261110-01",
+      "scoped_review_status": "PASS_SCOPED_ACTUAL_EXPLORATORY_EVIDENCE_ACCOUNTING_AND_REGISTERED_SCORES",
+      "study": "Issue cues across configurations",
+      "verified_model_usage_USD": "0.0038870"
+    },
+    {
+      "independent_review": {
+        "bytes": 14718,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+        "sha256": "a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475"
+      },
+      "model_generations": 40,
+      "report": {
+        "bytes": 34947,
+        "path": "reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+        "sha256": "fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964"
+      },
+      "run_id": "e02-wrapper-visibility-live-v1-03",
+      "scoped_review_status": "PASS_SCOPED_ACTUAL_EVIDENCE_ACCOUNTING_MATCHED_SCORING_AND_LIMITATIONS",
+      "study": "Wrapper and prior-answer visibility",
+      "verified_model_usage_USD": "0.0028919"
+    }
+  ],
+  "e02_fifth_study": {
+    "actual_execution": "NOT_RUN",
+    "batch_cap_microusd": 200000,
+    "evidence": [
+      {
+        "bytes": 18092,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_312_20261116.json",
+        "sha256": "12a137f3520ae5b501490641418775b2cc103d6ad72c09ba2bc73b8d7195ead8"
+      },
+      {
+        "bytes": 5508,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_TIMING_FINDING_20261116.json",
+        "sha256": "f21d3a42459515a89ce1f605c06db5ea3dda4d959c230643060416570a7f5601"
+      }
+    ],
+    "maximum_model_requests": 80,
+    "purpose": "Matched two-configuration comparison of wrapper sensitivity and own-prior-answer visibility; fresh responses in both configurations.",
+    "python311_continuation": "Original partial run stopped and retained; new dual-clock continuation awaiting separate implementation review",
+    "python312_functional_checks": "21 PASS; retained artifacts independently verified",
+    "timing_acceptance": "BLOCKED: elapsed UTC exceeded the original bound despite monotonic time being within it; cause UNKNOWN"
+  },
+  "e02_total_research_generations": 147,
+  "e02_verified_research_model_usage_USD": "0.0098213",
+  "full_original_completion_contract": "INCOMPLETE",
+  "git": {
+    "checkpoint_push": "PENDING",
+    "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+    "local_head_at_checkpoint": "b6f8299599def3449e0fd87848d513c5ba0a7d93"
+  },
+  "kind": "LEAD_RESEARCH_CHECKPOINT_NOT_AN_INDEPENDENT_ACCEPTANCE",
+  "limitations": [
+    "Small exploratory synthetic-model studies; no human persuasion or population-representativeness claim.",
+    "E02 original national calibration, external human validation and confirmatory requirements remain incomplete.",
+    "No prospective 2026 forecast exists in the accepted evidence.",
+    "E03/E04, advanced feeds/assistants/swarms remain gated.",
+    "Model-usage dollars exclude local compute, agent labor and infrastructure costs."
+  ],
+  "new_model_calls_during_this_checkpoint": 0,
+  "next_unblocked_work": [
+    "Review and execute the single bounded Python3.11 authored continuation; retain original timing failure.",
+    "Finish and independently review E01 fresh-metadata acquisition, then perform bounded acquisition and installation in sequence.",
+    "Commit safe completed code, logs and reports to the authorized GitHub branch; rerun remote CI once for the integrated checkpoint.",
+    "After all fifth-study release prerequisites pass, freeze the exact run packet, execute once within its cap and independently verify billing/results."
+  ],
+  "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
+  "owner_conservative_exposure_microusd": 12221,
+  "retained_uncertain_holds_microusd": [
+    340,
+    340,
+    788,
+    1008
+  ]
+}
