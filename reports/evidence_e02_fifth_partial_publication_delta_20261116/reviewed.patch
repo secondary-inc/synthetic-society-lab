@@ -1,0 +1,67 @@
+diff --git a/publications/BLOG_DRAFT.md b/publications/BLOG_DRAFT.md
+index 3bdc360..84cc240 100644
+--- a/publications/BLOG_DRAFT.md
++++ b/publications/BLOG_DRAFT.md
+@@ -1,6 +1,8 @@
+ # Testing Whether Synthetic Societies Earn Their Complexity Draft
+ 
+-Owner-review draft, updated November 11, 2026 UTC. Not published.
++Owner-review draft, updated November 16, 2026 (America/New_York). Not published. Dated totals in individual study sections are historical checkpoints.
++
++The current record contains four completed exploratory model studies and part of a fifth: 191 model responses in total, with $0.0129589 in verified model usage. The fifth study returned 44 responses before its 45th request received HTTP 402. Its full planned comparison has not been run. [Independent review](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json) checked the retained partial evidence and accounting, not a completed fifth result. Conservative budget exposure is $0.016149, including unresolved holds; the failed request's actual charge remains unknown. These figures exclude local compute and agent labor. None of these responses are observations of human persuasion.
+ 
+ A simulation can contain detailed people, convincing conversations and busy social feeds without predicting anything well. Synthetic Society Lab starts with a narrower question: what useful evidence does each extra layer add?
+ 
+diff --git a/publications/LIMITATIONS.md b/publications/LIMITATIONS.md
+index 4717b79..1d63e71 100644
+--- a/publications/LIMITATIONS.md
++++ b/publications/LIMITATIONS.md
+@@ -111,3 +111,11 @@ expired 02 scopes were not replayed or relabeled successful. Null service tier
+ remains UNKNOWN; streamed:true versus stream:false remains unresolved. The
+ [public aggregate](../reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json) has an
+ immutable capture-time pending field. [Independent scoped actual review passed](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json). Separate renderer/privacy/layout review remains pending; actual acceptance does not certify presentation or external validity.
++
++## November 16 interrupted fifth study
++
++The fifth batch has 44 committed responses out of at most 80 planned, not a completed experiment. Its 16 baseline and 28 post-treatment responses are split equally between the two configurations, but equal counts do not establish balanced or complete treatment comparisons. HTTP 402 interrupted the fixed execution order at request 45; subsequent missing responses cannot be assumed missing at random. The full registered comparison is NOT_RUN. Preserved automatic stopped-prefix diagnostics are not accepted here as a full-study effect. No post-hoc exclusion, imputation or completed-study claim resolves this interruption.
++
++The [independent partial-run review](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json) covers evidence, accounting and replay only. Each SHOWN cue uses that configuration's own baseline support; model, provider, quantization and potentially the numeric cue differ together. The complete configuration is therefore the comparison, not an isolated model-family cause. Response-model and statistics-model labels are separately preserved; neither independently proves deployed weights.
++
++Current verified research usage is $0.0129589 for 191 responses across four completed studies and this incomplete prefix. Conservative exposure is $0.016149 including all five unresolved holds; the latest failed-request reservation is $0.000775 with unknown actual cost. Earlier totals in this document remain historical checkpoints. HTTP 402 alone does not identify the rejected account limit or establish zero billing. A later successful key-authentication check does not establish prepaid account credit, so the billing cause remains unresolved. These engineering and billing observations do not establish a scientific effect, population validity or human persuasion.
+diff --git a/publications/REPRODUCIBILITY.md b/publications/REPRODUCIBILITY.md
+index 78adad4..63efc46 100644
+--- a/publications/REPRODUCIBILITY.md
++++ b/publications/REPRODUCIBILITY.md
+@@ -136,3 +136,11 @@ reproduction therefore differs from full raw-response rescoring and financial
+ verification; no new clean restoration or raw-data reconstruction is claimed.
+ Do not rerun paid launchers or reuse consumed preflight 01/expired 02/actual 03
+ scopes. All four historical holds remain unchanged. Publication stays gated.
++
++## November 16 stopped fifth-study evidence
++
++Run `e02-wrapper-crossmodel-v1-20261115-01` stopped after 44 committed responses and one HTTP 402 model-request failure. The [public closed-outcome record](../reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json) has SHA-256 `21ec7483ee0f2e91633b30c76b9fe196e27c5768c8a0131c36e0ae14ce0c6baf`. Its embedded PENDING review field is the immutable capture-time state. The later [independent actual review](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json), SHA-256 `e856a477ae56adf13ca44b01c7f0a00f7807a305675c262117a627c09b63672d`, passed 783 checks for retained partial evidence, accounting and replay. It does not accept the full 80-response study or a scientific effect.
++
++The closed record binds a private 325-file journal index and read-only owner export. The cumulative batch made 45 model POST attempts, 44 billing GETs and 10 catalog GETs. The final diagnostic's one POST counter concerns only the failed request; it is not the cumulative batch count. Forty-four verified invoices total $0.0031376; the failed request retains its $0.000775 uncertainty hold. Old owner rows, event prefix and journals were checked unchanged by the closed collector; the auditor checked retained evidence and prior pins rather than rereading the live owner.
++
++The full registered comparison is NOT_RUN, while automatically computed stopped-prefix diagnostics remain privately preserved. Public records support inspection of these claims and their hashes; reproducing the private response and billing verification requires authorized access to the retained private artifacts. They are not distributed in Git, and no clean-clone reconstruction of this private batch is claimed. Do not rerun the consumed launcher or collector for reproduction. Any future continuation must preserve this prefix, the failed request and all prior holds, with separate reviewed bounds. No financial reset, model request or external publication is implied by this documentation update.
+diff --git a/publications/TECHNICAL_PAPER_DRAFT.md b/publications/TECHNICAL_PAPER_DRAFT.md
+index e6e0505..62b06da 100644
+--- a/publications/TECHNICAL_PAPER_DRAFT.md
++++ b/publications/TECHNICAL_PAPER_DRAFT.md
+@@ -1,6 +1,15 @@
+ # Synthetic Society Lab Methods and Validation Draft
+ 
+-Draft for owner and independent scientific review. Updated November 12, 2026 (America/New_York). No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison and four separately and independently audited exploratory E02 live studies. The original full E01/E02 studies remain incomplete.
++Draft for owner and independent scientific review. Updated November 16, 2026 (America/New_York). No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison, four separately and independently audited exploratory E02 live studies, and an incomplete fifth study. The original full E01/E02 studies remain incomplete. Dated cost totals in individual study sections are historical checkpoints.
++
++## November 16 incomplete fifth study
++
++A separately frozen two-configuration wrapper-by-own-support-visibility study planned at most 80 responses. It produced 44 committed responses, comprising 16 baselines and 28 post-treatment responses, before model request 45 returned HTTP 402. Each configuration supplied 22 responses. No automatic model retry occurred. The retained evidence and accounting passed [independent partial-run review](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json); this does not accept a fifth completed experiment. The full registered comparison is NOT_RUN. Automatically computed stopped-prefix diagnostics remain preserved privately and are not presented here as an accepted effect.
++
++The [closed outcome record](../reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json) reports $0.0031376 in verified model-usage invoices for these 44 responses. Four completed studies plus this incomplete prefix contain 191 research responses and $0.0129589 in verified model usage. Conservative owner exposure is $0.016149, including rounded settlements and five uncertainty holds. The failed request retains its full $0.000775 reservation; its actual provider cost is unknown. Model usage excludes local compute, agent labor and infrastructure. These counts are not independent human participants, a pooled scientific sample or five completed studies.
++
++The two configurations couple model identity with serving provider and quantization; the SHOWN value is each configuration's own baseline answer and may differ between them. Equal response counts at this stop do not prove equal completed treatment-cell coverage. Completion and a matched analysis would still be required before interpreting a configuration contrast. No human effect, general model-family effect or representative-population claim follows from this partial batch.
++
+ 
+ ## Abstract
+ 

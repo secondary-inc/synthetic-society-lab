@@ -136,3 +136,11 @@ reproduction therefore differs from full raw-response rescoring and financial
 verification; no new clean restoration or raw-data reconstruction is claimed.
 Do not rerun paid launchers or reuse consumed preflight 01/expired 02/actual 03
 scopes. All four historical holds remain unchanged. Publication stays gated.
+
+## November 16 stopped fifth-study evidence
+
+Run `e02-wrapper-crossmodel-v1-20261115-01` stopped after 44 committed responses and one HTTP 402 model-request failure. The [public closed-outcome record](../reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json) has SHA-256 `21ec7483ee0f2e91633b30c76b9fe196e27c5768c8a0131c36e0ae14ce0c6baf`. Its embedded PENDING review field is the immutable capture-time state. The later [independent actual review](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json), SHA-256 `e856a477ae56adf13ca44b01c7f0a00f7807a305675c262117a627c09b63672d`, passed 783 checks for retained partial evidence, accounting and replay. It does not accept the full 80-response study or a scientific effect.
+
+The closed record binds a private 325-file journal index and read-only owner export. The cumulative batch made 45 model POST attempts, 44 billing GETs and 10 catalog GETs. The final diagnostic's one POST counter concerns only the failed request; it is not the cumulative batch count. Forty-four verified invoices total $0.0031376; the failed request retains its $0.000775 uncertainty hold. Old owner rows, event prefix and journals were checked unchanged by the closed collector; the auditor checked retained evidence and prior pins rather than rereading the live owner.
+
+The full registered comparison is NOT_RUN, while automatically computed stopped-prefix diagnostics remain privately preserved. Public records support inspection of these claims and their hashes; reproducing the private response and billing verification requires authorized access to the retained private artifacts. They are not distributed in Git, and no clean-clone reconstruction of this private batch is claimed. Do not rerun the consumed launcher or collector for reproduction. Any future continuation must preserve this prefix, the failed request and all prior holds, with separate reviewed bounds. No financial reset, model request or external publication is implied by this documentation update.

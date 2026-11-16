@@ -1,6 +1,15 @@
 # Synthetic Society Lab Methods and Validation Draft
 
-Draft for owner and independent scientific review. Updated November 12, 2026 (America/New_York). No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison and four separately and independently audited exploratory E02 live studies. The original full E01/E02 studies remain incomplete.
+Draft for owner and independent scientific review. Updated November 16, 2026 (America/New_York). No external release or institutional affiliation is authorized. This version reports engineering/data-preparation evidence, an independently checked post-hoc historical baseline comparison, four separately and independently audited exploratory E02 live studies, and an incomplete fifth study. The original full E01/E02 studies remain incomplete. Dated cost totals in individual study sections are historical checkpoints.
+
+## November 16 incomplete fifth study
+
+A separately frozen two-configuration wrapper-by-own-support-visibility study planned at most 80 responses. It produced 44 committed responses, comprising 16 baselines and 28 post-treatment responses, before model request 45 returned HTTP 402. Each configuration supplied 22 responses. No automatic model retry occurred. The retained evidence and accounting passed [independent partial-run review](../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json); this does not accept a fifth completed experiment. The full registered comparison is NOT_RUN. Automatically computed stopped-prefix diagnostics remain preserved privately and are not presented here as an accepted effect.
+
+The [closed outcome record](../reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json) reports $0.0031376 in verified model-usage invoices for these 44 responses. Four completed studies plus this incomplete prefix contain 191 research responses and $0.0129589 in verified model usage. Conservative owner exposure is $0.016149, including rounded settlements and five uncertainty holds. The failed request retains its full $0.000775 reservation; its actual provider cost is unknown. Model usage excludes local compute, agent labor and infrastructure. These counts are not independent human participants, a pooled scientific sample or five completed studies.
+
+The two configurations couple model identity with serving provider and quantization; the SHOWN value is each configuration's own baseline answer and may differ between them. Equal response counts at this stop do not prove equal completed treatment-cell coverage. Completion and a matched analysis would still be required before interpreting a configuration contrast. No human effect, general model-family effect or representative-population claim follows from this partial batch.
+
 
 ## Abstract
 
