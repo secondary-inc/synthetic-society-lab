@@ -5,6 +5,11 @@
     "shared": 5000000
   },
   "ci": {
+    "diagnostic_review": {
+      "bytes": 9309,
+      "path": "reports/INDEPENDENT_AUDIT_E02_W03_CI_DIAGNOSTIC_20261116.json",
+      "sha256": "4e5e32c3fe183ae43ed42e2eaab2e100e912c28f863c49c7ebd0fc5174ea1d51"
+    },
     "failure": "W03 authored bootstrap positive path; original internal cause UNKNOWN",
     "focused_evidence": {
       "bytes": 1664,
@@ -12,7 +17,7 @@
       "sha256": "841a0d73255a31ec7ee601bc00b825cfbe6bd5eff8fe68ff0e6ebbd214ae6a08"
     },
     "head_sha": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
-    "new_test_only_diagnostics": "Five focused checks PASS on each runtime; independent review pending; no production code or clock changes",
+    "new_test_only_diagnostics": "Five focused checks PASS on each runtime; independent diagnostic review PASS including eight adverse checks. Original remote cause remains UNKNOWN and a new full-suite result is pending; no production code or clock changes.",
     "overall": "FAILURE",
     "python311": "FAILURE",
     "python312": "SUCCESS",
@@ -119,11 +124,16 @@
         "bytes": 5508,
         "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_TIMING_FINDING_20261116.json",
         "sha256": "f21d3a42459515a89ce1f605c06db5ea3dda4d959c230643060416570a7f5601"
+      },
+      {
+        "bytes": 6316,
+        "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_FINAL_RECEIPT_FINDING_20261116.json",
+        "sha256": "85b8541662cdcf355b72a16ba9ed936f05fd9ee34433d3fc1665a463ee3c0ebb"
       }
     ],
     "maximum_model_requests": 80,
     "purpose": "Matched two-configuration comparison of wrapper sensitivity and own-prior-answer visibility; fresh responses in both configurations.",
-    "python311_continuation": "Original partial run stopped and retained; new dual-clock continuation awaiting separate implementation review",
+    "python311_continuation": "NOT_RUN: independent review found final-receipt clock samples bypass validation. Narrow remedy and new main-path adverse tests are in progress; original partial run and all findings retained.",
     "python312_functional_checks": "21 PASS; retained artifacts independently verified",
     "timing_acceptance": "BLOCKED: elapsed UTC exceeded the original bound despite monotonic time being within it; cause UNKNOWN"
   },
@@ -152,10 +162,17 @@
   ],
   "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
   "owner_conservative_exposure_microusd": 12221,
+  "previous_checkpoint_sha256": "47df74ca25647e98524055b365338a91b0ea473f743777b239d831e348746db5",
+  "public_checkpoint_static_review": {
+    "bytes": 8650,
+    "path": "reports/INDEPENDENT_AUDIT_E02_ROOT_RECEIPT_CHECKPOINT_20261116.json",
+    "sha256": "6039a29cbd6d3f777ba10662ac10c6181ccd610b18d68dd4d23e36166f6ff039"
+  },
   "retained_uncertain_holds_microusd": [
     340,
     340,
     788,
     1008
-  ]
+  ],
+  "updated_at_UTC": "2026-11-16T10:09:34.297192+00:00"
 }

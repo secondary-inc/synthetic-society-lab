@@ -1,0 +1,110 @@
+{
+  "kind": "E02_WRAPPER_CROSSMODEL_V1_METHODS_PROPOSAL",
+  "date_America_New_York": "2026-11-15",
+  "status": "PROPOSED_NO_EXECUTION",
+  "actual_authority": false,
+  "question": "Does the wrapper \u00d7 own-support-visibility pattern differ across two fixed serving configurations when both rerun under matched current conditions?",
+  "configurations": {
+    "A": {
+      "model": "openai/gpt-4.1-nano",
+      "requested_route": "azure",
+      "reported_provider": "Azure",
+      "route_scope": "PROVIDER_FAMILY"
+    },
+    "B": {
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "requested_route": "nebius/fp8",
+      "reported_provider": "Nebius",
+      "route_scope": "ENDPOINT_PREFIX"
+    }
+  },
+  "invariants": [
+    "Exactly the accepted four fictional contexts, two project-authored topics, source labels, system prompt and four-item instrument. Same item orders and pair seeds within/across configurations.",
+    "Both configurations get eight NEW own pre answers and 32 NEW post answers; no old response as contemporaneous control.",
+    "Same treatment information across NEWS/SOCIAL and SHOWN/OMITTED. Only textual presentation label and own support field differ. No real feed, audience or hidden treatment identifier.",
+    "80 fixed jobs: duplicate each existing 40-slot job as adjacent configuration pair. Alternate A-first/B-first by old slot parity; equal first position in pre and post phases. Preserve original four-cell ordinal balance. Each SHOWN derives exactly its own same-configuration/profile/topic valid support."
+  ],
+  "primary_estimand": "For each profile/topic, OMITTED SOCIAL-minus-NEWS support contrast per configuration; primary robustness contrast is B minus A on the intersection with both configurations complete (four observed valid post supports). Report each configuration on that same intersection as well as all-available descriptives.",
+  "secondary_estimands": [
+    "Per configuration: (SOCIAL-NEWS)_SHOWN minus (SOCIAL-NEWS)_OMITTED. Cross-configuration interaction difference B-A only on common valid-own-pre/all-four-post intersection.",
+    "Show both signed contrasts and absolute wrapper magnitude changes, strict sign reversals, topic/party breakdown and leave-one-topic-out sensitivity. Thermometer gaps and factual comprehension remain separate diagnostics."
+  ],
+  "exclusions": {
+    "shape": "Bounded object with subset of four known keys; unknown extra key invalidates all scores. Nonobject or duplicate/nonfinite JSON is parse failure. No repair/coercion/imputation.",
+    "valid_support": "Only builtin int/float finite0to100,not bool,string or null. Distinguish MISSING_KEY,MISSING_NULL,INVALID,INVALID_SHAPE.",
+    "invalid_pre": "Skip exactly2SHOWN wrapper posts for that profile/topic if own support invalid; retain both OMITTED posts and primary eligibility. Missing unrelated thermometer/comprehension never gates support.",
+    "posts": "Wrapper primary requires both OMITTED supports; interaction all4supports and valid pre. Wrong factual answer never excludes support. Report each denominator and skipped/unasked distinct from observed factual errors.",
+    "failure": "No replacements or old-launcher replay. Unknown billing,identity/route mismatch,time/price/cap/persistence failure stops entire batch; preserve holds,all remaining jobs NOT_ATTEMPTED."
+  },
+  "uncertainty": "Descriptive unit values, range, matched denominators, topic sensitivity; no inferential CI, p-value, equivalence, mechanism, population, human-persuasion or model-family causal claim. Missing/null/invalid/skipped/unasked/incorrect remain distinct. Model/provider/time are jointly varied configurations.",
+  "limits": {
+    "maximum_model_POSTs": 80,
+    "planned_pre": 16,
+    "planned_post": 64,
+    "POST_retries": 0,
+    "concurrency": 1,
+    "maximum_statistics_GETs": 240,
+    "GETs_per_generation": 3,
+    "closed_retry_statuses": [
+      404
+    ],
+    "waits_seconds": [
+      10,
+      10,
+      20
+    ],
+    "maximum_catalog_GETs": 16,
+    "catalog_refresh_before_global_slots": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70
+    ],
+    "catalogs_per_round": 2,
+    "input_tokens_per_call_max": 8192,
+    "output_tokens_per_call_max": 256,
+    "maximum_total_input_tokens": 655360,
+    "maximum_total_output_tokens": 20480,
+    "maximum_total_tokens": 675840,
+    "per_call_microusd_max": 1785,
+    "maximum_arithmetic_batch_microusd": 142800,
+    "new_subcap_microusd": 200000,
+    "same_owner_E02_cumulative_microusd": 1000000,
+    "same_owner_shared_microusd": 5000000,
+    "E01_paid_microusd": 0,
+    "phase_seconds": 120,
+    "authority_seconds": 7200,
+    "HTTP_seconds": 30,
+    "socket_seconds": 15,
+    "price_age_seconds": 900,
+    "journal_artifacts": 1536,
+    "journal_bytes": 268435456,
+    "artifact_bytes": 2000000
+  },
+  "failures": "First uncertain billing/identity/route/unsupported activity/time/price/storage/integrity/cap failure stops entire batch. Full reservation retained. No POST retry/replacement/fallback. Bounded 404 billing observation only; own invalid support skips exactly two SHOWN posts, retaining OMITTED. Price leases must fit full next120s phase; batch may stop earlier than80 if time/freshness exhausted.",
+  "practical_reuse": [
+    "Reuse exact wrapper parser/scoring helpers and existing production quote/payload, sealed one-use capability, safe transport, native usage/statistics normalization and reservation/reconciliation controls.",
+    "New pure module with fixed80-slot manifest and matched scorer; new owner subclass of accepted WrapperVisibilityOwnerV1 adds separate namespace/events and retains all149 prior rows, four uncertain holds and historical studies. No financial-core or old-module edits.",
+    "Adapt accepted wrapper client to two role-specific terms/proofs, ordered finite refresh,80 dispatch/240 lookup/16 catalog counters and1536-file journal; reuse120s phase, no POST retries and closed billing lookup schedule.",
+    "New fixed caller with create-once intent and exact reviewed packet/caller/predecessor/export bounds. Root alone supplies fresh verified endpoint terms, current same-owner snapshot/ancestry, packet bindings and secure credential, then launches once. No worker private-owner/network/credential access."
+  ],
+  "acceptance": [
+    "Independent prospective methods review before outcomes.",
+    "Exact config/text hashes,80-slot balance, own-baseline binding, allowed request differences and missingness/matched-intersection arithmetic pass pure mocked tests.",
+    "Authored same-owner lifecycle verifies80 dispatches, reservation before POST, delayed billing bounds, skipped posts/no charge, unknown bill stop/full hold, all prior rows/studies/journals preserved, route/cap/clock/alias/replay refusals.",
+    "Both Python runtimes pass bounded focused tests; independent exact code/mock evidence and fresh price/particular packet review before root live execution.",
+    "After actual execution root retains generation/provider/usage/cost/error/exclusion identities and independently recollects/scorers; no claim of current availability or live results from this proposal."
+  ],
+  "prior_pins": {
+    "configs/e02_wrapper_visibility_v1.json": "9c2ab0741b29091a590f224821098c2a64da6ddf6c996c81e89c194d71df9428",
+    "src/civiclab/e02/wrapper_visibility_v1.py": "0a96611f0bb308efe0f274dce140fb296635bfc49e07c45d5765456d73319953",
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48",
+    "src/civiclab/e02/wrapper_visibility_client_v1.py": "c35745a55384984e18bad0370c5612a9d13ee3288a4748a0258137eed52546ed",
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json": "a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475"
+  },
+  "results": null,
+  "cost_USD": 0
+}

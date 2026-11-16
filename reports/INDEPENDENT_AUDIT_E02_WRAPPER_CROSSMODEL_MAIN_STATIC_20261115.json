@@ -1,0 +1,147 @@
+{
+  "artifacts": [
+    {
+      "bytes": 460,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115/RECEIPT.json",
+      "sha256": "5726c2b9dcf80c2efa87eb29273dfc03dbb95eb6dc35bee6b9da68f9451bdc7f"
+    },
+    {
+      "bytes": 2067,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115/STARTED.json",
+      "sha256": "57190feb77567476800716a9710637ee1e57227bddc97ebd59741f440677bba8"
+    },
+    {
+      "bytes": 3097,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115/python-311.log",
+      "sha256": "75d2ce96d99a42098f247aec894ad93bcc034320badf20fdd3fd599eb228b640"
+    },
+    {
+      "bytes": 3097,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115/python-312.log",
+      "sha256": "9d34d78353f4bed468575167524c18cc9cf94a9cbef75a896e2fe12f0e15f381"
+    },
+    {
+      "bytes": 1173,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115/runner.py",
+      "sha256": "1c68fd01edfcb9e2acfbd19c5154eb67a80a9d4f2325a26cc161a1bc235dadd8"
+    },
+    {
+      "bytes": 2416,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115/verification.json",
+      "sha256": "b93b8f2c9a737264dd77eab4549a662f6d1413b732a9590042807388158ce6d3"
+    },
+    {
+      "bytes": 3110,
+      "path": "/tmp/civiclab-auditor-e02-crossmodel-main-fast-20261115.py",
+      "sha256": "a3896ab519e737212120e387f9785cfebd7e7d44c80c8bd5839d6c2a7b33960c"
+    }
+  ],
+  "checks": {
+    "caller": [
+      "Exact packet/caller/source-export/credential-reader hashes and canonical bytes before use.",
+      "Create-once execution intent precedes credential read; environment restored on success and exception.",
+      "Main dispatch implementation has no caller-supplied owner/baseline/payload/output path."
+    ],
+    "client": [
+      "At most 80 POSTs; no POST retry. At most 240 statistics GETs, three per generation with 10/10/20-second waits; retries only exact closed404 with successful close.",
+      "Two initial plus fourteen scheduled catalog GETs; role-specific verified route/fee semantics, <=900-second age and full120-second phase fit.",
+      "1536 journal files, fixed aggregate/artifact/free-space admission; durable intent and canonical retained bodies.",
+      "Known overrun/unknown bill/route/clock failure stops batch, preserving maximum reservation or larger known cost; no replacement.",
+      "Quality parse failure may settle and commit as missing, without financial retry."
+    ],
+    "owner": [
+      "START binds exact completed 40-witness wrapper ancestry, 149 prior rows and four historical holds, head/history/all study/claims/consumed hashes.",
+      "Full proposed envelope headroom includes existing holds; fixed 80 new/229 lifetime dispatches, 200000 micro-USD new, 1000000 E02, 5000000 combined, E01 zero.",
+      "Atomic GRANT/RESERVE with durable owner acknowledgement before opaque single-use POST capability.",
+      "Authenticated own pre witness and payload/context/terms/price-proof binding; exact refresh stages at global slots 10 through 70, including skipped slots.",
+      "Only current new receipt can transition; old row/study authority is preserved.",
+      "Commit independently reloads bounded canonical response/statistics/checkpoint and revalidates route/usage/cost/generation/output hash, within phase/authority time."
+    ],
+    "protocol_and_analysis": [
+      "Exact frozen source protocol/instrument/topics retained, 80 NEW ordered roles and own-pre baseline indices.",
+      "Fixed paired messages/seed/order; alternating adjacent A/B roles. No old response reuse.",
+      "Primary OMITTED B-minus-A requires valid post-pair in each configuration; secondary interaction requires valid own pre and all four posts in each configuration.",
+      "Missing thermometer/factual items remain separate from valid support; unknown keys invalidate objects; no outcome replacements.",
+      "Descriptive exact matched intersections and denominators, by-topic/leave-one-topic-out and per-configuration party/direction diagnostics; no confidence or human/model-family inference."
+    ]
+  },
+  "code_refs": {
+    "configs/e02_wrapper_crossmodel_v1_20261115.json": {
+      "bytes": 82688,
+      "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    },
+    "scripts/run_wrapper_crossmodel_v1_20261115_once.py": {
+      "bytes": 4121,
+      "path": "scripts/run_wrapper_crossmodel_v1_20261115_once.py",
+      "sha256": "92321f3739460d2020255107fc2e211414b773702d89f82bfaddedfd1cc534e2"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1.py": {
+      "bytes": 11152,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+      "sha256": "6963e7322e47c23415b6e91e78b2882f7e0787c629461f115ae6e0119836ce81"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_client.py": {
+      "bytes": 19800,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1_client.py",
+      "sha256": "3223693da0664c868dbd892090a616b24a1afe33f3f0d2db4494e2a45a61bcf3"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_owner.py": {
+      "bytes": 29652,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1_owner.py",
+      "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+    },
+    "tests/test_wrapper_crossmodel_v1_caller_20261115.py": {
+      "bytes": 6004,
+      "path": "tests/test_wrapper_crossmodel_v1_caller_20261115.py",
+      "sha256": "944cc0963783dc925e6bfd54fb27e1f78397a00a81156f2e126ff38516ac526d"
+    },
+    "tests/test_wrapper_crossmodel_v1_controls_20261115.py": {
+      "bytes": 4430,
+      "path": "tests/test_wrapper_crossmodel_v1_controls_20261115.py",
+      "sha256": "1396f734f471954ba5c840d44753b3016a14cbcefefac62d8e66b2b4f3c8f1d0"
+    },
+    "tests/test_wrapper_crossmodel_v1_pure_20261115.py": {
+      "bytes": 8554,
+      "path": "tests/test_wrapper_crossmodel_v1_pure_20261115.py",
+      "sha256": "aec73765509c27475fd3fee9e521f01768859dadccf1e340ca9544fa0eeaacb7"
+    }
+  },
+  "cost_USD": 0,
+  "findings": [],
+  "independent_results": [
+    {
+      "exit_code": 0,
+      "log_sha256": "9d34d78353f4bed468575167524c18cc9cf94a9cbef75a896e2fe12f0e15f381",
+      "output_bytes": 3097,
+      "runtime": "312",
+      "wall_seconds": 2.316151958
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "75d2ce96d99a42098f247aec894ad93bcc034320badf20fdd3fd599eb228b640",
+      "output_bytes": 3097,
+      "runtime": "311",
+      "wall_seconds": 2.328719125
+    }
+  ],
+  "kind": "INDEPENDENT_E02_WRAPPER_CROSSMODEL_MAIN_STATIC_AND_FAST_COMPONENT_REVIEW",
+  "model_calls": 0,
+  "ownership": "Independent auditor; did not implement reviewed code or alter implementer, lead STATUS or existing audit files.",
+  "pending": [
+    "Verify full 80-call authored retained outcome and failure cases under both supported runtimes.",
+    "Review final production/test freeze and fixture metadata hardening evidence.",
+    "Review actual particular packet/caller/launch/price lease and ancestry before lead-only actual invocation."
+  ],
+  "review_date_client": "2026-11-15 America/New_York",
+  "scope_limitations": [
+    "No blocking issue found in exact static scope, but not full financial lifecycle acceptance.",
+    "No current actual owner, 3033541-byte historical actual export, credential, network/model or source read by this audit.",
+    "34 fast checks are 17 pure/control/caller checks under each3.12/3.11; lifecycle tests deliberately excluded to avoid duplicating long worker execution.",
+    "Retained authored financial lifecycle evidence and final exact freeze remain required.",
+    "Fixture retention/reuse helper has known pre-read admission limitations already reported to lead: index hash/read before its regular-file/size check and aggregate checks after hashing; metadata hardening pending after in-flight runs. This does not certify arbitrary fixture paths.",
+    "No particular packet, mutable final window, launch or actual execution release.",
+    "Cooperative timing and filesystem race limitations of existing reviewed foundation remain; no sandbox-strength or prospective/human result claim."
+  ],
+  "status": "PASS_STATIC_AND_34_FAST_CHECKS_FINANCIAL_LIFECYCLE_PENDING"
+}

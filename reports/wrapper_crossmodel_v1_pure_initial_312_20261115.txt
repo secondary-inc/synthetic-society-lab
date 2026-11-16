@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/__main__.py", line 18, in <module>
+    main(module=None)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/main.py", line 104, in __init__
+    self.parseArgs(argv)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/main.py", line 153, in parseArgs
+    self.createTests()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/main.py", line 164, in createTests
+    self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 207, in loadTestsFromNames
+    suites = [self.loadTestsFromName(name, module) for name in names]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_v1_pure_20261115.py", line 13, in <module>
+    P=m.load_protocol(RAW)
+      ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1.py", line 28, in load_protocol
+    p=_load(raw,131072);source=base.load_protocol(p['base_protocol_utf8'].encode('utf-8'))
+      ^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_pilot_analysis_v1.py", line 53, in _load
+    walk(value)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_pilot_analysis_v1.py", line 47, in walk
+    walk(v, depth+1)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_pilot_analysis_v1.py", line 52, in walk
+    raise ValueError('string length exceeds bound')
+ValueError: string length exceeds bound

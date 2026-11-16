@@ -1,0 +1,27 @@
+setUpClass (test_wrapper_crossmodel_v1_pure_20261115.PureTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_wrapper_crossmodel_v1_pure_20261115.PureTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_v1_pure_20261115.py", line 39, in setUpClass
+    cls.state,cls.requests,cls.rows=build()
+                                    ^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_v1_pure_20261115.py", line 27, in build
+    state=m.next_action(RAW,ts,canonical_bytes(rows))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1.py", line 115, in next_action
+    return _walk(p,terms,_load(transcript_bytes,BOUND))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1.py", line 98, in _walk
+    if row['status']=='ANSWER':_checked_answer(row['answer'])
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1.py", line 108, in _checked_answer
+    try:_bounded_answer(answer)
+        ^^^^^^^^^^^^^^^
+NameError: name '_bounded_answer' is not defined. Did you mean: '_checked_answer'?
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.010s
+
+FAILED (errors=1)

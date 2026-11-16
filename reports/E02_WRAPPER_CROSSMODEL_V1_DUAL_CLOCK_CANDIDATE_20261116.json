@@ -1,0 +1,115 @@
+{
+  "kind": "E02_WRAPPER_CROSSMODEL_V1_DUAL_CLOCK_CONTINUATION_REVIEW_CANDIDATE",
+  "status": "PREPARED_NOT_EXECUTED_PENDING_INDEPENDENT_REVIEW",
+  "source_contract_sha256": "d9384b692f996e6e5f7b2f981d31b256e3e4aebc2959419cbe6bf80265666b1c",
+  "source_contract": {
+    "configs/e02_wrapper_crossmodel_v1_20261115.json": {
+      "bytes": 82688,
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1.py": {
+      "bytes": 11152,
+      "sha256": "6963e7322e47c23415b6e91e78b2882f7e0787c629461f115ae6e0119836ce81"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_client.py": {
+      "bytes": 19800,
+      "sha256": "3223693da0664c868dbd892090a616b24a1afe33f3f0d2db4494e2a45a61bcf3"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_owner.py": {
+      "bytes": 29652,
+      "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+    },
+    "scripts/run_wrapper_crossmodel_v1_20261115_once.py": {
+      "bytes": 4121,
+      "sha256": "92321f3739460d2020255107fc2e211414b773702d89f82bfaddedfd1cc534e2"
+    },
+    "scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py": {
+      "bytes": 9131,
+      "sha256": "c916da99d2d4c8e972893d469a8df9d01785bd717fce7f8f9f7f4aa42facb460"
+    },
+    "tests/test_wrapper_crossmodel_v1_caller_20261115.py": {
+      "bytes": 6004,
+      "sha256": "944cc0963783dc925e6bfd54fb27e1f78397a00a81156f2e126ff38516ac526d"
+    },
+    "tests/test_wrapper_crossmodel_v1_controls_20261115.py": {
+      "bytes": 4430,
+      "sha256": "1396f734f471954ba5c840d44753b3016a14cbcefefac62d8e66b2b4f3c8f1d0"
+    },
+    "tests/test_wrapper_crossmodel_v1_execution_20261115.py": {
+      "bytes": 10467,
+      "sha256": "54491e8629965019365bfbb348dcdb8f3c631671c6b7571aa91399c9e05057d9"
+    },
+    "tests/test_wrapper_crossmodel_v1_fixture_metadata_20261115.py": {
+      "bytes": 3565,
+      "sha256": "f0b5951ee6f6dd6d5dc8a9dd2a0896cc1517e8d17bde540b5c5b6bb0b854231f"
+    },
+    "tests/test_wrapper_crossmodel_v1_pure_20261115.py": {
+      "bytes": 8554,
+      "sha256": "aec73765509c27475fd3fee9e521f01768859dadccf1e340ca9544fa0eeaacb7"
+    },
+    "tests/wrapper_crossmodel_v1_fixture_20261115.py": {
+      "bytes": 8588,
+      "sha256": "ae2e2962d1a70e181309a929356db7885ee8581594b82c28c839b63bff9433e0"
+    },
+    "tests/test_wrapper_crossmodel_v1_clock_runner_20261116.py": {
+      "bytes": 4410,
+      "sha256": "9221a1335568276443c82aacb6b4138f6a2957ed6eec4de3bad62b46af59fda5"
+    }
+  },
+  "review_refs": {
+    "scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py": {
+      "sha256": "c916da99d2d4c8e972893d469a8df9d01785bd717fce7f8f9f7f4aa42facb460",
+      "bytes": 9131
+    },
+    "tests/wrapper_crossmodel_v1_fixture_20261115.py": {
+      "sha256": "ae2e2962d1a70e181309a929356db7885ee8581594b82c28c839b63bff9433e0",
+      "bytes": 8588
+    },
+    "tests/test_wrapper_crossmodel_v1_fixture_metadata_20261115.py": {
+      "sha256": "f0b5951ee6f6dd6d5dc8a9dd2a0896cc1517e8d17bde540b5c5b6bb0b854231f",
+      "bytes": 3565
+    },
+    "tests/test_wrapper_crossmodel_v1_clock_runner_20261116.py": {
+      "sha256": "9221a1335568276443c82aacb6b4138f6a2957ed6eec4de3bad62b46af59fda5",
+      "bytes": 4410
+    },
+    "reports/wrapper_crossmodel_v1_clock_metadata_312_20261116.txt": {
+      "sha256": "9f720fc93dbb091541ce8c1f5f440d95d5d3bcc2738a778c811a8eb4a6bf5e3c",
+      "bytes": 2373
+    },
+    "reports/wrapper_crossmodel_v1_clock_metadata_311_20261116.txt": {
+      "sha256": "749368b716a4948199dbc5202af3c445962568241adea26df1ef71a8ffd5a6f4",
+      "bytes": 2373
+    }
+  },
+  "tests": "13fast checks (5metadata/8clock-output-kill-reap) PASS each runtime; no full80rerun",
+  "planned_run": {
+    "runtime": "3.11ONLY",
+    "scope": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311",
+    "fixture": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/prefix",
+    "fixture_index_sha256": "62f4633ea61fe04789ed247d55480bfb3165d8a7cafe9a0daf5e7f297e9a2798",
+    "UTC_and_monotonic_seconds_each": 3600,
+    "maximum_clock_difference_seconds": 2,
+    "output_bytes": 1048576,
+    "retry": false,
+    "failfast": true,
+    "expected_functional_checks": 21,
+    "release_command": ".venv/bin/python -B scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py --reviewed-contract-sha256 d9384b692f996e6e5f7b2f981d31b256e3e4aebc2959419cbe6bf80265666b1c"
+  },
+  "prior_312": "21functional checksPASS/3352.402s; UTCwallboundnotcompliant, independent timingfinding f21d3... preserved; no new312full run planned.",
+  "prior_311": "Stoppedexit-9/52committed of53newmockreservations; all_passfalse; no retry without newreview.",
+  "partial_stop_index": {
+    "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python311/STOPPED_PARTIAL_AUTHORED_HOME/index.json",
+    "bytes": 336362,
+    "sha256": "148cc9c16956d0508b1d0f855591b19000a86687fafdfaec1eccfa84858010ed"
+  },
+  "limitations": [
+    "CooperativeOSsignals/blocking overshoot retained; no hostile filesystem containment claim.",
+    "Clock discrepancy cause UNKNOWN. Bothreal clocks nowchecked; no exception to existingtime cap.",
+    "Old4033fixturehelper andrunpins retained; metadatahardening/test-onlyretention doesnotchange financialcode.",
+    "PartialSQLitestores remain unverifiedfailureevidence; no mutation or reconciliation applied.",
+    "No actual source/owner/key/network/model/nativePDF work; no paid authority from this technicalrunner."
+  ],
+  "model_calls": 0,
+  "cost_USD": 0
+}

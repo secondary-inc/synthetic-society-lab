@@ -1,0 +1,107 @@
+{
+  "kind": "E02_DUAL_CLOCK_FINAL_SAMPLE_REMEDY_REVIEW_CANDIDATE",
+  "status": "NOT_EXECUTED_PENDING_INDEPENDENT_REVIEW",
+  "supersedes_rejected_contract": "d9384b692f996e6e5f7b2f981d31b256e3e4aebc2959419cbe6bf80265666b1c",
+  "source_contract_sha256": "3011ca56ecf7cb1c7528050f3387160f29f6ac8c372b6ef19e321e796d2b56ca",
+  "source_contract": {
+    "configs/e02_wrapper_crossmodel_v1_20261115.json": {
+      "bytes": 82688,
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1.py": {
+      "bytes": 11152,
+      "sha256": "6963e7322e47c23415b6e91e78b2882f7e0787c629461f115ae6e0119836ce81"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_client.py": {
+      "bytes": 19800,
+      "sha256": "3223693da0664c868dbd892090a616b24a1afe33f3f0d2db4494e2a45a61bcf3"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_owner.py": {
+      "bytes": 29652,
+      "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+    },
+    "scripts/run_wrapper_crossmodel_v1_20261115_once.py": {
+      "bytes": 4121,
+      "sha256": "92321f3739460d2020255107fc2e211414b773702d89f82bfaddedfd1cc534e2"
+    },
+    "scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py": {
+      "bytes": 9802,
+      "sha256": "4666d27dc1ced87a6c81693246595a583538594662472ffaf1fd2c55b23f563b"
+    },
+    "tests/test_wrapper_crossmodel_v1_caller_20261115.py": {
+      "bytes": 6004,
+      "sha256": "944cc0963783dc925e6bfd54fb27e1f78397a00a81156f2e126ff38516ac526d"
+    },
+    "tests/test_wrapper_crossmodel_v1_controls_20261115.py": {
+      "bytes": 4430,
+      "sha256": "1396f734f471954ba5c840d44753b3016a14cbcefefac62d8e66b2b4f3c8f1d0"
+    },
+    "tests/test_wrapper_crossmodel_v1_execution_20261115.py": {
+      "bytes": 10467,
+      "sha256": "54491e8629965019365bfbb348dcdb8f3c631671c6b7571aa91399c9e05057d9"
+    },
+    "tests/test_wrapper_crossmodel_v1_fixture_metadata_20261115.py": {
+      "bytes": 3565,
+      "sha256": "f0b5951ee6f6dd6d5dc8a9dd2a0896cc1517e8d17bde540b5c5b6bb0b854231f"
+    },
+    "tests/test_wrapper_crossmodel_v1_pure_20261115.py": {
+      "bytes": 8554,
+      "sha256": "aec73765509c27475fd3fee9e521f01768859dadccf1e340ca9544fa0eeaacb7"
+    },
+    "tests/wrapper_crossmodel_v1_fixture_20261115.py": {
+      "bytes": 8588,
+      "sha256": "ae2e2962d1a70e181309a929356db7885ee8581594b82c28c839b63bff9433e0"
+    },
+    "tests/test_wrapper_crossmodel_v1_clock_runner_20261116.py": {
+      "bytes": 7486,
+      "sha256": "5d3a57af44ddf1707771397c18fc4484dfc5ce1308e406493ecef7e0242fe94f"
+    }
+  },
+  "evidence_refs": {
+    "reports/e02_dual_clock_rejected_candidate_20261116/INDEX.json": {
+      "bytes": 1378,
+      "sha256": "b91e3ebca725aeab804b0f76dd617225fd79903b78177c46cdcdda29d9449c9e"
+    },
+    "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_FINAL_RECEIPT_FINDING_20261116.json": {
+      "bytes": 6316,
+      "sha256": "85b8541662cdcf355b72a16ba9ed936f05fd9ee34433d3fc1665a463ee3c0ebb"
+    },
+    "reports/wrapper_crossmodel_v1_clock_final_remedy_312_20261116.txt": {
+      "bytes": 3290,
+      "sha256": "0957c9b8592edb4fc8b667c6ec8b04ee9fe0e439cea40ab0803b25194bbc5dbf"
+    },
+    "reports/wrapper_crossmodel_v1_clock_final_remedy_311_20261116.txt": {
+      "bytes": 3290,
+      "sha256": "ca6e4a15171262d010d1d0485fbcaf1f83bcea7fe6653bb751af5e455ed39655"
+    },
+    "reports/wrapper_crossmodel_v1_clock_final_remedy_runner_20261116.json": {
+      "bytes": 1001,
+      "sha256": "3bb6fdeffd4b3b7a8c608983ecc21e03fde237594d4f4e884936a011de5f5efd"
+    }
+  },
+  "changes": [
+    "Final success elapsed sample must pass same ClockBudget.check, validating rollback, finite values, deadline and <=2s divergence against previous samples.",
+    "Failure records final_clock_error and null unvalidated elapsed; attempts partial authored-home retention. Existing reasons cannot be converted to PASS.",
+    "Five main-path test methods exercise post-capture jump, both rollbacks, both nonfinite clocks, each deadline and coherent success."
+  ],
+  "checks": {
+    "312": "18 PASS, 0.057 unittest seconds",
+    "311": "18 PASS, 0.029 unittest seconds",
+    "scope_absent": true
+  },
+  "planned_scope": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311",
+  "command": ".venv/bin/python -B scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py --reviewed-contract-sha256 3011ca56ecf7cb1c7528050f3387160f29f6ac8c372b6ef19e321e796d2b56ca",
+  "limits": {
+    "UTC_seconds": 3600,
+    "monotonic_seconds": 3600,
+    "maximum_divergence_seconds": 2,
+    "output_bytes": 1048576,
+    "retries": 0
+  },
+  "no_full_312_repeat": true,
+  "historical_312": "Functional PASS preserved separately from failed/unestablished UTC timing compliance",
+  "historical_311": "Stopped partial MOCK evidence preserved; not acceptance",
+  "actual_model_calls": 0,
+  "cost_USD": 0,
+  "git_note": "Safe source, authored logs, rejected snapshot and independent findings for root commit/push. Raw/private data and credentials excluded; root owns Git."
+}

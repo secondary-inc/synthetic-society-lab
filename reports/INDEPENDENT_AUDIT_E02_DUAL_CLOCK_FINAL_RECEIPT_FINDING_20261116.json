@@ -1,0 +1,140 @@
+{
+  "access": {
+    "actual_owner": 0,
+    "benign_local_nonresearch_process_smoke": 1,
+    "cost_USD": 0,
+    "credentials": 0,
+    "model_calls": 0,
+    "network": 0,
+    "new_lifecycle_invocations": 0
+  },
+  "auditor_artifacts": [
+    {
+      "bytes": 542,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116/RECEIPT.json",
+      "sha256": "ba96d930253eaced2276f17a155f1776b714feae4bd3863873019b2a6ef13c26"
+    },
+    {
+      "bytes": 340,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116/STARTED.json",
+      "sha256": "12c136b5c88e0efb76a4c1e71b1aa0fdf8212d87fece177c91038139f53438b7"
+    },
+    {
+      "bytes": 2373,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116/python-311.log",
+      "sha256": "9eb9404870f8a66692bd06286f1c7a28f02aa088e43dc4ec2f3dca4467ad3592"
+    },
+    {
+      "bytes": 2373,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116/python-312.log",
+      "sha256": "217de380440be7b8f39725004f0b5cdd3a384b04a5aaac9bffaaf8c185492564"
+    },
+    {
+      "bytes": 1041,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116/runner.py",
+      "sha256": "210ed86145b04e0225c3f745636da3ead5c532c017df93a369d2145965a2a1f4"
+    },
+    {
+      "bytes": 6889,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116/verification.json",
+      "sha256": "c51a1ab373cf6afaa9b10e98d88bdae9315dc4217aa1a1b61422be5ba8997e2e"
+    },
+    {
+      "bytes": 6110,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-release-20261116.py",
+      "sha256": "6c2c5e12eb73d4a54dbad1f8d1cfaa7594af86cb4163aca4ad06db600cf872bd"
+    },
+    {
+      "bytes": 2138,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-final-sample-probe-20261116.py",
+      "sha256": "78269dd5e1520b928796183d7e603604d82c454b96c2a4573867f81fb08f1ea9"
+    },
+    {
+      "bytes": 728,
+      "path": "/tmp/civiclab-auditor-e02-dual-clock-final-sample-probe-20261116.json",
+      "sha256": "8bcfd6d1b762d3a5af0f5287533582de7c51e322c07c317310d3139919a63d77"
+    }
+  ],
+  "blocked_contract_sha256": "d9384b692f996e6e5f7b2f981d31b256e3e4aebc2959419cbe6bf80265666b1c",
+  "candidate": {
+    "bytes": 5536,
+    "path": "reports/E02_WRAPPER_CROSSMODEL_V1_DUAL_CLOCK_CANDIDATE_20261116.json",
+    "sha256": "1a424cc08d68ab3a09bed1cc0c2b51052e1bbe9ca52076dd69450a8927dce6cc"
+  },
+  "demonstration": {
+    "actual_receipt": {
+      "UTC_elapsed": 100.09999999999991,
+      "UTC_ended": "2026-11-16T10:07:14.523999+00:00",
+      "actual_model_calls": 0,
+      "captured_bytes": 26,
+      "cost_USD": 0,
+      "exit_code": 0,
+      "functional_tests_pass": true,
+      "monotonic_elapsed": 0.1,
+      "source_pins_unchanged": true,
+      "status": "PASS",
+      "stop_reason": null
+    },
+    "expected": "FAILED receipt and nonzero exit on CLOCK_DISCONTINUITY. No current continuation launch.",
+    "last_valid_capture_check": {
+      "UTC_elapsed": 0.1,
+      "monotonic_elapsed": 0.1
+    },
+    "post_capture_UTC_forward_jump_seconds": 100,
+    "pure_mock_main_path": true,
+    "returned_exit_code": 0
+  },
+  "finding": "After capture returns, main directly reads budget.utc()/mono() for final elapsed values, without passing those final samples through ClockBudget.check. The success predicate validates0<=elapsed<3600 but not2-second divergence or rollback against last accepted sample. Therefore a newly observed invalid final clock sample can produce a successful receipt.",
+  "finding_id": "E02-CROSSMODEL-DUAL-CLOCK-FINAL-002",
+  "kind": "INDEPENDENT_E02_DUAL_CLOCK_FINAL_RECEIPT_FINDING",
+  "metadata_scope": "New manifest admission checks metadata count/total/per-file before hashing; index O_NOFOLLOW/NONBLOCK bounded regular-file read. Scope is exact pinned149-row authored fixture, not arbitrary untrusted fixture support or hostile filesystem containment.",
+  "not_required": [
+    "No production clock/cap changes or financial increase.",
+    "No repeat of original3.12 full80 functional run; existing functional evidence and historical timing finding remain distinct."
+  ],
+  "passing_component_evidence": {
+    "benign_actual_OS_child_kill_reap": {
+      "captured_bytes": 0,
+      "exit_code": -9,
+      "stop_reason": "OUTPUT_CAP"
+    },
+    "count_each_runtime": 13,
+    "exact_retained_prefix_index_verified": true,
+    "independent_fast_checks": [
+      {
+        "UTC_seconds": 0.11095595359802246,
+        "exit_code": 0,
+        "log_sha256": "217de380440be7b8f39725004f0b5cdd3a384b04a5aaac9bffaaf8c185492564",
+        "monotonic_seconds": 0.110956208,
+        "output_bytes": 2373,
+        "runtime": "312"
+      },
+      {
+        "UTC_seconds": 0.07907700538635254,
+        "exit_code": 0,
+        "log_sha256": "9eb9404870f8a66692bd06286f1c7a28f02aa088e43dc4ec2f3dca4467ad3592",
+        "monotonic_seconds": 0.07907725000000002,
+        "output_bytes": 2373,
+        "runtime": "311"
+      }
+    ],
+    "lifecycle_scope_still_absent": true,
+    "main_production_and_original_test_pins_unchanged": true,
+    "old_reported_PID": "ABSENT"
+  },
+  "prior_partial_stop": "Saved old3.11 receipt explicitly FAILED/exit-9, no finished suite; external note reports52 committed/53 new reservations. Stop metadata/index hash verified. Partial SQLite financial state not admitted as successful.",
+  "required_remedy": [
+    "Use a fresh same-budget validated final clock sample for success, including rollback/nonfinite/either deadline and divergence against prior accepted state.",
+    "Ensure a final clock-validation error produces a durable failed receipt/nonzero exit without retry or silently substituting an accepted sample.",
+    "Add main-path tests that inject jump, rollback, nonfinite values and deadline at the post-capture final sample; none may produce PASS.",
+    "Freeze new exact runner/test/source contract and handoff for independent review before one3.11-only continuation. Preserve original candidate, probe and stopped scopes."
+  ],
+  "review_date_client": "2026-11-16 America/New_York",
+  "runner": {
+    "bytes": 9131,
+    "path": "scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py",
+    "sha256": "c916da99d2d4c8e972893d469a8df9d01785bd717fce7f8f9f7f4aa42facb460"
+  },
+  "severity": "MEDIUM_ENGINEERING_SUCCESS_RECEIPT_CLOCK_VALIDATION",
+  "status": "BLOCKED_CURRENT_AUTHORED_CONTINUATION_RELEASE"
+}

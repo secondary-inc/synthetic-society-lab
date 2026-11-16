@@ -1,0 +1,133 @@
+{
+  "artifacts": {
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/collect_closed_evidence_v1.py": {
+      "bytes": 8665,
+      "sha256": "9276dd7d48276d2ccd6723443bf92b5d10d9c90e590884c4f3b170773d74e67a"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_reviewed_once.py": {
+      "bytes": 1473,
+      "sha256": "782149d668fab6fe354782be7334ee071b9939a804c1411c9bb1900938c64cdd"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/prepare_candidate.py": {
+      "bytes": 4452,
+      "sha256": "915da4e6cd69c049482e172f4d0906196fae8389ba1fff9fce2d13ac38f79d8f"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/test_collector_v1.py": {
+      "bytes": 4075,
+      "sha256": "5209a9e17ac7aae2e7d34a7ff630dec8aacd2aa5839a0a3a7ac05bab4bcb30e3"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/test_launch_helper.py": {
+      "bytes": 3682,
+      "sha256": "2e7917218c5ada58a3476c423bfd07d626753a20893fa7de58a4b053720b62c0"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/TERMINAL.json": {
+      "bytes": 2019,
+      "sha256": "1ee023f8128b69a9c5e0ef3f91a64e80e98a1f6f379cf60de9f10507ed5a0b18"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/catalog-A.json": {
+      "bytes": 2359,
+      "sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/catalog-B.json": {
+      "bytes": 3569,
+      "sha256": "59c512102ac025f51b2e8a0b038170b5f29901a4a68421dec926d074f9a02237"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/intent.json": {
+      "bytes": 292,
+      "sha256": "d7293d2df20660abd349017a011c5a1c83ec67df0fcacdd895760905a41cc503"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/price-release.candidate.json": {
+      "bytes": 4490,
+      "sha256": "028514d722ab824a970e63ac7684fe1da1b0169594fd0556eef5d76c983eb499"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/receipt-A.json": {
+      "bytes": 209,
+      "sha256": "369dc1b7598e4d506c2cfe828c224b6b888ef60ccf59c1bd5874d4c234890055"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/receipt-B.json": {
+      "bytes": 222,
+      "sha256": "d27922de49f095deb34c2f72032339cd1e603c18adae2b12158c4bdde975fdc9"
+    },
+    "reports/wrapper_crossmodel_v1_collector_311_20261115.txt": {
+      "bytes": 786,
+      "sha256": "7cf5cb02d1b6c94ce61f79d8ca2d6060a9ce61e53659a062c6e890508f1032b9"
+    },
+    "reports/wrapper_crossmodel_v1_collector_312_20261115.txt": {
+      "bytes": 786,
+      "sha256": "7cf5cb02d1b6c94ce61f79d8ca2d6060a9ce61e53659a062c6e890508f1032b9"
+    },
+    "reports/wrapper_crossmodel_v1_collector_final_311_20261115.txt": {
+      "bytes": 1054,
+      "sha256": "fb7d9f612905db8aca4a42361f77dc65b5a935b6897fe383929d003af4ae8936"
+    },
+    "reports/wrapper_crossmodel_v1_collector_final_312_20261115.txt": {
+      "bytes": 1054,
+      "sha256": "fb7d9f612905db8aca4a42361f77dc65b5a935b6897fe383929d003af4ae8936"
+    },
+    "reports/wrapper_crossmodel_v1_launch_helper_311_20261115.txt": {
+      "bytes": 594,
+      "sha256": "9c700eaa3c48a8f4d9fd773c111c22fba46361bed78ae3b3ab74a5338ebcd945"
+    },
+    "reports/wrapper_crossmodel_v1_launch_helper_312_20261115.txt": {
+      "bytes": 594,
+      "sha256": "3babf6af3b79a222eb323990ceb5938d9a92ca21bdece777344fd3c4edf79ad6"
+    },
+    "scripts/prepare_wrapper_crossmodel_v1_prices_20261115.py": {
+      "bytes": 5299,
+      "sha256": "e86a348f97148987d1465608e1142173563235d8ec70c2081437d922b8706e3b"
+    }
+  },
+  "helper_tests": {
+    "actual_owner_access": 0,
+    "all_exit_codes": 0,
+    "final_collector_checks_per_runtime": 8,
+    "final_launch_checks_per_runtime": 4,
+    "initial_index_checks_per_runtime": 6,
+    "prefreeze_correction": "Closed export consumed is a structured accounting object; replaced mistaken scalar assertion before any collector execution, with positive and negative regressions.",
+    "process_launches": "Mocked for launch-helper checks",
+    "runtimes": [
+      "3.12",
+      "3.11"
+    ]
+  },
+  "kind": "E02_WRAPPER_CROSSMODEL_ROOT_PREPARATION_V1",
+  "launch_template": "Disabled PENDING_REVIEW constants; future exact binding changes require particular review. Child drops PYTHONOPTIMIZE without altering parent; no automatic second invocation.",
+  "limitations": [
+    "Focused helper checks do not accept the main 80-request financial lifecycle.",
+    "No new model answers or research results.",
+    "Actual current same-owner state must match the closed snapshot before admission; no reset or hold refund.",
+    "Existing combined $5/E02 $1/E01 inference $0 ceilings unchanged."
+  ],
+  "prepared_but_not_executed": [
+    "candidate packet creation",
+    "actual model launcher",
+    "closed actual evidence collection"
+  ],
+  "price_preparation": {
+    "both_semantics_unchanged": true,
+    "cost_USD": 0,
+    "maximum_batch_microusd": 120040,
+    "missing_fee_components": "Retained explicit conditional interpretation, not observed zero; fresh matching catalog remains mandatory at runtime.",
+    "model_POSTs": 0,
+    "per_call_maximum_microusd": {
+      "A": 1285,
+      "B": 1716
+    },
+    "runtime_catalog_max_separate": 16,
+    "subcap_microusd": 200000,
+    "total_catalog_max_including_preparation": 18,
+    "unauthenticated_GETs": 2
+  },
+  "prior_closed_snapshot": {
+    "bytes": 3033541,
+    "conservative_exposure_microusd": 12221,
+    "current_live_store_observed": false,
+    "history_events": 908,
+    "path": "data/processed/e02_wrapper_visibility_actual_v1_03/post-run-owner-export.local.json",
+    "rows": 149,
+    "sha256": "da5abbf754c6787b3073295cd6ebc54e704fa331792635a70c3d287da9cdc861",
+    "snapshot_plus_new_bound_microusd": 132261,
+    "unfinished_holds": 4
+  },
+  "status": "PREPARATION_ONLY_PENDING_CODE_AND_EXACT_EXECUTION_REVIEW"
+}

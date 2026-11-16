@@ -1,0 +1,93 @@
+{
+  "Python311": "Separate implementer reports its current partial run was stopped after a similar UTC/monotonic discrepancy. Not independently audited here; exact stop receipt still pending.",
+  "auditor_access": {
+    "actual_owner": 0,
+    "cost_USD": 0,
+    "credentials": 0,
+    "model_calls": 0,
+    "network": 0
+  },
+  "cause": "UNKNOWN: no attribution to suspension, sleep, host-clock change, runtime behavior or filesystem edits. No cause inferred from durations.",
+  "finding": "The retained3352.494-second wall value is not reconciled with STARTED/receipt filesystem timestamp separation6653.783seconds under a3600-second stated limit. A clean elapsed-wall bounded PASS is therefore unsupported. Filesystem timestamps are not independent trusted time attestation; this observation establishes unresolved disagreement, not its cause or a precise authoritative elapsed duration.",
+  "finding_id": "E02-CROSSMODEL-RETAINED-TIMING-001",
+  "kind": "INDEPENDENT_E02_WRAPPER_CROSSMODEL_RETAINED_TIMING_FINDING",
+  "next_criteria": [
+    "Preserve original timing/runner/stop evidence and all consumed mock scopes; never rerun or relabel them in place.",
+    "Provide a separately frozen finite recovery plan and precise elapsed-time semantics with UTC/monotonic disagreement, timeout, cancellation and process-cleanup tests.",
+    "Independently review revised harness/metadata controls and any explicitly bounded continuation before execution. Existing valid functional evidence may be reused under exact closed pins without claiming a new historical time bound.",
+    "Actual execution remains behind original phase/price/authority/budget controls and particular release; no financial ceiling increase follows."
+  ],
+  "observations": {
+    "RECEIPT": {
+      "birth_epoch": 1794801644.9350996,
+      "birth_utc": "2026-11-16T04:00:44.935100+00:00",
+      "mtime_epoch": 1794801644.9352486,
+      "mtime_utc": "2026-11-16T04:00:44.935249+00:00",
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/RECEIPT.json"
+    },
+    "RECEIPT_ref": {
+      "bytes": 1825,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/RECEIPT.json",
+      "sha256": "39015b37fa06775c264c501b339db9c2055ecc5558b405410711defccdc32f4e"
+    },
+    "STARTED": {
+      "birth_epoch": 1794794991.1522973,
+      "birth_utc": "2026-11-16T02:09:51.152297+00:00",
+      "mtime_epoch": 1794794991.1523921,
+      "mtime_utc": "2026-11-16T02:09:51.152392+00:00",
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/STARTED.json"
+    },
+    "STARTED_ref": {
+      "bytes": 1862,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/STARTED.json",
+      "sha256": "494df3f518dd7d16bac0cde4cce9a00eac0a0ada6cec2bc7288a7b1db7c6baff"
+    },
+    "additional_closed_timestamp_observations": [
+      {
+        "birth_epoch": 1794796286.6516716,
+        "birth_utc": "2026-11-16T02:31:26.651672+00:00",
+        "mtime_epoch": 1794796286.6528215,
+        "mtime_utc": "2026-11-16T02:31:26.652822+00:00",
+        "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/prefix/index.json"
+      },
+      {
+        "birth_epoch": 1794801254.7610204,
+        "birth_utc": "2026-11-16T03:54:14.761020+00:00",
+        "mtime_epoch": 1794801254.7622392,
+        "mtime_utc": "2026-11-16T03:54:14.762239+00:00",
+        "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_02_python312/test_full80_delayed_billing_preserves_prefix_holds_and_no_replay/01/index.json"
+      }
+    ],
+    "birth_gap_seconds": 6653.7828023433685,
+    "configured_seconds_cap": 3600,
+    "mtime_gap_seconds": 6653.782856464386,
+    "reported_unittest_seconds": 3352.402,
+    "reported_wall_seconds": 3352.4942332920036,
+    "retained_exit_code": 0,
+    "retained_functional_tests": 21
+  },
+  "preservation": "Prior audit and all source/test/evidence files left unchanged. This finding takes precedence for timing acceptance.",
+  "qualifies_prior_audit": {
+    "bytes": 18092,
+    "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_312_20261116.json",
+    "sha256": "12a137f3520ae5b501490641418775b2cc103d6ad72c09ba2bc73b8d7195ead8"
+  },
+  "review_date_client": "2026-11-16 America/New_York",
+  "reviewer_harness_notes": [
+    "The prior audit copied reported wall seconds and verified the numeric3352<3600 predicate but did not initially compare wall/file timestamps. This separate finding corrects that acceptance limitation.",
+    "The first report generator conditional-expression precedence and initial904-versus908 prefix assumption were separately preserved and corrected; they do not explain this timing discrepancy."
+  ],
+  "severity": "MEDIUM_ENGINEERING_TIMING_EVIDENCE",
+  "source_or_data_mutations": 0,
+  "status": "BLOCKED_ELAPSED_WALL_BOUND_UNPROVEN_RETAINED_FUNCTIONAL_INTEGRITY_VALID",
+  "still_valid": [
+    "Exact artifact hashes and closed file-set/SQLite event/charge/head agreement.",
+    "149 preserved prior authored rows/four holds and80 complete new mocked responses.",
+    "Retained21 functional PASS/exit0 log, with reported timing clearly qualified.",
+    "Independent80 request/billing/checkpoint validations, three one-POST negative cases and arithmetic checks."
+  ],
+  "withheld": [
+    "Actual elapsed-wall compliance of Python3.12 retained invocation.",
+    "Clean final two-runtime timing/fixture acceptance and particular execution release."
+  ]
+}
