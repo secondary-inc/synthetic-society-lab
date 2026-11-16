@@ -1,0 +1,14 @@
+{
+  "attempt1_exitcode": 1,
+  "correction": "Require an actual value character after the query key; scan still includes source snapshots. No HTTP/network/retrieval replay.",
+  "failed_source": {
+    "bytes": 2448,
+    "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/validator-attempt1.py",
+    "sha256": "e498aa3e976084a2336dadd47b965c315e6413916e0144c2dff212d1c18f5e25"
+  },
+  "failure": "Original redaction assertion scanned its own Python source and matched the literal key-plus-equals pattern, even without a query value. This was a validator defect, not evidence of a published signed URL.",
+  "kind": "LOCAL_VALIDATION_ATTEMPT1_FAILURE_PRESERVED",
+  "status": "FAILED_FALSE_POSITIVE_PATTERN_LITERAL_SELF_MATCH",
+  "stderr_source": "AssertionError SIGNED_QUERY_PUBLICLY_SAVED returned through tool output, not contemporaneously saved as a stderr file.",
+  "stdout_file": "local-validation-attempt1.stdout"
+}

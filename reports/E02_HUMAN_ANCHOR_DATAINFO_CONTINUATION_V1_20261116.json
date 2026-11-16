@@ -1,0 +1,237 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/E02_HUMAN_ANCHOR_DATAINFO_CONTINUATION_V1_20261116.json",
+    "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/",
+    "data/processed/e02_human_anchor_datainfo_continuation_v1_20261116/ (ignored exactURL and access-error body only)"
+  ],
+  "Git_STATUS_source_protocol_changes": 0,
+  "NEXT_UNBLOCKED_TASK": "Root independently inspects closed request/body/hash and redacted/private evidence offline. Preserve the denied stop and existing research state; any materially different future access or permissions decision must be separately and explicitly scoped, not inferred from this continuation.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 1520,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/01-OBSERVATION.json",
+      "sha256": "b7c609fcd4622099a22a532deaacfb985fc2d59a30fc6aeb18a5ce1fa1820fdc"
+    },
+    {
+      "bytes": 856,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/01-RESERVED.json",
+      "sha256": "3b6e874aedc9a2dd63389eedee0bf976f7b3111a4b5c9b4a57799347e3bf112b"
+    },
+    {
+      "bytes": 2241,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/CLOSED_CONTINUATION.json",
+      "sha256": "40cff33943183b359ebb3e4f738ec58a78b12e56175bd1c96d061b48947dcd41"
+    },
+    {
+      "bytes": 395,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/access-error-classification.json",
+      "sha256": "1d1925a9a31a20e6a68476703d46617f3092e7866dfcb5ceb14e0e3e10b2cd53"
+    },
+    {
+      "bytes": 6773,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/continue_exact_once.py",
+      "sha256": "61be167402a862a4cec72e012a8e7b571c38c265e0a9d1ce07e1204ac30ec51d"
+    },
+    {
+      "bytes": 502,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/local-stop-validation.json",
+      "sha256": "545a720a1febaf666c2d88935460ff184ee7c4c5e86d2a68c9a7cc1c356ae788"
+    },
+    {
+      "bytes": 942,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/local-validation-attempt1-failure.json",
+      "sha256": "88184e25188d605a1d9fa1becaa7c83e777262bc7454b14740a1a3696d98ff21"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/local-validation-attempt1.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2471,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/validate_continuation_stop.py",
+      "sha256": "afd029a926c4d561b89598d0913ea5805e65774b5ab4f80200f737b3777b53a8"
+    },
+    {
+      "bytes": 2448,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/validator-attempt1.py",
+      "sha256": "e498aa3e976084a2336dadd47b965c315e6413916e0144c2dff212d1c18f5e25"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": {
+    "network_source_not_replayable": {
+      "bytes": 6773,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/continue_exact_once.py",
+      "sha256": "61be167402a862a4cec72e012a8e7b571c38c265e0a9d1ce07e1204ac30ec51d"
+    },
+    "safe_offline_validation": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/validate_continuation_stop.py",
+    "warning": "One GET consumed and access-denied route closed. Do not replay, refresh, redirect or derive a new endpoint from cached URLs."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Temporary signed URL access failed; no global availability, ownership, rights or participant-data conclusion follows.",
+    "Public storage relationship is established by prior OSF anonymous redirect/object binding; no extra infrastructure/identity lookup was performed.",
+    "No document body was obtained; exact target integrity and usage/package notice remain unverified.",
+    "Original and continuation stops remain closed; combined13request authority fully used. No further request implicit from this report."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Anonymous public OSF delivery-chain continuation only. No owner keys or credentials, participant-level records, questionnaire, stimuli, mixed archive or publisher content acquired. Rights terms remain unknown; access-error classification is not documentation interpretation.",
+  "TASK_ID": "E02_HUMAN_ANCHOR_DATAINFO_CONTINUATION_V1_20261116",
+  "TESTS_RUN_AND_RESULTS": {
+    "local_validation_attempt1": "FAILED_FALSE_POSITIVE: literal-pattern scanner matched its own code, no signed value incident established. Failed source/empty stdout/failure description preserved.",
+    "local_validation_attempt2": "PASS_OFFLINE_STOP_ACCOUNTING: cached response bytes/hash, URL equality, no public signed query values, actual13combined requests, false interpretation gate and unchanged three predecessors.",
+    "network_reexecution_for_validator_fix": 0,
+    "research_or_inference_tests": 0,
+    "retrieval": "Single exact savedURL GET403; no redirect/retry; no target document."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Exact documentation not obtained/verified after403continuation.",
+    "No request authority remains in the closed scopes.",
+    "Reuse permissions, archive internals, instrument alignment and separate human-benchmark methods remain unresolved."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Use exactly saved destination with private signed queries and one bounded GET",
+      "status": "PASS_LOCAL_BINDING_ACCOUNTING"
+    },
+    {
+      "criterion": "Stop on403without new route/refresh/retry",
+      "status": "PASS_STOPPED"
+    },
+    {
+      "criterion": "Verify exact822-byte document before interpretation",
+      "status": "GATE_ENFORCED_VERIFICATION_NOT_RUN"
+    },
+    {
+      "criterion": "Resolve documentation rights/package notice",
+      "status": "NOT_RUN_NO_DOCUMENT"
+    },
+    {
+      "criterion": "Preserve three prior scopes and failure evidence",
+      "status": "PASS_OFFLINE_HASH_CHECKS"
+    },
+    {
+      "criterion": "Separate independent result review",
+      "status": "PENDING"
+    }
+  ],
+  "account_changes_external_publication": 0,
+  "accounting": {
+    "body_cap_this_continuation": 16384,
+    "byte_scope": "HTTP bodies, including access-error data; raw header/wire overhead not claimed as measured. The explicit continuation allowance was16KiB body.",
+    "combined_actual_requests": 13,
+    "combined_actual_response_body_bytes": 4570165,
+    "combined_maximum_requests": 13,
+    "combined_maximum_response_body_bytes": 20987904,
+    "combined_remaining_requests": 0,
+    "old_scopes_reset": false,
+    "redirect_or_retry_authority": false,
+    "remaining_requests_this_continuation": 0,
+    "requests_this_continuation": 1,
+    "response_body_bytes_this_continuation": 217
+  },
+  "authority_and_ancestry": {
+    "combined_maximum_requests": 13,
+    "combined_maximum_response_body_bytes": 20987904,
+    "original_twelve_requests_consumed": true,
+    "previous_stop_remains_stopped": true,
+    "prior_reports_unchanged": [
+      {
+        "bytes": 25234,
+        "path": "reports/E02_HUMAN_ANCHOR_REPLICATION_AVAILABILITY_20261116.json",
+        "sha256": "2c744473a592db12ece850305e453860510493ef23296b819476c0ae934448ee"
+      },
+      {
+        "bytes": 16567,
+        "path": "reports/E02_HUMAN_ANCHOR_RIGHTS_METADATA_V1_20261116.json",
+        "sha256": "873ec538a935039791762630b954358331418b34c232eabb37559eb6f25575bf"
+      },
+      {
+        "bytes": 13528,
+        "path": "reports/E02_HUMAN_ANCHOR_DATAINFO_V1_20261116.json",
+        "sha256": "dface3f5084dce220aeeaa30b38a044687f67ae511e699f94b1625932c0da420"
+      }
+    ],
+    "scope": "One distinct justified continuation GET only to exact previously saved second Location for c59u8, with16KiB body cap/20s timeout/no redirects/retries/refresh. Not a replay or relaxation of earlier controls."
+  },
+  "date": "2026-11-16",
+  "decision": "EXACT_SAVED_PUBLIC_REDIRECT_GET_RETURNED403_STOPPED_NO_DOCUMENT_OR_RIGHTS_INTERPRETATION",
+  "document_verification": {
+    "document_content_acquired": false,
+    "expected_bytes": 822,
+    "expected_sha256": "05fb2df6d9a028537068ad0659ad15b8405a604807745272f9e3a8c29213f354",
+    "hash_check": "NOT_RUN_NO200DOCUMENT",
+    "http200_target_received": false,
+    "interpretation_allowed": false,
+    "name": "jitp_datainfo.md",
+    "note": "Access-error body217bytes is not treated as the822-byte documentation or interpreted as a usage notice. Exact expected hash remains unchanged.",
+    "rights_or_package_paraphrase": null,
+    "size_check": "NOT_RUN_NO200DOCUMENT"
+  },
+  "exact_destination_binding": {
+    "exact_url_reused_verbatim": true,
+    "preflight_scope_limit": "This binds the public OSF delivery chain and intended object; it is not an independent claim of storage-tenant ownership or a successful current public read. Actual access result was403.",
+    "public_storage_preflight_basis": "Exact prior anonymous TLS-verified OSF object endpoint redirect, HTTPS OCI-compatible object-storage host and pinned path hash, no URL userinfo/fragment, standard service-generated presigned-download fields and expected jitp_datainfo.md disposition. No owner/account/API credential supplied or added.",
+    "requested_path_sha256": "e8a0c8bb5c3e48da6b64dfb71763ca6303c6b975e654ae4268579630814abdbf",
+    "requested_url_sha256": "8714cb67570a290ba74f3f53731803fdf9ace33847c3a5f4e71ea13aef8d218b",
+    "signed_query_values_public": false,
+    "source_location_header_sha256": "8714cb67570a290ba74f3f53731803fdf9ace33847c3a5f4e71ea13aef8d218b",
+    "source_private_path": "data/processed/e02_human_anchor_datainfo_v1_20261116/02-REDIRECT.json",
+    "url_private_ref": "data/processed/e02_human_anchor_datainfo_continuation_v1_20261116/EXACT_DESTINATION.json"
+  },
+  "independent_review": "PENDING_ROOT_SEPARATE_CLOSED_RESULT_REVIEW; no research milestone certified by producer.",
+  "model_calls": 0,
+  "privacy_and_retention": {
+    "cache_ignore_verified": true,
+    "full_signed_URL": "Private ignored EXACT_DESTINATION.json only; never printed or put into public report/source arguments. Public observations hold hashes and origin category only.",
+    "local_redaction_check": "Offline check finds no signed Signature/Credential query values in public artifacts. The original literal-only validator falsely matched its own code; exact source and empty stdout plus failure description retained, and corrected value-aware check passes.",
+    "local_validation_ref": {
+      "bytes": 502,
+      "path": "reports/evidence_e02_human_anchor_datainfo_continuation_v1_20261116/local-stop-validation.json",
+      "sha256": "545a720a1febaf666c2d88935460ff184ee7c4c5e86d2a68c9a7cc1c356ae788"
+    },
+    "private_cache_refs": [
+      {
+        "bytes": 217,
+        "path": "data/processed/e02_human_anchor_datainfo_continuation_v1_20261116/01-RESPONSE.bin",
+        "sha256": "242324a2fb771c7571b82e29377b760d7a79ba53d37ce8d8fc5cb9a28610cf66"
+      },
+      {
+        "bytes": 859,
+        "path": "data/processed/e02_human_anchor_datainfo_continuation_v1_20261116/EXACT_DESTINATION.json",
+        "sha256": "f1f65a7e3028a857836bc7baca7871e18b7ca76aa9e4a4aeb1fb05d0f1429014"
+      }
+    ],
+    "public_evidence": "Compact provenance/status/hashes/timestamps, closed error metadata and bounded paraphrase; no full rights/document text or signed query values.",
+    "response": "Private ignored217-byte HTTP access-error body only; not target documentation, participant records, stimuli or mixed archive."
+  },
+  "readonly_git_ignore_checks": 1,
+  "retrieval_result": {
+    "alternate_urls": 0,
+    "body_status": "COMPLETE",
+    "closed_storage_error_code": "AccessDenied",
+    "combined_ordinal": 13,
+    "elapsed_seconds": 0.10248633299488574,
+    "error_metadata_mentions_expiration": true,
+    "error_scope": "Closed transport/access-error classification from private217-byte XML only. Consistent with expired download capability, but no refreshed URL or repeated denied route was requested. This does not establish general file privacy, legal prohibition or document contents.",
+    "http_status": 403,
+    "method": "GET",
+    "redirects_followed": 0,
+    "refresh_requests": 0,
+    "response_body_bytes": 217,
+    "response_body_sha256": "242324a2fb771c7571b82e29377b760d7a79ba53d37ce8d8fc5cb9a28610cf66",
+    "response_content_type": "application/xml; charset=utf-8",
+    "retries": 0,
+    "retrieval_end_utc": "2026-11-16T15:43:05.054000+00:00",
+    "retrieval_start_utc": "2026-11-16T15:43:04.951218+00:00",
+    "scope_ordinal": 1,
+    "timeout_seconds": 20
+  },
+  "rights_and_research_implications": {
+    "documentation_terms": "UNKNOWN_NOT_READ",
+    "package_structure": "Only prior catalog filenames are known; archive internals and documentation text remain uninspected.",
+    "prohibition_not_inferred": "HTTP403for this saved temporary URL does not establish that the file is globally inaccessible or copying is legally forbidden. Public metadata likewise does not establish redistribution permission.",
+    "project_license_prior_metadata": "node_license:null and no license link remain unchanged prior observations; no interpretation of an unread documentation notice follows.",
+    "protocol_results": "Existing E02 studies/protocols/results unchanged. No replication, human benchmarking validity, calibration, human persuasion or population inference established.",
+    "third_party_code_data_instrument_stimuli_permissions": "UNVERIFIED"
+  }
+}

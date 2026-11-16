@@ -531,7 +531,17 @@
       "path": "reports/INDEPENDENT_AUDIT_E01_P2_READONLY_PREFLIGHT_STOP_20261116.json",
       "sha256": "1a95ebc788db8d0ada4a15acdd447bb8837f46bd93d1522acd4b3a7e04c89711"
     },
-    "pypa_fixture_harness_status": "V1 BLOCKED after24mock tests/runtime PASS: independent probes demonstrate dataclass-generated compile denial and caught shared read/write exhaustion yielding false-PASS. Original auditor fdopen-guard failure and corrected probes preserved. New V1.1 author successor assigned; actual PyPA import/compile/install and startup/runtime integration NOT_RUN. Existing installation allocations unchanged.",
+    "pypa_fixture_harness_status": "V1 remains preserved BLOCKED. V1.1 exact F01/F02 components now independently accepted:38suite+146adverseassertions/runtime PASS. Generated-code admission is finite/exact; caught sharedread/write exhaustion now prevents success and preserves primary refusal. Auditor original schema-normalization failure/recovery preserved. G03 actual caller/loader/audit-stack/whole-startup/guardedfilesystem/runtime NOT_RUN, no actual tool/import/install release. One-shot caller preparation active; original installation allocations unchanged.",
+    "pypa_fixture_harness_v1_1_handoff": {
+      "bytes": 20581,
+      "path": "reports/E01_PYPA_FIXTURE_HARNESS_V1_1_HANDOFF_20261116.json",
+      "sha256": "2885ad7d64b77f483bc95baf8b9acf0cc27cd35fe52a6cc23cdf000577b7ea5d"
+    },
+    "pypa_fixture_harness_v1_1_review": {
+      "bytes": 47690,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_HARNESS_V1_1_20261116.json",
+      "sha256": "b05c35ca8df6dedf0cb43508a0fd43422efbdccd35c3e7d7aeed4d1597ce88c4"
+    },
     "pypa_fixture_harness_v1_handoff": {
       "bytes": 15978,
       "path": "reports/E01_PYPA_FIXTURE_HARNESS_V1_HANDOFF_20261116.json",
@@ -786,16 +796,16 @@
       "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
       "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
     },
-    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_20/manifest.json",
+    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_21/manifest.json",
     "historical_verified_bundle_through_c249a57": {
       "bytes": 934,
       "path": "reports/GITHUB_DELIVERY_LOCAL_BUNDLE_20261116.json",
       "sha256": "492493f8c5f720763f1c3cd5850708b274b0b7bd606a5d9fc4a25ca021596cd9"
     },
-    "last_code_and_evidence_commit_before_final_checkpoint": "2e3dc244ddf3c8541784bed5f376057cce0b8569",
+    "last_code_and_evidence_commit_before_final_checkpoint": "94066df15d584f95cf8b22f115492edbbde2283e",
     "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
     "local_head_at_delivery_attempt": "ce9a779d949067f7bae08dbeb1e33baa1f1b5f12",
-    "local_unpublished_commits_before_final_checkpoint": 32
+    "local_unpublished_commits_before_final_checkpoint": 33
   },
   "historical_and_human_candidate_scope_review": {
     "bytes": 6430,
@@ -804,19 +814,70 @@
   },
   "human_anchor_candidate": {
     "authors": "Agadjanian and colleagues, including Brendan Nyhan",
+    "availability_closed_review": {
+      "bytes": 2815,
+      "path": "reports/INDEPENDENT_AUDIT_E02_HUMAN_ANCHOR_AVAILABILITY_20261116.json",
+      "sha256": "566d01ee84c0bbb93aa175da7224861ad4ec652ebc6da6d0381cd2509fb31bbe"
+    },
+    "availability_report": {
+      "bytes": 25234,
+      "path": "reports/E02_HUMAN_ANCHOR_REPLICATION_AVAILABILITY_20261116.json",
+      "sha256": "2c744473a592db12ece850305e453860510493ef23296b819476c0ae934448ee"
+    },
     "design_summary": "The 2018 MTurk experiment enrolled3008 participants in five arms. Its direct platform contrast used website and Facebook previews of the same two news articles. The primary credibility outcome averaged accuracy, credibility and trustworthiness on1-4 scales.",
+    "documentation_closed_review": {
+      "bytes": 15062,
+      "path": "reports/INDEPENDENT_AUDIT_E02_HUMAN_ANCHOR_DATAINFO_STOPS_20261116.json",
+      "sha256": "7721cba3ee8edc5f1f3b7874ed45a766453474b2b995ce2287ce6a346d5667be"
+    },
+    "documentation_continuation_stop": {
+      "bytes": 13676,
+      "path": "reports/E02_HUMAN_ANCHOR_DATAINFO_CONTINUATION_V1_20261116.json",
+      "sha256": "4db4fb82a697bf458de6520ae061c8514f345a140e0407f5c9f2a4d09ba94082"
+    },
+    "documentation_initial_stop": {
+      "bytes": 13528,
+      "path": "reports/E02_HUMAN_ANCHOR_DATAINFO_V1_20261116.json",
+      "sha256": "dface3f5084dce220aeeaa30b38a044687f67ae511e699f94b1625932c0da420"
+    },
+    "documentation_review_scope": "220checks PASS closedstopintegrity/bindings/accounting/redaction only. No document, rights or scientific acceptance; broader403cause UNKNOWN.",
     "doi": "10.1080/19331681.2022.2105465",
+    "previous_mislabeled_replication_url": "https://osf.io/6dzeu",
     "primary_author_copy": "https://bpb-us-e1.wpmucdn.com/sites.dartmouth.edu/dist/5/2293/files/2022/08/social_media_effects_credibility.pdf",
     "project_fit_inference": "A candidate for a separate human-benchmark study of presentation effects. Current E02 support/thermometer measures and text-only wrappers are not equivalent to its credibility instrument and image previews; existing results cannot be called a replication.",
-    "published_replication_link_not_acquired": "https://osf.io/6dzeu",
-    "remaining_requirements": [
-      "Verify replication files and their reuse terms; inspect exact stimuli and questionnaire.",
-      "Freeze a separate aligned outcome, presentation modality, sample and analysis before execution.",
-      "Require independent methods review and preserve current study protocols/results.",
-      "Disclose selection after current model results and possible model exposure to the published benchmark."
+    "public_catalog_only": [
+      "20180509AB_survey.pdf",
+      "Replication/jitp_datainfo.md",
+      "Replication/replication_jitp.zip"
     ],
-    "source_observation": "Author-hosted paper read via web tool, including Methods, Measures and Appendix references. Publisher returned403; OSF inaccessible through the tool; neither bypassed. No publisher/participant data copied into Git.",
-    "status": "LITERATURE_CANDIDATE_ONLY_NO_PROTOCOL_CHANGE_OR_REPLICATION",
+    "published_preregistration_link_not_acquired": "https://osf.io/6dzeu",
+    "published_replication_link_not_acquired": "https://osf.io/xe28y/",
+    "remaining_requirements": [
+      "Resolve documentation/instrument availability and applicable reuse terms through permitted sources; no denied-route bypass.",
+      "Inspect exact questionnaire/stimuli/scoring before freezing a distinct aligned protocol; current E02support/thermometers are not same ascredibility composite.",
+      "Require independent methods review and matched simpler comparator; preserve current studies and all failure evidence.",
+      "Disclose benchmarkselection aftercurrent modelresults, possible trainingexposure, and mismatch between2018MTurk sample andnational ANES/ACS population."
+    ],
+    "reuse_status": "UNVERIFIED: nullprojectlicense is neitherpermissionnorprohibition; thirdpartystimulusrights notestablished.",
+    "rights_metadata_closed_review": {
+      "bytes": 2509,
+      "path": "reports/INDEPENDENT_AUDIT_E02_HUMAN_ANCHOR_RIGHTS_METADATA_V1_20261116.json",
+      "sha256": "d3471216d43160205408e92b5788fcdd128143935ce81ff0282933c1a87a22d6"
+    },
+    "rights_metadata_report": {
+      "bytes": 16567,
+      "path": "reports/E02_HUMAN_ANCHOR_RIGHTS_METADATA_V1_20261116.json",
+      "sha256": "873ec538a935039791762630b954358331418b34c232eabb37559eb6f25575bf"
+    },
+    "source_access_accounting": {
+      "model_calls": 0,
+      "paid_cost_USD": "0",
+      "public_GETs": 13,
+      "response_body_bytes": 4570165,
+      "scope": "Three separately bounded source stages and one exactredirectcontinuation, all consumed. Header/wireoverhead excluded. No furtherrequest released."
+    },
+    "source_observation": "Initial literature inspection is preserved in prior checkpoints. Later author bibliography metadata labels6dzeu preregistration and xe28y replicationdata/code. Correct OSF project/catalog JSON was retrieved and retained privately: project public,true; node_license explicitlynull; root survey and Replication folder found. Folder lists jitp_datainfo.md and replication_jitp.zip. Metadata/source reporting passed separate closed review with explicit originalbody-retention limits. Readme-only retrieval stopped after two302s; separately authorized exact saved-location continuation returned403. No document body verified or interpreted, no respondent/stimulus/archive/questionnaire file acquired; no new rights grant.",
+    "status": "PUBLIC_PROJECT_AND_CATALOG_IDENTIFIED_RIGHTS_AND_INSTRUMENT_UNVERIFIED_NO_REPLICATION",
     "title": "A Platform Penalty for News? How Social Media Context Can Alter Information Credibility Online"
   },
   "kind": "LEAD_RESEARCH_CHECKPOINT_NOT_AN_INDEPENDENT_ACCEPTANCE",
@@ -829,11 +890,11 @@
   ],
   "new_model_calls_during_this_checkpoint": 45,
   "next_unblocked_work": [
-    "Implement separately versioned E01 harness remedies for independently demonstrated compile and sticky-budget failures; separate review before actual integration.",
-    "Check public human-anchor replication metadata and reuse conditions; preserve current E02 protocols and do not claim human replication.",
-    "Keep historical collection success separate from current dependency readiness, ordinary suite execution and full remote CI; W03 cause unresolved.",
-    "Preserve safe code/evidence in local commits/bundles; GitHub delivery awaits restored write access.",
-    "OpenRouter account administrator diagnosis is needed before further paid E02 work; preserve44response prefix and all holds."
+    "Prepare and independently review the finite G03 actual installer-fixture caller; retain explicit bootstrap/bytecode/audit-stack/filesystem gates and no actual execution untilqualified.",
+    "Human-anchor metadata anddocumentationstops independently reviewed; instrument/reuse/alignment remainunqualified. Preserveclosed13requestscopes; no furthernetworkrequest released.",
+    "Keep2771historical collection success separate from currentdependency/fullsuite/remoteCI readiness; W03cause unresolved.",
+    "Preserve safe code/evidence in localcommits/bundles; GitHub delivery awaits restoredwriteaccess.",
+    "Accountadministrator diagnosis ofOpenRouterHTTP402 isneeded before furtherpaidE02; preserve44responseprefix andallholds."
   ],
   "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
   "openrouter_diagnosis": {
@@ -863,7 +924,7 @@
   },
   "owner_conservative_exposure_microusd": 16149,
   "owner_exposure_observation": "Closed export after fifth stop:194 total historical dispatches/1180events;16149 microUSD conservative exposure includes settled rounding and all five holds. Independent783-check partial evidence review verified old149rows/908event prefix and new transitions. Original live-journal immutability remains the closed collector observation.",
-  "previous_checkpoint_sha256": "2410a3b14179bf474bf5a0f63566b3afa807d67b561e9236dd2dbc7b2a774164",
+  "previous_checkpoint_sha256": "4e9b8b082126fd3c4fe1a98c56a826658c71e662ab97a72d2d2449cc79b977b7",
   "public_checkpoint_static_review": {
     "bytes": 8650,
     "path": "reports/INDEPENDENT_AUDIT_E02_ROOT_RECEIPT_CHECKPOINT_20261116.json",
@@ -887,6 +948,27 @@
     775
   ],
   "status_display": {
+    "canvas_path": "/Users/joshua/.cursor/projects/Users-joshua-Documents-ChatGPT-synthetic-society-lab/canvases/research-status-latest-20261116.canvas.tsx",
+    "independent_static_review": {
+      "bytes": 15562,
+      "path": "reports/INDEPENDENT_AUDIT_RESEARCH_STATUS_CANVAS_LATEST_20261116.json",
+      "sha256": "8048ff23dd7ba87c338505daaf105803f4c1229f572710750eb84a08e0397f6f"
+    },
+    "lead_type_and_render_observation": {
+      "bytes": 3701,
+      "path": "reports/RESEARCH_STATUS_CANVAS_LATEST_QA_20261116.json",
+      "sha256": "47d08d748315dc79a9d0e4a9dc090b77c2f0d7065b7155e38868b9e83cb03552"
+    },
+    "live_monitor": false,
+    "safe_source": {
+      "bytes": 11237,
+      "path": "reports/evidence_research_status_canvas_latest_20261116/STATUS.canvas.tsx.txt",
+      "sha256": "170863d22172e3e01dd78c4aeded99520bf8a053bcfb219b3343f486211f3378"
+    },
+    "scope": "Dated33commit snapshot;139independent staticchecks,zeroTypeScript/browsererrors,desktop1100/narrow390renderchecked. LaterE01V1.1acceptanceandhumanmetadata are in currentSTATUS/checkpoint, notbackfilled into frozenvisual. NativehostfileopeningNOT_RUN.",
+    "snapshot_commit": "94066df15d584f95cf8b22f115492edbbde2283e"
+  },
+  "status_display_previous_snapshot": {
     "canvas_path": "/Users/joshua/.cursor/projects/Users-joshua-Documents-ChatGPT-synthetic-society-lab/canvases/research-status-20261116.canvas.tsx",
     "independent_static_review": {
       "bytes": 13050,
@@ -907,5 +989,5 @@
     "scope": "Dated public-evidence status snapshot.63 independent static checks; root local TypeScript/bundled-runtime checks passed with prior failures preserved. No new scientific acceptance or live monitoring.",
     "snapshot_commit": "85e5bdfca099faae182569d7a6d22624ff98d76b"
   },
-  "updated_at_UTC": "2026-11-16T15:26:43.320175+00:00"
+  "updated_at_UTC": "2026-11-16T15:47:10.935145+00:00"
 }

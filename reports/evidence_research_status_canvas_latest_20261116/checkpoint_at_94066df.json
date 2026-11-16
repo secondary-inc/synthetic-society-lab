@@ -1,0 +1,911 @@
+{
+  "caps_microusd": {
+    "E01_paid_inference": 0,
+    "E02": 1000000,
+    "shared": 5000000
+  },
+  "ci": {
+    "collection_static_audit": {
+      "bytes": 16078,
+      "path": "reports/CI_COLLECTION_SCOPE_AUDIT_20261116.json",
+      "sha256": "3231cdc9d9d63cbdbee61c247e6797af2b7dbb344752e6fc6457d4f2ad188ea7"
+    },
+    "diagnostic_review": {
+      "bytes": 9309,
+      "path": "reports/INDEPENDENT_AUDIT_E02_W03_CI_DIAGNOSTIC_20261116.json",
+      "sha256": "4e5e32c3fe183ae43ed42e2eaab2e100e912c28f863c49c7ebd0fc5174ea1d51"
+    },
+    "failure": "W03 authored bootstrap positive path; original internal cause UNKNOWN",
+    "focused_actual_summary": {
+      "actual_fresh_children_per_runtime": 10,
+      "full_ci": "NOT_RUN",
+      "historical_per_runtime": 4,
+      "model_cost_USD": 0,
+      "new_model_calls": 0,
+      "portable_per_runtime": 216,
+      "runtimes": [
+        "3.11.17",
+        "3.12.14"
+      ],
+      "tests_per_runtime": 220
+    },
+    "focused_closed_evidence_scope": "Separate auditor verified102pinned artifacts, six original frozen files, raw/RESULT/SUMMARY agreement, all220cases/runtime, zero failures/skips, successful reaping and observed limits; no reruns. Full CI unchanged NOT_RUN.",
+    "focused_evidence": {
+      "bytes": 1664,
+      "path": "reports/E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json",
+      "sha256": "841a0d73255a31ec7ee601bc00b825cfbe6bd5eff8fe68ff0e6ebbd214ae6a08"
+    },
+    "focused_execution_closed_evidence_audit": {
+      "bytes": 35400,
+      "path": "reports/INDEPENDENT_AUDIT_CI_FOCUSED_EXECUTION_EVIDENCE_20261116.json",
+      "sha256": "c1ab94cb58c02203824a7198c2e1c6c8e20d5abfa285341418dc6914cb48f7ae"
+    },
+    "head_sha": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+    "historical_collection_diagnostic": "V1 initial stop preserved; V1.2 one successor child collected2771unique ordinary cases,zero test/setup/framework entries/errors/refusals,6frozen modules excluded. Exit0/reaped2.213675s supervisor. Independent2127checks PASS exact retained evidence only. Pre/after import snapshots identical. Historical3.12.14/pypdf6.10.0; current7.0.1 qualification/full ordinary test execution/full remote CI NOT_RUN; W03 cause UNKNOWN.",
+    "historical_collection_stop": {
+      "bytes": 14899,
+      "path": "reports/CI_HISTORICAL_ORDINARY_COLLECTION_20261116.json",
+      "sha256": "e81d11e6450a38d293375279bfc3c890ba7d55236143657f1ce5218bfe5c0367"
+    },
+    "historical_collection_stop_review": {
+      "bytes": 7142,
+      "path": "reports/INDEPENDENT_AUDIT_CI_HISTORICAL_COLLECTION_STOP_20261116.json",
+      "sha256": "e9de41ed67ee6d3cf1df6f06f0ceb413c417e90d67796b1095635ac2fcced352"
+    },
+    "historical_collection_v1_2_actual": {
+      "bytes": 5146,
+      "path": "reports/CI_HISTORICAL_COLLECTION_V1_2_ACTUAL_20261116.json",
+      "sha256": "6f0303b1b30aa0d0f7889afd290a670bdb7635495eee3b69d35c54d23ffea071"
+    },
+    "historical_collection_v1_2_actual_review": {
+      "bytes": 5533,
+      "path": "reports/INDEPENDENT_AUDIT_CI_HISTORICAL_COLLECTION_V1_2_ACTUAL_20261116.json",
+      "sha256": "475b9a196f1b46ba5adc19313f5e5913c797c3db03c9c4149910607d64adea69"
+    },
+    "historical_collection_v1_2_preparation": {
+      "bytes": 18496,
+      "path": "reports/CI_HISTORICAL_COLLECTION_V1_2_PREPARATION_20261116.json",
+      "sha256": "19e87d14df53af61753808f4b9c2cd3dbfbc47d064b1b24b29cf4fa682ae5c04"
+    },
+    "isolation_author_coverage_successor": {
+      "bytes": 12635,
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_1_HANDOFF_20261116.json",
+      "sha256": "0b393fabca9c2bffb34552aaa07f2af5170160c94d8efb387913e5c8667a754c"
+    },
+    "isolation_author_handoff": {
+      "bytes": 18060,
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_HANDOFF_20261116.json",
+      "sha256": "27f02914c6b5963d2fd7b2467f07e0caf148dee6cbb0bf7a4387ba7f0f236ae9"
+    },
+    "isolation_component_and_focused_review": {
+      "bytes": 28080,
+      "path": "reports/INDEPENDENT_AUDIT_CI_COLLECTION_ISOLATION_V1_20261116.json",
+      "sha256": "312d762a3129ffb36f0586c91437829604d37f6a073c9c0a3ca6c29cf82be444"
+    },
+    "new_collection_findings": "Scoped isolation remedy accepted by lead reviewer separate from author. All six original frozen files unchanged. Independent22mocked runner checks and actual10isolated groups/220frozen cases PASS on each local3.11.17/3.12.14 runtime. Four historical host cases passed only on original local profiles; unsupported hosts remain explicit NOT_RUN. Full ordinary collection/Linux/full remote workflow remain NOT_RUN; original W03 cause UNKNOWN. Earlier lead finding about missing host used in-progress code and was withdrawn against frozen source; successor is test-only coverage improvement.",
+    "new_test_only_diagnostics": "Five focused checks PASS on each runtime; independent diagnostic review PASS including eight adverse checks. Original remote cause remains UNKNOWN and a new full-suite result is pending; no production code or clock changes.",
+    "ordinary_collection_current_environment": "NOT_RUN: known historical project.venv3.12 has pypdf6.10.0 versus current required7.0.1; known raw3.11 toolchain lacks project/extras; exact historical geometryvenv paths absent. Independent metadata review accepted narrow observations only; binary hashes retained, not rehashed under review cap. No unaccepted E01 target admitted. This is a limited known-path inventory, not exhaustive host absence or proof collection necessarily fails.",
+    "ordinary_collection_readiness_metadata": {
+      "bytes": 13124,
+      "path": "reports/CI_ORDINARY_COLLECTION_READINESS_20261116.json",
+      "sha256": "8443e311e9dfadb9a7bd4dd206650757d6b6b99f68d93fe1a4a9d006c8c1622e"
+    },
+    "ordinary_collection_readiness_metadata_review": {
+      "bytes": 9781,
+      "path": "reports/INDEPENDENT_AUDIT_CI_ORDINARY_READINESS_METADATA_20261116.json",
+      "sha256": "4eb47dadd71013e6c48dbc1731d774f30d38e90c09c105194d7c57e3adece05d"
+    },
+    "ordinary_namespace_remedy": "V1.2 accepted exact component:29 suite checks and46 independent adverse assertions/runtime PASS; failed auditor cleanup probes preserved. One historical collection successor subsequently passed, independently reviewed; no full test-suite/current-CI claim.",
+    "ordinary_namespace_remedy_handoff": {
+      "bytes": 19870,
+      "path": "reports/CI_ORDINARY_NAMESPACE_REMEDY_V1_2_HANDOFF_20261116.json",
+      "sha256": "9401a05cc08a6bdc28b565b785b5014778f8f9f149fec55ec4931285512a2671"
+    },
+    "ordinary_namespace_remedy_review": {
+      "bytes": 20106,
+      "path": "reports/INDEPENDENT_AUDIT_CI_NAMESPACE_REMEDY_V1_2_20261116.json",
+      "sha256": "8f92b56fa5d57da8e559e82e59bd8c6e18510a800b52adfea432dbbe4affc5e7"
+    },
+    "overall": "FAILURE",
+    "python311": "FAILURE",
+    "python312": "SUCCESS",
+    "run_id": 43788494169,
+    "url": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/43788494169"
+  },
+  "completion_dashboard_observation": {
+    "current_receipt_status_counts": {
+      "BLOCKED": 14,
+      "NOT_RUN": 7,
+      "PASS": 2
+    },
+    "generated_at_utc": "2026-11-16T11:24:49.570016+00:00",
+    "independent_current_receipt": {
+      "bytes": 27098,
+      "path": "reports/AUDIT_COMPLETION_20261116_REQUIREMENTS_IGNORE_SUCCESSOR.json",
+      "sha256": "84af4fceb272f61b63389a9d02cf4ca6df21f3a259f3d478f13683d0d28ea8fd"
+    },
+    "independent_ignore_delta_notes": {
+      "bytes": 2942,
+      "path": "reports/INDEPENDENT_AUDIT_COMPLETION_IGNORE_DELTA_20261116.json",
+      "sha256": "a27ce228fa0afd6af4643f0df9de8f9960bfa37082d867b434d35b51e474788f"
+    },
+    "independent_notes": {
+      "bytes": 21984,
+      "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+      "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+    },
+    "interpretation": "Current independent snapshot replaces missing current audit coverage. Only E02 engine and model controls pass as software milestones; full scientific and project completion remain unmet. Legacy paid_spend_authorized_usd=0 in the generated completion display grants no new authority and does not revoke standing owner caps.",
+    "passed_software_only": [
+      "E02_ENGINE",
+      "MODEL_CONTROLS"
+    ],
+    "rejected_audits": [
+      {
+        "path": "reports/AUDIT_COMPLETION_20261116_REQUIREMENTS.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_COMPARISON_INTEGRATION.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_CURRENT_DRAFTS_VISUALS_V2.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_E02_ENGINE.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_G0.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_G7_PACKAGE.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_MODEL_AND_SECRETS.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_PUBLICATION_DRAFTS.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_ROOT_973543f.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_STAGE2_BOOTSTRAP.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_STATUS_973543f.json",
+        "reason": "audit code scope missing or stale"
+      },
+      {
+        "path": "reports/AUDIT_COMPLETION_VISUALS_973543f.json",
+        "reason": "audit code scope missing or stale"
+      }
+    ],
+    "requirement_count": 23,
+    "status": "INCOMPLETE"
+  },
+  "e01": {
+    "accepted_prospective_2026_forecast": false,
+    "acquisition": "COMPLETE and independently reviewed: seven fresh metadata requests, four companion downloads and exact cached pypdf reuse; five wheel hashes verified. Prior failed acquisition scopes and charges remain. P2 installation attempts are separately recorded and unaccepted.",
+    "acquisition_evidence": [
+      {
+        "bytes": 15323,
+        "path": "reports/E01_PYPDF701_V1_4_ACTUAL_ACQUISITION_20261116.json",
+        "sha256": "e709f0b7474510912ed8ecea8f1761f56825820ebf642d9d9db0c0881c1d8353"
+      },
+      {
+        "bytes": 18029,
+        "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_ACTUAL_20261116.json",
+        "sha256": "0312f01f67ee0a378270192d2353311ff3f804ad5f93e3b4d337c8c772587972"
+      },
+      {
+        "bytes": 725,
+        "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_ROOT_RECEIPT_20261116.json",
+        "sha256": "5d9c7b5d034ffd69767d09b74de85da6347d2eb7b06d66a2d15d9270f9064e13"
+      }
+    ],
+    "completed_historical_diagnostic": {
+      "S0_MAE_percentage_points": 10.199287428521943,
+      "aggregate_arithmetic_rechecked_from_public_state_rows": true,
+      "calculations": {
+        "bytes": 28510,
+        "path": "reports/INDEPENDENT_AUDIT_E01_calculations.json",
+        "sha256": "9636fe79ad6d8c85d12dc661214a95cfe076f6e00bb982d68c12cec7103aad05"
+      },
+      "evidence": {
+        "bytes": 3678,
+        "path": "reports/E01_HISTORICAL_EVIDENCE.json",
+        "sha256": "e2bb2175c826abb48c38fb93df7a6e874d6c8fb503f289894bbf794f9fdef0e2"
+      },
+      "independent_review": {
+        "bytes": 5944,
+        "path": "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json",
+        "sha256": "d63612e20155da1a9fe7f6796f07eab3e71dd68aaa6a9db1fb170ac59fd061e8"
+      },
+      "limitations": [
+        "No independent pre-results archive; not prospective or historically untouched.",
+        "Operator and selection logic read outcomes; process/input separation is an accidental-I/O control, not researcher blindness or adversarial sandbox.",
+        "Finite selected eligible cohort and leave-one-state-out sensitivity do not provide forecasting intervals or universal superiority.",
+        "No model calls, agent variants, human effects or 2026 performance evidence."
+      ],
+      "new_source_reprocessing": false,
+      "scope": "30 regular Class-I Senate constituencies,2018-to-2024; selected post-hoc conditional D-R margins",
+      "status": "PASS_BOUNDED_HISTORICAL_DIAGNOSTIC_ONLY",
+      "zero_margin_control_MAE_percentage_points": 18.188306030001055
+    },
+    "current_source_document_scope": "13-state typed document union; 20 unfinished source jobs; zero accepted final ballots",
+    "dependency_upgrade": "P1 accepted. Three P2 installations remain preserved and unaccepted. Two once-only offline diagnostic dry-runs captured a socket-category refusal and then a socket-construction refusal; both retained original failed postconditions and passed independent closed evidence review. No installation target created by diagnostics or runtime/source qualification accepted.",
+    "diagnostic_actual": {
+      "bytes": 4084,
+      "path": "reports/E01_GUARD_DIAGNOSTIC_ACTUAL_20261116.json",
+      "sha256": "cb6c6f8a1a8f744e8ba725f4d59802cb6039700dc328ca9418176d36aaf64f42"
+    },
+    "diagnostic_actual_independent_review": {
+      "bytes": 9892,
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V1_ACTUAL_20261116.json",
+      "sha256": "5aaff6cbb5c97ee9d3a614f207fd18a0822f0dd77680106defda6ac3ff91f5d7"
+    },
+    "diagnostic_candidate": {
+      "bytes": 10351,
+      "path": "reports/E01_PYPDF701_GUARD_DIAGNOSTIC_V2_HANDOFF_20261116.json",
+      "sha256": "8d7229976248ab47b13802cc1faac5a2b965d73e3de82393c536709f54830e64"
+    },
+    "diagnostic_candidate_independent_review": {
+      "bytes": 9607,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_GUARD_DIAGNOSTIC_V2_COMPONENT_METHODS_20261116.json",
+      "sha256": "ae04be8c996b4ceca266773c1a3ebc8df457810ff8d69e68bd459d24833793d9"
+    },
+    "diagnostic_next_stage": "Concrete guarded generated-fixture harness implementation and pure mocked tests are assigned. Source-qualified PyPA tool import/actual fixture execution requires separate concrete review and finite release; original450wall/180CPU/12allocation remains consumed. No new actual installer attempt.",
+    "diagnostic_particular_review": {
+      "bytes": 9716,
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V1_PARTICULAR_20261116.json",
+      "sha256": "9222d2c7daa1568adaea1995ac35eb2e5900ac3f4aafae92e5cc2d0c52dcacd8"
+    },
+    "diagnostic_preflight": {
+      "bytes": 11979,
+      "path": "reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V2_20261116.json",
+      "sha256": "cbbeefdc552dccf8bf62e36e5a636a2931035d5927e6f641b361c550a93ab645"
+    },
+    "diagnostic_production_review": {
+      "bytes": 10996,
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_RUNNER_V1_PRODUCTION_20261116.json",
+      "sha256": "eeb3a9cfa66cae1f059bea66abd1f93f70619516fd72157707bd9c441bd95ecb"
+    },
+    "diagnostic_v2_actual": {
+      "bytes": 4232,
+      "path": "reports/E01_GUARD_DIAGNOSTIC_V2_ACTUAL_20261116.json",
+      "sha256": "0ba43cae46a56ff1c08c71d8e3741ebc23db8c310201521f39b116b4cf691e0f"
+    },
+    "diagnostic_v2_actual_independent_review": {
+      "bytes": 40800,
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V2_ACTUAL_20261116.json",
+      "sha256": "28292ad21097cc638c181e10a1f9fe90d3c3fac7c39b0e20e63c81116c87cf37"
+    },
+    "diagnostic_v2_particular_review": {
+      "bytes": 21665,
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V2_PARTICULAR_20261116.json",
+      "sha256": "410055439875f8f2583d67c162d0852f0f4739c2a52774a57255fa0d8c859bdc"
+    },
+    "diagnostic_v2_preflight": {
+      "bytes": 20313,
+      "path": "reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V3_20261116.json",
+      "sha256": "9872c105da2eb4196fc33ebe68d30f19ec6397f185fc2082962afef305c7ecc5"
+    },
+    "diagnostic_v2_production_review": {
+      "bytes": 13323,
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_RUNNER_V2_PRODUCTION_20261116.json",
+      "sha256": "d331186ffbdbd23509add7102fd231a4cfaa97ad66db4105739843757ad33926"
+    },
+    "error_observer_pure_v1_blocked_review": {
+      "bytes": 17725,
+      "path": "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V1_20261116.json",
+      "sha256": "40f575b123d632da72effc4c2c5e2ff229194a16f0e1231b790cfcdf1caee812"
+    },
+    "error_observer_pure_v1_proposal": {
+      "bytes": 16929,
+      "path": "reports/E01_COMPATIBILITY_FAILURE_OBSERVABILITY_PROPOSAL_20261116.json",
+      "sha256": "b52549e2b592ce1e7fb194b82f4a91631f9b7aa206e82e551f86e1a6ac514b5d"
+    },
+    "error_observer_pure_v2_finite_decision": {
+      "bytes": 1852,
+      "path": "reports/E01_COMPATIBILITY_ERROR_OBSERVER_V2_FINITE_DECISION_20261116.json",
+      "sha256": "11a7dc5d2d6384ae6c091ddea131c8309e1aa01284751b86bae081bb6c3e5a03"
+    },
+    "error_observer_pure_v2_handoff": {
+      "bytes": 5501,
+      "path": "reports/E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_HANDOFF_20261116.json",
+      "sha256": "80ab600de55af723437e41cd3e8aca3427b2876f4bf8a959099fcd6417b4129e"
+    },
+    "error_observer_pure_v2_review": {
+      "bytes": 15562,
+      "path": "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_20261116.json",
+      "sha256": "39c8d6eaffc46bfb38c6f22b908fdb8211ea53d762e0e110a9beb78bd5bdd122"
+    },
+    "fresh_acquisition_finding": {
+      "bytes": 8246,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_CODE_METHODS_20261116.json",
+      "sha256": "e9b7c5d6b055edd5cafcc8d97270b2e825ba3ad0df944c70ff19342c30ef4647"
+    },
+    "header_type_finding": {
+      "bytes": 5046,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_HEADER_TYPE_FINDING_20261116.json",
+      "sha256": "1131717479afdbacddc2a8594f8e7dafe307109d992e5b0f41e4a321d69d17c3"
+    },
+    "installer_actual_stop": {
+      "bytes": 1535,
+      "path": "reports/E01_PYPDF701_INSTALL_V1_3_ACTUAL_ROOT_CAPTURE_20261116.json",
+      "sha256": "0aa208af2df90c890b5fbcb4d98d0660a1d41dbcf7bb7ba3d0751cc46e2cfc89"
+    },
+    "installer_diagnosis": "Third installation copied packages then refused on an unrecorded caught violation. Later diagnosticV1 captured SOCKET andV2 SOCKET_CONSTRUCT. Pinned urllib3 import-time IPv6 capability probe remains plausible, not confirmed attribution. No network permission waiver, old evidence relabeling or consumed replay.",
+    "installer_evidence": {
+      "bytes": 9363,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_CORE_20261115.json",
+      "sha256": "d031fa33136b519a2a43829e1a232d08f450821c93bc08aa7e9753649480cc76"
+    },
+    "installer_packet": {
+      "bytes": 1526,
+      "path": "reports/E01_PYPDF701_INSTALL_V1_2_PACKET_CANDIDATE_20261116.json",
+      "sha256": "fd2e0ba2d7f47517675d6b5f96a12d20dd74155a8804e8a6c5fbd3d1fcbf7db1"
+    },
+    "installer_pip_compatibility_finding": {
+      "bytes": 7706,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_BOUND_PIP_TLS_FINDING_20261116.json",
+      "sha256": "f2d662a3ba70e6a1da967712070a2b1388b29fcd78c2aeec0e0da8ded1065207"
+    },
+    "installer_preflight": {
+      "bytes": 1075,
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_20261116.json",
+      "sha256": "e70db9ad3f1facef73885a169335c287a9bb1d53619c8285439cead19424e0e2"
+    },
+    "installer_preflight_success": {
+      "bytes": 12199,
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_V2_20261116.json",
+      "sha256": "615962f0669e90c12bc555488787d48b8f53ec5ca1f6553d196a8741c7f5d39a"
+    },
+    "installer_v1_4_stop": {
+      "bytes": 1535,
+      "path": "reports/E01_PYPDF701_INSTALL_V1_4_ACTUAL_ROOT_CAPTURE_20261116.json",
+      "sha256": "b4c22f61ea5d7c4f0361a19bbcfb1d945208c36139e5c8ce141307232a5d73be"
+    },
+    "installer_v1_4_stop_review": {
+      "bytes": 6127,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_4_ACTUAL_STOP_20261116.json",
+      "sha256": "78126259d9b0865031cd82a50915761bdf6ab7a5e78284a0cde33cae21caa2f7"
+    },
+    "installer_v1_5_metadata_preflight": {
+      "bytes": 19543,
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_V4_20261116.json",
+      "sha256": "f141a79258d3e2a993630834d90c0495d267fb9de74801d7115ba025ffb8c993"
+    },
+    "installer_v1_5_production": {
+      "bytes": 8507,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_5_PRODUCTION_20261116.json",
+      "sha256": "a6a6fa218712ece393fccb4a28ae355c4fd0569aeb5a9565632ca340c6272345"
+    },
+    "installer_v1_5_stop": {
+      "bytes": 1535,
+      "path": "reports/E01_PYPDF701_INSTALL_V1_5_ACTUAL_ROOT_CAPTURE_20261116.json",
+      "sha256": "1c3dde5a874456abd8ce0d2a69fd2ea20dd68f0dc504b30e674743f931e89955"
+    },
+    "installer_v1_5_stop_review": {
+      "bytes": 7196,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_5_ACTUAL_STOP_20261116.json",
+      "sha256": "0696e52c36b6e08b88f71251328eaf8cb4eb949e079bebea1f2276f809d2c63f"
+    },
+    "ipv6_probe_methods_v1": {
+      "bytes": 15420,
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
+      "sha256": "7e377eeace21ead57dc52883dcc2d0610cd8e094fd9d7461cf81b9c7e2674a9c"
+    },
+    "ipv6_probe_methods_v1_review": {
+      "bytes": 15342,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
+      "sha256": "aadca5316efb9ad9e88722f2f3b7bde7fab5ebc6f49931936d6d90fd9b2e9c6f"
+    },
+    "ipv6_probe_methods_v2": {
+      "bytes": 6928,
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+      "sha256": "02d1c2367997f182afbd68d2c6841b2122951552663b927f8d7a6cfbcbffac16"
+    },
+    "ipv6_probe_methods_v2_review": {
+      "bytes": 14670,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+      "sha256": "4d26a32aa0cf32c1d48703842424556303fae9be08a0c92beb24a0044edcd4f1"
+    },
+    "mime_candidate_review": {
+      "bytes": 9310,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_MIME_V2_CANDIDATE_METHODS_20261116.json",
+      "sha256": "1bb6c176a8eed5c24a49f7326be03bf70887d6dac018bfb6af5b0fef5a1d0a8e"
+    },
+    "mode": "RETROSPECTIVE",
+    "offline_compatibility_preparation_decision": {
+      "bytes": 5054,
+      "path": "reports/E01_OFFLINE_COMPATIBILITY_FINITE_DECISION_20261116.json",
+      "sha256": "4cc298064ff70e665f73aae5c016ca2a822bc786fc68075ff56535d2a83e660d"
+    },
+    "offline_compatibility_v1_1_actual_stop": {
+      "bytes": 7663,
+      "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_ACTUAL_STOP_20261116.json",
+      "sha256": "f0d45ba7eaf5f23faa017c343ccf026360c818cfa27a55403a35ea415a49de8c"
+    },
+    "offline_compatibility_v1_1_actual_stop_review": {
+      "bytes": 52271,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_ACTUAL_STOP_20261116.json",
+      "sha256": "6c4ba506b2afaa1f09c64b20a7c2d06b44f83f2cad5ad3589f4fd0815e83d561"
+    },
+    "offline_compatibility_v1_1_handoff": {
+      "bytes": 11015,
+      "path": "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_1_HANDOFF_20261116.json",
+      "sha256": "567095768b5655f1292e2017796a4848c4832649bb6553aec32d18283edc96f9"
+    },
+    "offline_compatibility_v1_1_packet_candidate": {
+      "bytes": 2047,
+      "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+      "sha256": "1423adee30915b6b47aecf4acff07208d9d0c6192d61c606d99e85525da4ed48"
+    },
+    "offline_compatibility_v1_1_packet_candidate_v2": {
+      "bytes": 2047,
+      "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json",
+      "sha256": "78bd9d62b891ba255ef506bb804143f1ca65395bd448df8f00cd75be9f971e03"
+    },
+    "offline_compatibility_v1_1_particular_block": {
+      "bytes": 12814,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+      "sha256": "65891b5385629e47743c5436de031df8366b31caa3c76b77ceb65904b1f239ae"
+    },
+    "offline_compatibility_v1_1_particular_v2": {
+      "bytes": 41026,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_V2_20261116.json",
+      "sha256": "c34e736ed5f48be2687ccba53c89426874a2795b181984b415090deb50e8b4f8"
+    },
+    "offline_compatibility_v1_1_preflight": {
+      "bytes": 31029,
+      "path": "reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json",
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    "offline_compatibility_v1_1_preflight_helper_review": {
+      "bytes": 9236,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+      "sha256": "091f3b663924a69c4af051f5a006419fc3175796dfc9b2504d9d9dd4d2d62aff"
+    },
+    "offline_compatibility_v1_1_preparation": {
+      "bytes": 6563,
+      "path": "reports/E01_OFFLINE_COMPATIBILITY_V1_1_FINITE_DECISION_20261116.json",
+      "sha256": "12d40cf7f6889c66c734fc76617bada9aadf2ec4e620d2c452adeb43363d6857"
+    },
+    "offline_compatibility_v1_1_production_review": {
+      "bytes": 23823,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+      "sha256": "3ac5052de1a663dce9d8891e6d35e6a2bf3760f2bc87cb39f6a165a10289b278"
+    },
+    "offline_compatibility_v1_handoff": {
+      "bytes": 12375,
+      "path": "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json",
+      "sha256": "ed6559beac66523309c23ae5e9212de04399cee264035c9998de3dc8c39dcd78"
+    },
+    "offline_compatibility_v1_preflight_unexecuted": {
+      "bytes": 1344,
+      "path": "reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_UNEXECUTED_20261116.json",
+      "sha256": "0d7cf9bb5c7502103d6a49a36c3c9625da3584cf2df856197207104fbf9d862a"
+    },
+    "offline_compatibility_v1_recovery_review": {
+      "bytes": 16664,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_RECOVERY_20261116.json",
+      "sha256": "bd95c21568b9e8034b275b49050bd96d183b67d92ddcc238a439351522a578e7"
+    },
+    "offline_compatibility_v1_review": {
+      "bytes": 14213,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116.json",
+      "sha256": "cc60b32f12a143b13b88aefd866b1fd40711035d5c27342caa362944d1ee0162"
+    },
+    "offline_import_protocol_methods_v1": {
+      "bytes": 20047,
+      "path": "reports/E01_OFFLINE_IMPORT_PROTOCOL_METHODS_V1_20261116.json",
+      "sha256": "cfe2118b1ca647510bd719c2c5fd0f07ba00642157aab359e70c0c7a8d796867"
+    },
+    "offline_import_protocol_methods_v1_review": {
+      "bytes": 23276,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IMPORT_PROTOCOL_METHODS_V1_20261116.json",
+      "sha256": "b560505ae94981ac2f6164562eed7ae5878a561d82ce1708f0aa59a8fcfc24a1"
+    },
+    "offline_installer_route_feasibility": {
+      "bytes": 20844,
+      "path": "reports/E01_OFFLINE_INSTALLER_ROUTE_FEASIBILITY_20261116.json",
+      "sha256": "4ca7a46e5d17cf96e95b38b152f5fbefbbabc36a96e82776410af5167f0166b1"
+    },
+    "offline_installer_route_feasibility_review": {
+      "bytes": 15228,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_INSTALLER_ROUTE_FEASIBILITY_20261116.json",
+      "sha256": "9edbf3a1b5d0073e665ce837445afc2e7b3e09b0e1814ac39e9873c233edd218"
+    },
+    "preflight_stop_review": {
+      "bytes": 3478,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_READONLY_PREFLIGHT_STOP_20261116.json",
+      "sha256": "1a95ebc788db8d0ada4a15acdd447bb8837f46bd93d1522acd4b3a7e04c89711"
+    },
+    "pypa_fixture_harness_status": "V1 BLOCKED after24mock tests/runtime PASS: independent probes demonstrate dataclass-generated compile denial and caught shared read/write exhaustion yielding false-PASS. Original auditor fdopen-guard failure and corrected probes preserved. New V1.1 author successor assigned; actual PyPA import/compile/install and startup/runtime integration NOT_RUN. Existing installation allocations unchanged.",
+    "pypa_fixture_harness_v1_handoff": {
+      "bytes": 15978,
+      "path": "reports/E01_PYPA_FIXTURE_HARNESS_V1_HANDOFF_20261116.json",
+      "sha256": "22c22aee3182284008e913c4b2fc56251f7ca610d05718af9a497a5eb947eb9c"
+    },
+    "pypa_fixture_harness_v1_review": {
+      "bytes": 32780,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_HARNESS_V1_20261116.json",
+      "sha256": "45939a8bcef79bbf72e465240e12f746055c36e2626f444bfed32f6578d5098e"
+    },
+    "pypa_installer_fixture_byte_clarification": {
+      "bytes": 3149,
+      "path": "reports/E01_PYPA_INSTALLER_FIXTURE_BYTE_CLARIFICATION_V1_1_20261116.json",
+      "sha256": "c6f21ce1a1269100a5032c13ec01f152499e314a4e7ddcbefbaa4173be492b40"
+    },
+    "pypa_installer_fixture_byte_closure_review": {
+      "bytes": 4651,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_FIXTURE_BYTES_V1_1_20261116.json",
+      "sha256": "9f92fac01e81b19eece29ecdda52d037326ffeed0e89abfd7164066e05dbb3e0"
+    },
+    "pypa_installer_fixture_contract": {
+      "bytes": 29721,
+      "path": "reports/E01_PYPA_INSTALLER_GENERATED_FIXTURE_CONTRACT_V1_20261116.json",
+      "sha256": "bc2077fcbd12bae4cbb68f79057c1bd2f345ac385de05c3b06dd2716de06b631"
+    },
+    "pypa_installer_fixture_contract_blocked_review": {
+      "bytes": 9536,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_FIXTURE_CONTRACT_V1_20261116.json",
+      "sha256": "09a951d1e18d439e9b24b2cf3249bcb7d03b80d314ce65204a6c4cf1787797ec"
+    },
+    "pypa_installer_source_acquisition": {
+      "bytes": 18994,
+      "path": "reports/E01_PYPA_INSTALLER_SOURCE_ACQUISITION_20261116.json",
+      "sha256": "7ba764a1f037c5f2dafab98f76bf1cbc3f4940ec872c7323d63bf6a2a62fd22f"
+    },
+    "pypa_installer_source_audit": {
+      "bytes": 20875,
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_SOURCE_ACQUISITION_20261116.json",
+      "sha256": "c6d8086ff740e665b5c8f8181fea040e957c1358873dad4dfa4a0e35ff90f8bd"
+    },
+    "pypa_installer_source_gate": {
+      "bytes": 3392,
+      "path": "reports/E01_PYPA_INSTALLER_SOURCE_GATE_20261116.json",
+      "sha256": "0069c56c9ce0d9c252c1f0a2166e96bb21074961fe0fceb92418d2d19354a853"
+    },
+    "pypa_installer_source_status": "Two public GETs acquired installer1.1.0 metadata and a hash/size-verified 464466-byte MIT wheel. Independent source/evidence review PASS363checks only. No package import, extraction, installation or runtime qualification. Full library RECORD validation writes /dev/null outside frozen guard scope and does not independently reject duplicate/orphan RECORD rows; direct API route remains blocked.",
+    "socket_observer_methods": {
+      "bytes": 11669,
+      "path": "reports/E01_SOCKET_STATIC_MAPPING_AND_OBSERVER_V3_METHODS_20261116.json",
+      "sha256": "b38147f6698d621a3a32abc505466970b8197291dac0183716600607962886d6"
+    },
+    "socket_observer_methods_review": {
+      "bytes": 12652,
+      "path": "reports/INDEPENDENT_AUDIT_E01_SOCKET_OBSERVER_V3_COMPONENT_METHODS_20261116.json",
+      "sha256": "41dd19725ad0e8ba2148d1f2edb2541b4e07a5f1aabf3ad7c5516e4461300f4d"
+    },
+    "source_scope_evidence": {
+      "bytes": 15513,
+      "path": "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json",
+      "sha256": "31bb4e389aad209d24a276347023de5f2eab3ed03a3e91d8745128dcfc8115e2"
+    },
+    "strict_wheel_source_pure_handoff": {
+      "bytes": 18657,
+      "path": "reports/E01_STRICT_WHEEL_SOURCE_PURE_V1_HANDOFF_20261116.json",
+      "sha256": "7d27c8a25c802c713e8e0bfa0a72292d07612fd81e7924f9e932afae33df2b03"
+    },
+    "strict_wheel_source_pure_independent_review": {
+      "bytes": 17325,
+      "path": "reports/INDEPENDENT_AUDIT_E01_STRICT_WHEEL_SOURCE_PURE_V1_20261116.json",
+      "sha256": "a91a1a7a4df10fcdacfb4493adb0941745ff93d4c80c8ed4fa207d2e84592fbe"
+    },
+    "strict_wheel_source_pure_status": "PASS exact restricted authored-fixture component: independent40suite+19adversechecks per3.11.17/3.12.14. Complete unique/bidirectional RECORD validation and immutable named readonly streams; central metadata bounded before ZipFile. All predecessor source/test snapshots and failed cache-read checks preserved. No PyPA import/fixture installation, real wheel/runtime qualification or P2/P3 advancement.",
+    "successor_rationale": {
+      "bytes": 2747,
+      "path": "reports/E01_DIAGNOSTIC_SUCCESSOR_RATIONALE_20261116.json",
+      "sha256": "8b2abcd2b72750fb8fbf58d0214995c287a20e6533492c860e5e86406f5fdf77"
+    }
+  },
+  "e02_completed_live_studies": [
+    {
+      "independent_review": {
+        "bytes": 13183,
+        "path": "reports/INDEPENDENT_AUDIT_E02_CONTINUATION_ACTUAL_20261108.json",
+        "sha256": "8764359767c8ade7ad2da42d8c8f27faa19aff2a27f001cec22367c2c3bf3d8e"
+      },
+      "model_generations": 32,
+      "report": {
+        "bytes": 23123,
+        "path": "reports/E02_EXPLORATORY_CONTINUATION_ACTUAL_20261108.json",
+        "sha256": "45e703078e7288512e383bda9561f4346140193d4b9d254d898dc95ad22c06cb"
+      },
+      "run_id": "e02-exploratory-continuation-20261108-01",
+      "scoped_review_status": "PASS_ACTUAL_LIMITED_PILOT_COMBINED_EVIDENCE_ACCOUNTING_AND_DESCRIPTIVE_RESCORING",
+      "study": "Exploratory continuation",
+      "verified_model_usage_USD": "0.0014340"
+    },
+    {
+      "independent_review": {
+        "bytes": 6808,
+        "path": "reports/INDEPENDENT_AUDIT_E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json",
+        "sha256": "cf2bed0882f71d33efd3cd755ace36cf3e58aaef0759b881c0361488a0ec7246"
+      },
+      "model_generations": 22,
+      "report": {
+        "bytes": 31516,
+        "path": "reports/E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json",
+        "sha256": "c3dc9da2551ce2277a75fee46faa18e9300139998f2f8364a8e95d285b05ccf6"
+      },
+      "run_id": "e02-alignment-anchoring-live-20261109-01",
+      "scoped_review_status": "PASS_ACTUAL_CLOSED_EVIDENCE_ACCOUNTING_REGISTERED_ARITHMETIC_AND_EXCLUSIONS",
+      "study": "Alignment and anchoring",
+      "verified_model_usage_USD": "0.0016084"
+    },
+    {
+      "independent_review": {
+        "bytes": 14156,
+        "path": "reports/INDEPENDENT_AUDIT_E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json",
+        "sha256": "ea7fece4bf153eef45ec067ef8ce9753b874e53b644d2a51505add4c5820bcfd"
+      },
+      "model_generations": 53,
+      "report": {
+        "bytes": 63510,
+        "path": "reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json",
+        "sha256": "b7269ba6c0a828c907a50b2de8b67d45dc8d4714efb8de8ccb90acba99467fb0"
+      },
+      "run_id": "e02-issue-cue-crossmodel-recovery-live-20261110-01",
+      "scoped_review_status": "PASS_SCOPED_ACTUAL_EXPLORATORY_EVIDENCE_ACCOUNTING_AND_REGISTERED_SCORES",
+      "study": "Issue cues across configurations",
+      "verified_model_usage_USD": "0.0038870"
+    },
+    {
+      "independent_review": {
+        "bytes": 14718,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+        "sha256": "a713b6b298b3c37979486d5b167880e836081675edc8d049b05e67d23c30a475"
+      },
+      "model_generations": 40,
+      "report": {
+        "bytes": 34947,
+        "path": "reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json",
+        "sha256": "fd4a4a25e3138aa963c32bdd26c6120ef2b43a4b66deee7ca63dab272d0ab964"
+      },
+      "run_id": "e02-wrapper-visibility-live-v1-03",
+      "scoped_review_status": "PASS_SCOPED_ACTUAL_EVIDENCE_ACCOUNTING_MATCHED_SCORING_AND_LIMITATIONS",
+      "study": "Wrapper and prior-answer visibility",
+      "verified_model_usage_USD": "0.0028919"
+    }
+  ],
+  "e02_fifth_study": {
+    "actual_execution": "STOPPED_NO_RETRY after44 committed responses and HTTP402 on attempt45. Independent783-check partial evidence/accounting/replay review PASS; full registered study incomplete and scientific effect not accepted.",
+    "actual_report": {
+      "bytes": 4617,
+      "path": "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "sha256": "21ec7483ee0f2e91633b30c76b9fe196e27c5768c8a0131c36e0ae14ce0c6baf"
+    },
+    "batch_cap_microusd": 200000,
+    "closed_observation": {
+      "actual_review": "PASS_PARTIAL_RETAINED_EVIDENCE_ACCOUNTING_AND_REPLAY_ONLY",
+      "automatic_partial_diagnostics": "Retained and independently reproduced; not a completed full-study inference.",
+      "catalog_GET_attempts": 10,
+      "counter_correction": "Terminal diagnostic model_POST_attempts=1 describes the failed request only. Retained failure journal and closed owner record establish 45 cumulative requests in this batch.",
+      "failed_request_actual_cost": null,
+      "failed_request_hold_microusd": 775,
+      "model_POST_attempts": 45,
+      "per_configuration_successful_responses": {
+        "A": 22,
+        "B": 22
+      },
+      "post_responses": 28,
+      "pre_responses": 16,
+      "private_export": {
+        "bytes": 3893676,
+        "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+        "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+      },
+      "private_index": {
+        "bytes": 45733,
+        "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+        "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+      },
+      "statistics_GET_attempts": 44,
+      "successful_responses": 44,
+      "verified_model_usage_USD": "0.0031376"
+    },
+    "evidence": [
+      {
+        "bytes": 18092,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_312_20261116.json",
+        "sha256": "12a137f3520ae5b501490641418775b2cc103d6ad72c09ba2bc73b8d7195ead8"
+      },
+      {
+        "bytes": 5508,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_TIMING_FINDING_20261116.json",
+        "sha256": "f21d3a42459515a89ce1f605c06db5ea3dda4d959c230643060416570a7f5601"
+      },
+      {
+        "bytes": 6316,
+        "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_FINAL_RECEIPT_FINDING_20261116.json",
+        "sha256": "85b8541662cdcf355b72a16ba9ed936f05fd9ee34433d3fc1665a463ee3c0ebb"
+      },
+      {
+        "bytes": 15973,
+        "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_REMEDY_CONTINUATION_RELEASE_20261116.json",
+        "sha256": "260bd1a0efc65ae8f424a562c86738bf0230d86dabb63663d119038b75fa38f8"
+      },
+      {
+        "bytes": 6313,
+        "path": "reports/E02_WRAPPER_CROSSMODEL_V1_AUTHORED_311_CLOSED_HANDOFF_20261116.json",
+        "sha256": "959ce7326d9fc250c324958dca6cda6a6b5267b684287fdf69741d2a62834bd3"
+      },
+      {
+        "bytes": 19632,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_CLOSED_311_20261116.json",
+        "sha256": "ba400aec5b8e83269c6569cb111cd281892bd57c8be9ed7a0fea2c67e81dccc1"
+      },
+      {
+        "bytes": 16056,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PARTICULAR_RELEASE_20261116.json",
+        "sha256": "5814f34d2ba98e123b1239b2ac7310c96ab47fa22fb6351622e38a30b1c96dd4"
+      }
+    ],
+    "independent_actual_review": {
+      "bytes": 8956,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "sha256": "e856a477ae56adf13ca44b01c7f0a00f7807a305675c262117a627c09b63672d"
+    },
+    "maximum_model_requests": 80,
+    "purpose": "Matched two-configuration comparison of wrapper sensitivity and own-prior-answer visibility; fresh responses in both configurations.",
+    "python311_continuation": "21 PASS with final dual-clock validation; closed evidence independently accepted.",
+    "python312_functional_checks": "21 PASS; retained artifacts independently verified",
+    "quoted_maximum_new_model_usage_microusd": 120040,
+    "timing_acceptance": "New bounded Python3.11 continuation accepted; original Python3.12 timing failure and interrupted prior3.11 preserved."
+  },
+  "e02_key_attribution_closure": {
+    "bytes": 2747,
+    "path": "reports/INDEPENDENT_AUDIT_E02_KEY_CHECKPOINT_ATTRIBUTION_CLOSURE_20261116.json",
+    "sha256": "67039007571805ca749409d20fc0d23388e1696dbe5dbd046113a775857727d3"
+  },
+  "e02_key_current_reporting_review": {
+    "bytes": 3451,
+    "path": "reports/INDEPENDENT_AUDIT_E02_KEY_CHECKPOINT_REPORTING_20261116.json",
+    "sha256": "7509f60e8c7f1e63af82e1788ec5d27e30e886fea64a65f925b80607460ed69c"
+  },
+  "e02_total_research_generations": 191,
+  "e02_totals_review_scope": "All191 invoice-matched research responses have scoped independent evidence review:147 in four completed studies,44 in the incomplete fifth prefix. No accepted full fifth-study effect.",
+  "e02_verified_research_model_usage_USD": "0.0129589",
+  "full_original_completion_contract": "INCOMPLETE",
+  "git": {
+    "checkpoint_push": "BLOCKED_UNAVAILABLE_WRITE_ACCESS",
+    "evidence": {
+      "bytes": 1432,
+      "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
+      "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
+    },
+    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_20/manifest.json",
+    "historical_verified_bundle_through_c249a57": {
+      "bytes": 934,
+      "path": "reports/GITHUB_DELIVERY_LOCAL_BUNDLE_20261116.json",
+      "sha256": "492493f8c5f720763f1c3cd5850708b274b0b7bd606a5d9fc4a25ca021596cd9"
+    },
+    "last_code_and_evidence_commit_before_final_checkpoint": "2e3dc244ddf3c8541784bed5f376057cce0b8569",
+    "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+    "local_head_at_delivery_attempt": "ce9a779d949067f7bae08dbeb1e33baa1f1b5f12",
+    "local_unpublished_commits_before_final_checkpoint": 32
+  },
+  "historical_and_human_candidate_scope_review": {
+    "bytes": 6430,
+    "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+    "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+  },
+  "human_anchor_candidate": {
+    "authors": "Agadjanian and colleagues, including Brendan Nyhan",
+    "design_summary": "The 2018 MTurk experiment enrolled3008 participants in five arms. Its direct platform contrast used website and Facebook previews of the same two news articles. The primary credibility outcome averaged accuracy, credibility and trustworthiness on1-4 scales.",
+    "doi": "10.1080/19331681.2022.2105465",
+    "primary_author_copy": "https://bpb-us-e1.wpmucdn.com/sites.dartmouth.edu/dist/5/2293/files/2022/08/social_media_effects_credibility.pdf",
+    "project_fit_inference": "A candidate for a separate human-benchmark study of presentation effects. Current E02 support/thermometer measures and text-only wrappers are not equivalent to its credibility instrument and image previews; existing results cannot be called a replication.",
+    "published_replication_link_not_acquired": "https://osf.io/6dzeu",
+    "remaining_requirements": [
+      "Verify replication files and their reuse terms; inspect exact stimuli and questionnaire.",
+      "Freeze a separate aligned outcome, presentation modality, sample and analysis before execution.",
+      "Require independent methods review and preserve current study protocols/results.",
+      "Disclose selection after current model results and possible model exposure to the published benchmark."
+    ],
+    "source_observation": "Author-hosted paper read via web tool, including Methods, Measures and Appendix references. Publisher returned403; OSF inaccessible through the tool; neither bypassed. No publisher/participant data copied into Git.",
+    "status": "LITERATURE_CANDIDATE_ONLY_NO_PROTOCOL_CHANGE_OR_REPLICATION",
+    "title": "A Platform Penalty for News? How Social Media Context Can Alter Information Credibility Online"
+  },
+  "kind": "LEAD_RESEARCH_CHECKPOINT_NOT_AN_INDEPENDENT_ACCEPTANCE",
+  "limitations": [
+    "Small exploratory synthetic-model studies; no human persuasion or population-representativeness claim.",
+    "E02 original national calibration, external human validation and confirmatory requirements remain incomplete.",
+    "No prospective 2026 forecast exists in the accepted evidence.",
+    "E03/E04, advanced feeds/assistants/swarms remain gated.",
+    "Model-usage dollars exclude local compute, agent labor and infrastructure costs."
+  ],
+  "new_model_calls_during_this_checkpoint": 45,
+  "next_unblocked_work": [
+    "Implement separately versioned E01 harness remedies for independently demonstrated compile and sticky-budget failures; separate review before actual integration.",
+    "Check public human-anchor replication metadata and reuse conditions; preserve current E02 protocols and do not claim human replication.",
+    "Keep historical collection success separate from current dependency readiness, ordinary suite execution and full remote CI; W03 cause unresolved.",
+    "Preserve safe code/evidence in local commits/bundles; GitHub delivery awaits restored write access.",
+    "OpenRouter account administrator diagnosis is needed before further paid E02 work; preserve44response prefix and all holds."
+  ],
+  "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
+  "openrouter_diagnosis": {
+    "HTTP200_authenticated": true,
+    "HTTP402_root_cause": "UNKNOWN",
+    "account_prepaid_credit_balance": "UNKNOWN",
+    "actual_review": {
+      "bytes": 1736,
+      "path": "reports/INDEPENDENT_AUDIT_OPENROUTER_KEY_STATUS_ACTUAL_20261116.json",
+      "sha256": "ad18ede4efdca8767a621bd3b8cd9a3fc5ad3246b256834b633fa3135be7091e"
+    },
+    "lead_browser_observation": "Secondary account credits access redirected to Workspaces with403 insufficient role permissions; separate Personal account display is excluded.",
+    "needed_external_action": "Secondary account administrator checks account credits and workspace/account restrictions; no newkey or purchase requested.",
+    "project_caps_increased": false,
+    "provider_key_limit_USD": 20,
+    "remaining_key_limit_USD": 19.9870341,
+    "report": {
+      "bytes": 2982,
+      "path": "reports/OPENROUTER_KEY_AND_ACCOUNT_DIAGNOSIS_20261116.json",
+      "sha256": "9fcf29c9d02d37ea25e603a7a0f794b36d214dbe3a88627e9041c454a417f823"
+    },
+    "reporting_review": {
+      "bytes": 1154,
+      "path": "reports/INDEPENDENT_AUDIT_OPENROUTER_KEY_STATUS_REPORTING_20261116.json",
+      "sha256": "1888ab303f52c702062416a03fe570f6b8e53a8362e5f602331e636b40394ea2"
+    }
+  },
+  "owner_conservative_exposure_microusd": 16149,
+  "owner_exposure_observation": "Closed export after fifth stop:194 total historical dispatches/1180events;16149 microUSD conservative exposure includes settled rounding and all five holds. Independent783-check partial evidence review verified old149rows/908event prefix and new transitions. Original live-journal immutability remains the closed collector observation.",
+  "previous_checkpoint_sha256": "2410a3b14179bf474bf5a0f63566b3afa807d67b561e9236dd2dbc7b2a774164",
+  "public_checkpoint_static_review": {
+    "bytes": 8650,
+    "path": "reports/INDEPENDENT_AUDIT_E02_ROOT_RECEIPT_CHECKPOINT_20261116.json",
+    "sha256": "6039a29cbd6d3f777ba10662ac10c6181ccd610b18d68dd4d23e36166f6ff039"
+  },
+  "publication_documentation_delta": {
+    "commit": "93eea51",
+    "review": {
+      "bytes": 7040,
+      "path": "reports/INDEPENDENT_AUDIT_E02_FIFTH_PARTIAL_PUBLICATION_DELTA_20261116.json",
+      "sha256": "b641f40a6e0f010a16b1b48c046e17fe1d4591f0796b6409f58d3716cb19fa6a"
+    },
+    "scope": "November 16 fifth-study paragraphs and dates in four owner-review drafts; unchanged manuscript claims and external publication not certified.",
+    "status": "PASS_SCOPED_DOCUMENTATION_DELTA_ONLY"
+  },
+  "retained_uncertain_holds_microusd": [
+    340,
+    340,
+    788,
+    1008,
+    775
+  ],
+  "status_display": {
+    "canvas_path": "/Users/joshua/.cursor/projects/Users-joshua-Documents-ChatGPT-synthetic-society-lab/canvases/research-status-20261116.canvas.tsx",
+    "independent_static_review": {
+      "bytes": 13050,
+      "path": "reports/INDEPENDENT_AUDIT_RESEARCH_STATUS_CANVAS_20261116.json",
+      "sha256": "4a8a28f9779f56942b8523dfed8c08cdbc3e9b8b84dceb747ee36a0273929e5c"
+    },
+    "lead_type_and_render_observation": {
+      "bytes": 4500,
+      "path": "reports/RESEARCH_STATUS_CANVAS_QA_20261116.json",
+      "sha256": "a6fa114f9bcad9a661152af703c67b542706b84a0f2b8f489296deacd0c5d0bf"
+    },
+    "live_monitor": false,
+    "safe_source": {
+      "bytes": 10214,
+      "path": "reports/evidence_research_status_canvas_root_20261116/STATUS.canvas.tsx.txt",
+      "sha256": "5ff7d65e9fd62f8b52b8f89afd7d0b994ad493dac83a3655534e7ec5f1d148b6"
+    },
+    "scope": "Dated public-evidence status snapshot.63 independent static checks; root local TypeScript/bundled-runtime checks passed with prior failures preserved. No new scientific acceptance or live monitoring.",
+    "snapshot_commit": "85e5bdfca099faae182569d7a6d22624ff98d76b"
+  },
+  "updated_at_UTC": "2026-11-16T15:26:43.320175+00:00"
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "class": "InvalidRecordEntry",
+    "decorator_line": 22,
+    "default_field_AST": {},
+    "fields": [
+      "elements",
+      "issues"
+    ],
+    "member": "installer/records.py",
+    "member_bytes": 7368,
+    "member_sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf",
+    "methods": [
+      "__post_init__"
+    ]
+  },
+  {
+    "class": "Hash",
+    "decorator_line": 33,
+    "default_field_AST": {},
+    "fields": [
+      "name",
+      "value"
+    ],
+    "member": "installer/records.py",
+    "member_bytes": 7368,
+    "member_sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf",
+    "methods": [
+      "__str__",
+      "validate",
+      "parse"
+    ]
+  },
+  {
+    "class": "RecordEntry",
+    "decorator_line": 77,
+    "default_field_AST": {},
+    "fields": [
+      "path",
+      "hash_",
+      "size"
+    ],
+    "member": "installer/records.py",
+    "member_bytes": 7368,
+    "member_sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf",
+    "methods": [
+      "to_row",
+      "__repr__",
+      "__eq__",
+      "validate",
+      "validate_stream",
+      "from_elements"
+    ]
+  },
+  {
+    "class": "Script",
+    "decorator_line": 50,
+    "default_field_AST": {
+      "section": "Call(func=Name(id='field', ctx=Load()), args=[], keywords=[keyword(arg='repr', value=Constant(value=False))])"
+    },
+    "fields": [
+      "name",
+      "module",
+      "attr",
+      "section"
+    ],
+    "member": "installer/scripts.py",
+    "member_bytes": 5538,
+    "member_sha256": "971da58eecdee1c64daf9018071f947f37b6c1d01cedd1828b24eb7f488e71f7",
+    "methods": [
+      "_get_launcher_data",
+      "_get_alternate_executable",
+      "generate",
+      "_is_executable_simple",
+      "_build_shebang"
+    ]
+  },
+  {
+    "class": "SchemeDictionaryDestination",
+    "decorator_line": 101,
+    "default_field_AST": {
+      "bytecode_optimization_levels": "Tuple(elts=[], ctx=Load())",
+      "destdir": "Constant(value=None)",
+      "hash_algorithm": "Constant(value='sha256')",
+      "overwrite_existing": "Constant(value=False)"
+    },
+    "fields": [
+      "scheme_dict",
+      "interpreter",
+      "script_kind",
+      "hash_algorithm",
+      "bytecode_optimization_levels",
+      "destdir",
+      "overwrite_existing"
+    ],
+    "member": "installer/destinations.py",
+    "member_bytes": 10666,
+    "member_sha256": "92853c201d052086220fef5784a2fb6c01dc5812b7f8f9f98590f1b87e5bb1fb",
+    "methods": [
+      "_path_with_destdir",
+      "write_to_fs",
+      "write_file",
+      "write_script",
+      "_compile_bytecode",
+      "finalize_installation"
+    ]
+  }
+]

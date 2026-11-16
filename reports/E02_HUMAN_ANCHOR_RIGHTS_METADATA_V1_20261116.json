@@ -1,0 +1,298 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/E02_HUMAN_ANCHOR_RIGHTS_METADATA_V1_20261116.json",
+    "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/",
+    "data/processed/e02_human_anchor_rights_metadata_v1_20261116/ (ignored metadata cache only)"
+  ],
+  "Git_mutations_STATUS_protocol_source_edits": 0,
+  "NEXT_UNBLOCKED_TASK": "Root independently inspects these exact closed metadata bytes and scope. If useful, explicitly scope a rights-only read of the small datainfo documentation, preserving existing budgets and prohibiting mixed archive/respondent/stimulus acquisition; do not self-expand this metadata task.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 1216,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/01-OBSERVATION.json",
+      "sha256": "038f2bc6d7b1acbd1afe25010b38f365c41c237c37010fd55038db5785185326"
+    },
+    {
+      "bytes": 513,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/01-RESERVED.json",
+      "sha256": "eafa5d14a3ed07f6eef92555917986f46c639beddfff4cf4c974b97b311028d5"
+    },
+    {
+      "bytes": 1283,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/02-OBSERVATION.json",
+      "sha256": "ec71c80dffcd4c2a574d81182338202fbfd424cb33fdcbc8743429f244ee2fab"
+    },
+    {
+      "bytes": 579,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/02-RESERVED.json",
+      "sha256": "a95cbeecc2779a9ed9db0a51e0b1fce1f7392a30ab0414759de31936badd9dfb"
+    },
+    {
+      "bytes": 5468,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/CLOSED_METADATA.json",
+      "sha256": "560d1e4d78bcca0a15588a3c2a3f881ca2b4896d87daf211da5590eac18aea84"
+    },
+    {
+      "bytes": 891,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/license-field-inspection.json",
+      "sha256": "99f7c8983485aa6b6dad2feec20477f2ee144064d560e4c43b3e3515f8453c45"
+    },
+    {
+      "bytes": 1318,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/local-accounting-validation.json",
+      "sha256": "c97372a7622e182a06fa4c547a57d46f7102881dddaca7dff2240cd6d6473655"
+    },
+    {
+      "bytes": 8524,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/rights_metadata_probe.py",
+      "sha256": "ed22c9da6f805637c7f0547d92c8c60781fe184aa641abc0d17a22281996f627"
+    },
+    {
+      "bytes": 2590,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/validate_closed_metadata.py",
+      "sha256": "fe2ab69a295272f906d398ae52dc93338fde2029da3ec0b6339411c277cdbde2"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": {
+    "network_source_record": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/rights_metadata_probe.py is preserved, not a replay authorization. New-only reservation/cache/closed records make reuse fail.",
+    "safe_local_accounting": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/validate_closed_metadata.py"
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "License catalog null is not a legal determination; supplementary documentation or file notices may supply terms but were not read.",
+    "File roles are filename/author-label inferences. Archive contents, respondent consent/deidentification and instrument/stimulus permission/compatibility remain unknown.",
+    "Cached metadata preserves this retrieval only; future server changes require a separately bounded observation, not retrospective edits.",
+    "No existing E02 result/protocol or research gate is changed, and no human validity or replication effect is inferred."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public OSF project/folder metadata accessed anonymously over verified HTTPS. Exact rights text/licenseURL are unavailable in observed project metadata; no content or permission inferred. No current protocol/source, credential, model or old-target access.",
+  "TASK_ID": "E02_HUMAN_ANCHOR_RIGHTS_METADATA_V1_20261116",
+  "TESTS_RUN_AND_RESULTS": "Local closed-evidence checks PASS for accounting only:2GETs/8906bytes, metadata body hashes/lengths, explicit null license field/absent relationship, complete2-entry folder, unchanged predecessor. No content, research or inference tests.",
+  "UNRESOLVED_BLOCKERS": [
+    "No explicit applicable project/code/data/instrument/stimulus reuse terms verified.",
+    "Documentation and archive contents remain uninspected under metadata-only restriction.",
+    "Separate aligned protocol and independent methods acceptance remain absent."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Correct project/license metadata and linked license if present",
+      "status": "PROJECT200_EXPLICIT_NULL_NO_LINK_NO_LICENSE_REQUEST"
+    },
+    {
+      "criterion": "Complete catalog of already-listed Replication folder within scope",
+      "status": "METADATA200_TWO_ENTRIES_NEXT_NULL"
+    },
+    {
+      "criterion": "Avoid respondent/stimulus/instrument/file contents and preserve bounds",
+      "status": "PASS_LOCAL_PRODUCER_ACCOUNTING"
+    },
+    {
+      "criterion": "Establish reuse permissions or human-benchmark validity",
+      "status": "UNRESOLVED_NOT_CLAIMED"
+    },
+    {
+      "criterion": "Independent closed-result review",
+      "status": "PENDING"
+    }
+  ],
+  "account_changes_or_external_publication": 0,
+  "aligned_protocol_implications": [
+    "Availability is clearer: public project and catalog metadata are accessible, but rights remain unresolved; no human validation or replication is established.",
+    "A separately authorized rights/documentation read may examine the822-byte jitp_datainfo.md without acquiring the mixed replication archive or respondent-level data. That content read is outside this metadata-only scope and was not performed.",
+    "Verify explicit code/instrument/stimulus permissions and provenance before copying materials. An archive may mix respondent data with code; metadata does not qualify selective safe acquisition or reuse.",
+    "Exact questionnaire/scoring/presentation compatibility, population/exclusions and preregistration remain unverified. A separate aligned credibility benchmark and matched simpler comparator need frozen hypotheses, methods and independent review before execution.",
+    "Keep existing E02 protocols/results unchanged; disclose retrospective benchmark selection and possible model exposure to the published study. Synthetic agreement does not establish human political persuasion or population validity."
+  ],
+  "date": "2026-11-16",
+  "decision": "PROJECT_LICENSE_EXPLICITLY_NULL_REPLICATION_FOLDER_CATALOGED_RIGHTS_UNRESOLVED_METADATA_ONLY",
+  "folder_catalog": {
+    "additional_page_requested": false,
+    "http_status": 200,
+    "integrity_scope": "Catalog md5/SHA256 values and version1 are server-reported metadata, not locally verified content integrity. Metadata response bytes themselves are retained privately and hash-checked offline.",
+    "inventory": [
+      {
+        "catalog_version": 1,
+        "child_metadata_url_not_followed": null,
+        "contents_acquired": false,
+        "date_created": "2022-07-13T21:46:22.178039Z",
+        "date_modified": "2022-07-13T21:46:22.178039",
+        "download_url_not_followed": "https://osf.io/download/c59u8/",
+        "html_url": "https://osf.io/xe28y/files/osfstorage/62cf3d2e1bb7a51aaa1f3720",
+        "id": "62cf3d2e1bb7a51aaa1f3720",
+        "kind": "file",
+        "metadata_url": "https://api.osf.io/v2/files/62cf3d2e1bb7a51aaa1f3720/",
+        "name": "jitp_datainfo.md",
+        "repository_reported_hashes": {
+          "md5": "4659c0ddcae89b0aae5ab994dfa6feb7",
+          "sha256": "05fb2df6d9a028537068ad0659ad15b8405a604807745272f9e3a8c29213f354"
+        },
+        "size_bytes": 822
+      },
+      {
+        "catalog_version": 1,
+        "child_metadata_url_not_followed": null,
+        "contents_acquired": false,
+        "date_created": "2022-07-13T21:46:27.166394Z",
+        "date_modified": "2022-07-13T21:46:27.166394",
+        "download_url_not_followed": "https://osf.io/download/jx3wu/",
+        "html_url": "https://osf.io/xe28y/files/osfstorage/62cf3d331bb7a51aae1f378b",
+        "id": "62cf3d331bb7a51aae1f378b",
+        "kind": "file",
+        "metadata_url": "https://api.osf.io/v2/files/62cf3d331bb7a51aae1f378b/",
+        "name": "replication_jitp.zip",
+        "repository_reported_hashes": {
+          "md5": "84841cf98c68d458e3f793ed99ae1db3",
+          "sha256": "889e14a43e05fe0e7262c696fd66b75db9e1771dd47dd6c3bf101bc6a3555c5d"
+        },
+        "size_bytes": 3900223
+      }
+    ],
+    "metadata_url": "https://api.osf.io/v2/nodes/xe28y/files/osfstorage/62cf3d1d588bb91920b8703b/?page%5Bsize%5D=100",
+    "pagination": {
+      "first": null,
+      "last": null,
+      "meta": {
+        "per_page": 100,
+        "total": 2
+      },
+      "next": null,
+      "prev": null
+    },
+    "returned_entries": 2,
+    "role_interpretations": [
+      {
+        "catalog_size_bytes": 822,
+        "contents_acquired": false,
+        "inferred_role": "Potential data/code documentation by filename only; exact contents and any rights statements not read.",
+        "name": "jitp_datainfo.md"
+      },
+      {
+        "catalog_size_bytes": 3900223,
+        "contents_acquired": false,
+        "inferred_role": "Candidate replication archive associated with author Stata label; internal data/code/instrument/stimulus names are unknown because archive not acquired or opened.",
+        "name": "replication_jitp.zip"
+      }
+    ],
+    "root_survey_from_predecessor": "20180509AB_survey.pdf remains metadata-only and uninspected. This scope did not request it or any download/preview/render endpoint."
+  },
+  "independent_review": "PENDING_ROOT_CLOSED_EVIDENCE_INSPECTION; producer has not certified a research milestone.",
+  "paid_or_model_calls": 0,
+  "predecessor": {
+    "report_ref": {
+      "bytes": 25234,
+      "path": "reports/E02_HUMAN_ANCHOR_REPLICATION_AVAILABILITY_20261116.json",
+      "sha256": "2c744473a592db12ece850305e453860510493ef23296b819476c0ae934448ee"
+    },
+    "requests_used": 8,
+    "response_bytes_used": 4561042,
+    "scope": "Original availability batch remains closed and consumed; this is a separately authorized correct-project metadata successor.",
+    "unchanged": true
+  },
+  "project_metadata": {
+    "category_as_returned": "",
+    "date_created_as_returned": "2020-02-03T17:42:48.589445",
+    "date_modified_as_returned": "2023-05-08T20:09:14.981657",
+    "date_timezone_note": "Returned project dates have no explicit offset; no timezone invented.",
+    "http_status": 200,
+    "public": true,
+    "version_scope": "Metadata observation only; timestamps do not prove actual study execution, package revisions or preregistered timing."
+  },
+  "request_accounting": {
+    "HTTP_methods": [
+      "GET"
+    ],
+    "automatic_redirects": 0,
+    "combined_actual_requests": 10,
+    "combined_actual_response_bytes": 4569948,
+    "combined_authority_maximum_requests": 12,
+    "combined_authority_maximum_response_bytes": 20971520,
+    "credential_or_login_use": 0,
+    "denials_encountered_this_scope": 0,
+    "denied_route_retries": 0,
+    "file_content_downloads": 0,
+    "new_scope_actual_requests": 2,
+    "new_scope_actual_response_bytes": 8906,
+    "new_scope_maximum_requests": 4,
+    "new_scope_maximum_response_bytes": 4194304,
+    "new_scope_remaining_response_bytes": 4185398,
+    "new_scope_unused_request_allowance": 2,
+    "old8_request_scope_reset": false,
+    "pagination_requests": 0,
+    "requests": [
+      {
+        "body_sha256": "9201202c79a559d9a6886e2bafd530554ecc29674bca6d5da29ec999c9ac4958",
+        "combined_ordinal": 9,
+        "response_bytes": 4530,
+        "retrieval_end_utc": "2026-11-16T15:35:28.438432+00:00",
+        "retrieval_start_utc": "2026-11-16T15:35:28.297733+00:00",
+        "scope_ordinal": 1,
+        "status": 200,
+        "url": "https://api.osf.io/v2/nodes/xe28y/"
+      },
+      {
+        "body_sha256": "4a96866ccb1b02fbc35b9025c5ba1ff9bb517099b76f1fc5ab4919ef1ed24c72",
+        "combined_ordinal": 10,
+        "response_bytes": 4376,
+        "retrieval_end_utc": "2026-11-16T15:35:28.594359+00:00",
+        "retrieval_start_utc": "2026-11-16T15:35:28.438788+00:00",
+        "scope_ordinal": 2,
+        "status": 200,
+        "url": "https://api.osf.io/v2/nodes/xe28y/files/osfstorage/62cf3d1d588bb91920b8703b/?page%5Bsize%5D=100"
+      }
+    ],
+    "stop_reason": "All specified metadata targets resolved: correct project and complete two-entry folder. No linked license and no next page exist in those responses, so remaining requests were not spent on guesses, file contents or denied routes.",
+    "unused_allowance_rule": "Unused requests are not authority to download documentation/archive/respondent/stimulus/instrument files or reopen the predecessor. No automatic continuation/replay."
+  },
+  "retention_and_integrity": {
+    "downloaded_code_data_archive": false,
+    "downloaded_questionnaire_or_stimuli": false,
+    "downloaded_readme": false,
+    "full_metadata_responses_private_ignored": [
+      {
+        "bytes": 4530,
+        "path": "data/processed/e02_human_anchor_rights_metadata_v1_20261116/01-RESPONSE.json",
+        "sha256": "9201202c79a559d9a6886e2bafd530554ecc29674bca6d5da29ec999c9ac4958"
+      },
+      {
+        "bytes": 4376,
+        "path": "data/processed/e02_human_anchor_rights_metadata_v1_20261116/02-RESPONSE.json",
+        "sha256": "4a96866ccb1b02fbc35b9025c5ba1ff9bb517099b76f1fc5ab4919ef1ed24c72"
+      }
+    ],
+    "full_public_response_bodies": 0,
+    "local_validation_ref": {
+      "bytes": 1318,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/local-accounting-validation.json",
+      "sha256": "c97372a7622e182a06fa4c547a57d46f7102881dddaca7dff2240cd6d6473655"
+    },
+    "offline_hash_verification": "Both cached raw response hashes/lengths match original observations; node_license null and absent license link confirmed from cached body.",
+    "private_cache_git_ignore_verified": true,
+    "public_evidence": "Compact selected project/file catalog fields, source URLs, status/times/header/body-hash observations and local accounting only. No full response body, description/paper text or respondent/stimulus/instrument data retained publicly.",
+    "raw_cached_response_types": "Public project and folder JSON metadata only; no payload/data-file content."
+  },
+  "rights_evidence": {
+    "description_scope": "Project description has no license/copyright/CC0/Creative Commons/rights-reserved keyword in a cached metadata check. Description text not reproduced; negative keyword checks alone are not a rights conclusion.",
+    "evidence_ref": {
+      "bytes": 891,
+      "path": "reports/evidence_e02_human_anchor_rights_metadata_v1_20261116/license-field-inspection.json",
+      "sha256": "99f7c8983485aa6b6dad2feec20477f2ee144064d560e4c43b3e3515f8453c45"
+    },
+    "exact_node_license_value": null,
+    "exact_rights_text": null,
+    "license_field_present": true,
+    "license_relationship_present": false,
+    "linked_license_url": null,
+    "project_code_data_scope": "No project or code/data license grant verified. The null catalog field is not proof of a legal prohibition, public-domain status, waiver, consent or author ownership of every included work.",
+    "reason_no_license_request": "No license relationship/URL is provided by the correct project metadata. No license ID or legal text was guessed, and no unrelated license endpoint was queried.",
+    "rights_status": "UNKNOWN_UNRESOLVED_NOT_FORBIDDEN_OR_APPROVED",
+    "third_party_stimuli_scope": "No inference that news articles, platform screenshots/logos or other third-party stimuli are licensed by the project. File contents and individual notices were not inspected."
+  },
+  "source_identity": {
+    "article_doi": "10.1080/19331681.2022.2105465",
+    "author_association_source": "https://sites.dartmouth.edu/nyhan/publications/",
+    "preregistration_separate": "https://osf.io/6dzeu",
+    "project_metadata": "https://api.osf.io/v2/nodes/xe28y/",
+    "replication_project": "https://osf.io/xe28y/",
+    "scope": "Current public project metadata matches the target title; author bibliography separately labels this project replication data/code (Stata). No renewed preregistration/publisher route request.",
+    "title": "A Platform Penalty for News? How Social Media Context Can Alter Information Credibility Online"
+  }
+}

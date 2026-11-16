@@ -1,0 +1,11 @@
+--- adverse_probe.py
++++ adverse_probe_schema_recovery_v1_1.py
+@@ -132,7 +132,7 @@
+     schemas.append({'module':row['member'][:-3].replace('/','.'),'class':row['class'],'line':row['decorator_line'],'fields':row['fields'],'defaults':defaults,'no_repr':no_repr,'methods':set(row['methods'])})
+ check('five source derived classes',len(schemas)==5)
+ for independent,declared in zip(schemas,m.DATACLASS_SCHEMAS):
+-    check('schema '+independent['class'],(independent['module'],independent['class'],independent['line'],tuple(independent['fields']),tuple(independent['defaults']),tuple(independent['no_repr']),'__post_init__' in independent['methods'])==declared)
++    check('schema '+independent['class'],(independent['module'],independent['class'],independent['line'],tuple(independent['fields']),tuple(name for name in independent['fields'] if name in independent['defaults']),tuple(independent['no_repr']),'__post_init__' in independent['methods'])==declared)
+ 
+ captured=[];dc=binding.module;original_exec=builtins.exec
+ def intercept(source,globals=None,locals=None,**kwargs):

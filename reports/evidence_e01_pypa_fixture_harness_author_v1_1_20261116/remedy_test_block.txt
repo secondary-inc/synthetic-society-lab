@@ -1,0 +1,177 @@
+class StickySharedExhaustionTests(unittest.TestCase):
+    def controls(self):
+        pure=m.own_module(m.PURE_REF,'sticky_pure');base=m.own_module(m.POLICY_REF,'sticky_base')
+        return pure,base
+    def test_caught_read_and_write_cap_cannot_finish_or_replace_primary(self):
+        for kind in ('read','write'):
+            class CatchingAPI(MockAPI):
+                caught=None
+                def install(self,source,destination,additional_metadata):
+                    budget=destination[0].policy.shared
+                    try:getattr(budget,kind)(33554432)
+                    except m.HarnessRefused as error:self.caught=error
+                    return super().install(source,destination,additional_metadata)
+            fs=m.MemoryFS();api=CatchingAPI()
+            with self.assertRaises(m.HarnessRefused) as caught:m.drive_mock(api,fs)
+            self.assertIs(caught.exception,api.caught)
+            self.assertEqual(caught.exception.code,'FIXTURE_'+kind.upper()+'_CAP')
+            terminal=json.loads(fs.files[str(fs.root/'controls/TERMINAL.json')])
+            self.assertEqual(terminal['outcome'],'FAILED_FIXTURE_HARNESS');self.assertTrue(terminal['usage']['failed'])
+            self.assertEqual(terminal['cases'],[]);self.assertEqual(api.calls,1)
+            self.assertTrue(terminal['failure_ref']);self.assertEqual(terminal['reason'],caught.exception.code)
+            failure=json.loads(fs.files[str(fs.root/'controls/FAILED_CASE.json')])
+            self.assertEqual(failure['partial_manifest'],{});self.assertFalse(failure['installation_accepted'])
+            self.assertLessEqual(terminal['usage']['closure_read_bytes'],32768)
+            self.assertLessEqual(len(fs.files[str(fs.root/'controls/TERMINAL.json')]),32768)
+    def test_independent_success_gate_catches_masked_cap_without_followup_writes(self):
+        for kind in ('read','write'):
+            class MaskingAPI(MockAPI):
+                caught=None
+                def install(self,source,destination,additional_metadata):
+                    self.calls+=1
+                    try:getattr(destination[0].policy.shared,kind)(33554432)
+                    except m.HarnessRefused as error:self.caught=error
+                    # Return normally, deliberately masking the resource refusal.
+            api=MaskingAPI();fs=m.MemoryFS()
+            with self.assertRaises(m.HarnessRefused) as caught:m.drive_mock(api,fs)
+            self.assertIs(caught.exception,api.caught)
+            terminal=json.loads(fs.files[str(fs.root/'controls/TERMINAL.json')])
+            self.assertEqual(terminal['outcome'],'FAILED_FIXTURE_HARNESS');self.assertEqual(terminal['cases'],[])
+            self.assertTrue(terminal['usage']['failed']);self.assertEqual(api.calls,1)
+    def test_read_write_check_and_prefix_effects_stay_refused_after_catch(self):
+        pure,base=self.controls();budget=m.SharedBudget(pure);fs=m.MemoryFS()
+        policy=m.policy_class(base.GuestPolicy)(fs.root,budget);fs.bind(policy);policy.begin('VALID');policy.phase_set('INSTALL')
+        with self.assertRaises(m.HarnessRefused) as first:budget.write(33554432)
+        before=dict(fs.files)
+        for call in (lambda:budget.read(0),lambda:budget.write(0),budget.check,budget.healthy,
+                     lambda:fs.write_new(Path(policy.current['prefix'])/'SHOULD_NOT_EXIST',b'MOCK')):
+            with self.assertRaises(m.HarnessRefused) as later:call()
+            self.assertIs(later.exception,first.exception)
+        self.assertEqual(fs.files,before);self.assertTrue(budget.strict_reads.failed)
+        budget.close_for_evidence();policy.phase_set('CONTROL')
+        m.receipt(fs,'FAILURE.json',{'mock_failure':True})
+        self.assertIn(str(fs.root/'controls/FAILURE.json'),fs.files)
+    def test_held_source_stream_is_poisoned_by_global_exhaustion(self):
+        pure,base=self.controls();budget=m.SharedBudget(pure);raw=m.make_fixture('VALID')
+        token=pure.validate_wheel(raw,expected_sha256=m.sha(raw),filename=m.FILENAME,budget=budget.strict_reads)
+        with token.open() as stream:
+            with self.assertRaises(m.HarnessRefused):budget.read(33554432)
+            with self.assertRaisesRegex(pure.WheelRefused,'READ_BUDGET_FAILED'):stream.read(1)
+        with self.assertRaisesRegex(pure.WheelRefused,'READ_BUDGET_FAILED'):token.open()
+    def test_strict_stream_exhaustion_also_blocks_a_normal_return(self):
+        class MaskingAPI(MockAPI):
+            def install(self,source,destination,additional_metadata):
+                self.calls+=1;budget=destination[0].policy.shared
+                try:budget.strict_reads._reserve(budget.strict_reads.limit+1)
+                except ValueError:pass
+        fs=m.MemoryFS();api=MaskingAPI()
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_STRICT_READ_CAP'):m.drive_mock(api,fs)
+        terminal=json.loads(fs.files[str(fs.root/'controls/TERMINAL.json')])
+        self.assertEqual(terminal['outcome'],'FAILED_FIXTURE_HARNESS');self.assertTrue(terminal['usage']['failed'])
+    def test_control_reserve_needs_irreversible_closure_and_is_bounded(self):
+        pure,base=self.controls();budget=m.SharedBudget(pure)
+        with self.assertRaises(m.HarnessRefused) as first:budget.read(33554432)
+        with self.assertRaises(m.HarnessRefused) as again:budget.write(1,control=True)
+        self.assertIs(first.exception,again.exception)
+        budget.close_for_evidence();budget.write(100,control=True);budget.read(100,control=True)
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_CLOSURE_WRITE_CAP'):budget.write(32768,control=True)
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_CLOSURE_READ_CAP'):budget.read(32768,control=True)
+        with self.assertRaises(m.HarnessRefused):budget.check()
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_STRICT_BUDGET_REENTRY'):budget.attach_strict(pure)
+
+
+class GeneratedCompilationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.binding=m.bind_runtime_compile(m.SharedBudget())
+    def frame(self,gate,row):
+        # Inert frame stand-ins; no code with a tool origin is compiled/executed.
+        snapshot=Path('/SSL_MOCK_COMPILE/controls/installer-1.1.0-py3-none-any.whl')
+        filename=str(snapshot)+'/'+row['module'].replace('.','/')+'.py'
+        def inert():pass
+        tool=SimpleNamespace(f_code=inert.__code__.replace(co_filename=filename,co_name='<module>'),
+            f_globals={'__name__':row['module'],'__file__':filename,'__spec__':SimpleNamespace(origin=filename)},
+            f_lineno=row['line'],f_back=None)
+        helper={'__init__':'_init_fn','__repr__':'_repr_fn','__eq__':'_cmp_fn'}[row['method']]
+        current=tool
+        for name in reversed(('_create_fn',helper,'_process_class','wrap','dataclass')):
+            current=SimpleNamespace(f_code=self.binding.codes[name],f_globals=self.binding.module.__dict__,f_back=current)
+        return snapshot,current,tool
+    def test_runtime_stdlib_binding_is_exact_and_not_an_import_time_hook(self):
+        pins=m.RUNTIME_COMPILE_PINS[self.binding.runtime]
+        self.assertEqual((self.binding.executable_ref['bytes'],self.binding.executable_ref['sha256']),pins['executable'])
+        self.assertEqual((self.binding.stdlib_ref['bytes'],self.binding.stdlib_ref['sha256']),pins['dataclasses'])
+        self.assertEqual(self.binding.module.__spec__.origin,str(self.binding.stdlib_path))
+    def test_exact_fifteen_sources_match_inert_stdlib_dataclass_generation_without_exec(self):
+        dc=self.binding.module;captured=[];original=builtins.exec
+        def intercept(source,globals=None,locals=None,**kwargs):
+            self.assertIs(sys._getframe(1).f_code,self.binding.codes['_create_fn'])
+            self.assertIs(type(source),str);captured.append(source.encode())
+            # _create_fn needs an inert callable; generated text is never run.
+            locals['__create_fn__']=lambda **kw:(lambda *a,**k:None)
+        try:
+            builtins.exec=intercept
+            for module,cls,line,fields,defaults,no_repr,post_init in m.DATACLASS_SCHEMAS:
+                ns={'__annotations__':{name:object for name in fields},'__module__':__name__,'__doc__':'AUTHORED INERT DATACLASS SCHEMA'}
+                for name in no_repr:ns[name]=dc.field(repr=False)
+                for name in defaults:ns[name]={'hash_algorithm':'sha256','bytecode_optimization_levels':(),'destdir':None,'overwrite_existing':False}[name]
+                if post_init:ns['__post_init__']=lambda self:None
+                if cls=='RecordEntry':ns.update(__repr__=lambda self:'MOCK',__eq__=lambda self,other:False)
+                dc.dataclass(type('AuthoredInertStandin',(Exception,) if post_init else (object,),ns))
+        finally:builtins.exec=original
+        plan=m.generated_compile_plan(self.binding.runtime)
+        self.assertEqual(captured,[row['source'] for row in plan]);self.assertEqual(len(captured),15)
+        self.assertEqual(sum(map(len,captured)),sum(row['bytes'] for row in plan))
+    def test_finite_ordered_plan_accepts_only_exact_mock_frame_context(self):
+        gate=m.GeneratedCompileGate(self.binding)
+        for row in gate.plan:
+            snapshot,frame,tool=self.frame(gate,row)
+            gate._admit(row['source'],'<string>','TOOL_LOAD',snapshot,frame)
+        gate.finish();self.assertEqual(gate.summary()['accepted_generated_events'],15)
+        snapshot,frame,tool=self.frame(gate,gate.plan[-1])
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_COUNT'):
+            gate._admit(gate.plan[-1]['source'],'<string>','TOOL_LOAD',snapshot,frame)
+        self.assertTrue(gate.failed)
+    def test_source_filename_phase_and_sequence_drift_refuse_and_latch(self):
+        for field in ('source','filename','phase','sequence'):
+            gate=m.GeneratedCompileGate(self.binding);row=gate.plan[0];snapshot,frame,tool=self.frame(gate,row)
+            source=row['source']+b'\n' if field=='source' else gate.plan[1]['source'] if field=='sequence' else row['source']
+            with self.assertRaises(m.HarnessRefused):gate._admit(source,'MOCK' if field=='filename' else '<string>',
+                'INSTALL' if field=='phase' else 'TOOL_LOAD',snapshot,frame)
+            self.assertEqual(gate.index,0);self.assertTrue(gate.failed)
+            with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_COUNT'):
+                gate._admit(row['source'],'<string>','TOOL_LOAD',snapshot,frame)
+    def test_stdlib_code_identity_globals_and_tool_origins_cannot_drift(self):
+        for field in ('code','globals','tool_origin','tool_file','tool_module','tool_line','tool_code_filename'):
+            gate=m.GeneratedCompileGate(self.binding);row=gate.plan[0];snapshot,frame,tool=self.frame(gate,row)
+            if field=='code':frame.f_code=frame.f_code.replace()
+            elif field=='globals':frame.f_globals=dict(frame.f_globals)
+            elif field=='tool_origin':tool.f_globals['__spec__'].origin='/MOCK_WRONG'
+            elif field=='tool_file':tool.f_globals['__file__']='/MOCK_WRONG'
+            elif field=='tool_module':tool.f_globals['__name__']='MOCK_WRONG'
+            elif field=='tool_line':tool.f_lineno+=1
+            else:tool.f_code=tool.f_code.replace(co_filename='/MOCK_WRONG')
+            with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_ORIGIN'):
+                gate._admit(row['source'],'<string>','TOOL_LOAD',snapshot,frame)
+            self.assertEqual(gate.index,0);self.assertTrue(gate.failed)
+    def test_missing_generated_event_refuses_finish_permanently(self):
+        gate=m.GeneratedCompileGate(self.binding)
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_INCOMPLETE'):gate.finish()
+        self.assertTrue(gate.failed)
+    def test_real_policy_callback_rejects_forged_caller_and_arbitrary_source(self):
+        pure=m.own_module(m.PURE_REF,'compile_pure');base=m.own_module(m.POLICY_REF,'compile_base')
+        for source,filename in ((m.generated_compile_plan(self.binding.runtime)[0]['source'],'<string>'),
+                (b'ARBITRARY MOCK SOURCE','installer/records.py')):
+            policy=m.policy_class(base.GuestPolicy)(Path('/SSL_MOCK_COMPILE'),m.SharedBudget(pure))
+            policy.generated_compile=m.GeneratedCompileGate(self.binding);policy.phase_set('TOOL_LOAD')
+            if filename!='<string>':filename=str(policy.stage/'installer-1.1.0-py3-none-any.whl')+'/'+filename
+            with self.assertRaises(base.Refused):policy.audit('compile',(source,filename))
+            self.assertEqual(policy.violations,1);self.assertTrue(policy.compile_failed)
+            with self.assertRaises(base.Refused):policy.audit('compile',(source,filename))
+            self.assertEqual(policy.violations,2)
+    def test_other_runtime_plan_is_distinct_and_unknown_runtime_refuses(self):
+        a=m.generated_compile_plan('3.11.17');b=m.generated_compile_plan('3.12.14')
+        self.assertNotEqual(a[0]['source'],b[0]['source']);self.assertEqual(len(a),len(b))
+        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_RUNTIME'):m.generated_compile_plan('3.10.0')
+
+

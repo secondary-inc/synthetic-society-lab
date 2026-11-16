@@ -1,0 +1,126 @@
+# Closed source qualification, not a general permission for dynamic compilation.
+RUNTIME_COMPILE_PINS={
+    '3.11.17':{'executable':(17344128,'595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f'),
+        'dataclasses':(58472,'77a41ea9eb35d959781087b72ef5b452218b57b9d8f2d28688d45a40ca7f8a09')},
+    '3.12.14':{'executable':(18058560,'9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb'),
+        'dataclasses':(62085,'d242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9')}}
+# Class schemas are inert data derived from the source-qualified tool; no tool
+# source is evaluated to produce the expected strings. Every class uses default
+# init/repr/eq, including RecordEntry whose own repr/eq are retained afterward.
+DATACLASS_SCHEMAS=(
+    ('installer.records','InvalidRecordEntry',22,('elements','issues'),(),(),True),
+    ('installer.records','Hash',33,('name','value'),(),(),False),
+    ('installer.records','RecordEntry',77,('path','hash_','size'),(),(),False),
+    ('installer.scripts','Script',50,('name','module','attr','section'),(),('section',),False),
+    ('installer.destinations','SchemeDictionaryDestination',101,
+        ('scheme_dict','interpreter','script_kind','hash_algorithm','bytecode_optimization_levels','destdir','overwrite_existing'),
+        ('hash_algorithm','bytecode_optimization_levels','destdir','overwrite_existing'),(),False))
+
+
+def generated_compile_plan(runtime):
+    need(runtime in RUNTIME_COMPILE_PINS,'FIXTURE_GENERATED_RUNTIME')
+    later=runtime.startswith('3.12.')
+    type_name=lambda field:('__dataclass_type_'+field+'__') if later else ('_type_'+field)
+    default_name=lambda field:('__dataclass_dflt_'+field+'__') if later else ('_dflt_'+field)
+    return_name='__dataclass_return_type__' if later else '_return_type'
+    rows=[]
+    for module,cls,line,fields,defaults,no_repr,post_init in DATACLASS_SCHEMAS:
+        names=[type_name(field) for field in fields]
+        names+=['__dataclass_HAS_DEFAULT_FACTORY__','__dataclass_builtins_object__'] if later else ['MISSING','_HAS_DEFAULT_FACTORY','__dataclass_builtins_object__']
+        names += [default_name(field) for field in defaults]+[return_name]
+        params=['self']+[field+':'+type_name(field)+('='+default_name(field) if field in defaults else '') for field in fields]
+        init_body=['self.'+field+'='+field for field in fields]+(['self.__post_init__()'] if post_init else [])
+        repr_body=['return self.__class__.__qualname__ + f"('+', '.join(field+'={self.'+field+'!r}' for field in fields if field not in no_repr)+')"']
+        self_tuple='('+','.join('self.'+field for field in fields)+',)'
+        other_tuple='('+','.join('other.'+field for field in fields)+',)'
+        eq_body=['if other.__class__ is self.__class__:', ' return '+self_tuple+'=='+other_tuple,'return NotImplemented']
+        for method,args,body,local_names,annotation in (
+                ('__init__',params,init_body,names,'->'+return_name),
+                ('__repr__',['self'],repr_body,[],''),
+                ('__eq__',['self','other'],eq_body,[],'')):
+            text='def __create_fn__('+', '.join(local_names)+'):\n def '+method+'('+','.join(args)+')'+annotation+':\n'+'\n'.join('  '+part for part in body)+'\n return '+method
+            raw=text.encode('utf-8')
+            rows.append({'module':module,'class':cls,'line':line,'method':method,
+                'source':raw,'bytes':len(raw),'sha256':sha(raw)})
+    need(len(rows)==15,'FIXTURE_GENERATED_PLAN_COUNT')
+    return rows
+
+
+_RUNTIME_BINDING_SEAL=object()
+class RuntimeCompileBinding:
+    def __init__(self,seal,runtime,stdlib_path,module,codes,executable_ref,stdlib_ref):
+        need(seal is _RUNTIME_BINDING_SEAL,'FIXTURE_RUNTIME_BINDING_REQUIRED')
+        self.runtime=runtime;self.stdlib_path=stdlib_path;self.module=module;self.codes=codes
+        self.executable_ref=executable_ref;self.stdlib_ref=stdlib_ref
+
+
+def bind_runtime_compile(budget):
+    """Hash exact runtime/stdlib files and retain only technical code identities.
+
+    Loaded bytecode/startup closure remains a separate actual-release gate.
+    No third-party tool/payload is imported or compiled here.
+    """
+    runtime=sys.version.split()[0]
+    need(sys.implementation.name=='cpython' and runtime in RUNTIME_COMPILE_PINS,'FIXTURE_GENERATED_RUNTIME')
+    executable=Path(sys.executable).resolve()
+    stdlib=Path(sys.base_prefix)/'lib'/('python%d.%d'%sys.version_info[:2])/'dataclasses.py'
+    refs={}
+    for kind,path in [('executable',executable),('dataclasses',stdlib)]:
+        size,digest=RUNTIME_COMPILE_PINS[runtime][kind]
+        read_pin(path.parent,{'path':path.name,'bytes':size,'sha256':digest},maximum=20971520,budget=budget)
+        refs[kind]={'path':str(path),'bytes':size,'sha256':digest}
+    import dataclasses
+    need(Path(dataclasses.__file__)==stdlib and dataclasses.__spec__.origin==str(stdlib)
+         and sys.modules.get('dataclasses') is dataclasses,'FIXTURE_DATACLASSES_ORIGIN')
+    codes={name:getattr(dataclasses,name).__code__ for name in
+        ('_create_fn','_init_fn','_repr_fn','_cmp_fn','_process_class','dataclass')}
+    wrap=[code for code in codes['dataclass'].co_consts if hasattr(code,'co_name') and code.co_name=='wrap']
+    need(len(wrap)==1 and all(code.co_filename==str(stdlib) for code in codes.values()),'FIXTURE_DATACLASSES_CODE_ORIGIN')
+    codes['wrap']=wrap[0]
+    return RuntimeCompileBinding(_RUNTIME_BINDING_SEAL,runtime,stdlib,dataclasses,codes,refs['executable'],refs['dataclasses'])
+
+
+class GeneratedCompileGate:
+    """Exactly15 generated dataclass strings in one TOOL_LOAD, never arbitrary exec.
+
+    accept captures the real audit caller. _admit/_origin_matches also support
+    inert frame doubles in authored tests; those private methods grant no tool
+    execution/release and are not a hostile-private-state security boundary.
+    """
+    def __init__(self,binding):
+        need(type(binding) is RuntimeCompileBinding,'FIXTURE_RUNTIME_BINDING_REQUIRED')
+        self.binding=binding;self.plan=generated_compile_plan(binding.runtime);self.index=0;self.failed=False
+    def _origin_matches(self,frame,snapshot,row):
+        helper={'__init__':'_init_fn','__repr__':'_repr_fn','__eq__':'_cmp_fn'}[row['method']]
+        chain=('_create_fn',helper,'_process_class','wrap','dataclass')
+        for name in chain:
+            if frame is None or frame.f_code is not self.binding.codes[name] or frame.f_globals is not self.binding.module.__dict__:
+                return False
+            if frame.f_code.co_filename!=str(self.binding.stdlib_path):return False
+            frame=frame.f_back
+        filename=str(snapshot)+'/'+row['module'].replace('.','/')+'.py'
+        if frame is None:return False
+        spec=frame.f_globals.get('__spec__')
+        return (frame.f_code.co_name=='<module>' and frame.f_code.co_filename==filename
+            and frame.f_globals.get('__name__')==row['module'] and frame.f_globals.get('__file__')==filename
+            and getattr(spec,'origin',None)==filename and frame.f_lineno==row['line'])
+    def _admit(self,source,filename,phase,snapshot,frame):
+        try:
+            need(not self.failed and self.index<len(self.plan),'FIXTURE_GENERATED_COUNT')
+            row=self.plan[self.index]
+            raw=source.encode('utf-8') if type(source) is str else source
+            need(phase=='TOOL_LOAD' and filename=='<string>','FIXTURE_GENERATED_PHASE_OR_FILENAME')
+            need(type(raw) is bytes and raw==row['source'],'FIXTURE_GENERATED_SOURCE')
+            need(self._origin_matches(frame,snapshot,row),'FIXTURE_GENERATED_ORIGIN')
+            self.index+=1
+        except HarnessRefused:self.failed=True;raise
+    def accept(self,source,filename,phase,snapshot):
+        # accept -> FixturePolicy.audit -> pinned dataclasses._create_fn.
+        frame=sys._getframe(2)
+        try:return self._admit(source,filename,phase,snapshot,frame)
+        finally:del frame
+    def finish(self):
+        need(not self.failed and self.index==15,'FIXTURE_GENERATED_INCOMPLETE')
+    def summary(self):
+        return {'expected_generated_events':15,'accepted_generated_events':self.index,'failed':self.failed,
+            'runtime_ref':self.binding.executable_ref,'stdlib_ref':self.binding.stdlib_ref}

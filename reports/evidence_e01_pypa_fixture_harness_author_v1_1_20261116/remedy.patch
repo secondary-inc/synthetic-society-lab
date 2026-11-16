@@ -1,0 +1,600 @@
+--- scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py
++++ scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py
+@@ -26,7 +26,7 @@
+ import zipimport
+ 
+ ROOT = Path(__file__).absolute().parents[1]
+-CODE = 'scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py'
++CODE = 'scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py'
+ PURE_REF = {'path':'scripts/e01_strict_wheel_source_candidate_v1_20261116.py','bytes':15018,
+     'sha256':'ec018402c9d455b723aec33a5ce3beb1404615f6df0c670c1815202413ab0543'}
+ POLICY_REF = {'path':'scripts/install_e01_pypdf701_runtime_v1_5.py','bytes':64638,
+@@ -144,32 +144,195 @@
+ 
+ 
+ class SharedBudget:
++    """One sticky operational budget and a bounded final evidence reserve."""
+     def __init__(self,pure=None,clock=time.monotonic):
+         self.clock=clock;self.started=self.previous=clock()
+         self.file_reads=self.writes=self.install_calls=self.refusals=0
+-        self.failed=False
+-        # Fixed partitions prevent separate IO and memory streams overspending64MiB.
+-        self.strict_reads=pure.ReadBudget(33554432) if pure is not None else None
+-    def check(self):
+-        now=self.clock();need(now>=self.previous,'FIXTURE_CLOCK_REGRESSION');self.previous=now
+-        need(now-self.started<120,'FIXTURE_WALL_CAP')
++        self._failed=False;self.failure=None;self.closing=False
++        self.closure_reads=self.closure_writes=0
++        self.strict_reads=None;self.strict_refusal_type=None
++        if pure is not None:self.attach_strict(pure)
++    def attach_strict(self,pure):
++        need(self.strict_reads is None and not self._failed and not self.closing,'FIXTURE_STRICT_BUDGET_REENTRY')
++        self.strict_reads=pure.ReadBudget(33554432);self.strict_refusal_type=pure.WheelRefused
++    @property
++    def failed(self):return self._failed or (self.strict_reads is not None and self.strict_reads.failed)
++    def trip(self,code):
++        if self.failure is None:self.failure=HarnessRefused(code)
++        self._failed=True
++        if self.strict_reads is not None and not self.strict_reads.failed:
++            # Fail the accepted stream budget through its own reservation API;
++            # never edit/reset that immutable-source component or its counters.
++            try:self.strict_reads._reserve(self.strict_reads.limit-self.strict_reads.used+1)
++            except self.strict_refusal_type:pass
++        raise self.failure
++    def healthy(self):
++        if self.failed:self.trip('FIXTURE_STRICT_READ_CAP' if self.failure is None else self.failure.code)
++        need(not self.closing,'FIXTURE_OPERATION_AFTER_CLOSURE')
++    def check(self,control=False):
++        if self.closing and control:return
++        self.healthy()
++        now=self.clock()
++        if now<self.previous:self.trip('FIXTURE_CLOCK_REGRESSION')
++        self.previous=now
++        if now-self.started>=120:self.trip('FIXTURE_WALL_CAP')
+         usage=resource.getrusage(resource.RUSAGE_SELF)
+-        need(usage.ru_utime+usage.ru_stime<120,'FIXTURE_CPU_CAP')
++        if usage.ru_utime+usage.ru_stime>=120:self.trip('FIXTURE_CPU_CAP')
++    def close_for_evidence(self):
++        # Irreversible; ordinary work cannot resume even after healthy closure.
++        self.closing=True
+     def read(self,n,control=False):
+-        need(type(n) is int and n>=0,'FIXTURE_READ_AMOUNT')
++        self.check(control);need(type(n) is int and n>=0,'FIXTURE_READ_AMOUNT')
++        if self.closing:
++            need(control and self.closure_reads+n<=32768,'FIXTURE_CLOSURE_READ_CAP')
++            self.closure_reads+=n
+         limit=33554432 if control else 33554432-32768
+-        if self.file_reads+n>limit:self.failed=True;raise HarnessRefused('FIXTURE_READ_CAP')
++        if self.file_reads+n>limit:self.trip('FIXTURE_READ_CAP')
+         self.file_reads+=n
+     def write(self,n,control=False):
+-        self.check();need(type(n) is int and n>=0,'FIXTURE_WRITE_AMOUNT')
++        self.check(control);need(type(n) is int and n>=0,'FIXTURE_WRITE_AMOUNT')
++        if self.closing:
++            need(control and self.closure_writes+n<=32768,'FIXTURE_CLOSURE_WRITE_CAP')
++            self.closure_writes+=n
+         limit=33554432 if control else 33554432-32768
+-        if self.writes+n>limit:self.failed=True;raise HarnessRefused('FIXTURE_WRITE_CAP')
++        if self.writes+n>limit:self.trip('FIXTURE_WRITE_CAP')
+         self.writes+=n
+     def summary(self):
+         strict_used=self.strict_reads.used if self.strict_reads is not None else 0
+         return {'file_read_bytes':self.file_reads,'strict_stream_read_bytes':strict_used,
+             'combined_read_bytes':self.file_reads+strict_used,'write_bytes':self.writes,
+-            'install_attempts':self.install_calls,'guard_refusals':self.refusals,'failed':self.failed}
++            'install_attempts':self.install_calls,'guard_refusals':self.refusals,'failed':self.failed,
++            'failure_code':None if self.failure is None else self.failure.code,
++            'closing':self.closing,'closure_read_bytes':self.closure_reads,'closure_write_bytes':self.closure_writes}
++
++
++# Closed source qualification, not a general permission for dynamic compilation.
++RUNTIME_COMPILE_PINS={
++    '3.11.17':{'executable':(17344128,'595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f'),
++        'dataclasses':(58472,'77a41ea9eb35d959781087b72ef5b452218b57b9d8f2d28688d45a40ca7f8a09')},
++    '3.12.14':{'executable':(18058560,'9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb'),
++        'dataclasses':(62085,'d242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9')}}
++# Class schemas are inert data derived from the source-qualified tool; no tool
++# source is evaluated to produce the expected strings. Every class uses default
++# init/repr/eq, including RecordEntry whose own repr/eq are retained afterward.
++DATACLASS_SCHEMAS=(
++    ('installer.records','InvalidRecordEntry',22,('elements','issues'),(),(),True),
++    ('installer.records','Hash',33,('name','value'),(),(),False),
++    ('installer.records','RecordEntry',77,('path','hash_','size'),(),(),False),
++    ('installer.scripts','Script',50,('name','module','attr','section'),(),('section',),False),
++    ('installer.destinations','SchemeDictionaryDestination',101,
++        ('scheme_dict','interpreter','script_kind','hash_algorithm','bytecode_optimization_levels','destdir','overwrite_existing'),
++        ('hash_algorithm','bytecode_optimization_levels','destdir','overwrite_existing'),(),False))
++
++
++def generated_compile_plan(runtime):
++    need(runtime in RUNTIME_COMPILE_PINS,'FIXTURE_GENERATED_RUNTIME')
++    later=runtime.startswith('3.12.')
++    type_name=lambda field:('__dataclass_type_'+field+'__') if later else ('_type_'+field)
++    default_name=lambda field:('__dataclass_dflt_'+field+'__') if later else ('_dflt_'+field)
++    return_name='__dataclass_return_type__' if later else '_return_type'
++    rows=[]
++    for module,cls,line,fields,defaults,no_repr,post_init in DATACLASS_SCHEMAS:
++        names=[type_name(field) for field in fields]
++        names+=['__dataclass_HAS_DEFAULT_FACTORY__','__dataclass_builtins_object__'] if later else ['MISSING','_HAS_DEFAULT_FACTORY','__dataclass_builtins_object__']
++        names += [default_name(field) for field in defaults]+[return_name]
++        params=['self']+[field+':'+type_name(field)+('='+default_name(field) if field in defaults else '') for field in fields]
++        init_body=['self.'+field+'='+field for field in fields]+(['self.__post_init__()'] if post_init else [])
++        repr_body=['return self.__class__.__qualname__ + f"('+', '.join(field+'={self.'+field+'!r}' for field in fields if field not in no_repr)+')"']
++        self_tuple='('+','.join('self.'+field for field in fields)+',)'
++        other_tuple='('+','.join('other.'+field for field in fields)+',)'
++        eq_body=['if other.__class__ is self.__class__:', ' return '+self_tuple+'=='+other_tuple,'return NotImplemented']
++        for method,args,body,local_names,annotation in (
++                ('__init__',params,init_body,names,'->'+return_name),
++                ('__repr__',['self'],repr_body,[],''),
++                ('__eq__',['self','other'],eq_body,[],'')):
++            text='def __create_fn__('+', '.join(local_names)+'):\n def '+method+'('+','.join(args)+')'+annotation+':\n'+'\n'.join('  '+part for part in body)+'\n return '+method
++            raw=text.encode('utf-8')
++            rows.append({'module':module,'class':cls,'line':line,'method':method,
++                'source':raw,'bytes':len(raw),'sha256':sha(raw)})
++    need(len(rows)==15,'FIXTURE_GENERATED_PLAN_COUNT')
++    return rows
++
++
++_RUNTIME_BINDING_SEAL=object()
++class RuntimeCompileBinding:
++    def __init__(self,seal,runtime,stdlib_path,module,codes,executable_ref,stdlib_ref):
++        need(seal is _RUNTIME_BINDING_SEAL,'FIXTURE_RUNTIME_BINDING_REQUIRED')
++        self.runtime=runtime;self.stdlib_path=stdlib_path;self.module=module;self.codes=codes
++        self.executable_ref=executable_ref;self.stdlib_ref=stdlib_ref
++
++
++def bind_runtime_compile(budget):
++    """Hash exact runtime/stdlib files and retain only technical code identities.
++
++    Loaded bytecode/startup closure remains a separate actual-release gate.
++    No third-party tool/payload is imported or compiled here.
++    """
++    runtime=sys.version.split()[0]
++    need(sys.implementation.name=='cpython' and runtime in RUNTIME_COMPILE_PINS,'FIXTURE_GENERATED_RUNTIME')
++    executable=Path(sys.executable).resolve()
++    stdlib=Path(sys.base_prefix)/'lib'/('python%d.%d'%sys.version_info[:2])/'dataclasses.py'
++    refs={}
++    for kind,path in [('executable',executable),('dataclasses',stdlib)]:
++        size,digest=RUNTIME_COMPILE_PINS[runtime][kind]
++        read_pin(path.parent,{'path':path.name,'bytes':size,'sha256':digest},maximum=20971520,budget=budget)
++        refs[kind]={'path':str(path),'bytes':size,'sha256':digest}
++    import dataclasses
++    need(Path(dataclasses.__file__)==stdlib and dataclasses.__spec__.origin==str(stdlib)
++         and sys.modules.get('dataclasses') is dataclasses,'FIXTURE_DATACLASSES_ORIGIN')
++    codes={name:getattr(dataclasses,name).__code__ for name in
++        ('_create_fn','_init_fn','_repr_fn','_cmp_fn','_process_class','dataclass')}
++    wrap=[code for code in codes['dataclass'].co_consts if hasattr(code,'co_name') and code.co_name=='wrap']
++    need(len(wrap)==1 and all(code.co_filename==str(stdlib) for code in codes.values()),'FIXTURE_DATACLASSES_CODE_ORIGIN')
++    codes['wrap']=wrap[0]
++    return RuntimeCompileBinding(_RUNTIME_BINDING_SEAL,runtime,stdlib,dataclasses,codes,refs['executable'],refs['dataclasses'])
++
++
++class GeneratedCompileGate:
++    """Exactly15 generated dataclass strings in one TOOL_LOAD, never arbitrary exec.
++
++    accept captures the real audit caller. _admit/_origin_matches also support
++    inert frame doubles in authored tests; those private methods grant no tool
++    execution/release and are not a hostile-private-state security boundary.
++    """
++    def __init__(self,binding):
++        need(type(binding) is RuntimeCompileBinding,'FIXTURE_RUNTIME_BINDING_REQUIRED')
++        self.binding=binding;self.plan=generated_compile_plan(binding.runtime);self.index=0;self.failed=False
++    def _origin_matches(self,frame,snapshot,row):
++        helper={'__init__':'_init_fn','__repr__':'_repr_fn','__eq__':'_cmp_fn'}[row['method']]
++        chain=('_create_fn',helper,'_process_class','wrap','dataclass')
++        for name in chain:
++            if frame is None or frame.f_code is not self.binding.codes[name] or frame.f_globals is not self.binding.module.__dict__:
++                return False
++            if frame.f_code.co_filename!=str(self.binding.stdlib_path):return False
++            frame=frame.f_back
++        filename=str(snapshot)+'/'+row['module'].replace('.','/')+'.py'
++        if frame is None:return False
++        spec=frame.f_globals.get('__spec__')
++        return (frame.f_code.co_name=='<module>' and frame.f_code.co_filename==filename
++            and frame.f_globals.get('__name__')==row['module'] and frame.f_globals.get('__file__')==filename
++            and getattr(spec,'origin',None)==filename and frame.f_lineno==row['line'])
++    def _admit(self,source,filename,phase,snapshot,frame):
++        try:
++            need(not self.failed and self.index<len(self.plan),'FIXTURE_GENERATED_COUNT')
++            row=self.plan[self.index]
++            raw=source.encode('utf-8') if type(source) is str else source
++            need(phase=='TOOL_LOAD' and filename=='<string>','FIXTURE_GENERATED_PHASE_OR_FILENAME')
++            need(type(raw) is bytes and raw==row['source'],'FIXTURE_GENERATED_SOURCE')
++            need(self._origin_matches(frame,snapshot,row),'FIXTURE_GENERATED_ORIGIN')
++            self.index+=1
++        except HarnessRefused:self.failed=True;raise
++    def accept(self,source,filename,phase,snapshot):
++        # accept -> FixturePolicy.audit -> pinned dataclasses._create_fn.
++        frame=sys._getframe(2)
++        try:return self._admit(source,filename,phase,snapshot,frame)
++        finally:del frame
++    def finish(self):
++        if self.failed or self.index!=15:
++            self.failed=True;raise HarnessRefused('FIXTURE_GENERATED_INCOMPLETE')
++    def summary(self):
++        return {'expected_generated_events':15,'accepted_generated_events':self.index,'failed':self.failed,
++            'runtime_ref':self.binding.executable_ref,'stdlib_ref':self.binding.stdlib_ref}
+ 
+ 
+ def policy_class(base):
+@@ -181,7 +344,7 @@
+             self.stage=Path(root)/'controls';self.target=Path(root)/'prefixes'
+             self.base_lib=Path(sys.base_prefix)/'lib'/('python%d.%d'%sys.version_info[:2])
+             self.exact_reads={Path('/dev/null')}
+-            self.shared=budget;self.phase='CONTROL';self.current=None;self.case_states=[];self.sealed=set()
++            self.shared=budget;self.phase='CONTROL';self.current=None;self.case_states=[];self.sealed=set();self.generated_compile=None;self.tool_compiled=set();self.compile_failed=False
+         def refuse(self,code):
+             self.shared.refusals+=1
+             super().refuse(code)
+@@ -193,6 +356,7 @@
+                    'quota_failed':False,'injected':InjectedWriteFailure('FIXTURE_INJECTED_WRITE')}
+             self.case_states.append(state);self.current=state
+         def path(self,value,flags):
++            self.shared.check(control=self.phase=='CONTROL')
+             super().path(value,flags)
+             path=canonical(value);writing=flags&(os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND)
+             if writing:
+@@ -217,10 +381,24 @@
+             super().charge(body,False)
+         def audit(self,event,args):
+             if event=='os.symlink':self.refuse('GUEST_FIXTURE_SYMLINK_DENIED')
+-            if event=='compile' and len(args)>1:
+-                filename=args[1]
+-                if type(filename) is not str or not filename.startswith(str(self.stage)+'/installer-1.1.0-py3-none-any.whl/installer/'):
+-                    self.refuse('GUEST_FIXTURE_COMPILE_DENIED')
++            if event=='compile':
++                try:
++                    need(not self.compile_failed and len(args)==2,'FIXTURE_COMPILE_EVENT')
++                    source,filename=args
++                    need(self.phase=='TOOL_LOAD','FIXTURE_COMPILE_PHASE')
++                    if filename=='<string>':
++                        need(self.generated_compile is not None,'FIXTURE_GENERATED_GATE_REQUIRED')
++                        self.generated_compile.accept(source,filename,self.phase,self.stage/'installer-1.1.0-py3-none-any.whl')
++                    else:
++                        prefix=str(self.stage/'installer-1.1.0-py3-none-any.whl')+'/'
++                        need(type(filename) is str and filename.startswith(prefix),'FIXTURE_COMPILE_ORIGIN')
++                        member=filename[len(prefix):]
++                        need(member in TOOL_PY and member!='installer/__main__.py' and member not in self.tool_compiled,'FIXTURE_COMPILE_MEMBER')
++                        raw=source.encode('utf-8') if type(source) is str else source
++                        need(type(raw) is bytes and (len(raw),sha(raw))==TOOL_PY[member],'FIXTURE_COMPILE_SOURCE')
++                        self.tool_compiled.add(member)
++                except HarnessRefused:
++                    self.compile_failed=True;self.refuse('GUEST_FIXTURE_COMPILE_DENIED')
+             before=self.reads
+             try:return super().audit(event,args)
+             finally:
+@@ -368,27 +546,32 @@
+                         policy.phase_set('INSTALL')
+                         try:api.install(source,destination,{'INSTALLER':INSTALLER})
+                         except BaseException as error:
++                            if budget.failed:
++                                if budget.failure is not None:raise budget.failure from None
++                                raise
+                             if name=='WRITE_QUOTA':need(type(error) is base.Refused and policy.current['quota_failed'],'FIXTURE_QUOTA_PRIMARY')
+                             elif name=='INTERRUPTED_WRITE':need(error is policy.current['injected'],'FIXTURE_INTERRUPTED_PRIMARY')
+                             else:raise
+                             case.update(verdict='EXPECTED_INSTALL_REFUSAL',error_code=_closed_error(error,pure,base),
+                                 primary_identity_preserved=name!='INTERRUPTED_WRITE' or error is policy.current['injected'])
+                         else:
++                            budget.healthy()
+                             need(name=='VALID' and policy.violations==before,'FIXTURE_NEGATIVE_INSTALL_ADMITTED')
+                             policy.phase_set('ORACLE');case['output_manifest']=verify_output(fs,policy.current['prefix'])
+                             case.update(verdict='VALID_GENERATED_OUTPUT',fixture_only=True)
+                     need(token.sha256==sha(raw),'FIXTURE_SOURCE_DRIFT')
+-            policy.phase_set('CONTROL')
++            budget.healthy();policy.phase_set('CONTROL')
+             case.update(guard_counter_before=before,guard_counter_after=policy.violations,
+                 destination_bytes=policy.current['destination_bytes'],write_attempts=policy.current['write_attempts'])
+             if name in {'WRITE_QUOTA','INTERRUPTED_WRITE'}:
+                 case['partial_manifest']={n:{'bytes':len(b),'sha256':sha(b)} for n,b in fs.list(policy.current['prefix']).items()}
+             ref=receipt(fs,name+'-RESULT.json',case)
+             results.append({'id':name,'verdict':case['verdict'],'ref':ref})
+-        need(budget.install_calls==3,'FIXTURE_INSTALL_CALL_COUNT');outcome='FIXTURE_ASSERTIONS_PASS_ONLY'
++        budget.healthy();need(budget.install_calls==3,'FIXTURE_INSTALL_CALL_COUNT');outcome='FIXTURE_ASSERTIONS_PASS_ONLY'
+     except BaseException as error:reason=_closed_error(error,pure,base);primary=error
+     finally:
+-        policy.phase_set('CONTROL')
++        budget.close_for_evidence();policy.phase_set('CONTROL')
++        if budget.failed:outcome='FAILED_FIXTURE_HARNESS'
+         try:
+             for row in results:
+                 raw=fs.read(fs.root/'controls'/row['ref']['path'])
+@@ -602,6 +785,8 @@
+             member=path[len(str(snapshot))+1:]
+             need(member in TOOL_PY,'FIXTURE_TOOL_MODULE_SET')
+     need(fs.read(snapshot)==raw,'FIXTURE_TOOL_POSTLOAD_HASH')
++    need(not policy.compile_failed,'FIXTURE_COMPILE_FAILED')
++    policy.generated_compile.finish()
+     policy.phase_set('CONTROL')
+     return QualifiedAPI(module,sys.modules['installer.sources'],sys.modules['installer.destinations'])
+ 
+@@ -610,7 +795,7 @@
+     """Pure exact binding. Real entry reads all evidence through pinned paths."""
+     required={'kind','execution_enabled','root_sha256','runtime','candidate_ref','plan_sha256',
+               'limits','source_audit_ref','pure_audit_ref','bytes_audit_ref','review_ref','temp_parent'}
+-    need(type(packet) is dict and set(packet)==required and packet['kind']=='E01_PYPA_FIXTURE_RELEASE_V1'
++    need(type(packet) is dict and set(packet)==required and packet['kind']=='E01_PYPA_FIXTURE_RELEASE_V1_1'
+          and packet['execution_enabled'] is True and packet['root_sha256']==sha(str(root).encode())
+          and packet['plan_sha256']==sha(packed(case_plan())) and packet['limits']==LIMITS
+          and packet['source_audit_ref']==SOURCE_AUDIT and packet['pure_audit_ref']==PURE_AUDIT
+@@ -641,7 +826,7 @@
+          'FIXTURE_SINGLE_OWNER')
+     budget=SharedBudget()
+     need(type(packet_ref) is dict and packet_ref.get('path','').startswith(
+-        'data/processed/e01_pypa_fixture_release_v1_20261116/'),'FIXTURE_RELEASE_PACKET_PATH')
++        'data/processed/e01_pypa_fixture_release_v1_1_20261116/'),'FIXTURE_RELEASE_PACKET_PATH')
+     packet=json.loads(read_pin(ROOT,packet_ref,65536,budget))
+     review_ref=packet.get('review_ref') if type(packet) is dict else None
+     need(type(review_ref) is dict and review_ref.get('path','').startswith('reports/INDEPENDENT_AUDIT_'),
+@@ -655,15 +840,16 @@
+         value=json.loads(read_pin(ROOT,ref,budget=budget));decision=value.get('decision',value.get('status'))
+         need(type(decision) is str and decision.startswith('PASS_'),'FIXTURE_PREREQUISITE_REVIEW')
+     pure=own_module(PURE_REF,'released_fixture_pure_source',budget)
+-    budget.strict_reads=pure.ReadBudget(33554432)
++    budget.attach_strict(pure)
+     base=own_module(POLICY_REF,'released_fixture_original_policy',budget)
+     fd=own_module(FD_REF,'released_fixture_original_directory_guard',budget)
+     raw=read_pin(ROOT,TOOL_REF,budget=budget);inspect_tool_bytes(raw)
+     parent=canonical(packet['temp_parent']);no_alias(parent);need(parent.is_dir(),'FIXTURE_TEMP_PARENT')
+-    scope=parent/('ssl-fixtures-v1-'+packet['root_sha256'][:16]+'-'+packet['runtime'])
++    scope=parent/('ssl-fixtures-v1_1-'+packet['root_sha256'][:16]+'-'+packet['runtime'])
+     no_alias(scope);need(not scope.exists(),'FIXTURE_SPENT_SCOPE')
+     scope.mkdir(mode=0o700,exist_ok=False);(scope/'controls').mkdir(mode=0o700);(scope/'prefixes').mkdir(mode=0o700)
+     fs=DiskFS(scope);policy=policy_class(base.GuestPolicy)(scope,budget);fs.bind(policy)
++    policy.generated_compile=GeneratedCompileGate(bind_runtime_compile(budget))
+     install_hooks(policy,fs,base,fd)
+     def stop(*_):raise HarnessRefused('FIXTURE_DEADLINE')
+     signal.signal(signal.SIGALRM,stop);signal.signal(signal.SIGXCPU,stop)
+@@ -679,7 +865,7 @@
+         return {'outcome':result['terminal']['outcome'],'terminal_ref':result['terminal_ref'],
+             'scope':str(scope),'installation_accepted':False,'runtime_or_P3_accepted':False}
+     except BaseException as primary:
+-        policy.phase_set('CONTROL')
++        budget.close_for_evidence();policy.phase_set('CONTROL')
+         try:receipt(fs,'BOOTSTRAP_FAILED.json',{'mode':'RELEASED_FIXTURE','phase':policy.phase,
+             'error_code':_closed_error(primary,pure,base),'usage':budget.summary(),'no_retry':True,
+             'installation_accepted':False,'runtime_or_P3_accepted':False})
+--- tests/test_e01_pypa_fixture_harness_candidate_v1_20261116.py
++++ tests/test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py
+@@ -31,10 +31,11 @@
+ import signal
+ import stat
+ import unittest
++from types import SimpleNamespace
+ import zipfile
+ 
+ ROOT=Path(__file__).resolve().parents[1]
+-CODE=ROOT/'scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py'
++CODE=ROOT/'scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py'
+ 
+ 
+ def load_own(name,path,expected=None):
+@@ -167,11 +168,11 @@
+         pure,base=self.controls();budget=m.SharedBudget(pure)
+         budget.write(33554432-32768)
+         with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_WRITE_CAP'):budget.write(1)
+-        budget.write(100,control=True);self.assertTrue(budget.failed)
++        budget.close_for_evidence();budget.write(100,control=True);self.assertTrue(budget.failed)
+         self.assertLessEqual(budget.summary()['write_bytes'],33554432)
+         reader=m.SharedBudget(pure);reader.read(33554432-32768)
+         with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_READ_CAP'):reader.read(1)
+-        reader.read(100,control=True);self.assertLessEqual(reader.summary()['combined_read_bytes'],67108864)
++        reader.close_for_evidence();reader.read(100,control=True);self.assertLessEqual(reader.summary()['combined_read_bytes'],67108864)
+     def test_clock_regression_and_deadline_refuse(self):
+         pure,base=self.controls();clock=[1.0];budget=m.SharedBudget(pure,lambda:clock[0]);clock[0]=0.0
+         with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_CLOCK_REGRESSION'):budget.check()
+@@ -229,7 +230,7 @@
+         finally:m.zipimport.zipimporter=original
+     def packet(self):
+         raw=b'MOCK_CANDIDATE_CODE_NOT_EXECUTED';root=Path('/SSL_MOCK_REVIEW_ROOT')
+-        packet={'kind':'E01_PYPA_FIXTURE_RELEASE_V1','execution_enabled':True,'root_sha256':m.sha(str(root).encode()),
++        packet={'kind':'E01_PYPA_FIXTURE_RELEASE_V1_1','execution_enabled':True,'root_sha256':m.sha(str(root).encode()),
+             'runtime':'3.12.14','candidate_ref':{'path':m.CODE,'bytes':len(raw),'sha256':m.sha(raw)},
+             'plan_sha256':m.sha(m.packed(m.case_plan())),'limits':m.LIMITS,
+             'source_audit_ref':m.SOURCE_AUDIT,'pure_audit_ref':m.PURE_AUDIT,'bytes_audit_ref':m.BYTES_AUDIT,
+@@ -251,6 +252,183 @@
+             with self.assertRaises(m.HarnessRefused):m.validate_release(packet,changed_root,changed_raw,changed_review)
+         packet['runtime']='3.10.0'
+         with self.assertRaises(m.HarnessRefused):m.validate_release(packet,root,raw,review)
++
++
++class StickySharedExhaustionTests(unittest.TestCase):
++    def controls(self):
++        pure=m.own_module(m.PURE_REF,'sticky_pure');base=m.own_module(m.POLICY_REF,'sticky_base')
++        return pure,base
++    def test_caught_read_and_write_cap_cannot_finish_or_replace_primary(self):
++        for kind in ('read','write'):
++            class CatchingAPI(MockAPI):
++                caught=None
++                def install(self,source,destination,additional_metadata):
++                    budget=destination[0].policy.shared
++                    try:getattr(budget,kind)(33554432)
++                    except m.HarnessRefused as error:self.caught=error
++                    return super().install(source,destination,additional_metadata)
++            fs=m.MemoryFS();api=CatchingAPI()
++            with self.assertRaises(m.HarnessRefused) as caught:m.drive_mock(api,fs)
++            self.assertIs(caught.exception,api.caught)
++            self.assertEqual(caught.exception.code,'FIXTURE_'+kind.upper()+'_CAP')
++            terminal=json.loads(fs.files[str(fs.root/'controls/TERMINAL.json')])
++            self.assertEqual(terminal['outcome'],'FAILED_FIXTURE_HARNESS');self.assertTrue(terminal['usage']['failed'])
++            self.assertEqual(terminal['cases'],[]);self.assertEqual(api.calls,1)
++            self.assertTrue(terminal['failure_ref']);self.assertEqual(terminal['reason'],caught.exception.code)
++            failure=json.loads(fs.files[str(fs.root/'controls/FAILED_CASE.json')])
++            self.assertEqual(failure['partial_manifest'],{});self.assertFalse(failure['installation_accepted'])
++            self.assertLessEqual(terminal['usage']['closure_read_bytes'],32768)
++            self.assertLessEqual(len(fs.files[str(fs.root/'controls/TERMINAL.json')]),32768)
++    def test_independent_success_gate_catches_masked_cap_without_followup_writes(self):
++        for kind in ('read','write'):
++            class MaskingAPI(MockAPI):
++                caught=None
++                def install(self,source,destination,additional_metadata):
++                    self.calls+=1
++                    try:getattr(destination[0].policy.shared,kind)(33554432)
++                    except m.HarnessRefused as error:self.caught=error
++                    # Return normally, deliberately masking the resource refusal.
++            api=MaskingAPI();fs=m.MemoryFS()
++            with self.assertRaises(m.HarnessRefused) as caught:m.drive_mock(api,fs)
++            self.assertIs(caught.exception,api.caught)
++            terminal=json.loads(fs.files[str(fs.root/'controls/TERMINAL.json')])
++            self.assertEqual(terminal['outcome'],'FAILED_FIXTURE_HARNESS');self.assertEqual(terminal['cases'],[])
++            self.assertTrue(terminal['usage']['failed']);self.assertEqual(api.calls,1)
++    def test_read_write_check_and_prefix_effects_stay_refused_after_catch(self):
++        pure,base=self.controls();budget=m.SharedBudget(pure);fs=m.MemoryFS()
++        policy=m.policy_class(base.GuestPolicy)(fs.root,budget);fs.bind(policy);policy.begin('VALID');policy.phase_set('INSTALL')
++        with self.assertRaises(m.HarnessRefused) as first:budget.write(33554432)
++        before=dict(fs.files)
++        for call in (lambda:budget.read(0),lambda:budget.write(0),budget.check,budget.healthy,
++                     lambda:fs.write_new(Path(policy.current['prefix'])/'SHOULD_NOT_EXIST',b'MOCK')):
++            with self.assertRaises(m.HarnessRefused) as later:call()
++            self.assertIs(later.exception,first.exception)
++        self.assertEqual(fs.files,before);self.assertTrue(budget.strict_reads.failed)
++        budget.close_for_evidence();policy.phase_set('CONTROL')
++        m.receipt(fs,'FAILURE.json',{'mock_failure':True})
++        self.assertIn(str(fs.root/'controls/FAILURE.json'),fs.files)
++    def test_held_source_stream_is_poisoned_by_global_exhaustion(self):
++        pure,base=self.controls();budget=m.SharedBudget(pure);raw=m.make_fixture('VALID')
++        token=pure.validate_wheel(raw,expected_sha256=m.sha(raw),filename=m.FILENAME,budget=budget.strict_reads)
++        with token.open() as stream:
++            with self.assertRaises(m.HarnessRefused):budget.read(33554432)
++            with self.assertRaisesRegex(pure.WheelRefused,'READ_BUDGET_FAILED'):stream.read(1)
++        with self.assertRaisesRegex(pure.WheelRefused,'READ_BUDGET_FAILED'):token.open()
++    def test_strict_stream_exhaustion_also_blocks_a_normal_return(self):
++        class MaskingAPI(MockAPI):
++            def install(self,source,destination,additional_metadata):
++                self.calls+=1;budget=destination[0].policy.shared
++                try:budget.strict_reads._reserve(budget.strict_reads.limit+1)
++                except ValueError:pass
++        fs=m.MemoryFS();api=MaskingAPI()
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_STRICT_READ_CAP'):m.drive_mock(api,fs)
++        terminal=json.loads(fs.files[str(fs.root/'controls/TERMINAL.json')])
++        self.assertEqual(terminal['outcome'],'FAILED_FIXTURE_HARNESS');self.assertTrue(terminal['usage']['failed'])
++    def test_control_reserve_needs_irreversible_closure_and_is_bounded(self):
++        pure,base=self.controls();budget=m.SharedBudget(pure)
++        with self.assertRaises(m.HarnessRefused) as first:budget.read(33554432)
++        with self.assertRaises(m.HarnessRefused) as again:budget.write(1,control=True)
++        self.assertIs(first.exception,again.exception)
++        budget.close_for_evidence();budget.write(100,control=True);budget.read(100,control=True)
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_CLOSURE_WRITE_CAP'):budget.write(32768,control=True)
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_CLOSURE_READ_CAP'):budget.read(32768,control=True)
++        with self.assertRaises(m.HarnessRefused):budget.check()
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_STRICT_BUDGET_REENTRY'):budget.attach_strict(pure)
++
++
++class GeneratedCompilationTests(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        cls.binding=m.bind_runtime_compile(m.SharedBudget())
++    def frame(self,gate,row):
++        # Inert frame stand-ins; no code with a tool origin is compiled/executed.
++        snapshot=Path('/SSL_MOCK_COMPILE/controls/installer-1.1.0-py3-none-any.whl')
++        filename=str(snapshot)+'/'+row['module'].replace('.','/')+'.py'
++        def inert():pass
++        tool=SimpleNamespace(f_code=inert.__code__.replace(co_filename=filename,co_name='<module>'),
++            f_globals={'__name__':row['module'],'__file__':filename,'__spec__':SimpleNamespace(origin=filename)},
++            f_lineno=row['line'],f_back=None)
++        helper={'__init__':'_init_fn','__repr__':'_repr_fn','__eq__':'_cmp_fn'}[row['method']]
++        current=tool
++        for name in reversed(('_create_fn',helper,'_process_class','wrap','dataclass')):
++            current=SimpleNamespace(f_code=self.binding.codes[name],f_globals=self.binding.module.__dict__,f_back=current)
++        return snapshot,current,tool
++    def test_runtime_stdlib_binding_is_exact_and_not_an_import_time_hook(self):
++        pins=m.RUNTIME_COMPILE_PINS[self.binding.runtime]
++        self.assertEqual((self.binding.executable_ref['bytes'],self.binding.executable_ref['sha256']),pins['executable'])
++        self.assertEqual((self.binding.stdlib_ref['bytes'],self.binding.stdlib_ref['sha256']),pins['dataclasses'])
++        self.assertEqual(self.binding.module.__spec__.origin,str(self.binding.stdlib_path))
++    def test_exact_fifteen_sources_match_inert_stdlib_dataclass_generation_without_exec(self):
++        dc=self.binding.module;captured=[];original=builtins.exec
++        def intercept(source,globals=None,locals=None,**kwargs):
++            self.assertIs(sys._getframe(1).f_code,self.binding.codes['_create_fn'])
++            self.assertIs(type(source),str);captured.append(source.encode())
++            # _create_fn needs an inert callable; generated text is never run.
++            locals['__create_fn__']=lambda **kw:(lambda *a,**k:None)
++        try:
++            builtins.exec=intercept
++            for module,cls,line,fields,defaults,no_repr,post_init in m.DATACLASS_SCHEMAS:
++                ns={'__annotations__':{name:object for name in fields},'__module__':__name__,'__doc__':'AUTHORED INERT DATACLASS SCHEMA'}
++                for name in no_repr:ns[name]=dc.field(repr=False)
++                for name in defaults:ns[name]={'hash_algorithm':'sha256','bytecode_optimization_levels':(),'destdir':None,'overwrite_existing':False}[name]
++                if post_init:ns['__post_init__']=lambda self:None
++                if cls=='RecordEntry':ns.update(__repr__=lambda self:'MOCK',__eq__=lambda self,other:False)
++                dc.dataclass(type('AuthoredInertStandin',(Exception,) if post_init else (object,),ns))
++        finally:builtins.exec=original
++        plan=m.generated_compile_plan(self.binding.runtime)
++        self.assertEqual(captured,[row['source'] for row in plan]);self.assertEqual(len(captured),15)
++        self.assertEqual(sum(map(len,captured)),sum(row['bytes'] for row in plan))
++    def test_finite_ordered_plan_accepts_only_exact_mock_frame_context(self):
++        gate=m.GeneratedCompileGate(self.binding)
++        for row in gate.plan:
++            snapshot,frame,tool=self.frame(gate,row)
++            gate._admit(row['source'],'<string>','TOOL_LOAD',snapshot,frame)
++        gate.finish();self.assertEqual(gate.summary()['accepted_generated_events'],15)
++        snapshot,frame,tool=self.frame(gate,gate.plan[-1])
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_COUNT'):
++            gate._admit(gate.plan[-1]['source'],'<string>','TOOL_LOAD',snapshot,frame)
++        self.assertTrue(gate.failed)
++    def test_source_filename_phase_and_sequence_drift_refuse_and_latch(self):
++        for field in ('source','filename','phase','sequence'):
++            gate=m.GeneratedCompileGate(self.binding);row=gate.plan[0];snapshot,frame,tool=self.frame(gate,row)
++            source=row['source']+b'\n' if field=='source' else gate.plan[1]['source'] if field=='sequence' else row['source']
++            with self.assertRaises(m.HarnessRefused):gate._admit(source,'MOCK' if field=='filename' else '<string>',
++                'INSTALL' if field=='phase' else 'TOOL_LOAD',snapshot,frame)
++            self.assertEqual(gate.index,0);self.assertTrue(gate.failed)
++            with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_COUNT'):
++                gate._admit(row['source'],'<string>','TOOL_LOAD',snapshot,frame)
++    def test_stdlib_code_identity_globals_and_tool_origins_cannot_drift(self):
++        for field in ('code','globals','tool_origin','tool_file','tool_module','tool_line','tool_code_filename'):
++            gate=m.GeneratedCompileGate(self.binding);row=gate.plan[0];snapshot,frame,tool=self.frame(gate,row)
++            if field=='code':frame.f_code=frame.f_code.replace()
++            elif field=='globals':frame.f_globals=dict(frame.f_globals)
++            elif field=='tool_origin':tool.f_globals['__spec__'].origin='/MOCK_WRONG'
++            elif field=='tool_file':tool.f_globals['__file__']='/MOCK_WRONG'
++            elif field=='tool_module':tool.f_globals['__name__']='MOCK_WRONG'
++            elif field=='tool_line':tool.f_lineno+=1
++            else:tool.f_code=tool.f_code.replace(co_filename='/MOCK_WRONG')
++            with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_ORIGIN'):
++                gate._admit(row['source'],'<string>','TOOL_LOAD',snapshot,frame)
++            self.assertEqual(gate.index,0);self.assertTrue(gate.failed)
++    def test_missing_generated_event_refuses_finish_permanently(self):
++        gate=m.GeneratedCompileGate(self.binding)
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_INCOMPLETE'):gate.finish()
++        self.assertTrue(gate.failed)
++    def test_real_policy_callback_rejects_forged_caller_and_arbitrary_source(self):
++        pure=m.own_module(m.PURE_REF,'compile_pure');base=m.own_module(m.POLICY_REF,'compile_base')
++        for source,filename in ((m.generated_compile_plan(self.binding.runtime)[0]['source'],'<string>'),
++                (b'ARBITRARY MOCK SOURCE','installer/records.py')):
++            policy=m.policy_class(base.GuestPolicy)(Path('/SSL_MOCK_COMPILE'),m.SharedBudget(pure))
++            policy.generated_compile=m.GeneratedCompileGate(self.binding);policy.phase_set('TOOL_LOAD')
++            if filename!='<string>':filename=str(policy.stage/'installer-1.1.0-py3-none-any.whl')+'/'+filename
++            with self.assertRaises(base.Refused):policy.audit('compile',(source,filename))
++            self.assertEqual(policy.violations,1);self.assertTrue(policy.compile_failed)
++            with self.assertRaises(base.Refused):policy.audit('compile',(source,filename))
++            self.assertEqual(policy.violations,2)
++    def test_other_runtime_plan_is_distinct_and_unknown_runtime_refuses(self):
++        a=m.generated_compile_plan('3.11.17');b=m.generated_compile_plan('3.12.14')
++        self.assertNotEqual(a[0]['source'],b[0]['source']);self.assertEqual(len(a),len(b))
++        with self.assertRaisesRegex(m.HarnessRefused,'FIXTURE_GENERATED_RUNTIME'):m.generated_compile_plan('3.10.0')
+ 
+ 
+ class CollectionAndSourceSafetyTests(unittest.TestCase):
+@@ -280,7 +458,7 @@
+ 
+ def guarded_main():
+     reads=[0];output=[0];stdlib=Path(sys.base_prefix)/'lib'
+-    allowed={Path(__file__).resolve(),CODE,ROOT/m.PURE_REF['path'],ROOT/m.POLICY_REF['path'],ROOT/m.FD_REF['path']}
++    allowed={Path(__file__).resolve(),CODE,ROOT/m.PURE_REF['path'],ROOT/m.POLICY_REF['path'],ROOT/m.FD_REF['path'],Path(sys.executable).resolve()}
+     def audit(event,args):
+         if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+             path=Path(os.path.realpath(args[0]));flags=args[2]
+@@ -305,7 +483,11 @@
+     resource.setrlimit(resource.RLIMIT_CORE,(0,0));resource.setrlimit(resource.RLIMIT_CPU,(119,120))
+     def timeout(*_):raise AssertionError('HARNESS_MOCK_WALL_CAP')
+     signal.signal(signal.SIGALRM,timeout);signal.setitimer(signal.ITIMER_REAL,120)
+-    unittest.main(failfast=True,verbosity=2)
++    program=unittest.main(failfast=True,verbosity=2,exit=False)
++    print(json.dumps({'kind':'V1_1_AUTHOR_GUARDED_SUITE_COUNTERS','late_read_bytes':reads[0],'console_bytes_before_summary':output[0],
++        'bootstrap_reads_not_metered':True,'actual_tool_imports':int(any(n=='installer' or n.startswith('installer.') for n in sys.modules)),
++        'OS_writes':0,'checks':program.result.testsRun},sort_keys=True))
++    raise SystemExit(0 if program.result.wasSuccessful() else 1)
+ 
+ 
+ if __name__=='__main__':guarded_main()

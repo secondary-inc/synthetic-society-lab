@@ -1,0 +1,169 @@
+{
+  "cost_usd": 0,
+  "counts": {
+    "requests": 3,
+    "response_bytes": 3958382
+  },
+  "denied_or_failed_routes_stopped": [],
+  "kind": "BOUNDED_PUBLIC_METADATA_AUTHOR_METHODS_INITIAL_BATCH",
+  "no_response_bodies_saved": true,
+  "observations": [
+    {
+      "public_metadata": null,
+      "request": {
+        "body_bytes": 61,
+        "body_read_status": "COMPLETE",
+        "body_saved": false,
+        "body_sha256": "6e27cfcdf9785eedadd5eac956cceb62de5d30f1834ab4954cbc88303e08588d",
+        "credentials": false,
+        "elapsed_seconds": 0.158114083998953,
+        "headers": {
+          "content-length": "61",
+          "content-type": "application/vnd.api+json; charset=utf-8",
+          "date": "Mon, 16 Nov 2026 15:25:46 GMT"
+        },
+        "http_status": 404,
+        "method": "GET",
+        "ordinal": 1,
+        "purpose": "Public project metadata and license/file relationships, no respondent data.",
+        "redirects": "NOT_AUTOMATICALLY_FOLLOWED",
+        "respondent_or_stimulus_download": false,
+        "response_byte_bound": 4194304,
+        "retrieval_end_utc": "2026-11-16T15:25:46.864036+00:00",
+        "retrieval_start_utc": "2026-11-16T15:25:46.705515+00:00",
+        "route": "OSF_API",
+        "url": "https://api.osf.io/v2/nodes/6dzeu/"
+      }
+    },
+    {
+      "public_metadata": {
+        "author_count": 16,
+        "doi": "10.1080/19331681.2022.2105465",
+        "first_author": "Alexander Agadjanian",
+        "issue": "3",
+        "journal": "Journal of Information Technology &amp; Politics",
+        "last_author": "Brendan Nyhan",
+        "license_field_present": false,
+        "metadata_deposited": {
+          "date-parts": [
+            [
+              2023,
+              5,
+              30
+            ]
+          ],
+          "date-time": "2023-05-30T02:08:53Z",
+          "timestamp": 1685412533000
+        },
+        "page": "338-348",
+        "published_online": {
+          "date-parts": [
+            [
+              2022,
+              8,
+              2
+            ]
+          ]
+        },
+        "published_print": {
+          "date-parts": [
+            [
+              2023,
+              7,
+              3
+            ]
+          ]
+        },
+        "publisher": "Informa UK Limited",
+        "publisher_vor_link": [
+          {
+            "URL": "https://www.tandfonline.com/doi/pdf/10.1080/19331681.2022.2105465",
+            "content-type": "unspecified",
+            "content-version": "vor",
+            "intended-application": "similarity-checking"
+          }
+        ],
+        "rights": "UNVERIFIED_NO_LICENSE_FIELD_OBSERVED",
+        "title": "A platform penalty for news? How social media context can alter information credibility online",
+        "volume": "20"
+      },
+      "request": {
+        "body_bytes": 7181,
+        "body_read_status": "COMPLETE",
+        "body_saved": false,
+        "body_sha256": "069185a0242aa1070a437397c79cf253f8dc831dd06a631dc0d4687d6e5d1606",
+        "credentials": false,
+        "elapsed_seconds": 0.15805475000524893,
+        "headers": {
+          "content-type": "application/json",
+          "date": "Mon, 16 Nov 2026 15:25:46 GMT"
+        },
+        "http_status": 200,
+        "method": "GET",
+        "ordinal": 2,
+        "purpose": "Public DOI bibliographic/license metadata only.",
+        "redirects": "NOT_AUTOMATICALLY_FOLLOWED",
+        "respondent_or_stimulus_download": false,
+        "response_byte_bound": 4194304,
+        "retrieval_end_utc": "2026-11-16T15:25:46.864259+00:00",
+        "retrieval_start_utc": "2026-11-16T15:25:46.705996+00:00",
+        "route": "CROSSREF",
+        "url": "https://api.crossref.org/works/10.1080%2F19331681.2022.2105465"
+      }
+    },
+    {
+      "public_metadata": {
+        "annotation_urls_inspected": false,
+        "keyword_presence_scope": "Text extraction only; not visual/annotation review or proof of no license.",
+        "license_notice_tokens_present": {
+          "all_rights_reserved": false,
+          "copyright": false,
+          "creative_commons": false
+        },
+        "literal_text_extraction_contains_osf_io_6dzeu": false,
+        "methods_keyword_observations": {
+          "Facebook": true,
+          "MTurk": true,
+          "N3008": true,
+          "credibility": true,
+          "website": true
+        },
+        "pages": 72,
+        "pdf_metadata": {
+          "/CreationDate": "D:20220805142401Z",
+          "/ModDate": "D:20220805142401Z",
+          "/Producer": "pdfTeX-1.40.18"
+        },
+        "pdf_or_text_saved": false
+      },
+      "request": {
+        "body_bytes": 3951140,
+        "body_read_status": "COMPLETE",
+        "body_saved": false,
+        "body_sha256": "cf446ed096dd83afad2e65c1ebc47fa4358e2b7c57edc6f6413b5566a1993028",
+        "credentials": false,
+        "elapsed_seconds": 0.5821700829983456,
+        "headers": {
+          "cache-control": "public, max-age=31919000",
+          "content-length": "3951140",
+          "content-type": "application/pdf",
+          "date": "Mon, 16 Nov 2026 15:25:46 GMT",
+          "etag": "\"f26453241900d15ea0a340ed959d3db8\"",
+          "last-modified": "Fri, 05 Aug 2022 14:25:05 GMT"
+        },
+        "http_status": 200,
+        "method": "GET",
+        "ordinal": 3,
+        "purpose": "Read-only author methods/version/replication reference. No retained text or PDF body.",
+        "redirects": "NOT_AUTOMATICALLY_FOLLOWED",
+        "respondent_or_stimulus_download": false,
+        "response_byte_bound": 4194304,
+        "retrieval_end_utc": "2026-11-16T15:25:47.288585+00:00",
+        "retrieval_start_utc": "2026-11-16T15:25:46.706243+00:00",
+        "route": "AUTHOR_PAPER",
+        "url": "https://bpb-us-e1.wpmucdn.com/sites.dartmouth.edu/dist/5/2293/files/2022/08/social_media_effects_credibility.pdf"
+      }
+    }
+  ],
+  "public_evidence_scope": "Selected bibliographic/file metadata, request statuses/hashes and rights observations only. No raw transport response body or author/publisher/stimulus/respondent text retained here."
+}

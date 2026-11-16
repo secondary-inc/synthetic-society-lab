@@ -1,0 +1,221 @@
+{
+  "G03": "NOT_RUN",
+  "V1_preserved": true,
+  "actual_tool_imports_compiles_calls_installs": 0,
+  "findings_ref": {
+    "bytes": 32780,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_HARNESS_V1_20261116.json",
+    "sha256": "45939a8bcef79bbf72e465240e12f746055c36e2626f444bfed32f6578d5098e"
+  },
+  "kind": "E01_PYPA_FIXTURE_HARNESS_V1_1_AUTHOR_FREEZE",
+  "runs": {
+    "311": {
+      "checks_passed": 38,
+      "console_bytes": 6926,
+      "guarded_counters": {
+        "OS_writes": 0,
+        "actual_tool_imports": 0,
+        "bootstrap_reads_not_metered": true,
+        "checks": 38,
+        "console_bytes_before_summary": 6719,
+        "kind": "V1_1_AUTHOR_GUARDED_SUITE_COUNTERS",
+        "late_read_bytes": 20668918
+      },
+      "log_ref": {
+        "bytes": 6926,
+        "path": "reports/evidence_e01_pypa_fixture_harness_author_v1_1_20261116/attempt1_311.txt",
+        "sha256": "d2745177a7973bc27d0fab178415c680f24eff6a9f0721b8152a20de0413b7ff"
+      },
+      "mock_full_flow_summary": {
+        "actual_installer_fixture_calls": 0,
+        "actual_installer_imports": 0,
+        "cases": 8,
+        "guard_refusals": 8,
+        "kind": "MOCK_ONLY_EIGHT_CASE_HARNESS_RESULT",
+        "mock_install_calls": 3,
+        "terminal_bytes": 2304,
+        "usage": {
+          "closing": true,
+          "closure_read_bytes": 3953,
+          "closure_write_bytes": 0,
+          "combined_read_bytes": 29527,
+          "failed": false,
+          "failure_code": null,
+          "file_read_bytes": 5378,
+          "guard_refusals": 8,
+          "install_attempts": 3,
+          "strict_stream_read_bytes": 24149,
+          "write_bytes": 6382
+        }
+      },
+      "result": {
+        "child_CPU_seconds": 0.247258,
+        "returncode": 0,
+        "wall_seconds": 0.330109083
+      },
+      "runtime": "3.11.17",
+      "suite_invocation_cap": 2,
+      "suite_invocations_used": 1
+    },
+    "312": {
+      "checks_passed": 38,
+      "console_bytes": 6926,
+      "guarded_counters": {
+        "OS_writes": 0,
+        "actual_tool_imports": 0,
+        "bootstrap_reads_not_metered": true,
+        "checks": 38,
+        "console_bytes_before_summary": 6719,
+        "kind": "V1_1_AUTHOR_GUARDED_SUITE_COUNTERS",
+        "late_read_bytes": 21292990
+      },
+      "log_ref": {
+        "bytes": 6926,
+        "path": "reports/evidence_e01_pypa_fixture_harness_author_v1_1_20261116/attempt1_312.txt",
+        "sha256": "5d7d1d8b73af6624e56f758be0d3cf79fa7858ea03c6529c21dd3413a0c59b81"
+      },
+      "mock_full_flow_summary": {
+        "actual_installer_fixture_calls": 0,
+        "actual_installer_imports": 0,
+        "cases": 8,
+        "guard_refusals": 8,
+        "kind": "MOCK_ONLY_EIGHT_CASE_HARNESS_RESULT",
+        "mock_install_calls": 3,
+        "terminal_bytes": 2304,
+        "usage": {
+          "closing": true,
+          "closure_read_bytes": 3953,
+          "closure_write_bytes": 0,
+          "combined_read_bytes": 29527,
+          "failed": false,
+          "failure_code": null,
+          "file_read_bytes": 5378,
+          "guard_refusals": 8,
+          "install_attempts": 3,
+          "strict_stream_read_bytes": 24149,
+          "write_bytes": 6382
+        }
+      },
+      "result": {
+        "child_CPU_seconds": 0.279596,
+        "returncode": 0,
+        "wall_seconds": 0.32905775
+      },
+      "runtime": "3.12.14",
+      "suite_invocation_cap": 2,
+      "suite_invocations_used": 1
+    }
+  },
+  "runtime_and_inert_class_schema_literals": {
+    "DATACLASS_SCHEMAS": [
+      [
+        "installer.records",
+        "InvalidRecordEntry",
+        22,
+        [
+          "elements",
+          "issues"
+        ],
+        [],
+        [],
+        true
+      ],
+      [
+        "installer.records",
+        "Hash",
+        33,
+        [
+          "name",
+          "value"
+        ],
+        [],
+        [],
+        false
+      ],
+      [
+        "installer.records",
+        "RecordEntry",
+        77,
+        [
+          "path",
+          "hash_",
+          "size"
+        ],
+        [],
+        [],
+        false
+      ],
+      [
+        "installer.scripts",
+        "Script",
+        50,
+        [
+          "name",
+          "module",
+          "attr",
+          "section"
+        ],
+        [],
+        [
+          "section"
+        ],
+        false
+      ],
+      [
+        "installer.destinations",
+        "SchemeDictionaryDestination",
+        101,
+        [
+          "scheme_dict",
+          "interpreter",
+          "script_kind",
+          "hash_algorithm",
+          "bytecode_optimization_levels",
+          "destdir",
+          "overwrite_existing"
+        ],
+        [
+          "hash_algorithm",
+          "bytecode_optimization_levels",
+          "destdir",
+          "overwrite_existing"
+        ],
+        [],
+        false
+      ]
+    ],
+    "RUNTIME_COMPILE_PINS": {
+      "3.11.17": {
+        "dataclasses": [
+          58472,
+          "77a41ea9eb35d959781087b72ef5b452218b57b9d8f2d28688d45a40ca7f8a09"
+        ],
+        "executable": [
+          17344128,
+          "595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f"
+        ]
+      },
+      "3.12.14": {
+        "dataclasses": [
+          62085,
+          "d242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9"
+        ],
+        "executable": [
+          18058560,
+          "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+        ]
+      }
+    }
+  },
+  "source_ref": {
+    "bytes": 52778,
+    "path": "scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py",
+    "sha256": "1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8"
+  },
+  "status": "38_AUTHOR_MOCK_CHECKS_EACH_PASS_INDEPENDENT_REVIEW_PENDING",
+  "test_ref": {
+    "bytes": 33431,
+    "path": "tests/test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py",
+    "sha256": "8236f2fcaaf325af67bf1c134fb98a4f18445e18af18330ce7f34fdb96e1bedc"
+  }
+}

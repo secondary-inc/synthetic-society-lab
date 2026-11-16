@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_pypa_fixture_harness_independent_v1_1_20261116/adverse_probe.py", line 135, in <module>
+    check('schema '+independent['class'],(independent['module'],independent['class'],independent['line'],tuple(independent['fields']),tuple(independent['defaults']),tuple(independent['no_repr']),'__post_init__' in independent['methods'])==declared)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_pypa_fixture_harness_independent_v1_1_20261116/adverse_probe.py", line 102, in check
+    if not value:raise AssertionError(name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: schema SchemeDictionaryDestination
