@@ -1,0 +1,22 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_guard_diagnostic_v1.py']\nrunpy.run_path('tests/test_e01_pypdf701_guard_diagnostic_v1.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 4.078476208000211,
+      "bytes": 4778,
+      "log": "reports/e01_guard_diagnostic_runner_v1_independent_312_20261116.txt",
+      "sha256": "1ceceae6169b1ee84f64f7091afebd2b4f687a92b6029574080fc2c747018c7a"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 2.9219672080071177,
+      "bytes": 4778,
+      "log": "reports/e01_guard_diagnostic_runner_v1_independent_311_20261116.txt",
+      "sha256": "7eb9ceafe9100bac39b2833cfaeedc911fdebcb07785cc1d99475363302dbbba"
+    }
+  ],
+  "reviewer_invocations_each_runtime": 1
+}

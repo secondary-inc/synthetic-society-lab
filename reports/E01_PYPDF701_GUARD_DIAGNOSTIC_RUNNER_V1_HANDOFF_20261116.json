@@ -1,0 +1,127 @@
+{
+  "TASK_ID": "E01_P2_GUARD_DIAGNOSTIC_RUNNER_V1_OFFLINE_20261116",
+  "kind": "E01_PYPDF701_GUARD_DIAGNOSTIC_RUNNER_V1_FROZEN_HANDOFF",
+  "status": "32_GUARDED_AUTHORED_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_PRODUCTION_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/diagnose_e01_pypdf701_guard_v1.py",
+    "configs/e01_pypdf701_guard_diagnostic_v1_20261116.json",
+    "tests/test_e01_pypdf701_guard_diagnostic_v1.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/diagnose_e01_pypdf701_guard_v1.py": {
+      "bytes": 37439,
+      "sha256": "c71209bcb3a8d0ec485c28dd5f3249d6b34faafd30677dcc908cbf1a656f3f31"
+    },
+    "configs/e01_pypdf701_guard_diagnostic_v1_20261116.json": {
+      "bytes": 3624,
+      "sha256": "14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4"
+    },
+    "tests/test_e01_pypdf701_guard_diagnostic_v1.py": {
+      "bytes": 25126,
+      "sha256": "16d745a764d1601dfd9f7668ad1ac18c165e80689ee59704a9f90d0384445a8b"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v1_authored_312_initial_20261116.txt": {
+      "bytes": 4004,
+      "sha256": "6a7da1b80d5ded491f0cf04e9bc79d82f660eb2f404a907ce899e724d73715f4"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v1_authored_312_final_20261116.txt": {
+      "bytes": 4778,
+      "sha256": "be9fe248bc9aba2dec4d5d7eaae67e8653a389ac3b5c07e4841454088a1dcdf0"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v1_authored_311_final_20261116.txt": {
+      "bytes": 4778,
+      "sha256": "ae50c6e6651c116b159c219e59872d0f3ab2435c7b8a39b125418d67e3c0226e"
+    },
+    "reports/E01_GUARD_DIAGNOSTIC_V1_INITIAL_AUTHORED_CANDIDATE_20261116.json": {
+      "bytes": 66745,
+      "sha256": "daa8b3b007a712b71cfe3313145dd91a778a388b40730a0dcdb362a11eeabc86"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_P2_GUARD_DIAGNOSTIC_V2_COMPONENT_METHODS_20261116.json": {
+      "bytes": 9607,
+      "sha256": "ae04be8c996b4ceca266773c1a3ebc8df457810ff8d69e68bd459d24833793d9"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_guard_diagnostic_v1.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_guard_diagnostic_v1.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "initial": "27 guarded authored checks PASS on Python3.12 in5.110 seconds. Full initial source/config/tests/log bytes preserved in66745-byte report.",
+    "final": {
+      "3.12": "32 PASS in5.790 seconds",
+      "3.11": "32 PASS in4.001 seconds"
+    },
+    "invocationsPerRuntime": {
+      "3.12": 2,
+      "3.11": 1
+    },
+    "maximumInvocationsPerRuntime": 3,
+    "guard": "Frozen authored runner:120wall/CPU,64MiB read,32MiB temporary write,256KiB output; no actual data/owner/credentials/process/network/native access.",
+    "coverage": [
+      "Three genuinely generated authored failed-installation fixtures bind the existing reviewed protocols. All source/method/packet/artifact/output hashes, old metadata snapshots and full charges remain required.",
+      "Exact externally hash-bound execution packet and acyclic independent particular-review core digest are mandatory before mutation. Missing enablement, unrelated review, changed code, corrupt old evidence and reset allocations refuse.",
+      "One mocked absolute-interpreter child, unchanged sanitized PATH, exact original offline/hash/legacy-certs argv plus one --dry-run flag; no venv, installation, check continuation or retry.",
+      "Guest records safe refusal journal in finally through original guards/charges. Nonzero original violations require failed child exit and GUEST_CAUGHT_VIOLATION. A zero exit cannot waive a refusal; absent/malformed/unsafe journals fail.",
+      "NO_REFUSAL_REPRODUCED is evidence only. All results retain installation_accepted=false; fictional target creation or old metadata change prevents acceptance.",
+      "Seven-tree combined768MiB and diagnostic-only16MiB storage limits, final terminal self-inclusive bytes, scope/journal precharge,30-second clock/rollback and20-CPU checks verified.",
+      "AST proves process launcher, wait/kill/reap behavior, StageBudget and CommandStopped match frozen code except tighter30/20 limits. Journal differs only by added diagnostic-scope precharge. Guest guard wrappers match frozen code except exact routing/source reads.",
+      "Mocked pipe capture records stdout/stderr and reaped CPU; output overflow kills/reaps once without an actual process. Pinned-package loading test uses authored inert mock pip and a runpy spy, never actual pip."
+    ]
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Versioned public source/config/reports and temporary authored fixtures only. Existing failure namespaces were reproduced under temporary fake roots; actual targets/scopes were never touched. No actual wheel bodies, installed-package file bodies/imports, research PDFs, respondent/publisher data, credentials or financial owners read by worker.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerInstallerDiagnosticPipPackageNativeNetworkResearchSourceActions": 0,
+  "implementation": {
+    "scope": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116",
+    "uncreatedPrefix": ".venv-e01-pypdf-7.0.1-DIAGNOSTIC-NOT-INSTALL-v1",
+    "actualPacketPath": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json",
+    "sourceLoading": "Fixed frozen installer64638B/32162b1d and accepted observer7311B/264eb97d verified with no aliases, regular nofollow reads and exact bytes/SHA. Execute the already verified source bytes, without an unchecked second source read. No actual pip is imported during module loading.",
+    "preservation": "Validate original two-stage ancestry using unchanged v1.5 checks, then independently bind third failed STARTED/terminal/source/method/packet/artifact/output/requirements refs and retained unknown-denial marker. Compare old control hashes and six-root metadata snapshots before terminal outcome. Old targets remain outside guest permissions.",
+    "child": "One absolute bound base CPython child with -I -B -S, independently signaled remaining30-second lifetime, parent/guestCPU7soft8hard and unchanged process/native/network/downloaded-package denials. No pip helper process, real inference or fourth installation.",
+    "pip": "Same public pinned-pip package loading without its old-site parent; exact absent-ZIP normalization and public built-in MIME setup. Original argv is structurally validated and only explicit --dry-run is inserted. Original PATH and optional-probe behavior remain unchanged.",
+    "guard": "Use only accepted diagnostic_policy_class around the frozen GuestPolicy. Route instance target/stage before hooks; never alter frozen globals. Tighten writes to diagnostic scope only. Additional exact diagnostic/candidate code reads are hash-verified first; no broad source-root permission.",
+    "observability": "At most16 closed code/operation events and4096 serialized bytes. Flush in finally through original guards and charges; then retain original failed postcondition for any violation. No raw arguments, paths, exception text, stack locals, keys or policy exemption.",
+    "resources": "Prior full360wall/120observedCPU/9commands plus one30/20/1 diagnostic gives cumulative allocated390/140/10. Keep original read/write/file/output limits; add16MiB diagnostic-scope cap inside seven-root768MiB/16384-entry union. Existing poll, quota headroom and self-inclusive final terminal accounting retained.",
+    "outcomes": [
+      "REFUSAL_OBSERVED",
+      "NO_REFUSAL_REPRODUCED",
+      "FAILED_DIAGNOSTIC"
+    ]
+  },
+  "rootPacketContract": {
+    "keys": [
+      "kind",
+      "root_sha256",
+      "methods_sha256",
+      "diagnostic_code_ref",
+      "execution_enabled",
+      "review_ref"
+    ],
+    "kind": "E01_GUARD_DIAGNOSTIC_EXECUTION_PACKET_V1",
+    "requirements": "Root supplies exact root/method/source bindings and execution_enabled=true only after review. The referenced reports/INDEPENDENT_AUDIT_* particular report must have PASS_* status, reviewed_packet_core_sha256=SHA256(canonical packet excluding review_ref), and evidence_refs entries exactly binding diagnostic_code_ref and the canonical methods bytes/SHA. Excluding review_ref avoids a circular digest.",
+    "actualPacketCreatedByWorker": false,
+    "actualParticularReleaseCreatedByWorker": false
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "candidateMethods": "Independent component/methods PASSae04be8c read before implementation; prior candidate/proposal/rejected records preserved.",
+    "authored": "32 checks pass on both runtimes; this is engineering mock evidence only.",
+    "production": "Exact source/config/tests/handoff ready for separate E02 review; not self-certified.",
+    "actual": "Root has not supplied an actual execution packet to this worker. Current actual metadata/occupancy preflight and exact independent particular release remain necessary.",
+    "P2P3AndResearch": "All three installations remain unaccepted. Diagnostic-only outcome cannot accept packages, runtime/source qualification, research campaigns or a forecasting/scientific gate."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Historical swallowed refusal remains UNKNOWN. A later dry-run may not reproduce an installation-only refusal, and cannot retrospectively identify an unrecorded event.",
+    "Observer records GuestPolicy.refuse calls only, with visible UNKNOWN/truncation/saturation. It is not an exhaustive audit of DirectoryFdGuard or operating-system exceptions.",
+    "Journal/terminal flush can fail under original quotas or OS errors. Such a case remains failed/UNKNOWN; no raw-write exemption or relaxed quota was added.",
+    "Logical disk and scope limits are polled/precharged cooperative controls, not hard OS quotas, exhaustive physical I/O or hostile-host/RSS containment. Blocking OS operations and filesystem races retain documented limits.",
+    "Reference-read accounting excludes bounded trusted-source bootstrap and general stdlib/startup reads, as in the frozen core. No exhaustive physical-read claim.",
+    "Pure mocked package loading/capture tests do not execute actual pip, validate an ABI or establish actual runtime compatibility.",
+    "No STATUS, Git, existing auditor finding, old source version, target or scope was edited. A local generator initially omitted its hashlib import while constructing only the new methods file; it was corrected before any authored run and caused no actual research/runtime action."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact production review",
+    "Root current actual inputs/occupancy preflight and externally hash-bound particular release before one actual diagnostic"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate E02 reviewer checks this frozen production candidate and focused tests. Root retains actual packet/preflight/execution, STATUS, Git and delivery ownership.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/diagnose_e01_pypdf701_guard_v1.py --methods-sha256 14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4 --packet-sha256 <ROOT_REVIEWED_ACTUAL_PACKET_SHA256>"
+}

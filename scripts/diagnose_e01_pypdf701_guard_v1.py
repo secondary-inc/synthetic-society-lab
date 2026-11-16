@@ -1,0 +1,645 @@
+"""One-child offline guard diagnosis. Actual invocation is root-reviewed only.
+
+This runner cannot install or accept a runtime. It preserves every failed target,
+uses the original PATH, and executes exactly one explicit pip --dry-run child.
+"""
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import platform
+import resource
+import runpy
+import selectors
+import signal
+import stat
+import subprocess
+import sys
+import threading
+import time
+
+ROOT = Path(__file__).absolute().parents[1]
+CODE_PATH = 'scripts/diagnose_e01_pypdf701_guard_v1.py'
+METHODS = 'configs/e01_pypdf701_guard_diagnostic_v1_20261116.json'
+OUTPUT = 'data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116'
+TARGET = '.venv-e01-pypdf-7.0.1-DIAGNOSTIC-NOT-INSTALL-v1'
+SITE = TARGET+'/lib/python3.12/site-packages'
+PRESERVED_ROOTS = (
+    'data/processed/e01_pypdf701_build_v1/install-v1_3-20261116', '.venv-e01-pypdf-7.0.1-v1',
+    'data/processed/e01_pypdf701_build_v1/install-v1_4-20261116', '.venv-e01-pypdf-7.0.1-v2',
+    'data/processed/e01_pypdf701_build_v1/install-v1_5-20261116', '.venv-e01-pypdf-7.0.1-v3')
+FROZEN_REF = {'path': 'scripts/install_e01_pypdf701_runtime_v1_5.py', 'bytes': 64638,
+              'sha256': '32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4'}
+CANDIDATE_REF = {'path': 'scripts/e01_p2_refusal_observability_candidate_v2_20261116.py', 'bytes': 7311,
+                 'sha256': '264eb97d73d0c584a0e58f9688c1e76b293982b76aee4ea679383212ab6180ba'}
+PROPOSAL_REF = {'path': 'configs/e01_pypdf701_guard_diagnostic_v1_proposal_20261116.json', 'bytes': 9126,
+                'sha256': 'ed357cbe714ff3d137ac95aa1b9500f45f93b1b9a8fa2286ef6e911507078c81'}
+COMPONENT_REVIEW_REF = {'path': 'reports/INDEPENDENT_AUDIT_E01_P2_GUARD_DIAGNOSTIC_V2_COMPONENT_METHODS_20261116.json',
+                        'bytes': 9607, 'sha256': 'ae04be8c996b4ceca266773c1a3ebc8df457810ff8d69e68bd459d24833793d9'}
+DIAGNOSTIC_SCOPE_BYTES = 16777216
+ALLOCATION = {'prior_wall_seconds': 360, 'prior_observed_CPU_seconds': 120, 'prior_main_commands': 9,
+              'new_wall_seconds': 30, 'new_observed_CPU_seconds': 20, 'new_main_commands': 1,
+              'cumulative_wall_seconds': 390, 'cumulative_observed_CPU_seconds': 140,
+              'cumulative_main_commands': 10}
+
+
+def load_source(root, ref, name, reader=None):
+    path = Path(root)/ref['path']
+    if reader is None:
+        if any(item.is_symlink() for item in (path, *path.parents)):
+            raise RuntimeError('DIAGNOSTIC_SOURCE_ALIAS')
+        before = path.stat(follow_symlinks=False)
+        if not stat.S_ISREG(before.st_mode) or before.st_size != ref['bytes'] or ref['bytes'] > 1048576:
+            raise RuntimeError('DIAGNOSTIC_SOURCE_SIZE')
+        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+        with os.fdopen(fd, 'rb') as stream:
+            opened = os.fstat(stream.fileno())
+            if (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) != (
+                    opened.st_dev, opened.st_ino, opened.st_size, opened.st_mtime_ns):
+                raise RuntimeError('DIAGNOSTIC_SOURCE_CHANGED')
+            raw = stream.read(ref['bytes']+1)
+    else: raw = reader.read(ref)
+    if len(raw) != ref['bytes'] or hashlib.sha256(raw).hexdigest() != ref['sha256']:
+        raise RuntimeError('DIAGNOSTIC_SOURCE_HASH')
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    # Compile the already verified bytes, avoiding a second unchecked loader read.
+    exec(compile(raw, str(path), 'exec'), module.__dict__)
+    return module
+
+
+p = load_source(ROOT, FROZEN_REF, 'diagnostic_frozen_installer_v1_5')
+c = load_source(ROOT, CANDIDATE_REF, 'diagnostic_reviewed_observer_v2')
+Refused = p.Refused
+need, sha, packed, json_body = p.need, p.sha, p.packed, p.json_body
+no_alias, relative = p.no_alias, p.relative
+CAPS = dict(p.CAPS, wall_seconds=30, observed_aggregate_CPU_seconds=20, main_commands=1)
+
+
+def owned_size(root):
+    total = count = 0
+    for tree in tuple(root/name for name in PRESERVED_ROOTS)+(root/OUTPUT,):
+        if not tree.exists(): continue
+        no_alias(tree)
+        before_tree = total
+        for parent, dirs, names in os.walk(tree, followlinks=False):
+            for name in dirs+names:
+                path = Path(parent)/name
+                info = path.lstat()
+                count += 1
+                need(count <= CAPS['tree_entries'], 'OWNED_ENTRY_CAP')
+                if stat.S_ISREG(info.st_mode) or stat.S_ISLNK(info.st_mode): total += info.st_size
+                else: need(stat.S_ISDIR(info.st_mode), 'OWNED_SPECIAL_FILE')
+                need(total <= CAPS['owned_logical_bytes'], 'OWNED_LOGICAL_BYTES_CAP')
+        if tree == root/OUTPUT:
+            need(total-before_tree <= DIAGNOSTIC_SCOPE_BYTES, 'DIAGNOSTIC_SCOPE_LOGICAL_CAP')
+    return total
+
+
+
+class StageBudget:
+    def __init__(self, root, clock=time.monotonic):
+        self.root, self.clock = root, clock
+        self.started = self.prior = clock()
+        self.output = self.commands = 0
+        self.reaped_cpu = 0.0
+        self.max_owned = 0
+
+    def check(self):
+        now = self.clock()
+        need(now >= self.prior, 'P2_CLOCK_REGRESSION')
+        self.prior = now
+        need(now-self.started < 30, 'P2_WALL_LIMIT')
+        usage = resource.getrusage(resource.RUSAGE_SELF)
+        observed = usage.ru_utime+usage.ru_stime+self.reaped_cpu
+        need(observed < 20, 'P2_OBSERVED_AGGREGATE_CPU_LIMIT')
+        self.max_owned = max(self.max_owned, owned_size(self.root))
+        return observed
+
+
+
+class Journal:
+    def __init__(self, root): self.root, self.bytes, self.refs = root, 0, []
+    def save(self, name, obj):
+        raw = obj if type(obj) is bytes else packed(obj)
+        # Reserve final terminal space within the combined old/new logical cap.
+        # Final record includes its own bytes, without relying on a later poll.
+        occupied = owned_size(self.root)
+        scope_occupied = logical_scope_size(self.root)
+        if name == 'TERMINAL.json' and type(obj) is dict:
+            obj = dict(obj)
+            obj['combined_logical_bytes_including_terminal'] = occupied+len(raw)
+            for _ in range(4):
+                raw = packed(obj)
+                total = occupied+len(raw)
+                if obj['combined_logical_bytes_including_terminal'] == total: break
+                obj['combined_logical_bytes_including_terminal'] = total
+            else: raise Refused('P2_TERMINAL_SIZE_FIXPOINT')
+            need(len(raw) <= 32768, 'P2_TERMINAL_HEADROOM')
+        need(occupied+len(raw)+(0 if name == 'TERMINAL.json' else 32768)
+             <= CAPS['owned_logical_bytes'], 'P2_COMBINED_JOURNAL_LOGICAL_CAP')
+        need(scope_occupied+len(raw)+(0 if name == 'TERMINAL.json' else 32768)
+             <= DIAGNOSTIC_SCOPE_BYTES, 'DIAGNOSTIC_SCOPE_JOURNAL_CAP')
+        self.bytes += len(raw)
+        need(self.bytes+(0 if name == 'TERMINAL.json' else 32768) <= CAPS['control_write_bytes'], 'P2_CONTROL_WRITE_CAP')
+        path = relative(self.root/OUTPUT, name)
+        no_alias(path)
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+        with os.fdopen(fd, 'wb') as stream:
+            need(stream.write(raw) == len(raw), 'P2_SHORT_WRITE'); stream.flush(); os.fsync(stream.fileno())
+        parent = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
+        try: os.fsync(parent)
+        finally: os.close(parent)
+        ref = {'path': name, 'bytes': len(raw), 'sha256': sha(raw)}
+        self.refs.append(ref)
+        return ref
+
+
+
+class CommandStopped(Refused):
+    def __init__(self, reason, record):
+        super().__init__(reason)
+        self.record = record
+
+
+
+def run_command(command, env, root, budget, number):
+    """One direct child; wait4 retains CPU. Never poll-reap through Popen."""
+    budget.check()
+    paths = [root/OUTPUT/(f'{number}-{suffix}.bin') for suffix in ('stdout', 'stderr')]
+    streams = [path.open('xb') for path in paths]
+    hashes, sizes = [hashlib.sha256(), hashlib.sha256()], [0, 0]
+    proc = None
+    selector = selectors.DefaultSelector()
+    status = usage = None
+    next_tree_check = 0.0
+    try:
+        proc = subprocess.Popen(command, cwd=root, env=env, stdin=subprocess.DEVNULL,
+                                stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
+        for i, stream in enumerate((proc.stdout, proc.stderr)):
+            os.set_blocking(stream.fileno(), False)
+            selector.register(stream, selectors.EVENT_READ, i)
+        while selector.get_map() or status is None:
+            now = budget.clock()
+            if now >= next_tree_check:
+                budget.check(); next_tree_check = now+.1
+            else:
+                need(now >= budget.prior and now-budget.started < 30, 'P2_COMMAND_DEADLINE')
+            for key, _ in selector.select(.05):
+                chunk = os.read(key.fileobj.fileno(), 65536)
+                if not chunk:
+                    selector.unregister(key.fileobj); key.fileobj.close(); continue
+                budget.output += len(chunk)
+                need(budget.output <= CAPS['command_output_bytes'], 'P2_COMMAND_OUTPUT_CAP')
+                streams[key.data].write(chunk); hashes[key.data].update(chunk); sizes[key.data] += len(chunk)
+            if status is None:
+                pid, candidate, observed = os.wait4(proc.pid, os.WNOHANG)
+                if pid:
+                    status, usage = candidate, observed
+                    proc.returncode = os.waitstatus_to_exitcode(status)
+        budget.reaped_cpu += usage.ru_utime+usage.ru_stime
+        budget.check()
+        return {'exit_code': proc.returncode, 'observed_reaped_CPU_seconds': usage.ru_utime+usage.ru_stime,
+                'pip_helper_descendants_permitted': 0,
+                'output': [{'path': str(path.relative_to(root/OUTPUT)), 'bytes': size, 'sha256': digest.hexdigest()}
+                           for path, size, digest in zip(paths, sizes, hashes)]}
+    except BaseException as exc:
+        if proc is not None and status is None:
+            try: os.killpg(proc.pid, signal.SIGKILL)
+            except ProcessLookupError: pass
+            _, status, usage = os.wait4(proc.pid, 0)
+            proc.returncode = os.waitstatus_to_exitcode(status)
+            budget.reaped_cpu += usage.ru_utime+usage.ru_stime
+        record = {'exit_code': None if proc is None else proc.returncode,
+            'observed_reaped_CPU_seconds': 0 if usage is None else usage.ru_utime+usage.ru_stime,
+            'pip_helper_descendants_permitted': 0, 'stopped': True,
+            'output': [{'path': str(path.relative_to(root/OUTPUT)), 'bytes': size, 'sha256': digest.hexdigest()}
+                       for path, size, digest in zip(paths, sizes, hashes)]}
+        raise CommandStopped(str(exc) if type(exc) is Refused else type(exc).__name__, record) from None
+    finally:
+        selector.close()
+        if proc is not None:
+            for stream in (proc.stdout, proc.stderr):
+                if stream is not None: stream.close()
+        for stream in streams: stream.flush(); os.fsync(stream.fileno()); stream.close()
+
+
+def snapshot(root):
+    return p.prior_metadata_snapshot(root, tuple(root/name for name in PRESERVED_ROOTS))
+
+
+def validate_methods(root, methods, reader):
+    proposal = json_body(reader.read(PROPOSAL_REF))
+    review = json_body(reader.read(COMPONENT_REVIEW_REF))
+    need(methods.get('kind') == 'E01_PYPDF701_GUARD_DIAGNOSTIC_METHODS_V1'
+         and methods.get('schema_version') == 1 and methods.get('root_sha256') == sha(str(root).encode())
+         and methods.get('scope') == OUTPUT and methods.get('uncreated_target') == TARGET
+         and methods.get('preserved_roots') == list(PRESERVED_ROOTS)
+         and methods.get('limits') == proposal['limits'] and methods.get('allocation') == ALLOCATION
+         and methods.get('proposal_ref') == PROPOSAL_REF
+         and methods.get('component_review_ref') == COMPONENT_REVIEW_REF
+         and methods.get('frozen_source_ref') == FROZEN_REF and methods.get('candidate_ref') == CANDIDATE_REF
+         and methods.get('installation_accepted') is False
+         and methods.get('packet') == 'data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json'
+         and review.get('status') == 'PASS_PURE_DIAGNOSTIC_COMPONENT_AND_DISABLED_PLAN_NO_RUNNER_OR_ACTUAL_RELEASE',
+         'DIAGNOSTIC_METHODS_IDENTITY')
+    need(proposal['limits']['stage_wall_seconds'] == 30
+         and proposal['limits']['observed_aggregate_CPU_seconds'] == 20
+         and proposal['limits']['main_children'] == 1
+         and proposal['limits']['combined_seven_tree_logical_bytes'] == CAPS['owned_logical_bytes']
+         and proposal['allocation'] == ALLOCATION, 'DIAGNOSTIC_PROPOSAL_LIMITS')
+    reader.read(FROZEN_REF); reader.read(CANDIDATE_REF)
+
+
+def validate_release(root, methods, packet, reader):
+    need(type(packet) is dict and set(packet) == {'kind', 'root_sha256', 'methods_sha256',
+         'diagnostic_code_ref', 'execution_enabled', 'review_ref'}
+         and packet['kind'] == 'E01_GUARD_DIAGNOSTIC_EXECUTION_PACKET_V1'
+         and packet['root_sha256'] == methods['root_sha256']
+         and packet['methods_sha256'] == sha(packed(methods))
+         and packet['execution_enabled'] is True, 'DIAGNOSTIC_EXPLICIT_RELEASE_REQUIRED')
+    ref = packet['diagnostic_code_ref']
+    need(type(ref) is dict and ref.get('path') == CODE_PATH, 'DIAGNOSTIC_CODE_REF')
+    raw = reader.read(ref)
+    need(sha(raw) == sha(Path(__file__).read_bytes()), 'DIAGNOSTIC_RUNNING_CODE')
+    review_ref = packet['review_ref']
+    need(type(review_ref) is dict and type(review_ref.get('path')) is str
+         and review_ref['path'].startswith('reports/INDEPENDENT_AUDIT_'), 'DIAGNOSTIC_REVIEW_REF')
+    review = json_body(reader.read(review_ref))
+    core = {key: value for key, value in packet.items() if key != 'review_ref'}
+    refs = review.get('evidence_refs', {})
+    need(type(review.get('status')) is str and review['status'].startswith('PASS_')
+         and review.get('reviewed_packet_core_sha256') == sha(packed(core))
+         and refs.get(CODE_PATH) == ref
+         and type(refs.get(METHODS)) is dict
+         and refs[METHODS] == {'path': METHODS, 'bytes': len(packed(methods)),
+                              'sha256': sha(packed(methods))}, 'DIAGNOSTIC_EXACT_PARTICULAR_REVIEW')
+
+
+def verify_inputs(root, methods, reader):
+    need(methods['frozen_methods_ref']['path'] == p.METHODS
+         and methods['prior_packet_ref']['path'] == 'data/processed/e01_pypdf701_build_v1/install-v1_5-packet-20261116.json'
+         and methods['latest_terminal_ref']['path'] == p.OUTPUT+'/TERMINAL.json'
+         and methods['latest_started_ref']['path'] == p.OUTPUT+'/STARTED.json'
+         and methods['requirements_ref']['path'] == p.OUTPUT+'/requirements.txt', 'DIAGNOSTIC_PRIOR_PATHS')
+    old_methods_raw = reader.read(methods['frozen_methods_ref'])
+    old_packet_raw = reader.read(methods['prior_packet_ref'])
+    old_methods, old_packet = json_body(old_methods_raw), json_body(old_packet_raw)
+    p.validate_methods(root, old_methods)
+    binding = p.verify_bootstrap(root, old_methods, reader)
+    acquisition = p.verify_acquisition(root, old_methods, old_packet, reader)
+    older = p.verify_prior_install(root, old_methods, old_packet, reader)
+    started = json_body(reader.read(methods['latest_started_ref']))
+    terminal = json_body(reader.read(methods['latest_terminal_ref']))
+    first_four_snapshot = p.prior_metadata_snapshot(root)
+    need(started.get('kind') == 'P2_STARTED_NO_RETRY'
+         and started.get('code_sha256') == FROZEN_REF['sha256']
+         and started.get('methods_sha256') == sha(old_methods_raw)
+         and started.get('packet_sha256') == sha(old_packet_raw)
+         and started.get('binding_ref') == old_methods['installer_binding_ref']
+         and started.get('caps') == p.CAPS
+         and started.get('prior_installation') == older
+         and started.get('recovery_allocation') == p.RECOVERY_ALLOCATION
+         and started.get('prior_metadata_snapshot') == first_four_snapshot, 'DIAGNOSTIC_LATEST_STARTED')
+    need(terminal.get('kind') == 'P2_TERMINAL_V1'
+         and terminal.get('status') == 'FAILED_PARTIAL_ENV_NO_RETRY'
+         and terminal.get('reason') == 'P2_COMMAND_FAILED' and terminal.get('stage') == 'install'
+         and terminal.get('commands_started') == 2 and terminal.get('no_retry') is True
+         and terminal.get('partial_environment_preserved') is True
+         and terminal.get('network_model_calls') == 0 and terminal.get('cost_USD') == 0
+         and terminal.get('downloaded_package_imports') is False
+         and terminal.get('runtime_or_source_qualification') is False
+         and terminal.get('pip_helper_descendants_permitted') == 0
+         and terminal.get('prior_installation') == older
+         and terminal.get('recovery_allocation') == p.RECOVERY_ALLOCATION
+         and terminal.get('prior_metadata_snapshot') == first_four_snapshot, 'DIAGNOSTIC_LATEST_FAILURE')
+    artifacts, results = terminal.get('artifacts'), terminal.get('results')
+    need(type(artifacts) is list and 1 <= len(artifacts) <= 64
+         and type(results) is list and len(results) == 2
+         and [item.get('exit_code') for item in results] == [0, 1], 'DIAGNOSTIC_PRIOR_COMMANDS')
+    names, started_seen, output_bytes, denial_seen = set(), False, 0, False
+    for ref in artifacts:
+        need(type(ref) is dict and type(ref.get('path')) is str and ref['path'] not in names,
+             'DIAGNOSTIC_PRIOR_ARTIFACTS')
+        names.add(ref['path'])
+        full = {**ref, 'path': p.OUTPUT+'/'+ref['path']}
+        reader.read(full)
+        if ref['path'] == 'STARTED.json':
+            need(full == methods['latest_started_ref'], 'DIAGNOSTIC_PRIOR_STARTED_REF')
+            started_seen = True
+    need(started_seen, 'DIAGNOSTIC_PRIOR_STARTED_REF')
+    for number, result in enumerate(results, 1):
+        need(result.get('pip_helper_descendants_permitted') == 0
+             and type(result.get('output')) is list and len(result['output']) == 2,
+             'DIAGNOSTIC_PRIOR_OUTPUTS')
+        for suffix, ref in zip(('stdout', 'stderr'), result['output']):
+            need(ref.get('path') == str(number)+'-'+suffix+'.bin', 'DIAGNOSTIC_PRIOR_OUTPUT_PATH')
+            raw = reader.read({**ref, 'path': p.OUTPUT+'/'+ref['path']})
+            output_bytes += len(raw)
+            if number == 2 and suffix == 'stderr': denial_seen = b'GUEST_CAUGHT_VIOLATION' in raw
+    need(denial_seen and output_bytes == terminal.get('captured_command_output_bytes')
+         and output_bytes <= CAPS['command_output_bytes'], 'DIAGNOSTIC_PRIOR_UNKNOWN_DENIAL')
+    requirements = ''.join(f"{wheel['name']}=={wheel['version']} --hash=sha256:{wheel['sha256']}\n"
+                           for wheel in acquisition['identities']).encode()
+    need(reader.read(methods['requirements_ref']) == requirements, 'DIAGNOSTIC_REQUIREMENTS')
+    prior = {'latest_terminal_ref': methods['latest_terminal_ref'], 'older_stages': older,
+        'full_prior_stage_caps': [p.CAPS, p.CAPS, p.CAPS], 'full_prior_allocation': p.RECOVERY_ALLOCATION,
+        'actual_prior_commands_started': older['actual_prior_commands_started']+terminal['commands_started'],
+        'actual_prior_captured_output_bytes': older['actual_prior_captured_output_bytes']+output_bytes,
+        'actual_prior_parent_read_bytes': older['actual_prior_parent_bound_reference_read_bytes']+
+                                         terminal['parent_bound_reference_read_bytes_charged'],
+        'actual_prior_observed_CPU_seconds': older['actual_prior_observed_CPU_seconds']+
+                                          terminal['observed_self_and_reaped_CPU_seconds']}
+    return {'binding': binding, 'binding_ref': old_methods['installer_binding_ref'],
+            'wheels': acquisition['identities'], 'requirements': requirements, 'prior': prior}
+
+
+def validate_journal(raw):
+    need(len(raw) <= c.MAX_JSON_BYTES, 'DIAGNOSTIC_JOURNAL_SIZE')
+    value = json_body(raw)
+    need(type(value) is dict and set(value) == {'kind', 'events', 'total_events', 'dropped_events', 'counter_saturated'}
+         and value['kind'] == 'BOUNDED_GUEST_REFUSAL_JOURNAL_V1'
+         and type(value['events']) is list and len(value['events']) <= c.MAX_EVENTS
+         and type(value['counter_saturated']) is bool, 'DIAGNOSTIC_JOURNAL_SCHEMA')
+    for key in ('total_events', 'dropped_events'):
+        need(type(value[key]) is int and 0 <= value[key] <= c.MAX_COUNTER, 'DIAGNOSTIC_JOURNAL_COUNTER')
+    previous = 0
+    for event in value['events']:
+        need(type(event) is dict and set(event) == {'sequence', 'code', 'operation'}
+             and type(event['sequence']) is int and previous < event['sequence'] <= value['total_events']
+             and type(event['code']) is str and event['code'] in c.CODES|{'UNKNOWN_REFUSAL_CODE'}
+             and type(event['operation']) is str and event['operation'] in c.OPERATIONS|{'UNKNOWN'},
+             'DIAGNOSTIC_JOURNAL_EVENT')
+        previous = event['sequence']
+    need(value['total_events'] >= len(value['events'])
+         and (value['counter_saturated'] or value['dropped_events'] == value['total_events']-len(value['events'])),
+         'DIAGNOSTIC_JOURNAL_COUNTS')
+    return value
+
+
+def read_owned_result(scope, name, maximum):
+    path = relative(scope, name); no_alias(path)
+    need(path.is_file() and path.stat().st_size <= maximum, 'DIAGNOSTIC_RESULT_SIZE')
+    raw = path.read_bytes()
+    need(len(raw) <= maximum, 'DIAGNOSTIC_RESULT_SIZE')
+    return raw
+
+
+def execute(root, methods, packet, *, launcher=run_command, clock=time.monotonic):
+    root = Path(root).absolute()
+    reader, budget = p.Reader(root, CAPS['parent_read_bytes']), StageBudget(root, clock)
+    validate_methods(root, methods, reader); validate_release(root, methods, packet, reader)
+    for path in (root/OUTPUT, root/TARGET):
+        no_alias(path); need(not path.exists(), 'DIAGNOSTIC_ALREADY_CONSUMED')
+    inputs = verify_inputs(root, methods, reader)
+    before = snapshot(root)
+    need(owned_size(root)+DIAGNOSTIC_SCOPE_BYTES <= CAPS['owned_logical_bytes'], 'DIAGNOSTIC_STORAGE_PREFLIGHT')
+    budget.check()
+    scope = root/OUTPUT; scope.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+    scope.mkdir(mode=0o700, exist_ok=False)
+    parent = os.open(scope.parent, os.O_RDONLY | os.O_DIRECTORY)
+    try: os.fsync(parent)
+    finally: os.close(parent)
+    journal = Journal(root)
+    outcome, reason, command_result, observed = 'FAILED_DIAGNOSTIC', None, None, None
+    try:
+        journal.save('STARTED.json', {'kind': 'E01_GUARD_DIAGNOSTIC_STARTED_V1',
+            'utc': datetime.now(timezone.utc).isoformat(), 'methods_sha256': sha(packed(methods)),
+            'packet_sha256': sha(packed(packet)), 'code_ref': packet['diagnostic_code_ref'],
+            'prior': inputs['prior'], 'allocation': ALLOCATION, 'limits': methods['limits'],
+            'old_metadata_snapshot': before, 'installation_accepted': False, 'no_retry': True})
+        for name in ('tmp', 'home'): (scope/name).mkdir(mode=0o700)
+        journal.save('requirements.txt', inputs['requirements'])
+        argv = c.dry_run_arguments(p.pip_arguments('install', root/TARGET, scope/'requirements.txt'))
+        environment = {'HOME': str(scope/'home'), 'TMPDIR': str(scope/'tmp'),
+            'PATH': str(Path(inputs['binding']['base_prefix'])/'bin')+':/usr/bin:/bin',
+            'PIP_CONFIG_FILE': os.devnull, 'PIP_DISABLE_PIP_VERSION_CHECK': '1',
+            'PYTHONDONTWRITEBYTECODE': '1', 'LC_ALL': 'C', 'LANG': 'C'}
+        budget.check()
+        payload = {'kind': 'E01_GUARD_DIAGNOSTIC_GUEST_PAYLOAD_V1',
+            'root_sha256': methods['root_sha256'], 'code_ref': packet['diagnostic_code_ref'],
+            'binding_ref': inputs['binding_ref'], 'scope': OUTPUT, 'target': TARGET,
+            'wheels': inputs['wheels'], 'pip_arguments': argv,
+            'remaining_wall_seconds': 30-(budget.clock()-budget.started),
+            'remaining_output_bytes': CAPS['command_output_bytes']-budget.output}
+        payload_ref = journal.save('guest-payload.json', payload)
+        command = [inputs['binding']['executable_ref']['path'], '-I', '-B', '-S', str(root/CODE_PATH),
+                   '--guest', '--payload', str(scope/payload_ref['path']), '--payload-sha256', payload_ref['sha256']]
+        need(budget.commands == 0, 'DIAGNOSTIC_ONE_CHILD')
+        journal.save('1-COMMAND_RESERVED.json', {'argv': command, 'helper_descendants_permitted': 0,
+            'remaining_wall_seconds': payload['remaining_wall_seconds'], 'absolute_interpreter': True})
+        budget.commands = 1
+        try: command_result = launcher(command, environment, root, budget, 1)
+        except CommandStopped as exc:
+            command_result = exc.record
+            journal.save('1-COMMAND_STOPPED.json', command_result)
+            raise Refused(str(exc)) from None
+        journal.save('1-COMMAND_RECORDED.json', command_result)
+        need(command_result.get('pip_helper_descendants_permitted') == 0, 'DIAGNOSTIC_HELPER_DENIED')
+        observed = validate_journal(read_owned_result(scope, 'guest-refusals.json', c.MAX_JSON_BYTES))
+        result = json_body(read_owned_result(scope, 'guest-result.json', 8192))
+        need(type(result) is dict and set(result) == {'kind', 'pip_arguments_sha256', 'guard_violations',
+             'pip_completed', 'error_code', 'mime_configuration', 'installation_accepted',
+             'downloaded_package_imports', 'target_exists'}
+             and result['kind'] == 'E01_GUARD_DIAGNOSTIC_GUEST_RESULT_V1'
+             and result['pip_arguments_sha256'] == sha(packed(argv))
+             and result['installation_accepted'] is False and result['downloaded_package_imports'] is False
+             and result['target_exists'] is False and type(result['guard_violations']) is int
+             and result['guard_violations'] >= 0 and type(result['pip_completed']) is bool,
+             'DIAGNOSTIC_GUEST_RESULT')
+        if result['guard_violations']:
+            need(observed['total_events'] > 0 and command_result.get('exit_code') != 0
+                 and result['error_code'] == 'GUEST_CAUGHT_VIOLATION', 'DIAGNOSTIC_REFUSAL_POSTCONDITION')
+            outcome, reason = 'REFUSAL_OBSERVED', 'GUEST_CAUGHT_VIOLATION'
+        else:
+            need(observed['total_events'] == 0 and command_result.get('exit_code') == 0
+                 and result['pip_completed'] is True and result['error_code'] is None
+                 and result['mime_configuration'] == p.MIME_RECEIPT, 'DIAGNOSTIC_NO_REFUSAL_PROOF')
+            outcome = 'NO_REFUSAL_REPRODUCED'
+    except BaseException as exc:
+        reason = str(exc) if type(exc) is Refused else type(exc).__name__
+    finally:
+        try:
+            need(verify_inputs(root, methods, reader) == inputs
+                 and snapshot(root) == before, 'DIAGNOSTIC_OLD_STATE_CHANGED')
+            no_alias(root/TARGET); need(not (root/TARGET).exists(), 'DIAGNOSTIC_TARGET_CREATED')
+            budget.check()
+        except BaseException as exc:
+            outcome, reason = 'FAILED_DIAGNOSTIC', str(exc) if type(exc) is Refused else type(exc).__name__
+        journal.save('TERMINAL.json', {'kind': 'E01_GUARD_DIAGNOSTIC_TERMINAL_V1',
+            'outcome': outcome, 'reason': reason, 'commands_started': budget.commands,
+            'command': command_result, 'refusals': observed, 'prior': inputs['prior'], 'allocation': ALLOCATION,
+            'old_metadata_snapshot': before, 'maximum_polled_owned_logical_bytes': budget.max_owned,
+            'parent_bound_reference_read_bytes_charged': reader.charged, 'captured_command_output_bytes': budget.output,
+            'reaped_child_CPU_seconds': budget.reaped_cpu, 'artifacts': journal.refs,
+            'observed_self_and_reaped_CPU_seconds': resource.getrusage(resource.RUSAGE_SELF).ru_utime+
+                resource.getrusage(resource.RUSAGE_SELF).ru_stime+budget.reaped_cpu,
+            'no_retry': True, 'installation_accepted': False, 'runtime_or_source_qualification': False,
+            'model_calls': 0, 'cost_USD': 0})
+    return {'outcome': outcome, 'reason': reason, 'commands_started': budget.commands,
+            'installation_accepted': False, 'cost_USD': 0}
+
+
+def logical_scope_size(root):
+    tree = root/OUTPUT
+    if not tree.exists(): return 0
+    no_alias(tree)
+    total = count = 0
+    for parent, dirs, names in os.walk(tree, followlinks=False):
+        for name in dirs+names:
+            info = (Path(parent)/name).lstat(); count += 1
+            need(count <= CAPS['tree_entries'], 'OWNED_ENTRY_CAP')
+            if stat.S_ISREG(info.st_mode) or stat.S_ISLNK(info.st_mode): total += info.st_size
+            else: need(stat.S_ISDIR(info.st_mode), 'OWNED_SPECIAL_FILE')
+            need(total <= DIAGNOSTIC_SCOPE_BYTES, 'DIAGNOSTIC_SCOPE_LOGICAL_CAP')
+    return total
+
+
+def install_guard(root, binding, payload):
+    import builtins
+    import io
+    helper = p.load_bound_module(root, p.GUARD_REF, 'diagnostic_bound_dirfd_guard')
+    policy = c.diagnostic_policy_class(p.GuestPolicy)(root, binding, payload)
+    # These exact trusted code bodies were hash-verified before hook setup.
+    policy.exact_reads.update({root/CODE_PATH, root/CANDIDATE_REF['path']})
+    guard = helper.DirectoryFdGuard(policy.path)
+    policy.fdguard = guard
+    sys.meta_path.insert(0, p.DownloadedImportGuard(policy))
+    sys.addaudithook(policy.audit)
+    os.open, os.close = guard.open, guard.close
+    def wrap(original):
+        def opening(*args, **kwargs):
+            stream = original(*args, **kwargs)
+            return stream if isinstance(stream, p.ChargedFile) else p.ChargedFile(stream, policy)
+        return opening
+    builtins.open, io.open, os.fdopen = wrap(builtins.open), wrap(io.open), wrap(os.fdopen)
+    raw_write = os.write
+    def write(fd, body):
+        policy.charge(body, fd in {1, 2})
+        return raw_write(fd, body)
+    os.write = write
+    sys.stdout, sys.stderr = p.ChargedFile(sys.stdout, policy, True), p.ChargedFile(sys.stderr, policy, True)
+    return policy
+
+
+def run_dry_pip(binding, root, arguments):
+    target, site = root/TARGET, root/SITE
+    p.target_scheme(target)
+    expected = c.dry_run_arguments(p.pip_arguments('install', target, root/OUTPUT/'requirements.txt'))
+    need(arguments == expected, 'DIAGNOSTIC_EXACT_ARGUMENTS')
+    original = p.narrowed_paths(list(sys.path), binding['base_prefix'])
+    need(not any('site-packages' in item for item in original), 'BASE_OR_OLD_SITE_ON_PATH')
+    need(not any(name == 'pip' or name.startswith('pip.') for name in sys.modules), 'DIAGNOSTIC_PIP_PRELOADED')
+    pip_root = root/binding['pip_root']
+    spec = importlib.util.spec_from_file_location('pip', pip_root/'__init__.py',
+                                                submodule_search_locations=[str(pip_root)])
+    module = importlib.util.module_from_spec(spec)
+    sys.modules['pip'] = module
+    spec.loader.exec_module(module)
+    need(module.__version__ == '25.0.1', 'PIP_LOADED_VERSION')
+    sys.path[:] = [str(site)]+original
+    old_args = sys.argv
+    sys.argv = expected
+    try:
+        try: runpy.run_module('pip', run_name='__main__', alter_sys=True)
+        except SystemExit as exc: need(exc.code in (None, 0), 'PIP_NONZERO_EXIT')
+    finally: sys.argv = old_args
+    need(sys.path[0] == str(site) and str(pip_root.parent) not in sys.path
+         and all(str(root/name/'lib/python3.12/site-packages') not in sys.path
+                 for name in PRESERVED_ROOTS if name.startswith('.venv')), 'DIAGNOSTIC_OLD_SITE_EXPOSED')
+
+
+def write_guest_file(name, raw):
+    path = relative(ROOT/OUTPUT, name); no_alias(path)
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+    with os.fdopen(fd, 'wb') as stream:
+        need(stream.write(raw) == len(raw), 'DIAGNOSTIC_GUEST_SHORT_WRITE')
+        stream.flush(); os.fsync(stream.fileno())
+
+
+def guest_main(args):
+    need(Path.cwd().absolute() == ROOT, 'DIAGNOSTIC_GUEST_ROOT')
+    path = relative(ROOT, OUTPUT+'/guest-payload.json')
+    need(Path(args.payload).absolute() == path, 'DIAGNOSTIC_GUEST_PAYLOAD_PATH')
+    no_alias(path); need(path.stat().st_size <= 1048576, 'DIAGNOSTIC_GUEST_PAYLOAD_SIZE')
+    raw = path.read_bytes(); need(sha(raw) == args.payload_sha256, 'DIAGNOSTIC_GUEST_PAYLOAD_HASH')
+    payload = json_body(raw)
+    need(type(payload) is dict and set(payload) == {'kind', 'root_sha256', 'code_ref', 'binding_ref', 'scope',
+         'target', 'wheels', 'pip_arguments', 'remaining_wall_seconds', 'remaining_output_bytes'}
+         and payload['kind'] == 'E01_GUARD_DIAGNOSTIC_GUEST_PAYLOAD_V1'
+         and payload['root_sha256'] == sha(str(ROOT).encode()) and payload['scope'] == OUTPUT
+         and payload['target'] == TARGET and payload['code_ref']['path'] == CODE_PATH
+         and payload['code_ref']['sha256'] == sha(Path(__file__).read_bytes()), 'DIAGNOSTIC_GUEST_IDENTITY')
+    remaining = payload['remaining_wall_seconds']
+    need(type(remaining) in {int, float} and 0 < remaining <= 30
+         and type(payload['remaining_output_bytes']) is int
+         and 0 < payload['remaining_output_bytes'] <= CAPS['command_output_bytes'], 'DIAGNOSTIC_GUEST_LIMITS')
+    def deadline(*_): raise Refused('DIAGNOSTIC_GUEST_DEADLINE')
+    signal.signal(signal.SIGALRM, deadline); signal.signal(signal.SIGXCPU, deadline)
+    signal.setitimer(signal.ITIMER_REAL, remaining)
+    resource.setrlimit(resource.RLIMIT_CORE, (0, 0)); resource.setrlimit(resource.RLIMIT_CPU, (7, 8))
+    resource.setrlimit(resource.RLIMIT_FSIZE, (CAPS['single_file_bytes'], CAPS['single_file_bytes']))
+    reader = p.Reader(ROOT, 4194304)
+    binding = json_body(reader.read(payload['binding_ref']))
+    reader.read(FROZEN_REF); reader.read(CANDIDATE_REF); reader.read(payload['code_ref'])
+    expected = c.dry_run_arguments(p.pip_arguments('install', ROOT/TARGET, ROOT/OUTPUT/'requirements.txt'))
+    need(payload['pip_arguments'] == expected, 'DIAGNOSTIC_EXACT_ARGUMENTS')
+    policy = install_guard(ROOT, binding, payload)
+    completed, error, mime = False, None, None
+    try:
+        mime = p.prepare_builtin_mime(binding)
+        run_dry_pip(binding, ROOT, expected)
+        completed = True
+    except BaseException as exc:
+        error = 'PIP_NONZERO_EXIT' if type(exc) is Refused and str(exc) == 'PIP_NONZERO_EXIT' else 'DIAGNOSTIC_GUEST_ERROR'
+    finally:
+        # No raw write exemption: the original file/read/write/output guards and
+        # charges remain active. A flush failure is a failure, never permission.
+        write_guest_file('guest-refusals.json', policy.refusal_journal.packed())
+    if policy.violations: error = 'GUEST_CAUGHT_VIOLATION'
+    result = {'kind': 'E01_GUARD_DIAGNOSTIC_GUEST_RESULT_V1', 'pip_arguments_sha256': sha(packed(expected)),
+              'guard_violations': policy.violations, 'pip_completed': completed, 'error_code': error,
+              'mime_configuration': mime, 'installation_accepted': False, 'downloaded_package_imports': False,
+              'target_exists': (ROOT/TARGET).exists()}
+    write_guest_file('guest-result.json', packed(result))
+    need(policy.violations == 0, 'GUEST_CAUGHT_VIOLATION')
+    return 0 if completed and error is None and not (ROOT/TARGET).exists() else 1
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--methods-sha256'); parser.add_argument('--packet-sha256')
+    parser.add_argument('--guest', action='store_true')
+    parser.add_argument('--payload'); parser.add_argument('--payload-sha256')
+    args = parser.parse_args()
+    need(Path.cwd().absolute() == ROOT and sys.version.split()[0] == '3.12.14'
+         and sys.implementation.name == 'cpython' and sys.platform == 'darwin'
+         and platform.machine() == 'arm64' and platform.mac_ver()[0] == '26.6', 'DIAGNOSTIC_HOST_RUNTIME')
+    resource.setrlimit(resource.RLIMIT_CORE, (0, 0)); resource.setrlimit(resource.RLIMIT_CPU, (7, 8))
+    def deadline(*_): raise Refused('DIAGNOSTIC_DEADLINE_SIGNAL')
+    signal.signal(signal.SIGALRM, deadline); signal.signal(signal.SIGXCPU, deadline)
+    signal.setitimer(signal.ITIMER_REAL, 30)
+    if args.guest: return guest_main(args)
+    def no_network(event, _):
+        if event.startswith('socket.'): raise Refused('DIAGNOSTIC_PARENT_NETWORK_DENIED')
+    sys.addaudithook(no_network)
+    need(args.methods_sha256 and args.packet_sha256, 'DIAGNOSTIC_CLI_BINDING_REQUIRED')
+    path = ROOT/METHODS; no_alias(path); need(path.stat().st_size <= 65536, 'DIAGNOSTIC_METHODS_SIZE')
+    raw = path.read_bytes(); need(sha(raw) == args.methods_sha256, 'DIAGNOSTIC_METHODS_HASH')
+    methods = json_body(raw); need(packed(methods) == raw, 'DIAGNOSTIC_METHODS_CANONICAL')
+    path = relative(ROOT, methods['packet']); no_alias(path)
+    need(path.stat().st_size <= 65536, 'DIAGNOSTIC_PACKET_SIZE')
+    raw = path.read_bytes(); need(sha(raw) == args.packet_sha256, 'DIAGNOSTIC_PACKET_HASH')
+    packet = json_body(raw); need(packed(packet) == raw, 'DIAGNOSTIC_PACKET_CANONICAL')
+    result = execute(ROOT, methods, packet)
+    signal.setitimer(signal.ITIMER_REAL, 0)
+    print(packed(result).decode())
+    return 0 if result['outcome'] == 'NO_REFUSAL_REPRODUCED' else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
+
