@@ -1,0 +1,123 @@
+{
+  "TASK_ID": "E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_PURE_MOCK_V2_20261116",
+  "status": "AUTHOR_CHECKS_PASS_INDEPENDENT_REVIEW_PENDING_PURE_MOCK_ONLY",
+  "FILES_CHANGED": [
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_20261116.txt",
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_20261116.txt",
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_final_20261116.txt",
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_final_20261116.txt"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "bytes": 4678,
+      "sha256": "23b1cee9db2c88b7983cd2f60185f0a10654ef7172158569cb6da23afeb3bb5d"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "bytes": 17601,
+      "sha256": "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_20261116.txt": {
+      "bytes": 5349,
+      "sha256": "5459895ccacecd4a2735203ec374e82facd1a23216268fe4085a7206a41da1ee"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_20261116.txt": {
+      "bytes": 5386,
+      "sha256": "8eb2848438b876dea7829f98461057351a9ab750e6d6d040e2ad6cb3d3d8ec39"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_final_20261116.txt": {
+      "bytes": 5349,
+      "sha256": "5459895ccacecd4a2735203ec374e82facd1a23216268fe4085a7206a41da1ee"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_final_20261116.txt": {
+      "bytes": 5386,
+      "sha256": "8eb2848438b876dea7829f98461057351a9ab750e6d6d040e2ad6cb3d3d8ec39"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json": {
+      "bytes": 15342,
+      "sha256": "aadca5316efb9ad9e88722f2f3b7bde7fab5ebc6f49931936d6d90fd9b2e9c6f"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final": {
+      "3.12.14": "29 PASS in 0.012 seconds, exit 0",
+      "3.11.17": "29 PASS in 0.009 seconds, exit 0"
+    },
+    "author_invocations_per_runtime": 2,
+    "maximum_author_invocations_per_runtime": 3,
+    "bounds_per_invocation": {
+      "seconds": 120,
+      "read_bytes": 67108864,
+      "temporary_write_bytes": 33554432,
+      "output_bytes": 262144
+    },
+    "coverage": [
+      "Exact mock types checked before any poisoning; unexpected namespaces refused.",
+      "Nested entry detected before temporary False applicability, poisons exact vendor and local owner token.",
+      "Caught inner refusal remains sticky even when callback resets public failed or scope_active.",
+      "Propagated primary exception preserves object identity and restores original mock flag.",
+      "Residual socket/native/helper denials retain authoritative guard counts and failed postcondition.",
+      "Transient drift restored before exit explicitly succeeds: limitation test, not tamper protection.",
+      "Private token exit drift refused; v1 source/tests/report/blocking audit pins unchanged."
+    ],
+    "interpretation": "Author engineering checks only; no independent milestone acceptance or scientific result."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "data": "No respondent or publisher data read or redistributed. Static pinned pip source is a candidate explanation only; actual call site, address family and historical cause remain unknown.",
+    "candidate_imports": [
+      "dataclasses"
+    ],
+    "loader": "Frozen original loader chain transitively imports stdlib socket; exact origins recorded in both final logs. Audit hook installed before that chain refuses real socket events, native/process events and pip imports.",
+    "actual_socket_operations": 0,
+    "socket_global_mutations": 0,
+    "pip_import": false
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "remedy": {
+    "ancestry": "V1 blocking audit retained unchanged. Its caught-reentry defect is not relabeled PASS.",
+    "mechanism": "After exact mock type checks, detect active vendor scope/token before checking has_ipv6. Poison public vendor.failed and exact owner token. Outer scope rejects either sticky failure after callback even when inner error was caught. Finally restores original mock capability flag and clears scope/token without clearing failed; primary exceptions are rethrown.",
+    "scope": "Exact mock vendor owner only. No real module adapter or actual socket/pip global mutation."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Exit-state drift checks do not observe transient drift restored before the check. No continuous tamper detection, hostile private-token/class mutation resistance, concurrency protection or global sandbox claim.",
+    "A future real capability override would alter a public capability indicator rather than use a supported documented offline setting. Vendor cached False persists after public flag restoration; transitive/parent effects remain unvalidated.",
+    "Helper success cannot override original socket/native/helper refusal counters or the nonzero-violation postcondition.",
+    "No AppEngine identity spoofing, guard relaxation, silent retry, new target or production execution is supplied.",
+    "No supported simpler suppression flag was found in the inspected probe/detector; this is not an exhaustive claim about all pip options."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Exact frozen V2 methods/model needs independent review.",
+    "Actual compatibility adapter, production integration, current preflight and particular finite validation remain separately unreleased.",
+    "Third installation remains unaccepted. No fourth installation, P3 runtime/source qualification, model inference or owner-state mutation authorized by this artifact."
+  ],
+  "prospective_limits_preserved": {
+    "status": "Methods only; not actual execution release.",
+    "prior": {
+      "wall_seconds": 420,
+      "cpu_seconds": 160,
+      "subprocesses": 11
+    },
+    "optional_compatibility": {
+      "wall_seconds": 30,
+      "cpu_seconds": 20,
+      "subprocesses": 1
+    },
+    "combined": {
+      "wall_seconds": 450,
+      "cpu_seconds": 180,
+      "subprocesses": 12
+    },
+    "nine_shared_roots": {
+      "bytes": 805306368,
+      "entries": 16384
+    },
+    "per_diagnostic_or_compatibility_scope_bytes": 16777216,
+    "new_prefix_must_be_absent": true
+  },
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews these exact V2 source/test/log hashes and sticky-reentry counterexamples. Lead alone coordinates any separately justified real adapter or finite actual validation; preserve all prior failures."
+}

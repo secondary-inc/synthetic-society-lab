@@ -175,7 +175,7 @@
       "path": "reports/INDEPENDENT_AUDIT_E01_P2_GUARD_DIAGNOSTIC_V2_COMPONENT_METHODS_20261116.json",
       "sha256": "ae04be8c996b4ceca266773c1a3ebc8df457810ff8d69e68bd459d24833793d9"
     },
-    "diagnostic_next_stage": "Both actual diagnostics accepted as closed evidence only. Independent pure-methods review found a caught-reentry gap in the mock capability override: inner precondition refusal can be caught before failure becomes sticky. Original19 plus seven independent adverse checks passed each runtime and demonstrate the limitation, not acceptance. V1 is preserved; a separate pure/mock V2 sticky-failure correction is in progress. No real adapter, further diagnostic, fourth installation or P3 release.",
+    "diagnostic_next_stage": "V1 caught-reentry finding remains preserved. Exact pure/mock V2 independently PASS with37 checks per runtime: detected same-owner reentry remains sticky through caught inner refusal; original guard counters/failed postcondition remain. Scope excludes hostile token mutation, concurrency/global ownership and repaired transient drift. A concrete real-adapter/offline dry-run candidate is now assigned under a separate finite decision. Actual prior420wall/160CPU/11commands remains retained; potential new30/20/1 means450/180/12 only after production review,current preflight,particular and root once-only invocation. No real adapter execution,new diagnostic,fourth installation or P3 released.",
     "diagnostic_particular_review": {
       "bytes": 9716,
       "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V1_PARTICULAR_20261116.json",
@@ -297,12 +297,27 @@
       "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
       "sha256": "aadca5316efb9ad9e88722f2f3b7bde7fab5ebc6f49931936d6d90fd9b2e9c6f"
     },
+    "ipv6_probe_methods_v2": {
+      "bytes": 6928,
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+      "sha256": "02d1c2367997f182afbd68d2c6841b2122951552663b927f8d7a6cfbcbffac16"
+    },
+    "ipv6_probe_methods_v2_review": {
+      "bytes": 14670,
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+      "sha256": "4d26a32aa0cf32c1d48703842424556303fae9be08a0c92beb24a0044edcd4f1"
+    },
     "mime_candidate_review": {
       "bytes": 9310,
       "path": "reports/INDEPENDENT_AUDIT_E01_P2_MIME_V2_CANDIDATE_METHODS_20261116.json",
       "sha256": "1bb6c176a8eed5c24a49f7326be03bf70887d6dac018bfb6af5b0fef5a1d0a8e"
     },
     "mode": "RETROSPECTIVE",
+    "offline_compatibility_preparation_decision": {
+      "bytes": 5054,
+      "path": "reports/E01_OFFLINE_COMPATIBILITY_FINITE_DECISION_20261116.json",
+      "sha256": "4cc298064ff70e665f73aae5c016ca2a822bc786fc68075ff56535d2a83e660d"
+    },
     "preflight_stop_review": {
       "bytes": 3478,
       "path": "reports/INDEPENDENT_AUDIT_E01_P2_READONLY_PREFLIGHT_STOP_20261116.json",
@@ -505,16 +520,16 @@
       "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
       "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
     },
-    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_09/manifest.json",
+    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_10/manifest.json",
     "historical_verified_bundle_through_c249a57": {
       "bytes": 934,
       "path": "reports/GITHUB_DELIVERY_LOCAL_BUNDLE_20261116.json",
       "sha256": "492493f8c5f720763f1c3cd5850708b274b0b7bd606a5d9fc4a25ca021596cd9"
     },
-    "last_code_and_evidence_commit_before_final_checkpoint": "85e5bdfca099faae182569d7a6d22624ff98d76b",
+    "last_code_and_evidence_commit_before_final_checkpoint": "0f08a4063ed366d6c6744167498dc62c15e9aee4",
     "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
     "local_head_at_delivery_attempt": "ce9a779d949067f7bae08dbeb1e33baa1f1b5f12",
-    "local_unpublished_commits_before_final_checkpoint": 21
+    "local_unpublished_commits_before_final_checkpoint": 22
   },
   "historical_and_human_candidate_scope_review": {
     "bytes": 6430,

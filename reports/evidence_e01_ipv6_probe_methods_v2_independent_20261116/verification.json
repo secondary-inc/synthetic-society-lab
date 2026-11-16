@@ -1,0 +1,118 @@
+{
+  "status": "PASS_EXACT_PURE_V2_STICKY_REENTRY_WITHIN_DECLARED_MODEL_LIMITS_NO_ACTUAL_RELEASE",
+  "evidence_refs": {
+    "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V2_20261116.json": {
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+      "bytes": 6928,
+      "sha256": "02d1c2367997f182afbd68d2c6841b2122951552663b927f8d7a6cfbcbffac16"
+    },
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+      "bytes": 4678,
+      "sha256": "23b1cee9db2c88b7983cd2f60185f0a10654ef7172158569cb6da23afeb3bb5d"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+      "bytes": 17601,
+      "sha256": "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_20261116.txt",
+      "bytes": 5349,
+      "sha256": "5459895ccacecd4a2735203ec374e82facd1a23216268fe4085a7206a41da1ee"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_20261116.txt",
+      "bytes": 5386,
+      "sha256": "8eb2848438b876dea7829f98461057351a9ab750e6d6d040e2ad6cb3d3d8ec39"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_final_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_final_20261116.txt",
+      "bytes": 5349,
+      "sha256": "5459895ccacecd4a2735203ec374e82facd1a23216268fe4085a7206a41da1ee"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_final_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_final_20261116.txt",
+      "bytes": 5386,
+      "sha256": "8eb2848438b876dea7829f98461057351a9ab750e6d6d040e2ad6cb3d3d8ec39"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
+      "bytes": 15342,
+      "sha256": "aadca5316efb9ad9e88722f2f3b7bde7fab5ebc6f49931936d6d90fd9b2e9c6f"
+    },
+    "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V1_20261116.json": {
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
+      "bytes": 15420,
+      "sha256": "7e377eeace21ead57dc52883dcc2d0610cd8e094fd9d7461cf81b9c7e2674a9c"
+    },
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_probe_mock_candidate_v1_20261116.py",
+      "bytes": 3412,
+      "sha256": "015cf1c2c2bd662cd726f74bf49336a1cdd702866ae45ce283b8caaa03053289"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py",
+      "bytes": 9939,
+      "sha256": "4302f69ca53fc8e654816e8c009bec3f67406b84c08fd0f48a74edb5a5e54cec"
+    },
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_312.txt": {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_312.txt",
+      "bytes": 7743,
+      "sha256": "95f96daa949bb32ee78ecd4985496fd0eb31b766d342a585a941de43bc60d66d"
+    },
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_311.txt": {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_311.txt",
+      "bytes": 7817,
+      "sha256": "6abf10f7627fd2c1e04dadb8ae23ff7d155803603c80fbcf4f48f93600cf5e87"
+    },
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py": {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py",
+      "bytes": 9636,
+      "sha256": "f242f5fbe82ca92bcb97ffaf750fe941a3dcd92762927f91bdaf9175293b6223"
+    }
+  },
+  "test_receipts": {
+    "312": {
+      "kind": "INDEPENDENT_IPV6_V2_PURE_REVIEW",
+      "python": "3.12.14",
+      "tests": 37,
+      "successful": true,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py",
+      "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274",
+      "actual_socket_operations": 0,
+      "pip_import": false,
+      "wall_seconds": 0.11828616699494887,
+      "logical_open_read_bytes": 3116470,
+      "authored_written_bytes": 0,
+      "console_bytes_before_receipt": 7130,
+      "cached_false_and_nonhostile_sticky_reentry_scope_explicit": true
+    },
+    "311": {
+      "kind": "INDEPENDENT_IPV6_V2_PURE_REVIEW",
+      "python": "3.11.17",
+      "tests": 37,
+      "successful": true,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/socket.py",
+      "socket_source_sha256": "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30",
+      "actual_socket_operations": 0,
+      "pip_import": false,
+      "wall_seconds": 0.10025904201029334,
+      "logical_open_read_bytes": 3317721,
+      "authored_written_bytes": 0,
+      "console_bytes_before_receipt": 7167,
+      "cached_false_and_nonhostile_sticky_reentry_scope_explicit": true
+    }
+  },
+  "original_probe_model_AST_unchanged": true,
+  "candidate_imports": [
+    "dataclasses"
+  ],
+  "author_invocations_each_runtime": 2,
+  "review_invocations_each_runtime": 1,
+  "automatic_reruns": 0,
+  "prior_V1_blocker_immutable": true,
+  "scope": "Original29-test loader plus8distinct auditor regressions; exact owner reentry poison persists under caught refusal/publicfailed reset; original guard counters remain authoritative."
+}

@@ -1,0 +1,209 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V2_20261116",
+  "kind": "INDEPENDENT_PURE_MOCK_STICKY_REENTRY_REMEDY_REVIEW",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "PASS_EXACT_PURE_V2_STICKY_REENTRY_WITHIN_DECLARED_MODEL_LIMITS_NO_ACTUAL_RELEASE",
+  "evidence_refs": {
+    "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V2_20261116.json": {
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+      "bytes": 6928,
+      "sha256": "02d1c2367997f182afbd68d2c6841b2122951552663b927f8d7a6cfbcbffac16"
+    },
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+      "bytes": 4678,
+      "sha256": "23b1cee9db2c88b7983cd2f60185f0a10654ef7172158569cb6da23afeb3bb5d"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+      "bytes": 17601,
+      "sha256": "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_20261116.txt",
+      "bytes": 5349,
+      "sha256": "5459895ccacecd4a2735203ec374e82facd1a23216268fe4085a7206a41da1ee"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_20261116.txt",
+      "bytes": 5386,
+      "sha256": "8eb2848438b876dea7829f98461057351a9ab750e6d6d040e2ad6cb3d3d8ec39"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_final_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_312_final_20261116.txt",
+      "bytes": 5349,
+      "sha256": "5459895ccacecd4a2735203ec374e82facd1a23216268fe4085a7206a41da1ee"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_final_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_probe_mock_candidate_v2_311_final_20261116.txt",
+      "bytes": 5386,
+      "sha256": "8eb2848438b876dea7829f98461057351a9ab750e6d6d040e2ad6cb3d3d8ec39"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
+      "bytes": 15342,
+      "sha256": "aadca5316efb9ad9e88722f2f3b7bde7fab5ebc6f49931936d6d90fd9b2e9c6f"
+    },
+    "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V1_20261116.json": {
+      "path": "reports/E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_V1_20261116.json",
+      "bytes": 15420,
+      "sha256": "7e377eeace21ead57dc52883dcc2d0610cd8e094fd9d7461cf81b9c7e2674a9c"
+    },
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_probe_mock_candidate_v1_20261116.py",
+      "bytes": 3412,
+      "sha256": "015cf1c2c2bd662cd726f74bf49336a1cdd702866ae45ce283b8caaa03053289"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py",
+      "bytes": 9939,
+      "sha256": "4302f69ca53fc8e654816e8c009bec3f67406b84c08fd0f48a74edb5a5e54cec"
+    },
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_312.txt": {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_312.txt",
+      "bytes": 7743,
+      "sha256": "95f96daa949bb32ee78ecd4985496fd0eb31b766d342a585a941de43bc60d66d"
+    },
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_311.txt": {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_311.txt",
+      "bytes": 7817,
+      "sha256": "6abf10f7627fd2c1e04dadb8ae23ff7d155803603c80fbcf4f48f93600cf5e87"
+    },
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py": {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py",
+      "bytes": 9636,
+      "sha256": "f242f5fbe82ca92bcb97ffaf750fe941a3dcd92762927f91bdaf9175293b6223"
+    }
+  },
+  "blocking_findings": [],
+  "findings": [
+    "Exact6928B/02d1c236 report,4678B/23b1cee9 candidate and17601B/dabe56af tests verified. Seven report artifact refs rehashed; original V1 report/source/tests/blocking audit remain byte-identical. V1 blocked finding is preserved, not relabeled as passed.",
+    "Candidate imports only dataclasses, structurally accepts exact mock types and has no actual socket/pip adapter. Original initialize_probe_model function AST unchanged; matched originalTrue/freshstate callback comparator and all original guard callbacks retained.",
+    "After exacttype checks, samevendor active flag/token is inspected before temporaryFalse applicability. Detected nested entry sets vendor.failed and poisons the exact active owner token. Outer call checks its local token even when callback catches inner refusal or clears publicfailed. Original V1 counterexample now raises MOCK_STICKY_FAILURE, restoresTrue, clears scope/token and keeps failedTrue.",
+    "Owneridentity validation rejects replacement token at exit. Independent regression uses another socket with samevendor and confirms exact currentowner poisoning without modifying other socket. Another regression exercises replacement token followed by caught/reset error and confirms outer identitydrift still fails. This is selected nonhostile regression coverage, not arbitrary private-token tamper resistance.",
+    "Exacttype checks occur before poisoning. Invalidnamespace nested request does not poison a valid owner. Separate mock owner objects do not crosspoison. These are intentionally object-local semantics, not a real sharedmodule/global ownership or concurrency policy.",
+    "Ordinary initializererrors, BaseException and original guarderrors retain primaryobject identity and finallyrestore. Independent primaryKeyboardInterrupt after caughtreentry and surfacedrift remains sameobject; original flag restored, scopefalse, tokenNone, failedTrue. Bad cachedinteger0 does not satisfy exactFalse result.",
+    "Preexisting and new residual socketdenial counters/journal totals remain intact with reentry failure. Original postcondition still refuses nonzeroviolations. Original comparator catches constructor but retains violation1; scopedmodel avoids modeled branch only. CachedvendorFalse deliberately persists after publicflagTrue restoration.",
+    "Exited-state transientdrift restored before checking intentionally succeeds; tests/report accurately exclude continuous detection, hostile private-token/class mutation, concurrent/global protection and real importclosure effects. A callback that manipulates all private state is beyond accepted model. Any real adapter needs independently enforced process/module ownership and reviewed failure semantics.",
+    "Original29 test methods/loader retained, no AST-extracted guard replacement. Eight distinct auditor regressions added. One invocation3.12:37PASS(.013 unittest s), wall.11828616699494887s/read3116470B; one3.11:37PASS(.010s), wall.10025904201029334s/read3317721B. Authoredwrites0; consolebelow256KiB. No failure/retry/rerun in review; author2 invocations/runtime separately retained.",
+    "Under explicit review allowance original loader transitively imports stdlibsocket. Both normal test and outerrunner validate origin and record socket.py SHA; no actualsocket events/functions/globalmutations,pip or downloadedpackage imports/network/native/helper calls. Candidate itself imports no socket. This does not retroactively certify historical author behavior.",
+    "Real override remains a publiccapability declaration, not supported documented offline API; cachedFalse and parent/transitive importeffects remain unvalidated. Actual callsite/family/destination/history remain unknown from closedV2event. Proposed450/180/12allocation and nine sharedroot768MiB/16384entries/each16MiB remain methods only, no actual reservation/release.",
+    "All actual three historical installs remain unaccepted, P2/P3blocked. This PASS accepts exact puremethods/model within declaredlimits only; no real adapter, newdiagnostic, fourthinstallation, source/runtime qualification, paid inference or scientific effect follows."
+  ],
+  "independent_test_results": {
+    "312": {
+      "kind": "INDEPENDENT_IPV6_V2_PURE_REVIEW",
+      "python": "3.12.14",
+      "tests": 37,
+      "successful": true,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py",
+      "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274",
+      "actual_socket_operations": 0,
+      "pip_import": false,
+      "wall_seconds": 0.11828616699494887,
+      "logical_open_read_bytes": 3116470,
+      "authored_written_bytes": 0,
+      "console_bytes_before_receipt": 7130,
+      "cached_false_and_nonhostile_sticky_reentry_scope_explicit": true
+    },
+    "311": {
+      "kind": "INDEPENDENT_IPV6_V2_PURE_REVIEW",
+      "python": "3.11.17",
+      "tests": 37,
+      "successful": true,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/socket.py",
+      "socket_source_sha256": "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30",
+      "actual_socket_operations": 0,
+      "pip_import": false,
+      "wall_seconds": 0.10025904201029334,
+      "logical_open_read_bytes": 3317721,
+      "authored_written_bytes": 0,
+      "console_bytes_before_receipt": 7167,
+      "cached_false_and_nonhostile_sticky_reentry_scope_explicit": true
+    }
+  },
+  "test_count": {
+    "author_methods_each_runtime": 29,
+    "distinct_auditor_regressions_each_runtime": 8,
+    "total_each_runtime": 37,
+    "total_completed": 74,
+    "invocations_each_runtime": 1
+  },
+  "accepted_contract": {
+    "same_exact_vendor_owner_caught_reentry": "PASS_STICKY",
+    "original_counterexample": "CLOSED_IN_V2_ONLY",
+    "public_failed_reset_bypass": "REFUSED",
+    "same_owner_different_mock_socket": "POISONS_EXACT_OWNER",
+    "primary_exception_identity": "PRESERVED",
+    "original_flag_restoration": "PASS_WITH_EXACT_MOCKS",
+    "residual_audit_counters_and_postcondition": "UNCHANGED",
+    "transient_repaired_drift": "EXPLICITLY_NOT_DETECTED",
+    "hostile_private_token_class_mutation": "NOT_CLAIMED_NOT_ACCEPTED",
+    "concurrency_or_shared_global_ownership": "NOT_ESTABLISHED",
+    "real_adapter_or_execution": "NOT_RELEASED"
+  },
+  "actual_actions": {
+    "real_socket_functions": 0,
+    "transitive_stdlib_socket_import": true,
+    "socket_global_mutations": 0,
+    "pip_import_or_execution": 0,
+    "downloaded_package_imports": 0,
+    "actual_runner_helper_main": 0,
+    "network": 0,
+    "old_target_scope_or_raw_source_reads": 0,
+    "owner_credential_access": 0,
+    "cost_USD": 0
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V2_20261116.json",
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_311.txt",
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_312.txt",
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py",
+    "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/verification.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_311.txt",
+      "bytes": 7817,
+      "sha256": "6abf10f7627fd2c1e04dadb8ae23ff7d155803603c80fbcf4f48f93600cf5e87"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_312.txt",
+      "bytes": 7743,
+      "sha256": "95f96daa949bb32ee78ecd4985496fd0eb31b766d342a585a941de43bc60d66d"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py",
+      "bytes": 9636,
+      "sha256": "f242f5fbe82ca92bcb97ffaf750fe941a3dcd92762927f91bdaf9175293b6223"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/verification.json",
+      "bytes": 5943,
+      "sha256": "d4b195c74bf1ab40ce7e3163bd65b3467bbe82c4849e80ee2d1e45971ae779ad"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S reports/evidence_e01_ipv6_probe_methods_v2_independent_20261116/review_runner.py",
+    "Authorized once-per-runtime review allowance consumed; commands record provenance only, no automatic rerun authorized."
+  ],
+  "TESTS_RUN_AND_RESULTS": "37 PASS perruntime,74completed, original29 plus8auditorregressions. Exact pin/AST preservation checks also PASS. Pure model only.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Technical candidate/tests/reports and original loader source only; exact two V1 reports allowlisted for preservation checks. No pip source imported, researchdata/rawrespondent/publisher content, credentials, owners or package/targetbodies accessed.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Audit/logical-open caps are engineering instrumentation, not an adversarial OS sandbox or exhaustive physical-I/O meter.",
+    "Exact mock dataclasses and authored callbacks only; no real importclosure or multithread/global ownership proof.",
+    "Sticky mechanism applies detected entry into exactvendorowner. Hostile erasure of privatetoken, object/class mutation and repairedtransientdrift explicitly excluded.",
+    "No inference about real callsite/history/compatibility/scientific validity from pure results."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Real adapter and validationrunner NOT_IMPLEMENTED_NOT_REVIEWED.",
+    "Fresh exactmodule/source/originalTrue/thread/importclosure/currentoldroot/input/storage proofs and finite rootjustification required before actualparticular release.",
+    "Three historical installs unaccepted; P2/P3/source/runtime gates remain BLOCKED."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may separately justify and assign a concrete real-adapter/finite-validation design with explicit importclosure and process/state ownership, then production review; this audit authorizes no actual mutation or execution.",
+  "ownership": "Independent auditor owns new report/evidence only; lead owns Git/STATUS and actual coordination."
+}
