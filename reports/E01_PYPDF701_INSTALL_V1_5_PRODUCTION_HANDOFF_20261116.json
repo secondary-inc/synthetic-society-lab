@@ -1,0 +1,108 @@
+{
+  "TASK_ID": "E01_P2_V1_5_MIME_RECOVERY_PRODUCTION_20261116",
+  "kind": "E01_PYPDF701_INSTALL_V1_5_FROZEN_PRODUCTION_HANDOFF",
+  "status": "74_GUARDED_AUTHORED_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_PRODUCTION_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/install_e01_pypdf701_runtime_v1_5.py",
+    "configs/e01_pypdf701_install_v1_5_20261116.json",
+    "tests/test_e01_pypdf701_install_v1_5.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/install_e01_pypdf701_runtime_v1_5.py": {
+      "bytes": 64638,
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+    },
+    "configs/e01_pypdf701_install_v1_5_20261116.json": {
+      "bytes": 13449,
+      "sha256": "ffd2bb0598587e44f3675ef778ba8a892acd70be5f25ea08d947264e076f9e7b"
+    },
+    "tests/test_e01_pypdf701_install_v1_5.py": {
+      "bytes": 27614,
+      "sha256": "b1037f25f952b87c82b9aaf319ba97f20c24e57d95a107ed0cacff9d11656e7f"
+    },
+    "reports/e01_pypdf701_install_v1_5_authored_312_initial_20261116.txt": {
+      "bytes": 11385,
+      "sha256": "67d79c892f3ee23591c87af9cbf924705398dcaad1c66f6fba5ea1d2d4a819cf"
+    },
+    "reports/e01_pypdf701_install_v1_5_authored_312_final_20261116.txt": {
+      "bytes": 11385,
+      "sha256": "60f80b740c1afd57b353d655e710f0a23f30db06b29962989c38807182b27686"
+    },
+    "reports/e01_pypdf701_install_v1_5_authored_311_final_20261116.txt": {
+      "bytes": 11385,
+      "sha256": "8e1bf36b9f4be7ea68fe39d18e43eb1c56fd6bba13e356c49f683208550d3dc6"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_P2_MIME_V2_CANDIDATE_METHODS_20261116.json": {
+      "bytes": 9310,
+      "sha256": "1bb6c176a8eed5c24a49f7326be03bf70887d6dac018bfb6af5b0fef5a1d0a8e"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_4_ACTUAL_STOP_20261116.json": {
+      "bytes": 6127,
+      "sha256": "78126259d9b0865031cd82a50915761bdf6ab7a5e78284a0cde33cae21caa2f7"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_install_v1_5.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_install_v1_5.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "initial": "Python 3.12: 74 PASS in7.447 seconds. Only explanatory config prose was refined before final runs.",
+    "final": {
+      "3.12": "74 PASS in8.450 seconds",
+      "3.11": "74 PASS in5.883 seconds"
+    },
+    "invocationsPerRuntime": {
+      "3.12": 2,
+      "3.11": 1
+    },
+    "maximumInvocationsPerRuntime": 3,
+    "scope": "Frozen guarded authored runner; runtime stdlib copies and authored temporary fixtures only. No actual pip, package, venv, network, native or research-source execution.",
+    "coverage": [
+      "Retains accepted core/consumer/header/legacy-certs/absent-ZIP checks and both previous installer source/config/test hash pins.",
+      "Production MIME helper is AST-identical to the accepted candidate except Refused replaces ValueError. Origin wrapper requires exact bound base/lib/python3.12/mimetypes.py, matching spec origin and no aliases.",
+      "Fresh and polluted stdlib MIME states rebuild with zero MIME file opens; HTML/plain-text/wheel classification restored. Wrong module/spec origin, alias, schema and init error refuse.",
+      "Guest AST order proves retained guard installation precedes MIME preparation, which precedes pip. Main validates guest configuration proof; missing proof stops before third command.",
+      "Both failed stage controls, source/method/packet hashes, output artifacts and chain bindings are required. Corrupt, missing, reordered, coherently nonfailed or altered-history evidence refuses before new scope creation.",
+      "Snapshots cover four preserved old roots. Either old target changing cannot pass; failure preserves both old targets plus the new partial target.",
+      "Six-tree logical limit, prior-occupancy preflight, old-root guest read/write exclusion, full prior allocations, journal headroom and self-inclusive final terminal accounting tested.",
+      "All unchanged core functions/classes are AST-identical after explicit new routing. run_pip, GuestPolicy, StageBudget, Journal and process launch remain unchanged from accepted v1.4."
+    ]
+  },
+  "delta": {
+    "newTarget": ".venv-e01-pypdf-7.0.1-v3",
+    "newScope": "data/processed/e01_pypdf701_build_v1/install-v1_5-20261116",
+    "newPacket": "data/processed/e01_pypdf701_build_v1/install-v1_5-packet-20261116.json",
+    "mime": "Copy the independently accepted Darwin-only public knownfiles=[]; init(files=None) helper. After unchanged guest guard, import mimetypes from exact bound stdlib origin, reject aliases, configure built-ins and record proof before pip. No private MIME database mutation or broader permissions.",
+    "ancestry": "Require exact two-stage failed chain, original v1.3 and latest v1.4. Each preserves two actual commands(exit0/exit1), STARTED/code/method/packet/artifact/output hashes and partial target. Latest records must bind the same first-stage evidence, first-recovery allocation and immutable first metadata snapshot. Aggregate actual prior command/read/output/CPU charges without refund.",
+    "resources": "Keep per-stage120 wall seconds/40 observed CPU seconds/3 main commands and parent/guest7soft8hard CPU. Full prior240/80/6 plus one120/40/3 stage yields cumulative allocated360/120/9. Record both prior full stage cap dictionaries and observed charges. No financial/source-campaign or ordinal changes.",
+    "storage": "One combined805306368-byte logical limit and16384-entry traversal limit across six old/new roots. Old occupancy is measured in metadata, included in preflight and polling; existing journal precharges,32768-byte terminal reserve and self-inclusive terminal calculation are unchanged.",
+    "preserved": "Both previous source/config/test versions, consumed scopes and partial v1/v2 targets remain immutable. New target/scope create once, no retry or cleanup."
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "methods": "Independent MIME candidate/methods PASS at1bb6c176; independent latest actual-stop audit78126259. These do not certify this new production integration.",
+    "authored": "74 guarded checks pass on both supported runtimes; exact frozen production review pending.",
+    "actualPreflight": "Root prepares current actual packet and bounded metadata/bootstrap/artifact/six-root preflight. Worker does not invent missing actual values or packet hashes.",
+    "actualRecovery": "NOT_RUN by worker. Root alone invokes once after exact production and particular release.",
+    "runtimeSourceQualification": "Still deferred; actual installation acceptance and subsequent qualification are separate gates."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Versioned code/config/reports, bounded public failed-run control metadata, and authored temporary fixtures. Real standard-library copies were used in isolated tests. No real system MIME file, wheel body, respondent/publisher data, research PDF, credential or private financial owner inspected.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerNetworkCalls": 0,
+  "actualWorkerPipPackageVenvNativeResearchSourceActions": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Exact historical v1.3 denied path and v1.4 MIME filename remain unknown; successful authored reproductions do not rewrite those traces.",
+    "Darwin fixed-runtime engineering only; no Windows registry, ABI compatibility, actual pip success or scientific acceptance inferred.",
+    "Cooperative guards, metadata snapshots and logical polling retain OS-blocking/race/RSS/physical-I/O limitations. No hard hostile-host containment or exhaustive physical I/O guarantee.",
+    "Prior full allocations remain charged even though observed usage was smaller. Current methods permit exactly one new create-once stage, not repeated recovery.",
+    "Bounded journal/OS failure can prevent final terminal creation; retained artifacts must not be inferred successful.",
+    "No Git, STATUS, auditor finding, old target or old installer version edited by this worker."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact production review",
+    "Root matching actual packet and current bounded preflight",
+    "Independent particular release and root single actual invocation",
+    "Independent actual acceptance followed by runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditor independently reviews frozen production and authored tests. Root retains packet, preflight, actual execution, STATUS and Git ownership.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/install_e01_pypdf701_runtime_v1_5.py --methods-sha256 ffd2bb0598587e44f3675ef778ba8a892acd70be5f25ea08d947264e076f9e7b --packet-sha256 <ROOT_REVIEWED_ACTUAL_PACKET_SHA256>"
+}

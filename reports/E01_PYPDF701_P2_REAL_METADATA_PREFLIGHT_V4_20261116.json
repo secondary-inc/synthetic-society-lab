@@ -1,0 +1,592 @@
+{
+  "UTC_elapsed_seconds": 0.34160399436950684,
+  "actual_research_source_reads": 0,
+  "combined_preflight_upper_bound": 103012406,
+  "cost_USD": 0,
+  "dependency_closure": [
+    {
+      "active": false,
+      "dependency": "typing-extensions",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "typing_extensions >= 4.0; python_version < '3.11'"
+    },
+    {
+      "active": false,
+      "dependency": "brotli",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "brotli>=1.2.0 ; extra == \"brotli\""
+    },
+    {
+      "active": false,
+      "dependency": "cryptography",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "cryptography>=43 ; extra == \"crypto\""
+    },
+    {
+      "active": false,
+      "dependency": "pycryptodome",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pycryptodome ; extra == \"cryptodome\""
+    },
+    {
+      "active": false,
+      "dependency": "flit",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "flit ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "pip-tools",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pip-tools ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "pre-commit",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pre-commit ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-cov",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pytest-cov ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-socket",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pytest-socket ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-timeout",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pytest-timeout ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-xdist",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pytest-xdist ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "wheel",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "wheel ; extra == \"dev\""
+    },
+    {
+      "active": false,
+      "dependency": "myst-parser",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "myst-parser ; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinx",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "sphinx ; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinx-rtd-theme",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "sphinx-rtd-theme ; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "fonttools",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "fonttools ; extra == \"fonts\""
+    },
+    {
+      "active": false,
+      "dependency": "arabic-reshaper",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "arabic-reshaper ; extra == \"full\""
+    },
+    {
+      "active": false,
+      "dependency": "brotli",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "brotli>=1.2.0 ; extra == \"full\""
+    },
+    {
+      "active": false,
+      "dependency": "cryptography",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "cryptography>=43 ; extra == \"full\""
+    },
+    {
+      "active": false,
+      "dependency": "fonttools",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "fonttools ; extra == \"full\""
+    },
+    {
+      "active": false,
+      "dependency": "pillow",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pillow>=8.0.0 ; extra == \"full\""
+    },
+    {
+      "active": false,
+      "dependency": "python-bidi",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "python-bidi ; extra == \"full\""
+    },
+    {
+      "active": false,
+      "dependency": "pillow",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "pillow>=8.0.0 ; extra == \"image\""
+    },
+    {
+      "active": false,
+      "dependency": "arabic-reshaper",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "arabic-reshaper ; extra == \"rtl-text\""
+    },
+    {
+      "active": false,
+      "dependency": "python-bidi",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pypdf",
+      "raw": "python-bidi ; extra == \"rtl-text\""
+    },
+    {
+      "active": true,
+      "dependency": "pycparser",
+      "disposition": "SATISFIED_FIXED_FIVE",
+      "owner": "cffi",
+      "raw": "pycparser; implementation_name != \"PyPy\""
+    },
+    {
+      "active": true,
+      "dependency": "cffi",
+      "disposition": "SATISFIED_FIXED_FIVE",
+      "owner": "cryptography",
+      "raw": "cffi>=2.0.0 ; platform_python_implementation != 'PyPy'"
+    },
+    {
+      "active": false,
+      "dependency": "typing-extensions",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "cryptography",
+      "raw": "typing-extensions>=4.13.2 ; python_full_version < '3.11'"
+    },
+    {
+      "active": false,
+      "dependency": "bcrypt",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "cryptography",
+      "raw": "bcrypt>=3.1.5 ; extra == 'ssh'"
+    },
+    {
+      "active": false,
+      "dependency": "furo",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "furo; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "olefile",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "olefile; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinx",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "sphinx>=8.2; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinx-autobuild",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "sphinx-autobuild; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinx-copybutton",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "sphinx-copybutton; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinx-inline-tabs",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "sphinx-inline-tabs; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "sphinxext-opengraph",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "sphinxext-opengraph; extra == \"docs\""
+    },
+    {
+      "active": false,
+      "dependency": "olefile",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "olefile; extra == \"fpx\""
+    },
+    {
+      "active": false,
+      "dependency": "olefile",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "olefile; extra == \"mic\""
+    },
+    {
+      "active": false,
+      "dependency": "arro3-compute",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "arro3-compute; extra == \"test-arrow\""
+    },
+    {
+      "active": false,
+      "dependency": "arro3-core",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "arro3-core; extra == \"test-arrow\""
+    },
+    {
+      "active": false,
+      "dependency": "nanoarrow",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "nanoarrow; extra == \"test-arrow\""
+    },
+    {
+      "active": false,
+      "dependency": "pyarrow",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "pyarrow; extra == \"test-arrow\""
+    },
+    {
+      "active": false,
+      "dependency": "coverage",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "coverage>=7.4.2; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "defusedxml",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "defusedxml; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "markdown2",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "markdown2; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "olefile",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "olefile; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "packaging",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "packaging; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "psutil",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "psutil; (sys_platform == \"linux\" or sys_platform == \"darwin\") and extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "pytest; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-cov",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "pytest-cov; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-timeout",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "pytest-timeout; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "pytest-xdist",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "pytest-xdist; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "setuptools",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "setuptools; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "trove-classifiers",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "trove-classifiers>=2024.10.12; extra == \"tests\""
+    },
+    {
+      "active": false,
+      "dependency": "defusedxml",
+      "disposition": "INACTIVE_MARKER_NO_EXTRA_ACTIVATION",
+      "owner": "pillow",
+      "raw": "defusedxml; extra == \"xmp\""
+    }
+  ],
+  "downloaded_package_imports": 0,
+  "inflated_bytes": 25657393,
+  "installer_commands": 0,
+  "kind": "E01_P2_READONLY_REAL_METADATA_PREFLIGHT_V4",
+  "model_calls": 0,
+  "monotonic_elapsed_seconds": 0.34160504200553987,
+  "network_requests": 0,
+  "pip_imports": 0,
+  "prior_installation": {
+    "actual_prior_captured_output_bytes": 13982,
+    "actual_prior_commands_started": 4,
+    "actual_prior_observed_CPU_seconds": 0.9307139999999999,
+    "actual_prior_parent_bound_reference_read_bytes": 121122934,
+    "allocation": {
+      "combined_logical_bytes": 805306368,
+      "cumulative_main_commands": 9,
+      "cumulative_observed_CPU_seconds": 120,
+      "cumulative_wall_seconds": 360,
+      "prior_main_commands": 6,
+      "prior_observed_CPU_seconds": 80,
+      "prior_wall_seconds": 240
+    },
+    "prior_full_stage_caps": [
+      {
+        "command_output_bytes": 262144,
+        "control_write_bytes": 8388608,
+        "guest_cumulative_write_bytes_each": 805306368,
+        "guest_read_bytes_each": 268435456,
+        "main_commands": 3,
+        "network": 0,
+        "observed_aggregate_CPU_seconds": 40,
+        "owned_logical_bytes": 805306368,
+        "parent_child_CPU_hard_seconds": 8,
+        "parent_child_CPU_soft_seconds": 7,
+        "parent_read_bytes": 536870912,
+        "single_file_bytes": 67108864,
+        "tree_entries": 16384,
+        "wall_seconds": 120
+      },
+      {
+        "command_output_bytes": 262144,
+        "control_write_bytes": 8388608,
+        "guest_cumulative_write_bytes_each": 805306368,
+        "guest_read_bytes_each": 268435456,
+        "main_commands": 3,
+        "network": 0,
+        "observed_aggregate_CPU_seconds": 40,
+        "owned_logical_bytes": 805306368,
+        "parent_child_CPU_hard_seconds": 8,
+        "parent_child_CPU_soft_seconds": 7,
+        "parent_read_bytes": 536870912,
+        "single_file_bytes": 67108864,
+        "tree_entries": 16384,
+        "wall_seconds": 120
+      }
+    ],
+    "stages": [
+      {
+        "actual_prior_captured_output_bytes": 6071,
+        "actual_prior_commands_started": 2,
+        "actual_prior_observed_CPU_seconds": 0.45450899999999994,
+        "actual_prior_parent_bound_reference_read_bytes": 60519091,
+        "allocation": {
+          "combined_logical_bytes": 805306368,
+          "cumulative_main_commands": 6,
+          "cumulative_observed_CPU_seconds": 80,
+          "cumulative_wall_seconds": 240,
+          "prior_main_commands": 3,
+          "prior_observed_CPU_seconds": 40,
+          "prior_wall_seconds": 120
+        },
+        "code_ref": {
+          "bytes": 51100,
+          "path": "scripts/install_e01_pypdf701_runtime_v1_3.py",
+          "sha256": "a4e6e9580bfbfdad96b960cc2837ae5e76771e6c6109217c97f50f1a1837f062"
+        },
+        "methods_ref": {
+          "bytes": 8157,
+          "path": "configs/e01_pypdf701_install_v1_3_20261116.json",
+          "sha256": "5b80e9f9bebd5b55c288c4023604a7b8af52a1140a94a79bcb9b6b72223cc743"
+        },
+        "packet_ref": {
+          "bytes": 1523,
+          "path": "data/processed/e01_pypdf701_build_v1/install-v1_3-packet-20261116.json",
+          "sha256": "9b0ca1255243821fee8707bcd83f3e6d773c17ce29522535e71585788d9f889b"
+        },
+        "preserved_scope": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116",
+        "preserved_target": ".venv-e01-pypdf-7.0.1-v1",
+        "prior_full_stage_caps": {
+          "command_output_bytes": 262144,
+          "control_write_bytes": 8388608,
+          "guest_cumulative_write_bytes_each": 805306368,
+          "guest_read_bytes_each": 268435456,
+          "main_commands": 3,
+          "network": 0,
+          "observed_aggregate_CPU_seconds": 40,
+          "owned_logical_bytes": 805306368,
+          "parent_child_CPU_hard_seconds": 8,
+          "parent_child_CPU_soft_seconds": 7,
+          "parent_read_bytes": 536870912,
+          "single_file_bytes": 67108864,
+          "tree_entries": 16384,
+          "wall_seconds": 120
+        },
+        "started_ref": {
+          "bytes": 915,
+          "path": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116/STARTED.json",
+          "sha256": "429fa2988dfbdb535c0a6f9526b60ad8e814909aa856d025d147429985590097"
+        },
+        "terminal_ref": {
+          "bytes": 2344,
+          "path": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116/TERMINAL.json",
+          "sha256": "9bcbcbb086aab17fde4e3d25beecc533fa214c1f71eefc84fe8ed9feb7034974"
+        }
+      },
+      {
+        "actual_prior_captured_output_bytes": 7911,
+        "actual_prior_commands_started": 2,
+        "actual_prior_observed_CPU_seconds": 0.476205,
+        "actual_prior_parent_bound_reference_read_bytes": 60603843,
+        "allocation": {
+          "combined_logical_bytes": 805306368,
+          "cumulative_main_commands": 9,
+          "cumulative_observed_CPU_seconds": 120,
+          "cumulative_wall_seconds": 360,
+          "prior_main_commands": 6,
+          "prior_observed_CPU_seconds": 80,
+          "prior_wall_seconds": 240
+        },
+        "code_ref": {
+          "bytes": 60303,
+          "path": "scripts/install_e01_pypdf701_runtime_v1_4.py",
+          "sha256": "5d118a009805890854dcad6e17c89d297376cb685b22c0374a2fd5fb33d4b6f3"
+        },
+        "methods_ref": {
+          "bytes": 10629,
+          "path": "configs/e01_pypdf701_install_v1_4_20261116.json",
+          "sha256": "4a3b12a980652c26c48bdffd8308bc7d4f7252c7c5189ae6174600ea5334d9c6"
+        },
+        "packet_ref": {
+          "bytes": 1523,
+          "path": "data/processed/e01_pypdf701_build_v1/install-v1_4-packet-20261116.json",
+          "sha256": "7b248077701e8d6bc7552eb765a44cc48f5da43ef7f3f232a5d8d5721f787e4c"
+        },
+        "preserved_scope": "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116",
+        "preserved_target": ".venv-e01-pypdf-7.0.1-v2",
+        "prior_full_stage_caps": {
+          "command_output_bytes": 262144,
+          "control_write_bytes": 8388608,
+          "guest_cumulative_write_bytes_each": 805306368,
+          "guest_read_bytes_each": 268435456,
+          "main_commands": 3,
+          "network": 0,
+          "observed_aggregate_CPU_seconds": 40,
+          "owned_logical_bytes": 805306368,
+          "parent_child_CPU_hard_seconds": 8,
+          "parent_child_CPU_soft_seconds": 7,
+          "parent_read_bytes": 536870912,
+          "single_file_bytes": 67108864,
+          "tree_entries": 16384,
+          "wall_seconds": 120
+        },
+        "started_ref": {
+          "bytes": 3156,
+          "path": "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116/STARTED.json",
+          "sha256": "d8f73751d427203403f7ca58dab799215ebd3dea0931af19ce02601f0bba4800"
+        },
+        "terminal_ref": {
+          "bytes": 4639,
+          "path": "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116/TERMINAL.json",
+          "sha256": "8112f0a9677bc72e69c57107b1bc90b825358fe1319549dffa239cb371e60f4e"
+        }
+      }
+    ]
+  },
+  "prior_metadata_snapshot": {
+    "entries_including_roots": 66,
+    "sha256": "cb022d033d02c51183844332668b8c60cb996ee240281160711294f13d33c1f6"
+  },
+  "prior_owned_logical_bytes": 84628,
+  "reader_bytes_charged": 42668767,
+  "source_pins": {
+    "configs/e01_pypdf701_install_v1_5_20261116.json": "ffd2bb0598587e44f3675ef778ba8a892acd70be5f25ea08d947264e076f9e7b",
+    "data/processed/e01_pypdf701_build_v1/install-v1_5-packet-20261116.json": "b850e1b220f0afedf7ec708c24d75771db79a96f2c620c58b1073b5558664855",
+    "scripts/install_e01_pypdf701_runtime_v1_5.py": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+  },
+  "status": "PASS_METADATA_ONLY_NO_INSTALL",
+  "stdlib_builtin_mime_configuration": {
+    "init_files": null,
+    "initialized": true,
+    "knownfiles": [],
+    "mode": "STDLIB_BUILTIN_TYPES_ONLY_DARWIN"
+  },
+  "target_env_created": false,
+  "validated_pip_base_paths": [
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12",
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload"
+  ],
+  "verified_wheels": 5
+}
