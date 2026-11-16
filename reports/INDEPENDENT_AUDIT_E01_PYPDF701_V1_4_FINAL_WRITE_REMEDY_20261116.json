@@ -1,0 +1,111 @@
+{
+  "kind": "INDEPENDENT_E01_PYPDF701_V1_4_FINAL_WRITE_REMEDY_REVIEW",
+  "status": "PASS_EXACT_REMEDY_ONE_ROOT_ACQUISITION_ONLY",
+  "review_date_America_New_York": "2026-11-16",
+  "closed_finding": {
+    "id": "E01-P1-V14-FINAL-CLOCK-001",
+    "disposition": "CLOSED_FOR_EXACT_REMEDIED_SOURCE_ONLY",
+    "old_audit_unchanged": true,
+    "evidence": "AST deletion of only new self.budget.check immediately after hashlock write restores full rejected module AST. Original exact counterexample now returns/persists FAILED_OR_UNKNOWN_NO_RETRY; legacy assertCOMPLETE consequently exits1 as expected."
+  },
+  "evidence": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1_4.py": {
+      "bytes": 28898,
+      "sha256": "7b749585397e6a8f609bd809f5f1a54e5124077a8d90cc6ae0c5530c3616f749"
+    },
+    "configs/e01_pypdf701_acquisition_v1_4_20261116.json": {
+      "bytes": 7395,
+      "sha256": "c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_4.py": {
+      "bytes": 16522,
+      "sha256": "5f0c0e31524003ed92ffc68035fcde5286fdf79973a61e0aa1ef3a67399f2c46"
+    },
+    "reports/E01_PYPDF701_V1_4_FINAL_WRITE_REJECTED_CANDIDATE_20261116.json": {
+      "bytes": 62375,
+      "sha256": "3933002c50748e32014c5a7baad9dbcaa84dfebb8537973ab05d907b1b9d3202"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_312_final_write_remedy_20261116.txt": {
+      "bytes": 3946,
+      "sha256": "35b22f536975c8614f2d53fdf252625358c72691fb5dba62892adc45955ea98e"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_311_final_write_remedy_20261116.txt": {
+      "bytes": 3946,
+      "sha256": "61f29605b3d8eed081d3861beba990f5c17e1ba8d8ba36ea8e853bd20f271ef2"
+    },
+    "reports/E01_PYPDF701_V1_4_FINAL_WRITE_REMEDY_HANDOFF_20261116.json": {
+      "bytes": 5404,
+      "sha256": "42e8f9d3661a6d74532e245d4af003c44f5d5007828359c8b3d11c2b2e6bee80"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_CODE_METHODS_20261116.json": {
+      "bytes": 8246,
+      "sha256": "e9b7c5d6b055edd5cafcc8d97270b2e825ba3ad0df944c70ff19342c30ef4647"
+    },
+    "reports/e01_pypdf701_v1_4_remedy_independent_312_20261116.txt": {
+      "bytes": 3946,
+      "sha256": "a5979f7aa2deead1a869b19bb0e669135d78c7773e9324df721a232d1664fbbf"
+    },
+    "reports/e01_pypdf701_v1_4_remedy_independent_311_20261116.txt": {
+      "bytes": 3946,
+      "sha256": "81f520b4fbdcb747b26391d6ee9f17785cf1370f4fd67fe0f2d1b9d2e8b678cd"
+    },
+    "reports/e01_pypdf701_v1_4_remedy_independent_runner_20261116.json": {
+      "bytes": 1096,
+      "sha256": "61bdc7969b70e598f761ff9eb62714a09008e39b337e85a9a1f449a2baabef3f"
+    },
+    "reports/e01_pypdf701_v1_4_remedy_original_counterexample_20261116.txt": {
+      "bytes": 1189,
+      "sha256": "901fed1dfd442c6050f2e276fbd782a3bbdd74c9a90fd281ec1b9d329fb89856"
+    }
+  },
+  "checks": [
+    "Rejected source/method/test/handoff fulltext SHA/size verified from immutable bundle.",
+    "Methods and all12previous P1/P2 code/config/test pins unchanged. Production one-statement delta only, no cap/identity/freshness/retry/ancestry changes.",
+    "24 guarded authored checks PASS once each3.12/3.11. Four post-final-write UTCexpiry/rollback/monotonicexpiry/CPUexpiry cases preserve failedterminal, hashlockattempt and11MOCKGET accounting; oldscopes unchanged.",
+    "Existing7freshmetadata gates, exactcache and fourcompanions, oldcharges,21GET/15metadata/6wheel,120UTC+monotonic/30CPU and cumulativebytes remain as previously reviewed."
+  ],
+  "tests": {
+    "312": "24PASS/2.448unittest seconds/2.545021833wall",
+    "311": "24PASS/1.719unittest seconds/1.818749750wall",
+    "original_counterexample": "One exact retained probe rerun under3.12 now yields FAILED; exit1 is expected old assertion failure, not an acceptance-suite regression.",
+    "limits": "120s,64MiBread,32MiBtempwrite,256KiBoutput, no network/native/process/private data plus realkill/killpg denial"
+  },
+  "release": {
+    "actor": "ROOT_ONLY",
+    "count": 1,
+    "create_once_scope": "data/processed/e01_pypdf701_build_v1/acquisition-v1_4-20261116",
+    "required_exact_code_sha256": "7b749585397e6a8f609bd809f5f1a54e5124077a8d90cc6ae0c5530c3616f749",
+    "methods_sha256": "c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f",
+    "deadline": "Root supplies actual awareUTC deadline with0<initialremaining<=120seconds at execution; no historical/review timestamp reuse.",
+    "new_GETs_max": 11,
+    "split": {
+      "version_metadata": 5,
+      "complete_advisory_page": 1,
+      "provenance": 1,
+      "companions": 4,
+      "pypdf_wheel": 0
+    },
+    "cumulative_GETs_max": 21,
+    "cumulative_metadata_GETs_max": 15,
+    "cumulative_wheel_GETs_max": 6,
+    "prior_failed_wheel_bytes_retained": 33554432,
+    "monotonic_seconds": 120,
+    "CPU_seconds": 30,
+    "retries": 0,
+    "extra_fallback_or_upgrade": false,
+    "stop": "First failure/unknown/limit; preserve all raw allowed technical evidence and charges. Unknown cannot be replayed.",
+    "no_new_financial_source_ordinal_install_authority": true
+  },
+  "claim_limits": [
+    "Review authorizes no reviewer actual network/package/install/source/owner/key work; revieweractualcalls0/cost0.",
+    "Actualmetadata/artifacts/securitycapture success NOT_RUN and must be independently verified after root once-only actualattempt.",
+    "A hashlock alone never means acceptance; require exactcomplete terminal plus allref/accounting checks.",
+    "Cooperative completion check bounds logical decision. Failure-terminal persistence/blocking OS calls may outlast logical deadline; no hardOScontainment claim.",
+    "NewP2consumer exactreview, actualinstallation, ABI/native/runtime/sourcequalification and researchbaselines remain separate gated stages.",
+    "No prospective forecasting, human-persuasion or representative scientificresult claims fromMOCKengineering evidence."
+  ],
+  "actual_execution": "NOT_RUN_BY_REVIEWER",
+  "cost_USD": 0,
+  "actual_model_calls": 0,
+  "ownership": "Separate independent audit and logs only; no implementation/config/test/status/Git/privatecontrol modifications."
+}

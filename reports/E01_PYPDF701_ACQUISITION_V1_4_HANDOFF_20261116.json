@@ -1,0 +1,104 @@
+{
+  "TASK_ID": "E01_P1_FRESH_METADATA_ACQUISITION_V1_4_20261116",
+  "kind": "E01_PYPDF701_ACQUISITION_V1_4_FROZEN_WORKER_HANDOFF",
+  "status": "20_GUARDED_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_REVIEW_NO_ACTUAL_CLI",
+  "FILES_CHANGED": [
+    "scripts/acquire_e01_pypdf701_artifacts_v1_4.py",
+    "configs/e01_pypdf701_acquisition_v1_4_20261116.json",
+    "tests/test_e01_pypdf701_acquisition_v1_4.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1_4.py": {
+      "bytes": 28866,
+      "sha256": "7d6d7ab3457cffe9d2b7b96464ad90998510b077b631d386c24603a7cec69164"
+    },
+    "configs/e01_pypdf701_acquisition_v1_4_20261116.json": {
+      "bytes": 7395,
+      "sha256": "c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_4.py": {
+      "bytes": 14776,
+      "sha256": "d1245343ec3979ed2b741eb13d7b88fdd7baf766940cc2fad17ace0233f947ba"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_312_initial_20261116.txt": {
+      "bytes": 3270,
+      "sha256": "a5b9435b01f1df9652e8805783848e17b79dd14d76fcd2d9bcc1a50b08387958"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_311_initial_20261116.txt": {
+      "bytes": 3270,
+      "sha256": "42bb8b60925b25366e4144b098f7b4d2c1e844f5e70720ed1c38c36a51cf6ed0"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_acquisition_v1_4.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_acquisition_v1_4.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "3.12": "20 PASS,2.147 seconds,exit0",
+    "3.11": "20 PASS,1.467 seconds,exit0",
+    "invocationsPerRuntime": 1,
+    "scope": "Authored stopped ancestry is a day old; new distinct mocked transports supply seven current metadata responses and four companion responses. Success requires all11 new GET calls, without invoking expired predecessor currentness or forging UTC. Every failure and bound is exercised without real network, native, process or package work.",
+    "coverage": [
+      "21/15/6 cumulative counts and33554432 old failed-wheel bytes",
+      "allthree terminal/write ancestry and real public reference-table counts",
+      "externally supplied aware UTC deadline<=120 seconds",
+      "UTC expiry with stopped monotonic clock and expiry during body reading",
+      "UTC rollback and independent monotonic/CPU limits",
+      "new metadata cannot receive immutable wheel freshness exception",
+      "old Date, changed artifact, applicable advisory, pagination and corrupt cache refuse",
+      "unmodeled v1_3 state and replay refuse",
+      "immutable cache parser/freshness/raw transport AST-identical to frozenv1_3"
+    ],
+    "guard": "Frozen authored runner,120 wall/CPU seconds,64MiB reads,32MiB temporary writes,256KiB output; no actual source/owner/credentials/native/process/network."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only two tiny technical STARTED JSON bodies totaling4226 bytes were read/hash-checked to confirm expiry. All actual source/package bodies, interpreter binaries, pip bodies, wheel/cache bytes, private controls and credentials remain unread by worker. Current package data must be obtained by root through reviewed actual execution.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerNetworkCalls": 0,
+  "actualWorkerWheelReads": 0,
+  "actualInstall": false,
+  "actualSourceRecoveryOrdinalConsumed": false,
+  "implementation": {
+    "authority": "Root explicitly authorized11 new technical GETs:5fixedversionmetadata,1completeadvisorypage,1pypdfprovenance,4companions. Cumulative21GET/15metadata/6wheel. All prior10GET/8metadata/2wheel and their charges retained. Monetary and source-recovery authority unchanged.",
+    "time": "New120 monotonic elapsed seconds/30CPU. Prior actual stage charged upper bounds540wall/120CPU, plus this execution yields660/150. Expired unexecutedv1_3 is not actual consumption and stays unavailable. HEAD diagnostics remain separate.",
+    "deadline": "CLI requires --operation-deadline-utc, awareUTC with0<initialremaining<=120 seconds. UTC regression/expiry is checked before effects and during reads, alongside monotonic/CPU. Socket timeouts and request alarms use the minimum remaining bound. Host suspension can pause monotonic measurement; the UTC check prevents work after resume, with no hard guarantee for already in-flight uninterruptible OS operations.",
+    "historical": "Fixed original/v1_1/v1_2 method/code/start/terminal/ref links, failed request holds, event ranges and cumulative physical/control totals are verified as history. No expired currentness function is invoked and no historical date is altered. Presence of an unmodeledv1_3 namespace blocks rather than assuming zero requests.",
+    "prior": {
+      "owned_bytes": 3041964,
+      "control_bytes": 134401,
+      "events": 20,
+      "GET": 10,
+      "metadata_GET": 8,
+      "wheel_GET": 2,
+      "metadata_body_bytes": 948771,
+      "wheel_body_bytes": 33554432
+    },
+    "freshness": "Seven actual new responses are mandatory; original metadataDate±300/Age<=3600 remain. One advisory page must be complete,<100/noNext. Applicable/unknown advisory, yanked/incompatible metadata, changed fixed artifact identity or mismatched provenance stops before companion GETs.",
+    "cache": "The retained exactpypdf copy is bound to newly checked metadata and subject provenance, then hash/size/ZIP-inspected and copied without a pypdf GET. Four companion URLs become available only after all seven metadata gates pass.",
+    "retainedPolicy": "The v1_3 immutable artifact policy is unchanged by AST: rawDate/Age/Cache-Control recorded, no header rewriting; strict unique max-age+immutable extension for exact wheels only, with s-maxage/conflict/duplicate/invalid refusals.",
+    "journal": "Create-once new scope, all reservation/header-decision/response events, current metadata receipts, ancestry and terminal retained. About54 cumulative events in the successful mocked plan, below existing64.",
+    "outputs": "P1_FIVE_WHEEL_HASHLOCK_V1/schema1 retains failed33554432 charges, source ancestry, new metadata receipt and current21GET cap; P1_TERMINAL_V1_4 uses latest consumedv1_2 prefix. COMPLETE grants no installation or source qualification.",
+    "byteCaps": "Original72MiB total response bodies,8MiB metadata,64MiB wheels,80MiB owned writes,8MiB controls and64events remain cumulative. No reset or refund."
+  },
+  "supersededProposal": "reports/E01_PYPDF701_FRESH_METADATA_CONTINUATION_PROPOSAL_20261116.json is retained as a proposal. Its optional300/60 and unused-authority envelope are superseded by root's explicit120/30 decision and actual-stage660/150 accounting.",
+  "ACCEPTANCE_CRITERIA": {
+    "authored": "20 checks passed both runtimes; independent exact review pending.",
+    "actualFreshMetadata": "NOT RUN by worker. Root supplies a real current UTC deadline and executes once after review.",
+    "actualFiveWheelHashlock": "NOT RUN; no actual packet or acquired companion values invented.",
+    "P2": "Accepted core and v1_1 consumer remain unchanged. A new narrow final consumer must accept v1_4 source/receipt/ancestry after review; no actual install."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "MOCK checks do not establish current upstream security, network success, native ABI/parser qualification, representative population or scientific effects.",
+    "A newly applicable advisory or changed artifact may block the fixed candidate; no automatic version upgrade, source fallback, extra page, retry or forged freshness is allowed.",
+    "UTC and signal checks are cooperative. Startup/OS blocking/suspend behavior is not hard OS containment; failures preserve unknown charges.",
+    "The current source epoch must come from seven actual new HTTP responses. Expiredv1_3 cannot be executed or relabeled fresh.",
+    "No frozen P1/P2 files, old environments, Git, STATUS or auditor findings were edited."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact v1_4 code/method/mock review",
+    "Root once-only live metadata/artifact acquisition",
+    "Actual source integrity and final five-wheel packet",
+    "Final narrow P2 consumer and runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead routes exact frozen packet to E02 worker for independent review. Worker prepares a separate P2 consumer forv1_4 without changing accepted core/v1_1. Root performs all actual downloads and installs.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/acquire_e01_pypdf701_artifacts_v1_4.py --methods-sha256 c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f --operation-deadline-utc <ROOT_CURRENT_UTC_PLUS_AT_MOST_120_SECONDS>"
+}

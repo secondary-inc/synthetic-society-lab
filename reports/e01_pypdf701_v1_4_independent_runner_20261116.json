@@ -1,0 +1,21 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_acquisition_v1_4.py']\nrunpy.run_path('tests/test_e01_pypdf701_acquisition_v1_4.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 1.6193253750097938,
+      "bytes": 3270,
+      "log": "reports/e01_pypdf701_v1_4_independent_312_20261116.txt",
+      "sha256": "03036147952c216339464be609913b92672a7b4b8f592a3a0cea2f0dd5e5b712"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 1.1126859590003733,
+      "bytes": 3270,
+      "log": "reports/e01_pypdf701_v1_4_independent_311_20261116.txt",
+      "sha256": "8ad69fa300a1feb6809dd30e5b8cadd040e0ff5aed0e48e764c32450bd001a58"
+    }
+  ]
+}

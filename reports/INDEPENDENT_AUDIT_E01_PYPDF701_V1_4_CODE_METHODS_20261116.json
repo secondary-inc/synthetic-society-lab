@@ -1,0 +1,111 @@
+{
+  "kind": "INDEPENDENT_E01_PYPDF701_V1_4_CODE_METHODS_AUTHORED_REVIEW",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "BLOCKED_FINAL_COMPLETION_DEADLINE_VALIDATION",
+  "code_and_authored_disposition": "20_EXISTING_GUARDED_MOCK_CHECKS_PASS_EACH_RUNTIME_ADDITIONAL_COUNTEREXAMPLE_REPRODUCED",
+  "findings": [
+    {
+      "id": "E01-P1-V14-FINAL-CLOCK-001",
+      "severity": "BLOCKING",
+      "file": "scripts/acquire_e01_pypdf701_artifacts_v1_4.py",
+      "trigger": "UTC deadline expires during final hashlock write after its prewrite check",
+      "observed": "run returns and writes ACQUISITION_COMPLETE_NOT_INSTALL_OR_QUALIFICATION at authored UTC12:02:01 against deadline12:02:00; last validated UTC remains12:00:00. All11 network operations are authored mock calls.",
+      "cause": "After final hashlock write, success status is assigned without a fresh Budget.check. Terminal writes deliberately exempt budget checking to preserve failure evidence.",
+      "required_remedy": "Validate same Budget after final hashlock write and immediately before completion decision; capture validation failures as failed terminal without deleting hashlock/partial evidence. Add final-path UTC expiry/rollback and monotonic/CPU expiry tests. Preserve old source and independently review exact new delta.",
+      "scope": "Cooperative final-success validation only. No impossible hard OS/blocking containment guarantee required."
+    }
+  ],
+  "evidence": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1_4.py": {
+      "bytes": 28866,
+      "sha256": "7d6d7ab3457cffe9d2b7b96464ad90998510b077b631d386c24603a7cec69164"
+    },
+    "configs/e01_pypdf701_acquisition_v1_4_20261116.json": {
+      "bytes": 7395,
+      "sha256": "c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_4.py": {
+      "bytes": 14776,
+      "sha256": "d1245343ec3979ed2b741eb13d7b88fdd7baf766940cc2fad17ace0233f947ba"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_312_initial_20261116.txt": {
+      "bytes": 3270,
+      "sha256": "a5b9435b01f1df9652e8805783848e17b79dd14d76fcd2d9bcc1a50b08387958"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_311_initial_20261116.txt": {
+      "bytes": 3270,
+      "sha256": "42bb8b60925b25366e4144b098f7b4d2c1e844f5e70720ed1c38c36a51cf6ed0"
+    },
+    "reports/E01_PYPDF701_ACQUISITION_V1_4_HANDOFF_20261116.json": {
+      "bytes": 8751,
+      "sha256": "728670a00a8f0de17e5a163fc2f4e929fef7aaf421371a75507f0733cf9f73ab"
+    },
+    "reports/e01_pypdf701_v1_4_independent_runner_20261116.json": {
+      "bytes": 893,
+      "sha256": "7c4d8740ba36cb301bcefb8e6c034043e34b0a2f0130eb005c3af2ceaf444bbe"
+    },
+    "reports/e01_pypdf701_v1_4_independent_312_20261116.txt": {
+      "bytes": 3270,
+      "sha256": "03036147952c216339464be609913b92672a7b4b8f592a3a0cea2f0dd5e5b712"
+    },
+    "reports/e01_pypdf701_v1_4_independent_311_20261116.txt": {
+      "bytes": 3270,
+      "sha256": "8ad69fa300a1feb6809dd30e5b8cadd040e0ff5aed0e48e764c32450bd001a58"
+    },
+    "reports/e01_pypdf701_v1_4_final_deadline_probe_20261116.py": {
+      "bytes": 1227,
+      "sha256": "609d9856eef4c7bf9afa3c1be75b2123339fc03dc907576322a3f5a1cf58a036"
+    },
+    "reports/e01_pypdf701_v1_4_final_deadline_probe_20261116.txt": {
+      "bytes": 495,
+      "sha256": "dab47e0741fec21aaf4bc605070b77ddc9b4c4dda318ed9b00e10061deb0a87f"
+    }
+  },
+  "preserved_prior_code_config_test_hashes": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1.py": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc",
+    "configs/e01_pypdf701_acquisition_v1_20261115.json": "9c61243db86336a2ba6b552e8b15ade5a8a3539e834a516f05d713f5c7969b07",
+    "tests/test_e01_pypdf701_acquisition_v1.py": "1f0e99e2ab7778c2121244ea2baaa086bc80d77b0c8be97706097ce2d61c4f40",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_1.py": "10d476ebea780a0f2726b559e35e1eb65e350dbacf867544f992560ce8e2b686",
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json": "decb70611ccbe16bb00fd1d1f1bea2666c64d4bbf6aec0c7598bd58445d6076b",
+    "tests/test_e01_pypdf701_acquisition_v1_1.py": "c929846acbb3a73b86a4eda9ecfcc6ada62b63ee21028e649f19f78f508b0d73",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_2.py": "961ef657dd6860c83d32acf5f2b4673976c33b996b2907ec4cc86f3eb5574634",
+    "configs/e01_pypdf701_acquisition_v1_2_20261115.json": "4223315862c53d890a91ee43766bc486e893ea0550f8b989c807ecd221ac2e97",
+    "tests/test_e01_pypdf701_acquisition_v1_2.py": "1a2718062aa01274a6b22ff11fee0c9b2c3cb8915134c42c7756cab53a400033",
+    "scripts/install_e01_pypdf701_runtime_v1.py": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847",
+    "configs/e01_pypdf701_install_v1_20261115.json": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a",
+    "tests/test_e01_pypdf701_install_v1.py": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a"
+  },
+  "verified_checks": [
+    "Exact handoff5artifact refs and12 earlier P1/P2 code/config/test hashes unchanged.",
+    "New7 metadata GETs are independently required before companion URLs are enabled:5fixed PyPI versions,1complete advisory page,1provenance. Legacy metadata is history only; no expired predecessor gate or forged UTC.",
+    "Fresh selection exact filename/URL/size/hash/version must match historical fixed identities; current advisory ambiguity/applicability/pagination stops before companion acquisition.",
+    "Historical three terminal/start/code/method/ref chains, request charges and physical/control/event totals validated. Cached pypdf exact hash/size binds to fresh metadata/provenance, inspected without GET.",
+    "Local new CAPS21GET/15metadata/6wheel retains historical10GET/8metadata/2wheel and33554432 failed wheel charge. Original body/write/control/event/ZIP limits unchanged.",
+    "Exact v1_3 immutable policy and raw transport AST-equal; no rawheader rewriting, metadata immutable exception, redirect/retry/version fallback/import/install/source authority.",
+    "Externally supplied awareUTC deadline initialremaining(0,120], UTC regression/expiry and independent120monotonic/30CPU enforce pre-effect/body checks; minimumremaining bounds socket/alarm. Final-completion gap described above remains.",
+    "Createonce new scope and unmodeledv1_3 namespace refusal preserve unusedexpired and consumedoldhistory."
+  ],
+  "independent_tests": {
+    "existing_suite_invocations_per_runtime": 1,
+    "312": "20PASS/1.526unittest seconds/1.619325375wall",
+    "311": "20PASS/1.031unittest seconds/1.112685959wall",
+    "counterexample": "One preliminary authored probe plus one retained exact reproduction on3.12; both reproduce invalid COMPLETE. Retained probe unittest PASS means counterexample reproduced, NOT acquisition accepted.",
+    "guards": "Frozen no network/process/native/private-data guards plus explicit os.kill/os.killpg audit denial;120s/64MiBread/32MiBtempwrite/256KiBoutput.",
+    "reproduction": [
+      ".venv/bin/python -I -B -S tests/test_e01_pypdf701_acquisition_v1_4.py",
+      "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_acquisition_v1_4.py",
+      ".venv/bin/python -I -B -S reports/e01_pypdf701_v1_4_final_deadline_probe_20261116.py"
+    ]
+  },
+  "actual_execution": "NOT_RELEASED",
+  "claim_limits": [
+    "No actual package/cachewheel/pip/native/source/owner/key bodies read by reviewer; no actual source or acquisition CLI executed.",
+    "Public frozen methods/reference tables and prior independent actual-stop audit supply ancestry basis; actual bytes remain root verification responsibility.",
+    "Fresh actual metadata/advisory security and actual artifact acquisition NOT_RUN. No prospective forecasting or human-persuasion claims.",
+    "Signals/cooperative guards may overshoot OS blocking; no hard physical/network/RSS or hostile-host containment assertion.",
+    "Separate P2 v1.4 consumer review, actual installation and runtime/source qualification remain gated."
+  ],
+  "cost_USD": 0,
+  "actual_model_calls": 0,
+  "ownership": "Only separate independent audit/probe/log/runner artifacts written. No E01 implementation/config/test, financial/private controls, STATUS or Git changes."
+}

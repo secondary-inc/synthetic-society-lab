@@ -1,0 +1,143 @@
+{
+  "TASK_ID": "E01_P1_FRESH_METADATA_CONTINUATION_PROPOSAL_20261116",
+  "kind": "E01_PYPDF701_FRESH_METADATA_CONTINUATION_PROPOSAL",
+  "status": "PROPOSAL_ONLY_NO_NEW_CODE_OR_NETWORK_RELEASE",
+  "reason": "Root reported current UTC09:51:31 on November16 and no actual v1_3 invocation. Both saved source windows expired; frozen code/config must not be relabeled fresh.",
+  "verifiedExpiry": [
+    {
+      "ref": {
+        "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/STARTED.json",
+        "bytes": 769,
+        "sha256": "6cadfa9c69c2744188e8155e3adf449adbdde62df42d41c4c9511a17d8c46918"
+      },
+      "startedUTC": "2026-11-16T01:51:43.795065+00:00",
+      "ttlSeconds": 14400,
+      "deadlineUTC": "2026-11-16T05:51:43.795065+00:00",
+      "expired": true
+    },
+    {
+      "ref": {
+        "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1_1-20261115/STARTED.json",
+        "bytes": 3457,
+        "sha256": "25b186ca8bc98b2befc22b9b364469c5bb8dafb7177aa6a1c9fd10b6e73e0a2c"
+      },
+      "startedUTC": "2026-11-16T02:15:49.122724+00:00",
+      "ttlSeconds": 3600,
+      "deadlineUTC": "2026-11-16T03:15:49.122724+00:00",
+      "expired": true
+    }
+  ],
+  "expiryVerificationScope": "Two technical STARTED JSON bodies,4226 bytes total, were hash-checked. No actual wheel/cache/interpreter/pip body or research source was read. Clock tool returned2026-11-16T09:53:49Z; expiration also holds at root-reported09:51:31Z.",
+  "preserve": {
+    "lastConsumedScope": "data/processed/e01_pypdf701_build_v1/acquisition-v1_2-20261115",
+    "terminal_ref": {
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1_2-20261115/TERMINAL.json",
+      "bytes": 3234,
+      "sha256": "df2e86ae959c82c4b9551d0c0eff5c392966c35783fc2ac2ba8a66038b110f71"
+    },
+    "consumed": {
+      "GET": 10,
+      "metadata_GET": 8,
+      "wheel_GET": 2,
+      "metadata_body_bytes": 948771,
+      "wheel_body_bytes": 33554432,
+      "owned_bytes": 3041964,
+      "control_bytes": 134401,
+      "events": 20
+    },
+    "v1_3": "Frozen, unexecuted per root. Do not invoke it, edit its dates or reuse its namespace as a fresh attempt.",
+    "knownCache": {
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1_2-20261115/wheels/pypdf-7.0.1-py3-none-any.whl",
+      "bytes": 416136,
+      "sha256": "6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b"
+    },
+    "noOtherAcquiredWheelClaim": "A saved selected manifest is not a downloaded companion wheel. Do not invent hashes or claim companion bytes were acquired."
+  },
+  "proposedScope": "data/processed/e01_pypdf701_build_v1/acquisition-v1_4-20261116",
+  "proposedRequests": {
+    "newMetadataGETs": 7,
+    "newCompanionWheelGETs": 4,
+    "newPypdfWheelGETs": 0,
+    "newHEADs": 0,
+    "newTotalGETs": 11,
+    "cumulativeCaps": {
+      "GET": 21,
+      "metadata_GET": 15,
+      "wheel_GET": 6
+    },
+    "historicalCaps": "Original13GET/8metadata/5wheel and the unexecuted v1_3 authorized14/8/6 remain recorded unchanged. This proposal requires an explicit root-recorded additional7 technical GET allowance beyond14; it does not authorize itself.",
+    "metadataURLs": [
+      "https://pypi.org/pypi/pypdf/7.0.1/json",
+      "https://pypi.org/pypi/cffi/2.1.1/json",
+      "https://pypi.org/pypi/cryptography/50.0.2/json",
+      "https://pypi.org/pypi/pillow/13.0.0/json",
+      "https://pypi.org/pypi/pycparser/3.12/json",
+      "https://api.github.com/repos/py-pdf/pypdf/security-advisories?state=published&per_page=100&sort=published&direction=asc",
+      "https://pypi.org/integrity/pypdf/7.0.1/pypdf-7.0.1-py3-none-any.whl/provenance"
+    ],
+    "advisoryPages": "Exactly one complete page, fewer than100 rows and no next link. Pagination/truncation/unknown schema blocks; no implicit second GET.",
+    "wheelURLs": "Only four companion URLs from newly verified same-version metadata, compared with the preserved selection. Any changed identity/ranking/URL/hash/size requires a recorded review decision before artifact GETs; no automatic package/candidate upgrade."
+  },
+  "unchangedCumulativeByteWriteCaps": {
+    "metadata_body_bytes": 8388608,
+    "wheel_body_bytes": 67108864,
+    "total_response_body_bytes": 75497472,
+    "owned_write_bytes": 83886080,
+    "control_write_bytes": 8388608,
+    "journal_events": 64,
+    "remainingBeforeAnyNewRequest": {
+      "metadata_body_bytes": 7439837,
+      "wheel_body_bytes": 33554432,
+      "total_response_body_bytes": 40994269,
+      "owned_write_bytes": 80844116,
+      "control_write_bytes": 8254207,
+      "journal_events": 44
+    },
+    "reservation": "Charge old settled and uncertain bytes exactly as retained. Reserve each new request/body before transport; unknown failure keeps full reservation. No refunds or ledger reset.",
+    "eventEnvelope": "At most3 events per11 requests plus one cache reuse event =34 new,54 cumulative, within existing64. Additional diagnostics must remain within the same cap."
+  },
+  "proposedStageResources": {
+    "wallSeconds": 300,
+    "CPUSeconds": 60,
+    "requestSeconds": 20,
+    "retries": 0,
+    "redirects": 0,
+    "auth": 0,
+    "proxy": 0,
+    "readOnlyAncestryEnvelopeBytes": 8388608,
+    "stdoutBytes": 262144,
+    "notReleased": "Root may choose a smaller envelope after inspecting exact needs. This is a finite proposal, not an applied cap increase.",
+    "timeAccounting": "Actual v1_3 did not run; do not invent its elapsed CPU/wall. If conservatively retaining its authorized120/30 envelope as well as all prior full bounds, adding proposed300/60 yields a potential envelope960wall/210CPU. Root must distinguish consumed attempts, unexecuted authority and actual observations; all HEAD diagnostics stay separate."
+  },
+  "executionOrder": [
+    "Before network, validate the retained three failed scopes and all terminal/hash/count ancestry as historical evidence. Do not call an expired currentness gate with a forged older clock.",
+    "Create one new immutable namespace and root methods/code pins. Record explicit new count/time authority, old charges and the unchanged monetary/source-recovery ceilings.",
+    "Refresh the five fixed-version metadata bodies and validate current release identity, target tags, Requires-Python, yanks and unique selection. Compare preserved and new artifact identities.",
+    "Acquire and assess one fresh complete maintainer advisory page with all rows retained and the exact paired-distribution exception. Applicable advisory or unsupported change stops before wheel GETs.",
+    "Acquire fresh publisher/subject provenance for the exact pypdf artifact. Fresh HTTPDate/Age metadata guards remain unchanged; no immutable-wheel exception for metadata.",
+    "Hash/size/ZIP-check the retained pypdf cache against the freshly confirmed subject, then copy it into the new scope without a pypdf GET.",
+    "Acquire only four companions under the independently reviewed raw-header immutable artifact policy: Date bound unchanged, integerAge strictly below unique max-age with immutable, refuse s-maxage/conflicts/duplicates/invalid values.",
+    "Inspect each exact wheel and freeze a new final hashlock/COMPLETE only if all five pass. Preserve every failed configuration. P1 completion never grants installation.",
+    "Record a narrow new P2 consumer/pin delta and root-owned actual packet; then independent review and read-only real Requires-Dist compatibility preflight before root actual install."
+  ],
+  "acceptanceCriteria": {
+    "metadata": "Seven actual new HTTP receipts with source dates/hashes and original metadata freshness rules; no copied timestamp presented as current.",
+    "identity": "Exactly the fixed five versions and target; no silent replacement of candidate, URL or artifact. Cache is accepted only against fresh metadata/provenance.",
+    "accounting": "Consumed10 requests and33554432 uncertain wheel bytes plus all owned/control/event charges retained. New cumulative21/15/6 only after root explicitly records it.",
+    "freshness": "New source capture deadlines derive from actual new acquisition time. Old deadlines remain untouched and visibly expired.",
+    "engineering": "Bounded authored tests, independent exact methods/code review, root-only actual execution and retained outputs.",
+    "science": "No source/native qualification, forecast, human-persuasion, representative-population or scientific effect claim follows."
+  },
+  "costUSD": 0,
+  "workerNetworkCalls": 0,
+  "modelCalls": 0,
+  "actualInstall": false,
+  "ownership": "Proposal report only. No frozen P1/P2 code/config/test, STATUS, Git or auditor findings edited.",
+  "unresolved": [
+    "Root decision on the explicit request/time envelope",
+    "Independent frozen implementation review",
+    "Actual fresh evidence and artifact success",
+    "Final P2 consumer acceptance and runtime/source qualification"
+  ],
+  "nextUnblockedTask": "Root inspect expiry findings and choose the bounded technical allowance; then worker may implement a new versioned continuation. Do not execute expired v1_3."
+}

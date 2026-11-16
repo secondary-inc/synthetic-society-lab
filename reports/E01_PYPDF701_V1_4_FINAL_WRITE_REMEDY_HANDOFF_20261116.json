@@ -1,0 +1,83 @@
+{
+  "TASK_ID": "E01_P1_V1_4_FINAL_HASHLOCK_WRITE_DEADLINE_REMEDY",
+  "kind": "E01_PYPDF701_V1_4_FINAL_WRITE_REMEDY_HANDOFF",
+  "status": "24_GUARDED_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_REMEDY_REVIEW_NO_ACTUAL_ATTEMPT",
+  "FILES_CHANGED": [
+    "scripts/acquire_e01_pypdf701_artifacts_v1_4.py",
+    "tests/test_e01_pypdf701_acquisition_v1_4.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1_4.py": {
+      "bytes": 28898,
+      "sha256": "7b749585397e6a8f609bd809f5f1a54e5124077a8d90cc6ae0c5530c3616f749"
+    },
+    "configs/e01_pypdf701_acquisition_v1_4_20261116.json": {
+      "bytes": 7395,
+      "sha256": "c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_4.py": {
+      "bytes": 16522,
+      "sha256": "5f0c0e31524003ed92ffc68035fcde5286fdf79973a61e0aa1ef3a67399f2c46"
+    },
+    "reports/E01_PYPDF701_V1_4_FINAL_WRITE_REJECTED_CANDIDATE_20261116.json": {
+      "bytes": 62375,
+      "sha256": "3933002c50748e32014c5a7baad9dbcaa84dfebb8537973ab05d907b1b9d3202"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_312_final_write_remedy_20261116.txt": {
+      "bytes": 3946,
+      "sha256": "35b22f536975c8614f2d53fdf252625358c72691fb5dba62892adc45955ea98e"
+    },
+    "reports/e01_pypdf701_acquisition_v1_4_authored_311_final_write_remedy_20261116.txt": {
+      "bytes": 3946,
+      "sha256": "61f29605b3d8eed081d3861beba990f5c17e1ba8d8ba36ea8e853bd20f271ef2"
+    }
+  },
+  "rejectedCandidate": "Exact original source7d6d7ab...,methods c5e158...,tests d124534...,handoff728670... preserved as full text/digests in the rejected-candidate bundle. Original handoff is unchanged rejected history.",
+  "remedy": "Exactly one production AST statement added: self.budget.check() immediately after durable final hashlock write and before assigning completion. A refusal keeps FAILED terminal, attempted hashlock and all request/body charges. No deletion/retry or namespace reset.",
+  "ASTVerification": "Removing only that exact post-lock check reproduces the entire rejected production module AST. A first offline checker selected the earlier fsync try block and stopped without mutation; the corrected checker selects the lock-writing try block.",
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_acquisition_v1_4.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_acquisition_v1_4.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "3.12": "24 PASS,3.107 seconds,exit0",
+    "3.11": "24 PASS,2.083 seconds,exit0",
+    "invocationsPerRuntime": 2,
+    "newCases": [
+      "UTC expires after final hashlock persistence",
+      "UTC rolls back after final hashlock persistence",
+      "monotonic limit reached after final hashlock persistence",
+      "CPU limit reached after final hashlock persistence"
+    ],
+    "observable": "Each new case completes11 mocked GETs, persists the attempted hashlock, returns FAILED and retains a FAILED terminal indexing that hashlock. Historical scopes remain unchanged.",
+    "guard": "Same frozen authored no-network/no-process/no-native/no-real-source/owner/credentials guard; existing120s/64MiB/32MiB/256KiB envelope."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public code/config and authored fixtures only. No actual wheel/cache/pip/interpreter/research source/private owner or credential reads.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualNetworkCalls": 0,
+  "actualInstall": false,
+  "actualAcquisitionAttempt": false,
+  "unchanged": "Methods7395B c5e158...; target/namespace,21GET/15metadata/6wheel,120wall/30CPU, absoluteUTCdeadline and all old charges unchanged. Expiredv1_3 remains unexecuted.",
+  "independentFinding": "Lead reported reviewer probe reports/e01_pypdf701_v1_4_final_deadline_probe_20261116.py/.txt; detailed finding belongs to reviewer and is not edited by worker.",
+  "ACCEPTANCE_CRITERIA": {
+    "rejectedBytes": "Preserved exactly.",
+    "productionDelta": "One AST statement, verified.",
+    "postWriteGuards": "Four new cases pass both runtimes; independent review pending.",
+    "actualRelease": "NOT RUN; root-only after acceptance.",
+    "P2": "Newv1_2 draft pins remedied producer; no actual packet/install."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "A hashlock file alone is not completion authority. Failed attempted outputs remain; consumers require COMPLETE terminal.",
+    "Checks are cooperative. Terminal persistence can outlast the logical completion check during blocking I/O; no hard OS containment is claimed.",
+    "All prior scientific/runtime/source limitations remain. Mock tests are not artifact success.",
+    "No actual attempt occurred; no new consumed scope or allowance."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact remedy review",
+    "Root actual metadata/artifact acquisition",
+    "P2 final consumer review and actual packet",
+    "Runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead forwards corrected pins to independent E02 reviewer. Root alone launches after acceptance. Worker continues separate P2v1_2 tests.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/acquire_e01_pypdf701_artifacts_v1_4.py --methods-sha256 c5e158306d145e0fe646268103e5e0e1716b475c1f23eea93cdb2fcd7b65fd4f --operation-deadline-utc <ROOT_CURRENT_UTC_PLUS_AT_MOST_120_SECONDS>"
+}

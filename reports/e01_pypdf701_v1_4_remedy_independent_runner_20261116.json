@@ -1,0 +1,24 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_acquisition_v1_4.py']\nrunpy.run_path('tests/test_e01_pypdf701_acquisition_v1_4.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 2.5450218329933705,
+      "bytes": 3946,
+      "log": "reports/e01_pypdf701_v1_4_remedy_independent_312_20261116.txt",
+      "sha256": "a5979f7aa2deead1a869b19bb0e669135d78c7773e9324df721a232d1664fbbf"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 1.8187497500039171,
+      "bytes": 3946,
+      "log": "reports/e01_pypdf701_v1_4_remedy_independent_311_20261116.txt",
+      "sha256": "81f520b4fbdcb747b26391d6ee9f17785cf1370f4fd67fe0f2d1b9d2e8b678cd"
+    }
+  ],
+  "production_AST_delta": "exactly one added self.budget.check after hashlock write",
+  "original_counterexample_exit": 1,
+  "original_counterexample_status": "FAILED_OR_UNKNOWN_NO_RETRY"
+}
