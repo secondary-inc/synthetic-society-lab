@@ -1,0 +1,258 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/CI_ORDINARY_COLLECTION_READINESS_20261116.json",
+    "reports/evidence_ci_ordinary_collection_20261116/inspect_environment_metadata.py",
+    "reports/evidence_ci_ordinary_collection_20261116/environment-metadata.json"
+  ],
+  "INPUT_BINDINGS": [
+    {
+      "bytes": 580,
+      "path": "pyproject.toml",
+      "sha256": "f6f2f55b9f8fe8db5d4553a7d8c68aa10575534f35794e1294acbe829eca0e14"
+    },
+    {
+      "bytes": 1214,
+      "path": ".github/workflows/offline.yml",
+      "sha256": "48d2d2185513c3d572b4a8189664daf5797bc76b745d9cc7adfab18687898baf"
+    },
+    {
+      "bytes": 24413,
+      "path": "scripts/run_offline_ci_v1.py",
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    {
+      "bytes": 22968,
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "sha256": "ca89179959346e04da76d789866446a9e39148acbe47c2e9e62d89c95455f3b7"
+    },
+    {
+      "bytes": 443,
+      "path": "configs/runtime_python312_20261103.txt",
+      "sha256": "6acb09ebaf9591cc515e8ec5d26c80c9fe57fbd44d686357d51f80ea309b7a76"
+    },
+    {
+      "bytes": 669,
+      "path": "configs/runtime_python312_geometry_20261103.txt",
+      "sha256": "169054497926df845d715fd3c8caeb1b3260c334a2c2ad7c09b2e5a953242435"
+    },
+    {
+      "bytes": 1443,
+      "path": "reports/INDEPENDENT_AUDIT_RUNTIME_LOCK_REMEDIATION.json",
+      "sha256": "e469934da5711a76c2f6792ddbbd5d968d0da304e4b943c5ab02822d68359809"
+    },
+    {
+      "bytes": 14540,
+      "path": "reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7.json",
+      "sha256": "25012ef5ab32bbff648d2f06566ae84da5bd2c35bce9e251b9cb87bb1eb51fb8"
+    },
+    {
+      "bytes": 28080,
+      "path": "reports/INDEPENDENT_AUDIT_CI_COLLECTION_ISOLATION_V1_20261116.json",
+      "sha256": "312d762a3129ffb36f0586c91437829604d37f6a073c9c0a3ca6c29cf82be444"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead records the concrete environment gap and sequences a separately scoped qualified project-environment preparation or an explicitly limited historical-environment collection decision. Do not install or admit an E01 target under this collection-only task.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 28705,
+      "path": "reports/evidence_ci_ordinary_collection_20261116/environment-metadata.json",
+      "sha256": "955ce0d3bbb1ac02377ffed5c6dbd58c00dcfc0112007075b857f2ea27f9f33a"
+    },
+    {
+      "bytes": 4781,
+      "path": "reports/evidence_ci_ordinary_collection_20261116/inspect_environment_metadata.py",
+      "sha256": "e4d39ed0d93b6826bbaaf7112289d9a71f72af046d4116932115bcd8de94e86d"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_ci_ordinary_collection_20261116/inspect_environment_metadata.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Search was bounded to repository .venv* paths, the known raw3.11 toolchain and exact temporary paths cited by historical geometry evidence. This is not an exhaustive host-wide environment search.",
+    "Installed metadata is not package-content integrity, safe-import or full environment qualification. No candidate importability probe was performed.",
+    "Current extras drift blocks this collection release; it does not establish a scientific failure or invalidate historical scoped results.",
+    "Full ordinary collection, actual test bodies, remote workflow and Linux integration remain unverified.",
+    "Original W03 cause remains UNKNOWN; no inference from this environment mismatch is made about that historical generic failure."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only existing technical configurations, package metadata, interpreter binaries for hash binding and scoped prior reports were read. No respondent/publisher/raw source data or credentials read, exported or processed.",
+  "TASK_ID": "CI_ORDINARY_COLLECTION_READINESS_20261116",
+  "TESTS_RUN_AND_RESULTS": "None. Metadata helper succeeds; actual ordinary collection readiness remains NOT_RUN for both runtimes.",
+  "UNRESOLVED_BLOCKERS": [
+    "No existing accepted current-CI project environment with the required direct extras was identified.",
+    "The project3.12 source pin is stale, the raw3.11 toolchain lacks project dependencies, historical geometry venvs are absent, and the available7.0.1 E01 target cannot be admitted."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Identify and bind existing qualified current-CI environments before collection",
+      "status": "NOT_MET_CONCRETE_GAP_RECORDED"
+    },
+    {
+      "criterion": "Preserve accepted source/exclusions/guards",
+      "status": "PASS_STATIC_HASH_CHECK"
+    },
+    {
+      "criterion": "Never run test bodies or unaccepted targets",
+      "status": "PASS_NO_COLLECTION_CHILD_LAUNCHED"
+    },
+    {
+      "criterion": "Observe ordinary collection case inventory and import errors",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Document unavailable runtime without claiming full CI PASS",
+      "status": "PASS_REPORT_ONLY"
+    }
+  ],
+  "actual_activity": {
+    "Git_mutations": 0,
+    "STATUS_edits": 0,
+    "candidate_runtime_executions": 0,
+    "collection_children": 0,
+    "metadata_helper_accounted_technical_bytes": 36439509,
+    "metadata_helper_exit_code": 0,
+    "metadata_inspection_commands": "Stdlib-only -I -B -S Python3.12 metadata helper; filesystem inspection only, no import of project/dependency/test code.",
+    "model_requests": 0,
+    "network_requests": 0,
+    "package_installs_or_downloads": 0,
+    "project_module_imports": 0,
+    "qualified_environment_admissions": 0,
+    "setup_or_teardown": 0,
+    "test_bodies": 0,
+    "test_collections": 0
+  },
+  "authorization_and_gate": {
+    "interpretation_limit": "This is a conservative current-CI environment admission decision, not proof that collection would necessarily fail in the historical environment. Metadata does not by itself qualify package contents or imports.",
+    "qualification_rule_used": "An existing project environment must have current workflow project extras (selection,sources,geometry), exact direct pins, and accepted source/runtime provenance before it can be used as a current-CI collection environment. Historical partial helper evidence and bare toolchains are not promoted into that qualification.",
+    "requested": "One collection-only child per available qualified project runtime, at most120CPU/wall seconds,256MiB technical/source reads,32MiB temp writes,512KiB console; no tests or unaccepted target."
+  },
+  "collection_result": {
+    "collected_case_count": null,
+    "import_errors": null,
+    "note": "Null values mean no collection observation, not zero tests, no errors or collection PASS. The reviewed exclusion/barrier was not invoked without an admitted environment.",
+    "status": "NOT_RUN",
+    "suite_ids": null
+  },
+  "date": "2026-11-16",
+  "decision": "NOT_RUN_NO_QUALIFIED_CURRENT_CI_PROJECT_ENVIRONMENT_IDENTIFIED",
+  "runtime_disposition": {
+    "E01_targets": {
+      "paths": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v1",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v2",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3"
+      ],
+      "reason": "E01v3 metadata shows pypdf7.0.1 but its runtime acceptance remains blocked. No target interpreter/package/payload was invoked or imported, and no target path was added to sys.path. v1/v2 have no installed distribution metadata. Metadata was inspected only to distinguish these from the project environment.",
+      "status": "EXCLUDED_UNACCEPTED_NOT_EXECUTED"
+    },
+    "Python3.11": {
+      "reason": "Known local3.11.17 raw toolchain site metadata contains only pip26.2.1/setuptools84.0.0, with no project/scipy/pypdf/pdfplumber distribution. No Python3.11 project .venv was identified. It is suitable for previously reviewed stdlib-only groups, not assumed suitable for ordinary project collection.",
+      "runtime_binding": {
+        "bytes": 17344128,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+        "sha256": "595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f"
+      },
+      "status": "NOT_RUN"
+    },
+    "Python3.12": {
+      "candidate": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv",
+      "config_binding": {
+        "bytes": 418,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/pyvenv.cfg",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/pyvenv.cfg",
+        "sha256": "2193f7e1f05ab6f8b46614b3c5ec3d476d34e04f2fca52bba889593ffa6e6084"
+      },
+      "current_direct_pin_comparison": {
+        "pdfplumber": {
+          "matches": true,
+          "metadata_observed": "0.11.9",
+          "required": "0.11.9"
+        },
+        "pypdf": {
+          "matches": false,
+          "metadata_observed": "6.10.0",
+          "required": "7.0.1"
+        },
+        "scipy": {
+          "matches": true,
+          "metadata_observed": "1.16.3",
+          "required": "1.16.3"
+        }
+      },
+      "reason": "The existing historical project .venv has pypdf6.10.0, while current pyproject source extra and offline workflow require7.0.1. scipy1.16.3 and pdfplumber0.11.9 match, but this does not remove the source-extra mismatch. No dependency replacement or installation was performed.",
+      "runtime_binding": {
+        "bytes": 18058560,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "resolved_path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+      },
+      "status": "NOT_RUN"
+    },
+    "historical_geometry": {
+      "evidence_ref": {
+        "bytes": 14540,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7.json",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7.json",
+        "sha256": "25012ef5ab32bbff648d2f06566ae84da5bd2c35bce9e251b9cb87bb1eb51fb8"
+      },
+      "paths": [
+        {
+          "config_exists": false,
+          "exists": false,
+          "path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.11"
+        },
+        {
+          "config_exists": false,
+          "exists": false,
+          "path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.12"
+        }
+      ],
+      "reason": "Both exact temporary venv paths recorded by historical scoped geometry helper evidence no longer exist. That record also qualified only a copied helper subset, not current full-tree CI.",
+      "status": "NOT_RUN"
+    }
+  },
+  "scope": "Ordinary CI collection readiness only. No suite, case, test body, setup, W03, research path, child collection or package install executed.",
+  "source_integrity": {
+    "accepted_runner_binding_unchanged": {
+      "bytes": 24413,
+      "path": "scripts/run_offline_ci_v1.py",
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    "ci_focused_lead_result": "Prior independently recorded220cases/runtime remain separate evidence; this report does not rerun or extend them.",
+    "original_guards_retained": true,
+    "six_frozen_files_unchanged": [
+      {
+        "bytes": 19017,
+        "path": "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+        "sha256": "83969d6ad8086d140bbeaf44880f79a68774fdca3b7e9c76965c8857114ed760"
+      },
+      {
+        "bytes": 20835,
+        "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+        "sha256": "0060994e89ed4e8c62a4a9b734aba4389f9d81878f882e5b88b1a0134f2e002a"
+      },
+      {
+        "bytes": 16128,
+        "path": "tests/test_e01_offline_import_protocol_methods_v1_20261116.py",
+        "sha256": "44589c9f6076d8589eb3a4da2d43c3a3fa18b296a3193c0f98aa4cabfb93324a"
+      },
+      {
+        "bytes": 28254,
+        "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+        "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+      },
+      {
+        "bytes": 34253,
+        "path": "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+        "sha256": "439a2d46ebcfc57c295a95e4fa353691246ab1e2ea0db1feebff41f4a3ba96a2"
+      },
+      {
+        "bytes": 17601,
+        "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+        "sha256": "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad"
+      }
+    ],
+    "source_workflow_guard_edits": 0
+  }
+}

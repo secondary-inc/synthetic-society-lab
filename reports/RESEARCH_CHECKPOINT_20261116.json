@@ -41,6 +41,7 @@
       "sha256": "c1ab94cb58c02203824a7198c2e1c6c8e20d5abfa285341418dc6914cb48f7ae"
     },
     "head_sha": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+    "historical_collection_diagnostic": "Separately authorized one3.12 collection-only diagnostic in existing historical.venv; no test bodies/setup/full suite/network/install. In progress, not a current-CI environment qualification.",
     "isolation_author_coverage_successor": {
       "bytes": 12635,
       "path": "reports/CI_COLLECTION_ISOLATION_V1_1_HANDOFF_20261116.json",
@@ -58,6 +59,17 @@
     },
     "new_collection_findings": "Scoped isolation remedy accepted by lead reviewer separate from author. All six original frozen files unchanged. Independent22mocked runner checks and actual10isolated groups/220frozen cases PASS on each local3.11.17/3.12.14 runtime. Four historical host cases passed only on original local profiles; unsupported hosts remain explicit NOT_RUN. Full ordinary collection/Linux/full remote workflow remain NOT_RUN; original W03 cause UNKNOWN. Earlier lead finding about missing host used in-progress code and was withdrawn against frozen source; successor is test-only coverage improvement.",
     "new_test_only_diagnostics": "Five focused checks PASS on each runtime; independent diagnostic review PASS including eight adverse checks. Original remote cause remains UNKNOWN and a new full-suite result is pending; no production code or clock changes.",
+    "ordinary_collection_current_environment": "NOT_RUN: known historical project.venv3.12 has pypdf6.10.0 versus current required7.0.1; known raw3.11 toolchain lacks project/extras; exact historical geometryvenv paths absent. Independent metadata review accepted narrow observations only; binary hashes retained, not rehashed under review cap. No unaccepted E01 target admitted. This is a limited known-path inventory, not exhaustive host absence or proof collection necessarily fails.",
+    "ordinary_collection_readiness_metadata": {
+      "bytes": 13124,
+      "path": "reports/CI_ORDINARY_COLLECTION_READINESS_20261116.json",
+      "sha256": "8443e311e9dfadb9a7bd4dd206650757d6b6b99f68d93fe1a4a9d006c8c1622e"
+    },
+    "ordinary_collection_readiness_metadata_review": {
+      "bytes": 9781,
+      "path": "reports/INDEPENDENT_AUDIT_CI_ORDINARY_READINESS_METADATA_20261116.json",
+      "sha256": "4eb47dadd71013e6c48dbc1731d774f30d38e90c09c105194d7c57e3adece05d"
+    },
     "overall": "FAILURE",
     "python311": "FAILURE",
     "python312": "SUCCESS",
@@ -727,16 +739,16 @@
       "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
       "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
     },
-    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_17/manifest.json",
+    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_18/manifest.json",
     "historical_verified_bundle_through_c249a57": {
       "bytes": 934,
       "path": "reports/GITHUB_DELIVERY_LOCAL_BUNDLE_20261116.json",
       "sha256": "492493f8c5f720763f1c3cd5850708b274b0b7bd606a5d9fc4a25ca021596cd9"
     },
-    "last_code_and_evidence_commit_before_final_checkpoint": "d77bcd3f8ce1271d732705a84073f63425cd709a",
+    "last_code_and_evidence_commit_before_final_checkpoint": "6a3d7421cf4e1e570de14800cb00d4a441ec7351",
     "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
     "local_head_at_delivery_attempt": "ce9a779d949067f7bae08dbeb1e33baa1f1b5f12",
-    "local_unpublished_commits_before_final_checkpoint": 29
+    "local_unpublished_commits_before_final_checkpoint": 30
   },
   "historical_and_human_candidate_scope_review": {
     "bytes": 6430,
@@ -771,7 +783,7 @@
   "new_model_calls_during_this_checkpoint": 45,
   "next_unblocked_work": [
     "Implement and independently review the concrete guarded PyPA generated-fixture harness; exact strict prevalidation/read-only component now accepted. No actual tool/fixture execution released.",
-    "Ordinary collection-only readiness check assigned in existing qualified project environments, with no test-body execution or package installation. Full remote workflow and old W03 diagnosis remain separate.",
+    "Complete and independently review the explicitly historical3.12 collection-only diagnostic. Current-CI environment remains NOT_RUN until correct dependencies are qualified; no unaccepted target admission or installation occurs through this diagnostic.",
     "Preserve safe code and evidence in local commits/bundles. GitHub delivery awaits restored write access.",
     "Resolve OpenRouter HTTP402/account access before any separately reviewed E02 continuation; preserve all responses and holds."
   ],
@@ -803,7 +815,7 @@
   },
   "owner_conservative_exposure_microusd": 16149,
   "owner_exposure_observation": "Closed export after fifth stop:194 total historical dispatches/1180events;16149 microUSD conservative exposure includes settled rounding and all five holds. Independent783-check partial evidence review verified old149rows/908event prefix and new transitions. Original live-journal immutability remains the closed collector observation.",
-  "previous_checkpoint_sha256": "0e1a6f8d941eb08556cbc066c4b6ac95baa99877d34a8a30a5e711e89788ab85",
+  "previous_checkpoint_sha256": "a542b3c2f04d61a47a15a10cc2d34a9fa6bcacae6e905a9bc6c48984d2907b12",
   "public_checkpoint_static_review": {
     "bytes": 8650,
     "path": "reports/INDEPENDENT_AUDIT_E02_ROOT_RECEIPT_CHECKPOINT_20261116.json",
@@ -847,5 +859,5 @@
     "scope": "Dated public-evidence status snapshot.63 independent static checks; root local TypeScript/bundled-runtime checks passed with prior failures preserved. No new scientific acceptance or live monitoring.",
     "snapshot_commit": "85e5bdfca099faae182569d7a6d22624ff98d76b"
   },
-  "updated_at_UTC": "2026-11-16T14:51:17.678861+00:00"
+  "updated_at_UTC": "2026-11-16T14:56:23.748544+00:00"
 }

@@ -1,0 +1,534 @@
+{
+  "candidate_runtime_invocations": 0,
+  "ci_runner_ref": {
+    "bytes": 24413,
+    "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/run_offline_ci_v1.py",
+    "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/run_offline_ci_v1.py",
+    "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+  },
+  "current_ci_requirements": {
+    "geometry": [
+      "pdfplumber==0.11.9"
+    ],
+    "selection": [
+      "scipy==1.16.3"
+    ],
+    "sources": [
+      "pypdf==7.0.1"
+    ]
+  },
+  "environments": [
+    {
+      "admitted": false,
+      "candidate_imports_or_invocations": 0,
+      "config_ref": {
+        "bytes": 418,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/pyvenv.cfg",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/pyvenv.cfg",
+        "sha256": "2193f7e1f05ab6f8b46614b3c5ec3d476d34e04f2fca52bba889593ffa6e6084"
+      },
+      "config_text": "home = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin\ninclude-system-site-packages = false\nversion = 3.12.14\nexecutable = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12\ncommand = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m venv /Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv\n",
+      "current_ci_direct_requirement_comparison": {
+        "pdfplumber": {
+          "matches": true,
+          "metadata_observed": "0.11.9",
+          "required": "0.11.9"
+        },
+        "pypdf": {
+          "matches": false,
+          "metadata_observed": "6.10.0",
+          "required": "7.0.1"
+        },
+        "scipy": {
+          "matches": true,
+          "metadata_observed": "1.16.3",
+          "required": "1.16.3"
+        }
+      },
+      "distributions": [
+        {
+          "metadata_ref": {
+            "bytes": 2527,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA",
+            "sha256": "558bafb9093a8e790175d9ecff9688382981d744877dad86fd6770db0f4dc918"
+          },
+          "name": "cffi",
+          "version": "2.1.1"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 46395,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/charset_normalizer-3.5.2.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/charset_normalizer-3.5.2.dist-info/METADATA",
+            "sha256": "89ce6362bb7be88558f4be99a98f5d1b4da93d19cd0323e5ee0bac05cf883dfb"
+          },
+          "name": "charset-normalizer",
+          "version": "3.5.2"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 3756,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/contourpy-1.4.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/contourpy-1.4.0.dist-info/METADATA",
+            "sha256": "40450acd747b288a5db999c435e1e921ffee0a38c7884a80cd46934c8004568f"
+          },
+          "name": "contourpy",
+          "version": "1.4.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 4394,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/cryptography-50.0.2.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/cryptography-50.0.2.dist-info/METADATA",
+            "sha256": "047cfc71226409de4318b360aef15c63a2adf609731e3dcf7fe932f14ea042ee"
+          },
+          "name": "cryptography",
+          "version": "50.0.2"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 3779,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/cycler-0.12.1.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/cycler-0.12.1.dist-info/METADATA",
+            "sha256": "23289e19b76f1e01394227696e6af2b6cd1ce79e89731209bf9195148b18ed36"
+          },
+          "name": "cycler",
+          "version": "0.12.1"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 139903,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/fonttools-4.68.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/fonttools-4.68.0.dist-info/METADATA",
+            "sha256": "e9c936cb3e09f35bb276054c34a99fc358f7425425f071c119f064464a03a2db"
+          },
+          "name": "fonttools",
+          "version": "4.68.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 5152,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/kiwisolver-1.5.1.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/kiwisolver-1.5.1.dist-info/METADATA",
+            "sha256": "f07b7b6c0c9c2a624c8a31f931e16712f2cf3490e7dfd51643d68e9d42d4b2c9"
+          },
+          "name": "kiwisolver",
+          "version": "1.5.1"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 11264,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/matplotlib-3.10.7.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/matplotlib-3.10.7.dist-info/METADATA",
+            "sha256": "fd8befb2181fe3d11f6477c359d8f452b4fbc90f6969a6893e09046d935e1677"
+          },
+          "name": "matplotlib",
+          "version": "3.10.7"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 6635,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/numpy-2.5.4.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/numpy-2.5.4.dist-info/METADATA",
+            "sha256": "e2b909d6a37d76c2bc130f528d7fed0c517322bce16dc7846b6a6df30e200403"
+          },
+          "name": "numpy",
+          "version": "2.5.4"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 3544,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/packaging-26.3.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/packaging-26.3.dist-info/METADATA",
+            "sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+          },
+          "name": "packaging",
+          "version": "26.3"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 4289,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pdfminer_six-20251230.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pdfminer_six-20251230.dist-info/METADATA",
+            "sha256": "77a7aa49c45244383288e8b98cb567f19a9083ad0d74716e3011c831df801d44"
+          },
+          "name": "pdfminer.six",
+          "version": "20251230"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 43599,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pdfplumber-0.11.9.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pdfplumber-0.11.9.dist-info/METADATA",
+            "sha256": "24f9118940ac3810a6bf0dd1970094e29cc659c71c334a6fc2e65d7120a74b62"
+          },
+          "name": "pdfplumber",
+          "version": "0.11.9"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 9118,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pillow-13.0.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pillow-13.0.0.dist-info/METADATA",
+            "sha256": "dba7fdfe24e302f46bae562f55d66cc367c0618abae9894a1ebec93dc8f0e511"
+          },
+          "name": "pillow",
+          "version": "13.0.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 3677,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA",
+            "sha256": "4fa7318cf30f979db7cec45c12cbbc2b4f88a15f12eefbf59a6291d0a03af926"
+          },
+          "name": "pip",
+          "version": "25.0.1"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 9709,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA",
+            "sha256": "ad8db5fe2b0e0a3b0e8419fe5041b80be92470a40b06bd9c1462a0a8bb637c92"
+          },
+          "name": "pycparser",
+          "version": "3.12"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 5857,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pyparsing-3.3.3.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pyparsing-3.3.3.dist-info/METADATA",
+            "sha256": "f2ca34052d720622d300023472ef8ae94fe5b57d69acbb28a8667f6dd0e13497"
+          },
+          "name": "pyparsing",
+          "version": "3.3.3"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 7112,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pypdf-6.10.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pypdf-6.10.0.dist-info/METADATA",
+            "sha256": "74db615a83dee1980ab4c4a73609d53cebf557e80ee822e9ac363cd575f7a61a"
+          },
+          "name": "pypdf",
+          "version": "6.10.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 62459,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pypdfium2-5.14.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/pypdfium2-5.14.0.dist-info/METADATA",
+            "sha256": "85fbd6fb9c6373299cde6898171c376f3ac6095a5d2eefd2e358573980f82955"
+          },
+          "name": "pypdfium2",
+          "version": "5.14.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 7341,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/python_dateutil-4.0.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/python_dateutil-4.0.0.dist-info/METADATA",
+            "sha256": "39adffb0c736bb6b6839f89fd158bb9b9ad54a3a795e0ea2ea53e79e1f821907"
+          },
+          "name": "python-dateutil",
+          "version": "4.0.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 62006,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/scipy-1.16.3.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/scipy-1.16.3.dist-info/METADATA",
+            "sha256": "24d10c4824ae711efe6cd295f2ac1474152e80abacb97b6c59f53f89b6617265"
+          },
+          "name": "scipy",
+          "version": "1.16.3"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 230,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/synthetic_society_lab-0.1.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/synthetic_society_lab-0.1.0.dist-info/METADATA",
+            "sha256": "e9f7403f0c8b3dec8048d6bf155d746593cca599ea254e51418d58ef6a896e5d"
+          },
+          "name": "synthetic-society-lab",
+          "version": "0.1.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 1358,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/tzdata-2026.6.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/tzdata-2026.6.dist-info/METADATA",
+            "sha256": "8173da8700dd125e60c9caf7663d02ee3318851ee60d387b2b080f23a74a86a8"
+          },
+          "name": "tzdata",
+          "version": "2026.6"
+        }
+      ],
+      "environment": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv",
+      "interpreter_exists": true,
+      "interpreter_ref": {
+        "bytes": 18058560,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "resolved_path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+      },
+      "pth_files": [
+        {
+          "ref": {
+            "bytes": 58,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/__editable__.synthetic_society_lab-0.1.0.pth",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/lib/python3.12/site-packages/__editable__.synthetic_society_lab-0.1.0.pth",
+            "sha256": "9bc5801fbb79be277eb5fa30774232c0b97eec485a05105704e710df7d6f8052"
+          },
+          "text": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src\n"
+        }
+      ],
+      "reason": "CURRENT_CI_SOURCE_EXTRA_MISMATCH: installed pypdf6.10.0 versus exact7.0.1; historical project environment is not silently promoted to current CI qualification."
+    },
+    {
+      "admitted": false,
+      "candidate_imports_or_invocations": 0,
+      "config_ref": {
+        "bytes": 454,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v1/pyvenv.cfg",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v1/pyvenv.cfg",
+        "sha256": "1ce8bb2083129358bc42adbfa086ba355ca21d9976148c0dbe196bc83bc0891f"
+      },
+      "config_text": "home = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin\ninclude-system-site-packages = false\nversion = 3.12.14\nexecutable = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12\ncommand = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -m venv --without-pip /Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v1\n",
+      "current_ci_direct_requirement_comparison": {
+        "pdfplumber": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "0.11.9"
+        },
+        "pypdf": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "7.0.1"
+        },
+        "scipy": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "1.16.3"
+        }
+      },
+      "distributions": [],
+      "environment": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v1",
+      "interpreter_exists": true,
+      "interpreter_ref": {
+        "bytes": 18058560,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v1/bin/python",
+        "resolved_path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+      },
+      "pth_files": [],
+      "reason": "EXCLUDED_UNACCEPTED_E01_TARGET: metadata-only inventory; never invoked, added to sys.path or imported."
+    },
+    {
+      "admitted": false,
+      "candidate_imports_or_invocations": 0,
+      "config_ref": {
+        "bytes": 454,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v2/pyvenv.cfg",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v2/pyvenv.cfg",
+        "sha256": "20415d96cafb5c4b08610f2b230b09e18b2c72fbd7c23fedbbce77345632fad4"
+      },
+      "config_text": "home = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin\ninclude-system-site-packages = false\nversion = 3.12.14\nexecutable = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12\ncommand = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -m venv --without-pip /Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v2\n",
+      "current_ci_direct_requirement_comparison": {
+        "pdfplumber": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "0.11.9"
+        },
+        "pypdf": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "7.0.1"
+        },
+        "scipy": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "1.16.3"
+        }
+      },
+      "distributions": [],
+      "environment": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v2",
+      "interpreter_exists": true,
+      "interpreter_ref": {
+        "bytes": 18058560,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v2/bin/python",
+        "resolved_path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+      },
+      "pth_files": [],
+      "reason": "EXCLUDED_UNACCEPTED_E01_TARGET: metadata-only inventory; never invoked, added to sys.path or imported."
+    },
+    {
+      "admitted": false,
+      "candidate_imports_or_invocations": 0,
+      "config_ref": {
+        "bytes": 454,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/pyvenv.cfg",
+        "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/pyvenv.cfg",
+        "sha256": "1da549840276d39f10edac28848181b0ac7d1b9a02c7e0517ac589911382ca8a"
+      },
+      "config_text": "home = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin\ninclude-system-site-packages = false\nversion = 3.12.14\nexecutable = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12\ncommand = /Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -m venv --without-pip /Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3\n",
+      "current_ci_direct_requirement_comparison": {
+        "pdfplumber": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "0.11.9"
+        },
+        "pypdf": {
+          "matches": true,
+          "metadata_observed": "7.0.1",
+          "required": "7.0.1"
+        },
+        "scipy": {
+          "matches": false,
+          "metadata_observed": null,
+          "required": "1.16.3"
+        }
+      },
+      "distributions": [
+        {
+          "metadata_ref": {
+            "bytes": 2527,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/cffi-2.1.1.dist-info/METADATA",
+            "sha256": "558bafb9093a8e790175d9ecff9688382981d744877dad86fd6770db0f4dc918"
+          },
+          "name": "cffi",
+          "version": "2.1.1"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 4394,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/cryptography-50.0.2.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/cryptography-50.0.2.dist-info/METADATA",
+            "sha256": "047cfc71226409de4318b360aef15c63a2adf609731e3dcf7fe932f14ea042ee"
+          },
+          "name": "cryptography",
+          "version": "50.0.2"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 9118,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/pillow-13.0.0.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/pillow-13.0.0.dist-info/METADATA",
+            "sha256": "dba7fdfe24e302f46bae562f55d66cc367c0618abae9894a1ebec93dc8f0e511"
+          },
+          "name": "pillow",
+          "version": "13.0.0"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 9709,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/pycparser-3.12.dist-info/METADATA",
+            "sha256": "ad8db5fe2b0e0a3b0e8419fe5041b80be92470a40b06bd9c1462a0a8bb637c92"
+          },
+          "name": "pycparser",
+          "version": "3.12"
+        },
+        {
+          "metadata_ref": {
+            "bytes": 7589,
+            "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/pypdf-7.0.1.dist-info/METADATA",
+            "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/lib/python3.12/site-packages/pypdf-7.0.1.dist-info/METADATA",
+            "sha256": "68c25385955dad43769d7eac9e18248f44efc25e59cdaf34fc44938d6d4525b1"
+          },
+          "name": "pypdf",
+          "version": "7.0.1"
+        }
+      ],
+      "environment": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3",
+      "interpreter_exists": true,
+      "interpreter_ref": {
+        "bytes": 18058560,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv-e01-pypdf-7.0.1-v3/bin/python",
+        "resolved_path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+      },
+      "pth_files": [],
+      "reason": "EXCLUDED_UNACCEPTED_E01_TARGET: metadata-only inventory; never invoked, added to sys.path or imported."
+    }
+  ],
+  "historical_geometry_environments": {
+    "admission": "NOT_ADMITTED: source-subset geometry helper qualification is not full current project/extras qualification; no candidate executed.",
+    "evidence_ref": {
+      "bytes": 14540,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7.json",
+      "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/ENGINEERING_EVIDENCE_GEOMETRY_RUNTIME_V1_7.json",
+      "sha256": "25012ef5ab32bbff648d2f06566ae84da5bd2c35bce9e251b9cb87bb1eb51fb8"
+    },
+    "historical_status": "LEAD_SCOPED_CLEAN_GEOMETRY_RESULTS_PENDING_INDEPENDENT_ACCEPTANCE",
+    "known_environment_paths": [
+      {
+        "config_exists": false,
+        "exists": false,
+        "path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.11"
+      },
+      {
+        "config_exists": false,
+        "exists": false,
+        "path": "/var/folders/7n/vyz0zplx3s32tb3z0mpb27n40000gn/T/civiclab-geometry-clean-l1ghs8jq/venv-3.12"
+      }
+    ],
+    "scope": "Copied exact standalone helper dependency subset and tests, not a full current-tree snapshot/bootstrap. Fresh3.11/3.12venvs optionalgeometry install and actualcachedsourcepreflight; no readiness RunStore, source GET, inference, candidate name or contact export. Original13-pin lock/old archives unchanged."
+  },
+  "kind": "ORDINARY_COLLECTION_READONLY_ENVIRONMENT_METADATA_V1",
+  "network_or_model_calls": 0,
+  "project_imports": 0,
+  "pyproject_ref": {
+    "bytes": 580,
+    "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/pyproject.toml",
+    "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/pyproject.toml",
+    "sha256": "f6f2f55b9f8fe8db5d4553a7d8c68aa10575534f35794e1294acbe829eca0e14"
+  },
+  "qualification_scope_limit": "Bounded known repository environments and exact paths from historical geometry evidence, not exhaustive search of all host directories. Metadata inspection is not a package integrity or importability qualification.",
+  "raw311": {
+    "admitted_for_ordinary_collection": false,
+    "reason": "Raw standard-library toolchain has no installed project, scipy, pypdf or pdfplumber distribution metadata. Frozen-group qualification is not project environment qualification.",
+    "runtime_ref": {
+      "bytes": 17344128,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+      "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+      "sha256": "595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f"
+    },
+    "site_distribution_metadata": [
+      {
+        "metadata_ref": {
+          "bytes": 4617,
+          "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/site-packages/pip-26.2.1.dist-info/METADATA",
+          "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/site-packages/pip-26.2.1.dist-info/METADATA",
+          "sha256": "3a561005822841f2c45f442f6c7a7505172c8c376c9fe274d876c8ac912968cb"
+        },
+        "name": "pip",
+        "version": "26.2.1"
+      },
+      {
+        "metadata_ref": {
+          "bytes": 6581,
+          "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/site-packages/setuptools-84.0.0.dist-info/METADATA",
+          "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/site-packages/setuptools-84.0.0.dist-info/METADATA",
+          "sha256": "3ef2975718dd31cabdd5829455e9b868ca14dbf79ed8fed2de0af4e87347006e"
+        },
+        "name": "setuptools",
+        "version": "84.0.0"
+      }
+    ]
+  },
+  "technical_file_bytes_read": 36439509,
+  "test_body_or_setup_invocations": 0,
+  "test_collections": 0,
+  "workflow_ref": {
+    "bytes": 1214,
+    "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.github/workflows/offline.yml",
+    "resolved_path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.github/workflows/offline.yml",
+    "sha256": "48d2d2185513c3d572b4a8189664daf5797bc76b745d9cc7adfab18687898baf"
+  }
+}
