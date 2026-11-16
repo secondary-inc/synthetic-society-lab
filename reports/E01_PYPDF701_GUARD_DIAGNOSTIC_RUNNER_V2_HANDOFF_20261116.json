@@ -1,0 +1,146 @@
+{
+  "TASK_ID": "E01_GUARD_DIAGNOSTIC_V2_OFFLINE_PRODUCTION_20261116",
+  "kind": "E01_PYPDF701_GUARD_DIAGNOSTIC_RUNNER_V2_FROZEN_HANDOFF",
+  "status": "SOURCE_FROZEN_52_PASS_FINAL_311_48_PASS_PREVIOUS_HARNESS_312_FINAL_312_NOT_RUN_AUTHOR_LIMIT",
+  "FILES_CHANGED": [
+    "scripts/diagnose_e01_pypdf701_guard_v2.py",
+    "configs/e01_pypdf701_guard_diagnostic_v2_20261116.json",
+    "tests/test_e01_pypdf701_guard_diagnostic_v2.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/diagnose_e01_pypdf701_guard_v2.py": {
+      "bytes": 49178,
+      "sha256": "6582297cd01bc2131a4cc17ea1e0d384c15b56fee6fa07620dada9a2c7c11c49"
+    },
+    "configs/e01_pypdf701_guard_diagnostic_v2_20261116.json": {
+      "bytes": 6817,
+      "sha256": "c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3"
+    },
+    "tests/test_e01_pypdf701_guard_diagnostic_v2.py": {
+      "bytes": 40156,
+      "sha256": "5d34c0a26260107ba685ff17227e83d5929d06aca19f5725f0df044c8b73301f"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v2_authored_312_initial_20261116.txt": {
+      "bytes": 3283,
+      "sha256": "1dbad3c98d01c31d17264654e678b2cb09062634d8df6940bc605755b2bf01a6"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v2_authored_312_final_20261116.txt": {
+      "bytes": 9091,
+      "sha256": "5433eb32846b1ca043b04bda5a429b8ea984aee096fdd17bae1564a4f1551adc"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v2_authored_312_verified_fixture_cache_20261116.txt": {
+      "bytes": 7370,
+      "sha256": "f2e2560191865f7f3dc81f5ad2d9cace8446286bf7be3d6898c9cf3709adc0b6"
+    },
+    "reports/e01_pypdf701_guard_diagnostic_v2_authored_311_final_20261116.txt": {
+      "bytes": 8040,
+      "sha256": "dc7db957afdc55633d55bc893ffaece09a24ea0ea1be9a9b1ae083a193b290ef"
+    },
+    "reports/E01_GUARD_DIAGNOSTIC_V2_INITIAL_ASSERTION_FAILURE_20261116.json": {
+      "bytes": 88149,
+      "sha256": "10483c487d77e268079b6535106ff9a839696053df0be919f933d2317ea80977"
+    },
+    "reports/E01_GUARD_DIAGNOSTIC_V2_AUTHORED_READ_CAP_STOP_20261116.json": {
+      "bytes": 102971,
+      "sha256": "a60d93c2f17859e7d22cded6e0668e16a5cc71ddd8912cb025c7974a6c60d4e3"
+    },
+    "reports/E01_GUARD_DIAGNOSTIC_V2_48_PASS_312_PRESERVED_20261116.json": {
+      "bytes": 104394,
+      "sha256": "50251dd634c71b5360483cd807b8ac8f79073570c79260d8933a30f94c35f091"
+    },
+    "reports/E01_DIAGNOSTIC_V2_PRIOR_CONTROL_BINDINGS_20261116.json": {
+      "bytes": 2661,
+      "sha256": "320eaed7cff732799ab58a0197086b79f1b4a299430d7610a32a0412852e4c8d"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_SOCKET_OBSERVER_V3_COMPONENT_METHODS_20261116.json": {
+      "bytes": 12652,
+      "sha256": "41dd19725ad0e8ba2148d1f2edb2541b4e07a5f1aabf3ad7c5516e4461300f4d"
+    },
+    "reports/E01_DIAGNOSTIC_SUCCESSOR_RATIONALE_20261116.json": {
+      "bytes": 2747,
+      "sha256": "8b2abcd2b72750fb8fbf58d0214995c287a20e6533492c860e5e86406f5fdf77"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_guard_diagnostic_v2.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_guard_diagnostic_v2.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "3.12": {
+      "invocations": 3,
+      "maximum": 3,
+      "first": "Stopped after16 completed checks on inherited assertion: production refused old-target mutation earlier at DIAGNOSTIC_V1_STARTED, while test expected later generic OLD_STATE_CHANGED. Exact draft/log retained.",
+      "second": "18 completed checks then unchanged64MiB authored physical-open/read cap stopped repeated nested fixture regeneration. Exact draft/log retained.",
+      "third": "48 checks PASS in8.618 seconds using verified temporary-fixture byte reuse. Exact source/config/tests/log retained.",
+      "final52CaseHarness": "NOT_RUN by author. Explicitly reserved for the independent reviewer's separately recorded one invocation. No fourth author process launched.",
+      "productionIdentity": "Current production source49178B/6582297c and methods6817B/c85b5c88 are byte-identical to those in the48-case pass. Only test-cache permission/adverse checks were added afterward."
+    },
+    "3.11": {
+      "invocations": 1,
+      "maximum": 3,
+      "final": "52 checks PASS in5.963 seconds with the exact frozen final harness."
+    },
+    "independentNext": "Root separately authorized reviewer ONE invocation per runtime:120wall/CPU,64MiB read,32MiB temporary write,256KiB output. Reviewer must assess exact final52 tests on3.12 and3.11 plus test validity before production acceptance.",
+    "guard": "No authored resource cap changed. Tests use temporary mock histories, inert mock pip module/runpy spy and mocked process callbacks only; no actual child, pip, socket, network, installed package/native/research-source execution.",
+    "coverage": [
+      "All original installation verification logic is AST-identical to frozen v1 after renaming its helper. Original process/guard/journal proofs retained.",
+      "Complete old diagnostic release/method/code/packet, STARTED, command reserve/record, requirements, payload/argv, both output refs, old V1 journal and guest result are required.",
+      "Coherently rehashed old argv cannot omit --dry-run; original violation/old coarse SOCKET event cannot be erased or relabeled. Prior release disablement, missing refs and altered outputs refuse.",
+      "Explicit V1 historical and V2 current consumers reject cross-version journals; finer construction event remains failed and cannot infer a call site or accept installation.",
+      "Seven preserved roots and fresh eighth root, both16MiB diagnostic caps, shared768MiB storage, old-scope mutation/absent old-prefix checks, immutable snapshots and full prior allocations verified.",
+      "Test-only cache retains no-alias/regular-file/type/full stat identity/ref-size/hash/logical quota checks. Adverse permission revocation, same-stat read denial, symlink replacement, corruption and malformed-ref cases pass on final3.11; exact final3.12 pending independent run."
+    ]
+  },
+  "authoredFixtureReuse": {
+    "purpose": "Reduce repeated physical reads while constructing deeply nested mock histories, without increasing the64MiB authored read cap or changing production verification.",
+    "productionUse": false,
+    "scope": "Only reference reads within that Reader's temporary fixture root under resolved system tempfile directory; actual workspace roots excluded. No actual source data, target, package or credential path cached.",
+    "capacity": "8MiB retained verified bytes per test; overflow stops adding cache entries, with original disk Reader used normally.",
+    "key": "Exact path, device, inode, mode, size,mtime_ns,ctime_ns plus expected ref bytes/SHA. Stat uses follow_symlinks=False; original no-alias/type/size validation occurs before lookup.",
+    "hit": "Recheck read permission; denial delegates to original disk Reader. Charge full ref bytes+1 on every logical read, enforce original Reader limit and rehash cached bytes. Permission, identity, ref or content changes miss/refuse.",
+    "miss": "Use original Reader with its nofollow/open identity/hash checks; cache only when pre/post full stat identities agree.",
+    "isolation": "Per-test patch of the in-process fixture Reader only; restored after each temporary fixture cleanup. Actual runner imports original frozen Reader in its fresh process and contains no cache code.",
+    "limitation": "This is a physical I/O optimization of authored fixtures, not a reduction in logical reference charges or a hostile-concurrent-filesystem guarantee. Independent test-validity review remains required."
+  },
+  "implementation": {
+    "scope": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116",
+    "uncreatedPrefix": ".venv-e01-pypdf-7.0.1-DIAGNOSTIC-NOT-INSTALL-v2",
+    "actualPacketPath": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+    "observer": "Exact accepted8165-byte observer v3/e7670b2d with journal protocolV2 and closed construction/bind/connect/resolve/metadata/unknown labels. No socket, IPv6, PATH, helper/native/network/import allowance changes.",
+    "history": "Load frozen prior diagnostic37439B/c71209bc as trusted code; retain its untouched p2 base and V1 consumer. Bind old594-byte packet/c3b197a0 and all consumed controls. Preserve old199-byte journal's SOCKET label verbatim,422-byte guest,8930-byte terminal, prior released controls and all three installation failures.",
+    "routing": "Observer routes only instance target/stage to freshv2. All seven old roots are unreadable/unwritable by guest. Both fictional diagnostic prefixes remain absent; no target writes, package acceptance, fourth installation or P3.",
+    "limits": "One new30-wall/20-observed-CPU child,7soft8hard per parent/child; retain full prior390/140/10 and add30/20/1=>420wall/160observedCPU/11commands allocated. Original read/write/file/output/deadline/denial guards retained.",
+    "storage": "Eight-root union805306368 bytes/16384 entries. Both old/new diagnostic scopes independently<=16777216 logical bytes. Preflight/polling/journal precharges and self-inclusive final terminal retained.",
+    "outcomes": [
+      "REFUSAL_OBSERVED",
+      "NO_REFUSAL_REPRODUCED",
+      "FAILED_DIAGNOSTIC"
+    ],
+    "interpretation": "Event class only; even SOCKET_CONSTRUCT does not identify function, call site, traffic or historical cause. Every outcome keeps installation_accepted=false."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only versioned code/reviews, bounded closed safe controls and wholly authored temporary fixture histories. No actual pip/socket/helper/diagnostic or installed package body/import, research PDF, respondent/publisher data, credential or financial owner accessed.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerDiagnosticChildPipSocketNetworkPackageNativeResearchSourceOwnerActions": 0,
+  "ACCEPTANCE_CRITERIA": {
+    "methods": "Exact observer/component/methods PASS41dd1972 and root finite rationale8b2abcd2 read before implementation. Old files/evidence preserved.",
+    "authorEvidence": "Final52-case3.11 PASS; same production code48-case3.12 PASS. Exact final52-case3.12 explicitly NOT_RUN by author due3-process limit.",
+    "production": "Independent reviewer owns final-harness52-check outcomes/test-cache validity and exact code/config review; not self-certified.",
+    "actual": "No actual successor packet or execution created. Root current bootstrap/input/old-state/eight-root occupancy preflight, particular release and once-only invocation are future gates.",
+    "research": "All installations, runtime/source qualification and scientific gates remain unaccepted/blocked."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Final author3.12 evidence is48 cases with earlier cache harness; do not relabel it52 or claim exact final-harness3.12 completion.",
+    "Both failed author attempts and successful48-case harness remain fully preserved. The read-cap stop also interrupted normal mock-temp cleanup; no blanket cleanup of unknown paths was attempted.",
+    "Cached temporary bytes are a test backend optimization only. Full identity/ref/hash/quota checks and final independent adverse testing are required; no production Reader was changed.",
+    "Diagnostic-only event labels cannot establish call sites/history or network transmission. Historical V1 SOCKET remains unknown beyond its closed category.",
+    "Journal/control flush can fail under original quotas/OS errors. No raw-write exemption, refusal waiver or retry added.",
+    "Cooperative guards, nofollow/prechecks, metadata snapshots, polled logical size and reference accounting retain documented OS-race/blocking/physical-I/O/RSS limitations.",
+    "No old source/config/test/audit, consumed scope, target, STATUS or Git was edited."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact final52-case3.12/3.11 and test-validity/production review",
+    "Root current inputs/storage preflight and exact particular release before any actual successor diagnostic"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate reviewer runs the exact frozen final harness once per runtime under its recorded bounds and reviews production/cache validity. Root retains Git/STATUS, actual packet/preflight/particular/execution authority.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/diagnose_e01_pypdf701_guard_v2.py --methods-sha256 c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3 --packet-sha256 <ROOT_REVIEWED_ACTUAL_PACKET_SHA256>"
+}

@@ -1,0 +1,43 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_guard_diagnostic_v2.py']\nrunpy.run_path('tests/test_e01_pypdf701_guard_diagnostic_v2.py',run_name='__main__')\n",
+  "exact_final_source_pins": {
+    "scripts/diagnose_e01_pypdf701_guard_v2.py": [
+      49178,
+      "6582297cd01bc2131a4cc17ea1e0d384c15b56fee6fa07620dada9a2c7c11c49"
+    ],
+    "configs/e01_pypdf701_guard_diagnostic_v2_20261116.json": [
+      6817,
+      "c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3"
+    ],
+    "tests/test_e01_pypdf701_guard_diagnostic_v2.py": [
+      40156,
+      "5d34c0a26260107ba685ff17227e83d5929d06aca19f5725f0df044c8b73301f"
+    ]
+  },
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "stop_reason": null,
+      "wall_seconds": 7.165276915999129,
+      "bytes": 8040,
+      "log": "reports/e01_guard_diagnostic_runner_v2_independent_312_20261116.txt",
+      "sha256": "df56bbbd31e6924dfb9d8de8e287fc0daf0a6c3dab3aa1e50f66583120bae3af"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "stop_reason": null,
+      "wall_seconds": 5.189325000013923,
+      "bytes": 8040,
+      "log": "reports/e01_guard_diagnostic_runner_v2_independent_311_20261116.txt",
+      "sha256": "f326a4fac9849bdb85b387ca00e5a5b1052fef95c26d70be14bed03ea25dd356"
+    }
+  ],
+  "reviewer_invocations_each_runtime": 1,
+  "author_invocations": {
+    "312": 3,
+    "311": 1
+  },
+  "note": "Reviewer allowance separately authorized; author312 final52 NOTRUN; older48PASS not relabeled. No automatic rerun. Source unchanged after both checks."
+}
