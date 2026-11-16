@@ -1,0 +1,105 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "scripts/e01_compatibility_error_observer_candidate_v2_20261116.py",
+    "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+    "reports/E01_COMPATIBILITY_ERROR_OBSERVER_V2_FINITE_DECISION_20261116.json",
+    "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_311_attempt1.txt",
+    "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_312_attempt1.txt",
+    "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/v1_to_v2.patch"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent exact V2 review before any separately designed integration; retain actual stop and all prior failed records.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 12129,
+      "path": "scripts/e01_compatibility_error_observer_candidate_v2_20261116.py",
+      "sha256": "3ad8fe01b317fe5c3879975d0acd2b081ff3adac7ce2c60e7eabef7737aede5b"
+    },
+    {
+      "bytes": 20835,
+      "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+      "sha256": "0060994e89ed4e8c62a4a9b734aba4389f9d81878f882e5b88b1a0134f2e002a"
+    },
+    {
+      "bytes": 1852,
+      "path": "reports/E01_COMPATIBILITY_ERROR_OBSERVER_V2_FINITE_DECISION_20261116.json",
+      "sha256": "11a7dc5d2d6384ae6c091ddea131c8309e1aa01284751b86bae081bb6c3e5a03"
+    },
+    {
+      "bytes": 6154,
+      "path": "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_311_attempt1.txt",
+      "sha256": "3ae9231bdb87c51eff08b550fdf44da52a14fbbcc6fd24972f357909464a7d32"
+    },
+    {
+      "bytes": 6117,
+      "path": "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_312_attempt1.txt",
+      "sha256": "0e0aeb79db79fb2e426ef35680fbce2076dda7fafec0cb7efb0e4db6279b81d8"
+    },
+    {
+      "bytes": 1337,
+      "path": "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/v1_to_v2.patch",
+      "sha256": "a18566e20694d72a2acd1b82de4e095ceffd16dbd0acdb234cbce07ceacae8dd"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "All V1 source/proposal/logs and BLOCKED review remain immutable.",
+    "This remains an unwired pure component; passing tests do not identify the generic actual failure or fix the import-protocol hypothesis.",
+    "Original observer single-owner/non-hostile-private-state assumptions and finite lossy codes/types/phases remain. Future exact call-site/type binding, charged persistence, terminal evidence/headroom and original exception/guard semantics require production review.",
+    "No actual allowance added. Existing450wall/180CPU/12main-children allocation is fully consumed. No retry/fourthinstallation/P3 or financial access.",
+    "Both root authored invocations are consumed; no automatic rerun."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Repo-owned pure Python candidate/tests and old pinned guard source only. Transitive stdlib socket imports/hashes recorded in logs; no real socket operation or field mutation, pip/vendor/package import, raw/source PDF or credential read.",
+  "TASK_ID": "LEAD_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_20261116",
+  "TESTS_RUN_AND_RESULTS": {
+    "3.11.17": {
+      "exit_code": 0,
+      "tests": 37,
+      "unittest_seconds": 0.059
+    },
+    "3.12.14": {
+      "exit_code": 0,
+      "tests": 37,
+      "unittest_seconds": 0.057
+    },
+    "maximum_receipt_bytes_observed": 1393,
+    "new_author_invocations_each_runtime": 1,
+    "prior_author_invocations_each_runtime_retained": 2,
+    "receipt_cap": 4096,
+    "remaining_author_invocations_each_runtime": 0,
+    "scope": "Original34checks retained, plus3boundary tests covering real emitter transition65535to65536, forged impossible droppedcounts and actual dropped-counter cap/later marks. Pure mocks/direct frozen guardcallbacks only."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent pure V2 review pending.",
+    "Actual failure cause remainsunknown; import methods comparison continues separately."
+  ],
+  "acceptance_criteria": [
+    {
+      "milestone": "Authored correction",
+      "status": "AUTHOR_TESTS_PASS_ONLY"
+    },
+    {
+      "milestone": "Independent exact pure V2 review",
+      "status": "PENDING"
+    },
+    {
+      "milestone": "Production integration and actual use",
+      "status": "NOT_RELEASED_NOT_RUN"
+    }
+  ],
+  "change": "Only versioned receipt kind and saturated dropped-count invariant changed in candidate. At first saturation totalmarks>=MAX_COUNTER+1 and retainedprefix=MAX_PHASES, so dropped>=65520. Existing max65535 constraint remains. Unsaturated equality unchanged. No emitter or exception/guard/privacy behavior changed.",
+  "predecessor_blocked_review_ref": {
+    "bytes": 17725,
+    "path": "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V1_20261116.json",
+    "sha256": "40f575b123d632da72effc4c2c5e2ff229194a16f0e1231b790cfcdf1caee812"
+  },
+  "predecessor_proposal_ref": {
+    "bytes": 16929,
+    "path": "reports/E01_COMPATIBILITY_FAILURE_OBSERVABILITY_PROPOSAL_20261116.json",
+    "sha256": "b52549e2b592ce1e7fb194b82f4a91631f9b7aa206e82e551f86e1a6ac514b5d"
+  },
+  "status": "AUTHOR_37_CHECKS_PASS_EACH_RUNTIME_INDEPENDENT_REVIEW_PENDING_NO_INTEGRATION"
+}

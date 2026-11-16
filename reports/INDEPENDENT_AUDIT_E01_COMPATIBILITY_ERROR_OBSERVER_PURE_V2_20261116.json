@@ -1,0 +1,237 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_20261116",
+  "kind": "INDEPENDENT_EXACT_PURE_OBSERVER_SATURATION_CORRECTION_REVIEW",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "PASS_EXACT_PURE_V2_SATURATION_REMEDY_100_GUARDED_CHECKS_NO_INTEGRATION_OR_ACTUAL_RELEASE",
+  "evidence_refs": {
+    "reports/E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_HANDOFF_20261116.json": {
+      "path": "reports/E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_HANDOFF_20261116.json",
+      "bytes": 5501,
+      "sha256": "80ab600de55af723437e41cd3e8aca3427b2876f4bf8a959099fcd6417b4129e"
+    },
+    "scripts/e01_compatibility_error_observer_candidate_v2_20261116.py": {
+      "bytes": 12129,
+      "path": "scripts/e01_compatibility_error_observer_candidate_v2_20261116.py",
+      "sha256": "3ad8fe01b317fe5c3879975d0acd2b081ff3adac7ce2c60e7eabef7737aede5b"
+    },
+    "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py": {
+      "bytes": 20835,
+      "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+      "sha256": "0060994e89ed4e8c62a4a9b734aba4389f9d81878f882e5b88b1a0134f2e002a"
+    },
+    "reports/E01_COMPATIBILITY_ERROR_OBSERVER_V2_FINITE_DECISION_20261116.json": {
+      "bytes": 1852,
+      "path": "reports/E01_COMPATIBILITY_ERROR_OBSERVER_V2_FINITE_DECISION_20261116.json",
+      "sha256": "11a7dc5d2d6384ae6c091ddea131c8309e1aa01284751b86bae081bb6c3e5a03"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_311_attempt1.txt": {
+      "bytes": 6154,
+      "path": "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_311_attempt1.txt",
+      "sha256": "3ae9231bdb87c51eff08b550fdf44da52a14fbbcc6fd24972f357909464a7d32"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_312_attempt1.txt": {
+      "bytes": 6117,
+      "path": "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/observer_312_attempt1.txt",
+      "sha256": "0e0aeb79db79fb2e426ef35680fbce2076dda7fafec0cb7efb0e4db6279b81d8"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/v1_to_v2.patch": {
+      "bytes": 1337,
+      "path": "reports/evidence_e01_compatibility_error_observer_author_v2_20261116/v1_to_v2.patch",
+      "sha256": "a18566e20694d72a2acd1b82de4e095ceffd16dbd0acdb234cbce07ceacae8dd"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V1_20261116.json": {
+      "bytes": 17725,
+      "path": "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V1_20261116.json",
+      "sha256": "40f575b123d632da72effc4c2c5e2ff229194a16f0e1231b790cfcdf1caee812"
+    },
+    "reports/E01_COMPATIBILITY_FAILURE_OBSERVABILITY_PROPOSAL_20261116.json": {
+      "bytes": 16929,
+      "path": "reports/E01_COMPATIBILITY_FAILURE_OBSERVABILITY_PROPOSAL_20261116.json",
+      "sha256": "b52549e2b592ce1e7fb194b82f4a91631f9b7aa206e82e551f86e1a6ac514b5d"
+    },
+    "scripts/e01_compatibility_error_observer_candidate_v1_20261116.py": {
+      "path": "scripts/e01_compatibility_error_observer_candidate_v1_20261116.py",
+      "bytes": 11904,
+      "sha256": "6d540fb9bc33950c3e2c7777d5cd46df5c1e5f5f15b631d9b69556f4ae12445e"
+    },
+    "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py": {
+      "path": "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+      "bytes": 19017,
+      "sha256": "83969d6ad8086d140bbeaf44880f79a68774fdca3b7e9c76965c8857114ed760"
+    },
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_312.txt": {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_312.txt",
+      "bytes": 10370,
+      "sha256": "3c0304636510f1aa5696d709d0c9b2c03433bd4f201d2d19a66f7bf9ae5e20d4"
+    },
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_311.txt": {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_311.txt",
+      "bytes": 10444,
+      "sha256": "6f82be55899d09cf516283ab60dc74cd75fd563a3d62897c4b7e5624fd36320c"
+    },
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_runner.py": {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_runner.py",
+      "bytes": 10732,
+      "sha256": "10d8f52882ba59a71dfd065c1b9b72e972ecefee7c7d4a6da486d1654e7cca7c"
+    }
+  },
+  "blocking_findings": [],
+  "prior_blocker_resolution": {
+    "V1_impossible_saturated_drops": "CLOSED_IN_EXACT_V2_ONLY",
+    "V1_proposal_source_tests_logs_blocked_audit": "PRESERVED_UNCHANGED",
+    "actual_cause_or_import_compatibility": "NOT_ESTABLISHED",
+    "integration_execution": "NOT_RELEASED"
+  },
+  "findings": [
+    "Exact5501B/80ab600d handoff,12129B/3ad8fe01 candidate,20835B/0060994e tests,1852B/11a7dc5d finiteauthordecision/authorlogs/sourcepatch matched. OriginalV1candidate/tests/proposal and17725B/40f575b1 BLOCKEDaudit unchanged. No oldreceipt orfinding relabeledaspassed.",
+    "Fullcandidate text mechanicalcomparison proves onlyKINDversion andsaturateddroplowerboundbranch changed. All othermodulecode andemitter/privacy/primaryidentity/guards identical; ASTalltop-levelnodesexceptKINDandvalidate equal. Saved independentcandidatepatch supportsreview.",
+    "V2retainsphase_total65535 requirementforsaturation andnowrequiresphase_dropped>=MAX_COUNTER-MAX_PHASES+1=65520, withupper65535/intbounds unchanged. Priorforgeddrops0/65519 rejectedbothruntimes; authoredtests alsoreject1/16/65518. Valid65520/65521/65534/65535 accepted inindependentmatrix, negative/bool/65536 refused.",
+    "Unsaturatedequality notweakened: atphase_total65535/16prefixrows, exactdrop65519 acceptedwhile0/65520/65535 refused. Actualemitter transition65535marks=>satFalse/drop65519 and65536=>satTrue/drop65520 remainsvalid. Lateractualemittedmarks capdrop/total65535, retainfirst16prefix andlatestphase. Serializedsaturatedreceipt1393B<4096.",
+    "Original37checksplus13independentprivacy/phase-code/type/schema/primary/observerfailure/saturationregressions pass eachruntime. Exactlyone reviewinvocation3.12:50PASS.068unittestseconds/.1809291670069797wall/read3186491B;3.11:50PASS.069/.1614260829956038/read3388000B.100totalcompleted,norerun. AuthorV1two+V2oneinvocations separatelyrecorded; reviewerV1one+V2one retained.",
+    "Candidate exacttypeidentity classification andfixedcustomlabels stillneverreadexceptionargs/attrs/messages/name/path/traceback/cause/context/str/repr. Unknownsubclasses/hostile strsubclassphase/code values redactwithoutcomparison/conversion. Poisonedexception andcustommetaclassregistration checks preserveprivacy; callsiteauthenticity remainsfutureproductionresponsibility.",
+    "Callbackonce/exactreturn/primarysameobjectbare-reraise unchanged. RecorderBaseException doesnotreplacecallbackSystemExit/RuntimeError, observer_failedflag retained. Preboundarymarkfailure stopsuncalledcallback. First/latestrecords detachedprimitivecopies, noexceptioninstance retained; partialrecordingflagmeanslatestrecordmaybeanolderobservation, notactualfinalprimary.",
+    "Originalfrozen6socket/helper/native denials/counter6/nonzeroviolationpostcondition stillpass. Observerdoesnotwaiveguards orenforcecompatibilityacceptancebyitself. Futureintegrationmusttreatmissing/corrupt/failedobserverdata aspartial/failedobservability, retainoriginalprimary and chargedwritecaps.",
+    "Originalloader/finiteguard retained, withcorrectedDirectoryFdGuard-awareauditorwrapper. Transitivestdlibsocket import explicitlyallowedandexpectedorigins/SHArecorded; no actualsocketoperation/fieldmutation,pip/vendor/downloadedpackage import,actualchild/preflight/network/sourcePDF/credential/owner action. Candidate importsjsononly.",
+    "V1staticvendorfinderhypothesis isnotchanged/testedagainstactualruntime bythisremedy. Missingactualexceptionmetadata cannotbe reconstructed. Actualgenericalcause/importstage/socketoverride/restoration remainunknown; no scientific/runtimeacceptance frompureobserverPASS.",
+    "Componentremainsunwiredsingleowner, finiteandlossy, nohostileprivate-state/concurrency/continuousphaseproof. last_phase islastemittedtoken, notstack/currentinstruction/restoreproof; failure_totalcountsrecordobservations, notuniqueexceptions. Exactfuturephaseanchors/trustedtypes/codes requireseparateproductionreview.",
+    "No emitterIO,executor,concreteintegration,currentpreflight/particular/actualrelease supplied. Full450wall/180observedCPU/12children allocationremainsconsumed, no retry/newtarget/fourthinstallation/P3. ComponentPASS alone cannotrelaximportloaders/finders orcreateactualauthority."
+  ],
+  "test_results": {
+    "312": {
+      "kind": "INDEPENDENT_ERROR_OBSERVER_PURE_V2_REVIEW",
+      "python": "3.12.14",
+      "original_checks": 37,
+      "independent_checks": 13,
+      "expected_checks": 50,
+      "exit_code": 0,
+      "wall_seconds": 0.1809291670069797,
+      "logical_open_read_bytes_including_startup": 3186491,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py",
+      "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274",
+      "actual_socket_functions_or_globals_or_pip": 0,
+      "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+      "independent_no_rerun": true,
+      "prior_saturation_counterexample_rejected": true
+    },
+    "311": {
+      "kind": "INDEPENDENT_ERROR_OBSERVER_PURE_V2_REVIEW",
+      "python": "3.11.17",
+      "original_checks": 37,
+      "independent_checks": 13,
+      "expected_checks": 50,
+      "exit_code": 0,
+      "wall_seconds": 0.1614260829956038,
+      "logical_open_read_bytes_including_startup": 3388000,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/socket.py",
+      "socket_source_sha256": "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30",
+      "actual_socket_functions_or_globals_or_pip": 0,
+      "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+      "independent_no_rerun": true,
+      "prior_saturation_counterexample_rejected": true
+    }
+  },
+  "test_counts": {
+    "original_each": 37,
+    "independent_each": 13,
+    "completed_each": 50,
+    "completed_both": 100
+  },
+  "saturation_contract": {
+    "max_total": 65535,
+    "stored_prefix": 16,
+    "unsaturated_at_max_drops": 65519,
+    "first_saturated_min_drops": 65520,
+    "max_drops": 65535,
+    "prior_invalid_drops_rejected": [
+      0,
+      65519
+    ],
+    "selected_valid_saturated_drops": [
+      65520,
+      65521,
+      65534,
+      65535
+    ],
+    "receipt_observed_bytes": 1393,
+    "receipt_cap_bytes": 4096
+  },
+  "allocation_accounting": {
+    "new_review_invocations_each_runtime": 1,
+    "prior_consumed_review_invocations_each_runtime": 1,
+    "retained_review_invocations_each_runtime": 2,
+    "full_allocated_wall_CPU_seconds_each_runtime": 240,
+    "full_allocated_logical_reads_each_runtime": 134217728,
+    "full_allocated_tempwrites_each_runtime": 67108864,
+    "full_allocated_console_each_runtime": 524288,
+    "remaining_review_invocations": 0,
+    "automatic_reruns": 0,
+    "new_actual_allowance": 0
+  },
+  "actual_auditor_actions": {
+    "transitive_stdlib_socket_import": true,
+    "real_socket_functions_or_field_mutation": 0,
+    "pip_vendor_downloaded_package_import": 0,
+    "actual_child_helper_preflight_input_replays": 0,
+    "network_model_raw_source_credentials_financial_owner": 0,
+    "Git_STATUS_operations": 0,
+    "cost_USD": 0
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_20261116.json",
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/candidate_delta.patch",
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_311.txt",
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_312.txt",
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_runner.py",
+    "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/verification.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/candidate_delta.patch",
+      "bytes": 1225,
+      "sha256": "16c6bbc0b08abf974f9180f7eb4ad79b0a82a5468cdebb08b2e2034484842e95"
+    },
+    {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_311.txt",
+      "bytes": 10444,
+      "sha256": "6f82be55899d09cf516283ab60dc74cd75fd563a3d62897c4b7e5624fd36320c"
+    },
+    {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_312.txt",
+      "bytes": 10370,
+      "sha256": "3c0304636510f1aa5696d709d0c9b2c03433bd4f201d2d19a66f7bf9ae5e20d4"
+    },
+    {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_runner.py",
+      "bytes": 10732,
+      "sha256": "10d8f52882ba59a71dfd065c1b9b72e972ecefee7c7d4a6da486d1654e7cca7c"
+    },
+    {
+      "path": "reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/verification.json",
+      "bytes": 6322,
+      "sha256": "36f75e35f1ce257f4b4bbc57bf044b7a95fb37fc3b1a20081464230ee7541c8c"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_runner.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S reports/evidence_e01_compatibility_error_observer_independent_v2_20261116/review_runner.py",
+    "Commandsrecordcompletedreviewprovenance. Finiteonce/runtimeallowanceconsumed,noautomaticrerun."
+  ],
+  "TESTS_RUN_AND_RESULTS": "50PASSperruntime/100total, priorsaturationcounterexample rejected. Exactcandidateonlydeclaredtwodeltas andpreservedV1refs verified. Purecomponentonly.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Repo-ownedpurecandidate/tests/proposal/closedreview/logs/oldguard sourcetext only. Transitivestdlibsocket sourceorigin/hashrecorded, no actualpip/vendor/rawrespondent/publisher/PDF/packagebody/owner/credential access.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Purecomponentvalidationnotexactproductioncallsite/typeauthenticityorpersistencereview.",
+    "Single-owner/nonhostileprivate-state assumptions; finitelossyhistory andpartialrecordingflagsneedcarefulinterpretation.",
+    "No actualhistoricalcause canbe recoveredfrommissingrunmetadata.",
+    "No actualexecution/integration/loaderrelaxation/scientificacceptance granted."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Concreteinstrumentationandchargedpersistence/terminalheadroom/guardsemantics requireseparateexactproductionreview.",
+    "Actualfailurecauseunknown; importprotocolhypothesis needsseparateofflinecomparison,notblindactualretry.",
+    "Actualallocationconsumed; P2/P3/install/source/scientific gatesblocked."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead mayseparatelyassign offlinefabricatedimport-methodcomparisonorconcreteobserverintegrationdesign withboundedreview; preserveV1blockerandactualstop. No actualaction fromthisPASS.",
+  "ownership": "Independentauditorownsnewreport/evidenceonly; leadownsGit/STATUS/coordination/finitefuturework."
+}

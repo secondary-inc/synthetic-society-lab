@@ -1,0 +1,46 @@
+{
+  "actual_allocation_unchanged_fully_consumed": {
+    "main_children": 12,
+    "observed_CPU_seconds": 180,
+    "wall_seconds": 450
+  },
+  "cost_USD": 0,
+  "independent_review_required": true,
+  "kind": "LEAD_PURE_OBSERVER_V2_FINITE_CORRECTION_DECISION",
+  "new_author_allowance_each_runtime": {
+    "console_output_bytes": 262144,
+    "invocations": 1,
+    "logical_read_bytes": 67108864,
+    "temporary_write_bytes": 33554432,
+    "wall_CPU_seconds": 120
+  },
+  "predecessor_ref": {
+    "bytes": 11904,
+    "path": "scripts/e01_compatibility_error_observer_candidate_v1_20261116.py",
+    "sha256": "6d540fb9bc33950c3e2c7777d5cd46df5c1e5f5f15b631d9b69556f4ae12445e"
+  },
+  "reason": "The V1 saturated decoder skips dropped-count consistency. First saturation occurs after65535+1marks, so with16retained entries at least65520must have dropped. Preserve V1 and test corrected boundary with genuine pure emitter states.",
+  "retained_author_lineage_each_runtime": {
+    "combined_allocated_invocations": 3,
+    "console_output_bytes": 786432,
+    "logical_read_bytes": 201326592,
+    "prior_consumed_invocations": 2,
+    "temporary_write_bytes": 100663296,
+    "wall_CPU_seconds": 360
+  },
+  "runtimes": [
+    "3.12.14",
+    "3.11.17"
+  ],
+  "scope": "New V2 pure observer, versioned tests and authored evidence only. No production integration, pip/socket/runtime mutation, actual child/preflight/installation/source/network/model work.",
+  "source_ref": {
+    "bytes": 12129,
+    "path": "scripts/e01_compatibility_error_observer_candidate_v2_20261116.py",
+    "sha256": "3ad8fe01b317fe5c3879975d0acd2b081ff3adac7ce2c60e7eabef7737aede5b"
+  },
+  "tests_ref": {
+    "bytes": 20835,
+    "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+    "sha256": "0060994e89ed4e8c62a4a9b734aba4389f9d81878f882e5b88b1a0134f2e002a"
+  }
+}

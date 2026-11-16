@@ -1,0 +1,28 @@
+--- scripts/e01_compatibility_error_observer_candidate_v1_20261116.py
++++ scripts/e01_compatibility_error_observer_candidate_v2_20261116.py
+@@ -7,7 +7,7 @@
+ """
+ import json
+ 
+-KIND = 'E01_COMPATIBILITY_ERROR_OBSERVER_PURE_MOCK_V1'
++KIND = 'E01_COMPATIBILITY_ERROR_OBSERVER_PURE_MOCK_V2'
+ MAX_PHASES = 16
+ MAX_COUNTER = 65535
+ MAX_JSON_BYTES = 4096
+@@ -189,9 +189,13 @@
+                 and type(row['phase']) is str and row['phase'] in PHASES)
+         require(row['phase'] != 'UNKNOWN_PHASE' or value['unknown_phase_seen'])
+         previous = row['sequence']
+-    require(value['phase_total'] >= len(value['phases'])
+-            and (value['phase_saturated'] or
+-                 value['phase_dropped'] == value['phase_total']-len(value['phases'])))
++    require(value['phase_total'] >= len(value['phases']))
++    if value['phase_saturated']:
++        # Saturation starts on mark MAX_COUNTER+1, after the first MAX_PHASES
++        # retained entries. Both counters may cap later, but drops cannot shrink.
++        require(value['phase_dropped'] >= MAX_COUNTER-MAX_PHASES+1)
++    else:
++        require(value['phase_dropped'] == value['phase_total']-len(value['phases']))
+     if value['phase_total'] == 0:
+         require(value['last_phase'] == 'NOT_STARTED')
+     elif value['phase_dropped'] == 0 and not value['phase_saturated']:

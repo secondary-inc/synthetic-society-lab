@@ -1,0 +1,242 @@
+{
+  "TASK_ID": "E01_COMPATIBILITY_FAILURE_OBSERVABILITY_PURE_MOCK_V1_20261116",
+  "status": "AUTHOR_34_CHECKS_PASS_EACH_RUNTIME_PURE_PROPOSAL_INDEPENDENT_REVIEW_PENDING",
+  "FILES_CHANGED": [
+    "scripts/e01_compatibility_error_observer_candidate_v1_20261116.py",
+    "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_312_attempt1.txt",
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_312_attempt2.txt",
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_311_attempt1.txt",
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_311_attempt2.txt"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_compatibility_error_observer_candidate_v1_20261116.py": {
+      "bytes": 11904,
+      "sha256": "6d540fb9bc33950c3e2c7777d5cd46df5c1e5f5f15b631d9b69556f4ae12445e"
+    },
+    "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py": {
+      "bytes": 19017,
+      "sha256": "83969d6ad8086d140bbeaf44880f79a68774fdca3b7e9c76965c8857114ed760"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_312_attempt1.txt": {
+      "bytes": 5215,
+      "sha256": "93e5008dd02dd5c841b6a05fc406e4965fcb58bd94c13e171ab35caed804fb50"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_312_attempt2.txt": {
+      "bytes": 5673,
+      "sha256": "c732106c2c4cda9f62cc91a062afc2b25a258269ae88659c0eb8ae766f518063"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_311_attempt1.txt": {
+      "bytes": 5252,
+      "sha256": "c43d5f6293ee26c20005220e970cc64bb4068508a8632a9511863ac6ae6bc4a4"
+    },
+    "reports/evidence_e01_compatibility_error_observer_author_v1_20261116/observer_311_attempt2.txt": {
+      "bytes": 5710,
+      "sha256": "926d172e85542ef75b64960318b6aa05c0f50bf9f9b6ddc2f38db204142d1b7e"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "attempt1": {
+      "3.12.14": "31 PASS in0.040s, exit0",
+      "3.11.17": "31 PASS in0.043s, exit0"
+    },
+    "final_attempt2": {
+      "3.12.14": "34 PASS in0.041s, exit0",
+      "3.11.17": "34 PASS in0.042s, exit0"
+    },
+    "delta": "Strengthen payload validation for the first contiguous breadcrumb prefix, last-phase consistency, true saturation, explicit redaction flags and consistency of one failure's first/latest records; three added adverse checks. No predecessor log overwritten.",
+    "bounds_each": {
+      "maximum_invocations_per_runtime": 2,
+      "consumed_per_runtime": 2,
+      "remaining_per_runtime": 0,
+      "wall_CPU_seconds": 120,
+      "logical_read_bytes": 67108864,
+      "temporary_write_bytes": 33554432,
+      "console_output_bytes": 262144
+    },
+    "coverage": [
+      "Return-value identity and exactly-one callback; primary RuntimeError/SystemExit/KeyboardInterrupt identity; observer recording failure never replaces callback primary; pre-boundary failure prevents callback.",
+      "Poisoned exception refuses every attribute/str/repr access: still classified without access. Exact custom class bindings only; unknown subclasses/names remain redacted.",
+      "ModuleNotFoundError args/name/path never inspected or emitted. Known code must be a separate explicit allowlisted call-site token, not parsed from exception text.",
+      "Unknown or huge phase/code values and hostile string subclasses never stringified. Detached primitive snapshots retain no exception instance.",
+      "First observed failure and latest propagated failure are separately labeled; nested caught inner and distinct outer primary preserved.",
+      "Phase and failure saturation65535; first16 breadcrumbs plus dropped count/latest phase retained. Saturated serialized output1393B <=4096B.",
+      "Strict schema, exact code/type/phase vocabularies, boolean/counter/sequence invariants, duplicate JSON keys, nonfinite/invalid/oversized inputs refused.",
+      "Direct original frozen guard callbacks deny all six socket/helper/native events, retain counter6 and failed nonzero-violation postcondition. No guard modified.",
+      "Pure fabricated snapshot-finder conflict demonstrates a possible missing-module failure; no actual vendored loader or pip imported.",
+      "Candidate imports only json, has no runtime/filesystem/network/process names or str/repr/getattr calls. All code tokens statically present in pinned predecessor source.",
+      "Early audit hook covers loader and denies actual socket/process/native operations/pip imports; original authored guard supplies finite resources. Transitive stdlib socket origin/hash recorded on both runtimes."
+    ],
+    "interpretation": "Authored engineering tests only; not independent acceptance, actual integration, actual cause identification or scientific evidence."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "source_refs": {
+      "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+        "bytes": 12343,
+        "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+      },
+      "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+        "bytes": 55727,
+        "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/packages/six.py": {
+        "bytes": 34665,
+        "sha256": "6fd2ccd30057bfb13b4ab6c28c09b8c3037e86b1fe88dc6fd7c2e058d30c28fa"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/connection.py": {
+        "bytes": 20314,
+        "sha256": "b6d200f74f41adb4d4cf092a11efd3cd9561e0938e8fb83ad58b1e8b69abc068"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/__init__.py": {
+        "bytes": 3333,
+        "sha256": "8972dc6222724a7d0635b58e3990c30298012f52603f8e0467c8b5efad12f0c7"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/connectionpool.py": {
+        "bytes": 40408,
+        "sha256": "7b67a203035b14d08ac63e1bc0328d2bec3b1c8752cf73a633153f4c8b7e7af4"
+      }
+    },
+    "dependency_hashes": "All four inspected vendored urllib3 source hashes matched their entries in the original installer binding. Static reads only; no pip import/execution.",
+    "private_data": "No raw survey/respondent/publisher/PDF/owner/credential/model access. No third-party source redistribution; report records hashes/locations and paraphrased technical facts.",
+    "closed_controls_only": "Exact saved compatibility terminal/guest/refusal controls verified by length/hash; no current runtime/source/old-root preflight or mutable module probing performed."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "verified_closed_failure": {
+    "scope": "data/processed/e01_pypdf701_build_v1/compatibility-v1_1-20261116",
+    "terminal": {
+      "bytes": 21122,
+      "sha256": "b4251d9738f01ee568fab472e63c79df60bd0fcc5fbdfc4585d12e8f44d62af3",
+      "outcome": "FAILED_COMPATIBILITY",
+      "reason": "DIAGNOSTIC_NO_REFUSAL_PROOF",
+      "commands_started": 1
+    },
+    "guest_result": {
+      "bytes": 430,
+      "sha256": "fa8303c9bf79e2adaf19f16b901c4fed343824c87c493474c4c2e2921424ef77",
+      "error_code": "DIAGNOSTIC_GUEST_ERROR",
+      "guard_violations": 0,
+      "pip_completed": false,
+      "target_exists": false
+    },
+    "refusals": {
+      "bytes": 117,
+      "sha256": "4ffb0c720880b8540da05dc1151525d06cd508596ff0dcb410672cdae15a042b",
+      "total_events": 0
+    },
+    "lead_reported_not_worker_reexecuted": "No compatibility receipt; initialized MIME, empty outputs and544 preserved metadata entries unchanged. Root owns closed actual audit.",
+    "unknowns": [
+      "Exact primary exception type/code/call site, import name and phase are not present in the saved generic guest failure.",
+      "Zero recorded refusals does not establish successful compatibility or identify its failure cause.",
+      "No implication about earlier historical installation socket cause."
+    ],
+    "allocation_consumed": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "retry_authorized": false
+  },
+  "static_failure_points": [
+    {
+      "finding": "Required import chain uses a vendored dynamic moves finder.",
+      "facts": [
+        "urllib3/__init__.py:13 imports connectionpool; connectionpool.py:13 imports connection and:39 requests six.moves.queue.",
+        "connection.py:12-14 imports vendored six then six.moves.http_client.",
+        "packages/six.py:165/190 defines a custom finder/loader returning specs for its known moves modules;:1076 appends its instance to sys.meta_path."
+      ],
+      "classification": "Pinned static source facts only."
+    },
+    {
+      "finding": "Adapter snapshot may exclude the finder that the vendor adds later.",
+      "facts": [
+        "Adapter:73 stores tuple(sys.meta_path) in previous_finders.",
+        "Adapter:137-149 consults only that tuple, then raises ModuleNotFoundError itself rather than passing control to a newly appended finder."
+      ],
+      "inference": "If the required moves import is not satisfied by the earlier finders, the snapshot can raise ModuleNotFoundError before the vendor's newly added finder runs. A fabricated model demonstrates this mechanism. Whether this was the actual failed point is UNKNOWN."
+    },
+    {
+      "finding": "Other strict checks can reject the vendor's normal custom machinery.",
+      "facts": [
+        "Adapter spec validation allows only exact builtin/frozen/source/extension loaders; the vendored custom loader is outside that set.",
+        "Adapter:254 rejects a changed finder stack after initialization."
+      ],
+      "inference": "A custom loader or finder-stack addition can produce a declared refusal if reached. This is not evidence that either check executed in the closed failed child, nor authority to relax it."
+    },
+    {
+      "finding": "Outer guest catch erases distinguishing failure metadata.",
+      "facts": [
+        "Runner:829-830 maps most BaseException instances to DIAGNOSTIC_GUEST_ERROR, retaining no closed type or phase."
+      ],
+      "classification": "Pinned static source fact consistent with the saved generic result; does not reveal the actual exception."
+    }
+  ],
+  "candidate_design": {
+    "mode": "PURE_MOCK_UNWIRED; no actual executor, integration, emitter IO or automatic action.",
+    "data": "Own bounded primitive state only: fixed phase breadcrumbs, first observed error, latest propagated error, exact closed type label, explicitly supplied allowlisted code or UNAVAILABLE_OR_UNALLOWLISTED, and integrity/saturation flags.",
+    "exception_privacy": "Never inspect args, __dict__, __name__, name/path, messages, notes, traceback, frames, locals, context or cause. Unknown classes are UNKNOWN_TYPE. No dynamic exception serialization or string conversion.",
+    "type_binding": "At most two separately reviewed exact custom class identities may bind to fixed COMPATIBILITY_REFUSED/FROZEN_GUARD_REFUSED labels. Identity is supplied explicitly, never inferred from class name or subclass inheritance. Future production must bind actual classes through exact reviewed source; mock registration does not attest runtime.",
+    "code_binding": "Separate static call-site tokens only. At a boundary with unknown cause, leave code unavailable. A future reviewed original refusal/need call-site may emit its existing literal code before delegating unchanged; never read exception arguments or label a generic boundary with an inferred specific cause.",
+    "phases": "Fixed pre/post stage tokens only; last_phase is the last emitted breadcrumb, not a stack trace, exact current instruction, successful restoration proof or mutable-runtime observation. Dropped/saturated breadcrumbs remain explicit.",
+    "primary": "observe_call invokes callback once; returns the exact result or bare-reraises the same primary exception. A recording error sets observer_failed rather than replacing callback primary. No exception object is retained.",
+    "caps": {
+      "serialized_bytes": 4096,
+      "stored_phase_entries": 16,
+      "counter_maximum": 65535
+    },
+    "no_semantic_authority": "Observer data cannot waive any original counter, guard, alias, loader, source, ownership, restoration, budget or no-retry condition. It does not fix the suspected import incompatibility."
+  },
+  "prospective_integration_requirements": [
+    "First obtain independent pure component/proposal review and resolve the import-protocol hypothesis offline with fabricated finders/loaders and matched simple controls.",
+    "If justified, separately version and review production instrumentation against exact guest/adapter/guard call sites. Do not edit consumed source, scope or packets. Preserve actual primary error and original guard/counter outcomes.",
+    "Record fixed phase transitions around MIME, pip bootstrap, adapter socket/owner/freshness/parents/source/scope/import/result/restoration, receipt write, dry-run and final guard checks. Anchors must be reviewed against source; breadcrumbs alone do not prove successful state.",
+    "Persist full <=4096B observer evidence through existing charged guard-protected writes, using a new separately justified scope only if later authorized. Terminal should bind exact path/size/hash plus a small fixed summary; revalidate evidence on success/error paths and prove terminal headroom without raising32768B terminal,131072B compatibility receipt, output or storage caps.",
+    "Any observer corruption, unknown required code/phase, recording/write failure or missing evidence is explicit partial/failed observability and must not turn into compatibility acceptance. Log-write failure must not replace an already active primary exception or create a quota exemption.",
+    "Any new actual attempt needs a new lead finite decision, exact independent production/current/particular review, and explicit cumulative resource accounting. The full450/180/12 actual allocation remains consumed. This proposal adds no actual allocation or retry.",
+    "Do not change loader/finder acceptance to accommodate a suspected cause without separate methods/security review; no blind actual retry."
+  ],
+  "acceptance_criteria": [
+    {
+      "milestone": "Pure observer authored engineering",
+      "result": "AUTHOR_CHECKS_PASS_ONLY",
+      "evidence": "34 checks per runtime; implementing worker does not certify."
+    },
+    {
+      "milestone": "Independent component/proposal review",
+      "result": "PENDING",
+      "required": "Exact frozen candidate/tests/logs; adverse privacy, primary identity, guard and serialization checks."
+    },
+    {
+      "milestone": "Actual primary cause identification",
+      "result": "UNKNOWN",
+      "required": "Independent evidence beyond static inference; no claim supplied."
+    },
+    {
+      "milestone": "Concrete integration/current/particular and actual retry",
+      "result": "NOT_AUTHORIZED_NOT_RUN",
+      "required": "Separate justified lead decision and reviews; no executor in this proposal."
+    },
+    {
+      "milestone": "Installation/P3/scientific acceptance",
+      "result": "BLOCKED_UNCHANGED"
+    }
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "No actual failure can be reconstructed from fields the consumed run never recorded.",
+    "This is a pure single-owner observer, not hostile-callback/private-state or concurrency protection. Call-site authenticity needs exact production review.",
+    "Observer labels are finite and intentionally lossy. Unknown code/type/phase remains explicit; no dynamic fallback or auto probing.",
+    "First observed failure is not necessarily the final primary cause; latest propagated error and first observation remain separate. No traceback attribution.",
+    "Truncated/saturated event history is not complete, even though latest phase and counters remain available.",
+    "All two authored invocations per runtime consumed; no rerun added. Original failures, source files, targets/scopes, Git/STATUS and auditor findings untouched."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Exact independent pure review pending.",
+    "Actual error cause unknown; source observations are hypotheses only.",
+    "Actual allocation consumed and no new executor/preflight/run/target/package/source processing authorized.",
+    "No fourth installation or P3 release."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns a separate independent pure observer/proposal audit. Continue offline fabricated import-protocol analysis under a separate bounded assignment; avoid another blind actual retry."
+}
