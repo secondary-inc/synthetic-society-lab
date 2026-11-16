@@ -1,0 +1,23 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_install_v1_4.py']\nrunpy.run_path('tests/test_e01_pypdf701_install_v1_4.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 4.933921875010128,
+      "bytes": 9010,
+      "log": "reports/e01_pypdf701_install_v1_4_independent_312_20261116.txt",
+      "sha256": "194579e2200585f2ed7170cb3f0b596d6002b0e0e218fb8642bfa7d49a51f30c"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 3.461629625002388,
+      "bytes": 9010,
+      "log": "reports/e01_pypdf701_install_v1_4_independent_311_20261116.txt",
+      "sha256": "a2186fe84048d5d65bd9166fe65042be04a5ecec844a21bb037675fafe61231f"
+    }
+  ],
+  "reviewer_invocations_each_runtime": 1,
+  "implementer_prior_invocations_each_runtime": 2
+}

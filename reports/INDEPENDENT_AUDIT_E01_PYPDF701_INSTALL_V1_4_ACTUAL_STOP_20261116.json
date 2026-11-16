@@ -1,0 +1,87 @@
+{
+  "kind": "INDEPENDENT_E01_PYPDF701_INSTALL_V1_4_ACTUAL_STOP_AUDIT",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "PASS_PRESERVED_STOP_OLD_STATE_AND_STORAGE_INTEGRITY_INSTALL_REMAINS_BLOCKED",
+  "finding_id": "E01-P2-V14-MIME-READ-004",
+  "findings": [
+    {
+      "severity": "BLOCKING_FOR_ACTUAL_INSTALL_COMPLETION",
+      "observed": "pipfind-linksdirectoryscan\u2192_is_html_file\u2192mimetypes.guess_type\u2192init\u2192db.read\u2192open raisesGUEST_READ_OUTSIDE_ALLOWLIST; pipnonzeroexit follows.",
+      "stderr_sha256": "785b727c052df1ef761dc55bcf72b151e8dd74a23f7a422bc53ab479f38a5c67",
+      "exact_denied_filename": "UNKNOWN_NOT_LOGGED",
+      "scope": "Distinctguardcompatibilityfailureafteracceptedpathnarrowing; notactualinstallation/runtime/sourcequalification success. Currentevidencejustifiesdiagnosis, notsystemfileallowlistexpansion."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/e01_pypdf701_install_v1_4_actual_stop_independent_verification_20261116.json",
+      "bytes": 11043,
+      "sha256": "4d46f7274e7ca168b07ed9e088447b66ebd57aa630b329da1819675ffac00827"
+    },
+    {
+      "path": "reports/E01_PYPDF701_INSTALL_V1_4_ACTUAL_ROOT_CAPTURE_20261116.json",
+      "bytes": 1535,
+      "sha256": "b4c22f61ea5d7c4f0361a19bbcfb1d945208c36139e5c8ce141307232a5d73be"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_4_PRODUCTION_20261116.json",
+      "bytes": 9885,
+      "sha256": "9cc8425ab1c7f312aeb888d5422b680095d1140c4b7157c571f18ea14802f844"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_4_PARTICULAR_20261116.json",
+      "bytes": 6761,
+      "sha256": "f7816379738519b7b2367c532295646b02b41ec44fbc5f6deebe58ab7e0eb3f2"
+    },
+    {
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_V3_20261116.json",
+      "bytes": 14966,
+      "sha256": "725461a1a4a94a3c55dc9e92580c5972a67074c9e7ec7f05d15aa254cb8b1216"
+    }
+  ],
+  "checks": [
+    "Exactrootcapture/terminal4639B8112f0a9/source/method/packet/startbindings, all9journalartifactrefs and4commandoutputrefshash/bytes verified.",
+    "Tworeserved/recordedcommands exit[0,1]; venvguestcomplete/zero reportedviolations; noinstallguestcomplete, checkguest,thirdcommandreservation orinstalledmetadataresult. Rootouterelapsed0.506198667s,nooutertimeout.",
+    "7911capturedbytes=142stdout+7769stderr; stderridentitymatchesrawfailuretrace. Code/guestguardsfailclosed, no retry/cleanup/fallback.",
+    "Actualoldv1.3evidence/code/method/packet/artifact/outputrefschains reverifiedreadonlywithreviewedverify_prior_install; prior evidenceequalsnewSTARTED/newTERMINAL/preflight, actualpriorcharges retained.",
+    "Oldscope+v1targetmetadata snapshotrecomputed33entries/SHA4e827144c59c05d523c596883398db4d2a8bb90c9e6a4f05bfba73a092e4ada7, exactmatchpreflight/start/terminal. Nooldstatechangeobserved.",
+    "Metadata-onlylstatinventories+boundedpyvenv.cfgreads forbothv1/v2 targets; both3.12.14/include-system-site-packagesfalse, bothsite-packagesempty. Nointerpreter/packagebodyread/import/extraction.",
+    "Combinedfourold/newtreesowned_size independently84628logicalbytes, exactlyselfinclusivefinalterminalfield andbelow805306368. Maximumearlierpolled77677 isdistinctfromfinaloccupancy, notunderreportedfinalcap.",
+    "NewreapedchildCPU0.231583/observedself+reaped0.476205; parentboundreference60603843bytes retained. Priorfull120wall/40observedCPU/3commands+newfullsame=>240/80/6allocated, actualcommandstotal4; noreset/refund."
+  ],
+  "preserved_state": {
+    "old_scope": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116",
+    "old_target": ".venv-e01-pypdf-7.0.1-v1",
+    "new_consumed_scope": "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116",
+    "new_partial_target": ".venv-e01-pypdf-7.0.1-v2",
+    "combined_logical_bytes": 84628,
+    "snapshot_unchanged": true,
+    "site_packages_empty_both": true,
+    "no_retry": true
+  },
+  "verification_scope": {
+    "direct_regular_bounded_read_bytes": 143232,
+    "additional_read_scope": "Reviewedpurepriorverificationreadsoldcontrol/source/config/packetrefs only; boundedold/newmetadatawalk, noactualwheel/bootstrapbinary orresearchsourceprocessing.",
+    "perfile_bytes_cap": 262144,
+    "direct_total_bytes_cap": 1048576,
+    "reviewer_actual_install_native_network_package_source_actions": 0
+  },
+  "next_gates": [
+    "Keepv1.3/v1.4consumedscopes,bothpartialtargets,allsource/method/packet/currentartifact andfailureevidence immutable. Noactualrerun/cleanup.",
+    "Separatelyboundedstatic/authoreddiagnosisoffind-links/MIMEbranchusingexactboundruntime/pipsources; donotassume genericdocumentation guaranteesactualruntimebehavior or inventhistoricalfilename.",
+    "Anyremedyneedsseparatelyversionedexactmethods/implementation,originalfailure/adverseMOCKcoverage, unchangednetwork/native/helper/import/read/writecontrols, explicitpreservation/combinedstorage/cumulativeallocationaccounting andindependentreview.",
+    "Newactualpacket/preflight/particularreviewbeforeanyadditionalrootattempt; nocurrentreleaseorinferredfinancial/sourceordinalincrease."
+  ],
+  "limitations": [
+    "Noactualinstallercompletion/ABI/native/sourcequalification/scientificeffects/prospectiveforecasts/humanpersuasionclaims.",
+    "Recordedzeronetwork/model/packageimportsconsistentwithreviewedguardedexecution, notsystem-wideinstrumentationbeyondcapturedscope.",
+    "Post-successcompletebootstraprehash/finalpriorcheckwasNOT_REACHEDbyfailedinstaller. Thisauditindependentlycheckedoldpriorrefs/snapshot, notall844bootstrapbodies.",
+    "Trustedmetadata/polling/precheck/cooperativeguard/OSblocking/race/physicalI/Olimitationsremain; nohardcontainmentclaim.",
+    "Historicalv1.3deniedpathandnewMIMEdeniedfilenameremainUNKNOWN; priorfixesnotretroactivelyrewritten.",
+    "Gitdeliverywriteaccessblocked; leadownscommits/push."
+  ],
+  "actual_installation": "BLOCKED_INCOMPLETE_NO_RETRY",
+  "runtime_source_qualification": "NOT_RUN",
+  "cost_USD": 0,
+  "ownership": "Onlynewindependentverification/auditJSONs written. Noinstaller/config/tests/actualscope/target/STATUS/Git/privatecontrolmutation."
+}

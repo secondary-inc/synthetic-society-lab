@@ -1,0 +1,441 @@
+{
+  "active_fifth_actual_results_and_billing": "PENDING",
+  "audited_at_utc": "2026-11-16T10:55:39.287667+00:00",
+  "auditor_role": "independent_auditor",
+  "code_files": {
+    ".gitignore": "a916ce2584a2f5a56395032725561227f734e82a0be30eda46c55ed60aeb32e4",
+    "configs/SOURCE_INVENTORY.json": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c",
+    "configs/completion_contract.json": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075",
+    "configs/e02_analysis_lock.json": "7effd3a3c9e26aab408361d394ae8538b47158d77a0ffa761cd554af0dc4885a",
+    "configs/e02_analysis_plan.json": "9d9e195ad600f16b4a15f6879afd424596a32a308dd1cbab1bcd12765ffca3ff",
+    "configs/e02_demo_stimuli.json": "63926a3749aa5326587c197d2776edb58f25cf1aa8b78af379b82c0e8817d817",
+    "configs/e02_instrument.json": "ae506fe626928a13cbd09b0cadf402e90899048d656fa80d26b59e0b716df790",
+    "configs/e02_official_stimuli.json": "9a0980244ca8afcf0d5ee8c9349e69404a5a3464c6e1a4c83cd6eac02b8eaf9f",
+    "configs/e02_population_mapping.json": "405017ec17303e1b34216e35f37204d78da78ee61bbb6a310d0674308f2b9d6c",
+    "configs/e02_wrapper_crossmodel_v1_20261115.json": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1",
+    "protocols/E02_INFORMATION_EFFECTS.md": "aa2c4b87b01b665eebb5d7bdc09d94df86c87998091e088bd32817b0ba4de573",
+    "pyproject.toml": "f6f2f55b9f8fe8db5d4553a7d8c68aa10575534f35794e1294acbe829eca0e14",
+    "scripts/collect_connectivity_billing_once.py": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7",
+    "scripts/run_alignment_anchoring_once.py": "84b584d3cbbac537a3d34e2081e624e7bd36a6a513ef453a933c97f64ce66c2f",
+    "scripts/run_e02_continuation_once.py": "6cd726e5c5cec182252e76adedb0494ca39bba517e82063ca2fd2a8dad84cf9e",
+    "scripts/run_issue_cue_crossmodel_once.py": "d0101e94489cc7a69c5ee3059b3194c4b5f8b256eb0b244cc82c93804a9613a6",
+    "scripts/run_issue_cue_crossmodel_recovery_once.py": "da5fcb398d4b3419bd01533a1791528c5bd46b11e2b224da17675845fb2155d9",
+    "scripts/run_wrapper_crossmodel_v1_20261115_once.py": "92321f3739460d2020255107fc2e211414b773702d89f82bfaddedfd1cc534e2",
+    "scripts/run_wrapper_visibility_once.py": "5cb70f4eba7594c01e1f593c28e5f90baba4bec22d75933574bbe5e25b4c5b9d",
+    "src/civiclab/additional_compatibility_owner_v1.py": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f",
+    "src/civiclab/common.py": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa",
+    "src/civiclab/e02/alignment_anchoring_client_v1.py": "118f2fe420f8edb3a0d5ddc3c75079327ab89f002817e7385eb4b7d29f9d43fc",
+    "src/civiclab/e02/alignment_anchoring_owner_v1.py": "c37f21dd71d8426be4906799143de38f4ec35a097a8e5ffc0b3cad48d5802301",
+    "src/civiclab/e02/alignment_anchoring_v1.py": "b09050ae0f35f94f2bd204ddb12a1221d2a00e17d880d5283e25e071e5b2b2fc",
+    "src/civiclab/e02/crossmodel_metadata_v1.py": "16f2b405795d16031660ae892de041f625b17050080128269adeb9b2ec1ff05e",
+    "src/civiclab/e02/crossmodel_price_v1.py": "41994cca7d8ea639ed660991b0ab75b79e0c3b23c2f49fee675571905a1b7746",
+    "src/civiclab/e02/crossmodel_recovery_metadata_v1.py": "e2c39d06702a466166a79fce538292eb373d78893bdbb8effaa20e1f5238956e",
+    "src/civiclab/e02/crossmodel_saved_pair_v1.py": "b96780ecb522e95115d384d36069aaa2f42e8188142cdca4b7585ef6b0e3395a",
+    "src/civiclab/e02/experiment.py": "64b4d52707a9ca2b98ba2d306bfdabf661b9a725b4ac4ee1b34222ca082d15c7",
+    "src/civiclab/e02/exploratory_continuation_owner_v1.py": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256",
+    "src/civiclab/e02/exploratory_continuation_v1.py": "8523f8384b56a3487542488aa3d62987e1869a14090493dbb6408aa0886a22ca",
+    "src/civiclab/e02/exploratory_live_client_v1.py": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22",
+    "src/civiclab/e02/exploratory_live_requests_v1.py": "c1c69464beee0ab0d1695fd1ad7c5961ec6f7d73dcc26f56fba6630c958c61cd",
+    "src/civiclab/e02/exploratory_metadata_v1.py": "c7065106a7624bc1d01b4f75b651bc31877ddf0b0c7b722be3b51fc05bfdc2c8",
+    "src/civiclab/e02/exploratory_owner_v1.py": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756",
+    "src/civiclab/e02/exploratory_pilot_analysis_v1.py": "a914e23068152c8cb8a1399dd4d98612da335b198273f3dd3a66b629c925cccf",
+    "src/civiclab/e02/exploratory_response_v1.py": "60e1e3daed3866ba40ea22cd10897330cff6cb6d03dce4fb0b5a78209aeeeddd",
+    "src/civiclab/e02/exploratory_sequence_v1.py": "0777f92e1694652edd4c91c9da9e7a09d0379a66026fb098e21a86d985c24769",
+    "src/civiclab/e02/instrument.py": "d66d98d7cb037041519bbbc4bcb45b54aad380da7f754cc163f30a38a20435d9",
+    "src/civiclab/e02/issue_cue_crossmodel_client_v1.py": "6f3d19eaadc777cde6fbd3d69f0db699f8f92690a72c6a56ef200f8f7b387543",
+    "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": "0322944250e3236c7a08a9b0e15780f0a9247ee29d22ee15762595ab41a9c84b",
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_client_v1.py": "aa817253dc9d9a098ed545cebc236d84279eb16ae45806fddf50593d12e60e45",
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py": "6093e5e5b190f0a3ff7569ba52b5ff66c14b38fc66e569e3013986d4382d112d",
+    "src/civiclab/e02/issue_cue_crossmodel_v1.py": "041a423c37951e32352bd57582cfb6ba65133a536c19ff7de7119588c56892a2",
+    "src/civiclab/e02/methods.py": "e4b658bf84d8e9f20453f166aa182c57db86caa9d442af0bc7897273b005c262",
+    "src/civiclab/e02/population.py": "09448d0a714ad1e1bb72962b1799aad05a4a60c1f867fcf338047cdba6232fa8",
+    "src/civiclab/e02/stimuli.py": "51d92b13e58b890ff42580c606f882288cffbcf8b9aad3944de1628e48def49c",
+    "src/civiclab/e02/wrapper_crossmodel_v1.py": "6963e7322e47c23415b6e91e78b2882f7e0787c629461f115ae6e0119836ce81",
+    "src/civiclab/e02/wrapper_crossmodel_v1_client.py": "3223693da0664c868dbd892090a616b24a1afe33f3f0d2db4494e2a45a61bcf3",
+    "src/civiclab/e02/wrapper_crossmodel_v1_owner.py": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785",
+    "src/civiclab/e02/wrapper_visibility_client_v1.py": "c35745a55384984e18bad0370c5612a9d13ee3288a4748a0258137eed52546ed",
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48",
+    "src/civiclab/e02/wrapper_visibility_v1.py": "0a96611f0bb308efe0f274dce140fb296635bfc49e07c45d5765456d73319953",
+    "src/civiclab/jobs.py": "9fbb98860ab9e817249353162b23efc18c672bcdf83b3147641a36cf95bc7a67",
+    "src/civiclab/live_billing_v2.py": "6344f490f6a0b3cd98ad048d14cfa8e6519b16fadc7b5038e926196120d1fdb8",
+    "src/civiclab/model.py": "85b0f8098e02c4f5b8e694a4769e7bc21515454356311d12f1ee0e96235a7e2a",
+    "src/civiclab/openrouter_http_v2.py": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154",
+    "src/civiclab/orchestration.py": "4e1a862f815dcb10255fcae4d41c6c36ab3df17714af645469055af161277778",
+    "src/civiclab/owner_budget_v3.py": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058",
+    "src/civiclab/production_admission_v4.py": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd",
+    "src/civiclab/production_compatibility_transport_v4_2.py": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0",
+    "src/civiclab/production_compatibility_v4_2_1.py": "584974b59a675540cdf9b81c63aa343f2f49ad971e6d30e84ac475c0f1f7511a",
+    "src/civiclab/production_owner_v4.py": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf",
+    "src/civiclab/production_price_v4.py": "cfd375049b01ae1693e4262de425b5a4df41a93d6f59b989b6197b31bcefb6c3",
+    "src/civiclab/survey_execution.py": "2f47a1cd514b3ae0f1dd897fa8d904052585bb10fa43dfa28480e3d7dd6ab56c",
+    "tests/test_e02_experiment.py": "7974b0c922f3120ced036db31a4de596d5bd780a6836608da52418d55c408036",
+    "tests/test_e02_integration.py": "2f1ea1a58b186fd29a7c2874a1b296f7556062f9c8268ffc71b57d892e300d4c"
+  },
+  "contract_sha256": "74d17ada78e5847f94a20d4a805ac149e66e46351fc9ce9489d56804e302d075",
+  "cost_USD": 0,
+  "deferred_modules": [
+    "E03",
+    "E04"
+  ],
+  "new_model_calls": 0,
+  "notes": {
+    "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+    "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+  },
+  "overall": "INCOMPLETE",
+  "paid_authorization_note": "No new financial authority; unchanged owner5USD shared/1USD E02/0 E01 and separately reviewed0.20USD fifth subcap. Legacy evaluator default display0 is not a current authorization ledger.",
+  "publication_authorized": false,
+  "requirements": [
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_STAGE5_PACKAGE_RESTORE.json",
+          "sha256": "9aa7a3048e97fd606360ddf6112826e133bdd14ccbec0f8f965e0444a86b6514"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_3_ACTUAL_STOP_20261116.json",
+          "sha256": "bac4e8a9221ce7e1df13a092f67fe62aa25b77533189c610cb2eb3d729150011"
+        }
+      ],
+      "id": "G0_INSTALL",
+      "reason": "Installable project and accepted historical clean restores exist; no independently recreated clean checkout/install of this current changing source/dependency snapshot is supplied. Historical stage5 is not current full-monorepo acceptance.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_W03_CI_DIAGNOSTIC_20261116.json",
+          "sha256": "4e5e32c3fe183ae43ed42e2eaab2e100e912c28f863c49c7ebd0fc5174ea1d51"
+        }
+      ],
+      "id": "G0_TESTS",
+      "reason": "Current named clean-environment full documented suite not independently reproduced. Remote3.11 CI failed; focused44/P2 and21/E02 checks do not substitute for the complete current clean fixture suite.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_ANES_UPSTREAM_REACQUISITION.json",
+          "sha256": "bccf248015df8f41b2c04643caa6d08436b706b59b75c8321099cc09604af584"
+        },
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        }
+      ],
+      "id": "G0_INTEGRITY",
+      "reason": "Scoped ANES reacquisition and typed-source findings remain valid; complete registered inventory verification/reacquisition/reuse paths and rights are not established for the original full inputs. No new source scan performed here.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        }
+      ],
+      "id": "G0_SECRETS",
+      "reason": "Existing scoped exclusions/fail-closed controls and prior bounded live releases are preserved; no current entire-repository credential/raw-data exclusion scan or new credential examination is performed by this read-only audit. This is not evidence of a leak or a rotation claim.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json",
+          "sha256": "31bb4e389aad209d24a276347023de5f2eab3ed03a3e91d8745128dcfc8115e2"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+          "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+        }
+      ],
+      "id": "E01_MANIFEST",
+      "reason": "13-state typed source-document coverage with20 jobs unfinished and zero accepted final2026 ballots is not the complete frozen verified race/candidate/geography/crosswalk manifest. Historical30-state diagnostic scope stays separate.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+          "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json",
+          "sha256": "d63612e20155da1a9fe7f6796f07eab3e71dd68aaa6a9db1fb170ac59fd061e8"
+        }
+      ],
+      "id": "E01_BASELINES",
+      "reason": "Accepted30-constituency2018-to-2024 historical S0/S_ZERO diagnostic remains genuine post-hoc statistical work, with independently rechecked10.20/18.19pp MAEs. Complete requested E01 baseline coverage/end-to-end current validation on the required race/input scope is not supplied; do not promote the bounded diagnostic into full2026 or untouched-holdout acceptance.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        }
+      ],
+      "id": "E01_VARIANTS",
+      "reason": "No accepted matched agent-variant forecasts on the same validated real races/outcomes/cutoffs. E01 paid inference remains0; no new variant is run here.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+          "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+        }
+      ],
+      "id": "E01_EVALUATION",
+      "reason": "No accepted sealed holdout/full requested real evaluation. Post-hoc historical errors and explicit contamination limits are available; no independent timely2026 submission, researcher blindness or full agent comparison follows.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_METHODS_20261115.json",
+          "sha256": "6b786aa2c8d659f451ffe9d03da072ef8503e9ee17e07ba05a6e8d2ee4396d34"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+          "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+        }
+      ],
+      "id": "E02_PROTOCOL",
+      "reason": "Exact exploratory study methods/instruments/exclusions/sensitivity rules are independently accepted. Original full-universe/confirmatory sampling, variance/precision and external-validation protocol requirements remain open; hash locks/descriptive small samples do not close them.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_SUPPORT_COMPARISON.json",
+          "sha256": "ceb10613f8ba2272edc24248b3ab6bcd8e353fe8a8cdacea332a8c8235be44be"
+        },
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        }
+      ],
+      "id": "E02_POPULATION",
+      "reason": "Scoped ACS/ANES fits and held-out comparisons exist; support/universe limitations and matched simpler-comparator failures remain. National stated-universe joint population validity not established, and live studies used purposive fictional profiles.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+          "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PARTICULAR_RELEASE_20261116.json",
+          "sha256": "5814f34d2ba98e123b1239b2ac7310c96ab47fa22fb6351622e38a30b1c96dd4"
+        }
+      ],
+      "id": "E02_STIMULI",
+      "reason": "Current authored fictional notices and limited earlier official-text scopes are not the complete permitted contemporary-real-text/rights/timestamp matched corpus. Literature candidate is not acquired/cleared human-benchmark stimuli or licensed replication data.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_STAGE5_PACKAGE_RESTORE.json",
+          "sha256": "9aa7a3048e97fd606360ddf6112826e133bdd14ccbec0f8f965e0444a86b6514"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_CLOSED_311_20261116.json",
+          "sha256": "ba400aec5b8e83269c6569cb111cd281892bd57c8be9ed7a0fea2c67e81dccc1"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_MAIN_STATIC_20261115.json",
+          "sha256": "7ccf518cf819d4162e866d66ba33947674df7285a7d10e54a1d10b018d753497"
+        }
+      ],
+      "id": "E02_ENGINE",
+      "reason": "Software/offline integration only: current16-file generic engine/config/test/common/jobs closure exactly matches independently clean-restored stage5 Git blobs. Current frozen wrapper engine additionally passed isolated/scored/missing-data/replay/billing-adverse full80 MOCK checks on both supported runtimes with independent raw revalidation. No population, paid-result, human or confirmatory inference follows; original3.12 outer timing failure remains explicit.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PARTICULAR_RELEASE_20261116.json",
+          "sha256": "5814f34d2ba98e123b1239b2ac7310c96ab47fa22fb6351622e38a30b1c96dd4"
+        }
+      ],
+      "id": "E02_EVALUATION",
+      "reason": "Four limited real-model studies have scoped actual audits, but original registered full evaluation/uncertainty/external-human requirements are incomplete. Fifth run is active; its new results, costs and missingness have not been independently accepted.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_CLOSED_311_20261116.json",
+          "sha256": "ba400aec5b8e83269c6569cb111cd281892bd57c8be9ed7a0fea2c67e81dccc1"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PARTICULAR_RELEASE_20261116.json",
+          "sha256": "5814f34d2ba98e123b1239b2ac7310c96ab47fa22fb6351622e38a30b1c96dd4"
+        }
+      ],
+      "id": "MODEL_CONTROLS",
+      "reason": "Software control milestone only:47 exact current recursive source pins, current independent atomic-reservation/provider-billing/route/generation/unknown-hold/stop/checkpoint/full80 MOCK evidence and exact one-run admission review support OpenRouter-only bounded execution. Active actual fifth outcomes/billing are not certified; no future unreviewed configuration or spending increase is authorized.",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PARTICULAR_RELEASE_20261116.json",
+          "sha256": "5814f34d2ba98e123b1239b2ac7310c96ab47fa22fb6351622e38a30b1c96dd4"
+        },
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        }
+      ],
+      "id": "MODEL_AUTHORIZATION",
+      "reason": "Standing positive owner authority and prior scoped releases are valid, including exact fifth one-run release under unchanged5USD/1USD/0 and0.20batch caps. This receipt is not a generic future-call/credential/fresh-price approval; active fifth phase/billing evidence awaits closed audit and no live credential recheck is performed. No new owner permission is requested or prior release revoked.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        }
+      ],
+      "id": "INDEPENDENT_REVIEW",
+      "reason": "Many exact milestones have nonimplementing audits; current evidence is not complete for every original required milestone. Eleven historical broad receipts remain stale rather than being silently re-pinned.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        },
+        {
+          "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
+          "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E02_W03_CI_DIAGNOSTIC_20261116.json",
+          "sha256": "4e5e32c3fe183ae43ed42e2eaab2e100e912c28f863c49c7ebd0fc5174ea1d51"
+        }
+      ],
+      "id": "CI",
+      "reason": "Remote43788494169 failed3.11/passed3.12 at25d5125; original W03 cause unknown. Focused diagnostic review is accepted but not a full CI fix/result. Current local checkpoint has no accepted remote full-suite pass and upload is access-blocked.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        }
+      ],
+      "id": "TRACEABLE_VISUALS",
+      "reason": "Prior exact figures/recorded-data views and synthesis scopes remain valid. No current complete all-tables/all-figures/dashboard lineage/render/replay audit for every newer run is performed; active fifth results do not yet exist as accepted closed data.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_STAGE5_PACKAGE_RESTORE.json",
+          "sha256": "9aa7a3048e97fd606360ddf6112826e133bdd14ccbec0f8f965e0444a86b6514"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        }
+      ],
+      "id": "REPRO_PACK",
+      "reason": "Exact historical owner-review archives remain accepted, including stage5. No latest full-source/dependency/config/manifest/permitted-output pack has been independently clean-restored for this current snapshot.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CURRENT_DRAFTS_VISUALS_20261103_V2.json",
+          "sha256": "68a59cd73d73c66aafc729f580fc80bed01f31f7ad4156a65d596f5e219d78cd"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        }
+      ],
+      "id": "PAPER_DRAFT",
+      "reason": "Owner-review technical drafts exist and historical scoped reviews are preserved. Current whole-draft consistency/references/limitations against all new failures and active/pending fifth work have not been re-audited here; no publication or scientific completion inferred.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CURRENT_DRAFTS_VISUALS_20261103_V2.json",
+          "sha256": "68a59cd73d73c66aafc729f580fc80bed01f31f7ad4156a65d596f5e219d78cd"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        }
+      ],
+      "id": "BLOG_DRAFT",
+      "reason": "Owner-review blog exists with earlier scoped acceptance. No current entire blog update/review for newest runtime failures/pending study is performed; historical acceptance is not silently renewed.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_3_ACTUAL_STOP_20261116.json",
+          "sha256": "bac4e8a9221ce7e1df13a092f67fe62aa25b77533189c610cb2eb3d729150011"
+        },
+        {
+          "path": "reports/INDEPENDENT_AUDIT_CHECKPOINT_HISTORICAL_HUMAN_ANCHOR_20261116.json",
+          "sha256": "f387a3a875f866db97cea792d3e4d16455ff0447366f6831dc972d65d71d0667"
+        }
+      ],
+      "id": "LIMITATIONS",
+      "reason": "Numerous scoped failure/source/reuse/uncertainty records are preserved, but a complete current consolidated limitations/reuse report is not independently established. Active fifth costs/results, E01 install/path refusal, full population/human/source/agent gaps remain open.",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": [
+        {
+          "path": "reports/INDEPENDENT_AUDIT_COMPLETION_20261116_NOTES.json",
+          "sha256": "88029c390c9eadf7748b7f7b40af91de1880f822f522d4bb280107194586e7f6"
+        },
+        {
+          "path": "reports/RESEARCH_CHECKPOINT_20261116.json",
+          "sha256": "ff1efb91874978f1feaa18039d0a6687338ba3bf62dcdceb0f59384a7055129d"
+        }
+      ],
+      "id": "STATUS",
+      "reason": "Current lead status separates limited completed studies from full scientific completion. Fresh requirement receipt is now supplied, but lead dashboard/status regeneration and subsequent current-view check remain pending. Evaluator legacy default spend display0 must not be read as a live ledger or revocation of standing approved caps.",
+      "status": "BLOCKED"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Bounded current requirement-level evidence snapshot; software-only PASS rows do not certify original scientific completion. No old receipt/evaluator, live owner/credential, active model run, full suite, source data or publication altered."
+}

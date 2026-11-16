@@ -1,0 +1,113 @@
+{
+  "TASK_ID": "E01_P2_V1_4_VERSIONED_BOUNDED_RECOVERY_20261116",
+  "kind": "E01_PYPDF701_INSTALL_V1_4_FROZEN_RECOVERY_HANDOFF",
+  "status": "58_GUARDED_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_PRODUCTION_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/install_e01_pypdf701_runtime_v1_4.py",
+    "configs/e01_pypdf701_install_v1_4_20261116.json",
+    "tests/test_e01_pypdf701_install_v1_4.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/install_e01_pypdf701_runtime_v1_4.py": {
+      "bytes": 60303,
+      "sha256": "5d118a009805890854dcad6e17c89d297376cb685b22c0374a2fd5fb33d4b6f3"
+    },
+    "configs/e01_pypdf701_install_v1_4_20261116.json": {
+      "bytes": 10629,
+      "sha256": "4a3b12a980652c26c48bdffd8308bc7d4f7252c7c5189ae6174600ea5334d9c6"
+    },
+    "tests/test_e01_pypdf701_install_v1_4.py": {
+      "bytes": 15284,
+      "sha256": "70110d7002c32b10aa9be702abdce03158ce31334be5ae93a097e869f39a2c56"
+    },
+    "reports/E01_PYPDF701_INSTALL_V1_4_PRE_FINAL_WRITE_ACCOUNTING_20261116.json": {
+      "bytes": 103043,
+      "sha256": "41eaa61167a58f91d36b38bdf5ef5327dbeaa6523a9aeabf5b69bd5fc81bbc78"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_P2_ABSENT_ZIP_CANDIDATE_METHODS_20261116.json": {
+      "bytes": 8513,
+      "sha256": "73684794cf9c1e772f4038198e7173e2e00db6b6a3c374587dbbe6bd47e2be84"
+    },
+    "reports/e01_pypdf701_install_v1_4_authored_311_final_20261116.txt": {
+      "bytes": 9010,
+      "sha256": "4de6d71a69f8826599ce763bad69614550b14bc8723a25d9e8d09c8a18cab74a"
+    },
+    "reports/e01_pypdf701_install_v1_4_authored_311_initial_20261116.txt": {
+      "bytes": 8541,
+      "sha256": "4d29426ff9882114a11070b0109893707ed637c2f8ceb22c1f5624ebab342bfc"
+    },
+    "reports/e01_pypdf701_install_v1_4_authored_312_final_20261116.txt": {
+      "bytes": 9010,
+      "sha256": "01498bcb4c54cd32b0cffb84c2cc8c2c173b3ff5bec5f9bb81077629db4e438a"
+    },
+    "reports/e01_pypdf701_install_v1_4_authored_312_initial_20261116.txt": {
+      "bytes": 8541,
+      "sha256": "b0c6183ed6d19cec8ce175cbbd0dd2c81cb16dbd259a6fd81e89fd0f45e4e75f"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_install_v1_4.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_install_v1_4.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "initial": {
+      "3.12": "55 PASS in6.102s",
+      "3.11": "55 PASS in4.023s"
+    },
+    "final": {
+      "3.12": "58 PASS in7.058s",
+      "3.11": "58 PASS in4.836s"
+    },
+    "invocationsPerRuntime": 2,
+    "maximumInvocationsPerRuntime": 3,
+    "guard": "Existing frozen authored runner:120wall/CPU,64MiBread,32MiBtemporarywrite,256KiBoutput; no actualdata/owner/credentials/network/process/native actions.",
+    "coverage": [
+      "Retains original30 core checks and prior consumer/header/legacy-certs cases, with mocked run_pip test adapted to exact3entry authored stdlib directories.",
+      "Strict path rule positive plus unknown/extra/reordered/duplicate roots, presentZIP/danglingalias/missingdynamic refusal.",
+      "Exact FAILED ancestry/STARTED/code/method/packet/artifact/output verification; corrupt and coherently nonfailed prior refusal.",
+      "Success preserves both oldtree metadata snapshots; changed oldtarget metadata cannot pass.",
+      "Oldtree reads/writes remain outside guest permissions; failed recovery preserves bothpartialtargets and consumed scopes.",
+      "Priorfull allocations cannotreset; combinedold/new occupancy enforced in preflight and logicalpoll.",
+      "Final journal precharge/headroom and exact self-inclusive terminal occupancy; refusal beforefilecreation atcap.",
+      "AST equality of all accepted core functions/classes except enumerated changedfunctions; run_pip identical after removing one narrowed_paths assignment."
+    ]
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only versioned source/config/reports and authored temporary fixtures during integration. Earlier root-permitted static diagnosis read147770B binding and exactly two pinned publicpip source texts, total173972B. No actual pip/package/native imports, venv execution, actualwheel bodies, rawrespondents, publisher PDFs, credentials or partialtarget filebodies read by worker.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerNetworkCalls": 0,
+  "actualWorkerInstallVenvNativeSourceActions": 0,
+  "delta": {
+    "path": "narrowed_paths wired into run_pip's original path assignment. Require exact ordered conventionalZIP/stdlib/lib-dynload roots under boundbase; no symlink component; ZIP absent via lstat and bothretained roots directories. Remove only absentZIP, then prepend exactnewtargetsite. No broadmissingpath permission.",
+    "ancestry": "Config binds oldv1_3 terminal2344B/9bcbcbb..., STARTED915B/429fa..., source/config and1523B actualpacket/9b0ca... . Read/hashallpriorartifact/outputrefs; require twoactualcommands exit0/exit1,FAILED_PARTIAL_ENV_NO_RETRY/install/P2_COMMAND_FAILED. Bind oldmethods/root/bootstrap/acquisitionpacket to currentexactvalues.",
+    "preservation": "Oldscope install-v1_3-20261116 and .venv-e01-pypdf-7.0.1-v1 partialtarget remain createoncepreserved. Snapshot metadata only (relativepath/device/inode/mode/size/mtime/ctime); reverifyevidence/snapshot before success. No cleanup or oldguestaccess.",
+    "newOutput": "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116",
+    "newTarget": ".venv-e01-pypdf-7.0.1-v2",
+    "newSite": ".venv-e01-pypdf-7.0.1-v2/lib/python3.12/site-packages",
+    "newPacket": "data/processed/e01_pypdf701_build_v1/install-v1_4-packet-20261116.json",
+    "resources": "Sameperstage120wall/40observedCPU/3commands/7soft8hardCPU, allI/O/output/import/network/native/helperguards retained. Prior fullstagecaps and actualchargedread/output/CPU retained innewSTARTED/TERMINAL. Fixedcumulativeallocation240wall/80observedCPU/6commands, not observedusage.",
+    "logical": "owned_size measures unionoldscope/oldtarget/newscope/newtarget, <=805306368B and16384entries. Preflight includes oldunionoccupancy plus2xnewinflatedwheelbytes/baseexe/32MiBheadroom. Journalwrites precharge unionlogicalbytes andreserve32768B terminalspace; terminalsize boundedfixpointrecords selfinclusiveexactlogicalbytes and refusesbeforecreation overcap."
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "pathMethods": "Independent purecandidate/methods PASS73684794; doesnotcertifyproduction.",
+    "production": "58guardedauthoredPASS eachruntime; exact independentproductionreview pending.",
+    "actualMetadata": "Rootmustprepare matchingactualpacket and boundedmetadataonlypreflight; noactualpacket invented.",
+    "actualRecovery": "NOT_RUN by worker. Rootonce only after exact production/metadata/particular acceptance.",
+    "runtimeSourceQualification": "Deferred. OldP3/P4 plan's v1target is historical; eventualsuccessor mustbind actualacceptedv2 target/hashes."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Exacthistoricaldeniedpath wasnotlogged; conventionalZIP mechanism reproducedbut remains reconstruction.",
+    "Mocksuccessdoesnotestablish actualpipcompatibility/ABI or sourcequalification.",
+    "CooperativePython guards/metadata snapshots/polledlogicalspace are nothostilehostOScontainment,hardRSSquota,totalphysicalIO accounting or immunitytofilesystemraces.",
+    "Perstagefreshallowances are explicit boundedrecovery, notrefund; no model/financial/sourcecampaign/ordinal authority changes.",
+    "If a cap prevents writing even the boundedterminal, scopeartifacts remainpreserved and noactualsuccess maybeinferred. Journalcontrol/OSfailures can stillstopfinalization.",
+    "NoGit/STATUS/auditorfinding/previouscandidateedited."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Exact independentproductionreview",
+    "Rootmatchingactualpacket/metadataonlypreflight/particularreview",
+    "Rootoneactualrecoveryinvocation",
+    "Independentactualacceptance thenruntime/sourcequalification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent reviewerchecks frozen source/config/tests and logreferences. Rootpreparesactualpacket/preflight after exactrelease; workerdoesnotlaunch.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/install_e01_pypdf701_runtime_v1_4.py --methods-sha256 4a3b12a980652c26c48bdffd8308bc7d4f7252c7c5189ae6174600ea5334d9c6 --packet-sha256 <ROOT_REVIEWED_ACTUAL_PACKET_SHA256>"
+}

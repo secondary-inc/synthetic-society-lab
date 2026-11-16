@@ -1,0 +1,22 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py']\nrunpy.run_path('tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 0.13198533399554435,
+      "bytes": 1374,
+      "log": "reports/e01_p2_builtin_mime_v2_independent_312_20261116.txt",
+      "sha256": "b376c6786c89b799fff80afa8d67bd6a04510c33c0083ca1c23d42c0537c27dd"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 0.10945550000178628,
+      "bytes": 1374,
+      "log": "reports/e01_p2_builtin_mime_v2_independent_311_20261116.txt",
+      "sha256": "84459a798d6dd4d0cb8015a26efbdb319d5e3f9c30f86977de5e486b069038d6"
+    }
+  ],
+  "reviewer_invocations_each_runtime": 1
+}

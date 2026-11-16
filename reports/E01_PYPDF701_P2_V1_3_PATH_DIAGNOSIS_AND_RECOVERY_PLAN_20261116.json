@@ -1,0 +1,123 @@
+{
+  "TASK_ID": "E01_P2_V1_3_PATH_ENUMERATION_DIAGNOSIS_20261116",
+  "status": "AUTHOR_MOCK_DIAGNOSIS_AND_UNRELEASED_RECOVERY_PLAN_PENDING_INDEPENDENT_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/e01_p2_absent_zip_path_candidate_v1_20261116.py",
+    "tests/test_e01_p2_absent_zip_candidate_v1_20261116.py",
+    "tests/test_e01_p2_path_enumeration_diagnostic_v1_20261116.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_p2_absent_zip_path_candidate_v1_20261116.py": {
+      "bytes": 1132,
+      "sha256": "826b8f4825bedd5412bc18b262933bb55256746fc052abc20d507a238f424155"
+    },
+    "tests/test_e01_p2_absent_zip_candidate_v1_20261116.py": {
+      "bytes": 2997,
+      "sha256": "50425d1149e679d7e1423e24053c9ea817cf9938ffe8485eb6dfd90e98b7f29f"
+    },
+    "tests/test_e01_p2_path_enumeration_diagnostic_v1_20261116.py": {
+      "bytes": 3237,
+      "sha256": "9b7020b9378ecd1ef86cb11fe4b9116d5a0ecfb74a963050023c74352ba6ef70"
+    },
+    "reports/e01_p2_path_diagnostic_v1_312_20261116.txt": {
+      "bytes": 748,
+      "sha256": "b1fb14d1dd9d3062023e4c966472e4bdc6ff072e2c93142aed35c7d5c057e71c"
+    },
+    "reports/e01_p2_path_diagnostic_v1_311_20261116.txt": {
+      "bytes": 748,
+      "sha256": "8dd9e8b6253e09523c5533ff2185968bf2e05924ed89fbd1649feac5f312ed51"
+    },
+    "reports/e01_p2_absent_zip_candidate_v1_312_20261116.txt": {
+      "bytes": 890,
+      "sha256": "5e560ce6a3bdc5f63c8740732a1e8670d037a0ab7d37e3b6f338cd20cf3f2089"
+    },
+    "reports/e01_p2_absent_zip_candidate_v1_311_20261116.txt": {
+      "bytes": 890,
+      "sha256": "6bc92aa96d4df0f4933d2dc67d2c05d01ab42af3bf702460ee2297cb9d2ee3e8"
+    },
+    "reports/E01_PYPDF701_INSTALL_V1_3_ACTUAL_ROOT_CAPTURE_20261116.json": {
+      "bytes": 1535,
+      "sha256": "0aa208af2df90c890b5fbcb4d98d0660a1d41dbcf7bb7ba3d0751cc46e2cfc89"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_p2_path_enumeration_diagnostic_v1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_p2_path_enumeration_diagnostic_v1_20261116.py",
+    ".venv/bin/python -I -B -S tests/test_e01_p2_absent_zip_candidate_v1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_p2_absent_zip_candidate_v1_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "diagnosis": "4 PASS each; Python 3.12 0.012 seconds, Python 3.11 0.010 seconds",
+    "candidate": "6 PASS each; Python 3.12 0.011 seconds, Python 3.11 0.009 seconds",
+    "guard": "Existing guarded authored runner; actual pip/venv/network/native/source actions zero."
+  },
+  "diagnosis": {
+    "historical": "Actual install failed at pip user-agent metadata enumeration with GUEST_READ_OUTSIDE_ALLOWLIST. Exact historical attempted path was not recorded and remains unknown.",
+    "rootObservation": "Root reports exact -I -B -S sys.path = base/lib/python312.zip (absent), base/lib/python3.12 (directory), base/lib/python3.12/lib-dynload (directory). This is root observation supplied via coordination, not worker interpreter execution.",
+    "staticVerified": "Hash-bound session.py177 gets setuptools metadata. _envs.py164 uses sys.path,172-178 iterates find_eggs,144 calls zipfile.is_zipfile for each location even if nonexistent. Frozen run_pip prepends new site then preserves original sys.path. python312.zip is outside GuestPolicy.base_lib. Authored actual stdlib zipfile probe raises the retained policy error for that missing conventional path.",
+    "certainty": "Mechanism reproduced; exact historical path reconstruction remains inferential."
+  },
+  "permittedStaticInspection": {
+    "binding": {
+      "path": "data/processed/e01_pypdf701_installer_binding_v1_20261115/binding.json",
+      "bytes": 147770,
+      "sha256": "48699591b7e734e4c103a2ba80c63940afa24258a86e57f5c45768f4800ed38e"
+    },
+    "files": [
+      {
+        "path": ".venv/lib/python3.12/site-packages/pip/_internal/metadata/importlib/_envs.py",
+        "bytes": 7431,
+        "sha256": "51407df345d2ac35ab329435fc6e398b4afc1ea960fed83720f43ade612a6cd7"
+      },
+      {
+        "path": ".venv/lib/python3.12/site-packages/pip/_internal/network/session.py",
+        "bytes": 18771,
+        "sha256": "9ac3387acd7a2e698d118364ad8ca0f1f4dcee00076ca165b5ac1f28fdbb2ce2"
+      }
+    ],
+    "totalReferenceBytes": 173972,
+    "maximumReferenceBytes": 524288,
+    "perSourceMaximumBytes": 131072,
+    "verification": "No symlinks; exact bound bytes/SHA; text only, no pip import/execution."
+  },
+  "candidate": {
+    "path": "scripts/e01_p2_absent_zip_path_candidate_v1_20261116.py",
+    "wiredIntoInstaller": false,
+    "rule": "Require original sys.path exact ordered three conventional entries rooted in bound base_prefix. Reject unknown/extra/missing/reordered/duplicate entries; reject symlink at any component. Require conventional ZIP absent by lstat, both retained roots actual directories. Remove only that ZIP entry; prepend new target site in eventual installer. No guard allowlist expansion.",
+    "limitations": "Pure candidate only; production integration, TOCTOU limits and independently reviewed exact recovery implementation remain pending."
+  },
+  "proposedRecovery": {
+    "status": "PLAN_ONLY_NOT_RELEASED",
+    "newCode": "scripts/install_e01_pypdf701_runtime_v1_4.py",
+    "newMethods": "configs/e01_pypdf701_install_v1_4_20261116.json",
+    "newTests": "tests/test_e01_pypdf701_install_v1_4.py",
+    "newOutput": "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116",
+    "newTarget": ".venv-e01-pypdf-7.0.1-v2",
+    "preserve": "Never retry/delete/mutate old install-v1_3 scope or .venv-e01-pypdf-7.0.1-v1 partial target. Bind old actual FAILED terminal9bcbcbb086aab17fde4e3d25beecc533fa214c1f71eefc84fe8ed9feb7034974, root capture and reviewed old source pins as recovery ancestry.",
+    "newStageLimits": "One separately reviewed create-once recovery stage, same120 wall/40 observed CPU/3 direct commands/7soft8hard CPU/network0/read/write/output caps. No unbounded retries. Old stage fully charged; cumulative allocation upper bounds240 wall/80 observed CPU/6 direct commands, not observed usage.",
+    "logicalDisk": "Prefer retain original768MiB combined logical occupancy across old preserved target/scope and new target/scope, enforcing union in polling and preflight. Prior occupancy/count must be honestly measured by metadata only; do not invent. New guest writes only new target/scope. Original per-file/cumulative-write caps retained; all prior stage charges reported separately, never refunded.",
+    "otherGuards": "Retain downloaded-package import denial, native/helper/socket denial, supported legacy-certs option and narrow Requires-Dist normalization. No pip monkeypatch/private metadata backend or missing-path read allowance.",
+    "releaseRequirements": [
+      "Independent actual-stop audit",
+      "Independent narrow path candidate/methods review",
+      "Production versioned integration and negative tests including old-target mutation denial and combined disk accounting",
+      "Exact root actual packet with failed-ancestry references and independently reviewed current artifact/bootstrap bindings",
+      "Root bounded metadata-only preflight then one actual installer invocation only after exact release"
+    ]
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Permitted bound public pip source text only; authored fixtures. No actual package imports, raw respondent/publisher data, research PDFs, credentials or partial-target file bodies inspected.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Historical denied path unrecorded; no exact-path claim.",
+    "Candidate is not installed software or actual pip compatibility proof.",
+    "Path prechecks and cooperative guards do not provide hostile-host OS containment.",
+    "Existing P3/P4 plan's v1 target reference is now historical; any successor must bind eventual accepted v2 target and actual hashes."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent path remedy/recovery review",
+    "Versioned production integration",
+    "Root current artifact/preflight/recovery release",
+    "Actual runtime/source qualification remains deferred"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent review of diagnosis and narrowly bounded versioned recovery plan; root retains launch ownership."
+}

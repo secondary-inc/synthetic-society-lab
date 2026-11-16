@@ -1,0 +1,22 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\na=runpy.run_path('tests/test_e01_p2_absent_zip_candidate_v1_20261116.py',run_name='audit_candidate')\nb=runpy.run_path('tests/test_e01_p2_path_enumeration_diagnostic_v1_20261116.py',run_name='audit_diagnosis')\nAbsentZipCandidateTests=a['AbsentZipCandidateTests']\nPathEnumerationDiagnosis=b['PathEnumerationDiagnosis']\na['t'].g.old.guarded_test_main()\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 0.21389562501281034,
+      "bytes": 1611,
+      "log": "reports/e01_p2_absent_zip_diagnosis_independent_312_20261116.txt",
+      "sha256": "ebdfc1ad1bc7dd789b740fc21abae07dd27a3df5154aba7d1d298e25ec8c7b00"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 0.1840288329985924,
+      "bytes": 1611,
+      "log": "reports/e01_p2_absent_zip_diagnosis_independent_311_20261116.txt",
+      "sha256": "1206a48020b417d81fd9e72709b4c6042b097b51a33ca95eee37398f51a7c8c9"
+    }
+  ],
+  "invocations_each_runtime": 1
+}

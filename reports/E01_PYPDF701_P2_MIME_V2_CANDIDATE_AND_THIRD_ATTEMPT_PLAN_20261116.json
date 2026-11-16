@@ -1,0 +1,143 @@
+{
+  "TASK_ID": "E01_P2_V1_4_MIME_DIAGNOSIS_AND_THIRD_ATTEMPT_PROPOSAL_20261116",
+  "status": "PURE_CANDIDATE_V2_PASS_AUTHORED_TESTS_PENDING_INDEPENDENT_METHODS_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/e01_p2_builtin_mime_candidate_v1_20261116.py",
+    "tests/test_e01_p2_builtin_mime_candidate_v1_20261116.py",
+    "scripts/e01_p2_builtin_mime_candidate_v2_20261116.py",
+    "tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_p2_builtin_mime_candidate_v1_20261116.py": {
+      "bytes": 1113,
+      "sha256": "99ab72562c3376ee3c0e95f0025c809cdcedaf06a9fa6c13803b34d55bc2c3ff"
+    },
+    "tests/test_e01_p2_builtin_mime_candidate_v1_20261116.py": {
+      "bytes": 4504,
+      "sha256": "899eaa7a82a54a7db8c62ca487cd2b1bf6d5d22afaa701c04c6c42bdb1917b91"
+    },
+    "scripts/e01_p2_builtin_mime_candidate_v2_20261116.py": {
+      "bytes": 1077,
+      "sha256": "864d337ad575918a395beb21b3cbd7ceed3bc6c4c59e0801df3a0cdc2326c768"
+    },
+    "tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py": {
+      "bytes": 6054,
+      "sha256": "629cecddb82718ec71c3b1b634ff02c6a10f8ed4b872dabaca8f5412b583c373"
+    },
+    "reports/e01_p2_builtin_mime_candidate_v1_312_20261116.txt": {
+      "bytes": 1036,
+      "sha256": "25ab0e96d5f16f903a6d9451234d88da700b627c2e46e1ace1918de09e8890a7"
+    },
+    "reports/e01_p2_builtin_mime_candidate_v1_311_20261116.txt": {
+      "bytes": 1036,
+      "sha256": "7cc4d7326db06698579fa3125d49374efc4a6f444202ca6a2dc8c0ed016563d1"
+    },
+    "reports/e01_p2_builtin_mime_candidate_v2_312_20261116.txt": {
+      "bytes": 1374,
+      "sha256": "7afcaebd832752ee16fe9f2f709119bb836f65c8fe76232dceb74984dc4e3608"
+    },
+    "reports/e01_p2_builtin_mime_candidate_v2_311_20261116.txt": {
+      "bytes": 1374,
+      "sha256": "b376c6786c89b799fff80afa8d67bd6a04510c33c0083ca1c23d42c0537c27dd"
+    },
+    "reports/E01_PYPDF701_INSTALL_V1_4_ACTUAL_ROOT_CAPTURE_20261116.json": {
+      "bytes": 1535,
+      "sha256": "b4c22f61ea5d7c4f0361a19bbcfb1d945208c36139e5c8ce141307232a5d73be"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "v1": "6 PASS on each runtime; 3.12 0.006 seconds, 3.11 0.005 seconds. Fresh-only public knownfiles=[] then init(files=[]); preinitialized modules refuse.",
+    "v2": "8 PASS on each runtime; 3.12 0.008 seconds, 3.11 0.007 seconds. Selected proposal uses knownfiles=[] then init(files=None).",
+    "isolation": "Each test loads a separate copy of the runtime's real standard-library mimetypes module. It reads only an authored temporary MIME file to create deliberately polluted prior state. Candidate initialization and classification run with all builtins.open calls refused. No actual system MIME file read.",
+    "meaningfulRegressions": [
+      "Fresh init(files=[]) still attempts the authored knownfile read; refusal retained as expected finding.",
+      "After initialization with authored .whl=text/html and .txt=application/x-mock mappings, clearing knownfiles then init(files=[]) retains those mappings.",
+      "Selected public knownfiles=[]; init(files=None) rebuilds built-in mappings for both fresh and prepopulated state with zero file opens.",
+      "HTML and plain-text built-ins restored; representative wheel filenames for all five fixed packages classify as non-HTML. Names are authored fixtures, not asserted actual P1 artifact identities.",
+      "Public add_type contamination is reset by repeatable rebuild; init failure propagates once without retry/fallback.",
+      "Unexpected public-state schema refuses. AST confirms no private MIME attribute use or guard mutation."
+    ]
+  },
+  "diagnosis": {
+    "actual": "Root v1.4 attempt stopped at pip find-links directory MIME lookup. It passed the earlier sys.path boundary. Two partial targets/scopes remain preserved. Historical exact refused MIME file was not logged and remains unknown.",
+    "stdlib": "Bound mimetypes.py lines370-378 add knownfiles to an explicit empty files list when _db is None. Lines370-376 rebuild a fresh MimeTypes database when files=None and select the public knownfiles list. Clearing that list first yields built-ins only on Darwin.",
+    "pip": "Pinned sources.py44 calls mimetypes.guess_type, scan62 precedes wheel-name parsing. Direct local wheels alone do not eliminate MIME lookup: prepare.py139 constructs File(from_path,None), whose __post_init__ at90-91 calls mimetypes.guess_type.",
+    "choice": "Select the smaller public MIME configuration instead of redesigning wheel requirements. No private database writes, pip monkeypatches or broader read permission."
+  },
+  "permittedStaticSources": [
+    {
+      "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/mimetypes.py",
+      "bytes": 23037,
+      "sha256": "ed21537405f4b076318f966b810ae1d9415e16315603ad8003b1ecb24baf5950"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/index/sources.py",
+      "bytes": 8632,
+      "sha256": "94f04b2b95e2cbc43a210322a36e9697ba1c7d938a9201a494804dc94276ddf2"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/req/constructors.py",
+      "bytes": 18430,
+      "sha256": "bf5ab308dd66225770c7e9c2acf73c24ee25c649b716ff0ce515afb7c2c84a37"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py",
+      "bytes": 28118,
+      "sha256": "8e8589c0f92ea86b1c42054d2262caef57bd8516a9c0abd108cf07725cac9af5"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/models/link.py",
+      "bytes": 21448,
+      "sha256": "190f21abbc7e14314fbf6e4d6e7daf78833e32506b1990c62ddeda65e1785eb8"
+    }
+  ],
+  "staticReadAccounting": "All five sources were regular, nofollow opened, no symlink components and <=128KiB each. Four pip files matched the original binding's bytes/SHA. Source bytes total99,665; binding read twice147,770 each, total395,205 reference bytes across the two explicit static inspections. No pip source executed.",
+  "candidate": {
+    "selectedPath": "scripts/e01_p2_builtin_mime_candidate_v2_20261116.py",
+    "productionIntegrated": false,
+    "rule": "Darwin only. Require public inited boolean and knownfiles list, assign public knownfiles=[], call public init(files=None), verify initialized state and built-in HTML classification. No private globals or file permissions changed.",
+    "placementForReview": "If accepted, call before importing/running pip, after the original guest guard is installed. Runtime origin/binding remains subject to existing standard-library trust and actual preflight. No existing installer edited."
+  },
+  "thirdAttemptProposal": {
+    "status": "PLAN_ONLY_NOT_EXECUTION_RELEASE",
+    "newInstaller": "scripts/install_e01_pypdf701_runtime_v1_5.py",
+    "newMethods": "configs/e01_pypdf701_install_v1_5_20261116.json",
+    "newTests": "tests/test_e01_pypdf701_install_v1_5.py",
+    "newScope": "data/processed/e01_pypdf701_build_v1/install-v1_5-20261116",
+    "newTarget": ".venv-e01-pypdf-7.0.1-v3",
+    "ancestry": "Bind latest actual v1.4 FAILED terminal4639B SHA8112f0a9677bc72e69c57107b1bc90b825358fe1319549dffa239cb371e60f4e plus STARTED/source/config/packet/artifacts/output references and original v1.3 failed ancestry. Exact actual metadata must come from root; missing references are not invented.",
+    "preservation": "Keep both old partial targets and consumed scopes immutable. Snapshot their metadata, hash bound failed evidence, deny guest reads/writes to all old roots and reverify before success. New target/scope create once; no retry or cleanup.",
+    "timeCpuCommands": "Prior full allocation240 wall seconds/80 observed CPU seconds/6 main commands remains charged. One proposed new stage adds120/40/3, yielding explicit finite cumulative allocation360 wall seconds/120 observed CPU seconds/9 main commands. Every parent/guest retains CPU7soft/8hard and original deadlines. These are allocations, not observed usage.",
+    "storage": "Retain a single combined768MiB logical cap and16,384-entry cap across all six old/new scope/target trees. Measure old occupancy from metadata; include it in preflight, polling, journal precharges and self-inclusive final terminal. No invented occupancy, new per-target disk allowance or deletion of evidence.",
+    "otherLimits": "Retain original per-stage parent/guest read, write, file, control and captured-output limits; preserve all prior full caps and observed charges. Retain network/helper/native/downloaded-package-import denials, exact five wheels/hashes/dependency closure, legacy-certs and exact absent-ZIP path normalization.",
+    "researchAndMoney": "No change to financial owner/model budgets, source campaigns or recovery ordinals. No paid E01 inference, model calls or research-source PDF processing.",
+    "releaseGates": [
+      "Independent actual v1.4 stop audit",
+      "Independent MIME v2 candidate and finite third-attempt methods review",
+      "Explicit separate production integration plus guarded authored/adversarial tests",
+      "Exact root actual packet and current bounded metadata-only preflight",
+      "Independent exact production/particular acceptance before root invokes once"
+    ]
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public standard-library/pip source text and authored temporary fixtures only. No real system MIME file, raw respondent/publisher data, research PDF, credentials or downloaded package execution.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerPipVenvNativeNetworkSourceActions": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "No exact historical denied-file claim.",
+    "Darwin-only candidate; Windows registry behavior is outside scope.",
+    "Passing isolated stdlib tests does not prove complete pip installation compatibility or package ABI/runtime acceptance.",
+    "Third attempt remains a proposal; prior failure evidence is not erased or relabeled successful.",
+    "P3 runtime/source qualification remains deferred. No scientific or forecasting gate advances."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent actual-stop and methods review",
+    "Third-attempt production integration and exact review",
+    "Root current metadata/packet/preflight and bounded actual release",
+    "Actual runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent reviewer evaluates the selected pure candidate, retained ineffective-init findings and explicit third-attempt limits. Do not integrate or execute another recovery before review."
+}
