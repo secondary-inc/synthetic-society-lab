@@ -1,0 +1,104 @@
+{
+  "artifacts": {
+    "data/processed/e01_cffi_freshness_diagnostic_20261115_01/TERMINAL.json": {
+      "bytes": 743,
+      "sha256": "2571bea0a0aba99d76bb1b066fbd026132dbeef0cf5b2d93f48ba103f50dd79e"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1_2-20261115/TERMINAL.json": {
+      "bytes": 3234,
+      "sha256": "df2e86ae959c82c4b9551d0c0eff5c392966c35783fc2ac2ba8a66038b110f71"
+    },
+    "reports/e01_pypdf701_acquisition_v1_2_actual_20261115.txt": {
+      "bytes": 390,
+      "sha256": "b92beda4bbb2b4404a1e50ba71e67d541f59c087f25dc229a1b9827d75adfea2"
+    },
+    "scripts/diagnose_e01_cffi_freshness_20261115.py": {
+      "bytes": 2072,
+      "sha256": "1d05fde2f8312e5bb8d454788c6031cc17a504b125043aa912058d6491f2d5c4"
+    }
+  },
+  "budget": {
+    "attempts": {
+      "GET": 10,
+      "metadata_GET": 8,
+      "wheel_GET": 2
+    },
+    "body_bytes_charged": {
+      "metadata": 948771,
+      "wheel": 33554432
+    },
+    "outstanding_body_hold": 0
+  },
+  "cumulative_control_bytes_including_terminal": 134401,
+  "cumulative_events": 20,
+  "cumulative_owned_bytes_including_terminal": 3041964,
+  "current_request": {
+    "HTTP_status": 200,
+    "cap": 16777216,
+    "kind": "wheel",
+    "observed_partial_body_bytes": 0,
+    "partial_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "url": "https://files.pythonhosted.org/packages/54/7d/16e5a096677b5e313ca80cd5e5170efa3ea44624a82bb111925522da64b1/cffi-2.1.1-cp312-cp312-macosx_11_0_arm64.whl"
+  },
+  "date_utc": "2026-11-16T02:32:27.730282+00:00",
+  "exit_code": 1,
+  "interpretation": "Later HEAD Age 1425974 exceeds the original one-hour guard but is below explicit max-age 365000000; this supports an immutable-artifact policy correction, not reconstruction of the original GET header.",
+  "kind": "E01_PYPDF701_V1_2_ACTUAL_STOP_AND_BOUNDED_REMEDY",
+  "later_HEAD": {
+    "GET_attempts": 0,
+    "HEAD_attempts": 1,
+    "HTTP_status": 200,
+    "application_body_bytes_read": 0,
+    "cost_USD": 0,
+    "elapsed_seconds": 0.3905251669930294,
+    "headers": {
+      "Age": "1425974",
+      "Cache-Control": "max-age=365000000, immutable, public",
+      "Content-Encoding": null,
+      "Content-Length": "184719",
+      "Content-Type": "application/octet-stream",
+      "Date": "Mon, 16 Nov 2026 02:31:33 GMT",
+      "ETag": "\"a7ac39d760e8ae1f348d8185ba1bd3c2\"",
+      "Expires": null,
+      "Last-Modified": "Mon, 03 Aug 2026 21:19:48 GMT",
+      "Location": null
+    },
+    "model_calls": 0,
+    "observed_at_utc": "2026-11-16T02:31:33.047579+00:00",
+    "status": "HEAD_METADATA_ONLY_COMPLETE",
+    "url": "https://files.pythonhosted.org/packages/54/7d/16e5a096677b5e313ca80cd5e5170efa3ea44624a82bb111925522da64b1/cffi-2.1.1-cp312-cp312-macosx_11_0_arm64.whl"
+  },
+  "original_GET_Date_Age": "UNKNOWN_NOT_RETAINED",
+  "preservation": {
+    "actual_source_reads": 0,
+    "automatic_retry": false,
+    "cost_USD": 0,
+    "installation": false,
+    "new_model_calls": 0
+  },
+  "primary_HTTP_reference": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2",
+  "proposed_recovery": {
+    "GET_cumulative_max": 14,
+    "GET_max_new": 4,
+    "HEAD_diagnostics_separate": true,
+    "acquisition_upper_bounds_seconds": [
+      660,
+      150
+    ],
+    "additional_technical_GET_over_original_cap": 1,
+    "full_prior_engineering_wall_CPU_allowances_retained": [
+      540,
+      120
+    ],
+    "metadata_GET_cumulative_max": 8,
+    "narrow_header_policy": "Keep original Date syntax and 300-second check. For exact selected immutable wheels only, allow valid integer Age below unique explicit max-age when immutable is present; otherwise retain the one-hour Age bound. Record raw headers and decision; never fabricate Date/Age.",
+    "new_CPU_seconds": 30,
+    "new_scope_required": true,
+    "new_wall_seconds": 120,
+    "status": "PROPOSED_PENDING_IMPLEMENTATION_TESTS_AND_INDEPENDENT_REVIEW",
+    "unchanged": "Financial ceilings, body/write/event ceilings, failed charges, exact wheel URL/size/SHA256/ZIP, metadata freshness.",
+    "wheel_attempt_cumulative_max": 6
+  },
+  "reason": "HTTP_FRESHNESS",
+  "status": "STOPPED_BEFORE_COMPANION_BODY_OR_INSTALL"
+}

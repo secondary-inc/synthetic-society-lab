@@ -1,0 +1,153 @@
+{
+  "TASK_ID": "E01_P1_IMMUTABLE_ARTIFACT_FRESHNESS_V1_3_20261115",
+  "kind": "E01_PYPDF701_ACQUISITION_V1_3_FROZEN_WORKER_HANDOFF",
+  "status": "28_GUARDED_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_REVIEW_NO_ACTUAL_CLI",
+  "FILES_CHANGED": [
+    "scripts/acquire_e01_pypdf701_artifacts_v1_3.py",
+    "configs/e01_pypdf701_acquisition_v1_3_20261115.json",
+    "tests/test_e01_pypdf701_acquisition_v1_3.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1_3.py": {
+      "bytes": 24250,
+      "sha256": "412bed35d55837a36288221ce80f3e81e156480e7b1f6d059e33d850041437b6"
+    },
+    "configs/e01_pypdf701_acquisition_v1_3_20261115.json": {
+      "bytes": 7099,
+      "sha256": "a3a3d414de9f937e39c9ee022642d198053122ae3985e32b41efa6fab61ef5bd"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_3.py": {
+      "bytes": 19623,
+      "sha256": "3607ec90e2fbf71cd3c1cceaf343e18757f0531f1124abddcc465696f55f1013"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_312_initial_20261115.txt": {
+      "bytes": 3684,
+      "sha256": "3ec2348e4bf8a4fed77d6f4cd3c878cdc5cf74924c4a88903a8df31f432cec34"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_311_initial_20261115.txt": {
+      "bytes": 3684,
+      "sha256": "6a0e5a4496c5bb432102307e3f3d138819b9fefe73082107011e8c6c96330550"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_312_final_20261115.txt": {
+      "bytes": 4480,
+      "sha256": "73e1ecf147493086216cb8835d2fc71da83bdf8687652f13f16675e281b425d4"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_311_final_20261115.txt": {
+      "bytes": 4480,
+      "sha256": "0067dc6d6468c4e7ba959a80c1a52cd7e364f499649195bf3d8d1790626b2a96"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_acquisition_v1_3.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_acquisition_v1_3.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final": {
+      "3.12": "28 PASS, 2.382 seconds, exit 0",
+      "3.11": "28 PASS, 1.646 seconds, exit 0"
+    },
+    "initial": {
+      "3.12": "23 PASS, 2.014 seconds, exit 0",
+      "3.11": "23 PASS, 1.409 seconds, exit 0"
+    },
+    "invocationsPerRuntime": 2,
+    "names": [
+      "test_immutable_current_date_aged_artifact_uses_unique_maxage",
+      "test_original_date_future_and_past_checks_remain",
+      "test_metadata_never_receives_artifact_exception",
+      "test_no_immutable_or_no_maxage_keeps_legacy_age_bound",
+      "test_missing_age_uses_explicit_legacy_zero_not_immutable_exception",
+      "test_expired_equal_maxage_and_invalid_age_refuse",
+      "test_smaxage_conflicts_duplicates_and_bad_numbers_never_fallback",
+      "test_cache_control_case_and_directive_bounds",
+      "test_transport_preserves_repeated_cache_fields_for_refusal",
+      "test_real_methods_table_includes_all_three_terminal_writes",
+      "test_complete_four_gets_aged_immutable_wheels_all_charges_retained",
+      "test_raw_headers_and_decision_durably_recorded_without_faking",
+      "test_conflicting_shared_cache_field_refuses_before_body_and_records_raw",
+      "test_repeated_http_cache_fields_are_not_last_wins",
+      "test_stale_date_still_refuses_before_body_even_if_immutable",
+      "test_missing_immutable_does_not_get_age_exception",
+      "test_hash_mismatch_remains_refused_after_cache_acceptance",
+      "test_binary_mime_accepted_directly_and_never_rewritten",
+      "test_compressed_response_still_refused_before_body",
+      "test_redirect_not_followed_and_raw_decision_retained",
+      "test_content_length_mismatch_never_settles_partial_body_as_success",
+      "test_stream_without_declared_length_cannot_reach_reserved_cap",
+      "test_deadline_for_saved_advisory_is_not_extended",
+      "test_changed_previous_terminal_or_cached_wheel_is_not_adopted",
+      "test_cumulative_get_allowance_is_exactly_one_more_and_cannot_reset",
+      "test_no_new_pypdf_or_unknown_url_dispatch",
+      "test_duplicate_or_failed_scope_cannot_replay",
+      "test_timeout_keeps_all_old_charges_and_new_full_reservation"
+    ],
+    "guard": "Frozen authored runner denies real network/process/native/data/owner/credentials. Each invocation: 120 wall/CPU seconds, 64 MiB reads, 32 MiB temporary writes, 256 KiB output.",
+    "scope": "All response/cache/wheel/failure bytes are MOCK. Success produces five inspected authored wheels from four mocked GETs; no actual collector CLI, wheel reading, package import or installation."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only the tiny hash-bound v1_2 terminal and root-owned CFFI HEAD JSON were read to prepare this technical continuation. Worker did not execute HEAD/GET or read actual wheel/cache, interpreter binaries, pip bodies, respondent/publisher data, research PDFs or private owner controls.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerNetworkCalls": 0,
+  "actualWorkerWheelReads": 0,
+  "actualInstall": false,
+  "actualSourceRecoveryOrdinalConsumed": false,
+  "implementation": {
+    "authority": "Root explicitly authorized ONE additional technical GET: new cumulative 14 total/8 metadata/6 wheel attempts. Historical 13/8/5 remains unchanged in frozen code/config and is recorded in STARTED/hashlock/terminal. No hidden fresh allowance or financial increase.",
+    "time": "Separate 120 wall/30 CPU seconds. Fully charged acquisition upper bounds become 660 wall/150 CPU seconds; all HEAD diagnostics are separately scoped and their unknown CPU is not invented.",
+    "prior": {
+      "owned_bytes": 3041964,
+      "control_bytes": 134401,
+      "events": 20,
+      "GET": 10,
+      "metadata_GET": 8,
+      "wheel_GET": 2,
+      "metadata_body_bytes": 948771,
+      "wheel_body_bytes": 33554432
+    },
+    "ancestry": "Verified frozen v1_2 predecessor checks the original and v1_1 chains without writes. Then all v1_2 refs/start/failure/current request/cache/events18-20 and write totals are checked. Real public methods-table regression includes all three terminal writes, including latest3234 bytes.",
+    "cache": "Reuse the exact hash-bound pypdf copy retained in v1_2; full safe ZIP inspection before four companions. No pypdf GET and no metadata refresh.",
+    "freshness": "Date absolute difference <=300 seconds and its future bound remain unchanged. For metadata, Age<=3600 remains unchanged and the artifact exception is impossible. For fixed selected wheel URL/size/hash identities only, explicit integer Age must be strictly below one explicit unique integer max-age with immutable.",
+    "ambiguity": "Refuse any s-maxage, duplicate directives or repeated Cache-Control fields, malformed directives, noninteger/quoted/out-of-bound max-age, immutable with a value, no-cache/no-store/private. Invalid policy cannot fall back to acceptance. Max-age bounded at2147483647; no unknown shared-cache precedence is guessed.",
+    "legacy": "Without eligible immutable plus max-age, retain the original wheel Age<=3600 rule. An absent Age uses the original explicit default-zero branch and does not claim the immutable exception.",
+    "rawHeaders": "Date, Age, Cache-Control, Content-Type, Content-Length, Content-Encoding and all raw Cache-Control field occurrences are retained with ACCEPTED/REFUSED decisions before body reading. No header rewriting, fake age or frozen-guard monkeypatch. HTTP transport preserves duplicate Cache-Control occurrences that an old dictionary would otherwise lose.",
+    "HTTP": "Original TLS, no auth/proxy/redirect/retry, exact companion URLs, identity encoding, declared/streamed body caps, bounded timeout, full failed reservations, hash/size and ZIP checks remain. Binary MIME is accepted directly, with the actual raw string preserved.",
+    "deadlines": "Saved advisory/provenance capture remains <=1 hour from v1_1 STARTED and original metadata <=4 hours. No deadline extension or silent refresh; root recorded current capture deadline03:15:49Z. Old GET Date/Age remains UNKNOWN; later HEAD evidence is not retroactive proof.",
+    "outputs": "Create-once v1_3 namespace. Five-wheel P1_FIVE_WHEEL_HASHLOCK_V1/schema1 records v1_3 methods, prior terminal, retained33554432 charge, cache origin and historical/current GET caps. COMPLETE explicitly grants no install/runtime/source authority."
+  },
+  "preserved_hashes_reverified": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1.py": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc",
+    "configs/e01_pypdf701_acquisition_v1_20261115.json": "9c61243db86336a2ba6b552e8b15ade5a8a3539e834a516f05d713f5c7969b07",
+    "tests/test_e01_pypdf701_acquisition_v1.py": "1f0e99e2ab7778c2121244ea2baaa086bc80d77b0c8be97706097ce2d61c4f40",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_1.py": "10d476ebea780a0f2726b559e35e1eb65e350dbacf867544f992560ce8e2b686",
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json": "decb70611ccbe16bb00fd1d1f1bea2666c64d4bbf6aec0c7598bd58445d6076b",
+    "tests/test_e01_pypdf701_acquisition_v1_1.py": "c929846acbb3a73b86a4eda9ecfcc6ada62b63ee21028e649f19f78f508b0d73",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_2.py": "961ef657dd6860c83d32acf5f2b4673976c33b996b2907ec4cc86f3eb5574634",
+    "configs/e01_pypdf701_acquisition_v1_2_20261115.json": "4223315862c53d890a91ee43766bc486e893ea0550f8b989c807ecd221ac2e97",
+    "tests/test_e01_pypdf701_acquisition_v1_2.py": "1a2718062aa01274a6b22ff11fee0c9b2c3cb8915134c42c7756cab53a400033",
+    "scripts/install_e01_pypdf701_runtime_v1.py": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847",
+    "configs/e01_pypdf701_install_v1_20261115.json": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a",
+    "tests/test_e01_pypdf701_install_v1.py": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a"
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "rootAuthorityAndRealCountTable": "Recorded and covered by authored checks; independent review pending.",
+    "immutablePolicyAndRawDiagnostics": "28 mocked checks passed on both runtimes; independent exact code review pending.",
+    "actualFourCompanionAcquisition": "NOT RUN by worker. Root alone after exact independent review and unchanged capture deadline.",
+    "P2InstallAndQualification": "NOT RUN. P2 core candidate remains frozen at handoffc11ea136...; final acquisition consumer/pin delta remains required."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Engineering MOCK evidence does not establish actual network success, security absence, ABI compatibility, parser/source qualification or scientific validity.",
+    "Later HEAD explains a plausible compatibility issue but cannot prove the old GET's missing Date/Age. No old record is edited to claim that proof.",
+    "Root authorized a one-request increase; old attempts and all33554432 uncertain wheel bytes remain charged. All original body/write/event ceilings remain unchanged.",
+    "Python checks and signals can overshoot blocking OS operations. No hard RSS, hostile-host isolation, complete supply-chain signature verification or physical network overhead accounting is claimed.",
+    "Saved evidence can expire before execution. That is a stop, not permission to extend the deadline or refresh metadata.",
+    "Actual wheel package dependencies remain to be inspected in the separately reviewed P2 pipeline; no downloaded package was imported.",
+    "No STATUS, Git, auditor findings, frozen P1/P2 artifacts, old environments or source recovery controls were edited."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact v1_3 methods/code/mock review",
+    "Root one-time actual acquisition within the unchanged deadline",
+    "Actual five-wheel hashlock and P2 packet",
+    "Narrow final P2 consumer update, actual install and later runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent v1_3 review, then root-only actual execution. Keep all failures and P2 frozen; resume final P2 consumer adaptation after accepted acquisition.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/acquire_e01_pypdf701_artifacts_v1_3.py --methods-sha256 a3a3d414de9f937e39c9ee022642d198053122ae3985e32b41efa6fab61ef5bd"
+}

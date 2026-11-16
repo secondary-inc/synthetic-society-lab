@@ -1,0 +1,34 @@
+{
+  "kind": "INDEPENDENT_P1_V1_3_GUARDED_AUTHORED_TEST_EXECUTION",
+  "source_pins": {
+    "reports/E01_PYPDF701_ACQUISITION_V1_3_HANDOFF_20261115.json": "1b2a3ebd689e6c68cb56013131cda5e3d39d9427a0c3066e5663f0fa13362768",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_3.py": "412bed35d55837a36288221ce80f3e81e156480e7b1f6d059e33d850041437b6",
+    "configs/e01_pypdf701_acquisition_v1_3_20261115.json": "a3a3d414de9f937e39c9ee022642d198053122ae3985e32b41efa6fab61ef5bd",
+    "tests/test_e01_pypdf701_acquisition_v1_3.py": "3607ec90e2fbf71cd3c1cceaf343e18757f0531f1124abddcc465696f55f1013"
+  },
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_pypdf701_acquisition_v1_3.py']\nrunpy.run_path('tests/test_e01_pypdf701_acquisition_v1_3.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "reason": null,
+      "wall_seconds": 4.127153917,
+      "output_bytes": 4480,
+      "log": "reports/e01_pypdf701_v1_3_independent_312_20261115.txt",
+      "sha256": "dd17f06ff20842a816786a560ba0556afe212f108ffcd8613bf3e2cfea101a5c"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "reason": null,
+      "wall_seconds": 2.8001495,
+      "output_bytes": 4480,
+      "log": "reports/e01_pypdf701_v1_3_independent_311_20261115.txt",
+      "sha256": "8eea1e83c31ebf56f212273d0851480cb9a303db0f644bf57ba882b8b3cea970"
+    }
+  ],
+  "maximum_invocations_per_runtime": 1,
+  "wall_seconds_each": 120,
+  "captured_bytes_each": 262144,
+  "actual_package_install_or_network": 0
+}

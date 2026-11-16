@@ -1,0 +1,136 @@
+{
+  "kind": "INDEPENDENT_E01_PYPDF701_V1_3_CODE_AND_PARTICULAR_REVIEW",
+  "review_date_America_New_York": "2026-11-16",
+  "reviewer_role": "independent_auditor_not_E01_implementer",
+  "status": "BLOCKED_EXPIRED_CAPTURE_NO_ACTUAL_RELEASE",
+  "code_and_authored_disposition": "PASS_EXACT_FROZEN_CODE_AND_28_GUARDED_MOCK_CHECKS_EACH_RUNTIME",
+  "findings": [],
+  "blocking_gate": {
+    "kind": "FIXED_CAPTURE_DEADLINE_EXPIRED",
+    "unchanged_cutoff_UTC": "2026-11-16T03:15:49Z",
+    "observed_current_UTC": "2026-11-16T09:51:23Z",
+    "actual_execution_release": false,
+    "deadline_extension": false,
+    "automatic_metadata_refresh": false,
+    "message": "Static/mock pass does not revive expired capture. Any new acquisition requires separately reviewed finite fresh continuation and preserved old accounting."
+  },
+  "evidence": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1_3.py": {
+      "bytes": 24250,
+      "sha256": "412bed35d55837a36288221ce80f3e81e156480e7b1f6d059e33d850041437b6"
+    },
+    "configs/e01_pypdf701_acquisition_v1_3_20261115.json": {
+      "bytes": 7099,
+      "sha256": "a3a3d414de9f937e39c9ee022642d198053122ae3985e32b41efa6fab61ef5bd"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_3.py": {
+      "bytes": 19623,
+      "sha256": "3607ec90e2fbf71cd3c1cceaf343e18757f0531f1124abddcc465696f55f1013"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_312_initial_20261115.txt": {
+      "bytes": 3684,
+      "sha256": "3ec2348e4bf8a4fed77d6f4cd3c878cdc5cf74924c4a88903a8df31f432cec34"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_311_initial_20261115.txt": {
+      "bytes": 3684,
+      "sha256": "6a0e5a4496c5bb432102307e3f3d138819b9fefe73082107011e8c6c96330550"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_312_final_20261115.txt": {
+      "bytes": 4480,
+      "sha256": "73e1ecf147493086216cb8835d2fc71da83bdf8687652f13f16675e281b425d4"
+    },
+    "reports/e01_pypdf701_acquisition_v1_3_authored_311_final_20261115.txt": {
+      "bytes": 4480,
+      "sha256": "0067dc6d6468c4e7ba959a80c1a52cd7e364f499649195bf3d8d1790626b2a96"
+    },
+    "reports/E01_PYPDF701_ACQUISITION_V1_3_HANDOFF_20261115.json": {
+      "bytes": 12134,
+      "sha256": "1b2a3ebd689e6c68cb56013131cda5e3d39d9427a0c3066e5663f0fa13362768"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_2_ACTUAL_STOP_20261115.json": {
+      "bytes": 10128,
+      "sha256": "db2e4c427244b2cf0f715ff62d24f7c181e751892befe7ff896a8ad980bee945"
+    },
+    "reports/e01_pypdf701_v1_3_independent_runner_20261115.json": {
+      "bytes": 1669,
+      "sha256": "a109d06dacbb6fc49a36c8504f119cd587607accbff9ade7ea66f994dfe5c4a8"
+    },
+    "reports/e01_pypdf701_v1_3_independent_312_20261115.txt": {
+      "bytes": 4480,
+      "sha256": "dd17f06ff20842a816786a560ba0556afe212f108ffcd8613bf3e2cfea101a5c"
+    },
+    "reports/e01_pypdf701_v1_3_independent_311_20261115.txt": {
+      "bytes": 4480,
+      "sha256": "8eea1e83c31ebf56f212273d0851480cb9a303db0f644bf57ba882b8b3cea970"
+    }
+  },
+  "preserved_prior_code_config_test_hashes": {
+    "scripts/acquire_e01_pypdf701_artifacts_v1.py": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc",
+    "configs/e01_pypdf701_acquisition_v1_20261115.json": "9c61243db86336a2ba6b552e8b15ade5a8a3539e834a516f05d713f5c7969b07",
+    "tests/test_e01_pypdf701_acquisition_v1.py": "1f0e99e2ab7778c2121244ea2baaa086bc80d77b0c8be97706097ce2d61c4f40",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_1.py": "10d476ebea780a0f2726b559e35e1eb65e350dbacf867544f992560ce8e2b686",
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json": "decb70611ccbe16bb00fd1d1f1bea2666c64d4bbf6aec0c7598bd58445d6076b",
+    "tests/test_e01_pypdf701_acquisition_v1_1.py": "c929846acbb3a73b86a4eda9ecfcc6ada62b63ee21028e649f19f78f508b0d73",
+    "scripts/acquire_e01_pypdf701_artifacts_v1_2.py": "961ef657dd6860c83d32acf5f2b4673976c33b996b2907ec4cc86f3eb5574634",
+    "configs/e01_pypdf701_acquisition_v1_2_20261115.json": "4223315862c53d890a91ee43766bc486e893ea0550f8b989c807ecd221ac2e97",
+    "tests/test_e01_pypdf701_acquisition_v1_2.py": "1a2718062aa01274a6b22ff11fee0c9b2c3cb8915134c42c7756cab53a400033",
+    "scripts/install_e01_pypdf701_runtime_v1.py": "f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847",
+    "configs/e01_pypdf701_install_v1_20261115.json": "805718985a8384869eac1ebbde9bc9345ea2045e2702e23e1b862be48ef76c3a",
+    "tests/test_e01_pypdf701_install_v1.py": "fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a"
+  },
+  "checks": [
+    "Exact frozen handoff/helper/methods/test sizes and hashes, all7 handoff artifact refs and12 earlier preserved code/config/test pins independently reverified unchanged.",
+    "One explicit root technical GET increase: new local CAPS copy14GET/8metadata/6wheel, while frozen base13/8/5 remains unchanged. Existing10GET/8metadata/2wheel and33554432 charged wheel bytes are adopted, not reset; only four exact selected companion URLs can dispatch.",
+    "Exact v1_2 failed-predecessor refset/STARTED/code/method bindings, cache event18/reservation19/media20, known zero partial CFFI body, all3 terminal write totals,3041964owned/134401control/20events checked. Prior accepted actual-stop audit metadata is the actual ancestry basis; this reviewer did not read actual cached/wheel bodies.",
+    "Pypdf is reused only from exact hash/size-bound v1_2 cache and safely inspected. Four newly received companions still require exact selection URL/size/hash and aggregate ZIP inspection before hashlock COMPLETE. No extraction/package import/install/source authority.",
+    "Artifact freshness extension is confined to wheel fetches: original Date absolute300s rule and original metadataAge3600 rule remain; explicit integer Age must be below one unique explicit bounded max-age with immutable. Absent Age is explicitly labeled legacy default-zero, not immutable proof.",
+    "Cache-Control parsing refuses s-maxage, duplicate directive keys, repeated HTTP Cache-Control fields, no-cache/no-store/private, invalid or quoted/noninteger/out-of-range max-age, immutable-with-value and malformed/oversize directive lists. Invalid policy cannot hide behind a small legacy Age.",
+    "New HTTP transport preserves all raw Cache-Control occurrences. Accepted/refused decisions and raw selected header values are durably recorded before body access for policy/status/MIME/encoding decisions. No old header is rewritten or invented; later HEAD is support for new policy only, old GET Date/Age remains UNKNOWN.",
+    "Original TLS/host/URL/no-auth/no-proxy/no-redirect controls retained through frozen base transport. Binary MIME accepted directly. Content-length/stream/request/time/body/write/event limits and full unknown/header/transport reservations remain enforced; completed known bodies retain actual byte accounting even if later wheel identity fails.",
+    "New namespace createonce with STARTED/ancestry/selected/cache/raw-header events/artifacts/hashlock/TERMINAL. First error stops without retry; old files unchanged. Historical metadata/provenance freshness is delegated to exact frozen predecessor and has no refresh or new timestamp.",
+    "Independent28 guarded authored tests passed once each on3.12/3.11 under120s/256KiB limits, including positive4GET, ambiguity/header refusals before body, unchanged headers, MIME/encoding/redirect/hash/length/stream/timeout/cache/replay/cumulative-cap and deadline failure cases."
+  ],
+  "independent_tests": {
+    "invocations_each": 1,
+    "results": [
+      {
+        "runtime": "312",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 4.127153917,
+        "output_bytes": 4480,
+        "log": "reports/e01_pypdf701_v1_3_independent_312_20261115.txt",
+        "sha256": "dd17f06ff20842a816786a560ba0556afe212f108ffcd8613bf3e2cfea101a5c",
+        "tests": 28,
+        "unittest_seconds": 3.995
+      },
+      {
+        "runtime": "311",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 2.8001495,
+        "output_bytes": 4480,
+        "log": "reports/e01_pypdf701_v1_3_independent_311_20261115.txt",
+        "sha256": "8eea1e83c31ebf56f212273d0851480cb9a303db0f644bf57ba882b8b3cea970",
+        "tests": 28,
+        "unittest_seconds": 2.649
+      }
+    ],
+    "wall_seconds_each_cap": 120,
+    "captured_bytes_each_cap": 262144,
+    "extra_guard": "Frozen guarded file executed via runpy under-I-B-S with additional denial of real os.kill/os.killpg events; no actual processes beyond the test runner, package bodies, HTTP or cache wheels executed/read."
+  },
+  "claim_limits": [
+    "No actual collector CLI/GET/HEAD/cachewheel/native/pip/install/private owner/key/source execution by reviewer. All new transport and archive response bytes in tests are MOCK.",
+    "This accepts the explicitly bounded fixed-artifact policy, not a general RFC9111 cache implementation, signature/security-absence proof, retroactive reconstruction of missing old GET headers or runtime/source qualification.",
+    "Freshness/security metadata is the bounded historical capture; it has expired at review completion. No actual release follows from the code/mock PASS.",
+    "Cooperative Python guards and signals can overshoot blocking OS operations; no hard RSS, physical network overhead meter or hostile-host containment claim.",
+    "P2 consumer expects older v1_2 COMPLETE; actual P2 consumer/pin delta and install remain separate independent gates. No source-recovery ordinal or E02 financial/spending authority changes."
+  ],
+  "actual_execution": "NOT_RELEASED_EXPIRED",
+  "P2_install": "NOT_RELEASED_SEPARATE_CONSUMER_REVIEW_REQUIRED",
+  "runtime_source_qualification": "NOT_RUN",
+  "cost_USD": 0,
+  "model_calls": 0,
+  "ownership": "Only this independent audit JSON and uniquely named audit logs/runner receipt written. No E01 implementation/config/test/STATUS/Git/actual controls modified."
+}
