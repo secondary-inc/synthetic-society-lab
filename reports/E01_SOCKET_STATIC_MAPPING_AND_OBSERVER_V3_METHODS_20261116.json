@@ -1,0 +1,175 @@
+{
+  "TASK_ID": "E01_P2_SOCKET_STATIC_MAPPING_AND_OBSERVER_V3_20261116",
+  "status": "STATIC_CANDIDATE_NARROWED_23_PURE_CHECKS_PASS_EACH_RUNTIME_NO_ACTUAL_SUCCESSOR_RELEASE",
+  "FILES_CHANGED": [
+    "scripts/e01_p2_refusal_observability_candidate_v3_20261116.py",
+    "tests/test_e01_p2_refusal_observability_candidate_v3_20261116.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_p2_refusal_observability_candidate_v3_20261116.py": {
+      "bytes": 8165,
+      "sha256": "e7670b2d56866f0050c892d4406260c860df0158af2848a2f1061179f96e36d9"
+    },
+    "tests/test_e01_p2_refusal_observability_candidate_v3_20261116.py": {
+      "bytes": 14728,
+      "sha256": "ba48f292b147a83a113484b84e999676c9df0c0091f88ca1d8b2bb5ce6aba31a"
+    },
+    "reports/e01_p2_refusal_observability_candidate_v3_312_20261116.txt": {
+      "bytes": 3699,
+      "sha256": "bfe2b69e78e20e2960543954e08bf7008393613be9b9792742111bbddc833f1c"
+    },
+    "reports/e01_p2_refusal_observability_candidate_v3_311_20261116.txt": {
+      "bytes": 3699,
+      "sha256": "67f7dbfd0289a1c779a44b9a18b0a693ff73f243dc8a92b08dfd37e9f9e7e223"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V1_ACTUAL_20261116.json": {
+      "bytes": 9892,
+      "sha256": "5aaff6cbb5c97ee9d3a614f207fd18a0822f0dd77680106defda6ac3ff91f5d7"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_p2_refusal_observability_candidate_v3_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_p2_refusal_observability_candidate_v3_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "3.12": "23 PASS in0.018 seconds",
+    "3.11": "23 PASS in0.016 seconds",
+    "invocationsPerRuntime": 1,
+    "scope": "Frozen bounded authored runner120s/64MiB read/32MiB temporary write/256KiB output. Direct mock audit callbacks only; no actual socket, resolver, bind, connect, pip source/helper or native execution.",
+    "newChecks": [
+      "Exact construction/bind/connect/resolve/metadata/unknown event labels each retain original denial and violation counter.",
+      "Authored broad-catch shape records SOCKET_CONSTRUCT but still fails the original GUEST_CAUGHT_VIOLATION postcondition. No socket function is called.",
+      "No raw address/path/arguments or arbitrary-object coercion; V2 journal remains16 events/4096 bytes with saturated worst-case counters.",
+      "Consumed diagnostic-v1 scope remains unowned/unreadable; prospective fixed v2 routes do not reuse it.",
+      "Whole observer AST matches accepted v2 after removing the one classifier, restoring original operation enum, prior protocol label and explicit old route literals. Original guard delegation, quotas, denial counters and argument validation are otherwise unchanged."
+    ]
+  },
+  "closedActualEvidence": {
+    "terminal": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json",
+      "bytes": 8930,
+      "sha256": "1b2604451d5aba7f0dd4d63dd682cb6b24d397fc4e103bb8c6ec8c0c25ba9bcc"
+    },
+    "journal": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json",
+      "bytes": 199,
+      "sha256": "831f5c56bede2ffcadfcb952ef6d2d6f3e915519053ae76b0bd1e3c61941f970"
+    },
+    "guestResult": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json",
+      "bytes": 422,
+      "sha256": "13db843a6b2ab2e21da0d8a2fbc64e2557eae3d4f0b83455d50d6d6f6757a84e"
+    },
+    "observation": "REFUSAL_OBSERVED; one SOCKET-category GUEST_NETWORK_HELPER_OR_CTYPES_DENIED event; guard violations1; pip_completed=true; valid built-in MIME proof; fictional target absent; child exit1 and failed original postcondition. Closed old metadata unchanged.",
+    "independentAudit": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V1_ACTUAL_20261116.json",
+      "bytes": 9892,
+      "sha256": "5aaff6cbb5c97ee9d3a614f207fd18a0822f0dd77680106defda6ac3ff91f5d7",
+      "status": "PASS_EXACT_DIAGNOSTIC_EVIDENCE_REFUSAL_RECORDED_P2_INSTALLATION_REMAINS_BLOCKED"
+    },
+    "limits": "Exact event name, function, address, call site and relation to prior installation failure are UNKNOWN. The category does not establish an outbound connection attempt."
+  },
+  "staticSources": [
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/connection.py",
+      "bytes": 4901,
+      "sha256": "e4bc760753d6dbd2b1067d93d3190dd420604416b780654904aa10a11a201159"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/connection.py",
+      "bytes": 20314,
+      "sha256": "b6d200f74f41adb4d4cf092a11efd3cd9561e0938e8fb83ad58b1e8b69abc068"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/requests/packages.py",
+      "bytes": 1057,
+      "sha256": "fd94030894c9f123f79155ae9d2a81b1164d3f38f673558556a6ddaf4f29cf75"
+    },
+    {
+      "path": ".venv/lib/python3.12/site-packages/pip/_internal/network/session.py",
+      "bytes": 18771,
+      "sha256": "9ac3387acd7a2e698d118364ad8ca0f1f4dcee00076ca165b5ac1f28fdbb2ce2"
+    }
+  ],
+  "staticReadAccounting": {
+    "bindingBytes": 147770,
+    "uniquePipTextBytes": 45043,
+    "repeatedBoundConnectionTextBytes": 4901,
+    "closedControlBytes": 9551,
+    "independentAuditBytes": 9892,
+    "totalReferenceBytes": 217157,
+    "maximumReferenceBytes": 524288,
+    "eachPipTextMaximumBytes": 131072,
+    "verification": "All four pip texts matched original binding pins, with regular nofollow reads and no symlink components. The binding's147770-byte SHA48699591 was checked. No pip text was imported or executed."
+  },
+  "callSiteMapping": [
+    {
+      "site": "urllib3.util.connection._has_ipv6",
+      "source": "_vendor/urllib3/util/connection.py",
+      "lines": "119-149",
+      "flow": "Module line149 calls _has_ipv6('::1') at import. If socket.has_ipv6, line138 constructs AF_INET6 socket and139 binds static loopback/ephemeral port. Lines141-142 catch Exception and pass.",
+      "relevance": "A denial of socket construction can be swallowed while pip continues. This is a plausible mechanism consistent with one caught event; it is not an identified actual event."
+    },
+    {
+      "site": "urllib3.util.connection.create_connection",
+      "source": "_vendor/urllib3/util/connection.py",
+      "lines": "37-97",
+      "flow": "Line72 requests address resolution;76 constructs a socket;84 optionally binds a source address;85 connects. Its local catch at88 is socket.error, while original guard Refused is RuntimeError.",
+      "relevance": "These are candidate outbound-path operations. Their existence does not prove the actual record came from this function; higher-level catches were not exhaustively traced."
+    },
+    {
+      "site": "pip._internal.network.session",
+      "source": "_internal/network/session.py",
+      "lines": "32-38",
+      "flow": "Imports vendored requests and urllib3 as part of session code, so offline package handling can still initialize vendored socket-related capability code.",
+      "relevance": "Supports an import-time capability-probe hypothesis without claiming any network transaction or allowing one."
+    }
+  ],
+  "selectedProposal": {
+    "purpose": "Distinguish socket construction, bind, connect and resolution events without raw addresses, paths, arguments or guard changes. Observation only; no compatibility remedy or permission waiver.",
+    "source": "scripts/e01_p2_refusal_observability_candidate_v3_20261116.py",
+    "productionIntegrated": false,
+    "protocol": "BOUNDED_GUEST_REFUSAL_JOURNAL_V2, same closed record fields and bounds. Existing V1 consumer intentionally cannot accept it; any successor needs an explicit reviewed V2 consumer.",
+    "closedEventMap": {
+      "socket.__new__": "SOCKET_CONSTRUCT",
+      "socket.bind": "SOCKET_BIND",
+      "socket.connect": "SOCKET_CONNECT",
+      "socket.connect_ex": "SOCKET_CONNECT",
+      "socket.getaddrinfo": "SOCKET_RESOLVE",
+      "socket.gethostbyname": "SOCKET_RESOLVE",
+      "socket.gethostbyname_ex": "SOCKET_RESOLVE",
+      "socket.gethostbyaddr": "SOCKET_RESOLVE",
+      "socket.getnameinfo": "SOCKET_RESOLVE",
+      "socket.gethostname": "SOCKET_METADATA",
+      "other socket.*": "SOCKET_UNKNOWN"
+    },
+    "eventMapLimit": "These are prospective exact string classifiers. Unknown event names stay visible; no claim that every listed alias is emitted by this interpreter, that the mapping is exhaustive, or that a resolver API necessarily transmitted traffic.",
+    "preservedBehavior": "All socket events still invoke the original frozen guard, increment its refusal counter and raise. No IPv6 flag/global mutation, PATH change, socket construction/bind/connect permission, whole-category exception or postcondition waiver.",
+    "prospectiveScope": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116",
+    "prospectiveUncreatedPrefix": ".venv-e01-pypdf-7.0.1-DIAGNOSTIC-NOT-INSTALL-v2",
+    "finiteMethodsOnly": "If independently justified and reviewed later: one additional dry-run diagnostic child, same30wall/20observedCPU/7soft8hardCPU and original I/O/output/network/helper limits. Retain prior full390wall/140observedCPU/10commands; prospective cumulative allocation420/160/11. No actual successor is authorized.",
+    "storage": "Preserve all six failed-installation roots plus consumed diagnostic-v1 scope. A prospective diagnostic-v2 scope makes eight roots sharing768MiB/16384 entries, with16MiB for each diagnostic scope. Measure current occupancy and verify old metadata/control snapshots before/after. No target creation or cleanup.",
+    "releaseGates": [
+      "Independent static mapping/component/methods review",
+      "A separately versioned concrete V2 diagnostic controller/consumer and authored production review",
+      "Root current inputs/old-root preservation/occupancy preflight and exact particular release before one actual successor, only if justified"
+    ],
+    "notProposed": "No fourth full installation, no adopting v3, no actual source/P3 work and no financial/source-campaign change."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only bound public pip source text, closed safe diagnostic controls/audit and authored fixtures. No installed-package bodies/imports, research PDFs, respondent/publisher data, credentials, actual socket operations or external services accessed.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerPipPackageSocketNetworkProcessNativeResearchSourceActions": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Local IPv6 probe is plausible static evidence, not confirmed actual or historical cause.",
+    "SOCKET_CONSTRUCT alone would still not identify a call site. No stack frames, filenames or addresses are proposed for logging.",
+    "Finer labels and a new journal protocol require a reviewed successor consumer; this candidate is not production-integrated or executable authority.",
+    "The classifier does not waive original socket denial, infer successful traffic or prove an installation safe.",
+    "Existing cooperative-guard, OS/race, physical-I/O/RSS and bounded-journal limitations remain.",
+    "All previous source versions, consumed scopes, targets, journals, proposal, STATUS and Git remain untouched."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact static/observer methods review",
+    "No concrete reviewed V2 runner or root actual successor release exists; no actual execution is authorized."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate reviewer assesses the static mapping and frozen pure observer. Root decides whether a further finite diagnostic is justified; retain P2/P3 installation and source gates as blocked."
+}
