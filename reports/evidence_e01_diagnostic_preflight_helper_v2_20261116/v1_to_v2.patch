@@ -1,0 +1,86 @@
+--- data/processed/e01_guard_diagnostic_preflight_v1_20261116.py	2026-11-16 06:49:47
++++ data/processed/e01_guard_diagnostic_preflight_v2_20261116.py	2026-11-16 06:53:29
+@@ -1,6 +1,7 @@
+ """One read-only diagnostic-input preflight; no diagnostic, pip or child call."""
+ from pathlib import Path
+ from datetime import datetime, timezone
++import ast
+ import hashlib
+ import importlib.abc
+ import importlib.util
+@@ -13,8 +14,8 @@
+ import time
+ 
+ ROOT = Path(__file__).absolute().parents[2]
+-SCOPE = ROOT / 'data/processed/e01_guard_diagnostic_preflight_v1_20261116'
+-REPORT = ROOT / 'reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V1_20261116.json'
++SCOPE = ROOT / 'data/processed/e01_guard_diagnostic_preflight_v2_20261116'
++REPORT = ROOT / 'reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V2_20261116.json'
+ PINNED = {
+     'scripts/diagnose_e01_pypdf701_guard_v1.py': (37439, 'c71209bcb3a8d0ec485c28dd5f3249d6b34faafd30677dcc908cbf1a656f3f31'),
+     'configs/e01_pypdf701_guard_diagnostic_v1_20261116.json': (3624, '14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4'),
+@@ -70,6 +71,34 @@
+         os.fsync(stream.fileno())
+ 
+ 
++def configuration_proofs(module, binding, runner_source, frozen_source):
++    # Verify prescribed source policy without evaluating arbitrary source expressions.
++    expected = str(Path(binding['base_prefix'])/'bin')+':/usr/bin:/bin'
++    expressions = (
++        (runner_source, "str(Path(inputs['binding']['base_prefix'])/'bin')+':/usr/bin:/bin'"),
++        (frozen_source, "str(Path(binding['base_prefix'])/'bin')+':/usr/bin:/bin'"),
++    )
++    for raw, expected_expression in expressions:
++        values = [value for node in ast.walk(ast.parse(raw)) if isinstance(node, ast.Dict)
++                  for key, value in zip(node.keys, node.values)
++                  if isinstance(key, ast.Constant) and key.value == 'PATH']
++        if len(values) != 1 or ast.dump(values[0]) != ast.dump(ast.parse(expected_expression, mode='eval').body):
++            raise RuntimeError('PREFLIGHT_CHILD_PATH_POLICY')
++    base_paths = module.p.narrowed_paths(list(sys.path), binding['base_prefix'])
++    wanted = [str(Path(binding['base_prefix'])/'lib/python3.12'),
++              str(Path(binding['base_prefix'])/'lib/python3.12/lib-dynload')]
++    if base_paths != wanted:
++        raise RuntimeError('PREFLIGHT_BASE_PATH_PROOF')
++    mime = module.p.prepare_builtin_mime(binding)
++    if mime != module.p.MIME_RECEIPT:
++        raise RuntimeError('PREFLIGHT_MIME_PROOF')
++    return {'current_narrowed_base_paths': base_paths,
++            'stdlib_origin_validated_builtin_MIME': mime,
++            'prescribed_child_PATH': expected,
++            'child_PATH_matches_frozen_and_diagnostic_source_AST': True,
++            'child_PATH_is_prescribed_not_observed_execution': True}
++
++
+ def main():
+     begin = time.monotonic()
+     resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+@@ -84,12 +113,12 @@
+     sys.addaudithook(audit)
+     sys.meta_path.insert(0, NoPackages())
+     SCOPE.mkdir(mode=0o700, exist_ok=False)
+-    save(SCOPE / 'STARTED.json', {'kind': 'E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V1',
++    save(SCOPE / 'STARTED.json', {'kind': 'E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V2',
+         'UTC': datetime.now(timezone.utc).isoformat(), 'pins': PINNED,
+         'wall_seconds': 30, 'CPU_soft_hard': [7, 8], 'bound_reader_bytes': READ_LIMIT,
+         'control_write_bytes': CONTROL_LIMIT, 'preflight_invocations': 1,
+         'separate_from_diagnostic_child_allocation': True})
+-    result = {'kind': 'LEAD_E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V1',
++    result = {'kind': 'LEAD_E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V2',
+         'status': 'FAILED_METADATA_ONLY_NO_DIAGNOSTIC', 'pins': PINNED,
+         'network_requests': 0, 'model_calls': 0, 'child_commands': 0,
+         'pip_imports': 0, 'downloaded_package_imports': 0, 'research_source_reads': 0,
+@@ -123,12 +152,14 @@
+             module.need(not (ROOT/name).exists(), 'PREFLIGHT_ACTUAL_SCOPE_TARGET_PACKET_ALREADY_EXISTS')
+         before = module.snapshot(ROOT)
+         inputs = module.verify_inputs(ROOT, methods, reader)
++        proofs = configuration_proofs(module, inputs['binding'], bodies[source], reader.read(module.FROZEN_REF))
+         occupied = module.owned_size(ROOT)
+         upper = occupied + module.DIAGNOSTIC_SCOPE_BYTES
+         module.need(upper <= module.CAPS['owned_logical_bytes'], 'DIAGNOSTIC_STORAGE_PREFLIGHT')
+         after = module.snapshot(ROOT)
+         module.need(before == after, 'PREFLIGHT_OLD_METADATA_CHANGED')
+         result.update(status='PASS_METADATA_ONLY_NO_DIAGNOSTIC',
++            configuration_proofs=proofs,
+             old_metadata_snapshot=before, old_metadata_unchanged=True,
+             prior_owned_logical_bytes=occupied, combined_upper_bound=upper,
+             verified_wheels=len(inputs['wheels']), prior_allocation=inputs['prior'],

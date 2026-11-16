@@ -1,0 +1,102 @@
+{
+  "actual_release": false,
+  "auditor_actual_input_functions": 0,
+  "auditor_credential_reads": 0,
+  "auditor_implementation_edits": 0,
+  "auditor_main_invocations": 0,
+  "auditor_network_requests": 0,
+  "auditor_owner_accesses": 0,
+  "auditor_private_input_reads": 0,
+  "blocking_helper_findings": [],
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "PASS_EXACT_HELPER_STATIC_SCOPE_CONDITIONAL_ON_PRODUCTION_ACCEPTANCE",
+  "kind": "INDEPENDENT_STATIC_E01_DIAGNOSTIC_METADATA_PREFLIGHT_HELPER_REVIEW",
+  "observations": [
+    "Exact helper7237B/fc35d069 pin and both declared source/config pins agree with inspected files.",
+    "Main installs alarm/CPU limits, checks SCOPE/REPORT absent, installs hook/finder, creates0700scope and0600STARTED before pinned input loading. Any later failure consumes scope; no retries.",
+    "Only pinned runner source bytes compiled, with __name__ distinct from __main__; runner main/execute/guest/pip/child functions never called. Top-level frozen installer/pure observer imports are pinned source code, not downloaded package execution.",
+    "Called module surface limited to canonical parsing, bound Reader, validate_methods, no_alias/need, two snapshots, verify_inputs, owned_size, sha. Inspected transitive metadata path verifies prior controls, runtime/pip file and wheel hashes; no real functions invoked by auditor.",
+    "Actual diagnostic OUTPUT/TARGET/packet must be absent before checks; prior six-root before/after metadata equality required. Combined occupied bytes plus fixed16MiB diagnostic scope checked against existing805306368byte cap.",
+    "DefaultFAILED result becomesPASS only after all validations/equality. Exceptions inside validation emit type only and preserveFAILED. One-shot conflicts or terminal write interruption cannot create a fresh success/retry path.",
+    "59 isolated checks cover network/process/native/mutation denials, protected reads, old-target/unowned writes, package finder, output allowlist, no-follow/exclusive writes and bounds, plus call-surface/control-order AST checks.",
+    "No stdout raw data/paths/errors/credential values emitted; only status,child_commands,cost. Safe receipts contain pin/provenance/metadata hashes and prior numerical allocation, not copied old stderr or publisher/respondent content."
+  ],
+  "pins": {
+    "configs/e01_pypdf701_guard_diagnostic_v1_20261116.json": {
+      "bytes": 3624,
+      "sha256": "14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4"
+    },
+    "data/processed/e01_guard_diagnostic_preflight_v1_20261116.py": {
+      "bytes": 7237,
+      "sha256": "fc35d0692fa9935d2830aae9e946589ba9ab09e8c38b897c412183fff2253ec1"
+    },
+    "scripts/diagnose_e01_pypdf701_guard_v1.py": {
+      "bytes": 37439,
+      "sha256": "c71209bcb3a8d0ec485c28dd5f3249d6b34faafd30677dcc908cbf1a656f3f31"
+    },
+    "scripts/e01_p2_refusal_observability_candidate_v2_20261116.py": {
+      "bytes": 7311,
+      "sha256": "264eb97d73d0c584a0e58f9688c1e76b293982b76aee4ea679383212ab6180ba"
+    },
+    "scripts/install_e01_pypdf701_runtime_v1_5.py": {
+      "bytes": 64638,
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+    }
+  },
+  "scratch_harness_corrections": [
+    "First temporary save probe used macOS symlinked temp path and was correctly refused; probe changed to canonical resolved temp path.",
+    "First AST text-format position check was brittle across Python versions; replaced with AST node-line comparisons. These were harness issues, not helper defects."
+  ],
+  "suitable_for_one_metadata_only_invocation_after_production_acceptance": true,
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E01_DIAGNOSTIC_PREFLIGHT_HELPER_V1_20261116.json",
+      "reports/evidence_e01_diagnostic_preflight_helper_v1_20261116/authored_static_checks.py",
+      "reports/evidence_e01_diagnostic_preflight_helper_v1_20261116/checks.json"
+    ],
+    "NEXT_UNBLOCKED_TASK": "After exact production acceptance, lead may schedule only the one current metadata-only helper invocation under its recorded bounds; retain safe outcomes for independent review before any separately released diagnostic.",
+    "OUTPUT_ARTIFACTS": [
+      {
+        "bytes": 5128,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v1_20261116/authored_static_checks.py",
+        "sha256": "046a5a09dff8ebaba2897c3c2b5fb100d0965b2e6077f0853f923e84202e1405"
+      },
+      {
+        "bytes": 2501,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v1_20261116/checks.json",
+        "sha256": "549abdbb739f0317c7687870e59eb3d8f78a42add34739cfa65106a27e02dded"
+      }
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "/Users/joshua/.local/bin/python3.12 /Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_diagnostic_preflight_helper_v1_20261116/authored_static_checks.py"
+    ],
+    "RISKS_AND_LIMITATIONS": [
+      "This exact helper is suitable for one fresh-process current metadata-only invocation only after separate independent production acceptance of its exact pinned runner and normal lead scheduling. This receipt itself is not an actual execution or diagnostic release.",
+      "Metadata snapshot equality verifies six-tree metadata, not full content rehash of every old target. Bound referenced code/runtime/wheel/control artifacts are separately hashed by the pinned Reader functions. No actual inputs verified here.",
+      "The512MiB limit covers the bound Reader reference reads. Pinned helper/runner/frozen-module loading and normal standard-library loader reads are additional finite code-loading overhead; it is not a cap on all OS I/O.",
+      "Alarm30s and CPU7soft/8hard provide process limits; interruption can leave started-only or receipt-only evidence. Such scopes remain consumed and must not be replayed. No strict OS-wide containment or tamper-proof concurrent-writer guarantee is claimed.",
+      "Audit hook/import finder are scoped safeguards for this fixed trusted call graph, not a complete adversarial sandbox. The hook has no sticky denied-operation counter; inspected metadata functions propagate their guards, but future swallowed-denial or broader-code changes are outside acceptance.",
+      "Import finder covers fresh imports of named forbidden packages; already cached modules can bypass MetaPathFinder. Use a fresh process without preloaded pip/downloaded packages. The verified helper path never requests their import.",
+      "After-PASS concurrent changes are not excluded by a snapshot; this metadata observation grants no lock, lease or future execution permission. Later actual runner must revalidate inputs/absence.",
+      "Output accounting reserves before exclusive write; failed writes can consume allowance/scope without a complete terminal file. At most three named create-only outputs,65536bytes each/196608combined; no fallback/retry.",
+      "Safe counters are fixed call-scope declarations, not independently measured network/package events. Static graph and deny checks support them; actual metadata outcome still requires retained independent review."
+    ],
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Only helper/runner/config/frozen installer and pure candidate source text inspected. Standard-library imports and isolated authored temporary files used; no real preflight references, source PDFs, downloaded packages, old targets, credentials, financial owner or network accessed.",
+    "TASK_ID": "E01_DIAGNOSTIC_PREFLIGHT_HELPER_V1_20261116",
+    "TESTS_RUN_AND_RESULTS": {
+      "Python": "3.12",
+      "actual_helper_release": false,
+      "decision": "PASS_STATIC_AND_ISOLATED_HELPER_SCOPE_CONDITIONAL_ON_PRODUCTION_ACCEPTANCE",
+      "focused_authored_and_AST_checks": 59,
+      "real_input_function_invocations": 0,
+      "real_main_invocations": 0,
+      "real_runner_imports": 0
+    },
+    "UNRESOLVED_BLOCKERS": [
+      "Exact diagnostic runner independent production acceptance is separately pending/owned; must PASS before helper use.",
+      "No actual metadata preflight, diagnostic child, installation or runtime/source qualification is accepted by this review."
+    ]
+  }
+}

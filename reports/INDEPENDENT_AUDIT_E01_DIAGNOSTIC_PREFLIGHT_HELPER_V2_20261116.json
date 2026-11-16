@@ -1,0 +1,109 @@
+{
+  "actual_release": false,
+  "auditor_implementation_edits": 0,
+  "auditor_main_invocations": 0,
+  "auditor_network_requests": 0,
+  "auditor_old_target_reads": 0,
+  "auditor_owner_or_credential_accesses": 0,
+  "auditor_real_input_function_calls": 0,
+  "blocking_findings": [],
+  "closed_finding": "Missing basepaths/MIMEorigin/unchangedprescribedPATH proof is remedied in v2 only. V1 and prior findings remain unchanged.",
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "PASS_STATIC_V2_REMEDY_SUITABLE_FOR_ONE_METADATA_ONLY_INVOCATION",
+  "findings": [
+    "Delta consists of ast import, separately versioned scope/report/kinds, one pure configuration_proofs function and its required call/result beforePASS; all guard/save/cap/pin definitions remain AST-identical.",
+    "PATH proof requires exactly one PATH dict expression in each pinned runner/frozen source and exact expected AST. No source expression is evaluated; malicious/missing/duplicate/changed/syntax-error expressions refuse before configuration functions.",
+    "Current narrowed paths must equal exactly the two directories derived from bound base_prefix. Real frozen function additionally validates the conventional absentZIP/currentisolatedpath schema and aliases. Wrong/missing/extra/tuple paths tested refusing.",
+    "Frozen MIME function checks mimetypes stdlib origin and noalias, resets builtin-only state. Helper requires its returned receipt equal pinned MIME_RECEIPT. Missing/wrongmode/knownfiles/uninitialized/refusal cases tested refusing.",
+    "Proof call reads frozen source through chargedReader; appears inside validationtry before occupancy/aftersnapshot andPASS. Proof results retained. Exceptions flow to existingFAILED status, no PASS fallback.",
+    "Exact production audit10996B/eeb3a9cf prerequisite is intact and accepted; no actual invocation is certified.",
+    "52focused Python3.12 authored/AST checks pass with no real main/runner/import/inputfunctions called."
+  ],
+  "kind": "INDEPENDENT_E01_DIAGNOSTIC_METADATA_PREFLIGHT_V2_REMEDY_REVIEW",
+  "pins": {
+    "configs/e01_pypdf701_guard_diagnostic_v1_20261116.json": {
+      "bytes": 3624,
+      "sha256": "14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4"
+    },
+    "data/processed/e01_guard_diagnostic_preflight_v1_20261116.py": {
+      "bytes": 7237,
+      "sha256": "fc35d0692fa9935d2830aae9e946589ba9ab09e8c38b897c412183fff2253ec1"
+    },
+    "data/processed/e01_guard_diagnostic_preflight_v2_20261116.py": {
+      "bytes": 9049,
+      "sha256": "773bc7aa4a18ecdd211f040bc5ed4116285a39fa1ad2f1f38c242ac6aa38e81f"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_RUNNER_V1_PRODUCTION_20261116.json": {
+      "bytes": 10996,
+      "sha256": "eeb3a9cfa66cae1f059bea66abd1f93f70619516fd72157707bd9c441bd95ecb"
+    },
+    "reports/evidence_e01_diagnostic_preflight_helper_v1_20261116/PRODUCTION_PREREQUISITE_GAP.json": {
+      "bytes": 4415,
+      "sha256": "e503470bacf489d44d2068266daf19ffb43fb69460d576c29bb2b7f76630151d"
+    },
+    "scripts/diagnose_e01_pypdf701_guard_v1.py": {
+      "bytes": 37439,
+      "sha256": "c71209bcb3a8d0ec485c28dd5f3249d6b34faafd30677dcc908cbf1a656f3f31"
+    },
+    "scripts/install_e01_pypdf701_runtime_v1_5.py": {
+      "bytes": 64638,
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+    }
+  },
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E01_DIAGNOSTIC_PREFLIGHT_HELPER_V2_20261116.json",
+      "reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/authored_static_checks.py",
+      "reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/checks.json",
+      "reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/v1_to_v2.patch"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Lead may schedule one bounded current metadata-only v2 invocation under existing scope after checking unchanged exact production acceptance; retain safe outputs for independent review. No diagnostic child or package execution is released by this receipt.",
+    "OUTPUT_ARTIFACTS": [
+      {
+        "bytes": 6398,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/authored_static_checks.py",
+        "sha256": "0cd4b01108be2a5b1b34945c05cbb91e8c2597df4b3ab8c77f09624bc4f09fdd"
+      },
+      {
+        "bytes": 2198,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/checks.json",
+        "sha256": "8d3c2e3eb9e2a8475254caebc677e576fd27d462a774ef8a5a2bfd3949250b3f"
+      },
+      {
+        "bytes": 4887,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/v1_to_v2.patch",
+        "sha256": "c871ddd998d9d87f900c20ee3ab8c3530a8893da939e6cdda3de0594a2a3ddab"
+      }
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "/Users/joshua/.local/bin/python3.12 /Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_diagnostic_preflight_helper_v2_20261116/authored_static_checks.py"
+    ],
+    "RISKS_AND_LIMITATIONS": [
+      "Acceptance is exact9049B/773bc7aa helper and current fixed source pins only. A fresh-process current metadata-only invocation must use the intended isolated bound Python3.12 interpreter; no input result is certified yet.",
+      "Prescribed child PATH is proved from the two pinned source ASTs; it is not an observed child environment or execution. Current base-path/MIME proof remains to be produced by actual metadata preflight.",
+      "Pure tests stub p.narrowed_paths and p.prepare_builtin_mime to exercise failure propagation; their real stdlib-origin/alias/ZIP/builtin semantics come from pinned frozen source and separate production acceptance, not current input execution.",
+      "Prior v1 guard/output/resource caveats remain:512MiB bound reference Reader cap excludes finite source/stdloader overhead; metadata snapshots are not full-tree content hashes; audit/import finder not general tamper-proof sandbox; no sticky denial counter; cached modules bypass finder; use fresh process.",
+      "Alarm30s/CPU7soft8hard and create-once scope enforce bounded attempt; interrupted or failed outputs consume scope. No replay, fallback, fourth installer or source/runtime qualification follows.",
+      "No future concurrent-writer lock or lease: actual runner/particular release must separately revalidate refs, absence, limits and old-state preservation."
+    ],
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Repo-owned helper/runner/frozen installer/config source text and public prior reviews only. Configuration functions exercised through pure authored stubs; no actual MIME initialization, base-directory traversal, old target/control/wheel/runtime/reference reads, downloaded-package import, credential/owner/network/sourcePDF access.",
+    "TASK_ID": "E01_DIAGNOSTIC_PREFLIGHT_HELPER_V2_20261116",
+    "TESTS_RUN_AND_RESULTS": {
+      "Python": "3.12",
+      "actual_input_functions": 0,
+      "actual_main": 0,
+      "actual_release": false,
+      "actual_runner_imports": 0,
+      "decision": "PASS_EXACT_V2_STATIC_CONFIGURATION_REMEDY",
+      "focused_static_and_authored_checks": 52,
+      "inherited_scope": "audit/save/no_alias/NoPackages and caps/pins AST-identical; prior59 not newly rerun on real inputs",
+      "inherited_v1_guard_output_checks": 59
+    },
+    "UNRESOLVED_BLOCKERS": [
+      "No blocking static v2 helper finding remains. Actual one-shot metadata outcome and later particular diagnostic release are NOT_RUN.",
+      "Original v1 completeness BLOCKED finding remains preserved and applies to v1; closure here is for separatev2 only."
+    ]
+  }
+}

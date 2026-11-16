@@ -1,0 +1,31 @@
+{
+  "actual_packet_created": false,
+  "bound_actual_invocation": ".venv/bin/python -I -B -S scripts/diagnose_e01_pypdf701_guard_v1.py --methods-sha256 14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4 --packet-sha256 <final-bound-packet-sha256>",
+  "canonical_core_sha256": "d36970cea037c66900ac279ee499a764051b6dc2f3ee13961c878091f493cd10",
+  "core_for_independent_particular_review": {
+    "diagnostic_code_ref": {
+      "bytes": 37439,
+      "path": "scripts/diagnose_e01_pypdf701_guard_v1.py",
+      "sha256": "c71209bcb3a8d0ec485c28dd5f3249d6b34faafd30677dcc908cbf1a656f3f31"
+    },
+    "execution_enabled": true,
+    "kind": "E01_GUARD_DIAGNOSTIC_EXECUTION_PACKET_V1",
+    "methods_sha256": "14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4",
+    "root_sha256": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f"
+  },
+  "cost_USD": 0,
+  "kind": "LEAD_PACKET_CORE_CANDIDATE_NOT_EXECUTION_RELEASE",
+  "methods_ref": {
+    "bytes": 3624,
+    "path": "configs/e01_pypdf701_guard_diagnostic_v1_20261116.json",
+    "sha256": "14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4"
+  },
+  "model_calls": 0,
+  "no_fourth_installation_or_P3": true,
+  "prerequisites": [
+    "Exact production acceptance",
+    "Reviewed read-only preflight actually PASS with current source/runtime/wheel/three-failure chain, six-root metadata/occupancy and base-path/MIME/PATH proofs",
+    "Independent particular report binds this exact core hash and code/method refs",
+    "Root then adds exact review_ref and externally hashes final packet"
+  ]
+}

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/diagnose_e01_pypdf701_guard_v1.py", line 644, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/diagnose_e01_pypdf701_guard_v1.py", line 625, in main
+    if args.guest: return guest_main(args)
+                          ^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/diagnose_e01_pypdf701_guard_v1.py", line 608, in guest_main
+    need(policy.violations == 0, 'GUEST_CAUGHT_VIOLATION')
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 75, in need
+    raise Refused(reason)
+diagnostic_frozen_installer_v1_5.Refused: GUEST_CAUGHT_VIOLATION
