@@ -1,0 +1,29 @@
+--- before
++++ after
+@@ -33,7 +33,7 @@
+         <Pill>Research contract incomplete</Pill>
+       </Row>
+       <Text tone="secondary">{SNAPSHOT.date}. Saved evidence snapshot, not a live monitor. New work does not automatically update this report.</Text>
+-      <Text>Four small live E02 studies are complete. A fifth stopped on an account billing rejection. E01 has a retrospective statistical result; current work is repairing its offline PDF dependency installation.</Text>
++      <Text>Four small live E02 studies are complete. A fifth stopped on an HTTP 402 rejection. E01 has a retrospective statistical result; current work is repairing its offline PDF dependency installation.</Text>
+     </Stack>
+ 
+     <Grid columns="repeat(auto-fit, minmax(210px, 1fr))" gap={22}>
+@@ -44,7 +44,7 @@
+     <Text size="small" tone="secondary">Usage and exposure have different scopes. Exposure includes rounding and retained uncertainty holds; local compute and agent labor are excluded. Existing caps remain $5 shared, $1 E02, and $0 E01 paid inference.</Text>
+ 
+     <Callout tone="warning" title="Live E02 is blocked by HTTP 402">
+-      Request 45 of the fifth study was rejected after 44 saved responses and invoices. No automatic retry occurred. The failed request retains a $0.000775 hold; its actual charge is unknown. A read-only key check authenticated successfully, but prepaid account credits remain unknown. The Secondary billing page required administrator access. More key-limit room does not establish an account balance.
++      Request 45 of the fifth study was rejected after 44 saved responses and invoices. No automatic retry occurred. The failed request retains a $0.000775 hold; its actual charge is unknown. A read-only key check authenticated successfully, but prepaid account credits and the specific rejection cause remain unknown. The lead observed a 403 on the Secondary billing page for insufficient role permissions; the key-to-account identity has not been independently linked. More key-limit room does not establish an account balance.
+     </Callout>
+     <Row wrap>
+       <EvidenceButton path="reports/OPENROUTER_KEY_AND_ACCOUNT_DIAGNOSIS_20261116.json" label="Billing diagnosis" />
+@@ -83,7 +83,7 @@
+       <H2>What needs to happen next</H2>
+       <Table headers={["Work", "Current obstacle", "Next concrete step"]} rows={[
+         ["E02 live continuation", "HTTP 402; account credits and cause unresolved", "Administrator checks Secondary account credits/budget; then prepare a bounded continuation preserving saved responses and holds."],
+-        ["E01 source processing", "Offline pip initialization records a denied socket constructor", "Review the mocked optional-probe remedy, then separately test the bounded compatibility change before accepting an installation."],
++        ["E01 source processing", "Offline dry-run recorded one denied socket constructor; historical cause unknown", "Review the mocked optional-probe remedy, then separately test the bounded compatibility change before accepting an installation."],
+         ["GitHub delivery", "Repository write access unavailable", "Restore repository write access; push the preserved local commits and run current CI."],
+         ["Scientific completion", "National calibration, human anchoring, remaining validation and comparisons unfinished", "Keep these gates open and complete matched evaluations; no promotion of engineering or small-pilot results into human claims."],
+       ]} />

@@ -1,0 +1,107 @@
+import { Button, Callout, CollapsibleSection, Divider, Grid, H1, H2, Pill, Row, Stack, Stat, Table, Text, useCanvasAction, useHostTheme } from "cursor/canvas";
+
+const ROOT = "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/";
+const SNAPSHOT = {
+  date: "November 16, 2026 · America/New_York",
+  source: "reports/RESEARCH_CHECKPOINT_20261116.json",
+  codeHead: "85e5bdfca099faae182569d7a6d22624ff98d76b",
+  remoteHead: "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+  localCommits: 21,
+  researchResponses: 191,
+  invoicedResearchUSD: "0.0129589",
+  exposureUSD: "0.016149",
+};
+const STUDIES = [
+  { name: "Exploratory continuation", count: 32, usd: "0.0014340", status: "Complete · scoped review passed", report: "reports/E02_EXPLORATORY_CONTINUATION_ACTUAL_20261108.json" },
+  { name: "Alignment and anchoring", count: 22, usd: "0.0016084", status: "Complete · scoped review passed", report: "reports/E02_ALIGNMENT_ANCHORING_ACTUAL_20261109.json" },
+  { name: "Issue cues across configurations", count: 53, usd: "0.0038870", status: "Complete · includes preserved recovery prefix", report: "reports/E02_ISSUE_CUE_CROSSMODEL_RECOVERY_ACTUAL_20261110.json" },
+  { name: "Wrapper and prior-answer visibility", count: 40, usd: "0.0028919", status: "Complete · scoped review passed", report: "reports/E02_WRAPPER_VISIBILITY_ACTUAL_20261112.json" },
+  { name: "Wrapper comparison across configurations", count: 44, usd: "0.0031376", status: "Interrupted · 44 of at most 80 responses", report: "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json" },
+];
+
+function EvidenceButton({ path, label }: { path: string; label: string }) {
+  const dispatch = useCanvasAction();
+  return <Button variant="ghost" style={{ alignSelf: "flex-start" }} onClick={() => dispatch({ type: "openFile", path: ROOT + path })}>{label}</Button>;
+}
+
+export default function ResearchStatus() {
+  const theme = useHostTheme();
+  return <Stack gap={22} style={{ padding: 16, width: "100%", boxSizing: "border-box", minWidth: 0, overflowWrap: "anywhere", maxWidth: 1160, margin: "0 auto", color: theme.text.primary, background: theme.bg.editor }}>
+    <Stack gap={8}>
+      <Row justify="space-between" wrap>
+        <H1>Synthetic Society Lab — status</H1>
+        <Pill>Research contract incomplete</Pill>
+      </Row>
+      <Text tone="secondary">{SNAPSHOT.date}. Saved evidence snapshot, not a live monitor. New work does not automatically update this report.</Text>
+      <Text>Four small live E02 studies are complete. A fifth stopped on an HTTP 402 rejection. E01 has a retrospective statistical result; current work is repairing its offline PDF dependency installation.</Text>
+    </Stack>
+
+    <Grid columns="repeat(auto-fit, minmax(210px, 1fr))" gap={22}>
+      <Stat value={SNAPSHOT.researchResponses} label="Recorded live research responses · not people" />
+      <Stat value={"$" + SNAPSHOT.invoicedResearchUSD} label="Verified research model-usage invoices (USD)" />
+      <Stat value={"$" + SNAPSHOT.exposureUSD} label="Conservative exposure, including outstanding holds (USD)" />
+    </Grid>
+    <Text size="small" tone="secondary">Usage and exposure have different scopes. Exposure includes rounding and retained uncertainty holds; local compute and agent labor are excluded. Existing caps remain $5 shared, $1 E02, and $0 E01 paid inference.</Text>
+
+    <Callout tone="warning" title="Live E02 is blocked by HTTP 402">
+      Request 45 of the fifth study was rejected after 44 saved responses and invoices. No automatic retry occurred. The failed request retains a $0.000775 hold; its actual charge is unknown. A read-only key check authenticated successfully, but prepaid account credits and the specific rejection cause remain unknown. The lead observed a 403 on the Secondary billing page for insufficient role permissions; the key-to-account identity has not been independently linked. More key-limit room does not establish an account balance.
+    </Callout>
+    <Row wrap>
+      <EvidenceButton path="reports/OPENROUTER_KEY_AND_ACCOUNT_DIAGNOSIS_20261116.json" label="Billing diagnosis" />
+      <EvidenceButton path="reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json" label="Interrupted-batch audit" />
+    </Row>
+
+    <Stack gap={10}>
+      <H2>What has actually run</H2>
+      <div style={{ overflowX: "auto", maxWidth: "100%" }}><Table style={{ minWidth: 760, overflowWrap: "normal" }} headers={["E02 study", "Saved responses", "Verified usage (USD)", "Outcome", "Evidence"]}
+        rows={STUDIES.map(s => [s.name, s.count, "$" + s.usd, s.status, <EvidenceButton key={s.report} path={s.report} label="Open record" />])}
+        columnAlign={["left", "right", "right", "left", "left"]} /></div>
+      <Text size="small" tone="secondary">Source: dated public execution records, November 8–16, 2026. First four studies total 147 responses / $0.0098213. The fifth has 22 responses per configuration: 16 baselines and 28 post-treatment answers overall. Its full registered analysis is NOT_RUN. Independent reviews accept only their stated evidence, accounting and scoring scope.</Text>
+      <Text>These are exploratory model-output studies with authored stimuli and fictional contexts. They do not demonstrate effects on people, a representative electorate, or a completed human-study replication.</Text>
+    </Stack>
+
+    <Divider />
+    <Grid columns="repeat(auto-fit, minmax(min(100%, 280px), 1fr))" gap={30}>
+      <Stack gap={10}>
+        <H2>E01: retrospective baseline obtained</H2>
+        <Text>On 30 selected regular Class-I Senate constituencies from 2018 to 2024, prior-margin persistence had a mean absolute error of <strong>10.20 percentage points</strong>, compared with <strong>18.19</strong> for the zero-margin control.</Text>
+        <Text tone="secondary">The cohort was selected post hoc and outcomes were seen. This is a historical diagnostic, not an untouched holdout or prospective 2026 forecast.</Text>
+        <Text>Source-document work covers a 13-state typed union, with 20 unfinished jobs and zero accepted final ballots. Five upgraded dependency files are verified. Installation acceptance and further runtime/source qualification remain blocked.</Text>
+        <EvidenceButton path="reports/E01_HISTORICAL_EVIDENCE.json" label="Historical result" />
+        <EvidenceButton path="reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json" label="Independent baseline audit" />
+      </Stack>
+      <Stack gap={10}>
+        <H2>Engineering now in place</H2>
+        <Text>Installable Python package; source-integrity validation; reproducible mock experiments; run provenance and logs; OpenRouter dispatch reservations and billing reconciliation; E02 assignment, isolation and scoring; E01 baseline/evaluation code; recorded-data views; draft paper, blog, limitations and reproducibility notes.</Text>
+        <Text tone="secondary">This inventory describes implemented components. It is not a declaration that every original milestone has passed current independent acceptance.</Text>
+        <Text><strong>Current acceptance: 2 PASS, 14 BLOCKED, 7 NOT_RUN.</strong> Only the E02 engine and model controls pass as software milestones. E03 and E04 remain gated.</Text>
+        <EvidenceButton path="reports/AUDIT_COMPLETION_20261116_REQUIREMENTS_IGNORE_SUCCESSOR.json" label="Completion audit" />
+      </Stack>
+    </Grid>
+
+    <Stack gap={10}>
+      <H2>What needs to happen next</H2>
+      <div style={{ overflowX: "auto", maxWidth: "100%" }}><Table style={{ minWidth: 700, overflowWrap: "normal" }} headers={["Work", "Current obstacle", "Next concrete step"]} rows={[
+        ["E02 live continuation", "HTTP 402; account credits and cause unresolved", "Administrator checks Secondary account credits/budget; then prepare a bounded continuation preserving saved responses and holds."],
+        ["E01 source processing", "Offline dry-run recorded one denied socket constructor; historical cause unknown", "Review the mocked optional-probe remedy, then separately test the bounded compatibility change before accepting an installation."],
+        ["GitHub delivery", "Repository write access unavailable", "Restore repository write access; push the preserved local commits and run current CI."],
+        ["Scientific completion", "National calibration, human anchoring, remaining validation and comparisons unfinished", "Keep these gates open and complete matched evaluations; no promotion of engineering or small-pilot results into human claims."],
+      ]} /></div>
+    </Stack>
+
+    <CollapsibleSection title="Verification, delivery and snapshot provenance">
+      <Stack gap={12}>
+        <Text>E01's second offline dry-run recorded one denied socket-construction event and preserved the failed-exit rule. Its independent review passed 196 evidence checks. The call site and historical installation cause remain unknown. The compatibility proposal is pure/mock work; no fourth installation or source qualification is accepted.</Text>
+        <Text>Latest observed remote CI passed Python 3.12 and failed Python 3.11 in an authored bootstrap test. Focused diagnostic checks passed; no newer full-suite result is claimed.</Text>
+        <Text>{SNAPSHOT.localCommits} local commits are beyond the last verified remote. They are preserved in a verified local Git bundle. This is local preservation, not GitHub delivery or external publication.</Text>
+        <Text size="small" tone="secondary">Snapshot code/evidence head: {SNAPSHOT.codeHead}. Last verified remote: {SNAPSHOT.remoteHead}. Values embedded here are from the November 16 checkpoint saved at that local head; source buttons open current local files.</Text>
+        <Row wrap>
+          <EvidenceButton path={SNAPSHOT.source} label="Machine-readable checkpoint" />
+          <EvidenceButton path="reports/STATUS.md" label="Full status and history" />
+          <EvidenceButton path="data/processed/github_delivery_checkpoint_20261116_08/manifest.json" label="Verified bundle manifest" />
+          <EvidenceButton path="reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V2_ACTUAL_20261116.json" label="E01 diagnostic audit" />
+        </Row>
+      </Stack>
+    </CollapsibleSection>
+  </Stack>;
+}

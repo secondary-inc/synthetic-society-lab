@@ -1,0 +1,29 @@
+test_actual_modules_and_arbitrary_namespaces_are_not_accepted (__main__.MockIpv6ConfigurationTests.test_actual_modules_and_arbitrary_namespaces_are_not_accepted) ... ok
+test_already_initialized_or_failed_vendor_refuses_without_reset (__main__.MockIpv6ConfigurationTests.test_already_initialized_or_failed_vendor_refuses_without_reset) ... ok
+test_another_caught_constructor_during_scope_is_not_waived (__main__.MockIpv6ConfigurationTests.test_another_caught_constructor_during_scope_is_not_waived) ... ok
+test_constructor_after_restoration_is_still_denied (__main__.MockIpv6ConfigurationTests.test_constructor_after_restoration_is_still_denied) ... ok
+test_existing_violations_are_never_reset (__main__.MockIpv6ConfigurationTests.test_existing_violations_are_never_reset) ... ok
+test_failed_initialization_cannot_retry_same_vendor (__main__.MockIpv6ConfigurationTests.test_failed_initialization_cannot_retry_same_vendor) ... ok
+test_false_or_nonboolean_original_state_refuses_before_callback (__main__.MockIpv6ConfigurationTests.test_false_or_nonboolean_original_state_refuses_before_callback) ... ok
+test_initializer_error_restores_flag_and_preserves_primary_exception (__main__.MockIpv6ConfigurationTests.test_initializer_error_restores_flag_and_preserves_primary_exception) ... ok
+test_no_socket_import_network_library_or_real_global_mutation_in_candidate (__main__.MockIpv6ConfigurationTests.test_no_socket_import_network_library_or_real_global_mutation_in_candidate) ... ok
+test_original_mock_probe_catches_denial_but_postcondition_still_fails (__main__.MockIpv6ConfigurationTests.test_original_mock_probe_catches_denial_but_postcondition_still_fails) ... ok
+test_primary_guard_error_is_not_replaced_by_callback_drift (__main__.MockIpv6ConfigurationTests.test_primary_guard_error_is_not_replaced_by_callback_drift) ... ok
+test_reentrant_initialization_is_rejected_and_restored (__main__.MockIpv6ConfigurationTests.test_reentrant_initialization_is_rejected_and_restored) ... FAIL
+
+======================================================================
+FAIL: test_reentrant_initialization_is_rejected_and_restored (__main__.MockIpv6ConfigurationTests.test_reentrant_initialization_is_rejected_and_restored)
+----------------------------------------------------------------------
+mock_ipv6_configuration.MockConfigurationRefused: MOCK_ORIGINAL_NOT_TRUE
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py", line 135, in test_reentrant_initialization_is_rejected_and_restored
+    with self.assertRaisesRegex(m.MockConfigurationRefused,'MOCK_VENDOR_NOT_FRESH'):
+AssertionError: "MOCK_VENDOR_NOT_FRESH" does not match "MOCK_ORIGINAL_NOT_TRUE"
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.004s
+
+FAILED (failures=1)

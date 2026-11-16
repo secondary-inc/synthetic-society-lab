@@ -1,0 +1,26 @@
+--- before
++++ after
+@@ -21,12 +21,12 @@
+ 
+ function EvidenceButton({ path, label }: { path: string; label: string }) {
+   const dispatch = useCanvasAction();
+-  return <Button variant="ghost" onClick={() => dispatch({ type: "openFile", path: ROOT + path })}>{label}</Button>;
++  return <Button variant="ghost" style={{ alignSelf: "flex-start" }} onClick={() => dispatch({ type: "openFile", path: ROOT + path })}>{label}</Button>;
+ }
+ 
+ export default function ResearchStatus() {
+   const theme = useHostTheme();
+-  return <Stack gap={22} style={{ padding: 24, maxWidth: 1160, margin: "0 auto", color: theme.text.primary, background: theme.bg.editor }}>
++  return <Stack gap={22} style={{ padding: 16, width: "100%", boxSizing: "border-box", minWidth: 0, overflowWrap: "anywhere", maxWidth: 1160, margin: "0 auto", color: theme.text.primary, background: theme.bg.editor }}>
+     <Stack gap={8}>
+       <Row justify="space-between" wrap>
+         <H1>Synthetic Society Lab — status</H1>
+@@ -61,7 +61,7 @@
+     </Stack>
+ 
+     <Divider />
+-    <Grid columns="repeat(auto-fit, minmax(280px, 1fr))" gap={30}>
++    <Grid columns="repeat(auto-fit, minmax(min(100%, 280px), 1fr))" gap={30}>
+       <Stack gap={10}>
+         <H2>E01: retrospective baseline obtained</H2>
+         <Text>On 30 selected regular Class-I Senate constituencies from 2018 to 2024, prior-margin persistence had a mean absolute error of <strong>10.20 percentage points</strong>, compared with <strong>18.19</strong> for the zero-margin control.</Text>

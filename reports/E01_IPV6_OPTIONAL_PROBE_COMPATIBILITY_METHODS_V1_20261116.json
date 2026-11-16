@@ -1,0 +1,210 @@
+{
+  "TASK_ID": "E01_IPV6_OPTIONAL_PROBE_COMPATIBILITY_METHODS_PURE_MOCK_V1_20261116",
+  "status": "19_PURE_MOCK_CHECKS_PASS_EACH_RUNTIME_METHODS_ONLY_NO_REAL_MODULE_ADAPTER_OR_EXECUTION_AUTHORITY",
+  "FILES_CHANGED": [
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v1_20261116.py",
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_offline_ipv6_probe_mock_candidate_v1_20261116.py": {
+      "bytes": 3412,
+      "sha256": "015cf1c2c2bd662cd726f74bf49336a1cdd702866ae45ce283b8caaa03053289"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py": {
+      "bytes": 9939,
+      "sha256": "4302f69ca53fc8e654816e8c009bec3f67406b84c08fd0f48a74edb5a5e54cec"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v1_312_20261116.txt": {
+      "bytes": 3020,
+      "sha256": "e96d24abca376872125a029992a9d8760856c0aeefbb36416aba2d0ac7eeec54"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v1_311_20261116.txt": {
+      "bytes": 2936,
+      "sha256": "596beb214218f3af6958a7457bf6f069644612aa755c6a8aff6432fa7bac77d9"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v1_312_final_20261116.txt": {
+      "bytes": 3192,
+      "sha256": "72210e0aa702a6b3a22d42e9cbaa3410586e3a8ccdeef4bf67f525f75f06db04"
+    },
+    "reports/e01_offline_ipv6_probe_mock_candidate_v1_311_final_20261116.txt": {
+      "bytes": 3192,
+      "sha256": "9148db31c821c56c96eb9f75647a18e84edf4427a0fe1cc72ac9f1a12ce5fc55"
+    },
+    "reports/E01_IPV6_PROBE_MOCK_INITIAL_ASSERTION_FAILURE_20261116.json": {
+      "bytes": 20069,
+      "sha256": "003a2cf336ee2f1c70b6ce8b92727e4238d8651597bc3989c18dc1a9362aac4e"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_offline_ipv6_probe_mock_candidate_v1_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final": {
+      "3.12": "19 PASS in0.008 seconds",
+      "3.11": "19 PASS in0.006 seconds"
+    },
+    "invocationsPerRuntime": 2,
+    "maximumInvocationsPerRuntime": 3,
+    "initial": "12 checks reached; reentrant initialization correctly refused earlier at MOCK_ORIGINAL_NOT_TRUE while the test expected the later vendor-freshness label. Both logs and full draft bytes retained in20069-byte failure bundle. Only the test expectation changed.",
+    "scope": "Exact mock dataclasses, pure callback models and direct frozen guard audit callbacks under the existing120s/64MiB-read/32MiB-tempwrite/256KiB-output authored guard. No real socket or pip module imported by the candidate, no socket function executed.",
+    "coverage": [
+      "Same original broad-catch probe model produces one denied constructor and retains original failed postcondition.",
+      "Scoped mock flag=False skips only that modeled conditional and restores originalTrue; vendored cached resultFalse remains explicitly modeled.",
+      "Exact mock types, original booleanTrue and fresh/uninitialized/unfailed/non-reentrant vendor state required. Actual modules/arbitrary namespaces, false/nonboolean originals, preinitialized/failed state refuse before callback.",
+      "Success, ordinary exception, BaseException, state drift and reentry paths restore flag; failed vendor cannot retry. Primary guard exception is preserved.",
+      "Residual constructor/connect/bind/resolve/helper/native attempts remain denied and counted during/after scope. Previously recorded violations are never reset; caught residual refusal still fails original postcondition.",
+      "AST proves candidate imports only dataclasses and cannot reference/mutate actual socket/sys/os module globals."
+    ]
+  },
+  "prerequisiteClosedActual": {
+    "audit": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V2_ACTUAL_20261116.json",
+      "bytes": 40800,
+      "sha256": "28292ad21097cc638c181e10a1f9fe90d3c3fac7c39b0e20e63c81116c87cf37",
+      "status": "PASS_EXACT_V2_DIAGNOSTIC_EVIDENCE_CONSTRUCTION_REFUSAL_RECORDED_P2_P3_REMAIN_BLOCKED"
+    },
+    "terminal": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+      "bytes": 14847,
+      "sha256": "6898bbea458abfd769fcd6bcef2418afd50f76c7db7b0e83181340b8218a030b"
+    },
+    "journal": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+      "bytes": 209,
+      "sha256": "a6d8b5361159399537749f6992199f9620203afa03b3964da20d221c1de8beb9"
+    },
+    "guest": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+      "bytes": 422,
+      "sha256": "12d34712a13aac07a9070b1f100f0d491afef52567bf1184b1bda1aa5d8bce4a"
+    },
+    "finding": "One SOCKET_CONSTRUCT event, original guard1, pip_completed=true, failed child/postcondition, valid MIME state and no target created. Actual callsite, socket family/destination and historical cause remain UNKNOWN. No later bind/connect/resolve event was recorded.",
+    "scopeOfAcceptance": "Closed diagnostic evidence only; no installation/P3 acceptance or new actual authority."
+  },
+  "exactStaticEvidence": {
+    "binding": {
+      "path": "data/processed/e01_pypdf701_installer_binding_v1_20261115/binding.json",
+      "bytes": 147770,
+      "sha256": "48699591b7e734e4c103a2ba80c63940afa24258a86e57f5c45768f4800ed38e"
+    },
+    "probe": {
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/connection.py",
+      "bytes": 4901,
+      "sha256": "e4bc760753d6dbd2b1067d93d3190dd420604416b780654904aa10a11a201159",
+      "relevantLines": "119-149: App Engine early exit; conditional on socket.has_ipv6; constructor138/bind139 inside exceptException; module-level invocation149."
+    },
+    "appengine": {
+      "path": ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/contrib/_appengine_environ.py",
+      "bytes": 957,
+      "sha256": "6c36f2384856d8228b25c42a00a032ac41cdf9a925b321c52aaeaf17c645b269",
+      "finding": "Early exit detects actual first-generation App Engine through APPENGINE_RUNTIME=python27 plus SERVER_SOFTWARE prefixes. It is environment detection, not an offline IPv6-disable setting."
+    },
+    "guard": {
+      "path": "scripts/install_e01_pypdf701_runtime_v1_5.py",
+      "bytes": 64638,
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4",
+      "invariant": "All socket.* audit events call original refuse; counter increments and Refused raises. No exception/allowance proposed."
+    },
+    "observer": {
+      "path": "scripts/e01_p2_refusal_observability_candidate_v3_20261116.py",
+      "bytes": 8165,
+      "sha256": "e7670b2d56866f0050c892d4406260c860df0158af2848a2f1061179f96e36d9"
+    },
+    "staticReferenceBytes": 209906,
+    "accounting": "147770 binding +4901 probe +957 detector +15478 closed controls +40800 actual audit. Pip texts were regular/nofollow/noalias and matched binding hashes. This excludes separately bounded authored import/startup reads; no exhaustive physical-I/O claim."
+  },
+  "alternatives": [
+    {
+      "option": "Unchanged offline pip initialization",
+      "assessment": "Matched simpler comparator. It retains all guards but the actual diagnostic remains blocked by a caught constructor; callsite unknown."
+    },
+    {
+      "option": "Temporary child-local socket.has_ipv6=False around exact bound vendored initialization",
+      "assessment": "Selected for methods evaluation only. Source conditional would skip the optional probe. This is an intentional compatibility override of a public capability indicator, NOT a documented supported no-network configuration API. Real mutation is unimplemented/unapproved."
+    },
+    {
+      "option": "Existing --no-index/--no-deps/--no-cache-dir flags",
+      "assessment": "Already present. Session imports can still initialize vendored urllib3. No simpler offline-disable knob appears in the inspected exact probe/detector; this is not an exhaustive claim about all pip options."
+    },
+    {
+      "option": "Spoof App Engine environment",
+      "assessment": "Rejected: changes deployment identity and potentially other behavior; the sandbox detector is not a legitimate setting for this Mac runtime."
+    },
+    {
+      "option": "Edit bound vendor source/private HAS_IPV6 globals or permit socket construction",
+      "assessment": "Rejected for this proposal: changes frozen toolchain/private state or weakens denial. No category or operation is waived."
+    }
+  ],
+  "selectedMethods": {
+    "mode": "PURE_MOCK_ONLY",
+    "productionAdapterRef": null,
+    "execution_enabled": false,
+    "actualSocketHasIpv6": null,
+    "actualVendorInitializationState": null,
+    "actualModuleMutation": false,
+    "introducedBehavior": "During the proposed tiny initialization window only, the guest would declare the capability unavailable. Restoring the public flag afterward does NOT undo the vendor's computed/cached HAS_IPV6=False. That intentional cached difference must remain recorded; it is not a claim about host hardware.",
+    "prospectivePreconditions": [
+      "Separate independent methods and production review before any real-module adapter exists.",
+      "Exact bound CPython/Darwin/pip/source/guard identities and explicit standard-library socket module origin/type/source checks.",
+      "Fresh child, verified single-threaded initialization, actual original has_ipv6 exact booleanTrue, no vendored target/parent initialization already underway or cached; no other concurrent reader/mutator of the flag.",
+      "Original complete guard/observer installed before any import/configuration. No change to audit hooks, refusals, counters, PATH, endpoints, import denial, quotas or old-state permissions.",
+      "If original flagFalse/nonboolean, module already initialized or state unexpected: refuse as not applicable, do not force applicability or silently retry."
+    ],
+    "prospectiveWindow": "After pinned pip package loading and before the CLI, a separately reviewed adapter could set the public flagFalse, initialize only the exact bound vendored module through public import machinery, and restoreTrue in finally before regular pip command execution/return. Dotted import may execute parent/transitive initialization, so its bounded loaded closure and effects require review; this is not proven to affect only one consumer.",
+    "restoreAndFailure": "Always restore exact original flag, verify it, fail closed on drift/initialization error, preserve primary guard exceptions and partial module evidence, abort the stage on error. No cache deletion/retry, original-counter reset or successful-postcondition waiver.",
+    "residualDenials": "Any other constructor, metadata/resolver/bind/connect, external helper or native/load attempt remains denied/counted even while capabilityFalse. An internally caught residual denial still makes the original postcondition fail.",
+    "matchedConditions": "Same frozen code/guards/arguments/wheels, same originalTrue fresh mock state and same probe callback. Only scoped capability declaration changes in the proposed condition. Mock results are mechanism checks, not actual pip compatibility or historical attribution.",
+    "interpretation": "Even a later no-refusal validation would show compatibility of that explicit guest profile only; it would not prove the old constructor came from _has_ipv6 or accept an installation."
+  },
+  "prospectiveFiniteValidationOnly": {
+    "status": "NOT_AUTHORIZED_NOT_IMPLEMENTED_REQUIRES_ROOT_JUSTIFICATION",
+    "purpose": "If justified after methods/production review, one offline --dry-run compatibility validation; no new tracing layer, full installation or source work.",
+    "newScope": "data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+    "uncreatedPrefix": ".venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1",
+    "priorFullAllocation": {
+      "wall_seconds": 420,
+      "observed_CPU_seconds": 160,
+      "commands": 11
+    },
+    "proposedIncrement": {
+      "wall_seconds": 30,
+      "observed_CPU_seconds": 20,
+      "main_children": 1,
+      "parent_child_soft_hard_CPU": [
+        7,
+        8
+      ]
+    },
+    "proposedCumulativeAllocation": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "commands": 12
+    },
+    "storage": "Preserve all three failed target/scope pairs and both consumed diagnostic scopes (eight old roots). One compatibility scope would make nine roots sharing768MiB/16384entries; each diagnostic/compatibility scope16MiB, all old occupancy measured and reverified. No fictional target may be created.",
+    "unchanged": "Exact five wheels/hashes/requirements and --dry-run; absolute interpreter, original PATH, metadata/old-source proofs, all I/O/output/cancel/clock/control/file limits, zero network/helpers/downloaded-package imports, and failed original postcondition on any refusal.",
+    "releaseGates": [
+      "Exact independent pure methods review",
+      "Separately authorized concrete adapter/validation runner with matched authored/adverse tests and production review",
+      "Root explicit finite justification/current original-state/import-closure/old-root/input/storage preflight",
+      "Exact particular release and once-only root invocation; independent actual outcome review"
+    ],
+    "noCascade": "No automatic second remedy, fourth full installation, P3/source qualification, financial-owner or campaign-ordinal change follows."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Bound public pip source text, closed safe technical controls/audit and authored mock objects/callbacks only. No actual socket module state was queried/mutated, no actual socket/pip/package/helper/native/network/research-source execution, no raw respondents/publisher content, credentials or financial owners.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerSocketGlobalMutationPipDiagnosticNetworkPackageSourceOwnerActions": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "The actual construction callsite/family/destination/history remains unknown; models test only the plausible pinned branch.",
+    "Public capability override is not an officially supported offline-setting contract and can affect other import-time consumers. Exact narrow closure, single-threading and restoration must be established before a real implementation.",
+    "Mock dataclasses structurally reject real modules and arbitrary namespaces; this source is deliberately not a usable real socket adapter.",
+    "Vendor cachedFalse is an intentional surviving difference after flag restoration; do not claim unchanged network-capability state.",
+    "Original denial guards and postcondition remain authoritative. Candidate helper receipts alone do not imply zero guard violations.",
+    "All old production sources/configs/audits/targets/scopes, STATUS and Git remain unchanged. Current task supplies no actual execution authority."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact compatibility-methods/pure-model review",
+    "No real-module adapter, production validation runner, root finite justification or actual release exists"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate reviewer evaluates this conditional compatibility proposal and pure mock evidence. Root decides whether a separately bounded implementation/validation is justified; otherwise preserve the blocked P2/P3 state."
+}

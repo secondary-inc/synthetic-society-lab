@@ -1,0 +1,29 @@
+--- before
++++ after
+@@ -53,9 +53,9 @@
+ 
+     <Stack gap={10}>
+       <H2>What has actually run</H2>
+-      <Table headers={["E02 study", "Saved responses", "Verified usage (USD)", "Outcome", "Evidence"]}
++      <div style={{ overflowX: "auto", maxWidth: "100%" }}><Table style={{ minWidth: 760, overflowWrap: "normal" }} headers={["E02 study", "Saved responses", "Verified usage (USD)", "Outcome", "Evidence"]}
+         rows={STUDIES.map(s => [s.name, s.count, "$" + s.usd, s.status, <EvidenceButton key={s.report} path={s.report} label="Open record" />])}
+-        columnAlign={["left", "right", "right", "left", "left"]} />
++        columnAlign={["left", "right", "right", "left", "left"]} /></div>
+       <Text size="small" tone="secondary">Source: dated public execution records, November 8–16, 2026. First four studies total 147 responses / $0.0098213. The fifth has 22 responses per configuration: 16 baselines and 28 post-treatment answers overall. Its full registered analysis is NOT_RUN. Independent reviews accept only their stated evidence, accounting and scoring scope.</Text>
+       <Text>These are exploratory model-output studies with authored stimuli and fictional contexts. They do not demonstrate effects on people, a representative electorate, or a completed human-study replication.</Text>
+     </Stack>
+@@ -81,12 +81,12 @@
+ 
+     <Stack gap={10}>
+       <H2>What needs to happen next</H2>
+-      <Table headers={["Work", "Current obstacle", "Next concrete step"]} rows={[
++      <div style={{ overflowX: "auto", maxWidth: "100%" }}><Table style={{ minWidth: 700, overflowWrap: "normal" }} headers={["Work", "Current obstacle", "Next concrete step"]} rows={[
+         ["E02 live continuation", "HTTP 402; account credits and cause unresolved", "Administrator checks Secondary account credits/budget; then prepare a bounded continuation preserving saved responses and holds."],
+         ["E01 source processing", "Offline dry-run recorded one denied socket constructor; historical cause unknown", "Review the mocked optional-probe remedy, then separately test the bounded compatibility change before accepting an installation."],
+         ["GitHub delivery", "Repository write access unavailable", "Restore repository write access; push the preserved local commits and run current CI."],
+         ["Scientific completion", "National calibration, human anchoring, remaining validation and comparisons unfinished", "Keep these gates open and complete matched evaluations; no promotion of engineering or small-pilot results into human claims."],
+-      ]} />
++      ]} /></div>
+     </Stack>
+ 
+     <CollapsibleSection title="Verification, delivery and snapshot provenance">
