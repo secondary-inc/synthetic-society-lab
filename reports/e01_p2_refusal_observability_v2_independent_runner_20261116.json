@@ -1,0 +1,22 @@
+{
+  "wrapper": "import runpy,sys\ndef guard(event,args):\n if event in ('os.kill','os.killpg'): raise AssertionError('AUDIT_NO_ACTUAL_PROCESS_SIGNAL')\nsys.addaudithook(guard)\nsys.argv=['tests/test_e01_p2_refusal_observability_candidate_v2_20261116.py']\nrunpy.run_path('tests/test_e01_p2_refusal_observability_candidate_v2_20261116.py',run_name='__main__')\n",
+  "results": [
+    {
+      "runtime": "312",
+      "exit_code": 0,
+      "wall_seconds": 0.13537716699647717,
+      "bytes": 2749,
+      "log": "reports/e01_p2_refusal_observability_v2_independent_312_20261116.txt",
+      "sha256": "ead5f3a8450351ec817978071ca542da394736b1b291493baded1db4c9ac2607"
+    },
+    {
+      "runtime": "311",
+      "exit_code": 0,
+      "wall_seconds": 0.11685287499858532,
+      "bytes": 2749,
+      "log": "reports/e01_p2_refusal_observability_v2_independent_311_20261116.txt",
+      "sha256": "ead5f3a8450351ec817978071ca542da394736b1b291493baded1db4c9ac2607"
+    }
+  ],
+  "reviewer_invocations_each_runtime": 1
+}
