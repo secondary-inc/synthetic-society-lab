@@ -1,0 +1,83 @@
+{
+  "actual_failure_interpretation": "Root metadata-only preflight is preserved as FAILED_NO_INSTALL/DEPENDENCY_SCHEMA. The independent authored stdlib/pure-parser reproduction establishes the boundary mechanism without rereading actual wheels or rerunning preflight. Root reports55 JSON-normalized real requirements with no plain-string schema offenders; that count is not independently reprocessed here.",
+  "auditor_artifacts": [
+    {
+      "bytes": 2351,
+      "path": "/tmp/civiclab-auditor-e01-requires-header-boundary-20261116.py",
+      "sha256": "a0f93aebf0ce17a5d3ec8c1697ef788c045fe407e61e8a2846401067b1d0ea1b"
+    },
+    {
+      "bytes": 780,
+      "path": "/tmp/civiclab-auditor-e01-requires-header-boundary-20261116.json",
+      "sha256": "24295f5abc7b79a28b183631ee2ea8d7c96fae47c684557dea082fcebd3ef4cd"
+    }
+  ],
+  "cost_USD": 0,
+  "finding_id": "E01-P2-HEADER-TYPE-002",
+  "independent_authored_reproduction": {
+    "JSON_roundtrip_preserves_value_but_base_type": true,
+    "cost_USD": 0,
+    "current_consumer_sha256": "7da63c64b9427088d520fe06447431d37db8505587a23355ced5229e632c026f",
+    "header_runtime_type": "_UnstructuredHeader",
+    "isinstance_str": true,
+    "normalized_closure": [
+      {
+        "active": true,
+        "dependency": "pycparser",
+        "disposition": "SATISFIED_FIXED_FIVE",
+        "owner": "cffi",
+        "raw": "pycparser>=3.0; implementation_name == \"cpython\""
+      }
+    ],
+    "original_dependency_refusal": "DEPENDENCY_SCHEMA",
+    "scope": "Only extracted pure current parser functions and freshly authored stdlib email metadata. No package import/install/wheel/native/source/network.",
+    "status": "PASS_AUTHORED_STDLIB_HEADER_BOUNDARY_REPRODUCTION",
+    "type_is_str": false
+  },
+  "kind": "INDEPENDENT_E01_P2_STDLIB_REQUIRES_DIST_HEADER_BOUNDARY_FINDING",
+  "limits": [
+    "No actual installer, package import, pip invocation, native call, downloaded wheel/PDF/source or network action by this reproduction.",
+    "No new financial/source ordinal or runtime/source/scientific qualification acceptance.",
+    "Current39-per-runtime component mock acceptance stays its original scope; real metadata compatibility and actual install remain gated."
+  ],
+  "model_calls": 0,
+  "ownership": "Independent auditor; original helper/core/consumer/config/tests and prior findings unchanged.",
+  "proposed_remedy": "At the trusted inspection-to-consumer boundary, require string-compatible header values and normalize them to ordinary strings before the unchanged strict dependency parser. Preserve bounds/content and fail closed for arbitrary nonstring objects, unsupported active markers/versions/extras/URLs or unsatisfied dependencies. Do not change the frozen P1 helper or substitute metadata.",
+  "required_tests": [
+    "Actual stdlib BytesParser(policy.default) Requires-Dist header reaches consumer, with equal preserved JSON text and base-string dependency closure.",
+    "Nonstring input remains refused without arbitrary __str__ coercion. Existing active/inactive dependency, malicious-marker/version/extra/refusal and resource checks remain intact.",
+    "Separately versioned exact consumer/command/method/packet delta, retaining all accepted prior core/consumer sources and this failure evidence.",
+    "Recheck bounded real metadata compatibility and supported legacy-certs command delta before particular install release."
+  ],
+  "review_date_client": "2026-11-16 America/New_York",
+  "separate_issue": "E01-P2-BOUND-PIP-TLS-001 remains independently open; header normalization does not establish real pip startup/guard compatibility.",
+  "severity": "MEDIUM_ENGINEERING_VALID_METADATA_TYPE_COMPATIBILITY",
+  "source_refs": [
+    {
+      "bytes": 31924,
+      "path": "scripts/acquire_e01_pypdf701_artifacts_v1.py",
+      "sha256": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc"
+    },
+    {
+      "bytes": 50132,
+      "path": "scripts/install_e01_pypdf701_runtime_v1_2.py",
+      "sha256": "7da63c64b9427088d520fe06447431d37db8505587a23355ced5229e632c026f"
+    },
+    {
+      "bytes": 1075,
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_20261116.json",
+      "sha256": "e70db9ad3f1facef73885a169335c287a9bb1d53619c8285439cead19424e0e2"
+    },
+    {
+      "bytes": 3478,
+      "path": "reports/INDEPENDENT_AUDIT_E01_P2_READONLY_PREFLIGHT_STOP_20261116.json",
+      "sha256": "1a95ebc788db8d0ada4a15acdd447bb8837f46bd93d1522acd4b3a7e04c89711"
+    }
+  ],
+  "static_call_path": [
+    "Frozen P1 inspect_wheel uses BytesParser(policy=email_policy.default) at283 and returns meta.get_all(Requires-Dist,[]) at294.",
+    "P2v1.2 verify_acquisition assigns inspection requires_dist directly at413. Equality to hash-bound JSON inspection preserves textual equality but does not normalize runtime header type.",
+    "Strict dependency_closure requires type(raw)isstr, so stdlib header subclasses refuse DEPENDENCY_SCHEMA before marker/closure evaluation."
+  ],
+  "status": "BLOCKED_REAL_METADATA_COMPATIBILITY_UNTIL_NARROW_BOUNDARY_REMEDY"
+}

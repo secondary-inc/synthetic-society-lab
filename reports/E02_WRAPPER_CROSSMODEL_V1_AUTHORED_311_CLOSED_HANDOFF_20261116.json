@@ -1,0 +1,119 @@
+{
+  "TASK_ID": "E02_WRAPPER_CROSSMODEL_V1_REVIEWED_311_DUAL_CLOCK_CONTINUATION",
+  "kind": "E02_WRAPPER_CROSSMODEL_V1_AUTHORED_311_CLOSED_HANDOFF",
+  "status": "21_FUNCTIONAL_CHECKS_AND_DUAL_CLOCK_HARNESS_PASS_PENDING_INDEPENDENT_RETAINED_EVIDENCE_REVIEW",
+  "execution": {
+    "exit_code": 0,
+    "stop_reason": null,
+    "captured_bytes": 3870,
+    "UTC_ended": "2026-11-16T10:36:13.780417+00:00",
+    "source_pins_unchanged": true,
+    "actual_model_calls": 0,
+    "cost_USD": 0,
+    "functional_tests_pass": true,
+    "UTC_elapsed": 1446.1259043216705,
+    "monotonic_elapsed": 1446.1290635000041,
+    "final_clock_validated": true,
+    "status": "PASS"
+  },
+  "unittest_seconds": 1446.049,
+  "approved_source_contract_sha256": "3011ca56ecf7cb1c7528050f3387160f29f6ac8c372b6ef19e321e796d2b56ca",
+  "refs": [
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/STARTED.json",
+      "bytes": 3004,
+      "sha256": "b7c859a9e2fca88007c84d1e1a037cc874c050ea7a3fa689e2c5c517b25c408c"
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/RECEIPT.json",
+      "bytes": 364,
+      "sha256": "e77de13eace66651b73fe1570910ff833c8bd24979133aad5358bb3bb7f1c757"
+    },
+    {
+      "path": "reports/wrapper_crossmodel_v1_focused_dual_clock_311_20261116.txt",
+      "bytes": 3870,
+      "sha256": "0741d0503bc334cca47c4d945b67079c932f612a4071f22d708f71e6d7a73e11"
+    },
+    {
+      "path": "reports/wrapper_crossmodel_v1_focused_dual_clock_311_receipt_20261116.json",
+      "bytes": 364,
+      "sha256": "e77de13eace66651b73fe1570910ff833c8bd24979133aad5358bb3bb7f1c757"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_REMEDY_CONTINUATION_RELEASE_20261116.json",
+      "bytes": 15973,
+      "sha256": "260bd1a0efc65ae8f424a562c86738bf0230d86dabb63663d119038b75fa38f8"
+    }
+  ],
+  "retained_indices": [
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/CLASS_END_PARTIAL_MOCK_HOME/index.json",
+      "bytes": 255472,
+      "sha256": "682b5f138cffe352eeace380cc10e06e23d6a65bcc41a27d9a90fbc4342e723c",
+      "kind": "MOCK_AUTHORED_WRAPPER_CROSSMODEL_V1_FIXTURE_INDEX",
+      "file_count": 955
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/prefix/index.json",
+      "bytes": 251224,
+      "sha256": "da448e20bcabe4cf058f0407dbd78860f428f3ae7aaaf5c6296d76f5eebb26a6",
+      "kind": "MOCK_AUTHORED_WRAPPER_CROSSMODEL_V1_FIXTURE_INDEX",
+      "file_count": 939
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/test_full80_delayed_billing_preserves_prefix_holds_and_no_replay/01/index.json",
+      "bytes": 412881,
+      "sha256": "979e32dc903377862b27941f2b4fabb8b1e67ccc409a201f2c2b8794b4738506",
+      "kind": "MOCK_AUTHORED_WRAPPER_CROSSMODEL_V1_FIXTURE_INDEX",
+      "file_count": 1524
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/test_unapproved_provider_and_known_overrun_stop_without_second_post/01/index.json",
+      "bytes": 254318,
+      "sha256": "1bdebaa47b74cfdadf10990da5424ade3c7a5e127eb002cd1974d8f9da9821e9",
+      "kind": "MOCK_AUTHORED_WRAPPER_CROSSMODEL_V1_FIXTURE_INDEX",
+      "file_count": 951
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/test_unapproved_provider_and_known_overrun_stop_without_second_post/02/index.json",
+      "bytes": 253754,
+      "sha256": "fa9d4c84368f34a43bd6940effd4b2ca63c612f2fee6c79fc9964d55a91f75b2",
+      "kind": "MOCK_AUTHORED_WRAPPER_CROSSMODEL_V1_FIXTURE_INDEX",
+      "file_count": 949
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_authored_03_python311/test_unknown_bill_stops_whole_batch_keeps_full_hold/01/index.json",
+      "bytes": 255476,
+      "sha256": "ef2795f9da000f7bc9261aa2f5412f3eb6042a2b669c25cb437e3828ce6ce7ee",
+      "kind": "MOCK_AUTHORED_WRAPPER_CROSSMODEL_V1_FIXTURE_INDEX",
+      "file_count": 955
+    }
+  ],
+  "FILES_CHANGED": [
+    "No source changes after reviewed release",
+    "Public safe execution log/receipt/handoff only"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Exact consumed command: .venv/bin/python -B scripts/run_wrapper_crossmodel_v1_authored_utc_20261116.py --reviewed-contract-sha256 3011ca56ecf7cb1c7528050f3387160f29f6ac8c372b6ef19e321e796d2b56ca",
+    "DO NOT replay consumed scope. Reproduce only in separately reviewed fresh authored scope after verifying frozen fixture/source pins."
+  ],
+  "TESTS_RUN_AND_RESULTS": "One3.11-only continuation;21PASS1446.049s. Full80MOCK lifecycle plusunknownbilling/provider/overrun/ancestry/cap/clock/caller checks. No3.12repeat. FinalUTC1446.1259043s/mono1446.1290635s,3870Boutput,unchangedsourcepins.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Wholly authored fictional MOCK responses and149-row generated prefix cloned from exactaccepted3.12fixture. Noactualresearch/rawrespondent/publisher inputs used.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actual_model_network_calls": 0,
+  "actual_owner_access": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Engineeringtests only; no syntheticpoliticaleffect estimate or human/population/model-family validity.",
+    "This implementer reports execution; separateauditor must validate retainedraw state/manualarithmetic before milestoneacceptance or anylive release.",
+    "CLASS_END_PARTIAL_MOCK_HOME is automatic last-working-scope preservation, explicitly unverified partialevidence. It is not an additional successful scientificrun.",
+    "Historical3.12functionalPASS remainsqualified byfailed/unestablishedUTCcompliance; old3.11partial remainsfailed, originaltimingfinding/rejectedrunner remainunchanged. This newPASSdoesnotrewritehistory.",
+    "No live model/budget/credential/source/PDF/package installation authority.",
+    "Gitroot exclusively coordinates safecommits/push; remote delivery currentlyaccessblocked."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independentfinalretained3.11evidenceaudit",
+    "Exact rootliveprep/reviewiflaterauthorized",
+    "GitHubwriteaccess"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead relays exacthandoff to dedicatedauditor; commit safe source/audit/logs/receipt refs, preserve local rawMOCKstate; no automaticrerun/liveexecution."
+}
