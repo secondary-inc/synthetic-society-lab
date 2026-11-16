@@ -1,0 +1,35 @@
+{
+  "kind": "INDEPENDENT_P2_V1_3_PACKET_AND_PREFLIGHT_STATIC_REVIEW",
+  "status": "PASS_ONE_ROOT_METADATA_ONLY_PREFLIGHT_SCOPE_ONLY",
+  "actual_packet_ref": {
+    "path": "data/processed/e01_pypdf701_build_v1/install-v1_3-packet-20261116.json",
+    "bytes": 1523,
+    "sha256": "9b0ca1255243821fee8707bcd83f3e6d773c17ce29522535e71585788d9f889b"
+  },
+  "old_packet_sha256": "66159fdccc28b793b2e79255bb46e1ac417eef07f587f959c1d02fd3e602ac7a",
+  "changed_fields": [
+    "methods_sha256"
+  ],
+  "helper_ref": {
+    "path": "data/processed/e01_pypdf701_p2_metadata_preflight_v2_20261116.py",
+    "bytes": 5129,
+    "sha256": "86355c3bbddf452b675be81632a2c464334d40c83dfa7391bf2a189509ce4036"
+  },
+  "module_calls": [
+    "Reader",
+    "json_body",
+    "validate_methods",
+    "verify_acquisition",
+    "verify_bootstrap"
+  ],
+  "scope_and_report_absent": true,
+  "actual_execution": false,
+  "cost_USD": 0,
+  "notes": [
+    "Packet exactsamefiveidentity/terminal/hashlockvalues previously independentlyaccepted; only reviewedmethodsbindingchanged.",
+    "Helperpinsreviewedcode/method/packet;calls onlymetadata/bootstrap/acquisition verification, neverexecute/guest_main/pip.",
+    "NoDownloadedImports blocks pip andfivepackages; auditdeniessocket/subprocess/native;writesonlycreatescopeandnamedreport.",
+    "120salarm/7soft8hardCPU and536870912Readerreferencebytes; trustedcooperativeguards, nothardOS/hostilecodefilesystemcontainment.",
+    "Neitherstatichelperreview noritsfuturemetadatasuccessauthorizesactualinstallation; returnexactclosedreceipt forparticularreview."
+  ]
+}

@@ -129,7 +129,7 @@
       "zero_margin_control_MAE_percentage_points": 18.188306030001055
     },
     "current_source_document_scope": "13-state typed document union; 20 unfinished source jobs; zero accepted final ballots",
-    "dependency_upgrade": "P1 complete and independently accepted. P2 actual metadata-only preflight stopped at DEPENDENCY_SCHEMA before installation; narrow header-normalization and offline pip legacy-certs remedies under review. No new environment or source processing.",
+    "dependency_upgrade": "P1 accepted; new metadata-only P2 preflight PASS. One independently released offline installation attempt stopped at pip metadata scan with GUEST_READ_OUTSIDE_ALLOWLIST. Partial environment preserved, no retry, no runtime or source qualification.",
     "fresh_acquisition_finding": {
       "bytes": 8246,
       "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_4_CODE_METHODS_20261116.json",
@@ -139,6 +139,11 @@
       "bytes": 5046,
       "path": "reports/INDEPENDENT_AUDIT_E01_P2_HEADER_TYPE_FINDING_20261116.json",
       "sha256": "1131717479afdbacddc2a8594f8e7dafe307109d992e5b0f41e4a321d69d17c3"
+    },
+    "installer_actual_stop": {
+      "bytes": 1535,
+      "path": "reports/E01_PYPDF701_INSTALL_V1_3_ACTUAL_ROOT_CAPTURE_20261116.json",
+      "sha256": "0aa208af2df90c890b5fbcb4d98d0660a1d41dbcf7bb7ba3d0751cc46e2cfc89"
     },
     "installer_diagnosis": "Saved JSON has55 valid plain-string requirement rows. Frozen wheel inspection instead returns stdlib _UnstructuredHeader string subclasses; strict exact-str dependency validation rejects this representation. Authored stdlib reproduction confirms representation difference; separate consumer remedy is pending independent review.",
     "installer_evidence": {
@@ -160,6 +165,11 @@
       "bytes": 1075,
       "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_20261116.json",
       "sha256": "e70db9ad3f1facef73885a169335c287a9bb1d53619c8285439cead19424e0e2"
+    },
+    "installer_preflight_success": {
+      "bytes": 12199,
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_V2_20261116.json",
+      "sha256": "615962f0669e90c12bc555488787d48b8f53ec5ca1f6553d196a8741c7f5d39a"
     },
     "mode": "RETROSPECTIVE",
     "preflight_stop_review": {
@@ -244,7 +254,7 @@
     }
   ],
   "e02_fifth_study": {
-    "actual_execution": "NOT_RUN",
+    "actual_execution": "RUNNING: exactly one reviewed launcher invoked; final request count, invoices and results are not yet known.",
     "batch_cap_microusd": 200000,
     "evidence": [
       {
@@ -271,20 +281,31 @@
         "bytes": 6313,
         "path": "reports/E02_WRAPPER_CROSSMODEL_V1_AUTHORED_311_CLOSED_HANDOFF_20261116.json",
         "sha256": "959ce7326d9fc250c324958dca6cda6a6b5267b684287fdf69741d2a62834bd3"
+      },
+      {
+        "bytes": 19632,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_CLOSED_311_20261116.json",
+        "sha256": "ba400aec5b8e83269c6569cb111cd281892bd57c8be9ed7a0fea2c67e81dccc1"
+      },
+      {
+        "bytes": 16056,
+        "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PARTICULAR_RELEASE_20261116.json",
+        "sha256": "5814f34d2ba98e123b1239b2ac7310c96ab47fa22fb6351622e38a30b1c96dd4"
       }
     ],
     "maximum_model_requests": 80,
     "purpose": "Matched two-configuration comparison of wrapper sensitivity and own-prior-answer visibility; fresh responses in both configurations.",
-    "python311_continuation": "CLOSED:21 functional checks PASS,1446.126s UTC/1446.129s monotonic, unchanged source pins, final clock validation PASS. Independent closed evidence review pending; no actual fifth-study model request.",
+    "python311_continuation": "21 PASS with final dual-clock validation; closed evidence independently accepted.",
     "python312_functional_checks": "21 PASS; retained artifacts independently verified",
-    "timing_acceptance": "BLOCKED: elapsed UTC exceeded the original bound despite monotonic time being within it; cause UNKNOWN"
+    "quoted_maximum_new_model_usage_microusd": 120040,
+    "timing_acceptance": "New bounded Python3.11 continuation accepted; original Python3.12 timing failure and interrupted prior3.11 preserved."
   },
   "e02_total_research_generations": 147,
   "e02_verified_research_model_usage_USD": "0.0098213",
   "full_original_completion_contract": "INCOMPLETE",
   "git": {
     "checkpoint_push": "BLOCKED_UNAVAILABLE_WRITE_ACCESS",
-    "current_local_head": "fadf816956d29145459b8f8b64d8149883e83a93",
+    "current_local_head": "494b29e6b8e50628790cbde13e5dd9dba653040b",
     "evidence": {
       "bytes": 1432,
       "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
@@ -323,7 +344,7 @@
     "E03/E04, advanced feeds/assistants/swarms remain gated.",
     "Model-usage dollars exclude local compute, agent labor and infrastructure costs."
   ],
-  "new_model_calls_during_this_checkpoint": 0,
+  "new_model_calls_during_this_checkpoint": "PENDING_CLOSED_FIFTH_RUN_COUNT",
   "next_unblocked_work": [
     "Complete the running, once-only Python3.11 mock continuation and independently verify its closed artifacts; retain the original timing failure.",
     "Prepare and independently review narrow E01 installer compatibility remedies, verify real metadata without installation, then execute one exact bounded offline installation.",
@@ -332,6 +353,7 @@
   ],
   "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
   "owner_conservative_exposure_microusd": 12221,
+  "owner_exposure_observation": "12221 microUSD is the last independently verified closed baseline before the active fifth batch. Current live reservations and exact charges await closed reconciliation; no live owner reread was performed for this status update.",
   "previous_checkpoint_sha256": "47df74ca25647e98524055b365338a91b0ea473f743777b239d831e348746db5",
   "public_checkpoint_static_review": {
     "bytes": 8650,
@@ -344,5 +366,5 @@
     788,
     1008
   ],
-  "updated_at_UTC": "2026-11-16T10:35:42.331470+00:00"
+  "updated_at_UTC": "2026-11-16T10:47:15.274732+00:00"
 }

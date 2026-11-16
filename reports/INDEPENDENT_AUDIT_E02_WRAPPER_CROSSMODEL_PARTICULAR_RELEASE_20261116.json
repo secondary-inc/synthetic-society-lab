@@ -1,0 +1,258 @@
+{
+  "auditor_access": {
+    "closed_actual_export_bytes": 3033541,
+    "cost_USD": 0,
+    "credentials": 0,
+    "explicit_recorded_artifact_bytes": 3206939,
+    "live_owner_store": 0,
+    "model_calls": 0,
+    "network": 0,
+    "note": "Explicit bounded artifact reads are recorded separately from public source-module loading/code-contract source hashing; not a total physical-I/O meter."
+  },
+  "auditor_artifacts": [
+    {
+      "bytes": 5861,
+      "path": "/tmp/civiclab-auditor-e02-particular-20261116/verification.json",
+      "sha256": "fb14630fa8112808b50599f286e761d752a6711ba66a6cfb5529c08c702eda67"
+    },
+    {
+      "bytes": 8386,
+      "path": "/tmp/civiclab-auditor-e02-particular-20261116.py",
+      "sha256": "db00b2be9fd3c67c650b98e59244252f008124eabe0b31d029ec2b2a30ad6274"
+    }
+  ],
+  "authorization_basis": "Existing standing owner authorization: combined5USD/E02 1USD/E01 paid inference0. Lead fixed this separately reviewed batch at0.20USD. This audit validates the concrete implementation/packet within that authority; supplies no increase, account-setting, credit-purchase or external-publication authority.",
+  "exact_bindings": {
+    "caller": {
+      "bytes": 4121,
+      "path": "scripts/run_wrapper_crossmodel_v1_20261115_once.py",
+      "sha256": "92321f3739460d2020255107fc2e211414b773702d89f82bfaddedfd1cc534e2"
+    },
+    "code_contract_sha256": "8b11a9bb102ebab6731e8757c6986d7839da191d6bbf74901b55a8008ad42ab1",
+    "identical_candidate_packet": true,
+    "launcher": {
+      "bytes": 1573,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_reviewed_once.py",
+      "sha256": "c8d2a264a6ef83a0f58423fbea589d5260c849bd556675f2887d87a80c9ae80a"
+    },
+    "packet_file": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json",
+    "packet_sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec",
+    "protocol_sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1",
+    "source_commit_at_preparation": "494b29e6b8e50628790cbde13e5dd9dba653040b",
+    "window_end_utc": "2026-11-16T12:39:52.131896+00:00",
+    "window_start_utc": "2026-11-16T10:39:52.131896+00:00"
+  },
+  "findings": [],
+  "finite_controls": {
+    "E01_paid_microusd_cap": 0,
+    "E02_microusd_cap": 1000000,
+    "GET_retry_statuses": [
+      404
+    ],
+    "GETs_each_generation_max": 3,
+    "POST_retries": 0,
+    "artifact_bytes": 2000000,
+    "authority_seconds": 7200,
+    "batch_microusd_cap": 200000,
+    "catalog_refresh_before_global_slots": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70
+    ],
+    "concurrency": 1,
+    "input_tokens_each_max": 8192,
+    "journal_aggregate_bytes": 268435456,
+    "journal_artifacts_max": 1536,
+    "lifetime_dispatches_max": 229,
+    "lookup_wait_seconds": [
+      10,
+      10,
+      20
+    ],
+    "new_model_POSTs_max": 80,
+    "new_statistics_GETs_max": 240,
+    "output_tokens_each_max": 256,
+    "phase_seconds": 120,
+    "price_age_seconds": 900,
+    "quoted_maximum_batch_microusd": 120040,
+    "reserved_microusd_each_max": 1785,
+    "runtime_catalog_GETs_max": 16,
+    "separate_prior_preparation_catalog_GETs": 2,
+    "shared_microusd_cap": 5000000
+  },
+  "kind": "INDEPENDENT_E02_WRAPPER_CROSSMODEL_EXACT_PARTICULAR_LIVE_RELEASE_REVIEW",
+  "ownership": "Nonimplementing auditor. No packet/launcher/caller/code/accepted-review/intent/ledger/credential mutation or model invocation. Lead alone schedules exact approved invocation.",
+  "particular_checks": [
+    "Exact canonical packet/candidate bytes/hash match and pure validate_packet passes. Current recursively compiled code_contract equals candidate and policy hash; full exact limits/routing/instrument/source bindings retained.",
+    "Bound launcher differs from reviewed unbound1473-byte template only in exact PACKET/CALLER constants. It scrubs PYTHONOPTIMIZE in child, consumes create-once output paths and does not retry. Current caller, preparer, collector, receipt builder and credential-reader source hashes match accepted reviews.",
+    "Independently read exactly the declared3033541-byte old closed export under expected da5abbf7 hash. Its149 rows/908 events/four holds, completed40-witness predecessor, head/all earlier study/row/history/claim/consumed hashes match policy. No live owner store was opened.",
+    "Exact prior conservative exposure12221microUSD and historical holds340/340/788/1008 remain; E01 module exposure zero, prior dispatches149, no reset/new owner or reinterpretation of uncertain bills. Consent evidence hash equals accepted predecessor.",
+    "Real captured A/B price release equals previously reviewed028514d7 contract. Per-call worst quotes1285/1716microUSD and40 each give120040microUSD maximum. Conservative existing-plus-quoted exposure132261microUSD fits1M E02/5M shared, and new quote fits200000 batch cap. Missing fees remain explicitly conditional interpretations, not observed-zero claims.",
+    "Fixed80 new jobs:16 fresh pre responses and64 planned posts,40 each configuration; matched topic/profile/content/instrument/order/seed conditions, alternating paired role order, per-configuration own pre witness and frozen invalid/skip/intersection scoring. No old answers reused or outcome-based replacements.",
+    "Finite7200-second window is within both price contracts, valid until Nov17 approximately01:55UTC. At review it was open with more than120seconds remaining. Runtime still must fetch fresh verified route/fee catalogs at start and before global10/20/...70 barriers; captured old catalog bodies are not runtime freshness proofs.",
+    "At review no execution-intent, execution-summary, stderr or accepted-review marker existed in actual01 scope. No particular launcher/caller invocation or credential read occurred."
+  ],
+  "prior_reviews": [
+    {
+      "bytes": 7043,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_METHODS_20261115.json",
+      "sha256": "6b786aa2c8d659f451ffe9d03da072ef8503e9ee17e07ba05a6e8d2ee4396d34"
+    },
+    {
+      "bytes": 8222,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_MAIN_STATIC_20261115.json",
+      "sha256": "7ccf518cf819d4162e866d66ba33947674df7285a7d10e54a1d10b018d753497"
+    },
+    {
+      "bytes": 17970,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PRICE_ROOT_HELPERS_20261115.json",
+      "sha256": "37c994d2e9709e25d7b0b22a53077f0110683426707cd6ea99b3eb1d88722d76"
+    },
+    {
+      "bytes": 18092,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_312_20261116.json",
+      "sha256": "12a137f3520ae5b501490641418775b2cc103d6ad72c09ba2bc73b8d7195ead8"
+    },
+    {
+      "bytes": 5508,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_RETAINED_TIMING_FINDING_20261116.json",
+      "sha256": "f21d3a42459515a89ce1f605c06db5ea3dda4d959c230643060416570a7f5601"
+    },
+    {
+      "bytes": 15973,
+      "path": "reports/INDEPENDENT_AUDIT_E02_DUAL_CLOCK_REMEDY_CONTINUATION_RELEASE_20261116.json",
+      "sha256": "260bd1a0efc65ae8f424a562c86738bf0230d86dabb63663d119038b75fa38f8"
+    },
+    {
+      "bytes": 19632,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_CLOSED_311_20261116.json",
+      "sha256": "ba400aec5b8e83269c6569cb111cd281892bd57c8be9ed7a0fea2c67e81dccc1"
+    },
+    {
+      "bytes": 8650,
+      "path": "reports/INDEPENDENT_AUDIT_E02_ROOT_RECEIPT_CHECKPOINT_20261116.json",
+      "sha256": "6039a29cbd6d3f777ba10662ac10c6181ccd610b18d68dd4d23e36166f6ff039"
+    }
+  ],
+  "release_instructions": {
+    "after_stop_or_success": "Preserve actual owner/journal/intent/failed artifacts. Use exact reviewed closed-evidence collector and local report builder with assertions enabled; return hashes/usage/costs/denominators/exclusions for independent actual audit. Failure consumes this launcher namespace; any later recovery requires distinct reviewed bounded continuation, never replay/reset.",
+    "argv": [
+      ".venv/bin/python",
+      "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_reviewed_once.py"
+    ],
+    "authorized_actor": "Lead only under existing operator/financial authority",
+    "automatic_retries": 0,
+    "before_launch": [
+      "Recheck packet/caller/launcher/code pins, exact unconsumed paths and unexpired window. Runtime owner verification must refuse any drift from reviewed closed ancestor.",
+      "Create accepted-review.local.json binding this report path and exact final SHA256 before actual invocation so postrun collector binds the independent release. Do not alter packet or review roles to imply completed actual audit.",
+      "Use existing secure credential path; no pasted key, rotation/account changes or secret publication."
+    ],
+    "cwd": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab",
+    "invocations_max": 1,
+    "permission_scope": "Only this exact study/configuration/packet/window. No E01 inference/source processing, new population/feed/assistant/swarm condition, sample increase, external contact/publication, credit purchase or ceiling increase."
+  },
+  "review_date_client": "2026-11-16 America/New_York",
+  "reviewed_at_UTC": "2026-11-16T10:42:52.181967+00:00",
+  "reviewer_role": "independent_auditor",
+  "runtime_stop_conditions": "Fresh semantic/route/price mismatch, expired or discontinuous clocks, wrong ancestry, insufficient headroom/capacity, invalid provider/model/generation/usage/fees, unknown bill or known overrun stops without another POST/replacement. Preserve full reservation or higher known cost and all old holds. Only exact closed404 may receive remaining bounded lookup attempts. No silent fallback or unbounded retry.",
+  "scientific_limits": [
+    "Exploratory two-configuration comparison selected after previous results; model/provider/time change jointly. No causal model-family, serving-determinism, human persuasion or representative-population claim.",
+    "Four purposive fictional contexts/two project-authored notices/custom support outcome; this is not a real news-feed or external human-study replication.",
+    "SHOWN cue is fresh same-configuration own support and may differ numerically across configurations; no common numeric anchor intervention.",
+    "Report matched valid intersections and all missing/skip/quality states under frozen rules. No CI,p-value,equivalence, pooled old-study effect or source-rights upgrade.",
+    "Historical mock timing finding remains visible. Original research contract, broad current CI/reproducibility/national calibration/external human validity requirements remain incomplete."
+  ],
+  "source_refs": {
+    "configs/e02_wrapper_crossmodel_v1_20261115.json": {
+      "bytes": 82688,
+      "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/build_public_receipt.py": {
+      "bytes": 8901,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/build_public_receipt.py",
+      "sha256": "dece4866b37d6d36fc5ccfc5549551b789bc7210343334e6cf57e4ba0b335e05"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/code-contract.candidate.local.json": {
+      "bytes": 12160,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/code-contract.candidate.local.json",
+      "sha256": "8b11a9bb102ebab6731e8757c6986d7839da191d6bbf74901b55a8008ad42ab1"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/collect_closed_evidence_v1.py": {
+      "bytes": 8665,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/collect_closed_evidence_v1.py",
+      "sha256": "9276dd7d48276d2ccd6723443bf92b5d10d9c90e590884c4f3b170773d74e67a"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/exact-bindings.candidate.local.json": {
+      "bytes": 512,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/exact-bindings.candidate.local.json",
+      "sha256": "e5f0d83d6d7d59e1bb7ba9a97684c1965f7d640b9ee22a29b8c26c69cbff1533"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_reviewed_once.py": {
+      "bytes": 1573,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_reviewed_once.py",
+      "sha256": "c8d2a264a6ef83a0f58423fbea589d5260c849bd556675f2887d87a80c9ae80a"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_unbound_template.py": {
+      "bytes": 1473,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/launch_unbound_template.py",
+      "sha256": "782149d668fab6fe354782be7334ee071b9939a804c1411c9bb1900938c64cdd"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.candidate.local.json": {
+      "bytes": 7339,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.candidate.local.json",
+      "sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json": {
+      "bytes": 7339,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json",
+      "sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/preparation.local.json": {
+      "bytes": 508,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/preparation.local.json",
+      "sha256": "c2b9be6e4238a745027c9b9542b3a2b127e9941e0ef51fb81d2f4f87425ef9f7"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/prepare_candidate.py": {
+      "bytes": 4452,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/prepare_candidate.py",
+      "sha256": "915da4e6cd69c049482e172f4d0906196fae8389ba1fff9fce2d13ac38f79d8f"
+    },
+    "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/price-release.candidate.json": {
+      "bytes": 4490,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/price-release.candidate.json",
+      "sha256": "028514d722ab824a970e63ac7684fe1da1b0169594fd0556eef5d76c983eb499"
+    },
+    "data/processed/e02_wrapper_visibility_actual_v1_03/post-run-owner-export.local.json": {
+      "bytes": 3033541,
+      "path": "data/processed/e02_wrapper_visibility_actual_v1_03/post-run-owner-export.local.json",
+      "sha256": "da5abbf754c6787b3073295cd6ebc54e704fa331792635a70c3d287da9cdc861"
+    },
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PRICE_ROOT_HELPERS_20261115.json": {
+      "bytes": 17970,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_PRICE_ROOT_HELPERS_20261115.json",
+      "sha256": "37c994d2e9709e25d7b0b22a53077f0110683426707cd6ea99b3eb1d88722d76"
+    },
+    "scripts/collect_connectivity_billing_once.py": {
+      "bytes": 11207,
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    },
+    "scripts/run_wrapper_crossmodel_v1_20261115_once.py": {
+      "bytes": 4121,
+      "path": "scripts/run_wrapper_crossmodel_v1_20261115_once.py",
+      "sha256": "92321f3739460d2020255107fc2e211414b773702d89f82bfaddedfd1cc534e2"
+    }
+  },
+  "status": "PASS_EXACT_ONE_TIME_PARTICULAR_RELEASE_CONDITIONAL_ON_UNCHANGED_RUNTIME_GATES",
+  "workflow_limits": [
+    "Reviewer/authority fields are workflow assertions, not cryptographic identity. Current protected owner/history and runtime admission are the enforcement boundary.",
+    "Closed export reviewed, not live ledger; current ownership/clock/price/headroom verification is mandatory at runtime.",
+    "Cooperative OS/network/locking/blocking/suspension overshoot limitations remain; no hostile-host containment or guaranteed external billing correctness is claimed.",
+    "No actual result, bill or successful new dispatch exists at review time. This is preexecution readiness only."
+  ]
+}

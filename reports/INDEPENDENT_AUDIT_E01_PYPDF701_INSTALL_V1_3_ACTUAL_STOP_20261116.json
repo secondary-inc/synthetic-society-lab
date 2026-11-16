@@ -1,0 +1,74 @@
+{
+  "kind": "INDEPENDENT_E01_PYPDF701_INSTALL_V1_3_ACTUAL_STOP_AUDIT",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "PASS_PRESERVED_STOP_INTEGRITY_ACTUAL_INSTALL_BLOCKED",
+  "finding_id": "E01-P2-V13-ACTUAL-ALLOWLIST-003",
+  "findings": [
+    {
+      "severity": "BLOCKING_FOR_INSTALL_COMPLETION",
+      "trigger": "Pinnedpip install user_agent() metadata distribution scan reachesfind_eggs/zipfile.is_zipfile/open.",
+      "observed": "GUEST_READ_OUTSIDE_ALLOWLIST; pip exit1, parent P2_COMMAND_FAILED. Exactstderr6071B/SHA067342b23f41460839a6741ab594c126d0470ba39234eccfe7769b3c7f9087e7.",
+      "blocked_path": "UNKNOWN_NOT_PRESENT_IN_CAPTURED_TRACE",
+      "interpretation": "Fail-closed guard compatibility refusal, not dataacquisition/parser/native/sourcequalification result. No broad allowlist exception justified by current evidence."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/e01_pypdf701_install_v1_3_actual_stop_independent_verification_20261116.json",
+      "bytes": 6828,
+      "sha256": "5ec6aaca39df2b454d8e840318c92e9592cdd9461756243170ced18a5c1c0775"
+    },
+    {
+      "path": "reports/E01_PYPDF701_INSTALL_V1_3_ACTUAL_ROOT_CAPTURE_20261116.json",
+      "bytes": 1535,
+      "sha256": "0aa208af2df90c890b5fbcb4d98d0660a1d41dbcf7bb7ba3d0751cc46e2cfc89"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_3_REMEDY_20261116.json",
+      "bytes": 12436,
+      "sha256": "d23322bdd750e7c9eff500abb1ae1556b2fe6ca87db597c5ee45e0ef399c2503"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_3_PARTICULAR_20261116.json",
+      "bytes": 6099,
+      "sha256": "294f8a8dae140f2988c3d827a5b7a1c84fe01add9863f659824b3f85ab455ba6"
+    }
+  ],
+  "actual_scope": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116",
+  "preserved_target": ".venv-e01-pypdf-7.0.1-v1",
+  "checks": [
+    "Exactrootcapture/source/method/packet/startpins andterminal2344B9bcbcbb0bindingverified. All9journalartifactrefs andall4commandstdout/stderrrefs hash+sizeexact.",
+    "Exactlytworeserved/recordedcommandsexit[0,1], stagevenvhasvalidcompleteguestreceipt/zerosreportedviolations, installationlackscompleteguestreceipt, no checkguest/thirdreservation/installedmetadata result.",
+    "Failedterminal explicitpartialpreservation,noretry,network/modelcost0,noqualification. Captured6071bytesmatchesactualstderr, stdoutstreams+venvstderrzero.",
+    "Read-onlytarget14entrylstatinventory+pyvenv.cfgcaptured; include-system-site-packagesfalse/version3.12.14; currentsite-packagesempty. Interpreterlinksrecordedwithoutreadingexecutables/packagebody.",
+    "ReapedchildCPU0.222942=sum0.047256+0.175686; observedself+reaped0.454509s; maximumownedlogical34609bytes; outercapture0.491332375seconds,nooutertimeout.",
+    "OriginalTLS/headerfixesreachedsupportedcommand/currentmetadatapreflight; newtraceisaseparateallowlistfailure. Earlierfindings/component/particularacceptancesretainlimitedscope, notactualsuccess."
+  ],
+  "verification_scope": {
+    "successful_direct_read_bytes": 93656,
+    "all_metadata_passes_conservative_total_bytes_below": 1048576,
+    "perfile_cap_bytes": 262144,
+    "read_path": "RegularO_NOFOLLOW/NONBLOCK+parentaliasrefusal forcontrol/log/cfgreads; fixedtargetlstatinventory<=256entries.",
+    "reviewer_initial_assertion": "Unnecessaryliteralassumption abouttracebackzipfile.is_zipfile waswrong; initialreadonlypassstoppedbefore reportwrite. Correctedpositivecallpathchecks; failure retainedinverificationJSON. Not an installerretry ornewproductionfinding.",
+    "actual_install_network_native_package_source_actions_by_reviewer": 0,
+    "cost_USD": 0
+  },
+  "not_independently_claimed": [
+    "Terminalreportedno network/model/packageimports are consistent withreviewedguardedexecution; notaninstrumentedsystem-wideauditoutsidecapturedscope.",
+    "Post-installoriginalbootstraprehash occurs aftersuccessfulcheck; it wasNOT_REACHED. Thisnarrowstopreviewdidnotreread844bootstrapfilesorassertpostfailurecompleteimmutability.",
+    "Targetcurrentlyemptyinstalledsite is snapshot evidence,notproofnoOSsideeffectsanywhere.",
+    "Concreteblockedpath, detailedpipscannerpolicyremedy andactualinstallationcompatibility notyetestablished."
+  ],
+  "next_requirements": [
+    "Preserveconsumednamespace,target,code/method/packet,rawstderr/receipts andalloldpreflight/componentfindings unchanged. No rerun,overwrite,cleanup orrelabelling.",
+    "Performboundedstatic/authored diagnosisofexactfind_eggs/readpath withsafepath-type diagnostics. Noactualsource/credential/nativepackageimports or broadfilesystemreadwaiver.",
+    "Ifneeded, prepareseparatelyversionednarrowguard/scan remedywithmatchedoriginalfailuretest, unchangednetwork/helper/native/cost/resourcecontrols, freshcreateoncescope/target preservingoldpartialstate andindependentreview.",
+    "Reverifyactualinput/bootstrapbindings andboundedmetadata/commandpathcompatibility beforeanyseparatelyreviewedone-timecontinuation. Noautomaticrecoveryattempt."
+  ],
+  "installation": "BLOCKED_INCOMPLETE_NO_RETRY",
+  "runtime_source_qualification": "NOT_RUN",
+  "scientific_claims": "NO_E01FORECAST_OR_HUMAN_PERSUASION_RESULT",
+  "financial_source_authority": "UNCHANGED",
+  "cost_USD": 0,
+  "ownership": "Independentstopaudit+verificationJSONonly; noactualscopetargetmutations,installer/config/tests/STATUS/Git/privatecontrolchanges."
+}

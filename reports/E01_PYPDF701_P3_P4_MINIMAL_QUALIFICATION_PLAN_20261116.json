@@ -1,0 +1,106 @@
+{
+  "TASK_ID": "E01_P3_P4_MINIMAL_PYPDF701_QUALIFICATION_PLAN",
+  "kind": "E01_PYPDF701_PROFILE_AND_QUALIFICATION_PLAN_20261116",
+  "status": "PLAN_ONLY_ACTUAL_RUNTIME_HASHES_COUNTS_AND_RELEASES_UNKNOWN",
+  "scope": "Continue the accepted isolated runtime after P2 actual install and independent acceptance. Do not edit old qualified6.10.0 runtime/campaign/history or allocate another actual source recovery.",
+  "verifiedCodeFindings": [
+    "Current directories qualifier has SITE_REF plus additional hardcoded old site prefixes in _origin_allowed, runtime_inventory, worker sys.path, preloaded font-metric origin checks and output versions. Changing only PROFILE is insufficient.",
+    "validate_child delegates to frozen.validate_worker, which hardcodes pypdf6.10.0. Copy that small strict validator into the new qualifier with7.0.1 rather than changing old globals.",
+    "Old qualifier uses parent sys.executable and child10/11CPU; the accepted patch proposal requires the new environment and7/8CPU, so a small local controller/exchange with correctly composed limits is needed.",
+    "Source worker v2 imports old qualifier and asserts6.10.0; job v2 imports that worker, pins old methods and hardcodes518total/497nonproject.",
+    "Helperv3 imports jobv2 and has a consumed BOOT preparation namespace. It cannot deliver a new binding by editing/replaying its old packet.",
+    "Persistence module clerk2020_native_campaign_v2.py and source_format_adapter_v1.py can remain unchanged."
+  ],
+  "steps": [
+    {
+      "gate": "P3a static fingerprint",
+      "action": "After independently accepted P2 installation, root performs a bounded read-only hash/metadata pass over the new interpreter identity, exact installed five-package metadata/static files and CFFI backend. No package imports or generated/source readers.",
+      "output": "Root-provided file refs/profile inputs and P2 terminal binding. Runtime/native digests, byte sizes and counts remain unknown until this pass.",
+      "acceptance": "Exact new site and versions, no aliases/old-site fallback, installed static bytes hashed. Distinguish installed-file inventory from the later loaded runtime closure."
+    },
+    {
+      "gate": "P3b narrow new qualifier",
+      "files": [
+        "src/civiclab/e01/clerk2020_directories_qualification_v2.py",
+        "tests/test_clerk2020_directories_qualification_v2.py"
+      ],
+      "action": "Copy the finite directory/warmup/strict harness. Replace the11 static refs, declaredpypdf version, newsite/package/finder paths, actual CFFI backend and profile digest. Replace all hardcoded site/font-origin/version checks. Add a local strict worker validator with identical closed schema/hash/counter checks and7.0.1.",
+      "acceptance": "No actual digest placeholder may act as a wildcard. Preserve generated_checks, active/malformed negatives, exact origins and no-source/no-network guards. Determine actual7.0.1 font-metric layout from fingerprint, not a guess."
+    },
+    {
+      "gate": "P3c authored tests",
+      "action": "Freeze exact adapted tests and a guarded two-runtime invocation plan before execution. Existing54 directory methods and58 engine methods were statically counted; prior audit records8 directory-FD cases. Keep separate the6 currently verified CLI inheritance methods and their bounded subprocess envelope.",
+      "acceptance": "54+8+58 gives the prior120-case scaffold, not an automatic new complete-test claim. Additional new version/validator/CLI cases must have explicitly reviewed finite scope. No native import, actual PDF or real source in this stage."
+    },
+    {
+      "gate": "P4 root generated-only qualification",
+      "action": "After exact code/profile/packet review, root uses the new interpreter once in a fresh generated-only scope. Reuse4warmup readers119marker pages and4strict readers119pages, total8/238. Keep two negatives per pass and expected failure stages.",
+      "limits": "Prior proposal:45s parent wall,30s child wall; parent/childCPU7/8,CORE0; observedaggregateCPU20s; runtimefiles<=1024,manifest<=98304B,hashreads<=512MiB; warmup512opens/64MiB/256directory/512import events; stdout114688B/stderr4096B; ownedoutput128KiB; source/network/model0. Throttled RSS probes<=32,spacing>=1s,timeout<=0.125s,256MiB sampled stop. No hard allocation containment claim.",
+      "acceptance": "Independent actual review must supply real loaded-file manifest/counts, selected provider, backend identity, guard telemetry and qualification outcome. Preserve failure/full charge if any limit or marker fails."
+    },
+    {
+      "gate": "P5 same-campaign rebind",
+      "files": [
+        "src/civiclab/e01/clerk2020_source_worker_v3.py",
+        "src/civiclab/e01/clerk2020_source_job_v3.py",
+        "scripts/prepare_e01_source_phase_v4.py",
+        "configs/e01_clerk2020_monotone_successor_methods_v2_2_20261116.json"
+      ],
+      "action": "After actual qualification acceptance, make explicit versioned copies updating qualifier/site/profile/provider/version/method/code refs and actual loaded closure. Worker/job CPU setup and all source/IPC limits remain identical. New helper preparation scope retains2BOOT/6EXEC metadata reads,1MiB read cap and192KiB writes.",
+      "acceptance": "Fresh qualified_ref/runtime_review_ref/code binding and particular packet review. Never reuse518/497; count actual new rows and project overlay. Do not read private controls or actual source as a worker."
+    },
+    {
+      "gate": "P5 identity preservation",
+      "action": "Keep study E01_CLERK2020_M2_FORMAT_INSPECTION, source set clerk2020_counts_2026_nominees_FORMAT_v1, campaign clerk2020_source_format_native_v2, job clerk2020_source_format_job2, existing adjacent successor index/registrar/control namespaces and unused recovery ordinal1.",
+      "acceptance": "Root verifies ordinal remains unused at release. Append replacement runtime binding evidence; no second campaign, newordinal, reset/refund, fresh source-set index or consumed helperv3 replay. New module suffixes do not mean new research authority."
+    }
+  ],
+  "minimalLimitsNotes": [
+    "Preserve source worker/EXEC7/8CPU andCORE0, BOOT9/10CPU, parentCLI45/75s, all source byte/read/page/wire/uncertainty and cancellation controls.",
+    "Do not call frozen._exchange if its global limits defeat new7/8composition or bounded sampling. A local narrow copy preserves protocol, capped RSS/CPU accounting and no retry; do not monkeypatch frozen globals.",
+    "Use actual qualified totals only after generated qualification. Full installed package inventory, ZIP member count and loaded runtime closure are different quantities.",
+    "Newsite only for package lookup; old .venv must never satisfy imports. Crypto50.0.2/Pillow13.0.0/cffi2.1.1/pycparser3.12 versions remain fixed.",
+    "Generated native qualification is engineering acceptance only: no actual source-format acceptance, representative population, human persuasion or prospective forecast claim."
+  ],
+  "verifiedReferences": {
+    "src/civiclab/e01/clerk2020_directories_qualification_v1.py": {
+      "bytes": 50599,
+      "sha256": "900dc0605e102ecc3224287522db4a43583b561cd1ba286d1e82aaa3e5aed0a1"
+    },
+    "src/civiclab/e01/clerk2020_source_worker_v2.py": {
+      "bytes": 12172,
+      "sha256": "71dfd208034c5bef8f6ecd4b6fcab65d7c6b2cd2e0ca5075d2b8a70b2d8e50f0"
+    },
+    "src/civiclab/e01/clerk2020_source_job_v2.py": {
+      "bytes": 48537,
+      "sha256": "6c3c259bf7be9f300dbbfa4a961609f404d305dc4dc8445b9e5abf441e01856c"
+    },
+    "scripts/prepare_e01_source_phase_v3.py": {
+      "bytes": 8888,
+      "sha256": "cca31a349fd274cbb94e46ca903b406719d3cc5fadd14c1f56c4de0df13efeb2"
+    },
+    "src/civiclab/e01/clerk2020_native_campaign_v2.py": {
+      "bytes": 47502,
+      "sha256": "e021286d4983d526d8cac3598836b4c20d6c8b9d98268a78f14b717b6851c47a"
+    },
+    "src/civiclab/e01/clerk2020_source_format_adapter_v1.py": {
+      "bytes": 8058,
+      "sha256": "4ded1cc9f46df28417e059973c990d9b1cc029df7f7c625826ca5ac9877b7ed7"
+    }
+  },
+  "unknowns": {
+    "P2ActualInstallAcceptance": null,
+    "newStaticFileHashes": null,
+    "newNativeBackendHash": null,
+    "newQualifiedTotal": null,
+    "newQualifiedNonproject": null,
+    "newLoadedManifest": null,
+    "newSourceRelease": null
+  },
+  "pathInventory": "Proposed qualifierv2/workerv3/jobv3/helperv4/methodsv2.2 paths were checked and absent at plan time; they are plans, not existing implementation.",
+  "costUSD": 0,
+  "network": 0,
+  "actualPackageNativeSourceImports": 0,
+  "nextTask": "Finish the separately delegated P2 legacy-certs command remedy first. Then await accepted installation and root fingerprint before freezing any real P3 profile/code values.",
+  "ownership": "Plan report only; no qualified/source/helper/method/auditor/private-control files edited."
+}

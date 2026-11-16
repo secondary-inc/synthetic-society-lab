@@ -1,0 +1,125 @@
+{
+  "TASK_ID": "E01_P2_COMBINED_COMPATIBILITY_V1_3_20261116",
+  "kind": "E01_PYPDF701_INSTALL_V1_3_COMPATIBILITY_HANDOFF",
+  "status": "44_GUARDED_MOCK_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_REVIEW",
+  "FILES_CHANGED": [
+    "scripts/install_e01_pypdf701_runtime_v1_3.py",
+    "configs/e01_pypdf701_install_v1_3_20261116.json",
+    "tests/test_e01_pypdf701_install_v1_3.py"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/install_e01_pypdf701_runtime_v1_3.py": {
+      "bytes": 51100,
+      "sha256": "a4e6e9580bfbfdad96b960cc2837ae5e76771e6c6109217c97f50f1a1837f062"
+    },
+    "configs/e01_pypdf701_install_v1_3_20261116.json": {
+      "bytes": 8157,
+      "sha256": "5b80e9f9bebd5b55c288c4023604a7b8af52a1140a94a79bcb9b6b72223cc743"
+    },
+    "tests/test_e01_pypdf701_install_v1_3.py": {
+      "bytes": 13464,
+      "sha256": "9e47a1b4f7fe22e9a9640614a6f195e3e88fe5415a68c84f4af0364ea0a22a90"
+    },
+    "reports/E01_PYPDF701_P2_V1_3_PRE_EMAIL_NORMALIZATION_20261116.json": {
+      "bytes": 83061,
+      "sha256": "dbccd7ce1138f0484a0893ebb279afaf687f719399b69269fa666d94b9e30c44"
+    },
+    "reports/E01_PYPDF701_P3_P4_MINIMAL_QUALIFICATION_PLAN_20261116.json": {
+      "bytes": 8825,
+      "sha256": "3cb7ce7c1f89c0cf6a95847acc650fcb5f958f367b12f14f2cbcb1ff5e83f285"
+    },
+    "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_20261116.json": {
+      "bytes": 1075,
+      "sha256": "e70db9ad3f1facef73885a169335c287a9bb1d53619c8285439cead19424e0e2"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_P2_BOUND_PIP_TLS_FINDING_20261116.json": {
+      "bytes": 7706,
+      "sha256": "f2d662a3ba70e6a1da967712070a2b1388b29fcd78c2aeec0e0da8ded1065207"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_P2_HEADER_TYPE_FINDING_20261116.json": {
+      "bytes": 5046,
+      "sha256": "1131717479afdbacddc2a8594f8e7dafe307109d992e5b0f41e4a321d69d17c3"
+    },
+    "reports/e01_pypdf701_install_v1_3_authored_311_email_boundary_20261116.txt": {
+      "bytes": 6705,
+      "sha256": "8c7510925b0dd9c9a49857bfe9ac997b66f338e792efb8fb32e09557b82129d4"
+    },
+    "reports/e01_pypdf701_install_v1_3_authored_311_final_20261116.txt": {
+      "bytes": 6877,
+      "sha256": "5a5f1f2dd1fc3ec18af0672958c392b4a7a41e4932c6bcfa9f5cd94a38e53286"
+    },
+    "reports/e01_pypdf701_install_v1_3_authored_311_initial_20261116.txt": {
+      "bytes": 6157,
+      "sha256": "d620b23d4e3cebb91b07e4cd5ef2bf64024355b099ce3bd2bf5908b313675c3a"
+    },
+    "reports/e01_pypdf701_install_v1_3_authored_312_email_boundary_20261116.txt": {
+      "bytes": 6705,
+      "sha256": "17c66c2b565af8584dddea97f95af80024593a31025c9c349f602877b7541a41"
+    },
+    "reports/e01_pypdf701_install_v1_3_authored_312_final_20261116.txt": {
+      "bytes": 6877,
+      "sha256": "d82f8a0d05e4af12697457e9f6261bb090eaec1a23e2534e653385f65b939c30"
+    },
+    "reports/e01_pypdf701_install_v1_3_authored_312_initial_20261116.txt": {
+      "bytes": 6157,
+      "sha256": "148b722a24125884d926c7378a2f4a386eab8fa373f314d7bb31d5832883886e"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_install_v1_3.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_install_v1_3.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "final": {
+      "3.12": "44 PASS in 4.776 seconds",
+      "3.11": "44 PASS in 3.234 seconds"
+    },
+    "priorDrafts": {
+      "legacyOnly": "40 PASS; 3.12 6.162 seconds, 3.11 4.400 seconds",
+      "emailBoundary": "43 PASS; 3.12 5.128 seconds, 3.11 3.503 seconds"
+    },
+    "invocationsPerRuntime": 3,
+    "maximumInvocationsPerRuntime": 3,
+    "scope": "Authored temporary fixtures only; frozen guarded runner, no real pip/venv/native/network/source execution.",
+    "regressions": [
+      "Exact supported legacy-certs argv in both install/check.",
+      "Real stdlib BytesParser and frozen wheel-inspector authored Requires-Dist objects normalized losslessly to exact strings.",
+      "Folded header normalization agrees with JSON serialization.",
+      "Arbitrary objects, string subclasses, Subject headers refuse; strict dependency closure unchanged.",
+      "Whole module AST matches accepted core after enumerated routing/version literal normalization, one legacy-certs literal removal, and excluding separately tested verify_acquisition and requires_dist_strings."
+    ]
+  },
+  "delta": {
+    "pip": "Add --use-deprecated=legacy-certs to ordinary pip argument prefix. Keep ctypes.dlopen, network, helper process and all resource guards unchanged.",
+    "email": "At verify_acquisition consumer boundary accept exact strings or known undefective stdlib email.headerregistry._UnstructuredHeader Requires-Dist instances only; normalize with str.__str__, verify exact type and lossless equality. No arbitrary object coercion.",
+    "ancestry": "Consume accepted fresh P1 v1.4 scope; preserve failed predecessors and full charges. P1 v1.3 remains unexecuted history.",
+    "output": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116",
+    "packet": "data/processed/e01_pypdf701_build_v1/install-v1_3-packet-20261116.json",
+    "target": ".venv-e01-pypdf-7.0.1-v1",
+    "unchanged": "Fixed five packages, strict active dependency closure, no downloaded package imports, three main child commands, CPU/wall/read/write/output bounds and create-once semantics."
+  },
+  "ACCEPTANCE_CRITERIA": {
+    "authored": "44 checks passed on each runtime; independently review exact frozen candidate.",
+    "actualMetadata": "Root must prepare matching actual packet and run a new bounded metadata-only preflight; previous DEPENDENCY_SCHEMA failure retained.",
+    "actualInstallation": "NOT_RUN by worker; only root after exact independent release and current actual bindings.",
+    "runtimeQualification": "NOT_RUN; generated/runtime/source qualification remain separate gates."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only source/config, authored fixtures and public diagnostic reports inspected. No real wheel/pip/executable bodies, raw respondents, publisher documents or private controls read by worker.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "actualWorkerNetworkCalls": 0,
+  "actualWorkerInstallVenvNativeSourceActions": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Mock tests do not establish actual pip runtime compatibility, ABI behavior or scientific validity.",
+    "Cooperative guards and polled logical disk limits are not hard OS containment, exhaustive physical I/O or hard RSS guarantees.",
+    "The real earlier preflight failed before installation; no actual success is inferred.",
+    "All old candidates and findings remain immutable; no financial or source-recovery authority increase."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact v1.3 remedy review",
+    "Root matching actual packet and real metadata-only preflight",
+    "Root single bounded actual installation",
+    "Separate generated/runtime/source qualification"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent reviewer checks frozen code/config/tests; root prepares matching actual packet. Do not execute installer before independent acceptance.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/install_e01_pypdf701_runtime_v1_3.py --methods-sha256 5b80e9f9bebd5b55c288c4023604a7b8af52a1140a94a79bcb9b6b72223cc743 --packet-sha256 <ROOT_REVIEWED_ACTUAL_PACKET_SHA256>"
+}

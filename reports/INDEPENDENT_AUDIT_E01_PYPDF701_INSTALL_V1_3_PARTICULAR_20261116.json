@@ -1,0 +1,135 @@
+{
+  "kind": "INDEPENDENT_E01_P2_V1_3_METADATA_PREFLIGHT_AND_PARTICULAR_OFFLINE_INSTALL_RELEASE",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "PASS_EXACT_CLOSED_METADATA_PREFLIGHT_ONE_ROOT_OFFLINE_INSTALL_ATTEMPT_ONLY",
+  "findings": [],
+  "evidence": [
+    {
+      "path": "reports/E01_PYPDF701_P2_REAL_METADATA_PREFLIGHT_V2_20261116.json",
+      "bytes": 12199,
+      "sha256": "615962f0669e90c12bc555488787d48b8f53ec5ca1f6553d196a8741c7f5d39a"
+    },
+    {
+      "path": "data/processed/e01_pypdf701_p2_metadata_preflight_v2_20261116/RECEIPT.json",
+      "bytes": 12199,
+      "sha256": "615962f0669e90c12bc555488787d48b8f53ec5ca1f6553d196a8741c7f5d39a"
+    },
+    {
+      "path": "data/processed/e01_pypdf701_p2_metadata_preflight_v2_20261116/STARTED.json",
+      "bytes": 604,
+      "sha256": "02df832bce2dbc8fe4347f7d85d30ba37a4f484d0e5004c6e2d26164cbae367e"
+    },
+    {
+      "path": "data/processed/e01_pypdf701_p2_metadata_preflight_v2_20261116.py",
+      "bytes": 5129,
+      "sha256": "86355c3bbddf452b675be81632a2c464334d40c83dfa7391bf2a189509ce4036"
+    },
+    {
+      "path": "scripts/install_e01_pypdf701_runtime_v1_3.py",
+      "bytes": 51100,
+      "sha256": "a4e6e9580bfbfdad96b960cc2837ae5e76771e6c6109217c97f50f1a1837f062"
+    },
+    {
+      "path": "configs/e01_pypdf701_install_v1_3_20261116.json",
+      "bytes": 8157,
+      "sha256": "5b80e9f9bebd5b55c288c4023604a7b8af52a1140a94a79bcb9b6b72223cc743"
+    },
+    {
+      "path": "data/processed/e01_pypdf701_build_v1/install-v1_3-packet-20261116.json",
+      "bytes": 1523,
+      "sha256": "9b0ca1255243821fee8707bcd83f3e6d773c17ce29522535e71585788d9f889b"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_INSTALL_V1_3_REMEDY_20261116.json",
+      "bytes": 12436,
+      "sha256": "d23322bdd750e7c9eff500abb1ae1556b2fe6ca87db597c5ee45e0ef399c2503"
+    },
+    {
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1_4-20261116/hashlock.json",
+      "bytes": 8124,
+      "sha256": "05d2713fcd22848bb52132af3ab5d6370a3e3927334cd56b40366f9e25ae0d73"
+    }
+  ],
+  "verified_preflight": {
+    "public_and_local_receipt_bytes_identical": true,
+    "exactreviewedpins": true,
+    "fivewheels": 5,
+    "inflated_bytes": 25657393,
+    "reader_reference_bytes": 42460530,
+    "UTC_elapsed_seconds": 0.3031611442565918,
+    "monotonic_elapsed_seconds": 0.3031620839901734,
+    "dependency_rows": 55,
+    "active_edges": [
+      [
+        "cffi",
+        "pycparser"
+      ],
+      [
+        "cryptography",
+        "cffi"
+      ]
+    ],
+    "allreportedcounterszero": true,
+    "actualtarget_and_installscope_absent": true,
+    "closure_independently_recomputed_from_hashbound_P1_inspection_JSON": true
+  },
+  "release": {
+    "actor": "ROOT_ONLY",
+    "attempts_maximum": 1,
+    "retries": 0,
+    "code_sha256": "a4e6e9580bfbfdad96b960cc2837ae5e76771e6c6109217c97f50f1a1837f062",
+    "methods_sha256": "5b80e9f9bebd5b55c288c4023604a7b8af52a1140a94a79bcb9b6b72223cc743",
+    "packet_sha256": "9b0ca1255243821fee8707bcd83f3e6d773c17ce29522535e71585788d9f889b",
+    "argv": [
+      ".venv/bin/python",
+      "-I",
+      "-B",
+      "-S",
+      "scripts/install_e01_pypdf701_runtime_v1_3.py",
+      "--methods-sha256",
+      "5b80e9f9bebd5b55c288c4023604a7b8af52a1140a94a79bcb9b6b72223cc743",
+      "--packet-sha256",
+      "9b0ca1255243821fee8707bcd83f3e6d773c17ce29522535e71585788d9f889b"
+    ],
+    "new_scope": "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116",
+    "new_target": ".venv-e01-pypdf-7.0.1-v1",
+    "command_stages": [
+      "venv",
+      "install",
+      "check"
+    ],
+    "command_count_maximum": 3,
+    "network_model_source_calls": 0,
+    "cost_USD": 0,
+    "code_wall_seconds": 120,
+    "each_parent_child_CPU_soft_hard_seconds": [
+      7,
+      8
+    ],
+    "observed_aggregate_CPU_seconds": 40,
+    "command_output_bytes": 262144,
+    "owned_logical_bytes": 805306368,
+    "guest_helper_descendants_permitted": 0,
+    "outer_capture": {
+      "deadline_seconds": 125,
+      "createonlystdoutstderr": true,
+      "cleanup": "Installerparentgroup only; guests inown sessions. Normalinstallercleanup kills/reaps currentchild; eachguestselfalarm/CPUlimit remains. OuterparentgroupkilldoesNOTestablishallguestgroupsreaped. RecordUNKNOWNandretainedstatesifnotproven."
+    },
+    "stop_and_preserve": "Firsterror/unknown/limit; retainpartialtarget,scope,commandreservations,stdout/stderr,receipts/terminal. Neveroverwriteorcleanupoldenv, rerunconsumedscope, waiveguard, addresolver/helper/build/download fallback or substituteinputs.",
+    "postrun_required": "Closedterminal plus allcommandrecords/stdout/guestreceipts,installedmetadata,originalbootstraprehash,code/inputhashes,timing/resources/partialtargetmanifest forindependentactualreview."
+  },
+  "independent_review_scope": [
+    "No realpreflight rerun or bootstrap/wheelbody reread. Smallclosedreceipts,sourcepins,hashboundP1inspectionJSON andpurestrictclosure verified.",
+    "Exactoldmetadatafailure andcomponent/header/TLSfindings unchanged; newclosedpreflightaddressesmetadataonly.",
+    "Originalcomponentauditd23322bd andits88MOCKchecksremain prerequisite. Thisparticularreleasesoneboundedrootattempt, notitsfutureoutcome."
+  ],
+  "limits": [
+    "Packageinstallation createsfilesbutnoimportofdownloadedpypdf/PIL/crypto/cffi/pycparsermodules ornative/sourcePDFprocessing allowed. Metadataonlycheck and pinnedpip CLI only.",
+    "CooperativePython/kernelguards,partialliveCPUaccounting/logicaldiskpolling andpossibleblockingOSovershoot remainacceptedcorelimitations. No OS-widecontainment/securityabsence/ABI/runtimequalification claim.",
+    "P3generatedfixture/nativequalification/P4realresearchsources andbaseline/scientificvalidity remain distinctblockedgates.",
+    "No modelspending/source-recoveryordinal/credential/publicationauthorityincrease. Gitwriteblockedpendingowneraccess."
+  ],
+  "reviewer_actual_installer_network_source_native_actions": 0,
+  "cost_USD": 0,
+  "ownership": "Independentparticularaudit only; no installer/config/test/actualtarget/privatecontrol/status/Gitmutation."
+}
