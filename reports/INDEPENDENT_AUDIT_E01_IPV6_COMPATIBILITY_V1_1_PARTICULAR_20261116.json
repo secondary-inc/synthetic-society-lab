@@ -1,0 +1,189 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116",
+  "kind": "INDEPENDENT_EXACT_CURRENT_PREFLIGHT_AND_PACKET_CORE_PARTICULAR_REVIEW",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "BLOCKED_PACKET_CORE_DECLARED_HASH_MISMATCH_NO_ACTUAL_RELEASE",
+  "evidence_refs": {
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+      "bytes": 55727,
+      "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+    },
+    "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+      "bytes": 12343,
+      "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json": {
+      "path": "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+      "bytes": 7078,
+      "sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+      "bytes": 23823,
+      "sha256": "3ac5052de1a663dce9d8891e6d35e6a2bf3760f2bc87cb39f6a165a10289b278"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+      "bytes": 9236,
+      "sha256": "091f3b663924a69c4af051f5a006419fc3175796dfc9b2504d9d9dd4d2d62aff"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py": {
+      "path": "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py",
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    "reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json": {
+      "path": "reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json",
+      "bytes": 31029,
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json": {
+      "path": "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json",
+      "bytes": 814,
+      "sha256": "dd5ef54f4c71d8cb8dc135cf7d057301c362132190c86da5cc36e44b34f39b14"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json": {
+      "path": "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json",
+      "bytes": 31029,
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json": {
+      "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+      "bytes": 2047,
+      "sha256": "1423adee30915b6b47aecf4acff07208d9d0c6192d61c606d99e85525da4ed48"
+    }
+  },
+  "blocking_findings": [
+    {
+      "code": "DECLARED_CANONICAL_CORE_SHA_DOES_NOT_MATCH_FIVE_CORE_FIELDS",
+      "candidate_ref": {
+        "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+        "bytes": 2047,
+        "sha256": "1423adee30915b6b47aecf4acff07208d9d0c6192d61c606d99e85525da4ed48"
+      },
+      "declared": "4fe190810eb5ab363ccfe21a5f8f82e59ebcd9ac7ea36a371bcfff5405469142",
+      "computed_using_frozen_packed": "c84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea",
+      "core": {
+        "diagnostic_code_ref": {
+          "bytes": 55727,
+          "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+          "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+        },
+        "execution_enabled": true,
+        "kind": "E01_OFFLINE_COMPATIBILITY_EXECUTION_PACKET_V1_1",
+        "methods_sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de",
+        "root_sha256": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f"
+      },
+      "required_resolution": "Preserve exact failed candidate and this audit; provide separately frozen successor with correct canonicalcore hash and exactrefs, then separately scoped independent delta/particular review. Never overwrite or treat failed current candidate as reviewed PASS."
+    }
+  ],
+  "preflight_findings_completed_before_blocker": [
+    "ExactV1.1production23823B/3ac5052d PASS matched. Exact helper11611B/98c6b25d andsafehelpercopy matched acceptedstatichelperreport; genuine module.p.Reader construction retained, nofixturecache. Helperstaticreview disclosed40focused3.12checks beforeauditnormalizerfailure and41correctedPython3.9checks; this review relies on exactstaticacceptance andclosedactual3.12metadataresult, doesnotclaim fullhelperstaticpass on3.12.",
+    "Public31029B/8fbdcd1c receipt identical localRECEIPT, STARTED pins match. PASS_METADATA_ONLY_NO_DIAGNOSTIC/noerror, once-only separatemetadataallocation,30s/CPU7soft8hard/512MiBReader/3x64KiBoutput192KiBcombined preserved. All child/network/model/pip/package/source/cost counters0, installationacceptedfalse. Noauditorhelper/input/runtimefunctions replayed.",
+    "Closedcurrent originalsocketTrue/frozenexactsourcehash/probe pin/freshadapter/mainPythonowner/noinitializingmodules/unheldimportlock/no pipvendor imports proofs match reviewedread-onlyhelper. No realfieldmutation/vendorimport/lockacquisition. Actual importclosure explicitlyNOT_RUN; prospective child mustrecheck andrecord under originalguards.",
+    "Currentbasepaths/builtin-onlyMIME match. PATHsourceAST policy is prescribed, not observedchildexecution. Readercharge43709225<536870912, fivewheelmetadata/requirements hashretained. ClosedUTC/monotonic alignment under30s verified, butnumericalUTCinterval notretained afterfailure; originalmonotonic.42033745799562894s inreceipt.",
+    "Eightpreservedroots544entrysnapshot0b6747e9 unchangedinclosedhelper; currentall6new/superseded scope-target-packet paths absent andnoaliases checked bylstatonly. Auditor didnottraverse oldtargettrees orrecompute snapshot; relies on exactreviewedgenuineReader/helperfunctions.",
+    "Oldoccupied25849493+reserved16777216=42626709<805306368, eachdiagnostic16MiB/shared9root16384entries retained. Full420wall/160CPU/11+30/20/1=450/180/12 distinct fromactualprior8commands/21348output/353429948parentread/2.964237CPU. OriginalV1coarseSOCKET andV2fineSOCKET_CONSTRUCT controls independentlyhashed andnotreclassified.",
+    "Currentclosed prior+snapshot canonical19223B recomputed, plus12288reserve31511<32768. Savedfixture/productionheadroom validation separatelyaccepted; this currentmetadata check doesnotadvance installation/sourcegate.",
+    "Fivecorefields/currentenabledkind/root/code/method refs matched exactfrozenrunner/config; onlydeclaredcanonicaldigest mismatched frozenpacked result. This preventsparticular acceptance even thoughpreflightandbindingsotherwisepassed."
+  ],
+  "release": {
+    "approved": false,
+    "actual_packet_created": false,
+    "child_invocations_authorized_by_this_report": 0,
+    "installation_accepted": false,
+    "reason": "Exact declared packetcore identity inconsistent; status does not start PASS."
+  },
+  "failure_evidence": {
+    "status": "BLOCKED_PACKET_CORE_DECLARED_HASH_MISMATCH",
+    "failure_location": "verify_closed_preflight_core.py:77 exact_canonical_core_hash",
+    "observed_failure": "AssertionError: exact_canonical_core_hash",
+    "declared_canonical_core_sha256": "4fe190810eb5ab363ccfe21a5f8f82e59ebcd9ac7ea36a371bcfff5405469142",
+    "computed_canonical_core_sha256": "c84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea",
+    "canonical_serialization": "json.dumps(core,sort_keys=True,separators=(comma,colon),allow_nan=False).encode(); no newline",
+    "preceding_checks": "All assertions before line77 completed: pinned production/helper/runner/adapter/config, closedpreflight/localreceipt equality/zeroactions/caps/clocks/8roots+storage+6absence/priorcontrols/headroom/moduleproofs/code-method-rootcore binding. No numerical check count retained on failure.",
+    "invocations": {
+      "closed_readonly_verifier": 1,
+      "actual_helper_or_runner_replays": 0,
+      "supplemental_diagnosis": "One exact candidate-only canonical hash recomputation; no verifier rerun."
+    },
+    "reference_read_cap_bytes": 67108864,
+    "charged_total_read_bytes": "NOT_RETAINED_AFTER_ASSERTION_FAILURE",
+    "wall_CPU_cap_seconds": 120,
+    "cost_USD": 0,
+    "release": false
+  },
+  "actual_auditor_actions": {
+    "readonly_verifier_passes": 1,
+    "verifier_reruns": 0,
+    "supplemental_candidate_hash_diagnosis": 1,
+    "helper_or_runner_or_real_input_functions": 0,
+    "socket_operations_or_field_mutations": 0,
+    "pip_import_execution": 0,
+    "network_model_raw_source_owner_credentials": 0,
+    "old_target_or_wheel_body_reads": 0,
+    "actual_packet_created": false,
+    "cost_USD": 0
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/RECEIPT.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/STARTED.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/executed_helper.py.txt",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/failure.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/packet_core_candidate_preserved.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/verify_closed_preflight_core.py"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/RECEIPT.json",
+      "bytes": 31029,
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/STARTED.json",
+      "bytes": 814,
+      "sha256": "dd5ef54f4c71d8cb8dc135cf7d057301c362132190c86da5cc36e44b34f39b14"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/executed_helper.py.txt",
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/failure.json",
+      "bytes": 1244,
+      "sha256": "13fb3e98dd74f640b3915f99e82ce85d865c6f8da6e11c24ac58c4b02d4259fd"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/packet_core_candidate_preserved.json",
+      "bytes": 2047,
+      "sha256": "1423adee30915b6b47aecf4acff07208d9d0c6192d61c606d99e85525da4ed48"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/verify_closed_preflight_core.py",
+      "bytes": 10983,
+      "sha256": "79b4b71c0bec73ae7495943a846c27005a755bb63751f41fdcc88866a33775cb"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Completed readonly verifier exactsource/logicalcaps retained at reports/evidence_e01_ipv6_compatibility_v1_1_particular_20261116/verify_closed_preflight_core.py. It failed its canonicalcore assertion. Do not rerun this allowance or replay helper/actual child."
+  ],
+  "TESTS_RUN_AND_RESULTS": "Read-only assertions reached exact_canonical_core_hash then FAILED; priorassertionscompleted. No test suite/actualfunction rerun. Exactcandidate-only supplementalhash confirms mismatch.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Technicalcontrol/config/helper/source/pinnedreview/closedreceipt only. No rawrespondent/publisher/PDF/packagebodies, credentials orfinancialowner content.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "This BLOCKED particular doesnotpermitactualpacket creation/compatibilitylaunch despitevalidproductionacceptance.",
+    "Snapshots/currentmoduleproofs referclosedpreflighttime; prospectivechild wouldstillrevalidate.",
+    "Helperstatic supportedruntimegap disclosed; no claim it wasrerun here.",
+    "Originalreadcounter/progress count notpersisted afterassertion, so exactreadtotal/checkcount notinvented."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Correctly declared andfrozen canonicalpacketcore digest requires followup independent exactreview.",
+    "Actual importclosure/compatibility/currentruntime installation/P2/P3/source gates remainunaccepted."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead preserves failedcandidate andcreates separatelyfrozen correction; assign boundedreadonly particular/delta review. Noactualpacket, child or automaticretry.",
+  "ownership": "Auditor owns this report/evidence only; lead owns Git/STATUS/coordination andanylaterrelease."
+}

@@ -1,0 +1,86 @@
+from pathlib import Path
+from datetime import datetime
+import hashlib,json,resource,signal,time
+ROOT=Path(__file__).resolve().parents[2];OUT=Path(__file__).parent;START=time.monotonic();READS=0;checks=[];refs={}
+resource.setrlimit(resource.RLIMIT_CORE,(0,0));resource.setrlimit(resource.RLIMIT_CPU,(119,120))
+def stop(*a):raise RuntimeError('PARTICULAR_REVIEW_DEADLINE')
+signal.signal(signal.SIGALRM,stop);signal.setitimer(signal.ITIMER_REAL,120)
+def need(ok,label):
+ if not ok:raise AssertionError(label)
+ checks.append(label)
+def read(rel):
+ global READS
+ p=ROOT/rel;need(all(not q.is_symlink() for q in (p,*p.parents)),'no_alias:'+rel)
+ size=p.stat().st_size;READS+=size+1;need(READS<=67108864,'review_read_cap:'+rel)
+ b=p.read_bytes();need(len(b)==size,'read_size:'+rel);refs[rel]={'path':rel,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()};return b
+def js(rel):return json.loads(read(rel))
+def pin(r):
+ b=read(r['path']);need(refs[r['path']]==r,'pin:'+r['path']);return b
+def packed(x):return json.dumps(x,sort_keys=True,separators=(',',':'),allow_nan=False).encode()
+runner='scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py';config='configs/e01_offline_ipv6_compatibility_v1_1_20261116.json';adapter='scripts/e01_offline_ipv6_adapter_v1_1_20261116.py'
+code=pin({'path':runner,'bytes':55727,'sha256':'7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681'})
+mb=pin({'path':config,'bytes':7078,'sha256':'54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de'});m=json.loads(mb);need(packed(m)==mb,'canonical_methods')
+pin(m['adapter_ref'])
+prod=js('reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json')
+need(refs['reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json']=={'path':'reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json','bytes':23823,'sha256':'3ac5052de1a663dce9d8891e6d35e6a2bf3760f2bc87cb39f6a165a10289b278'},'exact_production_review')
+need(prod['status']=='PASS_EXACT_V1_1_PRODUCTION_134_GUARDED_CHECKS_NO_CURRENT_PREFLIGHT_OR_ACTUAL_RELEASE','production_PASS')
+ha=js('reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json')
+need(ha['decision']=='PASS_EXACT_STATIC_DELTA_CONDITIONAL_ON_V1_1_PRODUCTION_ACCEPTANCE' and ha['blocking_helper_findings']==[],'accepted_helper_static_delta')
+helper_path='data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py';h=pin({'path':helper_path,**ha['pins'][helper_path]})
+need(h==read('reports/evidence_e01_ipv6_compatibility_preflight_root_v1_1_20261116/HELPER.py.txt'),'executed_helper_safe_copy_exact')
+need(b'reader = module.p.Reader(ROOT, READ_LIMIT)' in h and b'inputs = module.verify_inputs(ROOT, methods, reader)' in h and b'headroom = module.terminal_headroom' in h,'genuine_reader_and_current_headroom_source')
+rp='reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json';rb=read(rp);r=json.loads(rb);scope='data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/'
+need(read(scope+'RECEIPT.json')==rb,'public_local_closed_receipt_identical');sb=read(scope+'STARTED.json');st=json.loads(sb)
+(OUT/'STARTED.json').write_bytes(sb);(OUT/'RECEIPT.json').write_bytes(rb);(OUT/'executed_helper.py.txt').write_bytes(h)
+need(r['status']=='PASS_METADATA_ONLY_NO_DIAGNOSTIC' and 'error_type' not in r,'closed_PASS_no_error')
+need(st['preflight_invocations']==1 and st['separate_from_diagnostic_child_allocation'] is True,'one_metadata_preflight_separate_allocation')
+need(st['pins']==r['pins'],'closed_STARTED_pins_match')
+for name,(size,digest) in r['pins'].items():pin({'path':name,'bytes':size,'sha256':digest})
+for key in ['child_commands','network_requests','model_calls','pip_imports','downloaded_package_imports','research_source_reads','cost_USD']:need(r[key]==0,'closed_zero:'+key)
+need(r['installation_accepted'] is False,'no_install_acceptance')
+need(st['wall_seconds']==30 and st['CPU_soft_hard']==[7,8] and st['bound_reader_bytes']==536870912 and st['control_write_bytes']==196608,'exact_metadata_preflight_caps')
+interval=(datetime.fromisoformat(r['UTC_finished'])-datetime.fromisoformat(st['UTC'])).total_seconds()
+need(0<=interval<30 and 0<=r['monotonic_elapsed_seconds']<30 and abs(interval-r['monotonic_elapsed_seconds'])<0.01,'UTC_monotonic_aligned_under30')
+need(r['reader_bytes_charged']==43709225<536870912,'closed_genuine_reader_charge_under_cap')
+need(r['verified_wheels']==5 and r['requirements_sha256']=='6cab8b38346fe98158c281a5b93eeb4762958ebab3400e2e22f932023210fa6b','five_wheel_requirements_receipt')
+need(len(m['preserved_roots'])==8 and len(set(m['preserved_roots']))==8 and r['old_metadata_unchanged'] is True and r['old_metadata_snapshot']=={'entries_including_roots':544,'sha256':'0b6747e9eacfabd64af6b6a97591932a4eaae12b75d168e34ddd637d8d16de11'},'eight_roots_544_closed_unchanged_snapshot')
+need(r['prior_owned_logical_bytes']==25849493 and r['combined_upper_bound']==25849493+16777216==42626709<805306368,'nine_root_reserved_storage_under_cap')
+need(m['limits']['combined_nine_tree_logical_bytes']==805306368 and m['limits']['each_diagnostic_scope_logical_bytes']==16777216 and m['limits']['combined_tree_entries']==16384,'unchanged_shared_and_individual_caps')
+paths=[m['scope'],m['uncreated_target'],m['packet'],*m['superseded_absent']];need(len(paths)==len(set(paths))==6,'six_distinct_absent_paths')
+for rel in paths:
+ p=ROOT/rel;need(all(not q.is_symlink() for q in (p,*p.parents)),'absent_path_no_alias:'+rel)
+ try:p.lstat()
+ except FileNotFoundError:checks.append('current_absent_lstat_only:'+rel)
+ else:raise AssertionError('occupied:'+rel)
+need(r['actual_scope_target_packet_absent'] is True and r['superseded_v1_scope_packet_target_absent'] is True,'closed_all_six_absence')
+need(r['diagnostic_allocation']==m['allocation']=={'cumulative_main_commands':12,'cumulative_observed_CPU_seconds':180,'cumulative_wall_seconds':450,'new_main_commands':1,'new_observed_CPU_seconds':20,'new_wall_seconds':30,'prior_main_commands':11,'prior_observed_CPU_seconds':160,'prior_wall_seconds':420},'full_cumulative_450_180_12')
+pa=r['prior_allocation'];need(pa['actual_prior_commands_started']==8 and pa['actual_prior_captured_output_bytes']==21348 and pa['actual_prior_parent_read_bytes']==353429948 and abs(pa['actual_prior_observed_CPU_seconds']-2.964237)<1e-10,'actual_prior_charges_distinct')
+need(pa['full_prior_allocation']==pa['diagnostic_v2']['allocation'] and len(pa['full_prior_stage_caps'])==5,'full_three_install_two_diagnostic_allocations_preserved')
+for item in pa['diagnostic_v2']['refs'].values():pin(item)
+for item in pa['prior_through_diagnostic_v1']['diagnostic_v1']['refs'].values():pin(item)
+need(pa['diagnostic_v2']['original_fine_journal']['events']==[{'sequence':1,'code':'GUEST_NETWORK_HELPER_OR_CTYPES_DENIED','operation':'SOCKET_CONSTRUCT'}] and pa['prior_through_diagnostic_v1']['diagnostic_v1']['original_coarse_journal']['events']==[{'sequence':1,'code':'GUEST_NETWORK_HELPER_OR_CTYPES_DENIED','operation':'SOCKET'}],'historical_event_labels_preserved')
+head=r['terminal_headroom'];measure=len(packed({'prior':pa,'old_metadata_snapshot':r['old_metadata_snapshot']}))
+need(measure==head['ancestry_bytes']==19223 and head=={'ancestry_bytes':19223,'maximum_supported_total':31511,'other_reserved_bytes':12288,'terminal_bytes_cap':32768} and head['maximum_supported_total']<=32768,'current_closed_ancestry_headroom_recomputed')
+proof=r['configuration_proofs'];bp='/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python'
+need(proof['current_narrowed_base_paths']==[bp+'/lib/python3.12',bp+'/lib/python3.12/lib-dynload'],'current_base_paths_receipt')
+need(proof['prescribed_child_PATH']==bp+'/bin:/usr/bin:/bin' and proof['child_PATH_is_prescribed_not_observed_execution'] is True and proof['child_PATH_matches_frozen_and_diagnostic_source_AST'] is True,'prescribed_PATH_not_child_execution')
+need(proof['stdlib_origin_validated_builtin_MIME']=={'init_files':None,'initialized':True,'knownfiles':[],'mode':'STDLIB_BUILTIN_TYPES_ONLY_DARWIN'},'current_builtin_MIME_receipt')
+cp=r['compatibility_readonly_proofs'];need(cp['socket_source_ref']=={'path':bp+'/lib/python3.12/socket.py','bytes':37815,'sha256':'7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274'},'closed_exact_socket_source_proof')
+need(cp['pinned_probe_ref']=={'path':'.venv/lib/python3.12/site-packages/pip/_vendor/urllib3/util/connection.py','bytes':4901,'sha256':'e4bc760753d6dbd2b1067d93d3190dd420604416b780654904aa10a11a201159'},'closed_pinned_probe_proof')
+for key in ['current_original_has_ipv6','fresh_adapter_state','main_single_Python_thread_and_process_checked','import_lock_currently_unheld','no_current_initializing_modules','pip_vendor_imports_absent','child_must_recheck_current_state']:need(cp[key] is True,'closed_module_state:'+key)
+for key in ['real_socket_field_mutations','vendor_imports','import_lock_acquisitions']:need(cp[key]==0,'zero_current_state_action:'+key)
+need(cp['actual_import_closure']=='NOT_RUN_ENFORCED_AND_RECORDED_IN_PROSPECTIVE_CHILD','actual_closure_NOT_RUN_must_child_recheck')
+cpath='reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json';cb=pin({'path':cpath,'bytes':2047,'sha256':'78bd9d62b891ba255ef506bb804143f1ca65395bd448df8f00cd75be9f971e03'});c=json.loads(cb);core=c['core_for_independent_particular_review']
+need(set(core)=={'diagnostic_code_ref','execution_enabled','kind','methods_sha256','root_sha256'},'exact_five_packet_core_fields')
+need(core['diagnostic_code_ref']==refs[runner] and core['methods_sha256']==refs[config]['sha256'] and c['methods_ref']==refs[config],'exact_runner_methods_packet_binding')
+need(core['kind']=='E01_OFFLINE_COMPATIBILITY_EXECUTION_PACKET_V1_1' and core['execution_enabled'] is True and core['root_sha256']==m['root_sha256']==hashlib.sha256(str(ROOT).encode()).hexdigest(),'exact_enabled_kind_root')
+need(hashlib.sha256(packed(core)).hexdigest()==c['canonical_core_sha256']=='c84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea','exact_canonical_core_hash')
+old_cb=pin({'path':'reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json','bytes':2047,'sha256':'1423adee30915b6b47aecf4acff07208d9d0c6192d61c606d99e85525da4ed48'})
+old_c=json.loads(old_cb)
+need(c=={**old_c,'canonical_core_sha256':c['canonical_core_sha256']} and c['canonical_core_sha256']!=old_c['canonical_core_sha256'],'only_declared_canonical_digest_changed')
+blocked=json.loads(pin({'path':'reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json','bytes':12814,'sha256':'65891b5385629e47743c5436de031df8366b31caa3c76b77ceb65904b1f239ae'}))
+need(blocked['status']=='BLOCKED_PACKET_CORE_DECLARED_HASH_MISMATCH_NO_ACTUAL_RELEASE','original_BLOCKED_audit_unchanged')
+(OUT/'packet_core_candidate_v2_preserved.json').write_bytes(cb)
+need(c['actual_allocation']==m['allocation'] and c['actual_packet_created'] is False and c['no_fourth_installation_or_P3'] is True and c['cost_USD']==c['model_calls']==0,'candidate_bounded_not_release_or_install')
+result={'status':'PASS_CLOSED_CURRENT_PREFLIGHT_AND_EXACT_CORE','checks':checks,'count':len(checks),'evidence_refs':refs,'reviewed_packet_core_sha256':c['canonical_core_sha256'],'core':core,'methods':m,'closed_UTC_interval_seconds':interval,'closed_monotonic_elapsed_seconds':r['monotonic_elapsed_seconds'],'review_referenced_read_bytes_charged':READS,'review_monotonic_elapsed_seconds':time.monotonic()-START,'actual_input_function_or_helper_replays':0,'cost_USD':0}
+(OUT/'checks.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'status':result['status'],'checks':len(checks),'referenced_read_bytes':READS,'UTC_interval_seconds':interval,'elapsed':time.monotonic()-START}))

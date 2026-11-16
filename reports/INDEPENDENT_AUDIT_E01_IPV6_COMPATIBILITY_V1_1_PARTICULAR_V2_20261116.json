@@ -1,0 +1,595 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_V2_20261116",
+  "kind": "INDEPENDENT_EXACT_V1_1_CURRENT_PREFLIGHT_CORRECTED_PACKET_CORE_PARTICULAR",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "PASS_EXACT_CORRECTED_V1_1_CORE_CURRENT_PREFLIGHT_ONE_ROOT_COMPATIBILITY_ONLY",
+  "reviewed_packet_core_sha256": "c84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea",
+  "evidence_refs": {
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+      "bytes": 55727,
+      "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json": {
+      "path": "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+      "bytes": 7078,
+      "sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de"
+    },
+    "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+      "bytes": 12343,
+      "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+      "bytes": 23823,
+      "sha256": "3ac5052de1a663dce9d8891e6d35e6a2bf3760f2bc87cb39f6a165a10289b278"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+      "bytes": 9236,
+      "sha256": "091f3b663924a69c4af051f5a006419fc3175796dfc9b2504d9d9dd4d2d62aff"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py": {
+      "path": "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py",
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    "reports/evidence_e01_ipv6_compatibility_preflight_root_v1_1_20261116/HELPER.py.txt": {
+      "path": "reports/evidence_e01_ipv6_compatibility_preflight_root_v1_1_20261116/HELPER.py.txt",
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    "reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json": {
+      "path": "reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json",
+      "bytes": 31029,
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json": {
+      "path": "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json",
+      "bytes": 31029,
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json": {
+      "path": "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json",
+      "bytes": 814,
+      "sha256": "dd5ef54f4c71d8cb8dc135cf7d057301c362132190c86da5cc36e44b34f39b14"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RECORDED.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RECORDED.json",
+      "bytes": 327,
+      "sha256": "13f88793d5081b95edfe6dc4a5db4db3df1503c97fc57cff36cdd4a04961976c"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RESERVED.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RESERVED.json",
+      "bytes": 565,
+      "sha256": "8e1efa38bd1d1413de3e723ca4279a6a336261e34e67f94bd15ddfb5a477ce63"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stderr.bin": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stderr.bin",
+      "bytes": 836,
+      "sha256": "086f8be97927258114ff7288c5ada78ea7018eaa23fd985a44f2099d0c2f09e3"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stdout.bin": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stdout.bin",
+      "bytes": 1600,
+      "sha256": "4b3d5e2217b232b7a315bc0d8faedb947c571a8b490d85c71a28dc6e9ef4c0f3"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/STARTED.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/STARTED.json",
+      "bytes": 14238,
+      "sha256": "37f7790973d61bf943c38bdbecbf6cca88d74d6819e5666f7246c7d6afe818f2"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+      "bytes": 14847,
+      "sha256": "6898bbea458abfd769fcd6bcef2418afd50f76c7db7b0e83181340b8218a030b"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-payload.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-payload.json",
+      "bytes": 2242,
+      "sha256": "934fc048784d18ec17d7a61e23a535cf08a043882c74824cdff1d58a1df8c5cb"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+      "bytes": 209,
+      "sha256": "a6d8b5361159399537749f6992199f9620203afa03b3964da20d221c1de8beb9"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+      "bytes": 422,
+      "sha256": "12d34712a13aac07a9070b1f100f0d491afef52567bf1184b1bda1aa5d8bce4a"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+      "bytes": 595,
+      "sha256": "a38f32592d410d8f117b6345dac6efb3bf177c3443a36dd4b76cf34c40903c12"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/requirements.txt": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/requirements.txt",
+      "bytes": 472,
+      "sha256": "6cab8b38346fe98158c281a5b93eeb4762958ebab3400e2e22f932023210fa6b"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RECORDED.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RECORDED.json",
+      "bytes": 327,
+      "sha256": "b8fa18011b1d870870a0a50f715b326854522836d613511115607b2d09bc6f9a"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RESERVED.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RESERVED.json",
+      "bytes": 566,
+      "sha256": "6159bb8a4ee0a951c655d96b4fb424dfede3155a93fbf2c8403572be92cbb224"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stderr.bin": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stderr.bin",
+      "bytes": 836,
+      "sha256": "1c0b190fbc1db5e84de9b2dfa01cf7dfd4a296fed4a4013891c7ff1fcd716e5c"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stdout.bin": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stdout.bin",
+      "bytes": 1600,
+      "sha256": "f62bb7a1933ee01f49d790c8b515d76a2a6bfc2cc283a88aa37251fed9158528"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/STARTED.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/STARTED.json",
+      "bytes": 8275,
+      "sha256": "26427bf64b90446cd13de9c744a9a81fda6c77be1317d21c8ecbd6c1d5c88460"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json",
+      "bytes": 8930,
+      "sha256": "1b2604451d5aba7f0dd4d63dd682cb6b24d397fc4e103bb8c6ec8c0c25ba9bcc"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-payload.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-payload.json",
+      "bytes": 2243,
+      "sha256": "29a9a5519f2450b280c0e77244abf5b30071af7a0a61888470246fb178d250eb"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json",
+      "bytes": 199,
+      "sha256": "831f5c56bede2ffcadfcb952ef6d2d6f3e915519053ae76b0bd1e3c61941f970"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json",
+      "bytes": 422,
+      "sha256": "13db843a6b2ab2e21da0d8a2fbc64e2557eae3d4f0b83455d50d6d6f6757a84e"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json",
+      "bytes": 594,
+      "sha256": "c3b197a0b69be6900490f79fe02269ed1932f5d1785d9cfa0ddd84962e0ba9d9"
+    },
+    "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/requirements.txt": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/requirements.txt",
+      "bytes": 472,
+      "sha256": "6cab8b38346fe98158c281a5b93eeb4762958ebab3400e2e22f932023210fa6b"
+    },
+    "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json": {
+      "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json",
+      "bytes": 2047,
+      "sha256": "78bd9d62b891ba255ef506bb804143f1ca65395bd448df8f00cd75be9f971e03"
+    },
+    "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json": {
+      "path": "reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+      "bytes": 2047,
+      "sha256": "1423adee30915b6b47aecf4acff07208d9d0c6192d61c606d99e85525da4ed48"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+      "bytes": 12814,
+      "sha256": "65891b5385629e47743c5436de031df8366b31caa3c76b77ceb65904b1f239ae"
+    }
+  },
+  "blocking_findings": [],
+  "checks": [
+    "no_alias:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "review_read_cap:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "read_size:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "pin:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "no_alias:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "review_read_cap:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "read_size:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "pin:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "canonical_methods",
+    "no_alias:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "review_read_cap:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "read_size:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "pin:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "no_alias:reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+    "review_read_cap:reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+    "read_size:reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+    "exact_production_review",
+    "production_PASS",
+    "no_alias:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+    "review_read_cap:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+    "read_size:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+    "accepted_helper_static_delta",
+    "no_alias:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py",
+    "review_read_cap:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py",
+    "read_size:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py",
+    "pin:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py",
+    "no_alias:reports/evidence_e01_ipv6_compatibility_preflight_root_v1_1_20261116/HELPER.py.txt",
+    "review_read_cap:reports/evidence_e01_ipv6_compatibility_preflight_root_v1_1_20261116/HELPER.py.txt",
+    "read_size:reports/evidence_e01_ipv6_compatibility_preflight_root_v1_1_20261116/HELPER.py.txt",
+    "executed_helper_safe_copy_exact",
+    "genuine_reader_and_current_headroom_source",
+    "no_alias:reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json",
+    "review_read_cap:reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json",
+    "read_size:reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json",
+    "no_alias:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json",
+    "review_read_cap:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json",
+    "read_size:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/RECEIPT.json",
+    "public_local_closed_receipt_identical",
+    "no_alias:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json",
+    "review_read_cap:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json",
+    "read_size:data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116/STARTED.json",
+    "closed_PASS_no_error",
+    "one_metadata_preflight_separate_allocation",
+    "closed_STARTED_pins_match",
+    "no_alias:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "review_read_cap:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "read_size:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "pin:configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "no_alias:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "review_read_cap:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "read_size:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "pin:scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "no_alias:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "review_read_cap:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "read_size:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "pin:scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "closed_zero:child_commands",
+    "closed_zero:network_requests",
+    "closed_zero:model_calls",
+    "closed_zero:pip_imports",
+    "closed_zero:downloaded_package_imports",
+    "closed_zero:research_source_reads",
+    "closed_zero:cost_USD",
+    "no_install_acceptance",
+    "exact_metadata_preflight_caps",
+    "UTC_monotonic_aligned_under30",
+    "closed_genuine_reader_charge_under_cap",
+    "five_wheel_requirements_receipt",
+    "eight_roots_544_closed_unchanged_snapshot",
+    "nine_root_reserved_storage_under_cap",
+    "unchanged_shared_and_individual_caps",
+    "six_distinct_absent_paths",
+    "absent_path_no_alias:data/processed/e01_pypdf701_build_v1/compatibility-v1_1-20261116",
+    "current_absent_lstat_only:data/processed/e01_pypdf701_build_v1/compatibility-v1_1-20261116",
+    "absent_path_no_alias:.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1_1",
+    "current_absent_lstat_only:.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1_1",
+    "absent_path_no_alias:data/processed/e01_pypdf701_build_v1/compatibility-v1_1-packet-20261116.json",
+    "current_absent_lstat_only:data/processed/e01_pypdf701_build_v1/compatibility-v1_1-packet-20261116.json",
+    "absent_path_no_alias:data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+    "current_absent_lstat_only:data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+    "absent_path_no_alias:data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json",
+    "current_absent_lstat_only:data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json",
+    "absent_path_no_alias:.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1",
+    "current_absent_lstat_only:.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1",
+    "closed_all_six_absence",
+    "full_cumulative_450_180_12",
+    "actual_prior_charges_distinct",
+    "full_three_install_two_diagnostic_allocations_preserved",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RECORDED.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RECORDED.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RECORDED.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RECORDED.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RESERVED.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RESERVED.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RESERVED.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-COMMAND_RESERVED.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stderr.bin",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stderr.bin",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stderr.bin",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stderr.bin",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stdout.bin",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stdout.bin",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stdout.bin",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/1-stdout.bin",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/STARTED.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/STARTED.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/STARTED.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/STARTED.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-payload.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-payload.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-payload.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-payload.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/requirements.txt",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/requirements.txt",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/requirements.txt",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/requirements.txt",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RECORDED.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RECORDED.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RECORDED.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RECORDED.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RESERVED.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RESERVED.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RESERVED.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-COMMAND_RESERVED.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stderr.bin",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stderr.bin",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stderr.bin",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stderr.bin",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stdout.bin",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stdout.bin",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stdout.bin",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/1-stdout.bin",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/STARTED.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/STARTED.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/STARTED.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/STARTED.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/TERMINAL.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-payload.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-payload.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-payload.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-payload.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-refusals.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/guest-result.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-packet-20261116.json",
+    "no_alias:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/requirements.txt",
+    "review_read_cap:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/requirements.txt",
+    "read_size:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/requirements.txt",
+    "pin:data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116/requirements.txt",
+    "historical_event_labels_preserved",
+    "current_closed_ancestry_headroom_recomputed",
+    "current_base_paths_receipt",
+    "prescribed_PATH_not_child_execution",
+    "current_builtin_MIME_receipt",
+    "closed_exact_socket_source_proof",
+    "closed_pinned_probe_proof",
+    "closed_module_state:current_original_has_ipv6",
+    "closed_module_state:fresh_adapter_state",
+    "closed_module_state:main_single_Python_thread_and_process_checked",
+    "closed_module_state:import_lock_currently_unheld",
+    "closed_module_state:no_current_initializing_modules",
+    "closed_module_state:pip_vendor_imports_absent",
+    "closed_module_state:child_must_recheck_current_state",
+    "zero_current_state_action:real_socket_field_mutations",
+    "zero_current_state_action:vendor_imports",
+    "zero_current_state_action:import_lock_acquisitions",
+    "actual_closure_NOT_RUN_must_child_recheck",
+    "no_alias:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json",
+    "review_read_cap:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json",
+    "read_size:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json",
+    "pin:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_V2_20261116.json",
+    "exact_five_packet_core_fields",
+    "exact_runner_methods_packet_binding",
+    "exact_enabled_kind_root",
+    "exact_canonical_core_hash",
+    "no_alias:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+    "review_read_cap:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+    "read_size:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+    "pin:reports/E01_IPV6_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_20261116.json",
+    "only_declared_canonical_digest_changed",
+    "no_alias:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+    "review_read_cap:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+    "read_size:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+    "pin:reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_20261116.json",
+    "original_BLOCKED_audit_unchanged",
+    "candidate_bounded_not_release_or_install"
+  ],
+  "findings": [
+    "Corrected candidate2047B/78bd9d62 differs from preserved2047B/1423adee predecessor in canonical_core_sha256 only. Five actualcore fields unchanged. Canonical no-newline frozenpacked nowcomputesc84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea, matching correcteddeclaration. Original12814B/65891b53 BLOCKEDaudit andfailedcandidate remain unchanged; no retroactivePASS.",
+    "Exact55727B/7e31c3df runner,7078B/54d61063 canonicalconfig,12343B/e65cacf adapter and23823B/3ac5052d independentproductionPASS matched. Required runner/config evidence_refs exactlymatch validate_release. Report contains no finalpacket/hash; acyclicreview_ref addition remains leadonly.",
+    "Closedpublic31029B/8fbdcd1c preflight receipt identical localRECEIPT. STARTEDpins match currentfiles; onefreshmetadatahelper separatefromchildallocation. Exact11611B/98c6b25d executedhelper andsafehelpercopy matched acceptedstaticreview. Originalmodule.p.Reader used directly, no fixturecache/inputreplay by auditor.",
+    "Helperstaticacceptance disclosed40focusedPython3.12checks then auditnormalizationfailure and41correctedPython3.9checks. This particular relies on exactstaticdelta acceptance andclosedactualmetadataresult, doesnotrelabel thathistory asfull3.12staticsuitepass. Production independent67+67mockchecks separatelyPASS.",
+    "ClosedactualmetadataPASS noerror,zerochild/network/model/pip/package/researchsource/cost, installationacceptedfalse. Helper30s/CPU7soft8hard/512MiBReader/3createonce64KiBoutputs/192KiBcombined preserved. Readercharge43709225 under536870912; closedUTC.417789s alignsmonotonic.42033745799562894s under30.",
+    "Currentclosed socketexactModuleType/origin/SourceFileLoader/socketSHA/originalbooleanTrue, exactprobeSHA,freshadapter/mainPythonowner/noinitializingmodules/unheldimportlock/no pip/vendor stateproofs agree reviewedhelper/adapter. Readonlymetadata made0socketfieldmutations/vendorimports/importlockacquisitions. Actualtransitiveimportclosure NOT_RUN, mustbecheckedunderoriginalguards inprospectivechild.",
+    "Closednarrowedbasepaths/builtin-onlyMIMEproofmatchbinding. ChildPATHmatches sourceAST prescribedruntime/bin:/usr/bin:/bin; thisisnot observedchildexecution. Freshchildrechecks exactcurrenthost/bootstrap/module/input/source/state andrejects unknown/custom origins/closureoverages, nosilentfallback.",
+    "Eightoldroots snapshot544entries/0b6747e9 unchanged in genuinehelper. Auditorhashes bothdiagnostic11refchains andpreserves oldV1coarseSOCKET/V2fineSOCKET_CONSTRUCT withoutnewcausalclaims. Noauditoroldtarget traversal/wheelbody/sourcePDF read; metadata snapshot isnotfulloldtreecontentdigest.",
+    "AllsixnewandsupersededV1scope-target-packet paths absent/noaliases bylstatagain inthissuccessorpass. Currentoccupied25849493 +16MiBnewscope=42626709<805306368; nine-root union16384entries andeachdiagnostic/compatibilityscope16MiB unchanged.",
+    "Currentclosed canonicalprior+snapshot19223B +12288reserve31511<=32768terminalcap recomputed. Full131072Bguestreceipt remainsseparateexacthashbinding/<=1536Bsummaryrecord; original32KiBterminal/8MiBcontrol/16MiBscope capsunchanged. Actualmustrepeatheadroomcheckbeforeconsumingscope andretainfullreceipt/error evidence.",
+    "Fullallocated420wall/160observedCPU/11priorcommands +30/20/1new=450/180/12. Actualprior8commands/21348output/353429948parentread/2.964237observedCPU retaineddistinctly. No oldunusedtime/storage reservation silentlyreclaimed; this correction addsnoactualhelper/childallowance.",
+    "213closedmetadata/bindingchecks PASS inonesuccessorreadonlypass;347212B referencedreads under64MiB, outputsunder32MiB, no test/helper/runner/input replay. Originalparticularpassconsumed plusonenew=2retained, noautomaticrerun.",
+    "One prospective boundedcompatibilityguest only: exactsource-pinned adapter intentionally declares socketcapabilityFalse during boundedfreshvendoredinitialization andrestoresTrue, whilecachedvendorFalse andparent/transitiveeffects remainexplicit. Every actualsocket/native/helper operation remainsdenied/counted; originalnonzeroviolationpostcondition canstillfail. No permissionwaiver, fourthinstallation orP3follows.",
+    "IndependentparticularPASS isconditional exactrelease binding, notactualoutcome/currentinstallation acceptance. Originalcallsite/family/address/destination/intent/history/scientificvalidity remainunknown. Child mustrevalidatecurrentstate becauseclosedpreflightdoesnotguaranteefuturestate."
+  ],
+  "release": {
+    "actor": "ROOT_ONLY",
+    "attempts": 1,
+    "retries": 0,
+    "packet_core": {
+      "diagnostic_code_ref": {
+        "bytes": 55727,
+        "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+        "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+      },
+      "execution_enabled": true,
+      "kind": "E01_OFFLINE_COMPATIBILITY_EXECUTION_PACKET_V1_1",
+      "methods_sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de",
+      "root_sha256": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f"
+    },
+    "final_packet_path": "data/processed/e01_pypdf701_build_v1/compatibility-v1_1-packet-20261116.json",
+    "allowed_packet_finalization": "Add ONLY review_ref={path:this report path,bytes:exact serialized report bytes,sha256:exact report SHA256} to the five unchanged reviewed core fields. Externally hash the final canonical no-newline packet using frozen packed serialization and pass its SHA256 to CLI. This auditor creates no actual packet.",
+    "argv": [
+      ".venv/bin/python",
+      "-I",
+      "-B",
+      "-S",
+      "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+      "--methods-sha256",
+      "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de",
+      "--packet-sha256",
+      "<LEAD_EXTERNALLY_HASHED_FINAL_CANONICAL_PACKET_SHA256>"
+    ],
+    "scope": "data/processed/e01_pypdf701_build_v1/compatibility-v1_1-20261116",
+    "uncreated_target": ".venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1_1",
+    "superseded_paths_must_stay_absent": [
+      "data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+      "data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json",
+      ".venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1"
+    ],
+    "preserved_roots": [
+      "data/processed/e01_pypdf701_build_v1/install-v1_3-20261116",
+      ".venv-e01-pypdf-7.0.1-v1",
+      "data/processed/e01_pypdf701_build_v1/install-v1_4-20261116",
+      ".venv-e01-pypdf-7.0.1-v2",
+      "data/processed/e01_pypdf701_build_v1/install-v1_5-20261116",
+      ".venv-e01-pypdf-7.0.1-v3",
+      "data/processed/e01_pypdf701_build_v1/diagnostic-v1-20261116",
+      "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116"
+    ],
+    "limits": {
+      "combined_nine_tree_logical_bytes": 805306368,
+      "combined_tree_entries": 16384,
+      "command_output_bytes": 262144,
+      "control_write_bytes": 8388608,
+      "diagnostic_scope_logical_bytes": 16777216,
+      "each_diagnostic_scope_logical_bytes": 16777216,
+      "guest_cumulative_write_bytes": 805306368,
+      "guest_read_bytes": 268435456,
+      "helper_descendants": 0,
+      "journal_events": 16,
+      "journal_serialized_bytes": 4096,
+      "main_children": 1,
+      "model_calls": 0,
+      "network": 0,
+      "observed_aggregate_CPU_seconds": 20,
+      "parent_child_CPU_hard_seconds": 8,
+      "parent_child_CPU_soft_seconds": 7,
+      "parent_reference_read_bytes": 536870912,
+      "single_file_bytes": 67108864,
+      "stage_wall_seconds": 30
+    },
+    "allocation": {
+      "cumulative_main_commands": 12,
+      "cumulative_observed_CPU_seconds": 180,
+      "cumulative_wall_seconds": 450,
+      "new_main_commands": 1,
+      "new_observed_CPU_seconds": 20,
+      "new_wall_seconds": 30,
+      "prior_main_commands": 11,
+      "prior_observed_CPU_seconds": 160,
+      "prior_wall_seconds": 420
+    },
+    "required_effect_bound": "Exactly one original guarded isolated child with fixed five wheels/hashlocked requirements/one --dry-run and unchanged PATH. Only reviewed adapter temporarycapabilityoverride andbounded moduleinitialization; preserve closure/rawreceipt/hashsummary, refusesunknownstate; no target created.",
+    "forbidden": [
+      "Network/socket operation allowance",
+      "Original refusal/counter/postcondition reset",
+      "Fourth installation or runtime/source/P3 acceptance",
+      "Cleanup/replay/reuse of any consumed scope/target",
+      "Automatic second remedy or retry",
+      "Budget/cap increase or additional paid/model execution",
+      "Historical callsite/family/destination attribution from compatibility result"
+    ]
+  },
+  "test_and_read_results": {
+    "readonly_checks": 213,
+    "referenced_read_bytes_charged": 347212,
+    "bound_read_bytes": 67108864,
+    "closed_preflight_UTC_interval_seconds": 0.417789,
+    "closed_preflight_monotonic_seconds": 0.42033745799562894,
+    "review_pass_elapsed_seconds": 0.0030735419999999986,
+    "test_suite_reruns": 0
+  },
+  "retained_review_authority": {
+    "prior_particular_passes": 1,
+    "new_successor_passes": 1,
+    "combined_passes": 2,
+    "full_allocated_wall_CPU_seconds": 240,
+    "full_allocated_referenced_reads_bytes": 134217728,
+    "full_allocated_review_output_bytes": 67108864,
+    "full_allocated_console_bytes": 524288,
+    "automatic_reruns": 0,
+    "new_actual_preflight_or_child_allowance": 0
+  },
+  "actual_auditor_actions": {
+    "helper_runner_realinput_functions": 0,
+    "socket_functions_or_field_mutations": 0,
+    "pip_import_execution": 0,
+    "network_model_raw_source_owner_credentials": 0,
+    "old_target_or_wheel_body_reads": 0,
+    "packet_created": false,
+    "cost_USD": 0
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_V1_1_PARTICULAR_V2_20261116.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/RECEIPT.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/STARTED.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/checks.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/executed_helper.py.txt",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/packet_core_candidate_v2_preserved.json",
+    "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/verify_closed_preflight_core.py"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/RECEIPT.json",
+      "bytes": 31029,
+      "sha256": "8fbdcd1cbdcd936b28bf227b1972813ee8115db1f218b17c4480f9123fe55035"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/STARTED.json",
+      "bytes": 814,
+      "sha256": "dd5ef54f4c71d8cb8dc135cf7d057301c362132190c86da5cc36e44b34f39b14"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/checks.json",
+      "bytes": 36365,
+      "sha256": "99c86b03b5239ce26d5a4699474ed0f74e0969eedb81193ca3b3b1a25d7a336d"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/executed_helper.py.txt",
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/packet_core_candidate_v2_preserved.json",
+      "bytes": 2047,
+      "sha256": "78bd9d62b891ba255ef506bb804143f1ca65395bd448df8f00cd75be9f971e03"
+    },
+    {
+      "path": "reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/verify_closed_preflight_core.py",
+      "bytes": 11761,
+      "sha256": "96b9a0e4964193b63d268b11dec04b43c294a0290612396eec76fb7e363d1cca"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "python3 -I -B -S reports/evidence_e01_ipv6_compatibility_v1_1_particular_v2_20261116/verify_closed_preflight_core.py (already completed exact bounded read-only pass; no automatic rerun).",
+    "Absencechecks intentionally fail after authorizedpacket/scopecreation. Do not rerun helper/child to reproduce this audit."
+  ],
+  "TESTS_RUN_AND_RESULTS": "213 readonlychecks PASS. Correctedcandidateonefielddelta andexactcanonicalhash verified. No actualtest/helper/adapter/child execution.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Technicalclosedcontrols/helper/config/source/reviewrefs only. No rawrespondent/publisher/PDF/packagebodies, credentials orfinancialowner data.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Closedpreflight snapshot/moduleproofs aretimebound, notcurrentfuturestateguarantee; prospectivechildmustrecheck.",
+    "Metadata snapshot notfulloldtreehash; no concurrenthostilewriter/continuous/native-thread/private-state sandboxguarantee.",
+    "Stdlibobservations exceptsocket notindependentprepins orcompleteexecutedcodeattestation.",
+    "Parent/transitiveconsumersmayobserveFalse andvendorcachedFalsepersists; compatibilityofthisprofile nothistoricalattribution orinstallationacceptance.",
+    "On receiptcontentdrift, failedterminal mayretain earlierref; actualauditor musthonorfailedoutcome/refmismatch, no falseacceptance."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Actualcompatibilityoutcome NOT_RUN; lead mustfinalizeexactpacketandpreserveonce-onlyclosedresult forindependentaudit.",
+    "Allthreehistoricalinstallations remainunaccepted; fourthinstallation/P3/source/runtime/scientificgates remainblocked."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may add exactthisreportreview_ref andexternallyhashfinalcanonicalpacket, thenatmostone unchangedboundedV1.1compatibilityinvocation underoriginaldecision. Retainfullclosure/guard/error/cost/oldstate/storageevidence forindependentactualreview; noretry.",
+  "ownership": "Auditor ownsnewreport/evidence only; lead ownsGit/STATUS/coordination/actualpacket andexecution."
+}

@@ -1,0 +1,19 @@
+{
+  "status": "BLOCKED_PACKET_CORE_DECLARED_HASH_MISMATCH",
+  "failure_location": "verify_closed_preflight_core.py:77 exact_canonical_core_hash",
+  "observed_failure": "AssertionError: exact_canonical_core_hash",
+  "declared_canonical_core_sha256": "4fe190810eb5ab363ccfe21a5f8f82e59ebcd9ac7ea36a371bcfff5405469142",
+  "computed_canonical_core_sha256": "c84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea",
+  "canonical_serialization": "json.dumps(core,sort_keys=True,separators=(comma,colon),allow_nan=False).encode(); no newline",
+  "preceding_checks": "All assertions before line77 completed: pinned production/helper/runner/adapter/config, closedpreflight/localreceipt equality/zeroactions/caps/clocks/8roots+storage+6absence/priorcontrols/headroom/moduleproofs/code-method-rootcore binding. No numerical check count retained on failure.",
+  "invocations": {
+    "closed_readonly_verifier": 1,
+    "actual_helper_or_runner_replays": 0,
+    "supplemental_diagnosis": "One exact candidate-only canonical hash recomputation; no verifier rerun."
+  },
+  "reference_read_cap_bytes": 67108864,
+  "charged_total_read_bytes": "NOT_RETAINED_AFTER_ASSERTION_FAILURE",
+  "wall_CPU_cap_seconds": 120,
+  "cost_USD": 0,
+  "release": false
+}

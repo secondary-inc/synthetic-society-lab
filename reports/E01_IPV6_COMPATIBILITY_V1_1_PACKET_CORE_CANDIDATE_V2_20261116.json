@@ -1,0 +1,42 @@
+{
+  "actual_allocation": {
+    "cumulative_main_commands": 12,
+    "cumulative_observed_CPU_seconds": 180,
+    "cumulative_wall_seconds": 450,
+    "new_main_commands": 1,
+    "new_observed_CPU_seconds": 20,
+    "new_wall_seconds": 30,
+    "prior_main_commands": 11,
+    "prior_observed_CPU_seconds": 160,
+    "prior_wall_seconds": 420
+  },
+  "actual_packet_created": false,
+  "bound_actual_invocation": ".venv/bin/python -I -B -S scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py --methods-sha256 54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de --packet-sha256 <final-bound-packet-sha256>",
+  "canonical_core_sha256": "c84426eae707145f90fdbf0dc084b5ec7270eb72ef984493e920e426b80c82ea",
+  "core_for_independent_particular_review": {
+    "diagnostic_code_ref": {
+      "bytes": 55727,
+      "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+      "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+    },
+    "execution_enabled": true,
+    "kind": "E01_OFFLINE_COMPATIBILITY_EXECUTION_PACKET_V1_1",
+    "methods_sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de",
+    "root_sha256": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f"
+  },
+  "cost_USD": 0,
+  "kind": "LEAD_COMPATIBILITY_V1_1_PACKET_CORE_CANDIDATE_NOT_EXECUTION_RELEASE",
+  "methods_ref": {
+    "bytes": 7078,
+    "path": "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de"
+  },
+  "model_calls": 0,
+  "no_fourth_installation_or_P3": true,
+  "prerequisites": [
+    "Exact V1.1 production acceptance on both runtimes",
+    "Exact helper acceptance and one genuine-reader current preflight including headroom, original module state, all eight preserved roots, superseded V1 absence and storage",
+    "Independent exact particular core/code/method/preflight review",
+    "Lead create-once packet adds exact review_ref, externally binds final packet and invokes once"
+  ]
+}
