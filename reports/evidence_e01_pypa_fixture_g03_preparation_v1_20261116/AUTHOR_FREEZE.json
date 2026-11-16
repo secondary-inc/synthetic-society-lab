@@ -1,0 +1,82 @@
+{
+  "actual_child_tool_hooks_installs": 0,
+  "caller_ref": {
+    "bytes": 18076,
+    "path": "scripts/e01_pypa_fixture_g03_caller_candidate_v1_20261116.py",
+    "sha256": "a1f03d2ad23526748d3784d71541df39c782449bb5e8315d8f1e0deedebe2514"
+  },
+  "component_only": "Parent one-shot/supervisor mocked scope, no actual G03 qualification",
+  "kind": "G03_AUTHOR_PREPARATION_FREEZE",
+  "packet_canonical_sha256": "dc84d2bf233e2d3f3afe070dc5a5ada571acc945e35c2dc06697966270081275",
+  "packet_ref": {
+    "bytes": 2524,
+    "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_20261116/PREPARATION_PACKET.json",
+    "sha256": "11b89170d0a5e4188ef9f034d53a0787404601fbd864d5527be49bfe2cce0a68"
+  },
+  "plan_ref": {
+    "bytes": 6658,
+    "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_20261116/INTEGRATION_PLAN.json",
+    "sha256": "4eb6402fb2e28e29a7d1702ddb52c4a932493af3e2acec2df2128d855f7cbf78"
+  },
+  "runs": {
+    "311": {
+      "checks_passed": 28,
+      "console_bytes": 4582,
+      "guarded_counters": {
+        "G03_actual_integration": "NOT_RUN",
+        "OS_writes": 0,
+        "actual_children": 0,
+        "actual_tool_imports_compiles_installs": 0,
+        "checks": 28,
+        "console_bytes_before_summary": 4314,
+        "kind": "G03_AUTHOR_INERT_SUITE",
+        "late_read_bytes": 251081,
+        "startup_reads_not_metered": true
+      },
+      "log_ref": {
+        "bytes": 4582,
+        "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_20261116/attempt1_311.txt",
+        "sha256": "4874400df9c5b6de87bb07139403c72bfd9fce8dd2c88c2890836b6392b28928"
+      },
+      "result": {
+        "child_CPU_seconds": 0.03927599999999999,
+        "returncode": 0,
+        "wall_seconds": 0.043691708999999995
+      },
+      "suite_invocation_cap": 2,
+      "suite_invocations_used": 1
+    },
+    "312": {
+      "checks_passed": 28,
+      "console_bytes": 4582,
+      "guarded_counters": {
+        "G03_actual_integration": "NOT_RUN",
+        "OS_writes": 0,
+        "actual_children": 0,
+        "actual_tool_imports_compiles_installs": 0,
+        "checks": 28,
+        "console_bytes_before_summary": 4314,
+        "kind": "G03_AUTHOR_INERT_SUITE",
+        "late_read_bytes": 236684,
+        "startup_reads_not_metered": true
+      },
+      "log_ref": {
+        "bytes": 4582,
+        "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_20261116/attempt1_312.txt",
+        "sha256": "460989a3db3dc11e285aefa1e0a1c5f3e2315df211e842bfaf1a5d940f570caf"
+      },
+      "result": {
+        "child_CPU_seconds": 0.04195599999999999,
+        "returncode": 0,
+        "wall_seconds": 0.084558667
+      },
+      "suite_invocation_cap": 2,
+      "suite_invocations_used": 1
+    }
+  },
+  "test_ref": {
+    "bytes": 18638,
+    "path": "tests/test_e01_pypa_fixture_g03_caller_candidate_v1_20261116.py",
+    "sha256": "cd4eff8f1d4777e3e7e369a8e493520dca77c138c659ed346ac98496d271f3e7"
+  }
+}

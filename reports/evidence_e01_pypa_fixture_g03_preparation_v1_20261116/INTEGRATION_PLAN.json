@@ -1,0 +1,99 @@
+{
+  "G03_acceptance": "NOT_RUN_BLOCKED_FOR_ACTUAL_RELEASE",
+  "actual_execution_count": 0,
+  "authority": "Preparation only. Neither this plan nor its disabled packet releases any actual child or tool action.450wall/180CPU/12oldchildren allocation stays consumed/unchanged.",
+  "kind": "G03_CONCRETE_INTEGRATION_PLAN_NOT_RELEASED",
+  "parent_component": {
+    "CPU_wall": "wait4 rusage observes that exact child whole lifetime including interpreter startup after reap; parent clock includes start overhead and cleanup. This is separate from enforcing child RLIMIT_CPU early. Reference backend and actual reaping remain NOT_RUN.",
+    "actual_entry": "run_actual unconditionally refuses missing child/startup integration. PosixBackend/DiskJournal are unexecuted reference integration; a new versioned reviewed actual entry is required.",
+    "one_shot": "Consume create-once STARTED before backend start. No alternate scope or retries after a start/setup/error. Parent disk directory creation itself is spent if interrupted.",
+    "status": "AUTHOR_INERT_CHECKS_PASS_ONLY",
+    "supervision": "Native reference backend uses exact Popen command, two nonblocking pipes and wait4 for its own PID. Clock starts before start; drain continues after reap until EOF. Work stop117s leaves3s within120 for kill/reap. Child return/CPU/malformed wait/clock/output errors remain FAILED_UNACCEPTED.",
+    "writes": "31MiB proposed child writes plus1MiB parent journal <=32MiB combined. Child adapter must enforce its31MiB quota before effects; frozen harness32MiB inner cap alone is insufficient. Parent keeps256KiB console prefix with explicit overflow failure."
+  },
+  "proposed_first_scope": "One fresh CPython3.12.14 generated-fixture child only; eight fixed cases/at most three PyPA fixture calls. No old environments, dependency payload installation or research source processing.",
+  "proposed_scope_limits": {
+    "cases": 8,
+    "child_CPU_seconds": 120,
+    "child_wall_seconds": 120,
+    "child_write_bytes": 32505856,
+    "children": 1,
+    "cleanup_reserve_seconds": 3,
+    "combined_write_bytes": 33554432,
+    "console_bytes": 262144,
+    "fixture_calls": 3,
+    "parent_write_bytes": 1048576,
+    "polls": 2500,
+    "read_chunk_bytes": 65536,
+    "retries": 0,
+    "technical_read_bytes": 67108864,
+    "work_seconds": 117
+  },
+  "required_child_adapter_steps": [
+    {
+      "boundary": "Immutable packet and runtime/source preflight",
+      "required_evidence": "Exact independently reviewed caller, child adapter, accepted harness/validator/policy/dirfd/diagnostic, runtime executable, tool archive/member hashes, review/packet ancestry; create-once new external scope. No wildcard repo/site-packages/raw/old-target allowlist. Hash opened files with stable identity and reverify closure after child.",
+      "step": 1
+    },
+    {
+      "boundary": "Isolated startup and bytecode closure",
+      "required_evidence": "-I -B -S plus -Xpycache_prefix pointing at a never-existing child-owned cache. Prove no preexisting pyc/sourceless code is admitted; record source origin, __cached__, spec/loader/code filename, built-in/frozen module names and native runtime boundaries. Runtime/source hashes do not retrospectively hash every loaded code object or OS dependency.",
+      "step": 2
+    },
+    {
+      "boundary": "Earliest guard and startup read accounting",
+      "required_evidence": "Freeze child prelude and exact bootstrap imports. Install network/process/native/path/compile/write/descriptor guards before project/tool loading; record actual start boundary. Substantiate a finite logical read bound/reservation for preceding interpreter/caller imports. Label audit open-size/stream counters as logical, not whole-process physical IO. Missing/unbounded bootstrap is BLOCKED, not zero.",
+      "step": 3
+    },
+    {
+      "boundary": "Original and outer guard composition",
+      "required_evidence": "Test exact real audit stack, closed15-event dataclass compile gates, per-member source compiles, no blanket<string>/stdlib exception. Integrate high-level io/Path and nested original/outer directory-descriptor guards; unknown/reused/moved/aliased descriptors must refuse before effects. Frozen run_released does not expose its policy to an outer startup guard, so a separately reviewed adapter is required.",
+      "step": 4
+    },
+    {
+      "boundary": "One cumulative operational/control budget",
+      "required_evidence": "Before actual release, freeze a64MiB combined technical/logical-read allocation covering parent preflight, bootstrap reservation, child filesystem and strict memory streams; avoid double-counting counters or omitting parent/stream reads. Parent and child each rehashing18MiB runtime plus an independently free32MiB memory budget cannot simply be asserted within64MiB. A narrower reviewed adapter/stream-budget allocation is needed. Preserve sticky failure, finite control-only closure and primary exceptions.",
+      "step": 5
+    },
+    {
+      "boundary": "Eight cases and result evidence",
+      "required_evidence": "Same fixture bytes/order/source pins/7-file output oracle/3-call cap. Record actual module origins, tool provider source identity, shared read/write/CPU/wall counters, descriptor event evidence, refused/partial output hashes and terminal. Independently replay exactly retained result files. Engineering assertions never certify runtime/P3 or scientific completion.",
+      "step": 6
+    },
+    {
+      "boundary": "Particular review and single actual execution",
+      "required_evidence": "Independent exact caller+child+closure review, corrected implementation tests and explicit finite lead release first. Consume one new marker, dispatch exactly one3.12 child, supervise/reap/save failures, then independent actual evidence review. No default CLI dispatch or approval derived from PASS alone.",
+      "step": 7
+    }
+  ],
+  "unsubstantiated_boundaries": [
+    {
+      "gate": "STARTUP_LOGICAL_READ_BOUND",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "SOURCE_AND_LOADED_CODE_CLOSURE",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "FRESH_BYTECODE_CACHE_POLICY",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "EARLY_NETWORK_IO_COMPILE_GUARD",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "REAL_AUDIT_STACK_AND_DESCRIPTOR_INTEGRATION",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "OPERATIONAL_CONTROL_BUDGET_INTEGRATION",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    },
+    {
+      "gate": "EXACT_CHILD_ADAPTER_REVIEW",
+      "state": "BLOCKED_MISSING_EVIDENCE"
+    }
+  ]
+}

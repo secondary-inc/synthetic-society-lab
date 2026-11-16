@@ -1,0 +1,67 @@
+{
+  "caller_ref": {
+    "bytes": 18076,
+    "path": "scripts/e01_pypa_fixture_g03_caller_candidate_v1_20261116.py",
+    "sha256": "a1f03d2ad23526748d3784d71541df39c782449bb5e8315d8f1e0deedebe2514"
+  },
+  "child_adapter_ref": null,
+  "child_guard_review_ref": null,
+  "component_review_ref": {
+    "bytes": 47690,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_HARNESS_V1_1_20261116.json",
+    "sha256": "b05c35ca8df6dedf0cb43508a0fd43422efbdccd35c3e7d7aeed4d1597ce88c4"
+  },
+  "execution_enabled": false,
+  "gates": {
+    "EARLY_NETWORK_IO_COMPILE_GUARD": "BLOCKED_MISSING_EVIDENCE",
+    "EXACT_CHILD_ADAPTER_REVIEW": "BLOCKED_MISSING_EVIDENCE",
+    "FRESH_BYTECODE_CACHE_POLICY": "BLOCKED_MISSING_EVIDENCE",
+    "OPERATIONAL_CONTROL_BUDGET_INTEGRATION": "BLOCKED_MISSING_EVIDENCE",
+    "REAL_AUDIT_STACK_AND_DESCRIPTOR_INTEGRATION": "BLOCKED_MISSING_EVIDENCE",
+    "SOURCE_AND_LOADED_CODE_CLOSURE": "BLOCKED_MISSING_EVIDENCE",
+    "STARTUP_LOGICAL_READ_BOUND": "BLOCKED_MISSING_EVIDENCE"
+  },
+  "harness_ref": {
+    "bytes": 52778,
+    "path": "scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py",
+    "sha256": "1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8"
+  },
+  "harness_release_ref": null,
+  "kind": "E01_G03_PREPARATION_PACKET_V1",
+  "limits": {
+    "cases": 8,
+    "child_CPU_seconds": 120,
+    "child_wall_seconds": 120,
+    "child_write_bytes": 32505856,
+    "children": 1,
+    "cleanup_reserve_seconds": 3,
+    "combined_write_bytes": 33554432,
+    "console_bytes": 262144,
+    "fixture_calls": 3,
+    "parent_write_bytes": 1048576,
+    "polls": 2500,
+    "read_chunk_bytes": 65536,
+    "retries": 0,
+    "technical_read_bytes": 67108864,
+    "work_seconds": 117
+  },
+  "network_model_requests": 0,
+  "no_old_targets": true,
+  "root_sha256": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f",
+  "runtime": {
+    "bytes": 18058560,
+    "executable": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+    "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb",
+    "version": "3.12.14"
+  },
+  "scientific_or_runtime_acceptance": false,
+  "scope": "ONE_FRESH_312_GENERATED_FIXTURE_CHILD_G03_V1",
+  "startup_closure_ref": null,
+  "state": "PREPARED_NOT_RELEASED",
+  "temp_parent": null,
+  "tool_ref": {
+    "bytes": 464466,
+    "path": "data/processed/e01_installer_tool_source_v1_20261116/2-RESPONSE.bin",
+    "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0"
+  }
+}

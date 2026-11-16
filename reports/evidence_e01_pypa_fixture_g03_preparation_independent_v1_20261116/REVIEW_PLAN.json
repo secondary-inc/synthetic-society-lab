@@ -1,0 +1,21 @@
+{
+  "kind": "FROZEN_INDEPENDENT_G03_INERT_COMPONENT_REVIEW_PLAN",
+  "authority": "One28-suite and one independent adverse probe/runtime3.11/3.12,each120sCPU/wall,64MiBread,32MiBownedwrites,256KiBconsole; no recovery implicit.",
+  "sources": [
+    {
+      "path": "reports/evidence_e01_pypa_fixture_g03_preparation_independent_v1_20261116/early_guard_suite.py",
+      "bytes": 1518,
+      "sha256": "7d198f4fe9be036b1d923c3d9cb91ce3322db474af5ccc8e88e694eeab1d3bb8"
+    },
+    {
+      "path": "reports/evidence_e01_pypa_fixture_g03_preparation_independent_v1_20261116/adverse_probe.py",
+      "bytes": 15443,
+      "sha256": "0cc10f3158198f2393d0fc21e35e3b4aa601726973629a1e34ecb2f439e54363"
+    }
+  ],
+  "native_effects": "Only inert Backend/MemoryJournal; no actual PosixBackend/DiskJournal, subprocess/fork/kill/wait4/temporary install/candidate hooks/PyPA/tool calls. Early audit denies process/network/native; os.kill/killpg/wait4 replaced with denial in test process.",
+  "child_OS_write_limit": 0,
+  "probe_finding_handling": "A semantic edge finding is recorded as finding, not an auditor harness error. Assertions verify evidence and invariants.",
+  "meter_limitation": "Late open-size meters exclude interpreter/bootstrap imports; no actual G03 resource qualification.",
+  "static_reference_hashing": "All24references incl18MiB3.12binary hashed before execution; separate static read upper-bound32MiB includes introductory source inspection."
+}
