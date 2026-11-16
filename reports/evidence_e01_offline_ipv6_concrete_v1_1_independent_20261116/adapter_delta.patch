@@ -1,0 +1,20 @@
+--- scripts/e01_offline_ipv6_adapter_v1_20261116.py
++++ scripts/e01_offline_ipv6_adapter_v1_1_20261116.py
+@@ -144,7 +144,7 @@
+         # The attempt is still part of the bounded closure record.
+         need(len(self.names) < MAX_MODULES, 'COMPATIBILITY_CLOSURE_MODULE_CAP')
+         self.names[fullname] = {'name': fullname, 'origin': 'not-found'}
+-        raise ModuleNotFoundError(fullname)
++        raise ModuleNotFoundError("No module named '"+fullname+"'", name=fullname)
+ 
+ 
+ def checked_socket(binding, reader):
+@@ -262,7 +262,7 @@
+                 closure.spec(name, value.__spec__)
+         scoped(socket_module, initialize, check)
+         need(socket_module.has_ipv6 is True, 'COMPATIBILITY_RESTORE_FAILED')
+-        return {'kind': 'E01_OFFLINE_IPV6_COMPATIBILITY_RECEIPT_V1',
++        return {'kind': 'E01_OFFLINE_IPV6_COMPATIBILITY_RECEIPT_V1_1',
+                 'original_has_ipv6': True, 'temporary_has_ipv6': False,
+                 'restored_has_ipv6': True, 'vendor_cached_ipv6': False,
+                 'target_module': TARGET, 'socket_ref': {'path': str(Path(binding['base_prefix'])/'lib/python3.12/socket.py'), **SOCKET_REF},

@@ -1,0 +1,228 @@
+--- scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py
++++ scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py
+@@ -22,10 +22,10 @@
+ import time
+ 
+ ROOT = Path(__file__).absolute().parents[1]
+-CODE_PATH = 'scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py'
+-METHODS = 'configs/e01_offline_ipv6_compatibility_v1_20261116.json'
+-OUTPUT = 'data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116'
+-TARGET = '.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1'
++CODE_PATH = 'scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py'
++METHODS = 'configs/e01_offline_ipv6_compatibility_v1_1_20261116.json'
++OUTPUT = 'data/processed/e01_pypdf701_build_v1/compatibility-v1_1-20261116'
++TARGET = '.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1_1'
+ SITE = TARGET+'/lib/python3.12/site-packages'
+ PRESERVED_ROOTS = (
+     'data/processed/e01_pypdf701_build_v1/install-v1_3-20261116', '.venv-e01-pypdf-7.0.1-v1',
+@@ -57,10 +57,14 @@
+ 
+ PRIOR_V2_REF = {'path': 'scripts/diagnose_e01_pypdf701_guard_v2.py', 'bytes': 49178, 'sha256': '6582297cd01bc2131a4cc17ea1e0d384c15b56fee6fa07620dada9a2c7c11c49'}
+ PRIOR_V2_METHODS_REF = {'path': 'configs/e01_pypdf701_guard_diagnostic_v2_20261116.json', 'bytes': 6817, 'sha256': 'c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3'}
+-ADAPTER_REF = {'path': 'scripts/e01_offline_ipv6_adapter_v1_20261116.py', 'bytes': 12302, 'sha256': 'd9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f'}
+-DECISION_REF = {'path': 'reports/E01_OFFLINE_COMPATIBILITY_FINITE_DECISION_20261116.json', 'bytes': 5054, 'sha256': '4cc298064ff70e665f73aae5c016ca2a822bc786fc68075ff56535d2a83e660d'}
++ADAPTER_REF = {'path': 'scripts/e01_offline_ipv6_adapter_v1_1_20261116.py', 'bytes': 12343, 'sha256': 'e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc'}
++DECISION_REF = {'path': 'reports/E01_OFFLINE_COMPATIBILITY_V1_1_FINITE_DECISION_20261116.json', 'bytes': 6563, 'sha256': '12d40cf7f6889c66c734fc76617bada9aadf2ec4e620d2c452adeb43363d6857'}
+ PURE_REVIEW_REF = {'path': 'reports/INDEPENDENT_AUDIT_E01_IPV6_PROBE_COMPATIBILITY_METHODS_V2_20261116.json', 'bytes': 14670, 'sha256': '4d26a32aa0cf32c1d48703842424556303fae9be08a0c92beb24a0044edcd4f1'}
+ V2_ACTUAL_REF = {'path': 'reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V2_ACTUAL_20261116.json', 'bytes': 40800, 'sha256': '28292ad21097cc638c181e10a1f9fe90d3c3fac7c39b0e20e63c81116c87cf37'}
++
++V1_REVIEW_REF = {'path': 'reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116.json', 'bytes': 14213, 'sha256': 'cc60b32f12a143b13b88aefd866b1fd40711035d5c27342caa362944d1ee0162'}
++V1_PRESERVED_REFS = [{'path': 'scripts/e01_offline_ipv6_adapter_v1_20261116.py', 'bytes': 12302, 'sha256': 'd9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f'}, {'path': 'scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py', 'bytes': 49669, 'sha256': 'de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a'}, {'path': 'configs/e01_offline_ipv6_compatibility_v1_20261116.json', 'bytes': 4818, 'sha256': '5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382'}, {'path': 'tests/test_e01_offline_ipv6_compatibility_v1_20261116.py', 'bytes': 28254, 'sha256': '61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8'}, {'path': 'reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt', 'bytes': 2826, 'sha256': '419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1'}, {'path': 'reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt', 'bytes': 5812, 'sha256': '4a25bf6498bf77150da01913ef0d24a99344f24f8c3b6cb8ff549127cf752b5a'}, {'path': 'reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt', 'bytes': 6172, 'sha256': '508f5d22dc21dbac7aa8b391ac1440100031d80e2ccac7a48384e1ea07a0ae1f'}, {'path': 'reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt', 'bytes': 2826, 'sha256': '419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1'}, {'path': 'reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt', 'bytes': 5849, 'sha256': 'd1e6cb35b0054bd652869ee1fab830aad7a5604dc2bc0ce8325846fa7e1a779d'}, {'path': 'reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt', 'bytes': 6209, 'sha256': '45a00e11fb0d626a2cfbd490fcfa90e5f604f4f859d6dbff93b2eeaf2793e650'}, {'path': 'reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json', 'bytes': 12375, 'sha256': 'ed6559beac66523309c23ae5e9212de04399cee264035c9998de3dc8c39dcd78'}]
++SUPERSEDED_ABSENT = ['data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116', 'data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json', '.venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1']
+ 
+ 
+ def load_source(root, ref, name, reader=None):
+@@ -256,9 +260,13 @@
+     decision = json_body(reader.read(DECISION_REF))
+     pure_review = json_body(reader.read(PURE_REVIEW_REF))
+     actual_review = json_body(reader.read(V2_ACTUAL_REF))
++    v1_review = json_body(reader.read(V1_REVIEW_REF))
++    need(v1_review.get('status') == 'BLOCKED_AUDITOR_HARNESS_SCOPE_ERROR_PRODUCTION_REVIEW_NOT_COMPLETE',
++         'COMPATIBILITY_RETAINED_V1_BLOCK')
++    for ref in V1_PRESERVED_REFS: reader.read(ref)
+     old_methods = json_body(reader.read(PRIOR_V2_METHODS_REF))
+     r.validate_methods(root, old_methods, reader)
+-    need(methods.get('kind') == 'E01_OFFLINE_IPV6_COMPATIBILITY_METHODS_V1'
++    need(methods.get('kind') == 'E01_OFFLINE_IPV6_COMPATIBILITY_METHODS_V1_1'
+          and methods.get('schema_version') == 1
+          and methods.get('root_sha256') == sha(str(root).encode())
+          and methods.get('scope') == OUTPUT and methods.get('uncreated_target') == TARGET
+@@ -267,12 +275,15 @@
+          and methods.get('limits') == LIMITS
+          and methods.get('prior_v2_methods_ref') == PRIOR_V2_METHODS_REF
+          and methods.get('adapter_ref') == ADAPTER_REF
++         and methods.get('v1_review_ref') == V1_REVIEW_REF
++         and methods.get('v1_preserved_refs') == V1_PRESERVED_REFS
++         and methods.get('superseded_absent') == SUPERSEDED_ABSENT
+          and methods.get('decision_ref') == DECISION_REF
+          and methods.get('pure_review_ref') == PURE_REVIEW_REF
+          and methods.get('v2_actual_review_ref') == V2_ACTUAL_REF
+          and methods.get('installation_accepted') is False
+          and methods.get('execution_enabled') is False
+-         and methods.get('packet') == 'data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json',
++         and methods.get('packet') == 'data/processed/e01_pypdf701_build_v1/compatibility-v1_1-packet-20261116.json',
+          'COMPATIBILITY_METHODS_IDENTITY')
+     need(decision.get('execution_enabled') is False
+          and decision.get('scope') == OUTPUT and decision.get('uncreated_target') == TARGET
+@@ -294,7 +305,7 @@
+ def validate_release(root, methods, packet, reader):
+     need(type(packet) is dict and set(packet) == {'kind', 'root_sha256', 'methods_sha256',
+          'diagnostic_code_ref', 'execution_enabled', 'review_ref'}
+-         and packet['kind'] == 'E01_OFFLINE_COMPATIBILITY_EXECUTION_PACKET_V1'
++         and packet['kind'] == 'E01_OFFLINE_COMPATIBILITY_EXECUTION_PACKET_V1_1'
+          and packet['root_sha256'] == methods['root_sha256']
+          and packet['methods_sha256'] == sha(packed(methods))
+          and packet['execution_enabled'] is True, 'DIAGNOSTIC_EXPLICIT_RELEASE_REQUIRED')
+@@ -480,7 +491,7 @@
+         'import_closure', 'closure_logical_read_bytes', 'network_permissions_changed',
+         'parent_transitive_consumers_may_observe_false'}
+     need(type(receipt) is dict and set(receipt) == expected_keys
+-         and receipt['kind'] == 'E01_OFFLINE_IPV6_COMPATIBILITY_RECEIPT_V1'
++         and receipt['kind'] == 'E01_OFFLINE_IPV6_COMPATIBILITY_RECEIPT_V1_1'
+          and receipt['original_has_ipv6'] is True and receipt['temporary_has_ipv6'] is False
+          and receipt['restored_has_ipv6'] is True and receipt['vendor_cached_ipv6'] is False
+          and receipt['target_module'] == a.TARGET
+@@ -532,14 +543,60 @@
+     return receipt
+ 
+ 
++def capture_compatibility(scope, binding, root):
++    """Bind full bounded evidence in its guest file; never embed its closure.
++
++    Used after ordinary completion and again on every exception/stopped-child
++    path. Invalid bounded evidence is still hashed and retained as invalid.
++    """
++    path = scope/'guest-compatibility.json'
++    no_alias(path)
++    if not path.exists(): return None
++    raw = read_owned_result(scope, 'guest-compatibility.json', 131072)
++    ref = {'path': 'guest-compatibility.json', 'bytes': len(raw), 'sha256': sha(raw)}
++    try:
++        receipt = validate_compatibility_receipt(raw, binding, root)
++    except BaseException as exc:
++        code = str(exc) if type(exc) is Refused else type(exc).__name__
++        need(len(code) <= 128, 'COMPATIBILITY_RECEIPT_ERROR_BOUND')
++        return {'ref': ref, 'validated': False, 'summary': None, 'error_code': code}
++    summary = {key: receipt[key] for key in ('kind', 'original_has_ipv6',
++        'temporary_has_ipv6', 'restored_has_ipv6', 'vendor_cached_ipv6',
++        'target_module', 'closure_logical_read_bytes', 'network_permissions_changed',
++        'parent_transitive_consumers_may_observe_false')}
++    summary['closure_entries'] = len(receipt['import_closure'])
++    need(len(packed(summary)) <= 1024, 'COMPATIBILITY_TERMINAL_SUMMARY_BOUND')
++    record = {'ref': ref, 'validated': True, 'summary': summary, 'error_code': None}
++    need(len(packed(record)) <= 1536, 'COMPATIBILITY_TERMINAL_BINDING_BOUND')
++    return record
++
++
++def terminal_headroom(prior, before):
++    """Reject oversized preserved ancestry before consuming the new scope.
++
++    Other terminal fields have finite control schemas: <=4096B fine refusal
++    journal, <=1536B compatibility binding, two command output refs, <=7 own
++    artifact refs, bounded counters/closed reasons and fixed labels. Reserve
++    12288B for all those fields and the terminal-size fixpoint. The inherited
++    Journal still enforces the exact32768B final encoding limit.
++    """
++    ancestry_bytes = len(packed({'prior': prior, 'old_metadata_snapshot': before}))
++    need(ancestry_bytes+12288 <= 32768, 'COMPATIBILITY_TERMINAL_ANCESTRY_HEADROOM')
++    return {'ancestry_bytes': ancestry_bytes, 'other_reserved_bytes': 12288,
++            'terminal_bytes_cap': 32768, 'maximum_supported_total': ancestry_bytes+12288}
++
++
+ def execute(root, methods, packet, *, launcher=run_command, clock=time.monotonic):
+     root = Path(root).absolute()
+     reader, budget = p.Reader(root, CAPS['parent_read_bytes']), StageBudget(root, clock)
+     validate_methods(root, methods, reader); validate_release(root, methods, packet, reader)
++    for name in SUPERSEDED_ABSENT:
++        no_alias(root/name); need(not (root/name).exists(), 'COMPATIBILITY_SUPERSEDED_SCOPE_NOT_ABSENT')
+     for path in (root/OUTPUT, root/TARGET):
+         no_alias(path); need(not path.exists(), 'DIAGNOSTIC_ALREADY_CONSUMED')
+     inputs = verify_inputs(root, methods, reader)
+     before = snapshot(root)
++    terminal_headroom(inputs['prior'], before)
+     need(owned_size(root)+DIAGNOSTIC_SCOPE_BYTES <= CAPS['owned_logical_bytes'], 'DIAGNOSTIC_STORAGE_PREFLIGHT')
+     budget.check()
+     scope = root/OUTPUT; scope.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+@@ -551,7 +608,7 @@
+     compatibility = None
+     outcome, reason, command_result, observed = 'FAILED_COMPATIBILITY', None, None, None
+     try:
+-        journal.save('STARTED.json', {'kind': 'E01_OFFLINE_COMPATIBILITY_STARTED_V1',
++        journal.save('STARTED.json', {'kind': 'E01_OFFLINE_COMPATIBILITY_STARTED_V1_1',
+             'utc': datetime.now(timezone.utc).isoformat(), 'methods_sha256': sha(packed(methods)),
+             'packet_sha256': sha(packed(packet)), 'code_ref': packet['diagnostic_code_ref'],
+             'prior': inputs['prior'], 'allocation': ALLOCATION, 'limits': methods['limits'],
+@@ -564,7 +621,7 @@
+             'PIP_CONFIG_FILE': os.devnull, 'PIP_DISABLE_PIP_VERSION_CHECK': '1',
+             'PYTHONDONTWRITEBYTECODE': '1', 'LC_ALL': 'C', 'LANG': 'C'}
+         budget.check()
+-        payload = {'kind': 'E01_OFFLINE_COMPATIBILITY_GUEST_PAYLOAD_V1',
++        payload = {'kind': 'E01_OFFLINE_COMPATIBILITY_GUEST_PAYLOAD_V1_1',
+             'root_sha256': methods['root_sha256'], 'code_ref': packet['diagnostic_code_ref'],
+             'binding_ref': inputs['binding_ref'], 'scope': OUTPUT, 'target': TARGET,
+             'wheels': inputs['wheels'], 'pip_arguments': argv,
+@@ -588,11 +645,11 @@
+         result = json_body(read_owned_result(scope, 'guest-result.json', 8192))
+         compatibility = None
+         if (scope/'guest-compatibility.json').exists():
+-            compatibility = validate_compatibility_receipt(read_owned_result(scope, 'guest-compatibility.json', 131072), inputs['binding'], root)
++            compatibility = capture_compatibility(scope, inputs['binding'], root)
+         need(type(result) is dict and set(result) == {'kind', 'pip_arguments_sha256', 'guard_violations',
+              'pip_completed', 'error_code', 'mime_configuration', 'installation_accepted',
+              'downloaded_package_imports', 'target_exists'}
+-             and result['kind'] == 'E01_OFFLINE_COMPATIBILITY_GUEST_RESULT_V1'
++             and result['kind'] == 'E01_OFFLINE_COMPATIBILITY_GUEST_RESULT_V1_1'
+              and result['pip_arguments_sha256'] == sha(packed(argv))
+              and result['installation_accepted'] is False and result['downloaded_package_imports'] is False
+              and result['target_exists'] is False and type(result['guard_violations']) is int
+@@ -606,19 +663,30 @@
+             need(observed['total_events'] == 0 and command_result.get('exit_code') == 0
+                  and result['pip_completed'] is True and result['error_code'] is None
+                  and result['mime_configuration'] == p.MIME_RECEIPT
+-                 and compatibility is not None, 'DIAGNOSTIC_NO_REFUSAL_PROOF')
++                 and compatibility is not None and compatibility['validated'] is True, 'DIAGNOSTIC_NO_REFUSAL_PROOF')
+             outcome = 'COMPATIBLE_OFFLINE_CONFIGURATION'
+     except BaseException as exc:
+         reason = str(exc) if type(exc) is Refused else type(exc).__name__
+     finally:
+         try:
++            final_compatibility = capture_compatibility(scope, inputs['binding'], root)
++            if compatibility is not None:
++                need(final_compatibility == compatibility, 'COMPATIBILITY_RECEIPT_CHANGED')
++            compatibility = final_compatibility
++            if compatibility is not None and compatibility['validated'] is not True:
++                outcome, reason = 'FAILED_COMPATIBILITY', 'COMPATIBILITY_RECEIPT_INVALID'
++        except BaseException as exc:
++            outcome, reason = 'FAILED_COMPATIBILITY', str(exc) if type(exc) is Refused else type(exc).__name__
++        try:
+             need(verify_inputs(root, methods, reader) == inputs
+                  and snapshot(root) == before, 'DIAGNOSTIC_OLD_STATE_CHANGED')
++            for name in SUPERSEDED_ABSENT:
++                no_alias(root/name); need(not (root/name).exists(), 'COMPATIBILITY_SUPERSEDED_SCOPE_NOT_ABSENT')
+             no_alias(root/TARGET); need(not (root/TARGET).exists(), 'DIAGNOSTIC_TARGET_CREATED')
+             budget.check()
+         except BaseException as exc:
+             outcome, reason = 'FAILED_COMPATIBILITY', str(exc) if type(exc) is Refused else type(exc).__name__
+-        journal.save('TERMINAL.json', {'kind': 'E01_OFFLINE_COMPATIBILITY_TERMINAL_V1',
++        journal.save('TERMINAL.json', {'kind': 'E01_OFFLINE_COMPATIBILITY_TERMINAL_V1_1',
+             'outcome': outcome, 'reason': reason, 'commands_started': budget.commands,
+             'command': command_result, 'refusals': observed, 'compatibility': compatibility, 'prior': inputs['prior'], 'allocation': ALLOCATION,
+             'old_metadata_snapshot': before, 'maximum_polled_owned_logical_bytes': budget.max_owned,
+@@ -734,7 +802,7 @@
+     payload = json_body(raw)
+     need(type(payload) is dict and set(payload) == {'kind', 'root_sha256', 'code_ref', 'binding_ref', 'scope',
+          'target', 'wheels', 'pip_arguments', 'remaining_wall_seconds', 'remaining_output_bytes'}
+-         and payload['kind'] == 'E01_OFFLINE_COMPATIBILITY_GUEST_PAYLOAD_V1'
++         and payload['kind'] == 'E01_OFFLINE_COMPATIBILITY_GUEST_PAYLOAD_V1_1'
+          and payload['root_sha256'] == sha(str(ROOT).encode()) and payload['scope'] == OUTPUT
+          and payload['target'] == TARGET and payload['code_ref']['path'] == CODE_PATH
+          and payload['code_ref']['sha256'] == sha(Path(__file__).read_bytes()), 'DIAGNOSTIC_GUEST_IDENTITY')
+@@ -765,7 +833,7 @@
+         # charges remain active. A flush failure is a failure, never permission.
+         write_guest_file('guest-refusals.json', policy.refusal_journal.packed())
+     if policy.violations: error = 'GUEST_CAUGHT_VIOLATION'
+-    result = {'kind': 'E01_OFFLINE_COMPATIBILITY_GUEST_RESULT_V1', 'pip_arguments_sha256': sha(packed(expected)),
++    result = {'kind': 'E01_OFFLINE_COMPATIBILITY_GUEST_RESULT_V1_1', 'pip_arguments_sha256': sha(packed(expected)),
+               'guard_violations': policy.violations, 'pip_completed': completed, 'error_code': error,
+               'mime_configuration': mime, 'installation_accepted': False, 'downloaded_package_imports': False,
+               'target_exists': (ROOT/TARGET).exists()}

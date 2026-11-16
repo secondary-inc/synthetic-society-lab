@@ -1,0 +1,190 @@
+{
+  "TASK_ID": "E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_1_20261116",
+  "status": "53_AUTHORED_CHECKS_PASS_EACH_RUNTIME_EXACT_INDEPENDENT_REVIEW_PENDING_NO_ACTUAL_RELEASE",
+  "FILES_CHANGED": [
+    "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "reports/e01_offline_ipv6_compatibility_v1_1_ancestry_headroom_fixture_20261116.json",
+    "reports/e01_offline_ipv6_compatibility_v1_1_312_attempt1_20261116.txt",
+    "reports/e01_offline_ipv6_compatibility_v1_1_311_attempt1_20261116.txt"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+      "bytes": 12343,
+      "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "bytes": 55727,
+      "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json": {
+      "bytes": 7078,
+      "sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "bytes": 34253,
+      "sha256": "439a2d46ebcfc57c295a95e4fa353691246ab1e2ea0db1feebff41f4a3ba96a2"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_1_ancestry_headroom_fixture_20261116.json": {
+      "bytes": 19630,
+      "sha256": "74fcb474cf216f7e435d421291c42c39f77ebede9ba2dc2d36f7e2c975f955a9"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_1_312_attempt1_20261116.txt": {
+      "bytes": 7390,
+      "sha256": "09864d363e794127a214ae3afa4f8e5ca7e63810b8b0337fe6c89e699a35598c"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_1_311_attempt1_20261116.txt": {
+      "bytes": 7427,
+      "sha256": "7bbe647a00f3cb98e81c9082081764dcb4eec5ef40c6aed21bd6fbb465ae75e0"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "single_new_invocation_each_runtime": {
+      "3.12.14": "53 PASS in1.504s, exit0",
+      "3.11.17": "53 PASS in1.139s, exit0"
+    },
+    "new_allowance": {
+      "maximum_invocations_each_runtime": 1,
+      "consumed_each_runtime": 1,
+      "remaining_each_runtime": 0,
+      "wall_CPU_seconds_each": 120,
+      "logical_read_bytes_each": 67108864,
+      "temporary_write_bytes_each": 33554432,
+      "console_output_bytes_each": 262144
+    },
+    "retained_concrete_candidate_lineage": {
+      "prior_invocations_each_runtime": 3,
+      "total_allocated_invocations_each_runtime": 4,
+      "wall_CPU_seconds_each_runtime": 480,
+      "read_bytes_each_runtime": 268435456,
+      "temporary_write_bytes_each_runtime": 134217728,
+      "console_output_bytes_each_runtime": 1048576,
+      "unused_time_from_old_runs_not_reallocated": true
+    },
+    "regressions": [
+      "All47 predecessor checks retained/adapted for the separately versioned candidate.",
+      "ModuleNotFoundError preserves exact missing-module name and normal message; no module imported for optional-absence test.",
+      "Full valid256-entry closure receipt encoded to exactly131072B without whitespace padding: validate entire object, retain exact guest bytes, terminal stores hash/size/path and bounded summary.",
+      "Stopped-child exception path binds and validates the same maximum receipt, emits failed terminal with full guest evidence retained.",
+      "Invalid bounded receipt retained byte-for-byte with exact hash/size/path and explicit failed validation, never admitted.",
+      "Saved technical ancestry structure plus maximum closure tested through controller:21402B terminal on3.12 and21392B on3.11, each<=32768.",
+      "Oversized ancestry refuses before scope consumption or child; superseded unexecuted V1 scope must remain absent.",
+      "Original guard wrappers/capture/budget/journal/refusal parser unchanged; residual denials and sticky owner/restoration/primary errors retained."
+    ],
+    "headroom": {
+      "saved_prior_bytes": 19081,
+      "ancestry_with_snapshot_shape_bytes": 19225,
+      "other_reserved_bytes": 12288,
+      "conservative_supported_terminal_total": 31513,
+      "terminal_cap": 32768,
+      "guest_receipt_cap": 131072,
+      "summary_cap": 1024,
+      "complete_binding_cap": 1536,
+      "maximum_closure_entries": 256,
+      "actual_current_state_validated": false
+    },
+    "transitive_stdlib_socket": "Exact origins and source hashes recorded in both logs; no actual socket operation or real socket field mutation. No pip import/execution."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "inputs": "Existing technical source/config/audit and exact saved diagnostic V2 controls only. No raw respondent/publisher/PDF/owner/credential data.",
+    "static_ancestry_fixture": "Derived from saved V2 terminal control fields, old packet review ref, methods refs and static guard caps. It models preserved ancestry encoding size; it does not attest current real metadata/runtime/module state and does not read actual old target contents.",
+    "source_ref": {
+      "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+      "bytes": 14847,
+      "sha256": "6898bbea458abfd769fcd6bcef2418afd50f76c7db7b0e83181340b8218a030b"
+    },
+    "rights": "No third-party source redistribution. Existing permitted dependency identities unchanged."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "remedy": {
+    "predecessor": "V1 remains BLOCKED and unexecuted, preserved byte-for-byte along with all six author logs and independent reviewer harness-error evidence.",
+    "preserved_v1_artifact_pins_verified": 10,
+    "reviewer_wrapper_failure": "Independent V1 wrapper failed during fabricated setup; this is not presented as a production guard defect and no actual guard was relaxed.",
+    "receipt": "Full closure remains in guest-compatibility.json under the original131072B cap. capture_compatibility validates full bytes, records exact ref plus <=1024B summary/<=1536B binding, and is called on both ordinary and exception/stopped-child paths. Final revalidation rejects drift. Invalid bounded evidence still has a verifiable ref and validation error. Terminal never embeds full closure.",
+    "preflight": "Measure exact inputs['prior'] and old snapshot before new scope. Require ancestry plus12288B reserved for bounded other terminal fields<=32768. Inherited Journal exact32768B terminal/fixpoint cap remains unchanged. Authored test uses saved ancestry structure, maximum receipt and actual final serialized terminal.",
+    "optional_absence": "ModuleNotFoundError(\"No module named '<fullname>'\", name=fullname), preserving missing-module metadata.",
+    "unchanged": "Original guard/refusal/counter/PATH/wheel/requirements/once-only/state accounting/ownership/sticky/reentry/restoration controls, fine observer and all IPv6 limitations."
+  },
+  "prospective_actual": {
+    "execution_enabled": false,
+    "scope": "data/processed/e01_pypdf701_build_v1/compatibility-v1_1-20261116",
+    "absent_target": ".venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1_1",
+    "old_unexecuted_v1_scope_packet_target_must_remain_absent": true,
+    "prior": {
+      "wall_seconds": 420,
+      "observed_CPU_seconds": 160,
+      "main_children": 11
+    },
+    "maximum_new": {
+      "wall_seconds": 30,
+      "observed_CPU_seconds": 20,
+      "main_children": 1,
+      "parent_child_CPU_soft_hard": [
+        7,
+        8
+      ]
+    },
+    "maximum_combined": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "actual_allowance_increment_from_v1": 0,
+    "storage": {
+      "eight_preserved_roots_plus_new_scope": 9,
+      "combined_bytes": 805306368,
+      "entries": 16384,
+      "each_diagnostic_or_compatibility_scope_bytes": 16777216
+    },
+    "new_actual_scope_packet_target_created": false,
+    "actual_preflight_invocations": 0
+  },
+  "acceptance_criteria": [
+    {
+      "milestone": "Authored engineering remedy",
+      "result": "AUTHOR_CHECKS_PASS_ONLY",
+      "evidence": "Exact53 checks per runtime; implementer does not independently certify."
+    },
+    {
+      "milestone": "Independent concrete V1.1 production review",
+      "result": "PENDING",
+      "required": "Exact frozen source/config/tests/logs; retain incomplete V1 review and its wrapper failure."
+    },
+    {
+      "milestone": "Current real genuine-reader and particular preflight",
+      "result": "NOT_RUN",
+      "required": "Lead verifies exact current runtime/module/import/state/storage and terminal headroom; independent exact particular plus lead-created once-only packet."
+    },
+    {
+      "milestone": "One actual compatibility run and closed review",
+      "result": "NOT_RUN",
+      "required": "Separate lead release and independent actual evidence review; no automatic retry."
+    },
+    {
+      "milestone": "Fourth installation or P3",
+      "result": "BLOCKED",
+      "required": "Further independently reviewed decision after actual compatibility; not supplied here."
+    }
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "No actual runtime/module/import compatibility or current old-state acceptance from authored objects or static saved ancestry.",
+    "Socket and pip sources independently pinned; other allowed stdlib hashes are bounded runtime observations, not independent prepins or complete executed-bytecode attestations.",
+    "Intentional capability override is not a supported pip offline API. Parent/transitive consumers may seeFalse, and vendor cachedFalse survives public restoration.",
+    "Entry/exit main Python-thread/process checks plus import lock are not continuous/native-thread/hostile-private-state protection. Transient drift restored before exit is not detected.",
+    "Full receipt path/size/hash enables evidence replay, not acceptance of an invalid receipt; maximum validation/schema/read caps remain enforced.",
+    "No historical callsite/family/destination/cause, installation/source qualification, prospective forecast or scientific result follows.",
+    "Single newly authorized invocation/runtime consumed; no automatic rerun or allowance enlargement."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact V1.1 production review pending.",
+    "No current genuine-reader/preflight/particular/actual release; fourth installation and P3 remain blocked.",
+    "Lead owns Git/STATUS/actual work. No worker edit to those or auditor findings."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews this frozen V1.1 remedy and full retained failures. Lead alone coordinates separately released current preflight, exact particular and any once-only actual run."
+}

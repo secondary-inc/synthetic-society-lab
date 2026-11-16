@@ -1,0 +1,85 @@
+{
+  "actual_main_real_inputs_socket_pip_child_owner_credential_network_calls": 0,
+  "checks": 41,
+  "decision": "PASS_EXACT_V1_1_STATIC_DELTA_AND_EXTRACTED_ADVERSE_CHECKS_ONLY",
+  "elapsed_seconds": 0.016339417000000002,
+  "names": [
+    "exact helper pin",
+    "unchanged audit",
+    "unchanged save",
+    "unchanged NoPackages",
+    "unchanged no_alias",
+    "unchanged configuration_proofs",
+    "unchanged compatibility_readonly_proofs",
+    "unchanged READ_LIMIT",
+    "unchanged OUTPUT_LIMIT",
+    "unchanged CONTROL_LIMIT",
+    "unchanged written",
+    "exact declared pin scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+    "exact declared pin configs/e01_offline_ipv6_compatibility_v1_1_20261116.json",
+    "exact declared pin scripts/e01_offline_ipv6_adapter_v1_1_20261116.py",
+    "headroom valid exact bytes",
+    "headroom does not mutate inputs",
+    "headroom exact boundary accepted",
+    "headroom rejects one over",
+    "headroom rejects large",
+    "headroom rejects unicode expansion",
+    "nonfinite cannot claim headroom PASS",
+    "superseded exact three paths",
+    "all six absent accepted without filesystem",
+    "absence rejects existing MOCK/new-scope",
+    "absence rejects existing MOCK/new-target",
+    "absence rejects existing MOCK/new-packet",
+    "absence rejects existing data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+    "absence rejects existing data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json",
+    "absence rejects existing .venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1",
+    "absence rejects aliases MOCK/new-scope",
+    "absence rejects aliases MOCK/new-target",
+    "absence rejects aliases MOCK/new-packet",
+    "absence rejects aliases data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+    "absence rejects aliases data/processed/e01_pypdf701_build_v1/compatibility-v1-packet-20261116.json",
+    "absence rejects aliases .venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1",
+    "headroom mandatory before PASS",
+    "headroom uses validated ancestry and before snapshot",
+    "headroom proof retained",
+    "absence proof retained",
+    "outer errors keep failure",
+    "whole delta exactly accounted for"
+  ],
+  "refs": {
+    "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json": {
+      "bytes": 7078,
+      "sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py": {
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_20261116.py": {
+      "bytes": 11414,
+      "sha256": "c8cf4f94a1140cec4637f447c4cd9285463f7911fa782bf5cfcdaa7c2a85ea82"
+    },
+    "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+      "bytes": 12343,
+      "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "bytes": 55727,
+      "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+    }
+  },
+  "review_allowance": {
+    "CPU_soft_hard_seconds": [
+      110,
+      120
+    ],
+    "application_read_cap": 67108864,
+    "application_source_read_bytes": 98173,
+    "per_invocation_output_cap": 262144,
+    "runtimes_used": 2,
+    "suite_invocations_this_runtime": 1,
+    "temp_write_cap": 33554432,
+    "wall_limit_seconds": 120
+  },
+  "runtime": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]"
+}

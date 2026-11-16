@@ -1,0 +1,57 @@
+--- data/processed/e01_ipv6_compatibility_preflight_v1_20261116.py	2026-11-16 08:15:55
++++ data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py	2026-11-16 08:27:15
+@@ -14,12 +14,12 @@
+ import time
+ 
+ ROOT = Path(__file__).absolute().parents[2]
+-SCOPE = ROOT / 'data/processed/e01_ipv6_compatibility_preflight_v1_20261116'
+-REPORT = ROOT / 'reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_20261116.json'
++SCOPE = ROOT / 'data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116'
++REPORT = ROOT / 'reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json'
+ PINNED = {
+-    'scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py': (49669, 'de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a'),
+-    'configs/e01_offline_ipv6_compatibility_v1_20261116.json': (4818, '5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382'),
+-    'scripts/e01_offline_ipv6_adapter_v1_20261116.py': (12302, 'd9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f'),
++    'scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py': (55727, '7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681'),
++    'configs/e01_offline_ipv6_compatibility_v1_1_20261116.json': (7078, '54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de'),
++    'scripts/e01_offline_ipv6_adapter_v1_1_20261116.py': (12343, 'e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc'),
+ }
+ OUTPUTS = {SCOPE / 'STARTED.json', SCOPE / 'RECEIPT.json', REPORT}
+ READ_LIMIT = 536870912
+@@ -146,12 +146,12 @@
+     sys.addaudithook(audit)
+     sys.meta_path.insert(0, NoPackages())
+     SCOPE.mkdir(mode=0o700, exist_ok=False)
+-    save(SCOPE / 'STARTED.json', {'kind': 'E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1',
++    save(SCOPE / 'STARTED.json', {'kind': 'E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1_1',
+         'UTC': datetime.now(timezone.utc).isoformat(), 'pins': PINNED,
+         'wall_seconds': 30, 'CPU_soft_hard': [7, 8], 'bound_reader_bytes': READ_LIMIT,
+         'control_write_bytes': CONTROL_LIMIT, 'preflight_invocations': 1,
+         'separate_from_diagnostic_child_allocation': True})
+-    result = {'kind': 'LEAD_E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1',
++    result = {'kind': 'LEAD_E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1_1',
+         'status': 'FAILED_METADATA_ONLY_NO_DIAGNOSTIC', 'pins': PINNED,
+         'network_requests': 0, 'model_calls': 0, 'child_commands': 0,
+         'pip_imports': 0, 'downloaded_package_imports': 0, 'research_source_reads': 0,
+@@ -180,11 +180,12 @@
+             raise RuntimeError('PREFLIGHT_METHODS_CANONICAL')
+         reader = module.p.Reader(ROOT, READ_LIMIT)
+         module.validate_methods(ROOT, methods, reader)
+-        for name in (module.OUTPUT, module.TARGET, methods['packet']):
++        for name in (module.OUTPUT, module.TARGET, methods['packet'], *module.SUPERSEDED_ABSENT):
+             module.no_alias(ROOT/name)
+             module.need(not (ROOT/name).exists(), 'PREFLIGHT_ACTUAL_SCOPE_TARGET_PACKET_ALREADY_EXISTS')
+         before = module.snapshot(ROOT)
+         inputs = module.verify_inputs(ROOT, methods, reader)
++        headroom = module.terminal_headroom(inputs['prior'], before)
+         proofs = configuration_proofs(module, inputs['binding'], bodies[source], reader.read(module.FROZEN_REF))
+         compatibility = compatibility_readonly_proofs(module, inputs['binding'], reader)
+         occupied = module.owned_size(ROOT)
+@@ -194,6 +195,7 @@
+         module.need(before == after, 'PREFLIGHT_OLD_METADATA_CHANGED')
+         result.update(status='PASS_METADATA_ONLY_NO_DIAGNOSTIC',
+             configuration_proofs=proofs, compatibility_readonly_proofs=compatibility,
++            terminal_headroom=headroom, superseded_v1_scope_packet_target_absent=True,
+             old_metadata_snapshot=before, old_metadata_unchanged=True,
+             prior_owned_logical_bytes=occupied, combined_upper_bound=upper,
+             verified_wheels=len(inputs['wheels']), prior_allocation=inputs['prior'],

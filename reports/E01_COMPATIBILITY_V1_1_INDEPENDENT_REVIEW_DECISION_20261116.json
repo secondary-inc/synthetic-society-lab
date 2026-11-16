@@ -1,0 +1,50 @@
+{
+  "acceptance": "Record independent PASS/BLOCKED with exact references and retained failures. No allowance transfers or automatic retries. A PASS is production-code acceptance only; actual release remains separate.",
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "file_ownership": [
+    "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_1_PRODUCTION_20261116.json",
+    "reports/evidence_e01_offline_ipv6_concrete_v1_1_independent_20261116/"
+  ],
+  "handoff_ref": {
+    "bytes": 11015,
+    "path": "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_1_HANDOFF_20261116.json",
+    "sha256": "567095768b5655f1292e2017796a4848c4832649bb6553aec32d18283edc96f9"
+  },
+  "kind": "LEAD_FINITE_INDEPENDENT_REVIEW_DECISION",
+  "new_allowance_each_runtime": {
+    "CPU_seconds": 120,
+    "console_output_bytes": 262144,
+    "invocations": 1,
+    "logical_read_bytes": 67108864,
+    "temporary_write_bytes": 33554432,
+    "wall_seconds": 120
+  },
+  "prior_reviews": [
+    {
+      "bytes": 14213,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116.json",
+      "sha256": "cc60b32f12a143b13b88aefd866b1fd40711035d5c27342caa362944d1ee0162"
+    },
+    {
+      "bytes": 16664,
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_RECOVERY_20261116.json",
+      "sha256": "bd95c21568b9e8034b275b49050bd96d183b67d92ddcc238a439351522a578e7"
+    }
+  ],
+  "purpose": "Independently verify the separately frozen V1.1 terminal-headroom and optional-import correction before any actual preflight or child release.",
+  "retained_reviewer_lineage_each_runtime": {
+    "combined_CPU_seconds": 360,
+    "combined_allocated_invocations": 3,
+    "combined_console_output_bytes": 786432,
+    "combined_logical_read_bytes": 201326592,
+    "combined_temporary_write_bytes": 100663296,
+    "combined_wall_seconds": 360,
+    "prior_consumed_invocations": 2
+  },
+  "runtimes": [
+    "3.12.14",
+    "3.11.17"
+  ],
+  "scope": "53 frozen authored checks plus independently authored adverse checks in one bounded suite invocation per runtime. Reuse the corrected directory-fd-aware review wrapper after pin adaptation. Transitive pinned stdlib socket import is allowed; no real socket operation or field mutation. No pip import, actual child/target/preflight, network, model call, source/raw/credential read, Git or STATUS edit."
+}

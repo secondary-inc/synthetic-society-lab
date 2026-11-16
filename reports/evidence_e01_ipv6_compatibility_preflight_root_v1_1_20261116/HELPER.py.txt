@@ -1,0 +1,220 @@
+"""One read-only compatibility-input preflight; no compatibility override, pip or child call."""
+from pathlib import Path
+from datetime import datetime, timezone
+import ast
+import hashlib
+import importlib.abc
+import importlib.util
+import json
+import os
+import resource
+import signal
+import stat
+import sys
+import time
+
+ROOT = Path(__file__).absolute().parents[2]
+SCOPE = ROOT / 'data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116'
+REPORT = ROOT / 'reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_1_20261116.json'
+PINNED = {
+    'scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py': (55727, '7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681'),
+    'configs/e01_offline_ipv6_compatibility_v1_1_20261116.json': (7078, '54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de'),
+    'scripts/e01_offline_ipv6_adapter_v1_1_20261116.py': (12343, 'e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc'),
+}
+OUTPUTS = {SCOPE / 'STARTED.json', SCOPE / 'RECEIPT.json', REPORT}
+READ_LIMIT = 536870912
+OUTPUT_LIMIT = 65536
+CONTROL_LIMIT = 196608
+written = 0
+
+
+class NoPackages(importlib.abc.MetaPathFinder):
+    def find_spec(self, fullname, path=None, target=None):
+        if fullname.split('.')[0] in {'pip', 'pypdf', 'PIL', 'cryptography', 'cffi', '_cffi_backend', 'pycparser'}:
+            raise RuntimeError('PREFLIGHT_PACKAGE_IMPORT_DENIED')
+
+
+def no_alias(path):
+    if any(p.is_symlink() for p in (path, *path.parents)):
+        raise RuntimeError('PREFLIGHT_ALIAS')
+
+
+def audit(event, args):
+    if event.startswith('socket.') or event in {
+        'subprocess.Popen', 'os.system', 'os.posix_spawn', 'os.exec', 'os.fork',
+        'os.forkpty', 'ctypes.dlopen', 'os.remove', 'os.rmdir', 'os.rename',
+        'os.symlink', 'os.link', 'os.chmod', 'os.chown', 'os.truncate',
+    }:
+        raise RuntimeError('PREFLIGHT_EXECUTION_OR_MUTATION_DENIED')
+    if event == 'os.mkdir' and Path(os.fsdecode(args[0])).absolute() != SCOPE:
+        raise RuntimeError('PREFLIGHT_DIRECTORY_WRITE_DENIED')
+    if event == 'open' and isinstance(args[0], (str, bytes, os.PathLike)):
+        path = Path(os.fsdecode(args[0])).absolute()
+        if path.is_relative_to(ROOT / 'data/raw') or path.name.startswith('.env'):
+            raise RuntimeError('PREFLIGHT_SOURCE_OR_CREDENTIAL_READ_DENIED')
+        flags = args[2]
+        if isinstance(flags, int) and flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND):
+            if path not in OUTPUTS:
+                raise RuntimeError('PREFLIGHT_WRITE_DENIED')
+
+
+def save(path, value):
+    global written
+    raw = (json.dumps(value, sort_keys=True, indent=2) + '\n').encode()
+    if len(raw) > OUTPUT_LIMIT or written + len(raw) > CONTROL_LIMIT:
+        raise RuntimeError('PREFLIGHT_OUTPUT_LIMIT')
+    no_alias(path)
+    written += len(raw)
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+    with os.fdopen(fd, 'wb') as stream:
+        stream.write(raw)
+        stream.flush()
+        os.fsync(stream.fileno())
+
+
+def configuration_proofs(module, binding, runner_source, frozen_source):
+    # Verify prescribed source policy without evaluating arbitrary source expressions.
+    expected = str(Path(binding['base_prefix'])/'bin')+':/usr/bin:/bin'
+    expressions = (
+        (runner_source, "str(Path(inputs['binding']['base_prefix'])/'bin')+':/usr/bin:/bin'"),
+        (frozen_source, "str(Path(binding['base_prefix'])/'bin')+':/usr/bin:/bin'"),
+    )
+    for raw, expected_expression in expressions:
+        values = [value for node in ast.walk(ast.parse(raw)) if isinstance(node, ast.Dict)
+                  for key, value in zip(node.keys, node.values)
+                  if isinstance(key, ast.Constant) and key.value == 'PATH']
+        if len(values) != 1 or ast.dump(values[0]) != ast.dump(ast.parse(expected_expression, mode='eval').body):
+            raise RuntimeError('PREFLIGHT_CHILD_PATH_POLICY')
+    base_paths = module.p.narrowed_paths(list(sys.path), binding['base_prefix'])
+    wanted = [str(Path(binding['base_prefix'])/'lib/python3.12'),
+              str(Path(binding['base_prefix'])/'lib/python3.12/lib-dynload')]
+    if base_paths != wanted:
+        raise RuntimeError('PREFLIGHT_BASE_PATH_PROOF')
+    mime = module.p.prepare_builtin_mime(binding)
+    if mime != module.p.MIME_RECEIPT:
+        raise RuntimeError('PREFLIGHT_MIME_PROOF')
+    return {'current_narrowed_base_paths': base_paths,
+            'stdlib_origin_validated_builtin_MIME': mime,
+            'prescribed_child_PATH': expected,
+            'child_PATH_matches_frozen_and_diagnostic_source_AST': True,
+            'child_PATH_is_prescribed_not_observed_execution': True}
+
+
+def compatibility_readonly_proofs(module, binding, reader):
+    # Reading current standard-library module state is not initializing pip or
+    # exercising the capability override. Actual child rechecks all conditions.
+    adapter = module.a
+    socket_module = adapter.checked_socket(binding, reader)
+    module.need(socket_module.has_ipv6 is True, 'PREFLIGHT_ORIGINAL_CAPABILITY_NOT_TRUE')
+    owner = adapter.Owner()
+    adapter.single_owner(owner)
+    module.need(adapter._ACTIVE is None and adapter._FAILED is False,
+                'PREFLIGHT_ADAPTER_ALREADY_CONSUMED')
+    module.need(not adapter._imp.lock_held(), 'PREFLIGHT_IMPORT_LOCK_HELD')
+    module.need(len(sys.modules) <= 1024 and not any(
+        getattr(getattr(value, '__spec__', None), '_initializing', False)
+        for value in sys.modules.values()), 'PREFLIGHT_IMPORT_IN_PROGRESS')
+    module.need(not any(name == 'pip' or name.startswith('pip.') for name in sys.modules),
+                'PREFLIGHT_PIP_PRELOADED')
+    # Verify the pinned candidate source through the genuine original reader;
+    # do not create a finder, acquire the import lock or import any vendor code.
+    relative = str(Path(binding['pip_root'])/'_vendor/urllib3/util/connection.py')
+    module.need(relative in binding['pip_files'], 'PREFLIGHT_PROBE_NOT_PINNED')
+    probe_ref = {'path': relative, **binding['pip_files'][relative]}
+    reader.read(probe_ref)
+    return {'socket_source_ref': {'path': socket_module.__file__, **adapter.SOCKET_REF},
+            'current_original_has_ipv6': True, 'fresh_adapter_state': True,
+            'main_single_Python_thread_and_process_checked': True,
+            'import_lock_currently_unheld': True, 'no_current_initializing_modules': True,
+            'pip_vendor_imports_absent': True, 'pinned_probe_ref': probe_ref,
+            'actual_import_closure': 'NOT_RUN_ENFORCED_AND_RECORDED_IN_PROSPECTIVE_CHILD',
+            'real_socket_field_mutations': 0, 'vendor_imports': 0,
+            'import_lock_acquisitions': 0, 'child_must_recheck_current_state': True}
+
+
+def main():
+    begin = time.monotonic()
+    resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+    resource.setrlimit(resource.RLIMIT_CPU, (7, 8))
+    def stop(*_): raise TimeoutError('PREFLIGHT_DEADLINE')
+    signal.signal(signal.SIGALRM, stop)
+    signal.signal(signal.SIGXCPU, stop)
+    signal.setitimer(signal.ITIMER_REAL, 30)
+    for path in (SCOPE, REPORT):
+        no_alias(path)
+        if path.exists(): raise RuntimeError('PREFLIGHT_ALREADY_CONSUMED')
+    sys.addaudithook(audit)
+    sys.meta_path.insert(0, NoPackages())
+    SCOPE.mkdir(mode=0o700, exist_ok=False)
+    save(SCOPE / 'STARTED.json', {'kind': 'E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1_1',
+        'UTC': datetime.now(timezone.utc).isoformat(), 'pins': PINNED,
+        'wall_seconds': 30, 'CPU_soft_hard': [7, 8], 'bound_reader_bytes': READ_LIMIT,
+        'control_write_bytes': CONTROL_LIMIT, 'preflight_invocations': 1,
+        'separate_from_diagnostic_child_allocation': True})
+    result = {'kind': 'LEAD_E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1_1',
+        'status': 'FAILED_METADATA_ONLY_NO_DIAGNOSTIC', 'pins': PINNED,
+        'network_requests': 0, 'model_calls': 0, 'child_commands': 0,
+        'pip_imports': 0, 'downloaded_package_imports': 0, 'research_source_reads': 0,
+        'cost_USD': 0, 'installation_accepted': False}
+    reader = None
+    try:
+        bodies = {}
+        for name, (size, digest) in PINNED.items():
+            path = ROOT / name
+            no_alias(path)
+            before = path.stat(follow_symlinks=False)
+            if not stat.S_ISREG(before.st_mode) or before.st_size != size:
+                raise RuntimeError('PREFLIGHT_PIN_SIZE')
+            fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
+            with os.fdopen(fd, 'rb') as stream:
+                raw = stream.read(size + 1)
+            if len(raw) != size or hashlib.sha256(raw).hexdigest() != digest:
+                raise RuntimeError('PREFLIGHT_PIN_HASH')
+            bodies[name] = raw
+        source = next(iter(PINNED))
+        spec = importlib.util.spec_from_file_location('diagnostic_readonly_preflight', ROOT/source)
+        module = importlib.util.module_from_spec(spec)
+        exec(compile(bodies[source], str(ROOT/source), 'exec'), module.__dict__)
+        methods = module.json_body(bodies[module.METHODS])
+        if module.packed(methods) != bodies[module.METHODS]:
+            raise RuntimeError('PREFLIGHT_METHODS_CANONICAL')
+        reader = module.p.Reader(ROOT, READ_LIMIT)
+        module.validate_methods(ROOT, methods, reader)
+        for name in (module.OUTPUT, module.TARGET, methods['packet'], *module.SUPERSEDED_ABSENT):
+            module.no_alias(ROOT/name)
+            module.need(not (ROOT/name).exists(), 'PREFLIGHT_ACTUAL_SCOPE_TARGET_PACKET_ALREADY_EXISTS')
+        before = module.snapshot(ROOT)
+        inputs = module.verify_inputs(ROOT, methods, reader)
+        headroom = module.terminal_headroom(inputs['prior'], before)
+        proofs = configuration_proofs(module, inputs['binding'], bodies[source], reader.read(module.FROZEN_REF))
+        compatibility = compatibility_readonly_proofs(module, inputs['binding'], reader)
+        occupied = module.owned_size(ROOT)
+        upper = occupied + module.DIAGNOSTIC_SCOPE_BYTES
+        module.need(upper <= module.CAPS['owned_logical_bytes'], 'DIAGNOSTIC_STORAGE_PREFLIGHT')
+        after = module.snapshot(ROOT)
+        module.need(before == after, 'PREFLIGHT_OLD_METADATA_CHANGED')
+        result.update(status='PASS_METADATA_ONLY_NO_DIAGNOSTIC',
+            configuration_proofs=proofs, compatibility_readonly_proofs=compatibility,
+            terminal_headroom=headroom, superseded_v1_scope_packet_target_absent=True,
+            old_metadata_snapshot=before, old_metadata_unchanged=True,
+            prior_owned_logical_bytes=occupied, combined_upper_bound=upper,
+            verified_wheels=len(inputs['wheels']), prior_allocation=inputs['prior'],
+            diagnostic_allocation=module.ALLOCATION,
+            actual_scope_target_packet_absent=True,
+            requirements_sha256=module.sha(inputs['requirements']),
+            binding_ref=inputs['binding_ref'])
+    except Exception as error:
+        # Closed type only; no exception text, source paths, arguments or credentials.
+        result['error_type'] = type(error).__name__
+    result.update(reader_bytes_charged=reader.charged if reader else 0,
+                  monotonic_elapsed_seconds=time.monotonic()-begin,
+                  UTC_finished=datetime.now(timezone.utc).isoformat())
+    save(SCOPE / 'RECEIPT.json', result)
+    save(REPORT, result)
+    signal.setitimer(signal.ITIMER_REAL, 0)
+    print(json.dumps({key: result[key] for key in ('status', 'child_commands', 'cost_USD')}))
+    return 0 if result['status'].startswith('PASS_') else 1
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

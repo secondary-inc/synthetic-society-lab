@@ -1,0 +1,145 @@
+{
+  "actual_release": false,
+  "auditor_actual_helper_main_scope_report_creation": 0,
+  "auditor_actual_socket_pip_child_network_owner_credential_source_data_actions": 0,
+  "auditor_implementation_Git_STATUS_edits": 0,
+  "blocking_helper_findings": [],
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "PASS_EXACT_STATIC_DELTA_CONDITIONAL_ON_V1_1_PRODUCTION_ACCEPTANCE",
+  "findings": [
+    "Exact11611B/98c6b25d helper and new55727B/7e31c3df runner,7078B/54d61063 config,12343B/e65cacfef adapter pins agree.",
+    "Whole ASTdelta fully accounted for by fresh names/kinds/pins, addingSUPERSEDED_ABSENT to the noalias/absence loop, mandatoryterminal_headroom call andretained proof fields. No other guards/limits/proof logic changes.",
+    "Terminal headroom receives validated prior and beforemetadata snapshot, runs beforePASS, and its proof is retained. Test accepts exact20480Bancestry/32768Btotal boundary, refuses onebyteover/large/Unicodeexpanded/nonfinite input, leaves authored inputs unchanged.",
+    "Absence loop covers3new scope-target-packet plus3exact supersededV1paths. Allabsent passes; every existingpath andevery aliasedpath refuses usingfabricatedpaths only.",
+    "Proof failures propagate through existingException handler retainingFAILEDstatus, without fallbackPASS. Old readonlysocket/base/MIME/PATHproofs and genuine p.Readerconstruction remain unchanged.",
+    "No actual helper, Readerinput, oldtarget, adapter/socket, package/child/network/owner/credential/sourcePDF work performed."
+  ],
+  "kind": "INDEPENDENT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_STATIC_DELTA_REVIEW",
+  "pins": {
+    "configs/e01_offline_ipv6_compatibility_v1_1_20261116.json": {
+      "bytes": 7078,
+      "sha256": "54d6106340798eeb1511126058b9d1cc317da63dd94d67e96244b76d49d150de"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_1_20261116.py": {
+      "bytes": 11611,
+      "sha256": "98c6b25d72b201f633d11add7719b9ee16707704e8c569dd8af2d5fe9294011f"
+    },
+    "data/processed/e01_ipv6_compatibility_preflight_v1_20261116.py": {
+      "bytes": 11414,
+      "sha256": "c8cf4f94a1140cec4637f447c4cd9285463f7911fa782bf5cfcdaa7c2a85ea82"
+    },
+    "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+      "bytes": 12343,
+      "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "bytes": 55727,
+      "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+    }
+  },
+  "static_check_results": {
+    "Python312": "40 focused checks completed before final auditor AST-normalization harness failure; no rerun on this runtime",
+    "Python39": "41 focused extracted/static checks PASS on corrected harness; one invocation",
+    "allowance": {
+      "application_source_bytes_per_invocation": 98173,
+      "both_suite_application_read_bytes": 196346,
+      "maximum_suite_invocations_per_runtime": 1,
+      "new_evidence_bytes_before_report": 26263,
+      "per_process_CPU_soft_hard": [
+        110,
+        120
+      ],
+      "per_process_wall_limit_seconds": 120,
+      "per_suite_output_cap_bytes": 262144,
+      "read_cap_bytes": 67108864,
+      "runtimes_used": 2,
+      "suite_invocations": 2,
+      "temp_write_cap_bytes": 33554432
+    },
+    "decision": "PASS_STATIC_DELTA_AND_EXTRACTED_ADVERSE_CHECKS_ONLY",
+    "main_real_inputs_socket_child_calls": 0,
+    "supported_actual_Python312_execution": "NOT_RUN"
+  },
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_20261116.json",
+      "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/checks_corrected.json",
+      "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/extracted_checks_corrected.py",
+      "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/first_harness_outcome.json",
+      "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/first_harness_preserved.py",
+      "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/v1_to_v1_1.patch"
+    ],
+    "NEXT_UNBLOCKED_TASK": "After exact production and helper static acceptance, lead may schedule only one bounded fresh metadata-only V1.1preflight; retain outputs for separate independent review before further execution.",
+    "OUTPUT_ARTIFACTS": [
+      {
+        "bytes": 3595,
+        "path": "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/checks_corrected.json",
+        "sha256": "6ee298613fca0f05ba69ef6b87d0082e46ec16491423c79271cb9eebfae32a69"
+      },
+      {
+        "bytes": 9065,
+        "path": "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/extracted_checks_corrected.py",
+        "sha256": "3f63cc20d53ce331fe8111de7bcdbc4afa1eef9fdb136c90ebc6a3ceb55381e1"
+      },
+      {
+        "bytes": 579,
+        "path": "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/first_harness_outcome.json",
+        "sha256": "7f87eac977d8f5961474f9d03b935f860841450c709fc4a66bf05d5ffed49204"
+      },
+      {
+        "bytes": 8996,
+        "path": "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/first_harness_preserved.py",
+        "sha256": "c7269537a377b05d8ef8d3b9b9635fd3b326bac447d69fa24098dfecca0ee41a"
+      },
+      {
+        "bytes": 4028,
+        "path": "reports/evidence_e01_ipv6_compatibility_preflight_v1_1_20261116/v1_to_v1_1.patch",
+        "sha256": "5def408b899d9f3b8e8687740be8077ed1b06dd5ddc1855c97f87ffaad87108d"
+      }
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "Inspect frozen helper and retained v1_to_v1_1.patch; no actual preflight reproduction authorized.",
+      "Completed bounded extracted checks are retained in checks_corrected.json. Do not rerun during this allowance; one suite was used on each of two runtimes."
+    ],
+    "RISKS_AND_LIMITATIONS": [
+      "Acceptance is exact11611B/98c6b25d helper and listed pins, not actual metadata or production acceptance. Concurrent independent V1.1production review must PASS before helper invocation.",
+      "Full final extracted suite passed onPython3.9, not a supported-runtime integration run. Python3.12first invocation hit only final harnessnormalizer failure; preserved40completedchecks and exactsourceAST comparison after correction are disclosed. No second3.12suite was run.",
+      "Terminal headroom checks canonical ancestry bytes+12288<=32768 and is now mandatory beforePASS. It is an early bound on ancestry, not proof of every eventual serializedterminal field; production boundedJournal still enforces its actual cap.",
+      "Inherited audit/save/importfinder/configuration/read-onlycompatibilityproof logic unchanged and retains earlier scoped caveats: not generalOSsandbox; no stickydenial latch; cachedmodule/concurrentstate limits; metadata snapshots not fullcontenthashes; child must recheck actual state and closure.",
+      "30s/CPU7soft8hard/512MiB boundReader and3createonce64KiBoutputs/192KiBcombined unchanged. Code/stdloader overhead additional finite; interruption consumes scope without retry.",
+      "All6requested actual/superseded scope-target-packet absent predicates tested with fabricatedpaths; no current paths observed. PredecessorV1 remains preserved/unexecuted by this review.",
+      "Actual importclosure remainsNOT_RUNuntilfutureguardedchild; no real socketmutation, pip/vendorimport, importlockacquisition, compatibilitychild or fourthinstall accepted."
+    ],
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Repo-owned helper/runner/config/adapter source text only. Extracted pure terminal_headroom with authored dictionaries/strings, and extracted absence loop with fabricated paths. No real Reader inputs, targets/wheels/PDFs, socket state, packages, financial owner, credentials, network or actual compatibility work.",
+    "TASK_ID": "E01_IPV6_COMPATIBILITY_PREFLIGHT_HELPER_V1_1_STATIC_20261116",
+    "TESTS_RUN_AND_RESULTS": {
+      "Python312": "40 focused checks completed before final auditor AST-normalization harness failure; no rerun on this runtime",
+      "Python39": "41 focused extracted/static checks PASS on corrected harness; one invocation",
+      "allowance": {
+        "application_source_bytes_per_invocation": 98173,
+        "both_suite_application_read_bytes": 196346,
+        "maximum_suite_invocations_per_runtime": 1,
+        "new_evidence_bytes_before_report": 26263,
+        "per_process_CPU_soft_hard": [
+          110,
+          120
+        ],
+        "per_process_wall_limit_seconds": 120,
+        "per_suite_output_cap_bytes": 262144,
+        "read_cap_bytes": 67108864,
+        "runtimes_used": 2,
+        "suite_invocations": 2,
+        "temp_write_cap_bytes": 33554432
+      },
+      "decision": "PASS_STATIC_DELTA_AND_EXTRACTED_ADVERSE_CHECKS_ONLY",
+      "main_real_inputs_socket_child_calls": 0,
+      "supported_actual_Python312_execution": "NOT_RUN"
+    },
+    "UNRESOLVED_BLOCKERS": [
+      "No blocking static helper-delta defect found. Exact V1.1production review remains independent prerequisite.",
+      "Actual helperoutcome, particularchildrelease, compatibility/runtime/sourcequalification remainNOT_RUN orBLOCKED under their own gates."
+    ]
+  }
+}
