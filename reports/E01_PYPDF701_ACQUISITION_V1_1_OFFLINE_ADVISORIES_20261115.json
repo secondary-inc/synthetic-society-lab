@@ -1,0 +1,52 @@
+{
+  "advisories": 78,
+  "assessment_status": "NO_APPLICABLE_ISSUE_IN_CAPTURED_MAINTAINER_PAGES",
+  "candidate": "7.0.1",
+  "candidate_applicable_rows": 0,
+  "cost_USD": 0,
+  "exact_distribution_exclusion": [
+    {
+      "assessment": {
+        "candidate_affected": false,
+        "candidate_affected_conservatively": true,
+        "candidate_distribution_excluded": true,
+        "exclusion_reason": "Distinct PyPDF2 distribution; exact paired pypdf row and maintainer migration instruction govern pypdf candidate.",
+        "label_uncertain": true,
+        "normalized_patched_versions": null,
+        "normalized_range": ">=2.2.0",
+        "package": {
+          "ecosystem": "pip",
+          "name": "PyPDF2"
+        },
+        "patched_versions": "",
+        "range": ">=2.2.0",
+        "withdrawn": false
+      },
+      "ghsa_id": "GHSA-4vvm-4w3v-6mr8"
+    }
+  ],
+  "full_assessment_sha256": "a1e90f78803a42a7522e25477e192d4957ec1e0f6885cfa7fcf303d604f9fa10",
+  "input_ref": {
+    "bytes": 345038,
+    "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/advisories-1.json",
+    "sha256": "5b50ef1c54b1cf227340e02117e6aa744a4e8ddf5be1e0ba4c9a8c8ec3f53a43"
+  },
+  "installations": 0,
+  "kind": "E01_P1_1_OFFLINE_CAPTURED_ADVISORY_ASSESSMENT_V1",
+  "limitations": "No network freshness check, wheel acquisition, installation, source/runtime qualification or claim of no vulnerabilities. Primary-data source reads here means research PDFs/respondent/publisher corpus; this operation reads saved public package advisory metadata only.",
+  "model_calls": 0,
+  "network_GET": 0,
+  "not_latest": true,
+  "read_envelope": {
+    "CPU_seconds": 10,
+    "cap_bytes": 1048576,
+    "captured_public_metadata_bytes": 345038,
+    "report_write_cap_bytes": 16384,
+    "stdout_cap_bytes": 1024,
+    "wall_seconds": 10
+  },
+  "source_reads": 0,
+  "status": "OFFLINE_SAVED_METADATA_ONLY_NOT_ACQUISITION_OR_INDEPENDENT_ACCEPTANCE",
+  "uncertain_label_rows": 10,
+  "vulnerability_rows": 79
+}

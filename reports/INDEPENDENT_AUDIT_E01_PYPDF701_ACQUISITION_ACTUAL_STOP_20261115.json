@@ -1,0 +1,263 @@
+{
+  "actual_BOOT_released": false,
+  "actual_EXEC_released": false,
+  "actual_outcome": {
+    "CLI_exit_code": 1,
+    "exit_code_evidence": "Lead-reported actual launcher exit; retained JSON failure independently verified. Auditor did not launch or trace the actual process.",
+    "extraction": false,
+    "hashlock": null,
+    "installation": false,
+    "known_metadata_body_bytes": 593885,
+    "metadata_GETs": 6,
+    "outstanding_body_hold": 0,
+    "package_imports": false,
+    "phase": "ADVISORIES",
+    "provenance_GET": 0,
+    "reason": "ADVISORY_PACKAGE_MISSING",
+    "status": "FAILED_OR_UNKNOWN_NO_RETRY",
+    "wheel_GETs": 0
+  },
+  "audit_read_accounting": {
+    "ceiling": 1048576,
+    "first_checker_body_bytes": 601081,
+    "followup_checker_body_bytes": 352234,
+    "initial_terminal_cat_bytes": 2667,
+    "note": "Follow-up carries prior verified hashes for fivePyPIbodies rather than reopening them; initial semantic assertion exposed real eventkind finding, not failed accounting. /tmp metadata summary is separate small technical evidence.",
+    "total_original_scope_body_bytes": 955982
+  },
+  "auditor_artifacts": [
+    {
+      "bytes": 4255,
+      "path": "/tmp/civiclab-auditor-e01-p1-stop-initial-event-kind-20261115.py",
+      "sha256": "1ccac933523436bf683f8277b539241ff266bf98f68486c46486b77e21312f89"
+    },
+    {
+      "bytes": 4669,
+      "path": "/tmp/civiclab-auditor-e01-p1-stop-20261115.py",
+      "sha256": "497dc420da4d8b4a08537ef32a3d74cbdfb7fb0bac61719f869081fc55323856"
+    },
+    {
+      "bytes": 12562,
+      "path": "/tmp/civiclab-auditor-e01-p1-stop-20261115.json",
+      "sha256": "062621012e77fb55fc96ddbcef1deee7d39e48528c6d7cd0649258ed05d9c342"
+    }
+  ],
+  "captured_schema_summary": {
+    "advisories": 78,
+    "first_original_filter_refusal": {
+      "id": "GHSA-xcjx-m2pj-8g79",
+      "labels": [
+        {
+          "ecosystem": "pip",
+          "name": "PyPDF2"
+        }
+      ],
+      "ranges": [
+        "<=1.27.4"
+      ]
+    },
+    "package_ecosystem_counts": [
+      {
+        "count": 4,
+        "ecosystem": "pip",
+        "name": "PyPDF2"
+      },
+      {
+        "count": 69,
+        "ecosystem": "pip",
+        "name": "pypdf"
+      },
+      {
+        "count": 3,
+        "ecosystem": "pypi",
+        "name": "pypdf"
+      },
+      {
+        "count": 3,
+        "ecosystem": "pip",
+        "name": "pypi"
+      }
+    ],
+    "prefixed_ranges": [
+      {
+        "id": "GHSA-hm9v-vj3r-r55m",
+        "range": "PyPDF2==2.10.5"
+      }
+    ],
+    "vulnerability_rows": 79
+  },
+  "checks": [
+    "Exact2667-byte terminal SHAf74d642c... and390-byte stdoutSHA3214f43f... verified. STARTED binds exact accepted methods9c61243d...andcollector6a8c9ec9...; failure phase/reason/budgets agree between terminal/stdout.",
+    "All19terminal-indexed artifact bodies/hashes/bytes verified in first bounded metadata pass before its later semantic event-kind assertion. Follow-up reread only advisorybody/terminal/events/STARTED; no second complete metadata sweep. Original five packagebody hashes were not redundantly reread.",
+    "Six alternating durable request/response pairs show attempts1through6; every request holds2MiB and each successful response settles its exact body hash/length before the next request. Sum593885knownbytes, sixmetadata/zero wheelattempts, outstandinghold0. No failed/uncertainHTTPbody or modeldispatch inferred.",
+    "Saved advisoryresponse has78advisories and79vulnerability rows. Labels include PyPDF2/pip4,pypdf/pip69,pypdf/pypi3,pypi/pip3. Original filter first refuses GHSA-xcjx-m2pj-8g79 with PyPDF2/pip and range<=1.27.4. The genericpypi labels are additional later incompatibilities, not the first stop.",
+    "Saved GHSA-hm9v-vj3r-r55m has rawrangePyPDF2==2.10.5, outside original numeric-comparator grammar. Captured schema/ranges require explicit reviewed correction; no silent ignore, guessedcurrentcompatibility or automaticcandidateupgrade follows.",
+    "Hashlock, selected.prepared, advisory-assessment, provenance body and wheels directory absent by existence-only checks. Actual attempt never reached provenance/wheel stage. Consumed original acquisition namespace remains unchanged.",
+    "No acquiredPDF, actualcampaign/owner controls, oldruntime binaries, credential or respondent data opened; no packageparser/native/source/network/model execution by auditor. No artifactinstallation or actualE01recoveryordinal consumed by P1."
+  ],
+  "cost_USD": 0,
+  "evidence": {
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/STARTED.json": {
+      "bytes": 769,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/STARTED.json",
+      "sha256": "6cadfa9c69c2744188e8155e3adf449adbdde62df42d41c4c9511a17d8c46918"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/TERMINAL.json": {
+      "bytes": 2667,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/TERMINAL.json",
+      "sha256": "f74d642c1ef7518ccbf627baba2cd6ac404425955d7486233fd5e0c702b20c9b"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/01.json": {
+      "bytes": 234,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/01.json",
+      "sha256": "fab4112bca7ee52813d8dff9632439c258d28307d96e2ed95eb42b10c0f2b3ff"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/02.json": {
+      "bytes": 352,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/02.json",
+      "sha256": "caa7b77ed790c3baadc9751e1bcf4e8bb4e1a925dc891d5ea2d83cdbdd929b3d"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/03.json": {
+      "bytes": 236,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/03.json",
+      "sha256": "e429c9116ac85ecc70ebb87c732a01f7beaa1a3fcd09c534c4a5908da54296db"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/04.json": {
+      "bytes": 352,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/04.json",
+      "sha256": "5fc74ab510df711af932ebe2943fa45cb015c8d978ba7703e35230f8fb4aa936"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/05.json": {
+      "bytes": 246,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/05.json",
+      "sha256": "4ef82f3021db0fcccf59f81fda3b83e71106decec8a1a3553983c49d144733d2"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/06.json": {
+      "bytes": 370,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/06.json",
+      "sha256": "07da483a243c751b9242d48c391eb17f1e7f3815fc6f56732b8c8f89622f87eb"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/07.json": {
+      "bytes": 241,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/07.json",
+      "sha256": "44d4d5587837d3e7eb6c4859ba9e9bf0f7afc4e8669e5a24ef283991173eeaff"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/08.json": {
+      "bytes": 358,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/08.json",
+      "sha256": "94c449ad9513a23f819d0a11b71f34e73c207e6d11d1aa0ad92f890029ece608"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/09.json": {
+      "bytes": 242,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/09.json",
+      "sha256": "3b0a285784f8f036908c717c8f5cf2fc13cda119f6b70e6955a851c510068617"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/10.json": {
+      "bytes": 363,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/10.json",
+      "sha256": "2e6a6c2d0be330a9e76f16471cd3f61df5bc75f1b8c2d0ff8c52b01cd6a88c46"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/11.json": {
+      "bytes": 321,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/11.json",
+      "sha256": "119a53a6232e67e3994e8aca2f6eaba6aebf715f1aa8c0f93cfeebfa710659d7"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/12.json": {
+      "bytes": 445,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/events/12.json",
+      "sha256": "37e5d8b6571175bc008d3426688661e01992548f2bf4605a97ab564df5cf861d"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/advisories-1.json": {
+      "bytes": 345038,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/advisories-1.json",
+      "sha256": "5b50ef1c54b1cf227340e02117e6aa744a4e8ddf5be1e0ba4c9a8c8ec3f53a43"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/cffi.json": {
+      "bytes": 89333,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/cffi.json",
+      "sha256": "2255e530e3f80593a354e3d84a29966924d0e10309d1e3a6d50f845ab7d8df66"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/cryptography.json": {
+      "bytes": 57201,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/cryptography.json",
+      "sha256": "7423990cc0948676ef47a71ea62a476ece4c76245e6bebd1c3a71f03c4ffc0f4"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/pillow.json": {
+      "bytes": 80892,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/pillow.json",
+      "sha256": "183d4151cbc909acf39d4d5d48469d6bc66d5516e7f506854241839d0611b69e"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/pycparser.json": {
+      "bytes": 12094,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/pycparser.json",
+      "sha256": "e919b291615d54a2328a0da6128cd9d95601ad04d27cec48eeb75e0d57c3b6ad"
+    },
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/pypdf.json": {
+      "bytes": 9327,
+      "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/metadata/pypdf.json",
+      "sha256": "173c915f1a3be79e3c35d1edbc1b3efffef86c0c1cd2af7d33cb8972fe4b17ed"
+    },
+    "reports/e01_pypdf701_acquisition_actual_20261115.txt": {
+      "bytes": 390,
+      "path": "reports/e01_pypdf701_acquisition_actual_20261115.txt",
+      "sha256": "3214f43f5e1f3d10546015e6538455472dd8fe9af858e9d8b514c0e3f378e3e6"
+    }
+  },
+  "findings": [
+    {
+      "id": "E01-P1-EVENT-KIND-001",
+      "observed_effect": "Typed request-event contract is broken. The durable pretransport hold/count fields and correct body settlements remain present and independently verified; no extra hidden GET/model/source work is demonstrated.",
+      "problem": "event() builds {sequence,kind:event_kind,**details}; requestdetails contain kind=metadata and overwrite REQUEST_RESERVED tag. All six odd retained event records therefore have kind=metadata.",
+      "remedy_boundary": "Preserve original events/code. Separate continuation should keep immutable event kind and record request_kind separately or reject reserved-key collisions, with regression. Original event records must not be rewritten or relabeled.",
+      "severity": "MEDIUM",
+      "source_pin": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc",
+      "status": "OPEN_FOR_SEPARATE_CONTINUATION"
+    },
+    {
+      "id": "E01-P1-ADVISORY-SCHEMA-002",
+      "problem": "Real published repository schema includes predecessor/ambiguous package names, pip/pypi ecosystems and exactlegacy package-prefixedrange; accepted mockschema did not cover these actual rows.",
+      "remedy_boundary": "Independently reviewed, narrowly defined conservative interpretation of the entire pinned snapshot; preserve everyrawlabel/range. Unknown/unparseable schema or applicableunfixedissue remains a stop. No acquisition/livecoverage acceptance from this failed snapshot.",
+      "severity": "MEDIUM",
+      "status": "ACTUAL_ACQUISITION_BLOCKED"
+    }
+  ],
+  "install_authority": false,
+  "kind": "E01_PYPDF701_P1_ACTUAL_STOP_INDEPENDENT_AUDIT",
+  "limitations": [
+    "Receipt/body/byte accounting accepted; acquisition outcomeFAILED remainsFAILED. Prior mocked code acceptance is preserved as historical, not retroactively actualAPIcompatibility.",
+    "Knownbytecharges refer bodybytes only, excluding networkprotocol/TLS/kernel overhead. Exact actualCPU/wall usage and independent originalHTTPheaders were not retained in this closed scope; do not invent them.",
+    "Read-only retained metadata review; not an actual collector rerun or independent network/process attestation.",
+    "No paid/model/financialowner/source/externalpublication authority increase."
+  ],
+  "model_calls": 0,
+  "next_gate": "Exact separate v1_1methods/code/mocktests and retained-body bindings before any continuation. Preserve original prefix/event finding. P2/P3/P4/BOOT/EXEC remain held.",
+  "ownership": "New independent audit and/tmp metadata only; no original implementation/source/test/STATUS/Git/actualstate modifications.",
+  "prior_code_particular_ref": {
+    "bytes": 14233,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_ACQUISITION_CODE_PARTICULAR_20261115.json",
+    "sha256": "dc80bcaa8c30f830974eb241217c368e5d52a15a34260a84ab021ef3f172f3dd"
+  },
+  "remaining_requests_body_arithmetic_only": {
+    "GET_max_remaining": 7,
+    "metadata_GET_max_remaining": 2,
+    "metadata_body_bytes_remaining": 7794723,
+    "not_authority": "Arithmetic only, no new continuation release. Any separately recorded recovery must preserve the6GET/593885Bcharge and bound reuse/read/write/CPU/time/freshness explicitly; no oldscope replay or fresh request/body allowance.",
+    "total_body_bytes_remaining": 74903587,
+    "wheel_GET_max_remaining": 5,
+    "wheel_body_bytes_remaining": 67108864
+  },
+  "review_date_client": "2026-11-15",
+  "reviewer_role": "independent_auditor",
+  "source_authority": false,
+  "status": "PASS_STOP_BYTES_AND_ACCOUNTING_ACQUISITION_FAILED_WITH_EVENT_SCHEMA_FINDING",
+  "stdout_ref": {
+    "bytes": 390,
+    "path": "reports/e01_pypdf701_acquisition_actual_20261115.txt",
+    "sha256": "3214f43f5e1f3d10546015e6538455472dd8fe9af858e9d8b514c0e3f378e3e6"
+  },
+  "terminal_ref": {
+    "bytes": 2667,
+    "path": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115/TERMINAL.json",
+    "sha256": "f74d642c1ef7518ccbf627baba2cd6ac404425955d7486233fd5e0c702b20c9b"
+  }
+}

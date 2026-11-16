@@ -1,0 +1,61 @@
+{
+  "assessment_scope": "Static exact-ref arithmetic and source review only; no original scope bodies reread, no tests or collector/HTTP/install/source/owner execution.",
+  "cost_USD": 0,
+  "finding": {
+    "effect": "Actual v1_1 would refuse PREDECESSOR_WRITE_TOTAL before successor namespace/STARTED/GET; if counts were otherwise bypassed, excluding terminal would violate cumulative write accounting. No actual attempt was run by auditor.",
+    "evidence": {
+      "correct_control_bytes": 7196,
+      "declared_control_bytes": 4529,
+      "declared_owned_bytes": 598414,
+      "missing_TERMINAL_bytes": 2667,
+      "pinned_ref_count": 20,
+      "sum_all_predecessor_file_bytes": 601081,
+      "sum_metadata_bytes": 593885
+    },
+    "id": "E01-P1-CONTINUATION-WRITE-003",
+    "required_narrow_remedy": "Preserve frozen failure candidate. Separately freeze corrected601081owned/7196control metadata, resource-note and handoff values. Add authored/no-actualdata regression verifying real config predecessor refs sum exactly to declared owned/control before execution. Preserve original v1terminal and all cumulative request/body/write/event caps.",
+    "severity": "MEDIUM",
+    "status": "OPEN",
+    "trigger": "Exact frozen config carries indexed artifacts excluding terminal as owned/control counters; exact code sums all predecessor body refs including terminal before comparing counters."
+  },
+  "frozen_refs": [
+    {
+      "bytes": 12037,
+      "path": "reports/E01_PYPDF701_ACQUISITION_V1_1_HANDOFF_20261115.json",
+      "sha256": "93b84b625fe885d40adeeeaa189f7dab4475bb5ebcfc1a4b8a98645f8f68f78a"
+    },
+    {
+      "bytes": 22091,
+      "path": "scripts/acquire_e01_pypdf701_artifacts_v1_1.py",
+      "sha256": "10d476ebea780a0f2726b559e35e1eb65e350dbacf867544f992560ce8e2b686"
+    },
+    {
+      "bytes": 6373,
+      "path": "configs/e01_pypdf701_acquisition_v1_1_20261115.json",
+      "sha256": "ee22723b9690ceccadd3889fa461cf11eb6a2af4676672061dde25e5fe111db4"
+    },
+    {
+      "bytes": 18932,
+      "path": "tests/test_e01_pypdf701_acquisition_v1_1.py",
+      "sha256": "cda03d6050f702f0a19c5dc67deea6b22860e328ce2193ee55a060645bb7e4c6"
+    }
+  ],
+  "install_authority": false,
+  "kind": "E01_PYPDF701_V1_1_FROZEN_PREDECESSOR_ACCOUNTING_FINDING",
+  "model_calls": 0,
+  "ownership": "Only this new audit and/tmp frozen-source snapshot written; no workerfile/STATUS/Git/actual state changes.",
+  "positive_design_observations_not_release": [
+    "Exact paired-distribution exception retains originalrows/labels and verifies siblingpypdffix plus maintainer migration description. Primary officialpage independently checked.",
+    "Fresh onepageadvisory/4hdatedversionmetadata,7remainingGET,immutableeventtypes and120/30separateclockbudget directions match rootdecision; final acceptance still requires correctedpins/tests."
+  ],
+  "primary_reference": "https://github.com/py-pdf/pypdf/security/advisories/GHSA-4vvm-4w3v-6mr8",
+  "review_date_client": "2026-11-15",
+  "reviewer_role": "independent_auditor",
+  "snapshot_ref": {
+    "bytes": 62212,
+    "path": "/tmp/civiclab-auditor-e01-p1-v1_1-frozen-write-count-finding-20261115.json",
+    "sha256": "8a8f398a3b9c4b2b4fb92a21a4b502a8f08d967f30162b5b6a3600ab55de2349"
+  },
+  "source_authority": false,
+  "status": "BLOCKED_BEFORE_ACTUAL_CONTINUATION_NO_EXECUTION"
+}

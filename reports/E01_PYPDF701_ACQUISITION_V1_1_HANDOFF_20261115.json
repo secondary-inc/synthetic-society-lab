@@ -1,0 +1,208 @@
+{
+  "ACCEPTANCE_CRITERIA": {
+    "actual_acquisition": "NOT_RUN; leadonly afterexactreview",
+    "mocked_positive_complete_and_negative_failclosed": "25checksPASS bothruntimes; independent pending",
+    "retained_primary_schema_allrows": "Offline78/79 validated; independent primary-evidence review pending",
+    "source_inert_and_v1_unchanged": "Worker verified; independent reviewer pending",
+    "wheel_install_runtime_qualification_source_recovery": "NOT_RUN/BLOCKED separate gates"
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "scripts/acquire_e01_pypdf701_artifacts_v1_1.py",
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json",
+    "tests/test_e01_pypdf701_acquisition_v1_1.py"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent exactv1_1 review; worker may resume draftP2 onlyafterlead scheduling. Do not execute actualcollector from this handoff.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json": {
+      "bytes": 6373,
+      "sha256": "ee22723b9690ceccadd3889fa461cf11eb6a2af4676672061dde25e5fe111db4"
+    },
+    "reports/E01_PYPDF701_ACQUISITION_V1_1_OFFLINE_ADVISORIES_20261115.json": {
+      "bytes": 2003,
+      "sha256": "6e39c0b184fce51b4cee6654bfda51db48de370a2197b09b578a5ca18e2a9625"
+    },
+    "reports/E01_PYPDF701_V1_1_PREFRESH_DRAFT_20261115.json": {
+      "bytes": 45444,
+      "sha256": "10815eaba6d5afeb4e7ce8676d338aa901b56b3fe31af95638e4e26b7dbc6697"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_311_fresh_20261115.txt": {
+      "bytes": 4096,
+      "sha256": "5038ff4da51b31f9e98e86040f19beb0b0da1dd1fe6ed44f9668b1432f55980f"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_311_initial_20261115.txt": {
+      "bytes": 54,
+      "sha256": "399b5464a241489aaf7fd42f5cb63f04194742ceb71bc88ee7c93127381da85f"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_311_toolchain_20261115.txt": {
+      "bytes": 3408,
+      "sha256": "ed6ba906d10027d5282b19fed6d5e05dccd872fd4cede610be9fa2937a4a495b"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_312_fresh_20261115.txt": {
+      "bytes": 4096,
+      "sha256": "7550d6d62414bb7f2018f315e9f066a75b5f0ce215de47f32111c18ac53f9235"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_312_initial_20261115.txt": {
+      "bytes": 3408,
+      "sha256": "c2cf21af2ae5ad07ae98943fd42caf491a787c817131d854f16adad1b7936754"
+    },
+    "scripts/acquire_e01_pypdf701_artifacts_v1_1.py": {
+      "bytes": 22091,
+      "sha256": "10d476ebea780a0f2726b559e35e1eb65e350dbacf867544f992560ce8e2b686"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_1.py": {
+      "bytes": 18932,
+      "sha256": "cda03d6050f702f0a19c5dc67deea6b22860e328ce2193ee55a060645bb7e4c6"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_acquisition_v1_1.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_acquisition_v1_1.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Independent review/actualsuccess pending. No global no-vulnerabilities assertion. Candidate7.0.1 notlatest.",
+    "Rootold300wall/60CPU elapsed unknown, chargedfull; successor separately120wall30CPU. Cumulativechargedupperbound420wall90CPU, notoriginal300/60aggregate. No financialincrease.",
+    "Original13GET/72MiB responsebodies/80MiBownedwrites/8MiBcontrol/64events remain cumulative; network headers/TLS overhead not metered. Copying cachedbodies charges newwrites again.",
+    "Pythoncooperativechecks and signals mayovershootblockingOSoperations; no hardRSS/nativecontainment or hostile-host filesystemrace guarantee.",
+    "Savedpackage metadata olderthan4h, freshadvisorypagination or changed/unknownschema stop; no fallback refresh/candidateupgrade.",
+    "P2dependencyclosure/offlineinstall/metadata check, newruntime qualification/profile and BOOT/EXEC bindings remain unimplemented/held. No oldenv modification.",
+    "Tests do not prove actualnetwork success, installedABIcompatibility, sourceparsing, scientific externalvalidity or E01completion."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only saved hash-pinned public upstream package/advisory technical metadata inspected. No researchPDF/ANES/person/publishercorpus/privateowner/credential work. PyPI/GitHub official metadata identity/provenance model inherited; HTTPS metadata/subject binding is not local cryptographic signature verification.",
+  "TASK_ID": "E01_PYPDF701_ACQUISITION_SCHEMA_SUCCESSOR_V1_1_20261115",
+  "TESTS_RUN_AND_RESULTS": {
+    "current": {
+      "3.11": "25PASS/0.466s/exit0",
+      "3.12": "25PASS/0.671s/exit0"
+    },
+    "guard": "Frozen v1 authored runner denies network/process/native and actualdata/owner/credentials. 120wall/CPU,64MiBread,32MiBtemporarywrite,256KiBoutput each. Inert module import does not install global guard during unittest discovery.",
+    "invocations": "2 real test invocations/runtime; missing executable shell launch also counted separately. Limits max3/runtime preserved. No third invocation requested by worker.",
+    "names": [
+      "test_all_observed_label_forms_assessed_not_discarded",
+      "test_exact_prefix_retained_and_entire_expression_checked",
+      "test_exact_paired_distribution_evidence_preserves_unpatched_pypdf2",
+      "test_paired_exception_fails_closed_if_evidence_changes",
+      "test_other_open_ended_or_ambiguous_label_range_blocks",
+      "test_unknowns_duplicates_nonfinite_and_bad_patch_refuse",
+      "test_complete_reuses_dated_bodies_with_seven_new_gets_and_old_accounting",
+      "test_request_event_kind_immutable_and_request_kind_explicit",
+      "test_duplicate_successor_and_partial_scope_cannot_replay",
+      "test_wrong_predecessor_hash_or_missing_reference_zero_requests",
+      "test_unknown_or_wrong_terminal_state_is_not_adopted",
+      "test_bad_predecessor_index_or_reservation_is_not_adopted",
+      "test_stale_or_future_cached_metadata_refuses_before_scope",
+      "test_wrong_methods_and_increased_limits_refuse",
+      "test_alias_input_and_output_refuse",
+      "test_failed_new_request_no_retry_full_hold_and_original_preserved",
+      "test_fresh_applicable_advisory_blocks_before_provenance_or_wheel",
+      "test_fresh_page_requiring_pagination_stops_without_second_get",
+      "test_changed_fresh_exception_refuses_before_wheels",
+      "test_full_fresh_page_without_link_is_unknown_not_complete",
+      "test_successor_alias_refuses_without_get_or_old_scope_change",
+      "test_cumulative_writes_and_event_caps_not_reset",
+      "test_remaining_request_and_body_allowances_are_cumulative",
+      "test_continuation_wall_cpu_and_rollback_refuse",
+      "test_bad_wheel_preserves_failure_no_hashlock_and_no_install"
+    ],
+    "prior_preserved": {
+      "3.11_missing_venv311_shell": "exit127/no test bodies/no interpreter spawned; preservedlog, corrected documented existingtoolchain path",
+      "3.11_toolchain_initial": "21PASS/0.294s/exit0",
+      "3.12_initial": "21PASS/0.448s/exit0"
+    },
+    "scope": "MOCK engineering controls only, no scientific effect/security/qualification certification"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Exact independent methods/code/mock evidence review",
+    "Leadone-timeactualacquisitionwithfreshadvisory/provenance andwheelvalidation",
+    "P2/P3/P4 and source-recovery gates remain separately held"
+  ],
+  "actual_acquisition_GET_by_worker": 0,
+  "actual_installation": false,
+  "implementation": {
+    "advisories": "All rows retained/conservatively assessed, known labelvariants explicit, whole numeric comparator grammar; exact declared packageprefix only. ExactGHSA-4vvm-4w3v-6mr8 pairedpypdf<=3.8.1/fixed>=3.9.0 and PyPDF2>=2.2.0/unpatched plus maintainer migration quote permit candidate-distribution distinction. Its PyPDF2range remains affected/unpatched. Changed evidence, unknownlabels/ranges block.",
+    "ancestry": "Exactfailed terminal20refs preflight; all19 indexed bodies plus terminal hash/size, start/caps/root/code,6requestreservation/settlement pairs,budget/write totals validated; no originalscope rewrite. Executable verified base bytes are compiled directly, avoiding hash-then-reopen of base.",
+    "events": "Originalcollision preserved; newimmutablekind/sequence with separate request_kind and collisionrefusal; counterscontinue13.",
+    "freshness": "Five packageversionmetadata as datedidentity only, <=4h; prior advisory copied/diagnosed separately. ONEfresh currentcomplete<100/noNext listing then provenance; no secondpage or retry. Date<=300/Age<=3600 guards inherited. Oldheaders not invented; oldcompleteness follows acceptedcode+6GET assessmentstop only.",
+    "hashlock": "SameP1_FIVE_WHEEL_HASHLOCK_V1/schema1, fivehash/size/ZIPvalidatedwheels, copied metadata refs/newwheelrefs, successor methodssha and predecessor terminal digest. COMPLETE explicitly notinstall/qualification.",
+    "network_body_caps": {
+      "CPU_seconds": 60,
+      "GET": 13,
+      "ZIP_directory_bytes": 4194304,
+      "ZIP_entries": 4096,
+      "ZIP_entry_bytes": 67108864,
+      "ZIP_ratio": 200,
+      "ZIP_uncompressed_bytes": 268435456,
+      "control_write_bytes": 8388608,
+      "journal_events": 64,
+      "metadata_GET": 8,
+      "metadata_each": 2097152,
+      "metadata_total": 8388608,
+      "network_total": 75497472,
+      "owned_write_bytes": 83886080,
+      "request_seconds": 20,
+      "wall_seconds": 300,
+      "wheel_GET": 5,
+      "wheel_each": 16777216,
+      "wheel_total": 67108864
+    },
+    "new_budget": {
+      "CPU_seconds": 30,
+      "cached_metadata_max_age_seconds": 14400,
+      "predecessor_read_bytes": 1048576,
+      "stdout_bytes": 262144,
+      "wall_seconds": 120
+    },
+    "prior_charged": {
+      "attempts": {
+        "GET": 6,
+        "metadata_GET": 6,
+        "wheel_GET": 0
+      },
+      "body_bytes_charged": {
+        "metadata": 593885,
+        "wheel": 0
+      },
+      "outstanding_body_hold": 0
+    },
+    "prior_owned_control_events": {
+      "control_bytes": 4529,
+      "events": 12,
+      "owned_bytes": 598414
+    },
+    "request_split": {
+      "advisory": 1,
+      "metadata": 2,
+      "provenance": 1,
+      "total": 7,
+      "wheel": 5
+    },
+    "separate_time_authority": {
+      "actual_source_recovery_ordinal_consumed": false,
+      "cumulative_charged_upper_bounds": {
+        "CPU_seconds": 90,
+        "wall_seconds": 420
+      },
+      "new_financial_authority": false,
+      "reason": "Root standing-authority bounded recovery of actual schema stop; original execution elapsed values not retained. Charge full previous300wall/60CPU and authorize separately120wall/30CPU. No aggregate300/60 claim.",
+      "request_body_write_event_caps": "Original caps remain cumulative, including sixGET/593885bodybytes/598414ownedbytes/4529controlbytes/12events already consumed."
+    }
+  },
+  "kind": "E01_PYPDF701_ACQUISITION_V1_1_WORKER_HANDOFF",
+  "network_model_calls": 0,
+  "offline_saved_metadata_observation": {
+    "advisories": 78,
+    "candidate_applicable_rows": 0,
+    "exact_distinct_distribution_exclusions": 1,
+    "rows": 79,
+    "scope": "Saved capture only, no current upstream security claim; freshlisting mandatory in actualcollector."
+  },
+  "preservation": "No STATUS/Git/auditorfinding edits, no actualnewscope created byworker; old controls/env/campaign/privateowner untouched.",
+  "preserved_v1_hashes_reverified": {
+    "configs/e01_pypdf701_acquisition_v1_20261115.json": "9c61243db86336a2ba6b552e8b15ade5a8a3539e834a516f05d713f5c7969b07",
+    "scripts/acquire_e01_pypdf701_artifacts_v1.py": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc",
+    "tests/test_e01_pypdf701_acquisition_v1.py": "1f0e99e2ab7778c2121244ea2baaa086bc80d77b0c8be97706097ce2d61c4f40"
+  },
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/acquire_e01_pypdf701_artifacts_v1_1.py --methods-sha256 ee22723b9690ceccadd3889fa461cf11eb6a2af4676672061dde25e5fe111db4",
+  "source_recovery_ordinal_consumed": false,
+  "status": "AUTHORED_MOCK_CHECKS_PASS_PENDING_INDEPENDENT_REVIEW_NO_ACTUAL_CLI"
+}

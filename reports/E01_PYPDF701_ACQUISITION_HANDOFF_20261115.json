@@ -1,0 +1,313 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 8049,
+      "path": "configs/e01_pypdf701_acquisition_v1_20261115.json",
+      "sha256": "9c61243db86336a2ba6b552e8b15ade5a8a3539e834a516f05d713f5c7969b07"
+    },
+    {
+      "bytes": 31924,
+      "path": "scripts/acquire_e01_pypdf701_artifacts_v1.py",
+      "sha256": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc"
+    },
+    {
+      "bytes": 23632,
+      "path": "tests/test_e01_pypdf701_acquisition_v1.py",
+      "sha256": "1f0e99e2ab7778c2121244ea2baaa086bc80d77b0c8be97706097ce2d61c4f40"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews exactthreecurrentfiles and authoredlogs. Rootalone schedules P1ifaccepted, then sendsretainedmetadata/hashlock/terminal for actualevidence review. No installerimplementation added here.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 4018,
+      "path": "reports/e01_pypdf701_acquisition_authored_312_initial_20261115.txt",
+      "sha256": "f604596659b9288a94b55325a0bd654e531b717ee6d2ff2aba1f2958b4e276a8"
+    },
+    {
+      "bytes": 4018,
+      "path": "reports/e01_pypdf701_acquisition_authored_312_final_20261115.txt",
+      "sha256": "befd681967015513c9a9a050f6219d9b5f81f50d697f3c64fc9cc0894ba30bac"
+    },
+    {
+      "bytes": 4018,
+      "path": "reports/e01_pypdf701_acquisition_authored_312_frozen_20261115.txt",
+      "sha256": "f5075d4e818d0d825128f9b76592eb6a27c652078b8922d685b6db9470553ab4"
+    },
+    {
+      "bytes": 4018,
+      "path": "reports/e01_pypdf701_acquisition_authored_311_initial_20261115.txt",
+      "sha256": "052f86485e08d04775888e23a520e5a82bf1c78b395f7c54c94b437373be13e0"
+    },
+    {
+      "bytes": 4018,
+      "path": "reports/e01_pypdf701_acquisition_authored_311_final_20261115.txt",
+      "sha256": "c1c50179480573b0439a79e5d55b52d6ee12e876a531d45cd124b6e655eb718a"
+    },
+    {
+      "bytes": 4018,
+      "path": "reports/e01_pypdf701_acquisition_authored_311_frozen_20261115.txt",
+      "sha256": "54f55c93bd8ed420e046fde9b697bcf920fa6fa0abae8c3c4029bb6d47d264bd"
+    },
+    {
+      "bytes": 31876,
+      "path": "reports/e01_pypdf701_acquisition_static_initial_20261115.json",
+      "sha256": "881b1f4cc80f54241604f052cf0e2b11497206edd46e88e40a4fcfe8a9425371"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -B tests/test_e01_pypdf701_acquisition_v1.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B tests/test_e01_pypdf701_acquisition_v1.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Worker25testsPASS is not independentmethods/codeacceptance or actualAPIcompatibility evidence. Livepayloads/advisoryapplicability and companionhashlock unknown untilreviewedrootP1run.",
+    "UnknownorunsupportedAPIcore/range/RequiresPython/schema/refcounts failclosed; mayblocka legitimatechangedAPI rather than guess.",
+    "No realdownload/ZIPofpublicwheel, installer, pypdf/nativeimport, qualification,BOOT/EXEC or actualrecoveryallocation performed.",
+    "CPU/wall enforcement iscooperative withCLIsignals/kernelCPUlimit;blockingOSoperationscanovershoot; nohardRSS/container/decodercontainmentclaim.",
+    "No newactualrecovery; oldqualifiedenv, originalfailedscope/fullcharges, unusedallocatedordinal1 andconsumedhelperv3metadata preparation untouched.",
+    "CapturedRequiresDist strings are not resolverapproval; P2must validateactivebase dependencies and bootstrap/installer identity."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only ownedcode, publicproposal/audit/docs and author-generatedZIP/JSONbytes used. No actualpackageGET, installedpackage/privatecontrol/ledger/rawPDF/ownercredential access. Publicpackageartifactlicenses/provenance are metadata toretain, not scientificdata/publication rights.",
+  "TASK_ID": "E01_PYPDF701_P1_METHODS_COLLECTOR_AUTHORED_TESTS_20261115",
+  "TESTS_RUN_AND_RESULTS": [
+    {
+      "current_tests": 25,
+      "invocations": 3,
+      "logs": [
+        {
+          "candidate": "prefreeze_engineering_pass_not_claimed_as_currenthash_evidence",
+          "ref": {
+            "bytes": 4018,
+            "path": "reports/e01_pypdf701_acquisition_authored_312_initial_20261115.txt",
+            "sha256": "f604596659b9288a94b55325a0bd654e531b717ee6d2ff2aba1f2958b4e276a8"
+          },
+          "unittest_seconds": "0.190"
+        },
+        {
+          "candidate": "prefreeze_engineering_pass_not_claimed_as_currenthash_evidence",
+          "ref": {
+            "bytes": 4018,
+            "path": "reports/e01_pypdf701_acquisition_authored_312_final_20261115.txt",
+            "sha256": "befd681967015513c9a9a050f6219d9b5f81f50d697f3c64fc9cc0894ba30bac"
+          },
+          "unittest_seconds": "0.459"
+        },
+        {
+          "candidate": "currentfrozen",
+          "ref": {
+            "bytes": 4018,
+            "path": "reports/e01_pypdf701_acquisition_authored_312_frozen_20261115.txt",
+            "sha256": "f5075d4e818d0d825128f9b76592eb6a27c652078b8922d685b6db9470553ab4"
+          },
+          "unittest_seconds": "0.176"
+        }
+      ],
+      "maximum_invocations": 3,
+      "runtime": "312",
+      "status": "WORKER_PASS_PENDING_INDEPENDENT_REVIEW"
+    },
+    {
+      "current_tests": 25,
+      "invocations": 3,
+      "logs": [
+        {
+          "candidate": "prefreeze_engineering_pass_not_claimed_as_currenthash_evidence",
+          "ref": {
+            "bytes": 4018,
+            "path": "reports/e01_pypdf701_acquisition_authored_311_initial_20261115.txt",
+            "sha256": "052f86485e08d04775888e23a520e5a82bf1c78b395f7c54c94b437373be13e0"
+          },
+          "unittest_seconds": "0.144"
+        },
+        {
+          "candidate": "prefreeze_engineering_pass_not_claimed_as_currenthash_evidence",
+          "ref": {
+            "bytes": 4018,
+            "path": "reports/e01_pypdf701_acquisition_authored_311_final_20261115.txt",
+            "sha256": "c1c50179480573b0439a79e5d55b52d6ee12e876a531d45cd124b6e655eb718a"
+          },
+          "unittest_seconds": "0.187"
+        },
+        {
+          "candidate": "currentfrozen",
+          "ref": {
+            "bytes": 4018,
+            "path": "reports/e01_pypdf701_acquisition_authored_311_frozen_20261115.txt",
+            "sha256": "54f55c93bd8ed420e046fde9b697bcf920fa6fa0abae8c3c4029bb6d47d264bd"
+          },
+          "unittest_seconds": "0.132"
+        }
+      ],
+      "maximum_invocations": 3,
+      "runtime": "311",
+      "status": "WORKER_PASS_PENDING_INDEPENDENT_REVIEW"
+    }
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exactP1methods/collector/tests review",
+    "Rootparticularrequest/collectorhashrelease before realGETs",
+    "Conditionalcurrentadvisoryassessment canblock7.0.1 andmustnotautoupgrade",
+    "LaterP2installer/P3profile/P4generatedqualification/sourcegates remainseparate"
+  ],
+  "authored_scope": {
+    "no_global_test_discovery_effect": "Authoredguards are installedonlywhenrunningthis testfile asmain, not during shared unittest discovery.",
+    "per_process_wall_CPU_seconds": 120,
+    "root_controls_or_sources": "No reads/writes; guarddenies actualrepo data/credentials except3.11runtime stdlibpath and rejectsallrepowrites in testprocess.",
+    "runtime_guard_ref": {
+      "bytes": 5143,
+      "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    "runtime_package_native_imports": "None; test-main finder blocksPDF/native4names and auditdeniesnetwork/process/ctypes effects. No artifactcode executed.",
+    "stdout_stderr_bytes": 262144,
+    "task_code_metadata_read_bytes": 67108864,
+    "temporary_write_bytes": 33554432,
+    "transport": "FakeTransport/memoryResponse only, exactboundedtempfiles/authorcreated ZIPs"
+  },
+  "documentation_reference_reads_not_actual_P1_requests": [
+    {
+      "facts": "Integrityv1route,envelope,publisher fields; docscheckedbeforefixtures.",
+      "url": "https://docs.pypi.org/api/integrity/"
+    },
+    {
+      "facts": "RepoAPIstatepublished,patched_versions,withdrawn_at,after/beforecursorpagination; pinnedAPIheader2026-03-10.",
+      "url": "https://docs.github.com/en/rest/security-advisories/repository-advisories"
+    },
+    {
+      "facts": "Leadindependentlyobservedpublisherrepo/workflow/commitee1fafc8... andsubjectSHA; pageevidence only, not currentIntegrityAPIbody/signatureverification.",
+      "url": "https://pypi.org/project/pypdf/7.0.1/"
+    }
+  ],
+  "exact_authored_test_list": [
+    "test_complete_five_artifacts_no_extraction_and_bound_hashlock",
+    "test_duplicate_scope_refuses_before_transport_or_marker_rewrite",
+    "test_wrong_methods_root_or_caps_have_zero_scope_effects",
+    "test_failed_request_reserved_durably_and_never_retried",
+    "test_http_status_redirect_or_compression_refuses_and_closes",
+    "test_response_body_limit_and_declared_length_refuse",
+    "test_stream_overflow_is_bounded_without_content_length",
+    "test_stale_or_unknown_http_date_refuses",
+    "test_request_and_stage_deadlines_or_cpu_are_enforced",
+    "test_clock_regression_and_total_request_or_byte_caps",
+    "test_wrong_package_version_yank_or_exact_python_requirement",
+    "test_arm64_abi3_universal2_and_macos_ceiling_are_explicit",
+    "test_ambiguous_duplicate_bad_digest_or_url_refuses",
+    "test_newer_applicable_advisory_blocks_before_wheel_or_provenance",
+    "test_advisory_schema_unknown_range_or_empty_listing_refuses",
+    "test_pagination_semantics_complete_second_page_or_truncation",
+    "test_pagination_two_pages_uses_thirteenth_request_at_most",
+    "test_provenance_publisher_subject_or_schema_refuses",
+    "test_wheel_hash_size_or_internal_tag_name_mismatch_refuses",
+    "test_zip_paths_duplicates_symlink_pth_and_encryption_refuse",
+    "test_two_wheel_aggregate_admission_precedes_second_payload",
+    "test_zip_crc_and_central_directory_corruption_refuses",
+    "test_budget_write_failure_preserves_started_and_terminal_headroom",
+    "test_output_scope_alias_refuses_before_requests",
+    "test_json_duplicate_or_complexity_and_ranges_are_fail_closed"
+  ],
+  "implementation": {
+    "ZIP_admission": "BoundEOCD/centralcount/size beforeZipFileallocation. Passremainingglobalentries/uncompressedbytes soallcentraldeclarationsadmitted BEFORE secondwheelpayloadstreams. CRC/size streamchecks; exactName/version/RequiresPython/internalWHEELtags; denyduplicatecasefold, traversal, symlink/special/encrypted,.pth/.data/foreign.dist-info/unsupportedcompression/inflation. Noextract/openpackage/import.",
+    "accounting": "Before eachGET OEXCL/fsynced requestreservation and fullboundedbodyhold. Knownresponse settles actualbytes; unknownfailure consumesfullhold, noretry. EOFprobe insidecap(successpayload<cap). Bodybudgets excludeHTTP/TLS/DNSprotocoloverhead; not measuredwhole-wiretraffic. Everyartifact/controlwriteprecharged with32768Bterminalheadroom.",
+    "candidate": "7.0.1 frozenminimumreviewedfloor, NOTlatest; rootobserved7.1.0Nov13 retained as context only. Currentadvisorycapture required each actualrun; activeapplicableissue/unknownschema/range/incompletecoverage blocks beforewheels.",
+    "caps": {
+      "CPU_seconds": 60,
+      "GET": 13,
+      "ZIP_directory_bytes": 4194304,
+      "ZIP_entries": 4096,
+      "ZIP_entry_bytes": 67108864,
+      "ZIP_ratio": 200,
+      "ZIP_uncompressed_bytes": 268435456,
+      "control_write_bytes": 8388608,
+      "journal_events": 64,
+      "metadata_GET": 8,
+      "metadata_each": 2097152,
+      "metadata_total": 8388608,
+      "network_total": 75497472,
+      "owned_write_bytes": 83886080,
+      "request_seconds": 20,
+      "wall_seconds": 300,
+      "wheel_GET": 5,
+      "wheel_each": 16777216,
+      "wheel_total": 67108864
+    },
+    "collector": "Single fixedP1 script; nogeneralizedplatform/installer. Requiredexplicittransport in API, rootCLI alone constructs stdlibTLStransport. Importhasno networksideeffect.",
+    "methods_root_binding": "a5ef47f0c607cc308551bea46b3ef0fb2fbb8bb3d786aa5b8914d16e6996053f",
+    "preservation": "Fixed0700create-oncescope,0600OEXCL/fsyncedfiles; duplicateprefixrefusesbeforetransport. Failedrequeststage/status/partialbodybytes/hash/chargedhold retained. Noerrorresponsecontents orunknownexceptionmessages echoed. AbruptOSkill/storagefailurecanleaveSTARTEDwithoutterminal:UNKNOWNconsumed, neverreplay.",
+    "provenance": "DocumentedIntegrityAPIpublisher+publishsubjectSHA binding, not localSigstore/certificate/signatureverification. Honestlimitedscope is saved in hashlock; P2must not treat it as nativequalification.",
+    "request_flow": "FiveexactPyPIversionGETs; one/two completepublishedmaintaineradvisorypages via semanticcursorLink; onePyPIprovenanceGET; five exactcompatiblewheelGETs. Max13requests:8metadata+5wheel. Zero retry/redirect/auth/proxy/resolver.",
+    "target": {
+      "OS": "macOS",
+      "architecture": "arm64",
+      "implementation": "CPython",
+      "macOS_version": "26.6",
+      "python": "3.12.14"
+    },
+    "versions": {
+      "cffi": "2.1.1",
+      "cryptography": "50.0.2",
+      "pillow": "13.0.0",
+      "pycparser": "3.12",
+      "pypdf": "7.0.1"
+    },
+    "wheel_selection": "ExactCPython3.12.14/macOS26.6/arm64. cffi/Pillowcp312-cp312, cryptographycp38..cp312-abi3 and compatiblearm64/universal2, purepypdf/pycparserpy3-none-any. Uniquehighestcompatiblerank; equalrank ambiguity refuses. Exact7.0.1known416136B/SHA/URL frozen; companions resolvedonlyfromboundedmetadata."
+  },
+  "path_only_audit_ref": {
+    "bytes": 8536,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF_RUNTIME_PROPOSAL_20261112.json",
+    "sha256": "04834488f081fd4550c32a50a4499d7460c987f5e3cf217842e3c0bdc582b3cb"
+  },
+  "preserved_prefreeze_issue": {
+    "reason": "SinglelineHTTPResponseconstructorfollowedbyindentedforloop; originalsource/hash preserved. No network/test/actualscope consumed by thatsyntaxcheck.",
+    "ref": {
+      "bytes": 31876,
+      "path": "reports/e01_pypdf701_acquisition_static_initial_20261115.json",
+      "sha256": "881b1f4cc80f54241604f052cf0e2b11497206edd46e88e40a4fcfe8a9425371"
+    },
+    "status": "STATIC_SYNTAX_ERROR_CORRECTED_BEFORE_TESTS"
+  },
+  "proposal_ref": {
+    "bytes": 21846,
+    "path": "reports/E01_PYPDF_PATCHED_RUNTIME_PROPOSAL_20261112.json",
+    "sha256": "7f0e954b59eb63160a6c92cc5b0456f30676e817bdb95cdeb43eda5ede4082fd"
+  },
+  "stable_P1_output_contract": {
+    "consumer_gate": "P2must separatelyreceiveleadrelease and exactboundterminal/hashlock refs. Validate completeTERMINAL and exactlyonehashlockref in terminalartifacts; comparefileSHA/bytes and all5artifactrefs underapprovedscope. No P1file grantsinstallation. Terminal excludesitsownref toavoidselfhashcycle; rootcapturesitsfilehash separately.",
+    "failure_terminal_status": "FAILED_OR_UNKNOWN_NO_RETRY",
+    "hashlock_path": "hashlock.json",
+    "hashlock_schema": {
+      "advisory_assessment_sha256": "SHA ofcanonical advisory-assessment.json",
+      "inspection_schema": "{entries,uncompressed_bytes,member_manifest_sha256,requires_dist:[capturedheaders],wheel_tags:[exactfilenameconsistenttags]}",
+      "kind": "P1_FIVE_WHEEL_HASHLOCK_V1",
+      "methods_sha256": "canonicalmethodsfileSHA",
+      "not_latest": true,
+      "provenance_scope": "PYPI_HTTPS_PUBLISHER_AND_SUBJECT_BINDING_ONLY_NOT_LOCAL_SIGNATURE_VERIFICATION",
+      "qualification_or_source_authority": false,
+      "ready_for_install": false,
+      "ref_schema": "{path:scope-relativefixedfilename,bytes:observedbodybytes,sha256:exactbodySHA}",
+      "schema_version": 1,
+      "target": {
+        "OS": "macOS",
+        "architecture": "arm64",
+        "implementation": "CPython",
+        "macOS_version": "26.6",
+        "python": "3.12.14"
+      },
+      "wheels": "Exactly5rows in declaredversionorder; fields{name,version,filename,url,size,sha256,requires_python,file_requires_python,yanked:false,metadata_ref,artifact_ref,inspection}."
+    },
+    "other_files": [
+      "STARTED.json",
+      "events/NN.json",
+      "metadata/{name}.json",
+      "metadata/advisories-N.json",
+      "metadata/pypdf-provenance.json",
+      "advisory-assessment.json",
+      "selected.prepared.json",
+      "wheels/<exactfilename>",
+      "TERMINAL.json"
+    ],
+    "partial_status": "selected.prepared.json is notdownloadedcomplete; failedwheelartifactsareuntrustedretainedbytes, not installable.",
+    "scope_relative_to_root": "data/processed/e01_pypdf701_build_v1/acquisition-v1-20261115",
+    "success_terminal_status": "ACQUISITION_COMPLETE_NOT_INSTALL_OR_QUALIFICATION"
+  },
+  "status": "FROZEN_REVIEW_CANDIDATE_NO_REAL_ACQUISITION_RELEASE"
+}

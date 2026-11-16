@@ -1,0 +1,93 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json",
+    "tests/test_e01_pypdf701_acquisition_v1_1.py"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditor exactcountcorrection review; worker resumes assignedP2draft. Root alone schedules actualCLI and STATUS/Git.",
+  "OUTPUT_ARTIFACTS": {
+    "configs/e01_pypdf701_acquisition_v1_1_20261115.json": {
+      "bytes": 6373,
+      "sha256": "decb70611ccbe16bb00fd1d1f1bea2666c64d4bbf6aec0c7598bd58445d6076b"
+    },
+    "reports/E01_PYPDF701_V1_1_PRIOR_WRITE_FINDING_PRESERVATION_20261115.json": {
+      "bytes": 62251,
+      "sha256": "dc767fc2e297e6b3ec010329aa10c734ec9808fd488162c86f20da50b026e9aa"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_311_prior_write_corrected_20261115.txt": {
+      "bytes": 4260,
+      "sha256": "77dbde95be7732ea60b277eaa04bcba6133d7e79e730633ec2553535a639eee1"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_authored_312_prior_write_corrected_20261115.txt": {
+      "bytes": 4260,
+      "sha256": "746fdb158010957688a78f1da83d6ee1f2a5c4afdb2f7669223f6cc76cf02f15"
+    },
+    "scripts/acquire_e01_pypdf701_artifacts_v1_1.py": {
+      "bytes": 22091,
+      "sha256": "10d476ebea780a0f2726b559e35e1eb65e350dbacf867544f992560ce8e2b686"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1_1.py": {
+      "bytes": 19677,
+      "sha256": "c929846acbb3a73b86a4eda9ecfcc6ada62b63ee21028e649f19f78f508b0d73"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_pypdf701_acquisition_v1_1.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_pypdf701_acquisition_v1_1.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Original failedv1 and erroneousv1_1 draft evidence preserved. Newcandidate requires exact independent review.",
+    "Four-hour cachedidentity plusonefreshcompleteadvisory/provenance/fivewheels andall originalcumulativecaps unchanged, nowcorrect terminalwritecarryforward.",
+    "26mockchecks are engineeringevidence only; no wheelacquisition/install/qualification/BOOT/EXEC success.",
+    "P2draft currently inprogress, notactualinstall, actualP1packetnotyetavailable."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public methods ref table and authoredtemporary fixtures only. No new actualadvisory/runtimebinary/wheel/native/researchPDF/source/privateowner read.",
+  "TASK_ID": "E01_P1_V1_1_PRIOR_WRITE_COUNT_CORRECTION",
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_test_invocations_per_runtime": 3,
+    "additional_preserved_missing_executable_shell_attempt": "One earlier3.11shell exit127 beforeinterpreter creation, nottestexecution; allreceiptspreserved.",
+    "count": 26,
+    "exits": [
+      0,
+      0
+    ],
+    "no_further_worker_rerun": "Original max3 real testinvocations/runtime exhausted; independent review separately scoped.",
+    "retained_durations_seconds": {
+      "reports/e01_pypdf701_acquisition_v1_1_authored_311_prior_write_corrected_20261115.txt": "0.464",
+      "reports/e01_pypdf701_acquisition_v1_1_authored_312_prior_write_corrected_20261115.txt": "0.678"
+    }
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent correctedconfig/test review",
+    "Rootone-timeactualP1v1_1 acquisition",
+    "P2/P3/P4 actual gates"
+  ],
+  "actual_install": false,
+  "actual_network_GET": 0,
+  "actual_source_recovery_ordinal_consumed": false,
+  "correction": {
+    "after": {
+      "control_bytes": 7196,
+      "owned_bytes": 601081
+    },
+    "authority_explanation_updated_to_same_correct_counts": true,
+    "before": {
+      "control_bytes": 4529,
+      "owned_bytes": 598414
+    },
+    "code_changed": false,
+    "metadata_bytes": 593885,
+    "original_terminal_bytes_previously_omitted": 2667,
+    "raw_ref_table_bytes": 601081
+  },
+  "finding_ref": {
+    "bytes": 3331,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPDF701_V1_1_WRITE_COUNT_FINDING_20261115.json",
+    "sha256": "89fbb7521fd8f1022f0c48ab0f0cd1d670dbd213e661c2bd8316359cb79c45a7"
+  },
+  "kind": "EXACT_INDEPENDENT_FINDING_CORRECTION_HANDOFF",
+  "regression": "test_actual_methods_reference_table_includes_terminal_write reads publicactualmethods table only, independently sums all20refs includingterminal and checksowned/control/body values; no actualdata/runtimebody reads.",
+  "root_only_unreleased_command": ".venv/bin/python -I -B -S scripts/acquire_e01_pypdf701_artifacts_v1_1.py --methods-sha256 decb70611ccbe16bb00fd1d1f1bea2666c64d4bbf6aec0c7598bd58445d6076b",
+  "status": "26_AUTHORED_CHECKS_PASS_BOTH_RUNTIMES_PENDING_INDEPENDENT_REVIEW_NO_ACTUAL_CLI",
+  "supersedes": "Only erroneous priorwrite totals and old25-test frozen config/test identities in reports/E01_PYPDF701_ACQUISITION_V1_1_HANDOFF_20261115.json; originalhandoff retained unchanged, allother gates/limits/limitations persist."
+}

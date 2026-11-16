@@ -1,0 +1,65 @@
+{
+  "HEAD_diagnostic": {
+    "CPU_observation": null,
+    "application_body_bytes_read": 0,
+    "elapsed_seconds": 0.15088591701351106,
+    "first_content_type": "binary/octet-stream",
+    "requests": 2,
+    "second_content_type": "application/octet-stream",
+    "wall_allowance_seconds": 40
+  },
+  "artifacts": {
+    "data/processed/e01_pypdf701_build_v1/acquisition-v1_1-20261115/TERMINAL.json": {
+      "bytes": 5574,
+      "sha256": "986b7e0d18681c3dd431fac9b7537ad98db5fa416e586ef1d0fb4423cf088671"
+    },
+    "data/processed/e01_pypdf701_mime_diagnostic_20261115_01/TERMINAL.json": {
+      "bytes": 987,
+      "sha256": "dfd920819c3a08626f339f619a6019efe105cce93b72b53b453412137c39a86e"
+    },
+    "reports/e01_pypdf701_acquisition_v1_1_actual_20261115.txt": {
+      "bytes": 387,
+      "sha256": "abcd6bb8e2df18ac1ab93c9dd3db5157480c69f8b8ea0582461bcde4cf81ab10"
+    },
+    "scripts/diagnose_e01_pypdf701_mime_20261115.py": {
+      "bytes": 4058,
+      "sha256": "7755c24a84242649bd7e995a2c42bc0e9c9891c9a00b0830f6d502242cae6ed5"
+    }
+  },
+  "budget": {
+    "attempts": {
+      "GET": 9,
+      "metadata_GET": 8,
+      "wheel_GET": 1
+    },
+    "body_bytes_charged": {
+      "metadata": 948771,
+      "wheel": 16777216
+    },
+    "outstanding_body_hold": 0
+  },
+  "current_request": {
+    "HTTP_status": 200,
+    "cap": 16777216,
+    "kind": "wheel",
+    "observed_partial_body_bytes": 0,
+    "partial_body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "url": "https://files.pythonhosted.org/packages/d5/a9/ae11deef21eaac5113f8c3848da1c42423b7abeca0abc349bfec7abf4c4e/pypdf-7.0.1-py3-none-any.whl"
+  },
+  "exit_code": 1,
+  "inference_from_later_HEAD": "The later fixed-URL pypdf HEAD reports binary/octet-stream, outside the original allowlist. The original GET media header was not retained; the later response supports a compatibility remedy but is not proof of that exact original header.",
+  "kind": "E01_PYPDF701_V1_1_ACTUAL_STOP",
+  "next_step": "Separately reviewed continuation: verify and reuse the previously accepted exact pypdf wheel; at most four companion GETs under remaining original GET/body/write bounds, with the evidenced binary/octet-stream alias and unchanged digest/size/ZIP checks.",
+  "phase": "WHEELS",
+  "preservation": {
+    "automatic_retry": false,
+    "cost_USD": 0,
+    "failed_wheel_full_body_charge": 16777216,
+    "installation": false,
+    "new_model_calls": 0,
+    "original_and_continuation_records_unchanged": true,
+    "source_reads": 0
+  },
+  "reason": "CONTENT_TYPE",
+  "status": "STOPPED_BEFORE_WHEEL_BODY_OR_INSTALL"
+}
