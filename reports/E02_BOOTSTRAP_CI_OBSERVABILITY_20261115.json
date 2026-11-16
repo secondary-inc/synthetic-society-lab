@@ -1,0 +1,112 @@
+{
+  "TASK_ID": "E02_BOOTSTRAP_CI_OBSERVABILITY_20261115",
+  "FILES_CHANGED": [
+    "tests/test_e02_f_wy_bootstrap_v1.py",
+    "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-311.log": {
+      "sha256": "0a56f038e680920b2cf32c455a09768e197e74b6f3155830d16ba90e256ccc2a",
+      "bytes": 16168
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-312.log": {
+      "sha256": "b76e9abd918fb0148ff0f72761f8dc53057e802738a407cd20c21d45ce6ed693",
+      "bytes": 15617
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-test.py": {
+      "sha256": "87938687404e95eab16ab60faf341d088fccf77d882e5935ef4a29b31344b4fa",
+      "bytes": 25398
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-311.log": {
+      "sha256": "431941d591822b5f5a3a2684d43f56f87f4b685915d655065b0fb3a8dbc2eee7",
+      "bytes": 2731
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-312.log": {
+      "sha256": "1cc40217463aeca120c419bc0c9743bb05d85427e8f6807fd152b37fcb4f77aa",
+      "bytes": 922
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-test.py": {
+      "sha256": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+      "bytes": 25947
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "candidate_v1": {
+      "python312": {
+        "tests": 5,
+        "seconds": 32.903,
+        "errors": 2,
+        "result": "FAILED"
+      },
+      "python311": {
+        "tests": 5,
+        "seconds": 31.258,
+        "errors": 2,
+        "result": "FAILED"
+      },
+      "finding": "New regression used class-level snapshot mock, intercepting launcher construction. Narrowed to original control instance in v2. Happy failure also recurred on both initial runs; its closed note lacked detailed reason labels. These initial concurrent runs remain preserved."
+    },
+    "candidate_v2_sequential": {
+      "python312": {
+        "tests": 5,
+        "seconds": 41.329,
+        "errors": 0,
+        "result": "PASS"
+      },
+      "python311": {
+        "tests": 5,
+        "seconds": 1.285,
+        "errors": 1,
+        "result": "FAILED",
+        "happy": "ERROR",
+        "new_regression": "PASS",
+        "deadline": "PASS",
+        "identity_sampling_failure": "PASS",
+        "real_native_cancellation_cleanup": "PASS",
+        "retained_note": {
+          "context_type": "Blocked",
+          "context_reason": "rollback or discontinuous clocks",
+          "state": "UNAVAILABLE",
+          "state_error_type": "Blocked",
+          "state_error_reason": "original journal unprovable"
+        }
+      }
+    },
+    "git_diff_check": "PASS",
+    "prior_report_and_15_artifact_hashes": "PASS unchanged",
+    "production_source_pins": "PASS unchanged",
+    "full_suite": "NOT_RUN; no full CI PASS claimed"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Existing authored MOCK fixture only. Deliberate PRIVATE/token-secret markers and 10000-character payload in regression are invented redaction test content, not actual credentials, paths or respondents. No external source acquisition/reuse change.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Observability change only; no CI bug fix or original remote cause established.",
+    "Local Python 3.11 now retains explicit clock-continuity refusal but not raw clock readings, exact stage or definitive host-clock/production mechanism. Failed verified snapshot is not bypassed.",
+    "Sequential v2 Python 3.11 happy remains failed; acceptance cannot be reported as two-runtime PASS. No retry-to-green performed.",
+    "New diagnostics wrapper covers the Launcher.run boundary where original selected CI failed. Subsequent happy-path scoring assertions remain unchanged.",
+    "New notes add at most 2048 characters using closed type/reason labels and fixed ORDER stage names. Unknown strings/types are redacted; raw snapshots, rows and paths excluded. Existing traceback/message are intentionally unchanged.",
+    "Earlier original trace probes, signal perturbation, diagnostic alarm, unchanged reservations and unproven remote cause remain recorded in frozen diagnosis.",
+    "First concurrent candidate runs retained ResourceWarnings. No production resource, timeout, clock, exception, billing or cleanup code changed.",
+    "Worker findings require independent audit."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Python 3.11 sequential happy-path test fails with explicit rollback/discontinuous-clock context. Production investigation lies outside this test-only task.",
+    "Original CI 43356225470 underlying refusal is still unknown; local evidence does not establish remote cause."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor review exact observability delta and all retained results. Lead separately scopes clock-continuity investigation with bounded actual clock and stage evidence; preserve resource/cancellation/unknown-charge behavior. Do not mark CI repaired.",
+  "CHANGE_PURPOSE": "Append closed authored diagnostics on launcher failure and bare re-raise identical exception. New regression verifies exception identity, failure, unchanged message, bounded redaction, safe allowlisted reason and snapshot-error fallback.",
+  "FINAL_SOURCE_SHA256": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+  "ORIGINAL_SOURCE_SHA256": "4d1d15e34d770fe34faa4506e7a44fe603e0aee821b21d5164e4bffa357c850a",
+  "PRODUCTION_UNCHANGED_SHA256": {
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a"
+  },
+  "PRIOR_DIAGNOSIS_SHA256": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+  "PRIOR_DIAGNOSIS_ARTIFACTS_UNCHANGED": true,
+  "INDEPENDENT_REVIEW": "PENDING"
+}

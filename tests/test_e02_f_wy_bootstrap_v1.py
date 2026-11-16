@@ -1,5 +1,6 @@
 """Authored-only bootstrap adversarial fixtures; no actual cache access."""
 from copy import deepcopy
+from contextlib import contextmanager
 import hashlib
 import json
 import multiprocessing
@@ -20,6 +21,65 @@ from civiclab.e02.f_wy_bootstrap_v1 import make_fixture, inspect_fixture, inspec
 from civiclab.e02.f_wy_bootstrap_control_v1 import Control, stamp, elapsed, ORDER
 from civiclab.e02.f_wy_bootstrap_launcher_v1 import Launcher, execute_actual, _existing_runtime, _processes
 from test_e02_f_wy_local_v1_1 import rows
+
+
+def _authored_coherent_stamp():
+    mono = time.monotonic()
+    return {'wall': mono + 1700000000.0, 'mono': mono, 'boot': 'AUTHORED_HAPPY_MONOTONIC_BOOT'}
+
+
+@contextmanager
+def _happy_clock_fixture():
+    # Advance in real time; control only the valid-clock prerequisite of this fixture.
+    with patch('civiclab.e02.f_wy_bootstrap_control_v1.stamp', _authored_coherent_stamp), \
+         patch('civiclab.e02.f_wy_bootstrap_launcher_v1.stamp', _authored_coherent_stamp):
+        yield
+
+
+def _run_happy_with_diagnostics(bundle, control):
+    """Retain only closed authored-fixture diagnostics; never replace a failure."""
+    try:
+        return Launcher(bundle).run()
+    except BaseException as error:
+        try:
+            names = {Blocked: 'Blocked', OSError: 'OSError', TimeoutError: 'TimeoutError',
+                     RuntimeError: 'RuntimeError', AssertionError: 'AssertionError',
+                     KeyboardInterrupt: 'KeyboardInterrupt'}
+            reasons = {
+                'sampled RSS stop threshold', 'parent sampled RSS stop threshold',
+                'sampled whole-stage/global deadline', 'stage not normally closed',
+                'known work still live/ambiguous after normal exit',
+                'stage death with pending reservation', 'process identity ambiguous',
+                'stage failed; full charges retained; shutdown may be unknown',
+                'original journal unprovable', 'control checkpoint changed',
+                'rollback or discontinuous clocks', 'clock continuity unknown',
+                'boot continuity unavailable', 'unsupported clock continuity',
+                'expired/failed/unknown control; no work', 'no exact pending stage',
+                'control transition mismatch', 'torn state/history; no reset',
+                'whole-stage/global elapsed exceeded', 'native cumulative/state/sweep limits',
+            }
+            def describe(value):
+                if value is None: return {'type': 'NONE', 'reason': 'UNAVAILABLE'}
+                reason = value.args[0] if len(value.args) == 1 else None
+                return {'type': names.get(type(value), 'OTHER'),
+                        'reason': reason if type(reason) is str and reason in reasons else 'REDACTED'}
+            note = {'kind': 'AUTHORED_BOOTSTRAP_FAILURE', 'error': describe(error),
+                    'cause': describe(error.__cause__), 'context': describe(error.__context__),
+                    'inner_cause': 'UNKNOWN_UNLESS_EXPLICITLY_RETAINED', 'state': 'UNAVAILABLE'}
+            try:
+                state = control.snapshot()
+                note.update(state='AVAILABLE',
+                            shutdown=state['shutdown'] if state['shutdown'] in
+                            ('ACTIVE', 'CLOSED', 'SHUTDOWN_UNKNOWN') else 'UNKNOWN',
+                            failed=state['failed'] if type(state['failed']) is bool else 'UNKNOWN',
+                            pending=[key for key in ORDER if state['stages'].get(key, {}).get('status') == 'PENDING'],
+                            unknown=[key for key in ORDER if state['stages'].get(key, {}).get('status') == 'UNKNOWN'])
+            except BaseException as snapshot_error:
+                note['state_error'] = describe(snapshot_error)
+            error.add_note(json.dumps(note, sort_keys=True)[:2048])
+        except BaseException:
+            pass
+        raise
 
 
 class Clock:
@@ -222,17 +282,76 @@ class BootstrapTests(unittest.TestCase):
         self.assertFalse((self.b.root/'runtime/ENROLL.local.json').exists())
 
     def test_happy_all_six_stages_normal_close_exact_replay(self):
-        c=self.control();s=Launcher(self.b).run()
-        self.assertEqual(s['reserved'],c.charge);self.assertEqual(s['shutdown'],'CLOSED');self.assertFalse(s['failed'])
-        self.assertEqual(set(s['stages']),set(ORDER));self.assertEqual(s['model_calls'],0)
-        a=_existing_runtime(self.b)
-        from civiclab.e02.f_wy_local_pilot_v1_1 import read_partial
-        primary=read_partial(a,'PRIMARY');replay=read_partial(a,'REPLAY')
-        self.assertEqual(primary[0].blobs(),replay[0].blobs());self.assertEqual(primary[2],replay[2])
-        proof=json.loads((c.root/'INSPECT.proof.local.json').read_text())
-        self.assertEqual(proof['result']['inspection']['person_rows_read'],0)
-        self.assertTrue(proof['normal_join_observed']);self.assertEqual(proof['stage_exitcode'],0)
-        self.assertEqual(proof['actual_source_rows'],0)
+        with _happy_clock_fixture():
+            c=self.control();s=_run_happy_with_diagnostics(self.b,c)
+            self.assertEqual(s['reserved'],c.charge);self.assertEqual(s['shutdown'],'CLOSED');self.assertFalse(s['failed'])
+            self.assertEqual(set(s['stages']),set(ORDER));self.assertEqual(s['model_calls'],0)
+            a=_existing_runtime(self.b)
+            from civiclab.e02.f_wy_local_pilot_v1_1 import read_partial
+            primary=read_partial(a,'PRIMARY');replay=read_partial(a,'REPLAY')
+            self.assertEqual(primary[0].blobs(),replay[0].blobs());self.assertEqual(primary[2],replay[2])
+            proof=json.loads((c.root/'INSPECT.proof.local.json').read_text())
+            self.assertEqual(proof['result']['inspection']['person_rows_read'],0)
+            self.assertTrue(proof['normal_join_observed']);self.assertEqual(proof['stage_exitcode'],0)
+            self.assertEqual(proof['actual_source_rows'],0)
+
+    def test_happy_clock_fixture_advances_coherently_and_restores_scope(self):
+        from civiclab.e02 import f_wy_bootstrap_control_v1 as control_module
+        from civiclab.e02 import f_wy_bootstrap_launcher_v1 as launcher_module
+        originals = (control_module.stamp, launcher_module.stamp, time.monotonic)
+        for fail_inside in (False, True):
+            with self.subTest(fail_inside=fail_inside):
+                try:
+                    with _happy_clock_fixture():
+                        self.assertIs(control_module.stamp, _authored_coherent_stamp)
+                        self.assertIs(launcher_module.stamp, _authored_coherent_stamp)
+                        before=time.monotonic();first=control_module.stamp()
+                        time.sleep(.002)
+                        last=launcher_module.stamp();after=time.monotonic()
+                        self.assertLessEqual(before,first['mono']);self.assertLess(first['mono'],last['mono'])
+                        self.assertLessEqual(last['mono'],after);self.assertGreater(elapsed(first,last),0)
+                        for value in (first,last):
+                            self.assertAlmostEqual(value['wall']-value['mono'],1700000000.0,delta=1e-6)
+                            self.assertEqual(value['boot'],'AUTHORED_HAPPY_MONOTONIC_BOOT')
+                        self.assertIs(time.monotonic,originals[2])
+                        if fail_inside:raise RuntimeError('AUTHORED_SCOPE_UNWIND')
+                except RuntimeError as error:
+                    self.assertTrue(fail_inside);self.assertEqual(str(error),'AUTHORED_SCOPE_UNWIND')
+                self.assertIs(control_module.stamp,originals[0]);self.assertIs(launcher_module.stamp,originals[1])
+                self.assertIs(time.monotonic,originals[2])
+
+    def test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure(self):
+        c=self.control();c.start('INSPECT')
+        private = '/PRIVATE/fixture/path respondent-row token-secret ' + 'x'*10000
+        try:
+            try: raise OSError(private)
+            except OSError as cause: raise Blocked(private) from cause
+        except Blocked as caught:
+            original = caught
+        with patch.object(Launcher, 'run', side_effect=original):
+            with self.assertRaises(Blocked) as caught:
+                _run_happy_with_diagnostics(self.b,c)
+        self.assertIs(caught.exception, original)
+        self.assertIs(caught.exception.__cause__, original.__cause__)
+        self.assertEqual(str(original), private)
+        self.assertEqual(len(original.__notes__), 1)
+        note = original.__notes__[0]; self.assertLessEqual(len(note), 2048)
+        value = json.loads(note)
+        self.assertEqual(value['pending'], ['INSPECT']);self.assertEqual(value['unknown'], [])
+        self.assertEqual(value['shutdown'], 'ACTIVE');self.assertIs(value['failed'], False)
+        self.assertEqual(value['error'], {'type':'Blocked','reason':'REDACTED'})
+        self.assertEqual(value['cause'], {'type':'OSError','reason':'REDACTED'})
+        self.assertNotIn('PRIVATE', note);self.assertNotIn('respondent', note)
+        self.assertNotIn('token-secret', note);self.assertNotIn(str(self.root), note)
+        # Even snapshot failure must retain the original failure, never diagnose it away.
+        other = Blocked('sampled RSS stop threshold')
+        with patch.object(Launcher, 'run', side_effect=other), patch.object(c, 'snapshot', side_effect=OSError(private)):
+            with self.assertRaises(Blocked) as caught:
+                _run_happy_with_diagnostics(self.b,c)
+        self.assertIs(caught.exception, other)
+        value=json.loads(other.__notes__[0]);self.assertEqual(value['state'], 'UNAVAILABLE')
+        self.assertEqual(value['error']['reason'], 'sampled RSS stop threshold')
+        self.assertNotIn('PRIVATE', other.__notes__[0])
 
     def test_copy_failure_preserves_admitted_root_but_never_enrolls(self):
         self.control();l=Launcher(self.b);l.run_stage('INSPECT')

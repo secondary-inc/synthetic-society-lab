@@ -1,0 +1,188 @@
+{
+  "TASK_ID": "E02_BOOTSTRAP_CI_DIAGNOSIS_20261115",
+  "FILES_CHANGED": [
+    "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/civiclab-ci-43356225470-failed-20261115.log": {
+      "sha256": "e262604d13b9fa3fea0b2a314f79266c6d102541df8cd0a51b27b1f75a5cb975",
+      "bytes": 1000570
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/clean/result.json": {
+      "sha256": "7937c98ae6ed051e1a5d1d0e146e66c213663e665bf73630bbf8f23c286faa68",
+      "bytes": 508
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/clean/trace.jsonl": {
+      "sha256": "e18edb0d2ff2f747d8fce55156166b59fc73bc616095c1a4b356c7515399d268",
+      "bytes": 50328
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/f_wy_bootstrap_control_v1.py": {
+      "sha256": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+      "bytes": 15452
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/f_wy_bootstrap_launcher_v1.py": {
+      "sha256": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+      "bytes": 13200
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/failure-cleanup-312.log": {
+      "sha256": "86f0418728faf8c660fe34efa210f4629c52ab2a9e817e4fcc0fba2fc3e58c1f",
+      "bytes": 887
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/focus-311.log": {
+      "sha256": "1a39b4be34cb67dcdd1a6fa1ce49a66cc9ce071e2acc01f72ce6f6e4b3e9809d",
+      "bytes": 733
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/happy-uninstrumented-312.log": {
+      "sha256": "4f30f949ec530919517309379e0a5fa4dfbb7ae701a99fe78686dc8127d2b815",
+      "bytes": 253
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/national_population.py": {
+      "sha256": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+      "bytes": 14187
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/original-source-pins.json": {
+      "sha256": "ee27c5b8f7722c40c965b76bfff49bac4b52b62b0eaf6f4de0c39b0e944f3de8",
+      "bytes": 464
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/parent512MiB/result.json": {
+      "sha256": "c1150203cee40dab9c4dd46a702791fbf84173db9aaa534128fcd1a48d59d66f",
+      "bytes": 444
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/parent512MiB/trace.jsonl": {
+      "sha256": "5e94fed8559ebea115fe02e62ee21ef30e6120356a7a0c90d99665cc49896477",
+      "bytes": 31601
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/probe.py": {
+      "sha256": "d3d98b1f34d950181acc3bda33d71fee3f3f6afd45d766186aed1c2473f575a0",
+      "bytes": 2240
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/probe_v2.py": {
+      "sha256": "8abb0946f4ef9b60247b9c659c3c22c3f7e8a9527d94143f49be68b49883ce73",
+      "bytes": 2381
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/test_e02_f_wy_bootstrap_v1.py": {
+      "sha256": "4d1d15e34d770fe34faa4506e7a44fe603e0aee821b21d5164e4bffa357c850a",
+      "bytes": 20970
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "python312_happy": {
+      "tests": 1,
+      "seconds": 30.405,
+      "result": "PASS"
+    },
+    "python312_failure_cleanup": {
+      "tests": 3,
+      "seconds": 0.277,
+      "result": "PASS",
+      "warning": "ResourceWarning: unclosed TextIOWrapper retained in log"
+    },
+    "python311_focus_log": "data/processed/e02_bootstrap_ci_diagnosis_20261115/focus-311.log",
+    "full_suite": "NOT_RUN; selected prior CI remains failed, not superseded by focused local checks",
+    "python311_focus": {
+      "tests": 4,
+      "result": "PASS",
+      "summary": "Ran 4 tests in 24.601s\n\nOK"
+    }
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only existing authored 12-row MOCK fixture and project source; no actual respondent/publisher input, external acquisition or changed reuse rights.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Original remote underlying refusal is not retained; no established timeout, RSS, fork deadlock, process-identity or production-bug diagnosis.",
+    "Linux hosted Python 3.12.16 differs from local macOS Python 3.12.14 and 3.11.17. Fresh isolated success cannot explain accumulated full-suite state.",
+    "Exception tracing substantially perturbed local runtime; probes are diagnostic evidence, not equivalent test timings or a scientific result.",
+    "Initial clean traced probe received a cooperative SIGINT attempt and emitted ignored generator KeyboardInterrupt; although snapshot reports CLOSED after 184.2216 seconds, this is not an uninterrupted clean-run proof.",
+    "Fixed 512MiB touched parent heap did not reproduce sampled child RSS over 512MiB on this macOS host. Probe reached its independently installed 120-second diagnostic alarm and preserved SHUTDOWN_UNKNOWN/full reservation, not proof of original CI resource cause.",
+    "No production/test source changes or limit/cleanup weakening were justified. Source matches pre-task pins.",
+    "No paid/model/network/actual-owner work or consumed scope replay. Reports are worker findings awaiting separate independent review."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Selected remote CI failure remains unexplained; no speculative test isolation remedy applied."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead/auditor inspect exact diagnosis. If CI reproduces, capture bounded per-stage inner refusal and controller closure evidence under a separately assigned diagnostic change; retain existing resource, unknown-charge and cleanup behavior.",
+  "BASE_HEAD": "e2caf370464f932868094b5023a7604a03ff3876",
+  "SOURCE_INTEGRITY": {
+    "original_sha256": {
+      "tests/test_e02_f_wy_bootstrap_v1.py": "4d1d15e34d770fe34faa4506e7a44fe603e0aee821b21d5164e4bffa357c850a",
+      "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+      "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+      "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a"
+    },
+    "final_sha256": {
+      "tests/test_e02_f_wy_bootstrap_v1.py": "4d1d15e34d770fe34faa4506e7a44fe603e0aee821b21d5164e4bffa357c850a",
+      "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+      "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+      "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a"
+    },
+    "all_unchanged": true
+  },
+  "REMOTE_EVIDENCE": {
+    "run": "43356225470",
+    "log_sha256": "e262604d13b9fa3fea0b2a314f79266c6d102541df8cd0a51b27b1f75a5cb975",
+    "log_bytes": 1000570,
+    "happy_start_utc": "2026-11-13T03:35:15.2935926Z",
+    "happy_error_utc": "2026-11-13T03:35:45.5472054Z",
+    "elapsed_seconds_approx": 30.254,
+    "production_stage_limit_seconds": 300,
+    "facts": [
+      "Generic Blocked at launcher catch; inner reason suppressed.",
+      "Multi-threaded fork warnings present, causal attribution unavailable.",
+      "Full job: 2058 tests/11382.923s, one error/one skip; Python 3.11 cancelled."
+    ]
+  },
+  "PROBES": {
+    "clean": {
+      "mode": "clean",
+      "status": "NORMAL_CLOSED",
+      "elapsed": 184.2215874579997,
+      "shutdown": "CLOSED",
+      "failed": false,
+      "stages": {
+        "INSPECT": "COMMITTED",
+        "ENROLL": "COMMITTED",
+        "PRIMARY": "COMMITTED",
+        "REPLAY": "COMMITTED",
+        "FINALIZE_PRIMARY": "COMMITTED",
+        "FINALIZE_REPLAY": "COMMITTED"
+      },
+      "reserved": {
+        "bytes": 12739060,
+        "ops": 12000000,
+        "rows": 24,
+        "seconds": 1800
+      },
+      "full_charge_preserved": true,
+      "actual_source_rows": 0,
+      "model_calls": 0
+    },
+    "parent512MiB": {
+      "mode": "parent512MiB",
+      "status": "Blocked",
+      "elapsed": 120.01839941700746,
+      "shutdown": "SHUTDOWN_UNKNOWN",
+      "failed": true,
+      "stages": {
+        "INSPECT": "COMMITTED",
+        "ENROLL": "COMMITTED",
+        "PRIMARY": "COMMITTED",
+        "REPLAY": "UNKNOWN"
+      },
+      "reserved": {
+        "bytes": 12739060,
+        "ops": 12000000,
+        "rows": 24,
+        "seconds": 1800
+      },
+      "full_charge_preserved": true,
+      "actual_source_rows": 0,
+      "model_calls": 0
+    }
+  },
+  "NO_TEST_REMEDY_REASON": "Reproduction did not establish a test harness defect. Moving execution to a subprocess or raising limits could obscure a real production refusal; preserve original test unchanged.",
+  "CONTEXT_NOTE": "New owner-pasted historical blueprint read as research context. Its missing-component statements are historical and do not override verified repository state or original completion contract."
+}

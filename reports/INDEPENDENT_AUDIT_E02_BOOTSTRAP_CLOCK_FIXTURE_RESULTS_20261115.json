@@ -1,0 +1,357 @@
+{
+  "acceptance_boundary": {
+    "actual_E01_runtime_BOOT_EXEC": "HELD_SEPARATELY",
+    "focused_test_and_workflow_delta": "PASS_FOR_RECORDED_PINS",
+    "full_suite_CI": "NOT_RUN_OR_ACCEPTED_BY_THIS_REVIEW",
+    "old_failures_preserved": true,
+    "original_remote_cause": "BLOCKED_UNKNOWN",
+    "production_clock_security_correctness": "NO_NEW_ACCEPTANCE"
+  },
+  "auditor_evidence": [
+    {
+      "bytes": 2898,
+      "path": "/tmp/civiclab-auditor-e02-clock-results-20261115.py",
+      "sha256": "bcc42848ab45f911437d36b7ccf06a615ebed7779d171b5052e6c055e55dc3b3"
+    },
+    {
+      "bytes": 17463,
+      "path": "/tmp/civiclab-auditor-e02-clock-results-20261115.json",
+      "sha256": "82377621145c99da93b701f9e429ffde9cbf08c7f794fef14613234be447d925"
+    }
+  ],
+  "checks": [
+    "Independently verified44closed authored/public artifacts and source refs, including all9runner/start/receipt/log artifacts, exact13before/after/current pins and all indexed prior diagnosis/observability evidence. No test scope was replayed by auditor.",
+    "Exact reviewed10testnames appear once each with individual ok in both logs; both process exitcodes0, statusPASS, no stop reason or skips. Python3.12unittest32.816s/wall32.9544s; Python3.11unittest31.950s/wall32.0645s. Both below120s perruntime.",
+    "Two log sizes1752bytes each and their SHA256 match receipts; total3504bytes agrees with combinedreceipt and is below1MiB. Saved commands equal frozen commands; perruntime STARTED argv and beforepins match globalSTARTED.",
+    "Runner sequential order executes3.11only after3.12fullsuccess; receipts record once each/no retries. Runner create-once scope and exclusive metadata writes preserve prior attempts; original failure/diagnosis/clock-refusal artifacts remain hash-identical.",
+    "Runner bounds wall/output and samples observed process identities, retaining cleanup on failure; successful runs report no observed survivor and cleanupnull. Timeout/output-abort paths were not triggered; sampling is not exhaustive arbitrary descendant containment.",
+    "Coherent-clock candidate and all three production source hashes remain unchanged. Prior code review established original happy assertions retained and independent rollback/deadline/RSS/process/cancellation/controller-death checks unchanged. Passing authored fixtures does not demonstrate productionclock repair.",
+    "Root workflow two-line change was statically accepted in priorcodeaudit: explicit240minutejobcap/fail-fastfalse only, originalmatrix/install/test/sourcevalidation commands intact. This review does not observe a new GitHub CI result."
+  ],
+  "claim_limits": [
+    "Independent retained-evidence/source review, not independent rerun of these consumed ten-test invocations.",
+    "No actual respondent/publisher sources, owner controls, credentials, network acquisition, nativePDF or model execution was performed by this audit.",
+    "Local authored macOS3.12.14/3.11.17 results do not establish Linux hosted3.12.16 fullsuite success, scientific effects or runtime qualification.",
+    "Lead owns commits/STATUS/onefreshCIrun; worker does not certify its own milestone."
+  ],
+  "cost_USD": 0,
+  "diagnosis_limits": [
+    "Original remote43356225470failure remains unexplained because inner refusal was suppressed; the generic remoteerror is not relabeled a timeout, clockbug or parserdefect.",
+    "Later preserved local3.11observation retained rollback/discontinuousclock refusal and originaljournalunprovable; this is concrete local evidence only, not proof of remotecause.",
+    "Earlier tracedcleanprobe received SIGINT and was perturbed; parent512MiBprobe reached its120salarm with shutdownunknown. Neither probe is an uninterrupted normalreproduction or RSScauseproof.",
+    "Coherent happy fixture controls validclock precondition with actual advancingmonotonic, stableauthoredboot/walloffset. It deliberately leaves production sampler and all failure safeguards unchanged."
+  ],
+  "evidence": {
+    ".github/workflows/offline.yml": {
+      "bytes": 815,
+      "path": ".github/workflows/offline.yml",
+      "sha256": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/civiclab-ci-43356225470-failed-20261115.log": {
+      "bytes": 1000570,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/civiclab-ci-43356225470-failed-20261115.log",
+      "sha256": "e262604d13b9fa3fea0b2a314f79266c6d102541df8cd0a51b27b1f75a5cb975"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/clean/result.json": {
+      "bytes": 508,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/clean/result.json",
+      "sha256": "7937c98ae6ed051e1a5d1d0e146e66c213663e665bf73630bbf8f23c286faa68"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/clean/trace.jsonl": {
+      "bytes": 50328,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/clean/trace.jsonl",
+      "sha256": "e18edb0d2ff2f747d8fce55156166b59fc73bc616095c1a4b356c7515399d268"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/f_wy_bootstrap_control_v1.py": {
+      "bytes": 15452,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/f_wy_bootstrap_control_v1.py",
+      "sha256": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/f_wy_bootstrap_launcher_v1.py": {
+      "bytes": 13200,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/f_wy_bootstrap_launcher_v1.py",
+      "sha256": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/failure-cleanup-312.log": {
+      "bytes": 887,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/failure-cleanup-312.log",
+      "sha256": "86f0418728faf8c660fe34efa210f4629c52ab2a9e817e4fcc0fba2fc3e58c1f"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/focus-311.log": {
+      "bytes": 733,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/focus-311.log",
+      "sha256": "1a39b4be34cb67dcdd1a6fa1ce49a66cc9ce071e2acc01f72ce6f6e4b3e9809d"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/happy-uninstrumented-312.log": {
+      "bytes": 253,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/happy-uninstrumented-312.log",
+      "sha256": "4f30f949ec530919517309379e0a5fa4dfbb7ae701a99fe78686dc8127d2b815"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/national_population.py": {
+      "bytes": 14187,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/national_population.py",
+      "sha256": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/original-source-pins.json": {
+      "bytes": 464,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/original-source-pins.json",
+      "sha256": "ee27c5b8f7722c40c965b76bfff49bac4b52b62b0eaf6f4de0c39b0e944f3de8"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/parent512MiB/result.json": {
+      "bytes": 444,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/parent512MiB/result.json",
+      "sha256": "c1150203cee40dab9c4dd46a702791fbf84173db9aaa534128fcd1a48d59d66f"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/parent512MiB/trace.jsonl": {
+      "bytes": 31601,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/parent512MiB/trace.jsonl",
+      "sha256": "5e94fed8559ebea115fe02e62ee21ef30e6120356a7a0c90d99665cc49896477"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/probe.py": {
+      "bytes": 2240,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/probe.py",
+      "sha256": "d3d98b1f34d950181acc3bda33d71fee3f3f6afd45d766186aed1c2473f575a0"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/probe_v2.py": {
+      "bytes": 2381,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/probe_v2.py",
+      "sha256": "8abb0946f4ef9b60247b9c659c3c22c3f7e8a9527d94143f49be68b49883ce73"
+    },
+    "data/processed/e02_bootstrap_ci_diagnosis_20261115/test_e02_f_wy_bootstrap_v1.py": {
+      "bytes": 20970,
+      "path": "data/processed/e02_bootstrap_ci_diagnosis_20261115/test_e02_f_wy_bootstrap_v1.py",
+      "sha256": "4d1d15e34d770fe34faa4506e7a44fe603e0aee821b21d5164e4bffa357c850a"
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-311.log": {
+      "bytes": 16168,
+      "path": "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-311.log",
+      "sha256": "0a56f038e680920b2cf32c455a09768e197e74b6f3155830d16ba90e256ccc2a"
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-312.log": {
+      "bytes": 15617,
+      "path": "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-312.log",
+      "sha256": "b76e9abd918fb0148ff0f72761f8dc53057e802738a407cd20c21d45ce6ed693"
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-test.py": {
+      "bytes": 25398,
+      "path": "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v1-test.py",
+      "sha256": "87938687404e95eab16ab60faf341d088fccf77d882e5935ef4a29b31344b4fa"
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-311.log": {
+      "bytes": 2731,
+      "path": "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-311.log",
+      "sha256": "431941d591822b5f5a3a2684d43f56f87f4b685915d655065b0fb3a8dbc2eee7"
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-312.log": {
+      "bytes": 922,
+      "path": "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-312.log",
+      "sha256": "1cc40217463aeca120c419bc0c9743bb05d85427e8f6807fd152b37fcb4f77aa"
+    },
+    "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-test.py": {
+      "bytes": 25947,
+      "path": "data/processed/e02_bootstrap_ci_observability_20261115/candidate-v2-test.py",
+      "sha256": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT-311.json": {
+      "bytes": 2187,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT-311.json",
+      "sha256": "8c5588d16470d4c779314c6430e50d274b7bebf0fef29c2b876ae338222cddfc"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT-312.json": {
+      "bytes": 2182,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT-312.json",
+      "sha256": "fcaa3fc8072fa17959bcfbe78c255ce2672ab79cdbed897bf6faed374cb6da5c"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT.json": {
+      "bytes": 4779,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT.json",
+      "sha256": "69219b690ca09df2a7edaa07375ae92f9f428f2545aef77db1ed7f3c54b5f924"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED-311.json": {
+      "bytes": 3021,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED-311.json",
+      "sha256": "3d6476da09d113fe29479790b97a70794530d1e380f56b3b5018f6c3075e0abd"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED-312.json": {
+      "bytes": 2962,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED-312.json",
+      "sha256": "ae68ddda18c4fdde24e0031b02a0513f3af58366f31f7437d506ea160aedb186"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED.json": {
+      "bytes": 4363,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED.json",
+      "sha256": "07026ce81aa5724c478bb8289dc7e2cc1aef63592d77688b72e1c620e7bbfe67"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/python-311.log": {
+      "bytes": 1752,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/python-311.log",
+      "sha256": "548c738092fc917fe86414336fe3eb146e5b0b570d25c112576d813c6c398552"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/python-312.log": {
+      "bytes": 1752,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/python-312.log",
+      "sha256": "b1ec4274e1af04004ad0601819260e6b4f3d2f1c96670c84848d354d02a0a3d0"
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/runner.py": {
+      "bytes": 5486,
+      "path": "data/processed/e02_bootstrap_clock_continuation_20261115_01/runner.py",
+      "sha256": "e1e1fc7a5e472cb258653033fbbd2dd821c68cfaabea45b9db18648c2adece4b"
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": {
+      "bytes": 25947,
+      "path": "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py",
+      "sha256": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4"
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": {
+      "bytes": 28344,
+      "path": "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py",
+      "sha256": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": {
+      "bytes": 5032,
+      "path": "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff",
+      "sha256": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7"
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": {
+      "bytes": 10255,
+      "path": "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff",
+      "sha256": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09"
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": {
+      "bytes": 2218,
+      "path": "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json",
+      "sha256": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c"
+    },
+    "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": {
+      "bytes": 10033,
+      "path": "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json",
+      "sha256": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf"
+    },
+    "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": {
+      "bytes": 7349,
+      "path": "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json",
+      "sha256": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54"
+    },
+    "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": {
+      "bytes": 7058,
+      "path": "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json",
+      "sha256": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553"
+    },
+    "reports/E02_BOOTSTRAP_COHERENT_CLOCK_RESULTS_20261115.json": {
+      "bytes": 14951,
+      "path": "reports/E02_BOOTSTRAP_COHERENT_CLOCK_RESULTS_20261115.json",
+      "sha256": "071a73dd0dba19fc0ad6c4ca649fa873dceb9f9c341c7324d97ea905f80bfabe"
+    },
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py": {
+      "bytes": 15452,
+      "path": "src/civiclab/e02/f_wy_bootstrap_control_v1.py",
+      "sha256": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1"
+    },
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": {
+      "bytes": 13200,
+      "path": "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py",
+      "sha256": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58"
+    },
+    "src/civiclab/e02/national_population.py": {
+      "bytes": 14187,
+      "path": "src/civiclab/e02/national_population.py",
+      "sha256": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a"
+    },
+    "tests/test_e02_f_wy_bootstrap_v1.py": {
+      "bytes": 28344,
+      "path": "tests/test_e02_f_wy_bootstrap_v1.py",
+      "sha256": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+    }
+  },
+  "findings": [],
+  "kind": "E02_BOOTSTRAP_CLOCK_FIXTURE_RETAINED_RESULTS_INDEPENDENT_AUDIT",
+  "metadata_checker_note": "Initial puremetadata summary assertion compared rendered31.950s to float-derived31.95 text and stopped; corrected comparison parses numeric summary. No source/test execution or consumed-scope retry resulted.",
+  "model_calls": 0,
+  "ownership": "Only this new audit and/tmp metadata written; no implementation/test/STATUS/Git or actualstate edits.",
+  "prior_code_review": {
+    "bytes": 8364,
+    "path": "reports/INDEPENDENT_AUDIT_E02_BOOTSTRAP_CLOCK_FIXTURE_CODE_20261115.json",
+    "sha256": "93340df3a9711e3cfa7fbea9d2575825a49b9e994b92db0ccf2803f920e36f08"
+  },
+  "results_ref": {
+    "bytes": 14951,
+    "path": "reports/E02_BOOTSTRAP_COHERENT_CLOCK_RESULTS_20261115.json",
+    "sha256": "071a73dd0dba19fc0ad6c4ca649fa873dceb9f9c341c7324d97ea905f80bfabe"
+  },
+  "review_date_client": "2026-11-15",
+  "reviewer_role": "independent_auditor",
+  "source_authority": false,
+  "status": "PASS_EXACT_FOCUSED_AUTHORED_RESULTS_NO_FULL_CI_OR_CAUSE_ACCEPTANCE",
+  "verified_run_summary": {
+    "all_pass": true,
+    "combined_output_bytes": 3504,
+    "cost_USD": 0,
+    "model_calls": 0,
+    "results": [
+      {
+        "after_pins": {
+          ".github/workflows/offline.yml": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+          "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+          "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54",
+          "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553",
+          "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+          "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+          "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+          "tests/test_e02_f_wy_bootstrap_v1.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+        },
+        "cleanup": null,
+        "cost_USD": 0,
+        "exit_code": 0,
+        "log_sha256": "b1ec4274e1af04004ad0601819260e6b4f3d2f1c96670c84848d354d02a0a3d0",
+        "model_calls": 0,
+        "observed_process_count": 15,
+        "output_bytes": 1752,
+        "runtime": "312",
+        "status": "PASS",
+        "stop_reason": null,
+        "tests_confirmed": 10,
+        "tests_expected": 10,
+        "unittest_seconds": 32.816,
+        "wall_seconds": 32.954423375
+      },
+      {
+        "after_pins": {
+          ".github/workflows/offline.yml": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+          "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+          "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+          "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54",
+          "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553",
+          "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+          "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+          "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+          "tests/test_e02_f_wy_bootstrap_v1.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+        },
+        "cleanup": null,
+        "cost_USD": 0,
+        "exit_code": 0,
+        "log_sha256": "548c738092fc917fe86414336fe3eb146e5b0b570d25c112576d813c6c398552",
+        "model_calls": 0,
+        "observed_process_count": 24,
+        "output_bytes": 1752,
+        "runtime": "311",
+        "status": "PASS",
+        "stop_reason": null,
+        "tests_confirmed": 10,
+        "tests_expected": 10,
+        "unittest_seconds": 31.95,
+        "wall_seconds": 32.064456207999996
+      }
+    ],
+    "retries": 0,
+    "second_runtime": "EXECUTED"
+  }
+}

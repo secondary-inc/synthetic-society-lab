@@ -1,0 +1,174 @@
+{
+  "TASK_ID": "E02_BOOTSTRAP_COHERENT_CLOCK_RESULTS_20261115",
+  "FILES_CHANGED": [
+    "tests/test_e02_f_wy_bootstrap_v1.py",
+    "reports/E02_BOOTSTRAP_COHERENT_CLOCK_RESULTS_20261115.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT-311.json": {
+      "sha256": "8c5588d16470d4c779314c6430e50d274b7bebf0fef29c2b876ae338222cddfc",
+      "bytes": 2187
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT-312.json": {
+      "sha256": "fcaa3fc8072fa17959bcfbe78c255ce2672ab79cdbed897bf6faed374cb6da5c",
+      "bytes": 2182
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/RECEIPT.json": {
+      "sha256": "69219b690ca09df2a7edaa07375ae92f9f428f2545aef77db1ed7f3c54b5f924",
+      "bytes": 4779
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED-311.json": {
+      "sha256": "3d6476da09d113fe29479790b97a70794530d1e380f56b3b5018f6c3075e0abd",
+      "bytes": 3021
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED-312.json": {
+      "sha256": "ae68ddda18c4fdde24e0031b02a0513f3af58366f31f7437d506ea160aedb186",
+      "bytes": 2962
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/STARTED.json": {
+      "sha256": "07026ce81aa5724c478bb8289dc7e2cc1aef63592d77688b72e1c620e7bbfe67",
+      "bytes": 4363
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/python-311.log": {
+      "sha256": "548c738092fc917fe86414336fe3eb146e5b0b570d25c112576d813c6c398552",
+      "bytes": 1752
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/python-312.log": {
+      "sha256": "b1ec4274e1af04004ad0601819260e6b4f3d2f1c96670c84848d354d02a0a3d0",
+      "bytes": 1752
+    },
+    "data/processed/e02_bootstrap_clock_continuation_20261115_01/runner.py": {
+      "sha256": "e1e1fc7a5e472cb258653033fbbd2dd821c68cfaabea45b9db18648c2adece4b",
+      "bytes": 5486
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_clock_fixture_advances_coherently_and_restores_scope test_e02_f_wy_bootstrap_v1.BootstrapTests.test_global_deadline_includes_review_gap_and_equality test_e02_f_wy_bootstrap_v1.BootstrapTests.test_normal_stage_completion_checks_whole_elapsed test_e02_f_wy_bootstrap_v1.BootstrapTests.test_rollback_boot_change_and_nonfinite_refuse test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup test_e02_f_wy_bootstrap_v1.BootstrapTests.test_real_controller_death_retains_pending_unknown_and_separate_cleanup",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_clock_fixture_advances_coherently_and_restores_scope test_e02_f_wy_bootstrap_v1.BootstrapTests.test_global_deadline_includes_review_gap_and_equality test_e02_f_wy_bootstrap_v1.BootstrapTests.test_normal_stage_completion_checks_whole_elapsed test_e02_f_wy_bootstrap_v1.BootstrapTests.test_rollback_boot_change_and_nonfinite_refuse test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup test_e02_f_wy_bootstrap_v1.BootstrapTests.test_real_controller_death_retains_pending_unknown_and_separate_cleanup"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "python312": {
+      "runtime": "312",
+      "status": "PASS",
+      "exit_code": 0,
+      "stop_reason": null,
+      "wall_seconds": 32.954423375,
+      "tests_expected": 10,
+      "tests_confirmed": 10,
+      "unittest_seconds": 32.816,
+      "output_bytes": 1752,
+      "log_sha256": "b1ec4274e1af04004ad0601819260e6b4f3d2f1c96670c84848d354d02a0a3d0",
+      "after_pins": {
+        ".github/workflows/offline.yml": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+        "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+        "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54",
+        "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553",
+        "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+        "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+        "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+        "tests/test_e02_f_wy_bootstrap_v1.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+      },
+      "cleanup": null,
+      "observed_process_count": 15,
+      "model_calls": 0,
+      "cost_USD": 0
+    },
+    "python311": {
+      "runtime": "311",
+      "status": "PASS",
+      "exit_code": 0,
+      "stop_reason": null,
+      "wall_seconds": 32.064456207999996,
+      "tests_expected": 10,
+      "tests_confirmed": 10,
+      "unittest_seconds": 31.95,
+      "output_bytes": 1752,
+      "log_sha256": "548c738092fc917fe86414336fe3eb146e5b0b570d25c112576d813c6c398552",
+      "after_pins": {
+        ".github/workflows/offline.yml": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+        "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+        "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+        "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54",
+        "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553",
+        "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+        "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+        "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+        "tests/test_e02_f_wy_bootstrap_v1.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+      },
+      "cleanup": null,
+      "observed_process_count": 24,
+      "model_calls": 0,
+      "cost_USD": 0
+    },
+    "invocation_count_each": 1,
+    "order": "Python 3.12 PASS before Python 3.11 launch",
+    "combined_captured_output_bytes": 3504,
+    "combined_captured_output_cap_bytes": 1048576,
+    "wall_seconds_each_cap": 120,
+    "retries": 0,
+    "old_reports_and_all_indexed_artifacts": "PASS unchanged",
+    "all_reviewed_before_after_current_pins": "PASS identical",
+    "independent_results_review": "PENDING",
+    "full_suite_CI": "NOT_RUN by worker; prior failed CI not relabeled"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only existing authored MOCK rows/fixtures and project sources. No actual respondent/publisher source, acquisition, model, credential/owner, network or native PDF work. No source/reuse rights changed.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "This is a focused authored test result, not full suite, clean install, scientific result or original remote CI cause attribution.",
+    "The test fixture controls valid-clock prerequisites using real advancing monotonic time with fixed wall offset/authored boot. Production clock continuity, stage/global deadlines, RSS, unknown-charge and process/cleanup rules remain unchanged.",
+    "Prior remote failure and local Python 3.11 clock-refusal logs remain unchanged failures. No retry-to-green or new research authority.",
+    "Outer timeout/output-stop guards were configured but not triggered in these successful runs; no absolute arbitrary-descendant containment guarantee is asserted.",
+    "Before/after pins and retained output verified by implementing worker; separate independent results review required before milestone acceptance."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact results review pending.",
+    "Full remote CI still requires lead commit/push and fresh run.",
+    "Original remote underlying cause remains unknown; production wall-clock investigation is separate."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor verifies exact nine retained runner/start/receipt/log artifacts, two exit-zero ten-test summaries and unchanged before/after source/evidence pins. Lead owns STATUS, commit/push and one fresh full CI run.",
+  "REVIEW_REF": {
+    "path": "reports/INDEPENDENT_AUDIT_E02_BOOTSTRAP_CLOCK_FIXTURE_CODE_20261115.json",
+    "sha256": "93340df3a9711e3cfa7fbea9d2575825a49b9e994b92db0ccf2803f920e36f08"
+  },
+  "SOURCE_SHA256": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+  "BEFORE_PINS": {
+    ".github/workflows/offline.yml": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+    "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+    "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54",
+    "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_f_wy_bootstrap_v1.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+  },
+  "CURRENT_PINS": {
+    ".github/workflows/offline.yml": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+    "reports/E02_BOOTSTRAP_CI_DIAGNOSIS_20261115.json": "a6fb55baf972ba5ae105815bb39910307fbaf7e7107d9826811872406a4ec4bf",
+    "reports/E02_BOOTSTRAP_CI_OBSERVABILITY_20261115.json": "8c2a6bb3fccfab4ac9fe33c0389d7027cbeb804657470fd702a78e917a479f54",
+    "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json": "5997857738a0fe11b2bf955748954651a2ff01d5d49d091ecd9afc5ee7657553",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a",
+    "tests/test_e02_f_wy_bootstrap_v1.py": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b"
+  },
+  "INDEPENDENT_REVIEW": "PENDING"
+}

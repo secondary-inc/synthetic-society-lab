@@ -1,0 +1,85 @@
+{
+  "TASK_ID": "E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115",
+  "STATE": "PREPARED_FOR_INDEPENDENT_REVIEW_NO_TEST_EXECUTION",
+  "FILES_CHANGED": [
+    "tests/test_e02_f_wy_bootstrap_v1.py",
+    "reports/E02_BOOTSTRAP_COHERENT_CLOCK_FIXTURE_20261115.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/before-observability-v2.py": {
+      "sha256": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+      "bytes": 25947
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-candidate.py": {
+      "sha256": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+      "bytes": 28344
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/coherent-clock-only.diff": {
+      "sha256": "1a8d931af74edb96e925710b18ee92b0cf109cbf21b696aae0ac8a51f38864e7",
+      "bytes": 5032
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/combined-test-vs-head.diff": {
+      "sha256": "e398619e9b616ab536dab779e95bced1b65e81d6e86774607080a5015ac80a09",
+      "bytes": 10255
+    },
+    "data/processed/e02_bootstrap_coherent_clock_fixture_20261115/focused-commands.json": {
+      "sha256": "4e173ca19520630ef5906b937fb37a5e84bd70499244d646c5fbac91ec107d9c",
+      "bytes": 2218
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_clock_fixture_advances_coherently_and_restores_scope test_e02_f_wy_bootstrap_v1.BootstrapTests.test_global_deadline_includes_review_gap_and_equality test_e02_f_wy_bootstrap_v1.BootstrapTests.test_normal_stage_completion_checks_whole_elapsed test_e02_f_wy_bootstrap_v1.BootstrapTests.test_rollback_boot_change_and_nonfinite_refuse test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup test_e02_f_wy_bootstrap_v1.BootstrapTests.test_real_controller_death_retains_pending_unknown_and_separate_cleanup",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B -m unittest -v test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_all_six_stages_normal_close_exact_replay test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_happy_clock_fixture_advances_coherently_and_restores_scope test_e02_f_wy_bootstrap_v1.BootstrapTests.test_global_deadline_includes_review_gap_and_equality test_e02_f_wy_bootstrap_v1.BootstrapTests.test_normal_stage_completion_checks_whole_elapsed test_e02_f_wy_bootstrap_v1.BootstrapTests.test_rollback_boot_change_and_nonfinite_refuse test_e02_f_wy_bootstrap_v1.BootstrapTests.test_launcher_deadline_or_bad_closure_unknown_no_success test_e02_f_wy_bootstrap_v1.BootstrapTests.test_process_identity_unknown_sampling_is_failure test_e02_f_wy_bootstrap_v1.BootstrapTests.test_live_parent_cancel_runs_native_new_session_cleanup test_e02_f_wy_bootstrap_v1.BootstrapTests.test_real_controller_death_retains_pending_unknown_and_separate_cleanup"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "candidate_execution": "NOT_RUN; await independent exact diff/list review",
+    "static_ast_parse": "PASS",
+    "git_diff_check": "PASS",
+    "unchanged_ast_checks": [
+      "test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure",
+      "test_global_deadline_includes_review_gap_and_equality",
+      "test_normal_stage_completion_checks_whole_elapsed",
+      "test_rollback_boot_change_and_nonfinite_refuse",
+      "test_launcher_deadline_or_bad_closure_unknown_no_success",
+      "test_process_identity_unknown_sampling_is_failure",
+      "test_live_parent_cancel_runs_native_new_session_cleanup",
+      "test_real_controller_death_retains_pending_unknown_and_separate_cleanup",
+      "_run_happy_with_diagnostics"
+    ],
+    "production_pins": "PASS unchanged",
+    "prior_reports": "PASS unchanged"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored existing fixtures only; no actual private source or external acquisition.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Controls valid-clock prerequisite of happy fixture only; does not fix production clocks or establish original remote CI cause.",
+    "Uses actual advancing time.monotonic, fixed wall offset and constant authored boot ID; real stage/global elapsed deadlines, RSS, process lifecycle and cleanup stay active.",
+    "Both bootstrap modules patched only during authored happy test and focused fixture-scope regression; native production clock, time.monotonic and other tests unmodified.",
+    "Candidate not yet executed or independently accepted. Prior Python 3.11 clock refusal and all earlier failed logs remain preserved."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact code and focused-list review required before one finite sequential invocation per runtime.",
+    "Production clock cause and original remote CI cause remain unresolved."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Auditor reviews candidate source hash, coherent-clock-only diff, combined diff and exact 10-test commands. After explicit review, worker runs each command once sequentially, preserves logs regardless of result and updates task evidence without retry-to-green.",
+  "CANDIDATE_SOURCE_SHA256": "ebed64e6e4216c64b0b49df8418d9a7e925c226cc7d9e1671e4f2e0234960b5b",
+  "PREVIOUS_SOURCE_SHA256": "66977c5ec24c19f2e452c3adba0547243ab4fe92d2ed1f7332cce80b8837d1d4",
+  "PRODUCTION_UNCHANGED_SHA256": {
+    "src/civiclab/e02/f_wy_bootstrap_launcher_v1.py": "e98ee0fdd6ebd4014fedfd5fa581d46c1b285c2d8ca1b099f50afdbf9caabd58",
+    "src/civiclab/e02/f_wy_bootstrap_control_v1.py": "ce12c2349357945c7d36496a3d2cd0bbe33af025659e421b8d1d0c17315535a1",
+    "src/civiclab/e02/national_population.py": "120dd827a6006638cf6b72c02fd82e81585f2287c1fa7a808b94300a92ea057a"
+  },
+  "FOCUSED_TEST_NAMES": [
+    "test_happy_all_six_stages_normal_close_exact_replay",
+    "test_happy_diagnostic_note_is_bounded_redacted_and_preserves_failure",
+    "test_happy_clock_fixture_advances_coherently_and_restores_scope",
+    "test_global_deadline_includes_review_gap_and_equality",
+    "test_normal_stage_completion_checks_whole_elapsed",
+    "test_rollback_boot_change_and_nonfinite_refuse",
+    "test_launcher_deadline_or_bad_closure_unknown_no_success",
+    "test_process_identity_unknown_sampling_is_failure",
+    "test_live_parent_cancel_runs_native_new_session_cleanup",
+    "test_real_controller_death_retains_pending_unknown_and_separate_cleanup"
+  ],
+  "INDEPENDENT_REVIEW": "PENDING"
+}
