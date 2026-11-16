@@ -16,13 +16,47 @@
       "sha256": "4e5e32c3fe183ae43ed42e2eaab2e100e912c28f863c49c7ebd0fc5174ea1d51"
     },
     "failure": "W03 authored bootstrap positive path; original internal cause UNKNOWN",
+    "focused_actual_summary": {
+      "actual_fresh_children_per_runtime": 10,
+      "full_ci": "NOT_RUN",
+      "historical_per_runtime": 4,
+      "model_cost_USD": 0,
+      "new_model_calls": 0,
+      "portable_per_runtime": 216,
+      "runtimes": [
+        "3.11.17",
+        "3.12.14"
+      ],
+      "tests_per_runtime": 220
+    },
+    "focused_closed_evidence_scope": "Separate auditor verified102pinned artifacts, six original frozen files, raw/RESULT/SUMMARY agreement, all220cases/runtime, zero failures/skips, successful reaping and observed limits; no reruns. Full CI unchanged NOT_RUN.",
     "focused_evidence": {
       "bytes": 1664,
       "path": "reports/E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json",
       "sha256": "841a0d73255a31ec7ee601bc00b825cfbe6bd5eff8fe68ff0e6ebbd214ae6a08"
     },
+    "focused_execution_closed_evidence_audit": {
+      "bytes": 35400,
+      "path": "reports/INDEPENDENT_AUDIT_CI_FOCUSED_EXECUTION_EVIDENCE_20261116.json",
+      "sha256": "c1ab94cb58c02203824a7198c2e1c6c8e20d5abfa285341418dc6914cb48f7ae"
+    },
     "head_sha": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
-    "new_collection_findings": "Two static P1 defects: six frozen test modules register process-wide audit hooks during shared discovery, and four methods assume only Python3.11.17/3.12.14 socket source hashes. CI isolation/explicit exact-host gating implementation is in progress. No new runtime/full-suite result; unrelated retained W03 cause remains UNKNOWN.",
+    "isolation_author_coverage_successor": {
+      "bytes": 12635,
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_1_HANDOFF_20261116.json",
+      "sha256": "0b393fabca9c2bffb34552aaa07f2af5170160c94d8efb387913e5c8667a754c"
+    },
+    "isolation_author_handoff": {
+      "bytes": 18060,
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_HANDOFF_20261116.json",
+      "sha256": "27f02914c6b5963d2fd7b2467f07e0caf148dee6cbb0bf7a4387ba7f0f236ae9"
+    },
+    "isolation_component_and_focused_review": {
+      "bytes": 28080,
+      "path": "reports/INDEPENDENT_AUDIT_CI_COLLECTION_ISOLATION_V1_20261116.json",
+      "sha256": "312d762a3129ffb36f0586c91437829604d37f6a073c9c0a3ca6c29cf82be444"
+    },
+    "new_collection_findings": "Scoped isolation remedy accepted by lead reviewer separate from author. All six original frozen files unchanged. Independent22mocked runner checks and actual10isolated groups/220frozen cases PASS on each local3.11.17/3.12.14 runtime. Four historical host cases passed only on original local profiles; unsupported hosts remain explicit NOT_RUN. Full ordinary collection/Linux/full remote workflow remain NOT_RUN; original W03 cause UNKNOWN. Earlier lead finding about missing host used in-progress code and was withdrawn against frozen source; successor is test-only coverage improvement.",
     "new_test_only_diagnostics": "Five focused checks PASS on each runtime; independent diagnostic review PASS including eight adverse checks. Original remote cause remains UNKNOWN and a new full-suite result is pending; no production code or clock changes.",
     "overall": "FAILURE",
     "python311": "FAILURE",
@@ -181,7 +215,7 @@
       "path": "reports/INDEPENDENT_AUDIT_E01_P2_GUARD_DIAGNOSTIC_V2_COMPONENT_METHODS_20261116.json",
       "sha256": "ae04be8c996b4ceca266773c1a3ebc8df457810ff8d69e68bd459d24833793d9"
     },
-    "diagnostic_next_stage": "Implement and independently review strict complete RECORD prevalidation and immutable named stream for the restricted authored fixture subset before using unmodified installer.install. Original contract has preserved literal-newline ambiguity; separate normative UTF-8 hex correction passed narrow independent methods review. No actual fixture/installer execution or P2/P3 release; old450wall/180CPU/12allocation remains consumed.",
+    "diagnostic_next_stage": "Concrete guarded generated-fixture harness implementation and pure mocked tests are assigned. Source-qualified PyPA tool import/actual fixture execution requires separate concrete review and finite release; original450wall/180CPU/12allocation remains consumed. No new actual installer attempt.",
     "diagnostic_particular_review": {
       "bytes": 9716,
       "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V1_PARTICULAR_20261116.json",
@@ -500,6 +534,17 @@
       "path": "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json",
       "sha256": "31bb4e389aad209d24a276347023de5f2eab3ed03a3e91d8745128dcfc8115e2"
     },
+    "strict_wheel_source_pure_handoff": {
+      "bytes": 18657,
+      "path": "reports/E01_STRICT_WHEEL_SOURCE_PURE_V1_HANDOFF_20261116.json",
+      "sha256": "7d27c8a25c802c713e8e0bfa0a72292d07612fd81e7924f9e932afae33df2b03"
+    },
+    "strict_wheel_source_pure_independent_review": {
+      "bytes": 17325,
+      "path": "reports/INDEPENDENT_AUDIT_E01_STRICT_WHEEL_SOURCE_PURE_V1_20261116.json",
+      "sha256": "a91a1a7a4df10fcdacfb4493adb0941745ff93d4c80c8ed4fa207d2e84592fbe"
+    },
+    "strict_wheel_source_pure_status": "PASS exact restricted authored-fixture component: independent40suite+19adversechecks per3.11.17/3.12.14. Complete unique/bidirectional RECORD validation and immutable named readonly streams; central metadata bounded before ZipFile. All predecessor source/test snapshots and failed cache-read checks preserved. No PyPA import/fixture installation, real wheel/runtime qualification or P2/P3 advancement.",
     "successor_rationale": {
       "bytes": 2747,
       "path": "reports/E01_DIAGNOSTIC_SUCCESSOR_RATIONALE_20261116.json",
@@ -682,16 +727,16 @@
       "path": "reports/GITHUB_DELIVERY_BLOCKER_20261116.json",
       "sha256": "001aa89472816e36d01f7892877bbe349de8074e21e7cdac8cb4174e91ffdc37"
     },
-    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_16/manifest.json",
+    "final_checkpoint_bundle_manifest": "data/processed/github_delivery_checkpoint_20261116_17/manifest.json",
     "historical_verified_bundle_through_c249a57": {
       "bytes": 934,
       "path": "reports/GITHUB_DELIVERY_LOCAL_BUNDLE_20261116.json",
       "sha256": "492493f8c5f720763f1c3cd5850708b274b0b7bd606a5d9fc4a25ca021596cd9"
     },
-    "last_code_and_evidence_commit_before_final_checkpoint": "9a373c45c97a85d02400057d9101100a9b89e3f4",
+    "last_code_and_evidence_commit_before_final_checkpoint": "d77bcd3f8ce1271d732705a84073f63425cd709a",
     "last_remote_verified_head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
     "local_head_at_delivery_attempt": "ce9a779d949067f7bae08dbeb1e33baa1f1b5f12",
-    "local_unpublished_commits_before_final_checkpoint": 28
+    "local_unpublished_commits_before_final_checkpoint": 29
   },
   "historical_and_human_candidate_scope_review": {
     "bytes": 6430,
@@ -725,9 +770,9 @@
   ],
   "new_model_calls_during_this_checkpoint": 45,
   "next_unblocked_work": [
-    "Finish pure strict wheel prevalidation/read-only source and separate independent review; then review the concrete guarded generated-fixture harness before any actual tool execution.",
-    "Fix shared CI collection isolation and make historical host qualification explicit without modifying frozen test evidence; independently review and run finite focused checks before any full-suite claim.",
-    "Preserve safe code and evidence in local commits/bundles. GitHub delivery and fresh full remote CI await restored write access.",
+    "Implement and independently review the concrete guarded PyPA generated-fixture harness; exact strict prevalidation/read-only component now accepted. No actual tool/fixture execution released.",
+    "Ordinary collection-only readiness check assigned in existing qualified project environments, with no test-body execution or package installation. Full remote workflow and old W03 diagnosis remain separate.",
+    "Preserve safe code and evidence in local commits/bundles. GitHub delivery awaits restored write access.",
     "Resolve OpenRouter HTTP402/account access before any separately reviewed E02 continuation; preserve all responses and holds."
   ],
   "observed_at_UTC": "2026-11-16T10:04:07.334535+00:00",
@@ -758,7 +803,7 @@
   },
   "owner_conservative_exposure_microusd": 16149,
   "owner_exposure_observation": "Closed export after fifth stop:194 total historical dispatches/1180events;16149 microUSD conservative exposure includes settled rounding and all five holds. Independent783-check partial evidence review verified old149rows/908event prefix and new transitions. Original live-journal immutability remains the closed collector observation.",
-  "previous_checkpoint_sha256": "0756950727d0226b574414607e73156a9d036eb111b28279a5f709583fa39276",
+  "previous_checkpoint_sha256": "0e1a6f8d941eb08556cbc066c4b6ac95baa99877d34a8a30a5e711e89788ab85",
   "public_checkpoint_static_review": {
     "bytes": 8650,
     "path": "reports/INDEPENDENT_AUDIT_E02_ROOT_RECEIPT_CHECKPOINT_20261116.json",
@@ -802,5 +847,5 @@
     "scope": "Dated public-evidence status snapshot.63 independent static checks; root local TypeScript/bundled-runtime checks passed with prior failures preserved. No new scientific acceptance or live monitoring.",
     "snapshot_commit": "85e5bdfca099faae182569d7a6d22624ff98d76b"
   },
-  "updated_at_UTC": "2026-11-16T14:36:36.440683+00:00"
+  "updated_at_UTC": "2026-11-16T14:51:17.678861+00:00"
 }

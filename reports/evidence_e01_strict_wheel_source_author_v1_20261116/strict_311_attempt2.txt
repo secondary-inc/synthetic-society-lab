@@ -1,0 +1,22 @@
+test_candidate_contains_no_filesystem_payload_execution_or_thirdparty_import (__main__.ImportAndScopeTests.test_candidate_contains_no_filesystem_payload_execution_or_thirdparty_import) ... ok
+test_ordinary_collection_import_installs_no_global_hooks (__main__.ImportAndScopeTests.test_ordinary_collection_import_installs_no_global_hooks) ... FAIL
+
+======================================================================
+FAIL: test_ordinary_collection_import_installs_no_global_hooks (__main__.ImportAndScopeTests.test_ordinary_collection_import_installs_no_global_hooks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_strict_wheel_source_candidate_v1_20261116.py", line 272, in test_ordinary_collection_import_installs_no_global_hooks
+    module=importlib.util.module_from_spec(again);again.loader.exec_module(module)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_strict_wheel_source_candidate_v1_20261116.py", line 306, in audit
+    if not allowed:raise AssertionError('PURE_SOURCE_UNAPPROVED_FILE_READ')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PURE_SOURCE_UNAPPROVED_FILE_READ
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.004s
+
+FAILED (failures=1)

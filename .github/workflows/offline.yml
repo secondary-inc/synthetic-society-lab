@@ -18,5 +18,13 @@ jobs:
         run: |
           export CIVICLAB_PYPDF7_FIXTURE_TARGET="$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')"
           python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v
-      - run: python -m unittest discover -s tests -v
+      - name: Verify ordinary and isolated frozen offline groups
+        run: python scripts/run_offline_ci_v1.py --output-dir ci-results/python-${{ matrix.python }}
+      - name: Preserve isolated CI coverage and failure receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-ci-python-${{ matrix.python }}
+          path: ci-results/python-${{ matrix.python }}/
+          if-no-files-found: warn
       - run: civiclab validate-sources --fixture-only

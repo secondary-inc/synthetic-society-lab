@@ -1,0 +1,559 @@
+{
+  "kind": "INDEPENDENT_CI_COLLECTION_ISOLATION_COMPONENT_AND_FOCUSED_REVIEW",
+  "decision": "PASS_SCOPED_COMPONENT_AND_220_FOCUSED_CASES_PER_RUNTIME_FULL_CI_NOT_RUN",
+  "reviewer": "Lead, separate from worker implementation author; source and evidence bindings verified before and after execution",
+  "updated_at_UTC": "2026-11-16T14:48:06.171642+00:00",
+  "inputs": [
+    {
+      "path": "reports/CI_COLLECTION_SCOPE_AUDIT_20261116.json",
+      "bytes": 16078,
+      "sha256": "3231cdc9d9d63cbdbee61c247e6797af2b7dbb344752e6fc6457d4f2ad188ea7"
+    },
+    {
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_HANDOFF_20261116.json",
+      "bytes": 18060,
+      "sha256": "27f02914c6b5963d2fd7b2467f07e0caf148dee6cbb0bf7a4387ba7f0f236ae9"
+    },
+    {
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_1_HANDOFF_20261116.json",
+      "bytes": 12635,
+      "sha256": "0b393fabca9c2bffb34552aaa07f2af5170160c94d8efb387913e5c8667a754c"
+    },
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 24413,
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 22968,
+      "sha256": "ca89179959346e04da76d789866446a9e39148acbe47c2e9e62d89c95455f3b7"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 1214,
+      "sha256": "48d2d2185513c3d572b4a8189664daf5797bc76b745d9cc7adfab18687898baf"
+    }
+  ],
+  "verification": {
+    "mocked_runner_tests_per_runtime": 22,
+    "mocked_runner_runtimes": [
+      "3.11.17",
+      "3.12.14"
+    ],
+    "frozen_source_files_unchanged": 6,
+    "frozen_case_partition": {
+      "portable": 216,
+      "historical": 4,
+      "total": 220
+    },
+    "actual_focused_runs": [
+      {
+        "python": "3.11.17",
+        "actual_fresh_children": 10,
+        "portable_cases": 216,
+        "historical_cases": 4,
+        "tests_run": 220,
+        "elapsed_seconds": 3.0683460839936743,
+        "summary": {
+          "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/SUMMARY.json",
+          "bytes": 47138,
+          "sha256": "5e62d157b3f2a154906480d9d1dc750789db3a3bfd7cf4dab5921cb3f207e9db"
+        }
+      },
+      {
+        "python": "3.12.14",
+        "actual_fresh_children": 10,
+        "portable_cases": 216,
+        "historical_cases": 4,
+        "tests_run": 220,
+        "elapsed_seconds": 4.396972125003231,
+        "summary": {
+          "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/SUMMARY.json",
+          "bytes": 46841,
+          "sha256": "ee7864dc9935d65e0c538074c7e3c8aa6f520a1db445f0d25f8e3e1c5b01f821"
+        }
+      }
+    ],
+    "full_unittest_collection": "NOT_RUN",
+    "remote_workflow": "NOT_RUN",
+    "old_W03_cause": "UNKNOWN"
+  },
+  "findings_resolved": [
+    "Ordinary discovery uses an exact six-file exclusion and child-only barrier; direct/transitive frozen execution and audit-hook registration during collection have pure adverse coverage. Ordinary full collection has not been executed.",
+    "Each frozen group runs in a fresh isolated child through its original guarded entrypoint, with original source hashes and case inventory checked. Real local runs confirm all220 cases on each exact supported runtime.",
+    "Historical host/source requirements are explicit. Unsupported cases remain NOT_RUN and aggregate labels preserve this; no guessed socket hashes or rewritten frozen tests.",
+    "Supervisor captures bounded output, enforces deadlines, kills/reaps on limits, preserves unknown shutdown/failures and sanitizes child environment. These adverse supervisor branches are mocked; actual integrations completed normally."
+  ],
+  "review_correction": "Lead initially read an earlier in-progress return missing host. Exact frozen9882cc86 already includes host/qualification; static assertion failed and no blocking finding report was written. Production defect claim withdrawn. V1.1 adds only useful supported-historical serialized coverage regression; production runner remains unchanged.",
+  "limitations": [
+    "This accepts the CI isolation component and focused frozen groups on local macOS runtimes, not Linux, full ordinary collection, all repository tests, original W03 correction, or remote green CI.",
+    "Global hooks are isolated at the CI runner boundary; direct raw unittest discovery remains unsuitable for the six unchanged historical modules.",
+    "The historical checks inspect the original bound host/socket source; they do not qualify a package installer, research runtime, PDF source, scientific result or complete project milestone.",
+    "A supervisor with unreaped child reports failure/unknown shutdown; no such condition occurred in these actual runs. Authored failure tests remain scoped mock evidence.",
+    "Earlier author failures and reconstructed historical source caveats remain unchanged in the two author handoffs."
+  ],
+  "TASK_ID": "CI_COLLECTION_ISOLATION_INDEPENDENT_FOCUSED_20261116",
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_CI_COLLECTION_ISOLATION_V1_20261116.json",
+    "reports/evidence_ci_collection_isolation_independent_v1_20261116"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/FOCUSED_RELEASE.json",
+      "bytes": 2468,
+      "sha256": "1a5b671768e51139df0e041d720b6c49ba3cc22196c34f96246ff372d7b8da2e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/REVIEW_PLAN.json",
+      "bytes": 1590,
+      "sha256": "80af96b488b91fe76da4de1a5c589c97cf1c6f98d5d88b1b931e9869369f864e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/PLAN.json",
+      "bytes": 1565,
+      "sha256": "ec4b3ccb9a0dfc7462ed8eb93f63da0f03a6795d08ec5cf3cc30ebc6ca24580b"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/SUMMARY.json",
+      "bytes": 47138,
+      "sha256": "5e62d157b3f2a154906480d9d1dc750789db3a3bfd7cf4dab5921cb3f207e9db"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-historical-RESERVED.json",
+      "bytes": 522,
+      "sha256": "a9ac7eb9cc732b065ca45aea9cc620cf66964d74ed8f998d725f49b50224031a"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-historical-RESULT.json",
+      "bytes": 1810,
+      "sha256": "9816759ef471fea306f169d417a399e5cfeb318d4606c90fc4dfb3d85c4dc2a4"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-historical.stderr",
+      "bytes": 254,
+      "sha256": "5fecaa77b3681f70cca78c57d6af174eef7619f1284203a99fb9b2f4aa57e0bb"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-historical.stdout",
+      "bytes": 1692,
+      "sha256": "e3564ea2a7f3bfc57eee4da7a38ac9bd57babeb2d9b4f1912358fa6895702f5b"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-portable-RESERVED.json",
+      "bytes": 516,
+      "sha256": "bfbf6f3038236d01fd252874a773418a462690e5c4b233f0247144504c559018"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-portable-RESULT.json",
+      "bytes": 7161,
+      "sha256": "684b529fa92484301378608ea04ba32eff7f2ce1cded948c49a22f74a0e643f6"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-portable.stderr",
+      "bytes": 6495,
+      "sha256": "25603fb4dc2750ea2424b48b0c44d574889192d6f4e7350ea46e5e18e4fd4f0b"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1-portable.stdout",
+      "bytes": 6646,
+      "sha256": "46a8701f286be82e1873afb0961b32da0bf2de76603bf9ebf2e930b1fe6a09c5"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-historical-RESERVED.json",
+      "bytes": 528,
+      "sha256": "4bbf92f108e302108f8f2de4e028e913f26184aae36aeb6806f2e3eb23eb603d"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-historical-RESULT.json",
+      "bytes": 1820,
+      "sha256": "9d02d01850ee8f901b51dcaf3d487946a2070fb28d211b61d622820b0321d594"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-historical.stderr",
+      "bytes": 256,
+      "sha256": "10fc263a5ae7f5ff3abae13dfe72d9cf4681241f8806cec1c5e767851c8767c1"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-historical.stdout",
+      "bytes": 1696,
+      "sha256": "def7267b7117f4f9a51704bd3d456eb1ff63f19d001decc24e90a78c9481feb9"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-portable-RESERVED.json",
+      "bytes": 522,
+      "sha256": "60fe04c1cc48f499cec99631b4d6c5ae12f6187a4c22d4c45c46c2bf7e44f693"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-portable-RESULT.json",
+      "bytes": 8050,
+      "sha256": "9879ce591a6289d7bcbc72bd0ad9a823714d610dbd5c8a582790067b993ee69a"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-portable.stderr",
+      "bytes": 7575,
+      "sha256": "98069e84757b8bd1f6b67be37021decd828df32ee1a561061f1a9487ef405f3f"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/compatibility-v1_1-portable.stdout",
+      "bytes": 7880,
+      "sha256": "9d8d49712d2796740e8f03725fa41424c4e59c8bcf4fabc02fc07330506abb48"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/import-methods-v1-portable-RESERVED.json",
+      "bytes": 519,
+      "sha256": "1fd49c0f31602024d1cace6d863278e3698fda1d32844c82fffc916dc05efce6"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/import-methods-v1-portable-RESULT.json",
+      "bytes": 4168,
+      "sha256": "de5ea5896bdac02b7507206a1cd34e34c82bd45ca5dd83235887c0daa9134ade"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/import-methods-v1-portable.stderr",
+      "bytes": 3295,
+      "sha256": "9ee6eff9906c830dfd5734419d90860f6c9b5222f0231ad53c10ab0e0cdc7e67"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/import-methods-v1-portable.stdout",
+      "bytes": 5412,
+      "sha256": "51367d64e5d1bdcc1e4a63cd2499dbfda070ad423efb503be97206f1ddd919f7"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-historical-RESERVED.json",
+      "bytes": 507,
+      "sha256": "d3ef14089b3e5f5571dec69b1a64c7434926818799292082e8e9add748eda9b1"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-historical-RESULT.json",
+      "bytes": 1836,
+      "sha256": "f62b306f0b9ad56602038fdc1219658ac81c5b06a338b7a57c196d892a5177e7"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-historical.stderr",
+      "bytes": 279,
+      "sha256": "99430e3adc409f9529025cb0d22594a23a63776bc6d4a38fd5f52536b1c064ee"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-historical.stdout",
+      "bytes": 1736,
+      "sha256": "b9ca41d61736ed757781f317c8d0ed172cc487e4dd3144d21035c8e5b7599655"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-portable-RESERVED.json",
+      "bytes": 501,
+      "sha256": "793cb7737c18f980075ae302cae7653d657015a50a907d62f46aa8329b3f7c60"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-portable-RESULT.json",
+      "bytes": 6683,
+      "sha256": "f71ee3bc604fa5c62d290c67b453f7956d00819cd1702b61cbcd8a6a98d9597d"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-portable.stderr",
+      "bytes": 5447,
+      "sha256": "3f2e6f2a407d534c87548b7b4c2ba2f227da0060fe2c9791a31cbcc0e937ee96"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v1-portable.stdout",
+      "bytes": 6299,
+      "sha256": "4e1756242927db8942d040234a6076c6a0126517cc5f022ceabd9bd2bb7fd754"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-historical-RESERVED.json",
+      "bytes": 507,
+      "sha256": "7c15e70906e7e54023ebc7f98b802ac65014f9ee70d3b7cb97fe866300c5367b"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-historical-RESULT.json",
+      "bytes": 1836,
+      "sha256": "03b16e32ca955d1e9efae0955514a2c46d2a1bdac27bbf335a43ec481856718e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-historical.stderr",
+      "bytes": 279,
+      "sha256": "671de8f6d515b82ad562d0d54cb7c2bd141de454f08351c5385a88ac75598542"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-historical.stdout",
+      "bytes": 1736,
+      "sha256": "e643fd0b54242c47997e2fb39b9924ffa884f47dd994e230f981e843e68d1c58"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-portable-RESERVED.json",
+      "bytes": 501,
+      "sha256": "59a4d8d22543ab3ca489239538a426065f461ae913f74118624ea5e4c267bbbe"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-portable-RESULT.json",
+      "bytes": 7157,
+      "sha256": "365e093e445e5a3e49cec61d243960ee1c0d7197f24bcddfa2ca87aa301aa0ec"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-portable.stderr",
+      "bytes": 5930,
+      "sha256": "e43ce0c15f2dc801103fc94dfd9538bf9d6f3c0797a8c133f403947d37f8c0cf"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/observer-v2-portable.stdout",
+      "bytes": 6773,
+      "sha256": "fb4641006e528237c02b617118e7ec739fe5e2479f103f482aeedd3f451e49a2"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/probe-v2-portable-RESERVED.json",
+      "bytes": 492,
+      "sha256": "2bce6705b9aa17b61410b7aed9b045678c4777b5fedb11370cf93841c6842fb8"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/probe-v2-portable-RESULT.json",
+      "bytes": 6329,
+      "sha256": "5b5611fa7392e6c457df093abbf2d479f027d5647d6a50fad8bcaedde2568dd7"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/probe-v2-portable.stderr",
+      "bytes": 5200,
+      "sha256": "de7a9d2ba47334188121c50002bb9a00f6562a5d8cc805c264da3e28f84ff999"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.11.17/probe-v2-portable.stdout",
+      "bytes": 6313,
+      "sha256": "6908b1abb47a2e7e152a1022c1b7bfa0931cdac5147180bfc9b3afee89cdab32"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/PLAN.json",
+      "bytes": 1565,
+      "sha256": "c61dfe02fdf529643ff5c46b64576586d9fe192484068bfdc9aa605ffa2df982"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/SUMMARY.json",
+      "bytes": 46841,
+      "sha256": "ee7864dc9935d65e0c538074c7e3c8aa6f520a1db445f0d25f8e3e1c5b01f821"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-historical-RESERVED.json",
+      "bytes": 485,
+      "sha256": "3e6ffe31cbc18af9c3380a046e751b2e9d9eadbadb0bcfbfe5f2e30ff2e667fc"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-historical-RESULT.json",
+      "bytes": 1773,
+      "sha256": "7964bea93a21feeb9ad12bd04c0b0620a9a4affcc853ad4d983cd3859730f67f"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-historical.stderr",
+      "bytes": 254,
+      "sha256": "5fecaa77b3681f70cca78c57d6af174eef7619f1284203a99fb9b2f4aa57e0bb"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-historical.stdout",
+      "bytes": 1618,
+      "sha256": "b97743dfeb89aad7653c385d93e1ca1c5d0d58734d9cfac339ed9fbbbb952a95"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-portable-RESERVED.json",
+      "bytes": 479,
+      "sha256": "59e5d4218a60408cb47c236e035960ca65012499342b3c1306cf2cb52b6323c9"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-portable-RESULT.json",
+      "bytes": 7124,
+      "sha256": "7e29ec11595ea0850a0a3335450811546f8c10f36204efffe82229bca2243d0a"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-portable.stderr",
+      "bytes": 6495,
+      "sha256": "e9b45efe6534c7557dd48fdd1ef930f25730492efaa0e175423c9120d5080a43"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1-portable.stdout",
+      "bytes": 6609,
+      "sha256": "f71f3b4beeaace2d648dba232be781aa1971b60276dac100f5b65df2fa7b3154"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-historical-RESERVED.json",
+      "bytes": 491,
+      "sha256": "3b7c15fb50ef518bf2e8d59342cb06fbe2eb7d1238845ed3756f3b0e80c2587a"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-historical-RESULT.json",
+      "bytes": 1783,
+      "sha256": "9f0f9b8dcda7d989e02a7a19c0f534c4b3719b401f520b95f4d51fb3d1d3c88a"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-historical.stderr",
+      "bytes": 256,
+      "sha256": "10fc263a5ae7f5ff3abae13dfe72d9cf4681241f8806cec1c5e767851c8767c1"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-historical.stdout",
+      "bytes": 1622,
+      "sha256": "2ab5d2129c8dfb81e03ac3e6c30d775793c32fa9fdc2c7d77cfca6205447c006"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-portable-RESERVED.json",
+      "bytes": 485,
+      "sha256": "7408f2e2a03aa56d3c5ebce781e861829a514bb587a237c6496bc9a3bcc95b96"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-portable-RESULT.json",
+      "bytes": 8014,
+      "sha256": "9e38f1e862f850f80396cfb8d7b4d0fe4b803f3daa6615fbff6ed46ccdaeb9e9"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-portable.stderr",
+      "bytes": 7575,
+      "sha256": "3afd8dc05ee04983a6dfc499dd19b34f9f1bc66345d32d4670d4894ef56a7294"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/compatibility-v1_1-portable.stdout",
+      "bytes": 7843,
+      "sha256": "6bfad1fa75d5ab5c0a921709810c5ac52545c73beaba2af097918d67c42fc2a5"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/import-methods-v1-portable-RESERVED.json",
+      "bytes": 482,
+      "sha256": "1351b881c2e7a6da1520710539ffe50b7c2f322a6253844a01fa0709caea5f3d"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/import-methods-v1-portable-RESULT.json",
+      "bytes": 4169,
+      "sha256": "3b8d87481e51131d8fc0df652e0e501a158db1652ba1b7d972d90b561004dc41"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/import-methods-v1-portable.stderr",
+      "bytes": 3295,
+      "sha256": "be20a15f9acb5c53be44ab1f71d3730ca29f7227be490c924bab2fea2808d87b"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/import-methods-v1-portable.stdout",
+      "bytes": 5412,
+      "sha256": "57889a9c919703a8eadd226f9c3a2b554150733ddca454c58ba511ae9a284786"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-historical-RESERVED.json",
+      "bytes": 470,
+      "sha256": "be43be047c3a2da1f366a29882e097a98c7b3fee22a8c9d5f81bbc4b6e10757e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-historical-RESULT.json",
+      "bytes": 1798,
+      "sha256": "30dfbc63329d1361692f2616a021b6799c0cdf71023f6bedbb1a83641d24ed05"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-historical.stderr",
+      "bytes": 279,
+      "sha256": "99430e3adc409f9529025cb0d22594a23a63776bc6d4a38fd5f52536b1c064ee"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-historical.stdout",
+      "bytes": 1662,
+      "sha256": "b35e4c0d7621440384297e73c54d29e8d393727bf36618d26e0c6e3992a024a7"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-portable-RESERVED.json",
+      "bytes": 464,
+      "sha256": "3b3cc4ba4390c6e1e310763d59e5e6293ed7b3cab1a6a81f1b00a822abc9ba8e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-portable-RESULT.json",
+      "bytes": 6646,
+      "sha256": "a8889ac83d5445ef4ffe31434dbaa1e8583d51f27c8579e6b340c3ee471c42a6"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-portable.stderr",
+      "bytes": 5447,
+      "sha256": "edaaeb38e7f53c01e38a99cd37f845236852293d3c25b4d4180abce4dd2f2dc1"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v1-portable.stdout",
+      "bytes": 6262,
+      "sha256": "dfbc6031acf8e60b8c65939c9805bbd70feabb2fac4df73bb293d50004848595"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-historical-RESERVED.json",
+      "bytes": 470,
+      "sha256": "828c2453fc7293d3cf129778ae22f535fe83f2ce2fe34cf7f888c49ae7f8e750"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-historical-RESULT.json",
+      "bytes": 1799,
+      "sha256": "71690f67719d67f591923b9420e5d55e3bbde633cde63932c597feded2bb36ca"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-historical.stderr",
+      "bytes": 279,
+      "sha256": "671de8f6d515b82ad562d0d54cb7c2bd141de454f08351c5385a88ac75598542"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-historical.stdout",
+      "bytes": 1662,
+      "sha256": "872d000a482b730231397a596692a3f6caf9ce79bd9327131db15c6125ac52fd"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-portable-RESERVED.json",
+      "bytes": 464,
+      "sha256": "c4e66035811c2cd896706222e268ead270037ea56a29549453fe645c2c6adb55"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-portable-RESULT.json",
+      "bytes": 7119,
+      "sha256": "87677dd959871d639f12e777830a723dc7b8112185d42664a3a81b830550662c"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-portable.stderr",
+      "bytes": 5930,
+      "sha256": "f99af9daf24f1953288f19d27fa588984a0c8aa59344ac893f90511d94df3f8a"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/observer-v2-portable.stdout",
+      "bytes": 6736,
+      "sha256": "c1e5e176573be2883d70b00e5c9b82f7ec3785378d06793ca6b5defcfb6f7c1e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/probe-v2-portable-RESERVED.json",
+      "bytes": 455,
+      "sha256": "124beeea57a694a02bf74abad9876ce2d76dc231312f2b641d5bbda3bcdea54e"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/probe-v2-portable-RESULT.json",
+      "bytes": 6329,
+      "sha256": "7a70dbca098cb22e3c78ae097146c010569711fefe029f1b3fe5da25ca659ae3"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/probe-v2-portable.stderr",
+      "bytes": 5200,
+      "sha256": "f2b632eb6f574200b13ae1c0b28bf368cf1fc6d3c9c64a7314225c819edd7bd3"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/actual-3.12.14/probe-v2-portable.stdout",
+      "bytes": 6276,
+      "sha256": "3f8e5c8754b894dd68712ef5c2cee96c79cb66dd7ebca4a32cff14214c997dc6"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/focused_groups.py",
+      "bytes": 3492,
+      "sha256": "6b416cb410cabc44c263b1587ebb72cc4cd5ef7ae6a042d6cfe94983a1f3a168"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/python311-suite.log",
+      "bytes": 3308,
+      "sha256": "55a15c549daeaa0d592a94bcb67ca9135a01d599ce074b484d193190ecb41baf"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/python312-suite.log",
+      "bytes": 3308,
+      "sha256": "3299a5de9cab3c3789e16891c8695451409fb389514feef0ed5766e607d41377"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Read the bound logs/receipts and verify hashes. The focused driver uses create-once output scopes; do not rerun consumed scopes. Future full CI is the workflow command, not this finite probe."
+  ],
+  "TESTS_RUN_AND_RESULTS": "Independent22 mocked checks PASS per runtime, plus10 actual isolated children/220 cases PASS per runtime;440 actual frozen test executions total. Original six files unchanged.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Repository engineering tests and authored fixtures only. No private respondent/publisher material or credentials were inspected.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "UNRESOLVED_BLOCKERS": [
+    "Fresh full remote CI pending GitHub write access; original W03 cause unknown.",
+    "Full ordinary collection and Linux integration remain unverified."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead integrate reviewed CI changes and safe evidence; record scope in status. Full-suite execution is a separate long-running validation stage."
+}

@@ -1,0 +1,153 @@
+{
+  "actual_child_processes_launched_by_tests": 0,
+  "actual_frozen_group_invocations": 0,
+  "actual_suite_invocations": 5,
+  "additional_allowance_source": "Explicit coordinator message after two preserved failures; final one extra 3.11 invocation and remaining second3.12 authorized.",
+  "additional_python311_allowance": 1,
+  "initial_allowance_per_runtime": 2,
+  "limits_per_invocation": {
+    "console_bytes": 262144,
+    "cpu_seconds": 120,
+    "read_reservation_bytes": 67108864,
+    "temp_write_bytes": 33554432,
+    "wall_seconds": 120
+  },
+  "runs": [
+    {
+      "attempt_for_runtime": 1,
+      "authored_source_ref": {
+        "bytes": 19233,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt1-test-reconstructed.py",
+        "sha256": "6a10ad54a43d8aa5c9acf2b1b2d51620b7cec61af7370ddb0ab6a1e15c0b68ac"
+      },
+      "exitcode": 1,
+      "log_ref": {
+        "bytes": 8739,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt1.log",
+        "sha256": "7d1b40b5dfaabce3cb4dd9ac58f0384724f4d8a554f822adbea500137b76845d"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 6812,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.11.17",
+        "read_reservation_bytes": 756627,
+        "successful": false,
+        "temp_write_bytes": 184381,
+        "tests_run": 20
+      },
+      "source_binding_limit": "RECONSTRUCTED_BY_REVERSING_RECORDED_PATCHES_NOT_CONTEMPORANEOUS_RUN_HASH"
+    },
+    {
+      "attempt_for_runtime": 2,
+      "authored_source_ref": {
+        "bytes": 20398,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt2-test-reconstructed.py",
+        "sha256": "f790d1e464c09159080efddd1b7d1556fe886c668c156c95f00b0cd61e42da26"
+      },
+      "exitcode": 1,
+      "log_ref": {
+        "bytes": 5077,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt2.log",
+        "sha256": "641f07aae0d01bc9eb5e0fd627a36aeb7cfbe775954533f90e26435bb1a6aade"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 4809,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.11.17",
+        "read_reservation_bytes": 886878,
+        "successful": false,
+        "temp_write_bytes": 184381,
+        "tests_run": 21
+      },
+      "source_binding_limit": "RECONSTRUCTED_BY_REVERSING_RECORDED_PATCHES_NOT_CONTEMPORANEOUS_RUN_HASH"
+    },
+    {
+      "attempt_for_runtime": 1,
+      "authored_source_ref": {
+        "bytes": 20528,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+        "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+      },
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 3126,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python312-attempt1.log",
+        "sha256": "d41128ac86df660bebf28ed42554507c35ebd15601edb9e45a01a04de8b5ab3b"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 2859,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.12.14",
+        "read_reservation_bytes": 650271,
+        "successful": true,
+        "temp_write_bytes": 184011,
+        "tests_run": 21
+      },
+      "source_binding_limit": "FROZEN_FINAL_BYTES"
+    },
+    {
+      "attempt_for_runtime": 3,
+      "authored_source_ref": {
+        "bytes": 20528,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+        "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+      },
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 3126,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt3-final.log",
+        "sha256": "00c37e7d12eca5d695604d7afca4e5717df68592da4d38463e2ac9daa23d895d"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 2859,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.11.17",
+        "read_reservation_bytes": 650271,
+        "successful": true,
+        "temp_write_bytes": 184381,
+        "tests_run": 21
+      },
+      "source_binding_limit": "FROZEN_BEFORE_FINAL_INVOCATION"
+    },
+    {
+      "attempt_for_runtime": 2,
+      "authored_source_ref": {
+        "bytes": 20528,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+        "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+      },
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 3126,
+        "path": "reports/evidence_ci_collection_isolation_v1_20261116/python312-attempt2-final.log",
+        "sha256": "00d817b62549169f9186f0260ab7526f99d0bebf4d507c14512b31fecc13932c"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 2859,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.12.14",
+        "read_reservation_bytes": 650271,
+        "successful": true,
+        "temp_write_bytes": 184011,
+        "tests_run": 21
+      },
+      "source_binding_limit": "FROZEN_BEFORE_FINAL_INVOCATION"
+    }
+  ],
+  "scope_note": "Receipts count bounded test body after stdlib/harness imports. Read count conservatively reserves full size at each open; temporary creation happens before guard installation. Trusted authored code, not adversarial sandbox."
+}

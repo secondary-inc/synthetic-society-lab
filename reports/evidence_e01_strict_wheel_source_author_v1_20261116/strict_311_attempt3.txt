@@ -1,0 +1,46 @@
+test_candidate_contains_no_filesystem_payload_execution_or_thirdparty_import (__main__.ImportAndScopeTests.test_candidate_contains_no_filesystem_payload_execution_or_thirdparty_import) ... ok
+test_ordinary_collection_import_installs_no_global_hooks (__main__.ImportAndScopeTests.test_ordinary_collection_import_installs_no_global_hooks) ... ok
+test_test_guards_are_only_installed_by_standalone_entrypoint (__main__.ImportAndScopeTests.test_test_guards_are_only_installed_by_standalone_entrypoint) ... ok
+test_bytes_return_values_cannot_mutate_source (__main__.ReadOnlyAndBudgetTests.test_bytes_return_values_cannot_mutate_source) ... ok
+test_closed_stream_refuses_and_context_preserves_primary (__main__.ReadOnlyAndBudgetTests.test_closed_stream_refuses_and_context_preserves_primary) ... ok
+test_every_public_write_or_buffer_escape_refuses (__main__.ReadOnlyAndBudgetTests.test_every_public_write_or_buffer_escape_refuses) ... ok
+test_failed_read_preserves_cursor_and_destination (__main__.ReadOnlyAndBudgetTests.test_failed_read_preserves_cursor_and_destination) ... ok
+test_no_mutable_input_or_budget_subclass_in_stream (__main__.ReadOnlyAndBudgetTests.test_no_mutable_input_or_budget_subclass_in_stream) ... ok
+test_read_seek_readinto_and_eof (__main__.ReadOnlyAndBudgetTests.test_read_seek_readinto_and_eof) ... ok
+test_readinto_readonly_target_and_invalid_seek_do_not_consume (__main__.ReadOnlyAndBudgetTests.test_readinto_readonly_target_and_invalid_seek_do_not_consume) ... ok
+test_shared_budget_cannot_be_reset_by_open_or_seek (__main__.ReadOnlyAndBudgetTests.test_shared_budget_cannot_be_reset_by_open_or_seek) ... ok
+test_stdlib_zipfile_accepts_named_seekable_stream (__main__.ReadOnlyAndBudgetTests.test_stdlib_zipfile_accepts_named_seekable_stream) ... ok
+test_token_and_filename_properties_are_readonly (__main__.ReadOnlyAndBudgetTests.test_token_and_filename_properties_are_readonly) ... ok
+test_validation_budget_exhaustion_is_sticky (__main__.ReadOnlyAndBudgetTests.test_validation_budget_exhaustion_is_sticky) ... ok
+test_absolute_parent_backslash_colon_and_control_paths_refuse (__main__.ValidationTests.test_absolute_parent_backslash_colon_and_control_paths_refuse) ... ok
+test_central_metadata_refuses_before_zipfile_constructor (__main__.ValidationTests.test_central_metadata_refuses_before_zipfile_constructor) ... ok
+test_declared_inflation_cap_before_member_read (__main__.ValidationTests.test_declared_inflation_cap_before_member_read) ... ok
+test_deflate_validity_same_content_and_no_execution (__main__.ValidationTests.test_deflate_validity_same_content_and_no_execution) ... ok
+test_duplicate_RECORD_row_is_not_last_wins (__main__.ValidationTests.test_duplicate_RECORD_row_is_not_last_wins) ... ok
+test_duplicate_archive_and_casefold_alias_refuse (__main__.ValidationTests.test_duplicate_archive_and_casefold_alias_refuse) ... ok
+test_entry_count_cap_before_zip_construction (__main__.ValidationTests.test_entry_count_cap_before_zip_construction) ... ok
+test_explicit_directories_are_not_RECORD_exceptions (__main__.ValidationTests.test_explicit_directories_are_not_RECORD_exceptions) ... ok
+test_extra_RECORD_name_is_not_ignored (__main__.ValidationTests.test_extra_RECORD_name_is_not_ignored) ... ok
+test_extra_or_missing_archive_file_refuses (__main__.ValidationTests.test_extra_or_missing_archive_file_refuses) ... ok
+test_malformed_directory_and_comment_refuse (__main__.ValidationTests.test_malformed_directory_and_comment_refuse) ... ok
+test_malformed_record_schema_refuses (__main__.ValidationTests.test_malformed_record_schema_refuses) ... ok
+test_metadata_and_entrypoint_subset_are_frozen (__main__.ValidationTests.test_metadata_and_entrypoint_subset_are_frozen) ... ok
+test_missing_RECORD_row_refuses (__main__.ValidationTests.test_missing_RECORD_row_refuses) ... ok
+test_missing_or_hashed_self_row_refuses (__main__.ValidationTests.test_missing_or_hashed_self_row_refuses) ... ok
+test_mutable_and_subclass_inputs_refuse_before_hashing (__main__.ValidationTests.test_mutable_and_subclass_inputs_refuse_before_hashing) ... ok
+test_normative_LF_bytes_match_successor_contract (__main__.ValidationTests.test_normative_LF_bytes_match_successor_contract) ... ok
+test_primary_hash_exception_is_not_replaced (__main__.ValidationTests.test_primary_hash_exception_is_not_replaced) ... ok
+test_primary_stdlib_crc_error_is_not_hidden (__main__.ValidationTests.test_primary_stdlib_crc_error_is_not_hidden) ... ok
+test_raw_archive_and_member_size_caps (__main__.ValidationTests.test_raw_archive_and_member_size_caps) ... ok
+test_sha256_and_filename_mismatch_refuse (__main__.ValidationTests.test_sha256_and_filename_mismatch_refuse) ... ok
+test_simple_stdlib_oracle_matches_member_hashes (__main__.ValidationTests.test_simple_stdlib_oracle_matches_member_hashes) ... ok
+test_symlink_type_alias_and_executable_member_refuse (__main__.ValidationTests.test_symlink_type_alias_and_executable_member_refuse) ... ok
+test_valid_fixture_and_manifest_bound_to_same_immutable_bytes (__main__.ValidationTests.test_valid_fixture_and_manifest_bound_to_same_immutable_bytes) ... ok
+test_wrong_member_hash_and_noncanonical_hash_refuse (__main__.ValidationTests.test_wrong_member_hash_and_noncanonical_hash_refuse) ... ok
+test_wrong_missing_negative_or_padded_size_refuses (__main__.ValidationTests.test_wrong_missing_negative_or_padded_size_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 0.020s
+
+OK
+{"archive_bytes": 1539, "charged_logical_read_bytes": 5354, "kind": "PURE_STRICT_FIXED_WHEEL_VALIDATION", "members": 5, "sha256": "cc20ab865ad6ed2549f97033486e59a4f37be462347f1cd34d38adec12e43c6f", "tool_or_payload_execution": 0}

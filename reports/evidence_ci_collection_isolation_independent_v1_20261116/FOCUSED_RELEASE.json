@@ -1,0 +1,49 @@
+{
+  "kind": "FINITE_CI_FOCUSED_EXECUTION_RELEASE",
+  "reason": "The exact runner was independently reviewed by lead, separate from its worker author. Both independent pure suites pass22 checks. Actual isolation is needed to validate the collection fix; the whole ordinary suite is excluded.",
+  "review_source": {
+    "path": "scripts/run_offline_ci_v1.py",
+    "bytes": 24413,
+    "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+  },
+  "tests": {
+    "path": "tests/test_ci_collection_isolation_v1.py",
+    "bytes": 22968,
+    "sha256": "ca89179959346e04da76d789866446a9e39148acbe47c2e9e62d89c95455f3b7"
+  },
+  "author_successor": {
+    "path": "reports/CI_COLLECTION_ISOLATION_V1_1_HANDOFF_20261116.json",
+    "bytes": 12635,
+    "sha256": "0b393fabca9c2bffb34552aaa07f2af5170160c94d8efb387913e5c8667a754c"
+  },
+  "focused_driver": {
+    "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/focused_groups.py",
+    "bytes": 3492,
+    "sha256": "6b416cb410cabc44c263b1587ebb72cc4cd5ef7ae6a042d6cfe94983a1f3a168"
+  },
+  "limits": {
+    "max_runtime_coordinators": 2,
+    "max_children_per_runtime": 10,
+    "max_wall_seconds_per_runtime": 360,
+    "max_wall_seconds_per_child": 30,
+    "max_output_bytes_per_child": 262144,
+    "retries": 0,
+    "on_first_failed_group": "STOP_RUNTIME",
+    "model_calls": 0,
+    "spending_USD": 0
+  },
+  "scope": "Six frozen portable mock groups plus four exact-host historical socket-source checks, original guarded entrypoints. No ordinary collection, W03, package installation, research source processing, actual model call or credential access. Each child receives only the existing sanitized CI environment. Historical unsupported status remains explicit NOT_RUN.",
+  "review_correction": "Earlier claimed missing-host defect referred to in-progress code; frozen9882cc86 already includes host/qualification. No production defect asserted or changed; successor adds an authored supported-host coverage regression.",
+  "pure_evidence": [
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/python311-suite.log",
+      "bytes": 3308,
+      "sha256": "55a15c549daeaa0d592a94bcb67ca9135a01d599ce074b484d193190ecb41baf"
+    },
+    {
+      "path": "reports/evidence_ci_collection_isolation_independent_v1_20261116/python312-suite.log",
+      "bytes": 3308,
+      "sha256": "3299a5de9cab3c3789e16891c8695451409fb389514feef0ed5766e607d41377"
+    }
+  ]
+}

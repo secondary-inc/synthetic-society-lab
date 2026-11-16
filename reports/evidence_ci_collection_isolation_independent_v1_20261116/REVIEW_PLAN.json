@@ -1,0 +1,35 @@
+{
+  "kind": "LEAD_INDEPENDENT_CI_COMPONENT_REVIEW_PLAN",
+  "reviewer": "Lead, separate from implementation author",
+  "scope": "Static final code review and one existing pure mocked suite per runtime; one independent authored supported-historical control per runtime. No real child group or full collection.",
+  "bounds_per_invocation": {
+    "wall_seconds": 120,
+    "CPU_seconds": 120,
+    "technical_read_bytes": 67108864,
+    "temporary_write_bytes": 33554432,
+    "console_bytes": 262144
+  },
+  "inputs": [
+    {
+      "path": "reports/CI_COLLECTION_ISOLATION_V1_HANDOFF_20261116.json",
+      "bytes": 18060,
+      "sha256": "27f02914c6b5963d2fd7b2467f07e0caf148dee6cbb0bf7a4387ba7f0f236ae9"
+    },
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 24413,
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 22968,
+      "sha256": "ca89179959346e04da76d789866446a9e39148acbe47c2e9e62d89c95455f3b7"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 1214,
+      "sha256": "48d2d2185513c3d572b4a8189664daf5797bc76b745d9cc7adfab18687898baf"
+    }
+  ],
+  "review_correction": "An earlier lead observation of the in-progress run_frozen omitted host in its successful return. Frozen runner9882cc86 already contains host and qualification. A static assertion of the stale finding failed before any finding receipt was written; the claimed production defect is withdrawn, not an implementation fix. Final review binds frozen bytes."
+}

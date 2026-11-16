@@ -1,0 +1,86 @@
+test_direct_and_transitive_frozen_execution_refused (__main__.CollectionTests.test_direct_and_transitive_frozen_execution_refused) ... ok
+test_exact_frozen_inventory_and_all_applicable_cases (__main__.CollectionTests.test_exact_frozen_inventory_and_all_applicable_cases) ... ok
+test_loader_excludes_six_only (__main__.CollectionTests.test_loader_excludes_six_only) ... ok
+test_no_real_hook_and_registration_guard_reset (__main__.CollectionTests.test_no_real_hook_and_registration_guard_reset) ... ok
+test_runner_import_has_no_top_level_effect_calls (__main__.CollectionTests.test_runner_import_has_no_top_level_effect_calls) ... ok
+test_dispatch_failure_not_hidden_or_stale (__main__.CoordinatorTests.test_dispatch_failure_not_hidden_or_stale) ... FAIL
+test_mock_dispatch_isolated_environment_and_unsupported_host (__main__.CoordinatorTests.test_mock_dispatch_isolated_environment_and_unsupported_host) ... FAIL
+test_authored_stub_guard_error_restores_parent_main (__main__.GuardedEntrypointModelTests.test_authored_stub_guard_error_restores_parent_main) ... ok
+test_authored_stub_guard_selection_and_main_restoration (__main__.GuardedEntrypointModelTests.test_authored_stub_guard_selection_and_main_restoration) ... ok
+test_complete_frozen_coverage_no_blanket_skip (__main__.ReceiptTests.test_complete_frozen_coverage_no_blanket_skip) ... ok
+test_final_status_preserves_failure_and_not_run (__main__.ReceiptTests.test_final_status_preserves_failure_and_not_run) ... ok
+test_historical_exact_profile_and_unsupported_variants (__main__.ReceiptTests.test_historical_exact_profile_and_unsupported_variants) ... ok
+test_historical_pass_cannot_claim_unknown_host (__main__.ReceiptTests.test_historical_pass_cannot_claim_unknown_host) ... ok
+test_receipt_binding_duplicate_keys_and_missing_marker (__main__.ReceiptTests.test_receipt_binding_duplicate_keys_and_missing_marker) ... ok
+test_receipt_size_distinguishes_large_ordinary_inventory (__main__.ReceiptTests.test_receipt_size_distinguishes_large_ordinary_inventory) ... ok
+test_combined_capture_boundary (__main__.SupervisorTests.test_combined_capture_boundary) ... ok
+test_launch_failure_preserved_without_retry (__main__.SupervisorTests.test_launch_failure_preserved_without_retry) ... ok
+test_output_limit_kills_and_reaps (__main__.SupervisorTests.test_output_limit_kills_and_reaps) ... ok
+test_success_bounded_capture_and_fresh_session (__main__.SupervisorTests.test_success_bounded_capture_and_fresh_session) ... ok
+test_wall_limit_kills_and_unknown_shutdown_preserved (__main__.SupervisorTests.test_wall_limit_kills_and_unknown_shutdown_preserved) ... ok
+
+======================================================================
+FAIL: test_dispatch_failure_not_hidden_or_stale (__main__.CoordinatorTests.test_dispatch_failure_not_hidden_or_stale)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 274, in test_dispatch_failure_not_hidden_or_stale
+    with tempfile.TemporaryDirectory() as parent, mock.patch.object(c,'plan',return_value=specification):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 665, in _rmtree_safe_fd
+    dirfd = os.open(entry.name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=topfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 313, in audit
+    raise AssertionError('CI_AUTHOR_READ_OUTSIDE_SCOPE')
+AssertionError: CI_AUTHOR_READ_OUTSIDE_SCOPE
+
+======================================================================
+FAIL: test_mock_dispatch_isolated_environment_and_unsupported_host (__main__.CoordinatorTests.test_mock_dispatch_isolated_environment_and_unsupported_host)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 255, in test_mock_dispatch_isolated_environment_and_unsupported_host
+    with tempfile.TemporaryDirectory() as parent, mock.patch.object(c,'plan',return_value=specification), mock.patch.dict(os.environ,{'OPENROUTER_API_KEY':'MOCK_PRIVATE_VALUE'}):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 665, in _rmtree_safe_fd
+    dirfd = os.open(entry.name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=topfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 313, in audit
+    raise AssertionError('CI_AUTHOR_READ_OUTSIDE_SCOPE')
+AssertionError: CI_AUTHOR_READ_OUTSIDE_SCOPE
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.059s
+
+FAILED (failures=2)
+{"kind": "CI_ISOLATION_AUTHOR_MOCK_V1", "python": "3.11.17", "tests_run": 20, "successful": false, "read_reservation_bytes": 756627, "temp_write_bytes": 184381, "console_bytes_before_receipt": 6812, "actual_children": 0, "actual_frozen_groups": 0, "network_calls": 0}
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 354, in <module>
+    if __name__=='__main__':raise SystemExit(bounded_main())
+                                             ^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 351, in bounded_main
+    scratch.cleanup()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 665, in _rmtree_safe_fd
+    dirfd = os.open(entry.name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=topfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_ci_collection_isolation_v1.py", line 313, in audit
+    raise AssertionError('CI_AUTHOR_READ_OUTSIDE_SCOPE')
+AssertionError: CI_AUTHOR_READ_OUTSIDE_SCOPE

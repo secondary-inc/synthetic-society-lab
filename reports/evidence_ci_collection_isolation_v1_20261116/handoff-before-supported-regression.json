@@ -1,0 +1,353 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 1214,
+      "path": ".github/workflows/offline.yml",
+      "sha256": "48d2d2185513c3d572b4a8189664daf5797bc76b745d9cc7adfab18687898baf"
+    },
+    {
+      "bytes": 24413,
+      "path": "scripts/run_offline_ci_v1.py",
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    {
+      "bytes": 20528,
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews the exact hashed files and mocked receipts, then lead sequences separately bounded focused execution. Do not start full collection from this handoff.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 5817,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/author-invocations.json",
+      "sha256": "7e7bd06479db27372aaecf8f56b9838e213fd771a8732be794909040baee5acc"
+    },
+    {
+      "bytes": 20528,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+      "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+    },
+    {
+      "bytes": 38036,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/frozen-case-inventory.json",
+      "sha256": "7404ced6a86b985a465cee5583ff5fcc4600258ee46d5048b82433ebe0418557"
+    },
+    {
+      "bytes": 19233,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt1-test-reconstructed.py",
+      "sha256": "6a10ad54a43d8aa5c9acf2b1b2d51620b7cec61af7370ddb0ab6a1e15c0b68ac"
+    },
+    {
+      "bytes": 8739,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt1.log",
+      "sha256": "7d1b40b5dfaabce3cb4dd9ac58f0384724f4d8a554f822adbea500137b76845d"
+    },
+    {
+      "bytes": 20398,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt2-test-reconstructed.py",
+      "sha256": "f790d1e464c09159080efddd1b7d1556fe886c668c156c95f00b0cd61e42da26"
+    },
+    {
+      "bytes": 5077,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt2.log",
+      "sha256": "641f07aae0d01bc9eb5e0fd627a36aeb7cfbe775954533f90e26435bb1a6aade"
+    },
+    {
+      "bytes": 3126,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt3-final.log",
+      "sha256": "00c37e7d12eca5d695604d7afca4e5717df68592da4d38463e2ac9daa23d895d"
+    },
+    {
+      "bytes": 3126,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python312-attempt1.log",
+      "sha256": "d41128ac86df660bebf28ed42554507c35ebd15601edb9e45a01a04de8b5ab3b"
+    },
+    {
+      "bytes": 3126,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/python312-attempt2-final.log",
+      "sha256": "00d817b62549169f9186f0260ab7526f99d0bebf4d507c14512b31fecc13932c"
+    },
+    {
+      "bytes": 24413,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/runner-final.py",
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    {
+      "bytes": 565,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/static-checks.json",
+      "sha256": "256bab365dc900db3b935d7e9c79ec624420c8f15bf1f35d62cc64b202a0f99d"
+    },
+    {
+      "bytes": 1214,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/workflow-final.yml",
+      "sha256": "48d2d2185513c3d572b4a8189664daf5797bc76b745d9cc7adfab18687898baf"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_ci_collection_isolation_v1.py",
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S tests/test_ci_collection_isolation_v1.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Author model tests are not actual subprocess/group/workflow execution or independent acceptance. No scientific findings or research-gate changes follow.",
+    "Ordinary process uses installed dependencies; source/version qualification of those dependencies is a separate research/runtime gate.",
+    "Supervision is trusted CI process isolation and bounded evidence capture, not an OS sandbox against hostile tests or descendants deliberately escaping their process group.",
+    "Ordinary job retains a180-minute window because existing workflow evidence reported about165minutes; full workflow fit and original guarded group runtime compatibility remain untested.",
+    "The barrier trusts conventional source code filenames; it is not an adversarial dynamic-code sandbox. Rejected transitive imports become ordinary test errors, not skipped successful coverage.",
+    "Current runtime source observations never substitute for exact historical source assertions. If a current origin cannot be safely observed, the portable child fails rather than silently claiming coverage.",
+    "Author read/console metrics are emitted before final scratch cleanup; they are test-harness counters, not an OS-level accounting attestation.",
+    "W03 historical cause remains UNKNOWN. Current substantiated collection defects are not attributed as the cause of the older generic failure."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Existing repository code and authored model fixtures only. No new external data, publisher text, respondent data, credentials or paid model responses acquired.",
+  "SOURCE_DEFECT_AUDIT": {
+    "bytes": 16078,
+    "path": "reports/CI_COLLECTION_SCOPE_AUDIT_20261116.json",
+    "sha256": "3231cdc9d9d63cbdbee61c247e6797af2b7dbb344752e6fc6457d4f2ad188ea7"
+  },
+  "TASK_ID": "CI_COLLECTION_ISOLATION_V1_20261116",
+  "TESTS_RUN_AND_RESULTS": {
+    "NOT_RUN": [
+      "full unittest collection",
+      "any actual six frozen group",
+      "actual supervisor subprocess boundary",
+      "entire offline workflow",
+      "actual historical qualification on any host",
+      "independent audit"
+    ],
+    "actual_invocations": [
+      {
+        "attempt_for_runtime": 1,
+        "authored_source_ref": {
+          "bytes": 19233,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt1-test-reconstructed.py",
+          "sha256": "6a10ad54a43d8aa5c9acf2b1b2d51620b7cec61af7370ddb0ab6a1e15c0b68ac"
+        },
+        "exitcode": 1,
+        "log_ref": {
+          "bytes": 8739,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt1.log",
+          "sha256": "7d1b40b5dfaabce3cb4dd9ac58f0384724f4d8a554f822adbea500137b76845d"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 6812,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.11.17",
+          "read_reservation_bytes": 756627,
+          "successful": false,
+          "temp_write_bytes": 184381,
+          "tests_run": 20
+        },
+        "source_binding_limit": "RECONSTRUCTED_BY_REVERSING_RECORDED_PATCHES_NOT_CONTEMPORANEOUS_RUN_HASH"
+      },
+      {
+        "attempt_for_runtime": 2,
+        "authored_source_ref": {
+          "bytes": 20398,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt2-test-reconstructed.py",
+          "sha256": "f790d1e464c09159080efddd1b7d1556fe886c668c156c95f00b0cd61e42da26"
+        },
+        "exitcode": 1,
+        "log_ref": {
+          "bytes": 5077,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt2.log",
+          "sha256": "641f07aae0d01bc9eb5e0fd627a36aeb7cfbe775954533f90e26435bb1a6aade"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 4809,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.11.17",
+          "read_reservation_bytes": 886878,
+          "successful": false,
+          "temp_write_bytes": 184381,
+          "tests_run": 21
+        },
+        "source_binding_limit": "RECONSTRUCTED_BY_REVERSING_RECORDED_PATCHES_NOT_CONTEMPORANEOUS_RUN_HASH"
+      },
+      {
+        "attempt_for_runtime": 1,
+        "authored_source_ref": {
+          "bytes": 20528,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+          "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+        },
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 3126,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python312-attempt1.log",
+          "sha256": "d41128ac86df660bebf28ed42554507c35ebd15601edb9e45a01a04de8b5ab3b"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 2859,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.12.14",
+          "read_reservation_bytes": 650271,
+          "successful": true,
+          "temp_write_bytes": 184011,
+          "tests_run": 21
+        },
+        "source_binding_limit": "FROZEN_FINAL_BYTES"
+      },
+      {
+        "attempt_for_runtime": 3,
+        "authored_source_ref": {
+          "bytes": 20528,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+          "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+        },
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 3126,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python311-attempt3-final.log",
+          "sha256": "00c37e7d12eca5d695604d7afca4e5717df68592da4d38463e2ac9daa23d895d"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 2859,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.11.17",
+          "read_reservation_bytes": 650271,
+          "successful": true,
+          "temp_write_bytes": 184381,
+          "tests_run": 21
+        },
+        "source_binding_limit": "FROZEN_BEFORE_FINAL_INVOCATION"
+      },
+      {
+        "attempt_for_runtime": 2,
+        "authored_source_ref": {
+          "bytes": 20528,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/final-authored-test.py",
+          "sha256": "aac280c74bb2625615d53fe278520ca48dd938022e53794cfd83bd06496a126e"
+        },
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 3126,
+          "path": "reports/evidence_ci_collection_isolation_v1_20261116/python312-attempt2-final.log",
+          "sha256": "00d817b62549169f9186f0260ab7526f99d0bebf4d507c14512b31fecc13932c"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 2859,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.12.14",
+          "read_reservation_bytes": 650271,
+          "successful": true,
+          "temp_write_bytes": 184011,
+          "tests_run": 21
+        },
+        "source_binding_limit": "FROZEN_BEFORE_FINAL_INVOCATION"
+      }
+    ],
+    "covered_models": [
+      "static six-file source pins and220/216/4 case counts",
+      "ordinary exact-file exclusions",
+      "direct/transitive frozen exec barrier callback",
+      "ordinary hook-registration barrier callback and collecting-state reset",
+      "runner import no top-level hook/process invocation",
+      "full portable coverage, dropped cases, zero runs, skip and false NOT_RUN rejection",
+      "exact historical host/source admission and unsupported versions/platforms/architectures",
+      "historical receipt cannot claim unknown profile",
+      "receipt identity, duplicate-key, missing marker and distinct size bounds",
+      "guarded entrypoint/loader selection with authored harmless stub only and parent unittest.main restoration",
+      "unsupported historical stub never executed",
+      "combined output cap, wall kill/reap, unknown shutdown, launch failure and fresh session using fake processes/selectors only",
+      "coordinator isolated argv/environment, single reservations, new-only evidence, failure propagation and no stale prior execution receipt"
+    ],
+    "failure_preservation": [
+      "3.11 attempt1:20tests,2 cleanup failures plus final cleanup error; guard resolved dir_fd-relative open against cwd. Repaired with unchanged existing DirectoryFdGuard helper; no read-scope waiver.",
+      "3.11 attempt2:21tests,1failure; unsupported-host model used real platform.mac_ver, attempted SystemVersion.plist outside pure read scope. Corrected test to mock mac_ver/machine rather than permit host file. Denial happened before file open effect.",
+      "Failed source snapshots were reconstructed by exact reverse of recorded patch changes, not contemporaneously hashed by the original invocations. Original failure logs are retained untouched."
+    ],
+    "final_python311": "21 tests PASS; attempt3 explicitly authorized after bounded two failures",
+    "final_python312": "21 tests PASS; attempt2 on identical final bytes"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent code/methods audit and separately approved focused actual subprocess/group execution are outstanding.",
+    "Full collection/workflow has not been rerun.",
+    "Lead owns STATUS and Git commit/push; this worker changed neither and cannot claim GitHub synchronization."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Preserve six frozen qualification files exactly",
+      "evidence": "frozen-case-inventory.json",
+      "status": "PASS_STATIC_AUTHOR_CHECK"
+    },
+    {
+      "criterion": "Mocked harness behavior and failure reporting on both target minors",
+      "evidence": "Final identical21-test logs; original failures retained.",
+      "status": "PASS_AUTHOR_ONLY"
+    },
+    {
+      "criterion": "Ordinary collection cannot import global frozen hooks, including transitive paths",
+      "evidence": "CollectionTests",
+      "status": "PASS_MOCK_CALLBACK_MODELS_ACTUAL_COLLECTION_NOT_RUN"
+    },
+    {
+      "criterion": "Original portable groups retain complete coverage and guard behavior in fresh processes",
+      "evidence": "Exact source/static inventory plus stub loader models only.",
+      "status": "NOT_RUN_ACTUAL_GROUPS"
+    },
+    {
+      "criterion": "Unsupported historical checks truthful and exact hashes not guessed",
+      "evidence": "ReceiptTests and unsupported stub model.",
+      "status": "PASS_PURE_MODELS_ACTUAL_HISTORICAL_NOT_RUN"
+    },
+    {
+      "criterion": "Independent auditor validates implementation and scoped execution before milestone acceptance",
+      "evidence": "Separate auditor required; implementer does not certify milestone.",
+      "status": "PENDING_INDEPENDENT_REVIEW"
+    }
+  ],
+  "date": "2026-11-16",
+  "decision": "AUTHOR_MOCK_TESTS_PASS_FINAL_311_AND_312_PENDING_INDEPENDENT_REVIEW_AND_FOCUSED_EXECUTION",
+  "git_and_status_authority": "Lead only; worker made no Git mutation, GitHub dispatch or STATUS edit.",
+  "job_contract": {
+    "coordinator_wall_seconds": 12120,
+    "default_unsupported_summary": "PASS_PORTABLE_HISTORICAL_NOT_RUN, never PASS_ALL_REQUESTED_GROUPS",
+    "each_frozen_capture_bytes": 262144,
+    "each_frozen_wall_and_cpu_seconds": 120,
+    "enumeration_ref": {
+      "bytes": 38036,
+      "path": "reports/evidence_ci_collection_isolation_v1_20261116/frozen-case-inventory.json",
+      "sha256": "7404ced6a86b985a465cee5583ff5fcc4600258ee46d5048b82433ebe0418557"
+    },
+    "environment": "Explicit inherited environment allowlist, -I -B for all; additionally -S for frozen groups. No ambient model/API credentials passed. Default paid flags false/0 are not represented as the research accounting enforcement mechanism.",
+    "frozen_guard_bounds": "Original authored denials/64MiB read/32MiB writes/256KiB output guards are retained where defined; import-methods-v1 retains its tighter zero-write guard. Parent applies independent wall/output/reap control.",
+    "historical_children": 4,
+    "historical_profile": "CPython exact3.11.17 or3.12.14, Darwin arm64 macOS26.6 plus exact existing socket.py size/hash. Scope only four frozen checks; not full runtime qualification.",
+    "mandatory_portable_cases": 216,
+    "ordinary_capture_bytes": 16777216,
+    "ordinary_children": 1,
+    "ordinary_wall_seconds": 10800,
+    "original_total_cases": 220,
+    "portable_children": 6,
+    "receipt_caps_bytes": {
+      "frozen": 131072,
+      "ordinary": 4194304
+    },
+    "separately_historical_cases": 4,
+    "strict_historical_option": "--require-historical causes FAIL_HISTORICAL_NOT_RUN when any historical check is unsupported.",
+    "total_sequential_children": 11,
+    "workflow_job_minutes_unchanged": 240
+  },
+  "problem_and_result": [
+    "Default unittest collection executes six frozen module-level global audit hooks, contaminating unrelated tests. Runner now excludes those exact files and executes ordinary collection in a disposable child with a fail-closed transitive execution and hook-registration barrier.",
+    "Six portable groups run in six separate fresh bounded children, using original exact source bytes and original guarded main entrypoints with only the selected unittest loader injected. All 216 applicable portable cases remain required; missing, skipped or incomplete portable coverage fails the coordinator.",
+    "Four frozen historical socket-source assertions are separate exact-profile jobs. Their assertions and hashes are unchanged. Unsupported hosts record NOT_RUN with zero tests and explicit reasons; no current source hash is promoted into a qualification pin.",
+    "CI uploads plan, per-job reservations, bounded stdout/stderr, source-bound receipts, job results and summary even after failure. Runner has no retries and new-only evidence directories."
+  ]
+}
