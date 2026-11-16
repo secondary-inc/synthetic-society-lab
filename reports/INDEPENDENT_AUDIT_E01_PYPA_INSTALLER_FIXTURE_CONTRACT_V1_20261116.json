@@ -1,0 +1,131 @@
+{
+  "auditor_archive_extractions_new_targets": 0,
+  "auditor_fixture_generation_or_install_calls": 0,
+  "auditor_network_Git_STATUS_owner_credential_raw_actions": 0,
+  "auditor_tool_import_execution": 0,
+  "blocking_findings": [
+    {
+      "id": "F01_EXACT_FIXTURE_BYTE_ENCODING_AMBIGUOUS",
+      "intended_candidate_UTF8_hex_not_generated": "5b636f6e736f6c655f736372697074735d0a666978747572652d636c69203d2073736c5f666978747572655f7061796c6f61643a6d61696e0a",
+      "observed_entrypoint_UTF8_hex": "5b636f6e736f6c655f736372697074735d5c6e666978747572652d636c69203d2073736c5f666978747572655f7061796c6f61643a6d61696e5c6e",
+      "observed_entrypoint_parsed_value_repr": "'[console_scripts]\\\\nfixture-cli = ssl_fixture_payload:main\\\\n'",
+      "observed_literal_LF_count": 0,
+      "required_resolution": "Freeze entry_points.txt and INSTALLER bytes explicitly (hex/base64 or actualJSONLF). Distinguish illustrative APIexpression escaping from literalfixturecontent. Reconcile7-fileoracle and exactscript/RECORD hashes against that frozenencoding in implementation; no historicalfieldrewriting.",
+      "scope": "Static JSONbyte-spec ambiguity only; no ConfigParser,PyPAtool orfixturecode executed.",
+      "status": "BLOCKED_BEFORE_EXACT_CONTRACT_ACCEPTANCE"
+    }
+  ],
+  "contract_ref": {
+    "bytes": 29721,
+    "path": "reports/E01_PYPA_INSTALLER_GENERATED_FIXTURE_CONTRACT_V1_20261116.json",
+    "sha256": "bc2077fcbd12bae4cbb68f79057c1bd2f345ac385de05c3b06dd2716de06b631"
+  },
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "BLOCKED_EXACT_FIXTURE_BYTE_SPEC_CLARIFICATION_REQUIRED_NO_EXECUTION",
+  "kind": "INDEPENDENT_STATIC_PYPA_INSTALLER_GENERATED_FIXTURE_METHODS_REVIEW",
+  "methods_assessment": {
+    "API_filename_binding": "WheelFile(ZipFile(readonlynamedbuffer)) source-feasible: nonemptyfilenameparsed foridentity; bareBytesIOinsufficient. Privateimmutablecursor preferred; no sourcepathreopen/fallback. APIsandloaderfitstillunimplemented/unexecuted.",
+    "caps_failure_evidence": "8cases/4families/max3installcallsperruntime coherent. Independentrecord/script/manifestoracle, sharedcounters, primaryexceptionpreservation,separatefullrecords and<=28KiBworst-caseplus4KiBheadroom/32KiBfinalcaps appropriate,butnotimplemented/tested.",
+    "configuration": "Emptytuplebytecodelevelsreturnsbeforecompileall;posixskipsbinarylauncherreads;markerinterpreter/wrapperneverexecuted. No targetsourcecompilation allowed.",
+    "implementation_readiness": "Methodsdesigncanproceedafterexplicitbyte-specclarification; no existingvalidator/harness/loader/oracle claimed. Successfulfuturefixtureswouldnot qualifyrealwheels/runtime/PDFsource.",
+    "route_A": "BLOCKED unmodifiedvalidate_record(True) writesos.devnull. Originalreadonlyexact_readsdoesnotauthorizewrites. No sinkparameter;no monkeypatch/globalchange/guardwaiver accepted.",
+    "route_B": "CONCEPTUALLY_ACCEPTABLE forrestrictedgeneratedsubset: complete independentSHA256/size/unique/bidirectionalRECORD/selfrow/path/ZIPprevalidation on sealedexactbytes, then unmodifiedinstaller.install. It doesnotclaim libraryvalidate_record(True)executed orgeneralwheelstandard equivalence.",
+    "semantic_gaps_preserved": "LibraryRECORDdictlastwins and noleftoverrejection remain sourcefacts; externalstrictvalidator mustexplicitlyrejectduplicates/orphans.",
+    "seven_file_oracle": "4nonRECORDarchivefiles+generatedINSTALLER+generatedposixscript+newRECORD=7. InstalledRECORD6contentrows+1emptyselfrow. ../binreferencelegitimateonlyunderfrozenowned-schememap."
+  },
+  "source_audit_ref": {
+    "bytes": 20875,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_SOURCE_ACQUISITION_20261116.json",
+    "sha256": "c6d8086ff740e665b5c8f8181fea040e957c1358873dad4dfa4a0e35ff90f8bd"
+  },
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_FIXTURE_CONTRACT_V1_20261116.json",
+      "reports/evidence_e01_pypa_installer_fixture_contract_v1_20261116/byte_encoding_finding.json",
+      "reports/evidence_e01_pypa_installer_fixture_contract_v1_20261116/selected_source_lines.json"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Lead issues a separatelypinnedbyte-specclarification/successor preservingoriginal; auditor closesnarrowfinding. Then separatelyassignboundedimplementationofpreferredstrictsealed-byte routeB, with directadverse/replayproofs andnorealinstallationrelease.",
+    "OUTPUT_ARTIFACTS": [
+      {
+        "bytes": 998,
+        "path": "reports/evidence_e01_pypa_installer_fixture_contract_v1_20261116/byte_encoding_finding.json",
+        "sha256": "99ba603119aa038721e0c88ccd1ad9b72aade800ac86e2b404784613f0f92492"
+      },
+      {
+        "bytes": 10463,
+        "path": "reports/evidence_e01_pypa_installer_fixture_contract_v1_20261116/selected_source_lines.json",
+        "sha256": "8eb3f62b6b894ded4c0dd93fcade1d6c0ba343b267fddba82f5ed1931b2b44c9"
+      }
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "Read exactcontract JSONand parse fixed_fixture_data.entrypoint encoding; inspect retainedsource lines andsourceauditrefs. No toolimport/extract/fixture/targetexecution permitted by this review."
+    ],
+    "RISKS_AND_LIMITATIONS": [
+      "OverallBLOCKED is narrow exactbyteencoding issue. Methodsstructure/routeBdesignfeasibility otherwise soundforrestricted authoredsubset, not allwheels/general equivalence or executedqualification.",
+      "Source-auditPASSisarchiveintegrityonly; suppliedarchive containsbinaryresources notread/executed by this review. Posixgenerationmustavoidthem.",
+      "No implementationexists forpureprevalidator,sealedtoken,read-onlynamedbuffer,standardZIPtoolbootstrap,guardrouting/IO/effectspies,fixturebuilder,independentoracle orboundedfailure/headroomwriter.",
+      "Validation-install identitymustbind everyconsumer tosame immutablebytes/token andexpectedfilename. Before/afterrehashalone isnot protectionagainst mutate-use-restore; private readonlyview/single-ownerthreatmodel isrequired.",
+      "Compile/parsesourceASTonlyforgeneratedwrapperinspection, neverpayloadexecution/targetbytecode. Toolmodulecompilationunderseparatelyreleasedloader isdistinctfromtargetpayloadcompilation.",
+      "Source/destinationcode canstat/create/open/chmodschemeparents/scripts; originalGuestPolicyplusdirFD/highlevelaliaschecksandsharedchargingmustmediate thoseeffects. Lexicalpaths/overwriteFalsearenotconfinement.",
+      "Contractrequiresprevalidatorunitadversaries(duplicate/selfrow/size etc) beyondthreeactualnegativefixturecases; those aremissingcode/test obligations andcreate no additionalfixtureallowance.",
+      "Futurebounds areproposalsonly:1suite/runtime,120s/64MiBread/32MiBwrite/8MiBlogicaltree/1024entries,16KiBarchive/32KiBinflate/32members/8KiBmember,zero network/model/childandnoretry.",
+      "Allthreeinstallcalls(valid,quota,interruption) remainfixture-only/unacceptedwhereexpected; unexpectedsetup/integrity/primaryfailurestopsbatch. No actual450/180/12reset/refund orP2/P3advancement."
+    ],
+    "SOURCE_DATA_AND_LICENSE_NOTES": "AcquiredMIT publicinstaller1.1.0archive readinmemory only.10selectedPythonmembersverifiedbySHA; noexec/import/extraction, scriptslaunched,generatedfixtures ornewtargets. No rawresearchsource/owner/credential/network work.",
+    "TASK_ID": "E01_PYPA_INSTALLER_FIXTURE_CONTRACT_V1_STATIC_20261116",
+    "TESTS_RUN_AND_RESULTS": "Static technicalsource/contract review only.10source-memberhashesmatch;4families/8cases/3maximuminstallcalls/7fileoracle arithmeticconsistent. Oneblockingexactbyte-specambiguity, no runtimebehaviorcertified.",
+    "UNRESOLVED_BLOCKERS": [
+      "ExplicitexactLF/escape resolution beforecallingfrozencontractreadyforimplementation.",
+      "Thenreviewedvalidator/sourcebinding/loader/guard/oracle/harnesscode andseparatefinitefixtureauthorizationrequired. RouteAowned-sinknullwriteblockremains."
+    ]
+  },
+  "tool_archive_ref": {
+    "bytes": 464466,
+    "path": "data/processed/e01_installer_tool_source_v1_20261116/2-RESPONSE.bin",
+    "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0"
+  },
+  "verified_source_members": {
+    "installer/__init__.py": {
+      "bytes": 128,
+      "sha256": "da5afac97745f229a8dcc480f15bf3b6f026b56614580ba0cb42967eff68a1a1"
+    },
+    "installer/__main__.py": {
+      "bytes": 3674,
+      "sha256": "30821a084a972e1734184986a1059b7f50aa3776f228666ceb0a8f88442d1b93"
+    },
+    "installer/_core.py": {
+      "bytes": 5234,
+      "sha256": "9da28e04fbd21cea234f16aec6ea75d24ac063a1a483ccf3abb4d651715011cb"
+    },
+    "installer/_scripts/__init__.py": {
+      "bytes": 81,
+      "sha256": "222fa4998cbf4d2db71c35dfdd0530de947234ca4c66ca75c322f5d38875625f"
+    },
+    "installer/destinations.py": {
+      "bytes": 10666,
+      "sha256": "92853c201d052086220fef5784a2fb6c01dc5812b7f8f9f98590f1b87e5bb1fb"
+    },
+    "installer/exceptions.py": {
+      "bytes": 248,
+      "sha256": "630c75d5da3447e70500b8a6731a6d93fae183b4756c36f8b010ae11b94d94be"
+    },
+    "installer/records.py": {
+      "bytes": 7368,
+      "sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf"
+    },
+    "installer/scripts.py": {
+      "bytes": 5538,
+      "sha256": "971da58eecdee1c64daf9018071f947f37b6c1d01cedd1828b24eb7f488e71f7"
+    },
+    "installer/sources.py": {
+      "bytes": 12121,
+      "sha256": "eef90f50aef04c6faa994a2de04e4e20cb61a659144317e10ba78486b5a694e8"
+    },
+    "installer/utils.py": {
+      "bytes": 8114,
+      "sha256": "c68c38a65e14f6a717845bbc6cf8f1a1307db2b4c5361550a5448ba53f2b92e7"
+    }
+  }
+}

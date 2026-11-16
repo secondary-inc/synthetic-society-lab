@@ -1,0 +1,450 @@
+{
+  "TASK_ID": "E01_PYPA_INSTALLER_GENERATED_FIXTURE_CONTRACT_DRAFT_V1_20261116",
+  "status": "DRAFT_ONLY_BASELINE_GUARD_FIT_BLOCKED_SOURCE_AUDIT_PREREQUISITE_NO_EXECUTION_RELEASE",
+  "FILES_CHANGED": [
+    "reports/E01_PYPA_INSTALLER_GENERATED_FIXTURE_CONTRACT_V1_20261116.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/E01_PYPA_INSTALLER_GENERATED_FIXTURE_CONTRACT_V1_20261116.json"
+  ],
+  "INPUT_ARTIFACTS": {
+    "scripts/install_e01_pypdf701_runtime_v1_5.py": {
+      "bytes": 64638,
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+    },
+    "scripts/e01_authored_dirfd_guard_v2_20261112.py": {
+      "bytes": 5143,
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    "scripts/e01_compatibility_error_observer_candidate_v2_20261116.py": {
+      "bytes": 12129,
+      "sha256": "3ad8fe01b317fe5c3879975d0acd2b081ff3adac7ce2c60e7eabef7737aede5b"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_COMPATIBILITY_ERROR_OBSERVER_PURE_V2_20261116.json": {
+      "bytes": 15562,
+      "sha256": "39c8d6eaffc46bfb38c6f22b908fdb8211ea53d762e0e110a9beb78bd5bdd122"
+    },
+    "reports/E01_PYPA_INSTALLER_SOURCE_ACQUISITION_20261116.json": {
+      "bytes": 18994,
+      "sha256": "7ba764a1f037c5f2dafab98f76bf1cbc3f4940ec872c7323d63bf6a2a62fd22f"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "Draft-only static inspection: rehash the closed464466B archive, read selected Python members in memory and compare their hashes to SOURCE_ANALYSIS. No installer import, fixture generation/execution or executable extraction.",
+    "All future API sequences below are specifications, not executed commands. No fixture invocation allowance is created by this contract."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "fixture_invocations": 0,
+    "package_imports_or_execution": 0,
+    "archive_extractions_or_new_targets": 0,
+    "network_requests": 0,
+    "static_inspection": "Pinned core/destination/source/record/script/utils source inspected only in memory; original guard and accepted observerV2 source/review read as technical references.",
+    "preparation_bounds": {
+      "start_UTC": "2026-11-16T14:16:24Z",
+      "deadline_UTC": "2026-11-16T14:26:24Z",
+      "maximum_minutes": 10,
+      "logical_read_cap_bytes": 16777216,
+      "conservative_known_read_bound_bytes": 4194304,
+      "report_output_cap_bytes": 2097152
+    },
+    "interpretation": "No API behavior, generated output, source-load mechanism, guard integration or cross-runtime execution result claimed."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "tool": {
+      "file_requires_python": ">=3.10",
+      "filename": "installer-1.1.0-py3-none-any.whl",
+      "name": "installer",
+      "requires_python": ">=3.10",
+      "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0",
+      "size": 464466,
+      "url": "https://files.pythonhosted.org/packages/d7/7a/63547a792a12148882205d79e07644091d5b7690f40c2bb9d41452a8bdc2/installer-1.1.0-py3-none-any.whl",
+      "version": "1.1.0",
+      "yanked": false
+    },
+    "license": "MIT",
+    "declared_requires_python": ">=3.10",
+    "declared_requires_dist": [],
+    "source_member_hashes": {
+      "installer/__init__.py": {
+        "bytes": 128,
+        "sha256": "da5afac97745f229a8dcc480f15bf3b6f026b56614580ba0cb42967eff68a1a1"
+      },
+      "installer/__main__.py": {
+        "bytes": 3674,
+        "sha256": "30821a084a972e1734184986a1059b7f50aa3776f228666ceb0a8f88442d1b93"
+      },
+      "installer/_core.py": {
+        "bytes": 5234,
+        "sha256": "9da28e04fbd21cea234f16aec6ea75d24ac063a1a483ccf3abb4d651715011cb"
+      },
+      "installer/_scripts/__init__.py": {
+        "bytes": 81,
+        "sha256": "222fa4998cbf4d2db71c35dfdd0530de947234ca4c66ca75c322f5d38875625f"
+      },
+      "installer/destinations.py": {
+        "bytes": 10666,
+        "sha256": "92853c201d052086220fef5784a2fb6c01dc5812b7f8f9f98590f1b87e5bb1fb"
+      },
+      "installer/exceptions.py": {
+        "bytes": 248,
+        "sha256": "630c75d5da3447e70500b8a6731a6d93fae183b4756c36f8b010ae11b94d94be"
+      },
+      "installer/records.py": {
+        "bytes": 7368,
+        "sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf"
+      },
+      "installer/scripts.py": {
+        "bytes": 5538,
+        "sha256": "971da58eecdee1c64daf9018071f947f37b6c1d01cedd1828b24eb7f488e71f7"
+      },
+      "installer/sources.py": {
+        "bytes": 12121,
+        "sha256": "eef90f50aef04c6faa994a2de04e4e20cb61a659144317e10ba78486b5a694e8"
+      },
+      "installer/utils.py": {
+        "bytes": 8114,
+        "sha256": "c68c38a65e14f6a717845bbc6cf8f1a1307db2b4c5361550a5448ba53f2b92e7"
+      }
+    },
+    "raw_archive_ref": {
+      "path": "data/processed/e01_installer_tool_source_v1_20261116/2-RESPONSE.bin",
+      "bytes": 464466,
+      "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0"
+    },
+    "privacy": "Public tool source and existing technical controls only. No raw research data, account/credential/model access or external publication."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "prerequisites": [
+    "Independent exact source/evidence audit must PASS before any package import or generated-fixture invocation.",
+    "Separate lead finite assignment must accept this contract and freeze exact harness/source-loader/guard/validator/diagnostic code with independent review. This document authorizes none of them.",
+    "Resolve the static baseline guard-fit mismatch without changing os.devnull, skipping verification, package monkeypatches or guard exemptions. Preserve original failure evidence."
+  ],
+  "confirmed_static_baseline_findings": [
+    {
+      "id": "B01_DEVNULL_WRITE",
+      "status": "BASELINE_BLOCKED",
+      "source": "installer/records.py:150-160",
+      "fact": "RecordEntry.validate_stream hashes by opening Path(os.devnull) in wb mode. WheelFile.validate_record(validate_contents=True) calls it at sources.py302-304.",
+      "guard": "Original GuestPolicy.path at483-495 allows writes only under its owned target/stage. /dev/null occurs in exact_reads, which does not authorize writes.",
+      "consequence": "Unmodified full library validation cannot be assumed to pass the unchanged guard. Positive routeA fixtures remain blocked. This is a source-level mismatch, not an executed fixture finding."
+    },
+    {
+      "id": "B02_RECORD_NAME_GAPS",
+      "status": "BASELINE_BLOCKED",
+      "source": "installer/sources.py245-248,256-310",
+      "fact": "RECORD rows are converted to a dict, so duplicate names are last-wins; entries are popped while scanning archive members, with no visible post-loop leftover-map rejection.",
+      "consequence": "Strict uniqueness and bidirectional membership need independent prechecks. Do not infer those guarantees from the method name or documentation."
+    },
+    {
+      "id": "B03_DESTINATION_AND_SCRIPT",
+      "status": "REQUIRES_FIXTURE_PROOF",
+      "source": "installer/destinations.py138-194,224-252",
+      "fact": "Destination normalizes paths, tests existence then opens wb, creates parents and chmods scripts. Normalization alone is not symlink/race confinement or create-exclusive behavior.",
+      "consequence": "Original directory-FD/audit/charging controls plus stricter fixture alias/effect checks must remain authoritative."
+    },
+    {
+      "id": "B04_BYTECODE",
+      "status": "STATIC_CONFIGURATION_AVAILABLE_NOT_EXECUTED",
+      "source": "installer/destinations.py256-272",
+      "fact": "Empty bytecode_optimization_levels returns before compileall import/call.",
+      "consequence": "Configure exactly(); independently assert no pyc/__pycache__ or compile event for target source. No target compilation/execution permitted."
+    },
+    {
+      "id": "B05_POSIX",
+      "status": "STATIC_CONFIGURATION_AVAILABLE_NOT_EXECUTED",
+      "source": "installer/scripts.py69-78,103-113",
+      "fact": "kind=posix returns no binary launcher data and generates wrapper bytes.",
+      "consequence": "Use only posix; no.exe resource reads or generated-script execution."
+    }
+  ],
+  "validation_route_comparison": {
+    "A": {
+      "name": "Library full validation plus strict name precheck and owned-sink adaptation",
+      "sequence": [
+        "Freeze fixture bytes and hash; run bounded ZIP/path/RECORD uniqueness+bidir-coverage/self-row checks.",
+        "Create source with unmodified WheelFile API, then source.validate_record(validate_contents=True) before constructing destination or calling installer.install.",
+        "An owned-sink design would still be needed for the library's null write; no such supported sink parameter exists in the inspected API."
+      ],
+      "blockers": [
+        "No os.devnull global mutation, write waiver or installer package monkeypatch is permitted.",
+        "A source-level owned-sink fork or dependency change would create separately qualified tool code. It is not provided or authorized here."
+      ],
+      "tradeoff": "Keeps library validation entry point, but currently requires a tool change or unsupported indirection in addition to strict membership checks.",
+      "status": "BLOCKED_PENDING_SEPARATE_SINK_DESIGN_NOT_DEFAULT"
+    },
+    "B": {
+      "name": "Strict bounded immutable-byte prevalidation, then unmodified installer.install",
+      "preferred_for_next_source_design": true,
+      "sequence": [
+        "Adapt only the narrow archive/RECORD verification core from the source-audited acquisition verifier into a new independently reviewed pure function; do not edit/re-execute consumed acquisition source.",
+        "Return a sealed ValidatedWheel token containing exact immutable raw bytes, SHA256, expected filename/name/version/dist-info and full per-member manifests only after every required check succeeds.",
+        "Construct unmodified WheelFile over a read-only, privately owned in-memory ZIP view of those exact bytes; bind stream filename to the expected .whl name and verify source identity.",
+        "Call unmodified installer.install with explicit destination settings below. No subsequent fixture path reopen, data replacement or alternate source is allowed."
+      ],
+      "required_prevalidation": [
+        "Exact raw archive SHA256 and length against the frozen case manifest; no source change after validation.",
+        "Bound central directory before ZIP construction: entry counts, file/total inflation, compressed formats; reject encrypted/special/symlink/type aliases, absolute/traversal/backslash/colon/NUL/duplicate/case-fold/file-parent collisions.",
+        "Require the exact single dist-info identity, version, WHEEL1.0/py3-none-any and fixture Requires-Python; reject.data,.pth,__pycache__,native members and signature exceptions in this small fixture subset.",
+        "RECORD must have exactly three fields per row, unique exact names and exact bidirectional coverage of all non-directory archive members. Directory treatment explicit.",
+        "Every non-RECORD file must have canonical SHA256 URLsafe digest and exact decimal byte size; stream hash bytes directly without any filesystem sink.",
+        "Only the exact RECORD self-row may have empty hash/size; no other exceptions. Hash and size every member independently of installer.",
+        "Freeze per-member executable flags and expected output layout; never evaluate or import payload bytes."
+      ],
+      "not_skip_validation": "This is complete independently reviewed content validation, not validate_contents=False or omission of verification. RouteB deliberately does not claim that library validate_record(True) ran. The later lead/auditor must explicitly accept this stronger external validation boundary before selectingB.",
+      "tradeoff": "Avoids null writes, global overrides and package monkeypatches while reusing standard installation/script/RECORD generation. Adds one bounded validator and immutable source binding, both requiring direct adverse tests.",
+      "status": "DRAFT_PREFERRED_VALIDATION_BOUNDARY_NOT_ACCEPTED"
+    }
+  },
+  "exact_source_API_plan": {
+    "preferred_B": "Use public WheelFile(ZipFile(file_like)) and unmodified installer.install. WheelSource is the documented extension abstraction but is not the first choice.",
+    "filename_issue": "WheelFile.__init__ asserts ZipFile.filename, then parses its basename (sources.py160-173). Bare BytesIO therefore is insufficient.",
+    "memory_view": "Plan a minimal read-only named buffer over the sealed bytes (or a privately owned NamedBytesIO with write/truncate/getbuffer disabled), with name='ssl_fixture_payload-1.0.0-py3-none-any.whl'. Standard ZipFile obtains filename from file.name. No installer class/module is patched.",
+    "same_bytes": "The canonical bytes token remains immutable; buffer ownership stays private to the fixture source. Rehash buffer content/identity before install and after source close, and reject mutation. A read-only immutable-byte cursor is preferable if NamedBytesIO cannot provide the declared boundary; no hostile-private-state/concurrent-writer guarantee inferred.",
+    "stdlib_source_evidence": [
+      {
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/zipfile/__init__.py",
+        "bytes": 89520,
+        "sha256": "83031a1582b84054fdde260a372f8ed25d9dedfbfcbedcef2bc015bcca7c5332",
+        "line": 1363,
+        "fact": "ZipFile assigns self.filename=getattr(file,'name',None)."
+      },
+      {
+        "path": "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/zipfile.py",
+        "bytes": 96163,
+        "sha256": "6f39d6578b4edcf5d3901748e7c8fa8a156e5fb942ab7ad9d2ff04e0879bdaf7",
+        "line": 1347,
+        "fact": "Same filename handoff."
+      }
+    ],
+    "fallback_WheelSource": "A custom WheelSource would need dist_info_filenames/read_dist_info/get_contents and stable same-content semantics. It adds interpretation code, so defer unless the unmodified WheelFile/read-only ZIP route fails independent review.",
+    "proof_obligations": [
+      "Read-only buffer compatibility with ZipFile and WheelFile on both runtimes is source-feasible, not tested.",
+      "Prove no mutable view/source reopen, correct filename/dist-info parsing, exact member-content identity and closed streams.",
+      "Do not create a new custom import/loader framework to solve a fixture-source issue."
+    ]
+  },
+  "tool_loading_plan": {
+    "status": "NOT_IMPLEMENTED_NOT_RELEASED",
+    "steps": [
+      "Before any tooling import, verify independent source-audit PASS plus exact archive/source hashes and fresh installer namespace; no existing site-package resolution or sys.path broadening.",
+      "Create an exclusive readonly-by-policy trusted archive snapshot in a fresh temporary batch tree, preserving exact464466B/hash and original .whl filename if needed by the standard loader. No Python member is extracted.",
+      "Prefer the standard ZIP import loader for the exact source-qualified archive. Bind only the known installer package members and verify source origins/hashes pre/post; reject unexpected imports, resources or fallback.",
+      "Do not assume support for the private .bin artifact name or loader behavior. Verify the qualified standard loader against the canonical snapshot in separately released fixtures; stop on mismatch instead of renaming old evidence or adding a new loader.",
+      "Install original network/helper/native/import/path/read-write guards before loading tool code. Permit reads only of exact qualified tooling/archive/project references, declared standard library and owned temporary controls. No old target or raw-data scan.",
+      "Never import installer.__main__, call CLI, resolve site packages, read.exe resources or run any generated entry point. Loading installer tool code itself needs the separate qualification/fixture release."
+    ],
+    "old_targets": "All fixture prefixes are fresh descendants of a new OS temporary batch root outside the repository; no existing .venv-e01*, source scopes, actual targets or historical control file is writable or reused.",
+    "limitations": "Standard ZIP loader/source-origin behavior and guard fit still require reviewed implementation. The plan is not a claim of immutable-host or OS sandbox protection."
+  },
+  "destination_API_plan": {
+    "call_order_A": "strict names precheck -> source.validate_record(validate_contents=True) -> destination -> installer.install, only after sink blocker independently resolved.",
+    "call_order_B": "strict sealed-byte full prevalidation -> WheelFile bound to same bytes -> identity check -> destination -> installer.install, only after explicit acceptance ofB.",
+    "source_ctor": "with zipfile.ZipFile(named_readonly_buffer, mode='r') as archive: source=WheelFile(archive)",
+    "destination_ctor": {
+      "API": "SchemeDictionaryDestination",
+      "scheme_dict": {
+        "purelib": "<fresh-case-prefix>/site",
+        "platlib": "<fresh-case-prefix>/site",
+        "scripts": "<fresh-case-prefix>/bin",
+        "headers": "<fresh-case-prefix>/headers",
+        "data": "<fresh-case-prefix>/data"
+      },
+      "interpreter": "/SSL_FIXTURE_DO_NOT_EXECUTE/python",
+      "script_kind": "posix",
+      "hash_algorithm": "sha256",
+      "bytecode_optimization_levels": [],
+      "destdir": null,
+      "overwrite_existing": false
+    },
+    "tuple_note": "bytecode_optimization_levels is the exact Python empty tuple(), represented as an empty JSON array here.",
+    "install_call": "installer.install(source=source, destination=destination, additional_metadata={'INSTALLER': b'synthetic-society-lab-fixture-only; installer=1.1.0\\n'})",
+    "execution_rule": "The interpreter string is a fixed non-executed fixture marker, not a real research runtime. No file at that marker is created/opened; every subprocess/exec path remains denied.",
+    "output_verification": "Independently enumerate the7 expected files and compare exact byte size/SHA256. Six installed RECORD rows have content hash/size; the self-row alone is empty. Verify generated shebang/entrypoint syntax as bytes/AST only.",
+    "record_path_note": "Installed RECORD may correctly reference ../bin/fixture-cli relative to site. Verify against the frozen expected prefix-relative file map, resolving only inside allowed schemes; never open raw RECORD paths or confuse this with illegal archive traversal."
+  },
+  "fixed_fixture_data": {
+    "distribution": "ssl_fixture_payload",
+    "version": "1.0.0",
+    "wheel_filename": "ssl_fixture_payload-1.0.0-py3-none-any.whl",
+    "archive_members": [
+      "ssl_fixture_payload/__init__.py",
+      "ssl_fixture_payload-1.0.0.dist-info/METADATA",
+      "ssl_fixture_payload-1.0.0.dist-info/WHEEL",
+      "ssl_fixture_payload-1.0.0.dist-info/entry_points.txt",
+      "ssl_fixture_payload-1.0.0.dist-info/RECORD"
+    ],
+    "payload": "Authored Python source with an unconditional import-time sentinel failure and a main definition; never imported/evaluated/compiled.",
+    "entrypoint": "[console_scripts]\\nfixture-cli = ssl_fixture_payload:main\\n",
+    "metadata": "Exact authored name/version; Requires-Python>=3.10; no dependencies; WHEEL1.0, Root-Is-Purelib:true, Tag:py3-none-any.",
+    "generation": "No randomness; deterministic ZIP order/timestamps/modes/compression and canonical per-member RECORD hashes. Freeze fixture bytes/hashes before invoking tool.",
+    "expected_installed_files": [
+      "site/ssl_fixture_payload/__init__.py",
+      "site/ssl_fixture_payload-1.0.0.dist-info/METADATA",
+      "site/ssl_fixture_payload-1.0.0.dist-info/WHEEL",
+      "site/ssl_fixture_payload-1.0.0.dist-info/entry_points.txt",
+      "site/ssl_fixture_payload-1.0.0.dist-info/INSTALLER",
+      "site/ssl_fixture_payload-1.0.0.dist-info/RECORD",
+      "bin/fixture-cli"
+    ]
+  },
+  "four_fixture_families": [
+    {
+      "family": "F1_VALID_ENTRYPOINT_AND_RECORD",
+      "cases": [
+        {
+          "id": "VALID",
+          "expected": "One successful fixture installation;7 exact files, correct marker shebang/entrypoint bytes, installed RECORD recomputed independently, no payload/module/script/native execution and no bytecode.",
+          "validation_calls_B": 1,
+          "install_calls": 1
+        }
+      ]
+    },
+    {
+      "family": "F2_CORRUPT_RECORD_AND_PATH",
+      "cases": [
+        {
+          "id": "BAD_HASH",
+          "expected": "Wrong member SHA256 rejected by selected full-content validator before destination effects; retain exact rejection and original evidence.",
+          "validation_calls_B": 1,
+          "install_calls": 0
+        },
+        {
+          "id": "ORPHAN_RECORD",
+          "expected": "Unique but nonexistent RECORD row rejected by strict bidirectional precheck; no library call.",
+          "validation_calls_B": 1,
+          "install_calls": 0
+        },
+        {
+          "id": "UNSAFE_PATH",
+          "expected": "Traversal/alias member rejected before ZIP-to-destination use; no library call.",
+          "validation_calls_B": 1,
+          "install_calls": 0
+        }
+      ]
+    },
+    {
+      "family": "F3_QUOTA_AND_DENIALS",
+      "cases": [
+        {
+          "id": "WRITE_QUOTA",
+          "expected": "After valid content verification, a frozen tiny write allowance interrupts a known destination write; no quota escape or retry, partial bytes/counter retained, installation unaccepted.",
+          "validation_calls_B": 1,
+          "install_calls": 1
+        },
+        {
+          "id": "GUARD_EFFECT_SPIES",
+          "expected": "Direct original socket/helper/native audit callbacks plus outside-write, alias and unknown/reused-directory-descriptor effect spies refuse before effects. No real socket/process/native dispatch. Original counters retained; separate descriptor refusals not falsely counted as GuestPolicy increments.",
+          "validation_calls_B": 0,
+          "install_calls": 0
+        }
+      ]
+    },
+    {
+      "family": "F4_INTERRUPTION_AND_EVIDENCE",
+      "cases": [
+        {
+          "id": "INTERRUPTED_WRITE",
+          "expected": "A fixed injected write failure during fixture destination use preserves exact primary exception, partial files and hashes; accepted file controls unchanged; no retry.",
+          "validation_calls_B": 1,
+          "install_calls": 1
+        },
+        {
+          "id": "HEADROOM_REPLAY",
+          "expected": "Largest permitted observer/manifest references and case summaries serialize below unchanged32KiB terminal; full records remain separate, replay verifies refs on success/error paths.",
+          "validation_calls_B": 0,
+          "install_calls": 0
+        }
+      ]
+    }
+  ],
+  "case_semantics": "Eight prespecified cases maximum; at most3 installer.install calls/runtime, all generated fixtures, not actual installations. Expected-refusal cases retain REFUSED/UNACCEPTED outcomes even when assertion tests PASS. Never reset a case guard counter or refund its allocation; one shared batch budget. Unexpected setup/integrity/primary failure stops batch.",
+  "guard_contract": {
+    "network_helper_native": "Original socket.*, subprocess/fork/exec/ctypes denials remain; no network, child or native operation is required even for negatives.",
+    "target_imports": "Keep original six-package block unchanged and add fixture payload name refusal. Audit/inspection must show payload bytes and generated wrappers never execute; sentinel/import/code-file effects are zero.",
+    "paths_descriptors": "Explicit new case routing only, never modify frozen module constants. Writable prefix/controls confined per case, no parent raw traversal, aliases, unregistered/reused/moved descriptors, hardlinks or outside mutations. High-level Path/io opens need reviewed pre-effect alias checks and original charging; do not infer this solely from lexical normalization.",
+    "read_write": "All opening/streams/writes, validation rereads, script modes, fsync and evidence count toward shared caps. Only exact source/input references readable; no whole site-package or repository/raw-data permission.",
+    "postconditions": "Positive case original violation counter must remain0. Negative cases preserve counts and rejection; aggregate fixture assertions never certify a runtime/P3 or real install.",
+    "threat_model": "Trusted single-owner authored harness/qualified tool; not hostile-host, private-state, native-thread or OS sandbox protection."
+  },
+  "diagnostics_and_headroom": {
+    "observer_ref": {
+      "bytes": 12129,
+      "sha256": "3ad8fe01b317fe5c3879975d0acd2b081ff3adac7ce2c60e7eabef7737aede5b"
+    },
+    "observer_audit": {
+      "bytes": 15562,
+      "sha256": "39c8d6eaffc46bfb38c6f22b908fdb8211ea53d762e0e110a9beb78bd5bdd122"
+    },
+    "allowed_reuse": "Optional generic GUEST_ENTRY/GUARD_READY/GUEST_RESULT_WRITE/GUEST_FINAL_COUNTER breadcrumbs and closed types only. Keep acceptedV2 mode/caps/saturation unchanged. New fixture phases belong to a separately reviewed fixed outer case manifest, not invented existing observer codes.",
+    "custom_errors": "Do not relabel PyPA validation classes as COMPATIBILITY_REFUSED. Source-qualified exact expected-class identity can yield a fixed expectation_met boolean in test evidence; observer may report UNKNOWN_TYPE/UNAVAILABLE. Never inspect exception args/issues/repr/path/traceback.",
+    "outer_phases": [
+      "SOURCE_PIN_CHECK",
+      "TOOL_LOAD",
+      "FIXTURE_BUILD",
+      "ARCHIVE_PRECHECK",
+      "RECORD_VALIDATE",
+      "DESTINATION_INSTALL",
+      "POST_VERIFY",
+      "EVIDENCE_FLUSH"
+    ],
+    "full_records": "Full observer<=4096B and installed/partial manifests stored separately; terminal binds path/size/SHA256 and bounded case summaries. Always attempt verification/binding on ordinary and exception paths.",
+    "headroom": "Before fixture scope consumption, serialize a worst-case terminal for8 cases with summary<=512B/case and bounded refs; require<=28672B, reserving4096B for failure/control additions. Final exact terminal<=32768B; no cap increases or embedded source/large manifests.",
+    "primary_failure": "Recording/flush failure never replaces an already active primary exception. Missing/invalid observability is explicit unaccepted/blocked evidence, never success."
+  },
+  "proposed_future_limits_NOT_AUTHORIZATION": {
+    "suite_invocations_per_runtime": 1,
+    "runtimes": [
+      "3.11.17",
+      "3.12.14"
+    ],
+    "wall_CPU_seconds_each": 120,
+    "logical_read_bytes_each": 67108864,
+    "cumulative_write_bytes_each": 33554432,
+    "console_bytes_each": 262144,
+    "temporary_tree_entries_each": 1024,
+    "temporary_tree_logical_bytes_each": 8388608,
+    "fixture_archive_bytes_each": 16384,
+    "fixture_uncompressed_bytes_each": 32768,
+    "fixture_members_each": 32,
+    "fixture_member_bytes_each": 8192,
+    "qualified_tool_archive_bytes": 464466,
+    "maximum_cases_each": 8,
+    "maximum_install_calls_each": 3,
+    "observer_file_bytes": 4096,
+    "terminal_bytes": 32768,
+    "network_model_child_requests": 0,
+    "no_retry": true
+  },
+  "cross_runtime": "Same pinned tool archive, fixture bytes, API settings, marker interpreter, case order, oracle and caps on3.11/3.12. Metadata>=3.10 and both stdlib filename handoffs support feasibility, not actual compatibility. Require identical normalized output manifests/case verdicts and independent review before claiming contract execution.",
+  "missing_code_and_acceptance": [
+    "Independent source-audit PASS and separately accepted validation-route choice.",
+    "Small strict prevalidator adapted from audited acquisition code, with duplicate/orphan/self-row/hash/size/path/ZIP-bound adverse tests.",
+    "Named read-only immutable-byte ZIP view and same-source binding proofs; no package monkeypatch.",
+    "Source-qualified standard ZIP tool bootstrap with exact module/origin pins and guard integration.",
+    "Fixture builder, original guard routing/charged IO/descriptor/high-level alias wrappers and effect spies.",
+    "Independent seven-file/installed-RECORD/script oracle and primary-failure/cap/headroom evidence writer.",
+    "Exact reviewed harness and finite lead fixture release before any import/invocation; no actual installer/P3 release follows."
+  ],
+  "authority": {
+    "current_task": "Contract only; no network/new package/import/exec/fixture/helper/target/Git/STATUS action.",
+    "installation_allocation_consumed_unchanged": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "new_actual_allowance": 0
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Baseline library full validation is blocked by null-write/strict-name gaps; findings preserved.",
+    "PreferredB is a proposed complete validation replacement boundary, not already accepted equivalence.",
+    "No standard-loader, named-buffer, PyPA behavior, filesystem guard integration or generated output tested.",
+    "Immutable-source claims exclude hostile private-state/concurrent host mutation until explicit threat-model review.",
+    "No real target, native runtime or source PDF qualification; successful fixtures would be engineering evidence only."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Source audit prerequisite; no invocation permission.",
+    "Independent routeB acceptance and missing validator/source-binding/harness code.",
+    "Baseline routeA owned-sink issue cannot be resolved by guard or package/global monkeypatch."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent review of this draft and confirmed baseline findings; prefer a small strict same-byte prevalidation designB over global/sink overrides if the reviewer establishes equivalence. Then separately assign finite fixture implementation, never actual installation."
+}

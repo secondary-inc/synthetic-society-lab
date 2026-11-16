@@ -1,0 +1,333 @@
+{
+  "auditor_network_Git_GitHub_API_owner_credential_old_target_actions": 0,
+  "auditor_project_module_imports": 0,
+  "auditor_source_test_workflow_Git_STATUS_edits": 0,
+  "auditor_tests_or_test_processes": 0,
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "BLOCKED_CURRENT_COLLECTION_HAS_TWO_SUBSTANTIATED_STATIC_DEFECTS_NO_NEW_RUNTIME_RESULT",
+  "evidence_refs": {
+    ".github/workflows/offline.yml": {
+      "bytes": 815,
+      "sha256": "226e398ba8ff8281589ae0defac42b364a87e7e9b2a613fd991c1a9a43d5f452"
+    },
+    "pyproject.toml": {
+      "bytes": 580,
+      "sha256": "f6f2f55b9f8fe8db5d4553a7d8c68aa10575534f35794e1294acbe829eca0e14"
+    },
+    "reports/E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json": {
+      "bytes": 1664,
+      "sha256": "841a0d73255a31ec7ee601bc00b825cfbe6bd5eff8fe68ff0e6ebbd214ae6a08"
+    },
+    "reports/INDEPENDENT_AUDIT_E02_W03_CI_DIAGNOSTIC_20261116.json": {
+      "bytes": 9309,
+      "sha256": "4e5e32c3fe183ae43ed42e2eaab2e100e912c28f863c49c7ebd0fc5174ea1d51"
+    },
+    "reports/evidence_w03_diagnostic_20261116/ci_43788494169_python311_failure.txt": {
+      "bytes": 499508,
+      "sha256": "254807fff42f78a3c3b3e5cbe729f3d24f2e3987822cd61e298a3b531f8d9e25"
+    },
+    "src/civiclab/e02/f_wy_actual_bootstrap_launcher_v1.py": {
+      "bytes": 13696,
+      "sha256": "df9ef5066b36c78e1cf4b6f074a9cf4a715a57385de3608d8afab66b06d56a4f"
+    },
+    "tests/test_clerk2020_native_qualification_v1.py": {
+      "bytes": 23930,
+      "sha256": "65f1662ffae685a7a83027ef061968d742e2ffbd768c00b6c4aebb68a3383e35"
+    },
+    "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py": {
+      "bytes": 19017,
+      "sha256": "83969d6ad8086d140bbeaf44880f79a68774fdca3b7e9c76965c8857114ed760"
+    },
+    "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py": {
+      "bytes": 20835,
+      "sha256": "0060994e89ed4e8c62a4a9b734aba4389f9d81878f882e5b88b1a0134f2e002a"
+    },
+    "tests/test_e01_offline_import_protocol_methods_v1_20261116.py": {
+      "bytes": 16128,
+      "sha256": "44589c9f6076d8589eb3a4da2d43c3a3fa18b296a3193c0f98aa4cabfb93324a"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+      "bytes": 34253,
+      "sha256": "439a2d46ebcfc57c295a95e4fa353691246ab1e2ea0db1feebff41f4a3ba96a2"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "bytes": 28254,
+      "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+    },
+    "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py": {
+      "bytes": 17601,
+      "sha256": "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad"
+    },
+    "tests/test_e01_pypdf701_acquisition_v1.py": {
+      "bytes": 23632,
+      "sha256": "1f0e99e2ab7778c2121244ea2baaa086bc80d77b0c8be97706097ce2d61c4f40"
+    },
+    "tests/test_e02_f_wy_actual_bootstrap_v1.py": {
+      "bytes": 35821,
+      "sha256": "51d4dfc677db2fb5aeb92b279ed95531c8185dcdcfff19ca75b5bc29acb6c3b2"
+    },
+    "tests/test_pypdf7_fresh_install_compatibility.py": {
+      "bytes": 6361,
+      "sha256": "bbb1475e3a78bc905a70d7bac7dfbba3a1ef6859ba01ac9f9ee839f403d506f4"
+    }
+  },
+  "findings": [
+    {
+      "concrete_conflicts": [
+        {
+          "lines": [
+            140,
+            144
+          ],
+          "operation": "Positiveauthoredqualification launches subprocess.Popen; importedE01hookdenies this necessarypositivepath.",
+          "path": "tests/test_clerk2020_native_qualification_v1.py"
+        },
+        {
+          "lines": [
+            173,
+            177
+          ],
+          "operation": "PositiveW03controller starts forkedmultiprocessingworker, subjecttohookos.forkdenial.",
+          "path": "src/civiclab/e02/f_wy_actual_bootstrap_launcher_v1.py"
+        },
+        {
+          "lines": [
+            44,
+            49
+          ],
+          "operation": "Packagefixture imports pypdfwhenexplicitlyenabled. Strongmethods hook would denyimport in sharedprocess; dedicated earlierstep isseparate and unaffected.",
+          "path": "tests/test_pypdf7_fresh_install_compatibility.py"
+        }
+      ],
+      "hook_sites": [
+        {
+          "line": 21,
+          "path": "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+          "snippet": "sys.addaudithook(forbid_actual)"
+        },
+        {
+          "line": 21,
+          "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+          "snippet": "sys.addaudithook(forbid_actual)"
+        },
+        {
+          "line": 15,
+          "path": "tests/test_e01_offline_import_protocol_methods_v1_20261116.py",
+          "snippet": "sys.addaudithook(forbid_actual)"
+        },
+        {
+          "line": 28,
+          "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+          "snippet": "sys.addaudithook(no_actual)"
+        },
+        {
+          "line": 28,
+          "path": "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+          "snippet": "sys.addaudithook(no_actual)"
+        },
+        {
+          "line": 25,
+          "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+          "snippet": "sys.addaudithook(forbid_actual_operations)"
+        }
+      ],
+      "id": "CI_IMPORT_GLOBAL_HOOK_CONTAMINATION",
+      "intended_harness_evidence": [
+        {
+          "lines": [
+            297,
+            324
+          ],
+          "meaning": "Original guarded_test_main explicitlydocuments per-processonly, neverglobaldiscovery; installsboundedhook insidefunction.",
+          "path": "tests/test_e01_pypdf701_acquisition_v1.py"
+        },
+        {
+          "lines": [
+            272,
+            305
+          ],
+          "meaning": "BoundedIO/CPU/wallharness onlyunder__main__, butadditionalforbid_actualhook alreadytop-level at15.",
+          "path": "tests/test_e01_offline_import_protocol_methods_v1_20261116.py"
+        }
+      ],
+      "mechanism": "Global unittestdiscovery imports these modules in the suiteprocess. Hooks deny os.fork/subprocess.Popen/socket.*/ctypes.dlopen; the methods module additionally denies pypdf/PIL/cryptography/cffi imports. These hooks persistforothermodules/tests and have no scoping/removal here.",
+      "priority": "P1",
+      "smallest_fix": "Remove import-time registration from ordinarycollectiblemodules; preserve fullguardedexecution inside explicit fresh standalone process/entrypoint. Keep portablefabricatedtests discoverablewithout globalsideeffects, and keep hostboundqualification as separateexplicitlybounded stage. Merely movinghooks afterunit tests orcatchingtheirAssertionError isnot afix. Do not weakenguards orsilentdroprequiredqualification.",
+      "status": "SUBSTANTIATED_STATIC_COLLECTION_DEFECT",
+      "summary": "Six ordinary-discoverable E01modules install process-global denialhooks at moduleimport, before their __main__boundedharness."
+    },
+    {
+      "contrast": {
+        "lines": [
+          237,
+          255
+        ],
+        "meaning": "This sibling records current origin/size/hash, withorigin/alias/sizebounds, ratherthan assertingtwohistoricalhashkeys. Observation alone stilldoesnotqualifycurrentruntime.",
+        "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py"
+      },
+      "id": "CI_UNPINNED_HOST_FIXED_SOCKET_SOURCE_ASSERTIONS",
+      "mechanism": "At observed3.11.18, expected[sys.version.split()[0]] has nokey andwouldraiseKeyError if reached. Otherbuilds maydiffer in sourcehash/path evenwithsamepatch. No skip/hostgate guards these methods. This isnot an observedrun ofthe newtests.",
+      "priority": "P1",
+      "sites": [
+        {
+          "lines": [
+            253,
+            257
+          ],
+          "path": "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+          "version_keys": [
+            "3.12.14",
+            "3.11.17"
+          ]
+        },
+        {
+          "lines": [
+            253,
+            257
+          ],
+          "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+          "version_keys": [
+            "3.12.14",
+            "3.11.17"
+          ]
+        },
+        {
+          "lines": [
+            400,
+            404
+          ],
+          "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+          "version_keys": [
+            "3.12.14",
+            "3.11.17"
+          ]
+        },
+        {
+          "lines": [
+            485,
+            489
+          ],
+          "path": "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+          "version_keys": [
+            "3.12.14",
+            "3.11.17"
+          ]
+        }
+      ],
+      "smallest_fix": "Separate portable origin-observation/fabricatedlogic tests from exacthost/runtime/sourcequalification. Retain exactpins in explicitlyboundstandalonequalification withtruthful unsupported NOT_RUN/skipreasons anddocumentedcoverage. Do not simply addnewhosthashes,deleteassertions,orpretend minor-matrixLinuxrun islocalmacOSqualification.",
+      "status": "SUBSTANTIATED_STATIC_PORTABILITY_DEFECT",
+      "summary": "Four discoverablemethods unconditionally index expected socket.py sourcebytes/hash by only3.12.14 or3.11.17, while workflow selects minorversions onUbuntu."
+    }
+  ],
+  "kind": "INDEPENDENT_STATIC_CI_COLLECTION_SCOPE_AND_RETAINED_FAILURE_AUDIT",
+  "limits": {
+    "final_hash_pass_technical_bytes": 751404,
+    "note": "Targetedsource/logreads only; no fullrepository orrawdata scan. Earlier rg/sed reads are not presented as exacttotalIOaccounting.",
+    "output_cap_bytes": 2097152,
+    "requested_minutes": 10,
+    "technical_read_cap_bytes": 16777216
+  },
+  "observed_historical_failure": {
+    "dedicated_fixture_result": "6tests in0.246s; retainedOK follows. This stepcompleted before fullcollection.",
+    "failing_test": "test_e02_f_wy_actual_bootstrap_v1.ConditionalWiringTests.test_W03_positive_KSE_reaches_true_native_actual_admission_and_replay",
+    "focused_followup": "E02_W03_CI_DIAGNOSTIC_RESULTS_20261116.json records5focusedchecks/runtime and unchangedproductionpins; scopedlocalpass isnot a newfullsuite/remoteCI pass.",
+    "general_suite": "2060tests/9893.108s,1error/1skip; jobexit1.",
+    "head": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+    "line_evidence": {
+      "CPython31118": 120,
+      "W03_error": 2297,
+      "dedicated_pypdf6tests": 210,
+      "dedicated_pypdf_start": 190,
+      "general_discovery_start": 213,
+      "general_pypdf_fixture_skipped": 2204,
+      "generic_Blocked": 2311,
+      "launcher_rethrow": 2310,
+      "suite_count_timing": 2314,
+      "suite_failure": 2316
+    },
+    "outer_exception": "civiclab.e02.national_budget.Blocked: stage failed; full charges retained; shutdown may be unknown",
+    "retained_log": "reports/evidence_w03_diagnostic_20261116/ci_43788494169_python311_failure.txt",
+    "run_id": 43788494169,
+    "separation": "Newcollectiondefects below are current-source staticfindings. They are NOT retroactively attributed as causeof olderremoteW03failure.",
+    "status": "OBSERVED_RETAINED_LOG_NOT_REPRODUCED",
+    "underlying_cause": "UNKNOWN. Genericlauncherexcept suppresses underlyingexception withfromNone; retainedtrace doesnot establish timeout,RSS,identity,fork,clockornewE01hookcause."
+  },
+  "recommended_minimum_validation_not_executed": [
+    "Staticreviewofonlysixhookregistrations/fourhostboundmethods plusworkflowwiring; preserveoldsourcepins/logs and independentreviews.",
+    "Freshisolated bounded import/collectionprobe confirmsordinarydiscovery imports no globalhooks anddoesnot mutateparentimport/socket/processstate. Exercisequalificationonlyinitsownboundedprocess,neverinsharedsuiteprocess.",
+    "Runportabletests onbothsupportedPython3.11/3.12Ubuntuconditions, includingafresh fixturecompatibilitystage withexplicit targetenv; hostboundqualificationseparatelyonexactreviewedtoolchainswithallcaps/denialsintact.",
+    "RerunoriginalW03positivecase andfocusedfailure-observabilitytests aftercollectionisolation, keepingitsoriginalfailureanddiagnostics. Do notraisebudgets,removeassertions orclaimrootcausefroma pass.",
+    "Onlyafterfocusedchecks pass, runonecurrentcleanfullworkflow persupportedruntime underrecordedboundandretainlogs/resources/versions. RemoteCIstillrequiresrestoredGitHubwriteaccess; no testorCIwasrunbythisaudit."
+  ],
+  "scope": "Current workflow/test source and retained logs only; no tested-module imports, test collection/execution, experimental processes, network, Git/GitHub API, credentials, old targets or STATUS changes.",
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "reports/CI_COLLECTION_SCOPE_AUDIT_20261116.json"
+    ],
+    "NEXT_UNBLOCKED_TASK": "Lead assigns narrow test/harness-collection isolation and explicitportablevsboundqualificationwiring; separateauditorreviewschangebeforefocusedandfullvalidation.",
+    "OUTPUT_ARTIFACTS": [
+      "reports/CI_COLLECTION_SCOPE_AUDIT_20261116.json"
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "Read .github/workflows/offline.yml lines16\u201322 and flagged top-levelhook/hashmethod lines; inspect retained CIlog lines120,190\u2013213,2297\u20132316. No tests/imports/processprobes authorized by this audit."
+    ],
+    "RISKS_AND_LIMITATIONS": "No currentmodule imports/collection/tests orfullCIexecution/runtimebehaviorcertification. Readingdeclarations cannot establish exactnumber/orderofdownstreamfailures. Oldfailureandnewstaticdefectsremainseparate.",
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Repo-owned technicalsource and retainedCIlogs only; no realresearchsource/rawrespondent/publisher, privateowner/credential/oldtarget data.",
+    "TASK_ID": "CI_COLLECTION_SCOPE_AUDIT_20261116",
+    "TESTS_RUN_AND_RESULTS": "NOT_RUN. Static source/logaudit only; twoP1defects substantiated, historicalW03causeunknown.",
+    "UNRESOLVED_BLOCKERS": "Current sharedcollection hooks and hostboundhash assertions need implementationreview/fix. Original3.11W03cause/fullCIremainunresolved."
+  },
+  "workflow": {
+    "dedicated_env_scope": "Fixture target export is only within step17shell. General step21 doesnot repeat export orpersist GITHUB_ENV; retainedgeneralcollection skipped freshpypdf fixture class for this reason.",
+    "matrix": [
+      "3.11",
+      "3.12"
+    ],
+    "matrix_line": 10,
+    "path": ".github/workflows/offline.yml",
+    "runner": "ubuntu-latest",
+    "runner_line": 5,
+    "steps": [
+      {
+        "command": "python -m pip install -e '.[selection,sources,geometry]'",
+        "lines": [
+          16,
+          16
+        ],
+        "meaning": "Editableproject andselection/scipy1.16.3,sources/pypdf7.0.1,geometry/pdfplumber0.11.9; figures extra absent."
+      },
+      {
+        "command": "export CIVICLAB_PYPDF7_FIXTURE_TARGET=\"$(python -c 'import sysconfig; print(sysconfig.get_path(\"purelib\"))')\"; python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v",
+        "lines": [
+          17,
+          20
+        ],
+        "meaning": "DedicatedauthoredPDFcompatibility in its own interpreter and shell-step targetenvironment."
+      },
+      {
+        "command": "python -m unittest discover -s tests -v",
+        "lines": [
+          21,
+          21
+        ],
+        "meaning": "Default unittest test*.py discovery imports allmatchingmodules before normal execution. New sixhookmodules/fourversion-boundtests are included by current names; no explicit CI exclusion."
+      },
+      {
+        "command": "civiclab validate-sources --fixture-only",
+        "lines": [
+          22,
+          22
+        ],
+        "meaning": "Onlyfixturevalidation, not realresearchinventory/rights check. Normal step success dependency means previousfailure prevents this finalstep; not claimed executed for failed3.11 run."
+      }
+    ],
+    "test_selection_config": "pyproject.toml has no unittest discovery filtering. Python>=3.11 declared atline9. No customload_tests/skipgate observed in flagged modules.",
+    "timeout_minutes": 240,
+    "trigger_lines": [
+      1,
+      2
+    ]
+  }
+}

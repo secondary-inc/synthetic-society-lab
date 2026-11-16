@@ -1,0 +1,43 @@
+{
+  "kind": "E01_PYPA_INSTALLER_FIXTURE_BYTE_CLARIFICATION_V1_1",
+  "status": "CANDIDATE_NARROW_METHODS_CORRECTION_NOT_EXECUTION_RELEASE",
+  "original_contract": {
+    "path": "reports/E01_PYPA_INSTALLER_GENERATED_FIXTURE_CONTRACT_V1_20261116.json",
+    "bytes": 29721,
+    "sha256": "bc2077fcbd12bae4cbb68f79057c1bd2f345ac385de05c3b06dd2716de06b631"
+  },
+  "preserved_blocking_review": {
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_FIXTURE_CONTRACT_V1_20261116.json",
+    "bytes": 9536,
+    "sha256": "09a951d1e18d439e9b24b2cf3249bcb7d03b80d314ce65204a6c4cf1787797ec"
+  },
+  "scope": "This successor replaces only the entry_points.txt bytes and INSTALLER metadata bytes described ambiguously in the original contract. Original files and findings remain unchanged; all other contract requirements, limits and unresolved implementation obligations remain.",
+  "normative_fixture_bytes": {
+    "ssl_fixture_payload-1.0.0.dist-info/entry_points.txt": {
+      "encoding": "UTF-8; hex is normative; LF is byte 0a; no BOM or CR",
+      "utf8_text": "[console_scripts]\nfixture-cli = ssl_fixture_payload:main\n",
+      "utf8_hex": "5b636f6e736f6c655f736372697074735d0a666978747572652d636c69203d2073736c5f666978747572655f7061796c6f61643a6d61696e0a",
+      "bytes": 57,
+      "sha256": "7c681c48ff47ebff69a7725580e9f612320498b6a27ecdcb7540237eed6978bb",
+      "LF_count": 2
+    },
+    "additional_metadata_INSTALLER": {
+      "encoding": "UTF-8; hex is normative; LF is byte 0a; no BOM or CR",
+      "utf8_text": "synthetic-society-lab-fixture-only; installer=1.1.0\n",
+      "utf8_hex": "73796e7468657469632d736f63696574792d6c61622d666978747572652d6f6e6c793b20696e7374616c6c65723d312e312e300a",
+      "bytes": 52,
+      "sha256": "a25d1b0c7e51bf5e0dd2aa45bf85e03faf1101a0bbd8a92347ce5dc3d913e2dd",
+      "LF_count": 1
+    }
+  },
+  "construction_rule": "Decode the normative utf8_hex using bytes.fromhex; verify bytes, SHA-256 and LF_count before use. utf8_text is a human-readable equivalent, not Python source. Do not interpret literal backslash+n sequences as file contents. The original install_call field is illustrative Python syntax, superseded here for its INSTALLER argument.",
+  "oracle_rule": "The original seven expected installed paths remain the intended oracle. With the corrected actual LF section, entry_points.txt describes one console script. This is a static byte and arithmetic specification, not proof that the tool has generated the script or installed RECORD. Freeze all remaining fixture and expected-output bytes in the future concrete harness before actual execution.",
+  "validation_record": {
+    "checks": "The two UTF-8 strings round-trip through hex, contain exactly 2 and 1 LF bytes respectively, contain no literal backslash, no CR and no BOM. No parser/tool/fixture executed.",
+    "model_cost_USD": 0,
+    "network_requests": 0,
+    "tool_imports": 0,
+    "fixture_install_calls": 0
+  },
+  "next_gate": "Independent narrow methods closure. Pure validator implementation may proceed under its existing bounded test assignment; no actual installer/fixture/target execution or renewed old allowance follows."
+}

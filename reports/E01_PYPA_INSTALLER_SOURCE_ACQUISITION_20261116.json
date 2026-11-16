@@ -1,0 +1,390 @@
+{
+  "TASK_ID": "E01_PYPA_INSTALLER_SOURCE_ONLY_ACQUISITION_V1_20261116",
+  "status": "SOURCE_ACQUIRED_STATIC_INTEGRITY_ONLY_INDEPENDENT_SOURCE_AUDIT_PENDING_NO_FIXTURES_OR_QUALIFICATION",
+  "FILES_CHANGED": [
+    "reports/E01_PYPA_INSTALLER_SOURCE_ACQUISITION_20261116.json",
+    "scripts/acquire_e01_installer_tool_source_v1_20261116.py",
+    "reports/evidence_e01_pypa_installer_source_acquisition_20261116/acquisition_console.txt",
+    "reports/evidence_e01_pypa_installer_source_acquisition_20261116/source_reference_index.json",
+    "data/processed/e01_installer_tool_source_v1_20261116 (private create-once source scope;10 files)"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/acquire_e01_installer_tool_source_v1_20261116.py": {
+      "bytes": 22890,
+      "sha256": "d7707bc933f9d25b9bf2f7ec148aed1df0ee1518199a12d44e66662ee4c660b9"
+    },
+    "reports/evidence_e01_pypa_installer_source_acquisition_20261116/acquisition_console.txt": {
+      "bytes": 306,
+      "sha256": "f2e2c05eb1728d135718490865ce3c58df1fb4932faef35a00bf574fe630a927"
+    },
+    "reports/evidence_e01_pypa_installer_source_acquisition_20261116/source_reference_index.json": {
+      "bytes": 4406,
+      "sha256": "6ab3177e6c0dc88ac97e322409aa86f69dec1506687e928583025021cdfe5caf"
+    }
+  },
+  "INPUT_ARTIFACTS": {
+    "reports/E01_PYPA_INSTALLER_SOURCE_GATE_20261116.json": {
+      "bytes": 3392,
+      "sha256": "0069c56c9ce0d9c252c1f0a2166e96bb21074961fe0fceb92418d2d19354a853"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_OFFLINE_INSTALLER_ROUTE_FEASIBILITY_20261116.json": {
+      "bytes": 15228,
+      "sha256": "9edbf3a1b5d0073e665ce837445afc2e7b3e09b0e1814ac39e9873c233edd218"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "Recorded one source-only invocation: .venv/bin/python -I -B -S scripts/acquire_e01_installer_tool_source_v1_20261116.py > reports/evidence_e01_pypa_installer_source_acquisition_20261116/acquisition_console.txt 2>&1",
+    "Scope and both public GET allowances are consumed. Do not rerun helper, create an alternate scope, or refetch automatically.",
+    "Independent auditor may inspect retained exact response bytes/wheel and source AST in memory under a separate bounded assignment, without package import or fixture execution."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "source_only_invocation": {
+      "count": 1,
+      "exit_code": 0,
+      "phase_result": "SOURCE_ACQUIRED_STATIC_INTEGRITY_ONLY",
+      "generated_fixture_invocations": 0
+    },
+    "checks": [
+      "Exact gate limits/scope/prerequisite review hash and PASS status before scope creation; original450/180/12 allocation retained.",
+      "Create-once0700 scope, STARTED/code+gate hashes and request reservation before dispatch;0600 create-exclusive no-follow files and directory fsync.",
+      "One metadata GET200 followed by one exact selected wheel GET200. HTTPS official endpoints; proxy handling disabled; redirect/retry/fallback/auth absent; content encoding identity and bounded Content-Length required.",
+      "Latest metadata info.version1.1.0, exactly one same-version non-yanked py3-none-any candidate, bounded SHA256/size/host identity and Requires-Python applicability to both3.11.17/3.12.14.",
+      "Full wheel byte length and SHA256 match metadata; ZIP central directory bounded before construction; alias/traversal/case-fold duplicate/file-parent/type/special/encrypted/compression bounds.",
+      "All23 file RECORD rows cover archive files exactly.22 rows verify canonical SHA256 URLsafe digest and exact size; RECORD self-row alone has empty hash/size. No other exceptions.",
+      "WHEEL identity/tag/purelib and METADATA name/version/Requires-Python checked. All10 Python source members parsed as AST only; no code compile-to-executable/import/eval/execution.",
+      "Closed terminal, all9 prior artifact refs and final source-scope size514575B reverified; no file extraction, fixture or package execution."
+    ],
+    "observed_usage": {
+      "public_GETs": 2,
+      "HTTP_statuses": [
+        200,
+        200
+      ],
+      "HTTP_body_bytes": 493674,
+      "each_HTTP_body_bytes": [
+        29208,
+        464466
+      ],
+      "source_scope_write_bytes": 514575,
+      "scope_files": 10,
+      "ZIP_entries": 23,
+      "declared_uncompressed_bytes": 978081,
+      "largest_member_bytes": 182784,
+      "RECORD_coverage_files": 23,
+      "AST_nodes": 5681
+    },
+    "observed_times": {
+      "started_UTC": "2026-11-16T14:10:28.895712+00:00",
+      "terminal_UTC": "2026-11-16T14:10:29.358274+00:00",
+      "elapsed_fetch_static_seconds": 0.4629657909972593,
+      "observed_CPU_seconds": 0.10092899999999999
+    },
+    "configured_limits": {
+      "maximum_public_GETs": 2,
+      "remaining_public_GETs": 0,
+      "redirects": 0,
+      "retries": 0,
+      "fallbacks": 0,
+      "each_HTTP_body_bytes": 1048576,
+      "combined_HTTP_body_bytes": 2097152,
+      "fetch_and_static_validation_wall_seconds": 60,
+      "CPU_seconds": 20,
+      "CPU_soft_hard_seconds": [
+        19,
+        20
+      ],
+      "request_socket_timeout_seconds": 15,
+      "source_scope_write_bytes": 4194304,
+      "archive_entries": 1024,
+      "declared_archive_uncompressed_bytes": 8388608,
+      "single_member_bytes": 1048576,
+      "console_bytes": 32768
+    },
+    "console_used_bytes": 306,
+    "enforcement_note": "urllib's15s timeout is a request socket-operation timeout, not an independently timed full DNS/body-transfer wall deadline. The entire actual fetch+static stage completed in0.463s, so both actual requests finished below15s. A general full-request wall guarantee is not certified for future reuse; preserve the consumed helper and have the independent audit assess this distinction.",
+    "interpretation": "Actual source acquisition and archive integrity observations only. Implementing worker does not independently certify source trust, execution safety, library conformance or runtime/P3 acceptance."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "selected": {
+      "file_requires_python": ">=3.10",
+      "filename": "installer-1.1.0-py3-none-any.whl",
+      "name": "installer",
+      "requires_python": ">=3.10",
+      "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0",
+      "size": 464466,
+      "url": "https://files.pythonhosted.org/packages/d7/7a/63547a792a12148882205d79e07644091d5b7690f40c2bb9d41452a8bdc2/installer-1.1.0-py3-none-any.whl",
+      "version": "1.1.0",
+      "yanked": false
+    },
+    "retrieval_times": {
+      "started_UTC": "2026-11-16T14:10:28.895712+00:00",
+      "terminal_UTC": "2026-11-16T14:10:29.358274+00:00",
+      "elapsed_fetch_static_seconds": 0.4629657909972593,
+      "observed_CPU_seconds": 0.10092899999999999
+    },
+    "metadata_response": {
+      "url": "https://pypi.org/pypi/installer/json",
+      "path": "data/processed/e01_installer_tool_source_v1_20261116/1-RESPONSE.bin",
+      "bytes": 29208,
+      "sha256": "a07eab0a3d531db1bb200afb05b3188270c1ebb8d2bcb4d04967d4b63bb2186b"
+    },
+    "wheel_response": {
+      "url": "https://files.pythonhosted.org/packages/d7/7a/63547a792a12148882205d79e07644091d5b7690f40c2bb9d41452a8bdc2/installer-1.1.0-py3-none-any.whl",
+      "path": "data/processed/e01_installer_tool_source_v1_20261116/2-RESPONSE.bin",
+      "bytes": 464466,
+      "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0",
+      "retained_name_note": "Immutable exact wheel bytes retained as2-RESPONSE.bin; original wheel filename is pinned separately, not installed or renamed."
+    },
+    "project_identity": "Official PyPI project metadata and its SHA256/size-bound files.pythonhosted.org distribution over HTTPS. This is metadata/archive integrity, not a separate signed publisher/source attestation.",
+    "declared_license": {
+      "expression": "MIT",
+      "license_file": "installer-1.1.0.dist-info/licenses/LICENSE",
+      "bytes": 1057,
+      "sha256": "37b8b9f2569892fa54406383d431169dbb2115980d78b7efba6eeae5664c484f"
+    },
+    "declared_runtime_dependencies": [],
+    "declared_requires_python": ">=3.10",
+    "compatibility_scope": "Metadata numeric constraints evaluated against3.11.17 and3.12.14. No PyPA installer code executed on either runtime and no library compatibility test performed.",
+    "rights": "Original archive, including license and launcher resources, remains private within source scope. No external redistribution/publication. Independent source/rights audit still required.",
+    "privacy": "Only public source/metadata plus existing technical gate/review were read; no owner/credential/account/research PDF/respondent/publisher data.",
+    "source_hashes": {
+      "installer/__init__.py": {
+        "bytes": 128,
+        "sha256": "da5afac97745f229a8dcc480f15bf3b6f026b56614580ba0cb42967eff68a1a1"
+      },
+      "installer/__main__.py": {
+        "bytes": 3674,
+        "sha256": "30821a084a972e1734184986a1059b7f50aa3776f228666ceb0a8f88442d1b93"
+      },
+      "installer/_core.py": {
+        "bytes": 5234,
+        "sha256": "9da28e04fbd21cea234f16aec6ea75d24ac063a1a483ccf3abb4d651715011cb"
+      },
+      "installer/_scripts/__init__.py": {
+        "bytes": 81,
+        "sha256": "222fa4998cbf4d2db71c35dfdd0530de947234ca4c66ca75c322f5d38875625f"
+      },
+      "installer/destinations.py": {
+        "bytes": 10666,
+        "sha256": "92853c201d052086220fef5784a2fb6c01dc5812b7f8f9f98590f1b87e5bb1fb"
+      },
+      "installer/exceptions.py": {
+        "bytes": 248,
+        "sha256": "630c75d5da3447e70500b8a6731a6d93fae183b4756c36f8b010ae11b94d94be"
+      },
+      "installer/records.py": {
+        "bytes": 7368,
+        "sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf"
+      },
+      "installer/scripts.py": {
+        "bytes": 5538,
+        "sha256": "971da58eecdee1c64daf9018071f947f37b6c1d01cedd1828b24eb7f488e71f7"
+      },
+      "installer/sources.py": {
+        "bytes": 12121,
+        "sha256": "eef90f50aef04c6faa994a2de04e4e20cb61a659144317e10ba78486b5a694e8"
+      },
+      "installer/utils.py": {
+        "bytes": 8114,
+        "sha256": "c68c38a65e14f6a717845bbc6cf8f1a1307db2b4c5361550a5448ba53f2b92e7"
+      }
+    }
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "private_scope": {
+    "path": "data/processed/e01_installer_tool_source_v1_20261116",
+    "mode": "0700",
+    "file_mode": "0600",
+    "writes": "Create-exclusive/no-follow; no overwrite/retry/cleanup of failure evidence.",
+    "scope_refs": {
+      "1-REQUEST_RESERVED.json": {
+        "bytes": 143,
+        "sha256": "a68ce34cfca71fa79a50361fdc30ede6087a9233c537935a3f4d66dede41bbc8"
+      },
+      "1-REQUEST_RESULT.json": {
+        "bytes": 284,
+        "sha256": "476c9205c39cdd1912cbda39fa5a55cbff69742f7e91694593d0d03f3778b77d"
+      },
+      "1-RESPONSE.bin": {
+        "bytes": 29208,
+        "sha256": "a07eab0a3d531db1bb200afb05b3188270c1ebb8d2bcb4d04967d4b63bb2186b"
+      },
+      "2-REQUEST_RESERVED.json": {
+        "bytes": 246,
+        "sha256": "4c71b970c2b4f19ad08f0ce0b5ae06cbef8274c2df679f223311d317ea68e681"
+      },
+      "2-REQUEST_RESULT.json": {
+        "bytes": 397,
+        "sha256": "769d9e103c3ef50e18373f5903c000f7bcfccfd46186efc461ac84d5dedf2b22"
+      },
+      "2-RESPONSE.bin": {
+        "bytes": 464466,
+        "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0"
+      },
+      "SELECTED.json": {
+        "bytes": 396,
+        "sha256": "9ead336c7f81166917f052a8706c72322f56aefc0133506ca1a819d73989ab6b"
+      },
+      "SOURCE_ANALYSIS.json": {
+        "bytes": 15285,
+        "sha256": "8bc0ca87e3f3217183deac0af3fcf38b89bb03d886e5d522edefdea24bf8129a"
+      },
+      "STARTED.json": {
+        "bytes": 869,
+        "sha256": "62a45fcc246b3e8bfda19d108446705ddfceb91d01140d532cf0658834f8d798"
+      },
+      "TERMINAL.json": {
+        "bytes": 3281,
+        "sha256": "fe61ded177d6bd6c44bf9f30a0e110af94f16a592655112de00d322a12f80268"
+      }
+    },
+    "logical_bytes": 514575,
+    "scope_files": 10,
+    "evidence_note": "Raw metadata/wheel stay in the private source scope. Reports contain technical hashes/indices only. Existing source/targets/scopes untouched."
+  },
+  "static_findings": {
+    "version": "installer1.1.0, not an assumed earlier release.",
+    "metadata": "License-Expression MIT; no Requires-Dist headers; Requires-Python>=3.10; universal py3-none-any and Root-Is-Purelib true.",
+    "imports_syntax_only": [
+      "argparse",
+      "base64",
+      "collections",
+      "compileall",
+      "configparser",
+      "contextlib",
+      "csv",
+      "dataclasses",
+      "email",
+      "functools",
+      "hashlib",
+      "importlib",
+      "installer",
+      "io",
+      "os",
+      "pathlib",
+      "posixpath",
+      "re",
+      "shlex",
+      "stat",
+      "sys",
+      "sysconfig",
+      "typing",
+      "warnings",
+      "zipfile"
+    ],
+    "dependency_limit": "Observed absolute import roots are standard-library names plus installer; relative imports and call sites are retained. This is not a resolved/complete dynamic import closure or no-execution proof.",
+    "APIs": [
+      {
+        "source": "installer/sources.py",
+        "lines": [
+          231,
+          310
+        ],
+        "finding": "Concrete validate_record(self, *, validate_contents: bool=True) is present; static call set includes record.validate_stream and source/RECORD checks."
+      },
+      {
+        "source": "installer/_core.py",
+        "lines": [
+          65,
+          149
+        ],
+        "finding": "install(source,destination,additional_metadata) calls destination write_file/write_script/finalize_installation. Its recorded call set does not include source.validate_record, so later API use must explicitly validate before install."
+      },
+      {
+        "source": "installer/destinations.py",
+        "lines": [
+          162,
+          194
+        ],
+        "finding": "write_to_fs uses target existence, parent mkdir, target open, hashing/copy and executable-mode helpers; confinement/atomicity/quota fit needs source audit and later guarded fixtures."
+      },
+      {
+        "source": "installer/destinations.py",
+        "lines": [
+          224,
+          306
+        ],
+        "finding": "write_script delegates Script.generate and writes script/mode; finalization constructs installed RECORD and has a bytecode path."
+      },
+      {
+        "source": "installer/scripts.py",
+        "lines": [
+          91,
+          120
+        ],
+        "finding": "Script.generate constructs wrapper bytes and may use launcher-resource/ZIP machinery. No entry point was executed in this task."
+      },
+      {
+        "source": "installer/__main__.py",
+        "lines": [
+          86,
+          111
+        ],
+        "finding": "CLI main includes source.validate_record and installer.install calls. Branch/default/control behavior still needs independent source inspection."
+      }
+    ],
+    "selected_execution_capable_path": {
+      "source": "installer/destinations.py",
+      "line": 270,
+      "callee": "compileall.compile_file",
+      "finding": "Static bytecode-generation path exists. Future exact configuration/source review must demonstrate its intended disabling; no code path was run here."
+    },
+    "resources": "Eight.exe launcher resources and empty py.typed are archive data, all hashed/RECORD-verified. No executable extraction or launcher execution. POSIX-only usage and bundled-resource rights/security require independent audit.",
+    "AST_scope": "5681 nodes across10 Python members. API arguments/callee lists include explicit truncation flags; none of the displayed API summaries were truncated. AST is not module execution or a call-graph security proof."
+  },
+  "gate_progress": [
+    {
+      "milestone": "Source acquisition and archive integrity",
+      "result": "AUTHOR_OBSERVED_SUCCESS_ONLY",
+      "evidence": "Two200 responses, exact archive hash/size,23 RECORD files and closed terminal; independent review pending."
+    },
+    {
+      "milestone": "Independent source/evidence audit",
+      "result": "PENDING_BEFORE_FIXTURES",
+      "required": "Rehash gate/helper/closed artifacts, metadata selection, every RECORD/member, license/import/API/static behavior and limits; do not infer execution safety from AST."
+    },
+    {
+      "milestone": "Generated fixture execution",
+      "result": "NOT_RUN_NOT_RELEASED",
+      "required": "Independent source audit first, then separate finite lead fixture assignment; no target imports/execution."
+    },
+    {
+      "milestone": "Tool qualification/actual installation/runtime/P3",
+      "result": "NOT_ACCEPTED_NOT_RUN",
+      "required": "Separate exact production/current/particular decisions and cumulative resource accounting."
+    }
+  ],
+  "authority_and_accounting": {
+    "source_gate": "Separately justified two-GET source acquisition under standing owner authority; no model/paid/purchase permission added.",
+    "new_source_acquisition_helper_invocations": 1,
+    "new_installation_children": 0,
+    "installation_allocation_fully_consumed_unchanged": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "actual_installer_retry": 0,
+    "new_targets_or_executable_extractions": 0,
+    "package_imports_or_execution": 0,
+    "generated_fixtures": 0,
+    "model_inference": 0,
+    "credential_account_actions": 0,
+    "Git_STATUS_or_old_file_edits": 0
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "No independent source trust or tooling-execution acceptance yet; the archive is unexecuted.",
+    "No Requires-Dist headers does not rule out dynamic imports, bundled-code obligations or optional execution paths.",
+    "Per-request timeout semantics are explicitly narrower than a full per-request wall deadline; actual recorded stage was far below all limits. No future reuse/automatic retry of this helper.",
+    "AST syntactic absence of direct network/exec calls is not behavioral proof; compileall and importlib/resource-related paths need review.",
+    "Target wheels' RECORD verification and output/script accounting are not tested by validating the installer tool archive.",
+    "No fixture, target interpreter/scheme, path-race guard integration, native import, PDF source/P3 or actual-installation qualification.",
+    "Source scope and both requests are consumed and preserved. Do not change them to repair a later finding."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact source/evidence audit before any generated-fixture execution.",
+    "Tool source has not been permitted to import; source/archive verification alone does not qualify it.",
+    "No implementation/API fixture results or original-guard fit evidence.",
+    "Actual installation allocation450/180/12 remains consumed; no new actual retry/P3 release."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns independent source/evidence audit of this exact source-only acquisition, including the noted timeout semantics. Only after that audit may lead separately scope guarded generated-fixture feasibility; no automatic execution."
+}

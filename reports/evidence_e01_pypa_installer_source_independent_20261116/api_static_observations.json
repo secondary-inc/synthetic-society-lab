@@ -1,0 +1,57 @@
+{
+  "kind": "INDEPENDENT_STATIC_API_INTEGRATION_OBSERVATIONS_NOT_EXECUTION",
+  "archive_sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0",
+  "tool_version": "1.1.0",
+  "findings": [
+    {
+      "code": "FULL_CONTENT_RECORD_VALIDATION_DEVNULL_WRITE",
+      "source": "installer/records.py",
+      "lines": [
+        150,
+        160
+      ],
+      "fact": "RecordEntry.validate_stream opens Path(os.devnull) with wb and writes hashed stream through copyfileobj_with_hashing.",
+      "constraint": "Frozen GuestPolicy.path refuses all non-owned writes; /dev/null is only in exact read set.",
+      "status": "UNMODIFIED_VALIDATE_RECORD_TRUE_GUARD_FIT_BLOCKED",
+      "no_waiver": true
+    },
+    {
+      "code": "RECORD_DUPLICATE_AND_EXTRA_ROW_COVERAGE_GAPS",
+      "source": "installer/sources.py",
+      "lines": [
+        231,
+        310
+      ],
+      "fact": "validate_record builds dict from parsedrows(lastduplicatewins), pops actual archive member names, but has no final leftovermapping assertion. parse_record_file at records.py219 only checks3columns/normalizesbackslashes.",
+      "constraint": "Project needs independent duplicate-row andbidirectional namecoverage checks before destination writes, inadditionto22/hash/fullpayload checks."
+    },
+    {
+      "code": "CORE_VALIDATION_NOT_AUTOMATIC",
+      "source": "installer/_core.py",
+      "lines": [
+        65,
+        149
+      ],
+      "fact": "install(source,destination,additional_metadata) writes scripts first, thenmembers/additionalmetadata/finalRECORD, anddoesnotcallsource.validate_record."
+    },
+    {
+      "code": "FILESYSTEM_WRITER_NOT_ATOMIC_EXCLUSIVE",
+      "source": "installer/destinations.py",
+      "lines": [
+        138,
+        194
+      ],
+      "fact": "Normalizedabspathcontainment checkpresent; write_to_fs usesexists thenopenwb, parentmkdir/chmod.",
+      "constraint": "Keep originaldirfd/nofollow/alias/charging/collision controls; no assumption library nooverwrite isatomicorconcurrent-writerproof."
+    },
+    {
+      "code": "BYTECODE_AND_LAUNCHER_PATHS",
+      "source": "installer/destinations.py and installer/scripts.py",
+      "fact": "Emptybytecodelevels cause earlyreturn before compileall import/call. POSIXlauncher kind returnsNone before .exe resource access; otherkinds canreadpackagedlauncherdata.",
+      "constraint": "Futureexactconfig emptybytecodelevels/posix/boundinterpreter,no targetentrypoint/nativeexecution. These pathsnotexecutednow."
+    }
+  ],
+  "timeout": "Helper15s urllibtimeout is socketoperationnot independentfullrequest DNS/bodywall.60ssignal/check coversfetch/staticphase, disabledbeforeterminalfsync. Actualfetch/static.4629657909972593 andUTC.462562 alignunder15; no generalhelperreuse/finalizationdeadlinecertification.",
+  "rights": "MetadataLicense-ExpressionMIT/1057Blicenseverified andretained inprivatearchive; no separateprovenance/license certification for8binaryresources. No thirdpartycodecopiedtoGit.",
+  "no_tool_or_helper_execution": true
+}
