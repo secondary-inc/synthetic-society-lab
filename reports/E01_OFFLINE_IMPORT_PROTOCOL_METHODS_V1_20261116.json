@@ -1,0 +1,316 @@
+{
+  "TASK_ID": "E01_OFFLINE_IMPORT_PROTOCOL_METHODS_PURE_FABRICATED_V1_20261116",
+  "status": "20_AUTHOR_CHECKS_PASS_EACH_RUNTIME_INDEPENDENT_METHODS_REVIEW_PENDING_NO_ACTUAL_ROUTE_QUALIFIED",
+  "FILES_CHANGED": [
+    "reports/E01_OFFLINE_IMPORT_PROTOCOL_METHODS_V1_20261116.json",
+    "tests/test_e01_offline_import_protocol_methods_v1_20261116.py",
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/methods_312_attempt1.txt",
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/methods_311_attempt1.txt",
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/matched_results.json",
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/wheel_format_metadata.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "tests/test_e01_offline_import_protocol_methods_v1_20261116.py": {
+      "bytes": 16128,
+      "sha256": "44589c9f6076d8589eb3a4da2d43c3a3fa18b296a3193c0f98aa4cabfb93324a"
+    },
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/methods_312_attempt1.txt": {
+      "bytes": 4677,
+      "sha256": "16f6d664406661079efd020f82d7593071f577cedf20746ebc6d393c55ada583"
+    },
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/methods_311_attempt1.txt": {
+      "bytes": 4677,
+      "sha256": "16f6d664406661079efd020f82d7593071f577cedf20746ebc6d393c55ada583"
+    },
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/matched_results.json": {
+      "bytes": 1620,
+      "sha256": "7722bfd2e0e292d3a2a7064db26fb42160cb3bb63837372895664ad38f693209"
+    },
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/wheel_format_metadata.json": {
+      "bytes": 6346,
+      "sha256": "02ce554752760870bb5298c1df637ba0a57551104e6bf4d2ae9b8043b7fab873"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_offline_import_protocol_methods_v1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_offline_import_protocol_methods_v1_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "3.12.14": "20 PASS in0.004s, exit0",
+    "3.11.17": "20 PASS in0.004s, exit0",
+    "bounds_each": {
+      "maximum_invocations_per_runtime": 1,
+      "consumed_per_runtime": 1,
+      "remaining_per_runtime": 0,
+      "wall_CPU_seconds": 120,
+      "logical_read_bytes": 67108864,
+      "temporary_write_bytes": 33554432,
+      "console_output_bytes": 262144
+    },
+    "harness": "Standalone stdlib-only authored test module. Early audit hook denies socket/process/native operations and pip/target-package imports. Main harness limits CPU/wall/output/read bytes and refuses all filesystem writes/mutations (no temporary writes needed). No project runtime module import and no real sys.meta_path mutation. Source-only archive metadata inspection was performed separately, without extraction/import.",
+    "coverage": [
+      "Six matched rows: two fixed requests x three conditions; exact same initial finder, append, alias map and source token; no RNG, inert specs only.",
+      "Ordinary None-to-next-finder delegation versus frozen chain raising before appended finder; changing only the modeled terminal behavior to defer permits outer delegation.",
+      "Frozen unchanged-stack postcondition can fail even when an earlier finder resolves a request.",
+      "Bounded registration predicate matches simple-control outputs only for exact fabricated type/source/alias map, one appended finder and unchanged baseline identities.",
+      "Unbound source, changed aliases, subclass/custom finder, missing/extra append, reordered/replaced baseline, unsupported request, changed source after resolve and conflicting earlier spec refuse.",
+      "Simple ordinary control can resolve an unsafe fabricated mapping: correctness comparator does not constitute security acceptance.",
+      "Fabricated original denial preserves same primary and counter across conditions; no claim to revalidate actual production guard execution.",
+      "Deterministic full result bytes match both runtimes. AST checks forbid imports/IO/real-runtime attributes in model bodies."
+    ],
+    "results": {
+      "fixed_inputs": {
+        "aliases": {
+          "MODEL_MOVES_HTTP": "MODEL_STDLIB_HTTP",
+          "MODEL_MOVES_QUEUE": "MODEL_STDLIB_QUEUE"
+        },
+        "appended_finders": 1,
+        "baseline_finders": 1,
+        "randomness": "NONE",
+        "requests_per_case": 1,
+        "source_token": "2404acaca6ee5b731f443b35a606503d5455df48c8eac03b8163708f89cd5df3"
+      },
+      "interpretation": "Inert protocol models only; not actual Python import execution, package compatibility or actual failure attribution.",
+      "kind": "PURE_FABRICATED_IMPORT_PROTOCOL_MATCHED_RESULTS_V1",
+      "rows": [
+        {
+          "finder_queries": 2,
+          "model_or_network_requests": 0,
+          "module_code_executions": 0,
+          "outcome": "MODEL_RESOLVED",
+          "request": "MODEL_MOVES_HTTP",
+          "target": "MODEL_STDLIB_HTTP",
+          "variant": "ORDINARY_CONTROL"
+        },
+        {
+          "finder_queries": 1,
+          "model_or_network_requests": 0,
+          "module_code_executions": 0,
+          "outcome": "MODEL_MISSING",
+          "request": "MODEL_MOVES_HTTP",
+          "target": null,
+          "variant": "FROZEN_SNAPSHOT"
+        },
+        {
+          "finder_queries": 2,
+          "model_or_network_requests": 0,
+          "module_code_executions": 0,
+          "outcome": "MODEL_RESOLVED",
+          "request": "MODEL_MOVES_HTTP",
+          "target": "MODEL_STDLIB_HTTP",
+          "variant": "BOUND_REGISTRATION_MODEL"
+        },
+        {
+          "finder_queries": 2,
+          "model_or_network_requests": 0,
+          "module_code_executions": 0,
+          "outcome": "MODEL_RESOLVED",
+          "request": "MODEL_MOVES_QUEUE",
+          "target": "MODEL_STDLIB_QUEUE",
+          "variant": "ORDINARY_CONTROL"
+        },
+        {
+          "finder_queries": 1,
+          "model_or_network_requests": 0,
+          "module_code_executions": 0,
+          "outcome": "MODEL_MISSING",
+          "request": "MODEL_MOVES_QUEUE",
+          "target": null,
+          "variant": "FROZEN_SNAPSHOT"
+        },
+        {
+          "finder_queries": 2,
+          "model_or_network_requests": 0,
+          "module_code_executions": 0,
+          "outcome": "MODEL_RESOLVED",
+          "request": "MODEL_MOVES_QUEUE",
+          "target": "MODEL_STDLIB_QUEUE",
+          "variant": "BOUND_REGISTRATION_MODEL"
+        }
+      ]
+    },
+    "results_sha256": "7722bfd2e0e292d3a2a7064db26fb42160cb3bb63837372895664ad38f693209",
+    "limitations": "The suite models protocol behavior using fabricated objects. It does not invoke Python's actual importer, vendored six, a real source-bound loader or a wheel installer."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "static_source_refs": {
+      "scripts/e01_offline_ipv6_adapter_v1_1_20261116.py": {
+        "bytes": 12343,
+        "sha256": "e65cacfef0cbfd59acabbf4d97e63ebfd5a866d01e1228fb53d1c78cdb5531fc"
+      },
+      "scripts/validate_e01_offline_ipv6_compatibility_v1_1_20261116.py": {
+        "bytes": 55727,
+        "sha256": "7e31c3df2f8da2a8eedbaf587c880a37db18fc59ee1160524057ccc8f1925681"
+      },
+      "scripts/install_e01_pypdf701_runtime_v1_5.py": {
+        "bytes": 64638,
+        "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+      },
+      "scripts/acquire_e01_pypdf701_artifacts_v1.py": {
+        "bytes": 31924,
+        "sha256": "6a8c9ec9826b3f16c8a9cd11b6f9d7991d0dbe65b136d2fed05b74330223a9cc"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_internal/operations/install/wheel.py": {
+        "bytes": 27615,
+        "sha256": "5f9233f72520e4b94ae55350f60da291ce9d711bbc10f8bf4948b98ae103460a"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/packages/six.py": {
+        "bytes": 34665,
+        "sha256": "6fd2ccd30057bfb13b4ab6c28c09b8c3037e86b1fe88dc6fd7c2e058d30c28fa"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/connection.py": {
+        "bytes": 20314,
+        "sha256": "b6d200f74f41adb4d4cf092a11efd3cd9561e0938e8fb83ad58b1e8b69abc068"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/connectionpool.py": {
+        "bytes": 40408,
+        "sha256": "7b67a203035b14d08ac63e1bc0328d2bec3b1c8752cf73a633153f4c8b7e7af4"
+      },
+      ".venv/lib/python3.12/site-packages/pip/_vendor/urllib3/__init__.py": {
+        "bytes": 3333,
+        "sha256": "8972dc6222724a7d0635b58e3990c30298012f52603f8e0467c8b5efad12f0c7"
+      }
+    },
+    "integrity": "Inspected vendored pip files matched original installer binding. Existing acquisition inspector matched its frozen base-code ref. Five archive sizes/SHA256 matched the fixed hashlock. Only ZIP directory/WHEEL/RECORD/entry-point format metadata parsed; no package payload extraction, execution or qualification.",
+    "no_private_data": "No raw PDF, respondent, publisher, owner or credential access. No new download or third-party source redistribution.",
+    "metadata_artifact": "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/wheel_format_metadata.json",
+    "rights": "Metadata/provenance assessment only; retain existing dependency license obligations in any later materialization."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "mechanism_conclusion": {
+    "observed_in_models": "Both modeled move requests resolve through ordinary delegation and the bound-registration predicate, using two finder queries each. Frozen-snapshot lookup consults only one original finder and reports missing before the appended finder is called.",
+    "not_observed": "Actual consumed-run cause, exact exception, phase or missing module. The hypothesis remains unconfirmed for the real child.",
+    "static_alignment": [
+      "Pinned urllib3 parent imports connectionpool, which imports connection and six.moves aliases.",
+      "Pinned vendored six registers a custom finder after the adapter has captured earlier finders.",
+      "Consumed adapter consults only captured finders, raises missing itself, limits loader classes and requires unchanged finder stack. These yield multiple potential incompatibility points."
+    ],
+    "query_count_note": "Finder-query counts are pure model operation counts, not measured real runtime, money or compute efficiency."
+  },
+  "earned_complexity_comparison": [
+    {
+      "condition": "Ordinary delegation simple control",
+      "evidence": "Resolves both inert aliases after one standard miss.",
+      "tradeoff": "Lowest modeled mechanism complexity. By itself it supplies no source/loader/guard guarantees; accepting arbitrary appended finders is not allowed."
+    },
+    {
+      "condition": "Current frozen-snapshot semantics",
+      "evidence": "Fails both inert aliases before appended finder; separate unchanged-stack test fails after a resolved lookup.",
+      "tradeoff": "Existing restrictions remain preserved. Merely returningNone is insufficient to establish bounded/custom-loader/source/alias/finder-stack safety."
+    },
+    {
+      "condition": "Narrow source-bound registration design model",
+      "justification": "Included only to specify a bounded compatibility alternative after demonstrating the simpler/frozen difference.",
+      "evidence": "Returns the same two inert specs as ordinary control; refuses declared source/type/append/map/baseline mutations.",
+      "tradeoff": "Adds exact source identity, finder class/registration provenance, alias map, stable baseline and post-state obligations. All current source tokens are fabricated. No actual six loader support, origin attestation, finder mutation or guard waiver implemented.",
+      "gate": "PENDING independent model review, then actual-source proof/production review if this route is selected. It has not earned production preference."
+    }
+  ],
+  "simpler_dependency_route_assessment": {
+    "candidate": "Strict stdlib-only materialization of the exact five pinned wheels into a fresh separately released prefix, reusing the previously reviewed no-pip environment construction where applicable. This is a design candidate, not an implemented installer or actual target.",
+    "why_consider": "Avoids executing pip and its vendored HTTP/import stack during installation; hence avoids capability overrides and custom finder accommodation. It trades those components for a small but security-sensitive materializer.",
+    "actual_metadata_observations": {
+      "fixed_wheels": 5,
+      "archive_bytes": 9430688,
+      "declared_uncompressed_bytes": 25657393,
+      "archive_entries": 373,
+      "native_member_filename_count": 28,
+      "data_paths": 0,
+      "pth_paths": 0,
+      "record_names_match_nondirectory_archive_members": "All five true; raw directory-inclusive equality is false for cffi/pillow because directory entries are not RECORD file rows.",
+      "root_is_purelib": "true for pypdf/pycparser; false for cffi/cryptography/pillow.",
+      "console_script": "cffi declares cffi-gen-src; also a distutils.setup_keywords metadata key. No other console/GUI entry points found in inspected metadata.",
+      "record_payload_hashes_reverified": false,
+      "native_ABI_or_loading_verified": false
+    },
+    "concrete_counterexample_to_plain_extraction": "cffi's console script requires installed-script handling and installed RECORD accounting. Extracting archive members alone does not create that wrapper, so plain unzip is not equivalent to the same installation contract.",
+    "requirements_held_equal": [
+      "Same exact five versions, immutable archive hashes, accepted acquisition ancestry, source/rights and existing dependency closure; preserve all prior failures/accounting.",
+      "Absent new target and once-only consumption; exact bound interpreter/platform/scheme and module paths, no reuse/acceptance of the populated failed environment.",
+      "Original network/helper/native-execution/import/write guards and cumulative limits remain enforced; no downloaded code imports or entry-point execution before qualification.",
+      "Bound ZIP directory/count/ratio/inflation/size, reject traversal, aliases, duplicate case-fold names, special entries and unexpected .data/.pth. Current existing inspector supplies some of these, not a complete installer.",
+      "Independently verify per-file RECORD algorithm/hash/size/coverage, directory treatment and overlap/collision policy. Existing acquisition inspector streams CRC and WHEEL/METADATA; it does not establish per-member RECORD cryptographic consistency.",
+      "Generate required console wrappers without running package code; preserve license/package/native-library layout, install metadata and update installed RECORD with generated artifacts under a frozen scheme.",
+      "Use fail-closed descriptor/path handling, bounded charged IO, partial-failure retention, deterministic manifests and durable exact terminal evidence. No silent skip of entry points or postcondition.",
+      "Independent native/runtime/source qualification remains a later gate; static binary filenames/tags and archive integrity do not certify ABI or native loading."
+    ],
+    "tradeoffs": "Potentially fewer dynamic import assumptions, but replacing installer semantics adds its own implementation/audit burden. Source metadata makes a strict fixed-wheel subset plausible; no supplied evidence yet proves a safe, equivalent materializer.",
+    "other_routes": [
+      {
+        "route": "Use the already populated failed third environment",
+        "decision": "Not an accepted simpler route: its original guard postcondition failed. Preserve it; do not relabel it accepted."
+      },
+      {
+        "route": "OS sandbox plus ordinary pip",
+        "decision": "Not tested or qualified. No tool availability, policy enforcement, read/write quotas or equivalence established. An OS-sandbox label cannot replace original controls."
+      },
+      {
+        "route": "Manual extraction or ignoring cffi console metadata",
+        "decision": "Not equivalent to the unchanged contract without separately justified scope and complete RECORD/generated-file accounting."
+      }
+    ],
+    "recommendation": "Evaluate a small strict materializer feasibility design against the source-bound pip option using the same fixed wheel/scheme/guard/RECORD/cap/no-execution criteria before building more import machinery. Give the simpler route first consideration; select neither for actual execution until independent evidence closes its gaps."
+  },
+  "source_only_metadata_limits": {
+    "read": "Archive bytes read for exact hashes; only bounded WHEEL/RECORD/entry-point metadata decompressed in memory. No package payload files extracted.",
+    "inference": "No native execution/ABI, complete RECORD payload verification, installed-state acceptance, license-compliance certification or current runtime preflight."
+  },
+  "actual_authority": {
+    "allocation_consumed": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "new_actual_allowance": 0,
+    "actual_executor": false,
+    "actual_preflight": false,
+    "fourth_installation": false,
+    "source_P3": false,
+    "paid_execution": false,
+    "old_source_adapter_edits": false,
+    "real_sys_meta_path_mutations": false,
+    "network_requests": 0
+  },
+  "acceptance_criteria": [
+    {
+      "milestone": "Matched fabricated mechanism",
+      "result": "AUTHOR_CHECKS_PASS_ONLY",
+      "evidence": "20 checks each; six matched rows and identical result digest."
+    },
+    {
+      "milestone": "Independent methods/data-integrity review",
+      "result": "PENDING",
+      "required": "Exact test/report/logs/metadata refs; compare semantics, scope and static claims independently."
+    },
+    {
+      "milestone": "Choose installation strategy",
+      "result": "OPEN",
+      "required": "Concrete small feasibility contracts for identical requirements; simpler materializer receives first comparison. Neither route qualifies from this model."
+    },
+    {
+      "milestone": "Real production/current/particular/execution",
+      "result": "NOT_AUTHORIZED_NOT_RUN",
+      "required": "Separate justified finite lead decision, exact independent review and new cumulative accounting before any real attempt."
+    },
+    {
+      "milestone": "Actual failed-child cause/native/source qualification",
+      "result": "UNKNOWN_OR_BLOCKED_UNCHANGED"
+    }
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Fabricated source tokens/specs are not real code provenance or actual Python import correctness proofs.",
+    "Normal-delegation model is a mechanism comparator, not a complete Python import-system simulation or security baseline.",
+    "No claim that whitelisting one vendored finder would solve every closure, alias, loader or post-state issue.",
+    "Source-bound predicate is single-owner/nonhostile and incomplete for real importer semantics; no broad loader allowance proposed.",
+    "Static archive metadata narrows a possible materializer subset but does not implement or qualify installation. RECORD hashes and native ABI remain unverified in this task.",
+    "All one authored suite invocation per runtime consumed; no retry. Prior observer V1 remains preserved and is under lead-owned separate correction, per ownership coordination.",
+    "Implementer does not independently certify any milestone."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact methods review pending.",
+    "Actual compatibility failure attribution remains unknown.",
+    "No real source-bound loader or strict materializer qualified.",
+    "Actual allocation consumed; no actual preflight/target/executor/P3/credential/network/Git/STATUS actions allowed."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns an independent audit of this exact small mechanism/metadata report, then a bounded offline strict-materializer feasibility comparison if justified. Preserve consumed failures; do not run another blind actual retry."
+}

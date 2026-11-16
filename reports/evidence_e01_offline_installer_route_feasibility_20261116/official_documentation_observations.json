@@ -1,0 +1,82 @@
+{
+  "kind": "PRIMARY_PYPA_DOCUMENTATION_OBSERVATIONS_NOT_ORIGIN_HTML",
+  "retrieval_window_start_UTC": "2026-11-16T13:53:47Z",
+  "budget": {
+    "maximum_public_document_requests": 6,
+    "charged_requests": 6,
+    "usable_documents": 5,
+    "inaccessible_attempts": 1,
+    "no_additional_requests": true,
+    "retained_technical_text_cap_bytes": 5242880
+  },
+  "hash_scope": "Hashes bind these retained short observations/metadata, not origin HTML bytes or an immutable release. Browser-tool transport/cache/redirect counts and raw source bytes were not exposed.",
+  "documents": [
+    {
+      "id": "D1",
+      "url": "https://installer.pypa.io/en/stable/",
+      "title": "PyPA installer documentation",
+      "retrieval": "USABLE",
+      "short_quote": "Platform-independent Python script wrapper generation.",
+      "observation": "The project describes a low-level wheel-installation library and a destination abstraction.",
+      "claim_scope": "Documented purpose; not evidence of qualified local code or current release maintenance.",
+      "tool_crawl_label": "today",
+      "accessed_date_UTC": "2026-11-16"
+    },
+    {
+      "id": "D2",
+      "url": "https://installer.pypa.io/en/stable/cli/",
+      "title": "Initial CLI path",
+      "retrieval": "INACCESSIBLE_VIA_TOOL",
+      "short_quote": null,
+      "observation": "The initial guessed path returned no usable document; this retrieval is charged to the six-request budget.",
+      "claim_scope": "No capabilities inferred.",
+      "tool_crawl_label": null,
+      "accessed_date_UTC": "2026-11-16"
+    },
+    {
+      "id": "D3",
+      "url": "https://installer.pypa.io/en/stable/cli/installer/",
+      "title": "python -m installer",
+      "retrieval": "USABLE",
+      "short_quote": "validate the wheel against certain part of its record (default=none)",
+      "observation": "CLI accepts wheel paths, prefix/staging controls, explicit no-bytecode and RECORD-validation options; validation defaults to none and bytecode defaults to levels0,1. Existing-file overwrite is opt-in.",
+      "claim_scope": "CLI reference only; source behavior and enforcement not tested.",
+      "tool_crawl_label": "yesterday",
+      "accessed_date_UTC": "2026-11-16"
+    },
+    {
+      "id": "D4",
+      "url": "https://installer.pypa.io/en/stable/api/sources/",
+      "title": "installer.sources",
+      "retrieval": "USABLE",
+      "short_quote": "This method should be called before install if validation is required.",
+      "quote_note": "Normalized identifier formatting only; sentence refers to validate_record.",
+      "observation": "WheelFile.validate_record(validate_contents=True) checks RECORD membership plus content sizes/hashes. The documentation tells callers to validate before installation.",
+      "claim_scope": "Documented API contract; exact algorithms, malformed-input handling and source version need audit.",
+      "tool_crawl_label": "today",
+      "accessed_date_UTC": "2026-11-16"
+    },
+    {
+      "id": "D5",
+      "url": "https://installer.pypa.io/en/stable/api/destinations/",
+      "title": "installer.destinations",
+      "retrieval": "USABLE",
+      "short_quote": "Hashes the written content, to determine the entry in the RECORD file.",
+      "observation": "Destination methods support file/script writing and final RECORD output. SchemeDictionaryDestination exposes SHA256 hashing, empty bytecode-level defaults and no-overwrite behavior.",
+      "claim_scope": "Documented output responsibilities; not path-race confinement, quotas, atomicity, durability or no-execution certification.",
+      "tool_crawl_label": "today",
+      "accessed_date_UTC": "2026-11-16"
+    },
+    {
+      "id": "D6",
+      "url": "https://installer.pypa.io/en/stable/api/__init__/",
+      "title": "installer API",
+      "retrieval": "USABLE",
+      "short_quote": "This API is not finalised, and may change in a patch version.",
+      "observation": "Core install accepts a source, destination and additional metadata. Exact API/version pinning is required before integration.",
+      "claim_scope": "Stable documentation URL is not an immutable package/source revision.",
+      "tool_crawl_label": "5 days ago",
+      "accessed_date_UTC": "2026-11-16"
+    }
+  ]
+}

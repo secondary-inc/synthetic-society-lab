@@ -1,0 +1,44 @@
+{
+  "kind": "INDEPENDENT_OFFICIAL_DOC_OBSERVATIONS_NOT_ORIGIN_HTML_OR_PACKAGE_SOURCE",
+  "start_UTC": "2026-11-16T14:00:17Z",
+  "date_UTC": "2026-11-16",
+  "logical_public_GETs": 3,
+  "maximum_GETs": 3,
+  "pages": [
+    {
+      "url": "https://installer.pypa.io/en/stable/cli/installer/",
+      "title": "python -m installer",
+      "crawl_label": "yesterday",
+      "observation": "CLI RECORD validation defaults to none; request all for full validation. Bytecode compilation defaults to levels0,1; no-compile-bytecode disables it. Existing-file overwrite defaults false. Wheel paths and prefix are interface inputs, not confinement guarantees.",
+      "retained_observation_sha256": "f1b61a4aa98157c455201bea44e5401cc41a527b415d2bf919c2ad96077b81ce"
+    },
+    {
+      "url": "https://installer.pypa.io/en/stable/api/sources/",
+      "title": "installer.sources",
+      "crawl_label": "today",
+      "observation": "WheelFile.validate_record(validate_contents=True) validates membership and content sizes/hashes. Documentation directs callers to run validation before install when needed. API may change in patch versions; stable docs do not pin implementation.",
+      "retained_observation_sha256": "dad19be3e7d6538f3877637d7aa0d1aabf9aa84dd7333bae416b1dcec57dee53"
+    },
+    {
+      "url": "https://installer.pypa.io/en/stable/api/destinations/",
+      "title": "installer.destinations",
+      "crawl_label": "today",
+      "observation": "Destination methods generate entrypoint scripts and installed RECORD. SchemeDictionaryDestination takes explicit interpreter/scheme/script-kind; defaults include SHA256, empty bytecode levels and no overwrite. This documents interfaces, not quota, path-race or target-import isolation.",
+      "retained_observation_sha256": "a558a1cb886e83cabe82dc2a5fa04d82af6cafc5f7014b3b0a4c1eb3871425a9"
+    }
+  ],
+  "retrieval_accounting": {
+    "logical_official_GETs": 3,
+    "raw_transport_cache_redirect_counts": "NOT_EXPOSED",
+    "tool_text_UTF16_units": 21043,
+    "conservative_UTF8_bound_bytes": 63129,
+    "technical_text_and_retained_output_cap_bytes": 2097152
+  },
+  "hash_scope": "Per-observation hashes below bind canonical retained semantic metadata, never originHTML bytes, source archives, released code or a version attestation.",
+  "unrefetched_author_pages": [
+    "https://installer.pypa.io/en/stable/",
+    "https://installer.pypa.io/en/stable/cli/",
+    "https://installer.pypa.io/en/stable/api/__init__/"
+  ],
+  "no_further_GETs": true
+}

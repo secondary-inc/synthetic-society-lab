@@ -1,0 +1,295 @@
+{
+  "TASK_ID": "E01_OFFLINE_STANDARD_INSTALLER_ROUTE_FEASIBILITY_20261116",
+  "status": "DOCUMENTATION_AND_SCOPED_LOCAL_ASSESSMENT_COMPLETE_INDEPENDENT_REVIEW_PENDING_NO_ROUTE_QUALIFIED",
+  "FILES_CHANGED": [
+    "reports/E01_OFFLINE_INSTALLER_ROUTE_FEASIBILITY_20261116.json",
+    "reports/evidence_e01_offline_installer_route_feasibility_20261116/official_documentation_observations.json",
+    "reports/evidence_e01_offline_installer_route_feasibility_20261116/local_availability.json"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "reports/evidence_e01_offline_installer_route_feasibility_20261116/official_documentation_observations.json": {
+      "bytes": 4234,
+      "sha256": "c84bd5b09465d9d9c910b74eb6a6c8c6f2aa62f5b8a79758f70b2fac5469c016"
+    },
+    "reports/evidence_e01_offline_installer_route_feasibility_20261116/local_availability.json": {
+      "bytes": 1445,
+      "sha256": "51b567bdd5211b6dbe517bb4775801977485c3141fe5d7b282c226de4be35b14"
+    }
+  },
+  "INPUT_ARTIFACTS": {
+    "reports/E01_OFFLINE_IMPORT_PROTOCOL_METHODS_V1_20261116.json": {
+      "bytes": 20047,
+      "sha256": "cfe2118b1ca647510bd719c2c5fd0f07ba00642157aab359e70c0c7a8d796867"
+    },
+    "reports/evidence_e01_offline_import_protocol_methods_v1_20261116/wheel_format_metadata.json": {
+      "bytes": 6346,
+      "sha256": "02ce554752760870bb5298c1df637ba0a57551104e6bf4d2ae9b8043b7fab873"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    "Six observed public document retrieval URLs and date/hash scopes are recorded in official_documentation_observations.json; this task's retrieval allowance is consumed, so no automatic refetch.",
+    "Read-only directory checks enumerated installer, installer.py and installer-* names in the three recorded site directories; checked pip/_vendor/installer and three repository candidates; read/hash pyproject.toml without importing packages. Exact selected paths/results are in local_availability.json.",
+    "No install, package import, archive acquisition/extraction, test suite, actual preflight or target command was run."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "documentation_requests": {
+      "maximum": 6,
+      "charged": 6,
+      "usable": 5,
+      "inaccessible": 1,
+      "remaining": 0,
+      "failed_path": "https://installer.pypa.io/en/stable/cli/",
+      "transport_note": "Six logical public browser-tool retrieval attempts charged, including the inaccessible path. Raw transport/cache/redirect requests are not exposed by the browser tool; no further retrieval made."
+    },
+    "local_checks": "No installer package/module/distribution entry in three selected site directories; no vendored installer directory or selected repository package/module candidate. pyproject.toml has no installer mention. This is scoped file availability, not exhaustive import-resolution proof.",
+    "validation": "Evidence JSON parsed; exact retained artifact bytes/hashes and per-document canonical observation hashes recorded. No automated execution test or production source audit performed.",
+    "research_window": {
+      "start_UTC": "2026-11-16T13:53:47Z",
+      "deadline_UTC": "2026-11-16T14:03:47Z",
+      "maximum_minutes": 10,
+      "assessment_verified_by_UTC": "2026-11-16T13:58:35Z",
+      "elapsed_seconds_to_verification": 288
+    },
+    "retained_technical_text": {
+      "cap_bytes": 5242880,
+      "public_tool_text_conservative_upper_bound_bytes": 87139,
+      "scope": "Short document observations and this assessment only; no origin HTML/source archive retained. Final artifact totals verified separately."
+    }
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "primary_sources": [
+      {
+        "id": "D1",
+        "url": "https://installer.pypa.io/en/stable/",
+        "title": "PyPA installer documentation",
+        "accessed_date_UTC": "2026-11-16",
+        "retrieval": "USABLE",
+        "retained_observation_sha256": "1692033637d955edcb648dd4ac9a8e01ed037964f81abf127df3b7c41c38a634"
+      },
+      {
+        "id": "D2",
+        "url": "https://installer.pypa.io/en/stable/cli/",
+        "title": "Initial CLI path",
+        "accessed_date_UTC": "2026-11-16",
+        "retrieval": "INACCESSIBLE_VIA_TOOL",
+        "retained_observation_sha256": "c1f81fa497d5c8408bd454c5f74a37f4e31e2f34cd24717906ddb8aaae7d74f7"
+      },
+      {
+        "id": "D3",
+        "url": "https://installer.pypa.io/en/stable/cli/installer/",
+        "title": "python -m installer",
+        "accessed_date_UTC": "2026-11-16",
+        "retrieval": "USABLE",
+        "retained_observation_sha256": "bb97ff9f9d1635c8516411e9454f1f09ba9bdde96e48b5fab08b55e6032492a1"
+      },
+      {
+        "id": "D4",
+        "url": "https://installer.pypa.io/en/stable/api/sources/",
+        "title": "installer.sources",
+        "accessed_date_UTC": "2026-11-16",
+        "retrieval": "USABLE",
+        "retained_observation_sha256": "0c726a7d89f239241d43178b6aec6c8aff5258f48f0a1e0bffbd6020871ee20f"
+      },
+      {
+        "id": "D5",
+        "url": "https://installer.pypa.io/en/stable/api/destinations/",
+        "title": "installer.destinations",
+        "accessed_date_UTC": "2026-11-16",
+        "retrieval": "USABLE",
+        "retained_observation_sha256": "edac4d17d2acfbab7af6630d9d89cf3b9e43c104f8fe9b422bbca89b3d0bb595"
+      },
+      {
+        "id": "D6",
+        "url": "https://installer.pypa.io/en/stable/api/__init__/",
+        "title": "installer API",
+        "accessed_date_UTC": "2026-11-16",
+        "retrieval": "USABLE",
+        "retained_observation_sha256": "fe5ae0b69ed7833ad1ea3b4e4d7d8b2a0abf3d6fea154a7d7ffa8d4ef08d69f8"
+      }
+    ],
+    "hash_scope": "Per-source hashes bind canonical retained observation metadata, not original HTML, package code or an immutable release. Official stable docs were read on2026-11-16; browser crawl labels differ and are retained.",
+    "source_version_limit": "No installer release metadata, source archive, current release number, dependency set, license file or source revision retrieved. API docs warn of patch-version changes. Active maintenance cadence and exact supported Python versions are not independently established.",
+    "license": "Only short technical observations and minimal excerpts retained. No package/source redistribution. Future tool acquisition must verify license and reuse obligations.",
+    "credentials_or_private_data": "None; no account, credential, raw respondent/publisher/PDF or private-source access."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "recommendation": {
+    "preferred_next_candidate": "PyPA installer through its explicitly configured library API, conditional on exact source/toolchain qualification and guarded fixture tests.",
+    "reason": "It offers established wheel-installation primitives instead of requiring us to reimplement script and RECORD semantics or continue adapting pip's vendored import machinery. Documentation establishes relevant interfaces, not conformance to our research controls.",
+    "relative_priority": [
+      "First evaluate a pinned PyPA installer implementation against the unchanged contract.",
+      "Retain bespoke fixed-wheel materialization as a fallback if documented APIs/source cannot fit the existing guard/cap requirements.",
+      "Preserve pip recovery and its failures; do not extend custom loader allowances without a demonstrated need."
+    ],
+    "not_a_claim": "No maintained-version/source assurance, compatible local package, safe import closure, no-network behavior, equivalent installed tree or actual installation is certified."
+  },
+  "documented_capability_facts": [
+    {
+      "id": "F1",
+      "sources": [
+        "D1",
+        "D6"
+      ],
+      "fact": "Low-level wheel installation with source/destination abstractions; core call accepts additional metadata."
+    },
+    {
+      "id": "F2",
+      "sources": [
+        "D4"
+      ],
+      "fact": "Caller can explicitly validate wheel RECORD membership and content hashes/sizes before install. Documentation does not say core install automatically performs that full validation."
+    },
+    {
+      "id": "F3",
+      "sources": [
+        "D5"
+      ],
+      "fact": "Destination API covers generated scripts and final installed RECORD, with hashing and scheme/interpreter configuration."
+    },
+    {
+      "id": "F4",
+      "sources": [
+        "D3",
+        "D5"
+      ],
+      "fact": "CLI defaults require deliberate changes: use all-content RECORD validation and disable bytecode. API bytecode-level configuration can be empty. Keep overwrite disabled."
+    },
+    {
+      "id": "F5",
+      "sources": [
+        "D4",
+        "D5",
+        "D6"
+      ],
+      "fact": "API is not finalized; a stable documentation URL cannot substitute for exact package/source version pinning."
+    }
+  ],
+  "unchanged_comparison_contract": [
+    "Same exact five target wheels/versions/archive SHA256 and original acquisition provenance; existing independent dependency closure remains a separate input, not delegated to an assumed resolver.",
+    "Validate archive structure/caps and wheel RECORD content hashes/sizes/membership before writes; no trust from a self-described metadata filename alone.",
+    "Generate the required cffi console script with the verified target-interpreter binding and include generated files accurately in installed RECORD; independently verify resulting manifest.",
+    "Fresh absent target; no overwrite or acceptance of preserved failed environments, and no fourth installation or target change under this task.",
+    "Retain exact bound interpreter/platform/scheme/source checks, original network/helper/native/load/write denials, directory-FD protection and charged read/write/output/storage/time limits.",
+    "No downloaded target package, console entry point, startup hook or native extension executed during installation. New installer tooling itself must be source-qualified before importing it.",
+    "Preserve failure evidence, no-retry/consumption, original counters, durable bounded terminal and full prior resource accounting.",
+    "Successful installation would not release native/runtime or PDF-source P3 qualification; independent later gates stay intact."
+  ],
+  "route_comparison": [
+    {
+      "route": "Current instrumented pip/custom-loader remedy",
+      "existing_evidence": "Pinned pip, guard, wheel and ancestry infrastructure already exists. Consumed V1.1 actual dry-run failed with a generic guest error. Matched fabricated methods support a finder conflict mechanism but do not identify the actual cause.",
+      "wheel_and_RECORD": "Reuse original exact five-wheel archive validation/dependency checks, but require explicit complete RECORD content verification and installed-tree reconciliation; existing acquisition CRC checks alone are insufficient evidence for this additional duty.",
+      "scripts_and_installed_RECORD": "Existing pinned pip source handles script/installed-RECORD responsibilities; retained actual environment is still unaccepted. Any changed import protocol needs new independent proof without changing package-script requirements.",
+      "filesystem_and_network": "Original enforcement remains. Admitting custom finder/alias semantics is additional security-sensitive work, not a network exemption; preserve all guard counters and postconditions.",
+      "qualification": "No success or runtime/P3 release. All actual allowance consumed.",
+      "tradeoff": "Reuses substantial reviewed control code, but loader/alias/closure assumptions and failure-observation gaps add custom machinery. Not preferred for further expansion before testing the simpler standard-installer option.",
+      "status": "BLOCKED_ACTUAL_FAILURE_PRESERVED"
+    },
+    {
+      "route": "Strict bespoke fixed-wheel materializer",
+      "existing_evidence": "Only source/metadata feasibility and inert protocol models, not a materializer implementation. Previous metadata artifact records five archives without.data/.pth paths, mixed pure/native wheels and cffi's console script.",
+      "wheel_and_RECORD": "Would need a reviewed bounded reader, per-member verification, RECORD exclusions/coverage, duplicate/path/special-entry defenses and complete exact source identity. Prior inspector helps but does not supply a full installer.",
+      "scripts_and_installed_RECORD": "Must implement generated wrappers, target shebang, installed RECORD updates, license/native layout and collision semantics itself; plain extraction is not equivalent.",
+      "filesystem_and_network": "Could avoid pip/vendor imports, but requires tested destination operations under unchanged guards/caps and failure retention. No safety or OS-sandbox claim from stdlib usage.",
+      "qualification": "Same target-code execution ban and later independent runtime/P3 gates; fresh target only under separate release.",
+      "tradeoff": "Potentially smaller import surface, but highest new responsibility for wheel semantics and installed-file correctness. Avoid building this before evaluating established primitives.",
+      "status": "UNIMPLEMENTED_FALLBACK"
+    },
+    {
+      "route": "PyPA installer library/CLI",
+      "existing_evidence": "Official documentation supports F1-F5. Selected local sites show no available installer distribution; exact package source/dependencies have not been acquired or qualified.",
+      "wheel_and_RECORD": "Keep independent pinned archive SHA256 and ZIP caps. Proposed API sequence would explicitly call WheelFile.validate_record(validate_contents=True) before installer.install. CLI equivalent must request --validate-record all. Source audit/tests must verify error behavior before any destination write.",
+      "scripts_and_installed_RECORD": "Use documented destination machinery instead of bespoke script/RECORD algorithms, with independently verified final output. The explicit interpreter parameter makes an API candidate useful for binding wrappers to the target interpreter.",
+      "filesystem_and_network": "Documentation does not prove confinement, atomicity, quota enforcement, durable failure evidence or no target imports/network. Source-audit import closure and test destination interactions with original directory-FD/audit/charge controls; no replacement of those controls.",
+      "qualification": "Installer is new executable tooling and needs its own exact source/tool qualification before import. Target package/native/P3 gates remain separate and unchanged.",
+      "tradeoff": "Strongest candidate for reducing custom wheel/import semantics if a small guarded adapter suffices. Unknown source availability/version/dependencies and guard fit remain real blockers.",
+      "status": "PREFERRED_FEASIBILITY_CANDIDATE_NOT_QUALIFIED"
+    }
+  ],
+  "proposed_configuration_not_execution": {
+    "api": "A source-qualified exact tooling version; an independently verified scheme mapping and target interpreter; posix script kind only after platform check; SHA256 destination hashing; bytecode levels empty; overwrite disabled; explicit pre-install source validation.",
+    "cli_flags_for_future_test_only": [
+      "--validate-record",
+      "all",
+      "--no-compile-bytecode",
+      "--prefix",
+      "<separately-released-absent-prefix>"
+    ],
+    "cli_caveats": [
+      "Do not assume --prefix alone makes generated script shebangs point at the target interpreter. Verify with the exact invocation/tooling runtime; API allows explicit binding.",
+      "--destdir has documented staged-root/embedded-path semantics. Do not add it without checking actual scheme and RECORD paths.",
+      "No network flag or security property is inferred from accepting local wheel paths. Hard denials remain mandatory."
+    ],
+    "resolver": "Keep existing separately verified five-wheel dependency closure; no dependency fetching or solving is authorized or assumed."
+  },
+  "small_next_feasibility_gate": {
+    "name": "Pinned standard-installer source review plus four bounded fixture families",
+    "scope": "A separate finite lead assignment only. No broad job framework or actual target required.",
+    "entry_requirements": [
+      "Obtain/record exact release metadata and a source-qualified implementation under a separately bounded acquisition allowance; verify Requires-Python for both supported runtimes, dependencies, licenses and archive/source hashes. No acquisition made here.",
+      "Review the implementation/import closure and destination code before any tooling import; determine whether original guards work without unsupported exemptions. If new tool qualification conflicts with the execution contract, leave the route blocked."
+    ],
+    "fixtures_after_tool_qualification": [
+      "Same small fabricated valid wheel: correct output bytes, target-bound console wrapper, metadata and independently checked installed RECORD, with zero target-module/entrypoint/native execution.",
+      "Bad hash/size/membership/RECORD plus path/duplicate/special-entry cases: refusal before writes, no silent overwrite or fallback.",
+      "Guarded recording destination under read/write/output/storage caps: source/destination identities, original network/helper/import denials and unchanged counters.",
+      "Interrupted write/limit/error: exact retained failure, original primary error, full referenced evidence and terminal headroom without cap increases."
+    ],
+    "acceptance": "Independent reviewer verifies exact source, all fixture outcomes and output manifests on3.11/3.12. Select standard installer only if it meets the unchanged contract with less custom semantic code; otherwise document the specific blocker and compare the narrow bespoke fallback.",
+    "not_included": "No dependency/archive download, library import, test invocation, actual executor/preflight/installation/P3 or allowance increase occurs under this report."
+  },
+  "acceptance_criteria": [
+    {
+      "milestone": "Bounded primary-source and scoped-local assessment",
+      "result": "COMPLETE_AUTHOR_ONLY",
+      "evidence": "Six charged retrievals, five official documents, scoped availability artifact and hashes."
+    },
+    {
+      "milestone": "Independent assessment review",
+      "result": "PENDING",
+      "required": "Verify documented capabilities versus untested requirements, source/date/hash scopes and bounded request use."
+    },
+    {
+      "milestone": "Existing installer source and guarded fixture feasibility",
+      "result": "NOT_RUN_BLOCKED_ON_UNPINNED_TOOL_SOURCE",
+      "required": "Separate bounded lead assignment and exact tool qualification before import."
+    },
+    {
+      "milestone": "Actual route acceptance/runtime/P3",
+      "result": "NOT_AUTHORIZED_NOT_RUN"
+    }
+  ],
+  "actual_authority": {
+    "consumed_allocation": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "new_actual_allowance": 0,
+    "archive_or_package_downloads": 0,
+    "package_imports": 0,
+    "import_count_scope": "No installer, pip or target-distribution code imported; metadata checks used standard-library file/JSON/hash tools only.",
+    "wheel_extractions": 0,
+    "research_children_or_model_calls": 0,
+    "actual_preflight_target_or_source_actions": 0,
+    "credential_account_actions": 0,
+    "paid_actions": 0,
+    "Git_or_STATUS_edits": 0
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Official docs are interface evidence; no original source bytes, current release maintenance, API compatibility or security conformance proved.",
+    "Documentation observations/hashes are not downloaded distribution/source hashes. Browser retrieval cache/transport details are unobserved.",
+    "Scoped file absence does not prove global unavailability; no import resolution was attempted.",
+    "A new trusted installer dependency is a real bootstrap and source-qualification obligation, not a free exception to the target execution ban.",
+    "Existing path/audit/IO guards may reject this library's operations. Do not widen them from documentation evidence.",
+    "RECORD validation, generated scripts, collisions, path races, quotas, interrupted writes and target-import isolation need direct future tests.",
+    "No new actual allowance; no route may consume the old stopped launchers or be relabeled accepted from docs."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact report review pending.",
+    "No pinned/qualified local PyPA installer source or verified version/dependencies/license/runtime compatibility.",
+    "No library/CLI integration or guarded fixture tests; actual failure attribution still unknown.",
+    "Original actual450/180/12 consumed; further actual work remains separately gated."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns independent assessment review, then a small separately bounded PyPA-installer metadata/source-qualification gate if justified. Prefer this established implementation's feasibility test before bespoke wheel or import machinery."
+}
