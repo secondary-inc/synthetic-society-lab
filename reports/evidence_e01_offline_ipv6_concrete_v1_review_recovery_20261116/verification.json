@@ -1,0 +1,191 @@
+{
+  "status": "BLOCKED_RECEIPT_TERMINAL_HEADROOM_CONTRACT_DESPITE_112_MOCK_PASS",
+  "test_results": {
+    "312": {
+      "kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW_RECOVERY",
+      "python": "3.12.14",
+      "original_checks": 47,
+      "independent_checks": 9,
+      "expected_checks": 56,
+      "exit_code": 0,
+      "wall_seconds": 1.245000541995978,
+      "logical_open_read_bytes_including_startup": 8739683,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py",
+      "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274",
+      "actual_socket_functions_or_globals_or_pip": 0,
+      "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+      "independent_no_rerun": true
+    },
+    "311": {
+      "kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW_RECOVERY",
+      "python": "3.11.17",
+      "original_checks": 47,
+      "independent_checks": 9,
+      "expected_checks": 56,
+      "exit_code": 0,
+      "wall_seconds": 0.8920998749963474,
+      "logical_open_read_bytes_including_startup": 8943514,
+      "transitive_stdlib_socket_import": true,
+      "socket_origin": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/socket.py",
+      "socket_source_sha256": "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30",
+      "actual_socket_functions_or_globals_or_pip": 0,
+      "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+      "independent_no_rerun": true
+    }
+  },
+  "exact_refs": {
+    "scripts/e01_offline_ipv6_adapter_v1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_adapter_v1_20261116.py",
+      "bytes": 12302,
+      "sha256": "d9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py",
+      "bytes": 49669,
+      "sha256": "de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_20261116.json": {
+      "path": "configs/e01_offline_ipv6_compatibility_v1_20261116.json",
+      "bytes": 4818,
+      "sha256": "5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+      "bytes": 28254,
+      "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt",
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt",
+      "bytes": 5812,
+      "sha256": "4a25bf6498bf77150da01913ef0d24a99344f24f8c3b6cb8ff549127cf752b5a"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt",
+      "bytes": 6172,
+      "sha256": "508f5d22dc21dbac7aa8b391ac1440100031d80e2ccac7a48384e1ea07a0ae1f"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt",
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt",
+      "bytes": 5849,
+      "sha256": "d1e6cb35b0054bd652869ee1fab830aad7a5604dc2bc0ce8325846fa7e1a779d"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt",
+      "bytes": 6209,
+      "sha256": "45a00e11fb0d626a2cfbd490fcfa90e5f604f4f859d6dbff93b2eeaf2793e650"
+    },
+    "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json": {
+      "path": "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json",
+      "bytes": 12375,
+      "sha256": "ed6559beac66523309c23ae5e9212de04399cee264035c9998de3dc8c39dcd78"
+    },
+    "reports/E01_COMPATIBILITY_REVIEW_HARNESS_RECOVERY_DECISION_20261116.json": {
+      "path": "reports/E01_COMPATIBILITY_REVIEW_HARNESS_RECOVERY_DECISION_20261116.json",
+      "bytes": 2689,
+      "sha256": "d5e82fd1a39a4ddbf14783dd034b52bfdb5ffd2ab46ce7044bac92be537c6417"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116.json": {
+      "path": "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116.json",
+      "bytes": 14213,
+      "sha256": "cc60b32f12a143b13b88aefd866b1fd40711035d5c27342caa362944d1ee0162"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt": {
+      "bytes": 8720,
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+      "sha256": "d5bda33a7fcb72db2d2ab0cb5f3ca52e57a1fd86d9d19a9d3174a7854813a56c"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt": {
+      "bytes": 9076,
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+      "sha256": "e1db1d54800b0517dc424babf786ba67143b526262541225d14bc6b64eee1443"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py": {
+      "bytes": 6922,
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+      "sha256": "481f77757e3e12b41b9e7d7ecef0097ea14467dfe0562055ebfa00eb8867c28c"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_review_recovery_20261116/review_312.txt": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_review_recovery_20261116/review_312.txt",
+      "bytes": 9336,
+      "sha256": "25db0b10bdfad738442325f46da32901e6cd13c3024aa649004f1fc0f73401ce"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_review_recovery_20261116/review_311.txt": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_review_recovery_20261116/review_311.txt",
+      "bytes": 9411,
+      "sha256": "0ae882f975f7a68a022588c766008a5314ddfeb95e6f4766028730d65113043f"
+    }
+  },
+  "recovery_authorization": {
+    "allowed_changes": [
+      "Use the original frozen DirectoryFdGuard event_path for dirfd-aware resolution after installation; no fallback that broadens real target/raw/owner access.",
+      "Protect actual ROOT/.venv-e01-* trees, while allowing explicitly authored temporary fixture trees under the original authored write/read guard.",
+      "New audit runner and evidence paths only; preserve all original failures and no blanket cleanup."
+    ],
+    "bounds_each": {
+      "authored_temporary_write_bytes": 33554432,
+      "console_output_bytes": 262144,
+      "logical_read_bytes": 67108864,
+      "wall_CPU_seconds": 120
+    },
+    "cost_USD": 0,
+    "created_at_UTC": "2026-11-16T13:18:21.353373+00:00",
+    "failed_logs": [
+      {
+        "bytes": 8720,
+        "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+        "sha256": "d5bda33a7fcb72db2d2ab0cb5f3ca52e57a1fd86d9d19a9d3174a7854813a56c"
+      },
+      {
+        "bytes": 9076,
+        "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+        "sha256": "e1db1d54800b0517dc424babf786ba67143b526262541225d14bc6b64eee1443"
+      }
+    ],
+    "failed_runner": {
+      "bytes": 6922,
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+      "sha256": "481f77757e3e12b41b9e7d7ecef0097ea14467dfe0562055ebfa00eb8867c28c"
+    },
+    "financial_authority_change": false,
+    "kind": "LEAD_FINITE_INDEPENDENT_REVIEW_HARNESS_RECOVERY",
+    "new_maximum_invocations_per_runtime": 1,
+    "reason": "The reviewer extra path guard incorrectly treated fabricated fixture names as protected real environments and mishandled dirfd-relative cleanup. It stopped both runs after23 checks before controller coverage; this is a review harness failure, not a production finding. One corrected review run per runtime is justified to finish unchanged47 authored plus nine selected independent regressions.",
+    "retained_full_prior_and_new_allocations_per_runtime": {
+      "authored_temporary_write_bytes": 67108864,
+      "console_output_bytes": 524288,
+      "invocations": 2,
+      "logical_read_bytes": 134217728,
+      "wall_CPU_seconds": 240
+    },
+    "scope": "Independent authored/mock production review only; no actual compatibility or installer action.",
+    "unchanged_restrictions": [
+      "No real socket operations/global mutation,pip import/execution,network,downloaded packages,raw sources,owner or credentials.",
+      "Existing frozen authored guards remain active; transitive pinned stdlibsocket import recorded.",
+      "No actual preflight, actual invocation, installation, P3 or cleanup of preserved targets.",
+      "No automatic further rerun; report any failure."
+    ]
+  },
+  "retained_review_invocations_each_runtime": 2,
+  "remaining_review_invocations_each_runtime": 0,
+  "original_failure_preserved": true,
+  "automatic_further_reruns": 0,
+  "terminal_size_issue": {
+    "accepted_receipt_bytes": 131072,
+    "terminal_limit_bytes": 32768,
+    "implementation": "execute retains validated compatibility object, embeds whole object in TERMINAL; Journal.save terminal caps32KiB before creating record.",
+    "why_unresolved": "Accepted closure admits up to256 variable-length names/origins/source refs; serialized valid receipt can itself exceed32KiB. Adding nested prior state only grows terminal. No explicit sublimit/reservation or separate receipt reference constrains terminal embedding.",
+    "failure": "Journal rejects P2_TERMINAL_HEADROOM in finally, causing actual createonce scope to remain without closedTERMINAL. Original quotas remain enforced.",
+    "required": "Separate reviewed bounded output design: retain exact guest receipt as artifact ref/hash and bounded summary or enforce prior-aware size before effects/receipt acceptance, preserving32KiBterminal/8MiBcontrol/16MiBscope/allcaps. Add meaningful near-limit/oversize terminal regression under separatelyauthorized test allowance. No automatic capincrease."
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "status": "BLOCKED_AUDITOR_HARNESS_SCOPE_ERROR_PRODUCTION_REVIEW_NOT_COMPLETE",
+  "exact_refs": {
+    "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json": {
+      "path": "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json",
+      "bytes": 12375,
+      "sha256": "ed6559beac66523309c23ae5e9212de04399cee264035c9998de3dc8c39dcd78"
+    },
+    "scripts/e01_offline_ipv6_adapter_v1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_adapter_v1_20261116.py",
+      "bytes": 12302,
+      "sha256": "d9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py",
+      "bytes": 49669,
+      "sha256": "de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_20261116.json": {
+      "path": "configs/e01_offline_ipv6_compatibility_v1_20261116.json",
+      "bytes": 4818,
+      "sha256": "5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+      "bytes": 28254,
+      "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt",
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt",
+      "bytes": 5812,
+      "sha256": "4a25bf6498bf77150da01913ef0d24a99344f24f8c3b6cb8ff549127cf752b5a"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt",
+      "bytes": 6172,
+      "sha256": "508f5d22dc21dbac7aa8b391ac1440100031d80e2ccac7a48384e1ea07a0ae1f"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt",
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt",
+      "bytes": 5849,
+      "sha256": "d1e6cb35b0054bd652869ee1fab830aad7a5604dc2bc0ce8325846fa7e1a779d"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt",
+      "bytes": 6209,
+      "sha256": "45a00e11fb0d626a2cfbd490fcfa90e5f604f4f859d6dbff93b2eeaf2793e650"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+      "bytes": 8720,
+      "sha256": "d5bda33a7fcb72db2d2ab0cb5f3ca52e57a1fd86d9d19a9d3174a7854813a56c"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+      "bytes": 9076,
+      "sha256": "e1db1d54800b0517dc424babf786ba67143b526262541225d14bc6b64eee1443"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+      "bytes": 6922,
+      "sha256": "481f77757e3e12b41b9e7d7ecef0097ea14467dfe0562055ebfa00eb8867c28c"
+    }
+  },
+  "static_AST_unchanged": [
+    "run_command",
+    "StageBudget",
+    "Journal",
+    "validate_journal",
+    "logical_scope_size"
+  ],
+  "review_invocations_each_runtime": 1,
+  "review_invocations_remaining_each_runtime": 0,
+  "automatic_reruns": 0,
+  "test_results": {
+    "312": {
+      "result": "BLOCKED_AUDITOR_HARNESS_ERROR",
+      "completed_original_checks": 23,
+      "controller_setUpClass": "ERROR_before_controller_checks",
+      "independent_checks_executed": 0,
+      "remaining_original_checks": "NOT_RUN",
+      "process_exit": 1,
+      "receipt": {
+        "kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW",
+        "python": "3.12.14",
+        "original_checks": 47,
+        "independent_checks": 9,
+        "expected_checks": 56,
+        "exit_code": 1,
+        "wall_seconds": 0.3500750829989556,
+        "logical_open_read_bytes_including_startup": 4519567,
+        "transitive_stdlib_socket_import": true,
+        "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py",
+        "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274",
+        "actual_socket_functions_or_globals_or_pip": 0,
+        "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+        "independent_no_rerun": true
+      },
+      "shutdown_cleanup_refusals_preserved": true
+    },
+    "311": {
+      "result": "BLOCKED_AUDITOR_HARNESS_ERROR",
+      "completed_original_checks": 23,
+      "controller_setUpClass": "ERROR_before_controller_checks",
+      "independent_checks_executed": 0,
+      "remaining_original_checks": "NOT_RUN",
+      "process_exit": 1,
+      "receipt": {
+        "kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW",
+        "python": "3.11.17",
+        "original_checks": 47,
+        "independent_checks": 9,
+        "expected_checks": 56,
+        "exit_code": true,
+        "wall_seconds": 0.256623833993217,
+        "logical_open_read_bytes_including_startup": 4721132,
+        "transitive_stdlib_socket_import": true,
+        "socket_origin": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/socket.py",
+        "socket_source_sha256": "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30",
+        "actual_socket_functions_or_globals_or_pip": 0,
+        "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+        "independent_no_rerun": true
+      },
+      "shutdown_cleanup_refusals_preserved": true
+    }
+  },
+  "error_analysis": "Added auditor guard wrongly treats any .venv-e01-* ancestor as actual target even under fabricated temp root. Its early path resolver also lacks installed DirectoryFdGuard.event_path dirfd-relative resolution. Original production/author alias and dirfd checks unchanged.",
+  "separate_static_risk": "Controller embeds accepted compatibility receipt(up to131072B) into TERMINAL, but inherited Journal enforces32768B terminal headroom. Large otherwise-valid bounded closure may cause terminal save refusal; no claim every accepted receipt can close. Root must assess before actual release.",
+  "actual_operations": 0,
+  "cost_USD": 0
+}

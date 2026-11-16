@@ -1,0 +1,180 @@
+{
+  "TASK_ID": "E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_20261116",
+  "status": "47_AUTHORED_CHECKS_PASS_EACH_RUNTIME_INDEPENDENT_PRODUCTION_REVIEW_PENDING_NO_ACTUAL_RELEASE",
+  "FILES_CHANGED": [
+    "scripts/e01_offline_ipv6_adapter_v1_20261116.py",
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py",
+    "configs/e01_offline_ipv6_compatibility_v1_20261116.json",
+    "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt",
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt",
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt",
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt",
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt",
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt"
+  ],
+  "OUTPUT_ARTIFACTS": {
+    "scripts/e01_offline_ipv6_adapter_v1_20261116.py": {
+      "bytes": 12302,
+      "sha256": "d9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "bytes": 49669,
+      "sha256": "de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_20261116.json": {
+      "bytes": 4818,
+      "sha256": "5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "bytes": 28254,
+      "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt": {
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt": {
+      "bytes": 5812,
+      "sha256": "4a25bf6498bf77150da01913ef0d24a99344f24f8c3b6cb8ff549127cf752b5a"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt": {
+      "bytes": 6172,
+      "sha256": "508f5d22dc21dbac7aa8b391ac1440100031d80e2ccac7a48384e1ea07a0ae1f"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt": {
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt": {
+      "bytes": 5849,
+      "sha256": "d1e6cb35b0054bd652869ee1fab830aad7a5604dc2bc0ce8325846fa7e1a779d"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt": {
+      "bytes": 6209,
+      "sha256": "45a00e11fb0d626a2cfbd490fcfa90e5f604f4f859d6dbff93b2eeaf2793e650"
+    }
+  },
+  "REPRODUCTION_COMMANDS": [
+    ".venv/bin/python -I -B -S tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_e01_offline_ipv6_compatibility_v1_20261116.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "author_invocations_per_runtime": 3,
+    "maximum_author_invocations_per_runtime": 3,
+    "remaining_author_invocations_per_runtime": 0,
+    "bounds_per_invocation": {
+      "wall_CPU_seconds": 120,
+      "logical_read_bytes": 67108864,
+      "temporary_write_bytes": 33554432,
+      "console_output_bytes": 262144
+    },
+    "attempt1": {
+      "both_runtimes": "12 attempted, first11 PASS; residual guard test fixture ERROR PATH_ALIAS because temporary root used an unresolved macOS path alias. Full logs preserved. No actual protected work occurred.",
+      "correction": "Resolve fabricated temporary root before exact policy routing. Bind nested fixture Reader to the exact candidate's frozen guard module. Neither production alias checks nor guards relaxed."
+    },
+    "attempt2": {
+      "3.12.14": "45 PASS in 0.879s, exit0",
+      "3.11.17": "45 PASS in 0.655s, exit0"
+    },
+    "final_attempt3": {
+      "3.12.14": "47 PASS in 0.884s, exit0",
+      "3.11.17": "47 PASS in 0.650s, exit0",
+      "delta": "Bounded stable-identity stdlib observation, exact vendor socket identity check, and two added regressions for stdlib observation and preservation of guard wrappers."
+    },
+    "coverage": [
+      "Full fabricated installation and both diagnostic ancestries are validated without changing production validators; controller emits one mocked child, exact dry-run/PATH, eight-root snapshots, full prior allocations and no new target.",
+      "Consumed scope, preexisting target, missing release, unrelated particular review, old V2 control tampering and prior allocation reset all refuse.",
+      "Residual refusal/counter, missing compatibility receipt, restore mismatch, child failure and target creation cannot pass; no retries.",
+      "Exact fabricated module checks, sticky caught/propagated reentry even with public failure reset, primary exception identity, BaseException restoration, owner change, no retry after failure and transient drift limitation.",
+      "Fabricated public facade tests cover closure/cachedFalse/restoration, preloaded vendor, initializing module, held import lock and invalid result; checked_socket is explicitly mocked in these tests, so they do not attest actual module identity.",
+      "Pinned source hash mismatch, unknown source origin, custom loader, count/read caps, alias refusal and optional absence recording; fake source code only, never actual pip imports.",
+      "AST equality retains reviewed capture, budget, journal and fine refusal parser. Guard wrapper AST equality permits only explicit new route selection and exact added adapter source read.",
+      "Exact final source pins and transitive stdlib socket origins recorded on each runtime."
+    ],
+    "boundary": "Original authored guard installed for suite; earlier audit hook covers transitive loader, refuses real socket/process/native events and pip imports. Actual socket operations0, actual socket module field mutations0, actual pip import/execution0. Fabricated modules and temporary fixture trees only."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": {
+    "private_data": "No respondent/publisher/raw PDF/owner/credential/model access.",
+    "static_inputs": "Reviewed source/config/review bytes and exact V2 closed control files read only. Old target content and current real source-state qualification not run.",
+    "dependency_rights": "No third-party source copy or change; existing pip source remains local. Closure records only paths/sizes/hashes. Actual use stays within original pinned wheels/requirements."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "design": {
+    "scope": "data/processed/e01_pypdf701_build_v1/compatibility-v1-20261116",
+    "uncreated_target": ".venv-e01-pypdf-7.0.1-COMPATIBILITY-NOT-INSTALL-v1",
+    "adapter": "No import-time work. Exact stdlib socket type/origin/source hash, original booleanTrue, fresh vendor-prefix absence, bounded existing module map, no initializing imports, main Python thread and process identity, no other Python threads and unheld import lock. Hold CPython import lock across temporary capability override. Verify pinned vendor target/source and bound pip parents. RestoreTrue in finally; retain vendor cachedFalse explicitly. Sticky active-owner failure survives caught reentry; primary errors retain identity.",
+    "closure": "At most256 named import entries and16MiB logical source observations,8MiB per source. New imports are checked before execution using original finder chain, allowed exact pip-source refs or the bound base stdlib directory and standard builtin/frozen/source/extension loaders; unknown/custom origins refuse. Optional absence is recorded as not-found and raises normal ModuleNotFoundError. Record parent/transitive consumers rather than claiming a single consumer.",
+    "stdlib_attestation": "Socket source is independently pinned. Other stdlib hashes in closure are bounded observations of files under the bound runtime; they are not independently prepinned source attestations. Reads use no-follow descriptors, bounded size+1 and stable file identity, then the frozen Reader revalidates the recorded hash.",
+    "runner": "Separately versioned reviewed diagnostic V2 controller with new routing. Original fine observer, guards, counters, network/helper/native denials, PATH, quotas, exact five wheels/requirements and dry-run arguments preserved. Adds adapter and bounded receipt validation. Original nonzero-violation postcondition remains authoritative.",
+    "ancestry": "Revalidate original installations, diagnostic V1 and exact diagnostic V2 methods/particular/STARTED/TERMINAL/payload/command/output/refusals/guest result/requirements. Preserve old metadata and full actual/prior allocation accounting before/after; no reset or old-scope reuse."
+  },
+  "acceptance_criteria": [
+    {
+      "milestone": "Concrete authored engineering",
+      "result": "AUTHOR_CHECKS_PASS_ONLY",
+      "evidence": "Final47 checks per runtime and pinned artifacts; no independent certification by implementing worker."
+    },
+    {
+      "milestone": "Independent production methods review",
+      "result": "PENDING",
+      "required": "Separate auditor reviews exact adapter, runner, config and tests; does not accept current real state from fabricated fixtures."
+    },
+    {
+      "milestone": "Current real preflight and particular",
+      "result": "NOT_RUN",
+      "required": "Lead genuine-reader runtime/module/source/old-state/storage verification plus independent exact particular and once-only packet."
+    },
+    {
+      "milestone": "Once-only actual compatibility validation",
+      "result": "NOT_RUN",
+      "required": "Lead actual invocation only after release; independent closed evidence review."
+    },
+    {
+      "milestone": "Fourth installation or P3",
+      "result": "BLOCKED",
+      "required": "Separate justified decision after accepted actual compatibility evidence; not supplied here."
+    }
+  ],
+  "prospective_allocations": {
+    "prior": {
+      "wall_seconds": 420,
+      "observed_CPU_seconds": 160,
+      "main_children": 11
+    },
+    "new": {
+      "wall_seconds": 30,
+      "observed_CPU_seconds": 20,
+      "main_children": 1,
+      "parent_child_CPU_soft_hard": [
+        7,
+        8
+      ]
+    },
+    "combined": {
+      "wall_seconds": 450,
+      "observed_CPU_seconds": 180,
+      "main_children": 12
+    },
+    "storage": {
+      "eight_preserved_roots_plus_new_scope": 9,
+      "combined_bytes": 805306368,
+      "entries": 16384,
+      "each_diagnostic_compatibility_scope_bytes": 16777216
+    }
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Intentional capability override is not a documented supported offline API; parent/transitive consumers can seeFalse, and vendor cachedFalse survives public flag restoration.",
+    "Current actual closure may fail strict loader/origin/state/cap checks. Authored success does not prove actual compatibility. Reject unknown state rather than broaden without review.",
+    "Single-Python-thread entry/exit checks plus import lock are declared process/module ownership checks, not continuous or hostile-callback/native-thread tamper protection. Transient drift restored before exit is not detected.",
+    "Candidate enforces original guards as trusted installer controls, not an OS sandbox or physical IO meter. Existing limitations remain.",
+    "No historical socket callsite, address family, destination, causal attribution, runtime acceptance, source qualification, forecasting or scientific result follows.",
+    "All three author invocations per runtime consumed. Any required further authored run needs a separately recorded finite justification/release from lead; worker has not enlarged allowance."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent exact production review pending; current genuine-reader and particular preflight NOT_RUN.",
+    "No actual execution packet created, new actual scope/target created, fourth installation or P3 performed.",
+    "Lead owns STATUS/Git/current real state; untracked unrelated auditor reports untouched."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews frozen concrete V1 source/config/tests/logs. Lead coordinates any separately released current preflight, exact particular and actual invocation. Preserve prior failed candidates and all authored failures."
+}

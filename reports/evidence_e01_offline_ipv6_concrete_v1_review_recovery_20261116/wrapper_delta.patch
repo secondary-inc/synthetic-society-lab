@@ -1,0 +1,28 @@
+--- reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py
++++ reports/evidence_e01_offline_ipv6_concrete_v1_review_recovery_20261116/review_runner.py
+@@ -13,8 +13,16 @@
+  global READS
+  if event.startswith('socket.') or event in {'subprocess.Popen','os.system','os.posix_spawn','os.exec','os.spawn','os.fork','os.forkpty','ctypes.dlopen','os.kill','os.killpg'}:raise RuntimeError('INDEPENDENT_NO_ACTUAL_OPERATION')
+  if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+-  p=Path(os.fsdecode(args[0])).resolve();flags=args[2]
+-  if ((p.is_relative_to(ROOT/'data') and not p.is_relative_to(BASE)) or p.name.startswith('.env') or any(x.name.startswith('.venv-e01-') for x in (p,*p.parents))):raise RuntimeError('INDEPENDENT_NO_REAL_INPUT_TARGET_OWNER_CREDENTIAL')
++  resolver=getattr(os.open,'__self__',None)
++  if resolver is not None and type(resolver).__name__=='DirectoryFdGuard' and type(resolver).__module__=='e01_authored_dirfd_guard_v2_20261112':
++   p=resolver.event_path(args[0])
++  else:
++   p=Path(os.fsdecode(args[0]))
++   if not p.is_absolute():raise RuntimeError('INDEPENDENT_UNBOUND_RELATIVE_OPEN')
++   p=p.resolve()
++  flags=args[2]
++  actual_target=p.is_relative_to(ROOT) and p.relative_to(ROOT).parts and p.relative_to(ROOT).parts[0].startswith('.venv-e01-')
++  if ((p.is_relative_to(ROOT/'data') and not p.is_relative_to(BASE)) or p.name.startswith('.env') or actual_target):raise RuntimeError('INDEPENDENT_NO_REAL_INPUT_TARGET_OWNER_CREDENTIAL')
+   if p.is_relative_to(ROOT) and flags&(os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND):raise RuntimeError('INDEPENDENT_NO_REPOSITORY_WRITE')
+   if not flags&os.O_WRONLY:
+    try:size=p.stat().st_size
+@@ -83,5 +91,5 @@
+ sock=sys.modules.get('socket');expected=BASE/'lib'/('python'+'.'.join(map(str,sys.version_info[:2])))/'socket.py'
+ assert sock is not None and Path(sock.__file__).resolve()==expected.resolve()
+ assert not any(n=='pip' or n.startswith('pip.') for n in sys.modules)
+-print(json.dumps({'kind':'INDEPENDENT_CONCRETE_IPV6_V1_REVIEW','python':sys.version.split()[0],'original_checks':47,'independent_checks':9,'expected_checks':56,'exit_code':EXIT,'wall_seconds':time.monotonic()-START,'logical_open_read_bytes_including_startup':READS,'transitive_stdlib_socket_import':True,'socket_origin':str(expected),'socket_source_sha256':hashlib.sha256(expected.read_bytes()).hexdigest(),'actual_socket_functions_or_globals_or_pip':0,'original_authored_bounds':'120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole','independent_no_rerun':True}))
++print(json.dumps({'kind':'INDEPENDENT_CONCRETE_IPV6_V1_REVIEW_RECOVERY','python':sys.version.split()[0],'original_checks':47,'independent_checks':9,'expected_checks':56,'exit_code':EXIT,'wall_seconds':time.monotonic()-START,'logical_open_read_bytes_including_startup':READS,'transitive_stdlib_socket_import':True,'socket_origin':str(expected),'socket_source_sha256':hashlib.sha256(expected.read_bytes()).hexdigest(),'actual_socket_functions_or_globals_or_pip':0,'original_authored_bounds':'120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole','independent_no_rerun':True}))
+ raise SystemExit(EXIT)

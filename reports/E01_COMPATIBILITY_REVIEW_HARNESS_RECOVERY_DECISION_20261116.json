@@ -1,0 +1,50 @@
+{
+  "allowed_changes": [
+    "Use the original frozen DirectoryFdGuard event_path for dirfd-aware resolution after installation; no fallback that broadens real target/raw/owner access.",
+    "Protect actual ROOT/.venv-e01-* trees, while allowing explicitly authored temporary fixture trees under the original authored write/read guard.",
+    "New audit runner and evidence paths only; preserve all original failures and no blanket cleanup."
+  ],
+  "bounds_each": {
+    "authored_temporary_write_bytes": 33554432,
+    "console_output_bytes": 262144,
+    "logical_read_bytes": 67108864,
+    "wall_CPU_seconds": 120
+  },
+  "cost_USD": 0,
+  "created_at_UTC": "2026-11-16T13:18:21.353373+00:00",
+  "failed_logs": [
+    {
+      "bytes": 8720,
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+      "sha256": "d5bda33a7fcb72db2d2ab0cb5f3ca52e57a1fd86d9d19a9d3174a7854813a56c"
+    },
+    {
+      "bytes": 9076,
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+      "sha256": "e1db1d54800b0517dc424babf786ba67143b526262541225d14bc6b64eee1443"
+    }
+  ],
+  "failed_runner": {
+    "bytes": 6922,
+    "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+    "sha256": "481f77757e3e12b41b9e7d7ecef0097ea14467dfe0562055ebfa00eb8867c28c"
+  },
+  "financial_authority_change": false,
+  "kind": "LEAD_FINITE_INDEPENDENT_REVIEW_HARNESS_RECOVERY",
+  "new_maximum_invocations_per_runtime": 1,
+  "reason": "The reviewer extra path guard incorrectly treated fabricated fixture names as protected real environments and mishandled dirfd-relative cleanup. It stopped both runs after23 checks before controller coverage; this is a review harness failure, not a production finding. One corrected review run per runtime is justified to finish unchanged47 authored plus nine selected independent regressions.",
+  "retained_full_prior_and_new_allocations_per_runtime": {
+    "authored_temporary_write_bytes": 67108864,
+    "console_output_bytes": 524288,
+    "invocations": 2,
+    "logical_read_bytes": 134217728,
+    "wall_CPU_seconds": 240
+  },
+  "scope": "Independent authored/mock production review only; no actual compatibility or installer action.",
+  "unchanged_restrictions": [
+    "No real socket operations/global mutation,pip import/execution,network,downloaded packages,raw sources,owner or credentials.",
+    "Existing frozen authored guards remain active; transitive pinned stdlibsocket import recorded.",
+    "No actual preflight, actual invocation, installation, P3 or cleanup of preserved targets.",
+    "No automatic further rerun; report any failure."
+  ]
+}

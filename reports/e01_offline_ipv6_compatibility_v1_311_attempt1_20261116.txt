@@ -1,0 +1,32 @@
+test_baseexception_restores_and_no_retry (__main__.AdapterTests.test_baseexception_restores_and_no_retry) ... ok
+test_caught_reentry_poison_is_sticky (__main__.AdapterTests.test_caught_reentry_poison_is_sticky) ... ok
+test_exact_module_before_reentry_poison (__main__.AdapterTests.test_exact_module_before_reentry_poison) ... ok
+test_exit_drift_refused_but_transient_restoration_not_observed (__main__.AdapterTests.test_exit_drift_refused_but_transient_restoration_not_observed) ... ok
+test_false_original_refuses_without_callback (__main__.AdapterTests.test_false_original_refuses_without_callback) ... ok
+test_final_owner_change_refuses_and_restores (__main__.AdapterTests.test_final_owner_change_refuses_and_restores) ... ok
+test_owner_change_refuses_and_restores (__main__.AdapterTests.test_owner_change_refuses_and_restores) ... ok
+test_primary_exception_identity_preserved (__main__.AdapterTests.test_primary_exception_identity_preserved) ... ok
+test_public_failure_reset_does_not_clear_owner (__main__.AdapterTests.test_public_failure_reset_does_not_clear_owner) ... ok
+test_real_api_rejects_fabricated_socket_origin (__main__.AdapterTests.test_real_api_rejects_fabricated_socket_origin) ... ok
+test_reentry_propagates_and_restores (__main__.AdapterTests.test_reentry_propagates_and_restores) ... ok
+test_residual_guard_denial_is_never_waived (__main__.AdapterTests.test_residual_guard_denial_is_never_waived) ... ERROR
+
+======================================================================
+ERROR: test_residual_guard_denial_is_never_waived (__main__.AdapterTests.test_residual_guard_denial_is_never_waived)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_offline_ipv6_compatibility_v1_20261116.py", line 275, in test_residual_guard_denial_is_never_waived
+    policy=d.compatibility_policy_class(d.p.GuestPolicy)(root,binding,{'wheels':[],'remaining_output_bytes':1024})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py", line 657, in __init__
+    no_alias(path)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 111, in no_alias
+    need(not any(p.is_symlink() for p in (path, *path.parents)), 'PATH_ALIAS')
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 75, in need
+    raise Refused(reason)
+diagnostic_frozen_installer_v1_5.Refused: PATH_ALIAS
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+FAILED (errors=1)

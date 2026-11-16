@@ -1,0 +1,223 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116",
+  "kind": "INDEPENDENT_PRODUCTION_REVIEW_INCOMPLETE_AFTER_AUDITOR_HARNESS_ERROR",
+  "review_date_America_New_York": "2026-11-16",
+  "status": "BLOCKED_AUDITOR_HARNESS_SCOPE_ERROR_PRODUCTION_REVIEW_NOT_COMPLETE",
+  "evidence_refs": {
+    "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json": {
+      "path": "reports/E01_OFFLINE_IPV6_COMPATIBILITY_CONCRETE_V1_HANDOFF_20261116.json",
+      "bytes": 12375,
+      "sha256": "ed6559beac66523309c23ae5e9212de04399cee264035c9998de3dc8c39dcd78"
+    },
+    "scripts/e01_offline_ipv6_adapter_v1_20261116.py": {
+      "path": "scripts/e01_offline_ipv6_adapter_v1_20261116.py",
+      "bytes": 12302,
+      "sha256": "d9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f"
+    },
+    "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "path": "scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py",
+      "bytes": 49669,
+      "sha256": "de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a"
+    },
+    "configs/e01_offline_ipv6_compatibility_v1_20261116.json": {
+      "path": "configs/e01_offline_ipv6_compatibility_v1_20261116.json",
+      "bytes": 4818,
+      "sha256": "5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382"
+    },
+    "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py": {
+      "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+      "bytes": 28254,
+      "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt1_20261116.txt",
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt2_20261116.txt",
+      "bytes": 5812,
+      "sha256": "4a25bf6498bf77150da01913ef0d24a99344f24f8c3b6cb8ff549127cf752b5a"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_312_attempt3_20261116.txt",
+      "bytes": 6172,
+      "sha256": "508f5d22dc21dbac7aa8b391ac1440100031d80e2ccac7a48384e1ea07a0ae1f"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt1_20261116.txt",
+      "bytes": 2826,
+      "sha256": "419f41e58de8fcd94209cad9312ad252345f43be8f3a3170d4cd90a779c809c1"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt2_20261116.txt",
+      "bytes": 5849,
+      "sha256": "d1e6cb35b0054bd652869ee1fab830aad7a5604dc2bc0ce8325846fa7e1a779d"
+    },
+    "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt": {
+      "path": "reports/e01_offline_ipv6_compatibility_v1_311_attempt3_20261116.txt",
+      "bytes": 6209,
+      "sha256": "45a00e11fb0d626a2cfbd490fcfa90e5f604f4f859d6dbff93b2eeaf2793e650"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+      "bytes": 8720,
+      "sha256": "d5bda33a7fcb72db2d2ab0cb5f3ca52e57a1fd86d9d19a9d3174a7854813a56c"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+      "bytes": 9076,
+      "sha256": "e1db1d54800b0517dc424babf786ba67143b526262541225d14bc6b64eee1443"
+    },
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py": {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+      "bytes": 6922,
+      "sha256": "481f77757e3e12b41b9e7d7ecef0097ea14467dfe0562055ebfa00eb8867c28c"
+    }
+  },
+  "blocking_findings": [
+    {
+      "code": "AUDITOR_WRAPPER_REJECTS_FABRICATED_OLD_TARGET_NAMES",
+      "cause": "Added auditor guard wrongly treats any .venv-e01-* ancestor as actual target even under fabricated temp root. Its early path resolver also lacks installed DirectoryFdGuard.event_path dirfd-relative resolution. Original production/author alias and dirfd checks unchanged.",
+      "required": "Separate finite lead decision for any corrected review successor; no automatic rerun or cleanup. Preserve this exact error evidence."
+    }
+  ],
+  "static_findings": [
+    "Exact handoff/adapter/runner/config/tests and all six author logs rehashed. Author3invocations/runtime fully consumed: attempt1 fixturealiaserror, attempt2 45PASS, final47PASS. Author results are not independent completion evidence.",
+    "Frozen capture/StageBudget/Journal/finejournal/logicalscope AST exact same as accepted V2. Guards install wrappers retained with explicit compatibility routing/adapter exactreadallowance; no socket/native/helper audit exemption introduced.",
+    "Controller methods/packet require exact roots/allocation/limits/adapter/decision/pureV2review/closedV2actual evidence. Exact particular packet core binding excludesreview_ref. It extends original input validators through oldV1+V2controls with pre/post eight-root metadata, fixed fivewheel dryrun and singleabsolute child. New ninthscope16MiB shared768MiB/16384entries; alloutcomes installationacceptedfalse.",
+    "Adapter requires exactsocketModuleType/name/sourceorigin/SourceFileLoader/frozen socket hash andoriginalTrue; no preloaded vendorprefix/initializingmodules/heldimportlock, bounded1024initialmodulemap and one main Pythonowner. Importlock surrounds temporaryoverride; finder checks standardloader/origin and256entry/16MiBclosure, eachsource8MiB.",
+    "Knownpip sources pinned; most stdlibsource hashes bounded observations, not independent prepins or complete executed-bytecode attestations. Cachedsource refs and absence of hostile concurrent-writer guarantees must not be presented as full immutable execution proof.",
+    "Sticky globalowner token preventscaught reentry/public_FAILEDreset bypass within declared nonhostile model; primaryexceptions restored andTrue restoredfinally. Pythonthreadcount checks/importlock are not native-thread or arbitrary private-state defenses. Parent/transitiveconsumers mayseeFalse; cachedvendorFalse deliberatelysurvives.",
+    "Public facade checks targetmodule/socketidentity/HAS_IPV6False/functionglobals/sourcefilename, preserves preexisting moduleobjects andfinderstack, validatesnewmoduleclosure. Fabricatedfacade tests mockchecked_socket and importer; they do not qualify actualruntime identity or imports.",
+    "Optional absence records not-found and raises ModuleNotFoundError(fullname), but unlike ordinary import error its name attribute is unset. Intended added characterization didnotrun dueearlier harnessfailure; static source semantics should be documented or separatelycorrected if normal metadata fidelity is required.",
+    "23original Adapter/Closure checks PASS each beforeController setup auditorerror. Remainingoriginal/controller/publicfacade/frozenstructure and all9auditorregressions NOT_RUN in this review. Bothfailedprocesses/tracebacks/cleanuprefusals preserved. Noactualoldtarget/source/package/credential access or socketoperation caused this stop.",
+    "Potential closure-output accounting gap: validcompatibilityreceipt cap131072B plusnestedprior state can exceed inherited32768Bterminalheadroom. Journal failsclosed, but terminalsavecanfail andleave no closedTERMINAL. This is not a quotaescape; boundedfailure-evidence completion at largevalidclosure remains unverified and must be resolved/explicitlybounded beforeactualrelease."
+  ],
+  "test_results": {
+    "312": {
+      "result": "BLOCKED_AUDITOR_HARNESS_ERROR",
+      "completed_original_checks": 23,
+      "controller_setUpClass": "ERROR_before_controller_checks",
+      "independent_checks_executed": 0,
+      "remaining_original_checks": "NOT_RUN",
+      "process_exit": 1,
+      "receipt": {
+        "kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW",
+        "python": "3.12.14",
+        "original_checks": 47,
+        "independent_checks": 9,
+        "expected_checks": 56,
+        "exit_code": 1,
+        "wall_seconds": 0.3500750829989556,
+        "logical_open_read_bytes_including_startup": 4519567,
+        "transitive_stdlib_socket_import": true,
+        "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py",
+        "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274",
+        "actual_socket_functions_or_globals_or_pip": 0,
+        "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+        "independent_no_rerun": true
+      },
+      "shutdown_cleanup_refusals_preserved": true
+    },
+    "311": {
+      "result": "BLOCKED_AUDITOR_HARNESS_ERROR",
+      "completed_original_checks": 23,
+      "controller_setUpClass": "ERROR_before_controller_checks",
+      "independent_checks_executed": 0,
+      "remaining_original_checks": "NOT_RUN",
+      "process_exit": 1,
+      "receipt": {
+        "kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW",
+        "python": "3.11.17",
+        "original_checks": 47,
+        "independent_checks": 9,
+        "expected_checks": 56,
+        "exit_code": true,
+        "wall_seconds": 0.256623833993217,
+        "logical_open_read_bytes_including_startup": 4721132,
+        "transitive_stdlib_socket_import": true,
+        "socket_origin": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/socket.py",
+        "socket_source_sha256": "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30",
+        "actual_socket_functions_or_globals_or_pip": 0,
+        "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole",
+        "independent_no_rerun": true
+      },
+      "shutdown_cleanup_refusals_preserved": true
+    }
+  },
+  "original_author_checks_claimed_not_independently_completed": 47,
+  "independent_review_allowance": {
+    "initial_each_runtime": 1,
+    "consumed_each_runtime": 1,
+    "remaining_each_runtime": 0,
+    "reruns": 0,
+    "bounds_each": {
+      "wall_CPU_seconds": 120,
+      "logical_read_bytes": 67108864,
+      "temporary_write_bytes": 33554432,
+      "console_bytes": 262144
+    }
+  },
+  "production_decision": "BLOCKED_INCOMPLETE; no current preflight or actual release from this report. No production implementation edits.",
+  "actual_operations": {
+    "real_socket_functions_global_mutations": 0,
+    "transitive_stdlib_socket_import": true,
+    "pip_import_or_execution": 0,
+    "downloaded_package_imports": 0,
+    "actual_runner_helper_input_functions": 0,
+    "old_targets_scopes_or_raw_source_reads": 0,
+    "financial_owner_or_credentials": 0,
+    "network": 0,
+    "cost_USD": 0
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_OFFLINE_IPV6_CONCRETE_V1_PRODUCTION_20261116.json",
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+    "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/verification.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_311.txt",
+      "bytes": 9076,
+      "sha256": "e1db1d54800b0517dc424babf786ba67143b526262541225d14bc6b64eee1443"
+    },
+    {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_312.txt",
+      "bytes": 8720,
+      "sha256": "d5bda33a7fcb72db2d2ab0cb5f3ca52e57a1fd86d9d19a9d3174a7854813a56c"
+    },
+    {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py",
+      "bytes": 6922,
+      "sha256": "481f77757e3e12b41b9e7d7ecef0097ea14467dfe0562055ebfa00eb8867c28c"
+    },
+    {
+      "path": "reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/verification.json",
+      "bytes": 7170,
+      "sha256": "a4399af640d1f9b212e509170e640dc2ee88cdeabaeb8763203fce7f7590e909"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Recorded failed once-per-runtime commands used review_runner.py under each isolated3.12/3.11runtime; allowance consumed. Do not rerun automatically. Exact wrapper/logs preserved."
+  ],
+  "TESTS_RUN_AND_RESULTS": "23original PASS each; ControllersetUpClass ERROR auditorguard; restNOT_RUN. Bothprocessesexit1. No fullproductioncertification.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Exact technicalsource/config/handoff/logs only. Tests fabricatedobjects/trees; realstdlibsocket import explicitlyallowed and originsrecorded. No socketoperation/globalmutation/pip/package/rawsource/owner/credentials.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Incomplete independent suite and unexecuted adversechecks.",
+    "Authored temp leftovers duecleanuprefusal preserved; no blanketcleanup orscope reuse.",
+    "Potential acceptedreceipt/terminalheadroom mismatch describedabove.",
+    "No realruntime/closure/preflight/compatibility/scientificclaim accepted."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Lead decision for bounded corrected review successor if justified; currentreviewallowance exhausted.",
+    "Full original47+targetedadverse review notcompleted.",
+    "Terminalreceipt/headroom/failureevidence bound needs assessment.",
+    "Current genuineReader/preflight/exactparticular/actualvalidation NOT_RUN; P2/P3blocked."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead reviews auditwrappererror andstaticterminalheadroom concern, mayassign separatelybounded successor; preserveerrors/noautomaticrerun/noactualaction.",
+  "ownership": "Auditor owns only this report/evidence; lead owns coordination/Git/STATUS and any finite recovery."
+}

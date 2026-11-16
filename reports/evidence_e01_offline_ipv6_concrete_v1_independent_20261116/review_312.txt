@@ -1,0 +1,80 @@
+test_baseexception_restores_and_no_retry (independent_original_concrete_suite.AdapterTests.test_baseexception_restores_and_no_retry) ... ok
+test_caught_reentry_poison_is_sticky (independent_original_concrete_suite.AdapterTests.test_caught_reentry_poison_is_sticky) ... ok
+test_exact_module_before_reentry_poison (independent_original_concrete_suite.AdapterTests.test_exact_module_before_reentry_poison) ... ok
+test_exit_drift_refused_but_transient_restoration_not_observed (independent_original_concrete_suite.AdapterTests.test_exit_drift_refused_but_transient_restoration_not_observed) ... ok
+test_false_original_refuses_without_callback (independent_original_concrete_suite.AdapterTests.test_false_original_refuses_without_callback) ... ok
+test_final_owner_change_refuses_and_restores (independent_original_concrete_suite.AdapterTests.test_final_owner_change_refuses_and_restores) ... ok
+test_owner_change_refuses_and_restores (independent_original_concrete_suite.AdapterTests.test_owner_change_refuses_and_restores) ... ok
+test_primary_exception_identity_preserved (independent_original_concrete_suite.AdapterTests.test_primary_exception_identity_preserved) ... ok
+test_public_failure_reset_does_not_clear_owner (independent_original_concrete_suite.AdapterTests.test_public_failure_reset_does_not_clear_owner) ... ok
+test_real_api_rejects_fabricated_socket_origin (independent_original_concrete_suite.AdapterTests.test_real_api_rejects_fabricated_socket_origin) ... ok
+test_reentry_propagates_and_restores (independent_original_concrete_suite.AdapterTests.test_reentry_propagates_and_restores) ... ok
+test_residual_guard_denial_is_never_waived (independent_original_concrete_suite.AdapterTests.test_residual_guard_denial_is_never_waived) ... ok
+test_result_check_error_preserves_primary (independent_original_concrete_suite.AdapterTests.test_result_check_error_preserves_primary) ... ok
+test_success_restores_exact_mock_flag (independent_original_concrete_suite.AdapterTests.test_success_restores_exact_mock_flag) ... ok
+test_changed_pinned_vendor_source_refuses (independent_original_concrete_suite.ClosureTests.test_changed_pinned_vendor_source_refuses) ... ok
+test_custom_loader_refused (independent_original_concrete_suite.ClosureTests.test_custom_loader_refused) ... ok
+test_module_cap_refuses (independent_original_concrete_suite.ClosureTests.test_module_cap_refuses) ... ok
+test_optional_absence_is_recorded_without_import (independent_original_concrete_suite.ClosureTests.test_optional_absence_is_recorded_without_import) ... ok
+test_origin_alias_refuses (independent_original_concrete_suite.ClosureTests.test_origin_alias_refuses) ... ok
+test_pinned_vendor_spec_records_without_execution (independent_original_concrete_suite.ClosureTests.test_pinned_vendor_spec_records_without_execution) ... ok
+test_read_cap_refuses (independent_original_concrete_suite.ClosureTests.test_read_cap_refuses) ... ok
+test_stdlib_observation_is_bounded_and_explicitly_not_prepinned (independent_original_concrete_suite.ClosureTests.test_stdlib_observation_is_bounded_and_explicitly_not_prepinned) ... ok
+test_unknown_origin_refuses_before_execution (independent_original_concrete_suite.ClosureTests.test_unknown_origin_refuses_before_execution) ... ok
+setUpClass (independent_original_concrete_suite.ControllerTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (independent_original_concrete_suite.ControllerTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_offline_ipv6_compatibility_v1_20261116.py", line 72, in setUpClass
+    cls.prior.setUp()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_pypdf701_guard_diagnostic_v2.py", line 82, in setUp
+    self.prior.setUp(); self.addCleanup(self.prior.doCleanups)
+    ^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_pypdf701_guard_diagnostic_v1.py", line 29, in setUp
+    self.old.setUp(); self.addCleanup(self.old.doCleanups)
+    ^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 69, in setUp
+    (prior/'pyvenv.cfg').write_bytes(b'MOCK OLD PARTIAL ENVIRONMENT\n')
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1036, in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_pypdf701_acquisition_v1.py", line 340, in opening
+    stream=original(*args,**kwargs);return stream if isinstance(stream,File) else File(stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py", line 17, in early
+    if ((p.is_relative_to(ROOT/'data') and not p.is_relative_to(BASE)) or p.name.startswith('.env') or any(x.name.startswith('.venv-e01-') for x in (p,*p.parents))):raise RuntimeError('INDEPENDENT_NO_REAL_INPUT_TARGET_OWNER_CREDENTIAL')
+                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: INDEPENDENT_NO_REAL_INPUT_TARGET_OWNER_CREDENTIAL
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.189s
+
+FAILED (errors=1)
+{"kind": "INDEPENDENT_CONCRETE_IPV6_V1_REVIEW", "python": "3.12.14", "original_checks": 47, "independent_checks": 9, "expected_checks": 56, "exit_code": 1, "wall_seconds": 0.3500750829989556, "logical_open_read_bytes_including_startup": 4519567, "transitive_stdlib_socket_import": true, "socket_origin": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py", "socket_source_sha256": "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274", "actual_socket_functions_or_globals_or_pip": 0, "original_authored_bounds": "120sCPUwall_64MiBread_32MiBtempwrite_256KiBconsole", "independent_no_rerun": true}
+Traceback (most recent call last):
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/weakref.py", line 666, in _exitfunc
+    f()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 939, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_authored_dirfd_guard_v2_20261112.py", line 94, in open
+    opened=self.raw_open(*args,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_offline_ipv6_concrete_v1_independent_20261116/review_runner.py", line 17, in early
+    if ((p.is_relative_to(ROOT/'data') and not p.is_relative_to(BASE)) or p.name.startswith('.env') or any(x.name.startswith('.venv-e01-') for x in (p,*p.parents))):raise RuntimeError('INDEPENDENT_NO_REAL_INPUT_TARGET_OWNER_CREDENTIAL')
+                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: INDEPENDENT_NO_REAL_INPUT_TARGET_OWNER_CREDENTIAL

@@ -1,0 +1,95 @@
+--- data/processed/e01_guard_diagnostic_preflight_v3_20261116.py	2026-11-16 07:31:14
++++ data/processed/e01_ipv6_compatibility_preflight_v1_20261116.py	2026-11-16 08:15:55
+@@ -1,4 +1,4 @@
+-"""One read-only diagnostic-input preflight; no diagnostic, pip or child call."""
++"""One read-only compatibility-input preflight; no compatibility override, pip or child call."""
+ from pathlib import Path
+ from datetime import datetime, timezone
+ import ast
+@@ -14,11 +14,12 @@
+ import time
+ 
+ ROOT = Path(__file__).absolute().parents[2]
+-SCOPE = ROOT / 'data/processed/e01_guard_diagnostic_preflight_v3_20261116'
+-REPORT = ROOT / 'reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V3_20261116.json'
++SCOPE = ROOT / 'data/processed/e01_ipv6_compatibility_preflight_v1_20261116'
++REPORT = ROOT / 'reports/E01_IPV6_COMPATIBILITY_PREFLIGHT_V1_20261116.json'
+ PINNED = {
+-    'scripts/diagnose_e01_pypdf701_guard_v2.py': (49178, '6582297cd01bc2131a4cc17ea1e0d384c15b56fee6fa07620dada9a2c7c11c49'),
+-    'configs/e01_pypdf701_guard_diagnostic_v2_20261116.json': (6817, 'c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3'),
++    'scripts/validate_e01_offline_ipv6_compatibility_v1_20261116.py': (49669, 'de9393077340aa7f5cb537cddb9c93d9628773da245f255f47c2f9e84529586a'),
++    'configs/e01_offline_ipv6_compatibility_v1_20261116.json': (4818, '5f2dbd8111eb1e5657526a894e21316a3d20c95a198c6a11c70eef6fafa75382'),
++    'scripts/e01_offline_ipv6_adapter_v1_20261116.py': (12302, 'd9be4f5fc3efde061ae881df8def47999580a6217c0100c7db213ea7e8e1b22f'),
+ }
+ OUTPUTS = {SCOPE / 'STARTED.json', SCOPE / 'RECEIPT.json', REPORT}
+ READ_LIMIT = 536870912
+@@ -99,6 +100,38 @@
+             'child_PATH_is_prescribed_not_observed_execution': True}
+ 
+ 
++def compatibility_readonly_proofs(module, binding, reader):
++    # Reading current standard-library module state is not initializing pip or
++    # exercising the capability override. Actual child rechecks all conditions.
++    adapter = module.a
++    socket_module = adapter.checked_socket(binding, reader)
++    module.need(socket_module.has_ipv6 is True, 'PREFLIGHT_ORIGINAL_CAPABILITY_NOT_TRUE')
++    owner = adapter.Owner()
++    adapter.single_owner(owner)
++    module.need(adapter._ACTIVE is None and adapter._FAILED is False,
++                'PREFLIGHT_ADAPTER_ALREADY_CONSUMED')
++    module.need(not adapter._imp.lock_held(), 'PREFLIGHT_IMPORT_LOCK_HELD')
++    module.need(len(sys.modules) <= 1024 and not any(
++        getattr(getattr(value, '__spec__', None), '_initializing', False)
++        for value in sys.modules.values()), 'PREFLIGHT_IMPORT_IN_PROGRESS')
++    module.need(not any(name == 'pip' or name.startswith('pip.') for name in sys.modules),
++                'PREFLIGHT_PIP_PRELOADED')
++    # Verify the pinned candidate source through the genuine original reader;
++    # do not create a finder, acquire the import lock or import any vendor code.
++    relative = str(Path(binding['pip_root'])/'_vendor/urllib3/util/connection.py')
++    module.need(relative in binding['pip_files'], 'PREFLIGHT_PROBE_NOT_PINNED')
++    probe_ref = {'path': relative, **binding['pip_files'][relative]}
++    reader.read(probe_ref)
++    return {'socket_source_ref': {'path': socket_module.__file__, **adapter.SOCKET_REF},
++            'current_original_has_ipv6': True, 'fresh_adapter_state': True,
++            'main_single_Python_thread_and_process_checked': True,
++            'import_lock_currently_unheld': True, 'no_current_initializing_modules': True,
++            'pip_vendor_imports_absent': True, 'pinned_probe_ref': probe_ref,
++            'actual_import_closure': 'NOT_RUN_ENFORCED_AND_RECORDED_IN_PROSPECTIVE_CHILD',
++            'real_socket_field_mutations': 0, 'vendor_imports': 0,
++            'import_lock_acquisitions': 0, 'child_must_recheck_current_state': True}
++
++
+ def main():
+     begin = time.monotonic()
+     resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+@@ -113,12 +146,12 @@
+     sys.addaudithook(audit)
+     sys.meta_path.insert(0, NoPackages())
+     SCOPE.mkdir(mode=0o700, exist_ok=False)
+-    save(SCOPE / 'STARTED.json', {'kind': 'E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V3',
++    save(SCOPE / 'STARTED.json', {'kind': 'E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1',
+         'UTC': datetime.now(timezone.utc).isoformat(), 'pins': PINNED,
+         'wall_seconds': 30, 'CPU_soft_hard': [7, 8], 'bound_reader_bytes': READ_LIMIT,
+         'control_write_bytes': CONTROL_LIMIT, 'preflight_invocations': 1,
+         'separate_from_diagnostic_child_allocation': True})
+-    result = {'kind': 'LEAD_E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V3',
++    result = {'kind': 'LEAD_E01_IPV6_COMPATIBILITY_READONLY_PREFLIGHT_V1',
+         'status': 'FAILED_METADATA_ONLY_NO_DIAGNOSTIC', 'pins': PINNED,
+         'network_requests': 0, 'model_calls': 0, 'child_commands': 0,
+         'pip_imports': 0, 'downloaded_package_imports': 0, 'research_source_reads': 0,
+@@ -153,13 +186,14 @@
+         before = module.snapshot(ROOT)
+         inputs = module.verify_inputs(ROOT, methods, reader)
+         proofs = configuration_proofs(module, inputs['binding'], bodies[source], reader.read(module.FROZEN_REF))
++        compatibility = compatibility_readonly_proofs(module, inputs['binding'], reader)
+         occupied = module.owned_size(ROOT)
+         upper = occupied + module.DIAGNOSTIC_SCOPE_BYTES
+         module.need(upper <= module.CAPS['owned_logical_bytes'], 'DIAGNOSTIC_STORAGE_PREFLIGHT')
+         after = module.snapshot(ROOT)
+         module.need(before == after, 'PREFLIGHT_OLD_METADATA_CHANGED')
+         result.update(status='PASS_METADATA_ONLY_NO_DIAGNOSTIC',
+-            configuration_proofs=proofs,
++            configuration_proofs=proofs, compatibility_readonly_proofs=compatibility,
+             old_metadata_snapshot=before, old_metadata_unchanged=True,
+             prior_owned_logical_bytes=occupied, combined_upper_bound=upper,
+             verified_wheels=len(inputs['wheels']), prior_allocation=inputs['prior'],
