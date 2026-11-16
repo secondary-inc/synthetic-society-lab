@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_namespace_remedy_independent_v1_2_20261116/independent_adverse_probe.py", line 17, in <module>
+    with tempfile.TemporaryDirectory(prefix='civiclab-independent-namespace-') as temporary:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 950, in __exit__
+    self.cleanup()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_namespace_remedy_independent_v1_2_20261116/independent_adverse_probe.py", line 25, in audit
+    if not(p in {SOURCE,ME} or p.is_relative_to(scratch) or (p.is_relative_to(STDLIB) and 'site-packages' not in p.parts)):raise AssertionError('UNAPPROVED_TECHNICAL_READ')
+                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: UNAPPROVED_TECHNICAL_READ

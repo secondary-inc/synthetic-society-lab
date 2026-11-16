@@ -1,0 +1,36 @@
+--- preserved_failed_probe
++++ cleanup_recovery_probe
+@@ -16,17 +16,24 @@
+ ROOT=Path('/Users/joshua/Documents/ChatGPT/synthetic-society-lab');SOURCE=ROOT/'scripts/run_offline_ci_v1.py';ME=Path(__file__).resolve();STDLIB=Path(sys.base_prefix)/'lib';technical=[0];writes=[0]
+ with tempfile.TemporaryDirectory(prefix='civiclab-independent-namespace-') as temporary:
+     scratch=Path(temporary).resolve();root=scratch/'owned';(root/'tests').mkdir(parents=True)
++    GUARD_SOURCE=ROOT/'scripts/e01_authored_dirfd_guard_v2_20261112.py'
++    guard_raw=GUARD_SOURCE.read_bytes()
++    assert len(guard_raw)==5143 and hashlib.sha256(guard_raw).hexdigest()=='431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000'
++    guard_module=types.ModuleType('accepted_directory_fd_guard');guard_module.__file__=str(GUARD_SOURCE)
++    exec(compile(guard_raw,str(GUARD_SOURCE),'exec'),guard_module.__dict__)
++    descriptor_guard=guard_module.DirectoryFdGuard(lambda path,flags:None)
+     def audit(event,args):
+         if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+-            p=Path(os.path.realpath(args[0]));flags=args[2]
++            p=Path(os.path.realpath(descriptor_guard.event_path(args[0])));flags=args[2]
+             if flags&(os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND):
+                 if not p.is_relative_to(scratch):raise AssertionError('WRITE_OUTSIDE_TEMPORARY_TREE')
+             else:
+-                if not(p in {SOURCE,ME} or p.is_relative_to(scratch) or (p.is_relative_to(STDLIB) and 'site-packages' not in p.parts)):raise AssertionError('UNAPPROVED_TECHNICAL_READ')
++                if not(p in {SOURCE,ME,GUARD_SOURCE} or p.is_relative_to(scratch) or (p.is_relative_to(STDLIB) and 'site-packages' not in p.parts)):raise AssertionError('UNAPPROVED_TECHNICAL_READ')
+                 try:technical[0]+=p.stat().st_size+1
+                 except FileNotFoundError:technical[0]+=1
+                 if technical[0]>67108864:raise AssertionError('TECHNICAL_READ_CAP')
+     sys.addaudithook(audit)
++    os.open=descriptor_guard.open;os.close=descriptor_guard.close
+     source=SOURCE.read_bytes();assert hashlib.sha256(source).hexdigest()=='61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae';c=types.ModuleType('independent_namespace_component');c.__file__=str(SOURCE);exec(compile(source,str(SOURCE),'exec'),c.__dict__)
+     checks=[]
+     def ok(name,value):assert value,name;checks.append(name)
+@@ -91,5 +98,5 @@
+         barrier=c.CollectionBarrier(root)
+         refuses('original filename execution barrier '+stem,lambda b=barrier,row=row:b('exec',(compile('pass',str(root/'tests'/row[0]),'exec'),)))
+     ok('all refusal paths left no owned modules',not any(n=='tests' or n.startswith('tests.') or n in ('safe_audit_fixture','safe_audit_bridge') for n in sys.modules))
+-    output={'kind':'INDEPENDENT_NAMESPACE_ADVERSE_PROBE','status':'PASS','Python':sys.version.split()[0],'runner_sha256':hashlib.sha256(source).hexdigest(),'checks':len(checks),'names':checks,'technical_read_bytes':technical[0],'authored_temp_bytes':writes[0],'real_collection_groups_repo_test_bodies_children_installs_network_owner_key_actions':0};encoded=json.dumps(output,sort_keys=True);assert len(encoded.encode())<=262144;print(encoded)
++    output={'kind':'INDEPENDENT_NAMESPACE_ADVERSE_PROBE','status':'PASS','Python':sys.version.split()[0],'runner_sha256':hashlib.sha256(source).hexdigest(),'directory_fd_guard_sha256':hashlib.sha256(guard_raw).hexdigest(),'guard_source_bootstrap_bytes':len(guard_raw),'checks':len(checks),'names':checks,'technical_read_bytes':technical[0],'authored_temp_bytes':writes[0],'real_collection_groups_repo_test_bodies_children_installs_network_owner_key_actions':0};encoded=json.dumps(output,sort_keys=True);assert len(encoded.encode())<=262144;print(encoded)
+ signal.setitimer(signal.ITIMER_REAL,0)

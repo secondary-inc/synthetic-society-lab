@@ -1,0 +1,122 @@
+{
+  "actual_child_dispatches": 1,
+  "binding_checks": {
+    "code": 470,
+    "harness": 3,
+    "metadata": 30,
+    "opened_stat_identities": 567,
+    "runtime": 1
+  },
+  "child_CPU_seconds": null,
+  "child_elapsed_seconds": 2.145511082999292,
+  "collected_case_count": 2771,
+  "component_review": {
+    "bytes": 20106,
+    "path": "reports/INDEPENDENT_AUDIT_CI_NAMESPACE_REMEDY_V1_2_20261116.json",
+    "sha256": "8f92b56fa5d57da8e559e82e59bd8c6e18510a800b52adfea432dbbe4affc5e7"
+  },
+  "console_bytes": 376,
+  "current_ci_qualification": false,
+  "evidence": [
+    {
+      "bytes": 182983,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/PACKET.json",
+      "sha256": "9ca04b4595b26fecfe072a0da22dcff2ab1edf4fb86ddcd0b87db7f015169ef7"
+    },
+    {
+      "bytes": 1944,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/LEAD_RELEASE.json",
+      "sha256": "8391c2f4023e8d1782365c93e5275c6d0fde1d33cc63d518e7b2e7a6418ec82a"
+    },
+    {
+      "bytes": 1049,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/STARTED.json",
+      "sha256": "317f3f3ba19eed0000244607ffaf35a06eff200468ec015107f594489341e2fc"
+    },
+    {
+      "bytes": 432,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/SUPERVISOR.json",
+      "sha256": "787791b11cae91dab162c53cc07bd214109a1f4093bda3a8d5e822beaf77239f"
+    },
+    {
+      "bytes": 685,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/FINAL.json",
+      "sha256": "25e8e5248aa10b73d4084a10127880c82c4827cb2ddb9550a2e02ec8bb1b4743"
+    },
+    {
+      "bytes": 14894,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/collection_child.py",
+      "sha256": "1f1940af14eb18219222bdcb6b1d4dd19c83f6c782b53663de2683b3c3fe276a"
+    },
+    {
+      "bytes": 7122,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/launch_once.py",
+      "sha256": "83559dd744035f0392627cefc9cedff7fdcffbeec5ed74b5f809be66cbef1482"
+    },
+    {
+      "bytes": 376,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/historical-python312-collection-v1_2.stdout",
+      "sha256": "b690665b08349c2108daffbcca17dbdcb55a10ca39bfcdfcc1c26282f8bf59aa"
+    },
+    {
+      "bytes": 0,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/historical-python312-collection-v1_2.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 569875,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/owned-temp-python312/collection-receipt.json",
+      "sha256": "2ed68455ca635094ee3ed1a5024ea8f18c2ec36a615366fcd5bfec443ec6ec24"
+    },
+    {
+      "bytes": 185077,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/lead-post-binding-verification.json",
+      "sha256": "10feca2cd783e9aba2845521b1fd901bb23adab9012289724f4a0e5136dba288"
+    }
+  ],
+  "frozen_modules_excluded": 6,
+  "frozen_modules_imported": 0,
+  "guard_refusals": [],
+  "historical_environment": {
+    "current_requested_pypdf": "7.0.1",
+    "pypdf_metadata": "6.10.0",
+    "python": "3.12.14"
+  },
+  "import_errors": [],
+  "installation_calls": 0,
+  "kind": "LEAD_HISTORICAL_COLLECTION_V1_2_ACTUAL",
+  "late_guard_reads_reserved_bytes": 32921178,
+  "limits": {
+    "child_cpu_seconds": 120,
+    "child_wall_seconds": 120,
+    "console_bytes": 524288,
+    "owned_temp_write_bytes": 33554432,
+    "source_technical_read_bytes": 268435456
+  },
+  "model_cost_USD": "0",
+  "namespace_context_restored": true,
+  "new_model_calls": 0,
+  "observed_at_utc": "2026-11-16T15:23:18.580097+00:00",
+  "observed_within_context": "Root/tests namespace is present during discovery; imported modules also insert duplicate technical src/scripts paths. The full recorded path list and tests namespace return to the pre-context snapshot afterward.",
+  "receipt_bytes": 569875,
+  "restrictions": [
+    "Consumed scope; no rerun or packet refresh.",
+    "Collection/import behavior only; no ordinary test execution, full CI, Linux qualification or resolution of W03.",
+    "Historical environment does not qualify current pypdf7.0.1 requirements or any unaccepted E01 target.",
+    "Trusted-code guards are not an adversarial sandbox; late counters exclude bootstrap.",
+    "New E01 harness candidate is included in the frozen source tree but actual tool execution remains blocked pending concrete review."
+  ],
+  "scope": "ONE_HISTORICAL_312_COLLECTION_ONLY_V1_2",
+  "setup_or_framework_execution_entries": 0,
+  "status": "PASS_HISTORICAL_COLLECTION_ONLY_PENDING_INDEPENDENT_ACTUAL_REVIEW",
+  "supervisor": {
+    "captured_bytes": 376,
+    "elapsed_seconds": 2.2136752079968574,
+    "reaped": true,
+    "reason": null,
+    "returncode": 0,
+    "stderr": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/historical-python312-collection-v1_2.stderr",
+    "stdout": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/historical-python312-collection-v1_2.stdout"
+  },
+  "test_body_executions": 0
+}

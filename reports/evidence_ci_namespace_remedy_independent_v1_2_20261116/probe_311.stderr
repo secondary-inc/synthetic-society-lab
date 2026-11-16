@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_namespace_remedy_independent_v1_2_20261116/independent_adverse_probe.py", line 17, in <module>
+    with tempfile.TemporaryDirectory(prefix='civiclab-independent-namespace-') as temporary:
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 665, in _rmtree_safe_fd
+    dirfd = os.open(entry.name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=topfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_namespace_remedy_independent_v1_2_20261116/independent_adverse_probe.py", line 25, in audit
+    if not(p in {SOURCE,ME} or p.is_relative_to(scratch) or (p.is_relative_to(STDLIB) and 'site-packages' not in p.parts)):raise AssertionError('UNAPPROVED_TECHNICAL_READ')
+                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: UNAPPROVED_TECHNICAL_READ

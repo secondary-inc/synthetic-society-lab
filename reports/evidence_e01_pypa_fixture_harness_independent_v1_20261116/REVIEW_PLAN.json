@@ -1,0 +1,19 @@
+{
+  "kind": "FROZEN_INDEPENDENT_FIXTURE_REVIEW_PLAN",
+  "probe": {
+    "path": "reports/evidence_e01_pypa_fixture_harness_independent_v1_20261116/adverse_probe.py",
+    "bytes": 4792,
+    "sha256": "d4b91e0d3e3f246130cfb31a3fa1b8061d302bcb3836342f2e5e1542f92ee063"
+  },
+  "allowance": "One final24 mocked suite and one independent adverse probe per runtime; no retries.",
+  "per_invocation_caps": {
+    "wall_seconds": 120,
+    "CPU_seconds": 120,
+    "technical_read_bytes": 67108864,
+    "owned_temp_write_bytes": 33554432,
+    "console_bytes": 262144
+  },
+  "child_OS_writes_allowed": 0,
+  "actual_tool_import_compile_install": false,
+  "meter_limitations": "Both mock processes import bootstrap stdlib before late read meter. Not whole-process actual-release accounting."
+}

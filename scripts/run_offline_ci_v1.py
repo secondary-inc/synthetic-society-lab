@@ -7,7 +7,9 @@ from __future__ import annotations
 
 import argparse
 import ast
+from contextlib import contextmanager
 import hashlib
+import importlib.machinery
 import importlib.util
 import json
 import os
@@ -110,6 +112,126 @@ class OrdinaryLoader(unittest.TestLoader):
         return str(Path(full_path).resolve()) not in self.excluded and super()._match_path(path, full_path, pattern)
 
 
+def ordinary_origin(path):
+    path = Path(path).absolute()
+    require(path == path.resolve() and not any(p.is_symlink() for p in (path, *path.parents)),
+            "ORDINARY_IMPORT_PATH_ALIAS")
+    return path
+
+
+class OrdinaryNamespaceFinder:
+    """Own only the verified tests namespace and its bare fixture names.
+
+    This is an import-context boundary for trusted CI, not a Python sandbox.
+    Frozen names fail before either import spelling can execute their source;
+    CollectionBarrier still covers direct/transitive filename execution.
+    """
+    offline_ci_owned_tests_namespace_v1_2 = True
+
+    def __init__(self, root):
+        self.root = ordinary_origin(root)
+        self.tests = ordinary_origin(self.root / "tests")
+        require(self.tests.is_dir() and not (self.tests / "__init__.py").exists(),
+                "ORDINARY_EXPECTED_TESTS_NAMESPACE")
+        self.bare_names = {p.stem for p in self.tests.glob("*.py")}
+        for name in self.bare_names:
+            ordinary_origin(self.tests / (name + ".py"))
+        self.frozen_names = {Path(row[0]).stem for row in FROZEN.values()}
+
+    def owned(self, name):
+        return name == "tests" or name.startswith("tests.") or name in self.bare_names
+
+    def validate_spec(self, name, spec):
+        parts = name.split(".")[1:] if name.startswith("tests.") else [name]
+        if name == "tests":
+            expected = self.tests
+        else:
+            expected = self.tests.joinpath(*parts)
+        if spec.origin is None:
+            locations = list(spec.submodule_search_locations or [])
+            require(locations == [str(expected)] and ordinary_origin(expected).is_dir(),
+                    "FOREIGN_TESTS_NAMESPACE")
+        else:
+            allowed = {expected.with_suffix(".py"), expected / "__init__.py"}
+            require(name != "tests" and ordinary_origin(spec.origin) in allowed,
+                    "FOREIGN_TEST_MODULE_ORIGIN")
+        return spec
+
+    def validate_cached(self):
+        for name, module in list(sys.modules.items()):
+            if not self.owned(name):
+                continue
+            require(name.rsplit(".", 1)[-1] not in self.frozen_names,
+                    "PRELOADED_FROZEN_TEST_MODULE")
+            require(module is not None and getattr(module, "__spec__", None) is not None,
+                    "UNBOUND_CACHED_TEST_MODULE")
+            self.validate_spec(name, module.__spec__)
+            if module.__spec__.origin is None:
+                require(list(getattr(module, "__path__", [])) == list(module.__spec__.submodule_search_locations),
+                        "FOREIGN_CACHED_TEST_NAMESPACE_PATH")
+            else:
+                require(ordinary_origin(module.__file__) == ordinary_origin(module.__spec__.origin),
+                        "CACHED_TEST_MODULE_ORIGIN_CHANGED")
+
+    def preflight_path(self):
+        # PathFinder checks metadata only; no candidate module is executed.
+        for entry in sys.path:
+            for name in ("tests", *sorted(self.bare_names)):
+                spec = importlib.machinery.PathFinder.find_spec(name, [entry])
+                if spec is not None:
+                    self.validate_spec(name, spec)
+
+    def find_spec(self, fullname, path=None, target=None):
+        if not self.owned(fullname):
+            return None
+        leaf = fullname.rsplit(".", 1)[-1]
+        require(leaf not in self.frozen_names, "TRANSITIVE_FROZEN_MODULE_IMPORT")
+        if fullname == "tests":
+            spec = importlib.machinery.ModuleSpec(fullname, loader=None, is_package=True)
+            spec.submodule_search_locations = [str(self.tests)]
+            return spec
+        parent = self.tests.joinpath(*fullname.split(".")[1:-1]) if fullname.startswith("tests.") else self.tests
+        if fullname.startswith("tests."):
+            require(list(path or []) == [str(parent)], "FOREIGN_TEST_NAMESPACE_SEARCH_PATH")
+        else:
+            require(path is None, "FOREIGN_BARE_TEST_SEARCH_PATH")
+        spec = importlib.machinery.PathFinder.find_spec(fullname, [str(ordinary_origin(parent))])
+        require(spec is not None, "OWNED_TEST_MODULE_MISSING")
+        return self.validate_spec(fullname, spec)
+
+
+@contextmanager
+def ordinary_import_context(root):
+    """Child-local admission; restore namespace, paths and importer cache on exit."""
+    finder = OrdinaryNamespaceFinder(root)
+    finder.validate_cached()
+    old_path_object, old_meta_object = sys.path, sys.meta_path
+    old_path, old_meta = sys.path[:], sys.meta_path[:]
+    old_cache = sys.path_importer_cache.copy()
+    old_modules = {name: module for name, module in sys.modules.items() if finder.owned(name)}
+    old_attributes = {name: module.__dict__.copy() for name, module in old_modules.items()}
+    try:
+        finder.preflight_path()
+        sys.path[:0] = [str(finder.root), str(finder.tests)]
+        sys.meta_path.insert(0, finder)
+        if "tests" not in sys.modules:
+            spec = finder.find_spec("tests")
+            sys.modules["tests"] = importlib.util.module_from_spec(spec)
+        yield finder
+    finally:
+        sys.path, sys.meta_path = old_path_object, old_meta_object
+        sys.path[:], sys.meta_path[:] = old_path, old_meta
+        for name in list(sys.modules):
+            if finder.owned(name) and name not in old_modules:
+                del sys.modules[name]
+        sys.modules.update(old_modules)
+        for name, attributes in old_attributes.items():
+            old_modules[name].__dict__.clear()
+            old_modules[name].__dict__.update(attributes)
+        sys.path_importer_cache.clear()
+        sys.path_importer_cache.update(old_cache)
+
+
 class CollectionBarrier:
     """Child-only fail-closed barrier; not an adversarial Python sandbox."""
     def __init__(self, root):
@@ -125,7 +247,7 @@ class CollectionBarrier:
             raise IsolationError("GLOBAL_HOOK_DURING_ORDINARY_COLLECTION")
 
 
-def collect_ordinary(root, *, loader=None, install_hook=sys.addaudithook):
+def _collect_ordinary(root, *, loader=None, install_hook=sys.addaudithook):
     barrier = CollectionBarrier(root)
     install_hook(barrier)  # This function is called only in the ordinary child.
     barrier.collecting = True
@@ -133,6 +255,11 @@ def collect_ordinary(root, *, loader=None, install_hook=sys.addaudithook):
         return (loader or OrdinaryLoader(root)).discover(str(Path(root) / "tests")), barrier
     finally:
         barrier.collecting = False
+
+
+def collect_ordinary(root, *, loader=None, install_hook=sys.addaudithook):
+    with ordinary_import_context(root):
+        return _collect_ordinary(root, loader=loader, install_hook=install_hook)
 
 
 def socket_observation():
@@ -279,9 +406,10 @@ def child_entry(root, group, phase):
     signal.signal(signal.SIGXCPU, deadline)
     signal.setitimer(signal.ITIMER_REAL, seconds)
     if phase == "ordinary":
-        suite, _ = collect_ordinary(root)
-        result = unittest.TextTestRunner(verbosity=2, resultclass=RecordingResult).run(suite)
-        return {"status": "PASS" if result.wasSuccessful() else "FAIL", **result_record(result)}
+        with ordinary_import_context(root):
+            suite, _ = _collect_ordinary(root)
+            result = unittest.TextTestRunner(verbosity=2, resultclass=RecordingResult).run(suite)
+            return {"status": "PASS" if result.wasSuccessful() else "FAIL", **result_record(result)}
     return run_frozen(root, group, phase)
 
 

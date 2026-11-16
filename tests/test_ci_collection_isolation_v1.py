@@ -4,6 +4,8 @@ Direct execution adds finite author-only limits. Frozen qualification modules ar
 read as AST inventories only. Supervisor processes/selectors are always fakes.
 """
 from pathlib import Path
+from contextlib import contextmanager
+import importlib
 import importlib.util
 import io
 import json
@@ -88,6 +90,140 @@ class CollectionTests(unittest.TestCase):
             if isinstance(node,(ast.FunctionDef,ast.ClassDef,ast.If)):continue
             calls=[ast.unparse(x.func) for x in ast.walk(node) if isinstance(x,ast.Call)]
             self.assertFalse(any(x in {'sys.addaudithook','subprocess.Popen','child_entry','main'} for x in calls))
+
+
+class OrdinaryNamespaceTests(unittest.TestCase):
+    @contextmanager
+    def authored_tree(self):
+        # Also works when this test is itself collected inside the real ordinary
+        # child: isolate only its import namespace, never execute repo tests.
+        names={p.stem for p in (ROOT/'tests').glob('*.py')}
+        removed={name:module for name,module in list(sys.modules.items())
+                 if name=='tests' or name.startswith('tests.') or name in names}
+        before_path,before_meta=sys.path[:],sys.meta_path[:]
+        before_cache=sys.path_importer_cache.copy()
+        for name in removed:del sys.modules[name]
+        sys.path[:]=[p for p in sys.path if p not in {str(ROOT),str(ROOT/'tests')}]
+        sys.meta_path[:]=[finder for finder in sys.meta_path if not getattr(finder,'offline_ci_owned_tests_namespace_v1_2',False)]
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                root=Path(directory).resolve();(root/'tests').mkdir()
+                yield root
+        finally:
+            for name in list(sys.modules):
+                if name=='tests' or name.startswith('tests.') or name in removed:
+                    del sys.modules[name]
+            sys.modules.update(removed)
+            sys.path[:],sys.meta_path[:]=before_path,before_meta
+            sys.path_importer_cache.clear();sys.path_importer_cache.update(before_cache)
+
+    def test_bare_and_qualified_authored_fixtures_collect_and_restore_state(self):
+        with self.authored_tree() as root:
+            (root/'tests/test_ns_fixture.py').write_text("VALUE='MOCK_LOCAL_FIXTURE'\n")
+            (root/'tests/test_ns_bridge.py').write_text('from test_ns_fixture import VALUE as BARE\nfrom tests.test_ns_fixture import VALUE as QUALIFIED\n')
+            before_path,before_meta,before_cache=sys.path[:],sys.meta_path[:],sys.path_importer_cache.copy()
+            callbacks=[]
+            class Loader(c.OrdinaryLoader):
+                def discover(self,path):
+                    bridge=importlib.import_module('test_ns_bridge')
+                    self_outer.assertEqual((bridge.BARE,bridge.QUALIFIED),('MOCK_LOCAL_FIXTURE',)*2)
+                    for name in ('test_ns_fixture','tests.test_ns_fixture'):
+                        self_outer.assertEqual(Path(sys.modules[name].__file__),root/'tests/test_ns_fixture.py')
+                    return unittest.TestSuite()
+            self_outer=self
+            suite,barrier=c.collect_ordinary(root,loader=Loader(root),install_hook=callbacks.append)
+            self.assertEqual(suite.countTestCases(),0)
+            self.assertFalse(barrier.collecting);self.assertEqual(len(callbacks),1)
+            self.assertEqual(sys.path,before_path);self.assertEqual(sys.meta_path,before_meta)
+            self.assertEqual(sys.path_importer_cache,before_cache)
+            self.assertFalse(any(name in sys.modules for name in ('tests','tests.test_ns_fixture','test_ns_fixture','test_ns_bridge')))
+
+    def test_lazy_qualified_fixture_import_kept_for_ordinary_child_lifetime(self):
+        with self.authored_tree() as root:
+            (root/'tests/test_lazy_fixture.py').write_text("VALUE='MOCK_LAZY_LOCAL'\n")
+            (root/'tests/test_lazy_bridge.py').write_text('def lazy():\n from tests.test_lazy_fixture import VALUE\n return VALUE\n')
+            callbacks=[];observed=[];original_collect=c._collect_ordinary
+            class Loader:
+                def discover(self,path):
+                    observed.append(importlib.import_module('test_lazy_bridge'))
+                    return unittest.TestSuite()
+            class ModelRunner:
+                def __init__(self,*args,**kwargs):pass
+                def run(self,suite):
+                    observed.append(observed[0].lazy())
+                    return c.RecordingResult(io.StringIO(),False,0)
+            def collect(root):return original_collect(root,loader=Loader(),install_hook=callbacks.append)
+            with mock.patch.object(c,'_collect_ordinary',side_effect=collect), mock.patch.object(c.unittest,'TextTestRunner',ModelRunner), mock.patch.object(c.resource,'setrlimit'), mock.patch.object(c.signal,'signal'), mock.patch.object(c.signal,'setitimer'):
+                receipt=c.child_entry(root,'ordinary','ordinary')
+            self.assertEqual(observed[1],'MOCK_LAZY_LOCAL')
+            self.assertEqual(receipt['tests_run'],0)  # ModelRunner executed no test.
+            self.assertFalse(any(name in sys.modules for name in ('tests','tests.test_lazy_fixture','test_lazy_bridge')))
+
+    def test_foreign_cached_namespace_and_path_shadowing_refused(self):
+        with self.authored_tree() as root:
+            (root/'tests/test_ns_fixture.py').write_text('VALUE=1\n')
+            foreign=root/'foreign';foreign.mkdir();(foreign/'tests').mkdir()
+            (foreign/'tests/__init__.py').write_text('raise AssertionError("FOREIGN_MUST_NOT_EXECUTE")\n')
+            before_path,before_meta=sys.path[:],sys.meta_path[:]
+            with mock.patch.dict(sys.modules,{'tests':SimpleNamespace(__spec__=None)}):
+                with self.assertRaisesRegex(c.IsolationError,'UNBOUND_CACHED_TEST'):
+                    with c.ordinary_import_context(root):self.fail('foreign namespace admitted')
+            with mock.patch.object(sys,'path',[str(foreign),*sys.path]):
+                with self.assertRaisesRegex(c.IsolationError,'FOREIGN_TEST_MODULE_ORIGIN'):
+                    with c.ordinary_import_context(root):self.fail('foreign path admitted')
+            (foreign/'tests/__init__.py').unlink()
+            with mock.patch.object(sys,'path',[str(foreign),*sys.path]):
+                with self.assertRaisesRegex(c.IsolationError,'FOREIGN_TESTS_NAMESPACE'):
+                    with c.ordinary_import_context(root):self.fail('foreign namespace portion admitted')
+            self.assertEqual(sys.path,before_path);self.assertEqual(sys.meta_path,before_meta)
+            self.assertNotIn('tests',sys.modules)
+
+    def test_existing_owned_namespace_attributes_restored_after_import(self):
+        with self.authored_tree() as root:
+            (root/'tests/test_ns_fixture.py').write_text('VALUE=1\n')
+            finder=c.OrdinaryNamespaceFinder(root)
+            namespace=importlib.util.module_from_spec(finder.find_spec('tests'))
+            with mock.patch.dict(sys.modules,{'tests':namespace}):
+                before=namespace.__dict__.copy()
+                with c.ordinary_import_context(root):
+                    importlib.import_module('tests.test_ns_fixture')
+                    self.assertIn('test_ns_fixture',namespace.__dict__)
+                self.assertEqual(namespace.__dict__,before)
+
+    def test_foreign_bare_fixture_and_aliased_root_refused(self):
+        with self.authored_tree() as root:
+            (root/'tests/test_ns_fixture.py').write_text('VALUE=1\n')
+            foreign=root/'foreign';foreign.mkdir();(foreign/'test_ns_fixture.py').write_text('VALUE=2\n')
+            with mock.patch.object(sys,'path',[str(foreign),*sys.path]):
+                with self.assertRaisesRegex(c.IsolationError,'FOREIGN_TEST_MODULE_ORIGIN'):
+                    with c.ordinary_import_context(root):self.fail('foreign bare fixture admitted')
+            alias=root/'alias';alias.symlink_to(root,target_is_directory=True)
+            with self.assertRaisesRegex(c.IsolationError,'ORDINARY_IMPORT_PATH_ALIAS'):
+                with c.ordinary_import_context(alias):self.fail('aliased root admitted')
+
+    def test_transitive_frozen_bare_and_qualified_imports_never_execute(self):
+        for spelling in ('bare','qualified'):
+            with self.subTest(spelling=spelling),self.authored_tree() as root:
+                name=Path(next(iter(c.FROZEN.values()))[0]).stem
+                (root/'tests'/f'{name}.py').write_text('raise AssertionError("FROZEN_PLACEHOLDER_MUST_NOT_EXECUTE")\n')
+                target=name if spelling=='bare' else 'tests.'+name
+                (root/'tests/test_bridge.py').write_text(f'import {target}\n')
+                before_path,before_meta,before_cache=sys.path[:],sys.meta_path[:],sys.path_importer_cache.copy()
+                with self.assertRaisesRegex(c.IsolationError,'TRANSITIVE_FROZEN_MODULE_IMPORT'):
+                    with c.ordinary_import_context(root):importlib.import_module('test_bridge')
+                self.assertNotIn(target,sys.modules)
+                self.assertEqual(sys.path,before_path);self.assertEqual(sys.meta_path,before_meta)
+                self.assertEqual(sys.path_importer_cache,before_cache)
+
+    def test_preloaded_frozen_module_refused_under_both_names(self):
+        with self.authored_tree() as root:
+            filename=next(iter(c.FROZEN.values()))[0]
+            path=root/'tests'/filename;path.write_text('raise AssertionError("NEVER_EXECUTE")\n')
+            for name in (path.stem,'tests.'+path.stem):
+                module=importlib.util.module_from_spec(importlib.util.spec_from_file_location(name,path))
+                with self.subTest(name=name),mock.patch.dict(sys.modules,{name:module}):
+                    with self.assertRaisesRegex(c.IsolationError,'PRELOADED_FROZEN_TEST_MODULE'):
+                        with c.ordinary_import_context(root):self.fail('preloaded frozen module admitted')
 
 
 class ReceiptTests(unittest.TestCase):

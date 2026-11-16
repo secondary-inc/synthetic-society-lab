@@ -1,0 +1,83 @@
+--- reports/evidence_ci_historical_collection_20261116/collection_child.py
++++ reports/evidence_ci_historical_collection_v1_2_20261116/collection_child.py
+@@ -1,4 +1,4 @@
+-"""One historical-environment COLLECTION ONLY diagnostic, never test execution."""
++"""PREPARED V1.2 successor: historical collection only; lead release required."""
+ from pathlib import Path
+ import ast
+ import builtins
+@@ -36,9 +36,11 @@
+ signal.setitimer(signal.ITIMER_REAL,120)
+ 
+ RUNNER=ROOT/'scripts/run_offline_ci_v1.py'
+-EXPECTED_RUNNER_SHA='9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b'
++EXPECTED_RUNNER_SHA='61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae'
++EXPECTED_TEST_SHA='f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631'
+ raw=RUNNER.read_bytes()
+ if hashlib.sha256(raw).hexdigest()!=EXPECTED_RUNNER_SHA:stop('RUNNER_SOURCE_BINDING')
++if hashlib.sha256((ROOT/'tests/test_ci_collection_isolation_v1.py').read_bytes()).hexdigest()!=EXPECTED_TEST_SHA:stop('CI_TEST_SOURCE_BINDING')
+ spec=importlib.util.spec_from_file_location('reviewed_ci_collection_only',RUNNER)
+ c=importlib.util.module_from_spec(spec)
+ # Exact already-reviewed bytes; no mutable cache/source loader substituted.
+@@ -169,7 +171,37 @@
+     if state['writes']>33554432:stop('TEMP_WRITE_CAP')
+     return raw_write(fd,value)
+ 
++def path_metadata(value):
++    if not isinstance(value,str):return {'kind':'NON_STRING_PATH','type':type(value).__name__}
++    if value=='':return {'kind':'CWD_ENTRY','cwd':str(ROOT)}
++    path=Path(value)
++    if path.is_absolute() and (path.is_relative_to(ROOT) or path.is_relative_to(Path(sys.base_prefix))):
++        return {'kind':'TECHNICAL_PATH','path':value,'resolved':str(path.resolve())}
++    return {'kind':'UNEXPECTED_PATH_REDACTED','sha256':hashlib.sha256(value.encode()).hexdigest()}
++
++
++def import_snapshot():
++    namespace=sys.modules.get('tests')
++    spec=getattr(namespace,'__spec__',None) if namespace is not None else None
++    origin=getattr(spec,'origin',None)
++    return {'sys_path':[path_metadata(value) for value in sys.path],
++            'tests_namespace':{'present':namespace is not None,
++              'origin':None if origin is None else path_metadata(origin),
++              'file':None if getattr(namespace,'__file__',None) is None else path_metadata(namespace.__file__),
++              'search_locations':[path_metadata(value) for value in list(getattr(namespace,'__path__',[]))],
++              'spec_search_locations':[path_metadata(value) for value in list(getattr(spec,'submodule_search_locations',None) or [])],
++              'loader_type':type(getattr(spec,'loader',None)).__name__},
++            'owned_namespace_finders':[{'type':type(finder).__name__,'root':str(finder.root),'tests':str(finder.tests)} for finder in sys.meta_path if getattr(finder,'offline_ci_owned_tests_namespace_v1_2',False)]}
++
++
+ class StopOnImportErrorLoader(c.OrdinaryLoader):
++    def discover(self,*args,**kwargs):
++        result['import_context_snapshots']['inside_before_discovery']=import_snapshot()
++        try:
++            return super().discover(*args,**kwargs)
++        finally:
++            try:result['import_context_snapshots']['inside_after_discovery_or_stop']=import_snapshot()
++            except BaseException:result['import_context_snapshots']['inside_after_discovery_or_stop']={'status':'CAPTURE_UNAVAILABLE_AFTER_STOP'}
+     def _find_test_path(self,*args,**kwargs):
+         before=len(self.errors)
+         result=super()._find_test_path(*args,**kwargs)
+@@ -183,7 +215,9 @@
+ sys.stdout=Writer(sys.stdout,'console');sys.stderr=Writer(sys.stderr,'console')
+ sys.addaudithook(audit)
+ sys.setprofile(profile)
+-result={'kind':'HISTORICAL_312_ORDINARY_COLLECTION_ONLY_V1','status':'ERROR_BEFORE_COLLECTION','historical_environment_only':True,'current_ci_qualification':False,'runner_sha256':EXPECTED_RUNNER_SHA,'python':sys.version.split()[0], 'sys_prefix':sys.prefix,'pypdf_metadata_version':'6.10.0', 'test_run_count':0,'setups_executed':0}
++result={'kind':'HISTORICAL_312_ORDINARY_COLLECTION_ONLY_V1_2','status':'ERROR_BEFORE_COLLECTION','historical_environment_only':True,'current_ci_qualification':False,'runner_sha256':EXPECTED_RUNNER_SHA,'python':sys.version.split()[0], 'sys_prefix':sys.prefix,'pypdf_metadata_version':'6.10.0', 'test_run_count':0,'setups_executed':0}
++result['ci_test_sha256']=EXPECTED_TEST_SHA
++result['import_context_snapshots']={'pre_context':import_snapshot(),'inside_before_discovery':{'status':'NOT_REACHED'},'inside_after_discovery_or_stop':{'status':'NOT_REACHED'}}
+ try:
+     state['phase']='COLLECTION'
+     state['expected_barrier_registration']=True
+@@ -212,10 +246,11 @@
+ finally:
+     state['phase']='CLOSED'
+     sys.setprofile(None)
++    result['import_context_snapshots']['after_context']=import_snapshot()
+     signal.setitimer(signal.ITIMER_REAL,0)
+ result.update(state=state,elapsed_seconds=time.monotonic()-WALL_START,project_modules=[{'name':name,'path':getattr(module,'__file__',None)} for name,module in sorted(sys.modules.items()) if name=='civiclab' or name.startswith('civiclab.')])
+ artifact=json.dumps(result,sort_keys=True).encode()
+ artifact_path=SCRATCH/'collection-receipt.json'
+ with open(artifact_path,'xb') as stream:stream.write(artifact)
+-print('HISTORICAL_COLLECTION_RECEIPT_V1='+json.dumps({'status':result['status'],'artifact_sha256':hashlib.sha256(artifact).hexdigest(),'artifact_bytes':len(artifact),'collected_case_count':result.get('collected_case_count'),'test_run_count':0,'setup_executions':0,'guarded_write_bytes_including_artifact':state['writes'],'refusal_count':len(state['refusals']),'elapsed_seconds':result['elapsed_seconds']},sort_keys=True),flush=True)
++print('HISTORICAL_COLLECTION_RECEIPT_V1_2='+json.dumps({'status':result['status'],'artifact_sha256':hashlib.sha256(artifact).hexdigest(),'artifact_bytes':len(artifact),'collected_case_count':result.get('collected_case_count'),'test_run_count':0,'setup_executions':0,'guarded_write_bytes_including_artifact':state['writes'],'refusal_count':len(state['refusals']),'elapsed_seconds':result['elapsed_seconds']},sort_keys=True),flush=True)
+ raise SystemExit(0 if result['status']=='PASS_HISTORICAL_COLLECTION_ONLY' else 1)

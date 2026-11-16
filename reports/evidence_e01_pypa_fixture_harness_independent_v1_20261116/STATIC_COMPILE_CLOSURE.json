@@ -1,0 +1,98 @@
+{
+  "archive": {
+    "path": "data/processed/e01_installer_tool_source_v1_20261116/2-RESPONSE.bin",
+    "bytes": 464466,
+    "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0"
+  },
+  "member": {
+    "path": "installer/destinations.py",
+    "bytes": 10666,
+    "sha256": "92853c201d052086220fef5784a2fb6c01dc5812b7f8f9f98590f1b87e5bb1fb",
+    "excerpt": [
+      {
+        "line": 96,
+        "text": ""
+      },
+      {
+        "line": 97,
+        "text": "        \"\"\""
+      },
+      {
+        "line": 98,
+        "text": "        raise NotImplementedError"
+      },
+      {
+        "line": 99,
+        "text": ""
+      },
+      {
+        "line": 100,
+        "text": ""
+      },
+      {
+        "line": 101,
+        "text": "@dataclass"
+      },
+      {
+        "line": 102,
+        "text": "class SchemeDictionaryDestination(WheelDestination):"
+      },
+      {
+        "line": 103,
+        "text": "    \"\"\"Destination, based on a mapping of {scheme: file-system-path}.\"\"\""
+      },
+      {
+        "line": 104,
+        "text": ""
+      },
+      {
+        "line": 105,
+        "text": "    scheme_dict: dict[str, str]"
+      },
+      {
+        "line": 106,
+        "text": "    \"\"\"A mapping of {scheme: file-system-path}\"\"\""
+      },
+      {
+        "line": 107,
+        "text": ""
+      },
+      {
+        "line": 108,
+        "text": "    interpreter: str"
+      },
+      {
+        "line": 109,
+        "text": "    \"\"\"The interpreter to use for generating scripts.\"\"\""
+      },
+      {
+        "line": 110,
+        "text": ""
+      }
+    ]
+  },
+  "stdlib": [
+    {
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/dataclasses.py",
+      "bytes": 58472,
+      "sha256": "77a41ea9eb35d959781087b72ef5b452218b57b9d8f2d28688d45a40ca7f8a09",
+      "exec_lines": [
+        {
+          "line": 433,
+          "text": "    exec(txt, globals, ns)"
+        }
+      ]
+    },
+    {
+      "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py",
+      "bytes": 62085,
+      "sha256": "d242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9",
+      "exec_lines": [
+        {
+          "line": 473,
+          "text": "    exec(txt, globals, ns)"
+        }
+      ]
+    }
+  ]
+}

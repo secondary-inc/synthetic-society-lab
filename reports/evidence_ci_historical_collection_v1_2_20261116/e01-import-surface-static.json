@@ -1,0 +1,259 @@
+{
+  "actual_PyPA_or_target_actions": 0,
+  "actual_import_probes": 0,
+  "basis": "Candidate module/class surface calls only Path/absolute, bytes.fromhex, MARKER.encode and object; the only observed definition decorator in these exact files is stdlib contextlib.contextmanager. Test imports only stdlib and calls load_own at module line52. That helper reads/compiles exact own candidate path and executes the statically inspected surface, not tool/payload modules or run_released. Hook installation early_guard and standalone bounded test entrypoints are under main-only guards. All other definitions remain uncalled on ordinary import.",
+  "files": [
+    {
+      "definition_decorators": [
+        {
+          "decorator": "contextlib.contextmanager",
+          "line": 562
+        }
+      ],
+      "import_time_calls_static": [
+        {
+          "call": "Path(__file__).absolute",
+          "kind": "module_or_class_statement",
+          "line": 28
+        },
+        {
+          "call": "Path",
+          "kind": "module_or_class_statement",
+          "line": 28
+        },
+        {
+          "call": "bytes.fromhex",
+          "kind": "module_or_class_statement",
+          "line": 50
+        },
+        {
+          "call": "bytes.fromhex",
+          "kind": "module_or_class_statement",
+          "line": 51
+        },
+        {
+          "call": "MARKER.encode",
+          "kind": "module_or_class_statement",
+          "line": 133
+        },
+        {
+          "call": "object",
+          "kind": "module_or_class_statement",
+          "line": 539
+        }
+      ],
+      "imports_reached_by_static_import_surface": [
+        {
+          "line": 8,
+          "source": "import base64"
+        },
+        {
+          "line": 9,
+          "source": "import contextlib"
+        },
+        {
+          "line": 10,
+          "source": "import csv"
+        },
+        {
+          "line": 11,
+          "source": "from datetime import datetime, timezone"
+        },
+        {
+          "line": 12,
+          "source": "import hashlib"
+        },
+        {
+          "line": 13,
+          "source": "import importlib.util"
+        },
+        {
+          "line": 14,
+          "source": "import io"
+        },
+        {
+          "line": 15,
+          "source": "import json"
+        },
+        {
+          "line": 16,
+          "source": "import os"
+        },
+        {
+          "line": 17,
+          "source": "from pathlib import Path"
+        },
+        {
+          "line": 18,
+          "source": "import resource"
+        },
+        {
+          "line": 19,
+          "source": "import signal"
+        },
+        {
+          "line": 20,
+          "source": "import stat"
+        },
+        {
+          "line": 21,
+          "source": "import sys"
+        },
+        {
+          "line": 22,
+          "source": "import tempfile"
+        },
+        {
+          "line": 23,
+          "source": "import threading"
+        },
+        {
+          "line": 24,
+          "source": "import time"
+        },
+        {
+          "line": 25,
+          "source": "import zipfile"
+        },
+        {
+          "line": 26,
+          "source": "import zipimport"
+        }
+      ],
+      "main_only_guards_not_reached_by_import": [
+        {
+          "condition": "__name__ == '__main__'",
+          "import_branch": "FALSE_BODY_NOT_REACHED_FOR_ORDINARY_MODULE_IMPORT",
+          "line": 691
+        }
+      ],
+      "other_module_or_class_conditions": [],
+      "ref": {
+        "bytes": 40820,
+        "path": "scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py",
+        "sha256": "a00f661e92e79a1ad3ff4010c7a55aeb2d196f2a59232e24d74dc4c19195b2ef"
+      }
+    },
+    {
+      "definition_decorators": [
+        {
+          "decorator": "contextlib.contextmanager",
+          "line": 59
+        }
+      ],
+      "import_time_calls_static": [
+        {
+          "call": "Path(__file__).resolve",
+          "kind": "module_or_class_statement",
+          "line": 36
+        },
+        {
+          "call": "Path",
+          "kind": "module_or_class_statement",
+          "line": 36
+        },
+        {
+          "call": "load_own",
+          "kind": "module_or_class_statement",
+          "line": 52
+        }
+      ],
+      "imports_reached_by_static_import_surface": [
+        {
+          "line": 2,
+          "source": "import sys"
+        },
+        {
+          "line": 18,
+          "source": "import ast"
+        },
+        {
+          "line": 19,
+          "source": "import base64"
+        },
+        {
+          "line": 20,
+          "source": "import builtins"
+        },
+        {
+          "line": 21,
+          "source": "import contextlib"
+        },
+        {
+          "line": 22,
+          "source": "import copy"
+        },
+        {
+          "line": 23,
+          "source": "import csv"
+        },
+        {
+          "line": 24,
+          "source": "import hashlib"
+        },
+        {
+          "line": 25,
+          "source": "import importlib.util"
+        },
+        {
+          "line": 26,
+          "source": "import io"
+        },
+        {
+          "line": 27,
+          "source": "import json"
+        },
+        {
+          "line": 28,
+          "source": "import os"
+        },
+        {
+          "line": 29,
+          "source": "from pathlib import Path"
+        },
+        {
+          "line": 30,
+          "source": "import resource"
+        },
+        {
+          "line": 31,
+          "source": "import signal"
+        },
+        {
+          "line": 32,
+          "source": "import stat"
+        },
+        {
+          "line": 33,
+          "source": "import unittest"
+        },
+        {
+          "line": 34,
+          "source": "import zipfile"
+        }
+      ],
+      "main_only_guards_not_reached_by_import": [
+        {
+          "condition": "__name__ == '__main__'",
+          "import_branch": "FALSE_BODY_NOT_REACHED_FOR_ORDINARY_MODULE_IMPORT",
+          "line": 16
+        },
+        {
+          "condition": "__name__ == '__main__'",
+          "import_branch": "FALSE_BODY_NOT_REACHED_FOR_ORDINARY_MODULE_IMPORT",
+          "line": 311
+        }
+      ],
+      "other_module_or_class_conditions": [],
+      "ref": {
+        "bytes": 19722,
+        "path": "tests/test_e01_pypa_fixture_harness_candidate_v1_20261116.py",
+        "sha256": "01e61c98e99789790de7354f542860de123c3c79304e0faa63d5a6b40d0f15ea"
+      }
+    }
+  ],
+  "kind": "E01_FROZEN_TEST_COLLECTION_IMPORT_SURFACE_STATIC_ONLY",
+  "limitations": "Own-candidate compile/exec at test import is real import-time behavior and must be reviewed; candidate load_own expected hash argument is omitted. Frozen driver manifest pins the exact candidate/test bytes before any later child. This is static review, not actual import execution, full concrete harness qualification, PyPA integration or a child release.",
+  "test_bodies_run": 0,
+  "verdict": "STATIC_IMPORT_SURFACE_HAS_NO_ACTUAL_TOOL_LOADING_GLOBAL_HOOK_DISPATCH_OR_RESEARCH_CALL"
+}

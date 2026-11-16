@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_pypa_fixture_harness_independent_v1_20261116/adverse_probe.py", line 53, in <module>
+    pure=m.own_module(m.PURE_REF,'independent_pure')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py", line 95, in own_module
+    raw=read_pin(ROOT,ref,budget=budget)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py", line 82, in read_pin
+    with os.fdopen(fd,'rb') as stream:
+         ^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 1031, in fdopen
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_pypa_fixture_harness_independent_v1_20261116/adverse_probe.py", line 33, in audit
+    raise AssertionError('NO_DESCRIPTOR_IO')
+AssertionError: NO_DESCRIPTOR_IO

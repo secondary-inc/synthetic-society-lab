@@ -1,0 +1,338 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/CI_HISTORICAL_COLLECTION_V1_2_PREPARATION_20261116.json",
+    "reports/evidence_ci_historical_collection_v1_2_20261116/"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead independently reviews frozen packet/driver and component result, coordinates source stability, then explicitly releases or blocks this exact one-shot historical collection scope. Worker must not self-release from the auditor message.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 182983,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/PACKET.json",
+      "sha256": "9ca04b4595b26fecfe072a0da22dcff2ab1edf4fb86ddcd0b87db7f015169ef7"
+    },
+    {
+      "bytes": 4945,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/build_packet.py",
+      "sha256": "a2f78aa6da518e601ff0dd4d7a4d4fb0debdf2ded3facd751d23a9a2468e3a93"
+    },
+    {
+      "bytes": 6227,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/child-successor.diff",
+      "sha256": "cb6252ffb0554c0ae9f94fc07d49cdbd423cb1491af66d08fad777ca5105ebec"
+    },
+    {
+      "bytes": 14894,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/collection_child.py",
+      "sha256": "1f1940af14eb18219222bdcb6b1d4dd19c83f6c782b53663de2683b3c3fe276a"
+    },
+    {
+      "bytes": 6950,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/e01-import-surface-static.json",
+      "sha256": "5827b2ede7e97229b99292e987fc4ddf7d9e4366fe5c0c0b80395fafb3901c44"
+    },
+    {
+      "bytes": 7122,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/launch_once.py",
+      "sha256": "83559dd744035f0392627cefc9cedff7fdcffbeec5ed74b5f809be66cbef1482"
+    },
+    {
+      "bytes": 17067,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/preparation-report-before-import-surface-addendum.json",
+      "sha256": "95e1836ac667e05ecb19e85ec47932ee1f980995c24d2b92551d2bb4811ab2a1"
+    },
+    {
+      "bytes": 203,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/preparation.log",
+      "sha256": "1d9e261e3fee4957f8f3ac80fb0f6019e6168cf484f96c24bf5d9a11242df54b"
+    },
+    {
+      "bytes": 1462,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/static-preparation-checks.json",
+      "sha256": "05326e2f775999e968dc7bb51e456ab1aa156d8f61b41cee9bddc4112258174a"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": {
+    "future_dispatch_after_separate_release_only": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_ci_historical_collection_v1_2_20261116/launch_once.py --lead-release /Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/LEAD_RELEASE.json",
+    "preparation_already_consumed": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_ci_historical_collection_v1_2_20261116/build_packet.py",
+    "warning": "Do not replay builder to replace frozen packet. No launch command was run; future command is reviewable only until exact component PASS and explicit lead release."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Driver and child are prepared only; no claim their full collection or metadata capture completes.",
+    "Existing original guard startup-read accounting limit is preserved: counters start after stdlib/harness/environment setup. No expansion of scopes is inferred.",
+    "All-source manifest includes active E01 candidate/tests; any future correction/addition invalidates this packet and requires a separately frozen scope, not silent refresh.",
+    "Own-candidate test import is an explicit unreviewed collection surface. No actual PyPA tool import/fixture installation is released by this packet.",
+    "Current exact7.0.1 project environment and3.11 project environment remain unqualified; historical6.10.0 does not establish full CI readiness."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only existing technical source/configuration, public reports, legacy environment metadata and known runtime binary for hashes. No third-party source acquired, payload imported, actual E01 data/target processed or credential read.",
+  "TASK_ID": "CI_HISTORICAL_COLLECTION_V1_2_PREPARATION_20261116",
+  "TESTS_RUN_AND_RESULTS": "No test or collection execution. Static AST/control equality and source/metadata hashes pass preparation checks; executable driver/child behavior is untested in this stage.",
+  "UNRESOLVED_BLOCKERS": [
+    "Independent namespace component review must PASS for the exact61bdc69/f3ba0 candidates.",
+    "Lead must review this exact packet/import-time surface and explicitly release one child during a stable source window.",
+    "No actual child has run; source/input changes must stop rather than update frozen bindings."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Prepare exact reviewable new child/driver/manifest without execution",
+      "status": "PASS_PREPARATION_ONLY"
+    },
+    {
+      "criterion": "Preserve original guard code and scope; capture real future path metadata",
+      "status": "PASS_STATIC_PRESERVATION_OBSERVATIONS_NOT_RUN"
+    },
+    {
+      "criterion": "Freeze after E01 source announcement and recheck entire tree",
+      "status": "PASS_METADATA_BINDINGS_ROOT_WINDOW_STILL_REQUIRED_BEFORE_LAUNCH"
+    },
+    {
+      "criterion": "Independent namespace component review and lead packet release",
+      "status": "PENDING_NO_AUTHORITY_TO_LAUNCH"
+    },
+    {
+      "criterion": "Historical successor collection result",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Current-CI/full-suite qualification",
+      "status": "NOT_RUN"
+    }
+  ],
+  "actual_activity": {
+    "Git_STATUS_edits": 0,
+    "accepted_source_edits": 0,
+    "builder_exitcode": 0,
+    "child_processes_dispatched": 0,
+    "collection_calls": 0,
+    "launch_driver_invocations": 0,
+    "metadata_packet_builders": 1,
+    "package_network_model_credential_oldtarget_actions": 0,
+    "tests_or_setups": 0
+  },
+  "candidate_bindings": {
+    "independent_component_review": "PENDING; preparation does not accept reviewer claims or self-release.",
+    "required_runner_sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae",
+    "required_test_sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631",
+    "runner": {
+      "bytes": 30370,
+      "path": "scripts/run_offline_ci_v1.py",
+      "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+    },
+    "test": {
+      "bytes": 32270,
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+    }
+  },
+  "date": "2026-11-16",
+  "decision": "PREPARED_NOT_RELEASED_ZERO_CHILDREN_PENDING_COMPONENT_PASS_AND_EXPLICIT_LEAD_RELEASE",
+  "lead_release_gate": {
+    "file_currently_absent": true,
+    "launch_driver_invoked": false,
+    "launcher_ref": {
+      "bytes": 7122,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/launch_once.py",
+      "sha256": "83559dd744035f0392627cefc9cedff7fdcffbeec5ed74b5f809be66cbef1482"
+    },
+    "not_an_approval": "This preparation report and PACKET.json are not LEAD_RELEASE and supply no dispatch permission.",
+    "one_shot": "New-only STARTED marker consumes scope before dispatch; no overwrite, restart or automatic retry. Preflight stops produce a new-only PREFLIGHT_STOP and prohibit replay. Child stop/error logs and final outcome remain recorded.",
+    "required_file": "reports/evidence_ci_historical_collection_v1_2_20261116/LEAD_RELEASE.json",
+    "required_release_fields": {
+      "approved_scope": "ONE_HISTORICAL_312_COLLECTION_ONLY_V1_2",
+      "component_review": "Exact public JSON report ref(path/resolved_path/bytes/sha256), decision_field(decision or status), matching PASS decision, runner_sha256 and test_sha256.",
+      "kind": "LEAD_HISTORICAL_COLLECTION_V1_2_RELEASE",
+      "maximum_children": 1,
+      "packet_sha256": "Exact PACKET.json SHA256 in packet_ref",
+      "status": "RELEASED_ONE_CHILD"
+    },
+    "review_gate": "Driver verifies exact review report bytes, a matching PASS decision and both candidate hashes mentioned by that report. Independent auditor output alone is insufficient: the separate explicit lead release file must bind this packet and scope."
+  },
+  "new_E01_import_time_static_note": {
+    "candidate_ref": {
+      "bytes": 40820,
+      "path": "scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py",
+      "sha256": "a00f661e92e79a1ad3ff4010c7a55aeb2d196f2a59232e24d74dc4c19195b2ef"
+    },
+    "candidate_top_level": "Static module statements instantiate constants, Path values, bytes and a sentinel; actual tool/archive loading and run_released calls are function bodies, not observed import-time calls. The early global audit hook in the test is under __name__ == __main__, so ordinary import does not call it.",
+    "complete_module_class_definition_surface_ref": {
+      "bytes": 6950,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/e01-import-surface-static.json",
+      "sha256": "5827b2ede7e97229b99292e987fc4ddf7d9e4366fe5c0c0b80395fafb3901c44"
+    },
+    "limitations": "Own-candidate compile/exec at test import is real import-time behavior and must be reviewed; candidate load_own expected hash argument is omitted. Frozen driver manifest pins the exact candidate/test bytes before any later child. This is static review, not actual import execution, full concrete harness qualification, PyPA integration or a child release.",
+    "observed_code": "Test module line52 invokes load_own(mocked_fixture_harness,CODE) during module import. That helper reads and compiles its own candidate source (expected hash parameter is omitted there), then executes its module definitions.",
+    "qualification_limit": "This is unreviewed import-time execution of own candidate code, not a report that PyPA/package loading or installation has occurred or been accepted. Packet pins both exact files; independent review and lead should account for their collection import surface before release. No E01 author file was edited or excluded.",
+    "static_verdict": "STATIC_IMPORT_SURFACE_HAS_NO_ACTUAL_TOOL_LOADING_GLOBAL_HOOK_DISPATCH_OR_RESEARCH_CALL",
+    "status": "STATIC_INSPECTION_ONLY_NOT_COMPONENT_ACCEPTANCE",
+    "test_ref": {
+      "bytes": 19722,
+      "path": "tests/test_e01_pypa_fixture_harness_candidate_v1_20261116.py",
+      "sha256": "01e61c98e99789790de7354f542860de123c3c79304e0faa63d5a6b40d0f15ea"
+    }
+  },
+  "old_scope_preservation": {
+    "W03": "Original cause remains UNKNOWN.",
+    "current_readiness": "Earlier8443e311 report remains unchanged NOT_RUN.",
+    "old_consumed_report": {
+      "bytes": 14899,
+      "path": "reports/CI_HISTORICAL_ORDINARY_COLLECTION_20261116.json",
+      "sha256": "e81d11e6450a38d293375279bfc3c890ba7d55236143657f1ce5218bfe5c0367"
+    },
+    "old_release_and_logs": "Unmodified under reports/evidence_ci_historical_collection_20261116/. No old launcher replay."
+  },
+  "packet_ref": {
+    "bytes": 182983,
+    "path": "reports/evidence_ci_historical_collection_v1_2_20261116/PACKET.json",
+    "sha256": "9ca04b4595b26fecfe072a0da22dcff2ab1edf4fb86ddcd0b87db7f015169ef7"
+  },
+  "planned_dispatch": {
+    "attempt": 1,
+    "command": [
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+      "-I",
+      "-B",
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/collection_child.py",
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/owned-temp-python312"
+    ],
+    "current_exact7_0_1_or_Python311_qualification": false,
+    "historical_environment_only": true,
+    "limits": {
+      "child_cpu_seconds": 120,
+      "child_wall_seconds": 120,
+      "console_bytes": 524288,
+      "owned_temp_write_bytes": 33554432,
+      "source_technical_read_bytes": 268435456
+    },
+    "maximum_children": 1,
+    "retry_count": 0,
+    "sanitized_environment": {
+      "CI": "true",
+      "HOME": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/owned-temp-python312",
+      "LANG": "en_US.UTF-8",
+      "LC_ALL": "en_US.UTF-8",
+      "MAX_SPEND_USD": "0",
+      "MPLCONFIGDIR": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/owned-temp-python312/matplotlib",
+      "PAID_API_ENABLED": "false",
+      "PATH": "/bin:/usr/bin",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "0",
+      "PYTHONNOUSERSITE": "1",
+      "TMPDIR": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_historical_collection_v1_2_20261116/owned-temp-python312",
+      "TZ": "UTC"
+    },
+    "scope": "ONE_HISTORICAL_312_COLLECTION_ONLY_V1_2"
+  },
+  "prelaunch_bindings": {
+    "active_E01_freeze": {
+      "launch_behavior": "Driver rechecks the entire source set and every code/config/metadata/runtime/harness hash before STARTED. Any moved/added/changed source stops; it never refreshes a reviewed manifest.",
+      "refs": [
+        {
+          "bytes": 40820,
+          "path": "scripts/e01_pypa_fixture_harness_candidate_v1_20261116.py",
+          "sha256": "a00f661e92e79a1ad3ff4010c7a55aeb2d196f2a59232e24d74dc4c19195b2ef"
+        },
+        {
+          "bytes": 19722,
+          "path": "tests/test_e01_pypa_fixture_harness_candidate_v1_20261116.py",
+          "sha256": "01e61c98e99789790de7354f542860de123c3c79304e0faa63d5a6b40d0f15ea"
+        }
+      ],
+      "root_confirmation": "Lead confirmed author frozen/idle after packet construction; same announced source/test hashes verified and already included in470-file manifest. No actual launch released.",
+      "timing": "Author announced frozen files before packet builder ran; both exact bytes/hashes verified. All other source files included. Root still coordinates the brief no-write window before any actual release."
+    },
+    "all_source_files_included": true,
+    "all_source_manifest_count": 470,
+    "all_source_manifest_roots": [
+      "tests",
+      "scripts",
+      "src"
+    ],
+    "manifest_rechecked_unchanged_after_preparation": true,
+    "metadata_input_count": 30,
+    "metadata_note": "Read-only existing metadata, no package import or environment admission beyond explicitly authorized historical3.12 scope. Runtime binary matches earlier historical environment inventory.",
+    "observed_metadata_versions": {
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "contourpy": "1.4.0",
+      "cryptography": "50.0.2",
+      "cycler": "0.12.1",
+      "fonttools": "4.68.0",
+      "kiwisolver": "1.5.1",
+      "matplotlib": "3.10.7",
+      "numpy": "2.5.4",
+      "packaging": "26.3",
+      "pdfminer.six": "20251230",
+      "pdfplumber": "0.11.9",
+      "pillow": "13.0.0",
+      "pip": "25.0.1",
+      "pycparser": "3.12",
+      "pyparsing": "3.3.3",
+      "pypdf": "6.10.0",
+      "pypdfium2": "5.14.0",
+      "python-dateutil": "4.0.0",
+      "scipy": "1.16.3",
+      "synthetic-society-lab": "0.1.0",
+      "tzdata": "2026.6"
+    },
+    "runtime_inputs": [
+      {
+        "bytes": 18058560,
+        "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "resolved_path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+      }
+    ],
+    "silently_excluded_active_author_files": []
+  },
+  "reused_controls": {
+    "allowed_roots_unchanged": true,
+    "diff_ref": {
+      "bytes": 6227,
+      "path": "reports/evidence_ci_historical_collection_v1_2_20261116/child-successor.diff",
+      "sha256": "cb6252ffb0554c0ae9f94fc07d49cdbd423cb1491af66d08fad777ca5105ebec"
+    },
+    "exact_guard_functions_preserved": [
+      "stop",
+      "deadline",
+      "profile",
+      "audit",
+      "tracked_open",
+      "tracked_close",
+      "Writer",
+      "write"
+    ],
+    "import_error_failfast_preserved": true,
+    "profile": "Same pre-bytecode framework/TestCase/TestSuite/runner and repo test_/standard setup/teardown guards. No actual framework/test/setup calls in preparation.",
+    "read_write_console": "Same256MiB technical source read reservation,32MiB owned scratch write and512KiB console controls; no broader read roots or target paths.",
+    "source": {
+      "bytes": 12382,
+      "path": "reports/evidence_ci_historical_collection_20261116/collection_child.py",
+      "sha256": "44b583548a5a5ae46cc4d4ff899af9174187d6d31f4eb8a2bb831da9753c8153"
+    },
+    "supervisor": "Launch driver delegates exactly one fixed job to reviewed candidate c.supervise, whose AST remains unchanged from accepted predecessor; no custom Popen or retry loop.",
+    "supervisor_source": {
+      "bytes": 2701,
+      "path": "reports/evidence_ci_historical_collection_20261116/diagnostic_supervisor.py",
+      "sha256": "d16cf3a77a6858ceeb329f6f63c52003f998583d7d98642ef71afedac46353c3"
+    }
+  },
+  "scope": "Prepare only one new historical3.12.14/pypdf6.10.0 collection diagnostic packet and driver. No actual collection, test, setup, framework execution, current-CI qualification or E01 target action.",
+  "sys_path_and_namespace_observations": {
+    "capture_points": [
+      "pre-context",
+      "inside reviewed namespace context before loader discovery",
+      "inside context after discovery or stop",
+      "after context exits/restores"
+    ],
+    "fields": [
+      "ordered sanitized sys.path entries, recognized absolute technical paths and resolved paths",
+      "unrecognized/non-string path entries redacted as hash/type metadata",
+      "tests namespace present/origin/file",
+      "namespace and spec search locations",
+      "namespace loader type and owned finder root/tests paths"
+    ],
+    "historical_limit": "The prior failed child still has no captured complete sys.path vector; this planned future observation does not retroactively create one.",
+    "implementation": "Loader.discover override samples inside the public reviewed collect_ordinary context. It does not add an outer admission context, manually insert a path or run any suite. Metadata sampling after a stop never retries discovery.",
+    "status": "PLANNED_NOT_OBSERVED_NO_CHILD"
+  }
+}

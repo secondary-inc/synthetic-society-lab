@@ -1,0 +1,148 @@
+{
+  "actual_original_frozen_group_runs": 0,
+  "actual_per_runtime": 2,
+  "actual_real_collection_continuations": 0,
+  "actual_supervised_children": 0,
+  "allowed_per_runtime": 2,
+  "attempt1_to_final_change": "Added preloaded frozen-module refusal and pure both-name regression after static gap review. Initial28-pass sources/logs retained. No failed run in this stage.",
+  "author_suite_processes": 4,
+  "limits_per_invocation": {
+    "console_bytes": 262144,
+    "cpu_seconds": 120,
+    "read_reservation_bytes": 67108864,
+    "temp_write_bytes": 33554432,
+    "wall_seconds": 120
+  },
+  "runs": [
+    {
+      "attempt_for_runtime": 1,
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 4296,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python311-attempt1.log",
+        "sha256": "ab27a3ac0b9b7ef2a22b23ca069d8bae0daf44961a9d8757cf8d0be43bde5f7d"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 4029,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.11.17",
+        "read_reservation_bytes": 675858,
+        "successful": true,
+        "temp_write_bytes": 184937,
+        "tests_run": 28
+      },
+      "runner_ref": {
+        "bytes": 30248,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-attempt1.py",
+        "sha256": "aba7586864f0922c9d5fcf6c400f5221c9b05f6ebd89a8e1413493cb128be971"
+      },
+      "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+      "test_ref": {
+        "bytes": 31549,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-attempt1.py",
+        "sha256": "70f9a056f36d62f0a5e7d76383b5df5ec425da1a9a378ab4fd61ed2fff4a583a"
+      }
+    },
+    {
+      "attempt_for_runtime": 1,
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 4296,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python312-attempt1.log",
+        "sha256": "ad10918e63968391f76c6973c1d289ce34a1fb1573e399d122dd352f9df72d55"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 4029,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.12.14",
+        "read_reservation_bytes": 675858,
+        "successful": true,
+        "temp_write_bytes": 184567,
+        "tests_run": 28
+      },
+      "runner_ref": {
+        "bytes": 30248,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-attempt1.py",
+        "sha256": "aba7586864f0922c9d5fcf6c400f5221c9b05f6ebd89a8e1413493cb128be971"
+      },
+      "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+      "test_ref": {
+        "bytes": 31549,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-attempt1.py",
+        "sha256": "70f9a056f36d62f0a5e7d76383b5df5ec425da1a9a378ab4fd61ed2fff4a583a"
+      }
+    },
+    {
+      "attempt_for_runtime": 2,
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 4445,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python311-attempt2-final.log",
+        "sha256": "f9a70186c9c36e80ef7d22f49ba0576243d8111c51cc6dcfe4bd900fa8eef004"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 4178,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.11.17",
+        "read_reservation_bytes": 676540,
+        "successful": true,
+        "temp_write_bytes": 184975,
+        "tests_run": 29
+      },
+      "runner_ref": {
+        "bytes": 30370,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.py",
+        "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+      },
+      "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+      "test_ref": {
+        "bytes": 32270,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.py",
+        "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+      }
+    },
+    {
+      "attempt_for_runtime": 2,
+      "exitcode": 0,
+      "log_ref": {
+        "bytes": 4445,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python312-attempt2-final.log",
+        "sha256": "d53d9088fbd8ec53342095750a68e4ea832a5c58082feb502e8d202d07c3e2bc"
+      },
+      "receipt": {
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "console_bytes_before_receipt": 4178,
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "network_calls": 0,
+        "python": "3.12.14",
+        "read_reservation_bytes": 676540,
+        "successful": true,
+        "temp_write_bytes": 184605,
+        "tests_run": 29
+      },
+      "runner_ref": {
+        "bytes": 30370,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.py",
+        "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+      },
+      "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+      "test_ref": {
+        "bytes": 32270,
+        "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.py",
+        "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+      }
+    }
+  ],
+  "scope_note": "Author guard counters begin after stdlib/harness imports; source/data bodies for original research tests are not executed. Temporary authored fixture modules and preexisting harmless guarded stub models only.",
+  "stage": "CI_ORDINARY_NAMESPACE_REMEDY_V1_2"
+}

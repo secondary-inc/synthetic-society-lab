@@ -1,0 +1,15 @@
+{
+  "kind": "INDEPENDENT_REVIEW_ATTEMPT1_AUDITOR_FAILURE",
+  "source_ref": {
+    "path": "reports/evidence_ci_historical_collection_v1_2_independent_20261116/review_closed_evidence.py",
+    "bytes": 15665,
+    "sha256": "6ec414018eaabbc16c8364dc3360dcd119ebc31556f6400db11877e32bb2486e"
+  },
+  "failure_type": "KeyError",
+  "failure_location": "OPEN_STAT post_open[path] at line76",
+  "cause": "Auditor compared absolute receipt open paths against repository-relative lead post-check keys. This is an auditor normalization failure, not a collected-child failure.",
+  "no_child_or_tests_rerun": true,
+  "technical_read_reservation_bytes_conservatively_charged": 33554432,
+  "remaining_shared_read_bytes": 33554432,
+  "outputs_completed": false
+}

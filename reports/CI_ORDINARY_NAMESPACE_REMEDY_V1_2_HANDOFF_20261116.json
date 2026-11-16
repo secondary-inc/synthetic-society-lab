@@ -1,0 +1,410 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    {
+      "bytes": 30370,
+      "path": "scripts/run_offline_ci_v1.py",
+      "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+    },
+    {
+      "bytes": 32270,
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate reviewer examines these exact diffs and runs scoped independent checks, then lead freezes one historical collection-only successor with new source hash and original guards. Do not edit or replay the old historical release.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 6257,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/author-invocations.json",
+      "sha256": "ae56f2fdf8a7696aa0c5ff95ca2bd40b9d09149bf02b872843fd8f11b2f964ae"
+    },
+    {
+      "bytes": 4296,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python311-attempt1.log",
+      "sha256": "ab27a3ac0b9b7ef2a22b23ca069d8bae0daf44961a9d8757cf8d0be43bde5f7d"
+    },
+    {
+      "bytes": 4445,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python311-attempt2-final.log",
+      "sha256": "f9a70186c9c36e80ef7d22f49ba0576243d8111c51cc6dcfe4bd900fa8eef004"
+    },
+    {
+      "bytes": 4296,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python312-attempt1.log",
+      "sha256": "ad10918e63968391f76c6973c1d289ce34a1fb1573e399d122dd352f9df72d55"
+    },
+    {
+      "bytes": 4445,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python312-attempt2-final.log",
+      "sha256": "d53d9088fbd8ec53342095750a68e4ea832a5c58082feb502e8d202d07c3e2bc"
+    },
+    {
+      "bytes": 30248,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-attempt1.py",
+      "sha256": "aba7586864f0922c9d5fcf6c400f5221c9b05f6ebd89a8e1413493cb128be971"
+    },
+    {
+      "bytes": 7805,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.diff",
+      "sha256": "ebde99b1ce1f68c206625ed7509f908c614b4cda2cb21f61c69c913144d71e25"
+    },
+    {
+      "bytes": 30370,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.py",
+      "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+    },
+    {
+      "bytes": 24413,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-predecessor.py",
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    {
+      "bytes": 2711,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/static-scope-checks.json",
+      "sha256": "e9f08eec2ba97729dadb5dbb439b450a1ea757463b69cc2bcd449bfbe6741828"
+    },
+    {
+      "bytes": 31549,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-attempt1.py",
+      "sha256": "70f9a056f36d62f0a5e7d76383b5df5ec425da1a9a378ab4fd61ed2fff4a583a"
+    },
+    {
+      "bytes": 10040,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.diff",
+      "sha256": "970bd5ed702f9fa95932470a00a36fd5e3840368f28dd1f27355f6decd265cce"
+    },
+    {
+      "bytes": 32270,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.py",
+      "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+    },
+    {
+      "bytes": 22968,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-predecessor.py",
+      "sha256": "ca89179959346e04da76d789866446a9e39148acbe47c2e9e62d89c95455f3b7"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_ci_collection_isolation_v1.py",
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S tests/test_ci_collection_isolation_v1.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Pure temporary fixtures and mocked lifecycle establish implementation behavior only; no claim that the previously failed full collection now completes.",
+    "Import contexts assume trusted CI/tests and normal import machinery, not hostile module/global-state manipulation. Shallow attribute restoration is not rollback of arbitrary mutated object internals or non-import side effects.",
+    "Foreign cached tests modules or matching search-path collisions deliberately fail; this may expose additional existing environment issues in a later approved collection.",
+    "Current project environment still has historical pypdf6.10.0; exact7.0.1 project environment and3.11 full project environment remain unqualified. No target was admitted or dependency changed.",
+    "Prior220-case focused original-group results bind predecessor runner9882cc86, not a new execution of this candidate. Original frozen sources/guard behavior are retained by static equality only here.",
+    "All earlier failed/current-readiness scopes remain preserved and consumed; W03 cause remains UNKNOWN."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Existing repository source plus harmless temporary authored fixture modules. No live data, respondent/publisher records, unaccepted target/package payload or credential access, download or installation.",
+  "TASK_ID": "CI_ORDINARY_NAMESPACE_REMEDY_V1_2_20261116",
+  "TESTS_RUN_AND_RESULTS": {
+    "NOT_RUN": [
+      "real repository ordinary collection",
+      "actual collection-only successor child",
+      "full ordinary test suite",
+      "real frozen groups under this new runner version",
+      "Linux/remote workflow",
+      "independent result review",
+      "current7.0.1 project environment qualification"
+    ],
+    "added_namespace_regressions": [
+      "bare and qualified authored fixture imports with exact local origins",
+      "module namespace/path/meta-path/importer-cache restoration after ordinary collection helper",
+      "harmless lazy qualified import inside mocked ordinary runner after collection returns; no repository test body executed",
+      "foreign cached namespace, foreign regular tests package and foreign namespace path portion refused",
+      "foreign bare fixture and aliased root refused",
+      "existing local namespace package attributes restored after import",
+      "transitive frozen placeholder module rejected under bare and qualified spelling, plus context restoration after exception",
+      "preloaded frozen placeholder module rejected under both names without source execution"
+    ],
+    "all_runs_ref": {
+      "bytes": 6257,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/author-invocations.json",
+      "sha256": "ae56f2fdf8a7696aa0c5ff95ca2bd40b9d09149bf02b872843fd8f11b2f964ae"
+    },
+    "final_python311": "29 checks PASS on3.11.17, second allowed invocation",
+    "final_python312": "29 checks PASS on3.12.14, second allowed invocation",
+    "prior_attempts": "28 checks PASS on each minor, preserved separate first candidate snapshots/logs",
+    "runs": [
+      {
+        "attempt_for_runtime": 1,
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 4296,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python311-attempt1.log",
+          "sha256": "ab27a3ac0b9b7ef2a22b23ca069d8bae0daf44961a9d8757cf8d0be43bde5f7d"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 4029,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.11.17",
+          "read_reservation_bytes": 675858,
+          "successful": true,
+          "temp_write_bytes": 184937,
+          "tests_run": 28
+        },
+        "runner_ref": {
+          "bytes": 30248,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-attempt1.py",
+          "sha256": "aba7586864f0922c9d5fcf6c400f5221c9b05f6ebd89a8e1413493cb128be971"
+        },
+        "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+        "test_ref": {
+          "bytes": 31549,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-attempt1.py",
+          "sha256": "70f9a056f36d62f0a5e7d76383b5df5ec425da1a9a378ab4fd61ed2fff4a583a"
+        }
+      },
+      {
+        "attempt_for_runtime": 1,
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 4296,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python312-attempt1.log",
+          "sha256": "ad10918e63968391f76c6973c1d289ce34a1fb1573e399d122dd352f9df72d55"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 4029,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.12.14",
+          "read_reservation_bytes": 675858,
+          "successful": true,
+          "temp_write_bytes": 184567,
+          "tests_run": 28
+        },
+        "runner_ref": {
+          "bytes": 30248,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-attempt1.py",
+          "sha256": "aba7586864f0922c9d5fcf6c400f5221c9b05f6ebd89a8e1413493cb128be971"
+        },
+        "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+        "test_ref": {
+          "bytes": 31549,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-attempt1.py",
+          "sha256": "70f9a056f36d62f0a5e7d76383b5df5ec425da1a9a378ab4fd61ed2fff4a583a"
+        }
+      },
+      {
+        "attempt_for_runtime": 2,
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 4445,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python311-attempt2-final.log",
+          "sha256": "f9a70186c9c36e80ef7d22f49ba0576243d8111c51cc6dcfe4bd900fa8eef004"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 4178,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.11.17",
+          "read_reservation_bytes": 676540,
+          "successful": true,
+          "temp_write_bytes": 184975,
+          "tests_run": 29
+        },
+        "runner_ref": {
+          "bytes": 30370,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.py",
+          "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+        },
+        "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+        "test_ref": {
+          "bytes": 32270,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.py",
+          "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+        }
+      },
+      {
+        "attempt_for_runtime": 2,
+        "exitcode": 0,
+        "log_ref": {
+          "bytes": 4445,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/python312-attempt2-final.log",
+          "sha256": "d53d9088fbd8ec53342095750a68e4ea832a5c58082feb502e8d202d07c3e2bc"
+        },
+        "receipt": {
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "console_bytes_before_receipt": 4178,
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "network_calls": 0,
+          "python": "3.12.14",
+          "read_reservation_bytes": 676540,
+          "successful": true,
+          "temp_write_bytes": 184605,
+          "tests_run": 29
+        },
+        "runner_ref": {
+          "bytes": 30370,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.py",
+          "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+        },
+        "source_binding_limit": "Attempt1 snapshots preserved after3.11 and before3.12, no intervening source changes; final snapshots preserved before both second invocations. Logs do not themselves embed code hashes.",
+        "test_ref": {
+          "bytes": 32270,
+          "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.py",
+          "sha256": "f3ba0b75b883545194696955d067a11d44a96fe90f9736edbf5fca968d27d631"
+        }
+      }
+    ]
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Separate independent lead review of exact candidate and test hashes is pending.",
+    "No real collection successor has been released/executed.",
+    "Current exact source-extra environment gap remains unchanged."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Resolve both import spellings from exact local authored namespace",
+      "status": "PASS_AUTHOR_PURE_MODELS_BOTH_MINORS"
+    },
+    {
+      "criterion": "Refuse foreign and aliased namespace/path/cache and frozen-name imports",
+      "status": "PASS_AUTHOR_PURE_NEGATIVES_BOTH_MINORS"
+    },
+    {
+      "criterion": "Retain context for ordinary-child lazy imports and restore parent contexts",
+      "status": "PASS_AUTHOR_MOCKED_LIFETIME_AND_RESTORATION"
+    },
+    {
+      "criterion": "Preserve original exclusions/barrier/frozen guard sources and past evidence",
+      "status": "PASS_AUTHOR_STATIC_BINDING_CHECKS"
+    },
+    {
+      "criterion": "Independent review of namespace boundary",
+      "status": "PENDING_REVIEW"
+    },
+    {
+      "criterion": "Historical actual collection successor completes",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Current-CI/full-suite qualification",
+      "status": "NOT_RUN"
+    }
+  ],
+  "date": "2026-11-16",
+  "decision": "AUTHOR_29_PURE_CHECKS_PASS_BOTH_MINORS_PENDING_INDEPENDENT_REVIEW_NO_COLLECTION_RELEASE",
+  "diff_refs": [
+    {
+      "bytes": 7805,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-candidate.diff",
+      "sha256": "ebde99b1ce1f68c206625ed7509f908c614b4cda2cb21f61c69c913144d71e25"
+    },
+    {
+      "bytes": 10040,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-candidate.diff",
+      "sha256": "970bd5ed702f9fa95932470a00a36fd5e3840368f28dd1f27355f6decd265cce"
+    }
+  ],
+  "guards_and_scope": {
+    "Git_STATUS_edits": 0,
+    "e01_target_admission": false,
+    "foreign_installed_tests_fallback": false,
+    "network_package_actions": 0,
+    "ordinary_test_tree_shape": "Canonical root and tests directory with no tests/__init__.py; no new root or tests initializer created. A changed/regular tests package requires review rather than silent reinterpretation.",
+    "original_collect_body_unchanged": true,
+    "original_frozen_files_unchanged": [
+      {
+        "bytes": 19017,
+        "path": "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py",
+        "sha256": "83969d6ad8086d140bbeaf44880f79a68774fdca3b7e9c76965c8857114ed760"
+      },
+      {
+        "bytes": 20835,
+        "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py",
+        "sha256": "0060994e89ed4e8c62a4a9b734aba4389f9d81878f882e5b88b1a0134f2e002a"
+      },
+      {
+        "bytes": 16128,
+        "path": "tests/test_e01_offline_import_protocol_methods_v1_20261116.py",
+        "sha256": "44589c9f6076d8589eb3a4da2d43c3a3fa18b296a3193c0f98aa4cabfb93324a"
+      },
+      {
+        "bytes": 28254,
+        "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py",
+        "sha256": "61358fc6b1f2285dac745bf207908372fd2525cf4a3cb169008b5feb4a6affb8"
+      },
+      {
+        "bytes": 34253,
+        "path": "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py",
+        "sha256": "439a2d46ebcfc57c295a95e4fa353691246ab1e2ea0db1feebff41f4a3ba96a2"
+      },
+      {
+        "bytes": 17601,
+        "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py",
+        "sha256": "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad"
+      }
+    ],
+    "paid_inference_or_budget_changes": false,
+    "unchanged_functions_and_classes": [
+      "OrdinaryLoader",
+      "CollectionBarrier",
+      "verified_source",
+      "case_inventory",
+      "plan",
+      "socket_observation",
+      "historical_admission",
+      "run_frozen",
+      "supervise",
+      "parse_receipt",
+      "validate_coverage",
+      "child_environment",
+      "run_parent",
+      "main"
+    ]
+  },
+  "invocation_authority": "Both2/runtime author allowances consumed. Commands identify reproduction only, not authority to replay original scopes or start real collection. Separate review precedes any newly bounded historical successor.",
+  "observed_problem": "One preserved historical3.12 collection child failed at tests/test_benchmark_viewer.py importing tests.test_benchmark_export. That is direct evidence of a namespace import error. Missing repository-root visibility is a static/inferred explanation; the failed child did not capture its full sys.path vector, which remains unasserted.",
+  "predecessors_preserved": {
+    "handoffs_and_consumed_scope": [
+      {
+        "bytes": 18060,
+        "path": "reports/CI_COLLECTION_ISOLATION_V1_HANDOFF_20261116.json",
+        "sha256": "27f02914c6b5963d2fd7b2467f07e0caf148dee6cbb0bf7a4387ba7f0f236ae9"
+      },
+      {
+        "bytes": 12635,
+        "path": "reports/CI_COLLECTION_ISOLATION_V1_1_HANDOFF_20261116.json",
+        "sha256": "0b393fabca9c2bffb34552aaa07f2af5170160c94d8efb387913e5c8667a754c"
+      },
+      {
+        "bytes": 13124,
+        "path": "reports/CI_ORDINARY_COLLECTION_READINESS_20261116.json",
+        "sha256": "8443e311e9dfadb9a7bd4dd206650757d6b6b99f68d93fe1a4a9d006c8c1622e"
+      },
+      {
+        "bytes": 14899,
+        "path": "reports/CI_HISTORICAL_ORDINARY_COLLECTION_20261116.json",
+        "sha256": "e81d11e6450a38d293375279bfc3c890ba7d55236143657f1ce5218bfe5c0367"
+      }
+    ],
+    "runner": {
+      "bytes": 24413,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/runner-predecessor.py",
+      "sha256": "9882cc86841b222f436c3210dd597bcf8d22623f08b31bdf95c5e691c940131b"
+    },
+    "test": {
+      "bytes": 22968,
+      "path": "reports/evidence_ci_namespace_remedy_v1_2_20261116/test-predecessor.py",
+      "sha256": "ca89179959346e04da76d789866446a9e39148acbe47c2e9e62d89c95455f3b7"
+    }
+  },
+  "resulting_behavior": [
+    "Ordinary context explicitly binds canonical verified root/tests paths and a locally created tests namespace. It resolves both bare fixture names and tests-qualified imports to that exact test tree.",
+    "Preflight checks existing owned sys.modules entries and PathFinder specs for every matching name on current search paths; foreign namespace portions, regular packages, cached foreign/unbound modules, bare-name shadowing and aliases fail before admission.",
+    "A child-local finder bounds future owned imports to the verified namespace paths and refuses both bare and qualified frozen names. Preloaded frozen names are refused. The exact original filename execution barrier and six discovery exclusions remain unchanged.",
+    "The ordinary child holds the import context through collection AND subsequent runner execution. Public collect_ordinary uses a bounded context around collection; both use the identical original barrier/loader body in a private helper. No frozen-group branch enters this ordinary-only context.",
+    "On exit, restore path/meta-path objects and values, importer cache, prior owned sys.modules entries and their shallow module attributes; remove newly imported owned modules. Temporary authored regression contexts also isolate/restore an existing ordinary child namespace."
+  ]
+}
