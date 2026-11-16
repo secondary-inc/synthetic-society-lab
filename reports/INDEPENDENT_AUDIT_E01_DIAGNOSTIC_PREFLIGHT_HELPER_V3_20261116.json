@@ -1,0 +1,105 @@
+{
+  "actual_release": false,
+  "auditor_actual_input_functions": 0,
+  "auditor_credential_or_owner_accesses": 0,
+  "auditor_implementation_edits": 0,
+  "auditor_main_invocations": 0,
+  "auditor_network_requests": 0,
+  "auditor_old_target_reads": 0,
+  "auditor_private_reference_reads": 0,
+  "blocking_helper_findings": [],
+  "cost_USD": 0,
+  "date": "2026-11-16",
+  "decision": "PASS_EXACT_V3_STATIC_DELTA_CONDITIONAL_ON_NEW_RUNNER_PRODUCTION_ACCEPTANCE",
+  "findings": [
+    "Entire AST matches acceptedv2 after normalizing only scope/report/two kind identifiers and PINNED assignment. No proof/guard/output/resource/control-flow logic changes.",
+    "Newrunner/config declared sizes/SHA256 match exact inspected files. Newrunner methods identifier matches new config path.",
+    "Called snapshot/validate_methods/verify_inputs/owned_size signatures unchanged. verify_inputs returns same helper-consumed binding/binding_ref/wheels/requirements/prior interface, with extended prior provenance.",
+    "Snapshot uses all seven preserved roots, including diagnosticv1. owned_size includes those roots and the new output, caps each diagnostic scope16MiB and combinedowned805306368B/16384entries. Helper reserves occupied+16MiB under same cap.",
+    "No actual diagnostic output/target/packet creation or imported pip/package/child call added to helper. Scope/report identifiers are freshv3; create-once output policy unchanged.",
+    "Configuration proof function unchanged: actual pinned newrunner PATH AST accepted by pure stub checks; malformed/missing/duplicate/injectedPATH and wrongbase/MIME/refusal cases fail.",
+    "63 Python3.12 isolated authored/AST checks pass. Neither helpermain nor realrunner/inputfunctions invoked."
+  ],
+  "kind": "INDEPENDENT_E01_DIAGNOSTIC_PREFLIGHT_HELPER_V3_MECHANICAL_DELTA_REVIEW",
+  "pins": {
+    "configs/e01_pypdf701_guard_diagnostic_v2_20261116.json": {
+      "bytes": 6817,
+      "sha256": "c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3"
+    },
+    "data/processed/e01_guard_diagnostic_preflight_v2_20261116.py": {
+      "bytes": 9049,
+      "sha256": "773bc7aa4a18ecdd211f040bc5ed4116285a39fa1ad2f1f38c242ac6aa38e81f"
+    },
+    "data/processed/e01_guard_diagnostic_preflight_v3_20261116.py": {
+      "bytes": 9049,
+      "sha256": "d94d91a6616577bf55d1cf6b191cf24f703a6170ba9a37cad727cf7cf1017291"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_DIAGNOSTIC_PREFLIGHT_HELPER_V2_20261116.json": {
+      "bytes": 7603,
+      "sha256": "db2138ecb0a6f391da637f0bbdb93828434ebaec10cc625b970f973ba9f7a72d"
+    },
+    "scripts/diagnose_e01_pypdf701_guard_v2.py": {
+      "bytes": 49178,
+      "sha256": "6582297cd01bc2131a4cc17ea1e0d384c15b56fee6fa07620dada9a2c7c11c49"
+    },
+    "scripts/install_e01_pypdf701_runtime_v1_5.py": {
+      "bytes": 64638,
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+    }
+  },
+  "task_contract": {
+    "COST_USD_ACTUAL_OR_ZERO": 0,
+    "FILES_CHANGED": [
+      "reports/INDEPENDENT_AUDIT_E01_DIAGNOSTIC_PREFLIGHT_HELPER_V3_20261116.json",
+      "reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/authored_static_checks.py",
+      "reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/checks.json",
+      "reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/v2_to_v3.patch"
+    ],
+    "NEXT_UNBLOCKED_TASK": "After exact newrunner production acceptance, lead may schedule one fresh-process metadata-only v3 invocation under unchanged bounds and preserve closed outputs for independent review. This static receipt creates no actual release.",
+    "OUTPUT_ARTIFACTS": [
+      {
+        "bytes": 9084,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/authored_static_checks.py",
+        "sha256": "ef94ef1239587e19f4c351524d652adf143e3ac1f031b666d87a04426169f117"
+      },
+      {
+        "bytes": 2802,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/checks.json",
+        "sha256": "ca24583f59be86625ea25afe312710f6da2d7a5022335ba0001c460922d912d0"
+      },
+      {
+        "bytes": 2184,
+        "path": "reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/v2_to_v3.patch",
+        "sha256": "319512398cca981d65a04ce98d45c7969e19802c8293045de74c03b896ae24ad"
+      }
+    ],
+    "REPRODUCTION_COMMANDS": [
+      "/Users/joshua/.local/bin/python3.12 /Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_e01_diagnostic_preflight_helper_v3_20261116/authored_static_checks.py"
+    ],
+    "RISKS_AND_LIMITATIONS": [
+      "Acceptance is exact9049B/d94d91a6v3 helper and its two declared newpins, not runner production acceptance, actual preflight result or diagnostic release.",
+      "V2 verify_inputs now includes preserved diagnosticv1 evidence; output prior-allocation schema grows but helper passes it through. Three65536Boutput and196608Btotal bounds remain; oversize fails rather than expanding allowance.",
+      "Sevenpreserved-root snapshots and eight-root occupancy use the new runner functions; extra bound reads remain inside existing536870912B Reader cap and process30s/CPU7soft8hard. Cap exhaustion must fail, never justify automatic expansion/retry.",
+      "Source module import chain adds prior-runner/pure observer code-loading overhead, pinned within new runner/source closure. Bound Reader512MiB does not cap all stdlib/source-loading I/O.",
+      "Prescribed childPATH is source-AST policy, not observedexecution. Current base/MIME proof still requires actual metadata invocation; tests use authored stubs and read actual fixed source expressions only.",
+      "Prior helper caveats remain: fresh isolatedbound3.12process; audit/finder are not full adversarial sandbox, cached-module/sticky-denial/concurrent-writer limits; metadata snapshot not all-tree content digest; interruption consumes one-shot scope.",
+      "No prior v1/v2 helper or findings changed or replayed. No metadata PASS can qualify installation/runtime/source or authorize package/pip/child/network/owner actions."
+    ],
+    "SOURCE_DATA_AND_LICENSE_NOTES": "Helper/runner/config/frozen source text and prior public helper audit only. Pure stubbed configuration calls and AST analysis; no old scopes/targets, real wheel/runtime/control reference bodies, sourcePDF, downloaded-package import, credential/owner/network accesses.",
+    "TASK_ID": "E01_DIAGNOSTIC_PREFLIGHT_HELPER_V3_20261116",
+    "TESTS_RUN_AND_RESULTS": {
+      "Python": "3.12",
+      "actual_main_invocations": 0,
+      "actual_release": false,
+      "decision": "PASS_MECHANICAL_STATIC_AND_ADVERSE_DELTA_ONLY",
+      "entire_AST_normalized_comparison": "PASS_only_four_identifiers_and_PINNED",
+      "focused_static_and_authored_checks": 63,
+      "real_input_function_invocations": 0,
+      "real_runner_imports": 0
+    },
+    "UNRESOLVED_BLOCKERS": [
+      "Exact49178B/6582297c runner independent production acceptance is separately assigned and must PASS before helper invocation.",
+      "Actual current v3 metadata outcome, separate particular diagnostic release and later runtime/source qualification remain NOT_RUN."
+    ]
+  }
+}

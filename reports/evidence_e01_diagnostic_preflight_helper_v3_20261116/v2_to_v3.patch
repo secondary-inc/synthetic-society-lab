@@ -1,0 +1,33 @@
+--- data/processed/e01_guard_diagnostic_preflight_v2_20261116.py	2026-11-16 06:53:29
++++ data/processed/e01_guard_diagnostic_preflight_v3_20261116.py	2026-11-16 07:31:14
+@@ -14,11 +14,11 @@
+ import time
+ 
+ ROOT = Path(__file__).absolute().parents[2]
+-SCOPE = ROOT / 'data/processed/e01_guard_diagnostic_preflight_v2_20261116'
+-REPORT = ROOT / 'reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V2_20261116.json'
++SCOPE = ROOT / 'data/processed/e01_guard_diagnostic_preflight_v3_20261116'
++REPORT = ROOT / 'reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V3_20261116.json'
+ PINNED = {
+-    'scripts/diagnose_e01_pypdf701_guard_v1.py': (37439, 'c71209bcb3a8d0ec485c28dd5f3249d6b34faafd30677dcc908cbf1a656f3f31'),
+-    'configs/e01_pypdf701_guard_diagnostic_v1_20261116.json': (3624, '14b336eb9ac616c99f73023e6105e9903fc3521f53cc42b5939e42ae0dc2bca4'),
++    'scripts/diagnose_e01_pypdf701_guard_v2.py': (49178, '6582297cd01bc2131a4cc17ea1e0d384c15b56fee6fa07620dada9a2c7c11c49'),
++    'configs/e01_pypdf701_guard_diagnostic_v2_20261116.json': (6817, 'c85b5c887aadd88e356e63aaf8864f59f2f10005c9f036804529f95114e877b3'),
+ }
+ OUTPUTS = {SCOPE / 'STARTED.json', SCOPE / 'RECEIPT.json', REPORT}
+ READ_LIMIT = 536870912
+@@ -113,12 +113,12 @@
+     sys.addaudithook(audit)
+     sys.meta_path.insert(0, NoPackages())
+     SCOPE.mkdir(mode=0o700, exist_ok=False)
+-    save(SCOPE / 'STARTED.json', {'kind': 'E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V2',
++    save(SCOPE / 'STARTED.json', {'kind': 'E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V3',
+         'UTC': datetime.now(timezone.utc).isoformat(), 'pins': PINNED,
+         'wall_seconds': 30, 'CPU_soft_hard': [7, 8], 'bound_reader_bytes': READ_LIMIT,
+         'control_write_bytes': CONTROL_LIMIT, 'preflight_invocations': 1,
+         'separate_from_diagnostic_child_allocation': True})
+-    result = {'kind': 'LEAD_E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V2',
++    result = {'kind': 'LEAD_E01_GUARD_DIAGNOSTIC_READONLY_PREFLIGHT_V3',
+         'status': 'FAILED_METADATA_ONLY_NO_DIAGNOSTIC', 'pins': PINNED,
+         'network_requests': 0, 'model_calls': 0, 'child_commands': 0,
+         'pip_imports': 0, 'downloaded_package_imports': 0, 'research_source_reads': 0,

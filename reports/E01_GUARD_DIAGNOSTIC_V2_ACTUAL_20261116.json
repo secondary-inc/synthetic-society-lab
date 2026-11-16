@@ -1,0 +1,97 @@
+{
+  "MIME_receipt": {
+    "init_files": null,
+    "initialized": true,
+    "knownfiles": [],
+    "mode": "STDLIB_BUILTIN_TYPES_ONLY_DARWIN"
+  },
+  "actual_commands_started": 1,
+  "actual_exit_code": 1,
+  "actual_model_calls": 0,
+  "actual_packet": {
+    "bytes": 595,
+    "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-packet-20261116.json",
+    "sha256": "a38f32592d410d8f117b6345dac6efb3bf177c3443a36dd4b76cf34c40903c12"
+  },
+  "cost_USD": 0,
+  "elapsed_scope": "Lead tool-reported duration, not an independently measured runtime field",
+  "fictional_target_exists": false,
+  "fourth_installation_attempted": false,
+  "guest_guard_violations": 1,
+  "guest_result": {
+    "bytes": 422,
+    "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-result.json",
+    "sha256": "12d34712a13aac07a9070b1f100f0d491afef52567bf1184b1bda1aa5d8bce4a"
+  },
+  "independent_actual_review": "PENDING",
+  "installation_accepted": false,
+  "interpretation": [
+    "One socket.__new__ event was classified SOCKET_CONSTRUCT and denied. No bind/connect/resolve event appears in the bounded journal; construction failed before subsequent operations could occur.",
+    "The event class does not identify the call site, address family, address, intended destination, successful traffic or historical installation cause.",
+    "The pinned urllib3 local IPv6 support probe remains a plausible static candidate, not confirmed actual attribution.",
+    "The original refusal counter and failed postcondition remain enforced; old coarse SOCKET evidence is not relabeled. All three prior installations remain unaccepted."
+  ],
+  "kind": "LEAD_CLOSED_E01_DIAGNOSTIC_V2_NOT_INDEPENDENT_ACCEPTANCE",
+  "limits_and_usage": {
+    "allocation": {
+      "cumulative_main_commands": 11,
+      "cumulative_observed_CPU_seconds": 160,
+      "cumulative_wall_seconds": 420,
+      "new_main_commands": 1,
+      "new_observed_CPU_seconds": 20,
+      "new_wall_seconds": 30,
+      "prior_main_commands": 10,
+      "prior_observed_CPU_seconds": 140,
+      "prior_wall_seconds": 390
+    },
+    "captured_command_output_bytes": 2436,
+    "maximum_polled_owned_logical_bytes": 25834646,
+    "observed_self_and_reaped_CPU_seconds": 0.730766,
+    "parent_bound_reference_read_bytes_charged": 86000455,
+    "reaped_child_CPU_seconds": 0.198571
+  },
+  "next": "Independent actual review and a pure/mock narrow offline-probe-suppression proposal. No socket permission waiver, consumed launcher replay, automatic further diagnostic, fourth installation or P3 release.",
+  "observed_at_UTC": "2026-11-16T12:41:44.839472+00:00",
+  "old_metadata_snapshot": {
+    "entries_including_roots": 531,
+    "sha256": "fece1bb00bda7ad26efa4927a66e3d057b9df48bb6de161800656265aebec86b"
+  },
+  "old_state_preservation": "Runner revalidated old control chains and seven-root metadata before terminal; independent closed actual review pending.",
+  "particular_review": {
+    "bytes": 21665,
+    "path": "reports/INDEPENDENT_AUDIT_E01_GUARD_DIAGNOSTIC_V2_PARTICULAR_20261116.json",
+    "sha256": "410055439875f8f2583d67c162d0852f0f4739c2a52774a57255fa0d8c859bdc"
+  },
+  "pip_completed_dry_run": true,
+  "preflight": {
+    "bytes": 20313,
+    "path": "reports/E01_GUARD_DIAGNOSTIC_PREFLIGHT_V3_20261116.json",
+    "sha256": "9872c105da2eb4196fc33ebe68d30f19ec6397f185fc2082962afef305c7ecc5"
+  },
+  "recorded_refusal": {
+    "counter_saturated": false,
+    "dropped_events": 0,
+    "events": [
+      {
+        "code": "GUEST_NETWORK_HELPER_OR_CTYPES_DENIED",
+        "operation": "SOCKET_CONSTRUCT",
+        "sequence": 1
+      }
+    ],
+    "kind": "BOUNDED_GUEST_REFUSAL_JOURNAL_V2",
+    "total_events": 1
+  },
+  "refusal_journal": {
+    "bytes": 209,
+    "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/guest-refusals.json",
+    "sha256": "a6d8b5361159399537749f6992199f9620203afa03b3964da20d221c1de8beb9"
+  },
+  "runtime_or_source_qualification": false,
+  "status": "REFUSAL_OBSERVED",
+  "terminal": {
+    "bytes": 14847,
+    "path": "data/processed/e01_pypdf701_build_v1/diagnostic-v2-20261116/TERMINAL.json",
+    "sha256": "6898bbea458abfd769fcd6bcef2418afd50f76c7db7b0e83181340b8218a030b"
+  },
+  "tool_reported_elapsed_seconds": 0.601726875
+}
