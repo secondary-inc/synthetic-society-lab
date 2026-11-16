@@ -1,0 +1,100 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/OPENROUTER_CREDITS_ACCESS_DOCUMENTATION_20261116.json",
+    "reports/evidence_openrouter_credits_access_documentation_20261116/"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead separately reviews this source-backed access clarification and records the owner-admin billing/account check. No implementation or authenticated execution is needed for this task.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 1428,
+      "path": "reports/evidence_openrouter_credits_access_documentation_20261116/official-documentation-observation.json",
+      "sha256": "bd485261d13086d4d28fac92528a0a94a18f79b3edc36ce62d51faa11590f7b9"
+    },
+    {
+      "bytes": 1417,
+      "path": "reports/evidence_openrouter_credits_access_documentation_20261116/static-diagnostic-comparison.json",
+      "sha256": "93b76fe42b864dc72a63868eefd56f0bda729dc066616d4f24c7e02794388289"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": {
+    "documentation": "One primary page read already performed; no authenticated reproduction command supplied.",
+    "local_review": "Inspect bound public report and diagnostic source as text/AST only; do not invoke its main or credential reader."
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "Documentation requirement is not a current account/credit/capability response.",
+    "The safe diagnostic projection cannot recover fields it did not retain; no raw/secret data was inspected to infer permissions.",
+    "Neither a management requirement nor a browser role failure identifies the original402cause."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Official public API documentation and existing safe repository report/code only. Two short access notices retained, no complete page or provider/account/credential response.",
+  "TASK_ID": "OPENROUTER_CREDITS_ACCESS_DOCUMENTATION_20261116",
+  "TESTS_RUN_AND_RESULTS": "Static AST comparison verifies a single GET/key request route and no retained management field. No runtime, credential or account test.",
+  "UNRESOLVED_BLOCKERS": [
+    "Correct-account billing balance/restrictions and key/account association require an appropriately authorized administrator.",
+    "Saved key management capability is not established; no additional privileged probe performed."
+  ],
+  "actual_activity": {
+    "authenticated_API_calls": 0,
+    "credential_reader_execution": 0,
+    "external_publication": 0,
+    "financial_owner_actions": 0,
+    "model_calls": 0,
+    "other_web_searches_clicks": 0,
+    "project_source_execution": 0,
+    "public_documentation_web_opens": 1,
+    "purchases_or_account_access_changes": 0,
+    "secret_or_key_value_reads": 0,
+    "source_STATUS_Git_mutations": 0
+  },
+  "comparison_to_existing_evidence": {
+    "current_balance": "UNKNOWN_NOT_OBSERVED",
+    "diagnostic_source_ref": {
+      "bytes": 5754,
+      "path": "scripts/diagnose_openrouter_key_once_20261116.py",
+      "sha256": "d8f992f5b3944de80982595a91c7b8a8666933e649356903591fd04526676ee1"
+    },
+    "existing_report_ref": {
+      "bytes": 2982,
+      "path": "reports/OPENROUTER_KEY_AND_ACCOUNT_DIAGNOSIS_20261116.json",
+      "sha256": "9fcf29c9d02d37ea25e603a7a0f794b36d214dbe3a88627e9041c454a417f823"
+    },
+    "original_HTTP402_cause": "UNKNOWN_NOT_DETERMINED",
+    "prior_browser_result": "Existing report records Secondary browser role403 and excludes an unrelated Personal balance. Browser/key account identity was not independently linked. This worker did not open that account.",
+    "prior_key_result": "Existing producer report records one200GET/api/v1/key with key-limit headroom. This worker did not replay or independently authenticate it.",
+    "projection_limit": "Source omits management capability from its retained safe fields; neither management status nor non-management status is proven.",
+    "static_comparison_ref": {
+      "bytes": 1417,
+      "path": "reports/evidence_openrouter_credits_access_documentation_20261116/static-diagnostic-comparison.json",
+      "sha256": "93b76fe42b864dc72a63868eefd56f0bda729dc066616d4f24c7e02794388289"
+    }
+  },
+  "concrete_owner_admin_check": [
+    "An appropriately authorized administrator should use the correct Secondary organization/workspace to verify its billing/credit access, prepaid balance and applicable workspace/member/key/in-flight restrictions.",
+    "Confirm that the saved project key belongs to that same account/workspace. Any later API-based billing inspection must have verified management capability and a separately bounded authorization; do not send keys into this report.",
+    "Return only non-secret status and relevant timestamps. No top-up, key creation/rotation, role change, model replay or financial-owner mutation is requested or performed here."
+  ],
+  "date": "2026-11-16",
+  "decision": "MANAGEMENT_REQUIREMENT_CONFIRMED_DOCUMENTATION_ONLY_NO_AUTHENTICATED_CREDITS_CALL_NEEDED",
+  "documentation_finding": "The current official reference requires a management key for GET/api/v1/credits and includes a403example for non-management keys. It describes purchased/used totals; sample payloads are not account evidence.",
+  "independent_review": "PENDING_LEAD_REVIEW; scope does not certify balance,402cause or execution readiness.",
+  "preserved_boundaries": {
+    "browser403_is_not_proof_of_API_key_capability": true,
+    "human_anchor_request_scopes": "Unchanged closed scopes; this is a separate one-page public documentation check, not another human-anchor acquisition.",
+    "key_authentication_is_not_account_balance": true,
+    "no_model_request_replayed": true,
+    "no_new_key_indicated_by_existing_authentication_evidence": true,
+    "spending_caps_or_holds_changed": false
+  },
+  "primary_source": {
+    "evidence_ref": {
+      "bytes": 1428,
+      "path": "reports/evidence_openrouter_credits_access_documentation_20261116/official-documentation-observation.json",
+      "sha256": "bd485261d13086d4d28fac92528a0a94a18f79b3edc36ce62d51faa11590f7b9"
+    },
+    "retrieval_count": 1,
+    "retrieval_date_client": "2026-11-16",
+    "type": "Official OpenRouter API reference",
+    "url": "https://openrouter.ai/docs/api/api-reference/credits/get-remaining-credits"
+  },
+  "why_no_authenticated_credits_call": "Management authority for the saved project key is unverified. No privileged probe is needed to answer this documentation question. A failed probe would not establish balance; success or failure must not be presumed from authentication alone. The prior one-shot diagnostic is consumed, and credentials do not authorize its expansion."
+}

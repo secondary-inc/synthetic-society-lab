@@ -1,0 +1,33 @@
+{
+  "kind": "P01_NARROW_SOURCE_DIFF_CHECK",
+  "result": "PASS_STATIC_SCOPE_ONLY",
+  "caller_changes": "CODE identity version plus one post-drain/wait work-clock check and explanatory comment only.",
+  "unchanged_structures": [
+    "SCOPE",
+    "LIMITS",
+    "GATES",
+    "HARNESS_REF",
+    "COMPONENT_REVIEW",
+    "RUNTIME",
+    "TOOL_REF",
+    "run_actual",
+    "PosixBackend",
+    "DiskJournal",
+    "validate_packet",
+    "validate_release",
+    "preparation_packet",
+    "_one_shot",
+    "run_mock"
+  ],
+  "old_all_output_pins_unchanged": 15,
+  "old_source_ref": {
+    "path": "scripts/e01_pypa_fixture_g03_caller_candidate_v1_20261116.py",
+    "bytes": 18076,
+    "sha256": "a1f03d2ad23526748d3784d71541df39c782449bb5e8315d8f1e0deedebe2514"
+  },
+  "new_source_ref": {
+    "path": "scripts/e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py",
+    "bytes": 18224,
+    "sha256": "1d956931da7d11cf58cfc540cd7b6b8634aecffc34e5c9b9aa4373be92879abc"
+  }
+}

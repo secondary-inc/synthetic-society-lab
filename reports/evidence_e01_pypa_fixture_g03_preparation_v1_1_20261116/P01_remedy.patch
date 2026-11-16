@@ -1,0 +1,107 @@
+--- scripts/e01_pypa_fixture_g03_caller_candidate_v1_20261116.py
++++ scripts/e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py
+@@ -15,7 +15,7 @@
+ import time
+ 
+ ROOT=Path(__file__).absolute().parents[1]
+-CODE='scripts/e01_pypa_fixture_g03_caller_candidate_v1_20261116.py'
++CODE='scripts/e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py'
+ SCOPE='ONE_FRESH_312_GENERATED_FIXTURE_CHILD_G03_V1'
+ LIMITS={'child_wall_seconds':120,'child_CPU_seconds':120,'technical_read_bytes':67108864,
+     'combined_write_bytes':33554432,'child_write_bytes':32505856,'parent_write_bytes':1048576,
+@@ -168,6 +168,8 @@
+             if candidate is not None:
+                 need(type(candidate) is dict and candidate.get('reaped') is True,'G03_WAIT_RECEIPT')
+                 wait=candidate
++            # A final drain/wait can consume the remaining work window.
++            if reason is None and now()-start>=117:reason='WORK_WALL_CAP'
+             if reason or (wait is not None and backend.output_complete):break
+         else:reason='POLL_CAP'
+     except BaseException as error:primary=error;reason='SUPERVISOR_PRIMARY_ERROR'
+--- tests/test_e01_pypa_fixture_g03_caller_candidate_v1_20261116.py
++++ tests/test_e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py
+@@ -22,7 +22,7 @@
+ import unittest
+ 
+ ROOT=Path(__file__).resolve().parents[1]
+-CODE=ROOT/'scripts/e01_pypa_fixture_g03_caller_candidate_v1_20261116.py'
++CODE=ROOT/'scripts/e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py'
+ 
+ def load_own(name,path):
+     path=Path(path).resolve();raw=path.read_bytes()
+@@ -231,6 +231,75 @@
+         with self.assertRaisesRegex(m.Refused,'G03_RECORD_NAME'):j.new('../OUTSIDE',b'A')
+ 
+ 
++class PostDrainDeadlineRemedyTests(unittest.TestCase):
++    def flow(self,backend,clock,journal=None):return m.run_mock(*authored_context(),backend,journal,clock=clock)
++    def test_matched_final_drain_work_and_total_boundaries(self):
++        rows=[]
++        for edge,expected in ((116.999,None),(117.0,'WORK_WALL_CAP'),(118.0,'WORK_WALL_CAP'),
++                              (120.0,'WORK_WALL_CAP'),(120.5,'TOTAL_WALL_CAP_OBSERVED')):
++            clock=Clock();b=FakeBackend(clock,events=[[('stdout',b'AUTHORED_FINAL_DRAIN')]],step=edge,exit_after=1)
++            result,j=self.flow(b,clock)
++            self.assertEqual(result['reason'],expected);self.assertTrue(result['reaped']);self.assertEqual(b.kills,0)
++            self.assertEqual(result['status'],'CAPTURED_PARENT_ONLY' if expected is None else 'FAILED_UNACCEPTED')
++            self.assertEqual(j.files['STDOUT.bin'],b'AUTHORED_FINAL_DRAIN');self.assertEqual(b.closes,1)
++            self.assertFalse(result['G03_acceptance']);self.assertFalse(result['actual_fixture_acceptance'])
++            rows.append({'edge':edge,'reason':result['reason'],'status':result['status'],'fake_kills':b.kills,
++                'reaped':result['reaped'],'elapsed':result['wall_seconds_start_to_cleanup']})
++        print(json.dumps({'kind':'G03_V1_1_MATCHED_POST_DRAIN_BOUNDARIES','rows':rows,'actual_children':0},sort_keys=True))
++    def test_wait_itself_crossing_threshold_is_sampled_before_capture(self):
++        for wait_advance,expected in ((.499,None),(.5,'WORK_WALL_CAP'),(1.5,'WORK_WALL_CAP')):
++            clock=Clock()
++            class WaitDelay(FakeBackend):
++                def wait_nonblock(self):
++                    value=super().wait_nonblock();self.clock.value+=wait_advance;return value
++            result,j=self.flow(WaitDelay(clock,step=116.5),clock)
++            self.assertEqual(result['reason'],expected);self.assertTrue(result['reaped'])
++    def test_crossing_threshold_while_unreaped_kills_once_and_preserves_output(self):
++        clock=Clock();b=FakeBackend(clock,events=[[('stdout',b'AUTHORED_PARTIAL')]],step=117,exit_after=100)
++        result,j=self.flow(b,clock)
++        self.assertEqual(result['reason'],'WORK_WALL_CAP');self.assertEqual(b.kills,1);self.assertTrue(result['reaped'])
++        self.assertEqual(j.files['STDOUT.bin'],b'AUTHORED_PARTIAL');self.assertEqual(b.drains,1)
++        self.assertLessEqual(result['wall_seconds_start_to_cleanup'],120)
++    def test_existing_console_refusal_is_not_replaced_by_work_threshold(self):
++        clock=Clock();b=FakeBackend(clock,events=[[('stdout',b'A'*65536)] for _ in range(5)],step=23.4,exit_after=100)
++        result,j=self.flow(b,clock)
++        self.assertEqual(result['reason'],'CONSOLE_CAP');self.assertEqual(b.kills,1)
++        self.assertEqual(len(j.files['STDOUT.bin']),262144)
++    def test_post_wait_clock_exception_survives_final_clock_and_close_errors(self):
++        primary=RuntimeError('AUTHORED_POST_WAIT_PRIMARY');secondary=ValueError('AUTHORED_FINAL_CLOCK')
++        class PostWaitClock(Clock):
++            def __init__(self):super().__init__();self.calls=0
++            def __call__(self):
++                self.calls+=1
++                if self.calls==3:raise primary
++                if self.calls>3:raise secondary
++                return self.value
++        class CloseError(FakeBackend):
++            def close(self):self.closes+=1;raise OSError('AUTHORED_CLOSE_SECONDARY')
++        clock=PostWaitClock();b=CloseError(clock,events=[[('stdout',b'AUTHORED_POST_WAIT')]])
++        j=m.MemoryJournal()
++        with self.assertRaises(RuntimeError) as caught:self.flow(b,clock,j)
++        self.assertIs(caught.exception,primary);self.assertEqual(b.closes,1);self.assertEqual(b.kills,0)
++        self.assertEqual(j.files['STDOUT.bin'],b'AUTHORED_POST_WAIT');self.assertIn('FAILURE.json',j.files)
++        self.assertNotIn(b'AUTHORED_POST_WAIT_PRIMARY',j.files['FAILURE.json'])
++    def test_post_wait_clock_regression_refuses_reaped_capture(self):
++        clock=Clock()
++        class Regress(FakeBackend):
++            def wait_nonblock(self):
++                value=super().wait_nonblock();self.clock.value=-1;return value
++        j=m.MemoryJournal();b=Regress(clock)
++        with self.assertRaisesRegex(m.Refused,'G03_CLOCK_REGRESSION'):self.flow(b,clock,j)
++        self.assertIn('FAILURE.json',j.files);self.assertEqual(b.kills,0)
++    def test_reaped_cleanup_at120_retains_work_failure_above120_total_failure(self):
++        for delay,expected in ((3.0,'WORK_WALL_CAP'),(3.5,'TOTAL_WALL_CAP_OBSERVED')):
++            clock=Clock()
++            class CloseDelay(FakeBackend):
++                def close(self):self.clock.value+=delay;super().close()
++            result,j=self.flow(CloseDelay(clock,step=117),clock)
++            self.assertEqual(result['reason'],expected);self.assertEqual(result['status'],'FAILED_UNACCEPTED')
++            self.assertTrue(result['reaped'])
++
++
+ class CollectionAndSafetyTests(unittest.TestCase):
+     def test_import_installs_no_hooks_limits_or_child(self):
+         calls=[];original=(sys.addaudithook,signal.signal,resource.setrlimit)

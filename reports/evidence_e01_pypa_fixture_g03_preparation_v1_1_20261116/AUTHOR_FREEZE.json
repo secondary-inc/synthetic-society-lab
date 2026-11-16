@@ -1,0 +1,176 @@
+{
+  "G03": "BLOCKED_NOT_RUN",
+  "actual_child_backend_tool_hooks_installs": 0,
+  "actual_entry": "UNCONDITIONALLY_REFUSES",
+  "caller_ref": {
+    "bytes": 18224,
+    "path": "scripts/e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py",
+    "sha256": "1d956931da7d11cf58cfc540cd7b6b8634aecffc34e5c9b9aa4373be92879abc"
+  },
+  "kind": "G03_V1_1_P01_AUTHOR_FREEZE",
+  "packet_canonical_sha256": "0e48abd9a8bd2359f58abc99b8b54990ea3ff868963e07532d2af080ad2d4514",
+  "packet_ref": {
+    "bytes": 2526,
+    "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_1_20261116/PREPARATION_PACKET.json",
+    "sha256": "d17650bc5e5d508884c251ebdcd175124951387d6fb459333bc2cb6f0cd999e1"
+  },
+  "predecessor_audit_ref": {
+    "bytes": 32397,
+    "path": "reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_G03_PREPARATION_V1_20261116.json",
+    "sha256": "17773ef068bac8ad54cb26b052ac02f58675fc96a3e0438e1f4011370a56a77e"
+  },
+  "runs": {
+    "311": {
+      "author_checks_passed": 35,
+      "console_bytes": 6514,
+      "late_counters": {
+        "G03_actual_integration": "NOT_RUN",
+        "OS_writes": 0,
+        "actual_children": 0,
+        "actual_tool_imports_compiles_installs": 0,
+        "checks": 35,
+        "console_bytes_before_summary": 6246,
+        "kind": "G03_AUTHOR_INERT_SUITE",
+        "late_read_bytes": 256410,
+        "startup_reads_not_metered": true
+      },
+      "log_ref": {
+        "bytes": 6514,
+        "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_1_20261116/attempt1_311.txt",
+        "sha256": "03def74d2ad86bfda2831f7c41a79223fc3b69e5028d3821b63fefdcdf9987be"
+      },
+      "matched_boundaries": {
+        "actual_children": 0,
+        "kind": "G03_V1_1_MATCHED_POST_DRAIN_BOUNDARIES",
+        "rows": [
+          {
+            "edge": 116.999,
+            "elapsed": 116.999,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": null,
+            "status": "CAPTURED_PARENT_ONLY"
+          },
+          {
+            "edge": 117.0,
+            "elapsed": 117.0,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "WORK_WALL_CAP",
+            "status": "FAILED_UNACCEPTED"
+          },
+          {
+            "edge": 118.0,
+            "elapsed": 118.0,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "WORK_WALL_CAP",
+            "status": "FAILED_UNACCEPTED"
+          },
+          {
+            "edge": 120.0,
+            "elapsed": 120.0,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "WORK_WALL_CAP",
+            "status": "FAILED_UNACCEPTED"
+          },
+          {
+            "edge": 120.5,
+            "elapsed": 120.5,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "TOTAL_WALL_CAP_OBSERVED",
+            "status": "FAILED_UNACCEPTED"
+          }
+        ]
+      },
+      "result": {
+        "child_CPU_seconds": 0.042159,
+        "returncode": 0,
+        "wall_seconds": 0.047589707999999994
+      },
+      "suite_invocation_cap": 2,
+      "suite_invocations_used": 1
+    },
+    "312": {
+      "author_checks_passed": 35,
+      "console_bytes": 6514,
+      "late_counters": {
+        "G03_actual_integration": "NOT_RUN",
+        "OS_writes": 0,
+        "actual_children": 0,
+        "actual_tool_imports_compiles_installs": 0,
+        "checks": 35,
+        "console_bytes_before_summary": 6246,
+        "kind": "G03_AUTHOR_INERT_SUITE",
+        "late_read_bytes": 242013,
+        "startup_reads_not_metered": true
+      },
+      "log_ref": {
+        "bytes": 6514,
+        "path": "reports/evidence_e01_pypa_fixture_g03_preparation_v1_1_20261116/attempt1_312.txt",
+        "sha256": "0f96cc77e7ee6c545e42bf68338e0095224bbaa59493ff0dcd963834e586ad73"
+      },
+      "matched_boundaries": {
+        "actual_children": 0,
+        "kind": "G03_V1_1_MATCHED_POST_DRAIN_BOUNDARIES",
+        "rows": [
+          {
+            "edge": 116.999,
+            "elapsed": 116.999,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": null,
+            "status": "CAPTURED_PARENT_ONLY"
+          },
+          {
+            "edge": 117.0,
+            "elapsed": 117.0,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "WORK_WALL_CAP",
+            "status": "FAILED_UNACCEPTED"
+          },
+          {
+            "edge": 118.0,
+            "elapsed": 118.0,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "WORK_WALL_CAP",
+            "status": "FAILED_UNACCEPTED"
+          },
+          {
+            "edge": 120.0,
+            "elapsed": 120.0,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "WORK_WALL_CAP",
+            "status": "FAILED_UNACCEPTED"
+          },
+          {
+            "edge": 120.5,
+            "elapsed": 120.5,
+            "fake_kills": 0,
+            "reaped": true,
+            "reason": "TOTAL_WALL_CAP_OBSERVED",
+            "status": "FAILED_UNACCEPTED"
+          }
+        ]
+      },
+      "result": {
+        "child_CPU_seconds": 0.044654,
+        "returncode": 0,
+        "wall_seconds": 0.08418033300000001
+      },
+      "suite_invocation_cap": 2,
+      "suite_invocations_used": 1
+    }
+  },
+  "status": "35_INERT_CHECKS_EACH_PASS_INDEPENDENT_REVIEW_PENDING",
+  "test_ref": {
+    "bytes": 23523,
+    "path": "tests/test_e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py",
+    "sha256": "21de70a84f62e2cac962f34baf2a4f3b25c90242d56d390528808def79db7555"
+  }
+}

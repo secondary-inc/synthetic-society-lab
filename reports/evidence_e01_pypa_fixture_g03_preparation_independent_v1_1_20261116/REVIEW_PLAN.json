@@ -1,0 +1,35 @@
+{
+  "kind": "FROZEN_INDEPENDENT_G03_P01_EXACT_REMEDY_REVIEW_PLAN",
+  "authority": "One35suite+oneindependentadverseprobe/runtime3.11/3.12;each120sCPU/wall,64MiBread,32MiBownwrites,256KiBconsole;noautomaticretry.",
+  "sources": [
+    {
+      "path": "reports/evidence_e01_pypa_fixture_g03_preparation_independent_v1_1_20261116/early_guard_suite.py",
+      "bytes": 1524,
+      "sha256": "1142d82274f5dbc03712c5a5a44df6d685f97aedce517cd0959e51d57323fa04"
+    },
+    {
+      "path": "reports/evidence_e01_pypa_fixture_g03_preparation_independent_v1_1_20261116/adverse_probe.py",
+      "bytes": 18684,
+      "sha256": "8032c92d6a035c722945dd5b663fe7a527898ae473910d00feada69f41236d3b"
+    }
+  ],
+  "scope": "Only inertBackend/MemoryJournal and matched frozen predecessor/successor supervisor calls. No old suite rerun; predecessor definitions loaded for matched inert control only. No nativebackend/diskjournal/process/fork/kill/wait4/candidatehooks/tool/network/model/owner actions.",
+  "child_OS_writes": 0,
+  "independent_boundaries": [
+    116.999,
+    117,
+    118,
+    120,
+    120.5
+  ],
+  "additional_checks": [
+    "waitcrossing",
+    "postwaitclockexceptionandregression",
+    "partialconsole",
+    "existingconsolefailure",
+    "cleanupat120and120.5",
+    "firstexceptionidentity"
+  ],
+  "source_scope": "Independent AST normalization proves onlyCODEversion andonecondition changed;63frozen references including allV1author/auditor artifacts checked.",
+  "limits_note": "Late read meter excludes bootstrap; native integration and cumulative69671552versus67108864read allocation remainblocked."
+}
