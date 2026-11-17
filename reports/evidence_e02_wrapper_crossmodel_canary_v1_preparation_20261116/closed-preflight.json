@@ -1,0 +1,771 @@
+{
+  "API_or_catalog_or_statistics_requests": 0,
+  "account_balance_or_management_authority_inferred": false,
+  "actual_new_reservations": 0,
+  "actual_owner_accesses_or_writes": 0,
+  "application_bytes_read": 4144868,
+  "baseline13_authenticated_committed": true,
+  "catalog_schedule_conflict": {
+    "already_consumed": 10,
+    "canary_only_total": 12,
+    "new_fresh_both_route_catalogs": 2,
+    "original_catalog_cap": 16,
+    "original_refresh_GETs_remaining": 6,
+    "remaining_original_barriers": [
+      50,
+      60,
+      70
+    ],
+    "whole_suffix_total_if_unchanged_schedule": 18
+  },
+  "counts": {
+    "POST_attempts": 45,
+    "catalog_GETs": 10,
+    "committed_responses": 44,
+    "owner_history_events": 1180,
+    "owner_rows": 194,
+    "statistics_GETs": 44
+  },
+  "decision": "BLOCKED_UNDER_UNCHANGED_STOPPED_OWNER_AND_ABSORBING_PROTOCOL",
+  "evidence_note": "Loads only pinned closed snapshots and public source AST. Witness answers are held transiently for structure checking but never copied or printed; no production owner/client is instantiated/imported. Hypothetical arithmetic is not authority or a quote.",
+  "frozen_dispositions": [
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 0,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 1,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 2,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 3,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 4,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 5,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 6,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 7,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 8,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 9,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 10,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 11,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 12,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 13,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 14,
+      "model_key": "B",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": null,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 15,
+      "model_key": "A",
+      "phase": "pre"
+    },
+    {
+      "baseline_execution_order": 8,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 16,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 9,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 17,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 9,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 18,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 8,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 19,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 8,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 20,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 9,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 21,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 9,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 22,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 8,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 23,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 7,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 24,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 6,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 25,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 6,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 26,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 7,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 27,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 7,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 28,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 6,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 29,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 6,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 30,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 7,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 31,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 11,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 32,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 10,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 33,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 10,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 34,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 11,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 35,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 11,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 36,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 10,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 37,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 10,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 38,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 11,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 39,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 12,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 40,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 13,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 41,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 13,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 42,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 12,
+      "disposition": "PHASE_COMMITTED",
+      "execution_order": 43,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 12,
+      "disposition": "FAILED_UNCERTAIN",
+      "execution_order": 44,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 13,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 45,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 13,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 46,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 12,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 47,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 15,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 48,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 14,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 49,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 14,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 50,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 15,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 51,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 15,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 52,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 14,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 53,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 14,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 54,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 15,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 55,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 3,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 56,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 2,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 57,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 2,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 58,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 3,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 59,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 3,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 60,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 2,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 61,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 2,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 62,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 3,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 63,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 0,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 64,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 1,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 65,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 1,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 66,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 0,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 67,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 0,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 68,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 1,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 69,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 1,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 70,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 0,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 71,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 4,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 72,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 5,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 73,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 5,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 74,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 4,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 75,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 4,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 76,
+      "model_key": "A",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 5,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 77,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 5,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 78,
+      "model_key": "B",
+      "phase": "post"
+    },
+    {
+      "baseline_execution_order": 4,
+      "disposition": "NOT_ATTEMPTED",
+      "execution_order": 79,
+      "model_key": "A",
+      "phase": "post"
+    }
+  ],
+  "hypothetical_financial_bounds": {
+    "E01_paid_inference": 0,
+    "NOT_AN_ACTUAL_RESERVATION": true,
+    "hypothetical_E02_after_reserve": 17934,
+    "hypothetical_fifth_after_reserve": 5713,
+    "hypothetical_global_after_reserve": 17934,
+    "hypothetical_max_one_call_reservation": 1785,
+    "old_fifth_charged_including_hold": 3928,
+    "old_global_exposure_including_holds": 16149
+  },
+  "hypothetical_one_canary_aggregate_counts": {
+    "POSTs": 46,
+    "catalog_GET_max": 12,
+    "owner_lifetime_dispatches": 195,
+    "statistics_GET_max": 47
+  },
+  "input_refs": [
+    {
+      "bytes": 100561,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal/failure.json",
+      "sha256": "c01dcb0c1a8c3737bce68c419e810c004230c3dd0923102065ea01ded54e7de7"
+    },
+    {
+      "bytes": 3893676,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+      "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+    },
+    {
+      "bytes": 7339,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json",
+      "sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec"
+    },
+    {
+      "bytes": 82688,
+      "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    }
+  ],
+  "kind": "CLOSED_402_AND_CONTINUATION_CONSTRAINTS_OFFLINE",
+  "never_attempted_slot_range": [
+    45,
+    79
+  ],
+  "next_canary_metadata": {
+    "base_execution_order": 22,
+    "baseline_execution_order": 13,
+    "execution_order": 45,
+    "model_key": "B",
+    "pair_seed": 2315288556,
+    "phase": "post",
+    "visibility": "OMITTED"
+  },
+  "old_packet_lease": {
+    "valid_from_utc": "2026-11-16T10:39:52.131896+00:00",
+    "valid_until_utc": "2026-11-16T12:39:52.131896+00:00"
+  },
+  "original_limits": {
+    "E01_microusd": 0,
+    "GET_retry_statuses": [
+      404
+    ],
+    "GET_waits_seconds": [
+      10,
+      10,
+      20
+    ],
+    "GETs_per_generation": 3,
+    "POST_retries": 0,
+    "authority_seconds": 7200,
+    "catalog_GETs": 16,
+    "catalog_refresh_before_slots": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70
+    ],
+    "concurrency": 1,
+    "cumulative_E02_microusd": 1000000,
+    "input_tokens": 8192,
+    "journal_artifacts": 1536,
+    "lifetime_dispatches": 229,
+    "new_batch_microusd": 200000,
+    "new_model_POSTs": 80,
+    "new_statistics_GETs": 240,
+    "output_tokens": 256,
+    "per_call_microusd": 1785,
+    "phase_seconds": 120,
+    "price_age_seconds": 900,
+    "shared_microusd": 5000000
+  },
+  "owner_stop_state": {
+    "historical_unfinished": 4,
+    "pending_is_none": true,
+    "refresh_stage": 4,
+    "stopped": true,
+    "unfinished": 5
+  },
+  "private_provider_or_answer_text_copied": false,
+  "resource_limits": {
+    "CPU_seconds": 60,
+    "application_read_bytes": 16777216,
+    "network_requests": 0,
+    "temp_data_writes": 0,
+    "wall_seconds": 90
+  },
+  "safe_failed_phase_diagnostic": {
+    "automatic_retry": false,
+    "conservative_charged_microusd": 775,
+    "executor_stage": "MODEL_POST",
+    "model_POST_attempts": 1,
+    "reported_provider_cost_microusd": null,
+    "reservation_recorded": true,
+    "reserved_microusd": 775,
+    "statistics_GET_attempts": 0,
+    "transport_http_status": 402
+  },
+  "slot44_hold": {
+    "charged_microusd": 775,
+    "execution_order": 44,
+    "generation_id_present": false,
+    "phase": "post",
+    "reserved_microusd": 775,
+    "status": "UNCERTAIN"
+  },
+  "source_blocking_clauses": {
+    "envelope_rejects_attempt_after_halt": [
+      {
+        "condition": "halt and status != 'NOT_ATTEMPTED' or (status == 'SKIPPED_INVALID_PRE' and (not skip)) or (not halt and skip and (status not in ('SKIPPED_INVALID_PRE', 'NOT_ATTEMPTED')))",
+        "line": 137
+      }
+    ],
+    "owner_grant_rejects_stopped_and_unfinished": [
+      {
+        "condition": "study['pending'] is not None or study['stopped'] or state['unfinished'] != 4",
+        "line": 223
+      }
+    ],
+    "owner_reserve_returns_stopped": [
+      {
+        "condition": "study['stopped'] or next_action(study)['status'] == 'COMPLETE'",
+        "line": 338
+      }
+    ],
+    "owner_start_requires149predecessor": [
+      {
+        "condition": "study is not None or old is None or old['stopped'] or (old['pending'] is not None) or (previous_next(old)['status'] != 'COMPLETE') or (len(old['witnesses']) != 40) or (state['unfinished'] != 4) or (state['consumed']['dispatches'] != 149) or (len(state['rows']) != 149) or (p['owner_id'] != self.header['owner_id']) or (canonical_hash(prior) != canonical_hash(expected)) or any((row['context']['run_id'] == p['run_id'] for row in state['rows'].values())) or (state['consumed']['total'] >= 1000000) or (state['consumed']['modules']['E01'] != 0)",
+        "line": 183
+      }
+    ],
+    "walk_failure_is_terminal": [
+      {
+        "condition": "row['status'] in ('FAILED_UNCERTAIN', 'CANCELLED')",
+        "line": 101
+      }
+    ]
+  },
+  "source_or_model_execution": false,
+  "source_refs": {
+    "wrapper_crossmodel_v1": {
+      "bytes": 11152,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+      "sha256": "6963e7322e47c23415b6e91e78b2882f7e0787c629461f115ae6e0119836ce81"
+    },
+    "wrapper_crossmodel_v1_client": {
+      "bytes": 19800,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1_client.py",
+      "sha256": "3223693da0664c868dbd892090a616b24a1afe33f3f0d2db4494e2a45a61bcf3"
+    },
+    "wrapper_crossmodel_v1_owner": {
+      "bytes": 29652,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1_owner.py",
+      "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+    }
+  },
+  "specific_original402cause": "UNKNOWN_NO_RETAINED_ERROR_METADATA"
+}

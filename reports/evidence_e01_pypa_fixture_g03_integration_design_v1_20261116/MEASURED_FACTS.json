@@ -1,0 +1,977 @@
+{
+  "ReadBudget_source_evidence": [
+    {
+      "line": 42,
+      "text": "class ReadBudget:"
+    },
+    {
+      "line": 43,
+      "text": "    \"\"\"Shared monotone logical-read budget; exhaustion is sticky."
+    },
+    {
+      "line": 44,
+      "text": ""
+    },
+    {
+      "line": 45,
+      "text": "    Validation charges input hashing, compressed archive reads and each declared"
+    },
+    {
+      "line": 46,
+      "text": "    decompressed member before reading it. All token streams share this budget."
+    },
+    {
+      "line": 47,
+      "text": "    Caller owns any wider run authority; this object does not grant execution."
+    },
+    {
+      "line": 48,
+      "text": "    \"\"\""
+    },
+    {
+      "line": 49,
+      "text": "    __slots__ = ('_limit', '_used', '_failed')"
+    },
+    {
+      "line": 50,
+      "text": "    def __init__(self, limit):"
+    },
+    {
+      "line": 51,
+      "text": "        need(type(limit) is int and 0 <= limit <= 67108864, 'READ_LIMIT')"
+    },
+    {
+      "line": 52,
+      "text": "        self._limit, self._used, self._failed = limit, 0, False"
+    },
+    {
+      "line": 53,
+      "text": "    @property"
+    },
+    {
+      "line": 54,
+      "text": "    def limit(self): return self._limit"
+    },
+    {
+      "line": 55,
+      "text": "    @property"
+    },
+    {
+      "line": 56,
+      "text": "    def used(self): return self._used"
+    },
+    {
+      "line": 57,
+      "text": "    @property"
+    },
+    {
+      "line": 58,
+      "text": "    def failed(self): return self._failed"
+    },
+    {
+      "line": 59,
+      "text": "    def _reserve(self, amount):"
+    },
+    {
+      "line": 60,
+      "text": "        need(type(amount) is int and amount >= 0, 'READ_AMOUNT')"
+    },
+    {
+      "line": 61,
+      "text": "        need(not self._failed, 'READ_BUDGET_FAILED')"
+    },
+    {
+      "line": 62,
+      "text": "        if amount > self._limit-self._used:"
+    },
+    {
+      "line": 63,
+      "text": "            self._failed = True"
+    },
+    {
+      "line": 64,
+      "text": "            raise WheelRefused('READ_BUDGET_EXHAUSTED')"
+    },
+    {
+      "line": 65,
+      "text": "        self._used += amount"
+    }
+  ],
+  "allocation_status": {
+    "bootstrap8MiB": "UNSUBSTANTIATED_NO_STARTUP_TRACE_OR_C_INITIALIZATION_SOURCE_PROOF",
+    "child_filesystem32MiB": "ENFORCEABLE_MONOTONE_CAP_NOT_A_SUCCESSFUL_RUNTIME_READ_COUNT",
+    "parent20MiB": "KNOWN_SUBSET_FITS_COMPLETE_CLOSURE_NOT_PROVEN",
+    "strict_memory4MiB": "VALID_SMALLER_EXACT_ReadBudget_CONSTRUCTOR_RANGE_ENFORCEMENT_REQUIRES_NEW_ADAPTER"
+  },
+  "allocation_sum_bytes": 67108864,
+  "conclusion": "BLOCKED_EXACT_BOOTSTRAP_BOUND_AND_CODE_CLOSURE_NOT_SUBSTANTIATED.8MiB is an arithmetic reserve, not verified usage or a proven upper bound. Complete parent closure also lacks that immutable artifact.",
+  "explicit_stdlib_source_charge_bytes": 213768,
+  "explicit_stdlib_source_evidence": {
+    "codecs.py": {
+      "ref": {
+        "bytes": 36870,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/codecs.py",
+        "sha256": "7b7839e53a77961153240aecfe11edc8054d05b1dedd83894450dae21ec05785"
+      },
+      "relevant_lines": []
+    },
+    "encodings/__init__.py": {
+      "ref": {
+        "bytes": 5884,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/encodings/__init__.py",
+        "sha256": "78c4744d407690f321565488710b5aaf6486b5afa8d185637aa1e7633ab59cd8"
+      },
+      "relevant_lines": []
+    },
+    "encodings/aliases.py": {
+      "ref": {
+        "bytes": 15677,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/encodings/aliases.py",
+        "sha256": "6fdcc49ba23a0203ae6cf28e608f8e6297d7c4d77d52e651db3cb49b9564c6d2"
+      },
+      "relevant_lines": []
+    },
+    "encodings/utf_8.py": {
+      "ref": {
+        "bytes": 1005,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/encodings/utf_8.py",
+        "sha256": "ba0cac060269583523ca9506473a755203037c57d466a11aa89a30a5f6756f3d"
+      },
+      "relevant_lines": []
+    },
+    "importlib/_bootstrap.py": {
+      "ref": {
+        "bytes": 57057,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/_bootstrap.py",
+        "sha256": "d112d54b7831cf4a818d4841d5ff8003b54df220a6dabafa61f67d7c7a5603f7"
+      },
+      "relevant_lines": [
+        {
+          "line": 1004,
+          "text": "def get_code(cls, fullname):"
+        },
+        {
+          "line": 1010,
+          "text": "def get_source(cls, fullname):"
+        },
+        {
+          "line": 1199,
+          "text": "def get_code(cls, fullname):"
+        },
+        {
+          "line": 1205,
+          "text": "def get_source(cls, fullname):"
+        }
+      ]
+    },
+    "importlib/_bootstrap_external.py": {
+      "ref": {
+        "bytes": 69428,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/_bootstrap_external.py",
+        "sha256": "e6ad72f3f0f9b65c99ab52598cd02ab748511dcdce1dd51f18dace9be9a680c6"
+      },
+      "relevant_lines": [
+        {
+          "line": 486,
+          "text": "def cache_from_source(path, debug_override=None, *, optimization=None):"
+        },
+        {
+          "line": 529,
+          "text": "if sys.pycache_prefix is not None:"
+        },
+        {
+          "line": 531,
+          "text": "# collisions within sys.pycache_prefix, if someone has two different"
+        },
+        {
+          "line": 533,
+          "text": "# same sys.pycache_prefix. Let's say sys.pycache_prefix is"
+        },
+        {
+          "line": 549,
+          "text": "sys.pycache_prefix,"
+        },
+        {
+          "line": 569,
+          "text": "found_in_pycache_prefix = False"
+        },
+        {
+          "line": 570,
+          "text": "if sys.pycache_prefix is not None:"
+        },
+        {
+          "line": 571,
+          "text": "stripped_path = sys.pycache_prefix.rstrip(path_separators)"
+        },
+        {
+          "line": 574,
+          "text": "found_in_pycache_prefix = True"
+        },
+        {
+          "line": 575,
+          "text": "if not found_in_pycache_prefix:"
+        },
+        {
+          "line": 618,
+          "text": "return cache_from_source(filename)"
+        },
+        {
+          "line": 995,
+          "text": "code = self.get_code(module.__name__)"
+        },
+        {
+          "line": 998,
+          "text": "'get_code() returns None')"
+        },
+        {
+          "line": 1048,
+          "text": "def get_source(self, fullname):"
+        },
+        {
+          "line": 1052,
+          "text": "source_bytes = self.get_data(path)"
+        },
+        {
+          "line": 1054,
+          "text": "raise ImportError('source not available through get_data()',"
+        },
+        {
+          "line": 1058,
+          "text": "def source_to_code(self, data, path, *, _optimize=-1):"
+        },
+        {
+          "line": 1061,
+          "text": "The 'data' argument can be any object type that compile() supports."
+        },
+        {
+          "line": 1066,
+          "text": "def get_code(self, fullname):"
+        },
+        {
+          "line": 1080,
+          "text": "bytecode_path = cache_from_source(source_path)"
+        },
+        {
+          "line": 1091,
+          "text": "data = self.get_data(bytecode_path)"
+        },
+        {
+          "line": 1108,
+          "text": "source_bytes = self.get_data(source_path)"
+        },
+        {
+          "line": 1132,
+          "text": "source_bytes = self.get_data(source_path)"
+        },
+        {
+          "line": 1133,
+          "text": "code_object = self.source_to_code(source_bytes, source_path)"
+        },
+        {
+          "line": 1187,
+          "text": "def get_data(self, path):"
+        },
+        {
+          "line": 1251,
+          "text": "def get_code(self, fullname):"
+        },
+        {
+          "line": 1253,
+          "text": "data = self.get_data(path)"
+        },
+        {
+          "line": 1267,
+          "text": "def get_source(self, fullname):"
+        },
+        {
+          "line": 1311,
+          "text": "def get_code(self, fullname):"
+        },
+        {
+          "line": 1315,
+          "text": "def get_source(self, fullname):"
+        }
+      ]
+    },
+    "zipimport.py": {
+      "ref": {
+        "bytes": 27840,
+        "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/zipimport.py",
+        "sha256": "a96f1d7a7b6aaf421a3cf382b94b1422f4f0ad452fdd0bb61d635b560d7a4e91"
+      },
+      "relevant_lines": [
+        {
+          "line": 131,
+          "text": "def get_code(self, fullname):"
+        },
+        {
+          "line": 132,
+          "text": "\"\"\"get_code(fullname) -> code object."
+        },
+        {
+          "line": 141,
+          "text": "def get_data(self, pathname):"
+        },
+        {
+          "line": 142,
+          "text": "\"\"\"get_data(pathname) -> string with file data."
+        },
+        {
+          "line": 158,
+          "text": "return _get_data(self.archive, toc_entry)"
+        },
+        {
+          "line": 174,
+          "text": "def get_source(self, fullname):"
+        },
+        {
+          "line": 175,
+          "text": "\"\"\"get_source(fullname) -> source string."
+        },
+        {
+          "line": 196,
+          "text": "return _get_data(self.archive, toc_entry).decode()"
+        },
+        {
+          "line": 521,
+          "text": "def _get_data(archive, toc_entry):"
+        },
+        {
+          "line": 629,
+          "text": "return compile(source, pathname, 'exec', dont_inherit=True)"
+        },
+        {
+          "line": 675,
+          "text": "return _get_data(self.archive, toc_entry)"
+        },
+        {
+          "line": 692,
+          "text": "data = _get_data(self.archive, toc_entry)"
+        }
+      ]
+    }
+  },
+  "fixed_parent_inputs": {
+    "bytes_review": {
+      "bytes": 4651,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_FIXTURE_BYTES_V1_1_20261116.json",
+      "sha256": "9f92fac01e81b19eece29ecdda52d037326ffeed0e89abfd7164066e05dbb3e0"
+    },
+    "dataclasses_source": {
+      "bytes": 62085,
+      "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py",
+      "sha256": "d242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9"
+    },
+    "directory_guard": {
+      "bytes": 5143,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    "harness": {
+      "bytes": 52778,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py",
+      "sha256": "1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8"
+    },
+    "harness_review": {
+      "bytes": 47690,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_HARNESS_V1_1_20261116.json",
+      "sha256": "b05c35ca8df6dedf0cb43508a0fd43422efbdccd35c3e7d7aeed4d1597ce88c4"
+    },
+    "original_policy": {
+      "bytes": 64638,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py",
+      "sha256": "32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4"
+    },
+    "parent_caller": {
+      "bytes": 18224,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_pypa_fixture_g03_caller_candidate_v1_1_20261116.py",
+      "sha256": "1d956931da7d11cf58cfc540cd7b6b8634aecffc34e5c9b9aa4373be92879abc"
+    },
+    "parent_review": {
+      "bytes": 53113,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/INDEPENDENT_AUDIT_E01_PYPA_FIXTURE_G03_PREPARATION_V1_1_20261116.json",
+      "sha256": "10c8a3fb13b2ef31f69a740dcd1acb4cd62658f9dcb758033a2d0f9aec8f37da"
+    },
+    "runtime_executable": {
+      "bytes": 18058560,
+      "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "sha256": "9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb"
+    },
+    "source_review": {
+      "bytes": 20875,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/INDEPENDENT_AUDIT_E01_PYPA_INSTALLER_SOURCE_ACQUISITION_20261116.json",
+      "sha256": "c6d8086ff740e665b5c8f8181fea040e957c1358873dad4dfa4a0e35ff90f8bd"
+    },
+    "strict_source": {
+      "bytes": 15018,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/e01_strict_wheel_source_candidate_v1_20261116.py",
+      "sha256": "ec018402c9d455b723aec33a5ce3beb1404615f6df0c670c1815202413ab0543"
+    },
+    "tool_archive": {
+      "bytes": 464466,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/e01_installer_tool_source_v1_20261116/2-RESPONSE.bin",
+      "sha256": "f55f5728ff61d3dd54dbc5a397cf3f7307cb64b180c20b72afbebf01c9e2c8a0"
+    },
+    "validator_review": {
+      "bytes": 17325,
+      "path": "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/INDEPENDENT_AUDIT_E01_STRICT_WHEEL_SOURCE_PURE_V1_20261116.json",
+      "sha256": "a91a1a7a4df10fcdacfb4493adb0941745ff93d4c80c8ed4fa207d2e84592fbe"
+    }
+  },
+  "fixed_parent_logical_read_charge_bytes": 18884579,
+  "helper_accounting": {
+    "CPU_seconds": 0.014126000000000007,
+    "CPU_wall_cap_seconds": 120,
+    "cap_bytes": 67108864,
+    "content_read_charge_bytes": 19151519,
+    "source_read_boundary": "Explicit read() plus exact decompressed tool-Python member charges; helper interpreter/stdlib bootstrap is outside this meter, no whole-process IO claim.",
+    "wall_seconds": 0.01640012499410659
+  },
+  "helper_builtin_names": [
+    "_abc",
+    "_ast",
+    "_asyncio",
+    "_bisect",
+    "_blake2",
+    "_bz2",
+    "_codecs",
+    "_codecs_cn",
+    "_codecs_hk",
+    "_codecs_iso2022",
+    "_codecs_jp",
+    "_codecs_kr",
+    "_codecs_tw",
+    "_collections",
+    "_contextvars",
+    "_csv",
+    "_ctypes",
+    "_curses",
+    "_curses_panel",
+    "_datetime",
+    "_decimal",
+    "_elementtree",
+    "_functools",
+    "_hashlib",
+    "_heapq",
+    "_imp",
+    "_io",
+    "_json",
+    "_locale",
+    "_lsprof",
+    "_lzma",
+    "_md5",
+    "_multibytecodec",
+    "_multiprocessing",
+    "_opcode",
+    "_operator",
+    "_pickle",
+    "_posixshmem",
+    "_posixsubprocess",
+    "_queue",
+    "_random",
+    "_scproxy",
+    "_sha1",
+    "_sha2",
+    "_sha3",
+    "_signal",
+    "_socket",
+    "_sqlite3",
+    "_sre",
+    "_ssl",
+    "_stat",
+    "_statistics",
+    "_string",
+    "_struct",
+    "_symtable",
+    "_testinternalcapi",
+    "_thread",
+    "_tokenize",
+    "_tracemalloc",
+    "_typing",
+    "_uuid",
+    "_warnings",
+    "_weakref",
+    "_xxinterpchannels",
+    "_xxsubinterpreters",
+    "_xxtestfuzz",
+    "_zoneinfo",
+    "array",
+    "atexit",
+    "audioop",
+    "binascii",
+    "builtins",
+    "cmath",
+    "errno",
+    "faulthandler",
+    "fcntl",
+    "gc",
+    "grp",
+    "itertools",
+    "marshal",
+    "math",
+    "mmap",
+    "posix",
+    "pwd",
+    "pyexpat",
+    "readline",
+    "resource",
+    "select",
+    "sys",
+    "syslog",
+    "termios",
+    "time",
+    "unicodedata",
+    "xxsubtype",
+    "zlib"
+  ],
+  "helper_flags": {
+    "dont_write_bytecode": true,
+    "isolated": 1,
+    "no_site": 1
+  },
+  "helper_runtime": "3.12.14",
+  "kind": "G03_BOUNDED_READ_ONLY_MEASUREMENT",
+  "local_CPython_startup_source_presence": {
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Modules/getpath.py": {
+      "body_read": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Modules/main.c": {
+      "body_read": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Python/import.c": {
+      "body_read": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Python/initconfig.c": {
+      "body_read": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/Python/pylifecycle.c": {
+      "body_read": false,
+      "exists": false
+    }
+  },
+  "no_actual_actions": {
+    "actual_backend_calls": 0,
+    "candidate_or_tool_import_compile_execute": 0,
+    "fixture_children": 0,
+    "global_candidate_hook_installations": 0,
+    "network_model_credentials_ledger": 0,
+    "old_targets_PDF_research_raw": 0,
+    "production_Git_STATUS_changes": 0
+  },
+  "parent20MiB_remaining_before_unknown_closure_and_child_adapter": 2086941,
+  "parent20MiB_remaining_if_the_seven_evidence_sources_also_rehashed": 1873173,
+  "proposed_partitions_bytes": {
+    "child_filesystem": 33554432,
+    "parent_preflight": 20971520,
+    "strict_memory": 4194304,
+    "trusted_bootstrap_reserve": 8388608
+  },
+  "specific_extension_metadata_only": {
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_hashlib.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_posixsubprocess.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_sha2.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_socket.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_ssl.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/resource.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    },
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/select.cpython-312-darwin.so": {
+      "bytes": null,
+      "content_hashed": false,
+      "exists": false
+    }
+  },
+  "tool_import_statements_not_complete_transitive_closure": {
+    "installer/__init__.py": [
+      {
+        "line": 6,
+        "text": "from installer._core import install"
+      }
+    ],
+    "installer/__main__.py": [
+      {
+        "line": 3,
+        "text": "import argparse"
+      },
+      {
+        "line": 4,
+        "text": "import os.path"
+      },
+      {
+        "line": 5,
+        "text": "import sys"
+      },
+      {
+        "line": 6,
+        "text": "import sysconfig"
+      },
+      {
+        "line": 7,
+        "text": "from collections.abc import Sequence"
+      },
+      {
+        "line": 9,
+        "text": "import installer"
+      },
+      {
+        "line": 10,
+        "text": "from installer.destinations import SchemeDictionaryDestination"
+      },
+      {
+        "line": 11,
+        "text": "from installer.sources import WheelFile"
+      },
+      {
+        "line": 12,
+        "text": "from installer.utils import get_launcher_kind"
+      }
+    ],
+    "installer/_core.py": [
+      {
+        "line": 3,
+        "text": "import posixpath"
+      },
+      {
+        "line": 4,
+        "text": "import warnings"
+      },
+      {
+        "line": 5,
+        "text": "from io import BytesIO"
+      },
+      {
+        "line": 6,
+        "text": "from typing import cast"
+      },
+      {
+        "line": 8,
+        "text": "from installer.destinations import WheelDestination"
+      },
+      {
+        "line": 9,
+        "text": "from installer.exceptions import InvalidWheelSource"
+      },
+      {
+        "line": 10,
+        "text": "from installer.records import RecordEntry"
+      },
+      {
+        "line": 11,
+        "text": "from installer.sources import WheelSource"
+      },
+      {
+        "line": 12,
+        "text": "from installer.utils import SCHEME_NAMES, Scheme, parse_entrypoints, parse_metadata_file"
+      }
+    ],
+    "installer/_scripts/__init__.py": [],
+    "installer/destinations.py": [
+      {
+        "line": 3,
+        "text": "import io"
+      },
+      {
+        "line": 4,
+        "text": "import os"
+      },
+      {
+        "line": 5,
+        "text": "from collections.abc import Collection, Iterable"
+      },
+      {
+        "line": 6,
+        "text": "from dataclasses import dataclass"
+      },
+      {
+        "line": 7,
+        "text": "from pathlib import Path"
+      },
+      {
+        "line": 8,
+        "text": "from typing import ("
+      },
+      {
+        "line": 14,
+        "text": "from installer.records import Hash, RecordEntry"
+      },
+      {
+        "line": 15,
+        "text": "from installer.scripts import Script"
+      },
+      {
+        "line": 16,
+        "text": "from installer.utils import ("
+      }
+    ],
+    "installer/exceptions.py": [],
+    "installer/records.py": [
+      {
+        "line": 3,
+        "text": "import base64"
+      },
+      {
+        "line": 4,
+        "text": "import csv"
+      },
+      {
+        "line": 5,
+        "text": "import hashlib"
+      },
+      {
+        "line": 6,
+        "text": "import os"
+      },
+      {
+        "line": 7,
+        "text": "from collections.abc import Iterable, Iterator"
+      },
+      {
+        "line": 8,
+        "text": "from dataclasses import dataclass"
+      },
+      {
+        "line": 9,
+        "text": "from pathlib import Path"
+      },
+      {
+        "line": 10,
+        "text": "from typing import BinaryIO, cast"
+      },
+      {
+        "line": 12,
+        "text": "from installer.utils import copyfileobj_with_hashing, get_stream_length"
+      }
+    ],
+    "installer/scripts.py": [
+      {
+        "line": 3,
+        "text": "import io"
+      },
+      {
+        "line": 4,
+        "text": "import os"
+      },
+      {
+        "line": 5,
+        "text": "import shlex"
+      },
+      {
+        "line": 6,
+        "text": "import zipfile"
+      },
+      {
+        "line": 7,
+        "text": "from collections.abc import Mapping"
+      },
+      {
+        "line": 8,
+        "text": "from dataclasses import dataclass, field"
+      },
+      {
+        "line": 9,
+        "text": "from importlib.resources import files"
+      },
+      {
+        "line": 10,
+        "text": "from typing import TYPE_CHECKING"
+      },
+      {
+        "line": 12,
+        "text": "from installer import _scripts"
+      },
+      {
+        "line": 37,
+        "text": "import re"
+      },
+      {
+        "line": 38,
+        "text": "import sys"
+      },
+      {
+        "line": 39,
+        "text": "from {module} import {import_name}"
+      }
+    ],
+    "installer/sources.py": [
+      {
+        "line": 3,
+        "text": "import posixpath"
+      },
+      {
+        "line": 4,
+        "text": "import stat"
+      },
+      {
+        "line": 5,
+        "text": "import zipfile"
+      },
+      {
+        "line": 6,
+        "text": "from collections.abc import Iterator"
+      },
+      {
+        "line": 7,
+        "text": "from contextlib import contextmanager"
+      },
+      {
+        "line": 8,
+        "text": "from functools import cached_property"
+      },
+      {
+        "line": 9,
+        "text": "from pathlib import Path"
+      },
+      {
+        "line": 10,
+        "text": "from typing import ("
+      },
+      {
+        "line": 17,
+        "text": "from installer.exceptions import InstallerError"
+      },
+      {
+        "line": 18,
+        "text": "from installer.records import InvalidRecordEntry, RecordEntry, parse_record_file"
+      },
+      {
+        "line": 19,
+        "text": "from installer.utils import canonicalize_name, parse_wheel_filename"
+      }
+    ],
+    "installer/utils.py": [
+      {
+        "line": 3,
+        "text": "import base64"
+      },
+      {
+        "line": 4,
+        "text": "import contextlib"
+      },
+      {
+        "line": 5,
+        "text": "import csv"
+      },
+      {
+        "line": 6,
+        "text": "import hashlib"
+      },
+      {
+        "line": 7,
+        "text": "import io"
+      },
+      {
+        "line": 8,
+        "text": "import os"
+      },
+      {
+        "line": 9,
+        "text": "import re"
+      },
+      {
+        "line": 10,
+        "text": "import sys"
+      },
+      {
+        "line": 11,
+        "text": "from collections import namedtuple"
+      },
+      {
+        "line": 12,
+        "text": "from collections.abc import Callable, Iterable, Iterator"
+      },
+      {
+        "line": 13,
+        "text": "from configparser import ConfigParser"
+      },
+      {
+        "line": 14,
+        "text": "from email.message import Message"
+      },
+      {
+        "line": 15,
+        "text": "from email.parser import FeedParser"
+      },
+      {
+        "line": 16,
+        "text": "from email.policy import compat32"
+      },
+      {
+        "line": 17,
+        "text": "from pathlib import Path"
+      },
+      {
+        "line": 18,
+        "text": "from typing import ("
+      }
+    ]
+  },
+  "tool_python_source_members": {
+    "installer/__init__.py": {
+      "bytes": 128,
+      "sha256": "da5afac97745f229a8dcc480f15bf3b6f026b56614580ba0cb42967eff68a1a1"
+    },
+    "installer/__main__.py": {
+      "bytes": 3674,
+      "sha256": "30821a084a972e1734184986a1059b7f50aa3776f228666ceb0a8f88442d1b93"
+    },
+    "installer/_core.py": {
+      "bytes": 5234,
+      "sha256": "9da28e04fbd21cea234f16aec6ea75d24ac063a1a483ccf3abb4d651715011cb"
+    },
+    "installer/_scripts/__init__.py": {
+      "bytes": 81,
+      "sha256": "222fa4998cbf4d2db71c35dfdd0530de947234ca4c66ca75c322f5d38875625f"
+    },
+    "installer/destinations.py": {
+      "bytes": 10666,
+      "sha256": "92853c201d052086220fef5784a2fb6c01dc5812b7f8f9f98590f1b87e5bb1fb"
+    },
+    "installer/exceptions.py": {
+      "bytes": 248,
+      "sha256": "630c75d5da3447e70500b8a6731a6d93fae183b4756c36f8b010ae11b94d94be"
+    },
+    "installer/records.py": {
+      "bytes": 7368,
+      "sha256": "bd26c18b12f2ec3ce8ff534c070f3878a8cf7f25134871ae8cdb93a52835f9cf"
+    },
+    "installer/scripts.py": {
+      "bytes": 5538,
+      "sha256": "971da58eecdee1c64daf9018071f947f37b6c1d01cedd1828b24eb7f488e71f7"
+    },
+    "installer/sources.py": {
+      "bytes": 12121,
+      "sha256": "eef90f50aef04c6faa994a2de04e4e20cb61a659144317e10ba78486b5a694e8"
+    },
+    "installer/utils.py": {
+      "bytes": 8114,
+      "sha256": "c68c38a65e14f6a717845bbc6cf8f1a1307db2b4c5361550a5448ba53f2b92e7"
+    }
+  },
+  "tool_python_source_total_bytes": 53172
+}

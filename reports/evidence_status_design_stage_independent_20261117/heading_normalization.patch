@@ -1,0 +1,11 @@
+--- review_reporting.py
++++ review_reporting_heading_normalization_v1_1.py
+@@ -31,7 +31,7 @@
+ s=statusraw.decode();cp=json.loads(cpraw);oldraw=pin(cp['previous_checkpoint']);old=json.loads(oldraw)
+ check('previoushash and dates',cp['previous_checkpoint_sha256']==hashlib.sha256(oldraw).hexdigest() and cp['reporting_date_local']=='2026-11-17' and cp['reporting_timezone']=='America/New_York' and cp['updated_at_UTC'].startswith('2026-11-17'))
+ baseline=pin({'path':str(OUT/'status_at_52c1aa4.md'),'bytes':166656,'sha256':'fbf7f361d7807ffac7af33d093ab5eaabae998855ebe80e2955001f9c5ad6f0c'}).decode()
+-check('Nov16 historical body preserved verbatim',s.split('## November 16 checkpoint (preserved history)\n\n',1)[1]==baseline.split('\n\n',2)[2])
++check('Nov16 historical body preserved verbatim',s.split('## November 16 checkpoint (preserved history)\n\n',1)[1]==baseline.split('## November 16 current checkpoint\n\n',1)[1])
+ check('intro only clientdate changed',s.split('\n\n',2)[1].replace('November 17, 2026','November 16, 2026')==baseline.split('\n\n',2)[1])
+ check('historicalscopeexplicit','Historical reports retain their original dates and scoped acceptance' in cp['inherited_evidence_scope'] and 'no new model result' in cp['inherited_evidence_scope'])
+ typed=[]
