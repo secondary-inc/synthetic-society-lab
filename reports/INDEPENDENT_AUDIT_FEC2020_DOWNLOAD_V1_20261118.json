@@ -1,0 +1,76 @@
+{
+  "TASK_ID": "INDEPENDENT_FEC2020_DOWNLOAD_V1_20261118",
+  "status": "BLOCKED",
+  "decision": "Redirect refusal leaves response open; narrow correction required. Other authored/inert cache/HTTP/timer controls pass.",
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_download.py",
+      "bytes": 4726,
+      "sha256": "01615c9667447fbadb62b697e397b0689b7ad9471759fc99223a13d983034368"
+    },
+    {
+      "path": "tests/test_fec2020_download.py",
+      "bytes": 4581,
+      "sha256": "d8d4dabb10a60ffd20d99704402e9cdef30ebf763dc252065b7a6f642b70dbe8"
+    },
+    {
+      "path": "reports/E01_FEC2020_DOWNLOAD_20261118.json",
+      "bytes": 3373,
+      "sha256": "a9bd670edf5418599b8b9143184f783b69ce1fb19e5ea8203eff85565214b80d"
+    }
+  ],
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_DOWNLOAD_V1_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_DOWNLOAD_V1_20261118.json",
+    "reports/evidence_independent_fec2020_download_20261118/"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "runtimes": {
+      "311": {
+        "errors": 0,
+        "failures": 1,
+        "network_attempts": 0,
+        "private_read_attempts": 8,
+        "tests": 14,
+        "wall_seconds": 0.028206625021994114
+      },
+      "312": {
+        "errors": 0,
+        "failures": 1,
+        "network_attempts": 0,
+        "private_read_attempts": 8,
+        "tests": 14,
+        "wall_seconds": 0.027677457983372733
+      }
+    },
+    "scope": "Six author cases plus eight independent controls per runtime. One failure in each: redirected fp remains unclosed.",
+    "passing_controls": [
+      "Exclusive link collision preserves existing raw path and cleans temp.",
+      "Fsync failure cleans temp and publishes nothing.",
+      "HTTP identity refusal closes response and publishes nothing.",
+      "Parent escape/oversized cache refuse before fetch.",
+      "Installed CLI timer callback returns WALL_LIMIT and restores handler/cancels timer.",
+      "Unknown RuntimeError message omitted."
+    ]
+  },
+  "finding": {
+    "id": "FEC-DOWNLOAD-01",
+    "priority": 2,
+    "file": "src/civiclab/e01/fec2020_download.py",
+    "function": "_NoRedirect.redirect_request",
+    "evidence": "Inert BytesIO remains closed=False after REDIRECT_REFUSED on both runtimes. Handler refuses before outer obtain response context is entered.",
+    "correction": "Close supplied response without following/draining it; preserve REDIRECT_REFUSED if ordinary close cleanup fails. Keep no retry or publication."
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Eight review-hook private-path denial observations were recorded per runtime; denied attempts are not actual private reads. Their cause is not claimed as a product defect. Correction run will retain path-role diagnostics.",
+    "CLI timer control is injected, not an actual sixty-second wall wait.",
+    "No real GET/cache verification or workbook/parser/source adoption by auditor."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "FEC-DOWNLOAD-01 correction and narrow successor recheck."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Review frozen root correction; then CI/E02 handoffs."
+}

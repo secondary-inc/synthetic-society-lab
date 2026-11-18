@@ -1,0 +1,70 @@
+{
+  "TASK_ID": "E01_FEC2020_CANDIDATE_DOWNLOAD_20261118",
+  "status": "AUTHOR_TESTS_PASS_PENDING_INDEPENDENT_REVIEW",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/fec2020_download.py",
+    "tests/test_fec2020_download.py"
+  ],
+  "purpose": "Reproduce the exact ignored FEC workbook candidate without raw-source redistribution or numeric adoption. Existing exact bytes require zero GETs.",
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_download.py",
+      "bytes": 4726,
+      "sha256": "01615c9667447fbadb62b697e397b0689b7ad9471759fc99223a13d983034368"
+    },
+    {
+      "path": "tests/test_fec2020_download.py",
+      "bytes": 4581,
+      "sha256": "d8d4dabb10a60ffd20d99704402e9cdef30ebf763dc252065b7a6f642b70dbe8"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -m civiclab.e01.fec2020_download",
+    "PYTHONPATH=src .venv/bin/python -m civiclab.e01.fec2020_download --fetch",
+    "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_fec2020_download.py -v",
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -m unittest discover -s tests -p test_fec2020_download.py -v"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "python312": {
+      "tests": 6,
+      "status": "PASS",
+      "reported_seconds": 0.006
+    },
+    "python311": {
+      "tests": 6,
+      "status": "PASS",
+      "reported_seconds": 0.007
+    },
+    "actual_local_candidate_verification": {
+      "status": "VERIFIED_LOCAL_CANDIDATE",
+      "bytes": 6251110,
+      "sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e",
+      "physical_http_GETs": 0,
+      "source_adoption": false
+    },
+    "evidence_scope": "Results observed in execution tool output; raw test transcripts are not retained in this author report. Unit network paths use authored bytes and inert responses; no new real HTTP fetch was executed."
+  },
+  "bounds": {
+    "CLI_wall_seconds": 60,
+    "network_socket_timeout_seconds": 30,
+    "GETs_max": 1,
+    "redirects_max": 0,
+    "retries_max": 0,
+    "response_read_bytes_max": 6251111,
+    "source_publish_bytes": 6251110,
+    "cache_mutation": "Exclusive hard-link publication only after exact size/hash match; existing raw files never overwritten. Temporary file removed on normal failure."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Pinned public FEC source only; helper neither executes workbook formulas nor reads election cells. Raw workbook remains ignored. Byte integrity is not a rights determination or candidate/party/seat/stage validation.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "A changed official workbook is refused; new source identity requires a new review rather than automatic acceptance.",
+    "CLI wall timer is POSIX SIGALRM; direct library callers have a socket timeout but no complete-operation wall timer.",
+    "No candidate/election totals adopted and no historical Clerk or G03 scope reopened.",
+    "New network path tested with inert responses only; actual candidate was already cached."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent code review pending.",
+    "Numeric source mapping, footnotes, totals and cohort gates remain open."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independently review the bounded fetch helper; retain source as candidate until a separately tested mapping/parser is accepted."
+}

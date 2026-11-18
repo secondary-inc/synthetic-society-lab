@@ -1,0 +1,38 @@
+{
+  "kind": "FEC2020_DOWNLOAD_REDIRECT_RESOURCE_CORRECTION",
+  "status": "AUTHOR_PASS_PENDING_INDEPENDENT_RECHECK",
+  "original_report": "reports/E01_FEC2020_DOWNLOAD_20261118.json",
+  "finding": "Redirect refusal raised before the returned HTTP response entered a context manager, leaving it unclosed. Independent inert control reproduced on both runtimes.",
+  "correction": "Close redirect response before refusing. A normal cleanup exception cannot replace REDIRECT_REFUSED; no redirect is followed.",
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_download.py",
+      "bytes": 4922,
+      "sha256": "f528562967c4d6c8595381fad0ff99421cf4881eda09266dbb08fbb216a718e1"
+    },
+    {
+      "path": "tests/test_fec2020_download.py",
+      "bytes": 5155,
+      "sha256": "d7b8e2572d5a609a23ce3461fd9cf588f028dc223f7207849976d4eaef7ce6e1"
+    }
+  ],
+  "tests": {
+    "Python3.12.14": {
+      "tests": 7,
+      "status": "PASS",
+      "reported_seconds": 0.005
+    },
+    "Python3.11.17": {
+      "tests": 7,
+      "status": "PASS",
+      "reported_seconds": 0.006
+    },
+    "added_control": "Close failure preserves original redirect refusal; existing redirect control now asserts response.closed."
+  },
+  "new_network_requests": 0,
+  "model_calls": 0,
+  "source_adoption": false,
+  "forecast_consumption": false,
+  "raw_workbook_changed": false,
+  "limits_changed": false
+}

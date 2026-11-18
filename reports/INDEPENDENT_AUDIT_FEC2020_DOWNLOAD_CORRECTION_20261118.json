@@ -1,0 +1,160 @@
+{
+  "TASK_ID": "INDEPENDENT_FEC2020_DOWNLOAD_CORRECTION_20261118",
+  "status": "PASS",
+  "decision": "FEC-DOWNLOAD-01 response-closure defect is closed; exact helper accepted for pinned candidate acquisition/cache semantics within offline-tested scope. No new fetch or source adoption.",
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_download.py",
+      "bytes": 4922,
+      "sha256": "f528562967c4d6c8595381fad0ff99421cf4881eda09266dbb08fbb216a718e1"
+    },
+    {
+      "path": "tests/test_fec2020_download.py",
+      "bytes": 5155,
+      "sha256": "d7b8e2572d5a609a23ce3461fd9cf588f028dc223f7207849976d4eaef7ce6e1"
+    },
+    {
+      "path": "reports/E01_FEC2020_DOWNLOAD_CORRECTION_20261118.json",
+      "bytes": 1390,
+      "sha256": "787cf2c0c85a377f0ca5c64526222737e5fbf1d28995873e32a13bddacec9cb5"
+    }
+  ],
+  "preserved_original_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_FEC2020_DOWNLOAD_V1_20261118.json",
+    "bytes": 3158,
+    "sha256": "5a4ee8590fdab4d1cf0b74ebac8e409f1e27fd4b47e4d30bd17c642ad96b9028"
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_DOWNLOAD_CORRECTION_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/SOURCE_PINS.json",
+      "bytes": 486,
+      "sha256": "3a85279c25b5d54998ca7eebbd8a6a139da5ab904ce18f6e2147a121fe472a96"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/cleanup_directory_diagnostic.log",
+      "bytes": 2360,
+      "sha256": "b3175593b59910735aaf1ac9d069a6683f0f8f15b9678f8144aa6a65de573ab8"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/cleanup_directory_diagnostic.py",
+      "bytes": 5760,
+      "sha256": "180cbe2860d66d768db3a75337a7fe740cf60e58054b13dc7967a8eb14a619ec"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/corrected_python311.json",
+      "bytes": 74,
+      "sha256": "88946f1ed45a1d93bc85d1f1a1afd1a4e7a0a0aa4a93ce8f85401f98a80a3318"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/corrected_python311.log",
+      "bytes": 782,
+      "sha256": "75baae6611d5c29b4fc2b6e32d1ee104d5a5f7ea65c9bc6bd8d0dbac4f27bdad"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/corrected_python312.json",
+      "bytes": 75,
+      "sha256": "bb627d91eb23ed5167b8984c55ad04b2eb2ab2f69ab5381e979dd9a8e964b14c"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/corrected_python312.log",
+      "bytes": 784,
+      "sha256": "70408a48df6e40342218ccacf9de53b1aa0251698ce5614b235388f1f823b7b4"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/focused_controls.py",
+      "bytes": 5532,
+      "sha256": "14e49ecff96e7664f53e2107c658b3a21eff1483fc3fb45109d5223a7048d615"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/focused_controls_corrected.py",
+      "bytes": 5588,
+      "sha256": "527db04c26a21437a96407bb4172c515693829827da26da6a2e5de7ced39a821"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/python311.json",
+      "bytes": 231,
+      "sha256": "9fa9532cd760f99f59705b7e9cc583c35c1574910e347c20bd9c15c2646ba8cc"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/python311.log",
+      "bytes": 905,
+      "sha256": "59888a044ec9e1d6e0359dcfb83720be4306e9fd0340a689929f6239841bf654"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/python312.json",
+      "bytes": 186,
+      "sha256": "f6a458df2b4bd73eb2416b7282035a19954ef7d4a1c525a3051c60de63d5e81d"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_download_20261118/python312.log",
+      "bytes": 905,
+      "sha256": "1cd5a72bde419a2fe4bab0566762dcbb0c620d97958c521b3ddad78f860f2dfc"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Focused seven authored plus eight independent tests under each isolated runtime; inert responses and authored tiny bytes only. See retained focused_controls_corrected.py."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "runtime_results": {
+      "311": {
+        "denied_paths": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data"
+        ],
+        "errors": 0,
+        "failures": 0,
+        "network_attempts": 0,
+        "private_read_attempts": 8,
+        "tests": 15,
+        "wall_seconds": 0.0310672500054352
+      },
+      "312": {
+        "denied_paths": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data"
+        ],
+        "errors": 0,
+        "failures": 0,
+        "network_attempts": 0,
+        "private_read_attempts": 8,
+        "tests": 15,
+        "wall_seconds": 0.026040833006845787
+      }
+    },
+    "finding_closed": "Redirect refusal closes its response before raising; ordinary close failure preserves REDIRECT_REFUSED and follows no redirect.",
+    "independent_controls": "Exclusive collision and fsync failure preserve immutable cache and remove temp; invalid HTTP closes response; parent escape and oversized cached bytes refuse before fetch; timer callback and restoration work; unknown RuntimeError message is omitted.",
+    "reviewer_hook_correction": "Eight apparent private-path denials per run were relative directory opens from stdlib shutil._rmtree_safe_fd during authored temp cleanup. The hook incorrectly resolved dir_fd-relative data against workspace cwd. Pure caller/flag diagnostics identify this as reviewer path accounting, not a private source-read attempt or product defect. Original counters/logs remain unchanged.",
+    "network_attempts": 0,
+    "actual_raw_cache_reads": 0,
+    "actual_GETs": 0
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Existing exact workbook remains ignored candidate only. No election-cell parser, formulas, rights determination, Clerk scope or forecast input adoption.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Actual network success path was not exercised; urllib behavior is checked with inert responses and source inspection.",
+    "CLI alarm bounds obtain; injected timer control is not a whole interpreter/startup/terminal-output certificate or a sixty-second real wait.",
+    "Direct obtain callers have socket30 timeout but no complete-operation wall bound.",
+    "Ordinary filesystem behavior assumed; no malicious same-UID/OS-uninterruptible IO guarantee.",
+    "One request maximum is per invocation; this is not a persistent acquisition-attempt ledger.",
+    "Original failed source/author report and independent finding remain historical."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "None for exact helper correction. Numeric mapping/parser/source adoption and CI/E02 milestones remain separate."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may commit helper correction/tests/reports; prioritize frozen CI and E02 reviews."
+}

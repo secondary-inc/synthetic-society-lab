@@ -1,0 +1,59 @@
+{
+  "TASK_ID": "INDEPENDENT_FEC2020_DISCOVERY_COUNT_CORRECTION_20261118",
+  "status": "PASS",
+  "decision": "Request-count wording corrected without changing workbook identity, schema or adoption. Prior source-readiness structural findings remain scoped acceptance; the former one-GET wording is superseded by one top-level call with unknown physical GET count.",
+  "recorded_at_UTC": "2026-11-18T16:37:23.642916+00:00",
+  "source_refs": [
+    {
+      "path": "reports/evidence_fec2020_workbook_discovery_20261118/original_discovery.json",
+      "bytes": 5676,
+      "sha256": "1246a75dcae5e9f0a1651f9dfc29d02b7cf4b0d19f276d8cd4475aa8e13528c3"
+    },
+    {
+      "path": "reports/E01_FEC2020_WORKBOOK_DISCOVERY_20261118.json",
+      "bytes": 6411,
+      "sha256": "7f8980cbd80b29e37e8fb14b0d0bc9eee0cc26545c11e64847b5e3fd7c32aab1"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_SOURCE_READINESS_20261118.json",
+      "bytes": 5394,
+      "sha256": "55ea2fec8b8839df1a3194f4c3f643cff15bd7ac6d476bf7b8f83efa439d4924"
+    }
+  ],
+  "checks": {
+    "original_archive_byte_identical_to_prior_audited_report": true,
+    "correction_binds_original": true,
+    "only_request_count_metadata_and_correction_note_changed": true,
+    "one_top_level_call_not_physical_count": true,
+    "redirect_reported_and_URLs_differ": true,
+    "limitation_explicit": true,
+    "workbook_identity_and_schema_unchanged": true,
+    "no_adoption_forecast_or_paid_execution": true
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_DISCOVERY_COUNT_CORRECTION_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_DISCOVERY_COUNT_CORRECTION_20261118.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Read-only JSON identity and semantic diff; no workbook reread, download, parser, native PDF or model execution."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "metadata_checks": 8,
+    "original_receipt_preserved": true,
+    "prior_audit_preserved": true,
+    "independent_reacquisition": false
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Recorded URLs/redirect flag remain lead acquisition metadata, not independently reconstructed HTTP hop history. No rights/adoption claim added.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Physical GET/hop count remains unknown and must not be inferred from top-level call count.",
+    "This correction does not revalidate the current remote source or numeric election values.",
+    "No raw workbook contents or publisher data copied into this receipt."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "No remaining blocker for this correction. Original source-adoption, forecast, CI and E02 remedy gates remain unchanged."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may commit the original archived receipt, corrected discovery report and this correction review; await frozen CI/E02 implementation handoffs."
+}

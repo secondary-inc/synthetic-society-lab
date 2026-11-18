@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "checks": {
+    "workbook_exact_identity": true,
+    "not_adopted_no_forecast_or_model": true,
+    "65_unique_archive_members": true,
+    "declared_expansion_matches": true,
+    "all19_sheet_names_and_declared_dimensions": true,
+    "Senate_declared_range_A1_Z542": true,
+    "Senate_A1_Z1_header_exact": true,
+    "Senate_formula_tag_count_exact": true,
+    "separate_general_runoff_combined_labels_present": true,
+    "validation_receipt_93_PASS": true,
+    "validation_limitation_explicit": true,
+    "GDELT_csv_hash_matches_JSON_receipt": true,
+    "GDELT_JSON_CSV_868_rows": true,
+    "GDELT_records_and_dates_preserved": true,
+    "GDELT_metadata_not_news_text": true
+  },
+  "refs": [
+    {
+      "path": "reports/E01_FEC2020_WORKBOOK_DISCOVERY_20261118.json",
+      "bytes": 5676,
+      "sha256": "1246a75dcae5e9f0a1651f9dfc29d02b7cf4b0d19f276d8cd4475aa8e13528c3"
+    },
+    {
+      "path": "data/raw/e01_fec2020_workbook_20261118/federalelections2020.xlsx",
+      "bytes": 6251110,
+      "sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e"
+    },
+    {
+      "path": "data/processed/validation/source-integrity-20261118.json",
+      "bytes": 17841,
+      "sha256": "5427ca0d62bfd311f98eb27e339cee800fa6432f54de56fc15bb09569cb80d53"
+    },
+    {
+      "path": "data/processed/gdelt/fixture-20261118.json",
+      "bytes": 312930,
+      "sha256": "b11983b877dfaabc80be85cd96e796fd1f645b1d372ae3995684df0c244756a9"
+    },
+    {
+      "path": "data/processed/gdelt/fixture-20261118.csv",
+      "bytes": 150278,
+      "sha256": "88166d75ad1a8ae1ad4c2526721193e882c3c12170fae2d0467e935db8ae3f6c"
+    }
+  ],
+  "workbook_schema_summary": {
+    "sheet_count": 19,
+    "Senate_range": "A1:Z542",
+    "independently_verified_header_range": "A1:Z1",
+    "header_columns": 26,
+    "Senate_formula_tags": 0,
+    "numeric_election_totals_adopted": false,
+    "candidate_party_or_district_row_counts_recomputed": false
+  },
+  "validation_scope": "Existing93-check receipt verified for count/status only; no independent rerun of full raw-source inventory.",
+  "GDELT_source_sha256_as_recorded": "6ed52033813c98b8b341c56e0a58bff8449907c0a823d3a780f4228d617af9bf",
+  "logical_read_bytes": 7824273,
+  "wall_seconds": 0.02530841701081954,
+  "network_calls": 0,
+  "workbook_writes": 0,
+  "model_calls": 0,
+  "source_adoption": false
+}

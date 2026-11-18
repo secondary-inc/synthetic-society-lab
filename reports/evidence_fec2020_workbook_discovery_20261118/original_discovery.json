@@ -1,0 +1,198 @@
+{
+  "kind": "FEC2020_WORKBOOK_CANDIDATE_DISCOVERY_20261118",
+  "status": "ACQUIRED_STRUCTURE_INSPECTED_NOT_ADOPTED",
+  "acquisition": {
+    "requested_url": "https://www.fec.gov/documents/4228/federalelections2020.xlsx",
+    "resolved_url": "https://www.fec.gov/resources/cms-content/documents/federalelections2020.xlsx",
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "last_modified_header": "Mon, 19 Dec 2022 15:00:14 GMT",
+    "retrieved_at_utc": "2026-11-18T16:28:30.289293+00:00",
+    "bytes": 6251110,
+    "sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e",
+    "discovery_page": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/federal-elections-2020/",
+    "network_GETs": 1,
+    "retries": 0,
+    "role": "CANDIDATE_SOURCE_NOT_ADOPTED",
+    "rights_note": "Official federal election results, retained locally for numeric-fact validation; no redistribution of workbook or third-party rights assertion.",
+    "not_forecast": true,
+    "zip_members": 65,
+    "declared_expanded_bytes": 51902709
+  },
+  "workbook_sheets": [
+    {
+      "title": "1. 2020 Publication Information",
+      "declared_rows": 150,
+      "declared_columns": 2
+    },
+    {
+      "title": "2. Table 1 Pres Popular Vote",
+      "declared_rows": 49,
+      "declared_columns": 3
+    },
+    {
+      "title": "3. Table 2 Electoral & Pop Vote",
+      "declared_rows": 63,
+      "declared_columns": 8
+    },
+    {
+      "title": "4. Table 3 GEVotefor Pres, H, S",
+      "declared_rows": 78,
+      "declared_columns": 11
+    },
+    {
+      "title": "5. Table 4 GE VotesCastbyParty",
+      "declared_rows": 79,
+      "declared_columns": 6
+    },
+    {
+      "title": "6. Table 5 P&GVotesCastforCong",
+      "declared_rows": 78,
+      "declared_columns": 7
+    },
+    {
+      "title": "7. Table 6 Senate by Party",
+      "declared_rows": 78,
+      "declared_columns": 7
+    },
+    {
+      "title": "8. Table 7 House by Party",
+      "declared_rows": 81,
+      "declared_columns": 7
+    },
+    {
+      "title": "9. 2020 Pres General Results",
+      "declared_rows": 741,
+      "declared_columns": 16006
+    },
+    {
+      "title": "10. 2020 Pres Primary Results",
+      "declared_rows": 1119,
+      "declared_columns": 15445
+    },
+    {
+      "title": "11.  Pres Primary Party Summary",
+      "declared_rows": 29,
+      "declared_columns": 5
+    },
+    {
+      "title": "12. US Senate Results by State",
+      "declared_rows": 542,
+      "declared_columns": 26
+    },
+    {
+      "title": "13. US House Results by State",
+      "declared_rows": 4043,
+      "declared_columns": 52
+    },
+    {
+      "title": "14. 2020 Party Labels",
+      "declared_rows": 121,
+      "declared_columns": 5
+    },
+    {
+      "title": "15. 2020 Primary Dates",
+      "declared_rows": 81,
+      "declared_columns": 12
+    },
+    {
+      "title": "16. Appendix 1A",
+      "declared_rows": 67,
+      "declared_columns": 21
+    },
+    {
+      "title": "17. Appendix 1B",
+      "declared_rows": 76,
+      "declared_columns": 36
+    },
+    {
+      "title": "18. Appendix 1C",
+      "declared_rows": 81,
+      "declared_columns": 36
+    },
+    {
+      "title": "19. Special Elections 2019-2021",
+      "declared_rows": 304,
+      "declared_columns": 26
+    }
+  ],
+  "senate_sheet": {
+    "title": "12. US Senate Results by State",
+    "inspected_range": "A1:Z542",
+    "header": [
+      1,
+      "STATE ABBREVIATION",
+      "STATE",
+      "DISTRICT",
+      "FEC ID",
+      "(I) Incumbent Indicator",
+      "CANDIDATE NAME (First)",
+      "CANDIDATE NAME (Last)",
+      "CANDIDATE NAME",
+      "TOTAL VOTES",
+      "PARTY",
+      "PRIMARY VOTES",
+      "PRIMARY %",
+      "RUNOFF VOTES",
+      "RUNOFF %",
+      "GENERAL VOTES ",
+      "GENERAL %",
+      "GE RUNOFF ELECTION VOTES (GA, LA)",
+      "GE RUNOFF ELECTION % (GA, LA)",
+      "COMBINED GE PARTY TOTALS (when applicable)",
+      "COMBINED % (when applicable)",
+      "PE WINNER INDICATOR",
+      "GE WINNER INDICATOR",
+      "FOOTNOTES",
+      null,
+      null
+    ],
+    "district_label_row_counts": {
+      "S": 470,
+      "S-FULL TERM": 12,
+      "S-UNEXPIRED TERM": 22
+    },
+    "general_vote_party_label_row_counts": {
+      "R": 41,
+      "D": 42,
+      "W": 52,
+      "N(D)/D": 1,
+      "AKI": 1,
+      "LIB": 19,
+      "APV": 1,
+      "UPC": 1,
+      "IDE": 1,
+      "IND": 19,
+      "GRE": 6,
+      "CON": 3,
+      "WWP": 1,
+      "NPY": 1,
+      "NPA": 4,
+      "OTH": 2,
+      "UST": 1,
+      "NLP": 1,
+      "DFL": 1,
+      "LMN": 1,
+      "GLC": 1,
+      "OBF": 1,
+      "LWR": 1,
+      " ": 1,
+      "DEM/IP/WF": 1,
+      "PG/PRO": 1
+    },
+    "formula_cells_in_inspected_range": 0
+  },
+  "parser_dependencies": {
+    "inspection": "Bundled openpyxl read_only=True,data_only=False,keep_links=False. No macros/formulas executed, workbook unchanged."
+  },
+  "acceptance_criteria_remaining": [
+    "Freeze exact candidate/event/stage/party-line mapping and missing-value rules; preserve general versus runoff and special contests.",
+    "Validate candidate totals against workbook party totals and independently inspect source footnotes and cohort/seat-class mapping.",
+    "Use authored fixtures and a nonimplementing reviewer before adopting numeric counts.",
+    "Keep this new FEC source separate from all consumed Clerk PDF qualification/actual scopes."
+  ],
+  "adoption": false,
+  "forecast_consumption": false,
+  "new_model_requests": 0,
+  "model_cost_usd": 0,
+  "rights_note": "Public federal numeric election facts; original workbook retained only in ignored raw storage. No publisher/respondent data forwarded to external services."
+}

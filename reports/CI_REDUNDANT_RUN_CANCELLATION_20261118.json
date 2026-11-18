@@ -1,0 +1,18 @@
+{
+  "kind": "DUPLICATE_CI_CANCELLATION",
+  "recorded_at_utc": "2026-11-18T16:41:23.858962+00:00",
+  "run_id": 44339937728,
+  "url": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/44339937728",
+  "head_sha": "18be6bcbe44d19076fd8e8732065175932e825dd",
+  "confirmed_status": "completed",
+  "confirmed_conclusion": "cancelled",
+  "reason": "The source/tests/scripts/workflow are unchanged from778f462 whose two runtimes reached10800-second ordinary-group limits with158 errors/failures. Differences through18be are reports/evidence only. Preserve completed failure artifacts and avoid a redundant known-failing run while repairing the runner.",
+  "action": "gh run cancel44339937728 --repo secondary-inc/synthetic-society-lab; exit0 request submitted. GitHub connector GET subsequently confirms cancelled.",
+  "connector_limitation": "Available GitHub connector supports run reads but has no cancellation capability; authenticated gh CLI used.",
+  "earlier_failed_runs_preserved": [
+    44234793646,
+    44244801559
+  ],
+  "full_CI_PASS": false,
+  "next_check": "One fresh run after independently accepted runner repair; failures remain failures."
+}

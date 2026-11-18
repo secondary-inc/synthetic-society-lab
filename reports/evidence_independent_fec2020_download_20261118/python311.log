@@ -1,0 +1,14 @@
+INDEPENDENT_FEC_DOWNLOAD={"errors": 0, "failures": 1, "network_attempts": 0, "private_read_attempts": 8, "tests": 14, "wall_seconds": 0.028206625021994114}
+............F.
+======================================================================
+FAIL: test_redirect_refusal_closes_response (__main__.Independent.test_redirect_refusal_closes_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_download_20261118/focused_controls.py", line 22, in test_redirect_refusal_closes_response
+    self.assertTrue(fp.closed,'Redirect response left open on refusal')
+AssertionError: False is not true : Redirect response left open on refusal
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.012s
+
+FAILED (failures=1)
