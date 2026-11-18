@@ -63,11 +63,24 @@ def main():
     run(args.packet_sha256, args.release_sha256)
 
 
+def safe_failure(error):
+    result = {'status': 'STOPPED_NO_RETRY',
+              'original_full80_analysis': 'NOT_RUN_INCOMPLETE'}
+    # Preserve only the existing transport's closed, revalidated diagnostic.
+    # Never inspect or print arbitrary exception text, response bodies or keys.
+    try:
+        from civiclab.production_compatibility_transport_v4_2 import _SafeTransportFailure
+        if type(error) is _SafeTransportFailure:
+            result['diagnostic'] = _SafeTransportFailure.diagnostic(error)
+    except BaseException:
+        pass
+    return result
+
+
 if __name__ == '__main__':
     sys.path.insert(0, str(ROOT / 'src'))
     try:
         main()
-    except BaseException:
-        print(json.dumps({'status': 'STOPPED_NO_RETRY',
-                          'original_full80_analysis': 'NOT_RUN_INCOMPLETE'}))
+    except BaseException as error:
+        print(json.dumps(safe_failure(error), sort_keys=True))
         raise SystemExit(1)

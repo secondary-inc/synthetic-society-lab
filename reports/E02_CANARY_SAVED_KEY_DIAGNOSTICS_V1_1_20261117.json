@@ -1,0 +1,50 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "NEXT_UNBLOCKED_TASK": "Independent narrow bridge delta review using remaining allocated bridge slot/runtime.",
+  "RISKS_AND_LIMITATIONS": [
+    "Safe HTTP status is observed service response, not an inferred account/billing cause.",
+    "Other errors intentionally retain generic status. No arbitrary exception strings/body/header/key.",
+    "All prior entry bounds/startup limitations and final release gates remain."
+  ],
+  "TASK_ID": "E02_SAVED_KEY_SAFE_DIAGNOSTIC_V1_1",
+  "TESTS_RUN_AND_RESULTS": {
+    "3.11": {
+      "API_calls": 0,
+      "console_bytes": 2035,
+      "console_sha256": "1ef7b5e8705c1beee12ffe67aebf1dc54f36bef5cabd28891bc168a190dc9f2c",
+      "exit_code": 0,
+      "mock_only": true,
+      "real_credential_reads": 0,
+      "reason": "EXIT",
+      "runtime": "3.11",
+      "wall_seconds": 0.0973815
+    },
+    "3.12": {
+      "API_calls": 0,
+      "console_bytes": 2035,
+      "console_sha256": "d8c029166f60ff13193dc4991ee948f58c89068f868a3ebcae222d94edd18f3b",
+      "exit_code": 0,
+      "mock_only": true,
+      "real_credential_reads": 0,
+      "reason": "EXIT",
+      "runtime": "3.12",
+      "wall_seconds": 0.112791875
+    },
+    "original_case_AST": "Nine cases unchanged; four additional diagnostic controls."
+  },
+  "reason": "Original launcher and bridge expose only generic stopped status; existing bounded transport exception has validated stage/category/HTTP-status/close boolean. Preserve that safe diagnostic in caller stdout to distinguish actual service refusal from preflight failure without response bodies, headers, messages or credentials. No changes to request/budget/owner/main path.",
+  "scope": "Only terminal safe diagnostic from exact existing _SafeTransportFailure type; use unbound revalidating method, omit tampered/unknown/subclass details. No production transport, financial policy, owner, packet, launcher or admitted success path change.",
+  "source_refs": [
+    {
+      "bytes": 3410,
+      "path": "scripts/launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "c4b2bd2d378b3fae5e22ecbe332fcefe2f8548257817409c53f1637f3cbe44e3"
+    },
+    {
+      "bytes": 6535,
+      "path": "tests/test_e02_canary_saved_key_entry_v1.py",
+      "sha256": "087b4546421a255fbe417fe83cf4cfcba5461efb1d72fbea22cb1d6bcb360b2d"
+    }
+  ],
+  "status": "AUTHOR13_TESTS_PASS_EACH_RUNTIME_INDEPENDENT_DELTA_REVIEW_PENDING"
+}

@@ -1,0 +1,369 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E02_CANARY_SAVED_KEY_ENTRY_V1_20261117.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/PLAN.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/STARTED_311_01.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/STARTED_312_01.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_311_01.log",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_311_01_result.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_312_01.log",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_312_01_result.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_v1.py"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead binds exact bridge source in final caller review;complete L01/L02/L03 and remaining proof/release gates before any actual saved-key action. Preserve zero paid activity in this review.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E02_CANARY_SAVED_KEY_ENTRY_V1_20261117.json",
+    "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    [
+      "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_v1.py"
+    ],
+    [
+      "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_v1.py"
+    ]
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "PASS is boundary/component review only;not real credential/authentication,actual launcher,current owner,prices or live release.",
+    "Real validate_release and real _credential policies are separate frozen reviewed dependencies. Probes replace admission/credential/main boundaries;their actual combined integration is not certified here.",
+    "Bridge initial packet/release admission and saved-key loading occur before original launcher installs its CPU/timer controls. Original240/60operation guard remains unchanged;do not claim those settings cover whole bridge preadmission/key loading. L01/caller qualification must state the boundary.",
+    "Only OPENROUTER_API_KEY value and sys.argv are intentionally modified/restored. This is not a snapshot/restoration of arbitrary environment changes by other code or concurrent threads. Trusted isolated process remains assumed.",
+    "Temporary environment restore covers ordinary and BaseException unwinding;abrupt process death terminates that process rather than executing Python finally. No key values printed or persisted by bridge.",
+    "The original canary code contract hashes its original launcher,not the new bridge. Final caller/lead release must externally pin this bridge hash and dependencies;do not imply old contract automatically covered it.",
+    "Pinned key-reader top-level executes imports/declarations with non-main name;no one-off billing main is invoked. Existing credential function may perform bounded Git-ignore check and file read only after admission,never in this review."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Bridge/test/pinned dependency source and authored scratch only. Production validation module replaced with inert explicit module for probe,so no owner/model/API code imported or called. All credential strings are invented. No .env contents or real credential loader invoked;ignored/owned/private file status remains root observation,not independently inspected here.",
+  "TASK_ID": "Independent root-authored E02 saved-key bridge boundary review",
+  "TESTS_RUN_AND_RESULTS": {
+    "additional7checks": "PASS independently each runtime:KeyboardInterrupt/SystemExit cleanup,packet/release read failure no loader,oversize exact-hash refusal,ancestor alias refusal,key-source pin failure no main.",
+    "invocations_used_each_runtime": 1,
+    "original9inertcases": "PASS independently each runtime",
+    "real_key_or_launcher": "NOT_RUN",
+    "remaining_in_allocation_each_runtime": 1,
+    "results": {
+      "311": {
+        "execution": {
+          "command": [
+            "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+            "-I",
+            "-B",
+            "-S",
+            "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_v1.py"
+          ],
+          "console_bytes": 876,
+          "counters": {
+            "denials": 0,
+            "file_reads": 139143,
+            "file_write_reservations": 327685
+          },
+          "exit": 0,
+          "extra_checks": 7,
+          "failed_case_names": [],
+          "original_suite": {
+            "errors": 0,
+            "failures": 0,
+            "tests": 9
+          },
+          "scratch_removed": true,
+          "timed_out": false,
+          "wall_seconds": 0.086700375
+        },
+        "observations": {
+          "actual_owner_calls": 0,
+          "additional_observations": [
+            {
+              "case": "cleanup_KeyboardInterrupt",
+              "pass": true
+            },
+            {
+              "case": "cleanup_SystemExit",
+              "pass": true
+            },
+            {
+              "case": "file_gate_packet.json",
+              "pass": true
+            },
+            {
+              "case": "file_gate_lead-release.json",
+              "pass": true
+            },
+            {
+              "case": "oversize_correct_hash_refused",
+              "pass": true
+            },
+            {
+              "case": "ancestor_alias_refused",
+              "pass": true
+            },
+            {
+              "case": "key_source_hash_refusal_no_main",
+              "pass": true
+            }
+          ],
+          "cost_usd": 0,
+          "counters": {
+            "denials": 0,
+            "file_reads": 139143,
+            "file_write_reservations": 327685
+          },
+          "failed_case_names": [],
+          "kind": "INDEPENDENT_SAVED_KEY_BRIDGE_INERT_PROBE",
+          "model_calls": 0,
+          "network_calls": 0,
+          "original_suite": {
+            "errors": 0,
+            "failures": 0,
+            "tests": 9
+          },
+          "real_credential_reads": 0,
+          "real_launcher_main_calls": 0,
+          "runtime": "3.11.17",
+          "scratch": "/private/tmp/INDEPENDENT_SAVED_KEY_oc3qclej",
+          "wall_seconds": 0.004679874982684851
+        }
+      },
+      "312": {
+        "execution": {
+          "command": [
+            "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "-I",
+            "-B",
+            "-S",
+            "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_v1.py"
+          ],
+          "console_bytes": 876,
+          "counters": {
+            "denials": 0,
+            "file_reads": 139143,
+            "file_write_reservations": 327685
+          },
+          "exit": 0,
+          "extra_checks": 7,
+          "failed_case_names": [],
+          "original_suite": {
+            "errors": 0,
+            "failures": 0,
+            "tests": 9
+          },
+          "scratch_removed": true,
+          "timed_out": false,
+          "wall_seconds": 0.091819166
+        },
+        "observations": {
+          "actual_owner_calls": 0,
+          "additional_observations": [
+            {
+              "case": "cleanup_KeyboardInterrupt",
+              "pass": true
+            },
+            {
+              "case": "cleanup_SystemExit",
+              "pass": true
+            },
+            {
+              "case": "file_gate_packet.json",
+              "pass": true
+            },
+            {
+              "case": "file_gate_lead-release.json",
+              "pass": true
+            },
+            {
+              "case": "oversize_correct_hash_refused",
+              "pass": true
+            },
+            {
+              "case": "ancestor_alias_refused",
+              "pass": true
+            },
+            {
+              "case": "key_source_hash_refusal_no_main",
+              "pass": true
+            }
+          ],
+          "cost_usd": 0,
+          "counters": {
+            "denials": 0,
+            "file_reads": 139143,
+            "file_write_reservations": 327685
+          },
+          "failed_case_names": [],
+          "kind": "INDEPENDENT_SAVED_KEY_BRIDGE_INERT_PROBE",
+          "model_calls": 0,
+          "network_calls": 0,
+          "original_suite": {
+            "errors": 0,
+            "failures": 0,
+            "tests": 9
+          },
+          "real_credential_reads": 0,
+          "real_launcher_main_calls": 0,
+          "runtime": "3.12.14",
+          "scratch": "/private/tmp/INDEPENDENT_SAVED_KEY_q8gvte61",
+          "wall_seconds": 0.005122625007061288
+        }
+      }
+    },
+    "source_evidence_refs": "9/9 exact source and author evidence refs revalidated"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Actual composite caller L01/L02 and normal new-event L03 still need scoped acceptance.",
+    "Fresh runtime locked owner verification/current catalog proofs and exact final packet/review/lead release remain unobserved.",
+    "No actual key access or live call permitted by this audit alone."
+  ],
+  "decision": {
+    "actual_composite_caller": "NOT_RUN",
+    "entry_bridge_ordering_pins_once_cleanup": "PASS_SCOPED_INERT_COMPONENT",
+    "live_release": "BLOCKED_NOT_GRANTED",
+    "real_credential_access": "NOT_RUN"
+  },
+  "evidence_refs": [
+    {
+      "bytes": 787,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/PLAN.json",
+      "sha256": "dcad3f59a0d333d3f45bcfb36d011a5ae6d379c6d703adfe63053cf94deac9eb"
+    },
+    {
+      "bytes": 238,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/STARTED_311_01.json",
+      "sha256": "5a3d8f9fc35ff19d7fcf6b7220e34af213ef8dab645904729d431fe405c1b69d"
+    },
+    {
+      "bytes": 273,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/STARTED_312_01.json",
+      "sha256": "41f821c4822d326dc094ef77752765be6d32217a6b7a50c67521d44e56841d28"
+    },
+    {
+      "bytes": 876,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_311_01.log",
+      "sha256": "0880fdc53e6daf41233541e1dc71f3915c90233697d00abfe558456520115dbc"
+    },
+    {
+      "bytes": 568,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_311_01_result.json",
+      "sha256": "a6b2a8fc9ef773be204e59808dbc93c05dfdc42857f385e527631c054f696fb6"
+    },
+    {
+      "bytes": 876,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_312_01.log",
+      "sha256": "078882a9a0e2ef417f92f77222d524df3f078ae9719359f58e4730fb240ebb68"
+    },
+    {
+      "bytes": 585,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_312_01_result.json",
+      "sha256": "3eb0eee38df5c169e71b0d0876be47a2f7ef53d7be29204407a2484daf2de3c7"
+    },
+    {
+      "bytes": 6357,
+      "path": "reports/evidence_independent_e02_canary_saved_key_entry_v1_20261117/probe_v1.py",
+      "sha256": "07fb72d69b7379142e80f56cb913eedeb0d1981bec26824e14acf29322005f39"
+    }
+  ],
+  "input_handoff": {
+    "bytes": 4386,
+    "path": "reports/E02_CANARY_SAVED_KEY_ENTRY_HANDOFF_20261117.json",
+    "sha256": "9a499a186ccbca18cc3fb6e5d5de88314bd7f709819960cb87119832e7ec0a96"
+  },
+  "no_additional_execution_access_spending_publication_authority": true,
+  "resource_accounting": {
+    "Git_mutations": 0,
+    "actual_each": {
+      "311": {
+        "console_bytes": 876,
+        "counters": {
+          "denials": 0,
+          "file_reads": 139143,
+          "file_write_reservations": 327685
+        },
+        "wall_seconds": 0.086700375
+      },
+      "312": {
+        "console_bytes": 876,
+        "counters": {
+          "denials": 0,
+          "file_reads": 139143,
+          "file_write_reservations": 327685
+        },
+        "wall_seconds": 0.091819166
+      }
+    },
+    "allocation_each_invocation": {
+      "CPU_seconds": 60,
+      "console_bytes": 131072,
+      "read_bytes": 33554432,
+      "scratch_writes": 4194304,
+      "wall_seconds": 120
+    },
+    "counter_boundary": "Read/content-write reservations after probe prewarm;not whole-process physical I/O or runtime-startup certification.",
+    "model_calls": 0,
+    "network_calls": 0,
+    "real_credential_reads": 0,
+    "real_launcher_main_calls": 0,
+    "scratch_cleanup": "Parent removed both owned authored scratch trees after process exit."
+  },
+  "reviewed_author_artifact_refs": [
+    {
+      "bytes": 272,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.11.json",
+      "sha256": "992e15db7b70eca526feab23d320c3b0ce9fd746ce4c5f63e5202e31fafedf4d"
+    },
+    {
+      "bytes": 1464,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.11.log",
+      "sha256": "7ceff720fc195da8add6d4be8a9025efa56d9e361aeb34ef576bb6a024e1d534"
+    },
+    {
+      "bytes": 275,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.12.json",
+      "sha256": "6ec58fe552b38296d8ded618903a30a8bc5cb9f6f32c9bf1c0c140db8d6c9f2f"
+    },
+    {
+      "bytes": 1464,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.12.log",
+      "sha256": "e2f489ec2ba59d28817283a751cd9fac604e81c47f5269c94ad0f73f84cbd688"
+    },
+    {
+      "bytes": 1307,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/PLAN.json",
+      "sha256": "84b7b214af9068b2218801bdab8791808ef4ed9aeb7d43a26f3f6d1762db392a"
+    }
+  ],
+  "source_refs": [
+    {
+      "bytes": 2899,
+      "path": "scripts/launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "80bbeafa473662ce4075de74e36f8ac31fd397c3f5c3cf8fad65d941721ebb58"
+    },
+    {
+      "bytes": 5111,
+      "path": "tests/test_e02_canary_saved_key_entry_v1.py",
+      "sha256": "781c4edf7cf8bd6cb4b48f99fc2ddd5305d1be2266cc0bbb395aef17b0940d5c"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 11207,
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    }
+  ],
+  "static_evidence": {
+    "cleanup": "finally restores original argv object and priorOPENROUTER_API_KEY value,orremoves temporarykey when absent. Tests includeTimeoutError,KeyboardInterrupt,SystemExit.",
+    "credential_policy_source": "Existing pinned _credential does ignored-file Git check,regular/private/owned bounded O_NOFOLLOW read and literal key syntax validation. This source review does not read or certify current key.",
+    "dependency_source_integrity": "_load_exact rejects symlink file/ancestors; reads at most65537 bytes; refuses length>65536 orwrong SHA beforecompile;verified bytes executed under non-main namespace without cached pyc.",
+    "ordering": "run loads exact launcher bytes,reads exact packet/release and calls validate_release before loading key-reader source or invoking _credential. Original launcher.main repeats its own exact admission before owner/action.",
+    "single_call": "No retry loop or secondarymain call. One _credential and one main per successful bridge run. Global duplicate prevention remains original owner ledger responsibility,not a new bridge scope."
+  }
+}

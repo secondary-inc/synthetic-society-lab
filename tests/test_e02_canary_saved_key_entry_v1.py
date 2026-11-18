@@ -104,6 +104,30 @@ class SavedKeyEntry(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'aliased'):
                 entry._load_exact(alias, hashlib.sha256(raw).hexdigest())
 
+    def test_closed_HTTP_diagnostic_retained(self):
+        from civiclab.production_compatibility_transport_v4_2 import _SafeTransportFailure
+        error = _SafeTransportFailure('HTTP_STATUS', 'HTTP_STATUS', 402)
+        self.assertEqual(entry.safe_failure(error)['diagnostic'],
+            {'stage': 'HTTP_STATUS', 'category': 'HTTP_STATUS', 'http_status': 402, 'close_failed': False})
+
+    def test_arbitrary_exception_text_not_disclosed(self):
+        result = entry.safe_failure(OSError('AUTHORED_PRIVATE_TEXT_MUST_NOT_APPEAR'))
+        self.assertEqual(result, {'status': 'STOPPED_NO_RETRY',
+                                 'original_full80_analysis': 'NOT_RUN_INCOMPLETE'})
+
+    def test_tampered_transport_fields_refused(self):
+        from civiclab.production_compatibility_transport_v4_2 import _SafeTransportFailure
+        error = _SafeTransportFailure('READ', 'TIMEOUT')
+        error._fields = ('AUTHORED_PRIVATE_TEXT', 'TIMEOUT', None, False)
+        self.assertNotIn('diagnostic', entry.safe_failure(error))
+
+    def test_transport_subclass_cannot_supply_diagnostic(self):
+        from civiclab.production_compatibility_transport_v4_2 import _SafeTransportFailure
+        class UnsafeSubclass(_SafeTransportFailure):
+            def diagnostic(self):
+                raise AssertionError('must not be called')
+        self.assertNotIn('diagnostic', entry.safe_failure(UnsafeSubclass('READ', 'TIMEOUT')))
+
 
 if __name__ == '__main__':
     unittest.main()

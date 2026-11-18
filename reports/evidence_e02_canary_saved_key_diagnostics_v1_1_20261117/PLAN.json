@@ -1,0 +1,38 @@
+{
+  "kind": "SAVED_KEY_ENTRY_SAFE_DIAGNOSTIC_DELTA",
+  "limits": {
+    "CPU_seconds": 30,
+    "console_bytes": 65536,
+    "invocations_per_runtime": 1,
+    "wall_seconds": 60
+  },
+  "predecessors": [
+    {
+      "bytes": 2899,
+      "copy": "reports/evidence_e02_canary_saved_key_diagnostics_v1_1_20261117/predecessor-launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "80bbeafa473662ce4075de74e36f8ac31fd397c3f5c3cf8fad65d941721ebb58",
+      "source": "scripts/launch_e02_canary_with_saved_key_20261117.py"
+    },
+    {
+      "bytes": 5111,
+      "copy": "reports/evidence_e02_canary_saved_key_diagnostics_v1_1_20261117/predecessor-test_e02_canary_saved_key_entry_v1.py",
+      "sha256": "781c4edf7cf8bd6cb4b48f99fc2ddd5305d1be2266cc0bbb395aef17b0940d5c",
+      "source": "tests/test_e02_canary_saved_key_entry_v1.py"
+    },
+    {
+      "bytes": 4386,
+      "copy": "reports/evidence_e02_canary_saved_key_diagnostics_v1_1_20261117/predecessor-E02_CANARY_SAVED_KEY_ENTRY_HANDOFF_20261117.json",
+      "sha256": "9a499a186ccbca18cc3fb6e5d5de88314bd7f709819960cb87119832e7ec0a96",
+      "source": "reports/E02_CANARY_SAVED_KEY_ENTRY_HANDOFF_20261117.json"
+    },
+    {
+      "bytes": 15699,
+      "copy": "reports/evidence_e02_canary_saved_key_diagnostics_v1_1_20261117/predecessor-INDEPENDENT_AUDIT_E02_CANARY_SAVED_KEY_ENTRY_V1_20261117.json",
+      "sha256": "973ae350f301e3fcb689bf9ff894c7f6287432c2034d12b92705f634bb914fcd",
+      "source": "reports/INDEPENDENT_AUDIT_E02_CANARY_SAVED_KEY_ENTRY_V1_20261117.json"
+    }
+  ],
+  "reason": "Original launcher and bridge expose only generic stopped status; existing bounded transport exception has validated stage/category/HTTP-status/close boolean. Preserve that safe diagnostic in caller stdout to distinguish actual service refusal from preflight failure without response bodies, headers, messages or credentials. No changes to request/budget/owner/main path.",
+  "recorded_at_UTC": "2026-11-18T03:48:02.850356+00:00",
+  "tests": "Existing9inertcases plus exact402,unknownerrorsecret,tamperedfields andsubclassrefusal; no actualkey/owner/API."
+}

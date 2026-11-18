@@ -1,0 +1,101 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "scripts/launch_e02_canary_with_saved_key_20261117.py",
+    "tests/test_e02_canary_saved_key_entry_v1.py"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent entry bridge review; root releases no actual key access until all E02 gates accepted.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 272,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.11.json",
+      "sha256": "992e15db7b70eca526feab23d320c3b0ce9fd746ce4c5f63e5202e31fafedf4d"
+    },
+    {
+      "bytes": 1464,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.11.log",
+      "sha256": "7ceff720fc195da8add6d4be8a9025efa56d9e361aeb34ef576bb6a024e1d534"
+    },
+    {
+      "bytes": 275,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.12.json",
+      "sha256": "6ec58fe552b38296d8ded618903a30a8bc5cb9f6f32c9bf1c0c140db8d6c9f2f"
+    },
+    {
+      "bytes": 1464,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/3.12.log",
+      "sha256": "e2f489ec2ba59d28817283a751cd9fac604e81c47f5269c94ad0f73f84cbd688"
+    },
+    {
+      "bytes": 1307,
+      "path": "reports/evidence_e02_canary_saved_key_entry_v1_20261117/PLAN.json",
+      "sha256": "84b7b214af9068b2218801bdab8791808ef4ed9aeb7d43a26f3f6d1762db392a"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src .venv/bin/python -B -m unittest discover -s tests -p test_e02_canary_saved_key_entry_v1.py -v"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "No actual key/owner/launcher execution. Trusted process and frozen project dependencies, not hostile-code sandbox.",
+    "Original launcher still independently requires L01/L02/L03 and fresh exact packet; bridge supplies no request/spending authority.",
+    "Frozen launcher body compiles exact pinned source; helper dependency source compiles exact pinned source. Existing checked _credential implementation enforces ignored owned private bounded literal key file.",
+    "The temporary process environment is restored on ordinary exceptions including timeout; abrupt process termination ends that process. No child/environment persistence introduced.",
+    "Entry bridge validates exact original release before key read; launcher repeats admission after injection. Source bytes other than the two pinned scripts use existing project contract/trusted import boundary.",
+    "Tests use mocked admission/key/main boundaries. They prove ordering and cleanup, not real authentication or model access."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only project-owned source and inert authored fixtures; private .env metadata checked, no contents read.",
+  "TASK_ID": "E02_SAVED_KEY_ENTRY_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "3.11": {
+      "API_calls": 0,
+      "console_bytes": 1464,
+      "console_sha256": "7ceff720fc195da8add6d4be8a9025efa56d9e361aeb34ef576bb6a024e1d534",
+      "exit_code": 0,
+      "mock_only": true,
+      "real_credential_reads": 0,
+      "reason": "EXIT",
+      "runtime": "3.11",
+      "wall_seconds": 0.092104
+    },
+    "3.12": {
+      "API_calls": 0,
+      "console_bytes": 1464,
+      "console_sha256": "e2f489ec2ba59d28817283a751cd9fac604e81c47f5269c94ad0f73f84cbd688",
+      "exit_code": 0,
+      "mock_only": true,
+      "real_credential_reads": 0,
+      "reason": "EXIT",
+      "runtime": "3.12",
+      "wall_seconds": 0.088124208
+    },
+    "cases_each": 9,
+    "independent_review": "PENDING"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent saved-key entry review",
+    "Remaining E02 launcher/new-event/current proof gates"
+  ],
+  "recorded_at_UTC": "2026-11-18T03:36:13.123661+00:00",
+  "source_refs": [
+    {
+      "bytes": 2899,
+      "path": "scripts/launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "80bbeafa473662ce4075de74e36f8ac31fd397c3f5c3cf8fad65d941721ebb58"
+    },
+    {
+      "bytes": 5111,
+      "path": "tests/test_e02_canary_saved_key_entry_v1.py",
+      "sha256": "781c4edf7cf8bd6cb4b48f99fc2ddd5305d1be2266cc0bbb395aef17b0940d5c"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 11207,
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    }
+  ]
+}
