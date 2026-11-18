@@ -1,0 +1,58 @@
+{
+  "kind": "ONE_HOSTED_CI_MATRIX_RELEASE",
+  "authority": "Standing owner engineering and bounded recovery authority; independent scoped implementation/coverage acceptance",
+  "previous_run": {
+    "id": 44352968450,
+    "ordinary_failures": 6,
+    "remaining_cancelled": 2,
+    "all_jobs_terminal": true
+  },
+  "repository": "secondary-inc/synthetic-society-lab",
+  "branch": "codex/research-foundation-and-baselines",
+  "open_PRs_for_branch": 0,
+  "trigger": "one normal push containing accepted active code and this release",
+  "workflow": "Offline verification",
+  "automatic_retries": 0,
+  "matrix_jobs": 18,
+  "max_parallel": 4,
+  "hard_job_timeout_seconds_total": 55200,
+  "seconds_per_runtime": 27600,
+  "ordinary_modules_in_committed_snapshot": 198,
+  "original197_retained": true,
+  "quarantinedV3_excluded_not_certified": true,
+  "runners": [
+    "ubuntu-latest",
+    "macos-latest"
+  ],
+  "public_standard_runner_scope": "reports/CI_PUBLIC_RUNNER_SCOPE_20261118.json",
+  "paid_runner_purchase_or_upgrade": false,
+  "model_calls": 0,
+  "full_CI_pass_claimed": false,
+  "code_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 70746,
+      "sha256": "2fea329e41347d0e1ed87aad835b3edd09f36345bb2ea520e7af651ea829dc65"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 59508,
+      "sha256": "ccc0cee9bc6c80adf09470e089b3bb9ddbc5568dc403bf024235ed774e766a65"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 3314,
+      "sha256": "e1278e2662b353947a4e8188a4d2bb77b57aaf9e0958763bd0c88a14c64194db"
+    },
+    {
+      "path": "configs/ci_workload_allocation_v2_20261118.json",
+      "bytes": 50638,
+      "sha256": "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+    }
+  ],
+  "audit_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_CI_WORKLOAD_ALLOCATION_V2_20261118.json",
+    "bytes": 17290,
+    "sha256": "6135c0cbdc32af8f94cdb44e64332271516fc9582c8fce4097415ae7eede546b"
+  }
+}

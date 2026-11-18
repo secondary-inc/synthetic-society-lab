@@ -36,6 +36,8 @@ def valid_receipt(job, specification, digest='runner'):
                  completed_case_ids=cases[:], outcomes=[{'case_id':case,'status':'PASS'} for case in cases],
                  failures=[], errors=[], unexpected_successes=[], not_run_cases=[], unstarted_skips=[])
         if 'test_module' in job:r.update(test_module=job['test_module'],source_ref=job['source_ref'])
+        if job.get('test_module') in c.NO_SITE_PROFILES:
+            r.update(no_site=True,startup_profile=c.NO_SITE_PROFILES[job['test_module']])
     if job['phase'] != 'ordinary':
         row = specification['inventory'][job['group']]
         cases = row['historical_cases'] if job['phase']=='historical' else row['portable_cases']
@@ -468,8 +470,8 @@ class ModuleIsolationRepairTests(unittest.TestCase):
                 with self.assertRaises(c.IsolationError):c.host_case_decision(root,'test_a.py')
 
     def test_literal_host_partition_keeps_all_four_portable_mime_cases(self):
-        self.assertEqual(sorted(len(r['local_cases']) for r in c.HOST_CASE_RULES.values()),[5,5,8])
-        self.assertEqual(sum(r['gate']=='DARWIN_MIME_ONLY' for r in c.HOST_CASE_RULES.values()),2)
+        self.assertEqual(sorted(len(r['local_cases']) for r in c.HOST_CASE_RULES.values()),[4,5,5,8])
+        self.assertEqual(sum(r['gate']=='DARWIN_MIME_ONLY' for r in c.HOST_CASE_RULES.values()),3)
         self.assertEqual(len(c.COMPILE_PROFILE_PINS),2)
 
     def test_canonical_interpreter_resolves_existing_symlink(self):
@@ -477,6 +479,176 @@ class ModuleIsolationRepairTests(unittest.TestCase):
             target=Path(directory)/'python';target.write_text('# inert executable model\n')
             alias=Path(directory)/'python-alias';alias.symlink_to(target)
             with mock.patch.object(c.sys,'executable',str(alias)):self.assertEqual(c.canonical_interpreter(),str(target.resolve()))
+
+
+class HostedFailureRepairTests(unittest.TestCase):
+    def test_four_exact_installer_mock_modules_get_no_site_without_global_path_rewrite(self):
+        self.assertEqual(set(c.NO_SITE_PROFILES),{'test_e01_pypdf701_install_'+v+'.py' for v in ('v1','v1_1','v1_2','v1_3')})
+        for name,profile in c.NO_SITE_PROFILES.items():
+            job={'phase':'ordinary','test_module':name,'source_ref':profile['test_ref']}
+            self.assertEqual(c.child_isolation_flags(job),['-I','-B','-S'])
+            with self.assertRaises(c.IsolationError):c.child_isolation_flags(dict(job,source_ref={}))
+        self.assertEqual(c.child_isolation_flags({'phase':'ordinary','test_module':'test_other.py'}),['-I','-B'])
+        self.assertEqual(c.child_isolation_flags({'phase':'portable'}),['-I','-B','-S'])
+
+    def test_no_site_child_admission_is_source_bound_and_fail_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory).resolve();(root/'tests').mkdir();(root/'scripts').mkdir()
+            (root/'tests/test_mock.py').write_text('# authored inert test\n');(root/'scripts/contract.py').write_text('# authored no-site contract\n')
+            def reference(path):
+                body=(root/path).read_bytes();return {'path':path,'bytes':len(body),'sha256':c.sha(body)}
+            rule={'test_ref':reference('tests/test_mock.py'),'contract_ref':reference('scripts/contract.py'),'reason':'AUTHORED_MODEL_ONLY'}
+            with mock.patch.object(c,'NO_SITE_PROFILES',{'test_mock.py':rule}):
+                with mock.patch.object(c.sys,'flags',SimpleNamespace(no_site=0)),self.assertRaisesRegex(c.IsolationError,'NO_SITE_CHILD_REQUIRED'):
+                    c.no_site_admission(root,'test_mock.py')
+                with mock.patch.object(c.sys,'flags',SimpleNamespace(no_site=1)):
+                    self.assertEqual(c.no_site_admission(root,'test_mock.py'),rule)
+                    (root/'scripts/contract.py').write_text('# changed\n')
+                    with self.assertRaisesRegex(c.IsolationError,'NO_SITE_PROFILE_SOURCE_CHANGED'):c.no_site_admission(root,'test_mock.py')
+
+    def test_no_site_receipt_cannot_claim_default_startup(self):
+        name=next(iter(c.NO_SITE_PROFILES));profile=c.NO_SITE_PROFILES[name]
+        job={'id':'ordinary-model','phase':'ordinary','test_module':name,'source_ref':profile['test_ref'],'declared_local_cases':['Local.test_one']}
+        receipt=valid_receipt(job,{})
+        c.validate_coverage(receipt,job,{})
+        for change in ({'no_site':False},{'startup_profile':None},{'startup_profile':{}}):
+            with self.assertRaisesRegex(c.IsolationError,'NO_SITE_STARTUP_BINDING'):c.validate_coverage(dict(receipt,**change),job,{})
+
+    def test_production_mime_class_preserves_three_portable_origin_cases(self):
+        row=c.HOST_CASE_RULES['test_e01_pypdf701_install_v1_5.py']
+        self.assertEqual(row['gate'],'DARWIN_MIME_ONLY')
+        self.assertEqual(set(row['local_cases']),{'ProductionMimeTests.'+name for name in (
+            'test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads',
+            'test_bound_stdlib_origin_prepopulated_initialization_resets_mappings',
+            'test_init_error_propagates_once_without_fallback','test_invalid_public_state_refuses')})
+        for name in ('test_unknown_origin_refuses_before_initialization','test_unknown_spec_origin_refuses_before_initialization','test_alias_origin_refuses_before_initialization'):
+            self.assertNotIn('ProductionMimeTests.'+name,row['local_cases'])
+
+    def test_result_relative_timestamps_expose_class_setup_time_without_sleep(self):
+        now=[0.0];stream=io.StringIO()
+        class Cases(unittest.TestCase):
+            @classmethod
+            def setUpClass(cls):now[0]=2.5
+            def test_one(self):pass
+        with mock.patch.object(c.time,'perf_counter',side_effect=lambda:now[0]):
+            result=unittest.TextTestRunner(stream=stream,resultclass=c.OrdinaryRecordingResult).run(unittest.defaultTestLoader.loadTestsFromTestCase(Cases))
+        self.assertTrue(result.wasSuccessful())
+        events=[json.loads(line[len(c.EVENT_MARKER):]) for line in stream.getvalue().splitlines() if line.startswith(c.EVENT_MARKER)]
+        self.assertEqual(events[0]['event'],'START');self.assertEqual(events[0]['since_result_seconds'],2.5)
+        self.assertEqual(events[-1]['since_result_seconds'],2.5)
+
+
+class WorkloadAllocationV2Tests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.policy,cls.reference=c.load_allocation(ROOT)
+        cls.rows=c.ordinary_modules(ROOT)
+        cls.base=c.plan(ROOT)
+
+    def plans(self,rows=None,policy=None):
+        return c.allocation_plans(ROOT,allocation=policy or self.policy,rows=self.rows if rows is None else rows,base=self.base)
+
+    def test_global_matrix_and_budget_include_Darwin_without_parallel_or_time_increase(self):
+        self.assertEqual(len(self.policy['lanes']),8)
+        self.assertEqual(sum(r['budget_seconds'] for r in self.policy['lanes'])+self.policy['darwin_focus']['budget_seconds'],27600)
+        self.assertEqual(2*27600,55200)
+        text=(ROOT/'.github/workflows/offline.yml').read_text()
+        matrix=json.loads(next(line.split('allocation: ',1)[1] for line in text.splitlines() if line.strip().startswith('allocation: [')))
+        self.assertEqual({r['id'] for r in matrix},set(c.ALLOCATION_LANES)|{'darwin-mime'})
+        self.assertEqual(len(matrix),9);self.assertEqual(sum(r['minutes'] for r in matrix)*60,27600)
+        budgets={r['id']:r['budget_seconds'] for r in self.policy['lanes']}
+        for row in matrix:
+            self.assertEqual(row['minutes']*60,600 if row['id']=='darwin-mime' else budgets[row['id']])
+            self.assertEqual(row['os'],'macos-latest' if row['id']=='darwin-mime' else 'ubuntu-latest')
+        self.assertEqual(text.count('max-parallel: 4'),1)
+        self.assertEqual(next(r for r in matrix if r['id']=='darwin-mime')['os'],'macos-latest')
+        self.assertIn('--job-start-monotonic "$CIVICLAB_CI_JOB_START"',text)
+
+    def test_every_discovered_module_once_and_original_frozen_jobs_first_once(self):
+        plans=self.plans();self.assertEqual(set(plans),set(c.ALLOCATION_LANES))
+        jobs=[j for spec in plans.values() for j in spec['jobs']]
+        self.assertEqual(len(jobs),len({j['id'] for j in jobs}))
+        ordinary=[j for j in jobs if j['phase']=='ordinary']
+        self.assertEqual(sorted(j['source_ref']['path'] for j in ordinary),sorted(r['path'] for r in self.rows))
+        self.assertGreaterEqual(len(ordinary),197)
+        self.assertEqual([j['id'] for j in plans['fast-0']['jobs'][:10]],[j['id'] for j in self.base['jobs'][1:]])
+        self.assertEqual(sum(j['phase']=='portable' for j in jobs),6)
+        self.assertEqual(sum(j['phase']=='historical' for j in jobs),4)
+        self.assertEqual((self.base['portable_cases'],self.base['historical_cases']),(216,4))
+        hashes={spec['allocation']['assignment_manifest_sha256'] for spec in plans.values()}
+        self.assertEqual(len(hashes),1)
+        for spec in plans.values():
+            self.assertTrue(all(j['wall_seconds']<=spec['shard']['budget_seconds'] for j in spec['jobs']))
+            self.assertEqual(spec['suite_scope'],'ALL_DISCOVERY_MODULES_PARTITION_V2')
+
+    def test_new_modules_are_dynamically_included_without_static197_truncation(self):
+        row={'path':'tests/test_future_authored_module.py','bytes':42,'sha256':'1'*64,'declared_local_cases':['Future.test_one']}
+        before=self.plans();after=self.plans(rows=self.rows+[row])
+        matches=[j for spec in after.values() for j in spec['jobs'] if j.get('source_ref',{}).get('path')==row['path']]
+        self.assertEqual(len(matches),1)
+        old_weight=sum(before['fast-0']['allocation']['fast_planning_weights_ms'].values())
+        new_weight=sum(after['fast-0']['allocation']['fast_planning_weights_ms'].values())
+        self.assertEqual(new_weight-old_weight,30000)
+        self.assertNotEqual(before['fast-0']['ordinary_manifest_sha256'],after['fast-0']['ordinary_manifest_sha256'])
+
+    def test_heavy_source_drift_missing_baseline_and_duplicate_paths_refuse(self):
+        from copy import deepcopy
+        rows=deepcopy(self.rows)
+        heavy=next(row['module_ref']['path'] for row in self.policy['lanes'] if row['type']=='HEAVY')
+        next(r for r in rows if r['path']==heavy)['sha256']='0'*64
+        with self.assertRaisesRegex(c.IsolationError,'HEAVY_SOURCE_CHANGED'):self.plans(rows=rows)
+        with self.assertRaisesRegex(c.IsolationError,'MODULE_MISSING_OR_DUPLICATE'):self.plans(rows=[r for r in self.rows if r['path']!=heavy])
+        with self.assertRaisesRegex(c.IsolationError,'MODULE_MISSING_OR_DUPLICATE'):self.plans(rows=self.rows+[self.rows[0]])
+
+    def test_assignment_is_deterministic_and_stale_fast_weights_are_not_measurements(self):
+        from copy import deepcopy
+        before=self.plans();reordered=self.plans(rows=list(reversed(self.rows)))
+        self.assertEqual(before['fast-0']['allocation']['assignment_manifest_sha256'],reordered['fast-0']['allocation']['assignment_manifest_sha256'])
+        rows=deepcopy(self.rows)
+        selected=next(r for r in rows if self.policy['completed_weights'].get(Path(r['path']).name,{}).get('source_sha256')==r['sha256'])
+        old=self.policy['completed_weights'][Path(selected['path']).name]['weight_ms'];selected['sha256']='2'*64
+        after=self.plans(rows=rows)
+        self.assertEqual(sum(after['fast-0']['allocation']['fast_planning_weights_ms'].values())-sum(before['fast-0']['allocation']['fast_planning_weights_ms'].values()),30000-old)
+
+    def test_policy_envelope_and_duplicate_heavy_assignment_cannot_drift(self):
+        from copy import deepcopy
+        for field,value in [('authorized_max_seconds_per_runtime',27601),('max_parallel',5),('artifact_reserve_seconds',0)]:
+            changed=deepcopy(self.policy);changed[field]=value
+            with self.assertRaises(c.IsolationError):c.validate_allocation(changed)
+        changed=deepcopy(self.policy);changed['lanes'][0]['budget_seconds']+=1
+        with self.assertRaises(c.IsolationError):c.validate_allocation(changed)
+        changed=deepcopy(self.policy);heavy=[r for r in changed['lanes'] if r['type']=='HEAVY'];heavy[1]['module_ref']=heavy[0]['module_ref']
+        with self.assertRaisesRegex(c.IsolationError,'HEAVY_DUPLICATE'):c.validate_allocation(changed)
+
+    def test_file_pin_and_file_bound_refuse_coedited_configuration(self):
+        raw=(ROOT/c.ALLOCATION_PATH).read_bytes()
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory).resolve();(root/'configs').mkdir();path=root/c.ALLOCATION_PATH
+            path.write_bytes(raw);self.assertEqual(c.load_allocation(root)[1],self.reference)
+            path.write_bytes(raw+b' ')
+            with self.assertRaisesRegex(c.IsolationError,'ALLOCATION_FILE_PIN'):c.load_allocation(root)
+            path.write_bytes(b'X'*131073)
+            with self.assertRaisesRegex(c.IsolationError,'ALLOCATION_FILE_BOUND'):c.load_allocation(root)
+
+    def test_fake_parent_deducts_setup_clock_and_never_claims_full_suite_PASS(self):
+        from copy import deepcopy
+        spec=deepcopy(self.plans()['fast-0'])
+        spec['jobs']=[next(j for j in spec['jobs'] if j['phase']=='ordinary')]
+        seen=[]
+        def fake(command,env,job,directory):
+            seen.append(job['wall_seconds']);path=directory/'mock.stdout';receipt=valid_receipt(job,spec,command[-1])
+            c.save_new(path,(c.MARKER+json.dumps(receipt)).encode())
+            return {'stdout':str(path),'returncode':0,'reason':None,'reaped':True}
+        with tempfile.TemporaryDirectory() as parent,mock.patch.object(c,'allocation_plan',return_value=spec),mock.patch.object(c.time,'monotonic',return_value=2000):
+            result=c.run_parent(Path(parent)/'one',run_process=fake,allocation_v2_lane='fast-0',job_start_monotonic=100)
+        self.assertEqual(seen,[77]);self.assertEqual(result['status'],'PASS_ALLOCATION_LANE')
+        self.assertEqual(result['allocation']['observed_setup_seconds'],1900)
+        self.assertEqual(result['allocation']['remaining_test_seconds_at_start'],80)
+
+    def test_allocation_cannot_mix_focused_or_old_shard_modes(self):
+        for extra in ({'shard_count':4},{'only_modules':['test_one.py']},{'module_wall':1}):
+            with self.assertRaisesRegex(c.IsolationError,'ALLOCATION_MODE_CONFLICT'):
+                c.run_parent(Path('/UNUSED_MODEL_ONLY'),allocation_v2_lane='fast-0',**extra)
 
 
 class FakePipe:
@@ -673,7 +845,9 @@ def bounded_main():
     helper=importlib.util.module_from_spec(helper_spec);helper_spec.loader.exec_module(helper)
     descriptor_guard=helper.DirectoryFdGuard(lambda path,flags:None)
     allowed={Path(__file__).resolve(),(ROOT/'scripts/run_offline_ci_v1.py').resolve(),
+             (ROOT/c.ALLOCATION_PATH).resolve(),(ROOT/'.github/workflows/offline.yml').resolve(),
              helper_path.resolve(),
+             *((path.resolve()) for path in (ROOT/'tests').glob('test*.py')),
              *((ROOT/'tests'/row[0]).resolve() for row in c.FROZEN.values())}
     def audit(event,args):
         if event.startswith(('socket.','ctypes.')) or event in {'subprocess.Popen','os.fork','os.forkpty','os.posix_spawn','os.system','pty.spawn'}:

@@ -1,0 +1,76 @@
+{
+  "accepted_a3e_ordinary_modules": 194,
+  "preallocation_841_ordinary_modules": 197,
+  "policy_exactly_matches_preallocation_841_names": true,
+  "additional_after_a3e": [
+    "test_fec2020_parser_v1.py",
+    "test_wrapper_slot46_hard_deadline_v2.py",
+    "test_wrapper_slot46_v2.py"
+  ],
+  "43of44original_CI_model_bodies_unchanged": true,
+  "one_CI_host_partition_expectation_updated": "ModuleIsolationRepairTests.test_literal_host_partition_keeps_all_four_portable_mime_cases",
+  "current_author_tests": 58,
+  "FROZEN_SOCKET_COMPILE_pins_unchanged": true,
+  "historical_admission_socket_observation_run_frozen_AST_unchanged": true,
+  "matrix": [
+    {
+      "id": "wrapper80",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 120
+    },
+    {
+      "id": "visibility40",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 90
+    },
+    {
+      "id": "fast-0",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 35
+    },
+    {
+      "id": "fast-1",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 35
+    },
+    {
+      "id": "issue56",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 60
+    },
+    {
+      "id": "recovery53",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 60
+    },
+    {
+      "id": "alignment28",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 30
+    },
+    {
+      "id": "exploratory",
+      "kind": "allocation",
+      "os": "ubuntu-latest",
+      "minutes": 20
+    },
+    {
+      "id": "darwin-mime",
+      "kind": "darwin",
+      "os": "macos-latest",
+      "minutes": 10
+    }
+  ],
+  "matrix_jobs_both_runtimes": 18,
+  "hardtimeout_total_per_runtime_seconds": 27600,
+  "hardtimeout_total_both_seconds": 55200,
+  "global_max_parallel": 4,
+  "reviewer_correction": "Second initialassert assumed197 at a3e, buta3ehas194;197baseline is preallocation841, adding3alreadyacceptednewmodules. Not a production omission."
+}

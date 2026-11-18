@@ -1,0 +1,333 @@
+{
+  "TASK_ID": "CI_WORKLOAD_ALLOCATION_V2_IMPLEMENTATION_20261118",
+  "status": "AUTHOR_PURE_PASS_PENDING_INDEPENDENT_AUDIT_HOSTED_NOT_RUN",
+  "FILES_CHANGED": [
+    "scripts/run_offline_ci_v1.py",
+    "tests/test_ci_collection_isolation_v1.py",
+    ".github/workflows/offline.yml",
+    "configs/ci_workload_allocation_v2_20261118.json"
+  ],
+  "source_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 70746,
+      "sha256": "2fea329e41347d0e1ed87aad835b3edd09f36345bb2ea520e7af651ea829dc65"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 59508,
+      "sha256": "ccc0cee9bc6c80adf09470e089b3bb9ddbc5568dc403bf024235ed774e766a65"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 3314,
+      "sha256": "e1278e2662b353947a4e8188a4d2bb77b57aaf9e0958763bd0c88a14c64194db"
+    },
+    {
+      "path": "configs/ci_workload_allocation_v2_20261118.json",
+      "bytes": 50638,
+      "sha256": "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+    }
+  ],
+  "predecessor_handoff_ref": {
+    "path": "reports/CI44352968450_REPAIR_HANDOFF_20261118.json",
+    "bytes": 21837,
+    "sha256": "1284b6907a1bd45c70823f5a3fec3fb3e12098609ccb0946afd7c7488d55c366"
+  },
+  "authorization": {
+    "original": "Lead explicitly authorized measured workload scheduling repair under standing owner authority, max27600seconds perruntime/55200both,maxparallel4,noautomaticreruns/paidrunnerupgrade/purchase/model/currentownerwork.",
+    "amendment": "Lead clarified8Linuxallocationlanes plus existinggenuineDarwinjob =9jobs/runtime, onecombinedmatrix maxparallel4globally; reserveDarwin600seconds fromfastbudgets.",
+    "authority_records": [
+      {
+        "path": "reports/evidence_ci_allocation_v2_20261118/AUTHORIZATION_AND_PLAN.json",
+        "bytes": 940,
+        "sha256": "4fc4aba1132855e7c9cc63af28852fd43bd3b958bdccf8d67586ce8dca3f15b8"
+      },
+      {
+        "path": "reports/evidence_ci_allocation_v2_20261118/AMENDED_AUTHORIZATION.json",
+        "bytes": 571,
+        "sha256": "ebf6ab81d5600ec80bc67d0bddb9aa0ff8366888c1f55b14da28155885f6b8f8"
+      }
+    ]
+  },
+  "implementation": {
+    "versioned_policy": "Exact bounded SHA-pinned config ci_workload_allocation_v2_20261118.json; validates8uniqueLinuxlaneIDs,6uniqueheavyreferences,budget caps,197baseline names,typedmeasuredweights andDarwinfocusbudget. Coedited/missing/oversized config failsclosed.",
+    "dynamic_coverage": "Scan actual flat testnamespace without executing/importing other testbodies. Original197names mandatory; newmodule names added automatically,changed/unmeasuredfastfiles use explicit30000msplanningweight. Source-hash-bound measuredweights used only on exactmatching files. Six heavy modules assigned once; remainingfiles deterministicLPT split overfastlanes. Missing/duplicate/heavy-source drift refuse. AlljobIDs globallyunique, allordinaryfiles coveredonce.",
+    "frozen_controls": "All6originalportablegroups216cases+4historicalchecks retained exactlyonce inLinuxpartition and scheduledfirstonfast-0. Host-dependentMIME checks retain truthfulNOT_RUN onLinux and unchanged genuineDarwin coverage; noothercase skipped.",
+    "workflow": "One strategy withPython3.11/3.12 x9targets =18jobs, globalmaxparallel4. EightUbuntu allocationjobs andoneexistingMacfocus perruntime; noseparateMacstrategy raisingparallelism. Exact jobhardtimeouts total460minutes=27600seconds/runtime,55200both, includingjobsetup/execution/artifactsteps.",
+    "clock_and_reserve": "Job records monotonic clock beforecheckout/setup. CLIallocationmode requires thisclock; parentdeducts elapsedsetup from laneclock and reserves120seconds forartifactupload. Future/nonfinite clockrefuses. Negative/exhaustedremainingbudget producesERRORwithoutdispatch. Childwall clamped toremainingminus3seconds. Existing supervisorhardkill/reap preserved. Noautomaticretry orresume.",
+    "scope_labels": "CLIuses explicit --allocation-v2-lane; conflictswitholdshards/focusedmodeselection refuse. PerlanePASS_ALLOCATION_LANE neverclaimsfullsuitepass. Globalassignment/source/config hashesandsetup-time metadata retained inPLAN/SUMMARY. Legacyfocused/historicalinterfaces retainprevioussemantics.",
+    "untouched": "No productioninstaller,normalownerverification,financialcaps,scientificprotocol/source/testbodies,full80coverage,FECparserorSTATUS/Git edits."
+  },
+  "budget_accounting": {
+    "linux_lane_budget_seconds": {
+      "fast-0": 2100,
+      "fast-1": 2100,
+      "alignment28": 1800,
+      "exploratory": 1200,
+      "issue56": 3600,
+      "recovery53": 3600,
+      "wrapper80": 7200,
+      "visibility40": 5400
+    },
+    "linux_total_seconds_per_runtime": 27000,
+    "genuine_Darwin_seconds_per_runtime": 600,
+    "combined_seconds_per_runtime": 27600,
+    "combined_seconds_both_runtimes": 55200,
+    "jobs_per_runtime": 9,
+    "matrix_jobs_total": 18,
+    "global_max_parallel": 4,
+    "linux_artifact_reserve_seconds_per_lane": 120,
+    "test_budget_before_setup_deduction_seconds": {
+      "fast-0": 1980,
+      "fast-1": 1980,
+      "wrapper80": 7080,
+      "visibility40": 5280,
+      "issue56": 3480,
+      "recovery53": 3480,
+      "alignment28": 1680,
+      "exploratory": 1080
+    },
+    "scope": "Hard workflowtimeout ceilings,notmeasuredrunningtime orbill. No newhostedrun/purchase/runnerupgrade."
+  },
+  "planning_snapshot": {
+    "ref": {
+      "path": "reports/evidence_ci_allocation_v2_20261118/ALLOCATION_SNAPSHOT.json",
+      "bytes": 60443,
+      "sha256": "6537e2bda31000d4fdaf2b97202ec1198603910ff21e575fbf0e10ea8a29c81e"
+    },
+    "ordinary_modules": 199,
+    "baseline_original_modules": 197,
+    "additional_modules": [
+      "test_fec_candidate_failure_diagnostic.py",
+      "test_wrapper_slot46_v3.py"
+    ],
+    "unique_linux_job_ids": 209,
+    "counts_by_lane": {
+      "fast-0": {
+        "jobs": 106,
+        "ordinary_modules": 96,
+        "lane_budget_seconds": 2100
+      },
+      "fast-1": {
+        "jobs": 97,
+        "ordinary_modules": 97,
+        "lane_budget_seconds": 2100
+      },
+      "wrapper80": {
+        "jobs": 1,
+        "ordinary_modules": 1,
+        "lane_budget_seconds": 7200
+      },
+      "visibility40": {
+        "jobs": 1,
+        "ordinary_modules": 1,
+        "lane_budget_seconds": 5400
+      },
+      "issue56": {
+        "jobs": 1,
+        "ordinary_modules": 1,
+        "lane_budget_seconds": 3600
+      },
+      "recovery53": {
+        "jobs": 1,
+        "ordinary_modules": 1,
+        "lane_budget_seconds": 3600
+      },
+      "alignment28": {
+        "jobs": 1,
+        "ordinary_modules": 1,
+        "lane_budget_seconds": 1800
+      },
+      "exploratory": {
+        "jobs": 1,
+        "ordinary_modules": 1,
+        "lane_budget_seconds": 1200
+      }
+    },
+    "assignment_manifest_sha256": "86a502a6da882c77963c49eabd4344c375862209366f823eb59994ae3cf20809",
+    "ordinary_manifest_sha256": "416fe5dced7231204eb13b0c48e6c331b472a996fa5fa2144cf834acddc554e5",
+    "scope": "Workingtreeplanningonly; futurediscoveryrecomputesmanifest. No inference aboutothermodules testresults."
+  },
+  "TESTS_RUN_AND_RESULTS": {
+    "final_pure_controls": {
+      "311": {
+        "receipt": {
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "python": "3.11.17",
+          "tests_run": 58,
+          "successful": true,
+          "read_reservation_bytes": 4242561,
+          "temp_write_bytes": 1408739,
+          "console_bytes_before_receipt": 9061,
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "network_calls": 0
+        },
+        "log_ref": {
+          "path": "reports/evidence_ci_allocation_v2_20261118/pure311_final.log",
+          "bytes": 9330,
+          "sha256": "120d046259874d3a7973ddf791061417ae74bc3fcaa9b65b082177ffe5761faa"
+        }
+      },
+      "312": {
+        "receipt": {
+          "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+          "python": "3.12.14",
+          "tests_run": 58,
+          "successful": true,
+          "read_reservation_bytes": 4242561,
+          "temp_write_bytes": 1408221,
+          "console_bytes_before_receipt": 9061,
+          "actual_children": 0,
+          "actual_frozen_groups": 0,
+          "network_calls": 0
+        },
+        "log_ref": {
+          "path": "reports/evidence_ci_allocation_v2_20261118/pure312_final.log",
+          "bytes": 9330,
+          "sha256": "641170f58264a6f77dd27f28c067446851ebc9e422d4b0ba35d8e21fa0903c25"
+        }
+      }
+    },
+    "scope": "58pure/inertcontrols/runtime. Tests verifyglobalevery-modulepartition,originalfrozencontrols,budget/OSmatrixidentity,newfiles,staleweights,heavyhash/missing/duplicate refusal,configpin/bounds,setup-clockdeduction andlane-only status. Zeroactualchilddispatches orfrozen/native/heavylifecyclegroups inside authoredtests.",
+    "preserved_initial_failure": "Two initialpureprocesses passed49existingcontrols thennewclasssetuphit author-onlysource-readguard because ASTinventoryneeded alltests/test*.py. Exactinitialsources/logspreserved. Narrowauthorallowlistcorrectionadmitsthoseprojectsourcefiles; allread/write/CPU/wall/consolecaps unchanged. Two recoveryprocesses thenPASS58each. Finaltwo alsoPASS58afterstrengthening per-targetminute/OSassertions.",
+    "local_pure_processes": 6,
+    "full_local_or_hosted_matrices": 0,
+    "whole_heavy_lifecycle_runs": 0,
+    "new_native_reader_runs": 0,
+    "whitespace": "PASS"
+  },
+  "REPRODUCTION_COMMANDS": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S tests/test_ci_collection_isolation_v1.py",
+    ".venv/bin/python -I -B -S tests/test_ci_collection_isolation_v1.py",
+    "Planningonly: import runner and callallocation_plans(ROOT); thisdoesnot importtestbodies orlaunchchildren.",
+    "Hostedperlane afterindependentacceptance: python scripts/run_offline_ci_v1.py --allocation-v2-lane <lane> --job-start-monotonic <clockrecordedbeforesetup> --output-dir <freshdirectory>"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/evidence_ci_allocation_v2_20261118"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public checked-in source/configmetadata andwhollyauthoredin-memory/ownedtempscratchpuremodels only. No actualFEC/rawpublisher/respondent/PDFsource,currentowner,key/.env,network/modeluse. Configweights originatefrom retainedCI44352968450completedmeasurements; censoredheavybounds remaincensored,notfabricatedcompletiontimes.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Independentimplementation/coverage/budgetreview stillrequired.",
+    "No newfullhostedmatrix orheavycompletionresult. Largerfinitecapsaredesignbounds,notcompletionguarantees.",
+    "Jobhardtimeoutsboundsetup/artifacts too; source/dependency/provisioning failuresmayleavepartial/noartifacts andremainfailed,neverPASS.",
+    "Pypdfspecialfresh-installcompatibilitystep andDarwinOS-focusedcontrolvariant remainexplicit additionalconditions withinexistingjobbudgets; exactordinaryonce claim refers tothe8Linuxallocationpartition.",
+    "GitHubcompute bill isnotestimated/assertedzero; no newremoteexecution or paidrunnerpurchase bythisworker.",
+    "Native/historical/scientific/prospectiveforecastacceptance isnot impliedbyCIplanningorunitchecks."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independentreview ofexact4sourcepins,coverage/budget/clockinvariants andmodewiring.",
+    "Lead-controlledsinglejustifiedhostedmatrix afteracceptance; fullLinux/Darwinmatrixreceipts requiredbeforefullCIclaim.",
+    "Any remainingrealportable failures orheavytimeouts mustretain evidence; no blanket skips/policyweakening."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independentnonimplementer reviewsfixedpins andrunsboundedpurecounterexamples. LeadretainsGit/STATUS/hostedtriggercontrol; noautomaticnewmatrixfromthishandoff.",
+  "evidence_refs": [
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/ALLOCATION_SNAPSHOT.json",
+      "bytes": 60443,
+      "sha256": "6537e2bda31000d4fdaf2b97202ec1198603910ff21e575fbf0e10ea8a29c81e"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/AMENDED_AUTHORIZATION.json",
+      "bytes": 571,
+      "sha256": "ebf6ab81d5600ec80bc67d0bddb9aa0ff8366888c1f55b14da28155885f6b8f8"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/AUTHORIZATION_AND_PLAN.json",
+      "bytes": 940,
+      "sha256": "4fc4aba1132855e7c9cc63af28852fd43bd3b958bdccf8d67586ce8dca3f15b8"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/PURE_GUARD_RECOVERY.json",
+      "bytes": 511,
+      "sha256": "60fce1d2db76bf4933c5e44a32889c77a305c88941f0e34ced4ec57052a3f0f7"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/attempt1_sources/ci_workload_allocation_v2_20261118.json",
+      "bytes": 50638,
+      "sha256": "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/attempt1_sources/offline.yml",
+      "bytes": 3314,
+      "sha256": "e1278e2662b353947a4e8188a4d2bb77b57aaf9e0958763bd0c88a14c64194db"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/attempt1_sources/run_offline_ci_v1.py",
+      "bytes": 70746,
+      "sha256": "2fea329e41347d0e1ed87aad835b3edd09f36345bb2ea520e7af651ea829dc65"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/attempt1_sources/test_ci_collection_isolation_v1.py",
+      "bytes": 59119,
+      "sha256": "692d4df16a2cfce5ef0b87d0e2efedd6eb1ce1c5b686cac796405835670a1152"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/final_ci_workload_allocation_v2_20261118.json",
+      "bytes": 50638,
+      "sha256": "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/final_offline.yml",
+      "bytes": 3314,
+      "sha256": "e1278e2662b353947a4e8188a4d2bb77b57aaf9e0958763bd0c88a14c64194db"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/final_run_offline_ci_v1.py",
+      "bytes": 70746,
+      "sha256": "2fea329e41347d0e1ed87aad835b3edd09f36345bb2ea520e7af651ea829dc65"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/final_test_ci_collection_isolation_v1.py",
+      "bytes": 59508,
+      "sha256": "ccc0cee9bc6c80adf09470e089b3bb9ddbc5568dc403bf024235ed774e766a65"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/predecessor_offline.yml",
+      "bytes": 2669,
+      "sha256": "5933789b71ac34b51b4859a0998ef3f5403de6bbe6473e96672b628d39f6eb31"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/predecessor_run_offline_ci_v1.py",
+      "bytes": 59796,
+      "sha256": "cc6ebfdaf3c25ed8f25bc89283adf3001e1f85e05c60cc24fc8119706b41a91f"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/predecessor_test_ci_collection_isolation_v1.py",
+      "bytes": 51171,
+      "sha256": "29196d1591bb9258386368c719db8765782a68b4a8bcb7d37f1460a359776844"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/pure311_attempt1.log",
+      "bytes": 9374,
+      "sha256": "5b114d5cdef1253e3cb6a53a16807c8d81ecb9721d3c664fe4a0b2ede9adfe6b"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/pure311_attempt2.log",
+      "bytes": 9330,
+      "sha256": "e7ca314f0c8079d7a7e24ebab0a9a1709409f948d54d5518a46129597008947c"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/pure311_final.log",
+      "bytes": 9330,
+      "sha256": "120d046259874d3a7973ddf791061417ae74bc3fcaa9b65b082177ffe5761faa"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/pure312_attempt1.log",
+      "bytes": 9300,
+      "sha256": "e9f6ca25c2bcac445ff957ff61bf1cdb81b92e95c1f6f4590a8390a1817037c7"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/pure312_attempt2.log",
+      "bytes": 9330,
+      "sha256": "060c458115a889887cb0cbf7330d0302b0679f2ec1fefcde691d4a9d43a0bd96"
+    },
+    {
+      "path": "reports/evidence_ci_allocation_v2_20261118/pure312_final.log",
+      "bytes": 9330,
+      "sha256": "641170f58264a6f77dd27f28c067446851ebc9e422d4b0ba35d8e21fa0903c25"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "OBSOLETE_FAILED_CI_CANCELLATION_PLAN",
+  "run_id": 44352968450,
+  "head_sha": "a3e7636744bf45cfc79c0c0d3da75c26861e2f3a",
+  "reason": "Six ordinary jobs already failed; failures preserved with digest-verified artifacts. Two old Python3.12 shards still run against superseded runner. Cancel to avoid overlapping obsolete work with the separately reviewed replacement; no success/coverage inferred for cancelled remainder.",
+  "completed_failures": [
+    "3.11shards0,1,2,3",
+    "3.12shards0,2"
+  ],
+  "remaining_jobs": [
+    134973333657,
+    134973333939
+  ],
+  "preserved_reports": [
+    "reports/CI_PARTIAL_FAILURE_44352968450_20261118.json",
+    "reports/CI_PARTIAL_PY312_FAILURE_44352968450_20261118.json"
+  ],
+  "requests_max": 1,
+  "automatic_retry": false,
+  "replacement": "Not yet released; separate independent review and one complete active-code matrix required",
+  "all_model_calls": 0,
+  "new_spending_or_purchase": false
+}

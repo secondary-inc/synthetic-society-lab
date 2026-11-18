@@ -1,0 +1,119 @@
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1.InstallerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.052s
+
+OK
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_1.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.076s
+
+OK
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.065s
+
+OK
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_3.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.062s
+
+OK
+test_alias_origin_refuses_before_initialization (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_alias_origin_refuses_before_initialization) ... Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 659, in doCleanups
+    self._callCleanup(function, *args, **kwargs)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 587, in _callCleanup
+    function(*args, **kwargs)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 665, in _rmtree_safe_fd
+    dirfd = os.open(entry.name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=topfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 35, in audit
+AssertionError: CI_PROBE_SOURCE_ONLY_READS
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 50, in main
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/runner.py", line 217, in run
+    test(result)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/suite.py", line 122, in run
+    test(result)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 627, in run
+    self.doCleanups()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 658, in doCleanups
+    with outcome.testPartExecutor(self):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 74, in testPartExecutor
+    _addError(self.result, test_case, exc_info)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/case.py", line 97, in _addError
+    result.addFailure(test, exc_info)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/runner.py", line 106, in addFailure
+    super(TextTestResult, self).addFailure(test, err)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/result.py", line 17, in inner
+    return method(self, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/result.py", line 122, in addFailure
+    self.failures.append((test, self._exc_info_to_string(err, test)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/result.py", line 177, in _exc_info_to_string
+    tb_e = traceback.TracebackException(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/traceback.py", line 728, in __init__
+    self.stack = StackSummary._extract_from_extended_frame_gen(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/traceback.py", line 433, in _extract_from_extended_frame_gen
+    f.line
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/traceback.py", line 318, in line
+    self._line = linecache.getline(self.filename, self.lineno)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tokenize.py", line 396, in open
+    buffer = _builtin_open(filename, 'rb')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 35, in audit
+AssertionError: CI_PROBE_SOURCE_ONLY_READS
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 59, in <module>
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 23, in main
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/shutil.py", line 665, in _rmtree_safe_fd
+    dirfd = os.open(entry.name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=topfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 35, in audit
+AssertionError: CI_PROBE_SOURCE_ONLY_READS

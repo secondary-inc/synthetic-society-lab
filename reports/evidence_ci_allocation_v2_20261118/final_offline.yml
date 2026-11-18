@@ -1,0 +1,56 @@
+name: Offline verification
+on: [push, pull_request]
+jobs:
+  tests:
+    name: '${{ matrix.python }} / ${{ matrix.allocation.id }}'
+    runs-on: '${{ matrix.allocation.os }}'
+    timeout-minutes: ${{ matrix.allocation.minutes }}
+    strategy:
+      fail-fast: false
+      # One strategy limits Linux and genuine Darwin jobs together.
+      max-parallel: 4
+      matrix:
+        python: ['3.11', '3.12']
+        allocation: [{"id":"wrapper80","kind":"allocation","os":"ubuntu-latest","minutes":120},{"id":"visibility40","kind":"allocation","os":"ubuntu-latest","minutes":90},{"id":"fast-0","kind":"allocation","os":"ubuntu-latest","minutes":35},{"id":"fast-1","kind":"allocation","os":"ubuntu-latest","minutes":35},{"id":"issue56","kind":"allocation","os":"ubuntu-latest","minutes":60},{"id":"recovery53","kind":"allocation","os":"ubuntu-latest","minutes":60},{"id":"alignment28","kind":"allocation","os":"ubuntu-latest","minutes":30},{"id":"exploratory","kind":"allocation","os":"ubuntu-latest","minutes":20},{"id":"darwin-mime","kind":"darwin","os":"macos-latest","minutes":10}]
+    steps:
+      - name: Record job clock before setup
+        run: python3 -I -B -S -c 'import os,time; f=open(os.environ["GITHUB_ENV"],"a"); f.write("CIVICLAB_CI_JOB_START="+repr(time.monotonic())+"\n"); f.close()'
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '${{ matrix.python }}'
+      - name: Install offline test dependencies
+        if: matrix.allocation.kind == 'allocation'
+        run: python -m pip install -e '.[selection,sources,geometry]'
+      - name: Verify pypdf 7 authored PDF compatibility
+        if: matrix.allocation.id == 'fast-0'
+        run: |
+          export CIVICLAB_PYPDF7_FIXTURE_TARGET="$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')"
+          python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v
+      - name: Verify registered fixture sources
+        if: matrix.allocation.id == 'fast-0'
+        run: civiclab validate-sources --fixture-only
+      - name: Verify one exact workload partition
+        if: matrix.allocation.kind == 'allocation'
+        run: >-
+          python scripts/run_offline_ci_v1.py
+          --allocation-v2-lane ${{ matrix.allocation.id }}
+          --job-start-monotonic "$CIVICLAB_CI_JOB_START"
+          --output-dir ci-results/python-${{ matrix.python }}-${{ matrix.allocation.id }}
+      - name: Execute unchanged MIME cases on genuine Darwin
+        if: matrix.allocation.kind == 'darwin'
+        run: >-
+          python scripts/run_offline_ci_v1.py
+          --only-module test_e01_p2_builtin_mime_candidate_v1_20261116.py
+          --only-module test_e01_p2_builtin_mime_candidate_v2_20261116.py
+          --only-module test_e01_pypdf701_install_v1_5.py
+          --module-wall-seconds 120
+          --output-dir ci-results/python-${{ matrix.python }}-${{ matrix.allocation.id }}
+      - name: Preserve exact coverage and failure receipts
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-ci-python-${{ matrix.python }}-${{ matrix.allocation.id }}
+          path: ci-results/python-${{ matrix.python }}-${{ matrix.allocation.id }}/
+          if-no-files-found: warn

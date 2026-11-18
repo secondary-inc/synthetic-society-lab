@@ -1,0 +1,120 @@
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1.InstallerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.064s
+
+OK
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_1.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.095s
+
+OK
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.078s
+
+OK
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_3.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.075s
+
+OK
+test_alias_origin_refuses_before_initialization (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_alias_origin_refuses_before_initialization) ... Traceback (most recent call last):
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 58, in testPartExecutor
+    yield
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 671, in doCleanups
+    self._callCleanup(function, *args, **kwargs)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 597, in _callCleanup
+    function(*args, **kwargs)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 35, in audit
+AssertionError: CI_PROBE_SOURCE_ONLY_READS
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 50, in main
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/runner.py", line 240, in run
+    test(result)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/suite.py", line 122, in run
+    test(result)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 690, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 638, in run
+    self.doCleanups()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 670, in doCleanups
+    with outcome.testPartExecutor(self):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 75, in testPartExecutor
+    _addError(self.result, test_case, exc_info)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/case.py", line 98, in _addError
+    result.addFailure(test, exc_info)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/runner.py", line 109, in addFailure
+    super(TextTestResult, self).addFailure(test, err)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/result.py", line 17, in inner
+    return method(self, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/result.py", line 123, in addFailure
+    self.failures.append((test, self._exc_info_to_string(err, test)))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/result.py", line 189, in _exc_info_to_string
+    tb_e = traceback.TracebackException(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/traceback.py", line 733, in __init__
+    self.stack = StackSummary._extract_from_extended_frame_gen(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/traceback.py", line 438, in _extract_from_extended_frame_gen
+    f.line
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/traceback.py", line 323, in line
+    self._line = linecache.getline(self.filename, self.lineno)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/linecache.py", line 141, in updatecache
+    with tokenize.open(fullname) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tokenize.py", line 457, in open
+    buffer = _builtin_open(filename, 'rb')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 35, in audit
+AssertionError: CI_PROBE_SOURCE_ONLY_READS
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 59, in <module>
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 23, in main
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 950, in __exit__
+    self.cleanup()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 759, in rmtree
+    _rmtree_safe_fd(stack, onexc)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py", line 674, in _rmtree_safe_fd
+    topfd = os.open(name, os.O_RDONLY | os.O_NONBLOCK, dir_fd=dirfd)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py", line 35, in audit
+AssertionError: CI_PROBE_SOURCE_ONLY_READS

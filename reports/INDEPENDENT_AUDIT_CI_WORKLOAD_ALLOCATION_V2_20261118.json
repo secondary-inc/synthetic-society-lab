@@ -1,0 +1,416 @@
+{
+  "kind": "INDEPENDENT_AUDIT_CI_WORKLOAD_ALLOCATION_V2_20261118",
+  "status": "PASS_SCOPED_IMPLEMENTATION_AND_ACCOUNTING",
+  "UTC": "2026-11-18T18:32:30.674371+00:00",
+  "scope": "Exact4sourcepins; planning,coverage,startup,host,budget methods and inert controls. No fullhosted/heavy/native research execution.",
+  "handoff": {
+    "path": "reports/CI_WORKLOAD_ALLOCATION_V2_HANDOFF_20261118.json",
+    "bytes": 17534,
+    "sha256": "05023bfb4b6f308c24ac378d1e70c017e6cd75cd3fe8082b3c8eb3596f194781"
+  },
+  "source_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 70746,
+      "sha256": "2fea329e41347d0e1ed87aad835b3edd09f36345bb2ea520e7af651ea829dc65"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 59508,
+      "sha256": "ccc0cee9bc6c80adf09470e089b3bb9ddbc5568dc403bf024235ed774e766a65"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 3314,
+      "sha256": "e1278e2662b353947a4e8188a4d2bb77b57aaf9e0958763bd0c88a14c64194db"
+    },
+    {
+      "path": "configs/ci_workload_allocation_v2_20261118.json",
+      "bytes": 50638,
+      "sha256": "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+    }
+  ],
+  "static_baseline": {
+    "accepted_a3e_ordinary_modules": 194,
+    "preallocation_841_ordinary_modules": 197,
+    "policy_exactly_matches_preallocation_841_names": true,
+    "additional_after_a3e": [
+      "test_fec2020_parser_v1.py",
+      "test_wrapper_slot46_hard_deadline_v2.py",
+      "test_wrapper_slot46_v2.py"
+    ],
+    "43of44original_CI_model_bodies_unchanged": true,
+    "one_CI_host_partition_expectation_updated": "ModuleIsolationRepairTests.test_literal_host_partition_keeps_all_four_portable_mime_cases",
+    "current_author_tests": 58,
+    "FROZEN_SOCKET_COMPILE_pins_unchanged": true,
+    "historical_admission_socket_observation_run_frozen_AST_unchanged": true,
+    "matrix": [
+      {
+        "id": "wrapper80",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 120
+      },
+      {
+        "id": "visibility40",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 90
+      },
+      {
+        "id": "fast-0",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 35
+      },
+      {
+        "id": "fast-1",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 35
+      },
+      {
+        "id": "issue56",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 60
+      },
+      {
+        "id": "recovery53",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 60
+      },
+      {
+        "id": "alignment28",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 30
+      },
+      {
+        "id": "exploratory",
+        "kind": "allocation",
+        "os": "ubuntu-latest",
+        "minutes": 20
+      },
+      {
+        "id": "darwin-mime",
+        "kind": "darwin",
+        "os": "macos-latest",
+        "minutes": 10
+      }
+    ],
+    "matrix_jobs_both_runtimes": 18,
+    "hardtimeout_total_per_runtime_seconds": 27600,
+    "hardtimeout_total_both_seconds": 55200,
+    "global_max_parallel": 4,
+    "reviewer_correction": "Second initialassert assumed197 at a3e, buta3ehas194;197baseline is preallocation841, adding3alreadyacceptednewmodules. Not a production omission."
+  },
+  "verified_host_and_artifact_refs": {
+    "path": "reports/evidence_independent_ci_allocation_v2_20261118/HANDOFF_AND_HOST_REF_CHECKS.json",
+    "bytes": 9018,
+    "sha256": "06b773b788b4c8024e2d077fc67930f641e87e8a486202402d5bb833c69be0b3"
+  },
+  "implementation_findings": [
+    "198ordinary modules assignedonce across8Linuxlanes plus6portable+4historical jobs=208. All197preallocation841 names retained, including all194ata3e plus3subsequentlyaccepted modules. One acceptedFECdiagnostic added dynamically. No originalresearchtest removed.",
+    "Frozen groups,pins,socket_observation,historical_admission,run_frozen AST unchanged. Four no-site profiles bind exact test+installer source and actualchild no_site; otherordinary modules retain site. AddedfourDarwinMIME cases source-bound; threeportableorigin refusals cannot be forgedintoNOT_RUN.",
+    "Only43of44priorCI modelbodies unchanged; one expectedhost-partition literal test legitimately includes newlyaddedfourthrule. Realfrozen/historical testsourcepins unchanged.",
+    "SinglePython3.11/3.12 x9job matrix=18jobs,maxparallel4globally. Exactworkflowhardtimeouts sum27600seconds/runtime including27000Linux+600Darwin;55200both. No separateDarwinstrategy addsconcurrency.",
+    "Linux reserves120seconds/artifacts perlane. Workflowclockrecordedbeforecheckout/setup; CLIrequiresfinite nonfuture jobclock; setupdeducted, childwallclampedremainingminus3;<=3remaining recordsERRORwithout dispatch. NaN/Inf canonicalserialization refusesbeforecustomvalidation. Existinggroupkill/reap preserved.",
+    "Configbytes/SHA,6heavyrefs,fullbaseline and unique globaljobcoverage bound. Changed/unmeasuredfastsource uses explicit30secondplanningweight; no censoredtimeout treated as completion. LanePASS labels neverfullsuitePASS.",
+    "27handoff/source/evidencerefs and16host/startup refs verified. Publicquarantine metadata hashchecked; V3 active test absent. Quarantinedcontents neitherreadnor executed."
+  ],
+  "independent_full_pure_runs": [
+    {
+      "runtime": "311",
+      "receipt": {
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "python": "3.11.17",
+        "tests_run": 66,
+        "successful": false,
+        "read_reservation_bytes": 7897334,
+        "temp_write_bytes": 4415301,
+        "console_bytes_before_receipt": 14736,
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "network_calls": 0
+      },
+      "full_suite_verdict": "FAILED_TWO_REVIEWER_EXPECTATION_SUBTEST_ERRORS",
+      "cases_passed": 65,
+      "tests_run": 66,
+      "failed_case": "IndependentAllocationControls.test_bad_job_clocks_refuse_before_any_dispatch",
+      "reason": "NaN/Inf rejected by canonical serializer ValueError before custom IsolationError. Reviewer asserted wrong exception class. No dispatch.",
+      "full66_green_claim": false
+    },
+    {
+      "runtime": "312",
+      "receipt": {
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "python": "3.12.14",
+        "tests_run": 66,
+        "successful": false,
+        "read_reservation_bytes": 7897339,
+        "temp_write_bytes": 4414709,
+        "console_bytes_before_receipt": 14524,
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "network_calls": 0
+      },
+      "full_suite_verdict": "FAILED_TWO_REVIEWER_EXPECTATION_SUBTEST_ERRORS",
+      "cases_passed": 65,
+      "tests_run": 66,
+      "failed_case": "IndependentAllocationControls.test_bad_job_clocks_refuse_before_any_dispatch",
+      "reason": "NaN/Inf rejected by canonical serializer ValueError before custom IsolationError. Reviewer asserted wrong exception class. No dispatch.",
+      "full66_green_claim": false
+    }
+  ],
+  "corrected_nonfinite_only_controls": [
+    {
+      "runtime": "311",
+      "control": {
+        "actual_dispatches": 0,
+        "kind": "INDEPENDENT_NONFINITE_REFUSAL_ONLY",
+        "source_change": false,
+        "status": "PASS",
+        "traces": [
+          {
+            "exact_exception_type": "ValueError",
+            "input": "NaN",
+            "safe_frame_names": [
+              "run_parent",
+              "save_new",
+              "packed",
+              "dumps",
+              "encode",
+              "iterencode"
+            ]
+          },
+          {
+            "exact_exception_type": "ValueError",
+            "input": "Inf",
+            "safe_frame_names": [
+              "run_parent",
+              "save_new",
+              "packed",
+              "dumps",
+              "encode",
+              "iterencode"
+            ]
+          }
+        ]
+      },
+      "receipt": {
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "python": "3.11.17",
+        "tests_run": 1,
+        "successful": true,
+        "read_reservation_bytes": 141818,
+        "temp_write_bytes": 0,
+        "console_bytes_before_receipt": 681,
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "network_calls": 0
+      }
+    },
+    {
+      "runtime": "312",
+      "control": {
+        "actual_dispatches": 0,
+        "kind": "INDEPENDENT_NONFINITE_REFUSAL_ONLY",
+        "source_change": false,
+        "status": "PASS",
+        "traces": [
+          {
+            "exact_exception_type": "ValueError",
+            "input": "NaN",
+            "safe_frame_names": [
+              "run_parent",
+              "save_new",
+              "packed",
+              "dumps",
+              "encode",
+              "iterencode"
+            ]
+          },
+          {
+            "exact_exception_type": "ValueError",
+            "input": "Inf",
+            "safe_frame_names": [
+              "run_parent",
+              "save_new",
+              "packed",
+              "dumps",
+              "encode",
+              "iterencode"
+            ]
+          }
+        ]
+      },
+      "receipt": {
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "python": "3.12.14",
+        "tests_run": 1,
+        "successful": true,
+        "read_reservation_bytes": 141818,
+        "temp_write_bytes": 0,
+        "console_bytes_before_receipt": 681,
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "network_calls": 0
+      }
+    }
+  ],
+  "recovery_history": {
+    "zero_test_wrappers": "Initial2processesran0cases due execnamespace mismatch; no acceptance claimed. Originalwrapper/logspreserved. Lead explicitlyauthorized2correctedfullsuiteprocesses.",
+    "two_subtest_errors": "Corrected66runseach have65successfulcases and2errors inonewrongexpectationcase. Existingallow_nanFalseValueError isfailclosed. Lead authorized2smallrefusal-onlyprocesses;both PASSexacttype/stack/noPLAN/noRESERVATION/nodispatch. Full66failedlogsunmodified; nofullsuite rerun.",
+    "static_review_assumptions": "Initiallyassumedall44oldCImodelbodiesidentical and197modulesata3e. Correctedexplicitgit/ASTevidence preserves43+1bodychange and194ata3e/197at841; no productdefectfromreviewerassertions.",
+    "implementation_edits": 0
+  },
+  "allocation": {
+    "initial_zero_test_processes": 2,
+    "corrected_full_suite_processes": 2,
+    "full_suite_limits_each": "120CPU/120wall/64MiBread/32MiBscratch/256KiBconsole",
+    "additional_nonfinite_only_processes": 2,
+    "nonfinite_limits_each": "30CPU/30wall,samefile/scratchguards",
+    "actual_child_or_frozen_groups": 0,
+    "native_heavy_or_hosted_jobs": 0,
+    "currentowner_key_network_model_V3_calls": 0,
+    "cost_usd": 0,
+    "billing_note": "No hostedrun/purchase byreviewer; GitHubcompute bills notestimated orassertedzero."
+  },
+  "acceptance": {
+    "exact_scheduler_component": "PASS_SCOPED",
+    "coverage_host_startup_accounting": "PASS_SCOPED",
+    "full_hosted_matrix": "NOT_RUN",
+    "heavy_completion": "NOT_RUN",
+    "historical_runtime_qualification": "UNCHANGED_NOT_NEWLY_CERTIFIED",
+    "E02V3": "BLOCKED_QUARANTINED_UNEXECUTED",
+    "full_research_contract": "INCOMPLETE"
+  },
+  "limitations": [
+    "Full66logs remainFAILED duewrongreviewerexceptionexpectation; separatelycorrectedcontrol establishes intendedrefusal. No66PASS history claimed.",
+    "No actualGitHubLinux/Darwin,installerorheavylifecycle executed inreview. Largerfinitecaps are planningjudgments, notcompletionguarantees.",
+    "Finalhostedacceptance requires allappropriatejobs andmatchingmanifests. PerlanePASS alone cannotprovefullsuite. Setup/timeout/unknownresults stayfailed.",
+    "CLIrequiresjobclock; puremodels do not establish physicalstartup/syscall/native/process-tree closure. Fixedworkflowjobcaps and existing supervisor supplyouterbounds.",
+    "QuarantinedV3 is notactiveorcertified. Thisreviewcannotresumeorcertify blockedcontinuation orfullresearchcontract.",
+    "HostNOT_RUN remains explicit. No scientific/source-adoption/prospectiveforecast/persuasion ornewfinancialauthority follows fromCIreview."
+  ],
+  "next": "Lead may commit exactaccepted4files andsafeclosedreviewevidence then trigger the one separatelyauthorized hostedmatrix; inspect complete receipts before claiming fullCIpass.",
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/HANDOFF_AND_HOST_REF_CHECKS.json",
+      "bytes": 9018,
+      "sha256": "06b773b788b4c8024e2d077fc67930f641e87e8a486202402d5bb833c69be0b3"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/STATIC_BASELINE_CHECKS.json",
+      "bytes": 2019,
+      "sha256": "3c760c48dbce95a0dbf5dd2b971eb819232f5f35f37d7a56575ac2dea4857c8a"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/STATIC_INITIAL_ASSUMPTION.json",
+      "bytes": 390,
+      "sha256": "b593ad255d0f69da4aa161a7dc2cbeafe238e7a0388d0d7116aa3610750cd1e4"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/ZERO_TEST_WRAPPER_RECOVERY.json",
+      "bytes": 414,
+      "sha256": "8f38ab55981605fae06cc1abb76ed256b57bb39532f583b5304be7d3854897ff"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/accepted_a3e_runner.py",
+      "bytes": 56028,
+      "sha256": "7db53cd92b6e7866015ed85d87bf4cddc7abccfbabc5d77b3c8bd54e165a941e"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/accepted_a3e_tests.py",
+      "bytes": 46608,
+      "sha256": "9e1f2b0ad7af0c2ded727e3d9c5bea828283d767f9d313f4467874bc642ce631"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/additional_controls.py",
+      "bytes": 5578,
+      "sha256": "9c3ed2dc2b9007aa6bfde034aa40635e40cd73d93aa3303c81440040cdb00360"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/build_audit.py",
+      "bytes": 6678,
+      "sha256": "7cfa81b84836f02faf3ded7fc8ffbbe6c0c58d4d58cc1c51e130ce7a20ec431e"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/frozen_ci_workload_allocation_v2_20261118.json",
+      "bytes": 50638,
+      "sha256": "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/frozen_offline.yml",
+      "bytes": 3314,
+      "sha256": "e1278e2662b353947a4e8188a4d2bb77b57aaf9e0958763bd0c88a14c64194db"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/frozen_run_offline_ci_v1.py",
+      "bytes": 70746,
+      "sha256": "2fea329e41347d0e1ed87aad835b3edd09f36345bb2ea520e7af651ea829dc65"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/frozen_test_ci_collection_isolation_v1.py",
+      "bytes": 59508,
+      "sha256": "ccc0cee9bc6c80adf09470e089b3bb9ddbc5568dc403bf024235ed774e766a65"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/nonfinite_311.log",
+      "bytes": 941,
+      "sha256": "2a43f5899bec924324e19a4b97ea1fe0360fc52a02c81797313f386005178523"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/nonfinite_312.log",
+      "bytes": 941,
+      "sha256": "36a7c3f1420696e8549a187d5727f4d2bfdb9e47cb79825ed407f388b243e5ca"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/nonfinite_control.py",
+      "bytes": 2229,
+      "sha256": "d90af50f6ad3b062b8acc045e90ec4c7f7bca342022b4b1102ec0d7551de0643"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/original_a3e_test_paths.txt",
+      "bytes": 8810,
+      "sha256": "26fc0afa2f94bb692e0200a72f0a4dda3c6f144b174d619272c261bdb50c8853"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/preallocation_841_test_paths.txt",
+      "bytes": 8920,
+      "sha256": "4f0eb5495f18978b9dbf72498f4a4aeb1a54427fe87850a87b8d4745d3856800"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/pure_corrected_311.log",
+      "bytes": 15007,
+      "sha256": "db8e3fbbb0a7b483713f39dea56cd13fdd7615261c22976be8fe79f86227c06f"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/pure_corrected_312.log",
+      "bytes": 14795,
+      "sha256": "51829d7025fecf850b7653285a61e73279087691accd2d304b395382fe9b683e"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/run_focused.py",
+      "bytes": 623,
+      "sha256": "98c1f48f254247f39a0e49725699d74283d5c049c25e5e4330bc2dcf80473df3"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/run_focused_zero_test_wrapper.py",
+      "bytes": 502,
+      "sha256": "c6b4f588414fa775c619eb9ae21e7df451c0672144201345efa4b6806a47e762"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/zero_tests_311.log",
+      "bytes": 352,
+      "sha256": "450d336a70d99f1528b9b5a2a3ef1dc5716b81e2919862e022c389b3c6895048"
+    },
+    {
+      "path": "reports/evidence_independent_ci_allocation_v2_20261118/zero_tests_312.log",
+      "bytes": 363,
+      "sha256": "2614c384150c0edb6efe2d281a2eeec0605a46dbffba5269bba1883d93ffb4fd"
+    }
+  ]
+}

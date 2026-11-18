@@ -13,6 +13,7 @@ import hashlib
 import importlib.machinery
 import importlib.util
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -37,7 +38,8 @@ FROZEN = {
     "compatibility-v1_1": ("test_e01_offline_ipv6_compatibility_v1_1_20261116.py", 34253, "439a2d46ebcfc57c295a95e4fa353691246ab1e2ea0db1feebff41f4a3ba96a2", 53, "FrozenStructureTests.test_stdlib_socket_origin_record_only_no_mutation", "g.f.old.g.old"),
     "probe-v2": ("test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py", 17601, "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad", 29, None, "t.g.old"),
 }
-HOST_CASE_RULES = {'test_e01_p2_builtin_mime_candidate_v1_20261116.py': {'test_ref': {'path': 'tests/test_e01_p2_builtin_mime_candidate_v1_20261116.py', 'bytes': 4504, 'sha256': '899eaa7a82a54a7db8c62ca487cd2b1bf6d5d22afaa701c04c6c42bdb1917b91'}, 'contract_ref': {'path': 'scripts/e01_p2_builtin_mime_candidate_v1_20261116.py', 'bytes': 1113, 'sha256': '99ab72562c3376ee3c0e95f0025c809cdcedaf06a9fa6c13803b34d55bc2c3ff'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['BuiltinMimeCandidateTests.test_public_knownfiles_clear_and_empty_init_need_no_file_open', 'BuiltinMimeCandidateTests.test_all_five_wheel_names_remain_non_html_without_io', 'BuiltinMimeCandidateTests.test_already_initialized_module_refuses_without_state_reset', 'BuiltinMimeCandidateTests.test_initialization_exception_propagates_without_retry_or_fallback', 'BuiltinMimeCandidateTests.test_unexpected_knownfiles_schema_refuses']}, 'test_e01_p2_builtin_mime_candidate_v2_20261116.py': {'test_ref': {'path': 'tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py', 'bytes': 6054, 'sha256': '629cecddb82718ec71c3b1b634ff02c6a10f8ed4b872dabaca8f5412b583c373'}, 'contract_ref': {'path': 'scripts/e01_p2_builtin_mime_candidate_v2_20261116.py', 'bytes': 1077, 'sha256': '864d337ad575918a395beb21b3cbd7ceed3bc6c4c59e0801df3a0cdc2326c768'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['BuiltinMimeRebuildTests.test_fresh_rebuild_and_classification_need_zero_file_opens', 'BuiltinMimeRebuildTests.test_prepopulated_rebuild_removes_machine_specific_mappings_without_io', 'BuiltinMimeRebuildTests.test_rebuild_is_repeatable_and_resets_public_add_type_changes', 'BuiltinMimeRebuildTests.test_init_failure_propagates_once_without_fallback', 'BuiltinMimeRebuildTests.test_unexpected_state_refuses_before_init']}, 'test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py': {'test_ref': {'path': 'tests/test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py', 'bytes': 33431, 'sha256': '8236f2fcaaf325af67bf1c134fb98a4f18445e18af18330ce7f34fdb96e1bedc'}, 'contract_ref': {'path': 'scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py', 'bytes': 52778, 'sha256': '1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8'}, 'gate': 'EXACT_GENERATED_RUNTIME', 'local_cases': ['GeneratedCompilationTests.test_runtime_stdlib_binding_is_exact_and_not_an_import_time_hook', 'GeneratedCompilationTests.test_exact_fifteen_sources_match_inert_stdlib_dataclass_generation_without_exec', 'GeneratedCompilationTests.test_finite_ordered_plan_accepts_only_exact_mock_frame_context', 'GeneratedCompilationTests.test_source_filename_phase_and_sequence_drift_refuse_and_latch', 'GeneratedCompilationTests.test_stdlib_code_identity_globals_and_tool_origins_cannot_drift', 'GeneratedCompilationTests.test_missing_generated_event_refuses_finish_permanently', 'GeneratedCompilationTests.test_real_policy_callback_rejects_forged_caller_and_arbitrary_source', 'GeneratedCompilationTests.test_other_runtime_plan_is_distinct_and_unknown_runtime_refuses']}}
+HOST_CASE_RULES = {'test_e01_p2_builtin_mime_candidate_v1_20261116.py': {'test_ref': {'path': 'tests/test_e01_p2_builtin_mime_candidate_v1_20261116.py', 'bytes': 4504, 'sha256': '899eaa7a82a54a7db8c62ca487cd2b1bf6d5d22afaa701c04c6c42bdb1917b91'}, 'contract_ref': {'path': 'scripts/e01_p2_builtin_mime_candidate_v1_20261116.py', 'bytes': 1113, 'sha256': '99ab72562c3376ee3c0e95f0025c809cdcedaf06a9fa6c13803b34d55bc2c3ff'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['BuiltinMimeCandidateTests.test_public_knownfiles_clear_and_empty_init_need_no_file_open', 'BuiltinMimeCandidateTests.test_all_five_wheel_names_remain_non_html_without_io', 'BuiltinMimeCandidateTests.test_already_initialized_module_refuses_without_state_reset', 'BuiltinMimeCandidateTests.test_initialization_exception_propagates_without_retry_or_fallback', 'BuiltinMimeCandidateTests.test_unexpected_knownfiles_schema_refuses']}, 'test_e01_p2_builtin_mime_candidate_v2_20261116.py': {'test_ref': {'path': 'tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py', 'bytes': 6054, 'sha256': '629cecddb82718ec71c3b1b634ff02c6a10f8ed4b872dabaca8f5412b583c373'}, 'contract_ref': {'path': 'scripts/e01_p2_builtin_mime_candidate_v2_20261116.py', 'bytes': 1077, 'sha256': '864d337ad575918a395beb21b3cbd7ceed3bc6c4c59e0801df3a0cdc2326c768'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['BuiltinMimeRebuildTests.test_fresh_rebuild_and_classification_need_zero_file_opens', 'BuiltinMimeRebuildTests.test_prepopulated_rebuild_removes_machine_specific_mappings_without_io', 'BuiltinMimeRebuildTests.test_rebuild_is_repeatable_and_resets_public_add_type_changes', 'BuiltinMimeRebuildTests.test_init_failure_propagates_once_without_fallback', 'BuiltinMimeRebuildTests.test_unexpected_state_refuses_before_init']}, 'test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py': {'test_ref': {'path': 'tests/test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py', 'bytes': 33431, 'sha256': '8236f2fcaaf325af67bf1c134fb98a4f18445e18af18330ce7f34fdb96e1bedc'}, 'contract_ref': {'path': 'scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py', 'bytes': 52778, 'sha256': '1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8'}, 'gate': 'EXACT_GENERATED_RUNTIME', 'local_cases': ['GeneratedCompilationTests.test_runtime_stdlib_binding_is_exact_and_not_an_import_time_hook', 'GeneratedCompilationTests.test_exact_fifteen_sources_match_inert_stdlib_dataclass_generation_without_exec', 'GeneratedCompilationTests.test_finite_ordered_plan_accepts_only_exact_mock_frame_context', 'GeneratedCompilationTests.test_source_filename_phase_and_sequence_drift_refuse_and_latch', 'GeneratedCompilationTests.test_stdlib_code_identity_globals_and_tool_origins_cannot_drift', 'GeneratedCompilationTests.test_missing_generated_event_refuses_finish_permanently', 'GeneratedCompilationTests.test_real_policy_callback_rejects_forged_caller_and_arbitrary_source', 'GeneratedCompilationTests.test_other_runtime_plan_is_distinct_and_unknown_runtime_refuses']}, 'test_e01_pypdf701_install_v1_5.py': {'test_ref': {'path': 'tests/test_e01_pypdf701_install_v1_5.py', 'bytes': 27614, 'sha256': 'b1037f25f952b87c82b9aaf319ba97f20c24e57d95a107ed0cacff9d11656e7f'}, 'contract_ref': {'path': 'scripts/install_e01_pypdf701_runtime_v1_5.py', 'bytes': 64638, 'sha256': '32162b1ddc0b31637842c3a5ecc0caa36dde6d6f32f2111a94c2336f59c178b4'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads', 'ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings', 'ProductionMimeTests.test_init_error_propagates_once_without_fallback', 'ProductionMimeTests.test_invalid_public_state_refuses']}}
+NO_SITE_PROFILES = {'test_e01_pypdf701_install_v1.py': {'test_ref': {'path': 'tests/test_e01_pypdf701_install_v1.py', 'bytes': 23310, 'sha256': 'fa4484c500056e2842d5b765143b52b2f89e513ec755f7bb916b0b9a7d476a7a'}, 'contract_ref': {'path': 'scripts/install_e01_pypdf701_runtime_v1.py', 'bytes': 46871, 'sha256': 'f9b8430824e6f6b382d22ce721e197c30bdebd852433119ed26938ba67315847'}, 'reason': 'ORIGINAL_MOCK_RUN_PIP_REQUIRES_PARENT_NO_SITE'}, 'test_e01_pypdf701_install_v1_1.py': {'test_ref': {'path': 'tests/test_e01_pypdf701_install_v1_1.py', 'bytes': 6441, 'sha256': 'ed88915ba7e0052a0c4629a5243324a0e27b1b860829cd9f6760aa307f4abe99'}, 'contract_ref': {'path': 'scripts/install_e01_pypdf701_runtime_v1_1.py', 'bytes': 48690, 'sha256': '86e473e42268dd13c3da8908295d101863dd28be77153136884d70e31d4b3364'}, 'reason': 'ORIGINAL_MOCK_RUN_PIP_REQUIRES_PARENT_NO_SITE'}, 'test_e01_pypdf701_install_v1_2.py': {'test_ref': {'path': 'tests/test_e01_pypdf701_install_v1_2.py', 'bytes': 9105, 'sha256': 'd372a382f314d63b48252f8c8452bd4f7787018d10afd695e3ad1010a6d1435c'}, 'contract_ref': {'path': 'scripts/install_e01_pypdf701_runtime_v1_2.py', 'bytes': 50132, 'sha256': '7da63c64b9427088d520fe06447431d37db8505587a23355ced5229e632c026f'}, 'reason': 'ORIGINAL_MOCK_RUN_PIP_REQUIRES_PARENT_NO_SITE'}, 'test_e01_pypdf701_install_v1_3.py': {'test_ref': {'path': 'tests/test_e01_pypdf701_install_v1_3.py', 'bytes': 13464, 'sha256': '9e47a1b4f7fe22e9a9640614a6f195e3e88fe5415a68c84f4af0364ea0a22a90'}, 'contract_ref': {'path': 'scripts/install_e01_pypdf701_runtime_v1_3.py', 'bytes': 51100, 'sha256': 'a4e6e9580bfbfdad96b960cc2837ae5e76771e6c6109217c97f50f1a1837f062'}, 'reason': 'ORIGINAL_MOCK_RUN_PIP_REQUIRES_PARENT_NO_SITE'}}
 COMPILE_PROFILE_PINS = {'3.11.17': {'executable': (17344128, '595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f'), 'dataclasses': (58472, '77a41ea9eb35d959781087b72ef5b452218b57b9d8f2d28688d45a40ca7f8a09')}, '3.12.14': {'executable': (18058560, '9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb'), 'dataclasses': (62085, 'd242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9')}}
 
 SOCKET_PINS = {
@@ -48,6 +50,9 @@ ORDINARY_WALL = 10800
 COORDINATOR_WALL = ORDINARY_WALL + 10 * 120 + 120
 MODULE_WALL = 3600
 EVENT_MARKER = "OFFLINE_CI_TEST_EVENT_V1="
+ALLOCATION_PATH = "configs/ci_workload_allocation_v2_20261118.json"
+ALLOCATION_SHA256 = "9a6d3029e163fa0ce28b5baebeab3bec182874c41e854c6c346675e5e5fb37c9"
+ALLOCATION_LANES = ("fast-0", "fast-1", "wrapper80", "visibility40", "issue56", "recovery53", "alignment28", "exploratory")
 
 
 class IsolationError(Exception):
@@ -164,6 +169,133 @@ def module_plan(root=ROOT, *, shard_index=0, shard_count=1, module_wall=MODULE_W
                                 "aggregate_budget_seconds_all_shards": COORDINATOR_WALL,
                                 "budget_seconds": COORDINATOR_WALL // shard_count + int(shard_index < COORDINATOR_WALL % shard_count)})
     return specification
+
+
+def validate_allocation(value):
+    require(type(value) is dict and value.get("kind") == "OFFLINE_CI_WORKLOAD_ALLOCATION_V2"
+            and type(value.get("version")) is int and value["version"] == 2, "ALLOCATION_SCHEMA")
+    require(value.get("authorized_max_seconds_per_runtime") == 27600
+            and value.get("authorized_max_seconds_both_runtimes") == 55200
+            and value.get("max_parallel") == 4 and value.get("artifact_reserve_seconds") == 120
+            and value.get("unknown_module_weight_ms") == 30000
+            and value.get("fast_module_wall_seconds") == 1200, "ALLOCATION_ENVELOPE")
+    caps = {"fast-0": 2100, "fast-1": 2100, "wrapper80": 7200, "visibility40": 5400,
+            "issue56": 3600, "recovery53": 3600, "alignment28": 1800, "exploratory": 1200}
+    lanes = value.get("lanes")
+    require(type(lanes) is list and len(lanes) == 8 and all(type(row) is dict for row in lanes), "ALLOCATION_LANES")
+    require({row.get("id") for row in lanes} == set(ALLOCATION_LANES), "ALLOCATION_LANE_IDENTITY")
+    heavy_names = []
+    for row in lanes:
+        require(type(row.get("budget_seconds")) is int and row["budget_seconds"] == caps[row["id"]], "ALLOCATION_LANE_BUDGET")
+        require(row.get("type") == ("FAST" if row["id"].startswith("fast-") else "HEAVY"), "ALLOCATION_LANE_TYPE")
+        if row["type"] == "HEAVY":
+            reference = row.get("module_ref")
+            require(type(reference) is dict and set(reference) == {"path", "bytes", "sha256"}, "ALLOCATION_HEAVY_REFERENCE")
+            require(type(reference["path"]) is str and reference["path"].startswith("tests/test")
+                    and Path(reference["path"]).parent == Path("tests") and reference["path"].endswith(".py")
+                    and type(reference["bytes"]) is int and 0 < reference["bytes"] <= 1048576
+                    and type(reference["sha256"]) is str and len(reference["sha256"]) == 64, "ALLOCATION_HEAVY_REFERENCE")
+            heavy_names.append(Path(reference["path"]).name)
+    require(len(set(heavy_names)) == 6, "ALLOCATION_HEAVY_DUPLICATE")
+    darwin = value.get("darwin_focus")
+    require(type(darwin) is dict and darwin == {"id": "darwin-mime", "budget_seconds": 600,
+            "module_wall_seconds": 120, "modules": ["test_e01_p2_builtin_mime_candidate_v1_20261116.py",
+            "test_e01_p2_builtin_mime_candidate_v2_20261116.py", "test_e01_pypdf701_install_v1_5.py"]}, "ALLOCATION_DARWIN_ENVELOPE")
+    require(sum(row["budget_seconds"] for row in lanes) + darwin["budget_seconds"] == 27600, "ALLOCATION_TOTAL_BUDGET")
+    baseline = value.get("baseline_module_names")
+    require(type(baseline) is list and len(baseline) == len(set(baseline)) == 197
+            and all(type(name) is str and Path(name).name == name and name.startswith("test") and name.endswith(".py") for name in baseline), "ALLOCATION_BASELINE")
+    require(set(heavy_names) <= set(baseline), "ALLOCATION_HEAVY_BASELINE")
+    weights = value.get("completed_weights")
+    require(type(weights) is dict and set(weights) <= set(baseline), "ALLOCATION_WEIGHT_SET")
+    for row in weights.values():
+        require(type(row) is dict and set(row) == {"source_sha256", "weight_ms", "scope"}
+                and type(row["weight_ms"]) is int and 1000 <= row["weight_ms"] <= 10800000
+                and type(row["source_sha256"]) is str and len(row["source_sha256"]) == 64
+                and row["scope"] == "OBSERVED_COMPLETED_3_11_MODULE", "ALLOCATION_WEIGHT")
+    return value
+
+
+def load_allocation(root=ROOT):
+    path = ordinary_origin(Path(root)/ALLOCATION_PATH)
+    require(path.stat().st_size <= 131072, "ALLOCATION_FILE_BOUND")
+    raw = path.read_bytes()
+    require(sha(raw) == ALLOCATION_SHA256, "ALLOCATION_FILE_PIN")
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            require(key not in result, "ALLOCATION_DUPLICATE_JSON_KEY")
+            result[key] = value
+        return result
+    value = json.loads(raw, object_pairs_hook=pairs)
+    return validate_allocation(value), {"path": ALLOCATION_PATH, "bytes": len(raw), "sha256": sha(raw)}
+
+
+def allocation_plans(root=ROOT, *, allocation=None, rows=None, base=None):
+    """One deterministic global partition; planning only, never imports tests."""
+    if allocation is None:
+        allocation, configuration_ref = load_allocation(root)
+    else:
+        validate_allocation(allocation)
+        configuration_ref = {"scope": "IN_MEMORY_PLANNING_ONLY", "canonical_sha256": sha(packed(allocation))}
+    base = plan(root) if base is None else base
+    rows = ordinary_modules(root) if rows is None else rows
+    by_name = {Path(row["path"]).name: row for row in rows}
+    require(len(by_name) == len(rows) and set(allocation["baseline_module_names"]) <= set(by_name), "ALLOCATION_MODULE_MISSING_OR_DUPLICATE")
+    lanes = {row["id"]: row for row in allocation["lanes"]}
+    assigned = {name: [] for name in ALLOCATION_LANES}
+    heavy = set()
+    for name, lane in lanes.items():
+        if lane["type"] == "HEAVY":
+            filename = Path(lane["module_ref"]["path"]).name
+            require({key: by_name[filename][key] for key in ("path", "bytes", "sha256")} == lane["module_ref"], "ALLOCATION_HEAVY_SOURCE_CHANGED")
+            assigned[name].append(by_name[filename]);heavy.add(filename)
+    fast_weights = {"fast-0": 0, "fast-1": 0}
+    weighted = []
+    for filename, row in by_name.items():
+        if filename in heavy:
+            continue
+        observed = allocation["completed_weights"].get(filename)
+        valid = observed is not None and observed["source_sha256"] == row["sha256"]
+        weight = observed["weight_ms"] if valid else allocation["unknown_module_weight_ms"]
+        weighted.append((weight, row["path"], row))
+    for weight, _, row in sorted(weighted, key=lambda value: (-value[0], value[1])):
+        name = min(fast_weights, key=lambda name: (fast_weights[name], name))
+        assigned[name].append(row);fast_weights[name] += weight
+    assignment = sorted(({"lane": name, "source_ref": {key: row[key] for key in ("path", "bytes", "sha256")}}
+                         for name in ALLOCATION_LANES for row in assigned[name]), key=lambda row: row["source_ref"]["path"])
+    require(Counter(row["source_ref"]["path"] for row in assignment) == Counter(row["path"] for row in rows), "ALLOCATION_EXACT_MODULE_COVERAGE")
+    manifest_hash, assignment_hash = sha(packed(rows)), sha(packed(assignment))
+    output = {}
+    for index, name in enumerate(ALLOCATION_LANES):
+        lane = lanes[name];budget = lane["budget_seconds"]-allocation["artifact_reserve_seconds"]
+        # Frozen jobs precede ordinary work so a long module cannot starve them.
+        jobs = [dict(job) for job in base["jobs"][1:]] if name == "fast-0" else []
+        for row in assigned[name]:
+            filename = Path(row["path"]).name
+            jobs.append({"id": "ordinary-"+filename[:-3], "group": "ordinary", "phase": "ordinary", "test_module": filename,
+                         "source_ref": {key: row[key] for key in ("path", "bytes", "sha256")}, "declared_local_cases": row["declared_local_cases"],
+                         "wall_seconds": min(budget, allocation["fast_module_wall_seconds"]) if lane["type"] == "FAST" else budget,
+                         "output_bytes": 16*1024*1024})
+        output[name] = {**base, "jobs": jobs, "ordinary_module_manifest": rows,
+                       "ordinary_manifest_sha256": manifest_hash, "suite_scope": "ALL_DISCOVERY_MODULES_PARTITION_V2",
+                       "root": str(Path(root).resolve()), "shard": {"index": index, "count": 8,
+                       "aggregate_budget_seconds_all_shards": 27000, "budget_seconds": budget},
+                       "allocation": {"version": 2, "configuration_ref": configuration_ref, "lane": name,
+                       "lane_budget_seconds_including_setup_and_artifact_reserve": lane["budget_seconds"],
+                       "artifact_reserve_seconds": allocation["artifact_reserve_seconds"],
+                       "combined_linux_and_darwin_budget_seconds_per_runtime": 27600,
+                       "combined_budget_seconds_both_runtimes": 55200, "max_parallel": 4,
+                       "assignment_manifest": assignment, "assignment_manifest_sha256": assignment_hash,
+                       "fast_planning_weights_ms": fast_weights, "exact_global_ordinary_module_coverage": True}}
+    ids = [job["id"] for spec in output.values() for job in spec["jobs"]]
+    require(len(ids) == len(set(ids)) == len(rows)+len(base["jobs"])-1, "ALLOCATION_EXACT_JOB_COVERAGE")
+    return output
+
+
+def allocation_plan(root, lane):
+    require(lane in ALLOCATION_LANES, "ALLOCATION_LANE_REQUIRED")
+    return allocation_plans(root)[lane]
 
 
 class OrdinaryLoader(unittest.TestLoader):
@@ -437,6 +569,24 @@ def host_case_decision(root, filename, *, version=None, platform_name=None, obse
             "local_cases": rule["local_cases"], "scope": "NAMED_ORIGINAL_HOST_CASES_ONLY_NOT_FULL_RUNTIME_QUALIFICATION"}
 
 
+def child_isolation_flags(job):
+    no_site = job["phase"] != "ordinary" or job.get("test_module") in NO_SITE_PROFILES
+    if job.get("test_module") in NO_SITE_PROFILES:
+        require(job.get("source_ref") == NO_SITE_PROFILES[job["test_module"]]["test_ref"], "NO_SITE_JOB_SOURCE_BINDING")
+    return ["-I", "-B"] + (["-S"] if no_site else [])
+
+
+def no_site_admission(root, filename):
+    profile = NO_SITE_PROFILES.get(filename)
+    if profile is None:
+        return None
+    for reference in (profile["test_ref"], profile["contract_ref"]):
+        raw = ordinary_origin(Path(root)/reference["path"]).read_bytes()
+        require((len(raw), sha(raw)) == (reference["bytes"], reference["sha256"]), "NO_SITE_PROFILE_SOURCE_CHANGED")
+    require(sys.flags.no_site == 1, "NO_SITE_CHILD_REQUIRED")
+    return profile
+
+
 class OrdinaryRecordingResult(unittest.TextTestResult):
     """Immediate bounded failure details survive a later test timeout."""
     def __init__(self, *args, **kwargs):
@@ -445,16 +595,18 @@ class OrdinaryRecordingResult(unittest.TextTestResult):
         self.started_case_ids, self.completed_case_ids, self.outcomes = [], [], []
         self._times = {}
         self._status = {}
+        self._result_started = time.perf_counter()
 
     def event(self, event, test, **extra):
-        record = {"event": event, "case_id": full_case_id(test), **extra}
+        record = {"event": event, "case_id": full_case_id(test),
+                  "since_result_seconds": time.perf_counter() - self._result_started, **extra}
         self.stream.writeln("\n" + EVENT_MARKER + packed(record).decode())
         self.stream.flush()
 
     def startTest(self, test):
         self.started_cases.append(case_id(test))
         self.started_case_ids.append(full_case_id(test))
-        self._times[id(test)] = time.monotonic()
+        self._times[id(test)] = time.perf_counter()
         self._status[id(test)] = "PASS"
         super().startTest(test)
         self.event("START", test)
@@ -464,7 +616,7 @@ class OrdinaryRecordingResult(unittest.TextTestResult):
         status = self._status.pop(id(test), "ERROR")
         self.outcomes.append({"case_id": full_case_id(test), "status": status})
         self.event("STOP", test, status=status,
-                   elapsed_seconds=time.monotonic() - self._times.pop(id(test), time.monotonic()))
+                   elapsed_seconds=time.perf_counter() - self._times.pop(id(test), time.perf_counter()))
         super().stopTest(test)
 
     def detail(self, test, text, status):
@@ -616,6 +768,7 @@ def child_entry(root, group, phase, *, test_module=None, module_sha=None, module
     if phase == "ordinary":
         with ordinary_import_context(root):
             reference = module_source(root, test_module, module_sha) if test_module is not None else None
+            startup_profile = no_site_admission(root, test_module)
             suite, _ = (_collect_ordinary(root) if test_module is None else
                         _collect_ordinary(root, pattern=test_module))
             discovered = list(flatten(suite))
@@ -643,6 +796,7 @@ def child_entry(root, group, phase, *, test_module=None, module_sha=None, module
                     "skips": [{"case": full_case_id(test), "reason": reason[:512]} for test, reason in result.skipped],
                     "suite_scope": "ONE_ORDINARY_MODULE" if reference is not None else "LEGACY_AGGREGATE",
                     "source_ref": reference, "test_module": test_module,
+                    "startup_profile": startup_profile, "no_site": sys.flags.no_site == 1,
                     "planned_case_ids": planned, "discovered_case_ids": planned[:],
                     "started_case_ids": started,
                     "completed_case_ids": getattr(result, "completed_case_ids", []),
@@ -779,6 +933,9 @@ def validate_coverage(receipt, job, specification):
         if "test_module" in job:
             require(receipt.get("test_module") == job["test_module"] and receipt.get("source_ref") == job["source_ref"]
                     and receipt.get("suite_scope") == "ONE_ORDINARY_MODULE", "ORDINARY_SOURCE_BINDING")
+            if job["test_module"] in NO_SITE_PROFILES:
+                require(receipt.get("no_site") is True and receipt.get("startup_profile") == NO_SITE_PROFILES[job["test_module"]],
+                        "ORDINARY_NO_SITE_STARTUP_BINDING")
         else:
             require(receipt["tests_run"] > 0 and receipt.get("suite_scope") == "LEGACY_AGGREGATE", "ORDINARY_COVERAGE_EMPTY")
         names = ("planned_case_ids", "discovered_case_ids", "started_case_ids", "completed_case_ids")
@@ -890,24 +1047,39 @@ def canonical_interpreter():
 
 
 def run_parent(directory, *, root=ROOT, run_process=supervise, require_historical=False,
-               shard_index=0, shard_count=None, module_wall=MODULE_WALL, only_modules=None):
+               shard_index=0, shard_count=None, module_wall=MODULE_WALL, only_modules=None,
+               allocation_v2_lane=None, job_start_monotonic=None):
     # None retains the old pure-model interface; the CLI always supplies a count
     # and therefore uses isolated modules, including for its default one shard.
-    specification = (plan(root) if shard_count is None else module_plan(root, shard_index=shard_index,
-                     shard_count=shard_count, module_wall=module_wall, only_modules=only_modules))
+    if allocation_v2_lane is not None:
+        require(shard_count in (None, 1) and shard_index == 0 and only_modules is None
+                and module_wall == MODULE_WALL, "ALLOCATION_MODE_CONFLICT")
+        specification = allocation_plan(root, allocation_v2_lane)
+    else:
+        require(job_start_monotonic is None, "JOB_CLOCK_REQUIRES_ALLOCATION")
+        specification = (plan(root) if shard_count is None else module_plan(root, shard_index=shard_index,
+                         shard_count=shard_count, module_wall=module_wall, only_modules=only_modules))
     runner_sha = sha(Path(__file__).read_bytes())
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=False, mode=0o700)
-    save_new(directory / "PLAN.json", {"kind": "OFFLINE_CI_PLAN_V1", "runner_sha256": runner_sha, **specification})
+    save_new(directory / "PLAN.json", {"kind": "OFFLINE_CI_PLAN_V1", "runner_sha256": runner_sha,
+                                      "job_start_monotonic": job_start_monotonic, **specification})
     started, results = time.monotonic(), []
     coordinator_wall = specification.get("shard", {}).get("budget_seconds", COORDINATOR_WALL)
+    if allocation_v2_lane is not None and job_start_monotonic is not None:
+        require(type(job_start_monotonic) in (int, float) and math.isfinite(job_start_monotonic)
+                and 0 <= job_start_monotonic <= started, "ALLOCATION_JOB_CLOCK")
+        setup_elapsed = started-job_start_monotonic
+        coordinator_wall -= setup_elapsed
+        specification["allocation"]["observed_setup_seconds"] = setup_elapsed
+        specification["allocation"]["remaining_test_seconds_at_start"] = max(0, coordinator_wall)
     for job in specification["jobs"]:
         remaining = coordinator_wall - (time.monotonic() - started)
         if remaining <= 3:
             result = {"job_id": job["id"], "status": "ERROR", "reason": "COORDINATOR_WALL_LIMIT"}
         else:
             job = dict(job, wall_seconds=min(job["wall_seconds"], max(1, int(remaining - 3))))
-            isolation = ["-I", "-B"] + ([] if job["phase"] == "ordinary" else ["-S"])
+            isolation = child_isolation_flags(job)
             command = [canonical_interpreter(), *isolation, str(Path(__file__).resolve()), "--child", job["group"],
                        "--phase", job["phase"]]
             if "test_module" in job:
@@ -931,7 +1103,7 @@ def run_parent(directory, *, root=ROOT, run_process=supervise, require_historica
     summary = {"kind": "OFFLINE_CI_SUMMARY_V1", "status": final_status(results, require_historical),
                "historical_required": require_historical, "results": results,
                "scope": "CI coverage only; NOT_RUN historical checks are never runtime/research acceptance."}
-    if shard_count is not None:
+    if shard_count is not None or allocation_v2_lane is not None:
         expected_jobs = [job["id"] for job in specification["jobs"]]
         require([row["job_id"] for row in results] == expected_jobs, "SHARD_JOB_COVERAGE_CHANGED")
         summary.update(suite_scope=specification["suite_scope"], shard=specification["shard"],
@@ -939,6 +1111,11 @@ def run_parent(directory, *, root=ROOT, run_process=supervise, require_historica
                        planned_module_refs=[job["source_ref"] for job in specification["jobs"] if "source_ref" in job])
         if only_modules is not None and summary["status"].startswith("PASS"):
             summary["status"] = "PASS_FOCUSED_ONLY" if summary["status"] == "PASS_ALL_REQUESTED_GROUPS" else "PASS_FOCUSED_HISTORICAL_NOT_RUN"
+        if allocation_v2_lane is not None:
+            summary["allocation"] = specification["allocation"]
+            if summary["status"].startswith("PASS"):
+                summary["status"] = ("PASS_ALLOCATION_LANE" if summary["status"] == "PASS_ALL_REQUESTED_GROUPS"
+                                     else "PASS_ALLOCATION_LANE_HISTORICAL_NOT_RUN")
     save_new(directory / "SUMMARY.json", summary)
     return summary
 
@@ -954,10 +1131,13 @@ def main():
     parser.add_argument("--shard-count", type=int, default=1)
     parser.add_argument("--module-wall-seconds", type=int, default=MODULE_WALL)
     parser.add_argument("--only-module", action="append")
+    parser.add_argument("--allocation-v2-lane", choices=ALLOCATION_LANES)
+    parser.add_argument("--job-start-monotonic", type=float)
     parser.add_argument("--test-module")
     parser.add_argument("--module-sha256")
     args = parser.parse_args()
     if args.child:
+        require(args.allocation_v2_lane is None and args.job_start_monotonic is None, "CHILD_ALLOCATION_ARGUMENTS")
         require(args.runner_sha256 == sha(Path(__file__).read_bytes()), "RUNNING_CI_SOURCE_HASH")
         require((args.child == "ordinary") == (args.phase == "ordinary"), "CHILD_PHASE")
         require((args.test_module is None) == (args.module_sha256 is None), "MODULE_SOURCE_ARGUMENTS")
@@ -986,9 +1166,11 @@ def main():
         return 0 if receipt["status"] in {"PASS", "NOT_RUN"} else 1
     require(args.output_dir is not None and args.phase is None, "OUTPUT_DIRECTORY_REQUIRED")
     require(args.test_module is None and args.module_sha256 is None, "PARENT_MODULE_ARGUMENTS")
+    require(args.allocation_v2_lane is None or args.job_start_monotonic is not None, "ALLOCATION_JOB_CLOCK_REQUIRED")
     summary = run_parent(args.output_dir, require_historical=args.require_historical,
                          shard_index=args.shard_index, shard_count=args.shard_count,
-                         module_wall=args.module_wall_seconds, only_modules=args.only_module)
+                         module_wall=args.module_wall_seconds, only_modules=args.only_module,
+                         allocation_v2_lane=args.allocation_v2_lane, job_start_monotonic=args.job_start_monotonic)
     print(packed({"status": summary["status"], "summary": str(args.output_dir / "SUMMARY.json")}).decode())
     return 0 if summary["status"].startswith("PASS") else 1
 

@@ -1,0 +1,531 @@
+{
+  "TASK_ID": "CI44352968450_HARNESS_HOST_FIX_AND_WORKLOAD_PLAN_20261118",
+  "status": "AUTHOR_FOCUSED_PASS_PENDING_INDEPENDENT_AUDIT_FULL_CI_AND_HEAVY_ALLOCATION_BLOCKED",
+  "FILES_CHANGED": [
+    "scripts/run_offline_ci_v1.py",
+    "tests/test_ci_collection_isolation_v1.py",
+    ".github/workflows/offline.yml"
+  ],
+  "source_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 59796,
+      "sha256": "cc6ebfdaf3c25ed8f25bc89283adf3001e1f85e05c60cc24fc8119706b41a91f"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 51171,
+      "sha256": "29196d1591bb9258386368c719db8765782a68b4a8bcb7d37f1460a359776844"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 2669,
+      "sha256": "5933789b71ac34b51b4859a0998ef3f5403de6bbe6473e96672b628d39f6eb31"
+    }
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/evidence_ci_runner_successor_44352968450_20261118"
+  ],
+  "actual_source_evidence": {
+    "run": 44352968450,
+    "download_receipts_ref": {
+      "path": "data/processed/ci_failure_44352968450/download_receipts.json",
+      "bytes": 931,
+      "sha256": "440e74aa04caf093b981dbdc173bcb5102df0b23ef4faef3d88e2eacb70a9ed4"
+    },
+    "all_four_ZIP_bytes_and_SHA_verified": true,
+    "failure_extraction_ref": {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/ACTUAL_FAILURES.json",
+      "bytes": 7324,
+      "sha256": "a83ca5784157e72da22a0e817f355dcedb6d0e030eaa37358c033487fe2a9027"
+    },
+    "scope": "3.11completed shards;3.12stillrunning at request. No guessed final3.12status."
+  },
+  "findings_and_changes": [
+    {
+      "id": "CI443-STARTUP",
+      "finding": "Four inherited test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix tests fail BASE_OR_OLD_SITE_ON_PATH because runnerordinary children enabled site. Original run_pip explicitly requires an-S parent.",
+      "fix": "Source-hash-bound NO_SITE_PROFILES for exact4test+installer script pairs. Parent launches-I-B-S only thoseordinary modules; child verifies source pins and actual sys.flags.no_site; parent receipt checks startup profile/no-site. No sys.path filtering or installer policy/test-body change.",
+      "scope": "v1,v1_1,v1_2,v1_3only; other ordinary dependency-using modules retain site."
+    },
+    {
+      "id": "CI443-MIME",
+      "finding": "4ProductionMimeTests call explicit Darwin-only initializer;3other original origin/alias refusal tests exit before that platform check and remain portable. ActualLinux errors/failurelabels match these exact4.",
+      "fix": "Add exact pinned test/installerv1_5 host rule for named4cases only. All othercases stay in Linux discovery. Darwin workflow focused job now also includes entirev1_5module, executing unchanged hostcases and portable controls.",
+      "no_skip_claim": "No blanket module/class skip; no mocked platform substitution for native coverage."
+    },
+    {
+      "id": "CI443-TIMING",
+      "finding": "Current event START lacks result-relative time, obscuring expensiveclasssetup. Heavy fixtures also mock module-global monotonic inside inert boundaries.",
+      "fix": "Add since_result_seconds to each progress event and use perf_counter for result/case elapsed diagnostics, exposing time beforefirsttest without using mockedmonotonic."
+    },
+    {
+      "id": "CI443-BUDGET",
+      "finding": "Round-robin3030s/shard starves heavy modules and later tiny/frozen jobs. Shards0/1/3 use~3027s,shard2ends861.5s. Full80hit2614s wall limit; visibility774s beforefirstcase; issuecue1226s afterfirstcase. Timeoutvalues are lowerbounds, not completed workloads.",
+      "fix": "No budget/allocation change implemented or authorized. Separate concrete measuredLPT/heavy-enclave proposal prepared for rootreview. FullCI remains blocked until accepted schedule and alloriginalcoverage pass."
+    }
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "pure_harness_controls": {
+      "311": {
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "python": "3.11.17",
+        "tests_run": 49,
+        "successful": true,
+        "read_reservation_bytes": 913943,
+        "temp_write_bytes": 203849,
+        "console_bytes_before_receipt": 7439,
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "network_calls": 0
+      },
+      "312": {
+        "kind": "CI_ISOLATION_AUTHOR_MOCK_V1",
+        "python": "3.12.14",
+        "tests_run": 49,
+        "successful": true,
+        "read_reservation_bytes": 913943,
+        "temp_write_bytes": 203405,
+        "console_bytes_before_receipt": 7439,
+        "actual_children": 0,
+        "actual_frozen_groups": 0,
+        "network_calls": 0
+      }
+    },
+    "exact_unchanged_startup_and_genuine_Darwin_host_cases": {
+      "311": {
+        "actual_PDF_reads": 0,
+        "cost_usd": 0,
+        "kind": "CI_EXACT_STARTUP_DARWIN_HOST_PROBE",
+        "native_installer_calls": 0,
+        "network_model_calls": 0,
+        "no_site": true,
+        "owner_key_data_access": 0,
+        "platform": "darwin",
+        "read_reservation_bytes": 8242520,
+        "runtime": "3.11.17",
+        "selected_results": [
+          {
+            "module": "test_e01_pypdf701_install_v1",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_1",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_2",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_3",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_5",
+            "successful": true,
+            "tests": 7
+          }
+        ]
+      },
+      "312": {
+        "actual_PDF_reads": 0,
+        "cost_usd": 0,
+        "kind": "CI_EXACT_STARTUP_DARWIN_HOST_PROBE",
+        "native_installer_calls": 0,
+        "network_model_calls": 0,
+        "no_site": true,
+        "owner_key_data_access": 0,
+        "platform": "darwin",
+        "read_reservation_bytes": 7950921,
+        "runtime": "3.12.14",
+        "selected_results": [
+          {
+            "module": "test_e01_pypdf701_install_v1",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_1",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_2",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_3",
+            "successful": true,
+            "tests": 1
+          },
+          {
+            "module": "test_e01_pypdf701_install_v1_5",
+            "successful": true,
+            "tests": 7
+          }
+        ]
+      }
+    },
+    "read_only_compiler_profile": {
+      "CPU_seconds": 1.678148,
+      "actual_lifecycle_runs": 0,
+      "authored_requests_built": 80,
+      "cost_usd": 0,
+      "hot_cumulative": [
+        {
+          "calls": 96,
+          "cumulative_seconds": 1.665963083,
+          "file": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+          "function": "next_action",
+          "line": 107,
+          "self_seconds": 0.0007676170000000001
+        },
+        {
+          "calls": 1,
+          "cumulative_seconds": 1.420097125,
+          "file": "tests/test_wrapper_crossmodel_v1_pure_20261115.py",
+          "function": "build",
+          "line": 24,
+          "self_seconds": 0.001397329
+        },
+        {
+          "calls": 96,
+          "cumulative_seconds": 1.2926200090000002,
+          "file": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+          "function": "_walk",
+          "line": 77,
+          "self_seconds": 0.008922845
+        },
+        {
+          "calls": 3932,
+          "cumulative_seconds": 1.231646867,
+          "file": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+          "function": "_compile",
+          "line": 63,
+          "self_seconds": 0.001425651
+        },
+        {
+          "calls": 3932,
+          "cumulative_seconds": 1.2302212160000001,
+          "file": "src/civiclab/e02/wrapper_visibility_v1.py",
+          "function": "_compile",
+          "line": 71,
+          "self_seconds": 0.013527899000000001
+        },
+        {
+          "calls": 12096,
+          "cumulative_seconds": 1.1798413010000002,
+          "file": "src/civiclab/production_price_v4.py",
+          "function": "pinned",
+          "line": 29,
+          "self_seconds": 0.010590858
+        },
+        {
+          "calls": 3934,
+          "cumulative_seconds": 0.9499447820000001,
+          "file": "src/civiclab/production_price_v4.py",
+          "function": "quote",
+          "line": 199,
+          "self_seconds": 0.008285785
+        },
+        {
+          "calls": 281216,
+          "cumulative_seconds": 0.6258027030000001,
+          "file": "src/civiclab/common.py",
+          "function": "redact",
+          "line": 55,
+          "self_seconds": 0.147326323
+        },
+        {
+          "calls": 4130,
+          "cumulative_seconds": 0.42896954600000003,
+          "file": "src/civiclab/production_price_v4.py",
+          "function": "validate_terms",
+          "line": 155,
+          "self_seconds": 0.023662918
+        },
+        {
+          "calls": 7876,
+          "cumulative_seconds": 0.39185360500000005,
+          "file": "src/civiclab/owner_budget_v3.py",
+          "function": "freeze",
+          "line": 29,
+          "self_seconds": 0.004705002000000001
+        },
+        {
+          "calls": 192,
+          "cumulative_seconds": 0.32509788,
+          "file": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+          "function": "load_protocol",
+          "line": 29,
+          "self_seconds": 0.000751469
+        },
+        {
+          "calls": 480,
+          "cumulative_seconds": 0.288816079,
+          "file": "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+          "function": "_load",
+          "line": 31,
+          "self_seconds": 0.000402692
+        },
+        {
+          "calls": 261736,
+          "cumulative_seconds": 0.287619344,
+          "file": "~",
+          "function": "<built-in method builtins.any>",
+          "line": 0,
+          "self_seconds": 0.082120881
+        },
+        {
+          "calls": 494496,
+          "cumulative_seconds": 0.23460239600000002,
+          "file": "src/civiclab/e02/exploratory_pilot_analysis_v1.py",
+          "function": "walk",
+          "line": 38,
+          "self_seconds": 0.164121143
+        },
+        {
+          "calls": 47822,
+          "cumulative_seconds": 0.22161809300000002,
+          "file": "__init__.py",
+          "function": "dumps",
+          "line": 183,
+          "self_seconds": 0.022806244
+        },
+        {
+          "calls": 47822,
+          "cumulative_seconds": 0.194196167,
+          "file": "encoder.py",
+          "function": "encode",
+          "line": 183,
+          "self_seconds": 0.020135783
+        },
+        {
+          "calls": 1497216,
+          "cumulative_seconds": 0.19268701100000002,
+          "file": "src/civiclab/common.py",
+          "function": "<genexpr>",
+          "line": 57,
+          "self_seconds": 0.130797286
+        },
+        {
+          "calls": 39956,
+          "cumulative_seconds": 0.187837004,
+          "file": "src/civiclab/common.py",
+          "function": "canonical_bytes",
+          "line": 23,
+          "self_seconds": 0.011196620000000001
+        }
+      ],
+      "kind": "READONLY_AUTHORED_COMPILER_PROFILE",
+      "limitation": "Pure compiler scaling only; cProfile overhead, no financial replay/setup/full-lifecycle completion or scientific result.",
+      "model_network_calls": 0,
+      "owner_calls": 0,
+      "read_reservation_bytes": 3907035,
+      "runtime": "3.12.14",
+      "sample_prefix_calls": [
+        {
+          "CPU_seconds": 0.012005000000000043,
+          "calls": 3,
+          "prior_authored_rows": 0
+        },
+        {
+          "CPU_seconds": 0.03209100000000009,
+          "calls": 3,
+          "prior_authored_rows": 20
+        },
+        {
+          "CPU_seconds": 0.052194000000000074,
+          "calls": 3,
+          "prior_authored_rows": 40
+        },
+        {
+          "CPU_seconds": 0.07209699999999986,
+          "calls": 3,
+          "prior_authored_rows": 60
+        },
+        {
+          "CPU_seconds": 0.0897429999999999,
+          "calls": 3,
+          "prior_authored_rows": 80
+        }
+      ],
+      "status": "PASS_PROFILE_ONLY",
+      "wall_seconds": 1.6824853750003967,
+      "writes": 0
+    },
+    "whitespace": "PASS",
+    "probe_counts": {
+      "original_focus_allocation": 4,
+      "original_focus_results": "2purePASS+2startup_guardFAIL",
+      "separately_authorized_corrected_focus_children": 2,
+      "corrected_focus_results": "2PASS11cases/runtime",
+      "optional_readonly_profile_children": 1,
+      "whole_lifecycle_runs": 0,
+      "full_suite_runs": 0,
+      "new_hosted_matrix_triggers": 0
+    }
+  },
+  "preserved_preparation_and_probe_failures": [
+    {
+      "kind": "evidence_directory_collision",
+      "fact": "Initialmkdir collided with root-owned reports/evidence_ci_failure_44352968450_20261118. No files there were written; separate worker evidence directory used."
+    },
+    {
+      "kind": "probe_guard_dir_fd_and_traceback_scope",
+      "fact": "Firststartup probes passed all4run_pip cases per runtime, then probeaudit resolveddir_fd-relative cleanup names againstcwd and refused; tracebackloading ownsource was also refused. Failedguard/source/logs retained. Correctionuses existing reviewedDirectoryFdGuard and exact ownscript read. Both owned leftovermock scratchdirs were inventoried/removed; no actualdata was present.",
+      "preserved_source": "reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe_failed_guard.py",
+      "cleanup_ref": {
+        "path": "reports/evidence_ci_runner_successor_44352968450_20261118/FAILED_GUARD_SCRATCH_CLEANUP.json",
+        "bytes": 285,
+        "sha256": "5dce6ae09aac03f4e22a5ad0539d039b3f613de2a2716af11841319421bbbd15"
+      }
+    }
+  ],
+  "allocation_proposal": {
+    "ref": {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/WORKLOAD_ALLOCATION_PROPOSAL.json",
+      "bytes": 104226,
+      "sha256": "c711512c27bc919a78fd491dea44badfaba1d697915c5955608a00e9e4a507f5"
+    },
+    "ordinary_modules_at_freeze": 197,
+    "all_modules_exactly_once": true,
+    "recommended_layout": "6dedicated heavy modulejobs plus2balancedfastlanes perruntime, allfrozen groups onFAST_0; no per-case prefix rebuilding or coverage drop.",
+    "proposed_seconds_per_runtime": 27600,
+    "former_seconds_per_runtime": 12120,
+    "increase_seconds_per_runtime": 15480,
+    "max_parallel": 4,
+    "root_authorization": "PENDING_NOT_EXECUTED",
+    "cost_note": "No new provider/model cost. GitHub compute cost is not estimated or asserted zero; root controls whether toauthorize the revised finite envelope and trigger.",
+    "measurement_limitation": "Completed PASS timings available; censoredheavy completion unknown and new/unexecutedmodules use explicit30s planning placeholders. Budgets are bounded judgments, not guarantees."
+  },
+  "performance_plan": "Profile pinpointed3932compile calls/3934quote calls and281216redact calls during96pure next_action calls. Per3calls CPU0rows=.012s,80rows=.090s under cProfile. A separately versioned/differentially reviewed candidate may investigate repeated derivations, but this task implements no caching, validation bypass, owner/financial/scientific change or promised speedup. No full-lifecycle optimization decision follows from microprofile alone.",
+  "REPRODUCTION_COMMANDS": [
+    "<exact-python> -I -B -S tests/test_ci_collection_isolation_v1.py",
+    "<exact-python> -I -B -S reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py [sixfocus children consumed; no extraauthor runimplicit]",
+    "<exact-python> -I -B -S reports/evidence_ci_runner_successor_44352968450_20261118/readonly_compiler_profile.py [oneprofileallocation consumed]"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Public project sources/closedCI artifacts and whollyauthored in-memory request/compiler/mocktemp fixtures only. No rawsource/PDF/currentowner/key/.env/network/model use. Frozeninstaller/owner/scientificsource untouched; FECfiles remainwithroot.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Authorfocusedchecks do not replace independent audit or hostedLinuxcoverage.",
+    "Full3.12matrixoutcome notassumed; root mayprovide furtherartifacts.",
+    "Heavycompletion and completefullCI remainblocked; no historicruntime/scientific/forecast acceptance.",
+    "Newhostqualification requires independent classification/source review; remainingportable tests mustexecute.",
+    "Proposedbudget increase is notself-authorized."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent audit of exactharness/host/timing patch.",
+    "Rootdecision on workloadproposal/revisedfiniteCIenvelope and its coverage-preserving implementation.",
+    "Singlejustified hostedfullmatrix onlyafterreview; allheavytestcases mustfinishunderacceptedbounds."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Nonimplementer audits correctedstartup/host rules and focusedreceipts. Root chooses a finiteworkloadbudget from concreteproposal; implementation and independentcoverage checks precede anynew fullhostedtrigger.",
+  "evidence_refs": [
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/ACTUAL_FAILURES.json",
+      "bytes": 7324,
+      "sha256": "a83ca5784157e72da22a0e817f355dcedb6d0e030eaa37358c033487fe2a9027"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/FAILED_GUARD_SCRATCH_CLEANUP.json",
+      "bytes": 285,
+      "sha256": "5dce6ae09aac03f4e22a5ad0539d039b3f613de2a2716af11841319421bbbd15"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/PLAN.json",
+      "bytes": 1055,
+      "sha256": "a1327ca983e7b0471a51f6b37e0b5077aba701f66e86484325568791a174ae4c"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/WORKLOAD_ALLOCATION_PROPOSAL.json",
+      "bytes": 104226,
+      "sha256": "c711512c27bc919a78fd491dea44badfaba1d697915c5955608a00e9e4a507f5"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/final_offline.yml",
+      "bytes": 2669,
+      "sha256": "5933789b71ac34b51b4859a0998ef3f5403de6bbe6473e96672b628d39f6eb31"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/final_run_offline_ci_v1.py",
+      "bytes": 59796,
+      "sha256": "cc6ebfdaf3c25ed8f25bc89283adf3001e1f85e05c60cc24fc8119706b41a91f"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/final_test_ci_collection_isolation_v1.py",
+      "bytes": 51171,
+      "sha256": "29196d1591bb9258386368c719db8765782a68b4a8bcb7d37f1460a359776844"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/offline.yml",
+      "bytes": 2607,
+      "sha256": "cfd6dab54170b37e127d49313c12b92e08114337b6a6c70a3404443e27568040"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/pure311.log",
+      "bytes": 7706,
+      "sha256": "dee58b1cdb9deb29ac884f0a8a7c847241e61a6ab668182c07cfb7049342655b"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/pure312.log",
+      "bytes": 7706,
+      "sha256": "15ecaea5e1eb830d5768e0618fe59f3425fb138637605e5d6032601ae6a12db0"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/readonly_compiler_profile.log",
+      "bytes": 4012,
+      "sha256": "1d88e357a18d5cb0dd14e738bb15bf36dd062f9b8d407f4bff0fc282051c80fa"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/readonly_compiler_profile.py",
+      "bytes": 3580,
+      "sha256": "b0b43714dc1ce7a271e79a1c732033394d2bda652151bbf028a0a2b33c977c70"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/run_offline_ci_v1.py",
+      "bytes": 56028,
+      "sha256": "7db53cd92b6e7866015ed85d87bf4cddc7abccfbabc5d77b3c8bd54e165a941e"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/startup311.log",
+      "bytes": 10394,
+      "sha256": "aa8702cc7a28ad5d34a209f0285f655ee9243665c915af37f942dc869f9e9354"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/startup311_corrected.log",
+      "bytes": 3075,
+      "sha256": "28fc81502d4e983f1913cc9c46d81756afdcea1a39a52d978ab4b4158758c7b1"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/startup312.log",
+      "bytes": 9192,
+      "sha256": "4c30585be7c74fa3914cb6218519db5e87da3226c68017246ecc3b9d96151eaf"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/startup312_corrected.log",
+      "bytes": 3075,
+      "sha256": "f9cd29175846bce0b4892544f875015a6e00c1791234a43d9bf2dba3cb3e9634"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe.py",
+      "bytes": 3954,
+      "sha256": "08ae67e2f6663c3d33ea8103d49f7b10a9fd2c7872ed7136ac9456ce1ae1a057"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/startup_and_host_probe_failed_guard.py",
+      "bytes": 3515,
+      "sha256": "82de60714d79c2e3acc1570abf3e7f27fac26fe87f41921a3dd44dec29b6a7f9"
+    },
+    {
+      "path": "reports/evidence_ci_runner_successor_44352968450_20261118/test_ci_collection_isolation_v1.py",
+      "bytes": 46608,
+      "sha256": "9e1f2b0ad7af0c2ded727e3d9c5bea828283d767f9d313f4467874bc642ce631"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+test_exact_canonical_serializer_refusal_precedes_dispatch (__main__.CorrectedNonfiniteClockControl.test_exact_canonical_serializer_refusal_precedes_dispatch) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK
+{"actual_dispatches": 0, "kind": "INDEPENDENT_NONFINITE_REFUSAL_ONLY", "source_change": false, "status": "PASS", "traces": [{"exact_exception_type": "ValueError", "input": "NaN", "safe_frame_names": ["run_parent", "save_new", "packed", "dumps", "encode", "iterencode"]}, {"exact_exception_type": "ValueError", "input": "Inf", "safe_frame_names": ["run_parent", "save_new", "packed", "dumps", "encode", "iterencode"]}]}
+{"kind": "CI_ISOLATION_AUTHOR_MOCK_V1", "python": "3.12.14", "tests_run": 1, "successful": true, "read_reservation_bytes": 141818, "temp_write_bytes": 0, "console_bytes_before_receipt": 681, "actual_children": 0, "actual_frozen_groups": 0, "network_calls": 0}

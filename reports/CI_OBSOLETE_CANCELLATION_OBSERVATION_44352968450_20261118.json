@@ -1,0 +1,73 @@
+{
+  "kind": "OBSOLETE_FAILED_CI_CANCELLATION_OBSERVATION",
+  "run_id": 44352968450,
+  "head_sha": "a3e7636744bf45cfc79c0c0d3da75c26861e2f3a",
+  "plan": "reports/CI_OBSOLETE_CANCELLATION_PLAN_44352968450_20261118.json",
+  "cancel_command_exit": 0,
+  "cancel_requests": 1,
+  "retries": 0,
+  "jobs": [
+    {
+      "id": 134973332773,
+      "name": "darwin-mime-cases (3.11)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 134973333431,
+      "name": "darwin-mime-cases (3.12)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 134973333516,
+      "name": "tests (3.11, 0)",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 134973333535,
+      "name": "tests (3.11, 1)",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 134973333618,
+      "name": "tests (3.11, 2)",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 134973333657,
+      "name": "tests (3.12, 3)",
+      "status": "completed",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 134973333665,
+      "name": "tests (3.12, 2)",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 134973333739,
+      "name": "tests (3.12, 0)",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 134973333809,
+      "name": "tests (3.11, 3)",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 134973333939,
+      "name": "tests (3.12, 1)",
+      "status": "completed",
+      "conclusion": "cancelled"
+    }
+  ],
+  "replacement_started": false,
+  "interpretation": "Six ordinary jobs failed; two remaining ordinary jobs cancelled. Both Mac jobs passed. No full pass or completeness claimed for cancelled remainder; preserved completed artifacts remain immutable."
+}
