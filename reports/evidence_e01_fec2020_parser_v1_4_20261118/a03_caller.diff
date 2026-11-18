@@ -1,0 +1,63 @@
+--- consumed-A02-v1.1
++++ unexecuted-A03
+@@ -1,4 +1,4 @@
+-"""Recorded FEC-A02 child invocation; one fixed source and private output."""
++"""Recorded FEC-A03 child invocation; one fixed source and private output."""
+ from pathlib import Path
+ import hashlib
+ import json
+@@ -10,7 +10,7 @@
+ import types
+ 
+ ROOT = Path(__file__).resolve().parents[2]
+-SCOPE = ROOT / "data/processed/e01_fec2020_candidate_actual_20261118_02"
++SCOPE = ROOT / "data/processed/e01_fec2020_candidate_actual_20261118_03"
+ SOURCE = ROOT / "data/raw/e01_fec2020_workbook_20261118/federalelections2020.xlsx"
+ PARSER = ROOT / "src/civiclab/e01/fec2020_parser_v1.py"
+ CONTRACT = ROOT / "configs/e01_fec2020_senate_mapping_v1.json"
+@@ -20,7 +20,7 @@
+ 
+ _PARSER_REFUSED_TYPE = None
+ _SAFE_PARSER_CODES = frozenset(('ARCHIVE_BOUND', 'ARCHIVE_DIRECTORY_PAYLOAD', 'ARCHIVE_MEMBER', 'CELL_INTEGER_BOUND', 'CELL_NONFINITE', 'CELL_PRIMITIVE', 'CELL_TEXT_BOUND', 'CELL_TYPE_OR_FORMULA', 'CELL_TYPE_VALUE', 'COHORT_FRAME', 'CONTEST_TOTAL_ROLE', 'CONTRACT_AUTHORITY', 'CONTRACT_BOUNDS', 'CONTRACT_CONTENT_PIN', 'CONTRACT_PIN', 'CONTRACT_SCHEMA', 'DECLARED_SHEET_RANGE', 'DUPLICATE_ARCHIVE_MEMBER', 'DUPLICATE_CANDIDATE_STAGE', 'DUPLICATE_CONTEST_TOTAL', 'DUPLICATE_SUMMARY_STATE', 'ET_XMLFILE_VERSION', 'EXTERNAL_LINK_OR_MACRO', 'EXTERNAL_RELATIONSHIP', 'EXTRA_ROW', 'INVALID_PERCENTAGE', 'INVALID_VOTE_COUNT', 'INVALID_WORKBOOK_ARCHIVE', 'MAIN_THREAD_REQUIRED', 'MISSING_ROW', 'MOCK_ID', 'OPAQUE_PART_PIN', 'OPERATION_DEADLINE', 'OPTIONAL_READER_MISSING', 'OUTPUT_BOUND', 'PARTY_SUBTOTAL_ROLE', 'READER_EXTRA_ROW', 'READER_INJECTION_MOCK_ONLY', 'READER_VERSION', 'READER_WARNING_BOUND', 'REAL_SOURCE_PIN', 'ROW_ORDINAL', 'ROW_WIDTH', 'SENATE_HEADER', 'SOURCE_HASH', 'SOURCE_SCHEMA', 'SOURCE_SIZE', 'STATE_CONTEST_CONTEXT', 'SUMMARY_HEADER', 'SUMMARY_RANGE', 'SUMMARY_STATE', 'TABLE_RANGE', 'TABLE_SET', 'UNKNOWN_ROW_ROLE', 'UNREVIEWED_COMBINED_OR_EXTRA_COLUMNS', 'WORKBOOK_CLOSE_FAILED', 'WORKBOOK_PIN', 'WORKBOOK_SIZE', 'XML_BACKEND_REQUIRES_FRESH_STDLIB_PROCESS', 'XML_DTD_OR_ENTITY'))
+-_SAFE_GUARD_CODES = frozenset(('FEC_A02_NO_NETWORK_OR_PROCESS', 'FEC_A02_NO_FOREIGN_DLOPEN', 'FEC_A02_WRITE_SCOPE', 'FEC_A02_READ_SCOPE', 'FEC_A02_READ_BOUND'))
++_SAFE_GUARD_CODES = frozenset(('FEC_A03_NO_NETWORK_OR_PROCESS', 'FEC_A03_NO_FOREIGN_DLOPEN', 'FEC_A03_WRITE_SCOPE', 'FEC_A03_READ_SCOPE', 'FEC_A03_READ_BOUND'))
+ 
+ def safe_failure(error):
+     kind=type(error)
+@@ -59,29 +59,29 @@
+         if event.startswith("socket.") or event in {
+             "subprocess.Popen", "os.fork", "os.posix_spawn", "os.system", "sqlite3.connect"
+         }:
+-            raise RuntimeError("FEC_A02_NO_NETWORK_OR_PROCESS")
++            raise RuntimeError("FEC_A03_NO_NETWORK_OR_PROCESS")
+         if event == "ctypes.dlopen" and args != (None,):
+-            raise RuntimeError("FEC_A02_NO_FOREIGN_DLOPEN")
++            raise RuntimeError("FEC_A03_NO_FOREIGN_DLOPEN")
+         if event == "open" and not isinstance(args[0], int):
+             path = Path(args[0]).resolve()
+             flags = args[2]
+             writing = flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND)
+             if writing:
+                 if path != OUTPUT or not flags & os.O_EXCL:
+-                    raise RuntimeError("FEC_A02_WRITE_SCOPE")
++                    raise RuntimeError("FEC_A03_WRITE_SCOPE")
+             else:
+                 if not (path in {SOURCE, PARSER, CONTRACT, MIME} or path.is_relative_to(runtime)):
+-                    raise RuntimeError("FEC_A02_READ_SCOPE")
++                    raise RuntimeError("FEC_A03_READ_SCOPE")
+                 if path.is_file():
+                     reads[0] += path.stat().st_size
+                 if reads[0] > 67108864:
+-                    raise RuntimeError("FEC_A02_READ_BOUND")
++                    raise RuntimeError("FEC_A03_READ_BOUND")
+     sys.addaudithook(guard)
+     mime = MIME.read_bytes()
+     assert len(mime) == 61375 and hashlib.sha256(mime).hexdigest() == "57265fdf030202387c23e44283d440cab368a031214566b538b4b27064ed23df"
+     code = PARSER.read_bytes()
+-    assert hashlib.sha256(code).hexdigest() == "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
+-    module = types.ModuleType("fec_a02_exact_reviewed_parser")
++    assert hashlib.sha256(code).hexdigest() == "8b0ae5b4a20b875324eaaa7ab2a43f31cc83cfca322ac6a5537ce3b206f6f430"
++    module = types.ModuleType("fec_a03_exact_reviewed_parser")
+     module.__file__ = str(PARSER)
+     sys.modules[module.__name__] = module
+     exec(compile(code, str(PARSER), "exec"), module.__dict__)

@@ -382,6 +382,25 @@ class ArchiveSuffixRegressionTests(unittest.TestCase):
         self.assertEqual(result['declared_expanded_bytes'],sum(len(v.encode() if isinstance(v,str) else v) for v in members.values()))
 
 
+class UnopposedMarkerTests(unittest.TestCase):
+    def test_unopposed_preserves_marker_and_unknown_count(self):
+        self.assertEqual(p.count('Unopposed'),{'votes':None,'status':'NONNUMERIC_MARKER','literal':'Unopposed'})
+
+    def test_unopposed_primary_does_not_erase_numeric_general(self):
+        row=candidate(2)
+        row[11]=cell('Unopposed')
+        result=p.row_record(row,2,source())
+        self.assertIsNone(result['stages'][0]['votes'])
+        self.assertEqual(result['stages'][2]['votes'],12)
+        self.assertFalse(result['candidate_identity_accepted'])
+
+    def test_unopposed_general_blocks_count_acceptance(self):
+        row=candidate(2,votes='Unopposed')
+        result=p.row_record(row,2,source())
+        self.assertIsNone(result['stages'][2]['votes'])
+        self.assertIn('GENERAL_COUNT_UNAVAILABLE',result['blockers'])
+
+
 class ArchiveExpansionBounds(unittest.TestCase):
     def check_members(self, sizes):
         members=[]

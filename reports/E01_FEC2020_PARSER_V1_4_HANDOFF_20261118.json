@@ -1,0 +1,66 @@
+{
+  "kind": "FEC_PARSER_V1_4_UNOPPOSED_MARKER_HANDOFF",
+  "status": "AUTHOR_PASS_PENDING_INDEPENDENT_REVIEW",
+  "reason": "Bounded diagnostic identified exact titlecase Unopposed in primary cell L11; prior parser treated it as INVALID_VOTE_COUNT. Add only that literal to existing NONNUMERIC_MARKER set with votesNone, preserve literal and existing unknown-count blocking. No zero/integer imputation or candidate identity/adoption.",
+  "source_diagnostic": "reports/E01_FEC2020_VALUE_DIAGNOSTIC_RESULT_20261118.json",
+  "tests": {
+    "python311": "48 PASS",
+    "python312": "48 PASS",
+    "original45bodies": "unchanged"
+  },
+  "actual_reader": "A02 consumed/refused; A03 separate caller prepared, not executed",
+  "actual_numeric_adoption": false,
+  "cost_usd": 0,
+  "files": [
+    {
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "bytes": 28910,
+      "sha256": "8b0ae5b4a20b875324eaaa7ab2a43f31cc83cfca322ac6a5537ce3b206f6f430"
+    },
+    {
+      "path": "tests/test_fec2020_parser_v1.py",
+      "bytes": 26289,
+      "sha256": "5cbf634935ed394e402fc7fd09a8f7c8607e959e8e0598225fb6d7b5883a6c61"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once_a03.py",
+      "bytes": 7055,
+      "sha256": "350117a07f651d77653b6cdd9555560030706ffddb4130b734aefbe9b328d1e9"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/a03_caller.diff",
+      "bytes": 4580,
+      "sha256": "a64663ac411e6e504824536284353e5959b2ed8eb54d30d492b256f3cc2c9d53"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/parser.diff",
+      "bytes": 561,
+      "sha256": "3731f054864a3275fc0fbf1c816a416ada3109e9f9850f92eb7a61e5562a4a9b"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/parser_before.py",
+      "bytes": 28897,
+      "sha256": "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/pure_311.log",
+      "bytes": 7249,
+      "sha256": "8d4d98924fefb1cc0006f59f3b76e4069cd65eeba9ce4c16035046ebe58f74f9"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/pure_312.log",
+      "bytes": 7249,
+      "sha256": "04679549bb7ad723ff29e0d491fb82ddfc5a9582a208bc062935aff2414bd640"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/tests.diff",
+      "bytes": 1151,
+      "sha256": "9240cea9adf8b8babd0e5d63440dc2d4808ced6bf3e17afb8434d6c94ce32cfb"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_4_20261118/tests_before.py",
+      "bytes": 25435,
+      "sha256": "83d658d04a3d95408c4affc50f3db977e8de8884fc73fea4787026abd8b3ae27"
+    }
+  ]
+}

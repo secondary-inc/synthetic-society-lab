@@ -1,0 +1,159 @@
+{
+  "kind": "INDEPENDENT_AUDIT_FEC_A02_ACTUAL_STOP_20261118",
+  "status": "BLOCKED",
+  "accepted_closed_evidence": "PASS",
+  "scope": "Metadata/claim/log/code-review bindings only; no source workbook or reader replay",
+  "recorded_UTC": "2026-11-18T18:16:23.675882+00:00",
+  "checks": {
+    "all_five_plan_code_review_pins": true,
+    "both_logs_exact": true,
+    "bounded_terminal_failure": true,
+    "chronology": true,
+    "closed_plan_and_observation_commit_binding": true,
+    "exact_five_closed_files": true,
+    "fixed_nonpaid_allocation": true,
+    "no_candidate_output": true,
+    "no_retry_or_adoption": true,
+    "one_exclusive_claim_reserved": true,
+    "private_public_observation_exact": true,
+    "private_public_plan_exact": true,
+    "safe_stdout_exact": true,
+    "stderr_empty": true
+  },
+  "outcome": {
+    "exit_code": 1,
+    "outer_stop_reason": null,
+    "fixed_diagnostic": {
+      "error_type": "ParserRefused",
+      "safe_code": "INVALID_VOTE_COUNT",
+      "status": "STOPPED_NO_RETRY"
+    },
+    "observed_wall_seconds": 1.049043500010157,
+    "observed_child_CPU_seconds": 0.9231929999999999,
+    "exclusive_claim": {
+      "reader_calls_reserved": 1,
+      "retries": 0
+    },
+    "closed_directory_files": [
+      "attempt.local.json",
+      "observation.local.json",
+      "reader-claim.local.json",
+      "stderr.log",
+      "stdout.log"
+    ],
+    "candidate_output_present": false,
+    "adoption": false,
+    "forecast_consumption": false,
+    "scope_consumed": true
+  },
+  "bindings": [
+    {
+      "bytes": 980,
+      "path": "reports/E01_FEC2020_A02_ACTUAL_20261118.json",
+      "sha256": "676754b998eb7b73a5a79eeeabb399d00803ceb4b13194cf255353d3a23f0f39"
+    },
+    {
+      "bytes": 1467,
+      "path": "reports/E01_FEC2020_A02_RUN_PLAN_20261118.json",
+      "sha256": "98503dc458eec487e8a03cb744340c810a8473cd20fe3b88fae9347557a3f3be"
+    },
+    {
+      "bytes": 7055,
+      "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once_a02_v1_1.py",
+      "sha256": "b005dff8a9491e4fbf269a60c804544ede6a81d492435b2e0356240628a400b5"
+    },
+    {
+      "bytes": 28897,
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "sha256": "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
+    },
+    {
+      "bytes": 19619,
+      "path": "configs/e01_fec2020_senate_mapping_v1.json",
+      "sha256": "db5d3b76ed7e0d4ab6f05143e40096e7acaa7663bda0f305473f17954232a23a"
+    },
+    {
+      "bytes": 4853,
+      "path": "reports/INDEPENDENT_AUDIT_FEC2020_PARSER_V1_3_20261118.json",
+      "sha256": "721262fbf831c82c660e5d153dc7e5d5fc344409be7fc07f6e2dc9be05daf84c"
+    },
+    {
+      "bytes": 4809,
+      "path": "reports/INDEPENDENT_AUDIT_FEC_A02_CALLER_V1_1_20261118.json",
+      "sha256": "b0f2e0e9d160c824f69e14b1fd015d019804434c8e143eaaf0719bee1c4002ab"
+    },
+    {
+      "bytes": 97,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/stdout.log",
+      "sha256": "0554b666fec7f8152771123b0af8ed3f5489d63809594d1262c55417d1914356"
+    },
+    {
+      "bytes": 0,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 97,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/stdout.log",
+      "sha256": "0554b666fec7f8152771123b0af8ed3f5489d63809594d1262c55417d1914356"
+    },
+    {
+      "bytes": 0,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 40,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/reader-claim.local.json",
+      "sha256": "0609162a831613d19cd93f6d8eecfcefeda17e951ced26ee0f359512f03401aa"
+    },
+    {
+      "bytes": 1290,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/attempt.local.json",
+      "sha256": "48c4ec9cbd02ee72f1656c4f8814e0340d86b47087e9343c8ee4e122551131bb"
+    },
+    {
+      "bytes": 980,
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/observation.local.json",
+      "sha256": "676754b998eb7b73a5a79eeeabb399d00803ceb4b13194cf255353d3a23f0f39"
+    }
+  ],
+  "execution": {
+    "read_bytes": 70184,
+    "wall_seconds": 0.002820624999003485,
+    "CPU_seconds": 0.030879,
+    "limits": "30CPU/30wall/8MiB metadata reads per review process",
+    "actual_workbook_caller_main_reader_key_owner_network_calls": 0,
+    "cost_usd": 0
+  },
+  "reviewer_correction": "Initial metadata harness wrongly expected only claim+stdout+stderr, omitting retained attempt/observation mirrors. Original failed harness/log preserved; corrected exactfive-file inventory and private/public mirror checks pass. No product defect inferred.",
+  "limitations": [
+    "The one-shot claim records one reader call reserved. It alone does not prove how much of the reader completed.",
+    "Saved accepted caller diagnostic is ParserRefused INVALID_VOTE_COUNT. This is a fixed code, not a diagnosis of which row/value/notation caused it; no workbook cells were read in this review.",
+    "The run stopped well within recorded limits, with no outer stop reason. This does not establish full parse success or exclude all other later defects.",
+    "No candidate output, numeric adoption, forecast, scientific experiment result or automatic rerun is accepted. A01/A02 scopes stay consumed.",
+    "No independent physical process/network trace or fresh source identity check is made here; exact code/review/plan/log bindings and retained observation are the evidence."
+  ],
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_fec_a02_actual_20261118/check_closed_metadata.py",
+      "bytes": 3787,
+      "sha256": "a16b385f7526da387c55bb48fa1e9ccb91970d1525e02e0812530832735cb2ad"
+    },
+    {
+      "path": "reports/evidence_independent_fec_a02_actual_20261118/check_closed_metadata_corrected.py",
+      "bytes": 4059,
+      "sha256": "d8bfc3e526aa5f6f6c4636950ca3fc22db7b7fc6888e6d9181d16e7d0158b82b"
+    },
+    {
+      "path": "reports/evidence_independent_fec_a02_actual_20261118/checks_312.log",
+      "bytes": 242,
+      "sha256": "d7bc0c4e50fff4ea41ee97acc8c132e60700cbc76137d6a9811a1fab9027f1f7"
+    },
+    {
+      "path": "reports/evidence_independent_fec_a02_actual_20261118/checks_corrected_312.log",
+      "bytes": 3475,
+      "sha256": "5089d9baf58b880d8b360d979bcb78cfafac6feb165afb0f5f08c7b6df76e266"
+    }
+  ]
+}

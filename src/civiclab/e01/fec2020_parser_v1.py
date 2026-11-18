@@ -132,7 +132,7 @@ def source_reference(source):
 def count(value, *, removed=False):
     if value is None or (type(value) is str and not value.strip()):
         return {"votes": None, "status": "MISSING"}
-    if type(value) is str and value in {"n/a", "-", "*"}:
+    if type(value) is str and value in {"n/a", "-", "*", "Unopposed"}:
         return {"votes": None, "status": "NONNUMERIC_MARKER", "literal": value}
     if value == "#" and type(value) is str:
         return {"votes": None, "status": "REMOVED_FROM_BALLOT" if removed else "UNKNOWN_BLOCKED", "literal": "#"}

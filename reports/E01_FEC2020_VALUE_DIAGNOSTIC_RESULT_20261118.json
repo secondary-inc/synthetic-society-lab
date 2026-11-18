@@ -1,0 +1,39 @@
+{
+  "kind": "FEC_FIRST_INVALID_COUNT_DIAGNOSTIC_RESULT",
+  "summary_lines": [
+    {
+      "caller": "row_record",
+      "column_index": 11,
+      "comma_integer_text": false,
+      "contains_only_whitespace": false,
+      "integer_text": false,
+      "kind": "FEC_FIRST_INVALID_COUNT_METADATA",
+      "recognized_marker": "UNOPPOSED_TITLE",
+      "row": 11,
+      "text_length": 9,
+      "utf8_sha256": "b230041379d44a5512d51a944032798ad09443608fc43c85f1e2fd040daba2fa",
+      "value_type": "str"
+    },
+    {
+      "status": "STOPPED_NO_RETRY",
+      "error_type": "ParserRefused",
+      "safe_code": "INVALID_VOTE_COUNT"
+    }
+  ],
+  "logs": [
+    {
+      "name": "stdout.log",
+      "bytes": 446,
+      "sha256": "30388b733b09791be299e658c6038fa8900f825eb7a9efac4afbed17c356754d"
+    },
+    {
+      "name": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "model_calls": 0,
+  "network_calls": 0,
+  "adoption": false,
+  "retries": 0
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "E01_FEC_A02_ACTUAL_OBSERVATION",
+  "source_commit": "33a0da185574a82f52c2fe52878595eb88130bfc",
+  "started_at_utc": "2026-11-18T18:15:10.034231+00:00",
+  "finished_at_utc": "2026-11-18T18:15:11.083253+00:00",
+  "exit_code": 1,
+  "outer_stop_reason": null,
+  "elapsed_seconds": 1.049043500010157,
+  "waited_child_CPU_seconds": 0.9231929999999999,
+  "retry_allowed": false,
+  "adoption": false,
+  "forecast_consumption": false,
+  "logs": [
+    {
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/stdout.log",
+      "bytes": 97,
+      "sha256": "0554b666fec7f8152771123b0af8ed3f5489d63809594d1262c55417d1914356"
+    },
+    {
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_02/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "summary": {
+    "status": "STOPPED_NO_RETRY",
+    "error_type": "ParserRefused",
+    "safe_code": "INVALID_VOTE_COUNT"
+  }
+}

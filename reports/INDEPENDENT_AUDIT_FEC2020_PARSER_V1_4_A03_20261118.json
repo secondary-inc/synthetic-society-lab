@@ -1,0 +1,132 @@
+{
+  "kind": "INDEPENDENT_AUDIT_FEC2020_PARSER_V1_4_A03_20261118",
+  "status": "PASS_SCOPED_CANDIDATE_ONLY",
+  "UTC": "2026-11-18T18:17:37.269665+00:00",
+  "scope": "Exact Unopposed marker correction and separately named A03 caller static binding; no actual reader release or source adoption",
+  "handoff": {
+    "path": "reports/E01_FEC2020_PARSER_V1_4_HANDOFF_20261118.json",
+    "bytes": 2719,
+    "sha256": "3888f74591b85c3fedb9b68b9e9d97a97f7766e9ee37e0d74869da765e114258"
+  },
+  "source": {
+    "path": "src/civiclab/e01/fec2020_parser_v1.py",
+    "bytes": 28910,
+    "sha256": "8b0ae5b4a20b875324eaaa7ab2a43f31cc83cfca322ac6a5537ce3b206f6f430"
+  },
+  "tests": {
+    "path": "tests/test_fec2020_parser_v1.py",
+    "bytes": 26289,
+    "sha256": "5cbf634935ed394e402fc7fd09a8f7c8607e959e8e0598225fb6d7b5883a6c61"
+  },
+  "caller": {
+    "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once_a03.py",
+    "bytes": 7055,
+    "sha256": "350117a07f651d77653b6cdd9555560030706ffddb4130b734aefbe9b328d1e9"
+  },
+  "static_checks": {
+    "handoff_refs_verified": 10,
+    "sole_AST_delta": "Unopposed literal in count marker set",
+    "old45tests_unchanged": true,
+    "new_tests": 3,
+    "A03_AST_normalized_to_acceptedA02V1_1": true,
+    "diagnostic_marker_length_hash_match": true
+  },
+  "semantics": {
+    "marker": "Only exact titlecase Unopposed joins priorn/a,-,* markers. votesNone,NONNUMERIC_MARKER,literal preserved. No numeric/zero/win/turnout imputation.",
+    "generals": "Existing GENERAL_COUNT_UNAVAILABLE behavior remains for nonnumeric general/runoff counts. Numeric general retained when only primary is nonnumeric. No party/class/selection/adoption logic changed.",
+    "security": "All archive/entity/opaque/budget/deadline/source/reader controls unchanged.",
+    "caller": "AST equals acceptedA02V1.1 after only docstring/name/scope/guard-prefix/parser-hash normalization. Exclusive distinctA03scope; onecall claim and unchanged closed diagnostic; no reuse of consumedA02."
+  },
+  "independent_tests": [
+    {
+      "CPU_seconds": 0.633478,
+      "actual_workbook_reader_network_key_owner_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_V1_4_FOCUSED",
+      "runtime": "3.11.17",
+      "successful": true,
+      "tests": 56,
+      "wall_seconds": 0.6237066670146305
+    },
+    {
+      "CPU_seconds": 0.6051639999999999,
+      "actual_workbook_reader_network_key_owner_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_V1_4_FOCUSED",
+      "runtime": "3.12.14",
+      "successful": true,
+      "tests": 56,
+      "wall_seconds": 0.592399958986789
+    }
+  ],
+  "diagnostic_evidence": {
+    "report": {
+      "path": "reports/E01_FEC2020_VALUE_DIAGNOSTIC_RESULT_20261118.json",
+      "bytes": 1016,
+      "sha256": "064cc36b2969302d875350abffc92ef1b8875f81d3d7f7eed754c56cce4201a2"
+    },
+    "marker_metadata_check": "UNOPPOSED_TITLE; exact9UTF8chars/SHA of Unopposed matches retained result. No source workbook reopened by reviewer.",
+    "limitation": "Retained root diagnostic identifies recorded primaryL11. Independent review confirms metadata binding and authored parser handling, not a new source observation."
+  },
+  "acceptance": {
+    "parser_component": "PASS_EXACT_8b0ae5b4",
+    "static_A03_caller": "PASS_EXACT_350117a0",
+    "actual_A03_reader_outcome": "NOT_RUN_BY_REVIEWER",
+    "numeric_source_adoption": "BLOCKED_PENDING_LATER_ACCEPTANCE",
+    "E01_scientific_completion": "INCOMPLETE"
+  },
+  "allocation": {
+    "pure_processes": 2,
+    "per_process_limits": "120CPU/120wall",
+    "tests_per_runtime": "48author+5priorindependentsecurity+3newindependentmarker=56",
+    "actual_source_reader_or_numeric_execution": 0,
+    "actual_owner_key_network_model_calls": 0,
+    "cost_usd": 0
+  },
+  "limitations": [
+    "Exact marker handling does not infer a vote total, candidate win or authoritative seat/date/party identity.",
+    "A01/A02 and diagnostic scopes remain consumed; this review does not replay or release them.",
+    "No complete workbook parse or candidate numeric output accepted from these mocked suites. Further source values may trigger other fixed refusals.",
+    "No new fullnative reader child is justified for a marker-set literal. Prior native qualification remains historical and exact-source-delta scope is explicit.",
+    "Root retains responsibility for a separately bounded A03 actual release and for committing all safe logs/findings."
+  ],
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/AST_SOURCE_AND_CALLER_CHECKS.json",
+      "bytes": 241,
+      "sha256": "a93413d6b89549bafbb21f3f50884571787041c508b90098d57ae26170bf3d72"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/frozen_fec2020_parser_v1.py",
+      "bytes": 28910,
+      "sha256": "8b0ae5b4a20b875324eaaa7ab2a43f31cc83cfca322ac6a5537ce3b206f6f430"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/frozen_read_candidate_once_a03.py",
+      "bytes": 7055,
+      "sha256": "350117a07f651d77653b6cdd9555560030706ffddb4130b734aefbe9b328d1e9"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/frozen_test_fec2020_parser_v1.py",
+      "bytes": 26289,
+      "sha256": "5cbf634935ed394e402fc7fd09a8f7c8607e959e8e0598225fb6d7b5883a6c61"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/pure_311.log",
+      "bytes": 9873,
+      "sha256": "b2ac2688e06ba1fd57275b0bf993e4e349720265c41f9569ecf45fad067cf4f5"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/pure_312.log",
+      "bytes": 9882,
+      "sha256": "2b8052bebee638ebd10975fb37f6b9f83200221e773cfd39521e48508ee564f5"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_4_20261118/run_focused.py",
+      "bytes": 2578,
+      "sha256": "274e974d2d9bf5027202530a07339564ffbd9677889d5d8b327bf22ee23035c9"
+    }
+  ]
+}
