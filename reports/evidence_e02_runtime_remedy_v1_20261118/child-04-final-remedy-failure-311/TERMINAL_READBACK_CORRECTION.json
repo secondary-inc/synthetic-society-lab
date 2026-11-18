@@ -1,0 +1,9 @@
+{
+  "kind": "PROFILE_LED_VALIDATION_CORRECTION",
+  "finding": "ProductionOwnerV4.transition verifies before apply/commit but _append does not run full postcommit replay. Faster prototype13verify result relied on probe finalassertion outside measured entry for readback. Must retain explicit normal terminal readback inside successor cleanup.",
+  "effect": "Add canary_snapshot after UNCERTAIN transition, verify branchclosed and UNCERTAIN/OVERRUN status. Remove redundant pre-transition snapshot and explicit extraCLOSE only after verified terminal readback. Fallback CLOSE still used ontransition/readback failure.",
+  "predecessor_bytes": 11909,
+  "predecessor_sha256": "860942284529d8e0952d2aafb3f57c86e023ffc72b0448a5521e141a15511479",
+  "remaining_integration_children": 1,
+  "allocation_note": "Use lastchild4 asplanned3.11 corrected integration. Corrected3.12 integration NOT_RUN under exhausted4total; independent reviewer may qualify separately. No extra author integration execution."
+}

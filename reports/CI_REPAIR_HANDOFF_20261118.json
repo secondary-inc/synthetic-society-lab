@@ -1,0 +1,271 @@
+{
+  "TASK_ID": "CI_FAILURE_44244801559_REPAIR_CANDIDATE_20261118",
+  "status": "FOCUSED_AUTHOR_PASS_INDEPENDENT_REVIEW_PENDING_FULL_CI_NOT_RUN",
+  "FILES_CHANGED": [
+    "scripts/run_offline_ci_v1.py",
+    "tests/test_ci_collection_isolation_v1.py",
+    ".github/workflows/offline.yml"
+  ],
+  "source_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 53722,
+      "sha256": "b2b0ee9f35b5d0b320849aad86a3e18af576b49ac6efaf7c4daf67f67051f677"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 43759,
+      "sha256": "bc24b61c6e2f526be866e65f251a052bf0b437e3ef80f4bd8f8b84bd33d6024a"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 2607,
+      "sha256": "cfd6dab54170b37e127d49313c12b92e08114337b6a6c70a3404443e27568040"
+    }
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/CI_FAILURE_DIAGNOSIS_44244801559_20261118.json",
+    "reports/evidence_ci_repair_20261118"
+  ],
+  "authentic_prior_failure": {
+    "run_id": 44244801559,
+    "source": "778f46294fb00cf8a5a2cff176fe053cd74a036e",
+    "ordinary_wall_seconds_per_runtime": 10800,
+    "ordinary_exit": -9,
+    "earlier_failure_labels_per_runtime": 158,
+    "affected_modules": 15,
+    "portable_frozen_checks_per_runtime": 216,
+    "historical_checks_not_run_per_runtime": 4,
+    "terminal_ordinary_receipt": false,
+    "limitation": "Labels survived; buffered end-of-suite tracebacks did not. The first Clerk Linux cause remains unknown."
+  },
+  "verified_cause_controls": [
+    "Original MIME candidates explicitly refuse Linux; authored Linux branch models are not host qualification.",
+    "PyPA SharedBudget counts absolute process CPU; authored age121 model fails where age0 passes.",
+    "First two Clerk cases pass in a fresh local Darwin process; this does not establish Linux behavior."
+  ],
+  "repair": [
+    "Per-file source-hashed fresh ordinary children; dynamically discovers new test modules.",
+    "Four deterministic Linux shards per Python runtime, total original coordinator allowance unchanged at12120 seconds; 3030 each.",
+    "Each file has exact dynamic planned/discovered/started/completed/outcome multiset accounting, with direct static declarations also required.",
+    "Class/module fixture skips preserved with member and reason bindings; test failures remain failures.",
+    "Immediate bounded64KiB failure/error/subtest/setup traces and flushed per-case start/stop events.",
+    "Canonical executable path avoids an interpreter symlink in nested exact path checks; no changed runtime pin.",
+    "Only independently classified ten Darwin MIME and eight exact generated-runtime cases may receive source-bound host-ineligible NOT_RUN. All four portable MIME cases and thirty portable PyPA mock cases remain included.",
+    "Focused genuine-Darwin workflow executes all fourteen original MIME cases unchanged; full historical runtime/research acceptance is not implied.",
+    "Six frozen source pins,216 portable cases,four historical checks and historical admission logic remain unchanged."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "direct_pure_models": {
+      "3.12.14": "41 PASS",
+      "3.11.17": "41 PASS"
+    },
+    "actual_production_cli": [
+      {
+        "summary": {
+          "path": "reports/evidence_ci_repair_20261118/actual_focus_python311_v1/SUMMARY.json",
+          "bytes": 44211,
+          "sha256": "c63a92e34bf1b8c46b4b3e565b79dc9c51473985b5a040cd321da5f105704fc3"
+        },
+        "status": "FAIL",
+        "runtime": "311",
+        "attempt": "v1",
+        "cases": 55,
+        "results": [
+          {
+            "job_id": "ordinary-test_ci_collection_isolation_v1",
+            "status": "FAIL",
+            "errors": [
+              "ModuleIsolationRepairTests.test_focused_plan_never_claims_whole_coverage",
+              "ModuleIsolationRepairTests.test_host_classification_models_never_run_historical_sources",
+              "ModuleIsolationRepairTests.test_module_receipt_requires_exact_case_accounting_and_source",
+              "ModuleIsolationRepairTests.test_shards_partition_dynamic_modules_and_preserve_total_time_allowance",
+              "ModuleIsolationRepairTests.test_source_hash_change_and_alias_refused"
+            ],
+            "failures": [
+              "ModuleIsolationRepairTests.test_canonical_interpreter_resolves_existing_symlink"
+            ],
+            "tests_run": 41,
+            "elapsed_seconds": 0.20664233400020748
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v1_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 6,
+            "elapsed_seconds": 0.1425242499972228
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v2_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 8,
+            "elapsed_seconds": 0.1406727079884149
+          }
+        ]
+      },
+      {
+        "summary": {
+          "path": "reports/evidence_ci_repair_20261118/actual_focus_python311_v2/SUMMARY.json",
+          "bytes": 43713,
+          "sha256": "09be1340873bcfd9633802f1697993215f954051fd394f14dce4060c34976e9d"
+        },
+        "status": "PASS_FOCUSED_ONLY",
+        "runtime": "311",
+        "attempt": "v2",
+        "cases": 55,
+        "results": [
+          {
+            "job_id": "ordinary-test_ci_collection_isolation_v1",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 41,
+            "elapsed_seconds": 0.18866074999095872
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v1_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 6,
+            "elapsed_seconds": 0.13940608300617896
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v2_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 8,
+            "elapsed_seconds": 0.14088591700419784
+          }
+        ]
+      },
+      {
+        "summary": {
+          "path": "reports/evidence_ci_repair_20261118/actual_focus_python312_v1/SUMMARY.json",
+          "bytes": 44212,
+          "sha256": "40cabefffc251f396f671b07534818ba40aac1e5ccddb27c5f32d11246b99f66"
+        },
+        "status": "FAIL",
+        "runtime": "312",
+        "attempt": "v1",
+        "cases": 55,
+        "results": [
+          {
+            "job_id": "ordinary-test_ci_collection_isolation_v1",
+            "status": "FAIL",
+            "errors": [
+              "ModuleIsolationRepairTests.test_focused_plan_never_claims_whole_coverage",
+              "ModuleIsolationRepairTests.test_host_classification_models_never_run_historical_sources",
+              "ModuleIsolationRepairTests.test_module_receipt_requires_exact_case_accounting_and_source",
+              "ModuleIsolationRepairTests.test_shards_partition_dynamic_modules_and_preserve_total_time_allowance",
+              "ModuleIsolationRepairTests.test_source_hash_change_and_alias_refused"
+            ],
+            "failures": [
+              "ModuleIsolationRepairTests.test_canonical_interpreter_resolves_existing_symlink"
+            ],
+            "tests_run": 41,
+            "elapsed_seconds": 0.21096641599433497
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v1_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 6,
+            "elapsed_seconds": 0.16004666598746553
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v2_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 8,
+            "elapsed_seconds": 0.1564003330131527
+          }
+        ]
+      },
+      {
+        "summary": {
+          "path": "reports/evidence_ci_repair_20261118/actual_focus_python312_v2/SUMMARY.json",
+          "bytes": 43713,
+          "sha256": "63f34ba26b16692cc36ed12345a14b4c3081ed26bfb30bc9b7207e9f6307fbf4"
+        },
+        "status": "PASS_FOCUSED_ONLY",
+        "runtime": "312",
+        "attempt": "v2",
+        "cases": 55,
+        "results": [
+          {
+            "job_id": "ordinary-test_ci_collection_isolation_v1",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 41,
+            "elapsed_seconds": 0.19625599999562837
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v1_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 6,
+            "elapsed_seconds": 0.15721441601635888
+          },
+          {
+            "job_id": "ordinary-test_e01_p2_builtin_mime_candidate_v2_20261116",
+            "status": "PASS",
+            "errors": [],
+            "failures": [],
+            "tests_run": 8,
+            "elapsed_seconds": 0.15657170800841413
+          }
+        ]
+      }
+    ],
+    "whitespace_check": "PASS",
+    "dynamic_four_shard_inventory_observation": {
+      "ordinary_modules": 194,
+      "total_jobs": 204,
+      "unique_jobs": 204,
+      "shard_jobs": [
+        59,
+        49,
+        48,
+        48
+      ],
+      "budgets": [
+        3030,
+        3030,
+        3030,
+        3030
+      ],
+      "new_fec_module_included": true,
+      "scope": "Observation of current working tree; other owned modules can change independently."
+    }
+  },
+  "preserved_author_error": "repair_focus_python311_attempt1.log is misnamed: its receipt records actual Python3.12.14, not3.11. First production CLI v1 failed six new fixture cases per runtime because macOS /var temp paths alias /private/var. Only authored fixture paths/expected resolved target were corrected; v1 evidence is retained.",
+  "REPRODUCTION_COMMANDS": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 tests/test_ci_collection_isolation_v1.py",
+    ".venv/bin/python tests/test_ci_collection_isolation_v1.py",
+    "<exact-python> scripts/run_offline_ci_v1.py --only-module test_ci_collection_isolation_v1.py --only-module test_e01_p2_builtin_mime_candidate_v1_20261116.py --only-module test_e01_p2_builtin_mime_candidate_v2_20261116.py --module-wall-seconds 120 --output-dir <fresh-directory>"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Project source and closed CI artifacts only; no actual source data, credential, current-owner, installer acquisition, model call or research run.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Author checks do not replace independent review.",
+    "No repaired hosted full run has been triggered.",
+    "Remaining portable failures, if any, must be diagnosed from new immediate traces; no blanket skip is authorized.",
+    "Historical host-ineligible cases remain NOT_RUN, never research qualification.",
+    "Shard budget still bounds wall time, so an expensive module/shard may remain red rather than extend authority."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent candidate review.",
+    "One justified hosted full matrix after accepted focused evidence and independent review; lead owns trigger.",
+    "Any portable Linux failure revealed by that run, particularly Clerk cause not locally proven."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews exact candidate and counterexamples. Lead coordinates publication of candidate and a single reviewed hosted full run."
+}

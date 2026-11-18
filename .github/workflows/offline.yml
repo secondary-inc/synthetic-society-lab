@@ -3,7 +3,40 @@ on: [push, pull_request]
 jobs:
   tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 65
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        python: ['3.11', '3.12']
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '${{ matrix.python }}'
+      - run: python -m pip install -e '.[selection,sources,geometry]'
+      - name: Verify pypdf 7 authored PDF compatibility
+        if: matrix.shard == 0
+        run: |
+          export CIVICLAB_PYPDF7_FIXTURE_TARGET="$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')"
+          python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v
+      - name: Verify isolated modules and frozen groups in deterministic shard
+        run: python scripts/run_offline_ci_v1.py --shard-count 4 --shard-index ${{ matrix.shard }} --output-dir ci-results/python-${{ matrix.python }}-shard-${{ matrix.shard }}
+      - name: Preserve isolated CI coverage and failure receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-ci-python-${{ matrix.python }}-shard-${{ matrix.shard }}
+          path: ci-results/python-${{ matrix.python }}-shard-${{ matrix.shard }}/
+          if-no-files-found: warn
+      - run: civiclab validate-sources --fixture-only
+        if: matrix.shard == 0
+  darwin-mime-cases:
+    # These original ten host cases plus four portable controls execute on
+    # genuine Darwin. This focused job is not whole historical qualification.
+    runs-on: macos-latest
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
@@ -13,18 +46,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '${{ matrix.python }}'
-      - run: python -m pip install -e '.[selection,sources,geometry]'
-      - name: Verify pypdf 7 authored PDF compatibility
-        run: |
-          export CIVICLAB_PYPDF7_FIXTURE_TARGET="$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')"
-          python -m unittest discover -s tests -p 'test_pypdf7_fresh_install_compatibility.py' -v
-      - name: Verify ordinary and isolated frozen offline groups
-        run: python scripts/run_offline_ci_v1.py --output-dir ci-results/python-${{ matrix.python }}
-      - name: Preserve isolated CI coverage and failure receipts
+      - name: Execute unchanged MIME cases on their required platform
+        run: >-
+          python scripts/run_offline_ci_v1.py
+          --only-module test_e01_p2_builtin_mime_candidate_v1_20261116.py
+          --only-module test_e01_p2_builtin_mime_candidate_v2_20261116.py
+          --module-wall-seconds 120
+          --output-dir ci-results/darwin-mime-python-${{ matrix.python }}
+      - name: Preserve focused genuine-host evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: offline-ci-python-${{ matrix.python }}
-          path: ci-results/python-${{ matrix.python }}/
+          name: offline-ci-darwin-mime-python-${{ matrix.python }}
+          path: ci-results/darwin-mime-python-${{ matrix.python }}/
           if-no-files-found: warn
-      - run: civiclab validate-sources --fixture-only

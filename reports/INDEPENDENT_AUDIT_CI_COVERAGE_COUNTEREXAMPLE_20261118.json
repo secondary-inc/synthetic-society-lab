@@ -1,0 +1,36 @@
+{
+  "TASK_ID": "INDEPENDENT_CI_ORDINARY_COVERAGE_COUNTEREXAMPLE_20261118",
+  "status": "BLOCKED",
+  "scope": "Existing ordinary receipt coverage validator at historical commit18be6bc only. No assertion of historical forged coverage or reopened E01 acceptance.",
+  "source_ref": {
+    "git_commit": "18be6bcbe44d19076fd8e8732065175932e825dd",
+    "path": "scripts/run_offline_ci_v1.py",
+    "bytes": 30370,
+    "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+  },
+  "counterexample": {
+    "function": "validate_coverage",
+    "receipt": {
+      "status": "PASS",
+      "tests_run": 1
+    },
+    "job": {
+      "phase": "ordinary"
+    },
+    "specification": {},
+    "observed": "Accepted without planned or started case inventory."
+  },
+  "reproduction": "AST-extracted pure validate_coverage function only with require raising on false. No module import, test suite, candidate entry, owner or network.",
+  "required_future_behavior": "Bind full ordinary module/case inventory and completed outcomes before a full-suite claim. Scope frozen historical qualification separately.",
+  "limitations": [
+    "This is a receipt robustness gap, not evidence that a real old CI execution omitted tests.",
+    "Current failing CI remains ERROR independently of this counterexample."
+  ],
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_CI_COVERAGE_COUNTEREXAMPLE_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_CI_COVERAGE_COUNTEREXAMPLE_20261118.json"
+  ],
+  "COST_USD_ACTUAL_OR_ZERO": 0
+}

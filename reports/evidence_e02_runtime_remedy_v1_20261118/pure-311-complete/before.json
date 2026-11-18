@@ -1,0 +1,28 @@
+{
+  "scope": "PURE_NO_INTEGRATION",
+  "command": [
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+    "-I",
+    "-B",
+    "-S",
+    "-c",
+    "import sys,runpy;sys.path.insert(0,'/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src');sys.argv=['/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_canary_failure_diagnostic_v1.py'];runpy.run_path(sys.argv[0],run_name=\"__main__\")"
+  ],
+  "source_pins": [
+    {
+      "path": "tests/test_wrapper_canary_failure_diagnostic_v1.py",
+      "bytes": 12510,
+      "sha256": "4c1925c692b1031ebaec346c5f01175cc1ccb9955ddbdce90ed15a1828916f84"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_canary_failure_diagnostic_v1.py",
+      "bytes": 2707,
+      "sha256": "d091c754f995f47c02ca48ded88b2cb3ab6e9d2b94b5f0c8c1374ba90eae936d"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_diagnostic_v1_client.py",
+      "bytes": 11909,
+      "sha256": "860942284529d8e0952d2aafb3f57c86e023ffc72b0448a5521e141a15511479"
+    }
+  ]
+}

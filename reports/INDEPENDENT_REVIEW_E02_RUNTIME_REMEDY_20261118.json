@@ -1,0 +1,421 @@
+{
+  "TASK_ID": "INDEPENDENT_REVIEW_E02_RUNTIME_REMEDY_20261118",
+  "status": "BLOCKED_ORIGINAL_EXCEPTION_PRESERVATION_WITH_SCOPED_OFFLINE_CHECKS_PASSED",
+  "scope": "Independent review of exact final MOCK-only diagnostic successor. No live release, saved-key/whole-CLI or slot46 qualification; no independent normal1189 stop replay.",
+  "handoff_ref": {
+    "path": "reports/E02_RUNTIME_REMEDY_V1_HANDOFF_20261118.json",
+    "bytes": 36330,
+    "sha256": "0948a2dd47eb97d3fadb55b1f4d8c676cccd538584a2e57443005aaacd9e568d"
+  },
+  "reviewed_source_refs": [
+    {
+      "bytes": 2707,
+      "path": "src/civiclab/e02/wrapper_canary_failure_diagnostic_v1.py",
+      "sha256": "d091c754f995f47c02ca48ded88b2cb3ab6e9d2b94b5f0c8c1374ba90eae936d"
+    },
+    {
+      "bytes": 12109,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_diagnostic_v1_client.py",
+      "sha256": "4eb0056fc432c13f8c7d9d56bf390c273b804b20f27cfb16e599df0ca9a8050b"
+    },
+    {
+      "bytes": 16147,
+      "path": "scripts/profile_e02_runtime_remedy_v1_20261118.py",
+      "sha256": "fadce8c30c8d0764cf96c04f57c8627ca619ac2f82045b0637a7fadef597df67"
+    },
+    {
+      "bytes": 12992,
+      "path": "tests/test_wrapper_canary_failure_diagnostic_v1.py",
+      "sha256": "fae10a207031d3a044fad3ac9c901b7aee0af165ef24714ccf3072144fb77208"
+    }
+  ],
+  "source_integrity": {
+    "four_final_pins_before_and_after": "PASS",
+    "exact_successor_diff_reproduced": "PASS",
+    "inherited_69_source_pins": "PASS",
+    "implementation_mutations": 0,
+    "CI_FEC_STATUS_mutations": 0
+  },
+  "findings": [
+    {
+      "id": "E02-REMEDY-REVIEW-01",
+      "severity": "P2",
+      "status": "REPRODUCED_ON_BOTH_RUNTIMES",
+      "file": "src/civiclab/e02/wrapper_crossmodel_canary_diagnostic_v1_client.py",
+      "location": "finally: if own_journal and journal is not None: journal.close()",
+      "problem": "An owned journal close OSError replaces the original inert POST RuntimeError, violating the broad original-exception preservation requirement. Existing authored flow cases supply a journal, so own_journal is false and this finally path is not covered.",
+      "inherited_from_predecessor": true,
+      "inheritance_does_not_waive_requirement": true,
+      "evidence": [
+        "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311-corrected/console.log",
+        "reports/evidence_independent_e02_runtime_remedy_20261118/additional-312-corrected/console.log"
+      ],
+      "required_remedy": "A separately versioned change must preserve the original error across owned-journal close failure and add independent controls. Do not edit the frozen reviewed candidate or claim broader acceptance from its predecessor."
+    }
+  ],
+  "scoped_checks": {
+    "safe_marker_privacy": "PASS: exact error class identities; no args/repr/arbitrary descriptors/class hashing; validated exact primitive transport fields only; closed stage/provenance, <=512B, no generation/billing attestation or retry.",
+    "marker_durability": "PASS: real _Journal.write uses O_EXCL, file flush/fsync then directory fsync; authored real-journal controls observe two fsync calls, reject overwrite and refuse durable return after fsync failure.",
+    "early_order": "PASS: successor writes marker before conservative cleanup; mocked transition/readback failure controls preserve original error; integration records marker present at both cleanup verifications and the external final assertion.",
+    "transition_no_weakening": "PASS: unchanged ProductionOwnerV4.transition executes full preverification, validates transition/row math and commits via _append. _append has no postcommit full readback; successor explicitly calls normal CanaryOwnerV1.canary_snapshot afterward.",
+    "terminal_readback": "PASS within observed inert POST-failure path: normal snapshot verifies branch closed and row UNCERTAIN/OVERRUN; fallback close retained if transition/readback fails. No cached validation or skipped validator.",
+    "hold_preservation": "PASS_CAPTURE_HASH_AND_SOURCE_ANCHOR_SCOPE: exact original capture rehashed unchanged by integration main; separate in-memory metadata check confirms original195 rows/1189events/6holds/17152microUSD, prior194 row hash and five protected-hold hashes equal immutable owner anchors. Integration normal verifier enforces those anchors. Do not claim a passed direct exact six-ID comparison against the mocked final state.",
+    "network_and_authority": "PASS_OFFLINE_SCOPE: exact inert transport/catalog classes and MOCK provenance only; no actual owner/key/.env access, network/model call, cap increase or consumed launcher execution.",
+    "full_original_exception_preservation": "BLOCKED by E02-REMEDY-REVIEW-01"
+  },
+  "tests_and_executions": {
+    "final_authored_pure_tests": {
+      "311": {
+        "closed_inputs": 0,
+        "kind": "PURE_ERROR_REMEDY_CONTROLS",
+        "network_calls": 0,
+        "normal_owner_calls": 0,
+        "resource_counters_before_summary": {
+          "console": 2017,
+          "reads": 9645963,
+          "writes": 1328
+        },
+        "runtime": "3.11.17",
+        "successful": true,
+        "tests": 14
+      },
+      "312": {
+        "closed_inputs": 0,
+        "kind": "PURE_ERROR_REMEDY_CONTROLS",
+        "network_calls": 0,
+        "normal_owner_calls": 0,
+        "resource_counters_before_summary": {
+          "console": 2017,
+          "reads": 9087292,
+          "writes": 1328
+        },
+        "runtime": "3.12.14",
+        "successful": true,
+        "tests": 14
+      }
+    },
+    "external_process_measurements": [
+      {
+        "label": "pure-311",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 0.14812379100476392,
+        "child_CPU_seconds": 0.080652,
+        "console_bytes": 2265,
+        "console_sha256": "85f22c1fe25d55bb1130e80326d302efc1148d9d154d333255ed919ad7cc18bc"
+      },
+      {
+        "label": "pure-312",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 0.09362987501663156,
+        "child_CPU_seconds": 0.07168900000000002,
+        "console_bytes": 2265,
+        "console_sha256": "3377fdbb66122413e4f05405a1c4de84788a37c4eac726318ea53a8986c03726"
+      },
+      {
+        "label": "integration-312-once",
+        "exit_code": 1,
+        "reason": null,
+        "wall_seconds": 92.04250454201247,
+        "child_CPU_seconds": 91.463601,
+        "console_bytes": 3523,
+        "console_sha256": "863e9341fe49f84a1f38fc7479bd7d5c75e78694383b02f442f9ac90ff94b6cb"
+      }
+    ],
+    "additional_corrected_controls": [
+      {
+        "label": "additional-311-corrected",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 0.1237240830087103,
+        "child_CPU_seconds": 0.07114,
+        "console_bytes": 440,
+        "console_sha256": "400def29f118b09213dea72cedfa42fbe1b56b3142af1edb8d2f63404d8d3a2b"
+      },
+      {
+        "label": "additional-312-corrected",
+        "exit_code": 0,
+        "reason": null,
+        "wall_seconds": 0.08494437497574836,
+        "child_CPU_seconds": 0.062494999999999995,
+        "console_bytes": 440,
+        "console_sha256": "9bbb2c56898c391d41423217b736a19615305862d27dc14ff735535d35151d32"
+      }
+    ],
+    "closed_anchor_metadata": {
+      "closed_conservative_exposure_microusd": 17152,
+      "closed_last_uncertain_hold_microusd": 1003,
+      "closed_unfinished_holds": 6,
+      "events": 1189,
+      "five_prior_holds_match_immutable_anchor": true,
+      "kind": "INDEPENDENT_CLOSED_1189_ANCHOR_METADATA_V1",
+      "limitation": "Metadata matches the exact source constants enforced by each normal integration verifier. This is not a passed direct final mock receipt-identity comparison or a normal1189 owner replay.",
+      "model_calls": 0,
+      "network_calls": 0,
+      "normal_owner_calls": 0,
+      "prior_rows": 194,
+      "prior_rows_match_immutable_anchor": true,
+      "raw_data_exported": false,
+      "reads_charged_by_capture_helper": 12764266,
+      "rows": 195,
+      "source_mutations": 0,
+      "status": "PASS_METADATA_NOT_OWNER_REPLAY"
+    }
+  },
+  "single_full_integration": {
+    "runtime": "3.12.14",
+    "full_invocations": 1,
+    "frozen_main_status": "PASS_OFFLINE",
+    "reviewer_wrapper_exit": 1,
+    "wrapper_status": "FAILED_REVIEWER_COMPARISON_NOT_ACCEPTED_AS_FULL_INTEGRATION_PASS",
+    "normal_verifications_before_external_final_assertion": 14,
+    "normal_verifications_total": 15,
+    "initial_marker": {
+      "dispatch_generation_billing": "NOT_ATTESTED_BY_THIS_MARKER",
+      "error_kind": "SAFE_TRANSPORT_FAILURE",
+      "http_status": 429,
+      "kind": "WRAPPER_CANARY_INITIAL_FAILURE_V1",
+      "response_provenance": "MOCK",
+      "retry_allowed": false,
+      "stage": "POST"
+    },
+    "actual_capture_unchanged": true,
+    "private_fixture_removed": true,
+    "inert_POSTs": 1,
+    "inert_catalog_calls": 2,
+    "inert_statistics_calls": 0,
+    "charged_logical_bytes": {
+      "console": 0,
+      "reads": 562328877,
+      "writes": 50387188
+    },
+    "mock_entry_CPU_seconds_with_observer_overhead": 85.292868,
+    "mock_entry_wall_seconds_with_observer_overhead": 85.83086933402228,
+    "observer_failure": "The observer excluded the stopped actual receipt ID from both ledgers. Retrospective inert reconstruction generates a fresh receipt, so actual_prior retained195 rows and comparison to194 originals failed. Wrong identity assumption belongs to reviewer, not demonstrated financial corruption. Assertion prevented later signature check; no independent exact six-ID comparison passed.",
+    "no_rerun": true,
+    "timing_limitation": "sys.settrace read-only observer adds substantial overhead;92.04s external wall/91.46s CPU must not be compared with uninstrumented author timings or used to qualify wholeCLI/slot46 resources."
+  },
+  "preserved_reviewer_failures": [
+    {
+      "attempt": "additional-311",
+      "error": "Reviewer pure guard initially refused standard-library imports because the approved3.11 interpreter is itself below repo data/processed/toolchains. Initial source and failed log retained; correction allows only the interpreter stdlib subtree while keeping other data/current-owner/key paths refused.",
+      "preserved_source": "reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls_initial.py",
+      "rerun_scope": "Pure counterexample only; no extra integration."
+    },
+    {
+      "attempt": "integration-312-once",
+      "error": "Invalid reviewer receipt-identity comparator after frozen main completed; preserved console and exit1. No rerun."
+    }
+  ],
+  "historical_cause": "UNKNOWN: original caught error, HTTP status, completed transmission, generation and bill remain unestablished. Authored429 is not evidence of the historical error or a zero provider charge.",
+  "scope_distinctions": [
+    "Author normal1189 stopped-state replay is retained prior evidence, not independently repeated here.",
+    "This single full failure integration reconstructs retrospective1180 prefix on a private derived copy with inert transport. It is not rollback/retry of actual consumed45 and cannot release46.",
+    "Current actual six holds were not reopened; exact closed capture and conservative exposure are preserved.",
+    "Slot46 needs separate versioned implementation, full saved-key/CLI resource qualification, exact budget/ancestry proofs and lead release."
+  ],
+  "privacy_scan": {
+    "common_token_and_private_key_patterns": [],
+    "limitation": "Bounded pattern scan of public reviewer artifacts only; not exhaustive credential certification."
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_REVIEW_E02_RUNTIME_REMEDY_20261118.json",
+    "reports/evidence_independent_e02_runtime_remedy_20261118/"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Exact argv retained per child before.json. Do not rerun run_review.py integration under consumed one-integration allocation.",
+    "Pure independent counterexample: <exact-python> -I -B -S reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls.py",
+    "Closed metadata-only: <exact-python> -I -B -S reports/evidence_independent_e02_runtime_remedy_20261118/closed_anchor_metadata.py"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Private closed capture read in memory/derived temporary fixture only; original source bytes unmodified; no raw charge rows, respondent/publisher text, credentials or private owner identities exported.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "UNRESOLVED_BLOCKERS": [
+    "Owned journal close can replace original exception.",
+    "Reviewer full integration wrapper comparison failed; no full clean independent process PASS for this candidate is claimed.",
+    "Whole saved-key/CLI and future slot46 are unqualified; actual historical bill/generation and original59CPU cause remain unknown."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may use scoped marker/readback evidence, preserve this BLOCKED finding and implement a separate successor correction with owned-journal close controls. No second integration follows from this report.",
+  "evidence_refs": [
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/EXECUTIONS.json",
+      "bytes": 823,
+      "sha256": "27b3f1852d876e528a6c360a1d6c41f352c93c1e89ac996ac04828694b6d528e"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/INHERITED_CLOSURE_CHECK.json",
+      "bytes": 156,
+      "sha256": "b5abcd14ac4b962e838cb0afea05cbead38d5e311d93d2e6819b8d2a4b85a826"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/PLAN.json",
+      "bytes": 1904,
+      "sha256": "cff6587e432ab35a21c6c350bd3fea8fe785a937da0f1f37c3407de40ffaa9cd"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/__pycache__/run_review.cpython-312.pyc",
+      "bytes": 5787,
+      "sha256": "46d3d9aba53c1e61548619130622ecff4077fe76483b8129292c289df4244189"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311/before.json",
+      "bytes": 475,
+      "sha256": "4c3c793e50c31f9a1c8e98f9335f155c0dc8bdc69afa16ea31ad86badbf6f0a3"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311/console.log",
+      "bytes": 1292,
+      "sha256": "afc39e7827dfc3b24410e051946d6fb3290429c7c1cc8524e046e521eb4e68af"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311/execution.json",
+      "bytes": 253,
+      "sha256": "f77ddf45cbb4622ce08a0b2f40f5862b5d1dd7e3ceeb9daa9017dea5d2061b59"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311-corrected/before.json",
+      "bytes": 475,
+      "sha256": "4c3c793e50c31f9a1c8e98f9335f155c0dc8bdc69afa16ea31ad86badbf6f0a3"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311-corrected/console.log",
+      "bytes": 440,
+      "sha256": "400def29f118b09213dea72cedfa42fbe1b56b3142af1edb8d2f63404d8d3a2b"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-311-corrected/execution.json",
+      "bytes": 260,
+      "sha256": "496911ebe70529dcce8b0f2346d1cf8c6df9e7cb943f613a9b8407b72bb7fdb4"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-312-corrected/before.json",
+      "bytes": 438,
+      "sha256": "16d094154f74aae7695757214c28bb272e68f23e5f7391b7c0e8c53e5d471145"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-312-corrected/console.log",
+      "bytes": 440,
+      "sha256": "9bbb2c56898c391d41423217b736a19615305862d27dc14ff735535d35151d32"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional-312-corrected/execution.json",
+      "bytes": 274,
+      "sha256": "7044cd269694daaf35d99bee1edd1d51618adb845db04e5f0db86be6a721d19e"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls.py",
+      "bytes": 2755,
+      "sha256": "c8d742d1189393ae39bc5860d7c7edb70f94c6854a0df1f1ed0f873428350788"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls_initial.py",
+      "bytes": 2646,
+      "sha256": "363063991a2d49623fa2337b7f42d26732efc1bcc3c5953e7978244e7a39ed94"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls_python312.log",
+      "bytes": 440,
+      "sha256": "9bbb2c56898c391d41423217b736a19615305862d27dc14ff735535d35151d32"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/closed-anchor-metadata-312/before.json",
+      "bytes": 441,
+      "sha256": "5d049f7f1d27b21868803c09134c353b42831feebbec50ba965e1aa008c5d6cc"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/closed-anchor-metadata-312/console.log",
+      "bytes": 725,
+      "sha256": "1d112c7effc316c481ba6156c0499f0b085b6edf7b0aa9f35c9e08eb3bd7c2cd"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/closed-anchor-metadata-312/execution.json",
+      "bytes": 275,
+      "sha256": "4078a5b5a09e42dacecb7c7681afaad0f4dd4bb9dff2e370551c4cbad373ff20"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/closed_anchor_metadata.py",
+      "bytes": 3289,
+      "sha256": "8078240717349a3e5acbba1de3fe3e8ff6314570a16914f7e95dafcc5367379d"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/independent_successor.diff",
+      "bytes": 11590,
+      "sha256": "101a26930b134f36eaf537908a05699783130eb83288209ed6450bd90294ee16"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/integration-312-once/before.json",
+      "bytes": 439,
+      "sha256": "8e895caae1af95c775336a80784988ad20d9d0e4412c9019315317e83500bd58"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/integration-312-once/console.log",
+      "bytes": 3523,
+      "sha256": "863e9341fe49f84a1f38fc7479bd7d5c75e78694383b02f442f9ac90ff94b6cb"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/integration-312-once/execution.json",
+      "bytes": 258,
+      "sha256": "5f991a1ae84a222f6be47afcf8235bf6cd571ef7f23da22904c6bc3c646a51c4"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/integration_observer.py",
+      "bytes": 3941,
+      "sha256": "ad7a88d7112cfcf42e2f6badacf29f499a94c48d808a3a03fcafd81170f83155"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/profile_e02_runtime_remedy_v1_20261118.py",
+      "bytes": 16147,
+      "sha256": "fadce8c30c8d0764cf96c04f57c8627ca619ac2f82045b0637a7fadef597df67"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/pure-311/before.json",
+      "bytes": 613,
+      "sha256": "23f7bef41a13a82d418fb1c56f87c62decb3a6364a58cdf7288b148d7abe12cb"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/pure-311/console.log",
+      "bytes": 2265,
+      "sha256": "85f22c1fe25d55bb1130e80326d302efc1148d9d154d333255ed919ad7cc18bc"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/pure-311/execution.json",
+      "bytes": 247,
+      "sha256": "a0729a47f038a01956d7a3b04b885e8164ef5e7e2e83eda62ccb733260ef2a2f"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/pure-312/before.json",
+      "bytes": 576,
+      "sha256": "d18d5304b85c8d4b499ae6e6dd30464d806d64eccabf26902ebb19e3fd46e442"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/pure-312/console.log",
+      "bytes": 2265,
+      "sha256": "3377fdbb66122413e4f05405a1c4de84788a37c4eac726318ea53a8986c03726"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/pure-312/execution.json",
+      "bytes": 258,
+      "sha256": "390294388f32310d32d92f8cfa8eea610f48e2b06114822d45072627ded689de"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/run_review.py",
+      "bytes": 3491,
+      "sha256": "4c05222a4b969b0e6c130f9ee2281e37a7208983c973eafe7e22a06bdfadbb2b"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/test_wrapper_canary_failure_diagnostic_v1.py",
+      "bytes": 12992,
+      "sha256": "fae10a207031d3a044fad3ac9c901b7aee0af165ef24714ccf3072144fb77208"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/wrapper_canary_failure_diagnostic_v1.py",
+      "bytes": 2707,
+      "sha256": "d091c754f995f47c02ca48ded88b2cb3ab6e9d2b94b5f0c8c1374ba90eae936d"
+    },
+    {
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/wrapper_crossmodel_canary_diagnostic_v1_client.py",
+      "bytes": 12109,
+      "sha256": "4eb0056fc432c13f8c7d9d56bf390c273b804b20f27cfb16e599df0ca9a8050b"
+    }
+  ]
+}

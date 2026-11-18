@@ -1,0 +1,368 @@
+{
+  "TASK_ID": "INDEPENDENT_CI_E02_INITIAL_REQUIREMENTS_20261118",
+  "status": "BLOCKED",
+  "decision": "Current CI is not accepted; inspect frozen fixes next. E02 source diagnosis supports bounded offline profiling/early diagnostics only, without recovering provider outcome.",
+  "recorded_at_UTC": "2026-11-18T16:22:19.284876+00:00",
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_CI_E02_REQUIREMENTS_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_CI_E02_REQUIREMENTS_20261118.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Read verified CI artifacts and current source only; no test suite or actual entry execution."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_tests_run_by_auditor": 0,
+    "CI_receipt_facts": {
+      "311": {
+        "jobs": [
+          {
+            "job": "compatibility-v1-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.0605906100008724,
+            "tests_run": 0
+          },
+          {
+            "job": "compatibility-v1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 1.4354490530004114,
+            "tests_run": 46
+          },
+          {
+            "job": "compatibility-v1_1-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.060095132001151796,
+            "tests_run": 0
+          },
+          {
+            "job": "compatibility-v1_1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 2.455834516998948,
+            "tests_run": 52
+          },
+          {
+            "job": "import-methods-v1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.06330642600005376,
+            "tests_run": 20
+          },
+          {
+            "job": "observer-v1-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.055573598998307716,
+            "tests_run": 0
+          },
+          {
+            "job": "observer-v1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.366931773000033,
+            "tests_run": 33
+          },
+          {
+            "job": "observer-v2-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.05709337200096343,
+            "tests_run": 0
+          },
+          {
+            "job": "observer-v2-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.4003328050002892,
+            "tests_run": 36
+          },
+          {
+            "job": "ordinary",
+            "status": "ERROR",
+            "reason": "WALL_LIMIT",
+            "seconds": 10800.085838918,
+            "tests_run": null
+          },
+          {
+            "job": "probe-v2-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.27882723699985945,
+            "tests_run": 29
+          }
+        ],
+        "ordinary_error_or_failure_labels": 158,
+        "ordinary_final_unittest_summary_present": false,
+        "terminal_case_line": "test_full80_delayed_billing_preserves_prefix_holds_and_no_replay (test_wrapper_crossmodel_v1_execution_20261115.LifecycleTests.test_full80_delayed_billing_preserves_prefix_holds_and_no_replay) ... ",
+        "limitation": "Failure labels are retained, but no completed unittest summary/tracebacks; individual causes remain to be isolated."
+      },
+      "312": {
+        "jobs": [
+          {
+            "job": "compatibility-v1-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.08347442599915667,
+            "tests_run": 0
+          },
+          {
+            "job": "compatibility-v1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 2.530877851000696,
+            "tests_run": 46
+          },
+          {
+            "job": "compatibility-v1_1-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.08411203700052283,
+            "tests_run": 0
+          },
+          {
+            "job": "compatibility-v1_1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 3.794254787000682,
+            "tests_run": 52
+          },
+          {
+            "job": "import-methods-v1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.09197108899934392,
+            "tests_run": 20
+          },
+          {
+            "job": "observer-v1-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.07800184200095828,
+            "tests_run": 0
+          },
+          {
+            "job": "observer-v1-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.5313797880007769,
+            "tests_run": 33
+          },
+          {
+            "job": "observer-v2-historical",
+            "status": "NOT_RUN",
+            "reason": null,
+            "seconds": 0.079444685999988,
+            "tests_run": 0
+          },
+          {
+            "job": "observer-v2-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.5725827450005454,
+            "tests_run": 36
+          },
+          {
+            "job": "ordinary",
+            "status": "ERROR",
+            "reason": "WALL_LIMIT",
+            "seconds": 10800.069427507,
+            "tests_run": null
+          },
+          {
+            "job": "probe-v2-portable",
+            "status": "PASS",
+            "reason": null,
+            "seconds": 0.4072870390009484,
+            "tests_run": 29
+          }
+        ],
+        "ordinary_error_or_failure_labels": 158,
+        "ordinary_final_unittest_summary_present": false,
+        "terminal_case_line": "test_every_slot_skip_crossing_and_refresh_replay_refused (test_wrapper_crossmodel_v1_controls_20261115.RefreshTests.test_every_slot_skip_crossing_and_refresh_replay_refused) ... ok",
+        "limitation": "Failure labels are retained, but no completed unittest summary/tracebacks; individual causes remain to be isolated."
+      }
+    },
+    "E02_diagnosis_decision": "CAUGHT_CLIENT_FAILURE_THEN_NATIVE_CPU_STOP_SUPPORTED_HTTP_ENTRY_AND_INITIAL_ERROR_UNKNOWN"
+  },
+  "source_refs": [
+    {
+      "path": "data/processed/ci_failure_44244801559/311/compatibility-v1-historical-RESULT.json",
+      "bytes": 1424,
+      "sha256": "a327676b2e880d5307d2a84f19429fae1b6aae0b8d953584013f1e154effaf8f"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/compatibility-v1-portable-RESULT.json",
+      "bytes": 6863,
+      "sha256": "357e7c8f2f1dd3903c76ccf9a7d52e3d8038046a9180f63c72f373db21b5ceb2"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/compatibility-v1_1-historical-RESULT.json",
+      "bytes": 1436,
+      "sha256": "196a02dedbe261a30df6dbecd64cb5c6dd381e507c24f2273f832929cb61e110"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/compatibility-v1_1-portable-RESULT.json",
+      "bytes": 7752,
+      "sha256": "0019bfae2504c13d9dd48ad212a755849b53913d2f8c21a6ca6c275426e868fc"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/import-methods-v1-portable-RESULT.json",
+      "bytes": 3945,
+      "sha256": "42303f8fbebe621702244a9bf42b7310b9cc258d14b03202533006ae81178830"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/observer-v1-historical-RESULT.json",
+      "bytes": 1435,
+      "sha256": "8b26d8f427ef7f81721b9e6ce4fd6cab557c65b6284b777caf1a39ebb72aec68"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/observer-v1-portable-RESULT.json",
+      "bytes": 6383,
+      "sha256": "7c18356e7cdb1adbf1a9040c297f6431655f19a5f343a2d7f935270e54f03a42"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/observer-v2-historical-RESULT.json",
+      "bytes": 1434,
+      "sha256": "5158d2b4a9a583b8779783db8f54e57b16db906fa4bd9330ffd27257d6f9c49d"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/observer-v2-portable-RESULT.json",
+      "bytes": 6858,
+      "sha256": "5981cc83c1aecfd1d25ff2cb8db4ddea461b450a24961a94d59e05763a461040"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/ordinary-RESULT.json",
+      "bytes": 307,
+      "sha256": "c310e9348721c6e1702bd2b0478a1a8f9c88ff95227da288363258d7c76b0cdc"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/probe-v2-portable-RESULT.json",
+      "bytes": 6106,
+      "sha256": "e1a5e10ec67ad5912b1cd34bfa461ebef39b83d5863add4e72c406432441499f"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/311/ordinary.stderr",
+      "bytes": 498174,
+      "sha256": "7a18815d2e96ffcb02c1f1ab0feafc8189c25b1af66be28d08dae3158b22443b"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/compatibility-v1-historical-RESULT.json",
+      "bytes": 1425,
+      "sha256": "f36bb33c7abffd31f08eb07ba5064dd281dd351076d9f3c831d0d83d5aaec470"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/compatibility-v1-portable-RESULT.json",
+      "bytes": 6862,
+      "sha256": "24cc99e1b25668515e9668f88df69b0fd8e991481889f970e9272837def773fd"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/compatibility-v1_1-historical-RESULT.json",
+      "bytes": 1435,
+      "sha256": "170407cc842041c1d98ad9e8572a2c2302aa3524a72645909003bf20a1123613"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/compatibility-v1_1-portable-RESULT.json",
+      "bytes": 7752,
+      "sha256": "1352f97e9ffa75724d270c478b870e3fe41a4101e79af29a9ecc2f27aa222d16"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/import-methods-v1-portable-RESULT.json",
+      "bytes": 3945,
+      "sha256": "36af48ec2803b2aa1f46be3335d837768f64aabd80745eb99dd4ac81da91e5a4"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/observer-v1-historical-RESULT.json",
+      "bytes": 1434,
+      "sha256": "d9543e2cb851e12dc2191aac58c8fb7157d385ee9303162d37c5141ef934990a"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/observer-v1-portable-RESULT.json",
+      "bytes": 6384,
+      "sha256": "2f31b84a2dbfdd9832576f101e2195dd780d3b125bd73ceb1f639d188b66ba60"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/observer-v2-historical-RESULT.json",
+      "bytes": 1432,
+      "sha256": "bd6cbd7ba0d48dfed86e006dbf07255c54cda431077b568af7f348bab9b680dc"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/observer-v2-portable-RESULT.json",
+      "bytes": 6858,
+      "sha256": "16c7e12b7a54de67f539aa5481ee43b2601b1414855f1103324873dd78508a2b"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/ordinary-RESULT.json",
+      "bytes": 307,
+      "sha256": "68910b5b9eeffb565307d4e873da78239c6afa9eb1e30ab36a8ee4cf3ac98854"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/probe-v2-portable-RESULT.json",
+      "bytes": 6105,
+      "sha256": "6edf1713f1f2d7a6b5196e2e8286910ca0f321f1c2f88cdd498642700dc32811"
+    },
+    {
+      "path": "data/processed/ci_failure_44244801559/312/ordinary.stderr",
+      "bytes": 497787,
+      "sha256": "2e01ddc8798f082298d706f084f8607ebd8e2e90c9636ea204d0658ba702ed29"
+    },
+    {
+      "path": "reports/E02_CANARY_STOP_SOURCE_DIAGNOSIS_20261117.json",
+      "bytes": 18261,
+      "sha256": "2a9a12d6985d163d58d418b44bd4cb82c8cb42ca988d0a490b7ffdfe5bf7abba"
+    }
+  ],
+  "concrete_findings": [
+    {
+      "id": "CI-01",
+      "severity": "high",
+      "evidence": "Both ordinary jobs ended WALL_LIMIT after 10,800 seconds, return code -9, reaped; no full receipt.",
+      "requirement": "Retain explicit ERROR/timeout status; no full-suite PASS from partial progress."
+    },
+    {
+      "id": "CI-02",
+      "severity": "high",
+      "evidence": "Each ordinary stderr contains 158 failure/error labels across 15 modules before timeout.",
+      "requirement": "Resolve or explicitly scope unsupported cases with coverage evidence. Do not silently drop failing modules. Preserve detailed failures incrementally before subsequent long tests."
+    },
+    {
+      "id": "CI-03",
+      "severity": "scope",
+      "evidence": "Six portable jobs pass 216 cases per runtime; four historical jobs legitimately NOT_RUN for Linux/machine/macOS/exact-version differences.",
+      "requirement": "Keep portable results separate from frozen historical qualification. NOT_RUN must not become historical PASS."
+    },
+    {
+      "id": "E02-01",
+      "severity": "high",
+      "evidence": "Client exception handler performs canary_snapshot, UNCERTAIN transition and CLOSE full-history verification before final failure journal.",
+      "requirement": "Versioned bounded safe failure diagnostic precedes expensive cleanup. Preserve original exception and conservative cleanup if diagnostic write fails."
+    },
+    {
+      "id": "E02-02",
+      "severity": "high",
+      "evidence": "Dispatch journal precedes final phase gate/transport entry; no generation/billing/response retained in actual stopped run.",
+      "requirement": "No diagnostic may imply physical POST completion, recover missing generation, clear holds, replay slot 45 or raise spending/CPU caps."
+    },
+    {
+      "id": "E02-03",
+      "severity": "privacy",
+      "evidence": "Trusted diagnostic code previously needed strict type/allowlist boundaries.",
+      "requirement": "Use exact trusted errors and revalidated transport diagnostics only; no arbitrary attributes, message conversion, raw payload or credentials. Profiling callbacks must not replace whole-process CPU accounting."
+    }
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Closed CI artifacts and tracked source/metadata only. No actual owner, key, model or source-body access.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Concrete individual CI failure causes are not established by labels alone.",
+    "CPU cleanup localization remains inference; original E02 error/provider outcome unknown.",
+    "No current CI rerun, independent normal reducer replay or live execution."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Frozen CI repair handoff pending.",
+    "Frozen early-safe-diagnostic remedy/profiling handoff pending."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Inspect exact worker handoffs and run only meaningful focused offline counterexamples within lead test limits."
+}

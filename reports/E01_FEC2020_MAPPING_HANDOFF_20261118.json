@@ -1,0 +1,57 @@
+{
+  "TASK_ID": "E01_FEC2020_MAPPING_CONTRACT_V1_20261118",
+  "status": "FROZEN_PROPOSAL_AND_AUTHOR_STRUCTURAL_INSPECTION_PENDING_INDEPENDENT_METHODS_REVIEW",
+  "FILES_CHANGED": [
+    "configs/e01_fec2020_senate_mapping_v1.json",
+    "scripts/inspect_fec2020_mapping_v1_20261118.py"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/E01_FEC2020_MAPPING_SOURCE_INSPECTION_20261118.json"
+  ],
+  "source_refs": [
+    {
+      "path": "configs/e01_fec2020_senate_mapping_v1.json",
+      "bytes": 19619,
+      "sha256": "db5d3b76ed7e0d4ab6f05143e40096e7acaa7663bda0f305473f17954232a23a"
+    },
+    {
+      "path": "scripts/inspect_fec2020_mapping_v1_20261118.py",
+      "bytes": 5785,
+      "sha256": "c3eb1bc91d0f4f0fc6f06bbd56b64d32198172a78972bac5b885bf6b7c2af04a"
+    },
+    {
+      "path": "reports/E01_FEC2020_MAPPING_SOURCE_INSPECTION_20261118.json",
+      "bytes": 1981,
+      "sha256": "f8d2285522908a7492ccd68b27107bd4d782af1e709a3dfcf2b29a7f255dad6c"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/inspect_fec2020_mapping_v1_20261118.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "scope": "Read-only exact-source cell structure and contract consistency, not a parser implementation/test or numeric acceptance.",
+    "runtime": "3.12.14",
+    "reader_version": "3.1.5",
+    "checks": 12,
+    "all_checks_passed": true,
+    "formula_cells": 0,
+    "bounded_cells": 15543,
+    "elapsed_seconds_observed_by_exec_tool": 0.084470458,
+    "retained_output": "reports/E01_FEC2020_MAPPING_SOURCE_INSPECTION_20261118.json"
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Pinned public FEC historical workbook stays in ignored raw storage; no workbook redistribution. Public metadata and structural checks only in reports. The publication says source State Elections Offices and October2022; this does not prove a timely prospective2026 submission.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "No independent review yet, no parser implemented, no numeric result adopted.",
+    "AK party identity, OR coalition label, ME round, GA conditional-general protocol and official general-date/class/term witnesses need source-specific review.",
+    "Separate FEC worksheets are internal consistency checks, not independent external validation.",
+    "Blank party-summary cells cannot be treated aszero.",
+    "Original full House/Senate and advanced comparison contract remains unchanged."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent methods decision on frozen mapping proposal.",
+    "Separate parser implementation and authored fixtures, nonimplementer review, bounded candidate parse and numeric audit.",
+    "Target final ballots, geography, full sample/history and sealed retrospective evaluation remain separate."
+  ],
+  "NEXT_UNBLOCKED_TASK": "After independent mapping review, implement only the separate FEC pure row parser/bounded adapter and authored fixtures. Do not reopen consumed Clerk/PDF/G03 scopes."
+}

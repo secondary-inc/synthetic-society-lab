@@ -1,0 +1,57 @@
+{
+  "kind": "LEAD_NEW_SCOPE_RESOURCE_DECISION",
+  "recorded_at_utc": "2026-11-18T16:39:55.919308+00:00",
+  "status": "DESIGN_ONLY_NOT_LIVE_RELEASE",
+  "authority": ".cursor/rules/responsible-autonomy.mdc and owner November18 continuation",
+  "target": {
+    "study": "e02_wrapper_crossmodel_v1_20261115",
+    "original_slot": 46,
+    "condition": "B / post / SHOWN",
+    "baseline": 13,
+    "pair_seed": 2315288556,
+    "attempted_slots_never_replayed": [
+      44,
+      45
+    ]
+  },
+  "resource_change": {
+    "old_consumed_slot45_cpu_soft_seconds": 59,
+    "old_consumed_slot45_cpu_hard_seconds": 60,
+    "new_scope_cpu_soft_seconds": 120,
+    "new_scope_cpu_hard_seconds": 125,
+    "operation_wall_seconds": 240,
+    "phase_wall_seconds": 120,
+    "price_age_seconds": 900,
+    "reason": "Legacy closed-copy client-only entry measured about37CPU seconds and excludes full saved-key launcher preadmission. Original whole entry stopped at59/60CPU without preserving original exception. A new finite compute allowance allows full validation and durable cleanup; it is not evidence of historical error cause or proof of live feasibility."
+  },
+  "unchanged_limits": {
+    "model_POSTs_max": 1,
+    "billing_GETs_max": 3,
+    "public_catalog_GETs_max": 2,
+    "model_retries": 0,
+    "input_token_bound": 8192,
+    "output_tokens_max": 256,
+    "combined_usd": 5,
+    "E02_usd": 1,
+    "study_usd": 0.2,
+    "E01_paid_inference_usd": 0,
+    "prior_holds_preserved": true,
+    "past_owner_or_packet_reset": false
+  },
+  "required_before_live_release": [
+    "Frozen separate successor source and packet with explicit ancestry, no consumed launcher reuse.",
+    "Whole-entry mock qualification including saved-key bridge, current captured1189-event normal ledger, admission, all terminal readbacks, failure marker and cancellation; timings must cover the actual intended scope.",
+    "Independent review of exact source, packet and recorded resource limits.",
+    "Fresh current accounting/price/provider checks; all unknown holds counted.",
+    "Lead release separate from this design record."
+  ],
+  "models_and_protocol": "Existing fixed parent study model/provider bindings and scoring/exclusions unchanged.",
+  "new_model_requests": 0,
+  "ledger_mutation": false,
+  "spending_increase": false,
+  "limitations": [
+    "Original stop exception, physical HTTP completion and provider charge remain unknown.",
+    "Preliminary timing which removed required postcommit readback is not accepted.",
+    "No automatic run follows this design decision."
+  ]
+}

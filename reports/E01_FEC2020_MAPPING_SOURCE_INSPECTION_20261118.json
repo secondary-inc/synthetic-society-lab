@@ -1,0 +1,58 @@
+{
+  "actual_parser_run": false,
+  "bounded_cells": 15543,
+  "checks": {
+    "AK_nonpartisan_primary_label_preserved": true,
+    "GA_later_runoff_footnote": true,
+    "GA_regular_and_special_distinct_labels": true,
+    "GA_summary_scope_note": true,
+    "MN_DFL_literal": true,
+    "MT_removed_ballot_marker_is_not_zero": true,
+    "NC_whitespace_total_role": true,
+    "OR_combined_label_one_row": true,
+    "WV_other_summary_missing": true,
+    "WY_other_summary_missing": true,
+    "no_combined_total_counts_observed": true,
+    "publication_month_observed": true
+  },
+  "contract_ref": {
+    "bytes": 19619,
+    "path": "configs/e01_fec2020_senate_mapping_v1.json",
+    "sha256": "db5d3b76ed7e0d4ab6f05143e40096e7acaa7663bda0f305473f17954232a23a"
+  },
+  "cost_usd": 0,
+  "declared_expanded_bytes": 51902709,
+  "forecast_consumption": false,
+  "formula_cells": [],
+  "kind": "E01_FEC2020_MAPPING_SOURCE_INSPECTION_V1",
+  "limitation": "Inspection of a proposal on one reader/runtime; no independent methods, parser, numeric, candidate/class/date or scientific acceptance. Header/footer formatting warnings do not qualify print layout.",
+  "limits": {
+    "CPU_seconds": 120,
+    "output_bytes": 65536,
+    "source_bytes": 6251110,
+    "wall_seconds": 120
+  },
+  "model_calls": 0,
+  "network_calls": 0,
+  "numeric_vote_totals_computed": false,
+  "reader": "openpyxl",
+  "reader_options": {
+    "data_only": false,
+    "keep_links": false,
+    "read_only": true
+  },
+  "reader_version": "3.1.5",
+  "runtime": "3.12.14",
+  "source_adoption": false,
+  "source_ref": {
+    "bytes": 6251110,
+    "path": "data/raw/e01_fec2020_workbook_20261118/federalelections2020.xlsx",
+    "sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e"
+  },
+  "status": "AUTHOR_STRUCTURE_CHECKS_PASS_NOT_NUMERIC_ACCEPTANCE",
+  "warnings": [
+    "Cannot parse header or footer so it will be ignored",
+    "Cannot parse header or footer so it will be ignored"
+  ],
+  "zip_members": 65
+}

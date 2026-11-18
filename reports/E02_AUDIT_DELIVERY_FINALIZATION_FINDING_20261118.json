@@ -1,0 +1,41 @@
+{
+  "activity": {
+    "current_owner_access": 0,
+    "key_reads": 0,
+    "ledger_mutations": 0,
+    "model_requests": 0,
+    "network_calls": 0,
+    "new_model_cost_usd": 0
+  },
+  "delivery": "Lead owns shared commit/push; this supplement prevents earlier pending handoff wording from implying independent acceptance.",
+  "finding": "Independent fake-journal counterexample shows own_journal=True finally journal.close() raises OSError and replaces original inert RuntimeError. Predecessor behavior was inherited; final remedy is not accepted as a full exception-preserving component.",
+  "frozen_candidate_unchanged": true,
+  "kind": "E02_AUDIT_DELIVERY_SUPPLEMENT_FINALIZATION_FINDING",
+  "recorded_at_utc": "2026-11-18T16:51:12.612456+00:00",
+  "slot46_requirements": [
+    "Preserve identity of original active exception when owned-journal close fails during error cleanup.",
+    "Attempt close exactly once and retain safe finalization-failure evidence without printing untrusted error contents.",
+    "On otherwise successful execution, a close failure must fail visibly; do not return a success summary.",
+    "Test original RuntimeError plus close OSError, cancellation plus close failure, normal close, borrowed journal not closed, and success-path close failure.",
+    "Independent review and whole-entry qualification remain required; pure helper checks alone cannot certify the new client."
+  ],
+  "source_refs": [
+    {
+      "bytes": 36532,
+      "path": "reports/E02_AUDIT_DELIVERY_INDEX_20261118.json",
+      "sha256": "c11aee7b8465a377ac6164c937a1704fb02063a14c7c60d08df530cc9b00d82a"
+    },
+    {
+      "bytes": 2755,
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls.py",
+      "sha256": "c8d742d1189393ae39bc5860d7c7edb70f94c6854a0df1f1ed0f873428350788"
+    },
+    {
+      "bytes": 440,
+      "path": "reports/evidence_independent_e02_runtime_remedy_20261118/additional_controls_python312.log",
+      "sha256": "9bbb2c56898c391d41423217b736a19615305862d27dc14ff735535d35151d32"
+    }
+  ],
+  "status": "BLOCKED_FOR_FULL_EXCEPTION_PRESERVATION_ACCEPTANCE",
+  "verification_scope": "Author read independent counterexample source/log and hashed files; did not rerun reviewer test or modify findings."
+}

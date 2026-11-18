@@ -1,0 +1,32 @@
+RUNTIME 3.12.16 (main, Nov  5 2026, 07:58:20) [GCC 14.2.0] Linux-7.0.14-linuxkit-x86_64-with-glibc2.41
+test_fixed_backend_real_subprocess_positive_replay_and_metrics (test_e01_clerk2020_m1_v1.InspectionHarness.test_fixed_backend_real_subprocess_positive_replay_and_metrics) ... ERROR
+test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused (test_e01_clerk2020_m1_v1.InspectionHarness.test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused) ... ERROR
+
+======================================================================
+ERROR: test_fixed_backend_real_subprocess_positive_replay_and_metrics (test_e01_clerk2020_m1_v1.InspectionHarness.test_fixed_backend_real_subprocess_positive_replay_and_metrics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_e01_clerk2020_m1_v1.py", line 188, in test_fixed_backend_real_subprocess_positive_replay_and_metrics
+    one=h.inspect_authored(docs);two=h.inspect_authored(docs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/src/civiclab/e01/clerk2020_contracts_v1.py", line 257, in call
+    if failed:raise ContractRejected()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+civiclab.e01.clerk2020_contracts_v1.ContractRejected: CLERK_M1_CONTRACT_REFUSED
+
+======================================================================
+ERROR: test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused (test_e01_clerk2020_m1_v1.InspectionHarness.test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_e01_clerk2020_m1_v1.py", line 225, in test_response_semantic_coedit_resource_unknown_or_spoof_and_backend_refused
+    docs=[document()];raw,cfg=h.load_policy();expected=h.project_authored(docs,cfg);valid=h.inspect_authored(docs)
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/src/civiclab/e01/clerk2020_contracts_v1.py", line 257, in call
+    if failed:raise ContractRejected()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+civiclab.e01.clerk2020_contracts_v1.ContractRejected: CLERK_M1_CONTRACT_REFUSED
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.016s
+
+FAILED (errors=2)

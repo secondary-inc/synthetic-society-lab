@@ -1,0 +1,109 @@
+{
+  "TASK_ID": "CI_ROOT_NARROW_CORRECTION_20261118",
+  "status": "AUTHOR_FOCUSED_PASS_PENDING_INDEPENDENT_RECHECK",
+  "original_handoff": "reports/CI_REPAIR_HANDOFF_20261118.json",
+  "findings": [
+    "Nested discoverable package could be silently omitted from flat manifest.",
+    "SKIP outcome could lack matching recorded skip reason."
+  ],
+  "changes": [
+    "Refuse unsupported nested unittest packages before emitting flat discovery manifest; no import or silent coverage reduction.",
+    "Require matching skip records, setup-skip holders and subtest parent dispositions; expected-failure outcomes now also need matching records.",
+    "Three added pure controls cover nested-package refusal, missing/inconsistent skip or expected-failure receipt, and real subtest skips."
+  ],
+  "source_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 56028,
+      "sha256": "7db53cd92b6e7866015ed85d87bf4cddc7abccfbabc5d77b3c8bd54e165a941e"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 46608,
+      "sha256": "9e1f2b0ad7af0c2ded727e3d9c5bea828283d767f9d313f4467874bc642ce631"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 2607,
+      "sha256": "cfd6dab54170b37e127d49313c12b92e08114337b6a6c70a3404443e27568040"
+    }
+  ],
+  "pure_tests": {
+    "Python3.11.17": 44,
+    "Python3.12.14": 44,
+    "status": "PASS",
+    "logs": [
+      {
+        "path": "reports/evidence_ci_root_correction_20261118/python311.log",
+        "bytes": 6841,
+        "sha256": "8cfe8262bf980fa3dead6963956a856be0bd952960b6c27f974eab42345702df"
+      },
+      {
+        "path": "reports/evidence_ci_root_correction_20261118/python312.log",
+        "bytes": 6841,
+        "sha256": "d65510930aff820283a393cc45689143924cedbe9951f8cf390dd7bb5a31a72a"
+      }
+    ]
+  },
+  "production_CLI_focused_results": [
+    {
+      "runtime": "311",
+      "status": "PASS_FOCUSED_ONLY",
+      "summary": {
+        "path": "reports/evidence_ci_root_correction_20261118/actual_python311/SUMMARY.json",
+        "bytes": 45858,
+        "sha256": "6baeb33d68260fb058f14b92bfb721abaccb8a0e0cf8e59572a71f4db3e55937"
+      },
+      "tests": 58,
+      "jobs": [
+        {
+          "id": "ordinary-test_ci_collection_isolation_v1",
+          "status": "PASS"
+        },
+        {
+          "id": "ordinary-test_e01_p2_builtin_mime_candidate_v1_20261116",
+          "status": "PASS"
+        },
+        {
+          "id": "ordinary-test_e01_p2_builtin_mime_candidate_v2_20261116",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "runtime": "312",
+      "status": "PASS_FOCUSED_ONLY",
+      "summary": {
+        "path": "reports/evidence_ci_root_correction_20261118/actual_python312/SUMMARY.json",
+        "bytes": 45858,
+        "sha256": "82be41c588581fe5db6d6ee506de4ba369bcb05847cbce8373d2a20b0ef58e65"
+      },
+      "tests": 58,
+      "jobs": [
+        {
+          "id": "ordinary-test_ci_collection_isolation_v1",
+          "status": "PASS"
+        },
+        {
+          "id": "ordinary-test_e01_p2_builtin_mime_candidate_v1_20261116",
+          "status": "PASS"
+        },
+        {
+          "id": "ordinary-test_e01_p2_builtin_mime_candidate_v2_20261116",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "resources": "Existing bounded pure harness120seconds,32MiBtempwrites,64MiBreadreservations,256KiBconsole; selected production CLI3modules each120seconds. No full suite or hosted run.",
+  "preserved_initial_source": {
+    "path": "reports/evidence_ci_root_correction_20261118/INITIAL_PINS.json",
+    "bytes": 758,
+    "sha256": "20c7615a023e7a818fd62579b7440dcd8f4e18ff342c54a81e61236aad454fca"
+  },
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "model_calls": 0,
+  "source_adoption": false,
+  "full_CI_PASS": false,
+  "NEXT_UNBLOCKED_TASK": "Independent recheck then one hosted full matrix; keep remaining portable failures visible."
+}

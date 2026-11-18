@@ -1,0 +1,23 @@
+OFFLINE_CI_MODULE_PLAN_V1={"not_run_cases":[],"planned_case_ids":[],"source_ref":null}
+INDEPENDENT_CI_REPAIR={"tests": 43, "failures": 2, "errors": 0, "wall_seconds": 0.13737350000883453, "full_suite_runs": 0, "real_model_calls": 0}
+.........................................FF
+======================================================================
+FAIL: test_nested_discoverable_module_is_not_silently_omitted (__main__.Independent.test_nested_discoverable_module_is_not_silently_omitted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_ci_repair_20261118/adverse_controls.py", line 13, in test_nested_discoverable_module_is_not_silently_omitted
+    self.assertIn('tests/pkg/test_nested.py',[r['path'] for r in rows],'Original unittest discovery supports nested test packages; new module manifest silently loses them')
+AssertionError: 'tests/pkg/test_nested.py' not found in ['tests/test_flat.py'] : Original unittest discovery supports nested test packages; new module manifest silently loses them
+
+======================================================================
+FAIL: test_skip_outcome_without_skip_record_is_rejected (__main__.Independent.test_skip_outcome_without_skip_record_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_ci_repair_20261118/adverse_controls.py", line 18, in test_skip_outcome_without_skip_record_is_rejected
+    with self.assertRaises(c.IsolationError):c.validate_coverage(receipt,job,{})
+AssertionError: IsolationError not raised
+
+----------------------------------------------------------------------
+Ran 43 tests in 0.109s
+
+FAILED (failures=2)

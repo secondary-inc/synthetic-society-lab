@@ -1,0 +1,78 @@
+{
+  "TASK_ID": "INDEPENDENT_CI_PLATFORM_CLASSIFICATION_20261118",
+  "status": "PASS",
+  "scope": "Static classification only; not acceptance of a runtime, CI fix or skipped full-suite result.",
+  "source_refs": [
+    {
+      "path": "scripts/e01_p2_builtin_mime_candidate_v1_20261116.py",
+      "bytes": 1113,
+      "sha256": "99ab72562c3376ee3c0e95f0025c809cdcedaf06a9fa6c13803b34d55bc2c3ff"
+    },
+    {
+      "path": "scripts/e01_p2_builtin_mime_candidate_v2_20261116.py",
+      "bytes": 1077,
+      "sha256": "864d337ad575918a395beb21b3cbd7ceed3bc6c4c59e0801df3a0cdc2326c768"
+    },
+    {
+      "path": "tests/test_e01_p2_builtin_mime_candidate_v1_20261116.py",
+      "bytes": 4504,
+      "sha256": "899eaa7a82a54a7db8c62ca487cd2b1bf6d5d22afaa701c04c6c42bdb1917b91"
+    },
+    {
+      "path": "tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py",
+      "bytes": 6054,
+      "sha256": "629cecddb82718ec71c3b1b634ff02c6a10f8ed4b872dabaca8f5412b583c373"
+    },
+    {
+      "path": "scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py",
+      "bytes": 52778,
+      "sha256": "1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8"
+    },
+    {
+      "path": "tests/test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py",
+      "bytes": 33431,
+      "sha256": "8236f2fcaaf325af67bf1c134fb98a4f18445e18af18330ce7f34fdb96e1bedc"
+    }
+  ],
+  "MIME": {
+    "portable_original_cases": [
+      "BuiltinMimeCandidateTests.test_empty_files_alone_still_attempts_knownfile_read",
+      "BuiltinMimeRebuildTests.test_empty_list_after_clearing_knownfiles_retains_prepopulated_database",
+      "BuiltinMimeRebuildTests.test_fresh_empty_list_still_attempts_knownfile_open",
+      "BuiltinMimeRebuildTests.test_no_private_mime_database_or_guard_mutation_in_candidate"
+    ],
+    "real_Darwin_candidate_call_cases": 10,
+    "rationale": "Both candidate functions reject non-Darwin before touching MIME state. Four original cases do not call those functions and remain portable.",
+    "required_behavior": "Preserve four portable cases on Linux. Execute the ten original candidate-call cases unchanged on genuine eligible Darwin; otherwise explicitly record host-ineligible NOT_RUN with reasons.",
+    "authored_branch_model_limit": "Replacing only candidate.sys with an authored namespace is separately labeled branch-model testing, not real Darwin or Linux runtime qualification or replacement original coverage.",
+    "reviewer_refinement": "Initial module-level shorthand was narrowed after full-body inspection to retain the four portable cases, before author implementation."
+  },
+  "PyPA_v1_1": {
+    "historical_class": "GeneratedCompilationTests",
+    "cases": 8,
+    "rationale": "setUpClass calls bind_runtime_compile with fixed exact CPython3.11.17/3.12.14 executable and dataclasses byte hashes. Hosted Linux3.11.18/3.12.16 is unsupported by construction.",
+    "required_behavior": "Record only these eight exact-profile cases as unsupported NOT_RUN on such host. Continue all other portable PyPA mocks; no module-wide skip.",
+    "limits": "True class eligibility depends on exact profile, not only platform/version strings. No new binary/source trust or G03 acceptance."
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_CI_PLATFORM_CLASSIFICATION_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_CI_PLATFORM_CLASSIFICATION_20261118.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Read-only exact candidate/test bodies; zero focused or full-suite execution for classification."
+  ],
+  "TESTS_RUN_AND_RESULTS": "Static classification agrees with five observed failure labels per MIME module and class-level exact-runtime binding.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Source only; no source data or private runtime execution.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Does not establish exact causes of other CI failures.",
+    "Frozen six historical groups remain unchanged.",
+    "Portable CI acceptance must remain distinct from full research/runtime qualification."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Exact frozen repair implementation and independent counterexamples still pending."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Author can apply this precise classification while preserving inventory and explicit unsupported status, then freeze the repair for review."
+}

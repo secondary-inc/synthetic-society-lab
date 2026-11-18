@@ -29,6 +29,13 @@ def binding(row):
 def valid_receipt(job, specification, digest='runner'):
     r = dict(kind='OFFLINE_CI_CHILD_V1', job_id=job['id'], runner_sha256=digest,
              status='PASS', tests_run=1, started_cases=['Ordinary.test_one'], skips=[])
+    if job['phase'] == 'ordinary':
+        cases = [Path(job['test_module']).stem+'.'+case for case in job['declared_local_cases']] if 'test_module' in job else ['test_ordinary.Ordinary.test_one']
+        r.update(tests_run=len(cases), suite_scope='ONE_ORDINARY_MODULE' if 'test_module' in job else 'LEGACY_AGGREGATE',
+                 planned_case_ids=cases[:], discovered_case_ids=cases[:], started_case_ids=cases[:],
+                 completed_case_ids=cases[:], outcomes=[{'case_id':case,'status':'PASS'} for case in cases],
+                 failures=[], errors=[], unexpected_successes=[], not_run_cases=[], unstarted_skips=[])
+        if 'test_module' in job:r.update(test_module=job['test_module'],source_ref=job['source_ref'])
     if job['phase'] != 'ordinary':
         row = specification['inventory'][job['group']]
         cases = row['historical_cases'] if job['phase']=='historical' else row['portable_cases']
@@ -277,6 +284,199 @@ class ReceiptTests(unittest.TestCase):
         self.assertEqual(c.final_status([{'status':'PASS'},{'status':'NOT_RUN'}]),'PASS_PORTABLE_HISTORICAL_NOT_RUN')
         self.assertEqual(c.final_status([{'status':'NOT_RUN'}],True),'FAIL_HISTORICAL_NOT_RUN')
         self.assertEqual(c.final_status([{'status':'FAIL'},{'status':'NOT_RUN'}]),'FAIL')
+
+
+class ModuleIsolationRepairTests(unittest.TestCase):
+    def authored_tree(self, directory):
+        root=Path(directory).resolve();(root/'tests').mkdir()
+        for name in ('test_a.py','test_b.py','test_c.py','test_d.py','test_zero.py'):
+            (root/'tests'/name).write_text('import unittest\nclass Local(unittest.TestCase):\n def test_one(self): pass\n' if name!='test_zero.py' else '# import-only helper\n')
+        return root
+
+    def specification(self, root, **kwargs):
+        with mock.patch.object(c,'plan',return_value={'jobs':[{'id':'ordinary'},{'id':'frozen-model'}],'inventory':{}}):
+            return c.module_plan(root,**kwargs)
+
+    def test_shards_partition_dynamic_modules_and_preserve_total_time_allowance(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=self.authored_tree(directory)
+            specs=[self.specification(root,shard_index=i,shard_count=4) for i in range(4)]
+            all_jobs=[job['id'] for spec in specs for job in spec['jobs']]
+            self.assertEqual(len(all_jobs),len(set(all_jobs)))
+            self.assertEqual(len(all_jobs),6)
+            self.assertEqual(sum(s['shard']['budget_seconds'] for s in specs),c.COORDINATOR_WALL)
+            self.assertTrue(all(s['ordinary_manifest_sha256']==specs[0]['ordinary_manifest_sha256'] for s in specs))
+            (root/'tests/test_new.py').write_text('# newly added module\n')
+            updated=self.specification(root)
+            self.assertIn('ordinary-test_new',[j['id'] for j in updated['jobs']])
+            self.assertNotEqual(updated['ordinary_manifest_sha256'],specs[0]['ordinary_manifest_sha256'])
+
+    def test_focused_plan_never_claims_whole_coverage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            spec=self.specification(self.authored_tree(directory),only_modules=['test_a.py'])
+            self.assertEqual(spec['suite_scope'],'FOCUSED_MODULES_ONLY')
+            self.assertEqual([j['id'] for j in spec['jobs']],['ordinary-test_a'])
+            def dispatch(command,env,job,output):
+                receipt=valid_receipt(job,spec,command[-1]);path=output/'mock.stdout'
+                c.save_new(path,(c.MARKER+json.dumps(receipt)).encode())
+                return dict(stdout=str(path),returncode=0,reason=None,reaped=True)
+            with mock.patch.object(c,'module_plan',return_value=spec):
+                summary=c.run_parent(Path(directory)/'output',run_process=dispatch,shard_count=1,only_modules=['test_a.py'])
+            self.assertEqual(summary['status'],'PASS_FOCUSED_ONLY')
+
+    def test_nested_packages_refuse_before_partial_manifest(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=self.authored_tree(directory)
+            package=root/'tests/pkg';package.mkdir()
+            (package/'__init__.py').write_text('raise AssertionError("MUST_NOT_IMPORT")\n')
+            (package/'test_nested.py').write_text('import unittest\nclass Local(unittest.TestCase):\n def test_one(self): pass\n')
+            with self.assertRaisesRegex(c.IsolationError,'NESTED_PACKAGES_UNSUPPORTED'):
+                c.ordinary_modules(root)
+
+    def test_source_hash_change_and_alias_refused(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=self.authored_tree(directory);reference=c.module_source(root,'test_a.py')
+            (root/'tests/test_a.py').write_text('# changed\n')
+            with self.assertRaisesRegex(c.IsolationError,'SOURCE_CHANGED'):c.module_source(root,'test_a.py',reference['sha256'])
+            (root/'tests/test_link.py').symlink_to(root/'tests/test_a.py')
+            with self.assertRaisesRegex(c.IsolationError,'ALIAS'):c.ordinary_modules(root)
+            with self.assertRaises(c.IsolationError):c.module_source(root,'../test_a.py')
+
+    def test_module_receipt_requires_exact_case_accounting_and_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            spec=self.specification(self.authored_tree(directory));job=spec['jobs'][0]
+            receipt=valid_receipt(job,spec);c.validate_coverage(receipt,job,spec)
+            changes=[{'planned_case_ids':[]},{'discovered_case_ids':[]},{'started_case_ids':[]},
+                     {'completed_case_ids':[]},{'outcomes':[]},{'source_ref':{}},{'test_module':'test_other.py'},
+                     {'tests_run':7},{'failures':['foreign']},{'unexpected_successes':['foreign']},
+                     {'not_run_cases':[{'case_id':receipt['planned_case_ids'][0],'qualification':{'status':'NOT_RUN','reasons':['invented']}}]}]
+            for change in changes:
+                with self.subTest(change=change),self.assertRaises(c.IsolationError):c.validate_coverage(dict(receipt,**change),job,spec)
+            forged=dict(receipt,planned_case_ids=[],discovered_case_ids=[],started_case_ids=[],completed_case_ids=[],outcomes=[],tests_run=0)
+            with self.assertRaisesRegex(c.IsolationError,'DECLARED_CASE_MISSING'):c.validate_coverage(forged,job,spec)
+
+    def test_positive_count_without_inventory_is_refused(self):
+        with self.assertRaises(c.IsolationError):c.validate_coverage({'status':'PASS','tests_run':1},{'phase':'ordinary'}, {})
+
+    def test_skip_and_expected_failure_require_matching_disposition(self):
+        job={'id':'ordinary','phase':'ordinary'}
+        receipt=valid_receipt(job,{})
+        case=receipt['outcomes'][0]['case_id']
+        receipt['outcomes'][0]['status']='SKIP'
+        with self.assertRaisesRegex(c.IsolationError,'SKIP_OUTCOME_MISMATCH'):
+            c.validate_coverage(receipt,job,{})
+        receipt['skips']=[{'case':case,'reason':'authored reason'}]
+        c.validate_coverage(receipt,job,{})
+        receipt['outcomes'][0]['status']='PASS'
+        with self.assertRaisesRegex(c.IsolationError,'SKIP_OUTCOME_MISMATCH'):
+            c.validate_coverage(receipt,job,{})
+        receipt['skips']=[]
+        receipt['outcomes'][0]['status']='EXPECTED_FAILURE'
+        with self.assertRaisesRegex(c.IsolationError,'EXPECTED_FAILURE_DISPOSITION'):
+            c.validate_coverage(receipt,job,{})
+        receipt['expected_failures']=[case]
+        c.validate_coverage(receipt,job,{})
+
+    def test_subtest_skip_is_visible_and_validates_on_parent(self):
+        class Cases(unittest.TestCase):
+            def test_one(self):
+                for value in (1,2):
+                    with self.subTest(value=value):self.skipTest('authored subtest skip')
+        suite=unittest.defaultTestLoader.loadTestsFromTestCase(Cases)
+        planned=[test.id() for test in c.flatten(suite)]
+        result=unittest.TextTestRunner(stream=io.StringIO(),resultclass=c.OrdinaryRecordingResult).run(suite)
+        receipt=valid_receipt({'id':'ordinary','phase':'ordinary'},{})
+        receipt.update(planned_case_ids=planned,discovered_case_ids=planned,
+                       started_case_ids=result.started_case_ids,completed_case_ids=result.completed_case_ids,
+                       outcomes=result.outcomes,tests_run=1,
+                       skips=[{'case':test.id(),'reason':reason} for test,reason in result.skipped])
+        self.assertEqual(result.outcomes[0]['status'],'SKIP')
+        c.validate_coverage(receipt,{'id':'ordinary','phase':'ordinary'},{})
+        receipt['skips'][0]['case']='unrelated.test_case (value=1)'
+        with self.assertRaisesRegex(c.IsolationError,'SKIP_PARENT_MISSING'):
+            c.validate_coverage(receipt,{'id':'ordinary','phase':'ordinary'},{})
+
+    def test_duplicate_discovered_ids_require_duplicate_completion(self):
+        job={'id':'ordinary','phase':'ordinary'};receipt=valid_receipt(job,{})
+        for key in ('planned_case_ids','discovered_case_ids','started_case_ids','completed_case_ids','outcomes'):
+            receipt[key]=receipt[key]*2
+        receipt['tests_run']=2;c.validate_coverage(receipt,job,{})
+        receipt['completed_case_ids']=receipt['completed_case_ids'][:1]
+        with self.assertRaises(c.IsolationError):c.validate_coverage(receipt,job,{})
+
+    def test_failure_traceback_is_flushed_before_next_case(self):
+        stream=io.StringIO();observed=[]
+        class Cases(unittest.TestCase):
+            def test_a(self):raise ValueError('AUTHORED_EARLY_ERROR')
+            def test_b(self):observed.append(stream.getvalue())
+        result=unittest.TextTestRunner(stream=stream,resultclass=c.OrdinaryRecordingResult).run(unittest.defaultTestLoader.loadTestsFromTestCase(Cases))
+        self.assertFalse(result.wasSuccessful());self.assertEqual(result.testsRun,2)
+        self.assertIn('AUTHORED_EARLY_ERROR',observed[0]);self.assertIn('CI_FAILURE_DETAIL_END',observed[0])
+        self.assertEqual([r['status'] for r in result.outcomes],['ERROR','PASS'])
+        self.assertEqual(result.started_case_ids,result.completed_case_ids)
+
+    def test_subtest_failure_is_recorded_on_parent(self):
+        class Cases(unittest.TestCase):
+            def test_one(self):
+                with self.subTest(value=1):self.fail('AUTHORED_SUBTEST')
+        stream=io.StringIO();result=unittest.TextTestRunner(stream=stream,resultclass=c.OrdinaryRecordingResult).run(unittest.defaultTestLoader.loadTestsFromTestCase(Cases))
+        self.assertEqual(result.outcomes[0]['status'],'FAIL')
+        self.assertIn('AUTHORED_SUBTEST',stream.getvalue())
+
+    def test_class_setup_skip_covers_only_original_members(self):
+        class Skipped(unittest.TestCase):
+            @classmethod
+            def setUpClass(cls):raise unittest.SkipTest('authored class skip')
+            def test_one(self):pass
+            def test_two(self):pass
+        suite=unittest.defaultTestLoader.loadTestsFromTestCase(Skipped)
+        planned=[t.id() for t in c.flatten(suite)]
+        result=unittest.TextTestRunner(stream=io.StringIO(),resultclass=c.OrdinaryRecordingResult).run(suite)
+        covered=c.unstarted_skip_cases(planned,[],result.skipped)
+        self.assertEqual(covered[0]['case_ids'],planned)
+        receipt=valid_receipt({'id':'ordinary','phase':'ordinary'}, {})
+        receipt.update(planned_case_ids=planned,discovered_case_ids=planned,started_case_ids=[],completed_case_ids=[],
+                       tests_run=0,outcomes=[],unstarted_skips=covered,
+                       skips=[{'case':t.id(),'reason':reason} for t,reason in result.skipped])
+        job={'id':'ordinary','phase':'ordinary','test_module':'test_authored.py','source_ref':{},'declared_local_cases':[]}
+        receipt.update(test_module='test_authored.py',source_ref={},suite_scope='ONE_ORDINARY_MODULE')
+        c.validate_coverage(receipt,job,{})
+        receipt['skips']=[]
+        with self.assertRaises(c.IsolationError):c.validate_coverage(receipt,job,{})
+
+    def test_host_classification_models_never_run_historical_sources(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=self.authored_tree(directory);(root/'scripts').mkdir();(root/'scripts/contract.py').write_text('# inert authored contract\n')
+            test_ref=c.module_source(root,'test_a.py')
+            raw=(root/'scripts/contract.py').read_bytes();contract=dict(path='scripts/contract.py',bytes=len(raw),sha256=c.sha(raw))
+            rule=dict(test_ref=test_ref,contract_ref=contract,gate='DARWIN_MIME_ONLY',local_cases=['Local.test_one'])
+            with mock.patch.object(c,'HOST_CASE_RULES',{'test_a.py':rule}):
+                self.assertEqual(c.host_case_decision(root,'test_a.py',platform_name='darwin')['status'],'SUPPORTED')
+                decision=c.host_case_decision(root,'test_a.py',platform_name='linux')
+                self.assertEqual(decision['status'],'NOT_RUN')
+                spec=self.specification(root);job=spec['jobs'][0];receipt=valid_receipt(job,spec)
+                receipt.update(tests_run=0,started_case_ids=[],completed_case_ids=[],outcomes=[],
+                               not_run_cases=[{'case_id':receipt['planned_case_ids'][0],'qualification':decision}])
+                with mock.patch.object(c.sys,'platform','linux'):c.validate_coverage(receipt,job,spec)
+                with mock.patch.object(c.sys,'platform','darwin'),self.assertRaises(c.IsolationError):c.validate_coverage(receipt,job,spec)
+            rule=dict(rule,gate='EXACT_GENERATED_RUNTIME')
+            with mock.patch.object(c,'HOST_CASE_RULES',{'test_a.py':rule}):
+                self.assertEqual(c.host_case_decision(root,'test_a.py',version='unknown')['status'],'NOT_RUN')
+                self.assertEqual(c.host_case_decision(root,'test_a.py',version='3.11.17',observe=lambda:c.COMPILE_PROFILE_PINS['3.11.17'])['status'],'SUPPORTED')
+                self.assertEqual(c.host_case_decision(root,'test_a.py',version='3.11.17',observe=lambda:{})['status'],'NOT_RUN')
+                (root/'scripts/contract.py').write_text('# drift\n')
+                with self.assertRaises(c.IsolationError):c.host_case_decision(root,'test_a.py')
+
+    def test_literal_host_partition_keeps_all_four_portable_mime_cases(self):
+        self.assertEqual(sorted(len(r['local_cases']) for r in c.HOST_CASE_RULES.values()),[5,5,8])
+        self.assertEqual(sum(r['gate']=='DARWIN_MIME_ONLY' for r in c.HOST_CASE_RULES.values()),2)
+        self.assertEqual(len(c.COMPILE_PROFILE_PINS),2)
+
+    def test_canonical_interpreter_resolves_existing_symlink(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target=Path(directory)/'python';target.write_text('# inert executable model\n')
+            alias=Path(directory)/'python-alias';alias.symlink_to(target)
+            with mock.patch.object(c.sys,'executable',str(alias)):self.assertEqual(c.canonical_interpreter(),str(target.resolve()))
 
 
 class FakePipe:

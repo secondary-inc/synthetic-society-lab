@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+from collections import Counter
 from contextlib import contextmanager
 import hashlib
 import importlib.machinery
@@ -22,6 +23,7 @@ import stat
 import subprocess
 import sys
 import time
+import traceback
 from types import ModuleType
 import unittest
 
@@ -35,12 +37,17 @@ FROZEN = {
     "compatibility-v1_1": ("test_e01_offline_ipv6_compatibility_v1_1_20261116.py", 34253, "439a2d46ebcfc57c295a95e4fa353691246ab1e2ea0db1feebff41f4a3ba96a2", 53, "FrozenStructureTests.test_stdlib_socket_origin_record_only_no_mutation", "g.f.old.g.old"),
     "probe-v2": ("test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py", 17601, "dabe56af0d88df61d2dae07d6230018b0a2b18915bd5e2a11ae2faafcf4458ad", 29, None, "t.g.old"),
 }
+HOST_CASE_RULES = {'test_e01_p2_builtin_mime_candidate_v1_20261116.py': {'test_ref': {'path': 'tests/test_e01_p2_builtin_mime_candidate_v1_20261116.py', 'bytes': 4504, 'sha256': '899eaa7a82a54a7db8c62ca487cd2b1bf6d5d22afaa701c04c6c42bdb1917b91'}, 'contract_ref': {'path': 'scripts/e01_p2_builtin_mime_candidate_v1_20261116.py', 'bytes': 1113, 'sha256': '99ab72562c3376ee3c0e95f0025c809cdcedaf06a9fa6c13803b34d55bc2c3ff'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['BuiltinMimeCandidateTests.test_public_knownfiles_clear_and_empty_init_need_no_file_open', 'BuiltinMimeCandidateTests.test_all_five_wheel_names_remain_non_html_without_io', 'BuiltinMimeCandidateTests.test_already_initialized_module_refuses_without_state_reset', 'BuiltinMimeCandidateTests.test_initialization_exception_propagates_without_retry_or_fallback', 'BuiltinMimeCandidateTests.test_unexpected_knownfiles_schema_refuses']}, 'test_e01_p2_builtin_mime_candidate_v2_20261116.py': {'test_ref': {'path': 'tests/test_e01_p2_builtin_mime_candidate_v2_20261116.py', 'bytes': 6054, 'sha256': '629cecddb82718ec71c3b1b634ff02c6a10f8ed4b872dabaca8f5412b583c373'}, 'contract_ref': {'path': 'scripts/e01_p2_builtin_mime_candidate_v2_20261116.py', 'bytes': 1077, 'sha256': '864d337ad575918a395beb21b3cbd7ceed3bc6c4c59e0801df3a0cdc2326c768'}, 'gate': 'DARWIN_MIME_ONLY', 'local_cases': ['BuiltinMimeRebuildTests.test_fresh_rebuild_and_classification_need_zero_file_opens', 'BuiltinMimeRebuildTests.test_prepopulated_rebuild_removes_machine_specific_mappings_without_io', 'BuiltinMimeRebuildTests.test_rebuild_is_repeatable_and_resets_public_add_type_changes', 'BuiltinMimeRebuildTests.test_init_failure_propagates_once_without_fallback', 'BuiltinMimeRebuildTests.test_unexpected_state_refuses_before_init']}, 'test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py': {'test_ref': {'path': 'tests/test_e01_pypa_fixture_harness_candidate_v1_1_20261116.py', 'bytes': 33431, 'sha256': '8236f2fcaaf325af67bf1c134fb98a4f18445e18af18330ce7f34fdb96e1bedc'}, 'contract_ref': {'path': 'scripts/e01_pypa_fixture_harness_candidate_v1_1_20261116.py', 'bytes': 52778, 'sha256': '1c55c942b061452f741d1242640fd1b85a8f11b398a30fea6c391525006b20b8'}, 'gate': 'EXACT_GENERATED_RUNTIME', 'local_cases': ['GeneratedCompilationTests.test_runtime_stdlib_binding_is_exact_and_not_an_import_time_hook', 'GeneratedCompilationTests.test_exact_fifteen_sources_match_inert_stdlib_dataclass_generation_without_exec', 'GeneratedCompilationTests.test_finite_ordered_plan_accepts_only_exact_mock_frame_context', 'GeneratedCompilationTests.test_source_filename_phase_and_sequence_drift_refuse_and_latch', 'GeneratedCompilationTests.test_stdlib_code_identity_globals_and_tool_origins_cannot_drift', 'GeneratedCompilationTests.test_missing_generated_event_refuses_finish_permanently', 'GeneratedCompilationTests.test_real_policy_callback_rejects_forged_caller_and_arbitrary_source', 'GeneratedCompilationTests.test_other_runtime_plan_is_distinct_and_unknown_runtime_refuses']}}
+COMPILE_PROFILE_PINS = {'3.11.17': {'executable': (17344128, '595d73e8b246e5276a3ae0409de4d01dd59fd6ec5f3190cfe28e05bf2de4986f'), 'dataclasses': (58472, '77a41ea9eb35d959781087b72ef5b452218b57b9d8f2d28688d45a40ca7f8a09')}, '3.12.14': {'executable': (18058560, '9d1335796350848c36dc2711a3298e096deebee18c85f1ab36edd8747fdf85eb'), 'dataclasses': (62085, 'd242aea5fcf6408b1c1f622442f88f68b9526ce1f8bd2890d74a144677c427d9')}}
+
 SOCKET_PINS = {
     "3.11.17": (37557, "64360e73e3db69396d45d5ee256e8306b3653212ab96ae4a130070488cddbb30"),
     "3.12.14": (37815, "7d4d4c66e6f4bcc961ab462c4f08002ca97def8713a4be1c7373bdbd970a5274"),
 }
 ORDINARY_WALL = 10800
 COORDINATOR_WALL = ORDINARY_WALL + 10 * 120 + 120
+MODULE_WALL = 3600
+EVENT_MARKER = "OFFLINE_CI_TEST_EVENT_V1="
 
 
 class IsolationError(Exception):
@@ -101,6 +108,62 @@ def plan(root=ROOT):
                          "wall_seconds": 120, "output_bytes": 262144})
     return {"jobs": jobs, "inventory": inventory, "portable_cases": sum(len(r["portable_cases"]) for r in inventory.values()),
             "historical_cases": sum(len(r["historical_cases"]) for r in inventory.values())}
+
+
+def ordinary_modules(root):
+    """Hash every ordinary discovery file, including zero-case helper modules."""
+    tests = ordinary_origin(Path(root) / "tests")
+    # Per-file isolation currently supports a flat tests namespace. unittest
+    # also discovers package directories (and their load_tests hooks): refuse
+    # those explicitly instead of quietly dropping them from the manifest.
+    for child in tests.iterdir():
+        if child.is_dir():
+            ordinary_origin(child)
+            require(not (child / "__init__.py").exists(), "ORDINARY_NESTED_PACKAGES_UNSUPPORTED")
+    excluded = {row[0] for row in FROZEN.values()}
+    rows = []
+    for path in sorted(tests.glob("test*.py")):
+        if path.name in excluded:
+            continue
+        ordinary_origin(path)
+        require(path.is_file() and path.stat().st_size <= 1048576, "ORDINARY_SOURCE_BOUND")
+        raw = path.read_bytes()
+        rows.append({"path": "tests/" + path.name, "bytes": len(raw), "sha256": sha(raw),
+                     "declared_local_cases": case_inventory(raw)})
+    require(0 < len(rows) <= 4096, "ORDINARY_MODULE_COUNT")
+    return rows
+
+
+def module_plan(root=ROOT, *, shard_index=0, shard_count=1, module_wall=MODULE_WALL, only_modules=None):
+    require(type(shard_count) is int and 1 <= shard_count <= 16
+            and type(shard_index) is int and 0 <= shard_index < shard_count, "SHARD_PARAMETERS")
+    require(type(module_wall) is int and 1 <= module_wall <= ORDINARY_WALL, "MODULE_WALL")
+    specification = plan(root)
+    rows = ordinary_modules(root)
+    available = {Path(row["path"]).name for row in rows}
+    if only_modules is not None:
+        require(type(only_modules) in {list, tuple} and only_modules
+                and len(set(only_modules)) == len(only_modules)
+                and set(only_modules) <= available, "FOCUSED_MODULE_SET")
+    jobs = []
+    for index, row in enumerate(rows):
+        filename = Path(row["path"]).name
+        if index % shard_count != shard_index or (only_modules is not None and filename not in only_modules):
+            continue
+        jobs.append({"id": "ordinary-" + filename[:-3], "group": "ordinary", "phase": "ordinary",
+                     "test_module": filename, "source_ref": {k: row[k] for k in ("path", "bytes", "sha256")},
+                     "declared_local_cases": row["declared_local_cases"], "wall_seconds": module_wall,
+                     "output_bytes": 16 * 1024 * 1024})
+    if shard_index == 0 and only_modules is None:
+        jobs.extend(specification["jobs"][1:])
+    specification.update(jobs=jobs, ordinary_module_manifest=rows,
+                         ordinary_manifest_sha256=sha(packed(rows)),
+                         suite_scope="FOCUSED_MODULES_ONLY" if only_modules is not None else "ALL_DISCOVERY_MODULES",
+                         root=str(Path(root).resolve()),
+                         shard={"index": shard_index, "count": shard_count,
+                                "aggregate_budget_seconds_all_shards": COORDINATOR_WALL,
+                                "budget_seconds": COORDINATOR_WALL // shard_count + int(shard_index < COORDINATOR_WALL % shard_count)})
+    return specification
 
 
 class OrdinaryLoader(unittest.TestLoader):
@@ -247,12 +310,15 @@ class CollectionBarrier:
             raise IsolationError("GLOBAL_HOOK_DURING_ORDINARY_COLLECTION")
 
 
-def _collect_ordinary(root, *, loader=None, install_hook=sys.addaudithook):
+def _collect_ordinary(root, *, loader=None, install_hook=sys.addaudithook, pattern=None):
     barrier = CollectionBarrier(root)
     install_hook(barrier)  # This function is called only in the ordinary child.
     barrier.collecting = True
     try:
-        return (loader or OrdinaryLoader(root)).discover(str(Path(root) / "tests")), barrier
+        selected = loader or OrdinaryLoader(root)
+        suite = (selected.discover(str(Path(root) / "tests")) if pattern is None else
+                 selected.discover(str(Path(root) / "tests"), pattern=pattern))
+        return suite, barrier
     finally:
         barrier.collecting = False
 
@@ -311,6 +377,148 @@ def flatten(suite):
 def case_id(test):
     method = getattr(test, "_testMethodName", None)
     return type(test).__name__ + "." + method if method is not None else test.id()[:512]
+
+
+def full_case_id(test):
+    value = test.id()
+    require(type(value) is str and 0 < len(value) <= 2048, "CASE_ID_BOUND")
+    return value
+
+
+def module_source(root, filename, expected_sha=None):
+    require(type(filename) is str and Path(filename).name == filename
+            and filename.startswith("test") and filename.endswith(".py")
+            and filename not in {row[0] for row in FROZEN.values()}, "ORDINARY_MODULE_NAME")
+    path = ordinary_origin(Path(root) / "tests" / filename)
+    require(path.is_file() and path.stat().st_size <= 1048576, "ORDINARY_SOURCE_BOUND")
+    raw = path.read_bytes()
+    reference = {"path": "tests/" + filename, "bytes": len(raw), "sha256": sha(raw)}
+    require(expected_sha is None or reference["sha256"] == expected_sha, "ORDINARY_SOURCE_CHANGED")
+    return reference
+
+
+def host_case_decision(root, filename, *, version=None, platform_name=None, observe=None):
+    """Only the frozen ten Darwin MIME and eight exact-runtime cases qualify."""
+    rule = HOST_CASE_RULES.get(filename)
+    if rule is None:
+        return None
+    for reference in (rule["test_ref"], rule["contract_ref"]):
+        path = ordinary_origin(Path(root) / reference["path"])
+        raw = path.read_bytes()
+        require((len(raw), sha(raw)) == (reference["bytes"], reference["sha256"]), "HOST_CASE_SOURCE_CHANGED")
+    version = sys.version.split()[0] if version is None else version
+    platform_name = sys.platform if platform_name is None else platform_name
+    evidence = {"gate": rule["gate"], "python": version, "platform": platform_name,
+                "test_ref": rule["test_ref"], "contract_ref": rule["contract_ref"]}
+    if rule["gate"] == "DARWIN_MIME_ONLY":
+        supported = platform_name == "darwin"
+        reasons = [] if supported else ["FROZEN_CANDIDATE_REQUIRES_DARWIN"]
+    else:
+        pins = COMPILE_PROFILE_PINS.get(version)
+        reasons = []
+        if pins is None:
+            reasons.append("FROZEN_GENERATED_RUNTIME_VERSION_UNSUPPORTED")
+        else:
+            if observe is None:
+                paths = {"executable": Path(sys.executable).resolve(),
+                         "dataclasses": Path(sys.base_prefix) / "lib" / f"python{sys.version_info.major}.{sys.version_info.minor}" / "dataclasses.py"}
+                observations = {}
+                for kind, path in paths.items():
+                    raw = ordinary_origin(path).read_bytes()
+                    require(len(raw) <= 33554432, "HOST_RUNTIME_SOURCE_BOUND")
+                    observations[kind] = (len(raw), sha(raw))
+            else:
+                observations = observe()
+            evidence["observations"] = observations
+            if observations != pins:
+                reasons.append("FROZEN_EXECUTABLE_OR_DATACLASSES_NOT_MATCHED")
+        supported = not reasons
+    return {**evidence, "status": "SUPPORTED" if supported else "NOT_RUN", "reasons": reasons,
+            "local_cases": rule["local_cases"], "scope": "NAMED_ORIGINAL_HOST_CASES_ONLY_NOT_FULL_RUNTIME_QUALIFICATION"}
+
+
+class OrdinaryRecordingResult(unittest.TextTestResult):
+    """Immediate bounded failure details survive a later test timeout."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.started_cases = []
+        self.started_case_ids, self.completed_case_ids, self.outcomes = [], [], []
+        self._times = {}
+        self._status = {}
+
+    def event(self, event, test, **extra):
+        record = {"event": event, "case_id": full_case_id(test), **extra}
+        self.stream.writeln("\n" + EVENT_MARKER + packed(record).decode())
+        self.stream.flush()
+
+    def startTest(self, test):
+        self.started_cases.append(case_id(test))
+        self.started_case_ids.append(full_case_id(test))
+        self._times[id(test)] = time.monotonic()
+        self._status[id(test)] = "PASS"
+        super().startTest(test)
+        self.event("START", test)
+
+    def stopTest(self, test):
+        self.completed_case_ids.append(full_case_id(test))
+        status = self._status.pop(id(test), "ERROR")
+        self.outcomes.append({"case_id": full_case_id(test), "status": status})
+        self.event("STOP", test, status=status,
+                   elapsed_seconds=time.monotonic() - self._times.pop(id(test), time.monotonic()))
+        super().stopTest(test)
+
+    def detail(self, test, text, status):
+        self._status[id(test)] = status
+        raw = text.encode("utf-8", "replace")
+        self.event(status, test, traceback_bytes=len(raw), traceback_sha256=sha(raw),
+                   traceback_truncated=len(raw) > 65536)
+        self.stream.writeln("CI_FAILURE_DETAIL_BEGIN " + full_case_id(test))
+        self.stream.writeln(raw[:65536].decode("utf-8", "replace"))
+        self.stream.writeln("CI_FAILURE_DETAIL_END")
+        self.stream.flush()
+
+    def addFailure(self, test, err):
+        super().addFailure(test, err)
+        self.detail(test, self.failures[-1][1], "FAIL")
+
+    def addError(self, test, err):
+        super().addError(test, err)
+        self.detail(test, self.errors[-1][1], "ERROR")
+
+    def addSubTest(self, test, subtest, err):
+        super().addSubTest(test, subtest, err)
+        if err is not None:
+            failures = self.failures if issubclass(err[0], test.failureException) else self.errors
+            self.detail(subtest, failures[-1][1], "FAIL" if failures is self.failures else "ERROR")
+            self._status[id(test)] = "FAIL" if failures is self.failures else "ERROR"
+
+    def addSkip(self, test, reason):
+        super().addSkip(test, reason)
+        parent = getattr(test, "test_case", test)
+        if self._status.get(id(parent), "PASS") in {"PASS", "SKIP"}:
+            self._status[id(parent)] = "SKIP"
+        self.event("SKIP", test, reason=reason[:512])
+
+    def addExpectedFailure(self, test, err):
+        super().addExpectedFailure(test, err)
+        self._status[id(test)] = "EXPECTED_FAILURE"
+
+
+def unstarted_skip_cases(planned, started, skipped):
+    remaining = Counter(planned) - Counter(started)
+    covered = []
+    for test, reason in skipped:
+        description = full_case_id(test)
+        if description.startswith("setUpClass (") and description.endswith(")"):
+            prefix = description[len("setUpClass ("):-1] + "."
+        elif description.startswith("setUpModule (") and description.endswith(")"):
+            prefix = description[len("setUpModule ("):-1] + "."
+        else:
+            continue
+        cases = [case for case, count in list(remaining.items()) if case.startswith(prefix) for _ in range(count)]
+        covered.append({"holder": description, "reason": reason[:512], "case_ids": cases})
+        remaining.subtract(Counter(cases))
+    return covered
 
 
 class RecordingResult(unittest.TextTestResult):
@@ -396,8 +604,8 @@ def run_frozen(root, group, phase, *, admission=None):
             **result_record(result)}
 
 
-def child_entry(root, group, phase):
-    seconds = ORDINARY_WALL if phase == "ordinary" else 120
+def child_entry(root, group, phase, *, test_module=None, module_sha=None, module_wall=MODULE_WALL):
+    seconds = (module_wall if test_module is not None else ORDINARY_WALL) if phase == "ordinary" else 120
     resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
     resource.setrlimit(resource.RLIMIT_CPU, (seconds - 1, seconds))
     def deadline(*_):
@@ -407,9 +615,41 @@ def child_entry(root, group, phase):
     signal.setitimer(signal.ITIMER_REAL, seconds)
     if phase == "ordinary":
         with ordinary_import_context(root):
-            suite, _ = _collect_ordinary(root)
-            result = unittest.TextTestRunner(verbosity=2, resultclass=RecordingResult).run(suite)
-            return {"status": "PASS" if result.wasSuccessful() else "FAIL", **result_record(result)}
+            reference = module_source(root, test_module, module_sha) if test_module is not None else None
+            suite, _ = (_collect_ordinary(root) if test_module is None else
+                        _collect_ordinary(root, pattern=test_module))
+            discovered = list(flatten(suite))
+            planned = [full_case_id(test) for test in discovered]
+            require(len(planned) <= 65536, "ORDINARY_CASE_COUNT")
+            decision = host_case_decision(root, test_module) if test_module is not None else None
+            active, not_run = [], []
+            matched_host_cases = []
+            for test in discovered:
+                if decision is not None and case_id(test) in decision["local_cases"]:
+                    matched_host_cases.append(case_id(test))
+                    if decision["status"] == "NOT_RUN":
+                        not_run.append({"case_id": full_case_id(test), "qualification": decision})
+                        continue
+                active.append(test)
+            if decision is not None:
+                require(sorted(matched_host_cases) == sorted(decision["local_cases"]), "HOST_CASE_INVENTORY_CHANGED")
+            print("OFFLINE_CI_MODULE_PLAN_V1=" + packed({"source_ref": reference,
+                  "planned_case_ids": planned, "not_run_cases": not_run}).decode(), flush=True)
+            result = unittest.TextTestRunner(verbosity=2, resultclass=OrdinaryRecordingResult).run(unittest.TestSuite(active))
+            if reference is not None:
+                require(module_source(root, test_module, module_sha) == reference, "ORDINARY_SOURCE_CHANGED")
+            started = getattr(result, "started_case_ids", [])
+            return {"status": "PASS" if result.wasSuccessful() else "FAIL", **result_record(result),
+                    "skips": [{"case": full_case_id(test), "reason": reason[:512]} for test, reason in result.skipped],
+                    "suite_scope": "ONE_ORDINARY_MODULE" if reference is not None else "LEGACY_AGGREGATE",
+                    "source_ref": reference, "test_module": test_module,
+                    "planned_case_ids": planned, "discovered_case_ids": planned[:],
+                    "started_case_ids": started,
+                    "completed_case_ids": getattr(result, "completed_case_ids", []),
+                    "outcomes": getattr(result, "outcomes", []), "not_run_cases": not_run,
+                    "expected_failures": [full_case_id(test) for test, _ in result.expectedFailures],
+                    "unstarted_skips": unstarted_skip_cases([full_case_id(t) for t in active], started, result.skipped),
+                    "host_case_decision": decision}
     return run_frozen(root, group, phase)
 
 
@@ -452,7 +692,7 @@ def supervise(command, env, job, directory, *, popen=subprocess.Popen,
     selector = None
     try:
         for path in (stdout_path, stderr_path):
-            streams.append(open(path, "xb"))
+            streams.append(open(path, "xb", buffering=0))
         selector = selector_factory()
         proc = popen(command, cwd=str(ROOT), env=env, stdin=subprocess.DEVNULL,
                      stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
@@ -534,8 +774,88 @@ def validate_coverage(receipt, job, specification):
     if receipt["status"] in {"ERROR", "FAIL"}:
         return
     if job["phase"] == "ordinary":
-        require(receipt["status"] == "PASS" and type(receipt.get("tests_run")) is int
-                and receipt["tests_run"] > 0, "ORDINARY_COVERAGE_EMPTY")
+        require(receipt["status"] == "PASS" and type(receipt.get("tests_run")) is int,
+                "ORDINARY_COVERAGE_EMPTY")
+        if "test_module" in job:
+            require(receipt.get("test_module") == job["test_module"] and receipt.get("source_ref") == job["source_ref"]
+                    and receipt.get("suite_scope") == "ONE_ORDINARY_MODULE", "ORDINARY_SOURCE_BINDING")
+        else:
+            require(receipt["tests_run"] > 0 and receipt.get("suite_scope") == "LEGACY_AGGREGATE", "ORDINARY_COVERAGE_EMPTY")
+        names = ("planned_case_ids", "discovered_case_ids", "started_case_ids", "completed_case_ids")
+        require(all(type(receipt.get(key)) is list and all(type(case) is str and 0 < len(case) <= 2048 for case in receipt[key]) for key in names),
+                "ORDINARY_CASE_INVENTORY_REQUIRED")
+        planned, discovered, started, completed = (receipt[key] for key in names)
+        require(planned == discovered and Counter(started) == Counter(completed)
+                and receipt["tests_run"] == len(started), "ORDINARY_CASE_EXECUTION_MISMATCH")
+        require(receipt.get("failures") == [] and receipt.get("errors") == []
+                and receipt.get("unexpected_successes") == [], "ORDINARY_SUCCESS_WITH_FAILURES")
+        if "test_module" in job:
+            declared = [Path(job["test_module"]).stem + "." + case for case in job["declared_local_cases"]]
+            require(not (Counter(declared) - Counter(planned)), "ORDINARY_DECLARED_CASE_MISSING")
+        require(type(receipt.get("outcomes")) is list and all(type(row) is dict and set(row) == {"case_id", "status"}
+                and type(row["case_id"]) is str and row["status"] in {"PASS", "SKIP", "EXPECTED_FAILURE"} for row in receipt["outcomes"]), "ORDINARY_OUTCOMES_REQUIRED")
+        require(Counter(row["case_id"] for row in receipt["outcomes"]) == Counter(started), "ORDINARY_OUTCOME_COVERAGE")
+        expected_failures = receipt.get("expected_failures", [])
+        require(type(expected_failures) is list and all(type(case) is str for case in expected_failures)
+                and Counter(expected_failures) == Counter(row["case_id"] for row in receipt["outcomes"]
+                if row["status"] == "EXPECTED_FAILURE"), "ORDINARY_EXPECTED_FAILURE_DISPOSITION")
+        skips = receipt.get("skips")
+        require(type(skips) is list and all(type(row) is dict and set(row) == {"case", "reason"}
+                and type(row["case"]) is str and type(row["reason"]) is str for row in skips),
+                "ORDINARY_SKIP_RECORDS_REQUIRED")
+        require(type(receipt.get("not_run_cases")) is list and type(receipt.get("unstarted_skips")) is list,
+                "ORDINARY_DISPOSITIONS_REQUIRED")
+        not_run = receipt["not_run_cases"]
+        for row in not_run:
+            require(type(row) is dict and set(row) == {"case_id", "qualification"}
+                    and type(row["case_id"]) is str and type(row["qualification"]) is dict and row["qualification"].get("status") == "NOT_RUN"
+                    and row["qualification"].get("reasons"), "ORDINARY_UNEXPLAINED_NOT_RUN")
+        if not_run:
+            require("test_module" in job, "ORDINARY_UNEXPLAINED_NOT_RUN")
+            rule = HOST_CASE_RULES.get(job["test_module"])
+            require(rule is not None and all(row["qualification"].get("test_ref") == rule["test_ref"]
+                    and row["qualification"].get("contract_ref") == rule["contract_ref"]
+                    and row["qualification"].get("gate") == rule["gate"]
+                    and row["case_id"].split(".", 1)[-1] in rule["local_cases"] for row in not_run), "ORDINARY_HOST_DISPOSITION_BINDING")
+            decision = host_case_decision(Path(specification.get("root", ROOT)), job["test_module"])
+            require(decision is not None and decision["status"] == "NOT_RUN"
+                    and all(packed(row["qualification"]) == packed(decision) for row in not_run)
+                    and Counter(row["case_id"].split(".", 1)[-1] for row in not_run) == Counter(rule["local_cases"]),
+                    "ORDINARY_HOST_DECISION_FORGED")
+        covered_skips = []
+        for row in receipt["unstarted_skips"]:
+            require(type(row) is dict and set(row) == {"holder", "reason", "case_ids"}
+                    and type(row["holder"]) is str and type(row["reason"]) is str
+                    and type(row["case_ids"]) is list, "ORDINARY_SKIP_DISPOSITION")
+            holder = row["holder"]
+            if holder.startswith("setUpClass (") and holder.endswith(")"):
+                prefix = holder[len("setUpClass ("):-1] + "."
+            elif holder.startswith("setUpModule (") and holder.endswith(")"):
+                prefix = holder[len("setUpModule ("):-1] + "."
+            else:
+                raise IsolationError("ORDINARY_SKIP_HOLDER")
+            require(all(type(case) is str and case.startswith(prefix) for case in row["case_ids"]), "ORDINARY_SKIP_MEMBERSHIP")
+            require({"case": holder, "reason": row["reason"]} in receipt.get("skips", []), "ORDINARY_SKIP_NOT_RECORDED")
+            covered_skips.extend(row["case_ids"])
+        require(Counter(started) + Counter(covered_skips) + Counter(row["case_id"] for row in not_run) == Counter(planned),
+                "ORDINARY_PLANNED_COVERAGE_INCOMPLETE")
+        holders = Counter((row["holder"], row["reason"]) for row in receipt["unstarted_skips"])
+        direct, subtests = Counter(), Counter()
+        for skip in skips:
+            holder = (skip["case"], skip["reason"])
+            if holders[holder] > 0:
+                holders[holder] -= 1
+            elif skip["case"] in started:
+                direct[skip["case"]] += 1
+            else:
+                parents = [case for case in set(started)
+                           if skip["case"].startswith(case + " (") and skip["case"].endswith(")")]
+                require(len(parents) == 1, "ORDINARY_SKIP_PARENT_MISSING")
+                subtests[parents[0]] += 1
+        skipped_outcomes = Counter(row["case_id"] for row in receipt["outcomes"] if row["status"] == "SKIP")
+        require(not +holders and not (direct - skipped_outcomes)
+                and not ((skipped_outcomes - direct) - subtests)
+                and set(subtests) <= set(skipped_outcomes), "ORDINARY_SKIP_OUTCOME_MISMATCH")
         return
     row = specification["inventory"][job["group"]]
     require(receipt.get("frozen_source_ref") == {key: row[key] for key in ("path", "bytes", "sha256")},
@@ -558,25 +878,42 @@ def validate_coverage(receipt, job, specification):
 def final_status(results, require_historical=False):
     if any(r["status"] not in {"PASS", "NOT_RUN"} for r in results):
         return "FAIL"
-    if any(r["status"] == "NOT_RUN" for r in results):
+    if any(r["status"] == "NOT_RUN" or r.get("receipt", {}).get("not_run_cases") for r in results):
         return "FAIL_HISTORICAL_NOT_RUN" if require_historical else "PASS_PORTABLE_HISTORICAL_NOT_RUN"
     return "PASS_ALL_REQUESTED_GROUPS"
 
 
-def run_parent(directory, *, root=ROOT, run_process=supervise, require_historical=False):
-    specification = plan(root)
+def canonical_interpreter():
+    path = Path(sys.executable).resolve()
+    require(path.is_file() and not path.is_symlink(), "CANONICAL_PYTHON_EXECUTABLE")
+    return str(path)
+
+
+def run_parent(directory, *, root=ROOT, run_process=supervise, require_historical=False,
+               shard_index=0, shard_count=None, module_wall=MODULE_WALL, only_modules=None):
+    # None retains the old pure-model interface; the CLI always supplies a count
+    # and therefore uses isolated modules, including for its default one shard.
+    specification = (plan(root) if shard_count is None else module_plan(root, shard_index=shard_index,
+                     shard_count=shard_count, module_wall=module_wall, only_modules=only_modules))
     runner_sha = sha(Path(__file__).read_bytes())
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=False, mode=0o700)
     save_new(directory / "PLAN.json", {"kind": "OFFLINE_CI_PLAN_V1", "runner_sha256": runner_sha, **specification})
     started, results = time.monotonic(), []
+    coordinator_wall = specification.get("shard", {}).get("budget_seconds", COORDINATOR_WALL)
     for job in specification["jobs"]:
-        if time.monotonic() - started >= COORDINATOR_WALL:
+        remaining = coordinator_wall - (time.monotonic() - started)
+        if remaining <= 3:
             result = {"job_id": job["id"], "status": "ERROR", "reason": "COORDINATOR_WALL_LIMIT"}
         else:
+            job = dict(job, wall_seconds=min(job["wall_seconds"], max(1, int(remaining - 3))))
             isolation = ["-I", "-B"] + ([] if job["phase"] == "ordinary" else ["-S"])
-            command = [sys.executable, *isolation, str(Path(__file__).resolve()), "--child", job["group"],
-                       "--phase", job["phase"], "--runner-sha256", runner_sha]
+            command = [canonical_interpreter(), *isolation, str(Path(__file__).resolve()), "--child", job["group"],
+                       "--phase", job["phase"]]
+            if "test_module" in job:
+                command.extend(["--test-module", job["test_module"], "--module-sha256", job["source_ref"]["sha256"],
+                                "--module-wall-seconds", str(job["wall_seconds"])])
+            command.extend(["--runner-sha256", runner_sha])
             save_new(directory / (job["id"] + "-RESERVED.json"), {"job": job, "argv": command, "attempt": 1})
             execution = None
             try:
@@ -594,6 +931,14 @@ def run_parent(directory, *, root=ROOT, run_process=supervise, require_historica
     summary = {"kind": "OFFLINE_CI_SUMMARY_V1", "status": final_status(results, require_historical),
                "historical_required": require_historical, "results": results,
                "scope": "CI coverage only; NOT_RUN historical checks are never runtime/research acceptance."}
+    if shard_count is not None:
+        expected_jobs = [job["id"] for job in specification["jobs"]]
+        require([row["job_id"] for row in results] == expected_jobs, "SHARD_JOB_COVERAGE_CHANGED")
+        summary.update(suite_scope=specification["suite_scope"], shard=specification["shard"],
+                       ordinary_manifest_sha256=specification["ordinary_manifest_sha256"],
+                       planned_module_refs=[job["source_ref"] for job in specification["jobs"] if "source_ref" in job])
+        if only_modules is not None and summary["status"].startswith("PASS"):
+            summary["status"] = "PASS_FOCUSED_ONLY" if summary["status"] == "PASS_ALL_REQUESTED_GROUPS" else "PASS_FOCUSED_HISTORICAL_NOT_RUN"
     save_new(directory / "SUMMARY.json", summary)
     return summary
 
@@ -605,16 +950,31 @@ def main():
     parser.add_argument("--phase", choices=["ordinary", "portable", "historical"])
     parser.add_argument("--runner-sha256")
     parser.add_argument("--require-historical", action="store_true")
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--shard-count", type=int, default=1)
+    parser.add_argument("--module-wall-seconds", type=int, default=MODULE_WALL)
+    parser.add_argument("--only-module", action="append")
+    parser.add_argument("--test-module")
+    parser.add_argument("--module-sha256")
     args = parser.parse_args()
     if args.child:
         require(args.runner_sha256 == sha(Path(__file__).read_bytes()), "RUNNING_CI_SOURCE_HASH")
         require((args.child == "ordinary") == (args.phase == "ordinary"), "CHILD_PHASE")
-        job_id = "ordinary" if args.child == "ordinary" else args.child + "-" + args.phase
+        require((args.test_module is None) == (args.module_sha256 is None), "MODULE_SOURCE_ARGUMENTS")
+        require(args.test_module is None or args.child == "ordinary", "MODULE_PHASE")
+        job_id = ("ordinary-" + args.test_module[:-3] if args.test_module else "ordinary") if args.child == "ordinary" else args.child + "-" + args.phase
         try:
-            receipt = child_entry(ROOT, args.child, args.phase)
+            receipt = child_entry(ROOT, args.child, args.phase, test_module=args.test_module,
+                                  module_sha=args.module_sha256, module_wall=args.module_wall_seconds)
         except BaseException:
+            detail = traceback.format_exc().encode("utf-8", "replace")
+            print("CI_SETUP_FAILURE_DETAIL_BEGIN", file=sys.stderr, flush=True)
+            print(detail[:65536].decode("utf-8", "replace"), file=sys.stderr, flush=True)
+            print("CI_SETUP_FAILURE_DETAIL_END", file=sys.stderr, flush=True)
             receipt = {"status": "ERROR", "reason": "CHILD_SETUP_OR_HARNESS_ERROR", "tests_run": None,
-                       "coverage": "UNKNOWN_AFTER_SETUP_OR_HARNESS_ERROR"}
+                       "coverage": "UNKNOWN_AFTER_SETUP_OR_HARNESS_ERROR",
+                       "traceback_bytes": len(detail), "traceback_sha256": sha(detail),
+                       "traceback_truncated": len(detail) > 65536}
         receipt.update(kind="OFFLINE_CI_CHILD_V1", job_id=job_id, runner_sha256=args.runner_sha256)
         receipt["runtime"] = {"python": sys.version.split()[0], "implementation": sys.implementation.name,
                               "platform": sys.platform}
@@ -625,7 +985,10 @@ def main():
         print(MARKER + packed(receipt).decode(), flush=True)
         return 0 if receipt["status"] in {"PASS", "NOT_RUN"} else 1
     require(args.output_dir is not None and args.phase is None, "OUTPUT_DIRECTORY_REQUIRED")
-    summary = run_parent(args.output_dir, require_historical=args.require_historical)
+    require(args.test_module is None and args.module_sha256 is None, "PARENT_MODULE_ARGUMENTS")
+    summary = run_parent(args.output_dir, require_historical=args.require_historical,
+                         shard_index=args.shard_index, shard_count=args.shard_count,
+                         module_wall=args.module_wall_seconds, only_modules=args.only_module)
     print(packed({"status": summary["status"], "summary": str(args.output_dir / "SUMMARY.json")}).decode())
     return 0 if summary["status"].startswith("PASS") else 1
 

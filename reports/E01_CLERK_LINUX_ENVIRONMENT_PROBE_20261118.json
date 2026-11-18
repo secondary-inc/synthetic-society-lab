@@ -1,0 +1,34 @@
+{
+  "kind": "FOCUSED_LINUX_ENVIRONMENT_PROBE",
+  "status": "TWO_AUTHORED_TEST_ERRORS_ENVIRONMENT_NOT_CI_EQUIVALENT",
+  "evidence": [
+    {
+      "path": "reports/evidence_clerk_linux_environment_probe_20261118/PLAN.json",
+      "bytes": 736,
+      "sha256": "d99ab99484419cd505d7e71be6891786fe9ca08a085b12810852beedd5bfdca6"
+    },
+    {
+      "path": "reports/evidence_clerk_linux_environment_probe_20261118/RESULT.json",
+      "bytes": 811,
+      "sha256": "a961c1a290bd6b98e711291226542193b5a9bab63b865450cb658b86143259bb"
+    },
+    {
+      "path": "reports/evidence_clerk_linux_environment_probe_20261118/console.log",
+      "bytes": 2422,
+      "sha256": "d9ced5db1e262e46a453cb902a4273709fdb098c8de9a8ed2649535d3fddf972"
+    }
+  ],
+  "observation": "Both originally failing Clerk InspectionHarness cases produce generic CLERK_M1_CONTRACT_REFUSED in a no-network official Python3.12.16 slim Linux/amd64 container. Separate read-only environment check confirms required /bin/ps does not exist in that image.",
+  "interpretation": "This image lacks a declared RSS-probe prerequisite and is not a valid GitHub-host reproduction. Do not attribute GitHub failures to missingps or use this as portable qualification. No production guard/test was weakened.",
+  "container_starts": 2,
+  "test_invocations": 1,
+  "test_cases": 2,
+  "second_container": "Filesystem existence check only; zero testcases.",
+  "container_network": "none",
+  "source_mount": "readonly copy of public tracked repository files; no rawdata/.env/privateowner/key mounted",
+  "image_pull": "One public official image pull; digestsha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "model_calls": 0,
+  "cost_usd": 0,
+  "full_CI_PASS": false,
+  "next_action": "Use repaired hosted CI receipts for true Linux failure diagnosis; retain these failed environment observations."
+}
