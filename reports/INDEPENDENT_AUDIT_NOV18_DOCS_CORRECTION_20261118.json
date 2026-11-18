@@ -1,0 +1,72 @@
+{
+  "TASK_ID": "INDEPENDENT_NOV18_DOCS_CORRECTION_20261118",
+  "status": "PASS",
+  "decision": "DOC-01 corrected. Final six-doc factual/relative-link review accepted within original scope; no scientific, CI or runtime gate promotion.",
+  "recorded_at_UTC": "2026-11-18T16:23:44.203778+00:00",
+  "preserved_original_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_NOV18_DOCS_20261118.json",
+    "bytes": 6586,
+    "sha256": "ba92c57eb0fb044a8d92952b7a78c3203c8b4bd39a04d5af3784ca22a9c4970b"
+  },
+  "final_six_doc_refs": [
+    {
+      "path": "README.md",
+      "bytes": 14359,
+      "sha256": "642ac3343f3d6302419977a49191fe72e75174aa7e434ab46ad5ec8f22194900"
+    },
+    {
+      "path": "publications/BLOG_DRAFT.md",
+      "bytes": 15867,
+      "sha256": "b60a83bf1b120361258255870a0969dd2d7d6fe0c80fb90a89732cd0a8d4f56f"
+    },
+    {
+      "path": "publications/LIMITATIONS.md",
+      "bytes": 22416,
+      "sha256": "34ed89ca29938a2b32a892eb1c3f44cd4c843c9d31ffdf589a8463f890060872"
+    },
+    {
+      "path": "publications/REPRODUCIBILITY.md",
+      "bytes": 19259,
+      "sha256": "d634df9fa146ad62a12d7fcb8200e478e3c72994cd887d294b8fe5ca15100ca3"
+    },
+    {
+      "path": "publications/TECHNICAL_PAPER_DRAFT.md",
+      "bytes": 40262,
+      "sha256": "8502475f8d54705e0e5206ca53ae2a52f01e82e20599877bdea3f11801661ea4"
+    },
+    {
+      "path": "reports/STATUS.md",
+      "bytes": 189217,
+      "sha256": "226e60889825077d1360a14c7760fa4df273249e3c1632cf539c01f6b92d31fc"
+    }
+  ],
+  "checks": {
+    "other_five_docs_unchanged": true,
+    "unsupported_failed_cleanup_phrase_absent": true,
+    "durable_events_described": true,
+    "cleanup_completion_unknown": true,
+    "provider_and_original_error_unknown": true,
+    "added_relative_links_still_exist": true
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_NOV18_DOCS_CORRECTION_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_NOV18_DOCS_CORRECTION_20261118.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Static metadata/wording/link recheck only; zero test or actual-reader execution."
+  ],
+  "TESTS_RUN_AND_RESULTS": "All six correction checks pass;15 new relative links still resolve. Five non-LIMITATIONS documents remain byte-identical to original review.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Tracked docs only; no new source data.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "CI run/external links not reacquired; review uses supplied verified artifacts and historical delivery checks.",
+    "The ZIP download digest assertion and dedicated PDF step are lead-observed; no independent artifact-capture manifest was included in this six-doc review. This is a scope limit, not a contrary finding.",
+    "No full research/scientific or runtime acceptance follows from documentation."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "No remaining blocker for this documentation delta. Worker fixes/CI/runtime/scientific completion remain separately open."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead can commit six reviewed docs and both independent documentation reports. Continue exact frozen worker fix reviews."
+}

@@ -1,0 +1,71 @@
+{
+  "kind": "LEAD_RECORDED_CHECKPOINT_VIEW_20261118",
+  "status": "BUILT_TESTED_PENDING_INDEPENDENT_REVIEW",
+  "source_files": [
+    {
+      "path": "src/civiclab/research_checkpoint_view.py",
+      "bytes": 6637,
+      "sha256": "c7ff52e54937b4341e617b3a254487a0e1561cb47b124decb02fdc0a5dad52e8"
+    },
+    {
+      "path": "src/civiclab/live_summary_viewer.py",
+      "bytes": 44084,
+      "sha256": "6727a0fa7d6cf7fdc4c8fc199e697efbee7136769cabacd2a9893a7e9fb57e8f"
+    },
+    {
+      "path": "tests/test_research_checkpoint_view.py",
+      "bytes": 4472,
+      "sha256": "78eb965a3bb4a8c0978644d3a252586912099be5d3d848a7b878b1da4c05c80a"
+    },
+    {
+      "path": "tests/test_live_summary_viewer.py",
+      "bytes": 26224,
+      "sha256": "2d2381309e57baf9df15619ab9a3843e3a6ad7209e412d258a8545322698c44f"
+    }
+  ],
+  "inputs": "Four additional pinned public reports; existing six study reports unchanged. No raw responses, private owner, credentials or network model access.",
+  "tests": {
+    "python312": {
+      "new": 4,
+      "existing": 25,
+      "result": "PASS"
+    },
+    "python311": {
+      "new": 4,
+      "existing": 25,
+      "result": "PASS"
+    },
+    "preserved_initial_failure": "Existing build privacy test allowed six public files; it correctly refused the four new declared checkpoint inputs. Exact allowlist updated to ten; no privacy check removed."
+  },
+  "outputs": [
+    {
+      "path": "data/processed/dashboard/index.html",
+      "bytes": 348444,
+      "sha256": "a0344f4e7d29c27d6fb169891d3160639c09fb4deb36b113eb6e8355983240c7"
+    },
+    {
+      "path": "data/processed/dashboard/live-summary.json",
+      "bytes": 9512,
+      "sha256": "bbc86e667cb2c27f9e055aa8634961b3a4e1e18fd59462601f12e4ff8e6e9f50"
+    },
+    {
+      "path": "data/processed/dashboard/historical-preview.html",
+      "bytes": 321174,
+      "sha256": "90ffa9259e181cd84315b8b55d407f703f0e013cde27d0fb2729ccb93e8064c0"
+    },
+    {
+      "path": "data/processed/dashboard/snapshot.json",
+      "bytes": 446680,
+      "sha256": "00e6aef91998200495560c7954119f836626eadd78b787d500a2d0f3cde2d89f"
+    }
+  ],
+  "historical_bytes_unchanged": true,
+  "browser_check": "Local preview http://127.0.0.1:8767 inspected through browser accessibility tree and screenshot; top checkpoint readable with response counts, invoice/exposure separation, unknown provider outcome and incomplete-study label. No responsive-device certification.",
+  "model_requests": 0,
+  "model_cost_usd": 0,
+  "publication": "LOCAL_OWNER_REVIEW_ONLY",
+  "limitations": [
+    "Full CI remains failed/pending repair.",
+    "No new scientific result, financial reconciliation or research milestone is certified by presentation work."
+  ]
+}

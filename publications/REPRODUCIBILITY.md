@@ -2,6 +2,10 @@
 
 This package is for local owner review. It does not authorize publication, paid inference, source redistribution or an affiliation claim.
 
+**November 18 status:** the [one-slot E02 attempt](../reports/E02_CANARY_ACTUAL_STOP_OBSERVATION_20261117.json) stopped at its CPU limit. [Independent closed-evidence review](../reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json) verifies retained history and holds, not a response, provider charge or completed run. Its launcher and packet are consumed and must not be replayed. The closed capture has 1,189 events and 195 financial rows; private journals and the actual owner store remain outside Git. A future implementation must preserve these records and the full uncertain hold.
+
+The [E01 saved-data consumer](../reports/E01_SAVED_JSON_ACTUAL_OBSERVATION_20261118.json) completed once with no network/model calls and passed [independent outcome review](../reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json). Its public [source-job ledger](../reports/E01_SOURCE_JOB_LEDGER_20261118.json) describes saved readiness metadata, not accepted ballots or predictions. Its one-shot scope is consumed too. Reproducing software with fixtures is separate from re-executing either historical actual scope. Full CI at `778f462` failed; a complete current clean-clone reproduction is not yet accepted.
+
 ## Environment
 
 Use Python 3.11 or 3.12 on macOS/Linux. Core execution uses the standard library. New E01 selector fixtures additionally use the pinned optional SciPy selection extra; install it to exercise the actual solver. Older frozen archives document their own dependency/test snapshot. Static figures use the optional pinned Matplotlib extra; official election PDF parsing uses the pinned sources extra:

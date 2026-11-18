@@ -1,6 +1,10 @@
 # Synthetic Society Lab Limitations and Failure Analysis
 
-Owner-review draft. Updated November 11, 2026 UTC. This report covers the current engineering snapshot and the full research program, including work not yet executed. Independent audit and requirement status are authoritative for completion.
+Owner-review draft. Updated November 18, 2026 (America/New_York). This report covers the current engineering snapshot and the full research program, including work not yet executed. Independent audit and requirement status are authoritative for completion. Dated cost totals below preserve historical checkpoints.
+
+The latest [E02 stop review](../reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json) verifies the saved ledger history and full uncertain reservation, not a completed model request. The process recorded a dispatch intent, then an UNCERTAIN transition and FAILED close before CPU-limit termination. Whether failure cleanup completed, provider receipt, the earlier exception and actual charge remain unknown. The current totals are 191 verified responses, $0.0129589 in verified model usage and $0.017152 conservative exposure, including six unresolved holds. No failed request is silently resent or discarded. The full fifth-study comparison remains incomplete. Profiling and diagnostic durability must be resolved before any new bounded continuation.
+
+E01's [accepted saved-data reader](../reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json) records 33 frame slots, 13 states with documents, 20 acquisition jobs and zero accepted final ballots. This does not establish candidate completeness, source adoption or a forecast. The [November 18 CI run at `778f462`](https://github.com/secondary-inc/synthetic-society-lab/actions/runs/44244801559) failed on both Python versions: the ordinary suite exceeded its three-hour limit and also recorded earlier test errors. Scoped component tests therefore do not establish current full-suite acceptance. Population validity, human anchoring, source reuse and the original research contract remain open.
 
 ## Scientific scope
 

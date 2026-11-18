@@ -1,0 +1,120 @@
+{
+  "TASK_ID": "INDEPENDENT_RESEARCH_CHECKPOINT_VIEW_20261118",
+  "status": "PASS",
+  "decision": "Four-file viewer delta accepted for pinned public projection, scoped rendered-string semantics, privacy, tamper refusal and historical preservation. No independent browser visual certification or scientific gate promotion.",
+  "recorded_at_UTC": "2026-11-18T16:26:40.270426+00:00",
+  "source_refs": [
+    {
+      "path": "src/civiclab/research_checkpoint_view.py",
+      "bytes": 6637,
+      "sha256": "c7ff52e54937b4341e617b3a254487a0e1561cb47b124decb02fdc0a5dad52e8"
+    },
+    {
+      "path": "src/civiclab/live_summary_viewer.py",
+      "bytes": 44084,
+      "sha256": "6727a0fa7d6cf7fdc4c8fc199e697efbee7136769cabacd2a9893a7e9fb57e8f"
+    },
+    {
+      "path": "tests/test_research_checkpoint_view.py",
+      "bytes": 4472,
+      "sha256": "78eb965a3bb4a8c0978644d3a252586912099be5d3d848a7b878b1da4c05c80a"
+    },
+    {
+      "path": "tests/test_live_summary_viewer.py",
+      "bytes": 26224,
+      "sha256": "2d2381309e57baf9df15619ab9a3843e3a6ad7209e412d258a8545322698c44f"
+    }
+  ],
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_RESEARCH_CHECKPOINT_VIEW_20261118.json",
+    "reports/evidence_independent_research_checkpoint_view_20261118/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/SOURCE_PINS.json",
+      "bytes": 651,
+      "sha256": "d99ea7ab7df278524a453c8f72034267fa263cadecfc31ae36bd0e27af6084b7"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/python311.json",
+      "bytes": 224,
+      "sha256": "c1fdb9781abb3cb442c2075a3db2cffb92f9e90b72ead9ebb658c741d2c66df6"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/python311.log",
+      "bytes": 2375,
+      "sha256": "aa309939dc94e52c9d449f2b45b783bd08bec43f9018195f0d3ec785e873d422"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/python311_corrected.json",
+      "bytes": 416,
+      "sha256": "c3128890b5b9d06523be9088eb18f24364c40051fdf8e6cc9be8d640399d941e"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/python311_corrected.log",
+      "bytes": 285,
+      "sha256": "346209b8bbd1f0fc1036d5e220133db8562c6e48ccc40cefc0ff42d83e8aebb1"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/python312.json",
+      "bytes": 194,
+      "sha256": "7f272211e3dfae446a70400fb2f41e76151ad06781864362efbb6e724f0b7728"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/python312.log",
+      "bytes": 285,
+      "sha256": "519e24cf30335bde13b35ced97c41beac9afa9b0e1054d7c7ebb255d29559367"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/run_focused.py",
+      "bytes": 1384,
+      "sha256": "0ee70b799b8b78ca0a4a120397a52bc4456b80c874e5661fb57fc4ed99352a03"
+    },
+    {
+      "path": "reports/evidence_independent_research_checkpoint_view_20261118/run_focused_initial.py",
+      "bytes": 1324,
+      "sha256": "2005c5b34e8e048d4232ac94c9d0ec31b8708905b8d612fadeb09b60a650714f"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Focused unittest modules test_research_checkpoint_view and test_live_summary_viewer under isolated3.11/3.12, no site, network/process deny hook and private-data deny hook. No full suite or actual reader/entry."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "runtime_results": {
+      "311": {
+        "errors": 0,
+        "failures": 0,
+        "network_attempts": 0,
+        "private_read_attempts": 0,
+        "tests": 29,
+        "wall_seconds": 0.06557204201817513
+      },
+      "312": {
+        "errors": 0,
+        "failures": 0,
+        "network_attempts": 0,
+        "private_read_attempts": 0,
+        "tests": 29,
+        "wall_seconds": 0.08347695801057853
+      }
+    },
+    "public_evidence": "Four new pinned records plus six existing public records, exactly ten allowed public inputs in integrated build. No whole report or private evidence export.",
+    "semantics": "191 responses,44/80 fifth prefix,$0.0129589 invoice usage,$0.017152 conservative exposure,$0.001003 new hold and six unresolved holds agree with accepted actual audits. Provider outcome and charge stay UNKNOWN. E01 metrics33/13/20/0 are readiness metadata, not ballots or forecasts.",
+    "adverse_cases": "Every changed new source pin refuses build before any output write. Existing old public-source tamper controls retained. HTML escapes dynamic fields and provenance strings.",
+    "replay_and_history": "Rebuild is byte-identical and includes checkpoint exactly once. Historical preview and snapshot bytes preserved, earlier four studies retained as distinct results.",
+    "preserved_reviewer_error": "Initial3.11 audit guard classified stdlib under data/processed/toolchains as private data and stopped before successful execution. Corrected only the reviewer hook to allow active trusted runtime prefix. Original script/log/receipt preserved; no production code change or test omitted.3.12 already passed first attempt.",
+    "actual_private_reads_or_network_attempts": 0
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only pinned public reports and scratch fixtures; raw responses/owner/key data not accessed.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Lead browser AX/screenshot observation is not independently repeated or certified here.",
+    "Exact pinned records make this a dated checkpoint; new records require deliberate code/pin update and revalidation.",
+    "Historical study financial totals remain historical; current exposure is separately labeled and is not provider invoice total.",
+    "No fullCI, startup/G03, population or human-persuasion acceptance."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "None for this four-file viewer delta. Broader CI/E02 implementation fixes remain separately under review."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may commit accepted viewer source/tests/evidence and continue frozen CI/E02 handoffs."
+}

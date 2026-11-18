@@ -485,6 +485,9 @@ def build(root, output):
     followup = followup_projection(root)
     crossmodel = crossmodel_projection(root)
     wrapper = wrapper_projection(root) if WRAPPER_AUDIT_SHA256 is not None else None
+    from .research_checkpoint_view import projection as checkpoint_projection, render as render_checkpoint
+    checkpoint = checkpoint_projection(root)
+    summary['latest_checkpoint'] = checkpoint
     if wrapper is not None:
         summary['wrapper_result'] = wrapper
     summary['followup_result'] = followup
@@ -495,7 +498,7 @@ def build(root, output):
     base = original_bytes.decode('utf-8')
     if START in base or base.count('<main>') != 1 or base.count('</main>') != 1:
         raise ValueError('Unexpected historical preview structure')
-    page = base.replace('<main>', (render_wrapper(wrapper) if wrapper is not None else '') + render_crossmodel(crossmodel) + render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
+    page = base.replace('<main>', render_checkpoint(checkpoint) + (render_wrapper(wrapper) if wrapper is not None else '') + render_crossmodel(crossmodel) + render_followup(followup) + render(summary) + '\n<details class="historical-preview"><summary>Historical snapshot · November 3 recorded runs and completion receipts</summary><main>', 1)
     # The new overlay has its own main; close only the historical main.
     pos = page.rfind('</main>')
     page = page[:pos] + '</main></details>' + page[pos + len('</main>'):]

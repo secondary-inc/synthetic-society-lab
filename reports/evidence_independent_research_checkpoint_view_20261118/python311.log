@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_research_checkpoint_view_20261118/run_focused.py", line 14, in <module>
+    suite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(n) for n in ('test_research_checkpoint_view','test_live_summary_viewer'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/suite.py", line 24, in __init__
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/suite.py", line 57, in addTests
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_research_checkpoint_view_20261118/run_focused.py", line 14, in <genexpr>
+    suite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(n) for n in ('test_research_checkpoint_view','test_live_summary_viewer'))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/unittest/loader.py", line 162, in loadTestsFromName
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_research_checkpoint_view.py", line 3, in <module>
+    import tempfile
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_research_checkpoint_view_20261118/run_focused.py", line 12, in audit
+    events['private_read_attempts']+=1;raise PermissionError('PRIVATE_INPUT_DENIED')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: PRIVATE_INPUT_DENIED

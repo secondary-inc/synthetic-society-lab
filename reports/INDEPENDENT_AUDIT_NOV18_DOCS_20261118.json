@@ -1,0 +1,164 @@
+{
+  "TASK_ID": "INDEPENDENT_NOV18_DOCS_FACTUAL_REVIEW_20261118",
+  "status": "BLOCKED",
+  "scope": "Only six lead-owned changed docs against18be6bc; historical observations unchanged.",
+  "recorded_at_UTC": "2026-11-18T16:23:29.429754+00:00",
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_NOV18_DOCS_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_NOV18_DOCS_20261118.json"
+  ],
+  "source_refs": [
+    {
+      "path": "README.md",
+      "bytes": 14359,
+      "sha256": "642ac3343f3d6302419977a49191fe72e75174aa7e434ab46ad5ec8f22194900"
+    },
+    {
+      "path": "publications/BLOG_DRAFT.md",
+      "bytes": 15867,
+      "sha256": "b60a83bf1b120361258255870a0969dd2d7d6fe0c80fb90a89732cd0a8d4f56f"
+    },
+    {
+      "path": "publications/LIMITATIONS.md",
+      "bytes": 22416,
+      "sha256": "34ed89ca29938a2b32a892eb1c3f44cd4c843c9d31ffdf589a8463f890060872"
+    },
+    {
+      "path": "publications/REPRODUCIBILITY.md",
+      "bytes": 19259,
+      "sha256": "d634df9fa146ad62a12d7fcb8200e478e3c72994cd887d294b8fe5ca15100ca3"
+    },
+    {
+      "path": "publications/TECHNICAL_PAPER_DRAFT.md",
+      "bytes": 40262,
+      "sha256": "8502475f8d54705e0e5206ca53ae2a52f01e82e20599877bdea3f11801661ea4"
+    },
+    {
+      "path": "reports/STATUS.md",
+      "bytes": 189217,
+      "sha256": "226e60889825077d1360a14c7760fa4df273249e3c1632cf539c01f6b92d31fc"
+    }
+  ],
+  "added_link_checks": [
+    {
+      "source": "README.md",
+      "target": "reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "README.md",
+      "target": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/BLOG_DRAFT.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/BLOG_DRAFT.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/LIMITATIONS.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/LIMITATIONS.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/LIMITATIONS.md",
+      "target": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/44244801559",
+      "status": "EXTERNAL_RECORDED_LINK_NOT_REACQUIRED"
+    },
+    {
+      "source": "publications/REPRODUCIBILITY.md",
+      "target": "../reports/E02_CANARY_ACTUAL_STOP_OBSERVATION_20261117.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/REPRODUCIBILITY.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/REPRODUCIBILITY.md",
+      "target": "../reports/E01_SAVED_JSON_ACTUAL_OBSERVATION_20261118.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/REPRODUCIBILITY.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/REPRODUCIBILITY.md",
+      "target": "../reports/E01_SOURCE_JOB_LEDGER_20261118.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/TECHNICAL_PAPER_DRAFT.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "publications/TECHNICAL_PAPER_DRAFT.md",
+      "target": "../reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "reports/STATUS.md",
+      "target": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/44244801559",
+      "status": "EXTERNAL_RECORDED_LINK_NOT_REACQUIRED"
+    },
+    {
+      "source": "reports/STATUS.md",
+      "target": "GITHUB_DELIVERY_OBSERVATION_20261118_01.json",
+      "status": "EXISTS"
+    },
+    {
+      "source": "reports/STATUS.md",
+      "target": "RESEARCH_CHECKPOINT_20261118_01.json",
+      "status": "EXISTS"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "git diff18be6bc over six exact doc paths; no source imports or test execution."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "new_relative_links": "All exist.",
+    "totals": "191 verified responses/$0.0129589 verified usage/$0.017152 exposure and six holds match accepted stopped-run audit.",
+    "E01": "33slots/13documentstates/20jobs/0ballots and no adoption/forecast match accepted actual ledger.",
+    "CI": "Both ordinary groups ERROR/WALL_LIMIT;216 portable cases per runtime pass and four exact historical qualification jobs NOT_RUN. Full CI remains unaccepted.",
+    "historical_records": "Earlier totals remain labeled dated history; immutable reports are not rewritten."
+  },
+  "findings": [
+    {
+      "id": "DOC-01",
+      "priority": 2,
+      "file": "publications/LIMITATIONS.md",
+      "line": 5,
+      "text": "The process reached a dispatch intent and failed cleanup before a CPU-limit termination",
+      "problem": "Failed cleanup is not established. UNCERTAIN and FAILED close were durable, but whether close read-back/cleanup returned is unknown. This phrasing can imply conservative accounting cleanup failed.",
+      "required_correction": "Describe dispatch intent, durable UNCERTAIN transition/FAILED close and unknown cleanup completion; retain unknown original error/provider receipt/charge.",
+      "status": "OPEN"
+    }
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Tracked docs and accepted aggregate reports only; no actual source bodies or private financial access.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "CI run/external links not reacquired; review uses supplied verified artifacts and historical delivery checks.",
+    "The ZIP download digest assertion and dedicated PDF step are lead-observed; no independent artifact-capture manifest was included in this six-doc review. This is a scope limit, not a contrary finding.",
+    "No full research/scientific or runtime acceptance follows from documentation."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Correct DOC-01; focused wording/link recheck then closes this documentation review."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead corrects the single phrasing; independent reviewer verifies exact updated delta. Worker code fixes remain separately pending."
+}

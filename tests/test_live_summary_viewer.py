@@ -374,8 +374,10 @@ class LiveSummaryTests(unittest.TestCase):
                 self.assertEqual((out/'index.html').read_bytes(),b'<main>BEFORE</main>')
                 self.assertEqual([p.name for p in out.iterdir()],['index.html'])
 
-    def test_four_study_build_opens_six_public_evidence_files_and_preserves_history(self):
+    def test_four_studies_and_checkpoint_open_only_public_evidence_and_preserve_history(self):
+        from civiclab.research_checkpoint_view import SOURCES
         public={ROOT/name for name in (viewer.AUDIT,viewer.FOLLOWUP_AUDIT,viewer.CROSSMODEL_AUDIT,viewer.CROSSMODEL_AGGREGATE,viewer.WRAPPER_AUDIT,viewer.WRAPPER_AGGREGATE)}
+        public.update(ROOT / path for path, _ in SOURCES.values())
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp);(out/'index.html').write_bytes(b'<main>HISTORICAL</main>\r\n');(out/'snapshot.json').write_bytes(b'{"old":1}\n')
             opened=[];original=Path.open
@@ -383,7 +385,7 @@ class LiveSummaryTests(unittest.TestCase):
                 self.assertTrue(path in public or path.parent==out,'undeclared input/output path');opened.append(path);return original(path,*args,**kwargs)
             with patch.object(Path,'open',checked):viewer.build(ROOT,out)
             self.assertEqual(set(path for path in opened if path in public),public)
-            self.assertEqual(sum(path in public for path in opened),6)
+            self.assertEqual(sum(path in public for path in opened),10)
             page=(out/'index.html').read_text();summary=json.loads((out/'live-summary.json').read_bytes())
             for section in ('wrapper-visibility-summary','crossmodel-summary','followup-summary'):
                 self.assertEqual(page.count('id="'+section+'"'),1)
