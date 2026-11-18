@@ -1,0 +1,23 @@
+--- 
++++ 
+@@ -167,6 +167,11 @@
+               "candidate_identity_accepted": False, "role": None, "stages": [], "blockers": []}
+     if all(value is None for i, value in enumerate(values) if i not in (0, 4)) and values[4] in (None, "n/a"):
+         result["role"] = "ORDINAL_ONLY_SEPARATOR"
++        return result
++    if (all(value is None for i, value in enumerate(values) if i not in (0, 1, 2, 4))
++            and values[4] in (None, "n/a") and values[1] in STATES
++            and type(values[2]) is str and bool(values[2].strip())):
++        result["role"] = "STATE_ONLY_SEPARATOR"
+         return result
+     require(values[1] in STATES and type(values[2]) is str and bool(values[2].strip())
+             and values[3] in {"S", "S-FULL TERM", "S-UNEXPIRED TERM"}, "STATE_CONTEST_CONTEXT")
+@@ -243,7 +248,7 @@
+     """Internal exact-count checks; never mixes events or adds subtotal rows."""
+     groups = {}
+     for record in parsed["records"]:
+-        if record["role"] == "ORDINAL_ONLY_SEPARATOR":
++        if record["role"] in {"ORDINAL_ONLY_SEPARATOR", "STATE_ONLY_SEPARATOR"}:
+             continue
+         for stage in record["stages"]:
+             key = (record["state"], record["contest_label"], stage["stage"])

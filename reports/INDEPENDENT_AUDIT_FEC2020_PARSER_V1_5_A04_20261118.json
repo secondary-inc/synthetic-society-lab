@@ -1,0 +1,166 @@
+{
+  "kind": "INDEPENDENT_AUDIT_FEC2020_PARSER_V1_5_A04_20261118",
+  "status": "PASS_SCOPED_CANDIDATE_ONLY",
+  "UTC": "2026-11-18T18:21:17.536448+00:00",
+  "scope": "Strict state-only separator methods/component and A04 staticcaller; optional closedA03 metadata",
+  "handoff": {
+    "path": "reports/E01_FEC2020_PARSER_V1_5_HANDOFF_20261118.json",
+    "bytes": 2833,
+    "sha256": "099666f40ca274604e5d050f1beb557ec27a457de186c940bf00532311f8bfef"
+  },
+  "source": {
+    "path": "src/civiclab/e01/fec2020_parser_v1.py",
+    "bytes": 29228,
+    "sha256": "d8b6f57ed7cd55f08088ecf86d27ef5a3b6bb99f970d667fc0daea4ab1aa832a"
+  },
+  "caller": {
+    "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once_a04.py",
+    "bytes": 7055,
+    "sha256": "ee99bf7e77980f33b97e33c54b21130f407bb2007e9eb2097df336e49ff663c5"
+  },
+  "static_checks": {
+    "all10handoffpins": true,
+    "changed_functions_only": [
+      "row_record",
+      "stage_controls"
+    ],
+    "old48test_bodies_exact": true,
+    "author_tests": 51,
+    "A04_identity_pin_only_AST_delta": true
+  },
+  "method_review": {
+    "role": "STATE_ONLY_SEPARATOR requires exactinteger ordinal, validstate, nonblankstrlabel, FECNoneorn/a and all other22fields None. Existing extra/combined column validations apply before classification.",
+    "provenance": "Raw26values/types,rowhash,source/sheet/state retained. No stages, no candidate acceptance, no vote/zero/class/party/date imputation.",
+    "stage_controls": "Explicitly skips only oldordinal-only and newstate-only separators; all other stagecontrol loops remain unchanged.",
+    "source_diagnostic": "Retained root metadata reports541rows15543cells,zero count errors,one state-context refusal149,onlycolumns0/1/2/4 nonempty. This justifies a general strict format role, not an outcome-selected numeric change. No workbook reopened by reviewer.",
+    "adverse_controls": "Every forbidden column independently mutated with0/emptystr/False refuses. NoneFEC preservesrawlabel/source. Invalidordinal, FECblank/case/space/numeric/lookalike refuse.",
+    "caller": "A04 AST normalizes exactly to acceptedA03 after only scope/name/guard-prefix/parserSHA updates. Same exclusiveonecall,source/MIME/config pins,closeddiagnostic and resource caps."
+  },
+  "independent_pure_runs": [
+    {
+      "CPU_seconds": 1.501905,
+      "actual_workbook_reader_network_key_owner_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_V1_5_FOCUSED",
+      "runtime": "3.11.17",
+      "successful": true,
+      "tests": 60,
+      "wall_seconds": 1.569729582988657
+    },
+    {
+      "CPU_seconds": 1.417481,
+      "actual_workbook_reader_network_key_owner_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_V1_5_FOCUSED",
+      "runtime": "3.12.14",
+      "successful": true,
+      "tests": 60,
+      "wall_seconds": 1.4762788750231266
+    }
+  ],
+  "closed_A03": {
+    "evidence_status": "PASS",
+    "checks": {
+      "all_four_plan_code_review_pins_historical_parser_snapshot": true,
+      "both_logs_exact": true,
+      "bounded_terminal_failure": true,
+      "chronology": true,
+      "closed_plan_and_observation_commit_binding": true,
+      "exact_five_closed_files": true,
+      "fixed_nonpaid_allocation": true,
+      "no_candidate_output": true,
+      "no_retry_or_adoption": true,
+      "one_exclusive_claim_reserved": true,
+      "private_public_observation_exact": true,
+      "private_public_plan_exact": true,
+      "safe_stdout_exact": true,
+      "stderr_empty": true
+    },
+    "fixed_failure": {
+      "error_type": "ParserRefused",
+      "safe_code": "STATE_CONTEST_CONTEXT",
+      "status": "STOPPED_NO_RETRY"
+    },
+    "observed_wall_seconds": 1.1554155409976374,
+    "observed_child_CPU_seconds": 0.9987299999999999,
+    "reserved_reader_calls": 1,
+    "candidate_output_present": false,
+    "adoption": false,
+    "scope_consumed": true,
+    "historical_binding_note": "A03 parser8b0ae5b4 compared against independently frozen V1.4 source, since currentparser isnow V1.5; no historic source file was altered.",
+    "review_read_bytes": 66225,
+    "review_wall_seconds": 0.00274866700056009
+  },
+  "allocation": {
+    "pure_suite_children": 2,
+    "per_suite_bound": "120CPU/120wall",
+    "suite_composition": "51author+5priorindependentsecurity+4newindependentseparator=60 eachruntime",
+    "extra_metadata_only_child": "30CPU/30wall/8MiB, explicit optionalclosedA03 review",
+    "actual_reader_workbook_currentowner_key_network_model_calls": 0,
+    "cost_usd": 0
+  },
+  "acceptance": {
+    "methods_component": "PASS_EXACT_d8b6f57e",
+    "static_A04_caller": "PASS_EXACT_ee99bf7e",
+    "actual_A04_outcome": "NOT_RUN_BY_REVIEWER",
+    "numeric_source_adoption": "NOT_ACCEPTED",
+    "full_E01": "INCOMPLETE"
+  },
+  "limitations": [
+    "Retained root structure diagnostic is metadata evidence, not an independently repeated source read.",
+    "One-call claim reserves a reader, not proof of fullreader completion. A03 stopped atSTATE_CONTEST_CONTEXT, no output; A01/A02/A03 remain consumed.",
+    "All advance source/date/seat/class/party/round/count/sampling checks remain applicable. Recognizing a separator does not certify other rows or count reconciliation.",
+    "No native workbook reader execution or newsource/count adoption occurred. Root retains separately bounded A04 release/execution responsibility.",
+    "Existing trusted-runtime/file-reservation/native startup limits are unchanged; no new G03/process-tree certificate.",
+    "E02V3 systemerror continuation is outside this review and was not executed or recreated."
+  ],
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/A03_closed_metadata.log",
+      "bytes": 3388,
+      "sha256": "f17c7e8987c6fa9f749ed403842edf01d78fd83d51aee1bf1fc24c2d8ac53cdc"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/STATIC_CHECKS.json",
+      "bytes": 204,
+      "sha256": "9db881df6cc9e4d25084d0de6bf20b7c5cc5f2e254475770761aab51435033c2"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/check_A03_closed_metadata.py",
+      "bytes": 4358,
+      "sha256": "4a059368501e5cdf2b8fcac68958ab5c16ce56abf6e7613d325138a505301d21"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/frozen_fec2020_parser_v1.py",
+      "bytes": 29228,
+      "sha256": "d8b6f57ed7cd55f08088ecf86d27ef5a3b6bb99f970d667fc0daea4ab1aa832a"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/frozen_read_candidate_once_a04.py",
+      "bytes": 7055,
+      "sha256": "ee99bf7e77980f33b97e33c54b21130f407bb2007e9eb2097df336e49ff663c5"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/frozen_test_fec2020_parser_v1.py",
+      "bytes": 27628,
+      "sha256": "c49add512c5b4c4d9209637bef090770cd6db8c192d6b7e5fef8dd3d66d962dc"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/pure_311.log",
+      "bytes": 10486,
+      "sha256": "7b1d7c76ed3b80736aa9a4a07194ad0a9d10dbaffb084149957173e190d2f774"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/pure_312.log",
+      "bytes": 10487,
+      "sha256": "072175acec19db725d3e62450dea71215c1ed36587d0109a0dc56ed92e050bbd"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_5_20261118/run_focused.py",
+      "bytes": 3641,
+      "sha256": "49d32b20faa3dfb88a9c1c17cbb3a0dc27de6deb76ec26ca7509cd3903d86216"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "FEC_PARSER_V1_5_STATE_SEPARATOR_HANDOFF",
+  "status": "AUTHOR_PASS_PENDING_INDEPENDENT_REVIEW",
+  "reason": "A03 refusedSTATE_CONTEST_CONTEXT. One bounded all-row metadata-only diagnostic examined541rows/15543cells and found exactlyone row-shape refusal(row149) withonlyordinal,state,label,fecplaceholder. No count failures. New STATE_ONLY_SEPARATOR requires validstate/nonblanklabel/empty all other fields except ordinal/fecNone-or-n-a; preserves rawprovenance,no stages/candidate acceptance; exclude explicitly from stagecontrols. Data-bearing/malformed rows stillrefuse.",
+  "diagnostic": "reports/E01_FEC2020_STRUCTURE_DIAGNOSTIC_RESULT_20261118.json",
+  "tests": {
+    "python311": "51 PASS",
+    "python312": "51 PASS",
+    "old48testbodies": "unchanged"
+  },
+  "actual_reader": "A03 consumed/refused; A04prepared_NOT_RUN",
+  "adoption": false,
+  "cost_usd": 0,
+  "files": [
+    {
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "bytes": 29228,
+      "sha256": "d8b6f57ed7cd55f08088ecf86d27ef5a3b6bb99f970d667fc0daea4ab1aa832a"
+    },
+    {
+      "path": "tests/test_fec2020_parser_v1.py",
+      "bytes": 27628,
+      "sha256": "c49add512c5b4c4d9209637bef090770cd6db8c192d6b7e5fef8dd3d66d962dc"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once_a04.py",
+      "bytes": 7055,
+      "sha256": "ee99bf7e77980f33b97e33c54b21130f407bb2007e9eb2097df336e49ff663c5"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/a04_caller.diff",
+      "bytes": 4549,
+      "sha256": "c3d3c38a7ba7631cc119b5671754e2c94cfb04c31516fe6062c459c74f503fc2"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/parser.diff",
+      "bytes": 1231,
+      "sha256": "7904a8436d04a7a0617f025f40ae05b66746a382ec18eefabaaa41438c99286e"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/parser_before.py",
+      "bytes": 28910,
+      "sha256": "8b0ae5b4a20b875324eaaa7ab2a43f31cc83cfca322ac6a5537ce3b206f6f430"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/pure_311.log",
+      "bytes": 7669,
+      "sha256": "a3273051361aaa8486804c935b6eb38381bed8f11f5b1cdc1fc8aaf05ebc44e1"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/pure_312.log",
+      "bytes": 7669,
+      "sha256": "0f750a4888490564f8947590cdbe154202f673023413c5cad3cefc40967309a0"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/tests.diff",
+      "bytes": 1765,
+      "sha256": "8023709be738ffddb003534e7173e33be58d4ab1a6e5b6e9ac631c450b128709"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_5_20261118/tests_before.py",
+      "bytes": 26289,
+      "sha256": "5cbf634935ed394e402fc7fd09a8f7c8607e959e8e0598225fb6d7b5883a6c61"
+    }
+  ]
+}

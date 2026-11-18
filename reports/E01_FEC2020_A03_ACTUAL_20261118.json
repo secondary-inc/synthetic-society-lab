@@ -1,0 +1,30 @@
+{
+  "kind": "E01_FEC_A03_ACTUAL_OBSERVATION",
+  "source_commit": "ace3b170c4135003f83d895689e9b48453466f17",
+  "started_at_utc": "2026-11-18T18:18:14.494745+00:00",
+  "finished_at_utc": "2026-11-18T18:18:15.650127+00:00",
+  "exit_code": 1,
+  "outer_stop_reason": null,
+  "elapsed_seconds": 1.1554155409976374,
+  "waited_child_CPU_seconds": 0.9987299999999999,
+  "retry_allowed": false,
+  "adoption": false,
+  "forecast_consumption": false,
+  "logs": [
+    {
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_03/stdout.log",
+      "bytes": 100,
+      "sha256": "0d94c6b6b74574bcdfaf9a30386d35f322d8c1219066fd4dbf6dc32ddf8111b5"
+    },
+    {
+      "path": "data/processed/e01_fec2020_candidate_actual_20261118_03/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "summary": {
+    "status": "STOPPED_NO_RETRY",
+    "error_type": "ParserRefused",
+    "safe_code": "STATE_CONTEST_CONTEXT"
+  }
+}

@@ -382,6 +382,33 @@ class ArchiveSuffixRegressionTests(unittest.TestCase):
         self.assertEqual(result['declared_expanded_bytes'],sum(len(v.encode() if isinstance(v,str) else v) for v in members.values()))
 
 
+class StateSeparatorTests(unittest.TestCase):
+    def state_row(self):
+        values=[None]*26
+        values[0]=2;values[1]='IA';values[2]='Fictional state label';values[4]='n/a'
+        return [cell(v) for v in values]
+
+    def test_state_only_separator_retains_provenance_without_stages(self):
+        record=p.row_record(self.state_row(),2,source())
+        self.assertEqual(record['role'],'STATE_ONLY_SEPARATOR')
+        self.assertEqual(record['state'],'IA')
+        self.assertEqual(record['stages'],[])
+        self.assertFalse(record['candidate_identity_accepted'])
+        self.assertEqual(p.stage_controls({'records':[record]}),[])
+
+    def test_data_bearing_row_is_not_silently_skipped(self):
+        for column,value in ((8,'Fictional candidate'),(11,1),(15,2),(23,'Fictional note')):
+            row=self.state_row();row[column]=cell(value)
+            with self.subTest(column=column),self.assertRaisesRegex(p.ParserRefused,'STATE_CONTEST_CONTEXT'):
+                p.row_record(row,2,source())
+
+    def test_invalid_state_or_label_is_not_a_separator(self):
+        for column,value in ((1,'XX'),(2,None),(2,''),(2,' '),(4,'S0ZZ00001')):
+            row=self.state_row();row[column]=cell(value)
+            with self.subTest(column=column),self.assertRaises(p.ParserRefused):
+                p.row_record(row,2,source())
+
+
 class UnopposedMarkerTests(unittest.TestCase):
     def test_unopposed_preserves_marker_and_unknown_count(self):
         self.assertEqual(p.count('Unopposed'),{'votes':None,'status':'NONNUMERIC_MARKER','literal':'Unopposed'})
