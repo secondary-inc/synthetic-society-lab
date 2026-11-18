@@ -1,0 +1,87 @@
+{
+  "actual_reader_calls": 1,
+  "adoption_and_forecast_flags": {
+    "accepted_coverage_promoted": false,
+    "actual_selection": false,
+    "forecast_consumption": false,
+    "source_adoption": false
+  },
+  "console_bytes": 0,
+  "cost_usd": 0,
+  "exit_code": 0,
+  "invocations": 1,
+  "kind": "E01_SAVED_JSON_ACTUAL_OBSERVATION_V1",
+  "ledger_metrics": {
+    "distinct_source_representation_count": 40,
+    "document_state_coverage_count": 13,
+    "final_ballots_accepted": 0,
+    "legacy_roster_state_count": 12,
+    "regular_frame_slots": 33,
+    "remaining_document_acquisition_jobs": 20,
+    "typed_status_history_state_count": 1
+  },
+  "limitations": [
+    "The ledger describes saved document-readiness metadata; it does not accept final ballots, choose a race sample or run a forecast.",
+    "The observed wall duration is the exec tool process wait measurement, not a full interpreter startup or all-stage timing certificate.",
+    "Recorded logical IO counters exclude the separately bounded selected-runtime origin rehash and trusted runtime/stdlib startup; RLIMIT_CPU is per process.",
+    "The one-shot scope is consumed. No retry or changed packet follows from this observation.",
+    "Original G03, full CI, acquisition, calibration, human anchoring and research completion gates remain separate."
+  ],
+  "model_calls": 0,
+  "network_calls": 0,
+  "packet_sha256": "745f6531ebf35e8fbd47595558a21fd8755334ef3b64cb070011d741220e7e74",
+  "private_exit_receipt": {
+    "bytes": 2785,
+    "path": "data/processed/e01_saved_json_actual_20261118_01/process-exit.local.json",
+    "sha256": "4cf7e88cbc79ab0e0c378c4666091c7f4b246ede4d108c36f2212ec90f9d22ba"
+  },
+  "public_ledger": {
+    "bytes": 18310,
+    "path": "reports/E01_SOURCE_JOB_LEDGER_20261118.json",
+    "sha256": "7d001f7d1839fa41204e333f766180baf4c227fc97038ecbbc520eddbbcce9ff"
+  },
+  "recorded_usage": {
+    "failed": false,
+    "project_source_bytes": 374638,
+    "reader_calls": 1,
+    "saved_JSON_bytes": 522395,
+    "write_bytes": 41249
+  },
+  "retained_control_artifacts": [
+    {
+      "bytes": 187,
+      "path": "data/processed/e01_saved_json_actual_20261118_01/stdout.jsonl",
+      "sha256": "b98b1b20985d71b722d145ffd049385788113fd282a6d0f84fb7f6361ac30715"
+    },
+    {
+      "bytes": 0,
+      "path": "data/processed/e01_saved_json_actual_20261118_01/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 289,
+      "path": "data/processed/e01_saved_json_one_call_control_v1/e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02/COMPLETE.json",
+      "sha256": "ed05dff1598d86605d12cf03b4e0a703de7a193ff2e3def7bddd2a8f496d4ad6"
+    },
+    {
+      "bytes": 354,
+      "path": "data/processed/e01_saved_json_one_call_control_v1/e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02/STARTED.json",
+      "sha256": "bbea8a4040d4c4e0ce51d627e2c3b780da367192c746e7ca7eb7a1a824738f69"
+    },
+    {
+      "bytes": 179,
+      "path": "data/processed/e01_saved_json_one_call_control_v1/e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02/WORKER_STARTED.json",
+      "sha256": "e6bb5aec1b9d752cc60f0e5c68ad80c39a46a1f85ecadc1e24ddffdee8442c50"
+    },
+    {
+      "bytes": 18310,
+      "path": "data/processed/e01_saved_json_one_call_control_v1/e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02/source_job_ledger.json",
+      "sha256": "7d001f7d1839fa41204e333f766180baf4c227fc97038ecbbc520eddbbcce9ff"
+    }
+  ],
+  "retries": 0,
+  "scope_id": "e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02",
+  "source_commit": "778f46294fb00cf8a5a2cff176fe053cd74a036e",
+  "status": "RECORDED_SAVED_METADATA_ONLY_PENDING_INDEPENDENT_OUTCOME_REVIEW",
+  "tool_observed_wall_seconds": 0.053083542
+}

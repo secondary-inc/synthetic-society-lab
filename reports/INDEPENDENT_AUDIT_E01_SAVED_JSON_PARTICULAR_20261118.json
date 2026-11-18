@@ -1,0 +1,172 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_SAVED_JSON_PARTICULAR_20261118",
+  "status": "PASS",
+  "decision": "Particular metadata/source/runtime conditions pass for the exact prepared packet only. Root execution release is a separate action; no actual reader or sixteen-file payload execution was performed by this audit.",
+  "recorded_at_UTC": "2026-11-18T05:33:48.051143+00:00",
+  "packet": {
+    "path": "data/processed/e01_saved_json_one_call_packets/packet_20261118_01.json",
+    "bytes": 8238,
+    "sha256": "745f6531ebf35e8fbd47595558a21fd8755334ef3b64cb070011d741220e7e74",
+    "scope_id": "e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02",
+    "issued_at": 1794979854,
+    "expires_at": 1794983454,
+    "owner_mode": "0600 current UID",
+    "source_commit_as_supplied_by_lead": "778f46294fb00cf8a5a2cff176fe053cd74a036e"
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_PARTICULAR_20261118.json",
+    "reports/evidence_independent_e01_saved_json_particular_20261118/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_e01_saved_json_particular_20261118/LEGACY_VERDICT_METADATA.json",
+      "bytes": 1064,
+      "sha256": "9a333e0cc437ae247ca4153996320c58d0ce7884d2df59d2e393974c7cb64481"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_particular_20261118/PARTICULAR_CHECKS.json",
+      "bytes": 2514,
+      "sha256": "48396b97b517b05e8be612f69f7050f0cc571c5c9b1ae1db2bdab1487d055451"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_particular_20261118/PARTICULAR_CORRECTION.json",
+      "bytes": 2874,
+      "sha256": "f8d034fd1a14fb2242e09bb3e2b5e1c06cdfa3a7c1960505f6e918ad3d8fca28"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_particular_20261118/review_packet.py",
+      "bytes": 6574,
+      "sha256": "d6857edeee995703c1104e4d73ef18a3f0763f5b59018f85d851a11a9770c6c0"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_particular_20261118/review_packet_correction.py",
+      "bytes": 6902,
+      "sha256": "b8a56823d777621545677649bfac5c3135ba1740bf3dda08d8150a22a6bbd05e"
+    }
+  ],
+  "source_and_review_refs": [
+    {
+      "path": "data/processed/e01_saved_json_one_call_packets/packet_20261118_01.json",
+      "bytes": 8238,
+      "sha256": "745f6531ebf35e8fbd47595558a21fd8755334ef3b64cb070011d741220e7e74"
+    },
+    {
+      "path": "scripts/run_e01_saved_json_entry_v1_20261117.py",
+      "bytes": 5848,
+      "sha256": "cece6007ac3c43fae3b16d67a0e9a4d8c7c2e1d64207e330c869e1eedc148115"
+    },
+    {
+      "path": "src/civiclab/e01/saved_json_entry_v1.py",
+      "bytes": 29540,
+      "sha256": "50700d8c5d288a626731e1bd230f9718ddac2e1cdacc2110127cad0979ac9677"
+    },
+    {
+      "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+      "bytes": 33311,
+      "sha256": "684eb291c1d462afe07d994b7c940290fa26e5fb89907212e75dc69085562010"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_READ_FAMILY_FIX_V1_1_20261117.json",
+      "bytes": 18819,
+      "sha256": "0d41e66a2206e8b3a79d1f0024737fbf2ae2a23afb906df7be2ee32de39c6013"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_1_20261117.json",
+      "bytes": 6586,
+      "sha256": "1a34cb0fe67fb5a9487ccbb1d8837f98037ad7102d0fad784f69ecd9a0b6b9e3"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Frozen review_packet.py original attempt; separately authorized review_packet_correction.py; one final legacy report metadata read only. No actual candidate execution or further invocation allocated."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "substantive_checks": {
+      "exact_packet_pin": true,
+      "packet_mode0600_owner": true,
+      "exact_scope": true,
+      "window": true,
+      "armed_only_root": true,
+      "pin:scripts/run_e01_saved_json_entry_v1_20261117.py": true,
+      "pin:src/civiclab/e01/saved_json_entry_v1.py": true,
+      "pin:src/civiclab/e01/saved_json_job_ledger_v1.py": true,
+      "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_READ_FAMILY_FIX_V1_1_20261117.json": true,
+      "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_1_20261117.json": true,
+      "manifest_candidate_identical": true,
+      "manifest_candidate_pin": true,
+      "selected_runtime_profile_pin": true,
+      "packet_runtime_sha": true,
+      "accepted_core_exact": true,
+      "accepted_helper_exact": true,
+      "accepted_launcher_exact": true,
+      "closed_packet_validator": true,
+      "actual_metadata_validator": true,
+      "selected_native_runtime_matches": true,
+      "no_preexisting_civiclab_modules": true,
+      "exact_limits": true,
+      "scope_not_consumed": true
+    },
+    "completed_checks": 23,
+    "all_completed_substantive_checks_pass": true,
+    "legacy_review_acceptance": {
+      "S01": "PASS_CORRECTED_WITH_INDEPENDENT_REGRESSION",
+      "authored_adapter_guard_projector_component": "PASS_SCOPED",
+      "actual_recorded_admission": "NOT_RUN_DISABLED"
+    },
+    "native_runtime": "Selected 3.12 profile exactly matches packet c4708c0dc62ffc2bde49c58838fbafb5955819dd24523b1cdb6a7fe9fd08bea7. This rehash does not certify all interpreter startup reads.",
+    "metadata_identity": "Exact raw manifest candidate matches packet manifest; closed packet and pure actual metadata validators pass with canonical JSON bytes. All raw-versus-canonical bindings are validated as metadata; actual body bytes were not read.",
+    "reviewer_errors_preserved": [
+      "Original invocation passed decoded manifest dict to a validator requiring JSON bytes, raising Refused. It is a reviewer call error, not a packet defect.",
+      "Correction completed 23 substantive checks, then an auxiliary generic assertion assumed both historical reports expose top-level status; legacy report exposes decision. KeyError is preserved. It is not classified as a product failure or fabricated passing assertion.",
+      "Final separately permitted one-read legacy metadata inspection confirms its actual scoped acceptance decision; no candidate or validator rerun."
+    ],
+    "resource_observation": {
+      "original_explicit_read_bytes": 110841,
+      "correction_conservative_open_read_bytes": 18410508,
+      "correction_wall_seconds": 0.01482195800053887,
+      "final_legacy_metadata_read_bytes": 18819,
+      "subprocesses": 0,
+      "actual16_body_reads": 0,
+      "actual_reader_calls": 0,
+      "network_calls": 0,
+      "model_calls": 0
+    }
+  },
+  "conditions_for_root_execution": [
+    "Unchanged exact packet/source/review/profile pins and unconsumed scope.",
+    "Packet still within its fixed release window.",
+    "Native Python 3.12 command uses -I -B -S with the reviewed exact launcher.",
+    "Exactly one actual reader in one worker, zero retries and zero network/model calls.",
+    "Parent/worker share main monotonic anchor and cumulative budget; no reset after failure.",
+    "Retain all STARTED/WORKER_STARTED/COMPLETE/FAILURE and stopped evidence.",
+    "All real body hashes, physical membership, code loader origin and output ledger checks must pass at execution time."
+  ],
+  "limits_and_interpretation": {
+    "wall": "Shared main-entry anchor 60 seconds: 57 work, 2 cleanup, 1 finalization; not whole interpreter/pre-main startup qualification.",
+    "CPU": "30 seconds RLIMIT_CPU per parent and per one worker, not aggregate 30 seconds.",
+    "saved_JSON_bytes": 8388608,
+    "project_source_bytes": 1048576,
+    "write_bytes": 2097152,
+    "public_bytes": 131072,
+    "console_bytes": 16384,
+    "reader_calls": 1,
+    "retries": 0,
+    "model_or_network_calls": 0,
+    "source_adoption": false,
+    "final_ballot_acceptance": false,
+    "forecast_or_evaluation_result": false,
+    "G03_or_whole_startup_acceptance": false
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Metadata/source/runtime only. No actual sixteen saved payload bodies, raw respondent/publisher records or accepted real reader execution.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "This scoped PASS does not prove actual files still match or forecast inputs are ready; actual entry must enforce hashes and fail closed.",
+    "No automatic restart/replay after consumption.",
+    "No broad CI, installer, cold-start or malicious same-UID containment claim.",
+    "Two preserved reviewer errors are explicit and were resolved without running the candidate."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Actual E01 offline ledger result and independent retained-output review remain NOT_RUN at this audit freeze.",
+    "Historical acquisition gaps, final-ballot acceptance, forecasting and separate G03 runtime work remain outside this particular metadata acceptance."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Root may make its separate one-shot release decision for this exact offline packet within the accepted conditions, then provide bounded recorded metadata for independent outcome review."
+}

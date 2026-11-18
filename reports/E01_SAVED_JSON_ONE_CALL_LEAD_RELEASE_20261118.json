@@ -1,0 +1,54 @@
+{
+  "acceptance": "One recorded saved-metadata ledger only after runtime input/output checks and separate outcome audit; no source/ballot/forecast promotion.",
+  "actual_scope": "data/processed/e01_saved_json_actual_20261118_01",
+  "command": [
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+    "-I",
+    "-B",
+    "-S",
+    "scripts/run_e01_saved_json_entry_v1_20261117.py",
+    "--root",
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab",
+    "--packet",
+    "data/processed/e01_saved_json_one_call_packets/packet_20261118_01.json",
+    "--packet-sha256",
+    "745f6531ebf35e8fbd47595558a21fd8755334ef3b64cb070011d741220e7e74"
+  ],
+  "created_at_UTC": "2026-11-18T05:34:31.452431+00:00",
+  "decision": "RELEASE_ONE_CALL_NO_RETRY",
+  "environment": "Empty environment except PATH=/usr/bin:/bin; isolated no-site no-bytecode native Python.",
+  "independent_particular_review": {
+    "bytes": 8867,
+    "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_PARTICULAR_20261118.json",
+    "sha256": "f72ba0b9cc4a70f4d1e4efb3deb5d3bb37a02af02143fc4a0be6231407a74229"
+  },
+  "kind": "ROOT_E01_EXACT_OFFLINE_ONE_CALL_RELEASE",
+  "limits": {
+    "CPU": "30 seconds RLIMIT_CPU per parent and per one worker, not aggregate 30 seconds.",
+    "G03_or_whole_startup_acceptance": false,
+    "console_bytes": 16384,
+    "final_ballot_acceptance": false,
+    "forecast_or_evaluation_result": false,
+    "model_or_network_calls": 0,
+    "project_source_bytes": 1048576,
+    "public_bytes": 131072,
+    "reader_calls": 1,
+    "retries": 0,
+    "saved_JSON_bytes": 8388608,
+    "source_adoption": false,
+    "wall": "Shared main-entry anchor 60 seconds: 57 work, 2 cleanup, 1 finalization; not whole interpreter/pre-main startup qualification.",
+    "write_bytes": 2097152
+  },
+  "packet": {
+    "bytes": 8238,
+    "expires_at": 1794983454,
+    "issued_at": 1794979854,
+    "owner_mode": "0600 current UID",
+    "path": "data/processed/e01_saved_json_one_call_packets/packet_20261118_01.json",
+    "scope_id": "e01-saved-json-0f14f1bcd9364b49a88ebd4271954a02",
+    "sha256": "745f6531ebf35e8fbd47595558a21fd8755334ef3b64cb070011d741220e7e74",
+    "source_commit_as_supplied_by_lead": "778f46294fb00cf8a5a2cff176fe053cd74a036e"
+  },
+  "source_commit": "778f46294fb00cf8a5a2cff176fe053cd74a036e",
+  "standing_authority": ".cursor/rules/responsible-autonomy.mdc; existing offline research scope; zero inference/purchases"
+}

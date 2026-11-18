@@ -1,0 +1,104 @@
+{
+  "TASK_ID": "INDEPENDENT_RESEARCH_CHECKPOINT_20261118_01",
+  "status": "PASS",
+  "decision": "All 32 pinned references and the current factual checkpoint claims agree with the accepted E01 actual/E02 stopped-run evidence and recorded GitHub delivery observation. This accepts the delivery checkpoint only.",
+  "recorded_at_UTC": "2026-11-18T05:39:23.193598+00:00",
+  "checkpoint_ref": {
+    "path": "reports/RESEARCH_CHECKPOINT_20261118_01.json",
+    "bytes": 8540,
+    "sha256": "67a2793d9bedb007e3cee2cb0a17220c2c96f39ba8f91a24de73afa6fe1dd0a0"
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_RESEARCH_CHECKPOINT_20261118_01.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_RESEARCH_CHECKPOINT_20261118_01.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Metadata/source bytes inspected and hashed only; no source imports, test execution or candidate reruns."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "pin_checks": {
+      "pin:reports/E01_ENTRY_DIAGNOSTIC_FIX_V1_1_20261117.json": true,
+      "pin:reports/E01_SAVED_JSON_ACTUAL_OBSERVATION_20261118.json": true,
+      "pin:reports/E01_SAVED_JSON_ONE_CALL_LEAD_RELEASE_20261118.json": true,
+      "pin:reports/E01_SAVED_JSON_ONE_CALL_PREPARATION_20261118.json": true,
+      "pin:reports/E01_SOURCE_JOB_LEDGER_20261118.json": true,
+      "pin:reports/E02_CANARY_ACTUAL_STOP_OBSERVATION_20261117.json": true,
+      "pin:reports/E02_CANARY_STOP_SOURCE_DIAGNOSIS_20261117.json": true,
+      "pin:reports/GITHUB_DELIVERY_OBSERVATION_20261118_01.json": true,
+      "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json": true,
+      "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_1_20261117.json": true,
+      "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_PARTICULAR_20261118.json": true,
+      "pin:reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json": true,
+      "pin:reports/RESEARCH_CHECKPOINT_20261117_03.json": true,
+      "pin:reports/STATUS.md": true,
+      "pin:reports/evidence_e02_canary_stop_source_diagnosis_20261117/diagnose_closed_once.py": true,
+      "pin:reports/evidence_independent_e01_saved_json_actual_20261118/ACTUAL_CHECKS.json": true,
+      "pin:reports/evidence_independent_e01_saved_json_actual_20261118/PUBLIC_AND_RECEIPT_JOINS.json": true,
+      "pin:reports/evidence_independent_e01_saved_json_actual_20261118/review_actual.py": true,
+      "pin:reports/evidence_independent_e01_saved_json_particular_20261118/LEGACY_VERDICT_METADATA.json": true,
+      "pin:reports/evidence_independent_e01_saved_json_particular_20261118/PARTICULAR_CHECKS.json": true,
+      "pin:reports/evidence_independent_e01_saved_json_particular_20261118/PARTICULAR_CORRECTION.json": true,
+      "pin:reports/evidence_independent_e01_saved_json_particular_20261118/review_packet.py": true,
+      "pin:reports/evidence_independent_e01_saved_json_particular_20261118/review_packet_correction.py": true,
+      "pin:scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py": true,
+      "pin:scripts/launch_e02_canary_with_saved_key_20261117.py": true,
+      "pin:scripts/run_e01_saved_json_entry_v1_20261117.py": true,
+      "pin:src/civiclab/e01/saved_json_entry_v1.py": true,
+      "pin:src/civiclab/e01/saved_json_job_ledger_v1.py": true,
+      "pin:src/civiclab/e02/wrapper_crossmodel_canary_v1.py": true,
+      "pin:src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py": true,
+      "pin:src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py": true,
+      "pin:tests/test_e01_saved_json_entry_v1.py": true
+    },
+    "factual_checks": {
+      "all_32_ref_pins_match": true,
+      "191_verified_responses": true,
+      "verified_usage_0_0129589": true,
+      "exposure_0_017152": true,
+      "hold_0_001003": true,
+      "no_new_verified_response": true,
+      "E01_reader_once": true,
+      "E01_13_states_20_jobs_0_ballots": true,
+      "E01_actual_pass_scoped": true,
+      "E02_execution_still_blocked": true,
+      "full_contract_incomplete": true,
+      "full_CI_not_certified": true,
+      "delivery_observation_head_matches": true,
+      "latest_STATUS_preserves_totals_and_unknowns": true
+    },
+    "original_ref_count": 32,
+    "factual_check_count": 14,
+    "full_test_execution": "NOT_RUN_NOT_REQUESTED",
+    "source_diagnosis_limit": "Source-diagnosis report is pinned as a separate static observation; this checkpoint review does not certify new live outcomes or normal reducer replay.",
+    "delivery_limit": "Existing delivery observation records verified head 778f462 and CI in_progress at its timestamp. No fresh network/GitHub check or later checkpoint push is asserted."
+  },
+  "resource_observation": {
+    "pin_inspection_logical_read_bytes": 522696,
+    "pin_inspection_wall_seconds": 0.001273750000000004,
+    "total_metadata_reads": "Below 2 MiB across inspection and final factual cross-check.",
+    "review_procedure_deviation": {
+      "kind": "CONSOLE_LIMIT_EXCEEDED_BY_REVIEWER",
+      "allocated_console_bytes": 8192,
+      "last_inspection_console_bytes_at_least": 13288,
+      "reason": "Reviewer unnecessarily printed a 12,500-character safe STATUS prefix plus delivery metadata. This exceeded the 8 KiB console allowance; factual checks and file integrity were unaffected. No raw data or credentials were printed. Output is preserved in tool history; no task/product acceptance rule was weakened.",
+      "further_tests_or_model_execution": false
+    }
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Tracked reports and source bytes only; no actual sixteen payloads, raw owner, reader/entry execution, key or network access.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Original completion contract remains incomplete.",
+    "E02 provider outcome/cost unknown; full new and five old holds preserved.",
+    "E01 saved-data consumer accepted, not forecasting or final-ballot acceptance.",
+    "Whole-startup/G03 and full CI remain unqualified.",
+    "Reviewer console deviation is explicit, not a product mismatch."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "20 E01 document-acquisition jobs and zero accepted final ballots.",
+    "E02 incomplete fifth-study analysis and unknown provider outcome.",
+    "Independent startup/fullCI and wider scientific gates remain."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may commit/deliver this factual checkpoint and select the next bounded offline runtime or E01 acquisition task."
+}

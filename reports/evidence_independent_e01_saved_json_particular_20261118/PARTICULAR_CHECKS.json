@@ -1,0 +1,71 @@
+{
+  "kind": "INDEPENDENT_E01_PARTICULAR_METADATA_REVIEW",
+  "status": "BLOCKED",
+  "checks": {
+    "exact_packet_pin": true,
+    "packet_mode0600_owner": true,
+    "exact_scope": true,
+    "window": true,
+    "armed_only_root": true,
+    "pin:scripts/run_e01_saved_json_entry_v1_20261117.py": true,
+    "pin:src/civiclab/e01/saved_json_entry_v1.py": true,
+    "pin:src/civiclab/e01/saved_json_job_ledger_v1.py": true,
+    "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_READ_FAMILY_FIX_V1_1_20261117.json": true,
+    "pin:reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_1_20261117.json": true,
+    "manifest_candidate_identical": true,
+    "manifest_candidate_pin": true,
+    "selected_runtime_profile_pin": true,
+    "packet_runtime_sha": true,
+    "accepted_core_exact": true,
+    "accepted_helper_exact": true,
+    "accepted_launcher_exact": true,
+    "closed_packet_validator": true
+  },
+  "errors_types_only": [
+    "Refused"
+  ],
+  "refs": [
+    {
+      "path": "data/processed/e01_saved_json_one_call_packets/packet_20261118_01.json",
+      "bytes": 8238,
+      "sha256": "745f6531ebf35e8fbd47595558a21fd8755334ef3b64cb070011d741220e7e74"
+    },
+    {
+      "path": "scripts/run_e01_saved_json_entry_v1_20261117.py",
+      "bytes": 5848,
+      "sha256": "cece6007ac3c43fae3b16d67a0e9a4d8c7c2e1d64207e330c869e1eedc148115"
+    },
+    {
+      "path": "src/civiclab/e01/saved_json_entry_v1.py",
+      "bytes": 29540,
+      "sha256": "50700d8c5d288a626731e1bd230f9718ddac2e1cdacc2110127cad0979ac9677"
+    },
+    {
+      "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+      "bytes": 33311,
+      "sha256": "684eb291c1d462afe07d994b7c940290fa26e5fb89907212e75dc69085562010"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_READ_FAMILY_FIX_V1_1_20261117.json",
+      "bytes": 18819,
+      "sha256": "0d41e66a2206e8b3a79d1f0024737fbf2ae2a23afb906df7be2ee32de39c6013"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_1_20261117.json",
+      "bytes": 6586,
+      "sha256": "1a34cb0fe67fb5a9487ccbb1d8837f98037ad7102d0fad784f69ecd9a0b6b9e3"
+    }
+  ],
+  "metadata": {
+    "failure_stage_check_count": 18
+  },
+  "explicit_read_bytes": 110841,
+  "runtime_rehash_bytes_additional": "Selected RuntimePin origin files; bounded by fixed accepted profile. No whole-startup IO certificate.",
+  "wall_seconds": 0.007444957998814061,
+  "actual16_body_reads": 0,
+  "actual_reader_calls": 0,
+  "subprocesses": 0,
+  "network_calls": 0,
+  "model_calls": 0,
+  "cost_usd": 0
+}

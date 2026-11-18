@@ -1,0 +1,136 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_SAVED_JSON_ACTUAL_20261118",
+  "status": "PASS",
+  "decision": "Exact released offline saved-JSON entry completed once and its retained public source-job ledger passes independent output review. This unblocks the saved-source-readiness consumer, not E01 forecasts, final ballots or the separate G03 whole-startup gate.",
+  "recorded_at_UTC": "2026-11-18T05:36:40.970689+00:00",
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ACTUAL_20261118.json",
+    "reports/evidence_independent_e01_saved_json_actual_20261118/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_e01_saved_json_actual_20261118/ACTUAL_CHECKS.json",
+      "bytes": 7925,
+      "sha256": "7cf9b88deef7ceeceed0a663fd3613500ce45dc1d9748cb4808e5a386e9e4af4"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_actual_20261118/PUBLIC_AND_RECEIPT_JOINS.json",
+      "bytes": 676,
+      "sha256": "d82f6d969ad796896746ba5fe9fb5e0607149f9b557a39672868cbe0fab7cfcb"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_actual_20261118/review_actual.py",
+      "bytes": 6220,
+      "sha256": "2808ad68d1b25b22f7c9320be58c215b7a1376fe7fdc80f54a336070a48bd764"
+    }
+  ],
+  "public_output_refs": [
+    {
+      "path": "reports/E01_SOURCE_JOB_LEDGER_20261118.json",
+      "bytes": 18310,
+      "sha256": "7d001f7d1839fa41204e333f766180baf4c227fc97038ecbbc520eddbbcce9ff"
+    },
+    {
+      "path": "reports/E01_SAVED_JSON_ACTUAL_OBSERVATION_20261118.json",
+      "bytes": 3706,
+      "sha256": "599234d04359cb8df5aff6fe8619fb148ccf89464159058bdde8b5e35a1e238f"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Bounded retained-output review_actual.py ran once; exact helper validate_ledger only, with no entry/reader re-execution. Final public metadata copy joins were requested separately by lead. Consumed actual scope must never be replayed."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "retained_checks": {
+      "receipt_pin": true,
+      "release_pin": true,
+      "packet_pin": true,
+      "release_binds_packet": true,
+      "release_binds_independent_particular_review": true,
+      "receipt_ref:stdout.jsonl": true,
+      "receipt_ref:stderr.log": true,
+      "receipt_ref:COMPLETE.json": true,
+      "receipt_ref:STARTED.json": true,
+      "receipt_ref:WORKER_STARTED.json": true,
+      "receipt_ref:source_job_ledger.json": true,
+      "accepted_helper_pin": true,
+      "exact_closed_real_ledger_validator": true,
+      "exact_ledger_hash": true,
+      "exact_control_members": true,
+      "complete_ledger_binding": true,
+      "usage_bounds": true,
+      "one_reader_no_failure": true,
+      "exact_usage": true,
+      "start_binds_scope_and_packet": true,
+      "worker_binds_scope_and_packet": true
+    },
+    "public_and_receipt_joins": {
+      "public_ledger_byte_hash_exact": true,
+      "public_metrics_match_retained_receipt": true,
+      "public_observation_binds_actual_ledger": true,
+      "public_observation_binds_process_receipt": true,
+      "retained_stdout_bytes_equal_receipt_object": true,
+      "complete_matches_receipt": true,
+      "stdout_matches_complete_status_and_hash": true,
+      "receipt_exact_one_success_no_retry": true,
+      "recorded_source_commit_matches_particular": true
+    },
+    "all_checks_pass": true,
+    "checks_count": 30,
+    "source_release_packet": "Accepted helper exact pin, lead release hash and packet pin match; release binds prior independent particular finding. STARTED and WORKER_STARTED bind same packet and exact scope.",
+    "control_members": "Exactly STARTED, WORKER_STARTED, source_job_ledger and COMPLETE. No FAILURE record.",
+    "output_validator": "Reviewed exact helper validate_ledger validates recorded provenance, closed schema, fixed row enums/digests/metrics, false flags, cost and raw-versus-canonical config bindings. No source reader invoked by auditor.",
+    "terminal": "Pinned zero stderr and 187-byte stdout exactly reserialize from receipt object; exit0/one invocation/no retry are recorded by lead. COMPLETE status/hash/usage match receipt and stdout.",
+    "audit_resources": {
+      "logical_private_copy_read_bytes": 81478,
+      "audit_wall_seconds": 0.016869207989657298,
+      "additional_safe_public_copy_read_bytes": 22016,
+      "actual16_rereads": 0,
+      "reader_or_entry_reruns": 0,
+      "network_or_model_calls": 0,
+      "current_owner_access": 0
+    }
+  },
+  "actual_recorded_usage": {
+    "saved_JSON_bytes": 522395,
+    "project_source_bytes": 374638,
+    "write_bytes": 41249,
+    "reader_calls": 1,
+    "failed": false,
+    "console_bytes": 0,
+    "model_calls": 0,
+    "cost_usd": 0,
+    "tool_observed_wall_seconds_as_recorded_by_lead": 0.053083542
+  },
+  "metrics": {
+    "distinct_source_representation_count": 40,
+    "document_state_coverage_count": 13,
+    "final_ballots_accepted": 0,
+    "legacy_roster_state_count": 12,
+    "regular_frame_slots": 33,
+    "remaining_document_acquisition_jobs": 20,
+    "typed_status_history_state_count": 1
+  },
+  "non_adoption_flags": {
+    "accepted_coverage_promoted": false,
+    "actual_selection": false,
+    "forecast_consumption": false,
+    "source_adoption": false
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Existing recorded saved-readiness metadata only. Actual saved payloads admitted by the released entry were not reread by auditor. Reviewed output contains statuses/hashes/provenance, not redistributed raw publisher/respondent data.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Runtime selected profile is accepted, but no whole interpreter/pre-main startup or G03/PyPA installer certification is implied.",
+    "CPU30 is per parent/worker process, not an aggregate30-second measurement; main-anchor60 wall budget is separate from startup.",
+    "One successful run does not independently monitor all physical IO or certify full CI.",
+    "13 document states are not13 accepted final ballots; actual final-ballot count remains0.",
+    "No source adoption, selection, coverage promotion, forecast consumption, model inference or retrospective forecast evaluation occurred.",
+    "Report verifies retained artifact joins and exact recorded limits; no consumed-scope replay."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "20 document acquisition jobs remain.",
+    "Final ballots accepted0, with geography/candidate/source acquisition and historical baseline readiness still separate gates.",
+    "Separate G03 whole-startup/runtime qualification remains unresolved; no full CI PASS.",
+    "E02 canary billing/HTTP outcome remains unknown under preserved full hold; this offline work does not alter accounting."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may update STATUS and commit scoped actual-output acceptance, then select the next allowed acquisition/validation job from the recorded ledger without promoting unresolved forecast gates."
+}
