@@ -1,0 +1,14 @@
+{
+  "time_UTC": "2026-11-18T03:56:10.552176+00:00",
+  "invocation": 1,
+  "runtime": "3.11.17",
+  "command": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+    "-I",
+    "-B",
+    "-S",
+    "-c",
+    "import sys,runpy;sys.path.insert(0,str(__import__('pathlib').Path.cwd()/'src'));sys.argv=['tests/test_wrapper_canary_inherited_integration_v1.py'];runpy.run_path(sys.argv[0],run_name='__main__')"
+  ],
+  "scope": "Same frozen2framework tests normalpositive+7views+availability"
+}

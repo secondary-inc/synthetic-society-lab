@@ -1,0 +1,34 @@
+{
+  "runtime": "3.12.14",
+  "attempt": 1,
+  "command": [
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+    "-I",
+    "-B",
+    "-S",
+    "-c",
+    "import sys,runpy;sys.path.insert(0,'/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src');sys.argv=['/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_canary_inherited_integration_v1.py'];runpy.run_path(sys.argv[0],run_name=\"__main__\")"
+  ],
+  "source_snapshot": [
+    {
+      "path": "scripts/qualify_e02_canary_inherited_mock_v1_20261117.py",
+      "snapshot": "reports/evidence_e02_canary_inherited_mock_v1_20261117/attempt-3.12-01/qualify_e02_canary_inherited_mock_v1_20261117.py",
+      "bytes": 5266,
+      "sha256": "b3aeee7713f3c26ab96a7a3c24f5416d16c9ccc212d640c37899de9f09378ade"
+    },
+    {
+      "path": "tests/test_wrapper_canary_inherited_integration_v1.py",
+      "snapshot": "reports/evidence_e02_canary_inherited_mock_v1_20261117/attempt-3.12-01/test_wrapper_canary_inherited_integration_v1.py",
+      "bytes": 14975,
+      "sha256": "b19634d11bd9c6ae747a72551179e97207e153727397f2bf74537903d0446b2b"
+    },
+    {
+      "path": "reports/evidence_e02_canary_inherited_mock_v1_20261117/TEST_PLAN.json",
+      "snapshot": "reports/evidence_e02_canary_inherited_mock_v1_20261117/attempt-3.12-01/TEST_PLAN.json",
+      "bytes": 1640,
+      "sha256": "ef3cbc8c9b5b05cff211a5f862b59ae066a11bdacd710c948ca8bfbcde33835f"
+    }
+  ],
+  "environment": "PATH only",
+  "scope": "L03 normal inherited MOCK integration/privateclones, no actual/currentowner"
+}
