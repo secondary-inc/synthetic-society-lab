@@ -1,0 +1,113 @@
+{
+  "accepted_review": {
+    "bytes": 18299,
+    "path": "reports/INDEPENDENT_AUDIT_E02_EXACT_CANARY_PACKET_20261117_02.json",
+    "sha256": "50269c6b7c0943122d4786d17d342792a398c4ffdb1fa61409f3522a823ef2aa"
+  },
+  "authority": "Existing November5 bounded autonomous research authorization, unchanged shared5USD/E021USD/fifthstudy0.20USD/E01paid0. No additional money or data publication authority.",
+  "before_execution_status": "NOT_RUN",
+  "conditional_exposure_after_reservation_microusd": 17152,
+  "credit_purchases": 0,
+  "current_owner_and_prices": "NOT_YET_OBSERVED. Mandatory locked currentowner/head/ANCHOR verification before two counted fresh catalog proofs; no grant unless all pass.",
+  "decision": "RELEASE_ONE_ORIGINAL45_ONLY",
+  "dependency_audits": [
+    {
+      "bytes": 8602,
+      "path": "reports/INDEPENDENT_AUDIT_E02_CLOSED_REPLAY_ACTUAL_V1_20261117.json",
+      "sha256": "5c3ef931ffe46fce21868b46690d0902b22cd66601ecd5e5787d45a3fb9f5763"
+    },
+    {
+      "bytes": 20437,
+      "path": "reports/INDEPENDENT_LEAD_AUDIT_E02_LAUNCH_BOUNDARIES_V1_20261117.json",
+      "sha256": "6e10e02bd6730c27db8403b3be7bc556eedd72301366e0d66b6eb6ee0906043f"
+    },
+    {
+      "bytes": 24277,
+      "path": "reports/INDEPENDENT_AUDIT_E02_NORMAL_INHERITED_L03_V1_20261117.json",
+      "sha256": "b5d4ec70f489625d7e24a6b8ac07fe844a5cc17f20e0160904b760bcca6f708f"
+    },
+    {
+      "bytes": 16389,
+      "path": "reports/INDEPENDENT_AUDIT_E02_CANARY_SAVED_KEY_DIAGNOSTICS_V1_1_20261117.json",
+      "sha256": "59af8f573274867ad475e1e4aab7d74ef08a6464e1b8e9fa66e18a1ef8b80631"
+    }
+  ],
+  "existing_holds_microusd": [
+    340,
+    340,
+    775,
+    788,
+    1008
+  ],
+  "external_caller": [
+    {
+      "bytes": 3410,
+      "path": "scripts/launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "c4b2bd2d378b3fae5e22ecbe332fcefe2f8548257817409c53f1637f3cbe44e3"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 11207,
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    }
+  ],
+  "kind": "ROOT_ONE_SLOT_LIVE_CANARY_RELEASE",
+  "limits": {
+    "CPU_seconds": 60,
+    "E01_microusd": 0,
+    "E02_microusd": 1000000,
+    "POST": 1,
+    "catalog_GET": 2,
+    "lifetime_dispatches": 229,
+    "operation_seconds": 240,
+    "parent_POST": 80,
+    "parent_catalog_GET": 16,
+    "parent_statistics_GET": 240,
+    "phase_seconds": 120,
+    "price_age_seconds": 900,
+    "shared_microusd": 5000000,
+    "statistics_GET": 3,
+    "study_microusd": 200000
+  },
+  "model_retries": 0,
+  "original_failed_slot44": "UNCHANGED_FAILED_UNCERTAIN",
+  "original_full80_analysis": "NOT_RUN_INCOMPLETE",
+  "packet_sha256": "61e5297bc1553747f5577db34556e35da8120357ee90088542d99d1b10a85cbd",
+  "predecessor_candidate01": "Withdrawn UNRELEASED/NOT_RUN; exact old evidence preserved, not overwritten.",
+  "prior_conservative_exposure_microusd": 16149,
+  "public_reporting": "No raw prompt/response/key/account secret. Actual errors only validated closed transport diagnostic. FullCI/original research completion not certified.",
+  "recorded_at_UTC": "2026-11-18T04:04:28.268104+00:00",
+  "release_sha256": "39edc24484dc78c00a07a8d47eddb33f78a4ab15845ed074e903bb7f935bacd5",
+  "remaining_seconds_at_release": 679.731896,
+  "request": {
+    "baseline_order": 13,
+    "conditional_reservation_microusd": 1003,
+    "input_token_bound": 4631,
+    "max_output_tokens": 256,
+    "maximum_permitted_reservation_microusd": 1785,
+    "model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "pair_seed": 2315288556,
+    "phase": "post",
+    "requested_route": "nebius/fp8",
+    "required_reported_provider": "Nebius",
+    "slot": 45,
+    "visibility": "OMITTED"
+  },
+  "root_execution_conditions": [
+    "Useexactpacket 61e5297bc1553747f5577db34556e35da8120357ee90088542d99d1b10a85cbd,leadrelease39edc24484dc78c00a07a8d47eddb33f78a4ab15845ed074e903bb7f935bacd5,caller eb89cb07d5ebf4229439c67081b919db83fe4192c45c45dac9ec7e0e0bc68255,currentbridgec4b2bd2d\u2026 andfrozenoriginal launcher/keyreader. No source/control edits afterreview.",
+    "Actual scope/controlfiles must be new/create-once and hashrechecked;onlyroot copies/releases. Thisauditor didnotcreateactualscope orcallkeyreader.",
+    "ActualnormalCanaryOwnerV1 lockedinheritedverification+expectedhead+ANCHOR mustpass beforecatalog/grant/reserve. Do notsubstitute closedexport ascurrentstate orcreate/resetowner.",
+    "Count twofreshA/BcatalogintentGETs againstsameowner/parent beforeproofs;allfreshness/equality/remainingphasechecks mustpassbeforegrant. Drift/failurestops,notnewlease/aliasrefetch.",
+    "AtmostonePOST fororiginal45;stats404only withinthreeintentGETs;singleusecapabilityandglobalidentityremainspent acrossinterruptions/crashes/aliases. Retainalloldholds andfullnewholdwhenbillingunknown.",
+    "Do notextendexpiredwindow,disabledeadline,raisebudget,addfallback,reclassifyold44orinsertcanaryintooriginalfull80envelope. Stopwithoutresendonfailure;separate bounded investigation ifneeded.",
+    "Record actualprovider/usage/cost/error/exclusion/parentreferences and outcome onlyfromretainedverifiedevidence;privateinputs/keysstayignored. Noautomaticexternalpublication."
+  ],
+  "source_commit": "7a4b36210e092746111df5aff08eed2b75b0dcc0",
+  "valid_from_utc": "2026-11-18T04:00:48+00:00",
+  "valid_until_utc": "2026-11-18T04:15:48+00:00"
+}
