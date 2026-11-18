@@ -1,0 +1,366 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JOB_LEDGER_WIP_DELIVERY_20261117.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Review separately frozen discovery-safe correction.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JOB_LEDGER_WIP_DELIVERY_20261117.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Rehash the explicit original manifest files and preserved final snapshot. AST parse without import. Do not execute candidates or open referenced private inputs."
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "No full implementation, CI, runtime upgrade or research acceptance.",
+    "Initial guard denial retained; exact denied path unrecorded and cause not independently certified.",
+    "Working test correction is outside this historical receipt; it needs a new freeze and review."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Explicit authored source, fixtures, snapshots and metadata only. No actual saved-reader inputs, raw respondent or publisher data, credentials or live-owner history opened. Pattern scan is limited.",
+  "TASK_ID": "Independent E01 saved-job-ledger original WIP delivery review, November 17",
+  "TESTS_RUN_AND_RESULTS": {
+    "author_recorded_results": "30 mock checks per runtime, two invocations each exhausted. Attempt 1 retained one guard denial; attempt 2 recorded zero. Author evidence only, not independently rerun or accepted.",
+    "credential_pattern_matches": [],
+    "independent_execution": "NOT_RUN: static delivery audit only",
+    "original_manifest_current_refs": "22 of 23 current refs match. Author correction changed working test during review; original test bytes verified in preserved final snapshot."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Original test changes shared process resource limits and alarm during import.",
+    "Actual reader, actual input manifest, guarded closure and release remain unreviewed or absent."
+  ],
+  "decision": {
+    "corrected_version": "NOT_RUN",
+    "full_implementation_or_execution_release": "NOT_RUN",
+    "historical_evidence_preservation": "PASS",
+    "original_import_safe_delivery": "BLOCKED",
+    "truthful_WIP_mock_metadata": "PASS within static scope"
+  },
+  "finding": {
+    "consequence": "Ordinary discovery would constrain the collector process and arm an alarm before the main guard. Direct AST/source evidence; no import executed.",
+    "evidence": [
+      "resource.setrlimit(resource.RLIMIT_CPU,(120,120))",
+      "resource.setrlimit(resource.RLIMIT_FSIZE,(33554432,33554432))",
+      "signal.alarm(120)"
+    ],
+    "original_lines": [
+      12,
+      13,
+      15
+    ],
+    "path": "tests/test_e01_source_job_ledger_v1.py",
+    "requested_remedy": "Move limits and alarms into standalone guarded main; retain original snapshots and version corrected freeze.",
+    "severity": "P1"
+  },
+  "input_manifest": {
+    "bytes": 5279,
+    "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/FROZEN_WIP_MANIFEST.json",
+    "sha256": "06ba63f655bf49e7beb9405d744fa259d52addd78fb47a65bf5aa7662aa28e92"
+  },
+  "manifest_ref_observations": [
+    {
+      "expected": {
+        "bytes": 25240,
+        "path": "src/civiclab/e01/source_job_ledger_v1.py",
+        "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 25240,
+        "path": "src/civiclab/e01/source_job_ledger_v1.py",
+        "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 656,
+        "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+        "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 656,
+        "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+        "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 24111,
+        "path": "tests/test_e01_source_job_ledger_v1.py",
+        "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+      },
+      "matches": false,
+      "observed": {
+        "bytes": 24290,
+        "path": "tests/test_e01_source_job_ledger_v1.py",
+        "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 20421,
+        "path": "reports/E01_SAVED_JOB_LEDGER_V1_CODE_HANDOFF_20261117.json",
+        "sha256": "8fc6db33ec2f756ffb65c684e4371c1180cab6bf483706631d7927e2bdb253d7"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 20421,
+        "path": "reports/E01_SAVED_JOB_LEDGER_V1_CODE_HANDOFF_20261117.json",
+        "sha256": "8fc6db33ec2f756ffb65c684e4371c1180cab6bf483706631d7927e2bdb253d7"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 771,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/SUITE_ATTEMPT_1_STARTED.json",
+        "sha256": "9b7024fba7047593830e15c5b4ed18dcf82a59d1a5b7761b9c276469c863c68c"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 771,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/SUITE_ATTEMPT_1_STARTED.json",
+        "sha256": "9b7024fba7047593830e15c5b4ed18dcf82a59d1a5b7761b9c276469c863c68c"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 796,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/SUITE_ATTEMPT_2_STARTED.json",
+        "sha256": "fb5a83d17b1dc81249b3a5ea1dd94414d8943438dcd8ab8a2eff40fce70dac7a"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 796,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/SUITE_ATTEMPT_2_STARTED.json",
+        "sha256": "fb5a83d17b1dc81249b3a5ea1dd94414d8943438dcd8ab8a2eff40fce70dac7a"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 13383,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/TRANSITIVE_IMPORT_INSPECTION.json",
+        "sha256": "2aad10be6fc43a44df69fb2f621f22549ca5f29d2fb43af3e239cc74002d865e"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 13383,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/TRANSITIVE_IMPORT_INSPECTION.json",
+        "sha256": "2aad10be6fc43a44df69fb2f621f22549ca5f29d2fb43af3e239cc74002d865e"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 656,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_compile_e01_saved_job_ledger_v1_20261117.py",
+        "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 656,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_compile_e01_saved_job_ledger_v1_20261117.py",
+        "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 25240,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_source_job_ledger_v1.py",
+        "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 25240,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_source_job_ledger_v1.py",
+        "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 24111,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_test_e01_source_job_ledger_v1.py",
+        "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 24111,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_test_e01_source_job_ledger_v1.py",
+        "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 30849,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python311.json",
+        "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 30849,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python311.json",
+        "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 30849,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python312.json",
+        "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 30849,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python312.json",
+        "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 656,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_compile_e01_saved_job_ledger_v1_20261117.py",
+        "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 656,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_compile_e01_saved_job_ledger_v1_20261117.py",
+        "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 25240,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_source_job_ledger_v1.py",
+        "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 25240,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_source_job_ledger_v1.py",
+        "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 23931,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_test_e01_source_job_ledger_v1.py",
+        "sha256": "74515f61c55b4c2ccff71c96a08f2d494da3ad867949a86a9dfc8afd8f1a7124"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 23931,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_test_e01_source_job_ledger_v1.py",
+        "sha256": "74515f61c55b4c2ccff71c96a08f2d494da3ad867949a86a9dfc8afd8f1a7124"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python311.json",
+        "sha256": "803d4790e223ab51a5468873f8f11792ccc13be3b201d95a876e7e8e257256b2"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python311.json",
+        "sha256": "803d4790e223ab51a5468873f8f11792ccc13be3b201d95a876e7e8e257256b2"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 3816,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python311.log",
+        "sha256": "ae2d39847fce685844b641f9b495fd1f9d51ef1037917ab7374804df78746bbc"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 3816,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python311.log",
+        "sha256": "ae2d39847fce685844b641f9b495fd1f9d51ef1037917ab7374804df78746bbc"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python312.json",
+        "sha256": "e7c12d9e80c6cdf89da8329a215f2fd926f3703f44c81da6996048ecc111793c"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python312.json",
+        "sha256": "e7c12d9e80c6cdf89da8329a215f2fd926f3703f44c81da6996048ecc111793c"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 3816,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python312.log",
+        "sha256": "4597cbbe7013835c7aa69c5aac2ab091f6b712b7f45609b7f8b0c47a08e64d24"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 3816,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python312.log",
+        "sha256": "4597cbbe7013835c7aa69c5aac2ab091f6b712b7f45609b7f8b0c47a08e64d24"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.json",
+        "sha256": "5918f5803e2a8c38e396ece6271ad6deae4a8a44b74b6e5ab42c4e894a9bbc76"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.json",
+        "sha256": "5918f5803e2a8c38e396ece6271ad6deae4a8a44b74b6e5ab42c4e894a9bbc76"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 34689,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.log",
+        "sha256": "4b2aa6c25b6f6713d4b79466dcb9f5c2a62d1f6d3fc9c213496253b6c3286967"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 34689,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.log",
+        "sha256": "4b2aa6c25b6f6713d4b79466dcb9f5c2a62d1f6d3fc9c213496253b6c3286967"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.json",
+        "sha256": "4022d1422bbb67f1707fd843b6acd87e9dbf221dbf83e32156b296e4538fca16"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 114,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.json",
+        "sha256": "4022d1422bbb67f1707fd843b6acd87e9dbf221dbf83e32156b296e4538fca16"
+      }
+    },
+    {
+      "expected": {
+        "bytes": 34689,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.log",
+        "sha256": "b0dcd0516cc13c7c76824a84aa3cd9e857a096278c76fd2f50dd69b674fd7094"
+      },
+      "matches": true,
+      "observed": {
+        "bytes": 34689,
+        "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.log",
+        "sha256": "b0dcd0516cc13c7c76824a84aa3cd9e857a096278c76fd2f50dd69b674fd7094"
+      }
+    }
+  ],
+  "no_additional_execution_access_spending_publication_authority": true,
+  "original_test_preserved_snapshot": {
+    "bytes": 24111,
+    "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_test_e01_source_job_ledger_v1.py",
+    "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+  },
+  "source_and_entry_static_scope": "Stdlib source imports and static declarations; actual_entry refuses actual execution. Main-guarded entry emits disabled status, with no real reader call. This is not full code certification."
+}

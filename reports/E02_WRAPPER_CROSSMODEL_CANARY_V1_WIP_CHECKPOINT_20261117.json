@@ -1,0 +1,148 @@
+{
+  "acceptance_criteria_remaining": [
+    "Bounded focused author suite on both supported runtimes with all failures and source hashes retained.",
+    "Freeze implementation and obtain separate independent code/integration audit; workers cannot certify their own milestone.",
+    "No actual execution until future exact packet, fresh counted proofs, independent review and lead release are accepted.",
+    "Lead performs safe aggregate commit/push and verifies remote commit; local snapshot is not proof of GitHub delivery."
+  ],
+  "author_test_plan": "reports/evidence_e02_wrapper_crossmodel_canary_v1_code_20261117/TEST_PLAN.json",
+  "cost_and_access_this_checkpoint": {
+    "API_calls": 0,
+    "actual_model_cost_USD": 0,
+    "compute_and_agent_labor": "Not included in model/API figure.",
+    "credential_reads": 0,
+    "live_owner_access": 0,
+    "model_POSTs": 0
+  },
+  "file_snapshot": [
+    {
+      "authored_test_methods": [],
+      "bytes": 7624,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1.py",
+      "sha256": "98595b5e94269f5e04d73d092428875420b05c111b8db9fbade354d9cbbeaa8d",
+      "syntax": "PASS_AST_PARSE_ONLY_NO_IMPORT_OR_EXECUTION"
+    },
+    {
+      "authored_test_methods": [],
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd",
+      "syntax": "PASS_AST_PARSE_ONLY_NO_IMPORT_OR_EXECUTION"
+    },
+    {
+      "authored_test_methods": [],
+      "bytes": 8656,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11",
+      "syntax": "PASS_AST_PARSE_ONLY_NO_IMPORT_OR_EXECUTION"
+    },
+    {
+      "authored_test_methods": [],
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d",
+      "syntax": "PASS_AST_PARSE_ONLY_NO_IMPORT_OR_EXECUTION"
+    },
+    {
+      "authored_test_methods": [
+        "test_success_one_slot_preserves_all_history_and_no_reopen",
+        "test_402_preserves_full_new_and_five_old_holds",
+        "test_provider_drift_stops_without_refund",
+        "test_unknown_bill_stops_and_keeps_full_hold",
+        "test_404_only_three_gets_no_post_retry",
+        "test_atomic_before_and_after_commit_crash",
+        "test_alias_head_slot_and_io_ordinals_refuse",
+        "test_overrun_preserves_known_charge_and_stops",
+        "test_copied_parent_payload_slot_and_original_halt_negatives",
+        "test_stale_future_catalog_and_usage_provider_fields_refuse",
+        "test_two_processes_cannot_grant_same_original_slot",
+        "test_identity_independent_of_head_alias",
+        "test_envelope_rejects_44_46_or_extra_records",
+        "test_clock_rollback_jump_deadline_cancel",
+        "test_full35_catalog_still_exceeds_original16"
+      ],
+      "bytes": 30659,
+      "path": "tests/test_wrapper_crossmodel_canary_v1.py",
+      "sha256": "0fc6f9199a5c1e79115fb9f25255f6fa24ef673c211f85c0c68c68475301bd2b",
+      "syntax": "PASS_AST_PARSE_ONLY_NO_IMPORT_OR_EXECUTION"
+    },
+    {
+      "bytes": 1934,
+      "path": "reports/evidence_e02_wrapper_crossmodel_canary_v1_code_20261117/TEST_PLAN.json",
+      "sha256": "9bc8c9e79eedf4c2737ac27e0191f409a3bd80a5b8acd97480beb5fcc761fa0e",
+      "syntax": "PASS_JSON_PARSE_ONLY"
+    },
+    {
+      "bytes": 407,
+      "path": "reports/evidence_e02_wrapper_crossmodel_canary_v1_code_20261117/parent-fingerprints.json",
+      "sha256": "bd480334e2829b36cd959071c5e924fe83abea6e7ee6bd63bccad61ffa154b3f",
+      "syntax": "PASS_JSON_PARSE_ONLY"
+    }
+  ],
+  "git_observation": {
+    "branch": "codex/research-foundation-and-baselines",
+    "delivery": "Lead owns staging/commit/push. This worker has not changed Git state or verified remote delivery.",
+    "local_head": "94df8fcd13f1db8abd0201791d2f18b16a3edd1c",
+    "remote_url": "https://github.com/secondary-inc/synthetic-society-lab.git"
+  },
+  "kind": "E02_AUTHOR_WORK_IN_PROGRESS_GITHUB_AUDIT_CHECKPOINT_V1",
+  "limitations": [
+    "Implementation is untested and may contain defects; no readiness or scientific validity claim.",
+    "Historical copied-history tests are deliberately not a complete historical regression suite.",
+    "Source snapshots are hash records, not copies of private responses, credentials or raw publisher/respondent data.",
+    "Other workers files and lead STATUS remain outside this worker ownership.",
+    "No external publication authority is created by this checkpoint."
+  ],
+  "proposed_canary_bounds_not_executed": {
+    "E01_paid_inference_microusd": 0,
+    "E02_cap_microusd": 1000000,
+    "combined_cap_microusd": 5000000,
+    "fifth_study_cap_microusd": 200000,
+    "new_model_POSTs": 1,
+    "new_runtime_catalog_GETs": 2,
+    "new_statistics_GETs": 3,
+    "resulting_physical_catalog_GET_ceiling": 14,
+    "resulting_runtime_catalog_GET_ceiling": 12
+  },
+  "recorded_at_UTC": "2026-11-17T15:57:21.405701+00:00",
+  "research_results": "No new experimental results. No evidence in this checkpoint changes the stopped parent result or its uncertainty holds.",
+  "status": "WORK_IN_PROGRESS_NOT_TESTED_NOT_RELEASED",
+  "unchanged_closed_parent_facts": {
+    "committed_responses": 44,
+    "conservative_owner_exposure_microusd": 16149,
+    "failed_slot": 44,
+    "failed_slot_hold_microusd": 775,
+    "full80_analysis": "NOT_RUN_INCOMPLETE",
+    "initial_setup_catalog_GETs": 2,
+    "model_POST_attempts": 45,
+    "physical_catalog_GETs": 12,
+    "runtime_catalog_GETs": 10,
+    "statistics_GET_attempts": 44,
+    "unfinished_holds": 5
+  },
+  "user_request": "Preserve new activity, work and updated results in GitHub with detailed audit logs.",
+  "validation_this_checkpoint": {
+    "checks": "Source AST/JSON parsing and limited secret-pattern scan only. No test suite/import/client/launcher/owner execution.",
+    "secret_pattern_scan": {
+      "files": 7,
+      "findings": [],
+      "limitation": "Limited pattern scan; not a general privacy or security certification.",
+      "patterns": [
+        "OpenRouter_key",
+        "Meta_access_token",
+        "GitHub_token",
+        "private_key"
+      ]
+    },
+    "test_suite_attempts_so_far": {
+      "3.11.17": 0,
+      "3.12.14": 0
+    }
+  },
+  "work_performed": [
+    "Authored a separate typed one-slot continuation candidate for original slot45 B/post/OMITTED, seed2315288556, baseline13.",
+    "Authored same-owner atomic claim/grant/reserve, durable bounded I/O intents and inherited-financial-validation integration.",
+    "Authored bounded client, future exact-release entry and focused temporary copied-history/mock tests.",
+    "Added preservation of historical initial catalog identity with a separately reviewed lease and two runtime fresh-catalog receipts; equality of tracked components remains required."
+  ]
+}

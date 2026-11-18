@@ -1,0 +1,64 @@
+{
+  "Git_action": "Root stages this exact list plus this manifest; worker makes no Git mutations.",
+  "actual_API_calls": 0,
+  "credential_reads": 0,
+  "freeze": "Worker pauses owned-file edits until root confirms the checkpoint commit. This WIP checkpoint grants no code acceptance, independent audit result, fresh proof, lease, packet or live authority.",
+  "full_suite_attempts": {
+    "3.11.17": 0,
+    "3.12.14": 0
+  },
+  "kind": "E02_OWNED_WIP_GIT_STAGING_MANIFEST_V1",
+  "labels": [
+    "WIP",
+    "NOT_TESTED",
+    "NOT_REVIEWED",
+    "NOT_RELEASED"
+  ],
+  "live_owner_access": 0,
+  "model_cost_USD": 0,
+  "owned_files": [
+    {
+      "bytes": 7624,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1.py",
+      "sha256": "98595b5e94269f5e04d73d092428875420b05c111b8db9fbade354d9cbbeaa8d"
+    },
+    {
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 8656,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 30659,
+      "path": "tests/test_wrapper_crossmodel_canary_v1.py",
+      "sha256": "0fc6f9199a5c1e79115fb9f25255f6fa24ef673c211f85c0c68c68475301bd2b"
+    },
+    {
+      "bytes": 1934,
+      "path": "reports/evidence_e02_wrapper_crossmodel_canary_v1_code_20261117/TEST_PLAN.json",
+      "sha256": "9bc8c9e79eedf4c2737ac27e0191f409a3bd80a5b8acd97480beb5fcc761fa0e"
+    },
+    {
+      "bytes": 407,
+      "path": "reports/evidence_e02_wrapper_crossmodel_canary_v1_code_20261117/parent-fingerprints.json",
+      "sha256": "bd480334e2829b36cd959071c5e924fe83abea6e7ee6bd63bccad61ffa154b3f"
+    },
+    {
+      "bytes": 6927,
+      "path": "reports/E02_WRAPPER_CROSSMODEL_CANARY_V1_WIP_CHECKPOINT_20261117.json",
+      "sha256": "bfcd339482962ba45171ac8ade2f2880857d45f0b8c6f64dcc75954f768ceb05"
+    }
+  ],
+  "private_raw_data_included": false,
+  "recorded_at_UTC": "2026-11-17T15:58:08.072926+00:00",
+  "source_validation": "AST and JSON parse only; no imports or execution. Limited credential-pattern scan returned zero matches."
+}

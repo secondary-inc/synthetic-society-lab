@@ -1,0 +1,418 @@
+{
+  "assessment_read_bytes": 378681,
+  "candidate_paths": [
+    "src/civiclab/e01/pipeline.py",
+    "src/civiclab/e01/ballots_v1_9_1.py"
+  ],
+  "candidate_runs_or_imports": 0,
+  "content_read_cap": 33554432,
+  "generic_REAL_races": [],
+  "generic_REAL_status": "BLOCKED_MISSING_VERIFIED_MANIFEST_AND_PRIOR_RETURNS",
+  "historical_recorded_artifact_metadata": [
+    {
+      "checksum_ledger_ref": {
+        "bytes": 1388,
+        "path": "data/processed/runs/e01-ed5b716aa76145258ece94c3df6b4188/checksums.json",
+        "sha256": "3d2611fdc535ed59062e3cd76a522e5324511529234d080c4c51aec80d7a87a2"
+      },
+      "directory_present": true,
+      "files": {
+        "S0.evaluation.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 9002,
+          "listed_hash": "c3014ef5106f0cf688483ca0d50185ffb23decdb7b7946d88704834081df27dd",
+          "present": true
+        },
+        "S0.predictions.frozen.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 11322,
+          "listed_hash": "82b3f81838459906c22040bef530f8897250ffff2041b303750b0ba421733fa3",
+          "present": true
+        },
+        "S_ZERO.evaluation.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 8559,
+          "listed_hash": "1f2a175ca76162ebe7e220dac49329449f0b64f64513c8946879b529b594f4b0",
+          "present": true
+        },
+        "S_ZERO.predictions.frozen.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 10883,
+          "listed_hash": "aec7a046eb33e1907b82842ec6dc6864f48b71fad57fa721f02a22147a54a1b5",
+          "present": true
+        },
+        "eligibility.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 692,
+          "listed_hash": "b42d7066a8c7feac518b05ced5fd6af43179eeac5fc74be03bc8882d01d94331",
+          "present": true
+        },
+        "features.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 10496,
+          "listed_hash": "99ed4807cb6e073bf26d4f9f4b4be4cd38f4eb29a1168a8c21e32759c3238116",
+          "present": true
+        },
+        "outcomes.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 3719,
+          "listed_hash": "088b1d2b674683fc18a2200270d8e80d1a9b7bdf60408466b245d839d9444def",
+          "present": true
+        },
+        "paired_comparison.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 4014,
+          "listed_hash": "45507b97d0b138119dc59ab513807f554759e59b915e624071bd28b7dd9124f5",
+          "present": true
+        },
+        "race_manifest.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 89160,
+          "listed_hash": "212b9d06d9b984daf81dded4d594cbb9a3c8c1350652639efff9f04eb4b798b3",
+          "present": true
+        },
+        "source_receipt.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 3708,
+          "listed_hash": "e1ee9e08846538741099680759b5b0b7ff6a9330ec9c863375be9593b87f9130",
+          "present": true
+        }
+      },
+      "numeric_bodies_read": false,
+      "run_id": "e01-ed5b716aa76145258ece94c3df6b4188"
+    },
+    {
+      "checksum_ledger_ref": {
+        "bytes": 1388,
+        "path": "data/processed/runs/e01-9a3e3305877f40b3a84e63bd5ca5ed1c/checksums.json",
+        "sha256": "06224fe7a661c379c452bae146376af0743b576658a0a43941b8e8c2a84082fd"
+      },
+      "directory_present": true,
+      "files": {
+        "S0.evaluation.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 9002,
+          "listed_hash": "c3014ef5106f0cf688483ca0d50185ffb23decdb7b7946d88704834081df27dd",
+          "present": true
+        },
+        "S0.predictions.frozen.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 11322,
+          "listed_hash": "82b3f81838459906c22040bef530f8897250ffff2041b303750b0ba421733fa3",
+          "present": true
+        },
+        "S_ZERO.evaluation.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 8559,
+          "listed_hash": "1f2a175ca76162ebe7e220dac49329449f0b64f64513c8946879b529b594f4b0",
+          "present": true
+        },
+        "S_ZERO.predictions.frozen.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 10883,
+          "listed_hash": "aec7a046eb33e1907b82842ec6dc6864f48b71fad57fa721f02a22147a54a1b5",
+          "present": true
+        },
+        "eligibility.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 692,
+          "listed_hash": "b42d7066a8c7feac518b05ced5fd6af43179eeac5fc74be03bc8882d01d94331",
+          "present": true
+        },
+        "features.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 10496,
+          "listed_hash": "99ed4807cb6e073bf26d4f9f4b4be4cd38f4eb29a1168a8c21e32759c3238116",
+          "present": true
+        },
+        "outcomes.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 3719,
+          "listed_hash": "088b1d2b674683fc18a2200270d8e80d1a9b7bdf60408466b245d839d9444def",
+          "present": true
+        },
+        "paired_comparison.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 4014,
+          "listed_hash": "45507b97d0b138119dc59ab513807f554759e59b915e624071bd28b7dd9124f5",
+          "present": true
+        },
+        "race_manifest.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 89160,
+          "listed_hash": "212b9d06d9b984daf81dded4d594cbb9a3c8c1350652639efff9f04eb4b798b3",
+          "present": true
+        },
+        "source_receipt.json": {
+          "body_read_or_rehashed": false,
+          "bytes": 3708,
+          "listed_hash": "e1ee9e08846538741099680759b5b0b7ff6a9330ec9c863375be9593b87f9130",
+          "present": true
+        }
+      },
+      "numeric_bodies_read": false,
+      "run_id": "e01-9a3e3305877f40b3a84e63bd5ca5ed1c"
+    }
+  ],
+  "historical_run_rebuilds_raw_inputs": true,
+  "input_refs": {
+    "configs/SOURCE_INVENTORY.json": {
+      "bytes": 94444,
+      "path": "configs/SOURCE_INVENTORY.json",
+      "sha256": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c"
+    },
+    "configs/e01_clerk_2020_senate_input_methods_v1.json": {
+      "bytes": 26910,
+      "path": "configs/e01_clerk_2020_senate_input_methods_v1.json",
+      "sha256": "ab53c24e13f27327b623f7f0ef622de046c3308f3e139418b3b79b73563bade0"
+    },
+    "configs/e01_official_sources.json": {
+      "bytes": 4198,
+      "path": "configs/e01_official_sources.json",
+      "sha256": "2df422bd26c0ba2809b9aeb0c89d48a02763d6740cd30ff0d7ef33a621f1eded"
+    },
+    "configs/e01_retrospective.json": {
+      "bytes": 462,
+      "path": "configs/e01_retrospective.json",
+      "sha256": "0d51243dd08d146e96a9455003a60819461c60f5b44d73956f8cf17a9685e29e"
+    },
+    "configs/e01_selection_source_schema_v1.json": {
+      "bytes": 1413,
+      "path": "configs/e01_selection_source_schema_v1.json",
+      "sha256": "79c99629a7dda6f8dd2e6663825a632ffd2faa21a84cbe4ab79cd4fee08ccaba"
+    },
+    "configs/e01_selection_v1.json": {
+      "bytes": 2523,
+      "path": "configs/e01_selection_v1.json",
+      "sha256": "3edd9ed550f9ea68f97e0c79ea03010485b11292f45a922cab91a8542a3ada1d"
+    },
+    "configs/e01_senate2018_2024.json": {
+      "bytes": 6359,
+      "path": "configs/e01_senate2018_2024.json",
+      "sha256": "162d75f9049b8e0d412fd4c9bf6d1cbdd601bc4a8bc260cc64f91988420fe305"
+    },
+    "configs/e01_typed_readiness_v1_9_1_candidate.json": {
+      "bytes": 14122,
+      "path": "configs/e01_typed_readiness_v1_9_1_candidate.json",
+      "sha256": "f017d3b4ceb1647add88eeb66a8d4d386f156f98169ac3807f7d800083fb2997"
+    },
+    "data/processed/runs/e01-9a3e3305877f40b3a84e63bd5ca5ed1c/checksums.json": {
+      "bytes": 1388,
+      "path": "data/processed/runs/e01-9a3e3305877f40b3a84e63bd5ca5ed1c/checksums.json",
+      "sha256": "06224fe7a661c379c452bae146376af0743b576658a0a43941b8e8c2a84082fd"
+    },
+    "data/processed/runs/e01-ed5b716aa76145258ece94c3df6b4188/checksums.json": {
+      "bytes": 1388,
+      "path": "data/processed/runs/e01-ed5b716aa76145258ece94c3df6b4188/checksums.json",
+      "sha256": "3d2611fdc535ed59062e3cd76a522e5324511529234d080c4c51aec80d7a87a2"
+    },
+    "docs/E01_2026_SELECTION_PROPOSAL.md": {
+      "bytes": 14217,
+      "path": "docs/E01_2026_SELECTION_PROPOSAL.md",
+      "sha256": "2460f9114b507b5e573bb751af19b9b0d5ca63c7752cc9f49ffef75da8aa6941"
+    },
+    "docs/E01_CLERK_2020_SENATE_INPUT_METHODS_v1.md": {
+      "bytes": 20853,
+      "path": "docs/E01_CLERK_2020_SENATE_INPUT_METHODS_v1.md",
+      "sha256": "eb0580d39db06642f86b8438642a5b73c777112d504d19463e382a5feb7dd447"
+    },
+    "docs/E01_HISTORICAL_RUNBOOK.md": {
+      "bytes": 3091,
+      "path": "docs/E01_HISTORICAL_RUNBOOK.md",
+      "sha256": "d8fa06f437bed41dfa88ccee3dacdc3c7fd0e123ad3d91e16f04ee164e3f121d"
+    },
+    "protocols/E01_FEED_TO_BALLOT.md": {
+      "bytes": 1373,
+      "path": "protocols/E01_FEED_TO_BALLOT.md",
+      "sha256": "1eec697325442c2001c684d72fd38676deb0448bd41d756b882220316242165f"
+    },
+    "protocols/E01_RETROSPECTIVE.md": {
+      "bytes": 5749,
+      "path": "protocols/E01_RETROSPECTIVE.md",
+      "sha256": "63003cc9eb060a241eaf19470488453e26bfbab645a0366b1ee8ef700793cb16"
+    },
+    "protocols/E01_SENATE_2018_2024_DIAGNOSTIC.md": {
+      "bytes": 4698,
+      "path": "protocols/E01_SENATE_2018_2024_DIAGNOSTIC.md",
+      "sha256": "043b588da2b1b61bb11d15f2cdde90f19b4aa33089ac71c74e9d691dffd7cf2a"
+    },
+    "reports/E01_2026_READINESS.json": {
+      "bytes": 4251,
+      "path": "reports/E01_2026_READINESS.json",
+      "sha256": "ed049549d61ab6e4a4c0749a09cb92e267e7ee8b7a53c5ba1e5bf1d9a8653b51"
+    },
+    "reports/E01_HISTORICAL_EVIDENCE.json": {
+      "bytes": 3678,
+      "path": "reports/E01_HISTORICAL_EVIDENCE.json",
+      "sha256": "e2bb2175c826abb48c38fb93df7a6e874d6c8fb503f289894bbf794f9fdef0e2"
+    },
+    "reports/E01_INSIDE_ELECTIONS_ASOF.json": {
+      "bytes": 4961,
+      "path": "reports/E01_INSIDE_ELECTIONS_ASOF.json",
+      "sha256": "c3123526f705d05f80c2f21f9734ea7d46a4d9fb44af84d43698874b12f0c78f"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_AL_V1_1_ACTUAL_PRIMARY_REPLAY.json": {
+      "bytes": 5893,
+      "path": "reports/INDEPENDENT_AUDIT_E01_AL_V1_1_ACTUAL_PRIMARY_REPLAY.json",
+      "sha256": "9d1ad9e216e7486b38e93e0357830ced80c3b8d5b1bce2aa1fb6f0ac1fd83353"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json": {
+      "bytes": 5944,
+      "path": "reports/INDEPENDENT_AUDIT_E01_HISTORICAL.json",
+      "sha256": "d63612e20155da1a9fe7f6796f07eab3e71dd68aaa6a9db1fb170ac59fd061e8"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_SELECTION_METHODS.json": {
+      "bytes": 1957,
+      "path": "reports/INDEPENDENT_AUDIT_E01_SELECTION_METHODS.json",
+      "sha256": "64650d22d82f46cb3a7f41250f69671e347b5c0e0d581dbe768d7283b4046e04"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_SELECTION_V1.json": {
+      "bytes": 12329,
+      "path": "reports/INDEPENDENT_AUDIT_E01_SELECTION_V1.json",
+      "sha256": "0afca7ddaa6501738c1800ff6b73d8e2796477a42a0725ea0302216e80cfcb40"
+    },
+    "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json": {
+      "bytes": 15513,
+      "path": "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json",
+      "sha256": "31bb4e389aad209d24a276347023de5f2eab3ed03a3e91d8745128dcfc8115e2"
+    },
+    "src/civiclab/cli.py": {
+      "bytes": 7017,
+      "path": "src/civiclab/cli.py",
+      "sha256": "88f9af069db005b39d19f099712129ffb5b5af1f31750b1d9b875e1d7509f679"
+    },
+    "src/civiclab/e01/ballots.py": {
+      "bytes": 25981,
+      "path": "src/civiclab/e01/ballots.py",
+      "sha256": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec"
+    },
+    "src/civiclab/e01/ballots_v1_9_1.py": {
+      "bytes": 18754,
+      "path": "src/civiclab/e01/ballots_v1_9_1.py",
+      "sha256": "30e02bfa068f400846c8feff612695c3ba2c12497d6bc1567ad4c75858788f8b"
+    },
+    "src/civiclab/e01/historical.py": {
+      "bytes": 22365,
+      "path": "src/civiclab/e01/historical.py",
+      "sha256": "ca8de92c9f0df1822c2c93e19e689e5f19a1b6e1073db53c782567455fe5c808"
+    },
+    "src/civiclab/e01/isolation.py": {
+      "bytes": 821,
+      "path": "src/civiclab/e01/isolation.py",
+      "sha256": "2d68590042a501f853d084576ed92c73006073a2eeb414881ab487f1fe0089f3"
+    },
+    "src/civiclab/e01/pipeline.py": {
+      "bytes": 22533,
+      "path": "src/civiclab/e01/pipeline.py",
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    },
+    "src/civiclab/e01/selection.py": {
+      "bytes": 22518,
+      "path": "src/civiclab/e01/selection.py",
+      "sha256": "70a0a4a1d3b6c27d65c2a318affb415a96f395ca6d0ecc7c83bf3e566297c4e4"
+    },
+    "src/civiclab/e01/worker.py": {
+      "bytes": 946,
+      "path": "src/civiclab/e01/worker.py",
+      "sha256": "307c978355b543b49ed13fa3ef6246908dadb3c71170d0cc2355884a29e88172"
+    }
+  },
+  "kind": "E01_METADATA_ONLY_INDEPENDENT_WORK_INVENTORY",
+  "network_models_credentials_liveowner_actions": 0,
+  "production_Git_STATUS_edits": 0,
+  "raw_PDF_CSV_or_numeric_recorded_bodies_processed": false,
+  "selector_REAL_policy": "DENIED_REGARDLESS_OF_FLAGS",
+  "typed_readiness": {
+    "class_II_states": [
+      "AK",
+      "AL",
+      "AR",
+      "CO",
+      "DE",
+      "GA",
+      "IA",
+      "ID",
+      "IL",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "ME",
+      "MI",
+      "MN",
+      "MS",
+      "MT",
+      "NC",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "OK",
+      "OR",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "VA",
+      "WV",
+      "WY"
+    ],
+    "legacy_states": [
+      "AK",
+      "CO",
+      "DE",
+      "IA",
+      "KS",
+      "ME",
+      "NC",
+      "NE",
+      "NH",
+      "NJ",
+      "VA",
+      "WY"
+    ],
+    "metrics": {
+      "final_ballots_accepted": 0,
+      "remaining_jobs": 20,
+      "slots": 33,
+      "typed_covered": 13
+    },
+    "remaining_document_states": [
+      "AL",
+      "AR",
+      "GA",
+      "IL",
+      "KY",
+      "LA",
+      "MA",
+      "MI",
+      "MN",
+      "MS",
+      "MT",
+      "NM",
+      "OK",
+      "OR",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "WV"
+    ],
+    "typed_history_state": "ID"
+  },
+  "verified_public_reader": {
+    "behavior": "Reads saved ledgers/seals/payloads/config andfourdeclaredJSONreferences;noverify_bound_inputs/rawsourceparse/computeinvocationinfunction. Separateactualauditacceptedsavedoutputscope.",
+    "lines": [
+      233,
+      262
+    ],
+    "source_ref": {
+      "bytes": 18754,
+      "path": "src/civiclab/e01/ballots_v1_9_1.py",
+      "sha256": "30e02bfa068f400846c8feff612695c3ba2c12497d6bc1567ad4c75858788f8b"
+    }
+  },
+  "wall_seconds": 0.012156458004028536
+}

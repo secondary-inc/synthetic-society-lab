@@ -1,0 +1,19 @@
+{
+  "consumer_and_entry_unchanged": [
+    {
+      "bytes": 25240,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 656,
+      "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    }
+  ],
+  "direct_entry": "__main__ calls guarded_main; its first call setup_direct_runtime sets120sCPU/32MiBFsize/alarm120 and START; next call standalone_guard installs existing fixture audit guard; then exact consumer mock module load. Guard/restrictions/tests otherwise unchanged.",
+  "kind": "DISCOVERY_FIX_STATIC_CHECK",
+  "remaining_top_level_calls": "Only Path(__file__).absolute() to derive ROOT/SOURCE/ENTRY metadata. Imports and class/function definitions; no file reads/fixture construction/source load/process controls/hook installation/test execution.",
+  "testclass_AST_identical": true,
+  "top_level_resource_mutations_after_fix": []
+}

@@ -1,0 +1,51 @@
+{
+  "all_hits_in_existing_six_module_isolation_list": true,
+  "base": "25d51254e5547cecf345a10c76ee22a7e83d9c18",
+  "direct_module_level_resource_or_hook_calls_excluding_main": [
+    {
+      "call_name": "addaudithook",
+      "line": 21,
+      "path": "tests/test_e01_compatibility_error_observer_candidate_v1_20261116.py"
+    },
+    {
+      "call_name": "addaudithook",
+      "line": 21,
+      "path": "tests/test_e01_compatibility_error_observer_candidate_v2_20261116.py"
+    },
+    {
+      "call_name": "addaudithook",
+      "line": 15,
+      "path": "tests/test_e01_offline_import_protocol_methods_v1_20261116.py"
+    },
+    {
+      "call_name": "addaudithook",
+      "line": 28,
+      "path": "tests/test_e01_offline_ipv6_compatibility_v1_1_20261116.py"
+    },
+    {
+      "call_name": "addaudithook",
+      "line": 28,
+      "path": "tests/test_e01_offline_ipv6_compatibility_v1_20261116.py"
+    },
+    {
+      "call_name": "addaudithook",
+      "line": 25,
+      "path": "tests/test_e01_offline_ipv6_probe_mock_candidate_v2_20261116.py"
+    }
+  ],
+  "head": "94df8fcd13f1db8abd0201791d2f18b16a3edd1c",
+  "kind": "LIMITED_STATIC_COMMITTED_TEST_IMPORT_CALL_SCAN",
+  "limitations": [
+    "Not transitive import-safety proof or full CI.",
+    "New pending E01 WIP discovery defect is separately tracked and must be fixed and reviewed before delivery; WIP files are not covered by this committed-head scan."
+  ],
+  "new_or_changed_committed_test_modules_scanned": 40,
+  "observed_at_utc": "2026-11-18T02:28:25.589540+00:00",
+  "runner_ref": {
+    "bytes": 30370,
+    "path": "scripts/run_offline_ci_v1.py",
+    "sha256": "61bdc69cdcf592af213c0e8c357a0a8976a3140bcd8a60a4731a1972f2d6a3ae"
+  },
+  "scope": "AST direct calls only; skip function/lambda bodies and conventional __main__ body. Existing committed test versions only. No imports, discovery or test execution.",
+  "uncovered_hits": []
+}

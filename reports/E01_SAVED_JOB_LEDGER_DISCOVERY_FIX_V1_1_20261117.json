@@ -1,0 +1,150 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "tests/test_e01_source_job_ledger_v1.py",
+    "reports/E01_SAVED_JOB_LEDGER_DISCOVERY_FIX_V1_1_20261117.json",
+    "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead/dedicatedauditor verify new frozen pins and discovery fix; exact-path Git checkpoint. Worker pauses edits.",
+  "REPRODUCTION_COMMANDS": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe.py",
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Author probes not independent acceptance. Dedicated auditor must review correction before Git push.",
+    "Read accounting covers audited opens after probe guard; interpreter startup/stdlib prewarming not counted and not a whole-process runtime qualification.",
+    "Focused setup uses spies, not a second full suite or actual120s alarm/limit application; original fullsuite body evidence retained, exact TestCase ASTunchanged.",
+    "Standalone30tests are not certified here for ordinary runner execution: discovery is verified, while authored M/temporary fixture setup still belongs to explicit guarded_main. Full code/scientific/runtime acceptance remains separate.",
+    "Actual consumer entry alwaysdisabled. Existing G03/readiness/fullresearch blockers unchanged."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only exact new test source loaded; no civiclab import, actual saved/private/raw source read, key, live owner, installer, API or model. Authored stale snapshot preserved for finding evidence.",
+  "TASK_ID": "E01_SAVED_JOB_LEDGER_DISCOVERY_FIX_V1_1_20261117",
+  "TESTS_RUN_AND_RESULTS": [
+    {
+      "alarm_not_rearmed_on_discovery": true,
+      "collected_cases": 30,
+      "cost_usd": 0,
+      "direct_main_order": [
+        "setup_direct_runtime",
+        "standalone_guard"
+      ],
+      "fixture_creation_on_discovery": false,
+      "focused_runtime_setup": "MOCK_CALLS_ONLY_EXACT_120S_CPU_WALL_32MIB_FSIZE_RETAINED",
+      "full_suite_rerun": false,
+      "guard_counters": {
+        "denied": 0,
+        "fixture_calls": 0,
+        "process_mutation_attempts": [],
+        "read_bytes": 48582,
+        "source_reader_calls": 0,
+        "test_body_calls": 0,
+        "write_bytes": 0
+      },
+      "hook_additions_attempted_on_discovery": 0,
+      "kind": "E01_SAVED_LEDGER_DISCOVERY_FIX_V1_1_PROBE",
+      "limits_unchanged_on_discovery": true,
+      "model_calls": 0,
+      "network_calls": 0,
+      "raw_source_calls": 0,
+      "real_reader_calls": 0,
+      "runtime": "3.11.17",
+      "status": "AUTHOR_PROBE_PASS_PENDING_INDEPENDENT_REVIEW",
+      "test_bodies_executed": 0,
+      "tracing_profiling_unchanged_on_discovery": true,
+      "wall_seconds": 0.03236250000190921
+    },
+    {
+      "alarm_not_rearmed_on_discovery": true,
+      "collected_cases": 30,
+      "cost_usd": 0,
+      "direct_main_order": [
+        "setup_direct_runtime",
+        "standalone_guard"
+      ],
+      "fixture_creation_on_discovery": false,
+      "focused_runtime_setup": "MOCK_CALLS_ONLY_EXACT_120S_CPU_WALL_32MIB_FSIZE_RETAINED",
+      "full_suite_rerun": false,
+      "guard_counters": {
+        "denied": 0,
+        "fixture_calls": 0,
+        "process_mutation_attempts": [],
+        "read_bytes": 48582,
+        "source_reader_calls": 0,
+        "test_body_calls": 0,
+        "write_bytes": 0
+      },
+      "hook_additions_attempted_on_discovery": 0,
+      "kind": "E01_SAVED_LEDGER_DISCOVERY_FIX_V1_1_PROBE",
+      "limits_unchanged_on_discovery": true,
+      "model_calls": 0,
+      "network_calls": 0,
+      "raw_source_calls": 0,
+      "real_reader_calls": 0,
+      "runtime": "3.12.14",
+      "status": "AUTHOR_PROBE_PASS_PENDING_INDEPENDENT_REVIEW",
+      "test_bodies_executed": 0,
+      "tracing_profiling_unchanged_on_discovery": true,
+      "wall_seconds": 0.03476087498711422
+    }
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent correction review pending",
+    "Original consumer full independent review pending",
+    "Real saved reader/manifest/guarded release not implemented or enabled"
+  ],
+  "bounds": {
+    "actual_console_bytes_each": 886,
+    "actual_probe_writes_each": 0,
+    "actual_read_bytes_each": 48582,
+    "additional_fullsuite_attempts": 0,
+    "each_process_console_bytes": 131072,
+    "each_process_read_bytes": 33554432,
+    "each_process_wall_CPU_seconds": 60,
+    "each_process_write_bytes": 8388608,
+    "fullsuite_attempts_prior_per_runtime": 2
+  },
+  "code_change": "Move START clock initialization, resource.setrlimit CPU120/Fsize33554432 and signal.alarm120 into setup_direct_runtime, called only by explicit guarded_main. Import START nowNone. No other production, entry, testbody, guard, scoring, fixture or limits changes.",
+  "evidence_method": "Watchers reject setrlimit/alarm/setitimer/signal/addaudithook/settrace/setprofile/mkdtemp during discovery; compare actual before/after rlimits, remaining alarm, signal handler, active tracing/profile functions; profile test-file calls. Unittest actual discover exact filename collects30cases. Module M/START/AUTHOR_TMP/PUBLIC_SAMPLE remainNone andGUARDzero. Mocksetup asserts unchanged120s/32MiB direct controls and AST verifies setup beforeguard.",
+  "model_calls": 0,
+  "network_calls": 0,
+  "new_test": {
+    "bytes": 24290,
+    "path": "tests/test_e01_source_job_ledger_v1.py",
+    "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+  },
+  "old_test": {
+    "bytes": 24111,
+    "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/unsafe_test_snapshot.py",
+    "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+  },
+  "raw_source_calls": 0,
+  "real_saved_reader_calls": 0,
+  "reason": "Independent pre-push finding: previous test module import setCPU/Fsize rlimits and armedalarm in collector; prior30body PASS suites did not test discovery purity.",
+  "status": "FROZEN_DISCOVERY_CORRECTION_PENDING_INDEPENDENT_REVIEW",
+  "supersession": {
+    "historical_old_handoff": {
+      "bytes": 20421,
+      "path": "reports/E01_SAVED_JOB_LEDGER_V1_CODE_HANDOFF_20261117.json",
+      "sha256": "8fc6db33ec2f756ffb65c684e4371c1180cab6bf483706631d7927e2bdb253d7"
+    },
+    "historical_old_manifest": {
+      "bytes": 5279,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/FROZEN_WIP_MANIFEST.json",
+      "sha256": "06ba63f655bf49e7beb9405d744fa259d52addd78fb47a65bf5aa7662aa28e92"
+    },
+    "rule": "Original manifest/handoff/source snapshots/test results remain byte-for-byte historical. Only old active test pin f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db superseded by newtest pin in this report. Prior30full checks perruntime apply to old test/source; no fresh fullsuite claimed. Class AST identical."
+  },
+  "unchanged_production": [
+    {
+      "bytes": 25240,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 656,
+      "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    }
+  ],
+  "verification_scope": "One fresh-process unittest discovery/import-purity probe per runtime, each also checking direct setup through mocked resource/alarm functions only. No test bodies executed and no full suite rerun. Exact source-byte import avoids bytecode-cache reads. Probe denies other project file reads, external actions and writes; stdlib imports warmed before observation."
+}

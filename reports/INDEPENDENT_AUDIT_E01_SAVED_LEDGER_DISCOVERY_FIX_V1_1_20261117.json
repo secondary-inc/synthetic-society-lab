@@ -1,0 +1,389 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_DISCOVERY_FIX_V1_1_20261117.json",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/STARTED.json",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/probe.py",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python311.log",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python311_result.json",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python312.log",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python312_result.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may deliver corrected WIP with explicit CI limitations; coordinate standalone test isolation, then complete separate consumer and actual reader review.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_DISCOVERY_FIX_V1_1_20261117.json",
+    "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    [
+      "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/probe.py"
+    ],
+    [
+      "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/probe.py"
+    ]
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Generic collector body execution is NOT_RUN: standalone guarded_main initializes M and fixtures. WIP is not certified CI ready.",
+    "No full consumer correctness, actual input closure, guarded reader or release acceptance.",
+    "Exact source loader bypasses bytecode lookup; ordinary pyc and transitive startup behavior are not comprehensively certified.",
+    "Existing unsafe snapshot and historical blocking receipt remain unchanged; this PASS applies only to current corrected pin.",
+    "Mocked standalone setup asserts requested 120 second CPU/alarm and 32 MiB file-size controls without applying them or running the 30 case suite."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only authored frozen WIP files, snapshots and probe evidence. Probe loads exact test source through unittest discovery without opening source consumer, fixtures, saved reader or private inputs. Stdlib dependencies preloaded before audit hook; startup bytes not claimed.",
+  "TASK_ID": "Independent executable import-purity review for E01 saved ledger V1.1",
+  "TESTS_RUN_AND_RESULTS": {
+    "decision": "PASS for corrected test discovery import-purity and preserved mocked standalone control contract only",
+    "full_suite_bodies": "NOT_RUN; no full suite rerun; original two invocations per runtime remain unchanged",
+    "independent_probes": {
+      "311": {
+        "probe": {
+          "alarm_not_rearmed_on_discovery": true,
+          "collected_cases": 30,
+          "cost_usd": 0,
+          "direct_main_order": [
+            "setup_direct_runtime",
+            "standalone_guard"
+          ],
+          "fixture_creation_on_discovery": false,
+          "focused_runtime_setup": "MOCK_CALLS_ONLY_EXACT_120S_CPU_WALL_32MIB_FSIZE_RETAINED",
+          "full_suite_rerun": false,
+          "guard_counters": {
+            "denied": 0,
+            "fixture_calls": 0,
+            "process_mutation_attempts": [],
+            "read_bytes": 48582,
+            "source_reader_calls": 0,
+            "test_body_calls": 0,
+            "write_bytes": 0
+          },
+          "hook_additions_attempted_on_discovery": 0,
+          "kind": "E01_SAVED_LEDGER_DISCOVERY_FIX_V1_1_PROBE",
+          "limits_unchanged_on_discovery": true,
+          "model_calls": 0,
+          "network_calls": 0,
+          "raw_source_calls": 0,
+          "real_reader_calls": 0,
+          "runtime": "3.11.17",
+          "status": "INDEPENDENT_IMPORT_PURITY_PROBE_PASS",
+          "test_bodies_executed": 0,
+          "tracing_profiling_unchanged_on_discovery": true,
+          "wall_seconds": 0.03048083299654536
+        },
+        "process": {
+          "command": [
+            "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+            "-I",
+            "-B",
+            "-S",
+            "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/probe.py"
+          ],
+          "console_bytes": 878,
+          "exit_code": 0,
+          "suite_bodies_executed": false,
+          "timed_out": false,
+          "wall_seconds": 0.07014108299999999
+        }
+      },
+      "312": {
+        "probe": {
+          "alarm_not_rearmed_on_discovery": true,
+          "collected_cases": 30,
+          "cost_usd": 0,
+          "direct_main_order": [
+            "setup_direct_runtime",
+            "standalone_guard"
+          ],
+          "fixture_creation_on_discovery": false,
+          "focused_runtime_setup": "MOCK_CALLS_ONLY_EXACT_120S_CPU_WALL_32MIB_FSIZE_RETAINED",
+          "full_suite_rerun": false,
+          "guard_counters": {
+            "denied": 0,
+            "fixture_calls": 0,
+            "process_mutation_attempts": [],
+            "read_bytes": 48582,
+            "source_reader_calls": 0,
+            "test_body_calls": 0,
+            "write_bytes": 0
+          },
+          "hook_additions_attempted_on_discovery": 0,
+          "kind": "E01_SAVED_LEDGER_DISCOVERY_FIX_V1_1_PROBE",
+          "limits_unchanged_on_discovery": true,
+          "model_calls": 0,
+          "network_calls": 0,
+          "raw_source_calls": 0,
+          "real_reader_calls": 0,
+          "runtime": "3.12.14",
+          "status": "INDEPENDENT_IMPORT_PURITY_PROBE_PASS",
+          "test_bodies_executed": 0,
+          "tracing_profiling_unchanged_on_discovery": true,
+          "wall_seconds": 0.03426470799604431
+        },
+        "process": {
+          "command": [
+            "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "-I",
+            "-B",
+            "-S",
+            "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/probe.py"
+          ],
+          "console_bytes": 878,
+          "exit_code": 0,
+          "suite_bodies_executed": false,
+          "timed_out": false,
+          "wall_seconds": 0.067906625
+        }
+      }
+    },
+    "input_ref_validation": "34/34 explicit frozen refs revalidated before and after probes"
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "CI integration and generic body execution remain pending.",
+    "Actual E01 reader/closure/release work remains blocked or unreviewed."
+  ],
+  "acceptance_criteria": {
+    "30_collected_zero_bodies_fixtures_source_reads": "PASS",
+    "actual_reader_release": "NOT_RUN",
+    "direct_main_setup_precedes_guard": "PASS static and mocked contract",
+    "exact_frozen_refs": "PASS",
+    "full_CI": "NOT_RUN",
+    "no_resource_alarm_hook_trace_profile_temp_mutation_on_discovery": "PASS on both independent probes",
+    "preserve_120_CPU_32MiB_FSIZE_120_alarm": "PASS static and mocked call contract"
+  },
+  "evidence_refs": [
+    {
+      "bytes": 643,
+      "path": "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/STARTED.json",
+      "sha256": "9fa3a52e26628afaf01c18b6389f8daf519ad77f472b0a9962bc243bc310a9ac"
+    },
+    {
+      "bytes": 6812,
+      "path": "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/probe.py",
+      "sha256": "c263fadb02a31ef694a99a7d52bddd936675733f9799d3c1f8f09344e5e26b96"
+    },
+    {
+      "bytes": 878,
+      "path": "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python311.log",
+      "sha256": "81eb55dce10de56d53b134366e150b336f01b84dee17a373bc92d052b60cdd40"
+    },
+    {
+      "bytes": 362,
+      "path": "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python311_result.json",
+      "sha256": "50da3f351e5cf43d74eea083c58205219d43e9256c359afc64b08ffa43b48a30"
+    },
+    {
+      "bytes": 878,
+      "path": "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python312.log",
+      "sha256": "2dd71b539c2d5df781eb3fde2021cae144375d4bd0af4904ddf5f8dc3c24a888"
+    },
+    {
+      "bytes": 371,
+      "path": "reports/evidence_independent_e01_saved_ledger_discovery_fix_v1_1_20261117/python312_result.json",
+      "sha256": "4f8c1a7110cb1a004c73215dfbc802766aca54303ef013cc3b6c00907a68d369"
+    }
+  ],
+  "input_manifest": {
+    "bytes": 7952,
+    "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/FROZEN_MANIFEST.json",
+    "sha256": "ebc6b5420a464dd4e01fdf9117beccd82c7487755cc4f93e39bcce87e036fbc9"
+  },
+  "input_refs": [
+    {
+      "bytes": 7856,
+      "path": "reports/E01_SAVED_JOB_LEDGER_DISCOVERY_FIX_V1_1_20261117.json",
+      "sha256": "9ed5ff3107c85f4b54f0148c8d5392210f2b9167c128c728585eaa89a8f50ee2"
+    },
+    {
+      "bytes": 20421,
+      "path": "reports/E01_SAVED_JOB_LEDGER_V1_CODE_HANDOFF_20261117.json",
+      "sha256": "8fc6db33ec2f756ffb65c684e4371c1180cab6bf483706631d7927e2bdb253d7"
+    },
+    {
+      "bytes": 5279,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/FROZEN_WIP_MANIFEST.json",
+      "sha256": "06ba63f655bf49e7beb9405d744fa259d52addd78fb47a65bf5aa7662aa28e92"
+    },
+    {
+      "bytes": 771,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/SUITE_ATTEMPT_1_STARTED.json",
+      "sha256": "9b7024fba7047593830e15c5b4ed18dcf82a59d1a5b7761b9c276469c863c68c"
+    },
+    {
+      "bytes": 796,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/SUITE_ATTEMPT_2_STARTED.json",
+      "sha256": "fb5a83d17b1dc81249b3a5ea1dd94414d8943438dcd8ab8a2eff40fce70dac7a"
+    },
+    {
+      "bytes": 13383,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/TRANSITIVE_IMPORT_INSPECTION.json",
+      "sha256": "2aad10be6fc43a44df69fb2f621f22549ca5f29d2fb43af3e239cc74002d865e"
+    },
+    {
+      "bytes": 613,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/STARTED.json",
+      "sha256": "d78c0ec5249ee41f5d27859c4199b495566745d3bd8ef963a01c3bdaa4165528"
+    },
+    {
+      "bytes": 1047,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/STATIC_CHECK.json",
+      "sha256": "102645765c86aa64f9898b7d314a252fdcfd1b10d24b032920901f6698d2192d"
+    },
+    {
+      "bytes": 24290,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/corrected_test_snapshot.py",
+      "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+    },
+    {
+      "bytes": 6820,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe.py",
+      "sha256": "59c689869560083b3cc63b3cbe9207576ea7e057bbf2f4bbf69039237d03cfe3"
+    },
+    {
+      "bytes": 886,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe_python311.log",
+      "sha256": "5d06412c8fde2ba21b1a1e35da44e81a5a79351a9d539df1a87ff3164727ff8f"
+    },
+    {
+      "bytes": 124,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe_python311_result.json",
+      "sha256": "d88e9a54c0acbe9c3b4b36e333f13ded58f85dd6a47d43640c90be208915efd9"
+    },
+    {
+      "bytes": 886,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe_python312.log",
+      "sha256": "c4506283288e29b5098766224e796a0fcd7c4eccc6a7100c15d83b9c1ba655e1"
+    },
+    {
+      "bytes": 125,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/probe_python312_result.json",
+      "sha256": "243d542af05871439c3c9c25a68c316e5783c8c96df7c07aa7e2e8cc38705bbe"
+    },
+    {
+      "bytes": 24111,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/unsafe_test_snapshot.py",
+      "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+    },
+    {
+      "bytes": 656,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    },
+    {
+      "bytes": 25240,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 24111,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/final_snapshot_test_e01_source_job_ledger_v1.py",
+      "sha256": "f4638cc06b3fbd451539f2043ea5426602f7548abd5abea36bf33433ceff82db"
+    },
+    {
+      "bytes": 30849,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python311.json",
+      "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+    },
+    {
+      "bytes": 30849,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python312.json",
+      "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+    },
+    {
+      "bytes": 656,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    },
+    {
+      "bytes": 25240,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 23931,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/snapshot_test_e01_source_job_ledger_v1.py",
+      "sha256": "74515f61c55b4c2ccff71c96a08f2d494da3ad867949a86a9dfc8afd8f1a7124"
+    },
+    {
+      "bytes": 114,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python311.json",
+      "sha256": "803d4790e223ab51a5468873f8f11792ccc13be3b201d95a876e7e8e257256b2"
+    },
+    {
+      "bytes": 3816,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python311.log",
+      "sha256": "ae2d39847fce685844b641f9b495fd1f9d51ef1037917ab7374804df78746bbc"
+    },
+    {
+      "bytes": 114,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python312.json",
+      "sha256": "e7c12d9e80c6cdf89da8329a215f2fd926f3703f44c81da6996048ecc111793c"
+    },
+    {
+      "bytes": 3816,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt1_python312.log",
+      "sha256": "4597cbbe7013835c7aa69c5aac2ab091f6b712b7f45609b7f8b0c47a08e64d24"
+    },
+    {
+      "bytes": 114,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.json",
+      "sha256": "5918f5803e2a8c38e396ece6271ad6deae4a8a44b74b6e5ab42c4e894a9bbc76"
+    },
+    {
+      "bytes": 34689,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.log",
+      "sha256": "4b2aa6c25b6f6713d4b79466dcb9f5c2a62d1f6d3fc9c213496253b6c3286967"
+    },
+    {
+      "bytes": 114,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.json",
+      "sha256": "4022d1422bbb67f1707fd843b6acd87e9dbf221dbf83e32156b296e4538fca16"
+    },
+    {
+      "bytes": 34689,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.log",
+      "sha256": "b0dcd0516cc13c7c76824a84aa3cd9e857a096278c76fd2f50dd69b674fd7094"
+    },
+    {
+      "bytes": 656,
+      "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    },
+    {
+      "bytes": 25240,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 24290,
+      "path": "tests/test_e01_source_job_ledger_v1.py",
+      "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+    }
+  ],
+  "no_additional_execution_access_spending_publication_authority": true,
+  "prior_static_review": {
+    "bytes": 11223,
+    "path": "reports/INDEPENDENT_AUDIT_E01_DISCOVERY_FIX_V1_1_20261117.json",
+    "sha256": "95664b6928e2b9fe7b40400e895be64b88b999dd9710bfeb54f7d3e1e5a3ee3f"
+  },
+  "resource_accounting": {
+    "actual_source_reader_calls": 0,
+    "audited_open_read_bytes_each": 48582,
+    "audited_writes_each": 0,
+    "console_bytes_cap": 131072,
+    "console_bytes_each": 878,
+    "model_calls": 0,
+    "network_calls": 0,
+    "per_process_cpu_wall_seconds_cap": 60,
+    "probe_count_each_runtime": 1,
+    "read_bytes_cap": 33554432,
+    "test_body_calls_each": 0,
+    "write_file_size_cap": 8388608
+  }
+}

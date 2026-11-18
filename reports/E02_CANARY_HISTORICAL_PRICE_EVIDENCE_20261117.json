@@ -1,0 +1,102 @@
+{
+  "actual_activity_this_check": {
+    "API_cost_USD": 0,
+    "billing_GETs": 0,
+    "credential_reads": 0,
+    "live_owner_access": 0,
+    "model_POSTs": 0,
+    "new_catalog_GETs": 0
+  },
+  "bootstrap_semantics_review": {
+    "bytes": 15426,
+    "path": "reports/E02_CANARY_PRICE_BOOTSTRAP_REVIEW_20261117.json",
+    "sha256": "5ac928a63e490e930d44dc2e2865d71026550f3b13597098c70bc53095dd9fc4"
+  },
+  "evidence": [
+    {
+      "bytes": 292,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/intent.json",
+      "sha256": "d7293d2df20660abd349017a011c5a1c83ec67df0fcacdd895760905a41cc503"
+    },
+    {
+      "bytes": 54,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/GET-A-intent.json",
+      "sha256": "1daecfbbb398f3f361ab56cc89e92f042e41f739547933144faf0c0e2dcdb82e"
+    },
+    {
+      "bytes": 67,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/GET-B-intent.json",
+      "sha256": "4a5b3c3fbb6c790532bc4ce08bc2ee9f99813c4b58e1aa17c6786eb2e975245e"
+    },
+    {
+      "bytes": 2359,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/catalog-A.json",
+      "sha256": "59c4fcc5ec213b8aae3019949267bd0f27f6bdfc95bee436c06a85ffc8ef9ee9"
+    },
+    {
+      "bytes": 3569,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/catalog-B.json",
+      "sha256": "59c512102ac025f51b2e8a0b038170b5f29901a4a68421dec926d074f9a02237"
+    },
+    {
+      "bytes": 209,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/receipt-A.json",
+      "sha256": "369dc1b7598e4d506c2cfe828c224b6b888ef60ccf59c1bd5874d4c234890055"
+    },
+    {
+      "bytes": 222,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/receipt-B.json",
+      "sha256": "d27922de49f095deb34c2f72032339cd1e603c18adae2b12158c4bdde975fdc9"
+    },
+    {
+      "bytes": 4490,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/price-release.candidate.json",
+      "sha256": "028514d722ab824a970e63ac7684fe1da1b0169594fd0556eef5d76c983eb499"
+    },
+    {
+      "bytes": 2019,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_price_01/TERMINAL.json",
+      "sha256": "1ee023f8128b69a9c5e0ef3f91a64e80e98a1f6f379cf60de9f10507ed5a0b18"
+    }
+  ],
+  "future_one_slot_bounds_NOT_ACTUAL": {
+    "cumulative_original_setup_plus_runtime_GETs_if_both_sent": 14,
+    "cumulative_runtime_catalog_GETs_if_both_sent": 12,
+    "new_durable_runtime_GETs": 2,
+    "new_initial_preparation_GETs": 0,
+    "new_total_catalog_GETs": 2,
+    "no_new_alias_or_hidden_preparation_allowance": true
+  },
+  "historical_receipt_observed_at_utc": {
+    "A": "2026-11-16T01:55:09.841164+00:00",
+    "B": "2026-11-16T01:55:09.893777+00:00"
+  },
+  "independent_reporting_review": "PENDING",
+  "initial_catalog_receipt_terms_interpretation_hash_joins": {
+    "A": true,
+    "B": true
+  },
+  "kind": "LEAD_HISTORICAL_PRICE_EVIDENCE_AVAILABILITY_NOT_CURRENT_PRICE_PROOF",
+  "limitations": [
+    "Retained initial source availability is verified; current prices and serving routes remain unverified.",
+    "No new financial reservation or actual continuation authority has been created.",
+    "Physical file reads were limited to the named small retained catalog/metadata files and source context; no private model response or account-key file was read."
+  ],
+  "observed_at_utc": "2026-11-17T15:53:49.746098+00:00",
+  "prior_catalog_accounting": {
+    "observed_original_setup_plus_runtime_GETs": 12,
+    "original_price_preparation_GETs": 2,
+    "original_runtime_catalog_cap": 16,
+    "original_setup_plus_runtime_catalog_cap": 18,
+    "scope_note": "The recorded10 and16 are runtime-study counts; the original2 setupGETs are separately recorded and not erased.",
+    "stopped_study_runtime_GETs": 10
+  },
+  "reporting_date_local": "2026-11-17",
+  "scope": "Read-only retained public catalog/receipt/price preparation metadata; no validator execution, new policy lease, packet, network request, owner access, credential access or price freshness claim.",
+  "source_context": {
+    "bytes": 5953,
+    "path": "reports/E02_WRAPPER_CROSSMODEL_V1_ROOT_PREPARATION_20261115.json",
+    "sha256": "f1e7e8801dce60368aea97cdb09a7099403f6dedc2bb1caf7727b73efbf015c0"
+  },
+  "unchanged_gate": "New exact independently reviewed coherent policy lease and packet; both fresh A/B proofs must match exact semantic/component contract before grant/reservation/POST. Historical observed_at/rawbytes/releases stay unchanged. Tracked price or route drift stops; no automatic packet replacement/refetch."
+}

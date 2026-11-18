@@ -1,0 +1,39 @@
+{
+  "kind": "AUTHOR_OFFLINE_TEST_PLAN_BEFORE_EXECUTION",
+  "date": "2026-11-17",
+  "actual_test_invocations_so_far": 0,
+  "maximum_full_attempts_per_runtime": 2,
+  "supported_runtimes": ["3.11.17", "3.12.14"],
+  "per_invocation_limits": {
+    "wall_seconds": 900,
+    "CPU_seconds": 600,
+    "logical_read_bytes": 1073741824,
+    "write_bytes": 268435456,
+    "console_bytes": 524288
+  },
+  "scope": "Focused pure/mocked cases and temporary copied-history integration only; no complete historical suite, live owner, API, credential or live scope.",
+  "inputs": "Pinned closed export and original protocol for copied-history identity; no old response/prompt/header text may be written to public evidence.",
+  "required_cases": [
+    "canonical parent+slot identity and aliases/concurrent reservations",
+    "durable owner-wide catalog/POST/statistics intent and ordinal nonreplay",
+    "atomic grant+claim+reserve rollback and post-commit irreversibility",
+    "all five old holds, original rows/events/stopped study and baseline13 preserved",
+    "exact slot45BpostOMITTED seed2315288556 and original compiler payload binding",
+    "fresh/future/stale/changed price/provider proof, clocks/deadline/cancel",
+    "malformed/overrun/unknown cost/response/billing, non404 failure no retry",
+    "existing financial row/generation/statistics uniqueness and materialized-table replay",
+    "zero/one45row incomplete-parent envelope, original absorbing halt unchanged",
+    "full35 catalog18>16 still refused; no live release from author tests"
+  ],
+  "live_bounds_unchanged": {
+    "wall_seconds": 240,
+    "CPU_seconds": 60,
+    "phase_seconds": 120,
+    "price_age_seconds": 900,
+    "POST": 1,
+    "statistics_GET": 3,
+    "catalog_GET": 2
+  },
+  "financial_caps_microusd": {"shared":5000000,"E02":1000000,"fifth":200000,"E01":0},
+  "independent_review": "Required after frozen implementation; no execution authority is created here."
+}
