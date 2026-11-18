@@ -1,0 +1,20 @@
+{
+  "kind": "AUTHOR_STATIC_PRE_REVIEW_LIFECYCLE_FINDING",
+  "candidate_execution": 0,
+  "finding": "EOF can precede process exit; the supervisor original finally block could kill a normally terminating child before waiting.",
+  "correction": "For ordinary EOF, first bounded-wait for remaining deadline; kill/reap only if child remains running. Preserve fixed interruption reason and reaping on unexpected supervisor exception.",
+  "predecessors": [
+    {
+      "original_path": "scripts/qualify_e02_canary_closed_replay_v1_20261117.py",
+      "preserved_at": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/helper-before-EOF-wait-correction.py",
+      "bytes": 23663,
+      "sha256": "7a0bd2bd450a28a10de29f6ed551a85246726647f6095cec405cb9beb4f71215"
+    },
+    {
+      "original_path": "reports/E02_CANARY_CLOSED_REPLAY_CODE_V1_20261117.json",
+      "preserved_at": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/handoff-before-EOF-wait-correction.json",
+      "bytes": 14056,
+      "sha256": "1ae9e445cb19686df35a011e4d505bdd5dafc20a47bc8e10b74935c73709983e"
+    }
+  ]
+}

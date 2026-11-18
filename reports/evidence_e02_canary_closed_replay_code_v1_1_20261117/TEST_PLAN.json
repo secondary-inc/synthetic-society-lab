@@ -1,0 +1,31 @@
+{
+  "kind": "BEFORE_AUTHOR_CORRECTION_FOCUSED_INVOCATIONS",
+  "scope": "Authored helper definitions/guards/serialization/inert supervisor lifecycle only; no helper main/child gate, closed payloads or civiclab module imports.",
+  "maximum_invocations_per_runtime": 2,
+  "runtimes": [
+    "3.11.17",
+    "3.12.14"
+  ],
+  "per_invocation_limits": {
+    "wall_seconds": 180,
+    "CPU_seconds": 120,
+    "authored_read_bytes": 134217728,
+    "scratch_write_bytes": 33554432,
+    "console_bytes": 262144
+  },
+  "required_cases": [
+    "H01 absolute parent traversal effect refusal",
+    "H01 tracked relative-dirfd traversal effect refusal",
+    "raw .. and alias/unknown/stale directory descriptor controls",
+    "positive absolute/relative-dirfd mkdir/rmdir/remove/chmod behavior unchanged",
+    "H02 ASCII/nonASCII/nested Unicode exact project-default canonical bytes and hashes",
+    "inert EOF/exit/hang/interruption/cancel/deadline/overflow behavior",
+    "explicit private quarantine disposition after missing child cleanup",
+    "child-only120CPU labeling and parent observedCPU"
+  ],
+  "actual_candidate_invocations": 0,
+  "actual_API_calls": 0,
+  "credentials_read": 0,
+  "live_owner_access": 0,
+  "independent_review": "Required on final frozen correction; author checks do not certify acceptance."
+}

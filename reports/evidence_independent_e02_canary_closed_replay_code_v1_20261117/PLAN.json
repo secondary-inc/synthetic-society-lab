@@ -1,0 +1,29 @@
+{
+  "created_at_UTC": "2026-11-18T03:10:34.755641+00:00",
+  "findings_policy": "Preserve exact result and failed harness; no retry beyond allocation, no silently widened guard. Actual replay remains blocked until helper/closure acceptance.",
+  "forbidden": [
+    "Actual closed export/registration read or reconstruction",
+    "candidate owner import/constructor/verifier",
+    "network/keys/currentowner/models",
+    "production edits"
+  ],
+  "groups": [
+    "Pure Budget/Stream/ReadOnlySQL and control-gate/serialization checks with authored files only",
+    "Disposable child guard and mutation/descriptor/SQL refusal checks using authored temp tree; no actual owner paths",
+    "Supervisor lifecycle with inert authored subprocess doubles: EOF before exit,EOF then hang,deadline/output/cancellation/kill/reap/create-once and safe receipt counts"
+  ],
+  "helper": {
+    "bytes": 24324,
+    "path": "scripts/qualify_e02_canary_closed_replay_v1_20261117.py",
+    "sha256": "70139f96325b8a6b144b18eca98970280e21d3df59537eec1e87126b82ffe51a"
+  },
+  "kind": "INDEPENDENT_CLOSED_REPLAY_HELPER_REVIEW_PLAN",
+  "limits_each_invocation": {
+    "CPU_seconds": 120,
+    "authored_metadata_reads": 134217728,
+    "authored_temp_writes": 33554432,
+    "console_bytes": 262144,
+    "wall_seconds": 180
+  },
+  "max_focused_invocations_each_runtime": 2
+}

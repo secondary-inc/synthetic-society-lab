@@ -1,0 +1,118 @@
+--- scripts/qualify_e02_canary_closed_replay_v1_20261117.py
++++ scripts/qualify_e02_canary_closed_replay_v1_1_20261117.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Future reviewed one-child CLOSED replay. No prepare/bootstrap/live mode.
++"""V1.1 corrected future reviewed one-child CLOSED replay. No prepare/bootstrap/live mode.
+ 
+ Only production_owner_directory is redirected. Private state is reconstructed
+ for comparison, never adopted as replay state. No candidate execution by author.
+@@ -40,7 +40,7 @@
+ def need(value,code):
+     if not value:raise Refused(code)
+ 
+-def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()
++def canonical(value):return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False).encode()
+ def digest(raw):return hashlib.sha256(raw).hexdigest()
+ def no_alias(path):
+     need(path.is_absolute() and not any(p.is_symlink() for p in (path,*path.parents)),'ALIASED_PATH')
+@@ -155,7 +155,8 @@
+     sys.pycache_prefix=str(tmp/'UNCREATED_PYC_CACHE')
+     missing_caches={Path(importlib.util.cache_from_source(str(p))) for p in permitted if p.suffix=='.py'}
+     def policy(path,flags):
+-        no_alias(path)
++        try:no_alias(path)
++        except Refused:budget.deny()
+         write=bool(flags & (os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND))
+         if write:
+             if not path.is_relative_to(tmp):budget.deny()
+@@ -166,7 +167,25 @@
+         elif path in permitted:budget.charge('read_bytes',path.stat().st_size)
+         else:budget.deny()
+     descriptor=namespace['DirectoryFdGuard'](policy)
+-    def audit(event,args):
++    def mutation_path(event,args):
++        value=args[0]
++        if isinstance(value,int):budget.deny()
++        raw=os.fsdecode(value)
++        # Reject raw parent components before normalization or any syscall.
++        if '..' in Path(raw).parts:budget.deny()
++        if os.path.isabs(raw):path=descriptor.absolute(raw)
++        else:
++            index={'os.mkdir':2,'os.chmod':2,'os.remove':1,'os.rmdir':1}.get(event)
++            fd=args[index] if index is not None and len(args)>index else None
++            if fd in (None,-1):path=descriptor.absolute(raw)
++            else:
++                origin=descriptor.directory(fd)[0]
++                path=descriptor.absolute(origin/raw)
++        if not path.is_relative_to(tmp):budget.deny()
++        try:no_alias(path)
++        except Refused:budget.deny()
++        return path
++    def guarded_audit(event,args):
+         if event.startswith('socket.') or event in {'subprocess.Popen','os.fork','os.forkpty','os.posix_spawn','os.exec','os.spawn','os.system','os.putenv','os.unsetenv','ctypes.dlopen','ctypes.dlsym','mmap.__new__'}:budget.deny()
+         if event=='import' and len(args)>1 and args[1] and str(args[1]).endswith(('.so','.dylib')):
+             if Path(args[1]).resolve() not in permitted:budget.deny()
+@@ -185,17 +204,15 @@
+             if not path.is_relative_to(tmp) and path not in permitted_directories:budget.deny()
+         if event in {'os.mkdir','os.remove','os.rmdir','os.rename','os.link','os.symlink','os.chmod','os.truncate'}:
+             if event in {'os.link','os.symlink','os.rename'}:budget.deny()
+-            value=args[0]
+-            if isinstance(value,int):budget.deny()
+-            # shutil cleanup can use tracked dir_fd; DirectoryFdGuard resolves opens.
+-            if not os.path.isabs(os.fsdecode(value)):
+-                fd=args[1] if event in {'os.remove','os.rmdir'} and len(args)>1 else None
+-                if type(fd) is not int or fd<0:budget.deny()
+-                origin=descriptor.directory(fd)[0];path=origin/os.fsdecode(value)
+-            else:path=Path(value)
+-            if not path.is_relative_to(tmp):budget.deny()
++            mutation_path(event,args)
++    def audit(event,args):
++        try:guarded_audit(event,args)
++        except namespace['GuardRefused']:budget.deny()
+     sys.addaudithook(audit)
+-    os.open=descriptor.open;os.close=descriptor.close
++    def descriptor_open(*args,**kwargs):
++        try:return descriptor.open(*args,**kwargs)
++        except namespace['GuardRefused']:budget.deny()
++    os.open=descriptor_open;os.close=descriptor.close
+     for obj,name in ((builtins,'open'),(io,'open'),(os,'fdopen')):
+         original=getattr(obj,name)
+         def opened(*a,_original=original,**k):return Stream(_original(*a,**k),budget)
+@@ -304,8 +321,20 @@
+     return 0 if result['status']=='PASS_PARENT_ONLY' else 1
+ 
+ 
++def fixture_disposition(scope,child_record):
++    """Metadata only: never follow/delete a leftover fixture after forced kill."""
++    path=scope/'temporary-fixture';alias=path.is_symlink()
++    present=alias or path.exists()
++    return {'disposition':'QUARANTINED_PRIVATE_NO_RETRY' if present else 'NO_FIXTURE_PRESENT',
++            'path_present':present,'path_is_alias':alias,
++            'child_cleanup_reported':bool(child_record and child_record.get('temporary_fixture_removed') is True),
++            'supervisor_cleanup_attempted':False,
++            'followup':'SEPARATE_BOUNDED_LEAD_CLEANUP_REQUIRED' if present else 'NONE'}
++
++
+ def supervise(args):
+     started=time.monotonic()
++    parent_cpu_started=resource.getrusage(resource.RUSAGE_SELF)
+     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(Refused('SUPERVISOR_WALL_LIMIT')))
+     signal.setitimer(signal.ITIMER_REAL,300)
+     budget=Budget();q,closure=gate(args,budget);preflight(closure,budget)
+@@ -343,9 +372,14 @@
+     except BaseException:parsed=None
+     aggregate_reads=parsed.get('charged_read_bytes',budget.reads) if parsed else budget.reads
+     valid=parsed is not None and parsed.get('kind')=='CLOSED_PARENT_REPLAY_RESULT_V1'
++    quarantine=fixture_disposition(SCOPE,parsed if valid else None)
+     cpu=after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime
+-    success=reason=='EXIT' and process.returncode==0 and valid and parsed.get('status')=='PASS_PARENT_ONLY' and aggregate_reads<=LIMITS['read_bytes'] and parsed.get('charged_write_bytes',LIMITS['write_bytes']+1)<=LIMITS['write_bytes'] and parsed.get('guard_denials')==0 and parsed.get('temporary_fixture_removed') is True and parsed.get('verify_calls')==1 and cpu<=120 and time.monotonic()-started<300
++    success=reason=='EXIT' and process.returncode==0 and valid and parsed.get('status')=='PASS_PARENT_ONLY' and aggregate_reads<=LIMITS['read_bytes'] and parsed.get('charged_write_bytes',LIMITS['write_bytes']+1)<=LIMITS['write_bytes'] and parsed.get('guard_denials')==0 and parsed.get('temporary_fixture_removed') is True and parsed.get('verify_calls')==1 and cpu<=120 and time.monotonic()-started<300 and not quarantine['path_present']
+     receipt={'kind':'CLOSED_PARENT_REPLAY_SUPERVISOR_V1','status':'PASS_PARENT_ONLY' if success else 'STOPPED_NOT_QUALIFIED','child_exit':process.returncode,'reason':reason,'wall_seconds':time.monotonic()-started,'child_CPU_seconds':after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime,'console_bytes':len(output),'console_sha256':digest(output),'aggregate_charged_read_bytes':aggregate_reads,'supervisor_charged_write_bytes':budget.writes,'child_record':parsed if valid else None,'one_child':True,'retries':0,'contract_sha256':args.contract_sha256,'review_sha256':args.review_sha256}
++    parent_cpu_now=resource.getrusage(resource.RUSAGE_SELF)
++    receipt.update({'CPU_scope':'CHILD_LIMIT_120_PARENT_OBSERVED_SEPARATELY',
++                    'supervisor_CPU_seconds':parent_cpu_now.ru_utime+parent_cpu_now.ru_stime-parent_cpu_started.ru_utime-parent_cpu_started.ru_stime,
++                    'fixture_disposition':quarantine})
+     private_write(SCOPE/'safe-child-console.jsonl',bytes(output),budget)
+     private_write(SCOPE/'safe-supervisor-receipt.json',canonical(receipt),budget)
+     print(json.dumps({'status':receipt['status'],'child_exit':process.returncode,'one_child':True,'live_release':False},sort_keys=True))

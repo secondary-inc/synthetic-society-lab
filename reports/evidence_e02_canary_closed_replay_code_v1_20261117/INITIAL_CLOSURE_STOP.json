@@ -1,0 +1,10 @@
+{
+  "kind": "STATIC_CLOSURE_COLLECTOR_FAILURE_PRESERVED",
+  "candidate_imports": 0,
+  "owner_verifier_calls": 0,
+  "failure": "NON_STDLIB_IMPORT:collect_connectivity_billing_once",
+  "cause": "Nested contract script has literal sibling-script import; resolver originally handled project package and stdlib only.",
+  "bounded_recovery": "Add exact sibling script resolution, recursively AST inspect it; do not import candidate/script.",
+  "charged_upper_source_read_bytes": 6696865,
+  "scope": "Conservative upper bound for failed pass source inputs; no runtime prewarm reached."
+}

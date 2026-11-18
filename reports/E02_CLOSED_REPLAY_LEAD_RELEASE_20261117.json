@@ -1,0 +1,372 @@
+{
+  "API_calls": 0,
+  "acceptance": [
+    "Exact pinned inputs, one child and one unmodified inherited verifier call",
+    "Replay all1180events/194rows/192claims/5holds and unchanged16149microUSD exposure",
+    "All comparisons true, zero guard denials, fixture removed, resource ceilings met"
+  ],
+  "authorization": "Existing bounded autonomous recovery; offline, no paid inference, credentials or current owner access. Not live canary release.",
+  "contract": {
+    "closure": {
+      "bytes": 180395,
+      "sha256": "f703e5dd9178c2558ba4b62c13846412257fd093d9448a78612c8ed829439750"
+    },
+    "dirfd": {
+      "bytes": 5143,
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    "helper": {
+      "bytes": 26107,
+      "sha256": "c1f4b27e7717830acc6ab7aa01859a06d698b3c0ee860de68c4edc36fa9564d7"
+    },
+    "kind": "E02_CLOSED_REPLAY_EXECUTION_CONTRACT_V1",
+    "limits": {
+      "CPU_seconds": 120,
+      "children": 1,
+      "console_bytes": 65536,
+      "read_bytes": 536870912,
+      "retries": 0,
+      "verify_calls": 1,
+      "wall_seconds": 300,
+      "write_bytes": 67108864
+    },
+    "runtime": "3.12.14",
+    "scope": "PARENT_ONLY_1180_NO_NEW_EVENTS"
+  },
+  "contract_raw_sha256": "97db6af3bcac9a3cc75018d367b3755135f9a5cfb027c46e5b04c41a33eb91fb",
+  "decision": "ONE_CHILD_ONE_VERIFY_ONLY",
+  "frozen_refs": [
+    {
+      "bytes": 17486,
+      "path": "reports/E02_CANARY_CLOSED_REPLAY_CODE_V1_20261117.json",
+      "sha256": "bb5fd66fc2b8a863709c38c1d0f123aba00362afd83fae61db633e1bfac886d5"
+    },
+    {
+      "bytes": 34096,
+      "path": "reports/E02_CANARY_CLOSED_REPLAY_CODE_V1_1_20261117.json",
+      "sha256": "e2149f90fe705ab1ede9e5a4af808b4c36e939bc60b7efe3c19c42d78b3843d7"
+    },
+    {
+      "bytes": 25447,
+      "path": "reports/INDEPENDENT_AUDIT_E02_CANARY_CLOSED_REPLAY_CODE_V1_20261117.json",
+      "sha256": "bacfe3236347bf5cfd045dd11a9743948860af806b166add012d271ac1a5c53c"
+    },
+    {
+      "bytes": 31432,
+      "path": "reports/INDEPENDENT_AUDIT_E02_CANARY_CLOSED_REPLAY_CODE_V1_1_20261117.json",
+      "sha256": "43b3480c0667c9834e320c74530483b3df89d6c65397b1a33b9b573d831215ed"
+    },
+    {
+      "bytes": 24324,
+      "path": "scripts/qualify_e02_canary_closed_replay_v1_20261117.py",
+      "sha256": "70139f96325b8a6b144b18eca98970280e21d3df59537eec1e87126b82ffe51a"
+    },
+    {
+      "bytes": 26107,
+      "path": "scripts/qualify_e02_canary_closed_replay_v1_1_20261117.py",
+      "sha256": "c1f4b27e7717830acc6ab7aa01859a06d698b3c0ee860de68c4edc36fa9564d7"
+    },
+    {
+      "bytes": 180156,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/EXACT_CLOSURE.json",
+      "sha256": "0e84ca9071bcc3dd108ca6106a9c4f79b93c21e7a8b6eb2fac4d829c9607288a"
+    },
+    {
+      "bytes": 180395,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/EXACT_CLOSURE_WITH_HELPER.json",
+      "sha256": "f703e5dd9178c2558ba4b62c13846412257fd093d9448a78612c8ed829439750"
+    },
+    {
+      "bytes": 581,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/INITIAL_CLOSURE_STOP.json",
+      "sha256": "2ad84721a0bd381f936fa5934710acac0685c8e9a7d66965d72d252c9730e38d"
+    },
+    {
+      "bytes": 843,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_CHECKS.json",
+      "sha256": "48f0b19de70d8d4038964414293e3d9077c75457a4d048350b3a9e1abc25dc0d"
+    },
+    {
+      "bytes": 1106,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_CHECKS_FINAL.json",
+      "sha256": "a23b112bfdf0ecb14f506201e0c266c898141813188842acdacba35f8f9ca04b"
+    },
+    {
+      "bytes": 1099,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_LIFECYCLE_FINDING.json",
+      "sha256": "160903382c54ea32befdf216cb6eb08d98ae67458a2e1428ee4598d01b6e878b"
+    },
+    {
+      "bytes": 502,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/accepted-review.UNRELEASED-TEMPLATE.json",
+      "sha256": "2c402064d0cf3a722f43dad9a8acffd853bf3fe3db8f785f8825968f46b0daa2"
+    },
+    {
+      "bytes": 502,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/accepted-review.v1_1.UNRELEASED-TEMPLATE.json",
+      "sha256": "655e6d2d92654a0b7f842b7b1a0e9c1780dd7af5bb9c8b1e657becdb5c36a004"
+    },
+    {
+      "bytes": 2424,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/augment_runtime_closure.py",
+      "sha256": "a851f643b051d54e6c70daa4bcee419fdca4fc7702555aeb2f2bf4a46f071f51"
+    },
+    {
+      "bytes": 7238,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/collect_exact_closure.py",
+      "sha256": "48f71c28fdc82c91a5e78f66ea90ea4c8604161a432c48aece3b7720c528914b"
+    },
+    {
+      "bytes": 7066,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/collect_exact_closure_initial_failed.py",
+      "sha256": "98f8e1ce63bb18600997d795bda58fb203b07e0433ae0a27be233c8fda676f47"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/execution-contract.candidate.json",
+      "sha256": "3659f04948f12ea8b589b716bfaf8b122549c66042bc4cf0fd59502c1bc40fa2"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/execution-contract.v1_1.candidate.json",
+      "sha256": "b393b63ef39006ccb75b7b685893740dbd955516c547c570d3905946c83fc5b4"
+    },
+    {
+      "bytes": 4618,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/freeze_final_helper_delta.py",
+      "sha256": "2c41ea04e3b2dc6fd7bfe1b887741524459e1006b4af50c342a05707f0257ec3"
+    },
+    {
+      "bytes": 13840,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/freeze_helper_handoff.py",
+      "sha256": "e19cabd560f1928f4d950a52c54540b0a503ab26a51a08578a08e72cc0b01d7e"
+    },
+    {
+      "bytes": 14056,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/handoff-before-EOF-wait-correction.json",
+      "sha256": "1ae9e445cb19686df35a011e4d505bdd5dafc20a47bc8e10b74935c73709983e"
+    },
+    {
+      "bytes": 23663,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/helper-before-EOF-wait-correction.py",
+      "sha256": "7a0bd2bd450a28a10de29f6ed551a85246726647f6095cec405cb9beb4f71215"
+    },
+    {
+      "bytes": 7992,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/HELPER_CORRECTION.diff",
+      "sha256": "b9dfa565d5937409c8e1f617f2446bb48bed93c826ccaab106f9c2b6e134c63b"
+    },
+    {
+      "bytes": 1729,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/PREDECESSORS.json",
+      "sha256": "ebcc82be17315c41a64a76fe4565ba8f6975c41ca40671d3042e60a2c056ef1e"
+    },
+    {
+      "bytes": 1306,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/TEST_PLAN.json",
+      "sha256": "3f534799c60a1dca9a91105fdddac2db940b4f047d6b6035e1c07d85d00e145f"
+    },
+    {
+      "bytes": 502,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/accepted-review.UNRELEASED-TEMPLATE.json",
+      "sha256": "f25f8b1190b38bc62a44b2e10f152aa26c4e33a8bdd49206d89c8932a277015a"
+    },
+    {
+      "bytes": 1306,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.11-01/TEST_PLAN.json",
+      "sha256": "3f534799c60a1dca9a91105fdddac2db940b4f047d6b6035e1c07d85d00e145f"
+    },
+    {
+      "bytes": 1631,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.11-01/before.json",
+      "sha256": "b1f1101228489dea369fbde0c41cba1894dcaee658330b3b2e6e110b54507bb9"
+    },
+    {
+      "bytes": 3912,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.11-01/console.log",
+      "sha256": "7c46b5685fcf1607fdf5bf3234d6e6a325fdc2757f13b30e94626fea08dd7c2c"
+    },
+    {
+      "bytes": 278,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.11-01/execution.json",
+      "sha256": "d29fdef606c1d86a372ce5783bddb01f7428fc5e99ccb9f4055a38c2503579b1"
+    },
+    {
+      "bytes": 15508,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.11-01/probe_correction_v1_1.py",
+      "sha256": "18d39bbbe507c847768358cff98508cd70ec37702cd8a8d99e2873e7806dda4a"
+    },
+    {
+      "bytes": 26107,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.11-01/qualify_e02_canary_closed_replay_v1_1_20261117.py",
+      "sha256": "c1f4b27e7717830acc6ab7aa01859a06d698b3c0ee860de68c4edc36fa9564d7"
+    },
+    {
+      "bytes": 1306,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.12-01/TEST_PLAN.json",
+      "sha256": "3f534799c60a1dca9a91105fdddac2db940b4f047d6b6035e1c07d85d00e145f"
+    },
+    {
+      "bytes": 1572,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.12-01/before.json",
+      "sha256": "473a46162cbbfec937370f1333ea20a37a052b12c896339979dc9f62f77accd6"
+    },
+    {
+      "bytes": 3912,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.12-01/console.log",
+      "sha256": "27c7da7c824fa06afb83f149db2b1f6f6bf72b10c06ed010c7aafa472f8dc896"
+    },
+    {
+      "bytes": 278,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.12-01/execution.json",
+      "sha256": "68ff7ec14f60270bbb89b9de5ae35386da40e72266529be48eb8a2146c19fc8f"
+    },
+    {
+      "bytes": 15508,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.12-01/probe_correction_v1_1.py",
+      "sha256": "18d39bbbe507c847768358cff98508cd70ec37702cd8a8d99e2873e7806dda4a"
+    },
+    {
+      "bytes": 26107,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/attempt-3.12-01/qualify_e02_canary_closed_replay_v1_1_20261117.py",
+      "sha256": "c1f4b27e7717830acc6ab7aa01859a06d698b3c0ee860de68c4edc36fa9564d7"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/execution-contract.candidate.json",
+      "sha256": "97db6af3bcac9a3cc75018d367b3755135f9a5cfb027c46e5b04c41a33eb91fb"
+    },
+    {
+      "bytes": 24324,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/predecessor-0-qualify_e02_canary_closed_replay_v1_20261117.py",
+      "sha256": "70139f96325b8a6b144b18eca98970280e21d3df59537eec1e87126b82ffe51a"
+    },
+    {
+      "bytes": 17486,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/predecessor-1-E02_CANARY_CLOSED_REPLAY_CODE_V1_20261117.json",
+      "sha256": "bb5fd66fc2b8a863709c38c1d0f123aba00362afd83fae61db633e1bfac886d5"
+    },
+    {
+      "bytes": 25447,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/predecessor-2-INDEPENDENT_AUDIT_E02_CANARY_CLOSED_REPLAY_CODE_V1_20261117.json",
+      "sha256": "bacfe3236347bf5cfd045dd11a9743948860af806b166add012d271ac1a5c53c"
+    },
+    {
+      "bytes": 180395,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/predecessor-3-EXACT_CLOSURE_WITH_HELPER.json",
+      "sha256": "f703e5dd9178c2558ba4b62c13846412257fd093d9448a78612c8ed829439750"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/predecessor-4-execution-contract.v1_1.candidate.json",
+      "sha256": "b393b63ef39006ccb75b7b685893740dbd955516c547c570d3905946c83fc5b4"
+    },
+    {
+      "bytes": 15508,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_1_20261117/probe_correction_v1_1.py",
+      "sha256": "18d39bbbe507c847768358cff98508cd70ec37702cd8a8d99e2873e7806dda4a"
+    },
+    {
+      "bytes": 1342,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/PLAN.json",
+      "sha256": "0301cf8b3d2db1c0a6856f98c00c4af5e30613b82e3424a23c72301f244ac79b"
+    },
+    {
+      "bytes": 252,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/STARTED_311_01.json",
+      "sha256": "456c357b81ec4602c1632678bceba9ec9b6a54a8ff3aee59617726574fb85382"
+    },
+    {
+      "bytes": 456,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/STARTED_312_01.json",
+      "sha256": "b692b62b186eb4f57f4101937fe53e1204f36dd9596bb6b3f54478d0fc36ed6a"
+    },
+    {
+      "bytes": 2877,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/probe_311_01.log",
+      "sha256": "f0ce0a6b57a877b35cf596931aae9fdbdf8009fa0e8300471baaeaeb3128d601"
+    },
+    {
+      "bytes": 518,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/probe_311_01_result.json",
+      "sha256": "5a7cf09a72825dd8d2a4589e477a2ad808cce118554d29a064eea5e43b66ae3f"
+    },
+    {
+      "bytes": 2877,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/probe_312_01.log",
+      "sha256": "ddd20a7d65ac08f653a4407294d6fb7f9244397dc9bf20affb00a634a029c366"
+    },
+    {
+      "bytes": 543,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/probe_312_01_result.json",
+      "sha256": "7c1b082bd10c8ce576b7988a26f6b096d759b336d862f77eb68fabc8c59e32cb"
+    },
+    {
+      "bytes": 8735,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_20261117/probe_v1.py",
+      "sha256": "00d312491d4082a7233a7aac71fb399660e4fb89aa8deb977a4f6c34e92dc3cc"
+    },
+    {
+      "bytes": 847,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/PLAN.json",
+      "sha256": "66ec4b00ba4a798657b2ed1a5a9b4526df5fb5acd4b77f031856355e419c4c9c"
+    },
+    {
+      "bytes": 294,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/STARTED_311_02.json",
+      "sha256": "1a3d3b02f2afdafeb3b4d556719994ab3565a56c01a1e5baf7eeccadf23b7ce6"
+    },
+    {
+      "bytes": 322,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/STARTED_312_02.json",
+      "sha256": "23faa0d638f024b90f51781ff0374ab6b238f7fc9be7015e2eb031dc16c662c2"
+    },
+    {
+      "bytes": 4744,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/probe_311_02.log",
+      "sha256": "3f42b9978c058be049d24772c6c4e6739986ffcbde51e13d104e3e9d3204862e"
+    },
+    {
+      "bytes": 424,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/probe_311_02_result.json",
+      "sha256": "6a34eeb46862694a8add9a6d2a6842b057809e7afc54be284a5e7dad7feb479f"
+    },
+    {
+      "bytes": 4745,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/probe_312_02.log",
+      "sha256": "8a482708b3a4e607395eb0fa8757436236d316aa93c6da5602b116a09effba76"
+    },
+    {
+      "bytes": 441,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/probe_312_02_result.json",
+      "sha256": "29817dbf015647cdd24a5eb11c2c291b0659849916c3e899315e9bdc60f91331"
+    },
+    {
+      "bytes": 11439,
+      "path": "reports/evidence_independent_e02_canary_closed_replay_code_v1_1_20261117/probe_v1_1.py",
+      "sha256": "d27b5f0d989d98dcc4fde49c4ae23e075855319266b7fde87ab7fb184a808a67"
+    }
+  ],
+  "independent_report": {
+    "bytes": 31432,
+    "path": "reports/INDEPENDENT_AUDIT_E02_CANARY_CLOSED_REPLAY_CODE_V1_1_20261117.json",
+    "sha256": "43b3480c0667c9834e320c74530483b3df89d6c65397b1a33b9b573d831215ed"
+  },
+  "kind": "LEAD_RELEASE_ONE_OFFLINE_PARENT_REPLAY_V1",
+  "limits_and_caveats": [
+    "300second successful-operation wall deadline; failed terminal kill/reap cleanup separately bounded",
+    "119soft/120hard child CPU; parent CPU separately observed",
+    "512MiB logical read/64MiB reserved write/64KiB console; explicit prewarm/native accounting boundary; not physical whole-process I/O",
+    "First failure consumes invocation; no retry or widened closure, leftover fixture quarantined"
+  ],
+  "new_model_cost_USD": 0,
+  "prior_remote_head": "dfb7671a82f19b31fc18541159bd2417025db96c",
+  "recorded_at_UTC": "2026-11-18T03:33:08.718474+00:00",
+  "remaining_live_gates": [
+    "Launcher boundary/interruptions",
+    "Normal inherited owner new-event controls",
+    "Fresh current-owner and catalog proofs with bound live release"
+  ],
+  "scope": "PARENT_ONLY_1180_NO_NEW_EVENTS",
+  "status_before_execution": "NOT_RUN"
+}

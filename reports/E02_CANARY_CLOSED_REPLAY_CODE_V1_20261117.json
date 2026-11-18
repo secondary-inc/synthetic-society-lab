@@ -1,0 +1,293 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "EXECUTION_CONTRACT": {
+    "closure": {
+      "bytes": 180395,
+      "sha256": "f703e5dd9178c2558ba4b62c13846412257fd093d9448a78612c8ed829439750"
+    },
+    "dirfd": {
+      "bytes": 5143,
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    "helper": {
+      "bytes": 24324,
+      "sha256": "70139f96325b8a6b144b18eca98970280e21d3df59537eec1e87126b82ffe51a"
+    },
+    "kind": "E02_CLOSED_REPLAY_EXECUTION_CONTRACT_V1",
+    "limits": {
+      "CPU_seconds": 120,
+      "children": 1,
+      "console_bytes": 65536,
+      "read_bytes": 536870912,
+      "retries": 0,
+      "verify_calls": 1,
+      "wall_seconds": 300,
+      "write_bytes": 67108864
+    },
+    "runtime": "3.12.14",
+    "scope": "PARENT_ONLY_1180_NO_NEW_EVENTS"
+  },
+  "FILES_CHANGED": [
+    {
+      "bytes": 24324,
+      "path": "scripts/qualify_e02_canary_closed_replay_v1_20261117.py",
+      "sha256": "70139f96325b8a6b144b18eca98970280e21d3df59537eec1e87126b82ffe51a"
+    }
+  ],
+  "INPUT_REFS": [
+    {
+      "bytes": 23663,
+      "path": "scripts/qualify_e02_canary_closed_replay_v1_20261117.py",
+      "sha256": "7a0bd2bd450a28a10de29f6ed551a85246726647f6095cec405cb9beb4f71215"
+    },
+    {
+      "bytes": 180395,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/EXACT_CLOSURE_WITH_HELPER.json",
+      "sha256": "f703e5dd9178c2558ba4b62c13846412257fd093d9448a78612c8ed829439750"
+    },
+    {
+      "bytes": 5143,
+      "path": "scripts/e01_authored_dirfd_guard_v2_20261112.py",
+      "sha256": "431fe340a87bd090f0898c5efef87a5b69f766964eaeb4a53776c3479f3dd000"
+    },
+    {
+      "bytes": 94444,
+      "path": "configs/SOURCE_INVENTORY.json",
+      "sha256": "68a054db537534a93939a61dabe97e26188a4df454cc2df4ae311771b53e2c8c"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent auditor reviews exact helper, closure, descriptor/SQLite read/write accounting and source-only handoff. Lead retains Git/STATUS ownership and separately assigns one actual offline qualification only after acceptance.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 180156,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/EXACT_CLOSURE.json",
+      "sha256": "0e84ca9071bcc3dd108ca6106a9c4f79b93c21e7a8b6eb2fac4d829c9607288a"
+    },
+    {
+      "bytes": 180395,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/EXACT_CLOSURE_WITH_HELPER.json",
+      "sha256": "f703e5dd9178c2558ba4b62c13846412257fd093d9448a78612c8ed829439750"
+    },
+    {
+      "bytes": 581,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/INITIAL_CLOSURE_STOP.json",
+      "sha256": "2ad84721a0bd381f936fa5934710acac0685c8e9a7d66965d72d252c9730e38d"
+    },
+    {
+      "bytes": 843,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_CHECKS.json",
+      "sha256": "48f0b19de70d8d4038964414293e3d9077c75457a4d048350b3a9e1abc25dc0d"
+    },
+    {
+      "bytes": 1106,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_CHECKS_FINAL.json",
+      "sha256": "a23b112bfdf0ecb14f506201e0c266c898141813188842acdacba35f8f9ca04b"
+    },
+    {
+      "bytes": 1099,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_LIFECYCLE_FINDING.json",
+      "sha256": "160903382c54ea32befdf216cb6eb08d98ae67458a2e1428ee4598d01b6e878b"
+    },
+    {
+      "bytes": 502,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/accepted-review.UNRELEASED-TEMPLATE.json",
+      "sha256": "2c402064d0cf3a722f43dad9a8acffd853bf3fe3db8f785f8825968f46b0daa2"
+    },
+    {
+      "bytes": 502,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/accepted-review.v1_1.UNRELEASED-TEMPLATE.json",
+      "sha256": "655e6d2d92654a0b7f842b7b1a0e9c1780dd7af5bb9c8b1e657becdb5c36a004"
+    },
+    {
+      "bytes": 2424,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/augment_runtime_closure.py",
+      "sha256": "a851f643b051d54e6c70daa4bcee419fdca4fc7702555aeb2f2bf4a46f071f51"
+    },
+    {
+      "bytes": 7238,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/collect_exact_closure.py",
+      "sha256": "48f71c28fdc82c91a5e78f66ea90ea4c8604161a432c48aece3b7720c528914b"
+    },
+    {
+      "bytes": 7066,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/collect_exact_closure_initial_failed.py",
+      "sha256": "98f8e1ce63bb18600997d795bda58fb203b07e0433ae0a27be233c8fda676f47"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/execution-contract.candidate.json",
+      "sha256": "3659f04948f12ea8b589b716bfaf8b122549c66042bc4cf0fd59502c1bc40fa2"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/execution-contract.v1_1.candidate.json",
+      "sha256": "b393b63ef39006ccb75b7b685893740dbd955516c547c570d3905946c83fc5b4"
+    },
+    {
+      "bytes": 4618,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/freeze_final_helper_delta.py",
+      "sha256": "2c41ea04e3b2dc6fd7bfe1b887741524459e1006b4af50c342a05707f0257ec3"
+    },
+    {
+      "bytes": 13840,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/freeze_helper_handoff.py",
+      "sha256": "e19cabd560f1928f4d950a52c54540b0a503ab26a51a08578a08e72cc0b01d7e"
+    },
+    {
+      "bytes": 14056,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/handoff-before-EOF-wait-correction.json",
+      "sha256": "1ae9e445cb19686df35a011e4d505bdd5dafc20a47bc8e10b74935c73709983e"
+    },
+    {
+      "bytes": 23663,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/helper-before-EOF-wait-correction.py",
+      "sha256": "7a0bd2bd450a28a10de29f6ed551a85246726647f6095cec405cb9beb4f71215"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": {
+    "already_executed": [
+      ".venv/bin/python -I -B -S reports/evidence_e02_canary_closed_replay_code_v1_20261117/collect_exact_closure.py (stdlib prewarm and AST/hash metadata only; original sibling-import resolver failure retained)",
+      ".venv/bin/python -I -B -S reports/evidence_e02_canary_closed_replay_code_v1_20261117/augment_runtime_closure.py (stdlib-only exact helper/descriptor prewarm closure augmentation)",
+      "python3 -B reports/evidence_e02_canary_closed_replay_code_v1_20261117/freeze_helper_handoff.py (AST/hash-only handoff)",
+      "python3 -I -B -S reports/evidence_e02_canary_closed_replay_code_v1_20261117/freeze_final_helper_delta.py (AST/hash-only final lifecycle correction freeze)"
+    ],
+    "gate": "No fixed actual scope/control/review exists. Root must obtain separate independent helper/guard PASS and exact lead execution assignment before staging future private controls. No invocation released by this handoff.",
+    "proposed_future_only": ".venv/bin/python -I -B -S scripts/qualify_e02_canary_closed_replay_v1_20261117.py --contract-sha256 b393b63ef39006ccb75b7b685893740dbd955516c547c570d3905946c83fc5b4 --review-sha256 <FUTURE_EXACT_ACCEPTED_REVIEW_RAW_SHA256>"
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "This is a static author handoff; helper guard, SQL accounting, child lifecycle, resource refusal and cleanup behavior have NOT been exercised. Independent reviewer must test these within separately assigned scope before any closed parent replay.",
+    "Python audit and trusted-code restrictions address accidental access, not arbitrary native adversarial code. Native SQLite logical reservations are distinct from physical I/O measurements.",
+    "Exact closure is finite/static; unknown dynamic reads or environmental drift stop without expanding allowances.",
+    "One full parent replay cannot accept new canary events, actual live launcher controls, fresh owner/price evidence or live authority. Original production canary implementation/test bytes stay frozen.",
+    "Original author3.11suite allowance remains consumed; this is a separate unexecuted3.12-only qualification proposal."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only source/AST and already retained closed metadata references used during author work; no raw respondent/publisher data or private registration/export contents copied into public evidence. Exact closed registration546B and export3,893,676B are only future fixed input refs; currentliveowner and credentials not read.",
+  "TASK_ID": "E02_CANARY_CLOSED_REPLAY_CODE_V1_20261117",
+  "TESTS_RUN_AND_RESULTS": {
+    "candidate_imports": 0,
+    "closure": "69 exact project/config/script/evidence refs,1,125,733 bytes. Recursively resolves literal project imports across all AST scopes, explicit nested code_contract seeds and sibling script imports; no directory-wide source allowlist. Static closure may still miss dynamic data access; such access must stop future child.",
+    "guard_runtime_or_mock_tests": 0,
+    "new_author_suite_attempts": 0,
+    "normal_constructor_calls": 0,
+    "owner_verify_calls": 0,
+    "pre_review_static_lifecycle_finding": "Before reviewer handoff, author found EOF could precede child termination and trigger premature kill. Preserved initial23663B helper and14056B handoff with exact hashes, corrected EOF bounded-wait/interruption/reap/final-resource acceptance, and generated new contract. No helper/runtime/guard/replay invocation occurred.",
+    "qualification_helper_execution": 0,
+    "static_checks": {
+      "candidate_imports": 0,
+      "candidate_verifier_calls": 0,
+      "checks": {
+        "both_required_recovery_evidence_exact_paths": true,
+        "helper_AST_parses": true,
+        "no_CopiedOwner": true,
+        "no_live_scope_creation_during_preparation": true,
+        "one_static_Popen": true,
+        "one_static_normal_constructor": true,
+        "one_static_owner_verify_call": true,
+        "only_production_path_route_mutations": true,
+        "real_preflight_before_candidate_import": true,
+        "recursive_project_source_pins_match_now": true
+      },
+      "final_helper_AST_parses": true,
+      "guard_runtime_tests": 0,
+      "helper_runtime_invocations": 0,
+      "kind": "AUTHOR_STATIC_AST_AND_INPUT_PIN_CHECKS_ONLY",
+      "prewarm_module_count": 43,
+      "project_pin_count": 69,
+      "source_mutations": [
+        "production.production_owner_directory",
+        "production.production_owner_directory"
+      ],
+      "static_lifecycle_correction": "Ordinary EOF bounded-waits for exit before kill; supervisor interruptions preserve fixed reason and reap; final PASS checks observed CPU/wall and child read/write/guard/cleanup/verify counts.",
+      "stdlib_pin_count": 247
+    },
+    "static_collector_initial_stop": "Exact sibling script import collect_connectivity_billing_once was initially not resolved. Failure/source preserved; conservative6,696,865B read reservation counted. Corrected resolver adds only exact sibling .py path and AST-recurses it. No script or project package imported.",
+    "stdlib_prewarm": "43 literal standard-library modules prewarmed on3.12.14;247 exact origin/cache/executable files pinned,24,055,941 bytes. Imported project/candidate0."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Independent helper/guard/closure acceptance and exact one-child lead execution assignment missing.",
+    "Full inherited1180event semantic replay remainsNOT_RUN.",
+    "Actual canary launcher resource closure, current owner/price proofs and exact live release remain separateBLOCKED gates."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Author static helper/dependency freeze",
+      "status": "AUTHOR_STATIC_CHECKS_PASS"
+    },
+    {
+      "criterion": "Independent helper and guard qualification",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Untouched inherited1180event actual replay",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Live execution authority",
+      "status": "NOT_RELEASED"
+    }
+  ],
+  "activity": {
+    "Git_mutations": 0,
+    "actual_qualification_scope_created": false,
+    "audited_canary_code_or_test_edits": 0,
+    "candidate_execution": 0,
+    "credential_reads": 0,
+    "current_live_owner_access": 0,
+    "network_calls": 0,
+    "qualification_children": 0
+  },
+  "author_frozen_version": "FINAL_STATIC_LIFECYCLE_CORRECTION_V1_1_NO_EXECUTION",
+  "decision": "AUTHOR_STATIC_PREPARATION_COMPLETE_HELPER_AND_REPLAY_NOT_RUN_NOT_RELEASED",
+  "execution_contract_raw_sha256": "b393b63ef39006ccb75b7b685893740dbd955516c547c570d3905946c83fc5b4",
+  "helper_architecture": {
+    "SQLite": "Reserve48MiB logical write capacity for <=24MiB main DB plus rollback and24MiB native construction-read capacity before SQLite connect. PRAGMA max_page_count6144/page_size4096, DELETE journal, MEMORY temp, original bounded export only and parameterized inserts. Explicitly close materialization connection before chmod0400/freeze. Actual physical OS syscall volumes are not claimed from these logical reservations. Query-only immutable verifier connection has native file read reservation plus a SELECT-only proxy that charges all serialized returned payload bytes without altering rows.",
+    "acceptance": "Exact head/history/194rows/192claims/consumed/fiveholds,7studyprojections/study_authorities/active approval/parentstop/no newcanarybranch; protected method identities, frozen derived file hashes and project input hashes unchanged. All guards/caps accepted, fixture cleanup required.",
+    "actual_replay": "Normal CanaryOwnerV1 constructor and single original owner._verify call; all inherited class methods remain intact. Only production_owner_v4.production_owner_directory temporarily redirected, restored in finally. Derived header/events/charges rebuilt from closed export; no final replay state adopted. No new event, request, packet, price proof, financial mutation or historical journal setup.",
+    "child": "Exact3.12.14, core0, CPU119/120, wall bounded by remaining parent deadline. O_EXCL child marker prevents another child. Charges supervisor reads/output reservation into child shared counters. Rehashes exact sources/runtime/export/registration before any candidate import; standard-library-only prewarm is explicit review boundary.",
+    "guard": "Before private fixture creation/candidate import, installs exact-path Python audit guard, DirectoryFdGuard source compiled directly from reviewed bytes (not stale cache), wrapped Python streams and restricted descriptor operations. Denies sockets/process/exec/ctypes/mmap/environment changes, unlisted files/native extension imports, alias paths and non-temp writes. Only two exact SQLite opens allowed (materialization and immutable read-only). Exact uncreated cache projections avoid stale project bytecode.",
+    "safe_result": "Fixed stage/type/status/counters/boolean comparison data only; no exception args/locals, raw IDs/prompts/responses/registration or owner contents printed. Temporary data remain Git-ignored and removed. Supervisor captures bounded private safe JSON output/receipt.",
+    "supervisor": "300-second timer starts before preflight, external exact contract/review gate, rehash closure and closed input pins, reserve parent output before one O_EXCL invocation claim and single isolated child. Empty credential environment except PATH. Deadline/output cap kills and reaps same child; no retries."
+  },
+  "kind": "FROZEN_UNEXECUTED_QUALIFICATION_HELPER_FOR_INDEPENDENT_CODE_GUARD_REVIEW",
+  "predecessors_preserved": [
+    {
+      "bytes": 1099,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/STATIC_LIFECYCLE_FINDING.json",
+      "sha256": "160903382c54ea32befdf216cb6eb08d98ae67458a2e1428ee4598d01b6e878b"
+    },
+    {
+      "bytes": 698,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/execution-contract.candidate.json",
+      "sha256": "3659f04948f12ea8b589b716bfaf8b122549c66042bc4cf0fd59502c1bc40fa2"
+    },
+    {
+      "bytes": 14056,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/handoff-before-EOF-wait-correction.json",
+      "sha256": "1ae9e445cb19686df35a011e4d505bdd5dafc20a47bc8e10b74935c73709983e"
+    },
+    {
+      "bytes": 23663,
+      "path": "reports/evidence_e02_canary_closed_replay_code_v1_20261117/helper-before-EOF-wait-correction.py",
+      "sha256": "7a0bd2bd450a28a10de29f6ed551a85246726647f6095cec405cb9beb4f71215"
+    }
+  ],
+  "recorded_at_UTC": "2026-11-18T03:02:59.081433+00:00",
+  "resource_boundaries": {
+    "author_preparation_charged_content_read_bytes": 36042859,
+    "author_preparation_read_limit": 67108864,
+    "content_read_scope": "Parent preflight read charges are inherited by child budget before further work; supervisor terminal reservations likewise included in child write counter. SQL native capacity reservations and serialized query result accounting are explicit.",
+    "generated_evidence_bytes_before_report": 439485,
+    "generated_evidence_write_limit": 8388608,
+    "prewarm": "Exact imported stdlib source/cache/native origins and executable are pinned and charged by whole-file preflight. Implicit interpreter/native-loader OS files and physical syscalls are outside Python-open accounting. No claim of complete whole-process measured I/O.",
+    "qualification_limits": {
+      "CPU_seconds": 120,
+      "children": 1,
+      "console_bytes": 65536,
+      "read_bytes": 536870912,
+      "retries": 0,
+      "verify_calls": 1,
+      "wall_seconds": 300,
+      "write_bytes": 67108864
+    }
+  }
+}
