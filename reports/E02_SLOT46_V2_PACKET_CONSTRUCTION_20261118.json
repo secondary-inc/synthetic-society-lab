@@ -1,0 +1,30 @@
+{
+  "activity": {
+    "actual_key_reads": 0,
+    "current_owner_access": 0,
+    "model_requests": 0,
+    "network_calls": 0,
+    "real_namespace_created": false,
+    "real_packet_built": false
+  },
+  "inputs_and_provenance": [
+    "owner_id and original45 packet price_release from the exact pinned closed capture only; no public raw owner values.",
+    "closed_expected_head from exact captured head JSON, not a manufactured head; canonical hash must equal m.EXPECTED_HEAD_SHA256.",
+    "m.ANCHOR pins195rows,6holds,original stopped study/claims/baseline13. New code contract is all exact current source/config/resource pins plus frozen predecessor contract.",
+    "Fresh explicit valid_from/valid_until and unique run_id are chosen by lead only after independent implementation review; p.validate_packet requires120<window<=900seconds and price lease encloses it. No automatic time generation, backdate or historic MOCK timestamp reuse.",
+    "Historical releases are verified as part of full1189-event replay and preserved semantics comparison. The date-only helper is not a fresh observation; mandatory runtime catalogGET A/B and fresh_proof joins still precede reservation.",
+    "Independent review is obtained for exact draft (all fields excluding review) and must bind canonical_hash(q). The authored a*32 mocked review identifier in qualifier is not real independent review."
+  ],
+  "kind": "E02_SLOT46_V2_NONEXECUTING_PACKET_CONSTRUCTION_PROCEDURE",
+  "lead_release_construction": "Only lead, after required independent checks, may construct closed6field release: kind=LEAD_WRAPPER_SLOT46_RELEASE_V2; packet_sha256=canonical_hash(final packet); code_hash=canonical_hash(p.contract()); review_sha256=canonical_hash(packet.review); maximum_POSTs=1; scope=ORIGINAL46_ONLY_NOT_FULL80. Serialize packet/release with canonical_bytes so file SHA and canonical hash match. Do not create such real release from this procedure.",
+  "mandatory_runtime_gates": [
+    "Fresh current locked normal owner replay must still match exact captured1189 head and all195rows/sixholds. Any divergence stops; do not reset owner or edit frozen anchors.",
+    "Both actual counted catalog proofs must verify unchanged model/provider/price semantics and time freshness before grant.",
+    "One reservation before onePOST;3stats maximum,zero model retries,unchanged caps.",
+    "Separate exact lead release and reviewed source hashes; no inferred authority from this procedure or design."
+  ],
+  "not_executed_python": "from copy import deepcopy\nfrom civiclab.common import canonical_hash\nfrom civiclab.e02 import wrapper_crossmodel_slot46_v2 as p\nfrom civiclab.e02 import wrapper_crossmodel_slot46_v2_owner as m\n\ndef assemble_packet(*,owner_id,closed_expected_head,historical_price_release,\n                    run_id,valid_from_utc,valid_until_utc,independent_review):\n    # Invoke only after independent implementation review. No IO to real owner,\n    # no credential/network, no namespace creation, no inferred live authority.\n    p.need(canonical_hash(closed_expected_head)==m.EXPECTED_HEAD_SHA256,\n           'exact captured1189 head required')\n    q={'kind':'WRAPPER_SLOT46_PACKET_V2','owner_id':owner_id,\n       'parent_key':p.identity(owner_id),'expected_head':deepcopy(closed_expected_head),\n       'parent_binding':deepcopy(m.ANCHOR),'run_id':run_id,\n       'valid_from_utc':valid_from_utc,'valid_until_utc':valid_until_utc,\n       'bounds':deepcopy(p.BOUNDS),'code_hash':canonical_hash(p.contract())}\n    q['price_release']={role:p.lease_preserved_semantics(\n        historical_price_release[role],\n        expected_release_hash=canonical_hash(historical_price_release[role]),\n        valid_from=valid_from_utc,valid_until=valid_until_utc)\n        for role in ('A','B')}\n    q['authority']={'kind':p.AUTHORITY,'scope_hash':canonical_hash(q)}\n    # Independent reviewer supplies the actual review identifier and hash for\n    # this exact q. Do not fill an authored dummy review ID as live evidence.\n    p.closed(independent_review,('kind','reviewer_role','review_id','inputs_hash'))\n    p.need(independent_review['inputs_hash']==canonical_hash(q),\n           'independent review must bind exact fresh draft')\n    q['review']=deepcopy(independent_review)\n    return p.validate_packet(q,canonical_hash(q))\n",
+  "private_scope": "Future fixed entry scope is data/processed/e02_wrapper_slot46_v2_20261118_actual_01, not created by this worker; raw packet/review/financial control data stay ignored/local.",
+  "recorded_at_utc": "2026-11-18T17:06:11.265489+00:00",
+  "status": "PROCEDURE_ONLY_NO_PACKET_NO_LIVE_RELEASE"
+}

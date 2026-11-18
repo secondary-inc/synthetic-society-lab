@@ -1,0 +1,146 @@
+{
+  "TASK_ID": "INDEPENDENT_FEC2020_MAPPING_METHODS_20261118",
+  "status": "PASS",
+  "decision": "FEC-M01 passes for implementation of the separate, candidate-only parser/adapter contract. This is methods acceptance with explicit blocked adoption conditions, not numeric data, party identity, seat/date provenance, final-ballot, forecast or G03 acceptance.",
+  "recorded_at_UTC": "2026-11-18T17:01:41.611021+00:00",
+  "source_refs": [
+    {
+      "path": "configs/e01_fec2020_senate_mapping_v1.json",
+      "bytes": 19619,
+      "sha256": "db5d3b76ed7e0d4ab6f05143e40096e7acaa7663bda0f305473f17954232a23a"
+    },
+    {
+      "path": "scripts/inspect_fec2020_mapping_v1_20261118.py",
+      "bytes": 5785,
+      "sha256": "c3eb1bc91d0f4f0fc6f06bbd56b64d32198172a78972bac5b885bf6b7c2af04a"
+    },
+    {
+      "path": "reports/E01_FEC2020_MAPPING_SOURCE_INSPECTION_20261118.json",
+      "bytes": 1981,
+      "sha256": "f8d2285522908a7492ccd68b27107bd4d782af1e709a3dfcf2b29a7f255dad6c"
+    }
+  ],
+  "input_handoff": {
+    "path": "reports/E01_FEC2020_MAPPING_HANDOFF_20261118.json",
+    "bytes": 3010,
+    "sha256": "0c43b3dd7ee5b8b715171f93d704a365216c84357771784038d45936c0c2f9cd"
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_MAPPING_METHODS_20261118.json",
+    "reports/evidence_independent_fec2020_mapping_methods_20261118/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_fec2020_mapping_methods_20261118/METHODS_CHECKS.json",
+      "bytes": 4631,
+      "sha256": "49dfbe7abe1e4f5f2bcc4d62356d69602ae1974b3c8d4b92ff21919195bc6c25"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_mapping_methods_20261118/PARTY_LABEL_CORRECTION.json",
+      "bytes": 625,
+      "sha256": "5f3d962876b6836a7f52f40bfa0745c88bfaf41f2d656c680de29016e61d4915"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_mapping_methods_20261118/check_methods.py",
+      "bytes": 5671,
+      "sha256": "b6962ed503f2225b17c564cf779bded10a8970e0ec0e5e2808ed0f6312d3ae48"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "check_methods.py: exact source/contract/basis hashing, bounded standard-library XML cell/structural checks, retained official-class capture consistency only. No parser implementation/feature calculation."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "main_checks": {
+      "handoff_pin:configs/e01_fec2020_senate_mapping_v1.json": true,
+      "handoff_pin:scripts/inspect_fec2020_mapping_v1_20261118.py": true,
+      "handoff_pin:reports/E01_FEC2020_MAPPING_SOURCE_INSPECTION_20261118.json": true,
+      "basis_pin:protocols/E01_RETROSPECTIVE.md": true,
+      "basis_pin:protocols/E01_FEED_TO_BALLOT.md": true,
+      "basis_pin:docs/E01_2026_SELECTION_PROPOSAL.md": true,
+      "basis_pin:src/civiclab/e01/historical.py": true,
+      "basis_pin:src/civiclab/e01/ballots.py": true,
+      "basis_pin:reports/E01_FEC2020_WORKBOOK_DISCOVERY_20261118.json": true,
+      "basis_pin:reports/CI_REPAIR_HANDOFF_20261118.json": true,
+      "exact_workbook_identity": true,
+      "archive_bounds": true,
+      "four_sheets_no_formulas": true,
+      "GA_terms_separate": true,
+      "GA_runoff_later_year_footnotes": true,
+      "AK_party_identity_ambiguous_not_silently_D": true,
+      "MT_removed_marker_not_zero": true,
+      "MN_DFL_literal": true,
+      "DFL_party_label_row29": false,
+      "OR_combined_label_single_occurrence": true,
+      "NC_whitespace_subtotal_role": true,
+      "blank_other_controls_remain_missing": true,
+      "no_data_combined_totals": true,
+      "GA_summary_notes_multiple_terms": true,
+      "publication_month_literal": true,
+      "source_witness_header_exact": true,
+      "class_capture_exact": true,
+      "captured_classII_33_state_frame_matches": true,
+      "captured_term_text_matches": true,
+      "no_adoption_execution_or_cost": true,
+      "bounded_ranges_fit_cell_cap": true,
+      "separate_methods_parser_numeric_gates": true
+    },
+    "initial_valid_checks": 31,
+    "reviewer_literal_correction": {
+      "kind": "REVIEWER_LITERAL_EXPECTATION_CORRECTION",
+      "source": "data/raw/e01_fec2020_workbook_20261118/federalelections2020.xlsx",
+      "sheet": "14. 2020 Party Labels",
+      "cells": {
+        "A29": "DFL",
+        "C29": "Democratic-Farmer Labor"
+      },
+      "original_reviewer_expectation": "Democratic-Farmer-Labor",
+      "finding": "Extra hyphen was a reviewer assumption, not a contract or source defect. Contract row29 witness is correct.",
+      "verification": "One supplementary standard-library XML read of party-label rows28:30; no numeric votes adopted.",
+      "original_check_record_preserved": true,
+      "corrected_witness_pass": true
+    },
+    "method_coverage": "All contract/source/basis pins match; source header and bounded sheets agree. GA term/runoff-year footnotes, AK nonpartisan context, MT removal marker, OR combined label, NC whitespace total, blank WV/WY controls and missing combined-total data independently agree.",
+    "class_capture": "Captured text/hash,33-state frame and2021-to2027 term text agree with proposal. This does not certify fresh official-server identity, current candidates or exact pre-results source-version availability.",
+    "scope_and_bounds": "15,543 cells fit16,000 planned maximum; source bounded6,251,110 bytes, archive<=80 members/64MiB declared expansion. Zero formulas in four inspected XML sheets. No adoption/forecast/parser/model flags set.",
+    "runtime_observation": {
+      "main_logical_read_bytes": 7247052,
+      "wall_seconds": 0.04363283299608156,
+      "network_calls": 0,
+      "model_calls": 0,
+      "workbook_writes": 0,
+      "numeric_vote_totals_computed": false
+    }
+  },
+  "accepted_methods": [
+    "Separate L/N/P/R stages, general versus runoff, regular/full/unexpired terms and cycle versus event year; do not join by state/year alone.",
+    "Use candidate rows without adding subtotal/control rows; preserve missing/zero/one and source-specific removal markers.",
+    "Unknown party/identity/class/date remains explicit blocked, never defaults to Other or a nominee. No winner-based selection.",
+    "Exactly one verified D/R candidate for conditional margin; keep others recorded/excluded, reject rival same-party aggregation.",
+    "Maintain33 frame slots and exclusions; no outcome-based replacements, imputation or sample shrinkage.",
+    "Same-publication summary sheets are internal consistency checks, not independent external evidence.",
+    "Alternative tabular source does not pass or reopen consumed Clerk/PDF/G03 scopes and does not complete House or advanced variants."
+  ],
+  "blocked_adoption_conditions_preserved": {
+    "AK": "Keep nonpartisan identity unresolved unless explicit estimand amendment/accepted mapping; otherwise exclude.",
+    "OR": "Combined party label is one observed count; no split/double-count. Affiliation acceptance remains reviewed.",
+    "ME": "Round/stage provenance not supplied by a generic GENERAL VOTES header.",
+    "GA": "Full/special and November/January observations separate. Any conditional November regular-GEN use despite runoff needs protocol interpretation/amendment; combined summary composition needs explicit source evidence.",
+    "LA": "Multiple same-party participants cannot be converted into one nominee.",
+    "AR": "A missing-D situation, if confirmed, retains an ineligible frame slot; do not fabricate or replace.",
+    "all_states": "Independent accepted class/term/date/candidate/source witnesses remain necessary before actual historical feature adoption. Current capture hash agreement alone is insufficient."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Pinned historical FEC workbook retained only in ignored raw storage; no candidate vote rows or workbook redistribution in audit. Publication month is an observed label, not independent proof of an exact pre-cutoff version or prospective forecast. Official acquisition metadata remains separately scoped.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Original main witness record retains one overly strict reviewer hyphen expectation. Supplementary cell inspection resolves it; no product defect or source change is alleged.",
+    "No FEC parser or actual numeric feature run occurred.",
+    "Candidate/event/party lineage and independent source authenticity/rights are not established by this methods review.",
+    "Package/version/source binding and timeout/read/output refusals remain implementation acceptance work.",
+    "Original target selection, House history, ballots/geography, sealed retrospective outcomes, matched comparators and full research contract remain open."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "P01 authored parser/adapter fixtures, P02 independent implementation review, A01 bounded candidate parse, A02 independent numeric/provenance acceptance and S01 original evaluation sequence remain required.",
+    "No additional methods blocker prevents candidate-only implementation under these frozen constraints."
+  ],
+  "NEXT_UNBLOCKED_TASK": "E01 worker may implement only separate pure row parser and bounded adapter with authored fixtures; retain false adoption/forecast flags and explicit unresolved dispositions. No actual numeric parse/adoption until its stated later gates."
+}

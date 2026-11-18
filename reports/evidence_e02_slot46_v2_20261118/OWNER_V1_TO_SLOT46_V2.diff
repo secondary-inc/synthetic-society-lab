@@ -1,0 +1,158 @@
+--- src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py
++++ src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py
+@@ -11,24 +11,20 @@
+ from ..model import ExecutionBlocked
+ from ..owner_budget_v3 import utc
+ from ..production_owner_v4 import ProductionOwnerV4,base_context,validate_row,price_proof_key
+-from .wrapper_crossmodel_v1_owner import WrapperCrossmodelOwnerV1
++from .wrapper_crossmodel_canary_v1_owner import CanaryOwnerV1, STATE as PREDECESSOR_STATE
+ from .exploratory_owner_v1 import _row_for
+ from .crossmodel_price_v1 import fresh_proof
+-from . import wrapper_crossmodel_canary_v1 as p
+-
+-OPEN='WRAPPER_CANARY_OPEN_V1'
+-IO='WRAPPER_CANARY_IO_V1'
+-PROOFS='WRAPPER_CANARY_PROOFS_V1'
+-GRANT='WRAPPER_CANARY_GRANT_V1'
+-FINISH='WRAPPER_CANARY_COMMIT_V1'
+-CLOSE='WRAPPER_CANARY_CLOSE_V1'
+-STATE='wrapper_crossmodel_canary_v1'
+-ANCHOR={'rows':'998ed5e53f82be68d115e057f6a002a615195f9ff06d2f3d0bf2df22c29dec3f',
+- 'study':'5c7da88a01de6f65a54b86d658e1f8c7fb3ad90011624c9bce0d450b6bbf5f2a',
+- 'claims':'ba46c00b6e493026993b07bac6d3afc4b6ce62f278b35f03593efb7a5a408689',
+- 'protected':'308e83e63bba9c43b6a2b51a3ef59a17f672167aade7f54bf121ddb924e13721',
+- 'baseline13':'19929177f13089ccfa5137b588632895280491f5b22eb155d58de197b65b681e'}
+-
++from . import wrapper_crossmodel_slot46_v2 as p
++
++OPEN='WRAPPER_SLOT46_OPEN_V2'
++IO='WRAPPER_SLOT46_IO_V2'
++PROOFS='WRAPPER_SLOT46_PROOFS_V2'
++GRANT='WRAPPER_SLOT46_GRANT_V2'
++FINISH='WRAPPER_SLOT46_COMMIT_V2'
++CLOSE='WRAPPER_SLOT46_CLOSE_V2'
++STATE='wrapper_crossmodel_slot46_v2'
++ANCHOR={'baseline13': '19929177f13089ccfa5137b588632895280491f5b22eb155d58de197b65b681e', 'claims': 'ba46c00b6e493026993b07bac6d3afc4b6ce62f278b35f03593efb7a5a408689', 'protected': 'ac7ae7d73e02f8c1e2edb2624a7d81a058db22142f55838456e8f1de15e8efb6', 'rows': 'b3391e7ec1b901df17185c3bd33984f31b109dc050a34f09cbb7edabfb09ec63', 'study': '5c7da88a01de6f65a54b86d658e1f8c7fb3ad90011624c9bce0d450b6bbf5f2a'}
++EXPECTED_HEAD_SHA256='540abd91b7a6cd2fd0e9d0fe6ff9b517e54396f6b62ec3dce34235963b0f95a2'
+ 
+ def parent_binding(state):
+     rows=state['rows'];study=state['wrapper_crossmodel']
+@@ -51,16 +47,19 @@
+     return canonical_hash(_jsonable({k:v for k,v in state.items() if k not in mutable}))
+ 
+ 
+-class CanaryOwnerV1(WrapperCrossmodelOwnerV1):
++class Slot46OwnerV2(CanaryOwnerV1):
+     @staticmethod
+     def _binding(row,authority):
+         if authority.get('kind')==p.AUTHORITY:
+             base_context(row['context'])
+             p.need(row['context']['approval_hash']==canonical_hash(authority),'canary financial authority')
+             return
+-        return WrapperCrossmodelOwnerV1._binding(row,authority)
++        return CanaryOwnerV1._binding(row,authority)
+ 
+     def _protect(self,state,b):
++        if b['packet']['kind']!='WRAPPER_SLOT46_PACKET_V2':
++            if STATE not in state:return CanaryOwnerV1._protect(self,state,b)
++            b=state[STATE]
+         old={k:state['rows'][k] for k in b['old_ids']}
+         p.need(canonical_hash(old)==ANCHOR['rows'] and canonical_hash(state['wrapper_crossmodel'])==ANCHOR['study']
+                and _static(state)==b['old_static'],'canary immutable parent rows/study')
+@@ -68,7 +67,7 @@
+         p.need(set(b['old_claims']).issubset(state['statistics_claims'])
+                and state['statistics_claims']<=set(b['old_claims'])|({b['receipt']} if b['receipt'] else set()),'canary prior claims')
+         protected={k:canonical_hash(v) for k,v in old.items() if v['status']!='PHASE_COMMITTED'}
+-        p.need(len(protected)==5 and canonical_hash(protected)==ANCHOR['protected'],'canary five protected holds')
++        p.need(len(protected)==6 and canonical_hash(protected)==ANCHOR['protected'],'canary six protected holds')
+         extra=state['rows'].get(b['receipt']) if b['receipt'] else None
+         expected_keys=set(b['old_keys'])
+         expected_generations=deepcopy(b['old_generations'])
+@@ -76,11 +75,11 @@
+             expected_keys.add(canonical_hash({k:extra['context'][k] for k in ('run_id','unit_id','phase','module')}))
+             if extra['generation_id'] is not None:expected_generations[extra['generation_id']]=extra['id']
+         p.need(state['keys']==expected_keys and state['generations']==expected_generations,'canary prior global identities')
+-        p.need(state['unfinished']==5+int(extra is not None and extra['status']!='PHASE_COMMITTED'),'canary unfinished accounting')
+-        expected=16149+(extra['charged'] if extra else 0)
++        p.need(state['unfinished']==6+int(extra is not None and extra['status']!='PHASE_COMMITTED'),'canary unfinished accounting')
++        expected=17152+(extra['charged'] if extra else 0)
+         p.need(state['consumed']['total']==expected and state['consumed']['modules']=={'E01':0,'E02':expected}
+-               and state['consumed']['dispatches']==194+int(extra is not None)
+-               and state['consumed']['module_dispatches']=={'E01':0,'E02':194+int(extra is not None)},'canary cumulative accounting')
++               and state['consumed']['dispatches']==195+int(extra is not None)
++               and state['consumed']['module_dispatches']=={'E01':0,'E02':195+int(extra is not None)},'canary cumulative accounting')
+ 
+     def _time(self,event,state,b,*,phase=False):
+         prior=state['max_clock'];now=self._clock(event,state);q=b['packet']
+@@ -107,13 +106,14 @@
+             p.need(checked==proofs[role]==record['proof'],'canary price source join')
+ 
+     def _canary_context(self,state,b):
++        if b['packet']['kind']!='WRAPPER_SLOT46_PACKET_V2':return CanaryOwnerV1._canary_context(self,state,b)
+         q=b['packet'];compiled,baseline=p.compile_slot(state['wrapper_crossmodel'],q['price_release']['B']['terms'])
+         p.need(baseline==ANCHOR['baseline13'],'canary baseline identity')
+-        plan={'kind':'WRAPPER_CANARY_PLAN_V1','parent_key':q['parent_key'],'execution_order':45,
++        plan={'kind':'WRAPPER_SLOT46_PLAN_V2','parent_key':q['parent_key'],'execution_order':46,
+               'baseline_sha256':baseline,'payload_sha256':compiled['payload_sha256'],'scope_hash':canonical_hash(q)}
+         c={'approval_hash':canonical_hash(q['authority']),'plan_hash':canonical_hash(plan),
+            'release_hash':canonical_hash(q['price_release']),'price_proof':b['proofs']['B'],
+-           'run_id':q['run_id'],'unit_id':'wrapper-canary-original-45','phase':'post','module':'E02',
++           'run_id':q['run_id'],'unit_id':'wrapper-slot46-original-46','phase':'post','module':'E02',
+            'terms':q['price_release']['B']['terms'],'envelope':compiled['envelope'],
+            'sampling':{'seed':p.SEED,'temperature':0,'retries':0},'payload_hash':compiled['payload_sha256']}
+         base_context(c)
+@@ -132,15 +132,16 @@
+             p.need(b is None,'canary parent+slot already opened across aliases')
+             p.need(q['owner_id']==self.header['owner_id']==state['wrapper_crossmodel']['packet']['policy']['owner_id']
+                    and canonical_hash(state['wrapper_crossmodel']['packet'])==p.PARENT_PACKET_SHA
+-                   and q['expected_head']==state['_prefix_head'] and q['parent_binding']==ANCHOR==parent_binding(state), 'canary exact live parent/head')
++                   and q['expected_head']==state['_prefix_head'] and canonical_hash(q['expected_head'])==EXPECTED_HEAD_SHA256 and len(state['_prefix_events'])==1189 and q['parent_binding']==ANCHOR==parent_binding(state), 'canary exact live parent/head')
+             old=state['wrapper_crossmodel']
+             for role in ('A','B'):
+                 prior=old['packet']['price_release'][role];new=q['price_release'][role]
+                 p.need(all(new['terms'][k]==v for k,v in prior['terms'].items() if k not in ('valid_from_utc','valid_until_utc','interpretation_hash'))
+                        and all(new['interpretation'][k]==v for k,v in prior['interpretation'].items() if k not in ('valid_from_utc','valid_until_utc')),'canary historical semantics not loose ceilings')
+             p.need(old['stopped'] is True and old['pending'] is None and len(old['receipts'])==45
+-                   and len(old['witnesses'])==44 and state['unfinished']==5 and len(state['rows'])==194
+-                   and sorted(state['rows'][r]['charged'] for r in state['rows'] if state['rows'][r]['status']!='PHASE_COMMITTED')==[340,340,775,788,1008]
++                   and len(old['witnesses'])==44 and state['unfinished']==6 and len(state['rows'])==195
++                   and state[PREDECESSOR_STATE]['closed'] is True and state[PREDECESSOR_STATE]['pending'] is None
++                   and sorted(state['rows'][r]['charged'] for r in state['rows'] if state['rows'][r]['status']!='PHASE_COMMITTED')==[340,340,775,788,1003,1008]
+                    and not any(row['context']['run_id']==q['run_id'] for row in state['rows'].values()),'canary stopped ancestry/holds')
+             b={'packet':deepcopy(q),'opened':event['recorded_at_utc'],'old_ids':sorted(state['rows']),
+                'old_claims':sorted(state['statistics_claims']),'old_static':_static(state),
+@@ -166,7 +167,7 @@
+                 row=state['rows'][b['receipt']]
+                 if key=='POST':p.need(row['status']=='STARTED','canary post status')
+                 else:p.need(row['status']=='RESPONSE_SEEN' and b['receipt'] in state['statistics_claims'] and b['counts']['POST']==1,'canary billing intent')
+-            bound=p.BOUNDS[key];seed={'POST':45,'statistics_GET':44,'catalog_GET':10}[key]
++            bound=p.BOUNDS[key];seed={'POST':46,'statistics_GET':44,'catalog_GET':12}[key]
+             p.need(b['counts'][key]+1<=bound and seed+b['counts'][key]+1<=p.BOUNDS['parent_'+key],'canary IO aggregate cap')
+             b['counts'][key]+=1;b['io'].append([phase,ordinal]);return
+         if kind==PROOFS:
+@@ -181,7 +182,7 @@
+             for release in b['packet']['price_release'].values():
+                 p.need((utc(release['terms']['valid_until_utc'])-now).total_seconds()>120,'canary full phase lease')
+             amount=ack['context']['envelope']['reserved_microusd'];used=state['consumed']
+-            p.need(amount<=1785 and 3928+amount<=200000 and used['total']+amount<=5000000
++            p.need(amount<=1785 and 4931+amount<=200000 and used['total']+amount<=5000000
+                    and used['modules']['E02']+amount<=1000000 and used['modules']['E01']==0
+                    and used['dispatches']+1<=229,'canary finite financial caps')
+             b['pending']=deepcopy(ack);b['phase_started']=event['recorded_at_utc'];return
+@@ -217,6 +218,7 @@
+         self._protect(state,b)
+ 
+     def _check_commit(self,event,state,b,body):
++        if b['packet']['kind']!='WRAPPER_SLOT46_PACKET_V2':return CanaryOwnerV1._check_commit(self,event,state,b,body)
+         from .wrapper_crossmodel_v1 import parse_response
+         from .crossmodel_recovery_metadata_v1 import normalize_statistics
+         from .exploratory_live_client_v1 import _no_provider_reasoning,_no_unsupported_response_activity,_usage_bounds,_cost
+@@ -239,7 +241,7 @@
+         p.need(response.get('id')==row['generation_id'] and response_model_allowed(response.get('model'),c['terms']['model']),'canary response identity')
+         output={'status':parsed['status'],'answer':parsed['answer'],'response_raw_sha256':hashlib.sha256(rr).hexdigest()}
+         expected={'schema_version':1,'run_id':c['run_id'],'unit_id':c['unit_id'],'phase':'post','receipt':row['id'],'request_hash':c['envelope']['request_hash'],'output':output}
+-        witness={'execution_order':45,'phase':'post','status':parsed['status'],'answer':parsed['answer'],'payload_sha256':c['payload_hash'],'receipt':row['id']}
++        witness={'execution_order':46,'phase':'post','status':parsed['status'],'answer':parsed['answer'],'payload_sha256':c['payload_hash'],'receipt':row['id']}
+         p.need(checkpoint==expected and canonical_hash(output)==row['output_hash'] and body['witness']==witness
+                and body['before_hash']==canonical_hash(row) and body['after']=={**row,'status':'PHASE_COMMITTED','checkpoint_hash':hashlib.sha256(cr).hexdigest()},'canary checkpoint/witness join')
+ 

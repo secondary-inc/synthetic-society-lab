@@ -1,0 +1,69 @@
+{
+  "actual_current_owner_key_network_access": false,
+  "actual_entry_bounds": {
+    "CPU_hard_seconds": 125,
+    "CPU_soft_seconds": 120,
+    "wall_seconds": 240
+  },
+  "capture": {
+    "events": 1189,
+    "holds": 6,
+    "manifest_sha256": "4cc86b9df8c149923eafc3fd8641c1445555f30b1e806045ca9a9f40883d8481",
+    "microusd": 17152,
+    "rows": 195
+  },
+  "each_child_bounds": {
+    "CPU_seconds": 600,
+    "console_bytes": 65536,
+    "logical_read_bytes": 4294967296,
+    "wall_seconds": 900,
+    "write_bytes": 268435456
+  },
+  "kind": "E02_SLOT46_V2_FINITE_AUTHOR_QUALIFICATION_PLAN",
+  "mock_seams": [
+    "Authored copied namespace and real-elapsed mocked UTC",
+    "Inert credential/HTTP/catalog factories only",
+    "Explicit MOCK response provenance seam",
+    "Fixed billing visibility delay may be waived only as recorded"
+  ],
+  "ordered_attempts": [
+    {
+      "id": 1,
+      "mode": "success",
+      "runtime": "3.12.14"
+    },
+    {
+      "id": 2,
+      "mode": "success",
+      "runtime": "3.11.17"
+    },
+    {
+      "id": 3,
+      "mode": "failure",
+      "runtime": "3.12.14"
+    },
+    {
+      "id": 4,
+      "mode": "cancel",
+      "runtime": "3.11.17"
+    }
+  ],
+  "pure_tests": {
+    "console_bytes": 65536,
+    "each_CPU_seconds": 30,
+    "each_wall_seconds": 30,
+    "read_bytes": 268435456,
+    "separate": true,
+    "write_bytes": 1048576
+  },
+  "required": [
+    "Execute actual new launcher main with exact packet/release validation, inert key/HTTP and normal full replay owner",
+    "Count inherited history and all six hold hashes unchanged",
+    "Positive success both supported runtimes",
+    "Meaningful transport failure and cancellation with conservative cleanup/initial marker",
+    "Preserve all failed attempts; no extra integration after allocation exhausted"
+  ],
+  "spending_increase": false,
+  "status": "OFFLINE_ONLY_NOT_LIVE_RELEASE",
+  "whole_entry_integrations_max": 4
+}

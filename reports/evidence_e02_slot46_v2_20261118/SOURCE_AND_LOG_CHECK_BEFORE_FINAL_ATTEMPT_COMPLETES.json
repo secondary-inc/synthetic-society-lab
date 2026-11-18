@@ -1,0 +1,48 @@
+{
+  "kind": "E02_SLOT46_V2_AUTHOR_SOURCE_AND_LOG_INTEGRITY_CHECK",
+  "source_checks": [
+    {
+      "attempt": "child-02-success-312",
+      "source_refs_match_current": true
+    },
+    {
+      "attempt": "child-03-success-311",
+      "source_refs_match_current": true
+    }
+  ],
+  "completed_child_records": [
+    {
+      "attempt": "child-01-success-312",
+      "execution": {
+        "exit": 1,
+        "wall_seconds": 0.243873875,
+        "CPU_seconds": 0.200135,
+        "console_bytes": 308,
+        "console_sha256": "33e80852fe01346499d13c7e71ebc2591ba336758db2bc393e251fa9e65ea4f6"
+      }
+    },
+    {
+      "attempt": "child-02-success-312",
+      "execution": {
+        "exit": 0,
+        "wall_seconds": 92.333690125,
+        "CPU_seconds": 62.162895,
+        "console_bytes": 3977,
+        "console_sha256": "b8c1569e30d5976123e8231027012f5b8e53c7d3b28c6c6c1ba7b74b32fdfede"
+      }
+    },
+    {
+      "attempt": "child-03-success-311",
+      "execution": {
+        "exit": 0,
+        "wall_seconds": 129.21403825000002,
+        "CPU_seconds": 97.633919,
+        "console_bytes": 3974,
+        "console_sha256": "747096b9acc39e17d3e5715d283d565ee38d57be86b07c539e8ce93b6f639773"
+      }
+    }
+  ],
+  "limited_secret_pattern_findings": [],
+  "not_independent_privacy_certification": true,
+  "production_source_frozen_at_successful_attempt2": true
+}

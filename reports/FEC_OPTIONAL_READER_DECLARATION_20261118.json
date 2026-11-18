@@ -1,0 +1,27 @@
+{
+  "kind": "FEC_OPTIONAL_READER_DECLARATION",
+  "recorded_at_utc": "2026-11-18T17:06:58.201720+00:00",
+  "status": "DECLARED_NOT_RUNTIME_QUALIFIED",
+  "pyproject_sha256": "24ec2cb7f839b3ca311d42f08fd740b5eb1ae7b698fdc618157ad6c62caa645a",
+  "extra": [
+    "openpyxl==3.1.5",
+    "et-xmlfile==2.0.0"
+  ],
+  "source": "https://pypi.org/project/openpyxl/3.1.5/",
+  "openpyxl_wheel_sha256": "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2",
+  "checks": [
+    "TOML parsed with project Python; exact optional requirements verified",
+    "Draft FEC adapter declares openpyxl3.1.5",
+    "Bundled Python3.12 metadata observes openpyxl3.1.5 and et-xmlfile2.0.0"
+  ],
+  "initial_check_failure": {
+    "command": "system python3 TOML read",
+    "error": "ModuleNotFoundError: No module named tomllib",
+    "effect": "No report written and no package change. Repeated only metadata check under supported project Python."
+  },
+  "scope": "Optional install declaration only. No package installed or imported for workbook parsing, no real numeric source parse, no default dependency change, no historical venv/PDF/G03 change. Adapter and runtime qualification require separate review.",
+  "command_after_qualification": "python -m pip install -e \".[fec]\"",
+  "actual_installations": 0,
+  "model_calls": 0,
+  "cost_usd": 0
+}

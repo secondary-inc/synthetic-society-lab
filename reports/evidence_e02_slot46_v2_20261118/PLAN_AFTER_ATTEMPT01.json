@@ -1,0 +1,24 @@
+{
+  "allocation_max": 4,
+  "consumed": 1,
+  "failed_attempt_preserved": "child-01-success-312",
+  "suspected_failure": "Historical lease helper required initial catalog raw hash; captured fresh catalog body may differ despite matching semantics. This is a source diagnosis, not yet validated by another run.",
+  "remaining_attempts": [
+    {
+      "id": 2,
+      "mode": "success",
+      "runtime": "3.12.14"
+    },
+    {
+      "id": 3,
+      "mode": "success",
+      "runtime": "3.11.17"
+    },
+    {
+      "id": 4,
+      "mode": "cancel",
+      "runtime": "3.11.17"
+    }
+  ],
+  "full_transport_HTTP_failure_integration": "NOT_RUN within remaining allocation; cancellation at inertPOST is separate adverse main path. Independent reviewer may qualify other path in separately bounded scope."
+}

@@ -1,0 +1,111 @@
+--- src/civiclab/e02/wrapper_crossmodel_canary_v1.py
++++ src/civiclab/e02/wrapper_crossmodel_slot46_v2.py
+@@ -1,4 +1,4 @@
+-"""One original slot45 continuation; pure bindings, no owner/IO/paid authority."""
++"""One original slot46 continuation; pure bindings, no owner/IO/paid authority."""
+ from copy import deepcopy
+ from pathlib import Path
+ import re
+@@ -12,13 +12,13 @@
+ ROOT=Path(__file__).resolve().parents[3]
+ PROTOCOL=ROOT/'configs/e02_wrapper_crossmodel_v1_20261115.json'
+ PARENT_PACKET_SHA='3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec'
+-SLOT=45
++SLOT=46
+ SEED=2315288556
+ BOUNDS={'POST':1,'statistics_GET':3,'catalog_GET':2,'parent_POST':80,'parent_statistics_GET':240,
+         'parent_catalog_GET':16,'lifetime_dispatches':229,'shared_microusd':5000000,
+         'E02_microusd':1000000,'study_microusd':200000,'E01_microusd':0,
+-        'phase_seconds':120,'operation_seconds':240,'CPU_seconds':60,'price_age_seconds':900}
+-AUTHORITY='WRAPPER_CANARY_AUTHORITY_V1'
++        'phase_seconds':120,'operation_seconds':240,'CPU_seconds':125,'CPU_soft_seconds':120,'price_age_seconds':900}
++AUTHORITY='WRAPPER_SLOT46_AUTHORITY_V2'
+ 
+ 
+ def need(value,code):
+@@ -30,12 +30,16 @@
+ 
+ 
+ def contract():
+-    from .wrapper_crossmodel_v1_owner import code_contract
+-    names=['src/civiclab/e02/wrapper_crossmodel_canary_v1.py',
+-           'src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py',
+-           'src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py',
+-           'scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py']
+-    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
++    from .wrapper_crossmodel_canary_v1 import contract as predecessor_contract
++    names=('src/civiclab/e02/wrapper_crossmodel_slot46_v2.py',
++           'src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py',
++           'src/civiclab/e02/wrapper_crossmodel_slot46_v2_client.py',
++           'scripts/launch_e02_slot46_v2_20261118.py',
++           'configs/e02_wrapper_slot46_v2_20261118.json',
++           'reports/E02_SLOT46_RESOURCE_DECISION_20261118.json',
++           'src/civiclab/e02/wrapper_canary_failure_diagnostic_v1.py',
++           'scripts/collect_connectivity_billing_once.py')
++    return {'kind':'WRAPPER_SLOT46_CODE_V2','predecessor':predecessor_contract(),
+             'pins':{name:sha256_file(ROOT/name) for name in names},'bounds':deepcopy(BOUNDS)}
+ 
+ 
+@@ -49,7 +53,7 @@
+     closed(q,('kind','owner_id','parent_key','expected_head','parent_binding','run_id',
+               'valid_from_utc','valid_until_utc','bounds','code_hash','price_release','review','authority'))
+     need(canonical_hash(q)==expected_hash and len(canonical_bytes(q))<=60000,'canary exact packet')
+-    need(q['kind']=='WRAPPER_CANARY_PACKET_V1' and q['bounds']==BOUNDS,'canary fixed scope')
++    need(q['kind']=='WRAPPER_SLOT46_PACKET_V2' and q['bounds']==BOUNDS,'canary fixed scope')
+     need(q['parent_key']==identity(q['owner_id']),'canary canonical parent identity')
+     need(q['code_hash']==canonical_hash(contract()),'canary code contract')
+     need(type(q['run_id']) is str and re.fullmatch(r'[A-Za-z0-9_-]{1,128}',q['run_id']), 'canary run identity')
+@@ -70,7 +74,7 @@
+     need(authority['kind']==AUTHORITY and authority['scope_hash']==canonical_hash({k:v for k,v in q.items() if k not in ('authority','review')}),'canary authority binding')
+     r=q['review'];closed(r,('kind','reviewer_role','review_id','inputs_hash'))
+     digest(r['review_id'],32)
+-    need(r['kind']=='INDEPENDENT_WRAPPER_CANARY_REVIEW_V1' and r['reviewer_role']=='independent_auditor'
++    need(r['kind']=='INDEPENDENT_WRAPPER_SLOT46_REVIEW_V2' and r['reviewer_role']=='independent_auditor'
+          and r['inputs_hash']==canonical_hash({k:v for k,v in q.items() if k!='review'}),'canary independent review')
+     return deepcopy(q)
+ 
+@@ -97,10 +101,27 @@
+     return {'kind':'LIMITED_PILOT_PRICE_RELEASE_V1','terms':terms,'interpretation':decision}
+ 
+ 
++def lease_preserved_semantics(historical_release,*,expected_release_hash,valid_from,valid_until):
++    """Lease exact preserved terms; not a fresh price observation or authority.
++
++    Fresh captured catalog bodies may differ from the original interpretation's
++    raw body. Two runtime fresh_proof checks still enforce identical semantics.
++    """
++    need(canonical_hash(historical_release)==expected_release_hash,'slot46 historical release pin')
++    result=deepcopy(historical_release);old=result['terms'];decision=result['interpretation']
++    validate_terms(old);validate_decision(decision)
++    need(result['kind']=='LIMITED_PILOT_PRICE_RELEASE_V1' and canonical_hash(decision)==old['interpretation_hash']
++         and decision['catalog_sha256']==old['initial_catalog_sha256'],'slot46 preserved interpretation')
++    decision.update(valid_from_utc=valid_from,valid_until_utc=valid_until)
++    old.update(valid_from_utc=valid_from,valid_until_utc=valid_until,interpretation_hash=canonical_hash(decision))
++    validate_terms(old);validate_decision(decision)
++    return result
++
++
+ def compile_slot(parent,terms):
+     p=original.load_protocol(PROTOCOL.read_bytes());job=p['jobs'][SLOT]
+     need((job['model_key'],job['phase'],job['visibility'],job['baseline_execution_order'],job['pair_seed'])
+-         ==('B','post','OMITTED',13,SEED),'canary original slot identity')
++         ==('B','post','SHOWN',13,SEED),'canary original slot identity')
+     before=next((w for w in parent['witnesses'] if w['execution_order']==13 and w['phase']=='pre'),None)
+     need(before is not None,'canary authenticated baseline13')
+     return original._compile(p,terms,job,before['answer']),canonical_hash(before)
+@@ -112,12 +133,12 @@
+     need(type(records) is list and len(records)<=1 and status in ('COMMITTED_ONE_SLOT','STOPPED'),'canary zero/one terminal')
+     for row in records:
+         closed(row,('execution_order','phase','status','answer','payload_sha256','receipt'))
+-        need(type(row['execution_order']) is int and row['execution_order']==45 and row['phase']=='post'
++        need(type(row['execution_order']) is int and row['execution_order']==46 and row['phase']=='post'
+              and row['status'] in ('ANSWER','PARSE_ERROR','FAILED_UNCERTAIN'),'canary record identity')
+         digest(row['payload_sha256']);digest(row['receipt'],32)
+         if row['status']=='ANSWER':original._checked_answer(row['answer'])
+         else:need(row['answer'] is None,'canary invalid answer exclusion')
+     need(status!='COMMITTED_ONE_SLOT' or (len(records)==1 and records[0]['status'] in ('ANSWER','PARSE_ERROR')),'canary success witness')
+-    return {'kind':'WRAPPER_CANARY_ENVELOPE_V1','parent_key':parent_key,'original_protocol_sha256':original.PROTOCOL_SHA256,
++    return {'kind':'WRAPPER_SLOT46_ENVELOPE_V2','parent_key':parent_key,'original_protocol_sha256':original.PROTOCOL_SHA256,
+             'records':deepcopy(records),'status':status,'response_provenance':provenance,
+-            'parent_stopped':True,'original_slot44':'FAILED_UNCERTAIN','original_full80_analysis':'NOT_RUN_INCOMPLETE'}
++            'parent_stopped':True,'original_slot44':'FAILED_UNCERTAIN','original_slot45':'FAILED_UNCERTAIN','original_full80_analysis':'NOT_RUN_INCOMPLETE'}
