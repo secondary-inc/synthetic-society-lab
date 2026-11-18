@@ -1,0 +1,221 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E02_SLOT46_V2_IMPLEMENTATION_20261118",
+  "status": "PASS",
+  "scope": "Implementation and bounded offline qualification only; no real packet binding or live release",
+  "reviewer": "independent auditor; no production source edits",
+  "utc_recorded": "2026-11-18T17:59:31.579382+00:00",
+  "source_pins": [
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2.py",
+      "bytes": 9023,
+      "sha256": "d86cd6287f6cc20a709721198f9640668c03dfcccde393f09abbe65fd9aa4543",
+      "original_handoff_match": true
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py",
+      "bytes": 22509,
+      "sha256": "ce0b810460e7f291f6d18044bba2d9fbef128f1972f5896589aab8fb1654193b",
+      "original_handoff_match": true
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2_client.py",
+      "bytes": 10562,
+      "sha256": "1c50e219fdf77d7766438aee20afdfab7c0b33864d1726d429500b89bb88ef85",
+      "original_handoff_match": true
+    },
+    {
+      "path": "scripts/launch_e02_slot46_v2_20261118.py",
+      "bytes": 3989,
+      "sha256": "c3aa20858f61da0653352422cff7d89f19ae078e862113ebfb95b868c8c64cd8",
+      "original_handoff_match": false
+    },
+    {
+      "path": "scripts/qualify_e02_slot46_v2_20261118.py",
+      "bytes": 18844,
+      "sha256": "1d363da9e2a93e61337864eebd7de8bc4458e046cb4cee023cbb5fc2deafbece",
+      "original_handoff_match": true
+    },
+    {
+      "path": "tests/test_wrapper_slot46_v2.py",
+      "bytes": 8981,
+      "sha256": "cff3bff7a94406233d5e68060e7c81df5b5ec2c306e33dcf7eafc59e46158430",
+      "original_handoff_match": true
+    },
+    {
+      "path": "configs/e02_wrapper_slot46_v2_20261118.json",
+      "bytes": 1199,
+      "sha256": "7de60b567c88bc9b9611699a91b8fef2eac70765b228631d46d07667718e7555",
+      "original_handoff_match": true
+    },
+    {
+      "path": "tests/test_wrapper_slot46_hard_deadline_v2.py",
+      "bytes": 2840,
+      "sha256": "e1bcc0d2b8ea485e3153e495c5cf4297b4b7922bfbef05de158b4320714e7a98"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_canary_failure_diagnostic_v1.py",
+      "bytes": 2707,
+      "sha256": "d091c754f995f47c02ca48ded88b2cb3ab6e9d2b94b5f0c8c1374ba90eae936d"
+    },
+    {
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "bytes": 11207,
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    },
+    {
+      "path": "reports/E02_SLOT46_RESOURCE_DECISION_20261118.json",
+      "bytes": 2554,
+      "sha256": "bbf251e380fa6173ca78c135e2f52bcce93bc18362829e7ed2a355edaa1fa682"
+    },
+    {
+      "path": "reports/E02_SLOT46_HARD_DEADLINE_CORRECTION_20261118.json",
+      "bytes": 2077,
+      "sha256": "f21844e04a77a750878646f1582802c91385a674a6723e298ae57519d9833226"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/ADVERSE_INTEGRATION_DERIVATION.json",
+      "bytes": 702,
+      "sha256": "7d29c42931fb39216d567329e97b08fd66ee922d2384b52e182208f2f9108230"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/FINAL_SOURCE_PINS.json",
+      "bytes": 2324,
+      "sha256": "f3f4eaddcfed7807faf74e6b23782a88027d0743d8fa88830d251879e1685030"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/INITIAL_SOURCE_PINS.json",
+      "bytes": 1193,
+      "sha256": "b0ea238c135914021528dfd4cae269d655a6c83645cce5eb0f8c2dbed8c07602"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/adverse_integration_312.log",
+      "bytes": 3120,
+      "sha256": "5874e7e8a117a3fb6e11a5ed4c890cf296127df2678b0b67d64198e524efcf73"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/credential_loader_311.log",
+      "bytes": 354,
+      "sha256": "14a415f151d6fe555b683cafdab65967810498d535c5a01fe381c913c7e51636"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/credential_loader_312.log",
+      "bytes": 354,
+      "sha256": "5efaaa1fe1712acfd0672a84db2034c29dda1c658290c36db2e51c9917d3990d"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/credential_loader_controls.py",
+      "bytes": 2420,
+      "sha256": "a58ea2d43832abc561a6c57af6d8c1f51b5694af1b99ca4cde594674b6dde130"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/hard_wall_corrected_311.json",
+      "bytes": 503,
+      "sha256": "c22c6bc05b9317d837c6e7ce5c9fcbfc7c1dbfb89e49d5a0b04e8ec053026cea"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/hard_wall_corrected_312.json",
+      "bytes": 511,
+      "sha256": "4f7e3c6c8d957ead7feb6d6456fcaee371d4d7ff7b2cb23f7c1d5f4d748ecfd8"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/independent_http_close_integration.py",
+      "bytes": 19490,
+      "sha256": "76bbbfcd33f8f813932921d8129499dfdc3d6d32bc5da66432f8c406e7af8c42"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/pure_312.log",
+      "bytes": 1774,
+      "sha256": "6fc46daaed4d2cab7b5b3724de6573a78284dece08be7c4cd456c7e8395801b4"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/wall_cleanup_corrected_smoke.py",
+      "bytes": 3217,
+      "sha256": "b934aed10d26c88484cad244a8698c666c0af4cd12b133b3ac0c7b88a2812633"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/wall_cleanup_initial.log",
+      "bytes": 504,
+      "sha256": "60afbfb4570f557937af6a860dd0c2bf67fca70942eac2b386cff861f853341c"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/wall_cleanup_smoke.py",
+      "bytes": 3178,
+      "sha256": "56c831bd1c1aaebe97a8bea540613aa2bc1916f622b89009f22f77e1f2026f69"
+    }
+  ],
+  "checks": [
+    {
+      "id": "V2-01",
+      "status": "PASS",
+      "evidence": "Six of seven original handoff files unchanged; sole production delta is exact3989-byte c3aa208 hard-deadline launcher. All12 final source refs rehashed."
+    },
+    {
+      "id": "V2-02",
+      "status": "PASS",
+      "evidence": "Original SLOT46-WALL-01 finding reproduced in preserved native smoke. Corrected exact launcher SIGALRM defaults terminate stubborn cleanup with native -14 on3.11 and3.12 at scaled0.15sec. Trace ends TRANSITION_ENTERED; no fallback, late write or journal close."
+    },
+    {
+      "id": "V2-03",
+      "status": "PASS",
+      "evidence": "Exact pinned key-reader function on owned synthetic0600 file and inert Git boundary passes both runtimes;0644, unignored file and changed source refused. No real .env read or Git child."
+    },
+    {
+      "id": "V2-04",
+      "status": "PASS",
+      "evidence": "12 original pure tests independently rerun on3.12.14. Covers primary RuntimeError/KeyboardInterrupt/SystemExit identity, marker failure, owned/borrowed close, success-close error, fixed identity and caps."
+    },
+    {
+      "id": "V2-05",
+      "status": "PASS",
+      "evidence": "One allocated full adverse integration on exact current1189-event closed copy, exact current launcher main, normal constructor, real resource limits and normal terminal verification. One inert HTTP429 then owned journal realclose/OSError; same original error survives, close attempted once, finalization marker denies retries."
+    },
+    {
+      "id": "V2-06",
+      "status": "PASS",
+      "evidence": "Normal terminal state has new row UNCERTAIN/full1011-microUSD hold, branch closed, old195rows and sixholds exact unchanged, seven unfinished and MOCK conservative exposure18163. Capture input hashes unchanged and owned fixture removed."
+    },
+    {
+      "id": "V2-07",
+      "status": "PASS",
+      "evidence": "Early fixed diagnostic visible before cleanup verification. Diagnostic type HTTP429 preserved without exception text; normal original slot44/45 ancestry remains stopped. No fallback/retry or additional POST."
+    },
+    {
+      "id": "V2-08",
+      "status": "PASS",
+      "evidence": "Static source review preserves original slot46 B/post/SHOWN/baseline13/seed2315288556; identity differs from consumed45. Leased historical terms are not fresh observations. Runtime requires two counted fresh catalog proofs, reread by owner, before reservation. Caps remain shared5USD/E02 1USD/study0.20USD/E01 inference0USD."
+    }
+  ],
+  "integration": {
+    "runtime": "3.12.14",
+    "exit_code": 0,
+    "main_CPU_seconds": 31.861265,
+    "main_wall_seconds": 32.003731874981895,
+    "whole_child_CPU_seconds": 34.560882,
+    "whole_child_wall_seconds": 34.69038200000068,
+    "calls": {
+      "POST": 1,
+      "catalog_GET": 2,
+      "inert_key_boundary": 1,
+      "statistics_GET": 0
+    },
+    "logical_read_bytes": 575869744,
+    "logical_write_bytes": 50400712,
+    "console_log_bytes": 3120,
+    "allocation_consumed": "one of one independent full adverse integrations",
+    "actual_network_model_key_current_owner_calls": 0,
+    "cost_usd": 0
+  },
+  "author_evidence_scope": "Original handoff success3.12/success3.11/cancellation3.11 are author results on pre-hard-alarm source. They are retained as such, not relabeled exact-current-source independent successes. Current source adverse integration and narrow hard-alarm native checks cover the correction.",
+  "limitations": [
+    "No real packet, exact particular review or lead release created by this audit. Mock review and authority placeholders have no live authority.",
+    "Independent full adverse integration uses inert key/HTTP/catalog, copied owner and real-elapsed authored UTC; it does not establish actual credential access, provider connectivity, scientific effects, billing or live timing.",
+    "Main CPU120soft/125hard and wall240 begin in main, not interpreter startup. Pinned loader contains bounded5second Git check-ignore subprocess; no whole-process-tree CPU certificate is claimed.",
+    "Native SIGALRM/SIGXCPU termination may omit final diagnostics or interrupt an append/readback. Preserve uncertain holds and require normal integrity verification; no automatic refund or replay.",
+    "Journal finalization regression covers an already-created owned journal. No new certificate of inherited journal-constructor internals or arbitrary hostile concurrent mutation.",
+    "The historical59/60-second CPU stop remains unexplained. Slots44/45 are consumed and unreplayed. Verified real results remain191/$0.0129589 and conservative exposure17152microUSD; mock1011 reservation is not a real charge.",
+    "Full fifth study80 responses and full CI are not certified by these focused checks."
+  ],
+  "next_acceptance": "Lead may prepare a separate exact slot46 real packet with fresh finite authority and unchanged ancestry/caps for narrow independent binding review, then distinct lead release. This report alone permits no live dispatch."
+}
