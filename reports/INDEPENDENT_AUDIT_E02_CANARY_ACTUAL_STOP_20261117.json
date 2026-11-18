@@ -1,0 +1,120 @@
+{
+  "TASK_ID": "INDEPENDENT_E02_CANARY_ACTUAL_STOP_20261117",
+  "status": "BLOCKED",
+  "scope_decisions": {
+    "closed_capture_byte_integrity": "PASS",
+    "old_prefix_and_old_rows_unchanged": "PASS",
+    "hash_chain_head_and_materialized_new_row": "PASS",
+    "conservative_hold_preservation": "PASS",
+    "successful_canary_completion": "BLOCKED",
+    "normal_policy_reducer_replay": "NOT_RUN",
+    "provider_HTTP_completion": "UNKNOWN",
+    "provider_charge": "UNKNOWN",
+    "earlier_exception": "UNKNOWN"
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E02_CANARY_ACTUAL_STOP_20261117.json",
+    "reports/evidence_independent_e02_canary_actual_stop_20261117/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_e02_canary_actual_stop_20261117/CLOSED_ANALYSIS.json",
+      "bytes": 3888,
+      "sha256": "df67421ae49591604dad621532e75f91961425b876d5adb0b07c7b52e63f2082"
+    },
+    {
+      "path": "reports/evidence_independent_e02_canary_actual_stop_20261117/ORDER_CORRECTION.json",
+      "bytes": 457,
+      "sha256": "13ba8cfae11363ac8f39d38ec0e3a9b65d347474d9de0c14475337f460dc2532"
+    },
+    {
+      "path": "reports/evidence_independent_e02_canary_actual_stop_20261117/PLAN.json",
+      "bytes": 525,
+      "sha256": "602213cec45965c18d4f1ce79f5f64bf907d7a076ea9d416527ac9b7f42ec774"
+    },
+    {
+      "path": "reports/evidence_independent_e02_canary_actual_stop_20261117/SHAPE_AND_PINS.json",
+      "bytes": 3347,
+      "sha256": "19776f45cb7d2842de5f2c7461ad7706747aeb4c01b4d0f8b64eb1a953dbfc74"
+    },
+    {
+      "path": "reports/evidence_independent_e02_canary_actual_stop_20261117/analyze_closed.py",
+      "bytes": 6589,
+      "sha256": "6f6e1939edff4c66489864dc3f968dda4ccac6acd6b1afaaa6f4b2ce93a862db"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "analyze_closed.py: exact closed copies only; two original invocations and one separately authorized order-correction inspection consumed. No replay of live launcher."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "first_invocation": "13 capture references pinned, schema inspected, immutable/query-only DB selected.",
+    "second_invocation": "37/38 checks true; sole false check compared SQL charge arrays with differing row order.",
+    "separate_correction": "5/5 checks PASS: header/events exact, 195 unique charge IDs, keyed raw charge strings identical, array order alone differs. Original false result preserved as reviewer error.",
+    "literal_prefix": "All 1,180 historical events and 194 previous rows exactly match accepted export ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66.",
+    "event_chain": "All 1,189 event digests/sequence/previous links and current head match. Prior-clock joins match.",
+    "new_row": "One new receipt; STARTED reservation transitions to UNCERTAIN with full 1,003 microUSD conservatively charged. No observed cost, generation or billing recorded.",
+    "journals": "Seven copied files. Two catalog receipts, exact candidate02 packet, request and dispatch-intent bindings verified. No response, statistics, summary or failure journal file present.",
+    "normal_reducer": "NOT_RUN. This review implements independent structural, byte, chain and financial comparisons; it does not certify every policy transition via normal reducer."
+  },
+  "stop_interpretation": {
+    "process_exit": 152,
+    "reported_signal": "SIGXCPU",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "durable_sequence": [
+      "OPEN",
+      "CATALOG_A intent",
+      "CATALOG_B intent",
+      "PROOFS",
+      "GRANT",
+      "RESERVE",
+      "POST intent",
+      "UNCERTAIN transition",
+      "FAILED close"
+    ],
+    "dispatch_evidence": "Consumed dispatch intent is written before transport.post_bytes; it proves intent, not provider receipt or HTTP completion.",
+    "root_cause": "Terminal CPU-limit stop is supported by exit metadata. Generic CanaryStopped and FAILED bookkeeping do not identify the earlier exception; no exact HTTP status, credit issue or transport cause is established.",
+    "timing": "Durable UNCERTAIN and close events precede terminal exit. CPU termination therefore must not be described as proof that the model POST never occurred."
+  },
+  "accounting": {
+    "old_holds_microusd": [
+      340,
+      340,
+      775,
+      788,
+      1008
+    ],
+    "new_hold_microusd": 1003,
+    "previous_conservative_exposure_microusd": 16149,
+    "current_conservative_exposure_microusd": 17152,
+    "new_verified_responses": 0,
+    "previous_verified_responses": 191,
+    "previous_verified_usage_USD": "0.0129589",
+    "new_actual_provider_charge": "UNKNOWN",
+    "combined_cap_USD": 5,
+    "E02_cap_USD": 1,
+    "fifth_study_cap_USD": "0.20",
+    "E01_model_cap_USD": 0,
+    "reservation_is_not_verified_invoice": true
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Private closed owner/journal copies only; reports contain metadata, hashes and aggregate accounting. No response/publisher/respondent payload reproduced.",
+  "COST_USD_ACTUAL_OR_ZERO": {
+    "audit_network_or_model_cost": 0,
+    "actual_canary_provider_cost": "UNKNOWN; full hold retained"
+  },
+  "RISKS_AND_LIMITATIONS": [
+    "No current owner access, key read, API access, financial mutation, adoption or retry from auditor.",
+    "Capture-time no-writes/no-sidecars assertions originate in collector evidence; auditor independently checked captured file pins, not original live file monitoring.",
+    "No normal reducer replay or full cold-start runtime acceptance.",
+    "One closed snapshot cannot establish absence of later external provider usage.",
+    "Original full80 analysis and human persuasion claims remain unqualified."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Actual one-shot stopped without verified response or billing.",
+    "Unknown provider outcome with full hold retained.",
+    "Normal reducer review would need a separately bounded offline assignment.",
+    "Exact earlier exception and CPU cost attribution are not recoverable from retained generic records alone."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Preserve the consumed one-shot and all holds; continue E01 authored diagnostic correction review. Diagnose runtime overhead offline under a separate explicit scope before any new continuation design.",
+  "decision": "Closed evidence, unchanged historical prefix and retained conservative accounting PASS; actual canary completion remains BLOCKED."
+}

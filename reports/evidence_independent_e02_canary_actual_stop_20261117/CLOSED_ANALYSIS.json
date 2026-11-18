@@ -1,0 +1,135 @@
+{
+  "kind": "INDEPENDENT_CLOSED_STOP_EVIDENCE_ANALYSIS",
+  "invocation": 2,
+  "checks": {
+    "pin:owner-v4-guard.local.json": true,
+    "pin:owner-v4-head.local.json": true,
+    "pin:openrouter-v4-bootstrap.local.json": true,
+    "pin:owner-v4.local.sqlite": true,
+    "pin:sql-rows.local.json": true,
+    "pin:parsed-rows.local.json": true,
+    "pin:2267645db2da5b1b7cfc01bd055e3918-dispatch.json": true,
+    "pin:2267645db2da5b1b7cfc01bd055e3918-request.json": true,
+    "pin:catalog-A.json": true,
+    "pin:catalog-B.json": true,
+    "pin:packet.json": true,
+    "pin:retention.json": true,
+    "pin:run.lock": true,
+    "capture_export_matches_sql_headers": true,
+    "capture_export_matches_sql_history": true,
+    "capture_export_matches_sql_rows": true,
+    "raw_sql_matches_database": false,
+    "full_event_hash_chain": true,
+    "head_joins_final_event": true,
+    "old_header_unchanged": true,
+    "old_1180_events_unchanged": true,
+    "old_194_rows_unchanged": true,
+    "packet_joins_old_head": true,
+    "exactly_one_new_row": true,
+    "new_events_exact_order": true,
+    "full_hold_retained": true,
+    "new_row_materialization_matches_last_transition": true,
+    "reserve_no_prior_and_transition_bound": true,
+    "old_five_holds_unchanged": true,
+    "request_receipt_context_joins": true,
+    "payload_hash_joins": true,
+    "request_head_dispatch_head_equal": true,
+    "dispatch_intent_only": true,
+    "io_intents_two_catalog_one_post_no_statistics": true,
+    "no_response_statistics_or_success_file": true,
+    "all_prior_generation_and_billing_fields_unchanged": true,
+    "conservative_exposure_16149_to_17152": true,
+    "prior_clock_chain": true
+  },
+  "all_checks_pass": false,
+  "event_count": 1189,
+  "row_count": 195,
+  "new_event_metadata": [
+    {
+      "kind": "WRAPPER_CANARY_OPEN_V1",
+      "recorded_at_utc": "2026-11-18T04:05:12.882206+00:00",
+      "payload_keys": [
+        "packet"
+      ]
+    },
+    {
+      "kind": "WRAPPER_CANARY_IO_V1",
+      "recorded_at_utc": "2026-11-18T04:05:19.750397+00:00",
+      "payload_keys": [
+        "ordinal",
+        "parent_key",
+        "phase"
+      ]
+    },
+    {
+      "kind": "WRAPPER_CANARY_IO_V1",
+      "recorded_at_utc": "2026-11-18T04:05:31.122674+00:00",
+      "payload_keys": [
+        "ordinal",
+        "parent_key",
+        "phase"
+      ]
+    },
+    {
+      "kind": "WRAPPER_CANARY_PROOFS_V1",
+      "recorded_at_utc": "2026-11-18T04:05:42.816000+00:00",
+      "payload_keys": [
+        "proofs"
+      ]
+    },
+    {
+      "kind": "WRAPPER_CANARY_GRANT_V1",
+      "recorded_at_utc": "2026-11-18T04:05:51.422826+00:00",
+      "payload_keys": [
+        "ack"
+      ]
+    },
+    {
+      "kind": "RESERVE",
+      "recorded_at_utc": "2026-11-18T04:05:51.435637+00:00",
+      "payload_keys": [
+        "after",
+        "before_hash"
+      ]
+    },
+    {
+      "kind": "WRAPPER_CANARY_IO_V1",
+      "recorded_at_utc": "2026-11-18T04:05:59.028794+00:00",
+      "payload_keys": [
+        "ordinal",
+        "parent_key",
+        "phase"
+      ]
+    },
+    {
+      "kind": "TRANSITION",
+      "recorded_at_utc": "2026-11-18T04:06:10.126409+00:00",
+      "payload_keys": [
+        "after",
+        "before_hash"
+      ]
+    },
+    {
+      "kind": "WRAPPER_CANARY_CLOSE_V1",
+      "recorded_at_utc": "2026-11-18T04:06:13.260235+00:00",
+      "payload_keys": [
+        "reason"
+      ]
+    }
+  ],
+  "new_row_status": "UNCERTAIN",
+  "new_row_error_type": "CanaryStopped",
+  "old_conservative_exposure_microusd": 16149,
+  "new_conservative_exposure_microusd": 17152,
+  "verified_new_responses": 0,
+  "new_provider_charge": "UNKNOWN",
+  "dispatch_HTTP_completion": "UNKNOWN",
+  "earlier_exception": "UNKNOWN",
+  "normal_reducer_replay": "NOT_RUN",
+  "logical_read_bytes": 29409382,
+  "wall_seconds": 0.264742375,
+  "current_owner_reads": 0,
+  "network_calls": 0,
+  "key_reads": 0,
+  "financial_writes": 0
+}

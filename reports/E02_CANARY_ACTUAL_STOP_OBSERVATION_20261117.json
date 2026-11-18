@@ -1,0 +1,88 @@
+{
+  "kind": "E02_ONE_SLOT_ACTUAL_STOP_OBSERVATION_V1",
+  "status": "STOPPED_NO_RETRY_PENDING_INDEPENDENT_EVIDENCE_REVIEW",
+  "source_commit": "0ae4d85e94a3b6c39e94476a4cbb492f22b75c8c",
+  "run_id": "e02-wrapper-canary-v1-20261117-01",
+  "actual_scope": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01",
+  "packet_sha256": "61e5297bc1553747f5577db34556e35da8120357ee90088542d99d1b10a85cbd",
+  "release_sha256": "39edc24484dc78c00a07a8d47eddb33f78a4ab15845ed074e903bb7f935bacd5",
+  "launch": {
+    "invocations": 1,
+    "automatic_retries": 0,
+    "exit_code": 152,
+    "conventional_shell_signal": "SIGXCPU",
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "CPU_soft_limit_seconds": 59,
+    "CPU_hard_limit_seconds": 60,
+    "operation_wall_limit_seconds": 240,
+    "terminal_success_summary": false,
+    "limitation": "The exit records a CPU-limit stop. It does not by itself establish the earlier exception, whether HTTP reached the provider, or whether the provider charged usage."
+  },
+  "raw_closed_capture": {
+    "status": "CAPTURE_COMPLETE_NOT_SEMANTICALLY_VERIFIED",
+    "manifest_path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-01/manifest.local.json",
+    "manifest_bytes": 4533,
+    "manifest_sha256": "4cc86b9df8c149923eafc3fd8641c1445555f30b1e806045ca9a9f40883d8481",
+    "recorded_at_UTC": "2026-11-18T04:08:17.892316+00:00",
+    "events_observed": 1189,
+    "financial_rows_observed": 195,
+    "new_event_kinds": [
+      "WRAPPER_CANARY_OPEN_V1",
+      "WRAPPER_CANARY_IO_V1",
+      "WRAPPER_CANARY_IO_V1",
+      "WRAPPER_CANARY_PROOFS_V1",
+      "WRAPPER_CANARY_GRANT_V1",
+      "RESERVE",
+      "WRAPPER_CANARY_IO_V1",
+      "TRANSITION",
+      "WRAPPER_CANARY_CLOSE_V1"
+    ],
+    "new_row_status": "UNCERTAIN",
+    "new_row_reserved_microusd": 1003,
+    "new_row_conservative_charged_microusd": 1003,
+    "new_row_observed_cost_microusd": null,
+    "new_row_generation_present": false,
+    "new_row_billing_present": false,
+    "journal_files": 7,
+    "journal_response_or_statistics_or_summary_file_present": false,
+    "raw_owner_files_unchanged_during_capture": true,
+    "sqlite_sidecars_observed": [],
+    "capture_model_requests": 0,
+    "capture_network_calls": 0,
+    "capture_key_reads": 0,
+    "capture_financial_writes": 0,
+    "capture_wall_seconds": 0.04328416602220386,
+    "capture_CPU_seconds": 0.062837,
+    "capture_logical_read_bytes": 39288182,
+    "capture_private_write_bytes": 12759733,
+    "limitation": "This is a raw snapshot observation, not a normal-reducer verification or provider billing reconciliation. Dispatch intent is not proof of a completed HTTP request."
+  },
+  "evidence_refs": [
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/execution-intent.local.json",
+      "bytes": 813,
+      "sha256": "9c1ef34580325624e501ec0e97cfe3226a965ada5afc2fedd885ba267909f65f"
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/process-exit.local.json",
+      "bytes": 661,
+      "sha256": "426e7e1d495ff019ee4ec4fea17a71bfd534945fdb0e185b97047ec7f5610f00"
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-plan.local.json",
+      "bytes": 760,
+      "sha256": "a77bbe728db682e1e2c52d095d9e4c8928d9dc9921fd1538194f33435bbeecbe"
+    }
+  ],
+  "research_interpretation": {
+    "new_verified_responses": 0,
+    "previously_verified_responses": 191,
+    "previously_verified_model_usage_USD": "0.0129589",
+    "new_actual_provider_cost": "UNKNOWN",
+    "full_fifth_study_analysis": "NOT_RUN_INCOMPLETE",
+    "full_original_contract": "INCOMPLETE",
+    "human_persuasion_or_prospective_forecasting_claims": false
+  },
+  "next_step": "Independently review the closed stop evidence. Preserve the new full hold and all previous holds. No launcher replay, new model dispatch, reset, adoption or billing reconciliation is authorized by this observation."
+}

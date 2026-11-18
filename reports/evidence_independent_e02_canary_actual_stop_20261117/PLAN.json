@@ -1,0 +1,15 @@
+{
+  "scope": "Closed stop-capture-01 only; no current owner, keys, network, financial mutation or model retry",
+  "max_invocations": 2,
+  "limits_each": {
+    "wall_seconds": 180,
+    "CPU_seconds": 120,
+    "logical_read_bytes": 536870912,
+    "scratch_write_bytes": 67108864,
+    "console_bytes": 131072
+  },
+  "sequence": [
+    "Verify exact capture hashes and inspect closed schemas",
+    "Compare SQL/export rows and old prefix; verify event hash-chain and new financial/journal joins; report bounded limitations"
+  ]
+}
