@@ -1,0 +1,19 @@
+--- attempt1/virtual_reader_guard.py
++++ final/virtual_reader_guard.py
+@@ -5,6 +5,7 @@
+ Process-wide guards belong only in an isolated single-threaded child.
+ """
+ import builtins
++import errno
+ from collections import Counter
+ import hashlib
+ import io
+@@ -275,7 +276,7 @@
+             # optional .lock may be queried as missing. Unknown metadata poisons.
+             allowed={ROOT/self.bundle.prefix/n for n in ('failure.json','terminal_failure.local.json','failure_checksums.local.json','.lock')}
+             if p not in allowed:self.budget.fail('METADATA_SCOPE')
+-            raise FileNotFoundError('ABSENT_SEALED_CONTROL')
++            raise FileNotFoundError(errno.ENOENT,'ABSENT_SEALED_CONTROL')
+         return os.stat_result((mode,1,1,1,0,0,n,0,0,0))
+     def listing(self,path):
+         self.budget.check();p=self.path(path)

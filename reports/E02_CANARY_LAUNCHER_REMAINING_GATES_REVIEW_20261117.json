@@ -1,0 +1,296 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/E02_CANARY_LAUNCHER_REMAINING_GATES_REVIEW_20261117.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns one finite disposable-child mock-caller qualification plus a finite focused remaining-adverse batch, using only temporary closed/authored fixtures and unchanged production paths/validators. Review exact helper/limits first.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/E02_CANARY_LAUNCHER_REMAINING_GATES_REVIEW_20261117.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Read accepted design, exact current canary BOUNDS, source and prior audit evidence; AST/source inspection only. No candidate, tests, APIs, keys or live-owner action."
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "This is a proposed qualification scope, not implementation self-approval or a change to earlier findings. All release-critical open gates remain open until exact new evidence.",
+    "Whole-interpreter startup byte accounting from E01 G03 is not an E02 accepted invariant and is not required here. Offline reviewer read/write/console allocations are not new live caps.",
+    "Original minimal design has explicitly proposed application read64MiB/owned output32MiB/console256KiB fields; actual BOUNDS does not contain these. Release review must explicitly record their disposition and must not claim aggregate enforcement. Existing per-file/transport/journal bounds remain applicable.",
+    "Stat-before-read packet/journal helpers are bounded for stable operator-controlled artifacts; they are not certified against hostile concurrent file growth or replacement. Descriptor-race hardening is optional unless the release threat model includes that adversary.",
+    "One child mock-caller check does not qualify current ancestry, fresh provider prices, authenticated network availability or arbitrary native process containment.",
+    "No full-study completion, old hold recovery, original402cause, Azure-route recovery or human/prospective claim follows."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored code/review/design inputs only. No closed respondent/model response, registration body, current owner, credential or network data accessed.",
+  "TASK_ID": "Static refinement of remaining E02 canary R02/R04 qualification scope",
+  "TESTS_RUN_AND_RESULTS": {
+    "execution": "NOT_RUN: static scope review only",
+    "existing_evidence": "15 author and10 independent tests each runtime remain accepted only in their frozen stated scopes; no new PASS inferred.",
+    "scope_refinement": "Concrete minimal prerequisite checks below; no production architecture or spending/attempt cap increase."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "R01 untouched inherited parent replay is separate prerequisite and not yet accepted here.",
+    "R02 exact launcher/caller resource admission and deadline failure path remain NOT_RUN.",
+    "R04 remaining transition/journal/claim/anchor interruption checks remain unqualified.",
+    "Current owner replay/attestation, fresh2catalog proofs, exact packet independent review and lead release remain absent."
+  ],
+  "accepted_live_bounds": {
+    "E01_microusd": 0,
+    "E02_microusd": 1000000,
+    "POST": 1,
+    "POST_retries": 0,
+    "catalog_GET": 2,
+    "fifth_microusd": 200000,
+    "input_token_bound": 8192,
+    "lifetime_dispatches": 229,
+    "operation_CPU_seconds": 60,
+    "operation_wall_seconds": 240,
+    "output_tokens": 256,
+    "parent_POST": 80,
+    "parent_runtime_catalog_GET": 16,
+    "parent_statistics_GET": 240,
+    "per_call_reservation_microusd_ceiling": 1785,
+    "phase_wall_seconds": 120,
+    "price_age_seconds": 900,
+    "shared_microusd": 5000000,
+    "statistics_GET": 3,
+    "statistics_retry_statuses": [
+      404
+    ]
+  },
+  "before_one_live_canary": [
+    "Independent acceptance of R01 plus exact L01/L02/L03 bounded evidence and any resulting fixes.",
+    "Fresh current same-owner full replay/attestation binds exact head/rows/claims/stopped parent; no replacement owner or alias reset.",
+    "New coherent reviewed price lease, two counted fresh runtime catalog observations matching fixedsemantic/provider/component constraints before reserve; preserve historical receipts and alloldholds.",
+    "Exact independently reviewed packet/code/review and lead release for original45only under unchanged cumulative caps; only OpenRouter inference and no paid work outsideexistingauthorization.",
+    "Record proposed aggregate byte-limit disposition, residual filesystem/OS/provider limitations and partial-study/external-validity exclusions. No actual action authorized by this scope review."
+  ],
+  "decision": "STATIC_SCOPE_REFINED_NO_RELEASE_OR_IMPLEMENTATION_ACCEPTANCE",
+  "existing_bounded_artifact_controls": {
+    "catalog": "Existing fetch limits2000000 bytes,15 second socket/30 second cooperative transfer; no redirect/encoding/framing acceptance or retry. Client bounds raw and validates receipt/semantic price before reservation.",
+    "console": "Launcher prints a fixed bounded terminal summary or generic STOPPED_NO_RETRY; retain secret-free output checks. Proposed256KiB aggregate console ceiling is not currently a live counter.",
+    "new_journal": "Existing _Journal artifact2000000 bytes,256 artifacts,total268435456 bytes,min free536870912 bytes; O_EXCL/canonical/redaction/fsync. Canary owner journal read2000000 bytes with canonical equality. These are existing bounds, not adopted32MiB aggregate output accounting.",
+    "packet_release_files": "read_exact default65536 bytes; packet canonical<=60000; exact path/hash/no-symlink checks before owner/key actions. No new cap proposed.",
+    "transport": "Existing maximum request262144/response2000000 bytes with bounded socket/cooperative total deadlines; no actual request in qualification."
+  },
+  "input_refs": [
+    {
+      "bytes": 18009,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CANARY_DESIGN_V1_20261116.json",
+      "sha256": "bdb6bb9d73ffba6ed7ffee0d376eab2145017323314a05bd3e818bb33c2cfc0c"
+    },
+    {
+      "bytes": 9877,
+      "path": "reports/evidence_e02_wrapper_crossmodel_canary_v1_preparation_20261116/minimal-continuation-design.json",
+      "sha256": "557902a974d4940893d174df7849249bb5b45074fa2fa593641777a4777477f3"
+    },
+    {
+      "bytes": 23289,
+      "path": "reports/E02_WRAPPER_CROSSMODEL_CANARY_V1_CODE_HANDOFF_20261117.json",
+      "sha256": "ca418e3a7263f23c9afb6ab0fabb4907a04019132f5f2e45ca5218d25f1023dd"
+    },
+    {
+      "bytes": 22113,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CANARY_IMPLEMENTATION_V1_20261117.json",
+      "sha256": "2cc5478a35c8432a541f7b2735725c33101bbcc8832f770e167732a1f3277301"
+    },
+    {
+      "bytes": 7624,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1.py",
+      "sha256": "98595b5e94269f5e04d73d092428875420b05c111b8db9fbade354d9cbbeaa8d"
+    },
+    {
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 8656,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 28676,
+      "path": "src/civiclab/e02/exploratory_live_client_v1.py",
+      "sha256": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22"
+    },
+    {
+      "bytes": 15343,
+      "path": "src/civiclab/production_admission_v4.py",
+      "sha256": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd"
+    },
+    {
+      "bytes": 7665,
+      "path": "src/civiclab/production_compatibility_transport_v4_2.py",
+      "sha256": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0"
+    },
+    {
+      "bytes": 6017,
+      "path": "src/civiclab/openrouter_http_v2.py",
+      "sha256": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154"
+    },
+    {
+      "bytes": 33110,
+      "path": "src/civiclab/production_owner_v4.py",
+      "sha256": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf"
+    },
+    {
+      "bytes": 8041,
+      "path": "src/civiclab/e02/crossmodel_recovery_metadata_v1.py",
+      "sha256": "e2c39d06702a466166a79fce538292eb373d78893bdbb8effaa20e1f5238956e"
+    },
+    {
+      "bytes": 4773,
+      "path": "src/civiclab/e02/crossmodel_price_v1.py",
+      "sha256": "41994cca7d8ea639ed660991b0ab75b79e0c3b23c2f49fee675571905a1b7746"
+    }
+  ],
+  "minimum_qualification_groups": [
+    {
+      "adverse": [
+        "Before positive main branch, wrong packet/release hash, extra/invalid packet field, wrong review/code/owner binding, oversize file and symlink/wrong scope refuse with zero owner/key/boundary calls. Select finite representative cases; do not mutate real future actual scope.",
+        "Resource setter or timer-install failure must stop before owner/key/transport. Test with an inert explicit setter failure; retain source/control order evidence.",
+        "Assert generic __main__ failure output is secret-free, STOPPED_NO_RETRY and nonzero exit; not a traceback containing credentials/raw data."
+      ],
+      "id": "L01",
+      "positive": [
+        "Load exact launcher source with future SCOPE routed only to a disposable authored directory. Keep actual read_exact and real validate_release; use correctly hash-bound authored packet/release.",
+        "Stub only owner constructor, credential reader, transport/catalog boundary and execute to inert counters. Deny real network, OS owner/key paths and child spawning. Assert these inert counters are zero until both release files and real packet/review/lead validations pass.",
+        "Run exact main once on positive branch. In child inspect actual RLIMIT_CORE=(0,0),RLIMIT_CPU=(59,60),SIGALRM handler and near240s ITIMER_REAL installed BEFORE owner/key boundary. Assert execute receives the fixed packet/release hashes, EXPLORATORY_REAL_MODEL provenance and only inert dependencies. No inference occurs.",
+        "Invoke installed handler directly under controlled interception to confirm TimeoutError, without waiting240seconds or rescheduling extra authority. Disable timer only as child exits. Parent has its own finite test watchdog."
+      ],
+      "release_prerequisite": true,
+      "scope": "Exact main/caller wiring in one small disposable child",
+      "test_scope_note": "One standalone child is preferred; real setter positive branch last because CPU limit changes are irreversible within that child. Stubs are boundary doubles, not code acceptance bypasses. No need to simulate a60CPU exhaustion or wait240seconds."
+    },
+    {
+      "adverse": [
+        "Inject cancellation or deadline at just-before POST after reservation: no POST, no subsequent external operation, no regrant/reopen; new reservation remains conservative and five old holds/rows unchanged.",
+        "Inject interruption after POST response but before statistics intent/transport: preserve consumedPOST intent and full new hold if billing unknown; no secondPOST or new catalog.",
+        "Inject interruption after verified invoice/SETTLED but before commit/checkpoint completion: retain verified cost/evidence and no unauthorized reduction or resend. Require no false success; if a full hold is retained that is conservative.",
+        "Reject insufficient remaining120second phase lease, stale/future proof and operation clock rollback/jump at the next external boundary; pure helper refusal alone does not establish all client boundaries. Select one representative end-to-end boundary plus existing helper evidence.",
+        "At one bounded artifact boundary per type, oversize/missing/noncanonical/hash-mismatched files or write/fsync failure stop before the next external action. No automatic refetch, replacement packet or POST retry."
+      ],
+      "already_covered_do_not_repeat_unnecessarily": [
+        "Independent429,POSTtimeout,model mismatch,malformed response,delayed404,generationcollision and capability timeout reuse; author402/provider/unknownbill/overrun/all404 evidence.",
+        "After confirmed commit but failed summary/ack delivery, retain committed row/witness and prohibit resend; do not fabricate a second request or delete successful evidence."
+      ],
+      "id": "L02",
+      "positive": [
+        "Verify one valid existing _Phase permits a fresh full120second phase and OperationGate fits within240; match source policy/price lease/900second proof rules. Existing pure gate tests may be reused by exact evidence.",
+        "Verify stable maximum-size packet/catalog/journal behavior at existing boundaries, normal one-slot canonical output and bounded fixed console. Reuse exact accepted parser/journal evidence where available instead of rerunning full historical suites."
+      ],
+      "release_prerequisite": true,
+      "scope": "Deadlines, bounded artifacts and interruption preservation at representative remaining boundaries"
+    },
+    {
+      "adverse": [
+        "Duplicate statistics claim for new receipt and foreign-generation statistics refuse; original claims untouched and no extra statistics transport after refused intent. Existing generationcollision result is supporting evidence.",
+        "Tamper one response/statistics/checkpoint join at commit: wrong generation/model/provider/cost/output/payload/request hash or witness must refuse PHASE_COMMITTED. Use a small representative pair plus closed-schema/static checks, not every Cartesian combination.",
+        "Attempt direct PHASE_COMMITTED transition or malformed new row/foreign original-row update; typed commit and row arithmetic must refuse.",
+        "Change derived anchor/head or a protected event/charge projection and require unchanged inherited verifier refusal; no repair, rebase or recreated owner. Existing copied SQL tamper is supporting evidence, not full inherited acceptance.",
+        "Inject one journal write failure after ambiguous dispatch and one after confirmed commit/ack boundary. Preserve known costs/full unknown holds, original5holds, spent slot/intent and no resend."
+      ],
+      "efficiency": "Reuse one reviewed fixture builder; finite isolated derived copies for destructive cases. Do not reread live owner or broadly recapture journals. No new production architecture is needed.",
+      "id": "L03",
+      "positive": [
+        "After separate R01 parent replay passes, one authored one-slot positive roundtrip using normal CanaryOwnerV1 in the routed temporary reconstructed namespace should exercise new typed events through unchanged inherited _verify. No CopiedOwner._verify/_registration seed shortcut for this integration check.",
+        "Require original194rows/1180prefix objects/seven study projections/five holds unchanged, exactly one new row/witness, exact slot45/baseline13/seed/payload, owner-wide generation/statistics uniqueness, expected1POST/1..3GET/2catalog mock counts and terminal no-reopen.",
+        "Measure real CPU/monotonic elapsed for this representative transaction path against60CPU/240operation/120phase; mocked UTC may only track real elapsed, not hide resource use. This establishes operational feasibility under the accepted limits, not an all-OS guarantee."
+      ],
+      "release_prerequisite": true,
+      "scope": "Representative remaining new-branch financial joins/tamper and real inherited integration"
+    }
+  ],
+  "no_additional_execution_access_spending_publication_authority": true,
+  "optional_hardening_and_nonprerequisites": [
+    {
+      "item": "Whole-interpreter startup or native-byte universal accounting",
+      "reason": "E01-specific gate, not accepted E02 release requirement. Keep startup/OS limits candid."
+    },
+    {
+      "item": "New total application-read/write/console accounting architecture",
+      "reason": "Not present in actual BOUNDS. Proposed values require explicit disposition; existing bounded formats/loops/time/artifact controls can be qualified without inventing live caps."
+    },
+    {
+      "item": "Exhaustive every-field/event/clock/crash permutation",
+      "reason": "Finite representative adverse cases plus strict schemas and reviewed existing controls suffice for this single-slot scope; untested classes remain documented."
+    },
+    {
+      "item": "Hostile concurrent filesystem races or malicious native children",
+      "reason": "Outside stable operator-controlled release threat model unless explicitly adopted. No claim these are solved."
+    },
+    {
+      "item": "All35remaining jobs/full80analysis,old775holdsettlement,Azureavailability,prospective/human effects",
+      "reason": "Outside one-slot canary; remain blocked/incomplete."
+    },
+    {
+      "item": "Full repo/Linux clean-checkout CI as a new canary-specific milestone",
+      "reason": "Engineering contract still requires truthful CI status; do not equate focused local tests with fullCI or automatically invent an extra release gate absent accepted runtime requirements."
+    }
+  ],
+  "practical_IO_and_output_bound_analysis": {
+    "actual_unbounded_or_conditional_edges": [
+      {
+        "classification": "Conditional filesystem-race limitation, not an unbounded normal retry. A tiny max+1 read hardening can close it if adopted; do not claim race-safe bytes without it.",
+        "observation": "Both stat-check size then call Path.read_bytes without an intrinsic max+1 reader. Under stable admitted files their content is bounded; concurrent growth between stat and read has no intrinsic read-byte ceiling until the full read/post-check.",
+        "path": "launcher.read_exact and CanaryOwnerV1._journal_read"
+      },
+      {
+        "classification": "Stable exact snapshot prerequisite plus documented hostile-storage limitation; optional stronger native isolation if that threat is adopted.",
+        "observation": "LIMIT bounds event/row count; event byte check happens after SQLite materialization. Admitted fixed DB snapshot is finite, but hostile oversized SQL blobs or concurrent mutation are not universally memory/I/O bounded by JSON/artifact guards.",
+        "path": "inherited verifier SQL materialization"
+      },
+      {
+        "classification": "Keep existing byte checks and CPU/wall limits; no aggregate memory/startup certification inferred.",
+        "observation": "Raw transport bodies are finite; canonical serialization may expand escaped characters before artifact-size rejection. This has a finite input-derived expansion, but2MB raw input does not mean2MB transient serialization.",
+        "path": "canonical serialization of provider objects"
+      }
+    ],
+    "assumptions": [
+      "Exact admitted owner/current-head rows/history and fixed code/protocol contracts; stable operator-controlled immutable journal/release artifacts. No hostile concurrent filesystem or SQLite mutation.",
+      "One execute call; no outer retry/restart/alias, recursive canary or extra caller. Failed slots/intents remain spent. These are already required design invariants."
+    ],
+    "conclusion": "Existing parsers, fixed attempt counts, journal artifacts and exact finite owner snapshot give a practical application-level finite bound for the one-canary path under its admitted storage model. They do not establish64MiB aggregate application reads,32MiB all-owned writes or256KiB total console enforcement. No unlimited network retry or canary loop was found statically; actual resource feasibility still needs focused evidence.",
+    "finite_owner_and_journal_rereads": {
+      "interpretation": "Inherited verifier uses bounded event/row counts and fixed contracts; the frozen current prefix has1180events/194rows. Every owner operation may reverify and reread protocols/source/new proofs, so cumulative application reads can greatly exceed unique artifact bytes. There is no admitted unbounded dispatch/retry loop; repeated reads are finite but64MiB total is not presently enforced or demonstrated.",
+      "native_SQL_note": "SQLite uses native page reads/writes; per-JSON bounds do not bound whole-process physical I/O or SQLite/WAL bytes. Do not present an open-hook counter or journal-only sum as a universal bound.",
+      "qualification": "R01 exact dependency graph and one normal new-branch roundtrip must record actual repeated-read/resource behavior. Existing CPU/wall enforcement must stop any path that cannot finish under60CPU/240operation/120phase. No E01 universal-startup byte ledger required."
+    },
+    "network_payload_bound": {
+      "POST_request_max_bytes": 262144,
+      "POST_response": {
+        "attempts": 1,
+        "max_bytes": 2000000
+      },
+      "catalog_bodies": {
+        "attempts": 2,
+        "max_bytes_each": 2000000
+      },
+      "conservative_total_inbound_body_bytes": 12000000,
+      "interpretation": "A finite body bound from existing per-transfer parsers and1/3/2 attempts. It excludes HTTP framing/TLS/kernel overhead; a failed parse/timeout is counted, never retried beyond the fixed404 schedule.",
+      "statistics_response_bodies": {
+        "attempts": 3,
+        "max_bytes_each": 2000000
+      }
+    },
+    "new_journal_bound": {
+      "below_proposed32MiB_for_journal_JSON_only": true,
+      "conservative_new_JSON_content_bytes": 28000000,
+      "derivation": "packet,retention,2catalog,request,dispatch,response,up to3statistics intents,statistics,checkpoint,summary,failure; run.lock is separate and initially empty. Some names are mutually exclusive, so14 is conservative.",
+      "existing_max_each_artifact_bytes": 2000000,
+      "interpretation": "Accepted serialized writes must satisfy existing artifact limit; raw2MB catalog might escape to a larger JSON artifact and then stop safely. Journal JSON bound is not a32MiB whole-owned-output cap: SQLite/WAL/anchors, metadata or filesystem overhead are separate. Existing256-artifact/256MiB journal bounds remain unweakened.",
+      "maximum_distinct_json_names_on_this_client_path": 14
+    }
+  },
+  "resource_accounting": {
+    "API_calls": 0,
+    "Git_mutations": 0,
+    "candidate_imports": 0,
+    "private_data_reads": 0,
+    "read_scope": "Under8MiB code/review/design inputs only",
+    "test_runs": 0
+  }
+}

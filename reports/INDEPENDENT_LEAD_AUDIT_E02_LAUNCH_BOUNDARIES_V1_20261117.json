@@ -1,0 +1,459 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11-recovery.json",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11-recovery.log",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11.json",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11.log",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12-recovery.json",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12-recovery.log",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12.json",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12.log",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/PLAN.json",
+    "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/RECOVERY_PLAN.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent L03 review, then exact one-request caller/packet review under unchanged existing caps.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 4014,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11-recovery.json",
+      "sha256": "88f9da7521dfde23c9ef3b6f7cb482b397847bf1c5dbce648e2d5100946912c7"
+    },
+    {
+      "bytes": 3409,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11-recovery.log",
+      "sha256": "766458f74c7bf392cd09f733ba0eb700dc1176098b430074fd6f74d1b74f496c"
+    },
+    {
+      "bytes": 222,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11.json",
+      "sha256": "92f5b51080f710d1785806b8bcd4ec57538a6d5de4ed3eff22e54ea4b85133ee"
+    },
+    {
+      "bytes": 484,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.11.log",
+      "sha256": "934b33b4cfdb52b89cd1fd6950acf31f0831097558a4512bbf9cd9573ff08036"
+    },
+    {
+      "bytes": 3954,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12-recovery.json",
+      "sha256": "87aa43023da202af3ddfb830e1c94de07e456e12db060061b87dee5bc4b49bc4"
+    },
+    {
+      "bytes": 3408,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12-recovery.log",
+      "sha256": "878e53a231df9fdfe4aad97d27c5eb37d5b27bb729fe884b9113fce1f84e5722"
+    },
+    {
+      "bytes": 222,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12.json",
+      "sha256": "84a6f613fcb826c911ca17d0e7096a3ba9c3f2dbaee3233ed156067f6eb470e7"
+    },
+    {
+      "bytes": 484,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/3.12.log",
+      "sha256": "934b33b4cfdb52b89cd1fd6950acf31f0831097558a4512bbf9cd9573ff08036"
+    },
+    {
+      "bytes": 1329,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/PLAN.json",
+      "sha256": "2364ed489e3f77964f3eb28772e4786dfebc946bcce1368fd2a8df5fa1a323cf"
+    },
+    {
+      "bytes": 1690,
+      "path": "reports/evidence_independent_lead_e02_launch_boundaries_v1_20261117/RECOVERY_PLAN.json",
+      "sha256": "bcc4f2774f518c5dfb7d0daa55c164ad692b7b74ed80ce91e5a2d4428b83d53f"
+    }
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Stable trusted filesystem/CPython and exact authored child code; no hostile-native-code sandbox guarantee.",
+    "Child communicate output size is checked after collection within180seconds; fixture emits bounded known output. This is not an independently stress-tested untrusted child stdout hard-memory bound.",
+    "Production operation CPU/timer starts after packet validation; saved-key bridge pre-admission/key-read precedes it. Do not claim full process/startup240wall/60CPU.",
+    "Logical file reservations and SQLite fixture reservations are not physical syscall I/O. Proposed aggregate live64MiBread/32MiBwrite caps remain unadopted; actual financial/dispatch/token/time/per-artifact limits unchanged.",
+    "Private copied-history tests can skip in a fresh public checkout where exact private export is absent; local scopedPASS is not clean-checkout fullCI or new scientific result."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Project-owned frozen source and exact retained synthetic closed history; private raw payloads remain local. Authored copies removed by test teardown.",
+  "TASK_ID": "INDEPENDENT_LEAD_E02_L01_L02_V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "each_runtime_L01_checks": 14,
+    "each_runtime_tests": 9,
+    "preserved_initial_failure": "Both reviewer direct -I/-S invocations lacked src path, stopped at civiclab import before any test bodies. Exact documented command used once/runtime under separately recorded same-limit recovery; all logs retained. No production/test changes.",
+    "results": [
+      {
+        "command": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+          "-I",
+          "-B",
+          "-S",
+          "-c",
+          "import sys,runpy;sys.path.insert(0,'/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src');sys.argv=['/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_canary_launch_boundaries_v1.py'];runpy.run_path(sys.argv[0],run_name=\"__main__\")"
+        ],
+        "console_bytes": 3409,
+        "console_sha256": "766458f74c7bf392cd09f733ba0eb700dc1176098b430074fd6f74d1b74f496c",
+        "exit_code": 0,
+        "reason": "EXIT",
+        "record": {
+          "L01_child_results": [
+            {
+              "console_bytes": 1571,
+              "console_sha256": "8a1439e3942f1c9d0c98589b8e9f9f517a33594783387400cf5ab760c14f8753",
+              "exit": 0,
+              "result": {
+                "API_calls": 0,
+                "authored_write_bytes": 172435,
+                "charged_read_bytes": 14094959,
+                "checks": [
+                  {
+                    "case": "packet_hash_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "release_hash_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "packet_extra_schema_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "review_binding_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "owner_parent_binding_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "packet_oversize_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "packet_symlink_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "wrong_scope_read_exact",
+                    "pass": true
+                  },
+                  {
+                    "case": "read_exact_accepts_stable65536",
+                    "pass": true
+                  },
+                  {
+                    "case": "resource_setter_failure_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "timer_failure_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "generic_main_failure_closed_safe",
+                    "pass": true
+                  },
+                  {
+                    "case": "positive_exact_main_inert_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "actual_installed_timeout_handler",
+                    "pass": true
+                  }
+                ],
+                "counters": {
+                  "catalog": 0,
+                  "execute": 1,
+                  "key": 1,
+                  "owner": 1,
+                  "transport": 1
+                },
+                "inference_calls": 0,
+                "kind": "MOCK_L01_EXACT_MAIN_QUALIFICATION",
+                "launcher_sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d",
+                "note": "Exact main passed EXPLORATORY_REAL_MODEL string into inert execute; no actual execution or release. Stable authored filesystem only.",
+                "passed": true,
+                "real_key_reads": 0,
+                "real_owner_constructor_calls": 0,
+                "real_resource_observation": {
+                  "CPU": [
+                    59,
+                    60
+                  ],
+                  "core": [
+                    0,
+                    0
+                  ],
+                  "handler_callable": true,
+                  "timer_near240": true
+                },
+                "response_provenance": "MOCK",
+                "wall_seconds": 0.15228337500593625
+              },
+              "wall_seconds": 0.20620450002024882
+            }
+          ],
+          "L03": "NOT_RUN_PREPARATION_ONLY",
+          "actual_API_calls": 0,
+          "charged_read_bytes": 793626755,
+          "charged_write_bytes": 148985180,
+          "console_bytes_before_summary": 1337,
+          "kind": "AUTHOR_L01_L02_MOCK_BOUNDARIES",
+          "live_owner_access": 0,
+          "python": "3.11.17",
+          "real_key_reads": 0,
+          "successful": true,
+          "tests_run": 9
+        },
+        "runtime": "3.11",
+        "wall_seconds": 12.238017583
+      },
+      {
+        "command": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+          "-I",
+          "-B",
+          "-S",
+          "-c",
+          "import sys,runpy;sys.path.insert(0,'/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src');sys.argv=['/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_canary_launch_boundaries_v1.py'];runpy.run_path(sys.argv[0],run_name=\"__main__\")"
+        ],
+        "console_bytes": 3408,
+        "console_sha256": "878e53a231df9fdfe4aad97d27c5eb37d5b27bb729fe884b9113fce1f84e5722",
+        "exit_code": 0,
+        "reason": "EXIT",
+        "record": {
+          "L01_child_results": [
+            {
+              "console_bytes": 1571,
+              "console_sha256": "d700271b0c5514b3005574f32daf711a3d8b58c85e6f30b708297fa260d6f68f",
+              "exit": 0,
+              "result": {
+                "API_calls": 0,
+                "authored_write_bytes": 172435,
+                "charged_read_bytes": 14030823,
+                "checks": [
+                  {
+                    "case": "packet_hash_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "release_hash_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "packet_extra_schema_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "review_binding_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "owner_parent_binding_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "packet_oversize_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "packet_symlink_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "wrong_scope_read_exact",
+                    "pass": true
+                  },
+                  {
+                    "case": "read_exact_accepts_stable65536",
+                    "pass": true
+                  },
+                  {
+                    "case": "resource_setter_failure_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "timer_failure_before_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "generic_main_failure_closed_safe",
+                    "pass": true
+                  },
+                  {
+                    "case": "positive_exact_main_inert_boundaries",
+                    "pass": true
+                  },
+                  {
+                    "case": "actual_installed_timeout_handler",
+                    "pass": true
+                  }
+                ],
+                "counters": {
+                  "catalog": 0,
+                  "execute": 1,
+                  "key": 1,
+                  "owner": 1,
+                  "transport": 1
+                },
+                "inference_calls": 0,
+                "kind": "MOCK_L01_EXACT_MAIN_QUALIFICATION",
+                "launcher_sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d",
+                "note": "Exact main passed EXPLORATORY_REAL_MODEL string into inert execute; no actual execution or release. Stable authored filesystem only.",
+                "passed": true,
+                "real_key_reads": 0,
+                "real_owner_constructor_calls": 0,
+                "real_resource_observation": {
+                  "CPU": [
+                    59,
+                    60
+                  ],
+                  "core": [
+                    0,
+                    0
+                  ],
+                  "handler_callable": true,
+                  "timer_near240": true
+                },
+                "response_provenance": "MOCK",
+                "wall_seconds": 0.17161900000064634
+              },
+              "wall_seconds": 0.2279943750181701
+            }
+          ],
+          "L03": "NOT_RUN_PREPARATION_ONLY",
+          "actual_API_calls": 0,
+          "charged_read_bytes": 793052741,
+          "charged_write_bytes": 148985180,
+          "console_bytes_before_summary": 1337,
+          "kind": "AUTHOR_L01_L02_MOCK_BOUNDARIES",
+          "live_owner_access": 0,
+          "python": "3.12.14",
+          "real_key_reads": 0,
+          "successful": true,
+          "tests_run": 9
+        },
+        "runtime": "3.12",
+        "wall_seconds": 12.107828458
+      }
+    ]
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "L03 normal inherited new-event positive/tamper qualification",
+    "Exact external caller pin including saved-key bridge and current price lease/packet review",
+    "Runtime current-owner verification and fresh catalogs NOT_RUN"
+  ],
+  "decision": {
+    "L01_exact_main": "PASS_SCOPED_INERT_BOUNDARIES",
+    "L02_interruptions_and_artifacts": "PASS_REPRESENTATIVE_COPIED_HISTORY_CONTROLS",
+    "L03_normal_inherited_new_events": "NOT_RUN_PENDING_OTHER_TASK",
+    "actual_live_release": "BLOCKED_NOT_GRANTED"
+  },
+  "independent_source_findings": [
+    "Read original main and helper: real validate_release precedes resource setters and all owner/key boundaries. Hash/schema/review/owner binding and setter/timer failures verify zero inert private-boundary counters.",
+    "Exact source main positive child observes real core0/CPU59soft60hard/240timer before fake_owner. Installed timeout handler raises TimeoutError. Exact __main__ failure AST returns safe generic result without traceback.",
+    "L02 guards preserve original1180-event prefix/194rows/fiveholds after prePOST cancellation, postPOST clockjump, prestats-intent write failure, postinvoice checkpoint failure and response fsync failure. New held row stays conservative; durable statistics intent may count despite transport not called.",
+    "Insufficient remaining lease and oversize catalog refuse before reservation. Missing/oversize/noncanonical catalog and proof hash mismatch refuse; exact2000000byte journal write positive and overflow negative covered.",
+    "Underlying CopiedOwner deliberately seeds accepted state; L01 mocked execute deliberately sends no network. Neither supplies L03 acceptance."
+  ],
+  "recorded_at_UTC": "2026-11-18T03:42:48.975005+00:00",
+  "reviewer": "Root lead, separate from E02 implementation author; root saved-key bridge separately reviewed by dedicated auditor.",
+  "source_refs": [
+    {
+      "bytes": 21270,
+      "path": "reports/E02_CANARY_LAUNCH_BOUNDARIES_V1_HANDOFF_20261117.json",
+      "sha256": "4433407a63803d39c78d60c0a172c9633e18c6a58e778353a35f6a18ca4e116b"
+    },
+    {
+      "bytes": 11621,
+      "path": "scripts/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "sha256": "7c2ade661f68ba0d826a26124b8e99e00b988424e54679b1cb3593ce75bbec1c"
+    },
+    {
+      "bytes": 16826,
+      "path": "tests/test_wrapper_canary_launch_boundaries_v1.py",
+      "sha256": "4b34dd08bf93f00444a24f2e568b571fa57df90a3782c716858f8e1512776e06"
+    }
+  ],
+  "verified_handoff_refs": [
+    {
+      "bytes": 11621,
+      "path": "scripts/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "sha256": "7c2ade661f68ba0d826a26124b8e99e00b988424e54679b1cb3593ce75bbec1c"
+    },
+    {
+      "bytes": 16826,
+      "path": "tests/test_wrapper_canary_launch_boundaries_v1.py",
+      "sha256": "4b34dd08bf93f00444a24f2e568b571fa57df90a3782c716858f8e1512776e06"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 1327,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/TEST_PLAN.json",
+      "sha256": "4020c737816143639f7098adaf5bc1e302a951d07c87fd2feeafa4fe943b29db"
+    },
+    {
+      "bytes": 1327,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/TEST_PLAN.json",
+      "sha256": "4020c737816143639f7098adaf5bc1e302a951d07c87fd2feeafa4fe943b29db"
+    },
+    {
+      "bytes": 1633,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/before.json",
+      "sha256": "9282c2d965d398a6dcdb447d58075a083b0bbb1962b83b2054b0a12410f2786f"
+    },
+    {
+      "bytes": 3409,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/console.log",
+      "sha256": "52d9bb7d470272e9970da482ab1ed9462c44b28624d771ead76251cfcab91682"
+    },
+    {
+      "bytes": 227,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/execution.json",
+      "sha256": "7f73be5f9eba489125e127b7b628dd0e285918171bb89a27bba2276b02097a6b"
+    },
+    {
+      "bytes": 11621,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "sha256": "7c2ade661f68ba0d826a26124b8e99e00b988424e54679b1cb3593ce75bbec1c"
+    },
+    {
+      "bytes": 16826,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/test_wrapper_canary_launch_boundaries_v1.py",
+      "sha256": "4b34dd08bf93f00444a24f2e568b571fa57df90a3782c716858f8e1512776e06"
+    },
+    {
+      "bytes": 1327,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.12-01/TEST_PLAN.json",
+      "sha256": "4020c737816143639f7098adaf5bc1e302a951d07c87fd2feeafa4fe943b29db"
+    },
+    {
+      "bytes": 1574,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.12-01/before.json",
+      "sha256": "9786e3742adc63f2bc46ee63038bf23915dbc2a38c43a25dde0cee60872d66b7"
+    },
+    {
+      "bytes": 3408,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.12-01/console.log",
+      "sha256": "43b1a6318d5b70f4a4125c3f4299eb403bf268176153e486679b6c169afc74bd"
+    },
+    {
+      "bytes": 228,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.12-01/execution.json",
+      "sha256": "33de32e4b9a88298ec7333443e96e09a99c499f5b278acf848819bd7b9c7d66e"
+    },
+    {
+      "bytes": 11621,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.12-01/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "sha256": "7c2ade661f68ba0d826a26124b8e99e00b988424e54679b1cb3593ce75bbec1c"
+    },
+    {
+      "bytes": 16826,
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.12-01/test_wrapper_canary_launch_boundaries_v1.py",
+      "sha256": "4b34dd08bf93f00444a24f2e568b571fa57df90a3782c716858f8e1512776e06"
+    }
+  ]
+}

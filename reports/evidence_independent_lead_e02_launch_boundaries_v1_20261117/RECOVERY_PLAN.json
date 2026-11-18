@@ -1,0 +1,38 @@
+{
+  "focused_invocations_per_runtime": 1,
+  "kind": "INDEPENDENT_LEAD_L01_L02_BOUNDED_HARNESS_RECOVERY",
+  "limits": {
+    "CPU_seconds": 600,
+    "charged_read_bytes": 1073741824,
+    "console_bytes": 524288,
+    "temp_write_bytes": 268435456,
+    "wall_seconds": 900
+  },
+  "new_invocations": 2,
+  "prior_invocations": 2,
+  "reason": "Initial isolated interpreter invocation omitted explicit src path; both stopped at import with ModuleNotFoundError before test bodies. Use exact documented author command, same frozen sources, one separately recorded correction invocation per runtime. No test or production changes.",
+  "recorded_at_UTC": "2026-11-18T03:41:37.645964+00:00",
+  "reviewer": "root lead, separate from E02 author",
+  "runtimes": [
+    "3.11.17",
+    "3.12.14"
+  ],
+  "scope": "Rerun exact nine boundary tests; independently inspect actual main source bindings/resource ordering,14 L01 observations, five L02 interruption traces and artifact refusals. No actual model/key/owner. Native child is trusted exact code, not hostile-output stress qualification. No L03 acceptance.",
+  "source_refs": [
+    {
+      "bytes": 21270,
+      "path": "reports/E02_CANARY_LAUNCH_BOUNDARIES_V1_HANDOFF_20261117.json",
+      "sha256": "4433407a63803d39c78d60c0a172c9633e18c6a58e778353a35f6a18ca4e116b"
+    },
+    {
+      "bytes": 11621,
+      "path": "scripts/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "sha256": "7c2ade661f68ba0d826a26124b8e99e00b988424e54679b1cb3593ce75bbec1c"
+    },
+    {
+      "bytes": 16826,
+      "path": "tests/test_wrapper_canary_launch_boundaries_v1.py",
+      "sha256": "4b34dd08bf93f00444a24f2e568b571fa57df90a3782c716858f8e1512776e06"
+    }
+  ]
+}

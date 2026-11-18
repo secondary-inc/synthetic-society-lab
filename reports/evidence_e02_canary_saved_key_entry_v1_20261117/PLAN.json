@@ -1,0 +1,38 @@
+{
+  "cases": 9,
+  "kind": "SAVED_KEY_ENTRY_INERT_TEST_PLAN",
+  "limits": {
+    "CPU_seconds_per_invocation": 30,
+    "console_bytes_per_invocation": 65536,
+    "invocations_per_runtime": 1,
+    "wall_seconds_per_invocation": 60
+  },
+  "recorded_at_UTC": "2026-11-18T03:35:43.253054+00:00",
+  "runtime": [
+    "3.11.17",
+    "3.12.14"
+  ],
+  "scope": "Inert admission/key/main doubles and tiny authored source fixtures only. No real key/private payload/currentowner/API. No new I/O budget semantics or changes to frozen production launcher.",
+  "source_refs": [
+    {
+      "bytes": 2899,
+      "path": "scripts/launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "80bbeafa473662ce4075de74e36f8ac31fd397c3f5c3cf8fad65d941721ebb58"
+    },
+    {
+      "bytes": 5111,
+      "path": "tests/test_e02_canary_saved_key_entry_v1.py",
+      "sha256": "781c4edf7cf8bd6cb4b48f99fc2ddd5305d1be2266cc0bbb395aef17b0940d5c"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 11207,
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    }
+  ]
+}

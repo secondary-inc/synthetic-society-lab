@@ -1,0 +1,12 @@
+{
+  "src/civiclab/common.py:canonical_bytes": {
+    "end_line": 24,
+    "line": 23,
+    "source": "def canonical_bytes(value):\n    return json.dumps(value, sort_keys=True, separators=(\",\", \":\"), allow_nan=False).encode()"
+  },
+  "src/civiclab/e01/idaho_v1_8_1.py:_closed_snapshot": {
+    "end_line": 95,
+    "line": 72,
+    "source": "def _closed_snapshot(value):\n    \"\"\"Detach a closed built-in tree BEFORE admitting that exact snapshot.\n\n    No deepcopy/JSON/default/protocol hooks are invoked on custom containers.\n    Caller mutations cannot replace source authorities after admission.\n    \"\"\"\n    budget=[0,0]\n    def clone(item,depth):\n        budget[0]+=1;require(budget[0]<=4096 and depth<=32)\n        kind=type(item)\n        if kind is dict:\n            result={}\n            for key,child in item.items():\n                require(type(key) is str);result[clone(key,depth+1)]=clone(child,depth+1)\n            return result\n        if kind is list:return [clone(child,depth+1) for child in item]\n        if kind is str:\n            budget[1]+=len(item);require(len(item)<=8192 and budget[1]<=131072);return item\n        if kind is int:require(item.bit_length()<=64);return item\n        if kind is float:\n            import math\n            require(math.isfinite(item));return item\n        require(kind in (bool,type(None)));return item\n    return clone(value,0)"
+  }
+}

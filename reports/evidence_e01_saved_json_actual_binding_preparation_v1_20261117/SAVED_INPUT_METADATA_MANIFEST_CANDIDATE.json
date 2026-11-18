@@ -1,0 +1,301 @@
+{
+  "chosen_run_id": "e01-f398afc9b07c495290f0a55262ac016c",
+  "config_canonical_contract_sha256": "dc4f585d47c2c6d88a9ce3a33be34ff1ff2c87ee93636f61f55b263562652222",
+  "config_file": {
+    "bytes": 14122,
+    "path": "configs/e01_typed_readiness_v1_9_1_candidate.json",
+    "sha256": "f017d3b4ceb1647add88eeb66a8d4d386f156f98169ac3807f7d800083fb2997"
+  },
+  "existing_acceptance": {
+    "bytes": 15513,
+    "path": "reports/INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY.json",
+    "sha256": "31bb4e389aad209d24a276347023de5f2eab3ed03a3e91d8745128dcfc8115e2"
+  },
+  "kind": "E01_SAVED_JSON_METADATA_MANIFEST_CANDIDATE_V1",
+  "metadata_bodies_verified": [
+    "checksums.json",
+    "manifest.json",
+    "summary.json",
+    "typed_commit.json",
+    "typed_payload_hashes.json",
+    "typed_release.json"
+  ],
+  "not_rehashed_paths": [
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/candidate_rosters.local.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/environment.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/events.jsonl",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/id_status_records.local.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/legacy_readiness_v1_7.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_document_readiness.json",
+    "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_diagnostics.local.json",
+    "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_records.local.json",
+    "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/ballot_readiness.json",
+    "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/candidate_rosters.local.json"
+  ],
+  "primary_started_at_utc": "2026-11-03T18:02:53.401816+00:00",
+  "privacy": "Onlypaths/counts/hashes/sizes/closedprotocolmetadata; no candidate/localreference/typedpublic/event/environment payloads read orserialized.",
+  "proposed_reader_static_read_multiplicity": {
+    "assumption": "Existingread_verified_public called oncewith explicit admittedcontract, so no implicitconfigopen. Excludes callerprehash/import/runtime/openEOFguardcharges andmetadata syscalls. This is staticcount, notactualtrace.",
+    "reader_content_bytes_including4references_andselfhash": 296088,
+    "reader_source_selfhash_bytes": 18754,
+    "reader_source_selfhash_reads": 1,
+    "reference_reads": 1,
+    "reference_total_bytes": 60628,
+    "saved_content_bytes": 216706,
+    "saved_content_reads": 26,
+    "saved_files": [
+      {
+        "artifact": "legacy_readiness_v1_7.json",
+        "logical_bytes": 39861,
+        "open_count": 3,
+        "size": 13287
+      },
+      {
+        "artifact": "candidate_rosters.local.json",
+        "logical_bytes": 112950,
+        "open_count": 3,
+        "size": 37650
+      },
+      {
+        "artifact": "id_status_records.local.json",
+        "logical_bytes": 19716,
+        "open_count": 3,
+        "size": 6572
+      },
+      {
+        "artifact": "typed_document_readiness.json",
+        "logical_bytes": 37868,
+        "open_count": 4,
+        "size": 9467
+      },
+      {
+        "artifact": "typed_payload_hashes.json",
+        "logical_bytes": 820,
+        "open_count": 2,
+        "size": 410
+      },
+      {
+        "artifact": "typed_commit.json",
+        "logical_bytes": 712,
+        "open_count": 2,
+        "size": 356
+      },
+      {
+        "artifact": "manifest.json",
+        "logical_bytes": 1458,
+        "open_count": 2,
+        "size": 729
+      },
+      {
+        "artifact": "environment.json",
+        "logical_bytes": 466,
+        "open_count": 1,
+        "size": 466
+      },
+      {
+        "artifact": "events.jsonl",
+        "logical_bytes": 183,
+        "open_count": 1,
+        "size": 183
+      },
+      {
+        "artifact": "summary.json",
+        "logical_bytes": 436,
+        "open_count": 2,
+        "size": 218
+      },
+      {
+        "artifact": "checksums.json",
+        "logical_bytes": 1898,
+        "open_count": 2,
+        "size": 949
+      },
+      {
+        "artifact": "typed_release.json",
+        "logical_bytes": 338,
+        "open_count": 1,
+        "size": 338
+      }
+    ]
+  },
+  "references": [
+    {
+      "bytes_observed_by_stat": 3119,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "pinnedconfig+acceptedpreflightreferencejoin",
+      "expected_sha256": "02a02643f3dded40faec287ba18eb8c5a8fbeaecf2d9e203d9f4c2d3a88a26a7",
+      "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_diagnostics.local.json",
+      "role": "id_diagnostics"
+    },
+    {
+      "bytes_observed_by_stat": 6572,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "pinnedconfig+acceptedpreflightreferencejoin",
+      "expected_sha256": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea",
+      "path": "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_records.local.json",
+      "role": "id_records"
+    },
+    {
+      "bytes_observed_by_stat": 13287,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "pinnedconfig+acceptedpreflightreferencejoin",
+      "expected_sha256": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997",
+      "path": "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/ballot_readiness.json",
+      "role": "legacy_public"
+    },
+    {
+      "bytes_observed_by_stat": 37650,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "pinnedconfig+acceptedpreflightreferencejoin",
+      "expected_sha256": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c",
+      "path": "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/candidate_rosters.local.json",
+      "role": "legacy_rosters"
+    }
+  ],
+  "saved_artifacts": [
+    {
+      "artifact": "candidate_rosters.local.json",
+      "bytes_observed_by_stat": 37650,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "fe7a127fb2d847debfa2bc3135c31a82dbefe11c1dac71092633cb25f617d46c",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/candidate_rosters.local.json"
+    },
+    {
+      "artifact": "checksums.json",
+      "bytes_observed_by_stat": 949,
+      "content_opened_in_this_preparation": true,
+      "current_content_hash_reverified": true,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "6921ea2488602ad07bc1198a3cf63e9d5ef6a74f1e4892025e87d8cf156409db",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/checksums.json"
+    },
+    {
+      "artifact": "environment.json",
+      "bytes_observed_by_stat": 466,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "9b22725f5980481c4437fc60772250818d34989bbb3f473e68b307609c3068f4",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/environment.json"
+    },
+    {
+      "artifact": "events.jsonl",
+      "bytes_observed_by_stat": 183,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "f4439d46881940fe828759960557a79565b3d28fe8b5f7f13df1a4b0568dfbde",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/events.jsonl"
+    },
+    {
+      "artifact": "id_status_records.local.json",
+      "bytes_observed_by_stat": 6572,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "8f40935424ef077b89d9a7f53382e36b0a25fa1afa257654339bf64d421bc2ea",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/id_status_records.local.json"
+    },
+    {
+      "artifact": "legacy_readiness_v1_7.json",
+      "bytes_observed_by_stat": 13287,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "be0db00d16758793d6a726c4a780c2c98ee1e6cfe2825bed84edf522998be997",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/legacy_readiness_v1_7.json"
+    },
+    {
+      "artifact": "manifest.json",
+      "bytes_observed_by_stat": 729,
+      "content_opened_in_this_preparation": true,
+      "current_content_hash_reverified": true,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "6d5211859573a4b8991cc41616cbde4402675ecb2a2541a101f562b09e88adab",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/manifest.json"
+    },
+    {
+      "artifact": "summary.json",
+      "bytes_observed_by_stat": 218,
+      "content_opened_in_this_preparation": true,
+      "current_content_hash_reverified": true,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "89ca96d6548260aff7e90bc093976ebd4da8adac44f72aed68e66cd76b014dff",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/summary.json"
+    },
+    {
+      "artifact": "typed_commit.json",
+      "bytes_observed_by_stat": 356,
+      "content_opened_in_this_preparation": true,
+      "current_content_hash_reverified": true,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "3e6e18e16969456170024d26b53d1364e46d38235894162373e6ca973494a6a8",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_commit.json"
+    },
+    {
+      "artifact": "typed_document_readiness.json",
+      "bytes_observed_by_stat": 9467,
+      "content_opened_in_this_preparation": false,
+      "current_content_hash_reverified": false,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "201ef67bf7d9db14d7997d65bc7ec848802916c1dabbb5b3ee066b994e08ce71",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_document_readiness.json"
+    },
+    {
+      "artifact": "typed_payload_hashes.json",
+      "bytes_observed_by_stat": 410,
+      "content_opened_in_this_preparation": true,
+      "current_content_hash_reverified": true,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "7927a8ebeff8000dbd7daa7d920a454b3b63bbe4336f876c53ada6ed80ae5817",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_payload_hashes.json"
+    },
+    {
+      "artifact": "typed_release.json",
+      "bytes_observed_by_stat": 338,
+      "content_opened_in_this_preparation": true,
+      "current_content_hash_reverified": true,
+      "expected_hash_source": "INDEPENDENT_AUDIT_E01_V1_9_1_ACTUAL_PRIMARY_REPLAY",
+      "expected_sha256": "ce21ee6260f080d203d2a77b7f2a40e7f9ca2ebb483eda3e56b7b61d6a35938e",
+      "path": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_release.json"
+    }
+  ],
+  "saved_input_bytes_one_pass": 131253,
+  "saved_run_prefix": "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c",
+  "schema_metrics_from_accepted_review": {
+    "distinct_source_representation_count": 40,
+    "document_state_coverage_count": 13,
+    "final_ballots_accepted": 0,
+    "legacy_roster_state_count": 12,
+    "regular_frame_slots": 33,
+    "remaining_document_acquisition_jobs": 20,
+    "typed_status_history_state_count": 1
+  },
+  "selection_rationale": "Previouslyindependentlyacceptedprimaryrun; noselectionbyoutcome and no newreplay. Existingreplay remainsarchivalcontrolonly.",
+  "stat_only_paths": [
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/candidate_rosters.local.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/checksums.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/environment.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/events.jsonl",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/id_status_records.local.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/legacy_readiness_v1_7.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/manifest.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/summary.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_commit.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_document_readiness.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_payload_hashes.json",
+    "data/processed/runs/e01-f398afc9b07c495290f0a55262ac016c/typed_release.json",
+    "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_diagnostics.local.json",
+    "data/processed/e01_id_standalone_preflight_v1_8_1/e01-id-standalone-v1_8_1-582d30d28eca493993ef692b5ed12cc1/primary_records.local.json",
+    "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/ballot_readiness.json",
+    "data/processed/runs/e01-6a2b9fded13e4bb48d15985d98c7bb34/candidate_rosters.local.json"
+  ],
+  "status": "PREPARATION_ONLY_NO_ACTUAL_READER_RELEASE",
+  "unresolved": "Exactly10saved/reference bodies stat-only withhistoricalexpectedhashes; futureguardmustreverifyall16files beforeoneactualreadercall."
+}

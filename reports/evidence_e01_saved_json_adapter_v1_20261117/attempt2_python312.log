@@ -1,0 +1,46 @@
+test_authored_adapter_cases_in_child (test_e01_saved_json_job_ledger_v1.SavedJSONAdapterCI.test_authored_adapter_cases_in_child) ... FAIL
+
+======================================================================
+FAIL: test_authored_adapter_cases_in_child (test_e01_saved_json_job_ledger_v1.SavedJSONAdapterCI.test_authored_adapter_cases_in_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_job_ledger_v1.py", line 308, in test_authored_adapter_cases_in_child
+    raw=b''.join(chunks);self.assertEqual(child.returncode,0,raw.decode(errors='replace'))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : AUTHORED_FIRST_FAILURE=test_01_full_reader_api_projection_and_real_hash_meanings (__main__._authored_suite.<locals>.Cases.test_01_full_reader_api_projection_and_real_hash_meanings)
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_job_ledger_v1.py", line 113, in test_01_full_reader_api_projection_and_real_hash_meanings
+    reader=Reader();result=run(reader=reader);ledger=result['ledger'];self.assertEqual(reader.calls,1)
+                           ^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_job_ledger_v1.py", line 101, in run
+    return M.compile_authored_once(M.packed(manifest),files,reader or Reader(),runtime,scope,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_job_ledger_v1.py", line 377, in compile_authored_once
+    if primary is not None:raise primary
+                           ^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_job_ledger_v1.py", line 364, in compile_authored_once
+    with Guard(bundle):value=reader(ROOT/bundle.prefix,root=ROOT,contract=strict_json(bundle.files[CONFIG]))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_job_ledger_v1.py", line 74, in __call__
+    assert not any((path/n).exists() for n in ('failure.json','terminal_failure.local.json','failure_checksums.local.json'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_job_ledger_v1.py", line 74, in <genexpr>
+    assert not any((path/n).exists() for n in ('failure.json','terminal_failure.local.json','failure_checksums.local.json'))
+                   ^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 860, in exists
+    self.stat(follow_symlinks=follow_symlinks)
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_job_ledger_v1.py", line 309, in <lambda>
+    replacements[(Path,name)]=lambda path,*a,**k:self.metadata(path,*a,**k)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_job_ledger_v1.py", line 278, in metadata
+    raise FileNotFoundError('ABSENT_SEALED_CONTROL')
+FileNotFoundError: ABSENT_SEALED_CONTROL
+
+AUTHORED_FAILURE_TOTALS={"errors": 6, "failures": 0, "full_diagnostic_sha256": "8133ab4bfdb18113aeb4478d9a93d888bb1cebc2b3d6e255955066d48795330e"}
+SAVED_JSON_AUTHORED_RECEIPT={"actual_reader_calls": 0, "cost_usd": 0, "errors": 6, "failures": 0, "kind": "AUTHORED_SAVED_JSON_ADAPTER", "model_calls": 0, "network_calls": 0, "outer_guard": {"denied": 0, "file_read_bytes": 18393902, "logical_fixture_read_bytes": 364501, "logical_output_bytes": 28590}, "runtime_pin_read_bytes": 18220496, "runtime_selected_origins_sha256": "c4708c0dc62ffc2bde49c58838fbafb5955819dd24523b1cdb6a7fe9fd08bea7", "startup_prewarm_complete": false, "tests": 12}
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.081s
+
+FAILED (failures=1)

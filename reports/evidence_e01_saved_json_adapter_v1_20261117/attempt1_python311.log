@@ -1,0 +1,15 @@
+test_authored_adapter_cases_in_child (test_e01_saved_json_job_ledger_v1.SavedJSONAdapterCI.test_authored_adapter_cases_in_child) ... FAIL
+
+======================================================================
+FAIL: test_authored_adapter_cases_in_child (test_e01_saved_json_job_ledger_v1.SavedJSONAdapterCI.test_authored_adapter_cases_in_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_job_ledger_v1.py", line 301, in test_authored_adapter_cases_in_child
+    count+=len(raw);self.assertLessEqual(count,cap,'CHILD_CONSOLE_CAP');chunks.append(raw)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 16385 not less than or equal to 16384 : CHILD_CONSOLE_CAP
+
+----------------------------------------------------------------------
+Ran 1 test in 0.072s
+
+FAILED (failures=1)

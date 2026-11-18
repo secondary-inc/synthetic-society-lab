@@ -1,0 +1,30 @@
+{
+  "command": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+    "-I",
+    "-B",
+    "-S",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py"
+  ],
+  "exit": 0,
+  "timed_out": false,
+  "wall_seconds": 0.145686666,
+  "console_bytes": 1642,
+  "author_suite": {
+    "diagnostic_sha256": "9f2a166519b2265afdabec46a5d1b91c7b05278bb22b9b28f69f9e36f71a563b",
+    "errors": 0,
+    "failures": 0,
+    "tests": 12
+  },
+  "failed_case_names": [
+    "closed_stream_read1",
+    "closed_stream_readlines",
+    "closed_stream_readinto1"
+  ],
+  "resource_counters": {
+    "denials": 0,
+    "file_read_bytes": 17569245,
+    "logical_fixture_read_bytes": 1386851,
+    "logical_output_bytes": 147422
+  }
+}

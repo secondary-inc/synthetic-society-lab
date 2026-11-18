@@ -1,0 +1,104 @@
+{
+  "actual_imports_performed": 0,
+  "all_match_previous_accepted_closure": true,
+  "kind": "CURRENT_PROJECT_SOURCE_CLOSURE_METADATA",
+  "pins": [
+    {
+      "bytes": 106,
+      "path": "src/civiclab/__init__.py",
+      "sha256": "23bd3100ad3fd5ef94e459572a286f3f87b321c9676b36507c859bcf7dfadd50"
+    },
+    {
+      "bytes": 8476,
+      "path": "src/civiclab/common.py",
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+    },
+    {
+      "bytes": 422,
+      "path": "src/civiclab/e01/__init__.py",
+      "sha256": "aff117761fad19eec67ce32b5eae12c9b84921a71f0458e854a55c0237f77e83"
+    },
+    {
+      "bytes": 4781,
+      "path": "src/civiclab/e01/ballot_capture_formats_v1_4.py",
+      "sha256": "0c8cc0be58b249c9d31968a439025e5025f42949abdfe15214496f63fddbf370"
+    },
+    {
+      "bytes": 6860,
+      "path": "src/civiclab/e01/ballot_formats_v1_3.py",
+      "sha256": "281ae5eb4f3a71ab29b22b8944256c68a513712b4e4c289b7c2b6d09f1534916"
+    },
+    {
+      "bytes": 5856,
+      "path": "src/civiclab/e01/ballot_formats_v1_6.py",
+      "sha256": "fb5fb665225dfdef782eef3f8ba712cd0eb67816e9b69632323e39310a19faa9"
+    },
+    {
+      "bytes": 25981,
+      "path": "src/civiclab/e01/ballots.py",
+      "sha256": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec"
+    },
+    {
+      "bytes": 8887,
+      "path": "src/civiclab/e01/ballots_v1_7.py",
+      "sha256": "b45746439df1e50469f76a7d6ff9acb8bb0536e2f1d605eb116a28460b169062"
+    },
+    {
+      "bytes": 18754,
+      "path": "src/civiclab/e01/ballots_v1_9_1.py",
+      "sha256": "30e02bfa068f400846c8feff612695c3ba2c12497d6bc1567ad4c75858788f8b"
+    },
+    {
+      "bytes": 8546,
+      "path": "src/civiclab/e01/delaware_v1_7.py",
+      "sha256": "929ecadc08bdcb3cfad881f68443951a339f56731c2ab72101f1cda45f4d74c6"
+    },
+    {
+      "bytes": 20513,
+      "path": "src/civiclab/e01/idaho_v1_8_1.py",
+      "sha256": "1413f9a6e784e88d82b0ffe0beb2e8323775c5a8b55a1f5fc223f4a2505c2bb7"
+    },
+    {
+      "bytes": 9833,
+      "path": "src/civiclab/e01/maine_v1_5.py",
+      "sha256": "e07da3eeb097fe5ed85f4d9445a6d1dc50c28c5b87c97dc7a153e866770ca179"
+    },
+    {
+      "bytes": 6137,
+      "path": "src/civiclab/e01/nebraska_v1_7.py",
+      "sha256": "7ccd0a19bc015440587b93283956b27b958a1f1530d5551d6bb23fb463607e5e"
+    },
+    {
+      "bytes": 22533,
+      "path": "src/civiclab/e01/pipeline.py",
+      "sha256": "caf1b19dd62aab8541c740868b20b618ac62213b8b6be3d597cef14f9b6cd763"
+    }
+  ],
+  "selected_function_AST_sources": {
+    "src/civiclab/common.py:canonical_hash": {
+      "end_line": 28,
+      "line": 27,
+      "source": "def canonical_hash(value):\n    return hashlib.sha256(canonical_bytes(value)).hexdigest()"
+    },
+    "src/civiclab/common.py:sha256_file": {
+      "end_line": 36,
+      "line": 31,
+      "source": "def sha256_file(path):\n    h = hashlib.sha256()\n    with Path(path).open(\"rb\") as stream:\n        for block in iter(lambda: stream.read(1024 * 1024), b\"\"):\n            h.update(block)\n    return h.hexdigest()"
+    },
+    "src/civiclab/e01/ballots_v1_9_1.py:read_bound": {
+      "end_line": 50,
+      "line": 42,
+      "source": "def read_bound(root,relative,digest,area=None,size=None):\n    q=Path(relative);require(not q.is_absolute() and '..' not in q.parts)\n    p=root/q;require(not any(x.is_symlink() for x in (p,*p.parents) if x.is_relative_to(root)))\n    require(p.is_file() and p.resolve().is_relative_to(root))\n    if area:require(p.resolve().is_relative_to(root/area))\n    n=p.stat().st_size;require(n<=4194304 and (size is None or type(size) is int and n==size))\n    with p.open('rb') as f:data=f.read(4194304)\n    require(p.stat().st_size==n and len(data)==n and idaho.digest(data)==digest)\n    return data"
+    },
+    "src/civiclab/e01/ballots_v1_9_1.py:snapshot": {
+      "end_line": 32,
+      "line": 29,
+      "source": "def snapshot(config):\n    c=idaho._closed_snapshot(config)\n    require(canonical_hash(c)==CONTRACT_SHA)\n    return c"
+    },
+    "src/civiclab/e01/idaho_v1_8_1.py:strict_json": {
+      "end_line": 108,
+      "line": 101,
+      "source": "def strict_json(data):\n    def pairs(items):\n        obj={}\n        for key,value in items:\n            require(key not in obj);obj[key]=value\n        return obj\n    def invalid(_):raise ValueError('ID_NONFINITE_JSON')\n    return json.loads(data.decode('utf-8'),object_pairs_hook=pairs,parse_constant=invalid)"
+    }
+  }
+}

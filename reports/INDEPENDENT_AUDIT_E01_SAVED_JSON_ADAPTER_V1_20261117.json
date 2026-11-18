@@ -1,0 +1,593 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ADAPTER_V1_20261117.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/PLAN.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/STARTED_311_01.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/STARTED_312_01.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_311_01.log",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_311_01_result.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_312_01.log",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_312_01_result.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns narrow ReadOnlyStream read-family sticky failure correction with originals preserved; review delta and rerun only focused authored regressions. Keep actual admission/entry disabled. E02 actual offline result is reviewed separately.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ADAPTER_V1_20261117.json",
+    "reports/evidence_independent_e01_saved_json_adapter_v1_20261117"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    [
+      "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py"
+    ],
+    [
+      "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py"
+    ]
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Component acceptance is BLOCKED by S01. Actual entry and recorded body admission remain disabled regardless of authored positive coverage.",
+    "ReadOnlyStream finding is ordinary public read API error handling, not a claim of general hostile-Python sandboxing. Trusted preloaded/single-threaded reader and isolated process assumptions remain.",
+    "Injected OSError branch exercised through checked() with a synthetic method raising native OSError type; no real host file I/O fault injected.",
+    "RuntimePin selected loaded origin/executable and function identity profile is not cold project/stdlib import closure or approval of the actual reader identity.",
+    "Local direct12case tests do not certify ordinary wrapper native deadline/kill/overflow or clean-checkout full CI.",
+    "Budget time checks are cooperative; actual60second whole caller including prewarm/admission/cleanup remains future qualification. Test wrapper60work plus up to2cleanup is truthfully separate. No unrelated whole-interpreter startup gate imposed here.",
+    "Author initial console overflow omitted original child diagnostic prefix as explicitly disclosed; retained parent failure and subsequent bounded recovery remain preserved.",
+    "No actual source acquisition,PDF/installer/G03/geography/finalballot/forecast or scientific acceptance."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only authored source/fixtures and selected current runtime origin bytes used. No actual16saved bodies/acceptedreader/registration/modelowner/credential/API accessed. Actual pin constants inspected as metadata only. Public output remains AUTHOR-labelled, digest/count/enum data.",
+  "TASK_ID": "Independent E01 saved-JSON adapter/guard/projector component V1 review",
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_reader_or_saved_data": "NOT_RUN",
+    "exact_original_authored_cases_each_runtime": 12,
+    "failed_extra_checks_each_runtime": 3,
+    "frozen_manifest_refs": "33/33 exact authored source/evidence refs revalidated",
+    "independent_extra_checks_each_runtime": 9,
+    "invocations_used_each_runtime": 1,
+    "ordinary_CI_wrapper": "NOT independently executed by this probe; exact12 nested cases run directly inside isolated audit process, no extra child. Author wrapper evidence reviewed only.",
+    "original_cases_failures_or_errors": 0,
+    "remaining_in_two_each_runtime_allocation": 1,
+    "results": {
+      "311": {
+        "execution": {
+          "author_suite": {
+            "diagnostic_sha256": "9f2a166519b2265afdabec46a5d1b91c7b05278bb22b9b28f69f9e36f71a563b",
+            "errors": 0,
+            "failures": 0,
+            "tests": 12
+          },
+          "command": [
+            "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+            "-I",
+            "-B",
+            "-S",
+            "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py"
+          ],
+          "console_bytes": 1642,
+          "exit": 0,
+          "failed_case_names": [
+            "closed_stream_read1",
+            "closed_stream_readlines",
+            "closed_stream_readinto1"
+          ],
+          "resource_counters": {
+            "denials": 0,
+            "file_read_bytes": 17569245,
+            "logical_fixture_read_bytes": 1386851,
+            "logical_output_bytes": 147422
+          },
+          "timed_out": false,
+          "wall_seconds": 0.145686666
+        },
+        "observations": {
+          "actual_reader_calls": 0,
+          "actual_saved_payload_reads": 0,
+          "cost_usd": 0,
+          "exact_author_suite": {
+            "diagnostic_sha256": "9f2a166519b2265afdabec46a5d1b91c7b05278bb22b9b28f69f9e36f71a563b",
+            "errors": 0,
+            "failures": 0,
+            "tests": 12
+          },
+          "failed_case_names": [
+            "closed_stream_read1",
+            "closed_stream_readlines",
+            "closed_stream_readinto1"
+          ],
+          "independent_observations": [
+            {
+              "case": "OSError_checked_latches",
+              "pass": true
+            },
+            {
+              "case": "closed_stream_read",
+              "caught": "Refused",
+              "completed": false,
+              "latched": true,
+              "pass": true,
+              "raised": "INPUT_IO"
+            },
+            {
+              "case": "closed_stream_read1",
+              "caught": "ValueError",
+              "completed": true,
+              "latched": false,
+              "pass": false,
+              "raised": null
+            },
+            {
+              "case": "closed_stream_readline",
+              "caught": "Refused",
+              "completed": false,
+              "latched": true,
+              "pass": true,
+              "raised": "INPUT_IO"
+            },
+            {
+              "case": "closed_stream_readlines",
+              "caught": "ValueError",
+              "completed": true,
+              "latched": false,
+              "pass": false,
+              "raised": null
+            },
+            {
+              "case": "closed_stream_readinto",
+              "caught": "Refused",
+              "completed": false,
+              "latched": true,
+              "pass": true,
+              "raised": "INPUT_IO"
+            },
+            {
+              "case": "closed_stream_readinto1",
+              "caught": "ValueError",
+              "completed": true,
+              "latched": false,
+              "pass": false,
+              "raised": null
+            },
+            {
+              "case": "guard_restored",
+              "pass": true
+            },
+            {
+              "case": "no_actual_import",
+              "pass": true
+            }
+          ],
+          "kind": "INDEPENDENT_E01_SAVED_JSON_ADAPTER_PROBE",
+          "model_calls": 0,
+          "network_calls": 0,
+          "resource_counters": {
+            "denials": 0,
+            "file_read_bytes": 17569245,
+            "logical_fixture_read_bytes": 1386851,
+            "logical_output_bytes": 147422
+          },
+          "runtime": "3.11.17",
+          "selected_runtime_read_bytes": 17502673,
+          "startup_accounting": "NOT_COMPLETE_COLD_PROFILE",
+          "wall_seconds": 0.0854933750233613
+        }
+      },
+      "312": {
+        "execution": {
+          "author_suite": {
+            "diagnostic_sha256": "c7f732cb85b9545e25c469eb1791552ee8141c92fde4095ed060c2aec2c850ed",
+            "errors": 0,
+            "failures": 0,
+            "tests": 12
+          },
+          "command": [
+            "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "-I",
+            "-B",
+            "-S",
+            "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py"
+          ],
+          "console_bytes": 1643,
+          "exit": 0,
+          "failed_case_names": [
+            "closed_stream_read1",
+            "closed_stream_readlines",
+            "closed_stream_readinto1"
+          ],
+          "resource_counters": {
+            "denials": 0,
+            "file_read_bytes": 18287068,
+            "logical_fixture_read_bytes": 1386851,
+            "logical_output_bytes": 147422
+          },
+          "timed_out": false,
+          "wall_seconds": 0.21081854200000003
+        },
+        "observations": {
+          "actual_reader_calls": 0,
+          "actual_saved_payload_reads": 0,
+          "cost_usd": 0,
+          "exact_author_suite": {
+            "diagnostic_sha256": "c7f732cb85b9545e25c469eb1791552ee8141c92fde4095ed060c2aec2c850ed",
+            "errors": 0,
+            "failures": 0,
+            "tests": 12
+          },
+          "failed_case_names": [
+            "closed_stream_read1",
+            "closed_stream_readlines",
+            "closed_stream_readinto1"
+          ],
+          "independent_observations": [
+            {
+              "case": "OSError_checked_latches",
+              "pass": true
+            },
+            {
+              "case": "closed_stream_read",
+              "caught": "Refused",
+              "completed": false,
+              "latched": true,
+              "pass": true,
+              "raised": "INPUT_IO"
+            },
+            {
+              "case": "closed_stream_read1",
+              "caught": "ValueError",
+              "completed": true,
+              "latched": false,
+              "pass": false,
+              "raised": null
+            },
+            {
+              "case": "closed_stream_readline",
+              "caught": "Refused",
+              "completed": false,
+              "latched": true,
+              "pass": true,
+              "raised": "INPUT_IO"
+            },
+            {
+              "case": "closed_stream_readlines",
+              "caught": "ValueError",
+              "completed": true,
+              "latched": false,
+              "pass": false,
+              "raised": null
+            },
+            {
+              "case": "closed_stream_readinto",
+              "caught": "Refused",
+              "completed": false,
+              "latched": true,
+              "pass": true,
+              "raised": "INPUT_IO"
+            },
+            {
+              "case": "closed_stream_readinto1",
+              "caught": "ValueError",
+              "completed": true,
+              "latched": false,
+              "pass": false,
+              "raised": null
+            },
+            {
+              "case": "guard_restored",
+              "pass": true
+            },
+            {
+              "case": "no_actual_import",
+              "pass": true
+            }
+          ],
+          "kind": "INDEPENDENT_E01_SAVED_JSON_ADAPTER_PROBE",
+          "model_calls": 0,
+          "network_calls": 0,
+          "resource_counters": {
+            "denials": 0,
+            "file_read_bytes": 18287068,
+            "logical_fixture_read_bytes": 1386851,
+            "logical_output_bytes": 147422
+          },
+          "runtime": "3.12.14",
+          "selected_runtime_read_bytes": 18220496,
+          "startup_accounting": "NOT_COMPLETE_COLD_PROFILE",
+          "wall_seconds": 0.14113270898815244
+        }
+      }
+    }
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "S01 inherited read1/readlines/readinto1 bypass sticky INPUT_IO on closed streams; versioned narrow correction and regression required.",
+    "Actual16body fresh loader, exact acceptedreader/project/runtime identity/import closure and one-shot packet/entry release unimplemented/unqualified.",
+    "Actual whole60second caller and native failure cleanup/IO branches remain separate future qualification."
+  ],
+  "decision": {
+    "actual_reader_release": "NOT_RUN_DISABLED",
+    "component_acceptance": "BLOCKED_S01",
+    "full_CI": "NOT_RUN",
+    "original12_authored_cases": "PASS_INDEPENDENT_BOTH_RUNTIMES",
+    "provenance_projection_static": "PASS_SCOPED"
+  },
+  "evidence_refs": [
+    {
+      "bytes": 1132,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/PLAN.json",
+      "sha256": "13417f19c87db6100f64d03d784458ad1385fa9f787373e658cbf5eea1aa6416"
+    },
+    {
+      "bytes": 267,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/STARTED_311_01.json",
+      "sha256": "149c27d2b84712d3c301df38fe0f72f16e97275b209af083cf137b494b47df89"
+    },
+    {
+      "bytes": 287,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/STARTED_312_01.json",
+      "sha256": "ec684f1ea547e5ea2f37ee6103a0b58dc6eefdc000de8e4a2873cc24f93c97f8"
+    },
+    {
+      "bytes": 1642,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_311_01.log",
+      "sha256": "083b902530944e4d2596a0bb5cd048ce1f8306481ec453e7e850faead5b01e2d"
+    },
+    {
+      "bytes": 756,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_311_01_result.json",
+      "sha256": "5c4b8c9963cf90d97c47cf1121e883e95f70d45cbe37823cd4bb75b0d8f4387f"
+    },
+    {
+      "bytes": 1643,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_312_01.log",
+      "sha256": "a1c74d5e2d2ded644b32a1007942a43920363737b2d53c39aa7f0c50b4309ad9"
+    },
+    {
+      "bytes": 781,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_312_01_result.json",
+      "sha256": "95dfc51fdb5a948eacdb7fe2ccae5117699a1767dd8fed05c17e201d2961cbfa"
+    },
+    {
+      "bytes": 5934,
+      "path": "reports/evidence_independent_e01_saved_json_adapter_v1_20261117/probe_v1.py",
+      "sha256": "21fb031f8c3c24e5abeffc5ffbb0d8c9d16fef47c26f190a4696f47c76033244"
+    }
+  ],
+  "finding": {
+    "evidence": "ReadOnlyStream wraps read/readinto/readline in checked(), but inherits BytesIO.read1/readlines/readinto1. Their closed-stream ValueError escapes without budget.fail.",
+    "id": "S01",
+    "impact": "Contradicts sticky IO-failure component contract and allows a run containing a caught file-read failure to be marked complete. No actual saved-data effect or provenance forgery claimed.",
+    "independent_counterexample": "Authored Reader opens the admitted typed public stream, closes it, calls each inherited read variant and catches ValueError, then returns normal unchanged admitted public data. On both runtimes compile_authored_once emits COMPLETE and budget.failed=false for read1/readlines/readinto1.",
+    "lines": [
+      227,
+      238
+    ],
+    "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+    "positive_controls": "Closed read/readline/readinto produce INPUT_IO and no COMPLETE; explicit checked() OSError injection latches INPUT_IO. Guard/function identities restore after every case.",
+    "priority": "P2",
+    "requested_remedy": "Route every supported public read-family operation through checked() (or explicitly refuse unsupported variants with sticky budget.fail), preserving read-only/no-host-IO behavior and positive EOF/read API compatibility. Add exact three counterexamples and successful read/EOF controls; retain existing12case bodies.",
+    "title": "Inherited stream read variants can fail without latching refusal"
+  },
+  "input_manifest": {
+    "bytes": 7436,
+    "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/FROZEN_MANIFEST.json",
+    "sha256": "1e36cddfe90962d589e3bf7f56e5c7cc05587d412352aa8cd84ac3a5ddf7c4f8"
+  },
+  "input_refs": [
+    {
+      "bytes": 33097,
+      "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+      "sha256": "edbc89d526bd463e6b7d7a9eb4361746df130a1ff41f45b8e4fdbc0c731dc66d"
+    },
+    {
+      "bytes": 375,
+      "path": "scripts/compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    },
+    {
+      "bytes": 22760,
+      "path": "tests/test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "35812f4d0532b9b7f0638418ff17f97cce4f82a9c79b98a3cd474bff0360ddd1"
+    },
+    {
+      "bytes": 21937,
+      "path": "reports/E01_SAVED_JSON_ADAPTER_V1_HANDOFF_20261117.json",
+      "sha256": "a0ee3fc270182578688427f290393414f55fda5bb738a09df4a8ef4f267ef8d3"
+    },
+    {
+      "bytes": 819,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/ATTEMPT1_STARTED.json",
+      "sha256": "35e1564dfe43abed4a768f41d1a64dbf2d470283dfed09f683e5ccb4d7d9ef66"
+    },
+    {
+      "bytes": 251,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/ATTEMPT2_PY311_STARTED.json",
+      "sha256": "0a8945c7cf5ee35098fae95ece28618977c70019b953f263db89530001e6d534"
+    },
+    {
+      "bytes": 225,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/ATTEMPT2_PY312_STARTED.json",
+      "sha256": "9b2f61ff77ee2705425c950c3d26744345002ef56603889a093fb5991e4aaba7"
+    },
+    {
+      "bytes": 839,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/ENOENT_CORRECTION.diff",
+      "sha256": "6b3240351886c3e31b4fed91c9bb6b037c8044da92aa95f3d438490f6d8bf7d0"
+    },
+    {
+      "bytes": 2299,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/PLAN_STARTED.json",
+      "sha256": "cba82ffe9fb7fb2c9792254a14fd0c3977bfc812158c78afcf940fb430c7d702"
+    },
+    {
+      "bytes": 3067,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/STATIC_AUTHOR_CHECKS.json",
+      "sha256": "448e311de9190fe4bf280ab5b10b3c00d830844fb693bf375980ddb31979b886"
+    },
+    {
+      "bytes": 375,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    },
+    {
+      "bytes": 959,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_python311.log",
+      "sha256": "a12cac66f7f232b6857f3192651127980886b68f5e236c1559c71173bce5b460"
+    },
+    {
+      "bytes": 112,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_python311_result.json",
+      "sha256": "7b7b22d677c7daf182161f03d7ad8b641de4175026833b50b6ad0f95468b3e7b"
+    },
+    {
+      "bytes": 959,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_python312.log",
+      "sha256": "f1fe54b6a09bfe2af91b293324400f6910f86a603273273f858a0971f8a5e063"
+    },
+    {
+      "bytes": 111,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_python312_result.json",
+      "sha256": "bc79f8d190a39d2ee74fd26b8a231721f940c7aec39209619959eeb12e84fe8c"
+    },
+    {
+      "bytes": 33071,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_saved_json_job_ledger_v1.py",
+      "sha256": "f089251ee805d20ab7aa2483732658961a4318086709b9c8422731ffd0dd4c02"
+    },
+    {
+      "bytes": 22384,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt1_test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "f90b47fe1c6c1297d161c0ce344957d6f5b6018d37c2254972f9bdf6bdc779fb"
+    },
+    {
+      "bytes": 33097,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_py311_saved_json_job_ledger_v1.py",
+      "sha256": "edbc89d526bd463e6b7d7a9eb4361746df130a1ff41f45b8e4fdbc0c731dc66d"
+    },
+    {
+      "bytes": 22760,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_py311_test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "35812f4d0532b9b7f0638418ff17f97cce4f82a9c79b98a3cd474bff0360ddd1"
+    },
+    {
+      "bytes": 722,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_python311.log",
+      "sha256": "cbd7a25ac1cf3ca158e4262f08800a88f1b558825dfea7be746a1b1f2b3ffe6e"
+    },
+    {
+      "bytes": 120,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_python311_result.json",
+      "sha256": "c4178400ee51185890464741c04224305350a9b70d10a2495ec57447567a6501"
+    },
+    {
+      "bytes": 4387,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_python312.log",
+      "sha256": "eb9d1fde5d692a279690f9b87fee8839fa184b77813ac959c097455bcceeb480"
+    },
+    {
+      "bytes": 113,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_python312_result.json",
+      "sha256": "21869ef138f29e1851624fbec8bd84c33581ca74a2acda4192194c488d89dda6"
+    },
+    {
+      "bytes": 22760,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/attempt2_test_snapshot.py",
+      "sha256": "35812f4d0532b9b7f0638418ff17f97cce4f82a9c79b98a3cd474bff0360ddd1"
+    },
+    {
+      "bytes": 375,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/final_compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    },
+    {
+      "bytes": 33097,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/final_saved_json_job_ledger_v1.py",
+      "sha256": "edbc89d526bd463e6b7d7a9eb4361746df130a1ff41f45b8e4fdbc0c731dc66d"
+    },
+    {
+      "bytes": 22760,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/final_test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "35812f4d0532b9b7f0638418ff17f97cce4f82a9c79b98a3cd474bff0360ddd1"
+    },
+    {
+      "bytes": 1238,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/recovery_py312_enoent_v1/STARTED.json",
+      "sha256": "81db7e69a26c3433f6c4edaacf9137581ee3405fa0bc787f397cd2160dfca32e"
+    },
+    {
+      "bytes": 375,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/recovery_py312_enoent_v1/frozen_compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    },
+    {
+      "bytes": 33097,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/recovery_py312_enoent_v1/frozen_saved_json_job_ledger_v1.py",
+      "sha256": "edbc89d526bd463e6b7d7a9eb4361746df130a1ff41f45b8e4fdbc0c731dc66d"
+    },
+    {
+      "bytes": 22760,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/recovery_py312_enoent_v1/frozen_test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "35812f4d0532b9b7f0638418ff17f97cce4f82a9c79b98a3cd474bff0360ddd1"
+    },
+    {
+      "bytes": 722,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/recovery_py312_enoent_v1/python312.log",
+      "sha256": "94ac3a2786a6a5ba3199f9d539072c23d03ed497503ec7dda3886d8fe6481391"
+    },
+    {
+      "bytes": 157,
+      "path": "reports/evidence_e01_saved_json_adapter_v1_20261117/recovery_py312_enoent_v1/result.json",
+      "sha256": "df127455f7c539dafc0ded6739a18aa0b5e68b0a9ec8e8d422e2c2342d260354"
+    }
+  ],
+  "no_additional_execution_access_spending_publication_authority": true,
+  "positive_static_and_test_evidence": {
+    "admission": "Closed exact32file authored namespace; perfile size/hash,finiteJSON,reference/checksum/seal/runmanifest/summary/payload/commit/legacy/ID joins; detached immutable byte mapping. RECORDED body admission explicitly refuses.",
+    "disabled_entry": "Module actual_entry unconditionally refuses before argument use. Separate375byte CLI imports json only and emits disabled/zero-call status. No production reader import or API activation.",
+    "guard": "Virtual Path/io namespace mediates expected reader APIs; raw descriptor/mutation/network/lateimport/compile/control actions refused and budget sticky for tested paths. Only already-admitted bytes served; no real filesystem symlink or loader acceptance.",
+    "projection": "33fixedordered slots,12legacy+1ID=13documentstates,20jobs,40source IDs,0ballots; literal false adoption/selection/coverage/forecast flags,cost0/model0; digest-only provenance and unresolved legal/asof/geography/selection/finalballot conditions.",
+    "provenance": "Real-shaped config uses original scope/keys; config-file raw SHA separate from canonical contract SHA. Canonical ensure_ascii defaults match project; no fake MOCKconfig/prospective attribution. Actual metadata-only validator compares original exact constants and grants zero calls.",
+    "single_use": "Scope claimed before work; one callback/no retry and exclusive memory artifacts; failures redacted. Budget-construction exception can leave spent scope before marker, so no persisted production marker claimed."
+  },
+  "resource_accounting": {
+    "Git_mutations": 0,
+    "actual_each_runtime": {
+      "311": {
+        "console_bytes": 1642,
+        "resource_counters": {
+          "denials": 0,
+          "file_read_bytes": 17569245,
+          "logical_fixture_read_bytes": 1386851,
+          "logical_output_bytes": 147422
+        },
+        "wall_seconds": 0.145686666
+      },
+      "312": {
+        "console_bytes": 1643,
+        "resource_counters": {
+          "denials": 0,
+          "file_read_bytes": 18287068,
+          "logical_fixture_read_bytes": 1386851,
+          "logical_output_bytes": 147422
+        },
+        "wall_seconds": 0.21081854200000003
+      }
+    },
+    "actual_saved_payload_reads": 0,
+    "allocation_each_invocation": {
+      "CPU_seconds": 120,
+      "authored_reads": 134217728,
+      "console_bytes": 262144,
+      "scratch_writes": 33554432,
+      "wall_seconds": 180
+    },
+    "candidate_real_reader_calls": 0,
+    "counter_note": "Whole-file runtime/source reads plus logical admitted fixture reads separately charged; output is in-memory logical bytes. Counter method excludes interpreter/prewarm startup and does not claim whole-OS I/O.",
+    "network_calls": 0,
+    "owned_evidence_bytes": 12442
+  }
+}

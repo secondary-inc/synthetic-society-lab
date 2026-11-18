@@ -1,0 +1,34 @@
+{
+  "actual_payload_reader_calls": 0,
+  "authority": "Leadexplicitone-recoveryinstruction2026-11-17",
+  "caps_unchanged": {
+    "CPU_seconds": 120,
+    "audited_read_bytes": 67108864,
+    "console_bytes": 262144,
+    "temporary_write_bytes": 33554432,
+    "wall_seconds": 180
+  },
+  "kind": "SEPARATELY_AUTHORIZED_PY312_ENOENT_RECOVERY_V1",
+  "max_new_invocations": 1,
+  "original_allocations": "Both3.12attempts andboth3.11attemptspreserved; notreset",
+  "pins": [
+    {
+      "bytes": 33097,
+      "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+      "sha256": "edbc89d526bd463e6b7d7a9eb4361746df130a1ff41f45b8e4fdbc0c731dc66d"
+    },
+    {
+      "bytes": 22760,
+      "path": "tests/test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "35812f4d0532b9b7f0638418ff17f97cce4f82a9c79b98a3cd474bff0360ddd1"
+    },
+    {
+      "bytes": 375,
+      "path": "scripts/compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    }
+  ],
+  "reason": "FileNotFoundError(errno.ENOENT) fixesvirtualmissingcontrol pathlib.exists contract",
+  "runtime": "3.12",
+  "runtime_adapter_caps": "60wall30CPU/saved8MiB/project1MiB/output2MiB/public128KiB/console16KiB"
+}

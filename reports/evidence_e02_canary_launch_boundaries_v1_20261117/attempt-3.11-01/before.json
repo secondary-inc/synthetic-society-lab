@@ -1,0 +1,34 @@
+{
+  "runtime": "3.11.17",
+  "attempt": 1,
+  "command": [
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+    "-I",
+    "-B",
+    "-S",
+    "-c",
+    "import sys,runpy;sys.path.insert(0,'/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src');sys.argv=['/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_canary_launch_boundaries_v1.py'];runpy.run_path(sys.argv[0],run_name=\"__main__\")"
+  ],
+  "source_snapshot": [
+    {
+      "path": "scripts/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "snapshot": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/qualify_e02_canary_launcher_mock_v1_20261117.py",
+      "bytes": 11621,
+      "sha256": "7c2ade661f68ba0d826a26124b8e99e00b988424e54679b1cb3593ce75bbec1c"
+    },
+    {
+      "path": "tests/test_wrapper_canary_launch_boundaries_v1.py",
+      "snapshot": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/test_wrapper_canary_launch_boundaries_v1.py",
+      "bytes": 16826,
+      "sha256": "4b34dd08bf93f00444a24f2e568b571fa57df90a3782c716858f8e1512776e06"
+    },
+    {
+      "path": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/TEST_PLAN.json",
+      "snapshot": "reports/evidence_e02_canary_launch_boundaries_v1_20261117/attempt-3.11-01/TEST_PLAN.json",
+      "bytes": 1327,
+      "sha256": "4020c737816143639f7098adaf5bc1e302a951d07c87fd2feeafa4fe943b29db"
+    }
+  ],
+  "environment": "PATH only",
+  "scope": "L01/L02 MOCK tests; one authored exact-main child, copiedseed boundaries only"
+}

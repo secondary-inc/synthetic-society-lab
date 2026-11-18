@@ -1,0 +1,12 @@
+--- original/stream.py
++++ V1.1/stream.py
+@@ -233,6 +233,9 @@
+     def read(self,*args):return self.checked(super().read,args)
+     def readinto(self,*args):return self.checked(super().readinto,args)
+     def readline(self,*args):return self.checked(super().readline,args)
++    def read1(self,*args):return self.checked(super().read1,args)
++    def readlines(self,*args):return self.checked(super().readlines,args)
++    def readinto1(self,*args):return self.checked(super().readinto1,args)
+     def write(self,*args):self.budget.fail('WRITE_DENIED')
+     def writelines(self,*args):self.budget.fail('WRITE_DENIED')
+     def truncate(self,*args):self.budget.fail('WRITE_DENIED')

@@ -1,0 +1,128 @@
+{
+  "command": [
+    "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+    "-I",
+    "-B",
+    "-S",
+    "-c",
+    "import sys,runpy;sys.path.insert(0,'/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src');sys.argv=['/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_canary_launch_boundaries_v1.py'];runpy.run_path(sys.argv[0],run_name=\"__main__\")"
+  ],
+  "console_bytes": 3409,
+  "console_sha256": "766458f74c7bf392cd09f733ba0eb700dc1176098b430074fd6f74d1b74f496c",
+  "exit_code": 0,
+  "reason": "EXIT",
+  "record": {
+    "L01_child_results": [
+      {
+        "console_bytes": 1571,
+        "console_sha256": "8a1439e3942f1c9d0c98589b8e9f9f517a33594783387400cf5ab760c14f8753",
+        "exit": 0,
+        "result": {
+          "API_calls": 0,
+          "authored_write_bytes": 172435,
+          "charged_read_bytes": 14094959,
+          "checks": [
+            {
+              "case": "packet_hash_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "release_hash_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "packet_extra_schema_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "review_binding_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "owner_parent_binding_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "packet_oversize_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "packet_symlink_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "wrong_scope_read_exact",
+              "pass": true
+            },
+            {
+              "case": "read_exact_accepts_stable65536",
+              "pass": true
+            },
+            {
+              "case": "resource_setter_failure_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "timer_failure_before_boundaries",
+              "pass": true
+            },
+            {
+              "case": "generic_main_failure_closed_safe",
+              "pass": true
+            },
+            {
+              "case": "positive_exact_main_inert_boundaries",
+              "pass": true
+            },
+            {
+              "case": "actual_installed_timeout_handler",
+              "pass": true
+            }
+          ],
+          "counters": {
+            "catalog": 0,
+            "execute": 1,
+            "key": 1,
+            "owner": 1,
+            "transport": 1
+          },
+          "inference_calls": 0,
+          "kind": "MOCK_L01_EXACT_MAIN_QUALIFICATION",
+          "launcher_sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d",
+          "note": "Exact main passed EXPLORATORY_REAL_MODEL string into inert execute; no actual execution or release. Stable authored filesystem only.",
+          "passed": true,
+          "real_key_reads": 0,
+          "real_owner_constructor_calls": 0,
+          "real_resource_observation": {
+            "CPU": [
+              59,
+              60
+            ],
+            "core": [
+              0,
+              0
+            ],
+            "handler_callable": true,
+            "timer_near240": true
+          },
+          "response_provenance": "MOCK",
+          "wall_seconds": 0.15228337500593625
+        },
+        "wall_seconds": 0.20620450002024882
+      }
+    ],
+    "L03": "NOT_RUN_PREPARATION_ONLY",
+    "actual_API_calls": 0,
+    "charged_read_bytes": 793626755,
+    "charged_write_bytes": 148985180,
+    "console_bytes_before_summary": 1337,
+    "kind": "AUTHOR_L01_L02_MOCK_BOUNDARIES",
+    "live_owner_access": 0,
+    "python": "3.11.17",
+    "real_key_reads": 0,
+    "successful": true,
+    "tests_run": 9
+  },
+  "runtime": "3.11",
+  "wall_seconds": 12.238017583
+}
