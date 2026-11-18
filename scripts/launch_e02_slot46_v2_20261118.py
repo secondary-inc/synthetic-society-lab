@@ -54,8 +54,10 @@ def main():
     # all success/error finalization. This is intentionally a one-process entry.
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
     resource.setrlimit(resource.RLIMIT_CPU,(120,125))
-    def timeout(*_):raise TimeoutError('slot46 operation deadline')
-    signal.signal(signal.SIGALRM,timeout);signal.setitimer(signal.ITIMER_REAL,240)
+    # A Python TimeoutError can be swallowed by best-effort error cleanup.
+    # Native termination makes this a hard wall bound even inside that cleanup.
+    # Outstanding reservations remain held; a late diagnostic is not guaranteed.
+    signal.signal(signal.SIGALRM,signal.SIG_DFL);signal.setitimer(signal.ITIMER_REAL,240)
     try:
         parser=argparse.ArgumentParser(description=__doc__)
         for name in ('packet','release'):parser.add_argument('--'+name+'-sha256',required=True)

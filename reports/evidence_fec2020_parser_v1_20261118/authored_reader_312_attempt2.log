@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/qualify_fec2020_reader_fixture_v1_20261118.py", line 108, in <module>
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/qualify_fec2020_reader_fixture_v1_20261118.py", line 93, in main
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/fec2020_parser_v1.py", line 427, in read_candidate_bytes
+    import openpyxl as reader
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/__init__.py", line 7, in <module>
+    from openpyxl.workbook import Workbook
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/workbook/__init__.py", line 4, in <module>
+    from .workbook import Workbook
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/workbook/workbook.py", line 17, in <module>
+    from openpyxl.writer.excel import save_workbook
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/writer/excel.py", line 24, in <module>
+    from openpyxl.packaging.manifest import Manifest
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/packaging/manifest.py", line 26, in <module>
+    mimetypes = MimeTypes()
+                ^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/mimetypes.py", line 74, in __init__
+    init()
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/mimetypes.py", line 384, in init
+    db.read(file)
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/mimetypes.py", line 217, in read
+    with open(filename, encoding='utf-8') as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/scripts/qualify_fec2020_reader_fixture_v1_20261118.py", line 81, in audit
+AssertionError: FEC_FIXTURE_READ_SCOPE

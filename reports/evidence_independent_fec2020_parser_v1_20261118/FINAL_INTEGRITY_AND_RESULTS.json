@@ -1,0 +1,207 @@
+{
+  "core_dependencies": [],
+  "handoff_pin_unchanged": true,
+  "optional_fec_dependencies": [
+    "openpyxl==3.1.5",
+    "et-xmlfile==2.0.0"
+  ],
+  "pinned_system_MIME": {
+    "bytes": 61375,
+    "mode": "0o644",
+    "path": "/private/etc/apache2/mime.types",
+    "sha256": "57265fdf030202387c23e44283d440cab368a031214566b538b4b27064ed23df",
+    "uid": 0
+  },
+  "reader_children_consumed": 2,
+  "recorded_at_utc": "2026-11-18T17:51:48.037370+00:00",
+  "records": [
+    {
+      "execution": {
+        "CPU_seconds": 2.195767,
+        "command": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+          "-I",
+          "-B",
+          "-S",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_parser_v1_20261118/qualify_frozen.py",
+          "--mode",
+          "suite"
+        ],
+        "console_bytes": 7473,
+        "console_sha256": "312fa3c1715c6683ba8e163cb21233d751c509848421c00d5bc1b5cd7e0fab08",
+        "exit": 1,
+        "wall_seconds": 3.646106083
+      },
+      "log": {
+        "bytes": 7473,
+        "path": "reports/evidence_independent_fec2020_parser_v1_20261118/suite_python312.log",
+        "sha256": "312fa3c1715c6683ba8e163cb21233d751c509848421c00d5bc1b5cd7e0fab08"
+      },
+      "run": "suite_python312",
+      "summary": {
+        "CPU_seconds": 2.166883,
+        "actual_workbook_reads": 0,
+        "errors": 0,
+        "failures": 1,
+        "kind": "INDEPENDENT_FEC_PARSER_FOCUSED_SUITE",
+        "network_model_calls": 0,
+        "owner_key_reads": 0,
+        "runtime": "3.12.14",
+        "successful": false,
+        "tests": 41,
+        "wall_seconds": 3.4810106249933597
+      }
+    },
+    {
+      "execution": {
+        "CPU_seconds": 2.2663080000000004,
+        "command": [
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11",
+          "-I",
+          "-B",
+          "-S",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_parser_v1_20261118/qualify_frozen.py",
+          "--mode",
+          "suite"
+        ],
+        "console_bytes": 7428,
+        "console_sha256": "1c5238aef5ae1b8f3152ddb733d0accfa1a718324df6bdb121cd2dea2ca5fca1",
+        "exit": 1,
+        "wall_seconds": 2.737030958
+      },
+      "log": {
+        "bytes": 7428,
+        "path": "reports/evidence_independent_fec2020_parser_v1_20261118/suite_python311.log",
+        "sha256": "1c5238aef5ae1b8f3152ddb733d0accfa1a718324df6bdb121cd2dea2ca5fca1"
+      },
+      "run": "suite_python311",
+      "summary": {
+        "CPU_seconds": 2.239233,
+        "actual_workbook_reads": 0,
+        "errors": 0,
+        "failures": 1,
+        "kind": "INDEPENDENT_FEC_PARSER_FOCUSED_SUITE",
+        "network_model_calls": 0,
+        "owner_key_reads": 0,
+        "runtime": "3.11.17",
+        "successful": false,
+        "tests": 41,
+        "wall_seconds": 2.548917125008302
+      }
+    },
+    {
+      "execution": {
+        "CPU_seconds": 0.195021,
+        "command": [
+          "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-I",
+          "-B",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_parser_v1_20261118/qualify_frozen.py",
+          "--mode",
+          "baseline"
+        ],
+        "console_bytes": 737,
+        "console_sha256": "dcc8f4aaf5e73dada569cdda996604e011096a088d2a294640c1374a9f7da62a",
+        "environment_overrides": {
+          "OPENPYXL_DEFUSEDXML": "False",
+          "OPENPYXL_LXML": "False"
+        },
+        "exit": 0,
+        "wall_seconds": 0.261734709
+      },
+      "log": {
+        "bytes": 737,
+        "path": "reports/evidence_independent_fec2020_parser_v1_20261118/reader_child01_baseline.log",
+        "sha256": "dcc8f4aaf5e73dada569cdda996604e011096a088d2a294640c1374a9f7da62a"
+      },
+      "run": "reader_child01_baseline",
+      "summary": {
+        "CPU_seconds": 0.183111,
+        "actual_workbook_reads": 0,
+        "all_adoption_flags_false": true,
+        "authored_expanded_bytes": 243544,
+        "authored_zip_bytes": 41816,
+        "cohort_slots": 33,
+        "entity_expanded_into_candidate_name": false,
+        "fixture_cells": 15543,
+        "fixture_sha256": "8c5da7f0909d4c9b46e5afbecd7d5f288fafe5681da760fb875a2122e13854db",
+        "kind": "INDEPENDENT_FEC_FRESH_READER",
+        "mode": "baseline",
+        "network_model_calls": 0,
+        "output_bytes": 512096,
+        "owner_key_reads": 0,
+        "reader": {
+          "DEFUSEDXML": false,
+          "LXML": false,
+          "backend": "STDLIB_XML_ETREE_ELEMENTTREE",
+          "et_xmlfile_version": "2.0.0",
+          "package": "openpyxl",
+          "version": "3.1.5",
+          "warnings": []
+        },
+        "refused": false,
+        "runtime": "3.12.14",
+        "successful": true,
+        "wall_seconds": 0.2159895829972811
+      }
+    },
+    {
+      "execution": {
+        "CPU_seconds": 0.19009399999999999,
+        "command": [
+          "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-I",
+          "-B",
+          "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_parser_v1_20261118/qualify_frozen.py",
+          "--mode",
+          "adversarial"
+        ],
+        "console_bytes": 752,
+        "console_sha256": "2d93d695d00237f2d7bcf5e42a5c185c6d515c8ce52cd2c0661bfbf0852f48c4",
+        "environment_overrides": {
+          "OPENPYXL_DEFUSEDXML": "False",
+          "OPENPYXL_LXML": "False"
+        },
+        "exit": 1,
+        "wall_seconds": 0.23523037500000002
+      },
+      "log": {
+        "bytes": 752,
+        "path": "reports/evidence_independent_fec2020_parser_v1_20261118/reader_child02_adversarial.log",
+        "sha256": "2d93d695d00237f2d7bcf5e42a5c185c6d515c8ce52cd2c0661bfbf0852f48c4"
+      },
+      "run": "reader_child02_adversarial",
+      "summary": {
+        "CPU_seconds": 0.17668499999999998,
+        "actual_workbook_reads": 0,
+        "all_adoption_flags_false": true,
+        "authored_expanded_bytes": 456825,
+        "authored_zip_bytes": 38208,
+        "cohort_slots": 33,
+        "entity_expanded_into_candidate_name": true,
+        "fixture_cells": 15543,
+        "fixture_sha256": "77982ff94823e93b7028507de1bf8ae90964a071ca6b00b420e5a82cc0d31217",
+        "kind": "INDEPENDENT_FEC_FRESH_READER",
+        "mode": "adversarial",
+        "network_model_calls": 0,
+        "output_bytes": 512138,
+        "owner_key_reads": 0,
+        "reader": {
+          "DEFUSEDXML": false,
+          "LXML": false,
+          "backend": "STDLIB_XML_ETREE_ELEMENTTREE",
+          "et_xmlfile_version": "2.0.0",
+          "package": "openpyxl",
+          "version": "3.1.5",
+          "warnings": []
+        },
+        "refused": false,
+        "runtime": "3.12.14",
+        "successful": false,
+        "wall_seconds": 0.19000741597847082
+      }
+    }
+  ],
+  "remaining": 0,
+  "source_pins_before_after_match": true
+}

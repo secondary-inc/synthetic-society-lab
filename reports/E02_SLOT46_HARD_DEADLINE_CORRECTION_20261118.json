@@ -1,0 +1,39 @@
+{
+  "kind": "SLOT46_HARD_DEADLINE_CORRECTION",
+  "recorded_at_utc": "2026-11-18T17:50:46.168026+00:00",
+  "status": "ROOT_IMPLEMENTED_PENDING_INDEPENDENT_REVIEW",
+  "finding": "reports/INDEPENDENT_AUDIT_E02_SLOT46_V2_WALL_BOUND_20261118.json",
+  "source_refs": [
+    {
+      "path": "scripts/launch_e02_slot46_v2_20261118.py",
+      "bytes": 3989,
+      "sha256": "c3aa20858f61da0653352422cff7d89f19ae078e862113ebfb95b868c8c64cd8"
+    },
+    {
+      "path": "tests/test_wrapper_slot46_hard_deadline_v2.py",
+      "bytes": 2840,
+      "sha256": "e1bcc0d2b8ea485e3153e495c5cf4297b4b7922bfbef05de158b4320714e7a98"
+    }
+  ],
+  "change": "Use native default SIGALRM termination at240seconds instead of catchable TimeoutError. CPU120soft/125hard and all financial/request limits unchanged.",
+  "rationale": "Independent scaled native control demonstrated cleanup swallowing the alarm and continuing after its bound.",
+  "tests": [
+    {
+      "runtime": "3.12.14",
+      "tests": 1,
+      "status": "PASS",
+      "wall_seconds_unittest": 0.078,
+      "scope": "Actual launcher main with inert admission loop catching BaseException; timer records240 then scales to0.05; native SIGALRM exits child before owner/key/transport."
+    },
+    {
+      "runtime": "3.11.17",
+      "tests": 1,
+      "status": "PASS",
+      "wall_seconds_unittest": 0.077,
+      "scope": "Actual launcher main with inert admission loop catching BaseException; timer records240 then scales to0.05; native SIGALRM exits child before owner/key/transport."
+    }
+  ],
+  "risk": "Native hard termination may leave an outstanding reservation and no late diagnostic. Never clear that hold, claim zero provider usage or replay the request from missing output. Ordinary exception/cancellation cleanup remains unchanged.",
+  "new_model_calls": 0,
+  "original_evidence": "Frozen initial launcher and author evidence remain at321d9a4; localinitial copy and exactdiff preserved. Previous fullsuccess measurements qualify old alarm source only; one independent fullfailure integration still pending on corrected source."
+}

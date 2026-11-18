@@ -1,0 +1,474 @@
+{
+  "kind": "PARTIAL_HOSTED_CI_OUTCOME",
+  "recorded_at_utc": "2026-11-18T17:54:08.986034+00:00",
+  "run_id": 44352968450,
+  "url": "https://github.com/secondary-inc/synthetic-society-lab/actions/runs/44352968450",
+  "head_sha": "a3e7636744bf45cfc79c0c0d3da75c26861e2f3a",
+  "status": "FAIL_PY311_PY312_STILL_RUNNING",
+  "darwin_mime_jobs": "Both completed success",
+  "artifacts": "4completedPython3.11ZIPs digest-verified against GitHub, bounded safe extraction; preserved summaries and all failed-job stdout/stderr. OriginalZIPs remain ignored/local.",
+  "results": [
+    {
+      "shard": "311-shard-0",
+      "status": "FAIL",
+      "counts": {
+        "PASS": 49,
+        "FAIL": 1,
+        "ERROR": 9
+      },
+      "failures": [
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1_2",
+          "status": "FAIL",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 2.5803982619999957,
+          "returncode": 1,
+          "errors": [
+            "ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix"
+          ],
+          "failures": []
+        },
+        {
+          "job": "ordinary-test_wrapper_crossmodel_v1_execution_20261115",
+          "status": "ERROR",
+          "reason": "CHILD_RECEIPT_OR_EXECUTION_FAILED",
+          "execution_reason": "WALL_LIMIT",
+          "elapsed_seconds": 2614.043459734,
+          "returncode": -9,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_wrapper_visibility_controls_v1",
+          "status": "ERROR",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 0.051187430000027234,
+          "returncode": 1,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1-portable",
+          "status": "ERROR",
+          "reason": "CHILD_RECEIPT_OR_EXECUTION_FAILED",
+          "execution_reason": "WALL_LIMIT",
+          "elapsed_seconds": 1.0340067030001592,
+          "returncode": -9,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1_1-portable",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "probe-v2-portable",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "observer-v1-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "observer-v2-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1_1-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        }
+      ]
+    },
+    {
+      "shard": "311-shard-1",
+      "status": "FAIL",
+      "counts": {
+        "PASS": 47,
+        "FAIL": 1,
+        "ERROR": 1
+      },
+      "failures": [
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1_3",
+          "status": "FAIL",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 4.440804664000005,
+          "returncode": 1,
+          "errors": [
+            "ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix"
+          ],
+          "failures": []
+        },
+        {
+          "job": "ordinary-test_wrapper_visibility_execution_v1",
+          "status": "ERROR",
+          "reason": "CHILD_RECEIPT_OR_EXECUTION_FAILED",
+          "execution_reason": "WALL_LIMIT",
+          "elapsed_seconds": 774.0462445929998,
+          "returncode": -9,
+          "errors": null,
+          "failures": null
+        }
+      ]
+    },
+    {
+      "shard": "311-shard-2",
+      "status": "FAIL",
+      "counts": {
+        "PASS": 47,
+        "FAIL": 1
+      },
+      "failures": [
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1",
+          "status": "FAIL",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 1.5129309850000041,
+          "returncode": 1,
+          "errors": [
+            "InstallerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix"
+          ],
+          "failures": []
+        }
+      ]
+    },
+    {
+      "shard": "311-shard-3",
+      "status": "FAIL",
+      "counts": {
+        "PASS": 35,
+        "FAIL": 2,
+        "ERROR": 11
+      },
+      "failures": [
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1_1",
+          "status": "FAIL",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 2.4498877680000533,
+          "returncode": 1,
+          "errors": [
+            "ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix"
+          ],
+          "failures": []
+        },
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1_5",
+          "status": "FAIL",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 5.639709248000031,
+          "returncode": 1,
+          "errors": [
+            "ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads",
+            "ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings"
+          ],
+          "failures": [
+            "ProductionMimeTests.test_init_error_propagates_once_without_fallback",
+            "ProductionMimeTests.test_invalid_public_state_refuses"
+          ]
+        },
+        {
+          "job": "ordinary-test_issue_cue_crossmodel_execution_v1",
+          "status": "ERROR",
+          "reason": "CHILD_RECEIPT_OR_EXECUTION_FAILED",
+          "execution_reason": "WALL_LIMIT",
+          "elapsed_seconds": 1226.027997944,
+          "returncode": -9,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_json_compatibility_terminal_continuation",
+          "status": "ERROR",
+          "reason": null,
+          "execution_reason": null,
+          "elapsed_seconds": 0.14229303899992374,
+          "returncode": 1,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_openrouter_http_v2",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_planning",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_production_compatibility_v4_2",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_reproduction",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_reviewed_benchmark",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_survey_global_execution_v2",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_wrapper_canary_launch_boundaries_v1",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_wrapper_crossmodel_v1_controls_20261115",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_wrapper_visibility_caller_v1",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "execution_reason": null,
+          "elapsed_seconds": null,
+          "returncode": null,
+          "errors": null,
+          "failures": null
+        }
+      ]
+    }
+  ],
+  "evidence_refs": [
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/SUMMARY.json",
+      "bytes": 600694,
+      "sha256": "c74a1a23944be98fbe2426fc91934e1ca272f6b061c8559f35204b8296458290"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/compatibility-v1-portable.stderr",
+      "bytes": 5045,
+      "sha256": "eb853220984b32f59330c5e9a161ccb16a4275268ec4145ce77e60e4a170a019"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/compatibility-v1-portable.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/ordinary-test_e01_pypdf701_install_v1_2.stderr",
+      "bytes": 23877,
+      "sha256": "d0b0bcfb10d902b24037fb461634f214d690905b511850ff33de5c3d93fb9546"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/ordinary-test_e01_pypdf701_install_v1_2.stdout",
+      "bytes": 30830,
+      "sha256": "52256e9e7c814881ec3df6e670886e274c65003214b6a50d17030e2c796b25e4"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/ordinary-test_wrapper_crossmodel_v1_execution_20261115.stderr",
+      "bytes": 974,
+      "sha256": "fb59d92b358c09aff58e546be4d5a3ebbd498a5dec74f2993a52a6eeb611893f"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/ordinary-test_wrapper_crossmodel_v1_execution_20261115.stdout",
+      "bytes": 734,
+      "sha256": "c70ab7031cba5ac1d1ae2004644a4058800e4c295d5341a88e1b91abba66a3f2"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/ordinary-test_wrapper_visibility_controls_v1.stderr",
+      "bytes": 2144,
+      "sha256": "aa1fc9458b13ebc9e71537df31d8adfbece58230dffc8f13b6cee129c9de610c"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-0/ordinary-test_wrapper_visibility_controls_v1.stdout",
+      "bytes": 530,
+      "sha256": "536b5f72baaacb03916c7083acb3cad5675987dd246674c092111cebcda7d674"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-1/SUMMARY.json",
+      "bytes": 541470,
+      "sha256": "c81f6bec0e3a8f038a912a4fe895516280d707f81d6ecca7bf676d1daf9f1df9"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-1/ordinary-test_e01_pypdf701_install_v1_3.stderr",
+      "bytes": 26960,
+      "sha256": "db455221a5ac1440bcd7044568e69cd852c5c689c872c347ebfe36e9ccc31349"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-1/ordinary-test_e01_pypdf701_install_v1_3.stdout",
+      "bytes": 35178,
+      "sha256": "8e9cccc0d9188ef4d4529fb1a2512c782518f7e813d1218042834984d0614263"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-1/ordinary-test_wrapper_visibility_execution_v1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-1/ordinary-test_wrapper_visibility_execution_v1.stdout",
+      "bytes": 812,
+      "sha256": "afe99aae3b7df9fe0a28a0507d74cd5d468acbc94dfbcef68564f975d5576404"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-2/SUMMARY.json",
+      "bytes": 543129,
+      "sha256": "82b1c4f562de2d85b261ba936ffa37a7e1366774b441a3fe8b99c1c5aa7846a1"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-2/ordinary-test_e01_pypdf701_install_v1.stderr",
+      "bytes": 18713,
+      "sha256": "c6cf4ea66284f0e35d285d8855cd86422c3a2d6e78eb5c7cdfd3d8d0701df103"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-2/ordinary-test_e01_pypdf701_install_v1.stdout",
+      "bytes": 23660,
+      "sha256": "ba6093eb76b711ba1c2cf63f3f67baa24e2c252cec765d591dce6c89a17be661"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/SUMMARY.json",
+      "bytes": 472638,
+      "sha256": "a5080e5665935002ba4c3c22e97c08329bc5b3c8d9da4dc479fc4311f300fb75"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_e01_pypdf701_install_v1_1.stderr",
+      "bytes": 21627,
+      "sha256": "131047baa0fa6b3baa9281695a3ecbfaf50526e737f9b3a5dd53e7d18d56126c"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_e01_pypdf701_install_v1_1.stdout",
+      "bytes": 27706,
+      "sha256": "0fd947906c28b6d810f368c0eb1a217071ee32581187e22056e75ee136843ade"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_e01_pypdf701_install_v1_5.stderr",
+      "bytes": 50275,
+      "sha256": "ca66526152f3accae18b1a92f7974ebd4380f393936465f70098c84ec74e3c41"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_e01_pypdf701_install_v1_5.stdout",
+      "bytes": 58292,
+      "sha256": "0bcca00bf715e4cfa4fda632ad883d0b1d4639ee574b15ba1601287258a862c2"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_issue_cue_crossmodel_execution_v1.stderr",
+      "bytes": 986,
+      "sha256": "e15bd8ec3ce45d56254a7230429d194a7228d1cd7900e9d1327449e3569c3e1f"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_issue_cue_crossmodel_execution_v1.stdout",
+      "bytes": 478,
+      "sha256": "cee0fe8884b7cfb4d92b75a78fa47f9788f6c15235b83c2d9b25c358e8746834"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_json_compatibility_terminal_continuation.stderr",
+      "bytes": 1934,
+      "sha256": "e26b2ae293afcff15df3086bce1616734436995be68cb37cb71f235845a4c56b"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/311-shard-3/ordinary-test_json_compatibility_terminal_continuation.stdout",
+      "bytes": 540,
+      "sha256": "373b9edb771d992785e08cea02abc7c82d6dc9ac756d8b3670c3beffcda747fc"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_20261118/download_receipts.json",
+      "bytes": 931,
+      "sha256": "440e74aa04caf093b981dbdc173bcb5102df0b23ef4faef3d88e2eacb70a9ed4"
+    }
+  ],
+  "diagnosis": [
+    "Four inherited installer fixture cases fail BASE_OR_OLD_SITE_ON_PATH; source expects no site-packages in parent path.",
+    "Four production MIME test cases in installerV1.5 reach explicit MIME_PLATFORM on Linux.",
+    "Three full mocked lifecycle modules hit remaining shard wall time; later setup failures reflect nearly exhausted deadline. Underlying heavy-case cause is not established."
+  ],
+  "next": "CI worker assigned narrow harness/host qualification and measured heavy-case diagnosis; no weakened controls, blanketPASS, duplicatewholeCI or paidcall.",
+  "new_model_calls": 0,
+  "complete_CI_PASS": false
+}

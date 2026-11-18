@@ -1,0 +1,69 @@
+{
+  "original_V1_audit21evidence_unchanged": true,
+  "production_source_before_after_unchanged": true,
+  "reader_children_original_allocation": 2,
+  "recorded_at_utc": "2026-11-18T17:56:50.617535+00:00",
+  "remaining": 0,
+  "separate_additional_alias_allocation": 1,
+  "supporting_installed_reader_source_refs": [
+    {
+      "bytes": 12357,
+      "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/reader/excel.py",
+      "sha256": "9204ad42d3b58f4bd5e7a196697c68dc6036117ba8b86b6716b45532872af046"
+    },
+    {
+      "bytes": 5709,
+      "path": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/openpyxl/worksheet/_read_only.py",
+      "sha256": "e8a77843eef752824363aeac911272fe4b3ec021cdb6d94686c0f1bc1f7d3ee6"
+    }
+  ],
+  "third_child_execution": {
+    "CPU_seconds": 0.21445799999999998,
+    "command": [
+      "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-I",
+      "-B",
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_parser_v1_1_20261118/qualify_alias_once.py",
+      "--mode",
+      "adversarial"
+    ],
+    "console_bytes": 741,
+    "console_sha256": "1338a1dfc5056b86dd03f675e8bb0076a6e35744aa6cc5bf79023027c790b774",
+    "environment_overrides": {
+      "OPENPYXL_DEFUSEDXML": "False",
+      "OPENPYXL_LXML": "False"
+    },
+    "exit": 1,
+    "wall_seconds": 0.2997127079870552
+  },
+  "third_child_summary": {
+    "CPU_seconds": 0.201643,
+    "actual_workbook_reads": 0,
+    "all_adoption_flags_false": true,
+    "authored_expanded_bytes": 456833,
+    "authored_zip_bytes": 38217,
+    "cohort_slots": 33,
+    "entity_expanded_into_candidate_name": true,
+    "fixture_cells": 15543,
+    "fixture_sha256": "332c414d4ab92d3a32c459e6832a283c11833a10746c2f3664ae63165fd11588",
+    "kind": "INDEPENDENT_FEC_FRESH_READER",
+    "mode": "adversarial",
+    "network_model_calls": 0,
+    "output_bytes": 512138,
+    "owner_key_reads": 0,
+    "reader": {
+      "DEFUSEDXML": false,
+      "LXML": false,
+      "backend": "STDLIB_XML_ETREE_ELEMENTTREE",
+      "et_xmlfile_version": "2.0.0",
+      "package": "openpyxl",
+      "version": "3.1.5",
+      "warnings": []
+    },
+    "refused": false,
+    "runtime": "3.12.14",
+    "successful": false,
+    "wall_seconds": 0.24209320900263265
+  },
+  "total_consumed": 3
+}

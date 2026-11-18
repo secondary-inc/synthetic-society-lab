@@ -1,0 +1,400 @@
+{
+  "kind": "E01_FEC2020_SENATE_MAPPING_PARSER_CONTRACT_V1",
+  "status": "FROZEN_PROPOSAL_PENDING_INDEPENDENT_METHODS_REVIEW",
+  "scope": "Separate public tabular historical-source route; no source adoption, sample change, real baseline run or reopening of consumed Clerk/PDF/G03 scopes.",
+  "source": {
+    "source_id": "FEC2020_WORKBOOK_CANDIDATE_20261118",
+    "path": "data/raw/e01_fec2020_workbook_20261118/federalelections2020.xlsx",
+    "bytes": 6251110,
+    "sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e",
+    "url": "https://www.fec.gov/resources/cms-content/documents/federalelections2020.xlsx",
+    "retrieved_at_utc": "2026-11-18T16:28:30.289293+00:00",
+    "role": "HISTORICAL_2020_COUNTS_CANDIDATE",
+    "publication_information_ref": {
+      "sheet": "1. 2020 Publication Information",
+      "cells": [
+        "A23",
+        "A25",
+        "A28",
+        "A42"
+      ]
+    },
+    "publication_month_observed": "2022-10",
+    "publication_time_limitation": "Historical facts available before2026, but current retrieval is retrospective and is not an independently timed prediction."
+  },
+  "basis_refs": [
+    {
+      "path": "protocols/E01_RETROSPECTIVE.md",
+      "bytes": 5749,
+      "sha256": "63003cc9eb060a241eaf19470488453e26bfbab645a0366b1ee8ef700793cb16"
+    },
+    {
+      "path": "protocols/E01_FEED_TO_BALLOT.md",
+      "bytes": 1373,
+      "sha256": "1eec697325442c2001c684d72fd38676deb0448bd41d756b882220316242165f"
+    },
+    {
+      "path": "docs/E01_2026_SELECTION_PROPOSAL.md",
+      "bytes": 14217,
+      "sha256": "2460f9114b507b5e573bb751af19b9b0d5ca63c7752cc9f49ffef75da8aa6941"
+    },
+    {
+      "path": "src/civiclab/e01/historical.py",
+      "bytes": 22365,
+      "sha256": "ca8de92c9f0df1822c2c93e19e689e5f19a1b6e1073db53c782567455fe5c808"
+    },
+    {
+      "path": "src/civiclab/e01/ballots.py",
+      "bytes": 25981,
+      "sha256": "67108d9641cabc04eb17b55896122bce31413059e8682dd9a358dc81d328d8ec"
+    },
+    {
+      "path": "reports/E01_FEC2020_WORKBOOK_DISCOVERY_20261118.json",
+      "bytes": 6411,
+      "sha256": "7f8980cbd80b29e37e8fb14b0d0bc9eee0cc26545c11e64847b5e3fd7c32aab1"
+    },
+    {
+      "path": "reports/CI_REPAIR_HANDOFF_20261118.json",
+      "bytes": 11666,
+      "sha256": "fceb4e3c7e491368ee3a5c8cf6019541e7e0048dd49a290f470efe06663facfa"
+    }
+  ],
+  "input_contract": {
+    "sheet": "12. US Senate Results by State",
+    "allowed_range": "A1:Z542",
+    "header_range": "A1:Z1",
+    "header_literal": [
+      1,
+      "STATE ABBREVIATION",
+      "STATE",
+      "DISTRICT",
+      "FEC ID",
+      "(I) Incumbent Indicator",
+      "CANDIDATE NAME (First)",
+      "CANDIDATE NAME (Last)",
+      "CANDIDATE NAME",
+      "TOTAL VOTES",
+      "PARTY",
+      "PRIMARY VOTES",
+      "PRIMARY %",
+      "RUNOFF VOTES",
+      "RUNOFF %",
+      "GENERAL VOTES ",
+      "GENERAL %",
+      "GE RUNOFF ELECTION VOTES (GA, LA)",
+      "GE RUNOFF ELECTION % (GA, LA)",
+      "COMBINED GE PARTY TOTALS (when applicable)",
+      "COMBINED % (when applicable)",
+      "PE WINNER INDICATOR",
+      "GE WINNER INDICATOR",
+      "FOOTNOTES",
+      null,
+      null
+    ],
+    "data_rows": [
+      2,
+      542
+    ],
+    "expected_formula_cells": 0,
+    "additional_bounded_sheets": {
+      "party_summary": {
+        "sheet": "7. Table 6 Senate by Party",
+        "range": "A1:G78",
+        "header_ranges": [
+          "B3:G3",
+          "A4:G4"
+        ],
+        "state_rows": [
+          5,
+          60
+        ],
+        "total_row": 61,
+        "notes_ranges": [
+          "A68",
+          "A70",
+          "A72:A78"
+        ]
+      },
+      "party_labels": {
+        "sheet": "14. 2020 Party Labels",
+        "range": "A1:E121"
+      },
+      "publication": {
+        "sheet": "1. 2020 Publication Information",
+        "range": "A1:B150"
+      }
+    },
+    "no_other_sheets": "No President/House/2026 outcomes; do not traverse source dimensions with unbounded iter_rows."
+  },
+  "column_mapping": {
+    "A": "SOURCE_ROW_ORDINAL_NOT_VOTES",
+    "B": "state_abbreviation_literal",
+    "C": "state_name_literal",
+    "D": "contest_label_literal",
+    "E": "fec_id_literal_not_sufficient_identity",
+    "F": "incumbency_literal_not_candidate_selection",
+    "G": "first_name_literal",
+    "H": "last_name_literal",
+    "I": "full_candidate_name_literal",
+    "J": "record_role_label_not_vote_count",
+    "K": "party_line_literal",
+    "L": "primary_votes",
+    "M": "primary_share_check_only",
+    "N": "primary_runoff_votes",
+    "O": "primary_runoff_share_check_only",
+    "P": "general_votes",
+    "Q": "general_share_check_only",
+    "R": "general_runoff_votes",
+    "S": "general_runoff_share_check_only",
+    "T": "combined_general_total_crosscheck_only",
+    "U": "combined_general_share_check_only",
+    "V": "primary_winner_not_general_eligibility",
+    "W": "general_winner_not_general_stage_or_nominee_selection",
+    "X": "footnote_literal",
+    "Y": "must_remain_blank",
+    "Z": "must_remain_blank"
+  },
+  "raw_record_contract": {
+    "identity": [
+      "source_sha256",
+      "sheet",
+      "row_number",
+      "column_letter"
+    ],
+    "preserve": [
+      "cell_type",
+      "literal_value",
+      "canonical_raw_row_sha256",
+      "source_ref",
+      "parser_code_ref",
+      "reader_version",
+      "warnings"
+    ],
+    "normalized_row_key": [
+      "state",
+      "seat_class",
+      "term_context",
+      "cycle_year",
+      "event_date",
+      "stage",
+      "special",
+      "candidate_identity",
+      "party_line_identity",
+      "vote_mode",
+      "record_role"
+    ],
+    "class_date_term": "UNKNOWN until source-bound mapping approved; do not infer from candidate FEC ID, state/year alone, election winner, or a candidate surname.",
+    "row_dispositions": [
+      "CANDIDATE_STAGE_VOTE",
+      "PRIMARY_ONLY",
+      "PARTY_SUBTOTAL",
+      "CONTEST_TOTAL",
+      "ORDINAL_ONLY_SEPARATOR",
+      "FOOTNOTE_REMOVAL",
+      "UNKNOWN_BLOCKED"
+    ],
+    "subtotal_recognition": "J literals Party Votes:, Total State Votes:, Total Full Term State Votes:, Total Unexpired Term State Votes: are separate controls, never added to candidate rows. Permit stripped whitespace-only I/K for the source-bound NC total row386. Unknown nonempty J is refused.",
+    "separators": "Only A ordinal and optional source-observed n/a E may remain on a separator; no forward fill across blank state/contest boundaries."
+  },
+  "numeric_and_missing_rules": [
+    "Vote counts accept exact nonnegative integer cells only; reject bool, nonfinite, negative or fractional values. An integer-valued XML number must have deterministic reviewed conversion; never derive votes from percentages.",
+    "None/blank/whitespace, n/a, dash, asterisk and # are not zero. Primary convention markers do not invalidate separately observed numeric general votes.",
+    "Preserve actual zero and one votes; do not assume one is an uncontested sentinel. Positive counts require source stage and candidate identity.",
+    "MT P304=# is a typed removed-from-ballot marker only with exact X304 footnote binding; retain rows304:307 and exclusion evidence. Do not invent a numeric zero.",
+    "Absent general counts on a primary candidate imply no general vote observation, not zero votes or a nominee.",
+    "No imputation, interpolation, rounding to integer, percentage inversion or automatic cleaning of unknown numeric strings."
+  ],
+  "event_rules": {
+    "stage_columns": "L/N/P/R are distinct stages; do not add them into one race feature. P alone supplies a reviewed regular-general historical feature.",
+    "regular": "D=S normally needs class/term/event proof; D=S-FULL TERM is a distinct source label, not an unconditional classII claim.",
+    "special": "D=S-UNEXPIRED TERM is retained separately and excluded from current regular S0; AZ S is also not proved regular by its generic label. No special event joins by state/year.",
+    "GA": {
+      "source_ranges": [
+        "B84:X95",
+        "B97:X119"
+      ],
+      "labels": [
+        "S-FULL TERM",
+        "S-UNEXPIRED TERM"
+      ],
+      "general_runoff_date_evidence": [
+        "X84",
+        "X92",
+        "X97",
+        "X98"
+      ],
+      "runoff_event_date": "2021-01-05",
+      "cycle_year": 2020,
+      "runoff_event_year": 2021,
+      "rule": "Keep November full-term P and January R as separate observations; never use W winner indicator to choose the November nominees or replace P with R. Special/unexpired rows are separate. Any use of November regularGEN as a conditional margin despite a later runoff requires explicit independent protocol interpretation/amendment; otherwise this frame slot remains blocked."
+    },
+    "LA": "Retain every named candidate and party separately in P; multiple D/R participants refuse the current exactly-one-D-and-one-R feature. Never sum rival same-party candidates into one nominee or choose the winner.",
+    "ME": "Do not infer ranked-choice final-round provenance from GENERAL VOTES alone; require source-specific stage/round review before adoption.",
+    "general_date": "2020-11-03 is proposed regularGEN date; require an official source-bound election-date reference before adoption. Workbook general column title alone is not a date witness."
+  },
+  "party_identity_rules": {
+    "simple": "D maps to Democratic and R maps to Republican only after source identity and primary/general stage resolved. DFL is a proposed Democratic-family mapping backed by party-label sheet row29 and explicit review.",
+    "AK": "N(D)/D at K17 and X17 describes nonpartisan Democratic-primary context. Preserve the literal; do not assert registered Democratic identity. Party-summary Democratic-column agreement is not sufficient to turn a nonpartisan candidate into a verified Democrat. Explicit coalition estimand amendment or an exclusion is required.",
+    "OR": "DEM/IP/WF at K403 is one reported candidate/combined party label and one P count. Never split that count over tokens or add it repeatedly. Proposed Democratic-aligned mapping requires source label/nomination review; no silent substring match.",
+    "write_ins": "W and source-scattered rows remain other/unallocated votes; named write-ins are not assigned D/R by biography or name.",
+    "candidate_identity": "Use source row+state+event+full name and source-bound FEC ID when present; n/a/trimmed/malformed ID never creates a cross-event join. Preserve raw identifier whitespace before reviewed normalized matching.",
+    "combined_totals": "No T data counts were observed in this pinned sheet; any nonblank T beyond header is a schema drift unless a separately reviewed complete-representation rule exists. Future fusion components/combined totals cannot both be summed.",
+    "unknown_party": "UNKNOWN_BLOCKED rather than Democratic/Republican/Other default; a control subtotal may have blank party under its own role."
+  },
+  "cohort": {
+    "expected_regular_class_II_states": [
+      "AK",
+      "AL",
+      "AR",
+      "CO",
+      "DE",
+      "GA",
+      "IA",
+      "ID",
+      "IL",
+      "KS",
+      "KY",
+      "LA",
+      "MA",
+      "ME",
+      "MI",
+      "MN",
+      "MS",
+      "MT",
+      "NC",
+      "NE",
+      "NH",
+      "NJ",
+      "NM",
+      "OK",
+      "OR",
+      "RI",
+      "SC",
+      "SD",
+      "TN",
+      "TX",
+      "VA",
+      "WV",
+      "WY"
+    ],
+    "number_of_frame_slots": 33,
+    "official_class_source_candidate": {
+      "source_id": "senate_class_II",
+      "url": "https://www.senate.gov/senators/Class_II.htm",
+      "path": "data/raw/e01_inside_elections/senate-class-II-browser-text-c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb.txt",
+      "bytes": 3488,
+      "sha256": "c991384cfb430445695d50b3b50cf0300e7de579a11dd348a26e17b26adaabbb",
+      "retrieved_at_utc": "2026-11-03T11:28:14.410Z",
+      "capture_kind": "BROWSER_VISIBLE_TEXT_UTF8_NOT_HTTP_WIRE_BYTES",
+      "source_role": "OFFICIAL_CLASS_IDENTITY",
+      "published_date": null,
+      "status": "CURRENT_INSTITUTIONAL_CAPTURE_PENDING_INDEPENDENT_REVIEW",
+      "response_headers": {}
+    },
+    "class_source_gate": "Verify independent acceptance and exact source/hash/classII termJanuary3,2021-January3,2027; the existing code tuple alone is not independent seat evidence.",
+    "regular_2020_to_2026": "Join same state +constitutional seat classII+regular term chain+statewide constituency with six-year gap only. Features remain separate from2026 outcomes.",
+    "AZ": "Retain as2020context/special candidate, excluded from classII regular frame; no replacement frame slot.",
+    "GA": "Separate full/unexpired term, no duplicate state join.",
+    "AR": "No observed D general candidate; preserve frame slot with exactly-one-D/R eligibility failure instead of imputing or replacing it.",
+    "missing_prior": "Selected target with missing/ineligible prior remains explicitly blocked. No selection by observed margins or eventual2026 errors; report secondary subset only with independent prespecification and full excluded-slot accounting."
+  },
+  "cross_checks": {
+    "candidate_to_contest_total": "For each exact state/term/stage, sum nonoverlapping eligible candidate+other/write-in counts once and compare with its J-labeled P or R total. Primary totals cannot serve as general controls. Removed/unknown counts retain explicit dispositions.",
+    "party_summary": "Independently parse E/F/G general summary columns for D/R/Other at the matching state row; compare only populated numeric controls after separately frozen party and event composition. B/C/D are primary controls, not general.",
+    "GA_summary": "A single summary state row covers both full and unexpired terms (notes A68/A70) and observed totals may include general and runoff event counts. Reconcile only under an explicit reviewed four-event composition; never use a combined summary value as one regular-general prior. Do not infer composition merely because an arithmetic sum matches.",
+    "blank_summary": "WV G58 and WY G60 and other blank fields remain unavailable controls; never zero-fill or claim a successful three-party reconciliation. Candidate-stage state totals remain a distinct check.",
+    "national": "Summary row61 may be checked only with its exact source-defined coverage/composition. A passed national sum cannot hide a failed state/event/candidate check.",
+    "percentages": "Q/S are diagnostic ratios with source precision tolerance; never numeric votes or substitutes for missing exact counts.",
+    "independence_limitation": "Separate worksheets are internal consistency controls from the same FEC publication, not an independently acquired external source."
+  },
+  "output_contract": {
+    "labels": [
+      "CANDIDATE_NOT_ADOPTED",
+      "RETROSPECTIVE",
+      "NO_PROSPECTIVE_FORECAST"
+    ],
+    "outputs": [
+      "immutable raw cell occurrence ledger in ignored local storage",
+      "typed normalized records with exact source-cell witnesses",
+      "33-slot cohort coverage/exclusion ledger",
+      "candidate/total/party-summary discrepancy report",
+      "candidate feature payload only after independent numeric review"
+    ],
+    "feature_allowlist": [
+      "race_id",
+      "office",
+      "prior_margin_pp",
+      "national_shift_pp",
+      "incumbency_adjustment_pp",
+      "feature_as_of",
+      "cutoff",
+      "source_hashes"
+    ],
+    "margin": "100*(D-R)/(D+R), exactly one verified D and R, denominator>0; others recorded excluded. No winner probability.",
+    "all_flags_default_false": [
+      "source_adoption",
+      "historical_feature_adoption",
+      "sample_selection_adoption",
+      "forecast_consumption",
+      "numeric_acceptance"
+    ]
+  },
+  "implementation_bounds_proposed": {
+    "network_calls": 0,
+    "model_calls": 0,
+    "cost_usd": 0,
+    "retries": 0,
+    "workbook_bytes": 6251110,
+    "zip_members_max": 80,
+    "declared_expanded_bytes_max": 67108864,
+    "wall_seconds_per_process": 120,
+    "CPU_seconds_per_process": 120,
+    "range_cells_max": 16000,
+    "output_bytes_max": 4194304,
+    "reader": "Pinned reviewed openpyxl read_only=True,data_only=False,keep_links=False; no macro/formula evaluation or external links; source/hash verified before reader. Reader is separate from old PDF installer/G03 path.",
+    "source_binding": "One exact workbook size/hash plus pinned protocol/contract/reader code and package versions. Existing raw source never modified; no publisher workbook committed."
+  },
+  "acceptance_criteria": [
+    {
+      "id": "FEC-M01",
+      "gate": "INDEPENDENT_METHODS_REVIEW",
+      "criteria": "Review exact source headers/ranges, dates/class/term mapping, general/runoff/special and party semantics; resolve AK/OR/ME/GA ambiguity or retain blocked slots. This proposal is not self-certification."
+    },
+    {
+      "id": "FEC-P01",
+      "gate": "AUTHORED_FIXTURE_PARSER_TESTS",
+      "criteria": "Implement separate pure row parser and bounded workbook adapter. Test row roles, # removed candidate, blank vszero vsone, bool/nonfinite/fraction, duplicate rows/FEC IDs, primary contamination, GA terms/year/runoff, LA multiple nominees, AK/OR parties, partial summary controls, altered header/hash, formula/external link refusal, fixed range, read/output/deadline failure and no partial adoption."
+    },
+    {
+      "id": "FEC-P02",
+      "gate": "INDEPENDENT_PARSER_REVIEW",
+      "criteria": "Nonimplementer runs fixtures and additional counterexamples on both supported runtimes. No source adoption merely from unit PASS."
+    },
+    {
+      "id": "FEC-A01",
+      "gate": "ONE_BOUNDED_ACTUAL_CANDIDATE_PARSE",
+      "criteria": "Versioned separate recorded run with exact source/code/input hashes, reader version, start/end, limits, errors and33-slot coverage. Zero network/model/2026 outcome access; retain failed attempt and all discrepancies."
+    },
+    {
+      "id": "FEC-A02",
+      "gate": "INDEPENDENT_NUMERIC_AND_PROVENANCE_REVIEW",
+      "criteria": "Check cell witnesses, candidate identity, totals and summary definition, class/date/candidate lineage, uncertainty/exclusions. Only explicitly accepted rows may become historical inputs; unresolved slots stay blocked."
+    },
+    {
+      "id": "FEC-S01",
+      "gate": "ORIGINAL_S0_AND_MATCHED_EVALUATION",
+      "criteria": "Separately freeze target race sample, final ballots/geography and predeclared adjustments, then feature isolation and sealed outcomes. Retain original broad24House/up-to8Senate and deep4House/2Senate completion requirements; Senate source progress does not complete House/advanced variants."
+    }
+  ],
+  "simpler_route_assessment": {
+    "can_replace_dependency": "The scientific baseline needs validated official historical counts; it does not inherently need a particular PDF parser or installer. A separately reviewed FEC tabular adapter can supply accepted counts without passing consumed Clerk PDF/G03 implementation-specific gates.",
+    "cannot_bypass": "Do not mark old PDF/G03 gates passed, reuse consumed release scopes, reinterpret fixtures as real counts, or waive candidate/class/event/geography/selection/leakage requirements. Full original contract remains incomplete.",
+    "remaining_original_contract": "Target2026 final ballots/geography, original full race selection, eligible historical counts for every selected target, House prior data, sealed retrospective outcomes, uncertainty, matched advanced comparators, reproducibility and independent review remain separate."
+  },
+  "adoption": false,
+  "forecast_consumption": false,
+  "actual_parser_run": false,
+  "parser_implementation_exists_claimed": false,
+  "model_calls": 0,
+  "cost_usd": 0
+}

@@ -1,0 +1,34 @@
+--- FROZEN_V1/tests/test_fec2020_parser_v1.py
++++ CORRECTED_V1_1/tests/test_fec2020_parser_v1.py
+@@ -333,6 +333,31 @@
+                 time.sleep(.01)
+ 
+ 
++class ArchiveSuffixRegressionTests(unittest.TestCase):
++    def test_uppercase_mixedcase_and_Unicode_XML_DTD_refused(self):
++        for filename in ('worksheet.XML','worksheet.Xml','worksheet.xMl','Ω.XML','Straße.XmL','İ.XML'):
++            for encoding in ('utf-8','utf-16'):
++                declaration='UTF-16' if encoding=='utf-16' else 'UTF-8'
++                body=('<?xml version="1.0" encoding="'+declaration+'"?><!DOCTYPE x [<!ENTITY e "AUTHORED_ONLY">]><x>&e;</x>').encode(encoding)
++                with self.subTest(filename=filename,encoding=encoding),self.assertRaisesRegex(p.ParserRefused,'XML_DTD_OR_ENTITY'):
++                    p.archive_preflight(archive({'xl/worksheets/'+filename:body}))
++
++    def test_uppercase_mixedcase_and_Unicode_RELS_external_refused(self):
++        for filename in ('workbook.RELS','workbook.Rels','workbook.reLS','Ω.RELS','Straße.ReLs','İ.RELS'):
++            for encoding in ('utf-8','utf-16'):
++                declaration='UTF-16' if encoding=='utf-16' else 'UTF-8'
++                body=('<?xml version="1.0" encoding="'+declaration+'"?><Relationships><Relationship TargetMode="External" Target="https://example.test/INERT"/></Relationships>').encode(encoding)
++                with self.subTest(filename=filename,encoding=encoding),self.assertRaisesRegex(p.ParserRefused,'EXTERNAL_RELATIONSHIP'):
++                    p.archive_preflight(archive({'xl/_rels/'+filename:body}))
++
++    def test_valid_Unicode_XML_and_RELS_stay_readable_without_case_path_rewriting(self):
++        members={'xl/worksheets/Ω.XML':'<worksheet>AUTHORED</worksheet>',
++                 'xl/_rels/İ.ReLs':'<?xml version="1.0" encoding="UTF-16"?><Relationships/>'.encode('utf-16')}
++        result=p.archive_preflight(archive(members))
++        self.assertEqual(result['members'],2)
++        self.assertEqual(result['declared_expanded_bytes'],sum(len(v.encode() if isinstance(v,str) else v) for v in members.values()))
++
++
+ if __name__=='__main__':
+     import resource
+     resource.setrlimit(resource.RLIMIT_CORE,(0,0));resource.setrlimit(resource.RLIMIT_CPU,(119,120))

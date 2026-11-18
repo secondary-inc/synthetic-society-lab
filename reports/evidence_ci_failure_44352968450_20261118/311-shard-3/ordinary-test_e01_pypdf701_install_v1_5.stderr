@@ -1,0 +1,491 @@
+test_alias_origin_refuses_before_initialization (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_alias_origin_refuses_before_initialization) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_alias_origin_refuses_before_initialization","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_alias_origin_refuses_before_initialization","elapsed_seconds":0.033926928000028056,"event":"STOP","status":"PASS"}
+test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads","event":"START"}
+ERROR
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads","event":"ERROR","traceback_bytes":992,"traceback_sha256":"60bdae8e76ffe440cf6a7d5722a3d1864ad56e509bbe04626fb5bac1ac13ca55","traceback_truncated":false}
+CI_FAILURE_DETAIL_BEGIN test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 314, in test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads
+    self.prepare_without_io()
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 307, in prepare_without_io
+    receipt = p.prepare_builtin_mime(self.binding)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 666, in prepare_builtin_mime
+    return initialize_builtin_mime_types(mimetypes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 644, in initialize_builtin_mime_types
+    raise Refused('MIME_PLATFORM')
+recovery_v1_5.Refused: MIME_PLATFORM
+
+CI_FAILURE_DETAIL_END
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads","elapsed_seconds":0.005780223999977352,"event":"STOP","status":"ERROR"}
+test_bound_stdlib_origin_prepopulated_initialization_resets_mappings (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings","event":"START"}
+ERROR
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings","event":"ERROR","traceback_bytes":992,"traceback_sha256":"d98faccfb06eb707faecba4453fe700eb10eca8a4417360d440ee687ea10fd51","traceback_truncated":false}
+CI_FAILURE_DETAIL_BEGIN test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 319, in test_bound_stdlib_origin_prepopulated_initialization_resets_mappings
+    self.prepare_without_io()
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 307, in prepare_without_io
+    receipt = p.prepare_builtin_mime(self.binding)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 666, in prepare_builtin_mime
+    return initialize_builtin_mime_types(mimetypes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 644, in initialize_builtin_mime_types
+    raise Refused('MIME_PLATFORM')
+recovery_v1_5.Refused: MIME_PLATFORM
+
+CI_FAILURE_DETAIL_END
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings","elapsed_seconds":0.004439942999965751,"event":"STOP","status":"ERROR"}
+test_init_error_propagates_once_without_fallback (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_init_error_propagates_once_without_fallback) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_init_error_propagates_once_without_fallback","event":"START"}
+FAIL
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_init_error_propagates_once_without_fallback","event":"FAIL","traceback_bytes":482,"traceback_sha256":"1f964f439c697058a27f08381e56b3836a22ab8c6437626df8c80b1f1eb31d3e","traceback_truncated":false}
+CI_FAILURE_DETAIL_BEGIN test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_init_error_propagates_once_without_fallback
+recovery_v1_5.Refused: MIME_PLATFORM
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 343, in test_init_error_propagates_once_without_fallback
+    with self.assertRaisesRegex(RuntimeError, 'MOCK_INIT_STOP'): p.prepare_builtin_mime(self.binding)
+AssertionError: "MOCK_INIT_STOP" does not match "MIME_PLATFORM"
+
+CI_FAILURE_DETAIL_END
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_init_error_propagates_once_without_fallback","elapsed_seconds":0.00412447600001542,"event":"STOP","status":"FAIL"}
+test_invalid_public_state_refuses (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_invalid_public_state_refuses) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_invalid_public_state_refuses","event":"START"}
+FAIL
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_invalid_public_state_refuses","event":"FAIL","traceback_bytes":470,"traceback_sha256":"1c715c1434f95a8b12bde36cb36df63832075817b4682c193dc1e9ccd57f7abf","traceback_truncated":false}
+CI_FAILURE_DETAIL_BEGIN test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_invalid_public_state_refuses
+recovery_v1_5.Refused: MIME_PLATFORM
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 349, in test_invalid_public_state_refuses
+    with self.assertRaisesRegex(p.Refused, 'MIME_STATE_SCHEMA'): p.prepare_builtin_mime(self.binding)
+AssertionError: "MIME_STATE_SCHEMA" does not match "MIME_PLATFORM"
+
+CI_FAILURE_DETAIL_END
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_invalid_public_state_refuses","elapsed_seconds":0.004085819000010815,"event":"STOP","status":"FAIL"}
+test_unknown_origin_refuses_before_initialization (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_unknown_origin_refuses_before_initialization) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_unknown_origin_refuses_before_initialization","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_unknown_origin_refuses_before_initialization","elapsed_seconds":0.004001685000048383,"event":"STOP","status":"PASS"}
+test_unknown_spec_origin_refuses_before_initialization (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_unknown_spec_origin_refuses_before_initialization) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_unknown_spec_origin_refuses_before_initialization","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_unknown_spec_origin_refuses_before_initialization","elapsed_seconds":0.00379694200000813,"event":"STOP","status":"PASS"}
+test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process","elapsed_seconds":0.0027561839999634685,"event":"STOP","status":"PASS"}
+test_capture_overflow_kills_reaps_and_records_stopped_prefix (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_capture_overflow_kills_reaps_and_records_stopped_prefix) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_capture_overflow_kills_reaps_and_records_stopped_prefix","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_capture_overflow_kills_reaps_and_records_stopped_prefix","elapsed_seconds":0.002093925000053787,"event":"STOP","status":"PASS"}
+test_control_terminal_headroom_and_reader_quota_precede_file_effect (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_control_terminal_headroom_and_reader_quota_precede_file_effect) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_control_terminal_headroom_and_reader_quota_precede_file_effect","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_control_terminal_headroom_and_reader_quota_precede_file_effect","elapsed_seconds":0.001674075000096309,"event":"STOP","status":"PASS"}
+test_final_terminal_counts_its_own_combined_logical_bytes (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_final_terminal_counts_its_own_combined_logical_bytes) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_final_terminal_counts_its_own_combined_logical_bytes","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_final_terminal_counts_its_own_combined_logical_bytes","elapsed_seconds":0.0016275360000008732,"event":"STOP","status":"PASS"}
+test_final_terminal_over_cap_refuses_before_file_creation (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_final_terminal_over_cap_refuses_before_file_creation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_final_terminal_over_cap_refuses_before_file_creation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_final_terminal_over_cap_refuses_before_file_creation","elapsed_seconds":0.0008602520000522418,"event":"STOP","status":"PASS"}
+test_logical_terminal_headroom_refuses_before_file_creation (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_logical_terminal_headroom_refuses_before_file_creation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_logical_terminal_headroom_refuses_before_file_creation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_logical_terminal_headroom_refuses_before_file_creation","elapsed_seconds":0.0007478249999621767,"event":"STOP","status":"PASS"}
+test_owned_size_cap_uses_observed_tree_and_refuses_special_file (test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_owned_size_cap_uses_observed_tree_and_refuses_special_file) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_owned_size_cap_uses_observed_tree_and_refuses_special_file","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryCaptureTests.test_owned_size_cap_uses_observed_tree_and_refuses_special_file","elapsed_seconds":0.0009513659999811352,"event":"STOP","status":"PASS"}
+test_mime_helper_is_accepted_candidate_with_only_refusal_type_changed (test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_mime_helper_is_accepted_candidate_with_only_refusal_type_changed) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_mime_helper_is_accepted_candidate_with_only_refusal_type_changed","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_mime_helper_is_accepted_candidate_with_only_refusal_type_changed","elapsed_seconds":0.01865325100004611,"event":"STOP","status":"PASS"}
+test_mime_preparation_is_after_guard_and_before_pip (test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_mime_preparation_is_after_guard_and_before_pip) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_mime_preparation_is_after_guard_and_before_pip","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_mime_preparation_is_after_guard_and_before_pip","elapsed_seconds":0.00019470799998089205,"event":"STOP","status":"PASS"}
+test_other_core_functions_remain_identical_after_explicit_routing (test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_other_core_functions_remain_identical_after_explicit_routing) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_other_core_functions_remain_identical_after_explicit_routing","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_other_core_functions_remain_identical_after_explicit_routing","elapsed_seconds":0.07336782499999117,"event":"STOP","status":"PASS"}
+test_previous_frozen_candidate_hashes_unchanged (test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_previous_frozen_candidate_hashes_unchanged) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_previous_frozen_candidate_hashes_unchanged","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_previous_frozen_candidate_hashes_unchanged","elapsed_seconds":0.0003224460000410545,"event":"STOP","status":"PASS"}
+test_previous_v1_4_source_methods_and_tests_unchanged (test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_previous_v1_4_source_methods_and_tests_unchanged) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_previous_v1_4_source_methods_and_tests_unchanged","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryDeltaTests.test_previous_v1_4_source_methods_and_tests_unchanged","elapsed_seconds":0.0001974920000975544,"event":"STOP","status":"PASS"}
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix","elapsed_seconds":0.10656625499996153,"event":"STOP","status":"PASS"}
+test_all_six_trees_share_single_logical_limit (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_all_six_trees_share_single_logical_limit) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_all_six_trees_share_single_logical_limit","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_all_six_trees_share_single_logical_limit","elapsed_seconds":0.10301067900002181,"event":"STOP","status":"PASS"}
+test_base_binary_hash_change_blocks_before_mutation (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_base_binary_hash_change_blocks_before_mutation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_base_binary_hash_change_blocks_before_mutation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_base_binary_hash_change_blocks_before_mutation","elapsed_seconds":0.10220496900001308,"event":"STOP","status":"PASS"}
+test_bootstrap_hash_and_extra_pip_file_are_blockers (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers","elapsed_seconds":0.0957144059999564,"event":"STOP","status":"PASS"}
+test_budget_wall_rollback_and_observed_cpu_refuse (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse","elapsed_seconds":0.10308299700000134,"event":"STOP","status":"PASS"}
+test_changed_old_pip_detected_after_commands (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_changed_old_pip_detected_after_commands) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_changed_old_pip_detected_after_commands","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_changed_old_pip_detected_after_commands","elapsed_seconds":0.1529757130000462,"event":"STOP","status":"PASS"}
+test_coherently_hashed_relabeling_flag_still_refuses (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_hashed_relabeling_flag_still_refuses) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_hashed_relabeling_flag_still_refuses","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_hashed_relabeling_flag_still_refuses","elapsed_seconds":0.11455369200007226,"event":"STOP","status":"PASS"}
+test_coherently_rehashed_latest_snapshot_cannot_replace_first_history (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_rehashed_latest_snapshot_cannot_replace_first_history) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_rehashed_latest_snapshot_cannot_replace_first_history","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_rehashed_latest_snapshot_cannot_replace_first_history","elapsed_seconds":0.11554726999997911,"event":"STOP","status":"PASS"}
+test_coherently_rehashed_nonfailed_ancestor_refuses (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_rehashed_nonfailed_ancestor_refuses) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_rehashed_nonfailed_ancestor_refuses","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_coherently_rehashed_nonfailed_ancestor_refuses","elapsed_seconds":0.12484985100002177,"event":"STOP","status":"PASS"}
+test_combined_occupancy_counts_both_old_and_new_targets (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_combined_occupancy_counts_both_old_and_new_targets) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_combined_occupancy_counts_both_old_and_new_targets","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_combined_occupancy_counts_both_old_and_new_targets","elapsed_seconds":0.10256572200000846,"event":"STOP","status":"PASS"}
+test_complete_mock_three_main_commands_no_oldsite_or_inference (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_complete_mock_three_main_commands_no_oldsite_or_inference) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_complete_mock_three_main_commands_no_oldsite_or_inference","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_complete_mock_three_main_commands_no_oldsite_or_inference","elapsed_seconds":0.1792089790000091,"event":"STOP","status":"PASS"}
+test_consumed_or_existing_target_not_reused (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_consumed_or_existing_target_not_reused) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_consumed_or_existing_target_not_reused","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_consumed_or_existing_target_not_reused","elapsed_seconds":0.1519297769999639,"event":"STOP","status":"PASS"}
+test_consumer_preserves_21_gets_and_both_failed_wheel_charges (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_consumer_preserves_21_gets_and_both_failed_wheel_charges) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_consumer_preserves_21_gets_and_both_failed_wheel_charges","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_consumer_preserves_21_gets_and_both_failed_wheel_charges","elapsed_seconds":0.11379164499999206,"event":"STOP","status":"PASS"}
+test_corrupt_failed_ancestor_blocks_before_new_stage (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_corrupt_failed_ancestor_blocks_before_new_stage) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_corrupt_failed_ancestor_blocks_before_new_stage","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_corrupt_failed_ancestor_blocks_before_new_stage","elapsed_seconds":0.11929483000005803,"event":"STOP","status":"PASS"}
+test_corrupt_wheel_or_ancestor_bytes_refuse (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_corrupt_wheel_or_ancestor_bytes_refuse) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_corrupt_wheel_or_ancestor_bytes_refuse","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_corrupt_wheel_or_ancestor_bytes_refuse","elapsed_seconds":0.11449340299998312,"event":"STOP","status":"PASS"}
+test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets","elapsed_seconds":0.10987627700001212,"event":"STOP","status":"PASS"}
+test_failed_command_preserves_partial_env_and_no_retry (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_failed_command_preserves_partial_env_and_no_retry) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_failed_command_preserves_partial_env_and_no_retry","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_failed_command_preserves_partial_env_and_no_retry","elapsed_seconds":0.14274808599998323,"event":"STOP","status":"PASS"}
+test_failed_recovery_preserves_both_partial_targets (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_failed_recovery_preserves_both_partial_targets) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_failed_recovery_preserves_both_partial_targets","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_failed_recovery_preserves_both_partial_targets","elapsed_seconds":0.14564537800004018,"event":"STOP","status":"PASS"}
+test_final_metadata_charge_includes_all_seven_new_bodies (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_final_metadata_charge_includes_all_seven_new_bodies) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_final_metadata_charge_includes_all_seven_new_bodies","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_final_metadata_charge_includes_all_seven_new_bodies","elapsed_seconds":0.12237399000002824,"event":"STOP","status":"PASS"}
+test_freshness_failure_ancestor_is_required_separately (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_freshness_failure_ancestor_is_required_separately) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_freshness_failure_ancestor_is_required_separately","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_freshness_failure_ancestor_is_required_separately","elapsed_seconds":0.10368415499999628,"event":"STOP","status":"PASS"}
+test_guest_blocks_network_helpers_downloaded_import_and_outside_write (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_guest_blocks_network_helpers_downloaded_import_and_outside_write) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_guest_blocks_network_helpers_downloaded_import_and_outside_write","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_guest_blocks_network_helpers_downloaded_import_and_outside_write","elapsed_seconds":0.10127367200004755,"event":"STOP","status":"PASS"}
+test_installed_extra_distribution_blocks_exact_closure (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_installed_extra_distribution_blocks_exact_closure) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_installed_extra_distribution_blocks_exact_closure","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_installed_extra_distribution_blocks_exact_closure","elapsed_seconds":0.14306494400000247,"event":"STOP","status":"PASS"}
+test_latest_failed_ancestor_hash_and_chain_cannot_be_dropped (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_latest_failed_ancestor_hash_and_chain_cannot_be_dropped) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_latest_failed_ancestor_hash_and_chain_cannot_be_dropped","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_latest_failed_ancestor_hash_and_chain_cannot_be_dropped","elapsed_seconds":0.1244688069999711,"event":"STOP","status":"PASS"}
+test_latest_old_target_metadata_change_cannot_pass (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_latest_old_target_metadata_change_cannot_pass) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_latest_old_target_metadata_change_cannot_pass","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_latest_old_target_metadata_change_cannot_pass","elapsed_seconds":0.15873795999993945,"event":"STOP","status":"PASS"}
+test_missing_mime_guest_proof_stops_before_third_command (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_missing_mime_guest_proof_stops_before_third_command) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_missing_mime_guest_proof_stops_before_third_command","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_missing_mime_guest_proof_stops_before_third_command","elapsed_seconds":0.137308384999983,"event":"STOP","status":"PASS"}
+test_missing_prior_target_refuses_before_new_stage (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_missing_prior_target_refuses_before_new_stage) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_missing_prior_target_refuses_before_new_stage","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_missing_prior_target_refuses_before_new_stage","elapsed_seconds":0.11293324600001142,"event":"STOP","status":"PASS"}
+test_old_capture_timestamp_cannot_replace_new_metadata_epoch (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_capture_timestamp_cannot_replace_new_metadata_epoch) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_capture_timestamp_cannot_replace_new_metadata_epoch","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_capture_timestamp_cannot_replace_new_metadata_epoch","elapsed_seconds":0.11617360600007487,"event":"STOP","status":"PASS"}
+test_old_target_metadata_change_prevents_success (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_target_metadata_change_prevents_success) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_target_metadata_change_prevents_success","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_target_metadata_change_prevents_success","elapsed_seconds":0.15073949700001776,"event":"STOP","status":"PASS"}
+test_old_tree_mutations_and_reads_remain_outside_guest_permissions (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_tree_mutations_and_reads_remain_outside_guest_permissions) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_tree_mutations_and_reads_remain_outside_guest_permissions","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_old_tree_mutations_and_reads_remain_outside_guest_permissions","elapsed_seconds":0.10309290200007126,"event":"STOP","status":"PASS"}
+test_oldest_ancestor_ref_remains_required (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_oldest_ancestor_ref_remains_required) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_oldest_ancestor_ref_remains_required","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_oldest_ancestor_ref_remains_required","elapsed_seconds":0.10767650599996159,"event":"STOP","status":"PASS"}
+test_preexisting_target_fails_before_new_stage (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_preexisting_target_fails_before_new_stage) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_preexisting_target_fails_before_new_stage","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_preexisting_target_fails_before_new_stage","elapsed_seconds":0.1026015049999387,"event":"STOP","status":"PASS"}
+test_preflight_includes_preserved_occupancy (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_preflight_includes_preserved_occupancy) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_preflight_includes_preserved_occupancy","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_preflight_includes_preserved_occupancy","elapsed_seconds":0.11722711300001265,"event":"STOP","status":"PASS"}
+test_recovery_allocation_cannot_reset_prior_charges (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_recovery_allocation_cannot_reset_prior_charges) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_recovery_allocation_cannot_reset_prior_charges","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_recovery_allocation_cannot_reset_prior_charges","elapsed_seconds":0.09828725800002758,"event":"STOP","status":"PASS"}
+test_recovery_success_preserves_old_scope_and_target_and_full_allocation (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_recovery_success_preserves_old_scope_and_target_and_full_allocation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_recovery_success_preserves_old_scope_and_target_and_full_allocation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_recovery_success_preserves_old_scope_and_target_and_full_allocation","elapsed_seconds":0.15109451299997545,"event":"STOP","status":"PASS"}
+test_reordered_or_missing_failed_stages_refuse (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_reordered_or_missing_failed_stages_refuse) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_reordered_or_missing_failed_stages_refuse","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_reordered_or_missing_failed_stages_refuse","elapsed_seconds":0.1315920050000159,"event":"STOP","status":"PASS"}
+test_stopped_command_retains_record_and_holds_scope_consumed (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_stopped_command_retains_record_and_holds_scope_consumed) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_stopped_command_retains_record_and_holds_scope_consumed","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_stopped_command_retains_record_and_holds_scope_consumed","elapsed_seconds":0.13096099400002004,"event":"STOP","status":"PASS"}
+test_unbound_empty_pip_directory_changes_bootstrap_identity (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_unbound_empty_pip_directory_changes_bootstrap_identity) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_unbound_empty_pip_directory_changes_bootstrap_identity","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_unbound_empty_pip_directory_changes_bootstrap_identity","elapsed_seconds":0.10036773299998458,"event":"STOP","status":"PASS"}
+test_v1_1_failure_cannot_masquerade_as_complete_v1_2 (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_v1_1_failure_cannot_masquerade_as_complete_v1_2) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_v1_1_failure_cannot_masquerade_as_complete_v1_2","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_v1_1_failure_cannot_masquerade_as_complete_v1_2","elapsed_seconds":0.09985429400001067,"event":"STOP","status":"PASS"}
+test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete","elapsed_seconds":0.09962972300002093,"event":"STOP","status":"PASS"}
+test_write_and_output_limits_refuse_before_effect (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_write_and_output_limits_refuse_before_effect) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_write_and_output_limits_refuse_before_effect","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_write_and_output_limits_refuse_before_effect","elapsed_seconds":0.09886332999997194,"event":"STOP","status":"PASS"}
+test_wrong_external_wheel_hash_blocks_before_mutation (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_wrong_external_wheel_hash_blocks_before_mutation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_wrong_external_wheel_hash_blocks_before_mutation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_wrong_external_wheel_hash_blocks_before_mutation","elapsed_seconds":0.1158688360000042,"event":"STOP","status":"PASS"}
+test_wrong_guest_target_scheme_is_rejected (test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_wrong_guest_target_scheme_is_rejected) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_wrong_guest_target_scheme_is_rejected","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryFixtureTests.test_wrong_guest_target_scheme_is_rejected","elapsed_seconds":0.1320896110000831,"event":"STOP","status":"PASS"}
+test_active_closure_and_inactive_dependencies_are_explicit (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_active_closure_and_inactive_dependencies_are_explicit) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_active_closure_and_inactive_dependencies_are_explicit","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_active_closure_and_inactive_dependencies_are_explicit","elapsed_seconds":0.0006514629999401222,"event":"STOP","status":"PASS"}
+test_bad_computed_install_scheme_fails_closed (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_bad_computed_install_scheme_fails_closed) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_bad_computed_install_scheme_fails_closed","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_bad_computed_install_scheme_fails_closed","elapsed_seconds":0.00012626699992779322,"event":"STOP","status":"PASS"}
+test_folded_email_requirement_matches_json_lock_without_losing_text (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_folded_email_requirement_matches_json_lock_without_losing_text) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_folded_email_requirement_matches_json_lock_without_losing_text","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_folded_email_requirement_matches_json_lock_without_losing_text","elapsed_seconds":0.0003399619999981951,"event":"STOP","status":"PASS"}
+test_frozen_wheel_inspector_real_email_headers_cross_the_same_boundary (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_frozen_wheel_inspector_real_email_headers_cross_the_same_boundary) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_frozen_wheel_inspector_real_email_headers_cross_the_same_boundary","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_frozen_wheel_inspector_real_email_headers_cross_the_same_boundary","elapsed_seconds":0.0008037590000640193,"event":"STOP","status":"PASS"}
+test_header_boundary_refuses_arbitrary_objects_subclasses_and_other_headers (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_header_boundary_refuses_arbitrary_objects_subclasses_and_other_headers) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_header_boundary_refuses_arbitrary_objects_subclasses_and_other_headers","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_header_boundary_refuses_arbitrary_objects_subclasses_and_other_headers","elapsed_seconds":0.00023034099990582035,"event":"STOP","status":"PASS"}
+test_legacy_certificate_option_is_explicit_and_not_a_network_or_native_fallback (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_legacy_certificate_option_is_explicit_and_not_a_network_or_native_fallback) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_legacy_certificate_option_is_explicit_and_not_a_network_or_native_fallback","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_legacy_certificate_option_is_explicit_and_not_a_network_or_native_fallback","elapsed_seconds":0.00012669700004153128,"event":"STOP","status":"PASS"}
+test_marker_parser_never_executes_code_or_unknown_names (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_marker_parser_never_executes_code_or_unknown_names) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_marker_parser_never_executes_code_or_unknown_names","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_marker_parser_never_executes_code_or_unknown_names","elapsed_seconds":0.0002932529999952749,"event":"STOP","status":"PASS"}
+test_marker_target_versions_and_inactive_extras (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_marker_target_versions_and_inactive_extras) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_marker_target_versions_and_inactive_extras","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_marker_target_versions_and_inactive_extras","elapsed_seconds":0.00021756099999947764,"event":"STOP","status":"PASS"}
+test_narrow_path_candidate_refuses_existing_alias_and_unknown_roots (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_narrow_path_candidate_refuses_existing_alias_and_unknown_roots) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_narrow_path_candidate_refuses_existing_alias_and_unknown_roots","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_narrow_path_candidate_refuses_existing_alias_and_unknown_roots","elapsed_seconds":0.0014185670000870232,"event":"STOP","status":"PASS"}
+test_python312_S_base_prefix_does_not_change_explicit_target (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_python312_S_base_prefix_does_not_change_explicit_target) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_python312_S_base_prefix_does_not_change_explicit_target","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_python312_S_base_prefix_does_not_change_explicit_target","elapsed_seconds":0.00013903599995046534,"event":"STOP","status":"PASS"}
+test_real_email_parser_header_boundary_is_lossless_and_satisfies_closure (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_real_email_parser_header_boundary_is_lossless_and_satisfies_closure) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_real_email_parser_header_boundary_is_lossless_and_satisfies_closure","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_real_email_parser_header_boundary_is_lossless_and_satisfies_closure","elapsed_seconds":0.0002345170000808139,"event":"STOP","status":"PASS"}
+test_strict_json_duplicate_nonfinite_and_ref_paths (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_strict_json_duplicate_nonfinite_and_ref_paths) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_strict_json_duplicate_nonfinite_and_ref_paths","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_strict_json_duplicate_nonfinite_and_ref_paths","elapsed_seconds":0.00018571399994016247,"event":"STOP","status":"PASS"}
+test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks (test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_5.RecoveryPureTests.test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks","elapsed_seconds":0.0001547779999100385,"event":"STOP","status":"PASS"}
+
+======================================================================
+ERROR: test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 314, in test_bound_stdlib_origin_fresh_initialization_has_no_mime_file_reads
+    self.prepare_without_io()
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 307, in prepare_without_io
+    receipt = p.prepare_builtin_mime(self.binding)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 666, in prepare_builtin_mime
+    return initialize_builtin_mime_types(mimetypes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 644, in initialize_builtin_mime_types
+    raise Refused('MIME_PLATFORM')
+recovery_v1_5.Refused: MIME_PLATFORM
+
+======================================================================
+ERROR: test_bound_stdlib_origin_prepopulated_initialization_resets_mappings (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_bound_stdlib_origin_prepopulated_initialization_resets_mappings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 319, in test_bound_stdlib_origin_prepopulated_initialization_resets_mappings
+    self.prepare_without_io()
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 307, in prepare_without_io
+    receipt = p.prepare_builtin_mime(self.binding)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 666, in prepare_builtin_mime
+    return initialize_builtin_mime_types(mimetypes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_5.py", line 644, in initialize_builtin_mime_types
+    raise Refused('MIME_PLATFORM')
+recovery_v1_5.Refused: MIME_PLATFORM
+
+======================================================================
+FAIL: test_init_error_propagates_once_without_fallback (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_init_error_propagates_once_without_fallback)
+----------------------------------------------------------------------
+recovery_v1_5.Refused: MIME_PLATFORM
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 343, in test_init_error_propagates_once_without_fallback
+    with self.assertRaisesRegex(RuntimeError, 'MOCK_INIT_STOP'): p.prepare_builtin_mime(self.binding)
+AssertionError: "MOCK_INIT_STOP" does not match "MIME_PLATFORM"
+
+======================================================================
+FAIL: test_invalid_public_state_refuses (test_e01_pypdf701_install_v1_5.ProductionMimeTests.test_invalid_public_state_refuses)
+----------------------------------------------------------------------
+recovery_v1_5.Refused: MIME_PLATFORM
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1_5.py", line 349, in test_invalid_public_state_refuses
+    with self.assertRaisesRegex(p.Refused, 'MIME_STATE_SCHEMA'): p.prepare_builtin_mime(self.binding)
+AssertionError: "MIME_STATE_SCHEMA" does not match "MIME_PLATFORM"
+
+----------------------------------------------------------------------
+Ran 74 tests in 5.231s
+
+FAILED (failures=2, errors=2)

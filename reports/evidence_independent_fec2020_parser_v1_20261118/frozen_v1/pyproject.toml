@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synthetic-society-lab"
+version = "0.1.0"
+description = "Reproducible, gated synthetic social-science research"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+figures = ["matplotlib==3.10.7"]
+sources = ["pypdf==7.0.1"]
+selection = ["scipy==1.16.3"]
+geometry = ["pdfplumber==0.11.9"]
+fec = ["openpyxl==3.1.5", "et-xmlfile==2.0.0"]
+
+[project.scripts]
+civiclab = "civiclab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+civiclab = ["templates/*.html"]

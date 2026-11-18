@@ -1,0 +1,33 @@
+--- reports/evidence_fec2020_parser_v1_2_20261118/prior_test_fec2020_parser_v1.py	2026-11-18 12:57:18
++++ tests/test_fec2020_parser_v1.py	2026-11-18 12:57:31
+@@ -334,6 +334,30 @@
+ 
+ 
+ class ArchiveSuffixRegressionTests(unittest.TestCase):
++    def test_XML_payload_without_XML_suffix_is_still_screened(self):
++        for name in ('sheet1.payload', 'sheet1', 'arbitrary.bin'):
++            for encoding in ('utf-8', 'utf-16'):
++                body=('<?xml version="1.0" encoding="'+encoding+'"?>'
++                      '<!DOCTYPE x [<!ENTITY e "MOCK_ONLY">]><x>&e;</x>').encode(encoding)
++                with self.subTest(name=name, encoding=encoding), self.assertRaisesRegex(p.ParserRefused, 'XML_DTD_OR_ENTITY'):
++                    p.archive_preflight(archive({'xl/worksheets/'+name:body}))
++        p.archive_preflight(archive({'xl/worksheets/sheet1.payload':b'<x>MOCK</x>'}))
++
++    def test_external_relationship_without_relationship_suffix_refuses(self):
++        body=b'<Relationships><Relationship TargetMode="External" Target="https://invalid.example/"/></Relationships>'
++        with self.assertRaisesRegex(p.ParserRefused, 'EXTERNAL_RELATIONSHIP'):
++            p.archive_preflight(archive({'xl/relationship.payload':body}))
++
++    def test_opaque_exceptions_require_exact_name_length_and_digest(self):
++        name='xl/printerSettings/AUTHORED.bin';raw=b'\x00\x01MOCK_OPAQUE'
++        with mock.patch.object(p, 'OPAQUE_PARTS', {name:(len(raw),hashlib.sha256(raw).hexdigest())}):
++            p.archive_preflight(archive({name:raw}))
++            for changed in (raw+b'X',raw[:-1]+b'X',b'<!DOCTYPE x><x/>'):
++                with self.subTest(changed=changed),self.assertRaisesRegex(p.ParserRefused,'OPAQUE_PART_PIN'):
++                    p.archive_preflight(archive({name:changed}))
++            with self.assertRaises(p.ParserRefused):
++                p.archive_preflight(archive({'xl/printerSettings/OTHER.bin':raw}))
++
+     def test_uppercase_mixedcase_and_Unicode_XML_DTD_refused(self):
+         for filename in ('worksheet.XML','worksheet.Xml','worksheet.xMl','Ω.XML','Straße.XmL','İ.XML'):
+             for encoding in ('utf-8','utf-16'):

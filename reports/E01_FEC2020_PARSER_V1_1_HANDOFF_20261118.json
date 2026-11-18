@@ -1,0 +1,153 @@
+{
+  "TASK_ID": "E01_FEC2020_PARSER_V1_1_SUFFIX_REPAIR_20261118",
+  "status": "AUTHOR_PURE_PASS_PENDING_INDEPENDENT_REVIEW_CORRECTED_NATIVE_READER_NOT_RUN",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/fec2020_parser_v1.py",
+    "tests/test_fec2020_parser_v1.py"
+  ],
+  "version": "V1.1 correction of canonical V1 paths, as explicitly directed by lead; no duplicate active parser.",
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "bytes": 25922,
+      "sha256": "c8ce459813ad379af326997b0833ae68556f778df55a7022e3f3658dbc548e26"
+    },
+    {
+      "path": "tests/test_fec2020_parser_v1.py",
+      "bytes": 22260,
+      "sha256": "f7ea6fbfe235cf8d24582b6d1e13bc6b3430906fc2049bd09d9142e5df8cace8"
+    },
+    {
+      "path": "scripts/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 7451,
+      "sha256": "8cb44dfd2cdceb7abd9b9fb51fd6971da2a077ff7ba79bebb9ed7227f9058559"
+    }
+  ],
+  "predecessor": {
+    "handoff": {
+      "path": "reports/E01_FEC2020_PARSER_V1_HANDOFF_20261118.json",
+      "bytes": 18887,
+      "sha256": "536283fa1fd19813e4317316d2d71d57540c435a8b8ee305eb21ba36609dab3f"
+    },
+    "exact_original_refs": [
+      {
+        "path": "src/civiclab/e01/fec2020_parser_v1.py",
+        "bytes": 25911,
+        "sha256": "13616e22b4ce1ce24bfe362a71d36477434a8c9f3d6810aa3f14d7e676de8cda"
+      },
+      {
+        "path": "tests/test_fec2020_parser_v1.py",
+        "bytes": 20325,
+        "sha256": "af9b3bfe07cb0836a8467c765612199761668b461f598657bd75d121876a3f24"
+      },
+      {
+        "path": "scripts/qualify_fec2020_reader_fixture_v1_20261118.py",
+        "bytes": 7451,
+        "sha256": "8cb44dfd2cdceb7abd9b9fb51fd6971da2a077ff7ba79bebb9ed7227f9058559"
+      }
+    ],
+    "findings": "Independent V1 reviewer40/41tests pass onbothruntimes; uppercase worksheet.XML DTD bypass reproduced. Separate reviewer reader evidence confirmed entity expansion into a fictional candidate name; original evidence remains unmodified. Do not treat V1 as accepted."
+  },
+  "change": "Only production change is filename.casefold() before deciding XML/RELS streaming preflight. Exact ZIP member filenames and paths are never rewritten or aliased; all existing source/archive/bounds/DTD/external/row/vote/control/cohort/adoption logic remains byte-identical.",
+  "regressions": {
+    "original_test_bodies_retained": 36,
+    "new_test_methods": 3,
+    "cases": "XML uppercase/mixedcase and Unicode prefixes with DTD/internalentity inUTF8/UTF16; RELS uppercase/mixedcase and Unicode prefixes with externalrelationships inUTF8/UTF16; valid Unicode XML/RELS positive controls.",
+    "original_AST_bodies_identical": true
+  },
+  "TESTS_RUN_AND_RESULTS": {
+    "311": {
+      "tests": 39,
+      "status": "PASS_AUTHOR_PURE",
+      "unittest_reported_seconds": 0.568
+    },
+    "312": {
+      "tests": 39,
+      "status": "PASS_AUTHOR_PURE",
+      "unittest_reported_seconds": 0.53
+    }
+  },
+  "limits": "Direct pure testprocesses120CPU/120wall, original fixture guards and output limits unchanged; only fictional in-memory cells/ZIP/inert readers. No whole native reader qualification run under correction.",
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B tests/test_fec2020_parser_v1.py",
+    "PYTHONPATH=src .venv/bin/python -B tests/test_fec2020_parser_v1.py"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/evidence_fec2020_parser_v1_1_20261118"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Exact source/config and fictional fixtures only. No actual workbook numeric parse, owner/key/.env/network/model access; no raw source redistribution.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Author pure controls do not replace independent regression acceptance.",
+    "Corrected optional-reader/native fixture execution NOT_RUN; V1 positive reader result cannot qualify changed V1.1 code.",
+    "No actual numeric source parsing/adoption, scientific baseline result, prospective forecast or PDF/G03/runtime acceptance."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent corrected-pin review and reproduced uppercase regressions.",
+    "Separately allocated corrected native-reader qualification if required by reviewer/lead.",
+    "All FEC-A01/A02 and original scientific gates remain unchanged."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent reviewer can rerun the original uppercase counterexample and focused controls against exact corrected pins; any full-reader execution needs its own explicit finite scope.",
+  "activity": {
+    "additional_native_reader_calls": 0,
+    "actual_FEC_numeric_parses": 0,
+    "network_calls": 0,
+    "model_calls": 0,
+    "adoption": false,
+    "forecast_consumption": false,
+    "pyproject_STATUS_Git_auditor_edits": 0
+  },
+  "coordination_note": "Initially drafted separate V1.1 module/test copies. Before test execution, lead clarified canonical unpublished repair with immutable archive, so only those own uncommitted duplicate copies were removed; original frozen bytes/findings remain preserved.",
+  "evidence_refs": [
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/PLAN.json",
+      "bytes": 1049,
+      "sha256": "cc02151f212e293a5173cb5d3c4aac88c39c655e096ab2d803e298d039754322"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/corrected_fec2020_parser_v1.py",
+      "bytes": 25922,
+      "sha256": "c8ce459813ad379af326997b0833ae68556f778df55a7022e3f3658dbc548e26"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/corrected_test_fec2020_parser_v1.py",
+      "bytes": 22260,
+      "sha256": "f7ea6fbfe235cf8d24582b6d1e13bc6b3430906fc2049bd09d9142e5df8cace8"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/fec2020_parser_v1.py",
+      "bytes": 25911,
+      "sha256": "13616e22b4ce1ce24bfe362a71d36477434a8c9f3d6810aa3f14d7e676de8cda"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/fec2020_parser_v1.py.diff",
+      "bytes": 768,
+      "sha256": "80001b182406edf24cd3254dda18bac5c1c709c6feb09161bf8ffe295efaf04f"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/python311.log",
+      "bytes": 5928,
+      "sha256": "68f8ff0d7b33662f00d79fa0f3d91fc9c93e619cc812fa86f57887e1404005bc"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/python312.log",
+      "bytes": 5928,
+      "sha256": "1cd4a0c8497224acb31c559e50e02af2f15ba8e660b05088a38c7b0423f58e14"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 7451,
+      "sha256": "8cb44dfd2cdceb7abd9b9fb51fd6971da2a077ff7ba79bebb9ed7227f9058559"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/test_fec2020_parser_v1.py",
+      "bytes": 20325,
+      "sha256": "af9b3bfe07cb0836a8467c765612199761668b461f598657bd75d121876a3f24"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_1_20261118/test_fec2020_parser_v1.py.diff",
+      "bytes": 2264,
+      "sha256": "72087a6c1285207953d95fa2ef0986fa115b9542bac2819099b15a86ac3895be"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+CI_SETUP_FAILURE_DETAIL_BEGIN
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 967, in main
+    receipt = child_entry(ROOT, args.child, args.phase, test_module=args.test_module,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 617, in child_entry
+    with ordinary_import_context(root):
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 269, in ordinary_import_context
+    finder = OrdinaryNamespaceFinder(root)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 199, in __init__
+    self.bare_names = {p.stem for p in self.tests.glob("*.py")}
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 199, in <setcomp>
+    self.bare_names = {p.stem for p in self.tests.glob("*.py")}
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/pathlib.py", line 953, in glob
+    for p in selector.select_from(self):
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/pathlib.py", line 356, in _select_from
+    entries = list(scandir_it)
+              ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 612, in deadline
+    raise IsolationError("CI_CHILD_DEADLINE")
+IsolationError: CI_CHILD_DEADLINE
+
+CI_SETUP_FAILURE_DETAIL_END

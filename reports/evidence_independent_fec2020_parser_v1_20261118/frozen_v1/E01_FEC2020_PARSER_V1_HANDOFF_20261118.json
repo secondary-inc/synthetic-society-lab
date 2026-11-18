@@ -1,0 +1,359 @@
+{
+  "TASK_ID": "E01_FEC2020_CANDIDATE_PARSER_V1_20261118",
+  "status": "AUTHOR36_PURE_BOTH_RUNTIMES_AND_NATIVE312_MOCK_READER_PASS_PENDING_INDEPENDENT_REVIEW",
+  "FILES_CHANGED": [
+    "src/civiclab/e01/fec2020_parser_v1.py",
+    "tests/test_fec2020_parser_v1.py",
+    "scripts/qualify_fec2020_reader_fixture_v1_20261118.py"
+  ],
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "bytes": 25911,
+      "sha256": "13616e22b4ce1ce24bfe362a71d36477434a8c9f3d6810aa3f14d7e676de8cda"
+    },
+    {
+      "path": "tests/test_fec2020_parser_v1.py",
+      "bytes": 20325,
+      "sha256": "af9b3bfe07cb0836a8467c765612199761668b461f598657bd75d121876a3f24"
+    },
+    {
+      "path": "scripts/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 7451,
+      "sha256": "8cb44dfd2cdceb7abd9b9fb51fd6971da2a077ff7ba79bebb9ed7227f9058559"
+    }
+  ],
+  "frozen_contract_ref": {
+    "path": "configs/e01_fec2020_senate_mapping_v1.json",
+    "bytes": 19619,
+    "sha256": "db5d3b76ed7e0d4ab6f05143e40096e7acaa7663bda0f305473f17954232a23a"
+  },
+  "methods_review_ref": {
+    "path": "reports/INDEPENDENT_AUDIT_FEC2020_MAPPING_METHODS_20261118.json",
+    "bytes": 9254,
+    "sha256": "322de699406243358208f87c236336ce87ff7d90045df1fc7517d02eb301922a"
+  },
+  "purpose": "Separate candidate-only FEC Senate row parser, bounded optional read-only adapter and authored fixtures. No actual workbook numeric parse, source adoption, historical feature generation or change to consumed PDF/G03 scopes.",
+  "implementation": {
+    "source_and_contract_binding": "Exact raw/canonical contract pins, exact real-source size/hash/id or explicit AUTHORED_/MOCK provenance, source/cell type/literal/row hash witnesses preserved. Neither a raw caller table nor a hash self-certifies official provenance.",
+    "row_roles": "Ordinal-only separators, candidates, primary-only records, party subtotals, term-specific contest totals and source-specific MT removed marker stay distinct. Unknown role/context, mismatched ordinal/shape, duplicate candidate name or FEC stage identity and combined total columns refuse.",
+    "events": "Primary/primary runoff/general/general runoff remain separate by state/source contest label/stage. Exact GA January5,2021 footnote gives runoff event date/year while cycle remains2020; November date/class/term remains unknown pending witnesses. Special term never joins regular by state/year.",
+    "votes": "Missing/blank/markers remain None with reasons, genuinezero/one preserved, no bool/nonfinite/fraction/negative/string conversion, exact finite integral floating-point values converted only while raw numeric cell is retained. No percentages inverted into votes.",
+    "party_and_cohort": "D/R/explicit other labels are unadopted candidates only. DFL, AK nonpartisan, OR coalition and unknown labels remain unknown/pending. Every one of33 classII frame slots persists, no outcome-based replacement or feature projection. AK/OR/ME/GA/LA blockers explicit; AR missing D remains blocked.",
+    "controls": "Candidate-stage sums do not include subtotals or other stages. Exact contest total discrepancies and populated D/R/Other summary discrepancies retained. Missing summary cells stay unavailable; GA combined composition is blocked. Percentages are diagnostics only with explicit1e-10 tolerance, never vote reconstruction. Separate worksheets are internal consistency controls only.",
+    "XML_archive": "<=80 members,<=64MiB declared expansion,<=32MiB/member, fixed known source pin, no duplicate/encrypted/path-alias/macros/external-link entries. XML/rels members are parsed by streaming XMLParser target that rejects DOCTYPE callbacks/external relationships, including UTF16. No lexical ASCII-only DTD assumption or external fetch.",
+    "reader": "Lazy optional read_only=True,data_only=False,keep_links=False, exact four ranges15543cells, dimensions must match, formulas/errors/type drift rejected, explicit output<=4MiB and warning bounds. Operation deadline preserves earlier timer; owned workbook close failure cannot mask active original parser error or publish a successful result after failed close.",
+    "all_flags": "source_adoption,historical_feature_adoption,sample_selection_adoption,forecast_consumption,numeric_acceptance alwaysfalse. features=[]; scientific_acceptance NOT_RUN."
+  },
+  "reader_backend_contract": {
+    "openpyxl": "3.1.5",
+    "et_xmlfile": "2.0.0",
+    "XML": "stdlib xml.etree.ElementTree iterparse/fromstring",
+    "LXML": false,
+    "DEFUSEDXML": false,
+    "fresh_process_environment": {
+      "OPENPYXL_LXML": "False",
+      "OPENPYXL_DEFUSEDXML": "False"
+    },
+    "preloaded_backend_policy": "Adapter refuses a preloaded different backend rather than switching silently.",
+    "observed_optional_import_caveats": [
+      "Ambient NumPy import initializes ctypes.PyDLL(None). Qualifier permits only that self-handle, no foreign ctypes library loads.",
+      "Exact root-authorized public MIME table /private/etc/apache2/mime.types61375bytes SHA57265fdf030202387c23e44283d440cab368a031214566b538b4b27064ed23df uid0 mode0644 verified before child and inside child before/after fixture; read bytes counted. No general /etc allowance."
+    ],
+    "root_owned_packaging": "pyproject optional fec extra and declaration report belong to root and are not edited/certified here. No installation or runtime qualification certificate.",
+    "MIME_inventory_ref": {
+      "path": "reports/FEC_SYSTEM_MIME_INVENTORY_20261118.json",
+      "bytes": 905,
+      "sha256": "6c206aaecbe20ede2c7b2d399f1332ba671c819f200c6cb3f0e9e5ec48455502"
+    }
+  },
+  "TESTS_RUN_AND_RESULTS": {
+    "initial_inert_fixtures": {
+      "Python3.11.17": {
+        "tests": 33,
+        "result": "PASS",
+        "unittest_reported_seconds": 2.594
+      },
+      "Python3.12.14": {
+        "tests": 33,
+        "result": "PASS",
+        "unittest_reported_seconds": 2.461
+      }
+    },
+    "final_inert_fixtures": {
+      "Python3.11.17": {
+        "tests": 36,
+        "result": "PASS",
+        "unittest_reported_seconds": 4.232
+      },
+      "Python3.12.14": {
+        "tests": 36,
+        "result": "PASS",
+        "unittest_reported_seconds": 4.083
+      }
+    },
+    "timing_scope": "Unit-test reported elapsed time, not external whole-process CPU/wall measurement. Each direct test process installs120s CPU/wall limits; no raw source/package installation or real inference invoked.",
+    "native_authored_reader_attempts": [
+      {
+        "attempt": 1,
+        "runtime": "3.12.14",
+        "result": "FAILED_GUARD_BEFORE_READER_WORKBOOK_OPEN",
+        "failure": "stdlib ctypes.PyDLL(None) during ambient NumPy import was refused by overbroad foreign-native guard. Exact initial sources and traceback retained.",
+        "log": "reports/evidence_fec2020_parser_v1_20261118/authored_reader_312_attempt1.log"
+      },
+      {
+        "attempt": 2,
+        "runtime": "3.12.14",
+        "result": "FAILED_GUARD_BEFORE_READER_WORKBOOK_OPEN",
+        "failure": "OpenPyXL MIME initialization attempted a system MIME metadata read outside allowed project/runtime paths. Strict guard refused. No path relaxation or third retry.",
+        "log": "reports/evidence_fec2020_parser_v1_20261118/authored_reader_312_attempt2.log"
+      },
+      {
+        "attempt": 3,
+        "runtime": "3.12.14",
+        "result": "PASS_MOCK_READER_ONLY",
+        "qualification": {
+          "actual_workbooks_opened": 0,
+          "archive": {
+            "declared_expanded_bytes": 41150,
+            "members": 8
+          },
+          "bounded_cells": 15543,
+          "cohort_slots": 33,
+          "cost_usd": 0,
+          "features": 0,
+          "file_read_reservation_bytes": 6576466,
+          "fixture_zip_bytes": 8200,
+          "fixture_zip_sha256": "2da6ceb03354b6eba587705d5f2dca3e39f1dac809962f2c75af68c2e8d8aeb7",
+          "forecast_consumption": false,
+          "historical_feature_adoption": false,
+          "kind": "FEC2020_OPTIONAL_READER_AUTHORED_FIXTURE_V1",
+          "model_calls": 0,
+          "network_calls": 0,
+          "numeric_acceptance": false,
+          "provenance": "MOCK",
+          "reader": {
+            "DEFUSEDXML": false,
+            "LXML": false,
+            "backend": "STDLIB_XML_ETREE_ELEMENTTREE",
+            "et_xmlfile_version": "2.0.0",
+            "package": "openpyxl",
+            "version": "3.1.5",
+            "warnings": []
+          },
+          "result_bytes": 511553,
+          "runtime": "3.12.14",
+          "sample_selection_adoption": false,
+          "source_adoption": false,
+          "status": "PASS_MOCK_READER_ONLY",
+          "system_MIME": {
+            "bytes": 61375,
+            "path": "/private/etc/apache2/mime.types",
+            "read_reservation_bytes_excluding_initial_pin": 122750,
+            "sha256": "57265fdf030202387c23e44283d440cab368a031214566b538b4b27064ed23df"
+          },
+          "wall_seconds": 0.7474864169780631
+        },
+        "external_exec_observed_wall_seconds": 0.792837541,
+        "timing_scope": "Qualifier in-process wall and exec tool observation; CPU usage not externally measured. Kernel119/120CPU and120wall limits configured.",
+        "log": "reports/evidence_fec2020_parser_v1_20261118/authored_reader_312_attempt3.log"
+      }
+    ],
+    "reader_attempt_allocation_consumed": 3,
+    "native_reader_workbook_calls_completed": 1,
+    "actual_publisher_workbooks_opened": 0,
+    "whitespace": "PASS"
+  },
+  "acceptance_criteria": [
+    {
+      "id": "FEC-M01",
+      "status": "PASS_SEPARATE_INDEPENDENT_METHODS_REVIEW",
+      "evidence": "reports/INDEPENDENT_AUDIT_FEC2020_MAPPING_METHODS_20261118.json"
+    },
+    {
+      "id": "FEC-P01_PURE",
+      "status": "AUTHOR_PASS_PENDING_INDEPENDENT_REVIEW",
+      "evidence": "36 pure/inert controls per exact runtime, including XML encoding/DTD/external refusal, row/event/party/missing/cohort/control/output/error/deadline behaviors."
+    },
+    {
+      "id": "FEC-P01_NATIVE_READER",
+      "status": "AUTHOR_PASS_312_MOCK_READER_PENDING_INDEPENDENT_REVIEW",
+      "evidence": "Third separately authorized fresh3.12 child passed with exact optional packages,stdlib backend and pinned public MIME metadata. Native3.11 optional-reader qualification NOT_RUN;36 pure/inert tests pass each runtime."
+    },
+    {
+      "id": "FEC-P02",
+      "status": "PENDING_INDEPENDENT_REVIEW",
+      "evidence": "Implementation/test/qualifier exact pins frozen; implementing worker does not certify milestone."
+    },
+    {
+      "id": "FEC-A01",
+      "status": "NOT_RUN",
+      "evidence": "No actual numeric parse or release."
+    },
+    {
+      "id": "FEC-A02",
+      "status": "NOT_RUN",
+      "evidence": "No numeric/provenance adoption."
+    },
+    {
+      "id": "FEC-S01",
+      "status": "BLOCKED",
+      "evidence": "Original final-ballot/geography/full selection/history/House/sealed retrospective evaluation and matched comparisons remain separate."
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "PYTHONPATH=src data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -B tests/test_fec2020_parser_v1.py",
+    "PYTHONPATH=src .venv/bin/python -B tests/test_fec2020_parser_v1.py",
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -I -B scripts/qualify_fec2020_reader_fixture_v1_20261118.py [three allocated author reader children consumed; independent reviewer requires a separate finite allocation]"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    "reports/evidence_fec2020_parser_v1_20261118"
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only public frozen config and fictional generated cell/OOXML fixtures were used. No real FEC vote rows/workbook, raw respondent/publisher data, current owner/key/.env or external service accessed. Reports contain code and authored failures only.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Pure/inert tests and one actual optional-reader MOCK fixture are author evidence, not independent implementation,actual-source or numeric acceptance.",
+    "Authored reader qualification is exact native3.12.14/macOS/bundled package/stdXML/pinned systemMIME scope; no portable whole-runtime or3.11optional-reader certificate.",
+    "Library operation deadline bounds main-thread work; process CPU/startup/import limits belong to separately qualified child entry. No G03 certificate.",
+    "Actual source acquisition/authenticity,candidate/class/date/term/party/round witnesses and rights/provenance remain separate.",
+    "No scientific effect,forecasting accuracy/probability or prospective result claimed."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Independent parser/inert-test/qualifier/packaging declaration review.",
+    "Actual numeric parse release and independent numeric/provenance adoption plus original E01 scientific gates.",
+    "Native3.11optional-reader qualification not run; full source/packaging/runtime scope is not certified."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Separate nonimplementing reviewer may run focused pure controls/counterexamples and separately bounded authored-reader qualification against frozen pins; include root-owned optional fec packaging declaration. Actual FEC numeric parse/adoption remains behind FEC-A01/A02 release/review, never inferred from fixtures.",
+  "evidence_refs": [
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/FINAL_SOURCE_PINS.json",
+      "bytes": 501,
+      "sha256": "94fd1cd8fb6d6760f174069a263dd0bf0fc64577646eab098f02c497577516ed"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/FINAL_SOURCE_PINS_INITIAL.json",
+      "bytes": 501,
+      "sha256": "a60464d42ec3b53cb788e5ba23fa73a4e86ccfe6176e37a40e30b6619581e41e"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/MIME_BEFORE_THIRD_CHILD.json",
+      "bytes": 259,
+      "sha256": "301bd07f128d4656e6e52673190feaa4bb1714315627dea6f47eab4b293db494"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/PLAN.json",
+      "bytes": 821,
+      "sha256": "b5e4c61babc656b5eec56215aae4cb9aed79bc961ac438f038efc970855683e0"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/authored_reader_312_attempt1.log",
+      "bytes": 2452,
+      "sha256": "efe7f0e6f4154ddedceaebeb74c72b727881845dbd93cddb94cf0a13c4e94dde"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/authored_reader_312_attempt2.log",
+      "bytes": 2240,
+      "sha256": "a2aafcb2fbe1e429582d7806ad8fcae08491a3d0fe5f1b7de398e0c1fd0485d5"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/authored_reader_312_attempt3.log",
+      "bytes": 1106,
+      "sha256": "288842ee298e017ca3708e9c787f67f82066487c8d1d71df8e201baac3f46027"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/e01_fec2020_senate_mapping_v1.json",
+      "bytes": 19619,
+      "sha256": "db5d3b76ed7e0d4ab6f05143e40096e7acaa7663bda0f305473f17954232a23a"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/fec2020_parser_v1.py",
+      "bytes": 22609,
+      "sha256": "9dec155bf6dd7d9b389641d0bfe7ac3478290f944efd58aa8f6c08d354937413"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/final_sources/fec2020_parser_v1.py",
+      "bytes": 25911,
+      "sha256": "13616e22b4ce1ce24bfe362a71d36477434a8c9f3d6810aa3f14d7e676de8cda"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/final_sources/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 6400,
+      "sha256": "2e3c59a3eb4397028ef50f276aa5da099c8ed7a6ff83086dc0ece2f522f97a70"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/final_sources/test_fec2020_parser_v1.py",
+      "bytes": 20325,
+      "sha256": "af9b3bfe07cb0836a8467c765612199761668b461f598657bd75d121876a3f24"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/final_sources_v1_1/fec2020_parser_v1.py",
+      "bytes": 25911,
+      "sha256": "13616e22b4ce1ce24bfe362a71d36477434a8c9f3d6810aa3f14d7e676de8cda"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/final_sources_v1_1/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 7451,
+      "sha256": "8cb44dfd2cdceb7abd9b9fb51fd6971da2a077ff7ba79bebb9ed7227f9058559"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/final_sources_v1_1/test_fec2020_parser_v1.py",
+      "bytes": 20325,
+      "sha256": "af9b3bfe07cb0836a8467c765612199761668b461f598657bd75d121876a3f24"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/initial_blocked_handoff.json",
+      "bytes": 14513,
+      "sha256": "0c7ff4018231cc3639883d0c160b027df27b5f45cb8b1375461fd6d979f1832a"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/python311_attempt1.log",
+      "bytes": 4972,
+      "sha256": "1c933e180ac9e5ab56fc764101cc0bdca1e3468a525af1082d234091f0d7c738"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/python311_attempt2.log",
+      "bytes": 5415,
+      "sha256": "1916275f07b46ac3e037571ea6d6ed48333aba68bd449ce737109c0e1863e3e5"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/python312_attempt1.log",
+      "bytes": 4972,
+      "sha256": "977e3f182795e79b367ea4c1b726508628b55f304a6ef607711a9ad887b77765"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/python312_attempt2.log",
+      "bytes": 5415,
+      "sha256": "22b90392de77e7ff56eb1891925c6db441c7bf1409fa0b706a75ea2c99acadd5"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/qualifier_before_MIME_allowance.py",
+      "bytes": 6400,
+      "sha256": "2e3c59a3eb4397028ef50f276aa5da099c8ed7a6ff83086dc0ece2f522f97a70"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/reader_attempt1_sources/fec2020_parser_v1.py",
+      "bytes": 25328,
+      "sha256": "7c2216009f527c688cd798bc0ac619c57db3c71e8ffbf4f041405cd31e9b9ad2"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/reader_attempt1_sources/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 6302,
+      "sha256": "258ac0d3de46c05cd08b1005b78c409aef2ff50f71a96ce9d4cfb8b1113066e4"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/reader_attempt1_sources/test_fec2020_parser_v1.py",
+      "bytes": 19559,
+      "sha256": "eb781e71dd9884f40171c5e44773c53cacf52f78c728a3e6d8575921401e06c8"
+    },
+    {
+      "path": "reports/evidence_fec2020_parser_v1_20261118/test_fec2020_parser_v1.py",
+      "bytes": 18845,
+      "sha256": "93909f6155467e0e594c328d587f4f14b1837f9f8f56795c9ed9eca5d5b6ff6b"
+    }
+  ],
+  "preserved_prior_blocked_handoff": {
+    "path": "reports/evidence_fec2020_parser_v1_20261118/initial_blocked_handoff.json",
+    "bytes": 14513,
+    "sha256": "0c7ff4018231cc3639883d0c160b027df27b5f45cb8b1375461fd6d979f1832a"
+  }
+}

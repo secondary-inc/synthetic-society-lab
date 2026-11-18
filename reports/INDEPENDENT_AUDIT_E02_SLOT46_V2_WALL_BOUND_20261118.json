@@ -1,0 +1,103 @@
+{
+  "TASK_ID": "INDEPENDENT_E02_SLOT46_V2_WALL_BOUND_20261118",
+  "status": "BLOCKED",
+  "decision": "Catchable wall-alarm exception is swallowed by best-effort cleanup; the stated hard operation-wall bound is not preserved. Resolve before the one full closed-owner integration.",
+  "source_refs": [
+    {
+      "bytes": 9023,
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2.py",
+      "sha256": "d86cd6287f6cc20a709721198f9640668c03dfcccde393f09abbe65fd9aa4543"
+    },
+    {
+      "bytes": 22509,
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py",
+      "sha256": "ce0b810460e7f291f6d18044bba2d9fbef128f1972f5896589aab8fb1654193b"
+    },
+    {
+      "bytes": 10562,
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2_client.py",
+      "sha256": "1c50e219fdf77d7766438aee20afdfab7c0b33864d1726d429500b89bb88ef85"
+    },
+    {
+      "bytes": 3814,
+      "path": "scripts/launch_e02_slot46_v2_20261118.py",
+      "sha256": "6cc33b0ffac2d3d19043a3b0e183d751e5cc809fc9e75fea5041d580cd7970f0"
+    },
+    {
+      "bytes": 18844,
+      "path": "scripts/qualify_e02_slot46_v2_20261118.py",
+      "sha256": "1d363da9e2a93e61337864eebd7de8bc4458e046cb4cee023cbb5fc2deafbece"
+    },
+    {
+      "bytes": 8981,
+      "path": "tests/test_wrapper_slot46_v2.py",
+      "sha256": "cff3bff7a94406233d5e68060e7c81df5b5ec2c306e33dcf7eafc59e46158430"
+    },
+    {
+      "bytes": 1199,
+      "path": "configs/e02_wrapper_slot46_v2_20261118.json",
+      "sha256": "7de60b567c88bc9b9611699a91b8fef2eac70765b228631d46d07667718e7555"
+    }
+  ],
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E02_SLOT46_V2_WALL_BOUND_20261118.json"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/wall_cleanup_smoke.py",
+      "bytes": 3178,
+      "sha256": "56c831bd1c1aaebe97a8bea540613aa2bc1916f622b89009f22f77e1f2026f69"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/wall_cleanup_initial.log",
+      "bytes": 504,
+      "sha256": "60afbfb4570f557937af6a860dd0c2bf67fca70942eac2b386cff861f853341c"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "One fast native3.12 entry smoke with authored owner/key/HTTP doubles and native SIGALRM interval scaled240\u21920.15seconds; no normal owner or full integration."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "actual_key_reads": 0,
+    "configured_main_timer_arguments": [
+      240,
+      0
+    ],
+    "current_owner_calls": 0,
+    "elapsed_seconds": 0.3112724579987116,
+    "full_closed_owner_integration": false,
+    "kind": "AUTHORED_SCALED_WALL_SMOKE",
+    "network_calls": 0,
+    "original_error_preserved": true,
+    "smoke_alarm_seconds": 0.15,
+    "trace": [
+      "catalog-A.json",
+      "catalog-B.json",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-request.json",
+      "failure-initial-v1.json",
+      "TRANSITION_ENTERED",
+      "FALLBACK_AFTER_WALL_TIMEOUT",
+      "failure.json",
+      "JOURNAL_CLOSE"
+    ]
+  },
+  "finding": {
+    "id": "SLOT46-WALL-01",
+    "priority": 2,
+    "file": "scripts/launch_e02_slot46_v2_20261118.py",
+    "mechanism": "SIGALRM raises TimeoutError. Actual client cleanup catches BaseException around transition/readback, then runs fallback CLOSE, writes failure and closes journal after alarm.",
+    "evidence": "Scaled alarm fires in authored transition sleep. Trace contains fallback/failure/journal close after the alarm; main elapsed0.311seconds for0.15-second alarm. Configured production call remained240.",
+    "required_correction": "Make the hard wall termination noncatchable by Python cleanup (default SIGALRM termination is a suitable narrow CLI approach) while retaining ordinary-error/cancellation cleanup and preserving reservations on abrupt stop."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only source and authored small control data; no current or closed owner reads, actual key, raw model responses, network or financial writes.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "Scaled smoke proves mechanism, not an observed actual240-second overrun or the historical59CPUcause.",
+    "This does not consume the one full current1189-copy integration allocation; zero such integrations run by this reviewer.",
+    "Hard deadline termination may omit final diagnostic or cleanup; outstanding holds must remain and must never be cleared or replayed."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "SLOT46-WALL-01 and final exact source qualification."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Root owns narrow launcher hard-deadline correction. Independently rerun scaled native mechanism on exact successor, then run one allotted full HTTPfailure plus owned-close adverse integration."
+}

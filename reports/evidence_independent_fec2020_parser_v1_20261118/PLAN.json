@@ -1,0 +1,33 @@
+{
+  "status": "AWAITING_FINAL_SOURCE_PINS_NO_QUALIFICATION_RUN_YET",
+  "recorded_at_utc": "2026-11-18T17:10:30.037998+00:00",
+  "scope": "Independent candidate-only parser review; no actual rawworkbook numeric parse, owner/key/network/model/install/G03/currentledger/wholeCI.",
+  "owned_paths": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_PARSER_V1_20261118.json",
+    "reports/evidence_independent_fec2020_parser_v1_20261118/"
+  ],
+  "pure_focused_suite_allocation": {
+    "runtimes": [
+      "3.12.14",
+      "3.11.17"
+    ],
+    "per_runtime_wall_seconds": 120,
+    "per_runtime_CPU_seconds": 120
+  },
+  "additional_fresh_reader_children_max": 2,
+  "each_adversarial_bounds": {
+    "wall_seconds": 120,
+    "CPU_seconds": 120,
+    "zip_bytes": 8388608,
+    "expanded_bytes": 67108864,
+    "cells": 16000,
+    "output_bytes": 4194304,
+    "console_bytes": 65536
+  },
+  "total_review_wall_minutes": 15,
+  "static_hypotheses_not_yet_findings": [
+    "UTF16 DTD bypass of ASCII preflight token detection",
+    "Uppercase XML suffix bypass of case-sensitive extension scan"
+  ],
+  "optional_reader": "No openpyxl/et_xmlfile distribution found in inspected two runtime site-packages; no install allowed. Actual fresh-reader qualification NOT_RUN unless an existing suitable runtime is supplied."
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "FEC_AUTHORED_READER_SYSTEM_MIME_INVENTORY",
+  "purpose": "Read-only standard public system MIME type tables needed by openpyxl package import; no workbook, key, owner or network. Separate FEC fixture scope only.",
+  "known_paths": [
+    "/etc/mime.types",
+    "/etc/httpd/mime.types",
+    "/etc/httpd/conf/mime.types",
+    "/etc/apache/mime.types",
+    "/etc/apache2/mime.types",
+    "/usr/local/etc/httpd/conf/mime.types",
+    "/usr/local/lib/netscape/mime.types",
+    "/usr/local/etc/httpd/conf/mime.types",
+    "/usr/local/etc/mime.types"
+  ],
+  "existing": [
+    {
+      "logical_path": "/etc/apache2/mime.types",
+      "resolved_path": "/private/etc/apache2/mime.types",
+      "bytes": 61375,
+      "sha256": "57265fdf030202387c23e44283d440cab368a031214566b538b4b27064ed23df",
+      "mode": "0o644",
+      "uid": 0
+    }
+  ],
+  "read_byte_limit": 1048576,
+  "actual_read_bytes": 61375
+}

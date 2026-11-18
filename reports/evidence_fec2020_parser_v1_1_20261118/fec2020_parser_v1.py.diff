@@ -1,0 +1,11 @@
+--- FROZEN_V1/src/civiclab/e01/fec2020_parser_v1.py
++++ CORRECTED_V1_1/src/civiclab/e01/fec2020_parser_v1.py
+@@ -382,7 +382,7 @@
+                         and ".." not in Path(item.filename).parts, "ARCHIVE_MEMBER")
+                 require("externallinks/" not in item.filename.lower() and "vbaproject" not in item.filename.lower(), "EXTERNAL_LINK_OR_MACRO")
+                 require("\\" not in item.filename, "ARCHIVE_MEMBER")
+-                if item.filename.endswith((".xml", ".rels")):
++                if item.filename.casefold().endswith((".xml", ".rels")):
+                     content = archive.read(item)
+                     xml_preflight(content)
+             return {"members": len(members), "declared_expanded_bytes": sum(m.file_size for m in members)}
