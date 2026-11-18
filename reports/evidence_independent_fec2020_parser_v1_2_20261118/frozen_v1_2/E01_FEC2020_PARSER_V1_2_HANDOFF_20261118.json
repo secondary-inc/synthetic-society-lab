@@ -1,0 +1,64 @@
+{
+  "TASK_ID": "FEC_PARSER_V1_2_MEMBER_SELECTION_CORRECTION",
+  "status": "ROOT_IMPLEMENTED_PENDING_INDEPENDENT_REVIEW",
+  "recorded_at_utc": "2026-11-18T17:57:56.092887+00:00",
+  "finding": "reports/INDEPENDENT_AUDIT_FEC2020_PARSER_V1_1_20261118.json",
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "bytes": 28665,
+      "sha256": "0795e2012be6b0cd36bb7c2a4805320c773f654260bfd764f9ae039740c1a2dc"
+    },
+    {
+      "path": "tests/test_fec2020_parser_v1.py",
+      "bytes": 23940,
+      "sha256": "2b64f9e99cb29d0d8a5652a3edea4adf7d3d1ec33c3ef53d3979facef87cc251"
+    },
+    {
+      "path": "scripts/qualify_fec2020_reader_fixture_v1_20261118.py",
+      "bytes": 7451,
+      "sha256": "8cb44dfd2cdceb7abd9b9fb51fd6971da2a077ff7ba79bebb9ed7227f9058559"
+    },
+    {
+      "path": "reports/FEC_OPAQUE_PART_IDENTITY_20261118.json",
+      "bytes": 3582,
+      "sha256": "4dd453580ea758854e823f77975a0ccc7b43811dc6073eece63b1ecdfa132321"
+    }
+  ],
+  "FILES_CHANGED": [
+    "src/civiclab/e01/fec2020_parser_v1.py",
+    "tests/test_fec2020_parser_v1.py"
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "pure": {
+      "3.12.14": 42,
+      "3.11.17": 42,
+      "status": "PASS"
+    },
+    "logs": [
+      {
+        "path": "reports/evidence_fec2020_parser_v1_2_20261118/pure311.log",
+        "bytes": 6423,
+        "sha256": "176f368fed25ed07371c733b2691243e8cefbfd5721772adb5182b49b30fbb47"
+      },
+      {
+        "path": "reports/evidence_fec2020_parser_v1_2_20261118/pure312.log",
+        "bytes": 6423,
+        "sha256": "0f4a10f6cdf5f18474a9482ba74deabbabf2f794845d33802c4b939e7e5f1edc"
+      }
+    ],
+    "all_prior_39_test_bodies_unchanged": true,
+    "native_reader_corrected_version": "NOT_RUN_BY_ROOT",
+    "actual_numeric_source_parse": "NOT_RUN"
+  },
+  "implementation": "Scan every non-directory ZIP member with the DTD/external-relationship rejecting XML parser regardless of suffix. Exactly17 opaque printerSettings files from the pinned source are allowed only with exactname+size+SHA. Changed or unknown binaries refuse. No vote/stage/party/cohort/scoring/adoption logic changed.",
+  "opaque_provenance": "Root reverified exact6251110-byte sourceSHA and read ZIP names/binary printerSettings identities only;94157binarybytes, zero numeric cell interpretation. Hash metadata is public; binarycontents remainlocal.",
+  "limits": "Same source/archive/cell/output/runtime bounds. Zero new network/model calls or installs.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "UNRESOLVED_BLOCKERS": [
+    "Independent final-code controls and native reader tests",
+    "FEC-A01 candidate-only read and A02 independent numeric/provenance review",
+    "Original E01 source/feature/selection/evaluation gates remain open"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Independent V1.2 recheck on exact finalpins; no sourceadoption from unit fixtures."
+}

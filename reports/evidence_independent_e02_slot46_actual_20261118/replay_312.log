@@ -1,0 +1,70 @@
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_e02_slot46_actual_20261118/review_closed_once.py", line 69, in <module>
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py", line 249, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py", line 247, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 286, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 279, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 283, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 259, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 231, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 417, in _verify
+    state,head=super()._verify(db)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/additional_compatibility_owner_v1.py", line 251, in _verify
+    self._apply(event['body'],state); history.append(event); previous=h
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py", line 152, in _apply
+    if b is None:return super()._apply(event,state)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py", line 151, in _apply
+    if b is None:return super()._apply(event,state)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 201, in _apply
+    if study is None:return super()._apply(event,state)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 194, in _apply
+    if study is None:return super()._apply(event,state)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 198, in _apply
+    if study is None:return super()._apply(event,state)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 175, in _apply
+    if study is None:return super()._apply(event,state)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 167, in _apply
+    if study is None:return super()._apply(event,state)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 93, in _apply
+    if event['kind']!=CONTINUE:return super()._apply(event,state)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 328, in _apply
+    q=validate_packet(payload['packet'],expected_packet_hash=canonical_hash(payload['packet']))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 131, in validate_packet
+    or p['code_contract_hash']!=canonical_hash(code_contract())
+                                               ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_e02_slot46_actual_20261118/review_closed_once.py", line 51, in audit
+AssertionError

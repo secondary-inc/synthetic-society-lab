@@ -399,7 +399,10 @@ def archive_preflight(raw):
             require(len({m.filename for m in members}) == len(members), "DUPLICATE_ARCHIVE_MEMBER")
             for item in members:
                 require(not item.flag_bits & 1 and item.compress_type in {zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED}
-                        and item.file_size <= 33554432 and not item.filename.startswith("/")
+                        # The pinned workbook contains one 41,139,508-byte XML
+                        # member. Keep a finite 48 MiB member ceiling inside
+                        # the unchanged 64 MiB aggregate expansion ceiling.
+                        and item.file_size <= 50331648 and not item.filename.startswith("/")
                         and ".." not in Path(item.filename).parts, "ARCHIVE_MEMBER")
                 require("externallinks/" not in item.filename.lower() and "vbaproject" not in item.filename.lower(), "EXTERNAL_LINK_OR_MACRO")
                 require("\\" not in item.filename, "ARCHIVE_MEMBER")

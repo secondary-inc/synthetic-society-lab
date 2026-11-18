@@ -1,0 +1,52 @@
+{
+  "actual_reader_or_openpyxl_calls": 0,
+  "allocation": {
+    "accepted_preflight_calls": 1,
+    "automatic_retries": 0,
+    "remaining": 0
+  },
+  "consumed_A01_scope_replayed": false,
+  "error": "Own ASCII member-name filter omitted square brackets used in standard[Content_Types].xml. RuntimeError PUBLIC_MEMBER_METADATA_BOUND before reading that member, not accepted parser refusal.",
+  "evidence": [
+    {
+      "bytes": 455,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/PLAN.json",
+      "sha256": "be04c1957343a8fe00321cebb881cdb3070ee22ca259bfe0db8f31c8c4cc8f5a"
+    },
+    {
+      "bytes": 785,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/console.log",
+      "sha256": "28e65345d29df74ea9257366f091c499401b77910478ddc9e9de32123b3542cb"
+    },
+    {
+      "bytes": 6201,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/diagnose_once.py",
+      "sha256": "b82588efbd1f5a9916d4f7a32798f36a03687d374c588993d4525850ecb58132"
+    },
+    {
+      "bytes": 466,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/execution.json",
+      "sha256": "3ea48ed14337de8249c4cf38380be3bddb68c81748c4ec8e9081f9740fd167ad"
+    }
+  ],
+  "execution": {
+    "CPU_seconds": 0.033963,
+    "command": [
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+      "-I",
+      "-B",
+      "-S",
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_preflight_diagnostic_20261118/diagnose_once.py"
+    ],
+    "console_bytes": 785,
+    "console_sha256": "28e65345d29df74ea9257366f091c499401b77910478ddc9e9de32123b3542cb",
+    "exit": 1,
+    "wall_seconds": 0.04190583300078288
+  },
+  "implementation_or_guard_changes": 0,
+  "kind": "INDEPENDENT_FEC_PREFLIGHT_DIAGNOSTIC_ATTEMPT1",
+  "next": "Separate root-bounded allocation needed for versioned diagnostic correction; no actual scope retry or source adoption.",
+  "numeric_values_extracted": 0,
+  "recorded_at_utc": "2026-11-18T18:05:54.623604+00:00",
+  "status": "FAILED_OWN_METADATA_FILTER_ORIGINAL_REFUSAL_UNKNOWN"
+}

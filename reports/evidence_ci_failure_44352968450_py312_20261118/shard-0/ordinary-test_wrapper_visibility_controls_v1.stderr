@@ -1,0 +1,51 @@
+CI_SETUP_FAILURE_DETAIL_BEGIN
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 967, in main
+    receipt = child_entry(ROOT, args.child, args.phase, test_module=args.test_module,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 617, in child_entry
+    with ordinary_import_context(root):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 269, in ordinary_import_context
+    finder = OrdinaryNamespaceFinder(root)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 199, in __init__
+    self.bare_names = {p.stem for p in self.tests.glob("*.py")}
+                                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 1093, in glob
+    selector = _make_selector(tuple(pattern_parts), self._flavour, case_sensitive)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 103, in _make_selector
+    return cls(pat, child_parts, flavour, case_sensitive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 198, in __init__
+    self.match = _compile_pattern(pat, case_sensitive)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 109, in _compile_pattern
+    return re.compile(fnmatch.translate(pat), flags).match
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/__init__.py", line 228, in compile
+    return _compile(pattern, flags)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/__init__.py", line 307, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/_compiler.py", line 754, in compile
+    code = _code(p, flags)
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/_compiler.py", line 587, in _code
+    _compile(code, p.data, flags)
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/_compiler.py", line 128, in _compile
+    _compile(code, p, _combine_flags(flags, add_flags, del_flags))
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/_compiler.py", line 111, in _compile
+    _compile(code, av[2], flags)
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/re/_compiler.py", line 100, in _compile
+    emit(ANY_ALL)
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/run_offline_ci_v1.py", line 612, in deadline
+    raise IsolationError("CI_CHILD_DEADLINE")
+IsolationError: CI_CHILD_DEADLINE
+
+CI_SETUP_FAILURE_DETAIL_END

@@ -1,0 +1,146 @@
+{
+  "kind": "INDEPENDENT_AUDIT_E02_SLOT46_V2_PARTICULAR_20261118_01",
+  "status": "PASS",
+  "scope": "Exact6002byte draft binding only; no live execution or lead release",
+  "recorded_UTC": "2026-11-18T18:02:08.252361+00:00",
+  "draft": {
+    "path": "data/processed/e02_wrapper_slot46_v2_packet_review_20261118_01/draft-packet.local.json",
+    "bytes": 6002,
+    "sha256": "4833471d80a8b79922123d2a68fe9ca69dd9907d86f10c060b0c4bfa0ca1170e"
+  },
+  "review": {
+    "path": "data/processed/e02_wrapper_slot46_v2_packet_review_20261118_01/independent-review.local.json",
+    "bytes": 213,
+    "sha256": "ad21f56a8f2bcaaf1e71977174d824920c54886823565c0194232ed9335847c0",
+    "object": {
+      "kind": "INDEPENDENT_WRAPPER_SLOT46_REVIEW_V2",
+      "reviewer_role": "independent_auditor",
+      "review_id": "8cb2e1ca87ba47f7b0da6cf1927b9435",
+      "inputs_hash": "4833471d80a8b79922123d2a68fe9ca69dd9907d86f10c060b0c4bfa0ca1170e"
+    }
+  },
+  "final_packet_canonical_sha256": "ce3888cbff40d401b778e40f3877b187067bbf70c3237a01baca43c977483d6d",
+  "checks": {
+    "exact_accepted_source_contract": true,
+    "closed_head_and_ancestry": true,
+    "never_attempted_slot46_identity": true,
+    "all_limits_exact": true,
+    "historical_price_semantics_A": true,
+    "historical_price_semantics_B": true,
+    "finite_current_window": true,
+    "original_matched_job_unchanged": true,
+    "full_validator_accepts_bound_review": true
+  },
+  "input_refs": [
+    {
+      "path": "data/processed/e02_wrapper_slot46_v2_packet_review_20261118_01/draft-packet.local.json",
+      "bytes": 6002,
+      "sha256": "4833471d80a8b79922123d2a68fe9ca69dd9907d86f10c060b0c4bfa0ca1170e"
+    },
+    {
+      "path": "reports/evidence_independent_e02_slot46_v2_20261118/FINAL_SOURCE_PINS.json",
+      "bytes": 2324,
+      "sha256": "f3f4eaddcfed7807faf74e6b23782a88027d0743d8fa88830d251879e1685030"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2.py",
+      "bytes": 9023,
+      "sha256": "d86cd6287f6cc20a709721198f9640668c03dfcccde393f09abbe65fd9aa4543"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2_owner.py",
+      "bytes": 22509,
+      "sha256": "ce0b810460e7f291f6d18044bba2d9fbef128f1972f5896589aab8fb1654193b"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_crossmodel_slot46_v2_client.py",
+      "bytes": 10562,
+      "sha256": "1c50e219fdf77d7766438aee20afdfab7c0b33864d1726d429500b89bb88ef85"
+    },
+    {
+      "path": "scripts/launch_e02_slot46_v2_20261118.py",
+      "bytes": 3989,
+      "sha256": "c3aa20858f61da0653352422cff7d89f19ae078e862113ebfb95b868c8c64cd8"
+    },
+    {
+      "path": "scripts/qualify_e02_slot46_v2_20261118.py",
+      "bytes": 18844,
+      "sha256": "1d363da9e2a93e61337864eebd7de8bc4458e046cb4cee023cbb5fc2deafbece"
+    },
+    {
+      "path": "tests/test_wrapper_slot46_v2.py",
+      "bytes": 8981,
+      "sha256": "cff3bff7a94406233d5e68060e7c81df5b5ec2c306e33dcf7eafc59e46158430"
+    },
+    {
+      "path": "configs/e02_wrapper_slot46_v2_20261118.json",
+      "bytes": 1199,
+      "sha256": "7de60b567c88bc9b9611699a91b8fef2eac70765b228631d46d07667718e7555"
+    },
+    {
+      "path": "tests/test_wrapper_slot46_hard_deadline_v2.py",
+      "bytes": 2840,
+      "sha256": "e1bcc0d2b8ea485e3153e495c5cf4297b4b7922bfbef05de158b4320714e7a98"
+    },
+    {
+      "path": "src/civiclab/e02/wrapper_canary_failure_diagnostic_v1.py",
+      "bytes": 2707,
+      "sha256": "d091c754f995f47c02ca48ded88b2cb3ab6e9d2b94b5f0c8c1374ba90eae936d"
+    },
+    {
+      "path": "scripts/collect_connectivity_billing_once.py",
+      "bytes": 11207,
+      "sha256": "0b5ea3cca5d6d71550985d1da12f9264f223662af7d6429ecab4d88b4cb8f4a7"
+    },
+    {
+      "path": "reports/E02_SLOT46_RESOURCE_DECISION_20261118.json",
+      "bytes": 2554,
+      "sha256": "bbf251e380fa6173ca78c135e2f52bcce93bc18362829e7ed2a355edaa1fa682"
+    },
+    {
+      "path": "reports/E02_SLOT46_HARD_DEADLINE_CORRECTION_20261118.json",
+      "bytes": 2077,
+      "sha256": "f21844e04a77a750878646f1582802c91385a674a6723e298ae57519d9833226"
+    },
+    {
+      "path": "reports/INDEPENDENT_AUDIT_E02_SLOT46_V2_IMPLEMENTATION_20261118.json",
+      "bytes": 10826,
+      "sha256": "5106e2af6277113bff16df1209269d8fc4184d1e429bb18f6cdb45da9616c974"
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-01/manifest.local.json",
+      "bytes": 4533,
+      "sha256": "4cc86b9df8c149923eafc3fd8641c1445555f30b1e806045ca9a9f40883d8481"
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-01/owner-v4-head.local.json",
+      "bytes": 297,
+      "sha256": "6acc88d3f5da32980616d4810c9e523e53590a78305b7f07e39826eefa8fe721"
+    },
+    {
+      "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-01/journal/packet.json",
+      "bytes": 6201,
+      "sha256": "61e5297bc1553747f5577db34556e35da8120357ee90088542d99d1b10a85cbd"
+    },
+    {
+      "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+      "bytes": 82688,
+      "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+    }
+  ],
+  "closed_metadata_and_explicit_source_read_bytes": 209363,
+  "observed_wall_seconds": 0.113933209,
+  "limits": {
+    "wall_seconds": 300,
+    "closed_metadata_bytes": 16777216
+  },
+  "model_network_current_owner_key_access": 0,
+  "cost_usd": 0,
+  "limitations": [
+    "Closed head is not a current owner observation. Runtime must lock and verify exact current ancestry/head before grant.",
+    "Historical leases preserve every price semantic; neither this review nor the leases are fresh catalog evidence. Two counted fresh raw catalogs and normal owner proof verification remain mandatory.",
+    "Slots44/45 consumed; no replay, hold release or ledger reset. Real conservative exposure17152microUSD and six holds remain unchanged. New reservation<=1785microUSD and existing caps enforced at runtime.",
+    "Exact independent review is a binding prerequisite, not a lead release or an instruction to execute. Main120soft/125hard CPU and240wall preserve hard-stop uncertainty limitations.",
+    "Original full80 scientific analysis remains incomplete; no new responses or actual bills observed."
+  ]
+}

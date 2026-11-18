@@ -1,0 +1,68 @@
+--- consumed-A01
++++ unexecuted-A02
+@@ -1,16 +1,17 @@
+-"""Recorded FEC-A01 child invocation; one fixed source and private output."""
++"""Recorded FEC-A02 child invocation; one fixed source and private output."""
+ from pathlib import Path
+ import hashlib
+ import json
+ import os
+ import resource
++import re
+ import signal
+ import sys
+ import time
+ import types
+ 
+ ROOT = Path(__file__).resolve().parents[2]
+-SCOPE = ROOT / "data/processed/e01_fec2020_candidate_actual_20261118_01"
++SCOPE = ROOT / "data/processed/e01_fec2020_candidate_actual_20261118_02"
+ SOURCE = ROOT / "data/raw/e01_fec2020_workbook_20261118/federalelections2020.xlsx"
+ PARSER = ROOT / "src/civiclab/e01/fec2020_parser_v1.py"
+ CONTRACT = ROOT / "configs/e01_fec2020_senate_mapping_v1.json"
+@@ -41,29 +42,29 @@
+         if event.startswith("socket.") or event in {
+             "subprocess.Popen", "os.fork", "os.posix_spawn", "os.system", "sqlite3.connect"
+         }:
+-            raise RuntimeError("FEC_A01_NO_NETWORK_OR_PROCESS")
++            raise RuntimeError("FEC_A02_NO_NETWORK_OR_PROCESS")
+         if event == "ctypes.dlopen" and args != (None,):
+-            raise RuntimeError("FEC_A01_NO_FOREIGN_DLOPEN")
++            raise RuntimeError("FEC_A02_NO_FOREIGN_DLOPEN")
+         if event == "open" and not isinstance(args[0], int):
+             path = Path(args[0]).resolve()
+             flags = args[2]
+             writing = flags & (os.O_WRONLY | os.O_RDWR | os.O_CREAT | os.O_TRUNC | os.O_APPEND)
+             if writing:
+                 if path != OUTPUT or not flags & os.O_EXCL:
+-                    raise RuntimeError("FEC_A01_WRITE_SCOPE")
++                    raise RuntimeError("FEC_A02_WRITE_SCOPE")
+             else:
+                 if not (path in {SOURCE, PARSER, CONTRACT, MIME} or path.is_relative_to(runtime)):
+-                    raise RuntimeError("FEC_A01_READ_SCOPE")
++                    raise RuntimeError("FEC_A02_READ_SCOPE")
+                 if path.is_file():
+                     reads[0] += path.stat().st_size
+                 if reads[0] > 67108864:
+-                    raise RuntimeError("FEC_A01_READ_BOUND")
++                    raise RuntimeError("FEC_A02_READ_BOUND")
+     sys.addaudithook(guard)
+     mime = MIME.read_bytes()
+     assert len(mime) == 61375 and hashlib.sha256(mime).hexdigest() == "57265fdf030202387c23e44283d440cab368a031214566b538b4b27064ed23df"
+     code = PARSER.read_bytes()
+-    assert hashlib.sha256(code).hexdigest() == "0795e2012be6b0cd36bb7c2a4805320c773f654260bfd764f9ae039740c1a2dc"
+-    module = types.ModuleType("fec_a01_exact_reviewed_parser")
++    assert hashlib.sha256(code).hexdigest() == "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
++    module = types.ModuleType("fec_a02_exact_reviewed_parser")
+     module.__file__ = str(PARSER)
+     sys.modules[module.__name__] = module
+     exec(compile(code, str(PARSER), "exec"), module.__dict__)
+@@ -97,5 +98,7 @@
+         main()
+     except BaseException as error:
+         # No raw cell or arbitrary exception text is printed.
+-        print(json.dumps({"status": "STOPPED_NO_RETRY", "error_type": type(error).__name__}))
++        code = str(error)
++        safe = code if type(error).__name__ in {"ParserRefused", "RuntimeError"} and re.fullmatch(r"[A-Z][A-Z0-9_]{0,79}", code) else "OMITTED"
++        print(json.dumps({"status": "STOPPED_NO_RETRY", "error_type": type(error).__name__, "safe_code": safe}))
+         raise SystemExit(1)

@@ -1,0 +1,50 @@
+--- frozen_V1_1
++++ frozen_V1_2
+@@ -30,6 +30,27 @@
+ SUMMARY = "7. Table 6 Senate by Party"
+ RANGES = {SENATE: (542, 26), SUMMARY: (78, 7),
+           "14. 2020 Party Labels": (121, 5), "1. 2020 Publication Information": (150, 2)}
++# Exact opaque printer settings in the one pinned FEC source.
++# Every other member is parsed as XML regardless of its filename suffix.
++OPAQUE_PARTS = {
++    'xl/printerSettings/printerSettings1.bin': (4821, 'ac43c34e45e564ed98b2e1547a3dc42dd51ca069caba2b9e090914cad3f6615b'),
++    'xl/printerSettings/printerSettings2.bin': (8800, '8a7c955ec8e5578364177da2fad65b27c693b9e42e4ea3e839ccba917a8e032e'),
++    'xl/printerSettings/printerSettings3.bin': (5528, '1c519dd3f54033b3a310954f4c1242de99ddc04a4f03796ac40c361840a5fd8f'),
++    'xl/printerSettings/printerSettings4.bin': (5528, '1c519dd3f54033b3a310954f4c1242de99ddc04a4f03796ac40c361840a5fd8f'),
++    'xl/printerSettings/printerSettings5.bin': (5528, '1c519dd3f54033b3a310954f4c1242de99ddc04a4f03796ac40c361840a5fd8f'),
++    'xl/printerSettings/printerSettings11.bin': (8800, '8a7c955ec8e5578364177da2fad65b27c693b9e42e4ea3e839ccba917a8e032e'),
++    'xl/printerSettings/printerSettings14.bin': (4821, '0880d8a02b0c8fb1da513dfa5bc4c38d7702257d4054a8de87d16dd273807643'),
++    'xl/printerSettings/printerSettings15.bin': (4821, '0880d8a02b0c8fb1da513dfa5bc4c38d7702257d4054a8de87d16dd273807643'),
++    'xl/printerSettings/printerSettings16.bin': (4821, '0880d8a02b0c8fb1da513dfa5bc4c38d7702257d4054a8de87d16dd273807643'),
++    'xl/printerSettings/printerSettings17.bin': (4821, '0880d8a02b0c8fb1da513dfa5bc4c38d7702257d4054a8de87d16dd273807643'),
++    'xl/printerSettings/printerSettings9.bin': (4821, '26a3634737c60e4e9a43393bb93502afeb561c5253a852e38dab1390030290b6'),
++    'xl/printerSettings/printerSettings8.bin': (5528, '1c519dd3f54033b3a310954f4c1242de99ddc04a4f03796ac40c361840a5fd8f'),
++    'xl/printerSettings/printerSettings7.bin': (5528, '1c519dd3f54033b3a310954f4c1242de99ddc04a4f03796ac40c361840a5fd8f'),
++    'xl/printerSettings/printerSettings12.bin': (4821, '26a3634737c60e4e9a43393bb93502afeb561c5253a852e38dab1390030290b6'),
++    'xl/printerSettings/printerSettings6.bin': (5528, '1c519dd3f54033b3a310954f4c1242de99ddc04a4f03796ac40c361840a5fd8f'),
++    'xl/printerSettings/printerSettings10.bin': (4821, 'f4852f34b27abefb3256ca573d68500ca71f6484b54a4076f55a455bfbc0741b'),
++    'xl/printerSettings/printerSettings13.bin': (4821, '26a3634737c60e4e9a43393bb93502afeb561c5253a852e38dab1390030290b6'),
++}
+ STAGES = ((11, "PRIMARY"), (13, "PRIMARY_RUNOFF"), (15, "GENERAL"), (17, "GENERAL_RUNOFF"))
+ STATES = frozenset("AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split())
+ OTHER_PARTIES = frozenset("W AKI LIB APV UPC IDE IND GRE CON WWP NPY NPA OTH UST NLP LMN GLC OBF LWR PG/PRO W(D) W(R) W(GRE)".split())
+@@ -382,8 +403,17 @@
+                         and ".." not in Path(item.filename).parts, "ARCHIVE_MEMBER")
+                 require("externallinks/" not in item.filename.lower() and "vbaproject" not in item.filename.lower(), "EXTERNAL_LINK_OR_MACRO")
+                 require("\\" not in item.filename, "ARCHIVE_MEMBER")
+-                if item.filename.casefold().endswith((".xml", ".rels")):
+-                    content = archive.read(item)
++                if item.is_dir():
++                    require(item.file_size == 0, "ARCHIVE_DIRECTORY_PAYLOAD")
++                    continue
++                content = archive.read(item)
++                opaque_pin = OPAQUE_PARTS.get(item.filename)
++                if opaque_pin is not None:
++                    require((len(content), hashlib.sha256(content).hexdigest()) == opaque_pin,
++                            "OPAQUE_PART_PIN")
++                else:
++                    # A worksheet relationship may target any filename. Suffix
++                    # checks cannot establish which members the reader parses.
+                     xml_preflight(content)
+             return {"members": len(members), "declared_expanded_bytes": sum(m.file_size for m in members)}
+     except (zipfile.BadZipFile, ET.ParseError):

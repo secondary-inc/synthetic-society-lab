@@ -382,6 +382,39 @@ class ArchiveSuffixRegressionTests(unittest.TestCase):
         self.assertEqual(result['declared_expanded_bytes'],sum(len(v.encode() if isinstance(v,str) else v) for v in members.values()))
 
 
+class ArchiveExpansionBounds(unittest.TestCase):
+    def check_members(self, sizes):
+        members=[]
+        for index,size in enumerate(sizes):
+            info=zipfile.ZipInfo('xl/worksheets/mock'+str(index)+'.xml')
+            info.file_size=size;info.compress_type=zipfile.ZIP_DEFLATED
+            members.append(info)
+        fake=mock.MagicMock()
+        fake.__enter__.return_value=fake
+        fake.infolist.return_value=members
+        fake.read.return_value=b'<worksheet>AUTHORED_BOUNDARY</worksheet>'
+        with mock.patch.object(p.zipfile,'ZipFile',return_value=fake):
+            result=p.archive_preflight(b'AUTHORED_CENTRAL_DIRECTORY')
+        return result,fake
+
+    def test_known_source_size_and_member_ceiling_are_admissible(self):
+        for size in (41139508,50331648):
+            with self.subTest(size=size):
+                result,fake=self.check_members([size])
+                self.assertEqual(result['declared_expanded_bytes'],size)
+                fake.read.assert_called_once()
+
+    def test_member_ceiling_plus_one_refuses_before_read(self):
+        with self.assertRaisesRegex(p.ParserRefused,'ARCHIVE_MEMBER'):
+            self.check_members([50331649])
+
+    def test_aggregate_ceiling_is_unchanged(self):
+        with self.assertRaisesRegex(p.ParserRefused,'ARCHIVE_BOUND'):
+            self.check_members([50331648,16777217])
+        result,_=self.check_members([50331648,16777216])
+        self.assertEqual(result['declared_expanded_bytes'],67108864)
+
+
 if __name__=='__main__':
     import resource
     resource.setrlimit(resource.RLIMIT_CORE,(0,0));resource.setrlimit(resource.RLIMIT_CPU,(119,120))

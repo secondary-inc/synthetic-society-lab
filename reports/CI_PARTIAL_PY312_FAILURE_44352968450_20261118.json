@@ -1,0 +1,262 @@
+{
+  "kind": "PARTIAL_HOSTED_PY312_CI_OUTCOME",
+  "run_id": 44352968450,
+  "head_sha": "a3e7636744bf45cfc79c0c0d3da75c26861e2f3a",
+  "completed_shards": [
+    0,
+    2
+  ],
+  "pending_shards": [
+    1,
+    3
+  ],
+  "status": "FAIL_COMPLETED_SHARDS",
+  "results": [
+    {
+      "shard": 0,
+      "status": "FAIL",
+      "failures": [
+        {
+          "job": "compatibility-v1-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1-portable",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1_1-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "compatibility-v1_1-portable",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "import-methods-v1-portable",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "observer-v1-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "observer-v2-historical",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1_2",
+          "status": "FAIL",
+          "reason": null,
+          "elapsed_seconds": 3.1430430099999995,
+          "execution_reason": null,
+          "errors": [
+            "ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix"
+          ],
+          "failures": []
+        },
+        {
+          "job": "ordinary-test_wrapper_crossmodel_v1_execution_20261115",
+          "status": "ERROR",
+          "reason": "CHILD_RECEIPT_OR_EXECUTION_FAILED",
+          "elapsed_seconds": 2198.066993944,
+          "execution_reason": "WALL_LIMIT",
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "ordinary-test_wrapper_visibility_controls_v1",
+          "status": "ERROR",
+          "reason": null,
+          "elapsed_seconds": 0.08455463200016311,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        },
+        {
+          "job": "probe-v2-portable",
+          "status": "ERROR",
+          "reason": "COORDINATOR_WALL_LIMIT",
+          "elapsed_seconds": null,
+          "execution_reason": null,
+          "errors": null,
+          "failures": null
+        }
+      ]
+    },
+    {
+      "shard": 2,
+      "status": "FAIL",
+      "failures": [
+        {
+          "job": "ordinary-test_e01_pypdf701_install_v1",
+          "status": "FAIL",
+          "reason": null,
+          "elapsed_seconds": 1.9815532150000053,
+          "execution_reason": null,
+          "errors": [
+            "InstallerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix"
+          ],
+          "failures": []
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/SUMMARY.json",
+      "bytes": 596513,
+      "sha256": "d36af614021011aa25dd81666c55fed943b562359d5912f73a7b7f5afdb9ab03"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/compatibility-v1-historical-RESULT.json",
+      "bytes": 91,
+      "sha256": "11261e038115a5325477d2cafabe061cad23f4afea6472f106a5ee668535e257"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/compatibility-v1-portable-RESULT.json",
+      "bytes": 89,
+      "sha256": "ec3968f72eac7a686abc3f30153b2df7af0f58eb2d190e34ca3839ae7c9bafbd"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/compatibility-v1_1-historical-RESULT.json",
+      "bytes": 93,
+      "sha256": "f0e763b1e68bf103b3062077bfd9c1864e4be57eb551ea6699029eb18d244a13"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/compatibility-v1_1-portable-RESULT.json",
+      "bytes": 91,
+      "sha256": "9d3c9049b7af29a0df01651778b2cfe512fa6fe5ca6004b5cad83d9d7db108f0"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/download_receipt.json",
+      "bytes": 151,
+      "sha256": "38a427aad843f0c6c191c455feb3894fb4ddb0eeb4c7daa41809493d10a90649"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/import-methods-v1-portable-RESULT.json",
+      "bytes": 90,
+      "sha256": "ad43877f1fbbf49844e4f82933e6d892ed0dc19070af6e8cc8589773e01cb603"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/observer-v1-historical-RESULT.json",
+      "bytes": 86,
+      "sha256": "e7ef47cbd1d4da7e11c0274d909f261c1124c6b42e37cec260b686d107e8266c"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/observer-v2-historical-RESULT.json",
+      "bytes": 86,
+      "sha256": "896eebaef12d67fda891628096bd92251f86ededd5de500c36a449a0af58a729"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_e01_pypdf701_install_v1_2-RESULT.json",
+      "bytes": 26698,
+      "sha256": "7ec69c53d4bfb9ddd28e2ab134fe3e8c77033eb0cf5b704176d472eef64a960c"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_e01_pypdf701_install_v1_2.stderr",
+      "bytes": 23873,
+      "sha256": "75ef15d65ef940b848f35bfb7565f18c6be5998240c259f2bd5fc2ef9538d5bc"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_e01_pypdf701_install_v1_2.stdout",
+      "bytes": 30830,
+      "sha256": "4c78b808ec34073e8298ceb0bf0dcf5b2e9fd97a342d6fff099145e09b84aa4e"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_wrapper_crossmodel_v1_execution_20261115-RESULT.json",
+      "bytes": 457,
+      "sha256": "afc4d58d08f3b2ece1e00773e571912221f12afa91f4f005c2d98743ccec2b7b"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_wrapper_crossmodel_v1_execution_20261115.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_wrapper_crossmodel_v1_execution_20261115.stdout",
+      "bytes": 734,
+      "sha256": "c70ab7031cba5ac1d1ae2004644a4058800e4c295d5341a88e1b91abba66a3f2"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_wrapper_visibility_controls_v1-RESULT.json",
+      "bytes": 897,
+      "sha256": "0610e2f4965e23e84135c8657984fabf2740b542c65db33bc04635c2f45b498e"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_wrapper_visibility_controls_v1.stderr",
+      "bytes": 3404,
+      "sha256": "b959b088ff1ee375ce0b7758d1ce0e563e58d1e8f212d298aea97f368dee5f73"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/ordinary-test_wrapper_visibility_controls_v1.stdout",
+      "bytes": 530,
+      "sha256": "a9853db9c440a3e01c3ce780650b1843235bb94b4cc842cc156c7b38d8b93a1e"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-0/probe-v2-portable-RESULT.json",
+      "bytes": 81,
+      "sha256": "223c1482cc41b291cb1880ae2ead8e1fa292fca026ade1dbd0188bf22f0e33e3"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-2/SUMMARY.json",
+      "bytes": 543132,
+      "sha256": "b65ba5d9c1c1d31d509a5ac748ca0f2af233e96ac14d08c30f94bade8e065b88"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-2/download_receipt.json",
+      "bytes": 151,
+      "sha256": "a194a75318f3f683080ff262d397d2f14db17615bfe30360f8dda4924410871d"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-2/ordinary-test_e01_pypdf701_install_v1-RESULT.json",
+      "bytes": 20559,
+      "sha256": "1c4ce1a46d4a8698e0d8b29b1af3fa626af4b5c3f7057b98e291777c3810339d"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-2/ordinary-test_e01_pypdf701_install_v1.stderr",
+      "bytes": 18711,
+      "sha256": "df451d8e2f563b3086ab3457c59316c23e4ae05458e4a75379d639a164e7c930"
+    },
+    {
+      "path": "reports/evidence_ci_failure_44352968450_py312_20261118/shard-2/ordinary-test_e01_pypdf701_install_v1.stdout",
+      "bytes": 23660,
+      "sha256": "cc1f95c2c2ad1acde8f5aa2d64b5410cdd248999d872ddd93d4a772aa2c577b0"
+    }
+  ]
+}

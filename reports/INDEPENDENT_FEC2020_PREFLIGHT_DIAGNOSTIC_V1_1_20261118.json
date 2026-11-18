@@ -1,0 +1,263 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_FEC2020_PREFLIGHT_DIAGNOSTIC_V1_1_20261118.json",
+    "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead reviews exactsize/aggregate arithmetic and proposes narrow bounded correction if appropriate; preserve all originalattempts. Do not infer a second source read or scientific/source acceptance from this report.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 814,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/FIRST_REFUSAL_MEMBER_METADATA.json",
+      "sha256": "e64699ca1571df67ed38caefb6f6f2dc405462cbe58d58c206d279332adcaaaf"
+    },
+    {
+      "bytes": 455,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/PLAN.json",
+      "sha256": "be04c1957343a8fe00321cebb881cdb3070ee22ca259bfe0db8f31c8c4cc8f5a"
+    },
+    {
+      "bytes": 634,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/PLAN_CORRECTED_ADDITIONAL_ALLOCATION.json",
+      "sha256": "c933feee7cbbd7bbc01020bb4143118c9a6a0e58fa8b9a19cf80a6d67efc24ca"
+    },
+    {
+      "bytes": 785,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/console.log",
+      "sha256": "28e65345d29df74ea9257366f091c499401b77910478ddc9e9de32123b3542cb"
+    },
+    {
+      "bytes": 1681,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/console_corrected.log",
+      "sha256": "4f03e3408f9b2082654a03fdfb0465e0f32de3628aeb5cc3fa1f2cb9f7a39407"
+    },
+    {
+      "bytes": 6201,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/diagnose_once.py",
+      "sha256": "b82588efbd1f5a9916d4f7a32798f36a03687d374c588993d4525850ecb58132"
+    },
+    {
+      "bytes": 6209,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/diagnose_once_v1_1.py",
+      "sha256": "a6786fac81b0191068ab6b69573c1cb1db80915721c310b36e963b5e1e566b32"
+    },
+    {
+      "bytes": 466,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/execution.json",
+      "sha256": "3ea48ed14337de8249c4cf38380be3bddb68c81748c4ec8e9081f9740fd167ad"
+    },
+    {
+      "bytes": 471,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/execution_corrected.json",
+      "sha256": "da5da83a296ff29b10230d904efd335aed62d43aaf4c04b388e3850e2cf0c8d4"
+    },
+    {
+      "bytes": 4951,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/frozen_root_failed_caller.py",
+      "sha256": "23a721afa73e8e04b243ce7d66d305211dac8b6a6b6154e609e2ed08c9bdf657"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    [
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+      "-I",
+      "-B",
+      "-S",
+      "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_preflight_diagnostic_20261118/diagnose_once_v1_1.py"
+    ]
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "This establishes the firstpreflightguard responsible for observedrefusal; it does not prove all later archive/reader/row/party/summary checks will pass.",
+    "No increase to size/read/time limits, source normalization, guard weakening or actual-reader retry is made by this diagnostic. Any correction requires separate documented decision, sourceversion, tests and release.",
+    "FEC-A01 actualcandidateoutput and independentnumericA02 remain absent; original scientific/fullE01 gates remainopen."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Exact existing local source read only for hash/ZIP preflight and central-directory metadata. XML target discards numeric text and only relationship-type metadata could be recorded; atfirstrefusal relationship isnull. No workbook reader, candidate table, vote sum, feature, adoption or source redistribution. Member names/byte sizes/hashes are metadata, not permission or data-acceptance claims.",
+  "TASK_ID": "INDEPENDENT_FEC2020_PREFLIGHT_DIAGNOSTIC_CORRECTED_20261118",
+  "TESTS_RUN_AND_RESULTS": {
+    "additional_preflight_retries": 0,
+    "corrected_preflight_calls": 1,
+    "exact_guard_evaluation": "file_size<=33554432 is false; flag_bits&1==0,compression8 allowed,noabsolute/pathtraversal.",
+    "fixed_safe_code": "ARCHIVE_MEMBER",
+    "member": "xl/worksheets/sheet10.xml",
+    "metadata_followup": "ZIP centraldirectory getinfo only, no decompression/preflight repeat; stillwithin same64MiBread envelope.",
+    "prior_failed_preflight_calls": 1,
+    "remaining_guard_checks": "NOT_RUN beyond firstrefusal; no assumption external links or other future guards absent.",
+    "source_and_parser_pins": "Exact6251110-byte sourceSHA5073b6d... and28665-byte parserSHA0795e201... verified; source never edited."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "A justified separately versioned size-policy correction and bounded preflight qualification would be needed before a new actual-source scope; original consumedA01 mustnotrerun.",
+    "No candidateoutput exists for A02 numeric/provenance review."
+  ],
+  "activity": {
+    "actual_consumed_A01_scope_replayed": false,
+    "canonical_parser_or_root_caller_edits": 0,
+    "full_workbook_reader_calls": 0,
+    "network_model_key_owner_currentledger_install_calls": 0,
+    "numeric_adoption_source_adoption_forecast_consumption": false,
+    "numeric_cell_values_extracted": 0,
+    "openpyxl_imported": false
+  },
+  "evidence_basis": {
+    "central_directory_only_metadata": {
+      "additional_member_decompressions": 0,
+      "additional_preflight_calls": 0,
+      "combined_diagnostic_and_metadata_charged_read_bytes": 19657841,
+      "kind": "INDEPENDENT_FEC_DIAGNOSTIC_FIRST_MEMBER_METADATA",
+      "metadata": {
+        "absolute_path": false,
+        "aggregate_bound_bytes": 67108864,
+        "aggregate_declared_expanded_bytes": 51902709,
+        "compressed_bytes": 4805016,
+        "compression_type": 8,
+        "declared_expanded_bytes": 41139508,
+        "encryption_flag": false,
+        "exceeds_per_member_bound": true,
+        "flag_bits": 6,
+        "member": "xl/worksheets/sheet10.xml",
+        "parent_traversal": false,
+        "per_member_bound_bytes": 33554432
+      },
+      "numeric_or_URL_values_recorded": 0,
+      "recorded_at_utc": "2026-11-18T18:08:29.786446+00:00",
+      "status": "METADATA_ONLY",
+      "wall_seconds": 0.006619332998525351
+    },
+    "corrected_external_execution": {
+      "CPU_seconds": 0.139239,
+      "command": [
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/.venv/bin/python",
+        "-I",
+        "-B",
+        "-S",
+        "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_fec2020_preflight_diagnostic_20261118/diagnose_once_v1_1.py"
+      ],
+      "console_bytes": 1681,
+      "console_sha256": "4f03e3408f9b2082654a03fdfb0465e0f32de3628aeb5cc3fa1f2cb9f7a39407",
+      "exit": 0,
+      "wall_seconds": 0.1465979999920819
+    },
+    "one_delegated_preflight_result": {
+      "actual_workbook_reader_calls": 0,
+      "first_refusal_metadata": {
+        "member": "xl/worksheets/sheet10.xml",
+        "relationship": null
+      },
+      "kind": "INDEPENDENT_FEC_EXACT_PREFLIGHT_DIAGNOSTIC",
+      "members_read_before_first_refusal": [
+        {
+          "bytes": 4102,
+          "member": "[Content_Types].xml"
+        },
+        {
+          "bytes": 588,
+          "member": "_rels/.rels"
+        },
+        {
+          "bytes": 3642,
+          "member": "xl/workbook.xml"
+        },
+        {
+          "bytes": 3259,
+          "member": "xl/_rels/workbook.xml.rels"
+        },
+        {
+          "bytes": 27845,
+          "member": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "bytes": 38233,
+          "member": "xl/worksheets/sheet2.xml"
+        },
+        {
+          "bytes": 61591,
+          "member": "xl/worksheets/sheet3.xml"
+        },
+        {
+          "bytes": 47049,
+          "member": "xl/worksheets/sheet4.xml"
+        },
+        {
+          "bytes": 15234,
+          "member": "xl/worksheets/sheet5.xml"
+        },
+        {
+          "bytes": 46412,
+          "member": "xl/worksheets/sheet6.xml"
+        },
+        {
+          "bytes": 19618,
+          "member": "xl/worksheets/sheet7.xml"
+        },
+        {
+          "bytes": 20165,
+          "member": "xl/worksheets/sheet8.xml"
+        },
+        {
+          "bytes": 6287822,
+          "member": "xl/worksheets/sheet9.xml"
+        }
+      ],
+      "numeric_cell_values_extracted": 0,
+      "openpyxl_imported": false,
+      "original_validator_invocation": "Delegated unchanged archive_preflight once; ZipFile.read delegates once and records member/length; XML target delegates original start exactly once. No guard weakening.",
+      "owner_key_network_model_install_calls": 0,
+      "parser_sha256": "0795e2012be6b0cd36bb7c2a4805320c773f654260bfd764f9ae039740c1a2dc",
+      "preflight_calls": 1,
+      "read_usage": {
+        "file_read_reservation_bytes": 6831171,
+        "inflated_member_bytes": 6575560
+      },
+      "safe_refusal_code": "ARCHIVE_MEMBER",
+      "scope": "ONE_PREFLIGHT_ONLY_NO_READER_NUMERIC_EXTRACTION",
+      "source_sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e",
+      "status": "REFUSAL_IDENTIFIED",
+      "wall_seconds": 0.12074133299756795
+    }
+  },
+  "finding": "Exact acceptedV1.2 archive preflight refuses ARCHIVE_MEMBER at xl/worksheets/sheet10.xml because its declared uncompressed size41139508 exceeds33554432 per-member bound. Its encryption/path/compression checks pass. Aggregate51902709 stays below67108864. No external relationship was observed at this refusal.",
+  "initial_diagnostic_failure": {
+    "allocation": "Original onepreflight consumed, no automatic retry. Root separately authorized exactlyone correctedpreflight under same finite bounds.",
+    "cause": "Initial diagnostic regex omitted standard square brackets in[Content_Types].xml. No actual parser refusal identified in that attempt.",
+    "correction": "Versioned wrapper only adds brackets to bounded metadata names. Accepted parser/guards unchanged.",
+    "report": {
+      "bytes": 2162,
+      "path": "reports/INDEPENDENT_FEC2020_PREFLIGHT_DIAGNOSTIC_20261118.json",
+      "sha256": "da12854ac536ae20238e60af31da3e085b24f61ecfe335c6d76e0436c6effabb"
+    },
+    "status": "Preserved ownmetadatafilterfailure"
+  },
+  "limits_and_usage": {
+    "actual_corrected_process": "0.146598wall/0.139239CPU;1681Bconsole",
+    "combined_corrected_and_central_directory_logical_read_bytes": 19657841,
+    "read_cap_bytes": 67108864,
+    "remaining_corrected_preflight_calls": 0,
+    "root_additional_allocation": "onecorrectedpreflight,60wall/60CPU,64MiBread,64KiBpublicmetadata",
+    "wrappers": "Only own in-memory wrappers; ZipFile.read delegates once, original XML target.start delegates once. FixedsafeParserRefused codes only; no error text, rawcellvalues, targets orURLs recorded."
+  },
+  "original_failed_A01": {
+    "caller": {
+      "bytes": 4951,
+      "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once.py",
+      "sha256": "23a721afa73e8e04b243ce7d66d305211dac8b6a6b6154e609e2ed08c9bdf657"
+    },
+    "caller_snapshot": {
+      "bytes": 4951,
+      "path": "reports/evidence_independent_fec2020_preflight_diagnostic_20261118/frozen_root_failed_caller.py",
+      "sha256": "23a721afa73e8e04b243ce7d66d305211dac8b6a6b6154e609e2ed08c9bdf657"
+    },
+    "observation": {
+      "bytes": 976,
+      "path": "reports/E01_FEC2020_CANDIDATE_ACTUAL_20261118.json",
+      "sha256": "5adddc9ff806552858c8d6c3e94948977a1fbb216e497dea118495b282b6b9cd"
+    },
+    "plan": {
+      "bytes": 1587,
+      "path": "reports/E01_FEC2020_CANDIDATE_RUN_PLAN_20261118.json",
+      "sha256": "f3f227db5ca0086243324aa8a1611b0894569a839babc55ca33cc74cf106fea9"
+    },
+    "preservation": "Original caller/plan/observation and canonical parser untouched. Diagnostic is separate read-only validator call, not reader invocation or adopted result.",
+    "scope": "data/processed/e01_fec2020_candidate_actual_20261118_01 remainsconsumed; notrerun"
+  },
+  "recorded_at_utc": "2026-11-18T18:09:30.442828+00:00",
+  "status": "PASS_DIAGNOSTIC_FIRST_REFUSAL_IDENTIFIED_NOT_SOURCE_PARSE_ACCEPTANCE"
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "INDEPENDENT_AUDIT_FEC_A02_CALLER_V1_20261118",
+  "status": "BLOCKED",
+  "finding": "A02-DIAGNOSTIC-01",
+  "scope": "Original unexecuted A02 caller diagnostic, separate from accepted parser member-bound correction",
+  "source": {
+    "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/frozen/read_candidate_once_a02.py",
+    "bytes": 5150,
+    "sha256": "f34bae92b3dda33a260167e9dccfcacb6d63ba3912aebc9229cd3c57fed18564"
+  },
+  "counterexample": {
+    "kind": "A02_EXTRACTED_DIAGNOSTIC_COUNTEREXAMPLE",
+    "actual_caller_or_reader_executed": false,
+    "actual_workbook_cells_read": 0,
+    "authored_exception": "RuntimeError with fabricated uppercase text",
+    "handler_output": [
+      "{\"status\": \"STOPPED_NO_RETRY\", \"error_type\": \"RuntimeError\", \"safe_code\": \"AUTHORED_PRIVATE_CELL\"}"
+    ],
+    "arbitrary_authored_text_released": true
+  },
+  "reason": "Regex accepts arbitrary uppercase RuntimeError text as safe code and invokes str(error) before exact identity validation. Thus a source-owned fixed-code-only projection is not enforced.",
+  "required_correction": "Exact exception identity and finite source-owned code membership over exact primitive args, without arbitrary exception strings or descriptors.",
+  "actual_caller_reader_or_workbook_numeric_execution": 0,
+  "UTC": "2026-11-18T18:13:14.874670+00:00"
+}

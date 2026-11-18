@@ -1,0 +1,99 @@
+{
+  "kind": "INDEPENDENT_AUDIT_FEC_A02_CALLER_V1_1_20261118",
+  "status": "PASS_SCOPED_CANDIDATE_CALLER",
+  "UTC": "2026-11-18T18:14:05.892230+00:00",
+  "source": {
+    "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once_a02_v1_1.py",
+    "bytes": 7055,
+    "sha256": "b005dff8a9491e4fbf269a60c804544ede6a81d492435b2e0356240628a400b5"
+  },
+  "parser": {
+    "path": "src/civiclab/e01/fec2020_parser_v1.py",
+    "bytes": 28897,
+    "sha256": "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
+  },
+  "author_tests": {
+    "path": "tests/test_fec_candidate_failure_diagnostic.py",
+    "bytes": 2001,
+    "sha256": "656631c3d35aa9d5849d4700d4cc7e6a6279369198d541280d645044cf15114f"
+  },
+  "prior_finding": {
+    "report": {
+      "path": "reports/INDEPENDENT_AUDIT_FEC_A02_CALLER_V1_20261118.json",
+      "bytes": 1366,
+      "sha256": "2648efb625d1db87f2e0a385f5d145e5680df17a179c71499b4526ac5ec2a08f"
+    },
+    "id": "A02-DIAGNOSTIC-01",
+    "resolution": "CLOSED_FOR_EXACT_V1_1_ONLY",
+    "original_report_unchanged": true
+  },
+  "static_review": {
+    "main_body": "AST identical to previous A02 except global declaration and exactmodule.ParserRefused binding.",
+    "diagnostic": "Exact RuntimeError or bound ParserRefused only. BaseException.args descriptor bypasses foreign property. One exactstr arg in finite code set; all other types/text suppressed. No str(error) or arbitrary type label projection.",
+    "allowlist": "60 parser literals independently equal exactsource require/ParserRefused codes; five owned RuntimeError guard codes.",
+    "execution_boundary": "One exclusive claim, one fullreader call, no automatic retry, exactsource6251110/hash5073b6d2; exactparser869e48f3; unchanged mapping contract; MIME61375/hash57265fdf verified twice.",
+    "resource_boundary": "Main120CPU/120wall,4MiBoutput,64MiBfile-read reservations, oneprivateA02scope distinct consumedA01.",
+    "scientific_boundary": "33cohort slots, features empty, allfalseadoption flags asserted. Candidate output only; no source numeric adoption or forecasts."
+  },
+  "independent_tests": [
+    {
+      "CPU_seconds": 0.050047999999999995,
+      "actual_caller_main_reader_workbook_key_owner_network_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_A02_DIAGNOSTIC_CORRECTION",
+      "runtime": "3.11.17",
+      "successful": true,
+      "tests": 13,
+      "wall_seconds": 0.01895100000547245
+    },
+    {
+      "CPU_seconds": 0.05061499999999999,
+      "actual_caller_main_reader_workbook_key_owner_network_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_A02_DIAGNOSTIC_CORRECTION",
+      "runtime": "3.12.14",
+      "successful": true,
+      "tests": 13,
+      "wall_seconds": 0.017593374999705702
+    }
+  ],
+  "allocation": "Two corrected-diagnostic-only pure processes under30CPU/30wall each, under lead correction-review scope; neither executes main/fullreader/source. Prior two50case parser suite runs and one archive-only preflight recorded separately.",
+  "activity": {
+    "actual_caller_main": 0,
+    "actual_reader": 0,
+    "actual_workbook_cells": 0,
+    "owner_key_network_model_calls": 0,
+    "cost_usd": 0
+  },
+  "limitations": [
+    "This is source and pure diagnostic qualification, not actual A02 outcome acceptance or release. Lead retains separately bounded execution responsibility.",
+    "Inherited trusted runtime imports and file-size read reservations are not a physical syscall/startup/process-tree/G03 closure certificate.",
+    "File-size reservations do not charge XML expansion; unchanged separate64MiBarchive expansion/48MiBmember limits enforce that bound.",
+    "No new full native mocked-reader child was justified or run for a single bound-constant correction. Prior exactV1.2 reader tests remain historical evidence.",
+    "Confirmatory sampling, missing counts/stages/parties and fullE01 completion remain unresolved gates."
+  ],
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_fec_a02_caller_v1_1_20261118/caller_frozen.py",
+      "bytes": 7055,
+      "sha256": "b005dff8a9491e4fbf269a60c804544ede6a81d492435b2e0356240628a400b5"
+    },
+    {
+      "path": "reports/evidence_independent_fec_a02_caller_v1_1_20261118/pure_311.log",
+      "bytes": 1885,
+      "sha256": "e982b011a2efb78bc4c1338338c27876e233ebddc5a90c826e6a88b303870225"
+    },
+    {
+      "path": "reports/evidence_independent_fec_a02_caller_v1_1_20261118/pure_312.log",
+      "bytes": 1885,
+      "sha256": "fcaa205eea996d354279bb300edd72e8642ee11fef397e0900dfd2539193b79e"
+    },
+    {
+      "path": "reports/evidence_independent_fec_a02_caller_v1_1_20261118/review_diagnostic.py",
+      "bytes": 3919,
+      "sha256": "19e6b3d155a224fa016d4c224f6ed4792f4e41be3c40b5af048c360ce74801c0"
+    }
+  ]
+}

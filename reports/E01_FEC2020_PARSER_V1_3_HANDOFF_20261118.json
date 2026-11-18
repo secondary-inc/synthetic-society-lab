@@ -1,0 +1,71 @@
+{
+  "kind": "FEC_PARSER_V1_3_MEMBER_BOUND_HANDOFF",
+  "status": "AUTHOR_TESTED_PENDING_INDEPENDENT_REVIEW",
+  "reason": "Exact official ZIP central directory contains sheet10.xml of41139508 bytes, above prior33554432 per-member limit but entirearchive51902709 is below original67108864 aggregate limit. Raise only member bound to50331648; preserve aggregate/member-count/encryption/path/DTD/external/opaque checks and all scientific mapping.",
+  "tests": {
+    "python312": "45 PASS",
+    "python311": "45 PASS",
+    "source_archive_preflight": "PASS;65members/51902709declaredexpanded;no openpyxl/numeric cells/adoption"
+  },
+  "prior_reports_preserved": [
+    "reports/INDEPENDENT_AUDIT_FEC2020_PARSER_V1_2_20261118.json",
+    "reports/INDEPENDENT_FEC2020_PREFLIGHT_DIAGNOSTIC_20261118.json",
+    "reports/INDEPENDENT_FEC2020_PREFLIGHT_DIAGNOSTIC_V1_1_20261118.json",
+    "reports/E01_FEC2020_CANDIDATE_ACTUAL_20261118.json"
+  ],
+  "adoption": false,
+  "new_model_calls": 0,
+  "actual_spend_usd": 0,
+  "files": [
+    {
+      "path": "src/civiclab/e01/fec2020_parser_v1.py",
+      "bytes": 28897,
+      "sha256": "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
+    },
+    {
+      "path": "tests/test_fec2020_parser_v1.py",
+      "bytes": 25435,
+      "sha256": "83d658d04a3d95408c4affc50f3db977e8de8884fc73fea4787026abd8b3ae27"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/parser.diff",
+      "bytes": 1149,
+      "sha256": "e91da4daec3cf39818299b5c08eeccb353915d6d337f1c67897154dc0a833ac0"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/parser_before.py",
+      "bytes": 28665,
+      "sha256": "0795e2012be6b0cd36bb7c2a4805320c773f654260bfd764f9ae039740c1a2dc"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/pure_311.log",
+      "bytes": 6830,
+      "sha256": "fd9fb6d705bcbee7ad348e507596f5c22d5b234091a64b70005a9fc13c411fe4"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/pure_312.log",
+      "bytes": 6830,
+      "sha256": "77f4a440c68bd7af27ebc9f9eca3a356e49bd338c1002a6d2189e74a7a1e0103"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/source_preflight_plan.json",
+      "bytes": 393,
+      "sha256": "ce4525a8d54a41924e86fa688e7532327694815d31c3d5acf0019a70b2e8edbf"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/source_preflight_result.json",
+      "bytes": 158,
+      "sha256": "58246dcfd1878df137f1e12e3c23da9fc4a9be2afa188ce6d17eda7c45b1580c"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/tests.diff",
+      "bytes": 2085,
+      "sha256": "3650dbc2b84ae9d7efc3c0fa4e52efcb77892b76d230d33c82405bcf669151f9"
+    },
+    {
+      "path": "reports/evidence_e01_fec2020_parser_v1_3_20261118/tests_before.py",
+      "bytes": 23940,
+      "sha256": "2b64f9e99cb29d0d8a5652a3edea4adf7d3d1ec33c3ef53d3979facef87cc251"
+    }
+  ]
+}

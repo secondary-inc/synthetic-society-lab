@@ -1,0 +1,32 @@
+{
+  "kind": "FEC_A01_CANDIDATE_ONLY_RUN_PLAN",
+  "status": "RELEASED_FOR_ONE_LOCAL_SOURCE_READ_NOT_ADOPTION",
+  "recorded_at_utc": "2026-11-18T18:02:47.363043+00:00",
+  "run_id": "e01-fec2020-candidate-20261118-01",
+  "code": {
+    "path": "reports/evidence_e01_fec2020_actual_20261118/read_candidate_once.py",
+    "bytes": 4951,
+    "sha256": "23a721afa73e8e04b243ce7d66d305211dac8b6a6b6154e609e2ed08c9bdf657"
+  },
+  "parser_sha256": "0795e2012be6b0cd36bb7c2a4805320c773f654260bfd764f9ae039740c1a2dc",
+  "review_sha256": "73c9b7e3d04df683e8b3043b27362ae618cc03b16903643094bacc78b88d4726",
+  "source_sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e",
+  "source_bytes": 6251110,
+  "limits": {
+    "reader_calls": 1,
+    "retries": 0,
+    "parent_wall_seconds": 120,
+    "child_CPU_soft": 119,
+    "child_CPU_hard": 120,
+    "file_size_bytes": 4194304,
+    "logical_file_reads_bytes": 67108864,
+    "archive_expansion_bytes": 67108864,
+    "cells_max": 16000,
+    "result_bytes_max": 4194304,
+    "captured_console_bytes_max": 65536
+  },
+  "runtime": "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+  "semantics": "Use accepted exactadapter once on localpinnedsource; source/script/datahashes,start/end,reader/errors/flags preserved. Parenttimeout killsandwaits child. Rawcandidateoutput remains0600 ignored/local. No currentowner/key/network/model/2026outcomeaccess; no features/adoption/forecast. Readerclaimandparentdirectory arecreateonce.",
+  "cost_usd": 0,
+  "independent_outcome_review": "REQUIRED_AFTER_RUN"
+}

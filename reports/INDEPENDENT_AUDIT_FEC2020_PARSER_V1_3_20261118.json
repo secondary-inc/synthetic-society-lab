@@ -1,0 +1,121 @@
+{
+  "kind": "INDEPENDENT_AUDIT_FEC2020_PARSER_V1_3_20261118",
+  "status": "PASS_SCOPED_CANDIDATE_ONLY",
+  "UTC": "2026-11-18T18:13:14.875909+00:00",
+  "scope": "Exact member-bound correction and focused regression; no actual reader or numeric adoption",
+  "source": {
+    "path": "src/civiclab/e01/fec2020_parser_v1.py",
+    "bytes": 28897,
+    "sha256": "869e48f397ce8b5b89edcd6e4d8be37345933eab4e58778140221e0517b859df"
+  },
+  "tests": {
+    "path": "tests/test_fec2020_parser_v1.py",
+    "bytes": 25435,
+    "sha256": "83d658d04a3d95408c4affc50f3db977e8de8884fc73fea4787026abd8b3ae27"
+  },
+  "handoff": {
+    "path": "reports/E01_FEC2020_PARSER_V1_3_HANDOFF_20261118.json",
+    "bytes": 2970,
+    "sha256": "57fb180945a9787306ed1de062172e3f2c3d88a856672972155a64180c8c765e"
+  },
+  "implementation": {
+    "AST": "Exactly one integer constant33554432 becomes50331648. All other AST nodes identical to acceptedV1.2.",
+    "security": "Original64MiBaggregate,80members,path/encryption/compression/DTD/entity/external/opaque-pin checks unchanged.",
+    "science": "All candidate/stage/party/cohort/falseadoption/scoring logic unchanged.",
+    "test_preservation": "All42 previous test bodies identical; three new member/aggregate boundaries."
+  },
+  "independent_runs": [
+    {
+      "CPU_seconds": 0.719085,
+      "actual_workbook_reader_network_key_owner_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_V1_3_FOCUSED",
+      "runtime": "3.11.17",
+      "successful": true,
+      "tests": 50,
+      "wall_seconds": 0.7140628329943866
+    },
+    {
+      "CPU_seconds": 0.674191,
+      "actual_workbook_reader_network_key_owner_calls": 0,
+      "errors": 0,
+      "failures": 0,
+      "kind": "INDEPENDENT_FEC_V1_3_FOCUSED",
+      "runtime": "3.12.14",
+      "successful": true,
+      "tests": 50,
+      "wall_seconds": 0.6659909590089228
+    }
+  ],
+  "archive_only_actual_source": {
+    "CPU_seconds": 0.7725519999999999,
+    "archive": {
+      "declared_expanded_bytes": 51902709,
+      "members": 65
+    },
+    "cost_usd": 0,
+    "full_reader_numeric_cell_interpretation_or_adoption": 0,
+    "kind": "INDEPENDENT_FEC_V1_3_SOURCE_ARCHIVE_PREFLIGHT",
+    "maximum_member_bytes": 41139508,
+    "member_reads": 65,
+    "network_model_key_owner_calls": 0,
+    "source_bytes": 6251110,
+    "source_sha256": "5073b6d2c76c86c941508dfb1a11cc497e8529b0068c5132aceb0f385c19352e",
+    "status": "PASS_ARCHIVE_ONLY",
+    "total_charged_source_plus_expanded_bytes": 58153819,
+    "wall_seconds": 0.7556982499954756
+  },
+  "allocation": {
+    "focused_suite_children": 2,
+    "archive_preflight_children": 1,
+    "full_reader_children": 0,
+    "focused_limits_each": "120CPU/120wall",
+    "archive_limits": "60CPU/60wall/64MiB source+expanded bytes",
+    "network_model_key_owner_calls": 0,
+    "cost_usd": 0
+  },
+  "caller": "Original unexecuted A02 remains BLOCKED under separate A02-DIAGNOSTIC-01 report; corrected successor requires separate review. Parser acceptance alone is not a caller release.",
+  "limitations": [
+    "Archive preflight feeds XML through security target; it does not interpret workbook cells or establish election totals.",
+    "A01 consumed; no replay or new source adoption. Any A02 run remains separately bounded and independently reviewed.",
+    "FullE01 gates and prospective claims remain unaccepted."
+  ],
+  "evidence": [
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/A02_DIAGNOSTIC_COUNTEREXAMPLE.json",
+      "bytes": 395,
+      "sha256": "d341841f2b00597bf97cd9d494dd26ba4f7a669f04528ac81c86693646a39e0f"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/AST_DIFF_CHECK.json",
+      "bytes": 372,
+      "sha256": "9ce7dbe3961f2fce3c89bc71fdf60563aafc613702c112b63ed3126f379d9a88"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/preflight_312.log",
+      "bytes": 552,
+      "sha256": "6b26f9b1b8480e5c8941f29cb6a59ee0c6fb48ba1ae6f30f5204ea37e45664d5"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/preflight_once.py",
+      "bytes": 2226,
+      "sha256": "5942d947bbde20258a46294aa1a7c2af8a196015c486eb47933b638e2d4da54b"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/pure_311.log",
+      "bytes": 9008,
+      "sha256": "663fbd5e9a2fd0251b7482fdaccc59334839e6c843cd20e8ed24b042f4167bc1"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/pure_312.log",
+      "bytes": 9008,
+      "sha256": "f3e0f68b37fe02761a96884560b1b08d1746541c9d80ae8b13873973b3b482f5"
+    },
+    {
+      "path": "reports/evidence_independent_fec2020_parser_v1_3_20261118/run_focused.py",
+      "bytes": 1825,
+      "sha256": "dda3bf0bd1d03e11405a9b8277332823fac4aace50e632253288d1acc9ffca5f"
+    }
+  ]
+}

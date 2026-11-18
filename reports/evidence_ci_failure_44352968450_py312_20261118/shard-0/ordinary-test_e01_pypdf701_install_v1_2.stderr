@@ -1,0 +1,225 @@
+test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process (test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_capture_backend_retains_stdout_stderr_and_reaped_cpu_without_process","elapsed_seconds":0.002789433999993207,"event":"STOP","status":"PASS"}
+test_capture_overflow_kills_reaps_and_records_stopped_prefix (test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_capture_overflow_kills_reaps_and_records_stopped_prefix) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_capture_overflow_kills_reaps_and_records_stopped_prefix","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_capture_overflow_kills_reaps_and_records_stopped_prefix","elapsed_seconds":0.0018401490000030662,"event":"STOP","status":"PASS"}
+test_control_terminal_headroom_and_reader_quota_precede_file_effect (test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_control_terminal_headroom_and_reader_quota_precede_file_effect) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_control_terminal_headroom_and_reader_quota_precede_file_effect","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_control_terminal_headroom_and_reader_quota_precede_file_effect","elapsed_seconds":0.0012537849999887385,"event":"STOP","status":"PASS"}
+test_owned_size_cap_uses_observed_tree_and_refuses_special_file (test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_owned_size_cap_uses_observed_tree_and_refuses_special_file) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_owned_size_cap_uses_observed_tree_and_refuses_special_file","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerCaptureTests.test_owned_size_cap_uses_observed_tree_and_refuses_special_file","elapsed_seconds":0.0007182380000045896,"event":"STOP","status":"PASS"}
+test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix","event":"START"}
+ERROR
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix","event":"ERROR","traceback_bytes":706,"traceback_sha256":"7df4a0bd740439a52c4eead3dd3990eb03fc7083b6a57953d0eb104c62d69bc2","traceback_truncated":false}
+CI_FAILURE_DETAIL_BEGIN test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1.py", line 312, in test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix
+    p.run_pip(self.binding, 'install', self.root)
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_2.py", line 559, in run_pip
+    need(not any('site-packages' in p for p in original), 'BASE_OR_OLD_SITE_ON_PATH')
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_2.py", line 61, in need
+    raise Refused(reason)
+p2_v1_1_consumer.Refused: BASE_OR_OLD_SITE_ON_PATH
+
+CI_FAILURE_DETAIL_END
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix","elapsed_seconds":0.0964079719999944,"event":"STOP","status":"ERROR"}
+test_base_binary_hash_change_blocks_before_mutation (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_base_binary_hash_change_blocks_before_mutation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_base_binary_hash_change_blocks_before_mutation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_base_binary_hash_change_blocks_before_mutation","elapsed_seconds":0.09723075499999823,"event":"STOP","status":"PASS"}
+test_bootstrap_hash_and_extra_pip_file_are_blockers (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_bootstrap_hash_and_extra_pip_file_are_blockers","elapsed_seconds":0.09362704499999097,"event":"STOP","status":"PASS"}
+test_budget_wall_rollback_and_observed_cpu_refuse (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_budget_wall_rollback_and_observed_cpu_refuse","elapsed_seconds":0.09560191600000678,"event":"STOP","status":"PASS"}
+test_changed_old_pip_detected_after_commands (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_changed_old_pip_detected_after_commands) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_changed_old_pip_detected_after_commands","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_changed_old_pip_detected_after_commands","elapsed_seconds":0.11961488800000097,"event":"STOP","status":"PASS"}
+test_coherently_hashed_relabeling_flag_still_refuses (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_coherently_hashed_relabeling_flag_still_refuses) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_coherently_hashed_relabeling_flag_still_refuses","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_coherently_hashed_relabeling_flag_still_refuses","elapsed_seconds":0.10885392499999114,"event":"STOP","status":"PASS"}
+test_complete_mock_three_main_commands_no_oldsite_or_inference (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_complete_mock_three_main_commands_no_oldsite_or_inference) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_complete_mock_three_main_commands_no_oldsite_or_inference","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_complete_mock_three_main_commands_no_oldsite_or_inference","elapsed_seconds":0.1338314500000024,"event":"STOP","status":"PASS"}
+test_consumed_or_existing_target_not_reused (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_consumed_or_existing_target_not_reused) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_consumed_or_existing_target_not_reused","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_consumed_or_existing_target_not_reused","elapsed_seconds":0.1282640000000015,"event":"STOP","status":"PASS"}
+test_consumer_preserves_21_gets_and_both_failed_wheel_charges (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_consumer_preserves_21_gets_and_both_failed_wheel_charges) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_consumer_preserves_21_gets_and_both_failed_wheel_charges","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_consumer_preserves_21_gets_and_both_failed_wheel_charges","elapsed_seconds":0.1100693439999958,"event":"STOP","status":"PASS"}
+test_corrupt_wheel_or_ancestor_bytes_refuse (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_corrupt_wheel_or_ancestor_bytes_refuse) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_corrupt_wheel_or_ancestor_bytes_refuse","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_corrupt_wheel_or_ancestor_bytes_refuse","elapsed_seconds":0.10393194999998911,"event":"STOP","status":"PASS"}
+test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_duplicate_fresh_metadata_refs_cannot_satisfy_seven_gets","elapsed_seconds":0.11123589299999992,"event":"STOP","status":"PASS"}
+test_failed_command_preserves_partial_env_and_no_retry (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_failed_command_preserves_partial_env_and_no_retry) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_failed_command_preserves_partial_env_and_no_retry","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_failed_command_preserves_partial_env_and_no_retry","elapsed_seconds":0.11989190200000621,"event":"STOP","status":"PASS"}
+test_final_metadata_charge_includes_all_seven_new_bodies (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_final_metadata_charge_includes_all_seven_new_bodies) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_final_metadata_charge_includes_all_seven_new_bodies","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_final_metadata_charge_includes_all_seven_new_bodies","elapsed_seconds":0.11141541399999255,"event":"STOP","status":"PASS"}
+test_freshness_failure_ancestor_is_required_separately (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_freshness_failure_ancestor_is_required_separately) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_freshness_failure_ancestor_is_required_separately","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_freshness_failure_ancestor_is_required_separately","elapsed_seconds":0.09735247199999719,"event":"STOP","status":"PASS"}
+test_guest_blocks_network_helpers_downloaded_import_and_outside_write (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_guest_blocks_network_helpers_downloaded_import_and_outside_write) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_guest_blocks_network_helpers_downloaded_import_and_outside_write","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_guest_blocks_network_helpers_downloaded_import_and_outside_write","elapsed_seconds":0.09437853100000382,"event":"STOP","status":"PASS"}
+test_installed_extra_distribution_blocks_exact_closure (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_installed_extra_distribution_blocks_exact_closure) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_installed_extra_distribution_blocks_exact_closure","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_installed_extra_distribution_blocks_exact_closure","elapsed_seconds":0.11612737600000855,"event":"STOP","status":"PASS"}
+test_old_capture_timestamp_cannot_replace_new_metadata_epoch (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_old_capture_timestamp_cannot_replace_new_metadata_epoch) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_old_capture_timestamp_cannot_replace_new_metadata_epoch","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_old_capture_timestamp_cannot_replace_new_metadata_epoch","elapsed_seconds":0.10663149299999475,"event":"STOP","status":"PASS"}
+test_oldest_ancestor_ref_remains_required (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_oldest_ancestor_ref_remains_required) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_oldest_ancestor_ref_remains_required","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_oldest_ancestor_ref_remains_required","elapsed_seconds":0.09689002500000754,"event":"STOP","status":"PASS"}
+test_preexisting_target_fails_before_new_stage (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_preexisting_target_fails_before_new_stage) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_preexisting_target_fails_before_new_stage","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_preexisting_target_fails_before_new_stage","elapsed_seconds":0.09471691199999555,"event":"STOP","status":"PASS"}
+test_stopped_command_retains_record_and_holds_scope_consumed (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_stopped_command_retains_record_and_holds_scope_consumed) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_stopped_command_retains_record_and_holds_scope_consumed","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_stopped_command_retains_record_and_holds_scope_consumed","elapsed_seconds":0.1080303669999978,"event":"STOP","status":"PASS"}
+test_unbound_empty_pip_directory_changes_bootstrap_identity (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_unbound_empty_pip_directory_changes_bootstrap_identity) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_unbound_empty_pip_directory_changes_bootstrap_identity","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_unbound_empty_pip_directory_changes_bootstrap_identity","elapsed_seconds":0.08662047899998981,"event":"STOP","status":"PASS"}
+test_v1_1_failure_cannot_masquerade_as_complete_v1_2 (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_v1_1_failure_cannot_masquerade_as_complete_v1_2) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_v1_1_failure_cannot_masquerade_as_complete_v1_2","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_v1_1_failure_cannot_masquerade_as_complete_v1_2","elapsed_seconds":0.09193252499999005,"event":"STOP","status":"PASS"}
+test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_v1_2_failed_terminal_cannot_be_adopted_as_v1_4_complete","elapsed_seconds":0.09197008399999618,"event":"STOP","status":"PASS"}
+test_write_and_output_limits_refuse_before_effect (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_write_and_output_limits_refuse_before_effect) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_write_and_output_limits_refuse_before_effect","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_write_and_output_limits_refuse_before_effect","elapsed_seconds":0.0917329189999947,"event":"STOP","status":"PASS"}
+test_wrong_external_wheel_hash_blocks_before_mutation (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_wrong_external_wheel_hash_blocks_before_mutation) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_wrong_external_wheel_hash_blocks_before_mutation","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_wrong_external_wheel_hash_blocks_before_mutation","elapsed_seconds":0.10615091799999732,"event":"STOP","status":"PASS"}
+test_wrong_guest_target_scheme_is_rejected (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_wrong_guest_target_scheme_is_rejected) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_wrong_guest_target_scheme_is_rejected","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_wrong_guest_target_scheme_is_rejected","elapsed_seconds":0.11099443799999165,"event":"STOP","status":"PASS"}
+test_active_closure_and_inactive_dependencies_are_explicit (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_active_closure_and_inactive_dependencies_are_explicit) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_active_closure_and_inactive_dependencies_are_explicit","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_active_closure_and_inactive_dependencies_are_explicit","elapsed_seconds":0.0006513189999992619,"event":"STOP","status":"PASS"}
+test_bad_computed_install_scheme_fails_closed (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_bad_computed_install_scheme_fails_closed) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_bad_computed_install_scheme_fails_closed","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_bad_computed_install_scheme_fails_closed","elapsed_seconds":0.00017056399998693905,"event":"STOP","status":"PASS"}
+test_marker_parser_never_executes_code_or_unknown_names (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_marker_parser_never_executes_code_or_unknown_names) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_marker_parser_never_executes_code_or_unknown_names","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_marker_parser_never_executes_code_or_unknown_names","elapsed_seconds":0.0003654430000068487,"event":"STOP","status":"PASS"}
+test_marker_target_versions_and_inactive_extras (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_marker_target_versions_and_inactive_extras) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_marker_target_versions_and_inactive_extras","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_marker_target_versions_and_inactive_extras","elapsed_seconds":0.00025983000000451284,"event":"STOP","status":"PASS"}
+test_python312_S_base_prefix_does_not_change_explicit_target (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_python312_S_base_prefix_does_not_change_explicit_target) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_python312_S_base_prefix_does_not_change_explicit_target","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_python312_S_base_prefix_does_not_change_explicit_target","elapsed_seconds":0.0002158420000029082,"event":"STOP","status":"PASS"}
+test_strict_json_duplicate_nonfinite_and_ref_paths (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_strict_json_duplicate_nonfinite_and_ref_paths) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_strict_json_duplicate_nonfinite_and_ref_paths","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_strict_json_duplicate_nonfinite_and_ref_paths","elapsed_seconds":0.00018402699998887329,"event":"STOP","status":"PASS"}
+test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks (test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.ConsumerPureTests.test_unknown_unsatisfied_extra_or_direct_url_active_dependency_blocks","elapsed_seconds":0.00022463400000560796,"event":"STOP","status":"PASS"}
+test_accepted_core_and_original_tests_are_unchanged (test_e01_pypdf701_install_v1_2.NarrowDeltaTests.test_accepted_core_and_original_tests_are_unchanged) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.NarrowDeltaTests.test_accepted_core_and_original_tests_are_unchanged","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.NarrowDeltaTests.test_accepted_core_and_original_tests_are_unchanged","elapsed_seconds":0.0002722130000023526,"event":"STOP","status":"PASS"}
+test_only_consumer_body_and_explicit_identity_literals_change (test_e01_pypdf701_install_v1_2.NarrowDeltaTests.test_only_consumer_body_and_explicit_identity_literals_change) ... 
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.NarrowDeltaTests.test_only_consumer_body_and_explicit_identity_literals_change","event":"START"}
+ok
+
+OFFLINE_CI_TEST_EVENT_V1={"case_id":"test_e01_pypdf701_install_v1_2.NarrowDeltaTests.test_only_consumer_body_and_explicit_identity_literals_change","elapsed_seconds":0.05835822999999607,"event":"STOP","status":"PASS"}
+
+======================================================================
+ERROR: test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix (test_e01_pypdf701_install_v1_2.ConsumerFixtureTests.test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/tests/test_e01_pypdf701_install_v1.py", line 312, in test_actual_mock_run_pip_path_excludes_oldsite_and_uses_prefix
+    p.run_pip(self.binding, 'install', self.root)
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_2.py", line 559, in run_pip
+    need(not any('site-packages' in p for p in original), 'BASE_OR_OLD_SITE_ON_PATH')
+  File "/home/runner/work/synthetic-society-lab/synthetic-society-lab/scripts/install_e01_pypdf701_runtime_v1_2.py", line 61, in need
+    raise Refused(reason)
+p2_v1_1_consumer.Refused: BASE_OR_OLD_SITE_ON_PATH
+
+----------------------------------------------------------------------
+Ran 39 tests in 2.793s
+
+FAILED (errors=1)
