@@ -1,0 +1,107 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_SAVED_JSON_ENTRY_V1_20261117",
+  "status": "BLOCKED",
+  "decision": "Original 15 authored component cases pass on both runtimes. Error-diagnostic boundary requires narrow correction before acceptance. Actual recorded-source use is NOT_RUN.",
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_20261117.json",
+    "reports/evidence_independent_e01_saved_json_entry_v1_20261117/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/ADVERSE_311.json",
+      "bytes": 97,
+      "sha256": "9e52e8a8de210ba88b336193ca789f5953544fb0890daa95b1f51d8edce2532a"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/ADVERSE_311.txt",
+      "bytes": 2196,
+      "sha256": "697305b1c16a2e0025ae00fa7d2786d1573443d6638970d2c9a1d1a2ee003b5a"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/ADVERSE_312.json",
+      "bytes": 97,
+      "sha256": "10427d673cf28d851d6ef89fe4542404c66620a1c1dd009dfbb6b42fee06157b"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/ADVERSE_312.txt",
+      "bytes": 2196,
+      "sha256": "ad968952749f3f5171ec97e4ddb38fac728b54b744df66ffa75b3024c74a0e1d"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/AUTHOR_SUITE_311.json",
+      "bytes": 243,
+      "sha256": "be4315fcec5f386d6e623458417b8e01699e6df4094c3bf993d5b4e1b9a43013"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/AUTHOR_SUITE_311.txt",
+      "bytes": 2868,
+      "sha256": "37fa6fb666acaf91593e78200cf2a12fd19f5f03c9325ef23b0299ae4d64f8fa"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/AUTHOR_SUITE_312.json",
+      "bytes": 206,
+      "sha256": "63da603b905d6f66d1e785caab4ad103a7743e833f649625f51e71cb94c4ea32"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/AUTHOR_SUITE_312.txt",
+      "bytes": 2868,
+      "sha256": "d913bdf429199321a4bb21a2132c41020d2fabd88214e6bcd39136e52a2ae242"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/PIN_CHECKS.json",
+      "bytes": 4882,
+      "sha256": "ff0a1b4206892b50bfe94a40e69ded92994c2ba08d4994dfb24a542173d4ae12"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/PLAN.json",
+      "bytes": 1296,
+      "sha256": "6ddce6582f9eccade01deabba267600e01fa4b38ccfd41d63265069cc890902d"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_20261117/adverse_controls.py",
+      "bytes": 2714,
+      "sha256": "30bdc37f611a1a771c0311e175150c5ab5abb3c6ac967a2b2fbb584b6ee80f66"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "See frozen source suite and adverse_controls.py; both allocations exhausted. Further execution requires separately recorded correction allocation."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "source_pins": "39 frozen references verified",
+    "Python_3_11": "Invocation 1: 15/15 PASS. Invocation 2: 20 cases, 2 assertion failures, 1 reviewer error.",
+    "Python_3_12": "Invocation 1: 15/15 PASS. Invocation 2: 20 cases, 2 assertion failures, 1 reviewer error.",
+    "valid_product_counterexamples": [
+      "safe_error returns foreign exception.code AUTHORED_PRIVATE_SENTINEL solely because it matches uppercase regex.",
+      "safe_error executes foreign exception.code property; raising descriptor prevents redacted diagnostic return."
+    ],
+    "reviewer_error": "Failure-file integration control omitted mandatory mock_only=True. It stopped with AUTHORED_READER before the proposed reader ran. This is invalid test construction, not product failure; no failure-file leak was experimentally demonstrated. Traceback serialization caused three scope-denial observations; actual-source accesses remained denied.",
+    "native_children_per_invocation": 5,
+    "actual_reader_calls": 0,
+    "network_calls": 0
+  },
+  "findings": [
+    {
+      "id": "E01-ENTRY-DIAGNOSTIC-01",
+      "status": "BLOCKED",
+      "priority": 2,
+      "file": "src/civiclab/e01/saved_json_entry_v1.py",
+      "line": 277,
+      "evidence": "Direct controls 01 and 02 fail on both runtimes. Source uses getattr(error,code) and regex-only validation.",
+      "required_correction": "Return only reviewed fixed codes from trusted exact exception types without invoking foreign descriptors; unknown exceptions return constant fallback. Test genuine authorized authored-reader integration separately.",
+      "limits": "No claim that current accepted real reader emitted such an exception or that actual private data leaked."
+    }
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored fixture bodies and source stubs only; no actual16 bodies or accepted reader.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "No full-startup/G03 certificate.",
+    "Actual parent/worker real-source flow NOT_RUN.",
+    "Kernel caps and cleanup apply to ordinary trusted OS behavior, not uninterruptible IO or malicious same-UID actors.",
+    "Two invocations per runtime exhausted; preserved failed reviewer control."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Narrow diagnostic correction and independent successor review.",
+    "Particular actual E01 release and remaining G03 startup/reader integration gates remain separate."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Review separately frozen diagnostic correction under lead successor allocation after E02 stop review."
+}

@@ -1,0 +1,53 @@
+--- passing_V1/saved_json_entry_v1.py
++++ binding_cleanup_recovery/saved_json_entry_v1.py
+@@ -297,10 +297,16 @@
+ 
+ def cleanup(child,budget):
+     if child.poll() is None:
+-        child.terminate()
+-        try:child.wait(timeout=max(0,min(1,budget.start+58-budget.now())))
+-        except subprocess.TimeoutExpired:
+-            child.kill();child.wait(timeout=max(0,budget.start+59-budget.now()))
++        terminated=False
++        try:child.terminate();terminated=True
++        except OSError:pass # Still attempt kill/reap within the same allocation.
++        if terminated:
++            try:child.wait(timeout=max(0,min(1,budget.start+58-budget.now())))
++            except (subprocess.TimeoutExpired,OSError):pass
++        if child.poll() is None:
++            try:child.kill()
++            except ProcessLookupError:pass
++            child.wait(timeout=max(0,budget.start+59-budget.now()))
+     need(child.poll() is not None,'CHILD_NOT_REAPED');need(budget.now()<budget.start+60,'CLEANUP_DEADLINE')
+ 
+ 
+@@ -366,9 +372,16 @@
+     need(len(packed(value))<=131072,'PUBLIC_CAP');return value
+ 
+ 
+-def production_parent(root,packet_path,expected_sha,start=None):
++
++def charge_bootstrap(budget,usage):
++    need(closed(usage,('saved_JSON_bytes','project_source_bytes')) and all(type(v) is int and v>=0 for v in usage.values()),'BOOTSTRAP_USAGE')
++    need(usage['saved_JSON_bytes']<=131073 and usage['project_source_bytes']<=139266,'BOOTSTRAP_CAP')
++    budget.read(usage['saved_JSON_bytes']);budget.read(usage['project_source_bytes'],True)
++
++
++def production_parent(root,packet_path,expected_sha,start=None,*,bootstrap_usage):
+     """Rootaloneissuespacket. Thisfunctionnotusedbyauthoredqualification."""
+-    budget=Budget(start=start);raw,p=root_packet_file(root,packet_path,expected_sha,budget)
++    budget=Budget(start=start);charge_bootstrap(budget,bootstrap_usage);raw,p=root_packet_file(root,packet_path,expected_sha,budget)
+     code=verify_controls(root,p,budget);control=Control(root,p,budget)
+     try:
+         control.consume()
+@@ -408,8 +421,8 @@
+     finally:os.close(claim)
+ 
+ 
+-def production_worker(root,packet_path,expected_sha,start,initial):
+-    budget=Budget(start=start,initial=initial);raw,p=root_packet_file(root,packet_path,expected_sha,budget)
++def production_worker(root,packet_path,expected_sha,start,initial,*,bootstrap_usage):
++    budget=Budget(start=start,initial=initial);charge_bootstrap(budget,bootstrap_usage);raw,p=root_packet_file(root,packet_path,expected_sha,budget)
+     control_path=CONTROL+'/'+p['scope_id']+'/STARTED.json'
+     # Rootpacket+consume are independently required; never create/reconsumehere.
+     fd=directory_fd(root,str(Path(control_path).parent))

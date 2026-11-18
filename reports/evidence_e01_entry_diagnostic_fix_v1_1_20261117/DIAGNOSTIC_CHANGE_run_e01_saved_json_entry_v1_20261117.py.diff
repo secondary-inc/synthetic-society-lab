@@ -1,0 +1,35 @@
+--- original/run_e01_saved_json_entry_v1_20261117.py
++++ diagnosticV1.1/run_e01_saved_json_entry_v1_20261117.py
+@@ -38,6 +38,23 @@
+     need(ident(before)==ident(after) and len(raw)==before.st_size,'BOOTSTRAP_DRIFT');return raw
+ 
+ 
++
++_BASE_ERROR_DICT=BaseException.__dict__['__dict__']
++_BASE_ERROR_ARGS=BaseException.__dict__['args']
++_SAFE_BOOTSTRAP_CODES=frozenset(('BOOTSTRAP_ALIAS', 'BOOTSTRAP_DRIFT', 'BOOTSTRAP_DUPLICATE', 'BOOTSTRAP_HELPER_BINDING', 'BOOTSTRAP_LAUNCHER_BINDING', 'BOOTSTRAP_NONFINITE', 'BOOTSTRAP_PACKET_HASH', 'BOOTSTRAP_PACKET_MODE', 'BOOTSTRAP_PACKET_PATH', 'BOOTSTRAP_SIZE', 'BOOTSTRAP_UNARMED'))
++
++
++def bootstrap_error(error):
++    if type(error) is not BootstrapRefused:return 'BOOTSTRAP_FAILURE'
++    if any(k in BootstrapRefused.__dict__ for k in ('code','args','__dict__','__getattribute__','__str__')):return 'BOOTSTRAP_FAILURE'
++    fields=_BASE_ERROR_DICT.__get__(error,BootstrapRefused)
++    args=_BASE_ERROR_ARGS.__get__(error,BootstrapRefused)
++    if type(fields) is not dict or type(args) is not tuple or len(args)!=1:return 'BOOTSTRAP_FAILURE'
++    code=dict.get(fields,'code')
++    if type(code) is not str or type(args[0]) is not str or code not in _SAFE_BOOTSTRAP_CODES or args[0]!=code:return 'BOOTSTRAP_FAILURE'
++    return code
++
++
+ def main():
+     start=time.monotonic();module=None
+     parser=argparse.ArgumentParser()
+@@ -75,7 +92,7 @@
+             print(json.dumps(result,sort_keys=True))
+         return 0
+     except BaseException as error:
+-        code=module.safe_error(error) if module is not None else getattr(error,'code','BOOTSTRAP_FAILURE')
++        code=module.safe_error(error) if module is not None else bootstrap_error(error)
+         print(json.dumps({'status':'FAILED_UNACCEPTED','error_code':code,'model_calls':0,'cost_usd':0}),file=sys.stderr);return 2
+ 
+ 

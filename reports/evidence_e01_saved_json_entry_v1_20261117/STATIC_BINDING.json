@@ -1,0 +1,65 @@
+{
+  "actual_private_execution": "NOT_RUN",
+  "actual_root_packet_created": false,
+  "actual_source_reader_import_or_call": false,
+  "case_inventory": [
+    "test_01_physical16_admission_one_reader_safe_ledger",
+    "test_02_unarmed_window_limits_and_bad_metadata_no_control",
+    "test_03_tamper_or_missing_saved16_stops_before_reader",
+    "test_04_exact_run_members_and_no_alias_or_parent_escape",
+    "test_05_create_once_replay_does_not_mutate_success",
+    "test_06_sticky_denied_stream_failure_and_output_validation",
+    "test_07_physical_read_hash_io_budget_and_canonical",
+    "test_08_work_cleanup_finalization_and_primary_errors",
+    "test_09_inert_native_transport_success",
+    "test_10_inert_native_overflow_and_deadline_reaped",
+    "test_11_default_cli_unarmed_no_worker",
+    "test_12_no_actual_reader_import_and_stream_family_supported",
+    "test_13_worker_claim_once_and_parent_usage_join",
+    "test_14_source_only_loader_authored_origins_no_reader_call",
+    "test_15_helper_binding_before_compile_and_terminate_error"
+  ],
+  "code_pins": [
+    {
+      "bytes": 27102,
+      "path": "src/civiclab/e01/saved_json_entry_v1.py",
+      "sha256": "a610dfa0efa0f9ba096782c103255f832165ea7b89d0898a4575b5914962f0ad"
+    },
+    {
+      "bytes": 4832,
+      "path": "scripts/run_e01_saved_json_entry_v1_20261117.py",
+      "sha256": "df28e7fab18d4927a195f78c5320578be2ead27e2fd8a6aed0451f27457bf9d2"
+    },
+    {
+      "bytes": 23296,
+      "path": "tests/test_e01_saved_json_entry_v1.py",
+      "sha256": "dacc2d4cdec7d7cc86516de6e33aa7f7c7c32ccfc3d79f58e2af034bb4fe892d"
+    }
+  ],
+  "kind": "ENTRY_V1_FINAL_SOURCE_BINDING",
+  "newcase": "test_15_helper_binding_before_compile_and_terminate_error",
+  "preserved_component_and_drafts": [
+    {
+      "bytes": 33311,
+      "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+      "sha256": "684eb291c1d462afe07d994b7c940290fa26e5fb89907212e75dc69085562010"
+    },
+    {
+      "bytes": 24830,
+      "path": "tests/test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "688d2830e456a7fc77d31ec94c3cbad7a0548a0e9e87b12b355aa25d596a32f8"
+    },
+    {
+      "bytes": 375,
+      "path": "scripts/compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    },
+    {
+      "bytes": 9690,
+      "path": "scripts/e01_saved_json_one_call_launcher_candidate_v1_20261117.py",
+      "sha256": "062fa3d45e355ae25ed5ab75bdd845f97f59e9ba50c1c3fbb332e593c3cc8275"
+    }
+  ],
+  "prior14cases_AST_identical": true,
+  "source_loader_test": "Only14authoredstubsourcebuffersimported;stubread_verified_public nevercalled;namespacecleaned."
+}

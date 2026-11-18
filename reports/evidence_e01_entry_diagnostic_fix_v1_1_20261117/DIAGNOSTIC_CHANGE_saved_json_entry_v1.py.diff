@@ -1,0 +1,28 @@
+--- original/saved_json_entry_v1.py
++++ diagnosticV1.1/saved_json_entry_v1.py
+@@ -274,9 +274,23 @@
+     return ledger
+ 
+ 
++_BASE_ERROR_DICT=BaseException.__dict__['__dict__']
++_BASE_ERROR_ARGS=BaseException.__dict__['args']
++_SAFE_ERROR_CODES=frozenset(('ABSOLUTE_PATH_REQUIRED', 'ARTIFACT_CAP', 'AUTHORED_PROVENANCE', 'AUTHORED_READER', 'AUTHORED_ROOT_REQUIRED', 'BOOTSTRAP_CAP', 'BOOTSTRAP_USAGE', 'CANCELLED', 'CHILD_EXIT', 'CHILD_NOT_REAPED', 'CHILD_RESULT', 'CHILD_USAGE', 'CHILD_USAGE_CAP', 'CHILD_USAGE_REGRESSION', 'CLEANUP_DEADLINE', 'CLOCK', 'CLOSED', 'CODE_PATH', 'CODE_SET', 'CONFIG_ADOPTION', 'CONSOLE_CAP', 'CONSUME_JOIN', 'CONTRACT_HASH', 'DESCRIPTOR_OR_MUTATION_DENIED', 'DIRECTORY_MEMBERSHIP', 'DIRECTORY_MEMBER_TYPE', 'DIRECTORY_SCOPE', 'EXTERNAL_OR_CODE_DENIED', 'FILE_HASH_OR_DRIFT', 'FILE_SIZE_OR_TYPE', 'FINALIZATION_DEADLINE', 'INITIAL_CAP', 'INITIAL_USAGE', 'INPUT_IO', 'JSON_BOUND', 'JSON_DUPLICATE', 'JSON_INVALID', 'JSON_NONFINITE', 'LATE_IMPORT_DENIED', 'LEDGER_BINDINGS', 'LEDGER_COST', 'LEDGER_FLAGS', 'LEDGER_INTERPRETATION', 'LEDGER_METRICS', 'LEDGER_PROVENANCE', 'LEDGER_ROW', 'LEDGER_ROWS', 'LEDGER_SCHEMA', 'LIMITS', 'MANIFEST_RUNTIME', 'METADATA_SCOPE', 'NO_READER_OVERRIDE', 'OPEN_MODE', 'OUTPUT_NAME', 'OUTPUT_SHORT_WRITE', 'PACKET_DIRECTORY', 'PACKET_DRIFT', 'PACKET_HASH', 'PACKET_SCHEMA', 'PATH', 'PATH_TYPE', 'PROJECT_ALREADY_IMPORTED', 'PROJECT_CAP', 'PROJECT_IMPORT_SCOPE', 'PROJECT_ORIGIN', 'PUBLIC_CAP', 'READER_ORIGIN', 'READER_RESULT', 'READER_SPENT', 'READ_AMOUNT', 'READ_SCOPE', 'RECORDED_PROVENANCE', 'REFERENCE', 'REFERENCE_JOIN', 'RELEASE_WINDOW', 'RESOLVE_SCOPE', 'REVIEW_PATH', 'REVIEW_SET', 'ROOT', 'ROOT_PACKET_MODE', 'ROOT_RELEASE', 'RUNTIME_PIN', 'SAVED_CAP', 'SCOPE_ID', 'SHARED_USAGE_JOIN', 'SPENT_CONTROL', 'STARTED_SIZE', 'UNARMED', 'UNMEDIATED_OPEN_DENIED', 'WORKER_MARKER_WRITE', 'WORK_DEADLINE', 'WRITE_CAP', 'WRITE_DENIED'))
++
++
+ def safe_error(error):
+-    code=getattr(error,'code',None)
+-    return code if type(code) is str and re.fullmatch('[A-Z][A-Z0-9_]{0,63}',code) else 'UNCLASSIFIED_FAILURE'
++    # No instance attribute lookup, descriptor, string conversion or foreign
++    # exception payload is consulted. Builtin descriptors read only exact own
++    # errors; the finite tag set is source-reviewed, not a syntax heuristic.
++    if type(error) is not Refused:return 'UNCLASSIFIED_FAILURE'
++    if any(k in Refused.__dict__ for k in ('code','args','__dict__','__getattribute__','__str__')):return 'UNCLASSIFIED_FAILURE'
++    fields=_BASE_ERROR_DICT.__get__(error,Refused)
++    args=_BASE_ERROR_ARGS.__get__(error,Refused)
++    if type(fields) is not dict or type(args) is not tuple or len(args)!=1:return 'UNCLASSIFIED_FAILURE'
++    code=dict.get(fields,'code')
++    if type(code) is not str or type(args[0]) is not str or code not in _SAFE_ERROR_CODES or args[0]!=code:return 'UNCLASSIFIED_FAILURE'
++    return code
+ 
+ 
+ def execute_authored(root,raw,expected_sha,core,runtime,reader_double,*,clock=time.monotonic,now=time.time,cancel=lambda:False):

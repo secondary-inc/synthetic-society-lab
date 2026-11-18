@@ -1,0 +1,52 @@
+{
+  "all_packet_admission_runtime_onecall_output_control_functions_AST_unchanged": true,
+  "case_inventory": [
+    "test_01_physical16_admission_one_reader_safe_ledger",
+    "test_02_unarmed_window_limits_and_bad_metadata_no_control",
+    "test_03_tamper_or_missing_saved16_stops_before_reader",
+    "test_04_exact_run_members_and_no_alias_or_parent_escape",
+    "test_05_create_once_replay_does_not_mutate_success",
+    "test_06_sticky_denied_stream_failure_and_output_validation",
+    "test_07_physical_read_hash_io_budget_and_canonical",
+    "test_08_work_cleanup_finalization_and_primary_errors",
+    "test_09_inert_native_transport_success",
+    "test_10_inert_native_overflow_and_deadline_reaped",
+    "test_11_default_cli_unarmed_no_worker",
+    "test_12_no_actual_reader_import_and_stream_family_supported",
+    "test_13_worker_claim_once_and_parent_usage_join",
+    "test_14_source_only_loader_authored_origins_no_reader_call",
+    "test_15_helper_binding_before_compile_and_terminate_error",
+    "test_16_foreign_descriptors_subclasses_and_tampered_codes",
+    "test_17_failure_envelopes_closed_and_private_payload_absent",
+    "test_18_bootstrap_classifier_exact_closed_and_descriptor_free"
+  ],
+  "foreign_attributes_or_exception_text_used_by_classifiers": false,
+  "kind": "ENTRY_DIAGNOSTIC_NARROW_STATIC_BINDING",
+  "new_helper_globals": "BuiltinBaseExceptiondict/argsdescriptors+93closedtrustedtags",
+  "new_launcher_function": "bootstrap_error+11closedtags",
+  "only_helper_function_change": "safe_error",
+  "only_launcher_existing_function_change": "mainexceptselectorusesbootstrap_error",
+  "original15case_AST_identical": true,
+  "original_independent_receipt": {
+    "bytes": 5579,
+    "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_20261117.json",
+    "sha256": "084aa222f88566ac5d5cd96822b9adddc69bc61d06c9f03bc2e6236f61485e0a"
+  },
+  "preserved_component": [
+    {
+      "bytes": 33311,
+      "path": "src/civiclab/e01/saved_json_job_ledger_v1.py",
+      "sha256": "684eb291c1d462afe07d994b7c940290fa26e5fb89907212e75dc69085562010"
+    },
+    {
+      "bytes": 24830,
+      "path": "tests/test_e01_saved_json_job_ledger_v1.py",
+      "sha256": "688d2830e456a7fc77d31ec94c3cbad7a0548a0e9e87b12b355aa25d596a32f8"
+    },
+    {
+      "bytes": 375,
+      "path": "scripts/compile_e01_saved_json_job_ledger_v1_20261117.py",
+      "sha256": "2277d19ba5213ff183e2612dd5c646fdffb51e1a308ef358fec3c68fe7b70880"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+--- original/test_e01_saved_json_entry_v1.py
++++ diagnosticV1.1/test_e01_saved_json_entry_v1.py
+@@ -226,6 +226,81 @@
+             b=E.Budget();E.charge_bootstrap(b,{'saved_JSON_bytes':4,'project_source_bytes':8})
+             self.assertEqual((b.saved,b.project),(4,8))
+             with self.assertRaises(E.Refused):E.charge_bootstrap(b,{'saved_JSON_bytes':True,'project_source_bytes':8})
++
++
++        def test_16_foreign_descriptors_subclasses_and_tampered_codes(self):
++            calls={'code':0,'text':0,'eq':0}
++            class Foreign(RuntimeError):
++                code='AUTHORED_PRIVATE_SENTINEL'
++            class Descriptor(RuntimeError):
++                @property
++                def code(self):calls['code']+=1;raise AssertionError('FOREIGN_DESCRIPTOR_EXECUTED')
++                def __str__(self):calls['text']+=1;raise AssertionError('FOREIGN_TEXT_EXECUTED')
++            class Subclass(E.Refused):
++                def __init__(self):BaseException.__init__(self,'WORK_DEADLINE')
++                @property
++                def code(self):calls['code']+=1;raise AssertionError('SUBCLASS_DESCRIPTOR_EXECUTED')
++            for error in (Foreign(),Descriptor(),Subclass()):self.assertEqual(E.safe_error(error),'UNCLASSIFIED_FAILURE')
++            self.assertEqual(E.safe_error(E.Refused('WORK_DEADLINE')),'WORK_DEADLINE')
++            self.assertEqual(E.safe_error(E.Refused('INPUT_IO')),'INPUT_IO')
++            for tag in ('AUTHORED_PRIVATE_SENTINEL','CANCELLED'):
++                error=E.Refused('WORK_DEADLINE');error.code=tag
++                self.assertEqual(E.safe_error(error),'UNCLASSIFIED_FAILURE')
++            error=E.Refused('AUTHORED_PRIVATE_SENTINEL');self.assertEqual(E.safe_error(error),'UNCLASSIFIED_FAILURE')
++            class StringLike(str):
++                def __eq__(self,other):calls['eq']+=1;raise AssertionError('FOREIGN_EQUALITY_EXECUTED')
++            error=E.Refused('WORK_DEADLINE');error.code=StringLike('WORK_DEADLINE')
++            self.assertEqual(E.safe_error(error),'UNCLASSIFIED_FAILURE')
++            error=E.Refused('WORK_DEADLINE');error.args=(object(),)
++            self.assertEqual(E.safe_error(error),'UNCLASSIFIED_FAILURE')
++            error=E.Refused('INPUT_IO')
++            def descriptor(_):calls['code']+=1;raise AssertionError('TAMPERED_CLASS_DESCRIPTOR')
++            E.Refused.code=property(descriptor)
++            try:self.assertEqual(E.safe_error(error),'UNCLASSIFIED_FAILURE')
++            finally:del E.Refused.code
++            self.assertEqual(calls,{'code':0,'text':0,'eq':0})
++
++        def test_17_failure_envelopes_closed_and_private_payload_absent(self):
++            calls={'code':0,'text':0}
++            class Foreign(RuntimeError):code='AUTHORED_PRIVATE_SENTINEL'
++            class Descriptor(RuntimeError):
++                @property
++                def code(self):calls['code']+=1;raise AssertionError('FOREIGN_DESCRIPTOR_EXECUTED')
++                def __str__(self):calls['text']+=1;raise AssertionError('FOREIGN_TEXT_EXECUTED')
++            class Subclass(E.Refused):
++                def __init__(self):BaseException.__init__(self,'AUTHORED_PRIVATE_SENTINEL')
++                @property
++                def code(self):calls['code']+=1;raise AssertionError('FOREIGN_SUBCLASS_DESCRIPTOR')
++            tampered=E.Refused('INPUT_IO');tampered.code='AUTHORED_PRIVATE_SENTINEL'
++            for error,expected in ((Foreign(), 'UNCLASSIFIED_FAILURE'),(Descriptor(),'UNCLASSIFIED_FAILURE'),(Subclass(),'UNCLASSIFIED_FAILURE'),
++                                   (tampered,'UNCLASSIFIED_FAILURE'),(E.Refused('WORK_DEADLINE'),'WORK_DEADLINE')):
++                parts=fresh()
++                class ReaderFailure:
++                    mock_only=True
++                    def __call__(self,*args,**kwargs):raise error
++                with self.assertRaises(type(error)):execute(parts,ReaderFailure())
++                record=E.strict(outcome(parts,'FAILURE.json').read_bytes())
++                self.assertEqual(record['error_code'],expected);self.assertEqual(record['status'],'FAILED_UNACCEPTED')
++                self.assertNotIn(b'AUTHORED_PRIVATE',E.packed(record));self.assertFalse(outcome(parts,'COMPLETE.json').exists())
++            self.assertEqual(calls,{'code':0,'text':0});runtime.verify()
++
++        def test_18_bootstrap_classifier_exact_closed_and_descriptor_free(self):
++            bootstrap=_load(LAUNCHER,'authored_bootstrap_classifier');calls={'code':0}
++            class Descriptor(RuntimeError):
++                @property
++                def code(self):calls['code']+=1;raise AssertionError('BOOTSTRAP_FOREIGN_DESCRIPTOR')
++            class Foreign(RuntimeError):code='AUTHORED_PRIVATE_SENTINEL'
++            class Subclass(bootstrap.BootstrapRefused):
++                def __init__(self):BaseException.__init__(self,'BOOTSTRAP_SIZE')
++                @property
++                def code(self):calls['code']+=1;raise AssertionError('BOOTSTRAP_SUBCLASS_DESCRIPTOR')
++            for error in (Foreign(),Descriptor(),Subclass()):self.assertEqual(bootstrap.bootstrap_error(error),'BOOTSTRAP_FAILURE')
++            self.assertEqual(bootstrap.bootstrap_error(bootstrap.BootstrapRefused('BOOTSTRAP_HELPER_BINDING')),'BOOTSTRAP_HELPER_BINDING')
++            error=bootstrap.BootstrapRefused('BOOTSTRAP_SIZE');error.code='AUTHORED_PRIVATE_SENTINEL'
++            self.assertEqual(bootstrap.bootstrap_error(error),'BOOTSTRAP_FAILURE')
++            error=bootstrap.BootstrapRefused('BOOTSTRAP_SIZE');error.code='BOOTSTRAP_ALIAS'
++            self.assertEqual(bootstrap.bootstrap_error(error),'BOOTSTRAP_FAILURE')
++            self.assertEqual(calls['code'],0)
+ 
+     return unittest.defaultTestLoader.loadTestsFromTestCase(Cases)
+ 
+@@ -338,8 +413,8 @@
+                 child.wait(timeout=max(0.001,deadline-time.monotonic()))
+             self.assertEqual(child.returncode,0,data.decode(errors='replace'))
+             lines=data.decode().splitlines();record=json.loads(next(x.split('=',1)[1] for x in lines if x.startswith('SAVED_JSON_ENTRY_AUTHORED=')))
+-            self.assertEqual(record['tests'],15);self.assertEqual(record['failures'],0);self.assertEqual(record['errors'],0)
+-            self.assertEqual(sum(x.startswith('test_') and x.endswith(' ... ok') for x in lines),15)
++            self.assertEqual(record['tests'],18);self.assertEqual(record['failures'],0);self.assertEqual(record['errors'],0)
++            self.assertEqual(sum(x.startswith('test_') and x.endswith(' ... ok') for x in lines),18)
+             print('E01_ENTRY_CI_RECEIPT='+json.dumps(record,sort_keys=True))
+         finally:
+             if child.poll() is None:

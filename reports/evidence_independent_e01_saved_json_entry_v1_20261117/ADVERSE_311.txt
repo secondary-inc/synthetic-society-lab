@@ -1,0 +1,20 @@
+FIRST_AUTHORED_FAILURE=test_independent_05_failure_ledger_redaction (__main__.extra.<locals>.Extra.test_independent_05_failure_ledger_redaction)
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/reports/evidence_independent_e01_saved_json_entry_v1_20261117/adverse_controls.py", line 39, in test_independent_05_failure_ledger_redaction
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_e01_saved_json_entry_v1.py", line 54, in execute
+    return E.execute_authored(root,raw,E.sha(raw),C,runtime,reader or Reader(),now=lambda:101,**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_entry_v1.py", line 294, in execute_authored
+    raise primary
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_entry_v1.py", line 287, in execute_authored
+    control.consume();ledger=calculate(root,p,core,runtime,budget,True,reader_double);validate_ledger(ledger,p,True)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_entry_v1.py", line 267, in calculate
+    need(getattr(reader_double,'mock_only',False) is True,'AUTHORED_READER');reader=reader_double
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e01/saved_json_entry_v1.py", line 36, in need
+    if not ok:raise Refused(code)
+              ^^^^^^^^^^^^^^^^^^^
+authored_entry.Refused: AUTHORED_READER
+
+SAVED_JSON_ENTRY_AUTHORED={"actual_16_body_reads": 0, "actual_reader_calls": 0, "cost_usd": 0, "counters": {"denied": 3, "fixture_write_bytes": 1807262, "native_children": 5, "observed_file_read_bytes": 20212422, "observed_write_bytes": 62728}, "errors": 1, "failures": 2, "model_calls": 0, "network_calls": 0, "runtime_selected_origins_sha256": "e3a2a4bd8305564b8b0e74e8028f450929151c314e1adc6b120a5c50bbe8d4f2", "startup_prewarm_complete": false, "tests": 20}

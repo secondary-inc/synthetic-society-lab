@@ -1,0 +1,396 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "CPU_scope_diagnosis": {
+    "absolute_process_limit": "RLIMIT_CPU applies cumulative process CPU, not a stopwatch reset at setrlimit. Frozen originalmain sets59/60 after its packet validation. The saved-key bridge also performs admission/key-loading before originalmain; all earlier process CPU remains counted. Prior L03 positive measurement began before normal constructor/client but after fixture creation/import/control construction; it is not whole entry-process CPU.",
+    "failure_path_work": "Failure handler performs a full canary_snapshot verification, UNCERTAIN transition verification/append read-back and CLOSE verification/append read-back before writing failure.json. These inherited full-history replays consume CPU and can be interrupted after event publication. Prior happy-path timing is not an error-path or all-input CPU upper bound.",
+    "likely_interruption_region_inference": "CLOSE published while failure.json and generic stdout are absent is consistent with native CPU stop during CLOSE post-commit verification or following error finalization. This is an inference from ordering, not a localized stack trace.",
+    "no_inspected_SIGXCPU_handler": true,
+    "observed_mock_measurements": [
+      {
+        "attempt": 2,
+        "positive": {
+          "fixed10second_billing_visibility_wait": "MOCK_SKIPPED",
+          "operation_CPU_seconds": 42.786136,
+          "operation_wall_seconds": 42.98547212500125,
+          "phase_wall_seconds": 24.934750041982625
+        },
+        "runtime": "3.12.14"
+      },
+      {
+        "attempt": 2,
+        "positive": {
+          "fixed10second_billing_visibility_wait": "MOCK_SKIPPED",
+          "operation_CPU_seconds": 42.68386999999999,
+          "operation_wall_seconds": 43.029534375004005,
+          "phase_wall_seconds": 25.139520083990647
+        },
+        "runtime": "3.11.17"
+      }
+    ],
+    "signal_and_limit_source_refs": [
+      {
+        "expression": "resource.setrlimit(resource.RLIMIT_CORE, (0, 0))",
+        "line": 34,
+        "source": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py"
+      },
+      {
+        "expression": "resource.setrlimit(resource.RLIMIT_CPU, (59, 60))",
+        "line": 34,
+        "source": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py"
+      },
+      {
+        "expression": "signal.signal(signal.SIGALRM, timeout)",
+        "line": 36,
+        "source": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py"
+      },
+      {
+        "expression": "signal.setitimer(signal.ITIMER_REAL, 240)",
+        "line": 36,
+        "source": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py"
+      }
+    ],
+    "what_is_not_explained": "Missing per-stage getrusage/monotonic/error record prevents attributing the actual difference to imports, repeated replay, exact live metadata, transport processing or cleanup. No claim any particular component caused59CPU or consumed a computed amount. Mock skipped10s billing wait is wall-time seam and was not reached by this new event prefix; it is not evidence of this CPU cause."
+  },
+  "HTTP_attempt_localization": {
+    "bounded_unknowns": "No retained response/statistics/checkpoint or failure.json identifies error type, HTTP status, provider handling, generation or bill. New row.error_type CanaryStopped is generic. No assertion of another402, successful API call, zero charge, or original parent402 cause.",
+    "durable_intents": "POST IO intent and matching dispatch journal are present. Source _Capability marks used and writes dispatch before a second phase.gate, assigning posts and entering transport.post_bytes only afterward. Treat this allowance as consumed even if transport never started.",
+    "possible_pre_transport_stop": "The phase gate immediately after durable dispatch may refuse before post_bytes. Dispatch record alone therefore does not establish actual HTTP entry.",
+    "possible_transport_or_post_return_stop": "If transport began, HTTP/network/decoding/transport validation may have raised; or the client gate/phase after return may have refused before retaining response/observing cost. A response lacking/invalid cost or generation could also fail before a response journal. Source-compatible possibilities, not observed causes.",
+    "prohibited_inference": "Do not resend originalslot45, re-open aliases, clear1003hold or infer a returned generation from a request hash."
+  },
+  "INPUT_REFS": [
+    {
+      "bytes": 4533,
+      "label": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-01/manifest.local.json",
+      "sha256": "4cc86b9df8c149923eafc3fd8641c1445555f30b1e806045ca9a9f40883d8481"
+    },
+    {
+      "bytes": 246,
+      "label": "capture-ref-0",
+      "sha256": "9f2ab0b4e44e10191fbad96dc5fca41eb79aaba6ca3066a2d9351de57d3f6d0a"
+    },
+    {
+      "bytes": 297,
+      "label": "capture-ref-1",
+      "sha256": "6acc88d3f5da32980616d4810c9e523e53590a78305b7f07e39826eefa8fe721"
+    },
+    {
+      "bytes": 546,
+      "label": "capture-ref-2",
+      "sha256": "920278f3258c856f60959cf7bd380a944cc09d797084552698dd7ae7024a54e9"
+    },
+    {
+      "bytes": 4956160,
+      "label": "capture-ref-3",
+      "sha256": "73edd63e035956caf74c1841f4c9e3f9ae8230363b1be70dae3a229818fb0148"
+    },
+    {
+      "bytes": 4182538,
+      "label": "capture-ref-4",
+      "sha256": "b9f184bd26714ef8c13ae22c830f2c2b9bf376dbebc8a90ea4ef94431ffd1228"
+    },
+    {
+      "bytes": 3594624,
+      "label": "capture-ref-5",
+      "sha256": "3737e37c16c6a9d18ec8b84db4f35f53c6222c83be8823eb94ab289b760ba8bb"
+    },
+    {
+      "bytes": 540,
+      "label": "capture-ref-6",
+      "sha256": "11cb4f7bd91fe7da1299a6013b29d020d35e54bd3165bfd970a3de72fb42b64a"
+    },
+    {
+      "bytes": 10834,
+      "label": "capture-ref-7",
+      "sha256": "94f9ca68554bd937df3374f2e4740918e2d5c55ce972afaf62aa2fc24b7cb85f"
+    },
+    {
+      "bytes": 3159,
+      "label": "capture-ref-8",
+      "sha256": "ea6f00fe9a0f80d2a80bf8bda7cb570b213b4259eb08399ad514f766588694c4"
+    },
+    {
+      "bytes": 4481,
+      "label": "capture-ref-9",
+      "sha256": "022ad302fdc444dc81b3cd5f94e43e59c9524ff5cf3eb4e63172e6e3ff03d5be"
+    },
+    {
+      "bytes": 6201,
+      "label": "capture-ref-10",
+      "sha256": "61e5297bc1553747f5577db34556e35da8120357ee90088542d99d1b10a85cbd"
+    },
+    {
+      "bytes": 107,
+      "label": "capture-ref-11",
+      "sha256": "e22ea06d7fc9ae6eddf7992371cc4cf012330bbc43dded827f4d3a95645ab1ed"
+    },
+    {
+      "bytes": 0,
+      "label": "capture-ref-12",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2795,
+      "label": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 8656,
+      "label": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11"
+    },
+    {
+      "bytes": 21807,
+      "label": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 28676,
+      "label": "src/civiclab/e02/exploratory_live_client_v1.py",
+      "sha256": "8133110f1889c75c440fa466284e710e10bd608475a6654eb0711e4dadbe4d22"
+    },
+    {
+      "bytes": 39024,
+      "label": "src/civiclab/e02/exploratory_owner_v1.py",
+      "sha256": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756"
+    },
+    {
+      "bytes": 33110,
+      "label": "src/civiclab/production_owner_v4.py",
+      "sha256": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf"
+    },
+    {
+      "bytes": 7665,
+      "label": "src/civiclab/production_compatibility_transport_v4_2.py",
+      "sha256": "970632b7d548f4efacf5065f10a88ee88d740ad274902922c1d061c2e0df00d0"
+    },
+    {
+      "bytes": 15343,
+      "label": "src/civiclab/production_admission_v4.py",
+      "sha256": "f9fb7cc5760943543857bf5f6215fbbc7d812e8be4356a51a4174d1746b15afd"
+    },
+    {
+      "bytes": 6017,
+      "label": "src/civiclab/openrouter_http_v2.py",
+      "sha256": "ddde4b1708c91f55e73c3bee60366dc8116be84b59beb403a4d05bd59c497154"
+    },
+    {
+      "bytes": 8476,
+      "label": "src/civiclab/common.py",
+      "sha256": "566c5f3947e3048a1521d1edfa2ee6e7ade7b66502e3b4ee6ee440573eb885fa"
+    },
+    {
+      "bytes": 3410,
+      "label": "scripts/launch_e02_canary_with_saved_key_20261117.py",
+      "sha256": "c4b2bd2d378b3fae5e22ecbe332fcefe2f8548257817409c53f1637f3cbe44e3"
+    },
+    {
+      "bytes": 40018,
+      "label": "reports/E02_CANARY_INHERITED_MOCK_V1_CODE_HANDOFF_20261117.json",
+      "sha256": "85e791752de5e1e242403eb5b013c9a73e1f6a3e3dd11965f2488060a5e11ad6"
+    },
+    {
+      "bytes": 184721,
+      "label": "reports/STATUS.md",
+      "sha256": "3ccab1a0195e4784abca373a9549db53fcdfded9eecb4fc32931593bb4330c3b"
+    }
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead/auditor review exact closed diagnosis; preserve all holds and consumed scope. No rerun authorized by this report.",
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only exact captured raw control/journal files and frozen project source/public prior metadata read. Captured owner/receipt/header/request values stayed transient; report contains deidentified technical counts/hashes and source locations only. No currentowner/key/env/publisher/respondent access. Structural projection is not semantic validation.",
+  "TASK_ID": "E02_CANARY_STOP_SOURCE_DIAGNOSIS_20261117",
+  "UNRESOLVED_BLOCKERS": [
+    "Underlying caught error/HTTP status and actual provider dispatch/bill unknown.",
+    "Stop semantic acceptance and any future bounded recovery/execution require separate lead assignment/review.",
+    "No prospective/humanpersuasion/full80study claim follows."
+  ],
+  "activity": {
+    "Git_mutations": 0,
+    "candidate_imports": 0,
+    "credentials_read": 0,
+    "current_owner_access": 0,
+    "model_requests": 0,
+    "network_calls": 0,
+    "owner_verifier_calls": 0,
+    "production_edits": 0
+  },
+  "capture_manifest": {
+    "bytes": 4533,
+    "path": "data/processed/e02_wrapper_crossmodel_canary_v1_20261117_actual_01/stop-capture-01/manifest.local.json",
+    "sha256": "4cc86b9df8c149923eafc3fd8641c1445555f30b1e806045ca9a9f40883d8481"
+  },
+  "closed_artifacts_missing": {
+    "checkpoint_json": true,
+    "failure_json": true,
+    "response_json": true,
+    "statistics_json": true,
+    "summary_json": true
+  },
+  "closed_checks": {
+    "complete_hash_chain": true,
+    "events": 1189,
+    "head_anchor_matches_terminal_chain": true,
+    "new_dispatch_context_payload_join": true,
+    "new_request_context_payload_join": true,
+    "no_semantic_owner_verification": true,
+    "original194rows_hash_matches_frozen_parent_and_unchanged": true,
+    "rows": 195,
+    "structural_after_projection_matches_materialization": true,
+    "structural_before_hash_joins": true
+  },
+  "conservative_accounting": {
+    "caps_unchanged": true,
+    "new_actual_charge": "UNKNOWN",
+    "new_full_hold_retained": true,
+    "new_hold_is_not_actual_invoice": true,
+    "sum_row_charges_microusd": 17152,
+    "unfinished_charges_microusd": [
+      340,
+      340,
+      775,
+      788,
+      1003,
+      1008
+    ],
+    "unfinished_count": 6
+  },
+  "decision": "CAUGHT_CLIENT_FAILURE_THEN_NATIVE_CPU_STOP_SUPPORTED_HTTP_ENTRY_AND_INITIAL_ERROR_UNKNOWN",
+  "kind": "CLOSED_COPY_STATIC_SOURCE_DIAGNOSIS_NOT_OWNER_REPLAY_OR_NEW_EXECUTION",
+  "minimal_future_recovery_proposal": [
+    {
+      "scope": "Keep original attempt stopped and1003 plus all five old holds. Treat generation/billing and physical POST entry unknown. No retry, largerCPUcap, new allowance, new owner or edits to old packet/journal/head.",
+      "step": 1
+    },
+    {
+      "scope": "Separate bounded closed-copy structural/semantic stop review and, if lead assigns it, one offline profiling qualification using normal inherited verifier, exact captured packet/catalog shapes and inert transport failures at dispatch/pre-response. Record per-stage selfCPU/wall with bounded safe enums; do not call current owner/API or retransmit actualslot45.",
+      "step": 2
+    },
+    {
+      "scope": "For a separately versioned future client, consider persisting one bounded secret-free original failure diagnostic BEFORE expensive cleanup/read-back (allowlisted error class and trusted HTTP status only), while retaining reservation. Independently test interruption and CPU boundaries before any future release. This is proposal only; production was not edited.",
+      "step": 3
+    },
+    {
+      "scope": "Unknown generation cannot be reconciled by inventing anID or approximate cost. Any permitted provider-log/account correlation needs separately bounded access and exact identity evidence; otherwise preserve full hold. No authenticated recovery query is proposed as already supported.",
+      "step": 4
+    },
+    {
+      "scope": "Any future modelwork must be a separately approved never-attempted scope with existing financial and request caps, after evidence/review and measured feasible caller/failure CPU budget. Do not reuse spent45 or silently raise59/60; stop if existing cap cannot be met.",
+      "step": 5
+    }
+  ],
+  "new_event_timeline": [
+    {
+      "IO_phase": null,
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_OPEN_V1",
+      "recorded_at_UTC": "2026-11-18T04:05:12.882206+00:00",
+      "seconds_after_GRANT": -38.54062,
+      "seconds_after_OPEN": 0.0
+    },
+    {
+      "IO_phase": "CATALOG_A",
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_IO_V1",
+      "recorded_at_UTC": "2026-11-18T04:05:19.750397+00:00",
+      "seconds_after_GRANT": -31.672429,
+      "seconds_after_OPEN": 6.868191
+    },
+    {
+      "IO_phase": "CATALOG_B",
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_IO_V1",
+      "recorded_at_UTC": "2026-11-18T04:05:31.122674+00:00",
+      "seconds_after_GRANT": -20.300152,
+      "seconds_after_OPEN": 18.240468
+    },
+    {
+      "IO_phase": null,
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_PROOFS_V1",
+      "recorded_at_UTC": "2026-11-18T04:05:42.816000+00:00",
+      "seconds_after_GRANT": -8.606826,
+      "seconds_after_OPEN": 29.933794
+    },
+    {
+      "IO_phase": null,
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_GRANT_V1",
+      "recorded_at_UTC": "2026-11-18T04:05:51.422826+00:00",
+      "seconds_after_GRANT": 0.0,
+      "seconds_after_OPEN": 38.54062
+    },
+    {
+      "IO_phase": null,
+      "clock_status": "OK",
+      "kind": "RESERVE",
+      "recorded_at_UTC": "2026-11-18T04:05:51.435637+00:00",
+      "seconds_after_GRANT": 0.012811,
+      "seconds_after_OPEN": 38.553431
+    },
+    {
+      "IO_phase": "POST",
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_IO_V1",
+      "recorded_at_UTC": "2026-11-18T04:05:59.028794+00:00",
+      "seconds_after_GRANT": 7.605968,
+      "seconds_after_OPEN": 46.146588
+    },
+    {
+      "IO_phase": null,
+      "clock_status": "OK",
+      "kind": "TRANSITION",
+      "recorded_at_UTC": "2026-11-18T04:06:10.126409+00:00",
+      "seconds_after_GRANT": 18.703583,
+      "seconds_after_OPEN": 57.244203
+    },
+    {
+      "IO_phase": null,
+      "clock_status": "OK",
+      "kind": "WRAPPER_CANARY_CLOSE_V1",
+      "recorded_at_UTC": "2026-11-18T04:06:13.260235+00:00",
+      "seconds_after_GRANT": 21.837409,
+      "seconds_after_OPEN": 60.378029
+    }
+  ],
+  "new_row_without_identity": {
+    "actual_serving_provider": "UNKNOWN_NO_RESPONSE_OR_BILLING",
+    "billing_present": false,
+    "charged_microusd": 1003,
+    "checkpoint_hash_present": false,
+    "error_type": "CanaryStopped",
+    "generation_present": false,
+    "observed_cost_microusd": null,
+    "output_hash_present": false,
+    "requested_model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "requested_route": "nebius/fp8",
+    "reserved_microusd": 1003,
+    "status": "UNCERTAIN"
+  },
+  "recorded_at_UTC": "2026-11-18T05:28:57.974945+00:00",
+  "resource_accounting": {
+    "CPU_limit_seconds": 60,
+    "CPU_seconds": 0.18972999999999998,
+    "bounded_diagnosis_invocations": 1,
+    "console_limit_bytes": 65536,
+    "logical_read_bytes": 21980448,
+    "manifest_only_preflight_reads_included": 4533,
+    "read_limit_bytes": 134217728,
+    "startup_boundary": "Stdlib/interpreter startup not claimed fully metered. Closed file bytes, SQLite native file reservation and returned serialized payloads explicitly charged.",
+    "wall_limit_seconds": 120,
+    "wall_seconds": 0.10539495899999998,
+    "write_limit_bytes": 4194304
+  },
+  "root_terminal_observation_not_rerun": {
+    "exit": 152,
+    "reported_signal": "SIGXCPU",
+    "source": "Root instruction for exact candidate02 at0ae4d85",
+    "source_note": "This diagnosis does not reproduce process exit or infer an HTTP error from shell status.",
+    "stderr_bytes": 0,
+    "stdout_bytes": 0
+  },
+  "what_TRANSITION_and_CLOSE_prove": [
+    "Given exact frozen client source, new receipt already assigned and its try block entered. A caught exception after reservation caused the client to attempt failure cleanup; successfully recorded UNCERTAIN/CanaryStopped with unknown generation/billing/observed cost is its conservative failure transition. This is not a billing reconciliation or successful model completion.",
+    "The following CLOSE payload is FAILED. Its recorded publication shows the close event reached storage. A matching head anchors that event if closed_checks.head_anchor_matches_terminal_chain is true; no claim is made that the live owner has been newly verified.",
+    "Owner append helpers publish database event/row, commit and anchor before mandatory _verify read-back. Thus a durable CLOSE does not prove close_canary returned, read-back completed, failure.json was written, or generic main failure output ran.",
+    "Original launcher installs CPU soft59/hard60 and wall240 handler, with no SIGXCPU handler in inspected source. Under the reported native SIGXCPU/default-handler interpretation, Python cleanup events precede the native termination and require an earlier caught failure. SIGXCPU alone does not explain which original error caused UNCERTAIN."
+  ]
+}

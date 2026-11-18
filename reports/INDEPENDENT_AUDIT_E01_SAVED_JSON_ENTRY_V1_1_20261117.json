@@ -1,0 +1,145 @@
+{
+  "TASK_ID": "INDEPENDENT_E01_SAVED_JSON_ENTRY_DIAGNOSTIC_V1_1_20261117",
+  "status": "PASS",
+  "decision": "Narrow diagnostic defect closed. Saved-JSON entry component accepted within authored physical-fixture and inert-child scope only. Actual recorded-source entry remains NOT_RUN pending particular review and root release.",
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_JSON_ENTRY_V1_1_20261117.json",
+    "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/AST_STABILITY.json",
+      "bytes": 2033,
+      "sha256": "b88ab393918a8d74a2eeb37d4141a77cfa1b327058ec0df3b5aa36b9c6ab605a"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/PIN_CHECKS.json",
+      "bytes": 3024,
+      "sha256": "399c0d11386cf77470b92f505ccb7c57c258f4076c5fbe4607881d844eeafbdd"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/PLAN.json",
+      "bytes": 1135,
+      "sha256": "8dd8695fbfa267c456d5e001d12cdee7fa678bd81cbbc1bb10aacbbaafca8234"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/SUCCESSOR_311.json",
+      "bytes": 105,
+      "sha256": "834eec4e4890b2b15a1f18b71fcfa1115b361c982cf283bd56c2eba9627505b2"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/SUCCESSOR_311.txt",
+      "bytes": 4683,
+      "sha256": "38e06accb808635335fcb7042c8631d3d0e5b0714f4e36ae4f350f03462fa76b"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/SUCCESSOR_312.json",
+      "bytes": 105,
+      "sha256": "80dffef80a233810995d760b656ffb6ffc617f7219c7ca84ffa426d6c7fa977d"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/SUCCESSOR_312.txt",
+      "bytes": 4683,
+      "sha256": "470f6ffc5c69befc98debb161361ee492a14852577e78aab4a88f2986aef8b88"
+    },
+    {
+      "path": "reports/evidence_independent_e01_saved_json_entry_v1_1_20261117/adverse_controls.py",
+      "bytes": 3759,
+      "sha256": "02ffd491942ff1429611146870d039c4546cc67aae018aafb716298251295540"
+    }
+  ],
+  "source_refs": [
+    {
+      "path": "src/civiclab/e01/saved_json_entry_v1.py",
+      "bytes": 29540,
+      "sha256": "50700d8c5d288a626731e1bd230f9718ddac2e1cdacc2110127cad0979ac9677"
+    },
+    {
+      "path": "scripts/run_e01_saved_json_entry_v1_20261117.py",
+      "bytes": 5848,
+      "sha256": "cece6007ac3c43fae3b16d67a0e9a4d8c7c2e1d64207e330c869e1eedc148115"
+    },
+    {
+      "path": "tests/test_e01_saved_json_entry_v1.py",
+      "bytes": 28500,
+      "sha256": "af45699d128cd99d1181b2038f224b09cc160b3e016e497e4c46c293572470f0"
+    },
+    {
+      "path": "reports/E01_ENTRY_DIAGNOSTIC_FIX_V1_1_20261117.json",
+      "bytes": 10560,
+      "sha256": "61e7052a8bc57205e21fbe24ad439a378f8f0dadd2dd753f3b1c121882e5323a"
+    },
+    {
+      "path": "reports/evidence_e01_entry_diagnostic_fix_v1_1_20261117/FROZEN_MANIFEST.json",
+      "bytes": 5427,
+      "sha256": "115e04f69f8f88c086ee3227cd6b6e636cd45141262e17c312312c875b50a176"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "One successor invocation/runtime of adverse_controls.py under -I -B -S and frozen authored guard; allocation exhausted."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "Python_3_11": {
+      "actual_16_body_reads": 0,
+      "actual_reader_calls": 0,
+      "cost_usd": 0,
+      "counters": {
+        "denied": 0,
+        "fixture_write_bytes": 2393670,
+        "native_children": 5,
+        "observed_file_read_bytes": 21218968,
+        "observed_write_bytes": 66100
+      },
+      "errors": 0,
+      "failures": 0,
+      "model_calls": 0,
+      "network_calls": 0,
+      "runtime_selected_origins_sha256": "e3a2a4bd8305564b8b0e74e8028f450929151c314e1adc6b120a5c50bbe8d4f2",
+      "startup_prewarm_complete": false,
+      "tests": 24
+    },
+    "Python_3_12": {
+      "actual_16_body_reads": 0,
+      "actual_reader_calls": 0,
+      "cost_usd": 0,
+      "counters": {
+        "denied": 0,
+        "fixture_write_bytes": 2393670,
+        "native_children": 5,
+        "observed_file_read_bytes": 21934792,
+        "observed_write_bytes": 66109
+      },
+      "errors": 0,
+      "failures": 0,
+      "model_calls": 0,
+      "network_calls": 0,
+      "runtime_selected_origins_sha256": "c4708c0dc62ffc2bde49c58838fbafb5955819dd24523b1cdb6a7fe9fd08bea7",
+      "startup_prewarm_complete": false,
+      "tests": 24
+    },
+    "scope": "18 authored cases plus six independent controls; five inert native children per runtime; zero network/key/model/actual-source/actual-reader access.",
+    "static_checks": "24 frozen refs verified. Every nondiagnostic original helper function and original15 case bodies AST-identical. Launcher change confined to closed diagnostic classifier and exception handler.",
+    "independent_controls": [
+      "Foreign uppercase codes fall back; foreign code properties are not evaluated.",
+      "Subclasses, unknown allowlist tags and tampered trusted instances fall back.",
+      "Legitimate SAVED_CAP preserved; arbitrary message omitted.",
+      "Authorized mock_only reader error preserves original exception and emits FAILURE with constant code, no private sentinel, no COMPLETE.",
+      "Foreign descriptor error still emits safe FAILURE without property evaluation.",
+      "Negative initial budget counters fail closed."
+    ],
+    "finding_closure": "E01-ENTRY-DIAGNOSTIC-01 PASS. Corrected legitimate mock_only integration replaces invalid old reviewer control; old error evidence is untouched."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authored fixture bodies/source stubs only. No real sixteen-file body admission or accepted real reader.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "No full cold-start/G03 certificate, actual installer execution, real-source entry or broad CI claim.",
+    "Accepted exact trusted project code and normal OS behavior; no malicious same-UID or uninterruptible OS IO claim.",
+    "Original BLOCKED receipt remains historical evidence.",
+    "No extra recovery allocation consumed."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "Actual E01 source admission/reader evaluation still needs an exact particular packet, fresh checks and root-controlled one-shot execution.",
+    "Separate G03 startup and broader research requirements remain open."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Static particular review of lead-prepared one-call E01 packet; no actual data execution by auditor."
+}

@@ -1,0 +1,67 @@
+{
+  "kind": "E01_OFFLINE_SAVED_JSON_PREPARATION_V1",
+  "status": "UNARMED_PENDING_ENTRY_AND_PARTICULAR_REVIEW",
+  "purpose": "Read the existing sealed source-readiness run once and produce an explicitly limited source-job ledger. This does not run a forecast, acquire new ballots or promote source acceptance.",
+  "metadata_preparation": {
+    "invocations": 1,
+    "wall_limit_seconds": 20,
+    "CPU_limit_seconds": 10,
+    "wall_seconds_observed": 0.016536250011995435,
+    "selected_runtime_read_bytes": 18220496,
+    "selected_runtime_read_cap_bytes": 33554432,
+    "accepted_component_bytes": 33311,
+    "accepted_component_sha256": "684eb291c1d462afe07d994b7c940290fa26e5fb89907212e75dc69085562010",
+    "actual_saved_body_reads": 0,
+    "actual_reader_calls": 0,
+    "model_calls": 0,
+    "network_calls": 0,
+    "armed": false
+  },
+  "private_metadata_refs": [
+    {
+      "path": "data/processed/e01_saved_json_actual_preparation_20261118_01/runtime-profile.local.json",
+      "bytes": 1786,
+      "sha256": "c4708c0dc62ffc2bde49c58838fbafb5955819dd24523b1cdb6a7fe9fd08bea7"
+    },
+    {
+      "path": "data/processed/e01_saved_json_actual_preparation_20261118_01/manifest.candidate.json",
+      "bytes": 6713,
+      "sha256": "a9322441fb8e52790df29d3df343e527bafea4dab52681c03f823d5bf2cedd1f"
+    }
+  ],
+  "proposed_actual_scope": {
+    "run_id": "e01-f398afc9b07c495290f0a55262ac016c",
+    "saved_files": 12,
+    "reference_files": 4,
+    "saved_and_reference_bytes_one_pass": 131253,
+    "project_source_files": 14,
+    "project_source_bytes_one_pass": 147685,
+    "reader_calls": 1,
+    "model_calls": 0,
+    "network_calls": 0,
+    "retries": 0,
+    "maximum_wall_seconds": 60,
+    "work_seconds": 57,
+    "cleanup_seconds": 2,
+    "finalization_seconds": 1,
+    "CPU_seconds": 30,
+    "saved_JSON_logical_byte_cap": 8388608,
+    "project_source_logical_byte_cap": 1048576,
+    "write_byte_cap": 2097152,
+    "public_byte_cap": 131072,
+    "console_byte_cap": 16384
+  },
+  "acceptance_criteria": [
+    "Independently accept the frozen corrected entry, then review the exact one-call packet before execution.",
+    "Reverify every declared input and project-source byte during actual admission before the single reader call.",
+    "Use the exact reviewed reader and selected runtime; record a create-once consumed scope and preserve any failed attempt.",
+    "Require a validated closed ledger with source adoption, actual selection, coverage promotion and forecast consumption all false.",
+    "Independently inspect actual output and resource evidence before accepting a completed metadata read."
+  ],
+  "limitations": [
+    "Selected runtime origins are not a complete interpreter or native-library startup certificate. The separate G03 gate remains unchanged.",
+    "Input hashes here are metadata pins. This preparation did not reread the sixteen real input bodies.",
+    "The historical readiness record indicates 13 document states and 20 remaining acquisition jobs, with zero accepted final ballots. These are not new actual-reader results.",
+    "No credential, model inference, paid execution, source adoption or external publication is released by this preparation."
+  ]
+}
