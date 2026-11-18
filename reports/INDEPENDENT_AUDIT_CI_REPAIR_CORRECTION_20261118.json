@@ -1,0 +1,131 @@
+{
+  "TASK_ID": "INDEPENDENT_CI_REPAIR_CORRECTION_20261118",
+  "status": "PASS",
+  "decision": "Corrected CI runner/workflow accepted within focused offline scope. Both independent coverage findings close. Hosted full matrix and remaining Linux failures are NOT_RUN/UNRESOLVED, not full CI PASS.",
+  "source_refs": [
+    {
+      "path": "scripts/run_offline_ci_v1.py",
+      "bytes": 56028,
+      "sha256": "7db53cd92b6e7866015ed85d87bf4cddc7abccfbabc5d77b3c8bd54e165a941e"
+    },
+    {
+      "path": "tests/test_ci_collection_isolation_v1.py",
+      "bytes": 46608,
+      "sha256": "9e1f2b0ad7af0c2ded727e3d9c5bea828283d767f9d313f4467874bc642ce631"
+    },
+    {
+      "path": ".github/workflows/offline.yml",
+      "bytes": 2607,
+      "sha256": "cfd6dab54170b37e127d49313c12b92e08114337b6a6c70a3404443e27568040"
+    }
+  ],
+  "input_handoff": {
+    "path": "reports/CI_ROOT_CORRECTION_20261118.json",
+    "bytes": 3903,
+    "sha256": "463d4b3ff524c31799c83533588d0b2400df03f2d85a7b6fdb859e520a98a0f5"
+  },
+  "preserved_initial_finding": {
+    "path": "reports/INDEPENDENT_AUDIT_CI_REPAIR_V1_20261118.json",
+    "bytes": 4856,
+    "sha256": "e761a6ceb0d7fbaed6aca294ca3f7f6999812a28c21324af00862102d21d8624"
+  },
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_CI_REPAIR_CORRECTION_20261118.json",
+    "reports/evidence_independent_ci_repair_20261118/"
+  ],
+  "OUTPUT_ARTIFACTS": [
+    {
+      "path": "reports/evidence_independent_ci_repair_20261118/EVIDENCE_MANIFEST.json",
+      "bytes": 10601,
+      "sha256": "d7fa4da18a4b8d64d68543ea948cb9c497441f1526b32df41442bac165bfedda"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "corrected_controls.py:48 pure/inert models per native runtime.",
+    "Exact production run_offline_ci_v1.py with --only-module test_ci_collection_isolation_v1.py plus two MIME modules, --module-wall-seconds120, fresh output directory:58cases/runtime. No full project suite."
+  ],
+  "TESTS_RUN_AND_RESULTS": {
+    "models": {
+      "3.11.17": {
+        "tests": 48,
+        "failures": 0,
+        "errors": 0,
+        "wall_seconds": 0.12467333301901817,
+        "full_suite_runs": 0,
+        "real_model_calls": 0
+      },
+      "3.12.14": {
+        "tests": 48,
+        "failures": 0,
+        "errors": 0,
+        "wall_seconds": 0.11805737498798408,
+        "full_suite_runs": 0,
+        "real_model_calls": 0
+      }
+    },
+    "production_focused": {
+      "3.11.17": {
+        "returncode": 0,
+        "status": "PASS_FOCUSED_ONLY",
+        "tests": 58,
+        "module_case_counts": [
+          44,
+          6,
+          8
+        ],
+        "wall_seconds": 0.860101125,
+        "source": "exact production CLI with three selected inert/authored modules only",
+        "full_suite_run": false
+      },
+      "3.12.14": {
+        "returncode": 0,
+        "status": "PASS_FOCUSED_ONLY",
+        "tests": 58,
+        "module_case_counts": [
+          44,
+          6,
+          8
+        ],
+        "wall_seconds": 0.9064538750000001,
+        "source": "exact production CLI with three selected inert/authored modules only",
+        "full_suite_run": false
+      }
+    },
+    "static_checks": {
+      "final_pin:scripts/run_offline_ci_v1.py": true,
+      "final_pin:tests/test_ci_collection_isolation_v1.py": true,
+      "final_pin:.github/workflows/offline.yml": true,
+      "preserved_frozen_rule:FROZEN": true,
+      "preserved_frozen_rule:SOCKET_PINS": true,
+      "preserved_frozen_rule:historical_admission": true,
+      "preserved_frozen_rule:run_frozen": true,
+      "preserved_frozen_rule:socket_observation": true,
+      "initial_archived:scripts/run_offline_ci_v1.py": true,
+      "initial_archived:tests/test_ci_collection_isolation_v1.py": true,
+      "initial_archived:.github/workflows/offline.yml": true,
+      "original_41_case_bodies_preserved": true,
+      "workflow_unchanged_from_initial_candidate": true
+    },
+    "finding_closure": {
+      "CI-REPAIR-01": "PASS: flat module architecture explicitly refuses test packages containing __init__.py before claiming complete discovery; no silent nested omission.",
+      "CI-REPAIR-02": "PASS: SKIP and EXPECTED_FAILURE outcomes require matched dispositions, while real per-test/setup/module/subtest skips remain supported."
+    },
+    "extra_controls": "Both original adverse controls pass after allowing explicit nested refusal. Legitimate reason-bound SKIP remains accepted; unplanned skip records are refused.",
+    "preservation": "Original41 test bodies and all six frozen groups/source pins/historical admission paths unchanged. Prior failure snapshots/logs retained.",
+    "bounds_and_labels": "Four deterministic Linux shards share unchanged12120-second coordinator allowance per Python runtime. Focused selections report PASS_FOCUSED_ONLY. Unsupported historical cases remain NOT_RUN; four portable MIME cases retained and ten actual candidate-call cases use real Darwin support."
+  },
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Source and authored/inert tests only. No actual source data, model, owner, key or real inference. Genuine Darwin MIME scope is only fourteen original unit cases, not a whole historical runtime certificate.",
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "RISKS_AND_LIMITATIONS": [
+    "No hosted full run or project full-suite rerun by auditor.",
+    "Flat tests namespace supported; future nested package support must be implemented or CI will explicitly refuse it.",
+    "Ordinary failure labels/long80-case execution may still reveal additional issues on hosted Linux; sharding alone does not prove repair of every test.",
+    "Clerk thin-Docker environment lacking required/bin/ps is not equivalent to original GitHub failure and establishes no definitive cause.",
+    "No G03, installer, research, source-adoption or spending gate promotion."
+  ],
+  "UNRESOLVED_BLOCKERS": [
+    "One justified hosted full matrix and any remaining portable failures; lead owns trigger and CI acceptance.",
+    "Separate E02 journal-finalization defect and whole-entry resource qualification remain open."
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may commit this scoped correction and run one bounded hosted matrix. Auditor next reviews frozen FEC methods; other independent reviewer handles E02 without duplicate integration."
+}
