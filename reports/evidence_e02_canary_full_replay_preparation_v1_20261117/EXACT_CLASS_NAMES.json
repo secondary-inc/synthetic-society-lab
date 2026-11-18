@@ -1,0 +1,80 @@
+{
+  "additional_content_read_bytes": 210553,
+  "clarification": "The preparation report verification_order labels describe semantic roles. These exact AST-extracted class/base names supersede guessed role labels wherever they differ; no runtime class import or verifier execution occurred.",
+  "cumulative_content_read_bytes": 21298244,
+  "kind": "EXACT_SOURCE_CLASS_NAME_CLARIFICATION",
+  "records": [
+    {
+      "base_names": [
+        "WrapperCrossmodelOwnerV1"
+      ],
+      "class_name": "CanaryOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py"
+    },
+    {
+      "base_names": [
+        "WrapperVisibilityOwnerV1"
+      ],
+      "class_name": "WrapperCrossmodelOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/wrapper_crossmodel_v1_owner.py"
+    },
+    {
+      "base_names": [
+        "CrossmodelRecoveryOwnerV1"
+      ],
+      "class_name": "WrapperVisibilityOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/wrapper_visibility_owner_v1.py"
+    },
+    {
+      "base_names": [
+        "CrossmodelOwnerV1"
+      ],
+      "class_name": "CrossmodelRecoveryOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py"
+    },
+    {
+      "base_names": [
+        "AlignmentOwnerV1"
+      ],
+      "class_name": "CrossmodelOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py"
+    },
+    {
+      "base_names": [
+        "ContinuationOwnerV1"
+      ],
+      "class_name": "AlignmentOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/alignment_anchoring_owner_v1.py"
+    },
+    {
+      "base_names": [
+        "StudyOwnerV1"
+      ],
+      "class_name": "ContinuationOwnerV1",
+      "defines_verify": false,
+      "source": "src/civiclab/e02/exploratory_continuation_owner_v1.py"
+    },
+    {
+      "base_names": [
+        "ExecutionBlocked"
+      ],
+      "class_name": "AnalysisRepresentationBound",
+      "defines_verify": false,
+      "source": "src/civiclab/e02/exploratory_owner_v1.py"
+    },
+    {
+      "base_names": [
+        "_AdditionalOwnerV1"
+      ],
+      "class_name": "StudyOwnerV1",
+      "defines_verify": true,
+      "source": "src/civiclab/e02/exploratory_owner_v1.py"
+    }
+  ]
+}

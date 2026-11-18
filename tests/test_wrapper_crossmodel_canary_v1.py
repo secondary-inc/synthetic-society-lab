@@ -382,7 +382,8 @@ def bounded_main():
             if flags & (os.O_WRONLY|os.O_RDWR|os.O_CREAT|os.O_TRUNC|os.O_APPEND):
                 if not path.is_relative_to(tmp):raise AssertionError('ONLY_OWNED_TEMP_WRITES')
             else:
-                if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                reviewed_parent_files={ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md',ROOT/'reports/INDEPENDENT_AUDIT_E02_RECOVERY_ADMISSION_V1_METHODS.json'}
+                if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in reviewed_parent_files or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
                 try:reads[0]+=path.stat().st_size+1
                 except FileNotFoundError:pass
                 if reads[0]>1073741824:raise AssertionError('AUTHOR_LOGICAL_READ_LIMIT')

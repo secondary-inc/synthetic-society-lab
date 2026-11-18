@@ -1,0 +1,390 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "src/civiclab/e01/source_job_ledger_v1.py",
+    "scripts/run_e01_saved_job_ledger_suite_v1.py",
+    "tests/test_e01_source_job_ledger_v1.py",
+    "reports/E01_SAVED_LEDGER_REFUSAL_FIX_V1_1_20261117.json",
+    "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Dedicatedauditorreviewexactfrozencombinedcode/evidence. LeadownsGit/STATUS/acceptance. Workerpausesallownededits.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 1099,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/CONSUMER_CHANGE.diff",
+      "sha256": "d889cabeed31d4d5abf8db555b2fe333a6fd401a5587f7f4c8423ed6213cc7e6"
+    },
+    {
+      "bytes": 898,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/INVOCATION_1_STARTED.json",
+      "sha256": "9d028c3ca8174dcdab341eaa2153bcf063df4052eff54538c77e42306681d6e6"
+    },
+    {
+      "bytes": 2157,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/PLAN_STARTED.json",
+      "sha256": "6ebf1b4b741e3f69634ada150ae865b7bfd0548acc43b4e368bf66058dd77f29"
+    },
+    {
+      "bytes": 1435,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/STATIC_BINDING.json",
+      "sha256": "9704fa497e47c1e731c31567e09e290d9b789b89bdb7a97943f34200cc56fc94"
+    },
+    {
+      "bytes": 24290,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/before_run_e01_saved_job_ledger_suite_v1.py",
+      "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+    },
+    {
+      "bytes": 25240,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/before_source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 5997,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/before_test_e01_source_job_ledger_v1.py",
+      "sha256": "b5ae6bef88ab928dcc7f2bef05d891e44c582c948139117a6bd21abf6df44533"
+    },
+    {
+      "bytes": 3082,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_python311.log",
+      "sha256": "59564dc88199f09dd4f7ff7f764bbdf0d37e109d6450e53a9b81a9c4710f2b69"
+    },
+    {
+      "bytes": 115,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_python311_result.json",
+      "sha256": "125a336666383ad8da989fd2544156b06f98fa16aa728b8e2e7b26f391005862"
+    },
+    {
+      "bytes": 3081,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_python312.log",
+      "sha256": "1507ce837cb955c11811a054810b550f2d303760b8a8d949af42ada9ae512067"
+    },
+    {
+      "bytes": 115,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_python312_result.json",
+      "sha256": "7438b2e1f4b193e2a97b180c185e66f96a4989f2fa70f4878813f78e115ea415"
+    },
+    {
+      "bytes": 7714,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_snapshot_probe.py",
+      "sha256": "4627b1757ee45d95a95e194f586f28aec84eb4dc3d46171920ce06a228f10325"
+    },
+    {
+      "bytes": 27823,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_snapshot_run_e01_saved_job_ledger_suite_v1.py",
+      "sha256": "33d208d3a19cf2fc4322e3e480a5ec27a07680bd89f5da4487f182629b1b8089"
+    },
+    {
+      "bytes": 25438,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_snapshot_source_job_ledger_v1.py",
+      "sha256": "fdb303d28be7c2d880a67ebb01bfd9d77e61228e7a5887acbf7efc39b959b3a5"
+    },
+    {
+      "bytes": 5997,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/invocation1_snapshot_test_e01_source_job_ledger_v1.py",
+      "sha256": "598702cf080a066ae9904151e255e8613b03ad0eee17765b63f568a960629ee1"
+    },
+    {
+      "bytes": 7714,
+      "path": "reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/probe.py",
+      "sha256": "4627b1757ee45d95a95e194f586f28aec84eb4dc3d46171920ce06a228f10325"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/bin/python3.11 -I -B -S reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/probe.py",
+    "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12 -I -B -S reports/evidence_e01_saved_ledger_refusal_fix_v1_1_20261117/probe.py"
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Authorresults are not independent closureofT01/T02 ormilestoneacceptance; auditor mustreviewcombinedcorrectedconsumer andordinaryharness.",
+    "Fullcleancheckout/remoteCI/historicalsuite notrun. Focusedordinaryunittestexecutionstdlibruntimesonly.",
+    "Noactualsavedreader/inputmanifest/realadapter/runtimeclosure/leadrelease; actual_entry remainsalwaysdisabled. ExistingG03/source/runtime/scientificgates unchanged.",
+    "Nativechildtimeout/outputoverflow/killfailure branches remainnotadverseexecuted;pure13wrapperreceiptcases do notcertifyallOSfailurepaths.",
+    "Parsercorrection addressesnumericnonfiniteoverflow; itdoesnot add arbitrarydepth/integertokencaps orclaimgeneralhostileJSONsandboxing. Existing4MiBfilebound retained.",
+    "Trustedauthoredstorecallbacks mayaccessobjects directly; noactualsecuritysandboxcertificate. ReadView stickyIO is enforcedwithin its intendedsavedAPI only.",
+    "Oneordinarywrapperreports33nestedtests; not34researchobservations. Allmockledgeradoption/selection/forecastflagsfalse andfinalballots0."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Authoredmockfixtures only. Consumer/staticentrysource read byexactpins, no civiclab/realreader/rawsource/PDF/CSV/sourcefetch/installer/key/owner/model actions. Fictionalprivateexceptions andsentinels testedforredaction; not realpersondata.",
+  "TASK_ID": "E01_SAVED_LEDGER_REFUSAL_FIX_V1_1_20261117",
+  "TESTS_RUN_AND_RESULTS": {
+    "additional_invocation_needed": false,
+    "authorized_max_per_runtime": 2,
+    "errors": 0,
+    "failures": 0,
+    "focused_invocations_per_runtime": 1,
+    "nested_cases_per_runtime": 33,
+    "new_regression_methods": 3,
+    "ordinary_cases_per_runtime": 1,
+    "original_preserved_cases": 30,
+    "pure_wrapper_adverse_checks_per_runtime": 13,
+    "results": [
+      {
+        "collector_process_controls_unchanged": true,
+        "cost_usd": 0,
+        "counts": {
+          "denied": 0,
+          "discovery_mutations": [],
+          "parent_audited_read_bytes": 113838,
+          "parent_writes": 0,
+          "subprocess_launches": 1
+        },
+        "full_historical_suite": false,
+        "kind": "E01_SAVED_LEDGER_REFUSAL_FIX_V1_1_PROBE",
+        "model_calls": 0,
+        "nested_cases": 33,
+        "nested_evidence": {
+          "actual_saved_reader_calls": 0,
+          "child_console_bytes": 35085,
+          "child_wall_seconds": 0.09470220899675041,
+          "nested_cases": [
+            "test_01_derives_dispositions_and_zero_acceptance",
+            "test_02_privacy_and_missing_semantics",
+            "test_03_reproducible",
+            "test_04_no_adoption_or_inference",
+            "test_05_reject_numeric_false_flags",
+            "test_06_state_shape_order_duplicate_missing",
+            "test_07_no_alabama_or_kind_promotion",
+            "test_08_legacy_index_strict",
+            "test_09_history_role_counts_and_extra",
+            "test_10_diagnostics_context_and_metrics_binding",
+            "test_11_tamper_every_admitted_file_before_reader",
+            "test_12_missing_every_admitted_file_before_reader",
+            "test_13_extra_failed_or_directory_members",
+            "test_14_lock_optional_never_read",
+            "test_15_manifest_closed_bindings_paths",
+            "test_16_plan_hash_pre_effect",
+            "test_17_no_limit_increase_or_type_coercion",
+            "test_18_duplicate_invalid_nonfinite_json",
+            "test_19_caught_outside_or_invalid_path_still_fails",
+            "test_20_caught_bad_json_still_fails",
+            "test_21_caught_budget_exhaustion_still_fails",
+            "test_22_reader_result_substitution_refused",
+            "test_23_no_retry_after_success_or_failure",
+            "test_24_cancel_deadline_clock_invalid",
+            "test_25_failure_marker_redacts_and_primary_survives",
+            "test_26_direct_projection_binding_privacy",
+            "test_27_eventual_packet_pins_and_actual_disabled",
+            "test_28_entry_and_source_do_not_import_actual_reader",
+            "test_29_disk_authored_fixture_and_symlink_refusal",
+            "test_30_disk_bad_root_and_extra_member",
+            "test_31_exponent_overflow_rejected_at_any_depth",
+            "test_32_caught_store_io_errors_latch_before_completion",
+            "test_33_caught_missing_store_controls_still_latch"
+          ],
+          "nested_receipt": {
+            "cost_usd": 0,
+            "errors": 0,
+            "failures": 0,
+            "guard": {
+              "denied": 0,
+              "fixture_write_bytes": 26192,
+              "logical_open_read_bytes": 79997
+            },
+            "interpreter_startup_read_accounting": "NOT_CLAIMED",
+            "kind": "MOCK_SAVED_JOB_LEDGER_SUITE",
+            "model_calls": 0,
+            "network_calls": 0,
+            "real_saved_reader_calls": 0,
+            "tests": 33,
+            "wall_seconds": 0.06294987502042204
+          },
+          "ordinary_wrapper_cases": 1,
+          "script_sha256": "33d208d3a19cf2fc4322e3e480a5ec27a07680bd89f5da4487f182629b1b8089",
+          "startup_resource_qualification": "NOT_CLAIMED",
+          "status": "MOCK_NESTED_33_PASS"
+        },
+        "network_calls": 0,
+        "ordinary_cases": 1,
+        "pure_wrapper_adverse_cases": 13,
+        "raw_source_calls": 0,
+        "real_saved_reader_calls": 0,
+        "runtime": "3.11.17",
+        "source_install_scope_replay": false,
+        "startup_read_accounting": "NOT_CLAIMED",
+        "status": "AUTHOR_PASS_PENDING_INDEPENDENT_REVIEW",
+        "wall_seconds": 0.15622500001336448
+      },
+      {
+        "collector_process_controls_unchanged": true,
+        "cost_usd": 0,
+        "counts": {
+          "denied": 0,
+          "discovery_mutations": [],
+          "parent_audited_read_bytes": 113838,
+          "parent_writes": 0,
+          "subprocess_launches": 1
+        },
+        "full_historical_suite": false,
+        "kind": "E01_SAVED_LEDGER_REFUSAL_FIX_V1_1_PROBE",
+        "model_calls": 0,
+        "nested_cases": 33,
+        "nested_evidence": {
+          "actual_saved_reader_calls": 0,
+          "child_console_bytes": 35085,
+          "child_wall_seconds": 0.09957941601169296,
+          "nested_cases": [
+            "test_01_derives_dispositions_and_zero_acceptance",
+            "test_02_privacy_and_missing_semantics",
+            "test_03_reproducible",
+            "test_04_no_adoption_or_inference",
+            "test_05_reject_numeric_false_flags",
+            "test_06_state_shape_order_duplicate_missing",
+            "test_07_no_alabama_or_kind_promotion",
+            "test_08_legacy_index_strict",
+            "test_09_history_role_counts_and_extra",
+            "test_10_diagnostics_context_and_metrics_binding",
+            "test_11_tamper_every_admitted_file_before_reader",
+            "test_12_missing_every_admitted_file_before_reader",
+            "test_13_extra_failed_or_directory_members",
+            "test_14_lock_optional_never_read",
+            "test_15_manifest_closed_bindings_paths",
+            "test_16_plan_hash_pre_effect",
+            "test_17_no_limit_increase_or_type_coercion",
+            "test_18_duplicate_invalid_nonfinite_json",
+            "test_19_caught_outside_or_invalid_path_still_fails",
+            "test_20_caught_bad_json_still_fails",
+            "test_21_caught_budget_exhaustion_still_fails",
+            "test_22_reader_result_substitution_refused",
+            "test_23_no_retry_after_success_or_failure",
+            "test_24_cancel_deadline_clock_invalid",
+            "test_25_failure_marker_redacts_and_primary_survives",
+            "test_26_direct_projection_binding_privacy",
+            "test_27_eventual_packet_pins_and_actual_disabled",
+            "test_28_entry_and_source_do_not_import_actual_reader",
+            "test_29_disk_authored_fixture_and_symlink_refusal",
+            "test_30_disk_bad_root_and_extra_member",
+            "test_31_exponent_overflow_rejected_at_any_depth",
+            "test_32_caught_store_io_errors_latch_before_completion",
+            "test_33_caught_missing_store_controls_still_latch"
+          ],
+          "nested_receipt": {
+            "cost_usd": 0,
+            "errors": 0,
+            "failures": 0,
+            "guard": {
+              "denied": 0,
+              "fixture_write_bytes": 26192,
+              "logical_open_read_bytes": 79997
+            },
+            "interpreter_startup_read_accounting": "NOT_CLAIMED",
+            "kind": "MOCK_SAVED_JOB_LEDGER_SUITE",
+            "model_calls": 0,
+            "network_calls": 0,
+            "real_saved_reader_calls": 0,
+            "tests": 33,
+            "wall_seconds": 0.06770287500694394
+          },
+          "ordinary_wrapper_cases": 1,
+          "script_sha256": "33d208d3a19cf2fc4322e3e480a5ec27a07680bd89f5da4487f182629b1b8089",
+          "startup_resource_qualification": "NOT_CLAIMED",
+          "status": "MOCK_NESTED_33_PASS"
+        },
+        "network_calls": 0,
+        "ordinary_cases": 1,
+        "pure_wrapper_adverse_cases": 13,
+        "raw_source_calls": 0,
+        "real_saved_reader_calls": 0,
+        "runtime": "3.12.14",
+        "source_install_scope_replay": false,
+        "startup_read_accounting": "NOT_CLAIMED",
+        "status": "AUTHOR_PASS_PENDING_INDEPENDENT_REVIEW",
+        "wall_seconds": 0.1635212079854682
+      }
+    ],
+    "scope": "Newleadassigned narrowrefusal/harnessqualification; nofullhistoricaltests orsource/installscope replay."
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Separateindependentcombinedconsumer/harnessreview pending",
+    "Actualsavedreaderadapter/manifest/guardedruntime/release unavailable",
+    "Originalfullresearchcontract incomplete"
+  ],
+  "acceptance_criteria": [
+    {
+      "author_evidence": "newtest31:6positive/negative/nested exponentoverflowcases and-Infinity refuse;5finite/underflow floats andnestedstringcontrol preserved",
+      "criterion": "Reject numeric overflow at parseboundary atanydepth, withoutrejectingfinitevalidcontrols",
+      "id": "R01"
+    },
+    {
+      "author_evidence": "newtest32:4size/read PermissionError/OSErrorcombos; callbackreturnsformerlyadmittedvalue; eachouterINPUT_IO/failedtrue/nojobledger/noCOMPLETE/redactedfailure",
+      "criterion": "Caught size/read IO faultsmustlatchexactfailure/noCOMPLETE",
+      "id": "R02"
+    },
+    {
+      "author_evidence": "newtest33:4size/read KeyError/FileNotFoundErrorcombos; failedtrue/nojobledger/noCOMPLETE",
+      "criterion": "MissingstoreerrorsretainMISSING_INPUTstickyfailure",
+      "id": "R03"
+    },
+    {
+      "author_evidence": "STATIC_BINDING andprior/currentASTcomparison; all33nestedPASS onbothruntimes",
+      "criterion": "Preserveoriginal30cases/publicprojection/disabledactualentry",
+      "id": "R04"
+    },
+    {
+      "author_evidence": "freshordinarydiscovery executes1wrapper/1child/33nested eachruntime;13pureauthoredadversereceiptchecks; collectorcontrolsunchanged; independentreviewpending",
+      "criterion": "CombinedordinaryCIharnessis collector-safe andbounded",
+      "id": "R05"
+    }
+  ],
+  "actual_saved_reader_calls": 0,
+  "code_pins": [
+    {
+      "bytes": 25438,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fdb303d28be7c2d880a67ebb01bfd9d77e61228e7a5887acbf7efc39b959b3a5"
+    },
+    {
+      "bytes": 27823,
+      "path": "scripts/run_e01_saved_job_ledger_suite_v1.py",
+      "sha256": "33d208d3a19cf2fc4322e3e480a5ec27a07680bd89f5da4487f182629b1b8089"
+    },
+    {
+      "bytes": 5997,
+      "path": "tests/test_e01_source_job_ledger_v1.py",
+      "sha256": "598702cf080a066ae9904151e255e8613b03ad0eee17765b63f568a960629ee1"
+    }
+  ],
+  "correction": {
+    "T01": "json.loads now uses finite_float callback for numeric JSONfloat tokens; positive/negative exponentoverflow raises JSON_NONFINITE including nested values. Existing parse_constant rejects namednonfinite; finitefloat/string/underflow controls preserved.",
+    "T02": "ReadView.read catches OSError after missingfilebranch and irreversibly trips INPUT_IO. PermissionError inheritsOSError. Missing KeyError/FileNotFoundError retain MISSING_INPUT. Same firstlatchederror propagates aftercallback even when callback catches it. No exception payload copied topublic failuremarker.",
+    "harness": "Existing newordinarywrapper nowrequires33nestedcasenames/tests and updatedexactconsumer/scriptpins.1ordinarycase,33nestedcasesexplicit, no silentdrop.",
+    "preserved": "project_public/actual_entry/validate_eventual_binding/compile_mock_once ASTidentical; original30fixturetestbodies ASTidentical; disabledCLI656B unchanged; priorlogs/snapshots/manifests preserved."
+  },
+  "independent_predecessor_findings": {
+    "confirmation_sha256": "8d27f4695f03d00b0c31c043396098552af2ae3873a94989d7eaad20c4350a2a",
+    "confirmed_counterexamples": "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_T01_T02_PROBE_20261117.json",
+    "finding_status": "Independent confirmation retained; this authorhandoff doesnot overwrite orcertifyclosure.",
+    "triage": "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_CODE_TRIAGE_V1_20261117.json"
+  },
+  "model_calls": 0,
+  "network_calls": 0,
+  "ordinary_CI_command": "python -m unittest discover -s tests -p test_e01_source_job_ledger_v1.py -v",
+  "raw_source_calls": 0,
+  "resource_accounting": {
+    "actual_each": {
+      "child_audited_read_bytes": 79997,
+      "child_console_bytes": 35085,
+      "childprocesses": 1,
+      "combined_audited_read_bytes": 193835,
+      "combined_console_bytes_max": 38167,
+      "denials": 0,
+      "fixture_write_bytes": 26192,
+      "parent_audited_read_bytes": 113838,
+      "parent_console_bytes_max": 3082,
+      "parent_mutations": 0
+    },
+    "per_invocation_caps": {
+      "CPU_seconds": 120,
+      "audited_read_bytes": 67108864,
+      "console_bytes": 262144,
+      "fixture_write_bytes": 33554432,
+      "wall_seconds": 180
+    },
+    "startup_limitations": "Initialparent/child interpreterstartup andstdlibwarming precedeopenaudit accounting; no wholeprocess64MiBread/runtimequalificationcertificate. Sourcecode/dataflow controls andwrittenlimits areauthored engineeringchecks only.",
+    "time_and_cleanup": "Inherited childCPU120/alarm120/Fsize32MiB/fixtureauditread64MiB; ordinarywrapper178swork+2sreservedcleanup/capture256KiB; focusedprobe outerCPU120/alarm180 andparenttimeout180. No unboundedretries. Individual OSstartupcalls notpreempted bycooperativetimer."
+  },
+  "status": "FROZEN_COMBINED_CORRECTED_CONSUMER_AND_CI_HARNESS_PENDING_INDEPENDENT_REVIEW",
+  "unchanged_actual_disabled_entry": {
+    "bytes": 656,
+    "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+    "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+  }
+}

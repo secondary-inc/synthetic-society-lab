@@ -1,0 +1,43 @@
+{
+  "actual_disabled_entry_unchanged": {
+    "bytes": 656,
+    "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+    "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+  },
+  "added_cases": [
+    "test_31_exponent_overflow_rejected_at_any_depth",
+    "test_32_caught_store_io_errors_latch_before_completion",
+    "test_33_caught_missing_store_controls_still_latch"
+  ],
+  "consumer_changes_only": [
+    "exact_json finite_float converter passed asparse_float",
+    "ReadView.read OSError ->stickyINPUT_IO aftermissingbranch"
+  ],
+  "kind": "REFUSAL_FIX_STATIC_REGRESSION_BINDING",
+  "new_nested_count": 33,
+  "original30case_bodies_AST_identical": true,
+  "pins": [
+    {
+      "bytes": 25438,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fdb303d28be7c2d880a67ebb01bfd9d77e61228e7a5887acbf7efc39b959b3a5"
+    },
+    {
+      "bytes": 27823,
+      "path": "scripts/run_e01_saved_job_ledger_suite_v1.py",
+      "sha256": "33d208d3a19cf2fc4322e3e480a5ec27a07680bd89f5da4487f182629b1b8089"
+    },
+    {
+      "bytes": 5997,
+      "path": "tests/test_e01_source_job_ledger_v1.py",
+      "sha256": "598702cf080a066ae9904151e255e8613b03ad0eee17765b63f568a960629ee1"
+    }
+  ],
+  "unchanged_consumer_functions": [
+    "project_public",
+    "actual_entry",
+    "validate_eventual_binding",
+    "compile_mock_once"
+  ],
+  "wrapper_explicit_count_and_code_pins_updated": true
+}

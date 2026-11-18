@@ -1,0 +1,34 @@
+{
+  "acceptance": [
+    "Ordinary unittest discovery imports safely and actually executes one wrapper reporting30nested cases on3.11/3.12",
+    "Exact previous30TestCase AST preserved in standalone script",
+    "Child CPU120/alarm120/read64MiB/write32MiB/console256KiB controls retained; parent totalwall180 and bounded capture",
+    "No consumer/entry/source/owner/API changes; only authored fixtures",
+    "Separate audit required; no selfcertification"
+  ],
+  "actual_reader_calls": 0,
+  "authorization": "New lead-assigned CI-harness qualification; not replay/reset of consumed source/install scopes",
+  "cost_usd": 0,
+  "design": "Move exact discovery-safe authored fixture suite to scripts preserving all30casebodies and root-relative source locations. Ordinary unittest wrapper launches this script via same interpreter in one bounded child; validates exit, nested30 names, JSON receipt, safety/cost flags and codepins. Collector process never imports fixture implementation or applies resource controls.",
+  "execution_limits": {
+    "CPU_seconds": 120,
+    "audited_read_bytes": 67108864,
+    "console_bytes": 262144,
+    "fixture_write_bytes": 33554432,
+    "max_focused_invocations_per_runtime": 2,
+    "wall_seconds": 180
+  },
+  "intended_checks": "One focused wrapper integration via ordinary unittest discovery with observer/probe each runtime. Second only for demonstrated failure or specific new harness adverse checks; no full repository historical suite.",
+  "model_calls": 0,
+  "network_calls": 0,
+  "owned_paths": [
+    "tests/test_e01_source_job_ledger_v1.py",
+    "scripts/run_e01_saved_job_ledger_suite_v1.py",
+    "reports/E01_SAVED_LEDGER_CI_INTEGRATION_V1_20261117.json",
+    "reports/evidence_e01_saved_ledger_ci_integration_v1_20261117"
+  ],
+  "previous_test_sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a",
+  "startup_limit": "Audited reads exclude interpreter startup and initialstdlib imports; no whole-runtime64MiB certificate.",
+  "status": "PLAN_RECORDED_BEFORE_NEW_HARNESS_EXECUTION",
+  "task": "E01_SAVED_LEDGER_CI_INTEGRATION_V1_20261117"
+}

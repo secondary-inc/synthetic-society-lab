@@ -1,0 +1,64 @@
+{
+  "code_refs": [
+    {
+      "bytes": 7624,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1.py",
+      "sha256": "98595b5e94269f5e04d73d092428875420b05c111b8db9fbade354d9cbbeaa8d"
+    },
+    {
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 8656,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 30854,
+      "path": "tests/test_wrapper_crossmodel_canary_v1.py",
+      "sha256": "a07b111a9418078969fa267f4772d9a2ea95bbd72b2617ef02199aafe6ab1a24"
+    }
+  ],
+  "created_at_UTC": "2026-11-18T02:42:45.317505+00:00",
+  "data_boundary": "Only explicit pinned closed-history evidence may be copied into owned temporary scope; no live-owner/key/API/actual scope access. No report output of raw responses. Authored doubles for network.",
+  "execution_allocation": {
+    "max_CPU_seconds_each": 600,
+    "max_charged_read_bytes_each": 1073741824,
+    "max_console_bytes_each": 524288,
+    "max_invocations_each_runtime": 2,
+    "max_wall_seconds_each": 900,
+    "max_write_bytes_each": 268435456
+  },
+  "financial_authority": "No network or paid execution; existing caps unchanged.",
+  "handoff": {
+    "bytes": 23289,
+    "path": "reports/E02_WRAPPER_CROSSMODEL_CANARY_V1_CODE_HANDOFF_20261117.json",
+    "sha256": "ca418e3a7263f23c9afb6ab0fabb4907a04019132f5f2e45ca5218d25f1023dd"
+  },
+  "kind": "INDEPENDENT_E02_CANARY_FINITE_REVIEW_PLAN",
+  "not_authorized": [
+    "Production edits",
+    "actual canary execution",
+    "credentials",
+    "live owner",
+    "unbounded tests or retries"
+  ],
+  "owned_outputs": [
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CANARY_IMPLEMENTATION_V1_20261117.json",
+    "reports/evidence_independent_e02_wrapper_canary_implementation_v1_20261117"
+  ],
+  "release_rule": "Passing existing tests is insufficient; release-critical unclosed gaps remain BLOCKED.",
+  "sequence": [
+    "Static review policy/owner/client/launcher and pinned tests; identify exact inherited source and closed-history dependencies without opening live owner/credentials.",
+    "Select one finite targeted invocation per runtime where feasible; separately authored guarded harness or exact reviewed bounded suite; preserve failures and consumed counts.",
+    "Prioritize owner identity/alias/concurrency, one-use atomicity, durable intents, historical holds, exact slot/payload, price proof rejection, billing uncertainty/provider and transport failure handling.",
+    "Record financial replay and caller resource gaps as BLOCKED unless independently closed; stop before any live release."
+  ]
+}

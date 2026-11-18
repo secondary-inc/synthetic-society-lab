@@ -1,0 +1,16 @@
+test_01_statistics_429_stops_once (__main__.IndependentCases.test_01_statistics_429_stops_once) ... ok
+test_02_post_timeout_stops_once (__main__.IndependentCases.test_02_post_timeout_stops_once) ... ok
+test_03_model_mismatch_stops_once (__main__.IndependentCases.test_03_model_mismatch_stops_once) ... ok
+test_04_malformed_response_stops_once (__main__.IndependentCases.test_04_malformed_response_stops_once) ... ok
+test_05_delayed_404_then_success (__main__.IndependentCases.test_05_delayed_404_then_success) ... ok
+test_06_generation_collision_retains_hold (__main__.IndependentCases.test_06_generation_collision_retains_hold) ... ok
+test_07_future_catalog_stops_before_reservation (__main__.IndependentCases.test_07_future_catalog_stops_before_reservation) ... ok
+test_08_price_drift_stops_before_reservation (__main__.IndependentCases.test_08_price_drift_stops_before_reservation) ... ok
+test_09_materialized_SQL_tamper_refused (__main__.IndependentCases.test_09_materialized_SQL_tamper_refused) ... ok
+test_10_capability_spent_even_when_transport_times_out (__main__.CapabilityCases.test_10_capability_spent_even_when_transport_times_out) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 11.037s
+
+OK
+{"kind": "CANARY_AUTHOR_OFFLINE_V1", "python": "3.12.14", "tests_run": 10, "successful": true, "read_reservation_bytes": 640395468, "write_reservation_bytes": 151378531, "console_bytes": 1251, "real_API_requests": 0, "live_owner_actions": 0, "credentials_read": 0}

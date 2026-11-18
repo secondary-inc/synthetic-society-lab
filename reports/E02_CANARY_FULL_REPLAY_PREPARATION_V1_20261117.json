@@ -1,0 +1,394 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "NEXT_UNBLOCKED_TASK": "Lead resolves original registration availability under a separate bounded evidence scope, reviews minimal fixture proposal, then assigns implementation/qualification. Audited canary code/tests stay frozen.",
+  "OUTPUT_ARTIFACTS": [
+    {
+      "bytes": 44392,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/DEPENDENCY_MANIFEST.json",
+      "sha256": "d1e53e9e0b5607e5196ff4a7ce84caec1bb6e568460d922886760ff546c01793"
+    },
+    {
+      "bytes": 19719,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/REPLAY_CALL_GRAPH.json",
+      "sha256": "315ed7ab8c81f2d96a8aa8d07bcb570f573d95bd521a2f6db57560738d04c24a"
+    },
+    {
+      "bytes": 226,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/SECOND_READ_ACCOUNT.json",
+      "sha256": "1ffc0689b53cd3a28cd53ea63c165a946e47ff49e87812aed1c047047f5c11c0"
+    },
+    {
+      "bytes": 72377,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/STATIC_INSPECTION.json",
+      "sha256": "5c788d6ed63404466083ebced63faa7ff9d185c0eecb188ecddd71128939505b"
+    },
+    {
+      "bytes": 3706,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/THIRD_READ_ACCOUNT.json",
+      "sha256": "d7ac0ff31df2b7bf68bc9133ab9823751a2f62e178351b167a1cc486cdcd1595"
+    },
+    {
+      "bytes": 15252,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/freeze_preparation.py",
+      "sha256": "7e0d7f76549700d6513114f827aa71cbc4ca4a3953ddd98410788fc5eabc76b1"
+    },
+    {
+      "bytes": 3879,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/inspect_closed_replay.py",
+      "sha256": "26a9a015f68dfe5750fc8ae4ccd62ddbfe632dbbc0dd53139d8edb516d4ab89a"
+    }
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Executed static source-only inspect_closed_replay.py; it imports stdlib AST/JSON/hashlib only.",
+    "Executed freeze_preparation.py to validate exact closed event hashchain/metadata and freeze proposal; it does not import owner or execute candidate.",
+    "Read retained metadata evidence first; re-running helpers requires own bounded preparation scope and must not become an author-suite attempt."
+  ],
+  "TASK_ID": "E02_CANARY_FULL_REPLAY_PREPARATION_V1_20261117",
+  "UNRESOLVED_BLOCKERS": [
+    "Exact original registration body and permitted temp-routing qualification scope absent.",
+    "Transitive read closure and one untouched full historical verifier pass remain unqualified.",
+    "Current live-owner ancestry/account/provider/price evidence not established; no live authority."
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Static dependency and retained-artifact preparation",
+      "status": "AUTHOR_PREPARATION_COMPLETE_NOT_INDEPENDENTLY_REVIEWED"
+    },
+    {
+      "criterion": "Exact registration body available",
+      "status": "BLOCKED_NOT_LOCATED_IN_INSPECTED_CLOSED_ARTIFACTS"
+    },
+    {
+      "criterion": "Full inherited1180event verification",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "New canary source acceptance and live release",
+      "status": "NOT_RUN_SEPARATE_REVIEW_IN_PROGRESS"
+    }
+  ],
+  "activity": {
+    "Git_mutations": 0,
+    "candidate_tests": 0,
+    "credential_reads": 0,
+    "current_live_owner_access": 0,
+    "model_cost_USD": 0,
+    "network_calls": 0,
+    "new_author_suite_attempts": 0,
+    "owner_imports": 0,
+    "owner_verifier_invocations": 0,
+    "source_AST_and_closed_metadata_only": true
+  },
+  "actual_inheritance": {
+    "authoritative_loop": "_AdditionalOwnerV1._verify calls real self._empty(), then self._apply() for each event in original order with original hashchain and prefix state, and finally compares actual charges table with replayed rows. It does not adopt the exported final state.",
+    "required_constructor_checks": "ProductionOwnerV4.__init__ reads and validates guard/header, calls _location and _registration. _registration reads external bootstrap body, validates original namespace/UID/assertion/zero allowance/digests/time interval, and binds canonical body hash to header.registration_sha256.",
+    "scope_of_existing_tests": "CopiedOwner from author suite overrides _verify and _registration and seeds final state. It cannot establish this inherited loop or constructor behavior.",
+    "verification_order": [
+      "CanaryOwnerV1._verify",
+      "WrapperCrossmodelOwnerV1._verify",
+      "WrapperVisibilityOwnerV1._verify",
+      "CrossmodelRecoveryOwnerV1._verify",
+      "CrossmodelOwnerV1._verify",
+      "AlignmentOwnerV1._verify",
+      "StudyOwnerV1._verify",
+      "_AdditionalOwnerV1._verify"
+    ]
+  },
+  "closed_journal_inventory": [
+    {
+      "closed_directory": "data/processed/e02_wrapper_visibility_actual_v1_03/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 716887,
+      "expected_bytes": 716887,
+      "expected_count": 289,
+      "files": 289,
+      "index": {
+        "bytes": 40825,
+        "path": "data/processed/e02_wrapper_visibility_actual_v1_03/retained-journal-index.local.json",
+        "sha256": "d021bb77a1befd53651f964cb21c946665d35e7595d6b66c6c46c7a34e38c667"
+      },
+      "owner_journal_subdirectory_from_collector": "limited-pilot-v1/<exact-run-id-from-private-index-source>",
+      "payload_content_read_or_rehashed": false,
+      "source_live_location_not_opened": true
+    },
+    {
+      "closed_directory": "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 960525,
+      "expected_bytes": 960525,
+      "expected_count": 374,
+      "files": 374,
+      "index": {
+        "bytes": 52788,
+        "path": "data/processed/e02_issue_cue_crossmodel_recovery_actual_20261110_01/retained-journal-index.local.json",
+        "sha256": "fcb4affc1a1be1e2f47b63b7ebe8e443312a78a60ac6116760a003f87c8459c1"
+      },
+      "owner_journal_subdirectory_from_collector": "limited-pilot-v1/<exact-run-id-from-private-index-source>",
+      "payload_content_read_or_rehashed": false,
+      "source_live_location_not_opened": true
+    },
+    {
+      "closed_directory": "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 83952,
+      "expected_bytes": 83952,
+      "expected_count": 23,
+      "files": 23,
+      "index": {
+        "bytes": 3277,
+        "path": "data/processed/e02_issue_cue_crossmodel_actual_20261110_01/retained-journal-index.local.json",
+        "sha256": "e2a5849c54d0bd22a4b55c35d77abccbfed1614bce3016f1b351ef3b7499f8ca"
+      },
+      "owner_journal_subdirectory_from_collector": "limited-pilot-v1/<exact-run-id-from-private-index-source>",
+      "payload_content_read_or_rehashed": false,
+      "source_live_location_not_opened": true
+    },
+    {
+      "closed_directory": "data/processed/e02_alignment_anchoring_actual_20261109_01/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 390191,
+      "expected_bytes": 390191,
+      "expected_count": 160,
+      "files": 160,
+      "index": {
+        "bytes": 22659,
+        "path": "data/processed/e02_alignment_anchoring_actual_20261109_01/retained-journal-index.local.json",
+        "sha256": "6396345752cce44ea1f30c6733f5cf39463c3c7b72ba583561b4718830f95be4"
+      },
+      "owner_journal_subdirectory_from_collector": "limited-pilot-v1/<exact-run-id-from-private-index-source>",
+      "payload_content_read_or_rehashed": false,
+      "source_live_location_not_opened": true
+    },
+    {
+      "closed_directory": "data/processed/e02_continuation_20261108_01/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 244374,
+      "expected_bytes": 244374,
+      "expected_count": 118,
+      "files": 118,
+      "index": {
+        "bytes": 16713,
+        "path": "data/processed/e02_continuation_20261108_01/retained-journal-index.local.json",
+        "sha256": "d5b5d1818724ece9f282585f31aa86bd679c4fbc990761da0f527bab29bfee24"
+      },
+      "owner_journal_subdirectory_from_collector": "limited-pilot-v1/<exact-run-id-from-private-index-source>",
+      "payload_content_read_or_rehashed": false,
+      "source_live_location_not_opened": true
+    },
+    {
+      "closed_directory": "data/processed/e02_actual_release_20261105_01/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 227568,
+      "expected_bytes": 227568,
+      "expected_count": 98,
+      "files": 98,
+      "index": {
+        "bytes": 13745,
+        "path": "data/processed/e02_actual_release_20261105_01/retained-journal-index.local.json",
+        "sha256": "1afe0a8f4a3a940f9954b594044aef822d44ae7d7c57bf83851444ec3b9d57a7"
+      },
+      "owner_journal_subdirectory_from_collector": "limited-pilot-v1/<exact-run-id-from-private-index-source>",
+      "payload_content_read_or_rehashed": false,
+      "source_live_location_not_opened": true
+    },
+    {
+      "closed_directory": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal",
+      "closed_directory_regular_membership_and_size_match": true,
+      "declared_bytes": 872796,
+      "files": 325,
+      "index": {
+        "bytes": 45733,
+        "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+        "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+      },
+      "payload_content_read_or_rehashed": false
+    }
+  ],
+  "date_UTC": "2026-11-18T02:47:42.548094+00:00",
+  "decision": "PREPARATION_COMPLETE_QUALIFICATION_NOT_RUN_REGISTRATION_PREREQUISITE_UNLOCATED",
+  "facts": {
+    "actual_initial_study_recovery_branch": true,
+    "closed_export_events": 1180,
+    "closed_export_rows": 194,
+    "conservative_exposure_microusd": 16149,
+    "existing_audited_source_files_unchanged": true,
+    "hash_chain_and_terminal_head_structurally_match": true,
+    "head_sequence": 1179,
+    "semantic_row_replay_performed": false,
+    "unfinished_holds": 5
+  },
+  "inputs": [
+    {
+      "bytes": 3893676,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+      "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+    },
+    {
+      "bytes": 44392,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/DEPENDENCY_MANIFEST.json",
+      "sha256": "d1e53e9e0b5607e5196ff4a7ce84caec1bb6e568460d922886760ff546c01793"
+    },
+    {
+      "bytes": 19719,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/REPLAY_CALL_GRAPH.json",
+      "sha256": "315ed7ab8c81f2d96a8aa8d07bcb570f573d95bd521a2f6db57560738d04c24a"
+    },
+    {
+      "bytes": 23289,
+      "path": "reports/E02_WRAPPER_CROSSMODEL_CANARY_V1_CODE_HANDOFF_20261117.json",
+      "sha256": "ca418e3a7263f23c9afb6ab0fabb4907a04019132f5f2e45ca5218d25f1023dd"
+    },
+    {
+      "bytes": 7624,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1.py",
+      "sha256": "98595b5e94269f5e04d73d092428875420b05c111b8db9fbade354d9cbbeaa8d"
+    },
+    {
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 8656,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 30854,
+      "path": "tests/test_wrapper_crossmodel_canary_v1.py",
+      "sha256": "a07b111a9418078969fa267f4772d9a2ea95bbd72b2617ef02199aafe6ab1a24"
+    },
+    {
+      "bytes": 45733,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+      "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+    },
+    {
+      "bytes": 44392,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/DEPENDENCY_MANIFEST.json",
+      "sha256": "d1e53e9e0b5607e5196ff4a7ce84caec1bb6e568460d922886760ff546c01793"
+    },
+    {
+      "bytes": 19719,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/REPLAY_CALL_GRAPH.json",
+      "sha256": "315ed7ab8c81f2d96a8aa8d07bcb570f573d95bd521a2f6db57560738d04c24a"
+    },
+    {
+      "bytes": 226,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/SECOND_READ_ACCOUNT.json",
+      "sha256": "1ffc0689b53cd3a28cd53ea63c165a946e47ff49e87812aed1c047047f5c11c0"
+    },
+    {
+      "bytes": 72377,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/STATIC_INSPECTION.json",
+      "sha256": "5c788d6ed63404466083ebced63faa7ff9d185c0eecb188ecddd71128939505b"
+    },
+    {
+      "bytes": 3706,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/THIRD_READ_ACCOUNT.json",
+      "sha256": "d7ac0ff31df2b7bf68bc9133ab9823751a2f62e178351b167a1cc486cdcd1595"
+    },
+    {
+      "bytes": 15252,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/freeze_preparation.py",
+      "sha256": "7e0d7f76549700d6513114f827aa71cbc4ca4a3953ddd98410788fc5eabc76b1"
+    },
+    {
+      "bytes": 3879,
+      "path": "reports/evidence_e02_canary_full_replay_preparation_v1_20261117/inspect_closed_replay.py",
+      "sha256": "26a9a015f68dfe5750fc8ae4ccd62ddbfe632dbbc0dd53139d8edb516d4ab89a"
+    }
+  ],
+  "journal_dependencies": {
+    "broader_historical_integrity": "All seven already-retained closed journal inventories are identified below; file membership and sizes match. Bodies were not read/rehashed in this preparation. Full raw-body admission/recommit revalidation is distinct from inherited event replay.",
+    "do_not_weaken": "Do not synthesize phase/checkpoint/response bodies to fill missing evidence or invoke admission/commit factories as a shortcut. Keep precise deny-on-unlisted I/O and log any unexpected fixed dependency as a blocker.",
+    "minimal_historical_replay": "Source call graph and actual first study recovery=True indicate no historical raw journal required by the selected pre-canary event replay path. _entry returns via _recovery_entry, which uses original event-contained recovery metadata; the normal additional-test-v1 phase.local.json path is not selected. Historical continuation admission and commit factories read journal bodies, but those factories are not invoked merely by replaying their already committed events. This is static dependency evidence, not a successful full replay; unexpected reads must fail closed.",
+    "new_canary_events": "If a later qualification appends actual typed MOCK canary events, its _proofs/_check_commit do reopen the new temp journal. That is a separate extension of full historical replay and must use correctly joined mock raw/hash/proof/checkpoint files."
+  },
+  "kind": "BOUNDED_STATIC_MINIMAL_INHERITED_REPLAY_FIXTURE_PROPOSAL",
+  "proposed_one_bounded_qualification": {
+    "children_maximum": 1,
+    "limitations": [
+      "Resource caps are a bounded proposal, not measured feasibility; full loop timing/read needs remain unknown.",
+      "One untouched parent replay does not prove every new canary transition, final billing join or actual operational limits.",
+      "Temporary path routing is explicit; actual OS namespace, current ancestry and fresh real prices remain future live release gates."
+    ],
+    "limits": {
+      "CPU_seconds": 120,
+      "console_bytes": 65536,
+      "credential_reads": 0,
+      "logical_read_bytes": 536870912,
+      "model_POSTs": 0,
+      "network_requests": 0,
+      "temporary_write_bytes": 67108864,
+      "wall_seconds": 300
+    },
+    "runtime": "Python3.12.14 initially; other runtime is a separately scoped qualification if needed. Not an extra3.11 author-suite attempt.",
+    "status": "PROPOSAL_ONLY_NOT_AUTHORIZED_BY_THIS_PREPARATION",
+    "steps": [
+      "Resolve exact registration-body prerequisite and obtain separate lead-reviewed qualification contract; preserve all prior frozen source and logs.",
+      "Before any child, pin original export, registration and all transitive source/config/review inputs. Deny sockets/subprocess/credential/live-owner access, allow only exact closed inputs and owned temporary writes; no environment credential inheritance.",
+      "Create derived DB/guard/head plus exact original registration under no-symlink temp layout. Explicitly redirect only production_owner_directory. No CopiedOwner, _verify/_registration/_empty overrides or preseeded final state.",
+      "Call normal CanaryOwnerV1 constructor and inherited _verify once against read-only/query_only derived DB. Do not append any new event, consume I/O allowance or create an actual release.",
+      "Require all1180 events accepted, semantic terminal head/194rows/fiveholds/conservative exposure/all7priorstudyprojections and192claims match closed export; assert parent stop remains true and canary branch absent.",
+      "Retain safe pass/fail stage labels, hashes/counters/resources and initial source pins only; private fixture data stays temporary/Git-ignored and is removed. No traceback locals, IDs, responses or raw exception text in public logs. Stop at first missing dependency/integrity error/bound; no retries or budget increase inferred."
+    ]
+  },
+  "qualified_source_inputs": "Use exact unchanged source files/contracts/protocols bound to historical packet events. Protocol/compiler and source pin reads during reducer replay must be allowed narrowly from repo. No old code-contract checks may be mocked or refreshed. Current preparation pins source and frozen candidate; transitive closure must be reviewed before qualification.",
+  "reconstruction": [
+    {
+      "artifact": "guard/header",
+      "instruction": "Write canonical header into derived temporary owner-v4-guard.local.json and single-row SQLite header table. Canonical serialization was checked to equal recorded original guard file SHA256.",
+      "original_guard_sha256": "9f2ab0b4e44e10191fbad96dc5fca41eb79aaba6ca3066a2d9351de57d3f6d0a",
+      "source": "Pinned export.header"
+    },
+    {
+      "artifact": "head",
+      "derived_canonical_sha256": "48568b715a48fe92a93efc74b4768bd9ba72242d9a69e5c3852fd41ac9768ef7",
+      "instruction": "Write a semantically identical derived owner-v4-head.local.json; let unchanged verifier compare parsed value. Do not assert original raw serialization.",
+      "raw_hashes_equal": false,
+      "recorded_original_raw_sha256": "548e631ee52f2dee735ea634b0cea870418066e272687479ecccab5491e31527",
+      "source": "Pinned export.head and recomputed terminal event hash"
+    },
+    {
+      "artifact": "SQLite",
+      "cannot_claim_original_db_bytes": true,
+      "instruction": "Create only required header(data TEXT), events(sequence INTEGER PRIMARY KEY,data TEXT,digest TEXT), charges(id TEXT PRIMARY KEY,data TEXT) tables in owned temp. Populate all1180 original event objects in original sequence with canonical hash digest and previous bindings, plus all194 original row values. This is a derived fixture DB; canonical event/row/head identity matters.",
+      "recorded_original_db_raw_sha256": "f3f6f64047960e42272d73f6f7dfe74d4766a220f85e0c9fa4cafd9c3d08dadf",
+      "source": "Pinned export.header, complete history and rows"
+    },
+    {
+      "artifact": "approvals/claims/keys/generations/projections",
+      "instruction": "Do not seed/export-import any of these final structures. Four original APPROVAL events and all studies/claims/transitions must rebuild them under unchanged inherited logic.",
+      "source": "Original event payloads and real _empty/_apply reducers"
+    },
+    {
+      "artifact": "location routing",
+      "instruction": "Propose an explicit test-only patch of production_owner_v4.production_owner_directory returning the exact temp owner path. Preserve __init__, _location, _registration, _empty, _apply, _verify and all financial validators unchanged. Construct the actual CanaryOwnerV1 normally after route redirection. Reject any access to the original fixed OS home namespace. This route patch is a fixture boundary, not qualification of actual OS-home routing.",
+      "source": "Original production_owner_directory and _location source checks"
+    }
+  ],
+  "registration": {
+    "UID": "Original account_uid must equal actual os.getuid() under unchanged validator; do not monkeypatch UID or rewrite original registration if it differs.",
+    "availability": "Body not present in the inspected closed export, original actual scope listing or historical journal indexes; no matching retained registration body located in the bounded inspection. This is not an exhaustive disk-absence claim.",
+    "never_acceptable": "Do not invent original registration_id/review_hash/release_hash/UID/times, create fresh zero-bootstrap, alter owner/header/hash or bypass _registration. A digest alone cannot supply the missing original bytes.",
+    "prerequisite": "Lead must locate an already retained exact body or separately authorize a tightly scoped read-only closed capture of that one registration artifact. Current preparation explicitly did not access the live owner/registration.",
+    "required_original_file_and_canonical_value_sha256": "920278f3258c856f60959cf7bd380a944cc09d797084552698dd7ae7024a54e9",
+    "required_relative_to_fixture_owner_parent": "openrouter-v4-bootstrap.local.json"
+  },
+  "resource_accounting": {
+    "authorized_metadata_read_limit_bytes": 33554432,
+    "cumulative_metadata_content_read_bytes": 21087691,
+    "cumulative_metadata_reads_before_final_evidence_hashing_bytes": 20928140,
+    "prior_metered_reads_bytes": 16829595,
+    "public_evidence_bytes_before_report": 159551,
+    "read_method": "Each content read reserved exact stat size before read. Directory membership/stat checks are metadata only. Final report evidence hash reads separately counted below; no private journal bodies read.",
+    "this_freeze_metadata_reads_bytes": 4098545,
+    "write_limit_bytes": 2097152
+  }
+}

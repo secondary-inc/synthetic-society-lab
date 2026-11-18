@@ -1,0 +1,130 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_CODE_TRIAGE_V1_20261117.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead assigns bounded focused mocks for numeric-overflow JSON refusal and caught non-missing I/O errors; preserve frozen V1 and evidence, then version corrective code. Prioritize E02 implementation audit once its test handoff freezes.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_CODE_TRIAGE_V1_20261117.json"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    "Read only explicitly pinned authored consumer, disabled entry, handoff, corrected test snapshot, mock public samples and final author logs. AST parse without import. Compare literal identity and eventual-binding constants against handoff; inspect failure control flow. No candidate/test/network/model/private-data execution."
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Static findings need narrowly bounded confirmation and correction evidence before full component acceptance; no dynamic outcome claimed.",
+    "Trusted callbacks are not sandboxed, and cooperative checks do not preempt a hanging callback. Real execution requires separately reviewed guarded caller.",
+    "Disk fixture is authored-test-only and not a production secure filesystem adapter; descriptor races/whole-process resource closure are not accepted.",
+    "No full CI, science, actual input-manifest, reader closure, or execution release acceptance.",
+    "Original budget-construction/output-marker and primary-exception limitations documented by author remain."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Only authored mock evidence and source code inspected. No raw respondent, publisher, saved real input, credentials, owner history or referenced actual adapter source opened. MOCK_AUTHORED remains explicit. Identity metadata equality does not authenticate real-world sources or final ballots.",
+  "TASK_ID": "Independent frozen E01 saved-job-ledger static correctness and closure triage V1",
+  "TESTS_RUN_AND_RESULTS": {
+    "author_log_evidence": "Both final logs record 30 tests, zero failures/errors/guard denials, no real-reader/network/model calls; this triage does not independently rerun them. Mock samples identical.",
+    "fixed_projection": "PASS static: 33 unique ordered states; 12 legacy + ID history = 13; 20 missing document jobs; 40 unique source IDs; zero final ballots; all four acceptance flags literal false",
+    "independent_execution": "NOT_RUN: static triage only",
+    "pin_metadata": "PASS: eventual code/config/review literal constants match handoff; referenced real files not opened or revalidated",
+    "static_findings": 2
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "Two static error-handling findings below need focused mock confirmation and a versioned correction if confirmed.",
+    "Actual saved-source adapter, real manifest, contract-hash versus config-file-hash binding and guarded closure remain unimplemented/unreviewed.",
+    "Standalone test CI integration is separate pending work. E01 G03 B01 remains blocked."
+  ],
+  "decision": {
+    "CI_acceptance": "NOT_RUN",
+    "actual_execution_release": "NOT_RUN",
+    "full_component_acceptance": "BLOCKED_PENDING_FOCUSED_FINDING_RESOLUTION",
+    "safe_projection_and_no_actual_entry": "PASS within static scope",
+    "static_triage": "COMPLETE_WITH_FINDINGS"
+  },
+  "findings": [
+    {
+      "counterexample_to_confirm_without_real_inputs": "Authored bytes {\"x\":1e999} and nested/negative variants should refuse JSON_NONFINITE rather than return a structure containing nonfinite float. No example executed in this triage.",
+      "evidence": "exact_json supplies parse_constant but no parse_float or recursive finite validation. parse_constant handles named NaN/Infinity tokens; ordinary exponent numeric parsing uses the default float conversion.",
+      "id": "T01",
+      "impact": "The shared JSON admission helper has a finite-value validation gap; current project_public checks and later packed(..., allow_nan=False) may still refuse affected projection paths, so no accepted ledger contamination is claimed. Authored existing cases test literal NaN/Infinity only.",
+      "lines": [
+        47,
+        55
+      ],
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "priority": "P2",
+      "requested_fix": "Use a finite parse_float conversion or recursively reject nonfinite decoded values, with a bounded mock regression and unchanged input size/depth policy.",
+      "title": "Nonfinite JSON detection does not cover numeric exponent overflow"
+    },
+    {
+      "counterexample_to_confirm_without_real_inputs": "In an authored fixture, make a permitted store operation raise PermissionError or another non-missing OSError once; have trusted mock callback catch it and then request valid public data. The enclosing operation must fail without COMPLETE, not silently finish. No example executed here.",
+      "evidence": "ReadView.read routes KeyError/FileNotFoundError and LedgerRefused through budget.trip. Other OSError subclasses from store.size/read escape without marking budget failed. A callback that catches that error can proceed to the next valid read and post-callback budget.check sees no latched refusal.",
+      "id": "T02",
+      "impact": "Current missing-file/hash/path/budget failures are sticky, but general I/O errors are not. This narrows the handoff claim that caught errors remain latched; it is distinct from adversarial sandboxing and from the absent real adapter.",
+      "lines": [
+        144,
+        155
+      ],
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "priority": "P2",
+      "requested_fix": "Latch expected storage I/O failure before propagating it, preserving primary error/redaction semantics. Add a finite focused authored regression without reading actual files.",
+      "title": "Non-missing store I/O errors bypass sticky budget failure"
+    }
+  ],
+  "input_refs": [
+    {
+      "bytes": 25240,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 656,
+      "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    },
+    {
+      "bytes": 20421,
+      "path": "reports/E01_SAVED_JOB_LEDGER_V1_CODE_HANDOFF_20261117.json",
+      "sha256": "8fc6db33ec2f756ffb65c684e4371c1180cab6bf483706631d7927e2bdb253d7"
+    },
+    {
+      "bytes": 24290,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/corrected_test_snapshot.py",
+      "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+    },
+    {
+      "bytes": 30849,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python311.json",
+      "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+    },
+    {
+      "bytes": 30849,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/mock_public_sample_python312.json",
+      "sha256": "21df160479208da0c2b251be228ca2728dae5a1b1cbfd65094b40e8b4007e3b8"
+    },
+    {
+      "bytes": 34689,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python311.log",
+      "sha256": "4b2aa6c25b6f6713d4b79466dcb9f5c2a62d1f6d3fc9c213496253b6c3286967"
+    },
+    {
+      "bytes": 34689,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/suite_attempt2_python312.log",
+      "sha256": "b0dcd0516cc13c7c76824a84aa3cd9e857a096278c76fd2f50dd69b674fd7094"
+    }
+  ],
+  "no_additional_execution_access_spending_publication_authority": true,
+  "positive_static_evidence": {
+    "bounds": "Finite file/manifest/output/ref counts; logical read/write caps with closure reserve; one callback/no retries; spent MemoryOutput scope; cooperative deadline/cancel checks. This is not actual runtime closure.",
+    "disabled_entry": "actual_entry immediately refuses without reading arguments. CLI imports json only and prints disabled status with zero calls; no actual reader import or packet/key read.",
+    "privacy": "Public ledger emits controlled enums, states, counts and digest-only refs. Diagnostics/context content are hashed for validation and omitted from output. Failure record omits exception text/args/code/path; direct caller exception is not a redacted logging API.",
+    "projection": "Closed row/schema checks, exact state order/kinds, literal false flags, strict integer counts and recomputed metrics; AL remains missing and all legal/as-of/geography/selection/final-ballot conditions unassessed.",
+    "source_join": "Plan hash, exact paths, unique refs, per-file bytes/digests, exact saved membership, checksum/seal/summary joins precede one reader callback; returned public bytes must equal admitted typed payload. Mock hashes are fixture metadata, not real acceptance pins."
+  },
+  "resource_accounting": {
+    "Git_mutations": 0,
+    "authored_bytes_read": "Under 4 MiB; explicit inputs only",
+    "candidate_imports": 0,
+    "model_calls": 0,
+    "network_calls": 0,
+    "private_data_reads": 0,
+    "test_execution": 0
+  }
+}

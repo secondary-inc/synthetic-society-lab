@@ -1,0 +1,1414 @@
+{
+  "API_calls": 0,
+  "content_read_bytes": 4212930,
+  "credential_reads": 0,
+  "export_safe_shape": {
+    "event_kinds": {
+      "ADDITIONAL_COMPATIBILITY_AMENDMENT_V1": 1,
+      "ALIGNMENT_STUDY_COMMIT_V1": 22,
+      "ALIGNMENT_STUDY_GRANT_V1": 22,
+      "ALIGNMENT_STUDY_START_V1": 1,
+      "APPROVAL": 4,
+      "CROSSMODEL_RECOVERY_COMMIT_V1": 51,
+      "CROSSMODEL_RECOVERY_GRANT_V1": 51,
+      "CROSSMODEL_RECOVERY_PRICE_REFRESH_V1": 3,
+      "CROSSMODEL_RECOVERY_START_V1": 1,
+      "CROSSMODEL_STUDY_COMMIT_V1": 1,
+      "CROSSMODEL_STUDY_GRANT_V1": 2,
+      "CROSSMODEL_STUDY_START_V1": 1,
+      "GENESIS": 1,
+      "LIMITED_STUDY_COMMIT": 31,
+      "LIMITED_STUDY_CONTINUATION_V1": 1,
+      "LIMITED_STUDY_GRANT": 32,
+      "LIMITED_STUDY_START": 1,
+      "PRICE_PROOF": 4,
+      "RESERVE": 194,
+      "STATISTICS_CLAIM": 192,
+      "TRANSITION": 386,
+      "WRAPPER_CROSSMODEL_COMMIT_V1": 44,
+      "WRAPPER_CROSSMODEL_GRANT_V1": 45,
+      "WRAPPER_CROSSMODEL_PRICE_REFRESH_V1": 4,
+      "WRAPPER_CROSSMODEL_START_V1": 1,
+      "WRAPPER_VISIBILITY_COMMIT_V1": 40,
+      "WRAPPER_VISIBILITY_GRANT_V1": 40,
+      "WRAPPER_VISIBILITY_PRICE_REFRESH_V1": 3,
+      "WRAPPER_VISIBILITY_START_V1": 1
+    },
+    "event_payload_field_names": {
+      "ADDITIONAL_COMPATIBILITY_AMENDMENT_V1": [
+        "approval",
+        "context",
+        "owner_assertion",
+        "policy",
+        "receipt",
+        "review"
+      ],
+      "ALIGNMENT_STUDY_COMMIT_V1": [
+        "after",
+        "before_hash",
+        "witness"
+      ],
+      "ALIGNMENT_STUDY_GRANT_V1": [
+        "context",
+        "plan",
+        "receipt"
+      ],
+      "ALIGNMENT_STUDY_START_V1": [
+        "fresh_proof",
+        "packet"
+      ],
+      "APPROVAL": [
+        "allowed_plans",
+        "approval_id",
+        "credential_state",
+        "kind",
+        "module_dispatches",
+        "module_microusd",
+        "owner_id",
+        "previous_approval_hash",
+        "release_hash",
+        "review_hash",
+        "statistics_policy",
+        "total_dispatches",
+        "total_microusd",
+        "valid_from_utc",
+        "valid_until_utc"
+      ],
+      "CROSSMODEL_RECOVERY_COMMIT_V1": [
+        "after",
+        "before_hash",
+        "witness"
+      ],
+      "CROSSMODEL_RECOVERY_GRANT_V1": [
+        "context",
+        "plan",
+        "receipt"
+      ],
+      "CROSSMODEL_RECOVERY_PRICE_REFRESH_V1": [
+        "fresh_proofs",
+        "next_execution_order",
+        "refresh_stage"
+      ],
+      "CROSSMODEL_RECOVERY_START_V1": [
+        "fresh_proofs",
+        "packet"
+      ],
+      "CROSSMODEL_STUDY_COMMIT_V1": [
+        "after",
+        "before_hash",
+        "witness"
+      ],
+      "CROSSMODEL_STUDY_GRANT_V1": [
+        "context",
+        "plan",
+        "receipt"
+      ],
+      "CROSSMODEL_STUDY_START_V1": [
+        "fresh_proofs",
+        "packet"
+      ],
+      "GENESIS": [
+        "header_sha256"
+      ],
+      "LIMITED_STUDY_COMMIT": [
+        "after",
+        "before_hash",
+        "witness"
+      ],
+      "LIMITED_STUDY_CONTINUATION_V1": [
+        "bundle",
+        "fresh_proof"
+      ],
+      "LIMITED_STUDY_GRANT": [
+        "context",
+        "plan",
+        "receipt"
+      ],
+      "LIMITED_STUDY_START": [
+        "code_contract",
+        "fresh_proof",
+        "packet"
+      ],
+      "PRICE_PROOF": [
+        "context"
+      ],
+      "RESERVE": [
+        "after",
+        "before_hash"
+      ],
+      "STATISTICS_CLAIM": [
+        "generation_id",
+        "receipt"
+      ],
+      "TRANSITION": [
+        "after",
+        "before_hash"
+      ],
+      "WRAPPER_CROSSMODEL_COMMIT_V1": [
+        "after",
+        "before_hash",
+        "witness"
+      ],
+      "WRAPPER_CROSSMODEL_GRANT_V1": [
+        "context",
+        "plan",
+        "receipt"
+      ],
+      "WRAPPER_CROSSMODEL_PRICE_REFRESH_V1": [
+        "fresh_proofs",
+        "next_execution_order",
+        "refresh_stage"
+      ],
+      "WRAPPER_CROSSMODEL_START_V1": [
+        "fresh_proofs",
+        "packet"
+      ],
+      "WRAPPER_VISIBILITY_COMMIT_V1": [
+        "after",
+        "before_hash",
+        "witness"
+      ],
+      "WRAPPER_VISIBILITY_GRANT_V1": [
+        "context",
+        "plan",
+        "receipt"
+      ],
+      "WRAPPER_VISIBILITY_PRICE_REFRESH_V1": [
+        "fresh_proofs",
+        "next_execution_order",
+        "refresh_stage"
+      ],
+      "WRAPPER_VISIBILITY_START_V1": [
+        "fresh_proofs",
+        "packet"
+      ]
+    },
+    "events_count": 1180,
+    "head_field_names": [
+      "head_hash",
+      "header_sha256",
+      "namespace",
+      "owner_id",
+      "sequence"
+    ],
+    "header_field_names": [
+      "namespace",
+      "owner_id",
+      "registration_sha256",
+      "schema_version",
+      "scope"
+    ],
+    "keys": [
+      "HTTP_requests",
+      "active_approval_hash",
+      "alignment_followup",
+      "consumed",
+      "continuation",
+      "control_file_hashes_after",
+      "control_file_hashes_before",
+      "credential_reads",
+      "head",
+      "header",
+      "historical_journal_checks",
+      "history",
+      "history_hash",
+      "issue_cue_crossmodel",
+      "issue_cue_crossmodel_recovery",
+      "kind",
+      "original_149_rows_unchanged",
+      "original_908_event_prefix_unchanged",
+      "original_alignment_unchanged",
+      "original_continuation_unchanged",
+      "original_journals_unchanged",
+      "original_recovery_unchanged",
+      "original_stopped_crossmodel_unchanged",
+      "original_study_unchanged",
+      "original_wrapper_unchanged",
+      "owner_writes",
+      "rows",
+      "statistics_claims",
+      "study",
+      "study_authorities",
+      "unfinished",
+      "wrapper_crossmodel",
+      "wrapper_visibility"
+    ],
+    "rows_count": 194,
+    "statistics_claims_count": 192
+  },
+  "kind": "STATIC_CLOSED_REPLAY_DEPENDENCY_INSPECTION",
+  "owner_imports": 0,
+  "owner_verifier_invocations": 0,
+  "read_limit_bytes": 33554432,
+  "selected_source_and_public_evidence": {
+    "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json": {
+      "actual_model_POST_attempts": 45,
+      "actual_serving_routes": [
+        {
+          "exact_backend_revision_independently_verified": false,
+          "provider": "Azure",
+          "response_model": "openai/gpt-4.1-nano",
+          "responses": 22,
+          "statistics_model": "openai/gpt-4.1-nano-2025-04-14"
+        },
+        {
+          "exact_backend_revision_independently_verified": false,
+          "provider": "Nebius",
+          "response_model": "qwen/qwen3-30b-a3b-instruct-2507",
+          "responses": 22,
+          "statistics_model": "qwen/qwen3-30b-a3b-instruct-2507"
+        }
+      ],
+      "analysis": {
+        "automatic_partial_diagnostics_retained": true,
+        "partial_estimates_published_in_this_report": false,
+        "reason": "The planned 80-response comparison is incomplete. The retained authenticated terminal contains automatically computed stopped-prefix diagnostics; these do not establish full-study completion or an accepted scientific effect.",
+        "status": "FULL_REGISTERED_COMPARISON_NOT_RUN"
+      },
+      "automatic_retries": 0,
+      "caps_microusd": {
+        "E01_paid_inference": 0,
+        "E02": 1000000,
+        "shared": 5000000,
+        "this_batch": 200000
+      },
+      "catalog_GET_attempts": 10,
+      "closed_owner": {
+        "collector_owner_writes": 0,
+        "conservative_exposure_microusd": 16149,
+        "events": 1180,
+        "historical_journals_checked_unchanged": true,
+        "increase_microusd": 3928,
+        "old_rows_and_event_prefix_unchanged": true,
+        "prior_closed_exposure_microusd": 12221,
+        "rows": 194,
+        "total_dispatches": 194
+      },
+      "committed_responses": 44,
+      "counter_correction": "The terminal diagnostic counts the final failed request only; the retained failure record and owner delta establish 45 cumulative attempts. The lead previously inferred one total attempt and corrects that here.",
+      "evidence": [
+        {
+          "bytes": 3893676,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+          "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+        },
+        {
+          "bytes": 45733,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+          "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+        },
+        {
+          "bytes": 3033541,
+          "path": "data/processed/e02_wrapper_visibility_actual_v1_03/post-run-owner-export.local.json",
+          "sha256": "da5abbf754c6787b3073295cd6ebc54e704fa331792635a70c3d287da9cdc861"
+        },
+        {
+          "bytes": 100561,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal/failure.json",
+          "sha256": "c01dcb0c1a8c3737bce68c419e810c004230c3dd0923102065ea01ded54e7de7"
+        },
+        {
+          "bytes": 548,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/execution-summary.local.json",
+          "sha256": "4ef4b2d321dbb0ab8790313b9d6735d284f1299cc41411ae4e69e24e72802e5a"
+        }
+      ],
+      "failed_request": {
+        "actual_provider_cost": null,
+        "full_reservation_retained_microusd": 775,
+        "http_status": 402,
+        "phase": "post",
+        "specific_402_cause": "UNKNOWN; diagnostic retained HTTP status but no error metadata",
+        "status": "UNCERTAIN",
+        "successful_response": false
+      },
+      "independent_actual_review": "PENDING",
+      "kind": "LEAD_CLOSED_STOPPED_ACTUAL_EVIDENCE_NOT_INDEPENDENT_ACCEPTANCE",
+      "limitations": [
+        "Exploratory synthetic-model responses; no human persuasion, representativeness or prospective forecast claim.",
+        "The study compares model/provider configurations, not an isolated model-family effect.",
+        "Recorded usage excludes local compute, agent labor and infrastructure.",
+        "HTTP 402 does not by itself establish zero billing or identify which account limit caused rejection."
+      ],
+      "new_settled_rounded_microusd": 3153,
+      "new_verified_model_usage_USD": "0.0031376",
+      "observed_at_utc": "2026-11-16T11:11:26.474470+00:00",
+      "phase_counts": {
+        "post": 28,
+        "pre": 16
+      },
+      "planned_model_POSTs_maximum": 80,
+      "private_evidence_in_git": false,
+      "research_study_complete": false,
+      "research_totals_including_incomplete_prefix": {
+        "completed_studies": 4,
+        "incomplete_additional_studies": 1,
+        "responses": 191,
+        "verified_model_usage_USD": "0.0129589"
+      },
+      "run_id": "e02-wrapper-crossmodel-v1-20261115-01",
+      "serving_identity_note": "Response and statistics labels are recorded separately. The Azure generation-statistics model label is dated, while its response label is the undated alias. Neither label independently attests exact deployed weights.",
+      "statistics_GET_attempts": 44,
+      "status": "STOPPED_NO_RETRY"
+    },
+    "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json": {
+      "audit_corrections": [
+        "Early first-request interpretation was incorrect because terminal counters describe only the failed phase. Correct cumulative counts are45attempts and44committed responses.",
+        "Initial checker passed the statistics object directly to normalize_statistics, which normalizes its model alias in place. Checker corrected to deepcopy before normalization and separately verify raw labels. Raw artifacts were never modified.",
+        "Two scratch-checker stops were auditor harness issues: unsupported provenance enum corrected to EXPLORATORY_REAL_MODEL; failed transcript disposition then added before stopped-envelope comparison. No product/run changes or network retries resulted."
+      ],
+      "auditor_actions": {
+        "cost_USD": 0,
+        "credential_reads": 0,
+        "live_owner_accesses": 0,
+        "network_requests": 0,
+        "owner_writes": 0,
+        "source_implementation_edits": 0
+      },
+      "date": "2026-11-16",
+      "decision": "PASS_PARTIAL_RETAINED_EVIDENCE_ACCOUNTING_AND_REPLAY_ONLY",
+      "evidence": {
+        "configs/e02_wrapper_crossmodel_v1_20261115.json": {
+          "bytes": 82688,
+          "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+          "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+        },
+        "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/execution-summary.local.json": {
+          "bytes": 548,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/execution-summary.local.json",
+          "sha256": "4ef4b2d321dbb0ab8790313b9d6735d284f1299cc41411ae4e69e24e72802e5a"
+        },
+        "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json": {
+          "bytes": 7339,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json",
+          "sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec"
+        },
+        "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json": {
+          "bytes": 3893676,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+          "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+        },
+        "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json": {
+          "bytes": 45733,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal-index.local.json",
+          "sha256": "38e778190c7b6f0e0689247cc97513b599cfb4c26df5c3958e2a12d8d0444148"
+        },
+        "failure.json": {
+          "bytes": 100561,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal/failure.json",
+          "sha256": "c01dcb0c1a8c3737bce68c419e810c004230c3dd0923102065ea01ded54e7de7"
+        },
+        "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json": {
+          "bytes": 4617,
+          "path": "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+          "sha256": "21ec7483ee0f2e91633b30c76b9fe196e27c5768c8a0131c36e0ae14ce0c6baf"
+        }
+      },
+      "full_registered_study": "BLOCKED_INCOMPLETE_HTTP402",
+      "independent_checks": [
+        "All325 exact closed journal files are regular no-follow bounded files with matching sizes/SHA256 and exact directory membership;872796 bytes.",
+        "Complete1180event hash chain/head verified; exact149row and908event historical prefix compared to independently reviewed packet predecessor hashes. Prior six study projections and old statistics claims unchanged.",
+        "New RESERVE/TRANSITION/COMMIT events replayed with exact before-hashes, immutable contexts/reservations and validated after-rows. Replayed rows equal closed194row export;44 committed witnesses match exact commit events.",
+        "All44 requests independently recompiled sequentially from frozen protocol and preceding answers, matching raw payload/context/witness hashes.",
+        "All44 unique generation IDs disjoint from historical IDs; raw response/statistics/checkpoint hashes and questionnaire parse/output bindings verified. Native billing normalized from independent deep copies, bounds/BYOK/provider/unsupported activity checks applied. Exact invoices independently summed with Decimal, per-generation rounded amounts checked against ledger.",
+        "Observed response models and raw statistics models separately retained: Azure response undated alias, raw statistics dated alias; Qwen same observed label. Exact backend revisions not independently verified.",
+        "Failed45th planned request and dispatch intent retained; HTTP402 phase-local diagnostic has1POST while cumulative retained failure has45POSTs. No response/statistics/checkpoint/provider charge claimed for failed row;775microUSD retained UNCERTAIN.",
+        "Independent transport counts45POST intents/44statistics intents/10catalog files; zero retry intent. Execution orders0\u201343 committed,44 failed,45\u201379 NOT_ATTEMPTED.",
+        "Stopped transcript independently reconstructed including FAILED_UNCERTAIN row, all80 envelope dispositions reproduced, internal automatic stopped diagnostics exactly recomputed. Full comparison incomplete; no partial contrast estimates published by this receipt.",
+        "Corrected public stop report counters, charges, model labels and inference language match independently verified closed evidence."
+      ],
+      "kind": "INDEPENDENT_CLOSED_E02_WRAPPER_CROSSMODEL_ACTUAL_REVIEW",
+      "limitations": [
+        "No full fresh owner implementation replay, live owner read, actual credential read, account GET, model request or historical raw-journal reread by auditor. Immutable historical prefixes are compared to previously independently accepted release hashes.",
+        "Old journal immutability flags are retained collector observations; this receipt does not newly reread original live journals.",
+        "Canonical parsed provider-object retention is verified; original HTTP wire bytes are not retained.",
+        "44 syntactically parsed ANSWER responses do not establish valid scores for every item, representative population, human persuasion, external validity or complete registered inference.",
+        "HTTP402 cause remains unresolved. Aggregate key-status observation cannot reconcile or release the failed775microUSD hold.",
+        "Exact serving backend weights/revisions not established solely by response/invoice aliases.",
+        "Original $5 combined/$1E02/$0E01 inference caps remain; no increase, continuation or model retry authority is created."
+      ],
+      "next_unblocked_task": "Lead records partial acceptance without claiming full study completion. E01v1.5 runtime qualification remains separately owned and independently reviewed.",
+      "reproduction": {
+        "CPU_limit_seconds": 75,
+        "bytes": 13882,
+        "bytes_limit": 16777216,
+        "closed_only_application_bytes": 4907397,
+        "command": "python3 /tmp/civiclab-auditor-e02-stopped-20261116.py",
+        "script": "/tmp/civiclab-auditor-e02-stopped-20261116.py",
+        "sha256": "1416699b7b58cbb58632adcdbc98cb6d3a85385f709f1156955078c1313f33d0",
+        "wall_alarm_seconds": 90
+      },
+      "scientific_effect_claim": "NOT_ACCEPTED",
+      "summary": {
+        "application_bytes_read": 4907397,
+        "auditor_cost_USD": 0,
+        "auditor_credential_reads": 0,
+        "auditor_live_owner_accesses": 0,
+        "auditor_network_requests": 0,
+        "automatic_partial_diagnostic_analysis_sha256": "68d625ffb2ad1d11a1139d930d0bd895ebe8a97db883a83f686d78ecf4220da8",
+        "checks_passed": 783,
+        "cumulative_consumption_microusd": 16149,
+        "events": 1180,
+        "failed_execution_order": 44,
+        "full_registered_comparison": "NOT_RUN_INCOMPLETE",
+        "historical_holds_microusd": [
+          340,
+          340,
+          788,
+          1008
+        ],
+        "journal_bytes": 872796,
+        "journal_files": 325,
+        "new_POST_attempts": 45,
+        "new_catalog_GETs": 10,
+        "new_committed_responses": 44,
+        "new_conservative_consumption_microusd": 3928,
+        "new_settled_rounded_microusd": 3153,
+        "new_statistics_GETs": 44,
+        "new_uncertain_hold_microusd": 775,
+        "new_verified_invoice_USD": "0.0031376",
+        "no_published_partial_effect_estimates": true,
+        "phase_counts": {
+          "post": 28,
+          "pre": 16
+        },
+        "quality_counts": {
+          "ANSWER": 44
+        },
+        "rows": 194,
+        "serving_routes": [
+          {
+            "committed_responses": 22,
+            "provider": "Azure",
+            "response_model": "openai/gpt-4.1-nano",
+            "statistics_model": "openai/gpt-4.1-nano-2025-04-14"
+          },
+          {
+            "committed_responses": 22,
+            "provider": "Nebius",
+            "response_model": "qwen/qwen3-30b-a3b-instruct-2507",
+            "statistics_model": "qwen/qwen3-30b-a3b-instruct-2507"
+          }
+        ],
+        "status": "PASS_CLOSED_PARTIAL_EVIDENCE_ACCOUNTING_AND_DIAGNOSTIC_REPRODUCIBILITY",
+        "transition_counts": {
+          "RESERVE": 45,
+          "STATISTICS_CLAIM": 44,
+          "TRANSITION": 89,
+          "WRAPPER_CROSSMODEL_COMMIT_V1": 44,
+          "WRAPPER_CROSSMODEL_GRANT_V1": 45,
+          "WRAPPER_CROSSMODEL_PRICE_REFRESH_V1": 4,
+          "WRAPPER_CROSSMODEL_START_V1": 1
+        }
+      }
+    },
+    "reports/evidence_e02_wrapper_crossmodel_canary_v1_preparation_20261116/closed-preflight.json": {
+      "API_or_catalog_or_statistics_requests": 0,
+      "account_balance_or_management_authority_inferred": false,
+      "actual_new_reservations": 0,
+      "actual_owner_accesses_or_writes": 0,
+      "application_bytes_read": 4144868,
+      "baseline13_authenticated_committed": true,
+      "catalog_schedule_conflict": {
+        "already_consumed": 10,
+        "canary_only_total": 12,
+        "new_fresh_both_route_catalogs": 2,
+        "original_catalog_cap": 16,
+        "original_refresh_GETs_remaining": 6,
+        "remaining_original_barriers": [
+          50,
+          60,
+          70
+        ],
+        "whole_suffix_total_if_unchanged_schedule": 18
+      },
+      "counts": {
+        "POST_attempts": 45,
+        "catalog_GETs": 10,
+        "committed_responses": 44,
+        "owner_history_events": 1180,
+        "owner_rows": 194,
+        "statistics_GETs": 44
+      },
+      "decision": "BLOCKED_UNDER_UNCHANGED_STOPPED_OWNER_AND_ABSORBING_PROTOCOL",
+      "evidence_note": "Loads only pinned closed snapshots and public source AST. Witness answers are held transiently for structure checking but never copied or printed; no production owner/client is instantiated/imported. Hypothetical arithmetic is not authority or a quote.",
+      "frozen_dispositions": [
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 0,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 1,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 2,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 3,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 4,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 5,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 6,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 7,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 8,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 9,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 10,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 11,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 12,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 13,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 14,
+          "model_key": "B",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": null,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 15,
+          "model_key": "A",
+          "phase": "pre"
+        },
+        {
+          "baseline_execution_order": 8,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 16,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 9,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 17,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 9,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 18,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 8,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 19,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 8,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 20,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 9,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 21,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 9,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 22,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 8,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 23,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 7,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 24,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 6,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 25,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 6,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 26,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 7,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 27,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 7,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 28,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 6,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 29,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 6,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 30,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 7,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 31,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 11,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 32,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 10,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 33,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 10,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 34,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 11,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 35,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 11,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 36,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 10,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 37,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 10,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 38,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 11,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 39,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 12,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 40,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 13,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 41,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 13,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 42,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 12,
+          "disposition": "PHASE_COMMITTED",
+          "execution_order": 43,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 12,
+          "disposition": "FAILED_UNCERTAIN",
+          "execution_order": 44,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 13,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 45,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 13,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 46,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 12,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 47,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 15,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 48,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 14,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 49,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 14,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 50,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 15,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 51,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 15,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 52,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 14,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 53,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 14,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 54,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 15,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 55,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 3,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 56,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 2,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 57,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 2,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 58,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 3,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 59,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 3,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 60,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 2,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 61,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 2,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 62,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 3,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 63,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 0,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 64,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 1,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 65,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 1,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 66,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 0,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 67,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 0,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 68,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 1,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 69,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 1,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 70,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 0,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 71,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 4,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 72,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 5,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 73,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 5,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 74,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 4,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 75,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 4,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 76,
+          "model_key": "A",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 5,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 77,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 5,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 78,
+          "model_key": "B",
+          "phase": "post"
+        },
+        {
+          "baseline_execution_order": 4,
+          "disposition": "NOT_ATTEMPTED",
+          "execution_order": 79,
+          "model_key": "A",
+          "phase": "post"
+        }
+      ],
+      "hypothetical_financial_bounds": {
+        "E01_paid_inference": 0,
+        "NOT_AN_ACTUAL_RESERVATION": true,
+        "hypothetical_E02_after_reserve": 17934,
+        "hypothetical_fifth_after_reserve": 5713,
+        "hypothetical_global_after_reserve": 17934,
+        "hypothetical_max_one_call_reservation": 1785,
+        "old_fifth_charged_including_hold": 3928,
+        "old_global_exposure_including_holds": 16149
+      },
+      "hypothetical_one_canary_aggregate_counts": {
+        "POSTs": 46,
+        "catalog_GET_max": 12,
+        "owner_lifetime_dispatches": 195,
+        "statistics_GET_max": 47
+      },
+      "input_refs": [
+        {
+          "bytes": 100561,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/retained-journal/failure.json",
+          "sha256": "c01dcb0c1a8c3737bce68c419e810c004230c3dd0923102065ea01ded54e7de7"
+        },
+        {
+          "bytes": 3893676,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+          "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+        },
+        {
+          "bytes": 7339,
+          "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/packet.local.json",
+          "sha256": "3b29761579efaabee4ef03c6c71ae5f476ced64980fa6d362c5eea55489457ec"
+        },
+        {
+          "bytes": 82688,
+          "path": "configs/e02_wrapper_crossmodel_v1_20261115.json",
+          "sha256": "19fff8964e84c536d7b3969eeab18e1a14bff69744b7752c7fbe9b22d68cccc1"
+        }
+      ],
+      "kind": "CLOSED_402_AND_CONTINUATION_CONSTRAINTS_OFFLINE",
+      "never_attempted_slot_range": [
+        45,
+        79
+      ],
+      "next_canary_metadata": {
+        "base_execution_order": 22,
+        "baseline_execution_order": 13,
+        "execution_order": 45,
+        "model_key": "B",
+        "pair_seed": 2315288556,
+        "phase": "post",
+        "visibility": "OMITTED"
+      },
+      "old_packet_lease": {
+        "valid_from_utc": "2026-11-16T10:39:52.131896+00:00",
+        "valid_until_utc": "2026-11-16T12:39:52.131896+00:00"
+      },
+      "original_limits": {
+        "E01_microusd": 0,
+        "GET_retry_statuses": [
+          404
+        ],
+        "GET_waits_seconds": [
+          10,
+          10,
+          20
+        ],
+        "GETs_per_generation": 3,
+        "POST_retries": 0,
+        "authority_seconds": 7200,
+        "catalog_GETs": 16,
+        "catalog_refresh_before_slots": [
+          10,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70
+        ],
+        "concurrency": 1,
+        "cumulative_E02_microusd": 1000000,
+        "input_tokens": 8192,
+        "journal_artifacts": 1536,
+        "lifetime_dispatches": 229,
+        "new_batch_microusd": 200000,
+        "new_model_POSTs": 80,
+        "new_statistics_GETs": 240,
+        "output_tokens": 256,
+        "per_call_microusd": 1785,
+        "phase_seconds": 120,
+        "price_age_seconds": 900,
+        "shared_microusd": 5000000
+      },
+      "owner_stop_state": {
+        "historical_unfinished": 4,
+        "pending_is_none": true,
+        "refresh_stage": 4,
+        "stopped": true,
+        "unfinished": 5
+      },
+      "private_provider_or_answer_text_copied": false,
+      "resource_limits": {
+        "CPU_seconds": 60,
+        "application_read_bytes": 16777216,
+        "network_requests": 0,
+        "temp_data_writes": 0,
+        "wall_seconds": 90
+      },
+      "safe_failed_phase_diagnostic": {
+        "automatic_retry": false,
+        "conservative_charged_microusd": 775,
+        "executor_stage": "MODEL_POST",
+        "model_POST_attempts": 1,
+        "reported_provider_cost_microusd": null,
+        "reservation_recorded": true,
+        "reserved_microusd": 775,
+        "statistics_GET_attempts": 0,
+        "transport_http_status": 402
+      },
+      "slot44_hold": {
+        "charged_microusd": 775,
+        "execution_order": 44,
+        "generation_id_present": false,
+        "phase": "post",
+        "reserved_microusd": 775,
+        "status": "UNCERTAIN"
+      },
+      "source_blocking_clauses": {
+        "envelope_rejects_attempt_after_halt": [
+          {
+            "condition": "halt and status != 'NOT_ATTEMPTED' or (status == 'SKIPPED_INVALID_PRE' and (not skip)) or (not halt and skip and (status not in ('SKIPPED_INVALID_PRE', 'NOT_ATTEMPTED')))",
+            "line": 137
+          }
+        ],
+        "owner_grant_rejects_stopped_and_unfinished": [
+          {
+            "condition": "study['pending'] is not None or study['stopped'] or state['unfinished'] != 4",
+            "line": 223
+          }
+        ],
+        "owner_reserve_returns_stopped": [
+          {
+            "condition": "study['stopped'] or next_action(study)['status'] == 'COMPLETE'",
+            "line": 338
+          }
+        ],
+        "owner_start_requires149predecessor": [
+          {
+            "condition": "study is not None or old is None or old['stopped'] or (old['pending'] is not None) or (previous_next(old)['status'] != 'COMPLETE') or (len(old['witnesses']) != 40) or (state['unfinished'] != 4) or (state['consumed']['dispatches'] != 149) or (len(state['rows']) != 149) or (p['owner_id'] != self.header['owner_id']) or (canonical_hash(prior) != canonical_hash(expected)) or any((row['context']['run_id'] == p['run_id'] for row in state['rows'].values())) or (state['consumed']['total'] >= 1000000) or (state['consumed']['modules']['E01'] != 0)",
+            "line": 183
+          }
+        ],
+        "walk_failure_is_terminal": [
+          {
+            "condition": "row['status'] in ('FAILED_UNCERTAIN', 'CANCELLED')",
+            "line": 101
+          }
+        ]
+      },
+      "source_or_model_execution": false,
+      "source_refs": {
+        "wrapper_crossmodel_v1": {
+          "bytes": 11152,
+          "path": "src/civiclab/e02/wrapper_crossmodel_v1.py",
+          "sha256": "6963e7322e47c23415b6e91e78b2882f7e0787c629461f115ae6e0119836ce81"
+        },
+        "wrapper_crossmodel_v1_client": {
+          "bytes": 19800,
+          "path": "src/civiclab/e02/wrapper_crossmodel_v1_client.py",
+          "sha256": "3223693da0664c868dbd892090a616b24a1afe33f3f0d2db4494e2a45a61bcf3"
+        },
+        "wrapper_crossmodel_v1_owner": {
+          "bytes": 29652,
+          "path": "src/civiclab/e02/wrapper_crossmodel_v1_owner.py",
+          "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+        }
+      },
+      "specific_original402cause": "UNKNOWN_NO_RETAINED_ERROR_METADATA"
+    },
+    "src/civiclab/additional_compatibility_owner_v1.py": {
+      "_apply": "            self._predecessor(state, m, head=state['_prefix_head'], history=state['_prefix_events'])\n            return super()._apply(event, state)\n                state['active'] = canonical_hash(a); state['approvals'][state['active']] = deepcopy(a)\n                self._binding({'context':c},a)\n                self._binding(row,a)\n        return super()._apply(event, state)",
+      "_verify": "def _verify(self, db):\n        self._registration()\n        if not self.anchor.is_file() or self.anchor.is_symlink():\n            raise ExecutionBlocked('owner head missing; no reset')\n        if freeze(_load(self.guard.read_text())) != self.header:\n            raise ExecutionBlocked('owner guard identity changed')\n        headers=db.execute('SELECT data FROM header').fetchall()\n        if len(headers)!=1 or _load(headers[0][0])!=self.header: raise ValueError('owner header changed')\n        rows=db.execute('SELECT sequence,data,digest FROM events ORDER BY sequence LIMIT 10001').fetchall()\n        if not 1 <= len(rows) <= 10000: raise ExecutionBlocked('bounded owner history required')\n        state=self._empty(); previous=None; history=[]\n        for i,(sequence,data,h) in enumerate(rows):\n            if len(data.encode())>65536: raise ExecutionBlocked('owner event exceeds bound')\n            event=_load(data)\n            if (set(event)!={'sequence','previous','body'} or type(sequence) is not int\n                or type(event['sequence']) is not int or sequence!=i or event['sequence']!=i\n                or event['previous']!=previous or canonical_hash(event)!=h\n                or (i==0)!=(event['body'].get('kind')=='GENESIS')):\n                raise ValueError('owner history changed')\n            state['_prefix_head']={'namespace':NAMESPACE,'owner_id':self.header['owner_id'],\n                'header_sha256':canonical_hash(self.header),'sequence':i-1,'head_hash':previous}\n            state['_prefix_events']=history\n            self._apply(event['body'],state); history.append(event); previous=h\n        if state.get('additional',{}).get('batch_stage','COMPLETE')!='COMPLETE':\n            raise ExecutionBlocked('partial amendment journal refused')\n        head={'namespace':NAMESPACE,'owner_id':self.header['owner_id'],\n              'header_sha256':canonical_hash(self.header),'sequence':len(rows)-1,'head_hash':previous}\n        if _load(self.anchor.read_text())!=head: raise ExecutionBlocked('owner store/head torn or truncated')\n        actual_rows=db.execute('SELECT id,data FROM charges LIMIT 1025').fetchall()\n        if len(actual_rows)>1024: raise ExecutionBlocked('owner rows exceed limit')\n        actual={i:_load(data) for i,data in actual_rows}\n        if actual!=state['rows']: raise ValueError('materialized charges differ from protected history')\n        state['_prefix_head']=head; state['_prefix_events']=history\n        return state,head"
+    },
+    "src/civiclab/e02/alignment_anchoring_owner_v1.py": {
+      "_apply": "                or p['owner_id']!=self.header['owner_id']\n                or canonical_hash(prior)!=canonical_hash({'head':state['_prefix_head'],'history_hash':canonical_hash(state['_prefix_events']),\n        if study is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')!=AUTHORITY:return ContinuationOwnerV1._binding(row,authority)\n        base_context(row['context'])\n        if row['context']['approval_hash']!=canonical_hash(authority):\n            raise ExecutionBlocked('follow-up financial authority differs')",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if state.get('alignment_followup',{}).get('pending') is not None:\n            raise ExecutionBlocked('partial follow-up grant refused')\n        return state,head"
+    },
+    "src/civiclab/e02/exploratory_continuation_owner_v1.py": {
+      "_apply": "        if event['kind']!=CONTINUE:return super()._apply(event,state)\n            or q['policy']['owner_id']!=self.header['owner_id']\n            or prior['history_hash']!=canonical_hash(state['_prefix_events'])"
+    },
+    "src/civiclab/e02/exploratory_owner_v1.py": {
+      "_apply": "            self._entry(state,q['policy']); self._new_clock(event,state,q['policy'],payload['fresh_proof'])\n        if study is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')!='LIMITED_PILOT_AUTHORITY_V1':\n            return ProductionOwnerV4._binding(row,authority)\n        base_context(row['context'])\n        if row['context']['approval_hash']!=canonical_hash(authority):\n            raise ExecutionBlocked('study context authority differs')",
+      "_entry": "def _entry(self,state,p):\n        prior=p['predecessor']; old=state['rows'].get(OLD_RECEIPT)\n        extra=state.get('additional',{})\n        compat=state['rows'].get(p['compatibility_receipt'])\n        if (p['owner_id']!=self.header['owner_id'] or prior['header_hash']!=canonical_hash(self.header)\n            or prior['head']!=state['_prefix_head'] or prior['history_hash']!=canonical_hash(state['_prefix_events'])\n            or prior['active_approval_hash']!=state['active'] or prior['rows_hash']!=canonical_hash(state['rows'])\n            or prior['statistics_claims_hash']!=canonical_hash(sorted(state['statistics_claims']))\n            or set(state['rows'])!={OLD_RECEIPT,p['compatibility_receipt']}\n            or extra.get('batch_stage')!='COMPLETE' or extra.get('receipt')!=p['compatibility_receipt']\n            or old is None or old['status']!='UNCERTAIN' or old['reserved']!=340 or old['charged']!=340\n            or canonical_hash(old)!=state['_amendment_bundle']['policy']['predecessor_row_hash']\n            or compat is None or state['consumed']['dispatches']!=2\n            or p['run_id'] in (old['context']['run_id'],compat['context']['run_id'])\n            or len(state['_prefix_events'])+193>10000 or len(state['rows'])+32>1024):\n            raise ExecutionBlocked('exact immutable unknown plus committed connectivity prefix required')\n        if recovery_mode(p):\n            self._recovery_entry(state, p, compat)\n            return\n        if (compat['status']!='PHASE_COMMITTED' or compat['billing'] is None\n            or compat['observed_cost'] is None or state['unfinished']!=1):\n            raise ExecutionBlocked('committed compatibility prefix required')\n        # A charged, committed compatibility failure is not successful JSON\n        # compatibility. Read only the accepted client's fixed, bounded path and\n        # authenticate its complete checkpoint against the original owner row.\n        c=compat['context'];base=self.directory/'additional-test-v1'/c['run_id']\n        for parent in (base,*base.parents):\n            if parent.is_symlink():raise ExecutionBlocked('symlink compatibility journal refused')\n        path=base/'phase.local.json'\n        if path.is_symlink() or not path.is_file() or path.stat().st_size>65536:\n            raise ExecutionBlocked('fixed compatibility checkpoint missing or oversized')\n        with path.open('rb') as stream:raw=stream.read(65537)\n        if len(raw)>65536 or hashlib.sha256(raw).hexdigest()!=compat['checkpoint_hash']:\n            raise ExecutionBlocked('compatibility checkpoint bytes differ')\n        from ..additional_compatibility_owner_v1 import _load\n        value=_load(raw);answer=value.get('output') if type(value) is dict else None\n        expected={'schema_version':1,**{k:c[k] for k in ('run_id','unit_id','phase')},\n                  'receipt':compat['id'],'request_hash':c['envelope']['request_hash'],'output':answer}\n        if (canonical_hash(value)!=canonical_hash(expected) or type(answer) is not dict\n            or canonical_hash(answer)!=compat['output_hash'] or answer.get('status')!='VALID'\n            or canonical_hash(answer.get('parsed'))!=canonical_hash({'ok':True})\n            or canonical_hash(_answer({'choices':[{'message':{'content':answer.get('raw_text')}}]}))\n               !=canonical_hash(answer)):\n            raise ExecutionBlocked('successful bound JSON compatibility is required')",
+      "_journal": "def _journal(self,run_id):\n        path=self.directory/'limited-pilot-v1'/run_id\n        for parent in (path,*path.parents):\n            if parent.is_symlink():raise ExecutionBlocked('symlink journal refused')\n        return path",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if (state.get('study',{}).get('pending') is not None\n            or state.get('study',{}).get('initial',False)):\n            raise ExecutionBlocked('partial study batch refused')\n        return state,head"
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": {
+      "_apply": "                or p['owner_id']!=self.header['owner_id']\n                or canonical_hash(prior)!=canonical_hash({'head':state['_prefix_head'],'history_hash':canonical_hash(state['_prefix_events']),\n        if study is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')!=AUTHORITY:return AlignmentOwnerV1._binding(row,authority)\n        base_context(row['context'])\n        if row['context']['approval_hash']!=canonical_hash(authority):\n            raise ExecutionBlocked('follow-up financial authority differs')",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if state.get('issue_cue_crossmodel',{}).get('pending') is not None:\n            raise ExecutionBlocked('partial follow-up grant refused')\n        return state,head"
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py": {
+      "_apply": "            expected={'head':state['_prefix_head'],'history_hash':canonical_hash(state['_prefix_events']),\n                or p['owner_id']!=self.header['owner_id'] or canonical_hash(prior)!=canonical_hash(expected)\n        if study is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')!=AUTHORITY:return CrossmodelOwnerV1._binding(row,authority)\n        base_context(row['context'])\n        if row['context']['approval_hash']!=canonical_hash(authority):\n            raise ExecutionBlocked('follow-up financial authority differs')",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if state.get('issue_cue_crossmodel_recovery',{}).get('pending') is not None:\n            raise ExecutionBlocked('partial follow-up grant refused')\n        return state,head"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py": {
+      "_apply": "            p.need(q['owner_id']==self.header['owner_id']==state['wrapper_crossmodel']['packet']['policy']['owner_id']\n                   and q['expected_head']==state['_prefix_head'] and q['parent_binding']==ANCHOR==parent_binding(state), 'canary exact live parent/head')\n        if b is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')==p.AUTHORITY:\n            base_context(row['context'])\n            p.need(row['context']['approval_hash']==canonical_hash(authority),'canary financial authority')\n            return\n        return WrapperCrossmodelOwnerV1._binding(row,authority)",
+      "_check_commit": "def _check_commit(self,event,state,b,body):\n        from .wrapper_crossmodel_v1 import parse_response\n        from .crossmodel_recovery_metadata_v1 import normalize_statistics\n        from .exploratory_live_client_v1 import _no_provider_reasoning,_no_unsupported_response_activity,_usage_bounds,_cost\n        row=state['rows'][b['receipt']];c=row['context']\n        now=utc(event['recorded_at_utc'])\n        p.need(event['clock_status']=='OK' and not b['closed'] and 0<=(now-utc(b['phase_started'])).total_seconds()<120\n               and 0<=(now-utc(b['opened'])).total_seconds()<240 and now<utc(b['packet']['valid_until_utc'])\n               and b['counts']['POST']==1 and 1<=b['counts']['statistics_GET']<=3,'canary timely committed phase')\n        rr,response=self._journal_read(b,b['receipt']+'-response.json')\n        sr,statistics=self._journal_read(b,b['receipt']+'-statistics.json')\n        cr,checkpoint=self._journal_read(b,b['receipt']+'-checkpoint.json')\n        _no_provider_reasoning(response);_no_unsupported_response_activity(response)\n        parsed=parse_response(response);compiled=self._canary_context(state,b)['request']\n        bill=normalize_statistics(deepcopy(statistics['data']),generation_id=row['generation_id'],requested_model=c['terms']['model'],reported_provider=c['terms']['reported_provider'],input_bound=c['envelope']['input_token_bound'],output_bound=256,reserved_microusd=row['reserved'],request_payload=compiled['payload'])['billing']\n        _usage_bounds(response.get('usage'),c['envelope'])\n        amount=_cost(statistics['data']['total_cost'])\n        p.need(row['status']=='SETTLED' and row['billing']==bill and amount==row['observed_cost'],'canary billing join')\n        if response.get('usage',{}).get('cost') is not None:p.need(_cost(response['usage']['cost'])==amount,'canary response billing disagreement')\n        from .crossmodel_recovery_metadata_v1 import response_model_allowed\n        p.need(response.get('id')==row['generation_id'] and response_model_allowed(response.get('model'),c['terms']['model']),'canary response identity')\n        output={'status':parsed['status'],'answer':parsed['answer'],'response_raw_sha256':hashlib.sha256(rr).hexdigest()}\n        expected={'schema_version':1,'run_id':c['run_id'],'unit_id':c['unit_id'],'phase':'post','receipt':row['id'],'request_hash':c['envelope']['request_hash'],'output':output}\n        witness={'execution_order':45,'phase':'post','status':parsed['status'],'answer':parsed['answer'],'payload_sha256':c['payload_hash'],'receipt':row['id']}\n        p.need(checkpoint==expected and canonical_hash(output)==row['output_hash'] and body['witness']==witness\n               and body['before_hash']==canonical_hash(row) and body['after']=={**row,'status':'PHASE_COMMITTED','checkpoint_hash':hashlib.sha256(cr).hexdigest()},'canary checkpoint/witness join')",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if STATE in state:\n            p.need(state[STATE]['pending'] is None,'canary torn grant')\n            self._protect(state,state[STATE])\n        return state,head"
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_owner.py": {
+      "_apply": "            expected={'head':state['_prefix_head'],'history_hash':canonical_hash(state['_prefix_events']),\n                or p['owner_id']!=self.header['owner_id'] or canonical_hash(prior)!=canonical_hash(expected)\n        if study is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')!=AUTHORITY:return WrapperVisibilityOwnerV1._binding(row,authority)\n        base_context(row['context'])\n        if row['context']['approval_hash']!=canonical_hash(authority):\n            raise ExecutionBlocked('follow-up financial authority differs')",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if state.get('wrapper_crossmodel',{}).get('pending') is not None:\n            raise ExecutionBlocked('partial follow-up grant refused')\n        return state,head"
+    },
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": {
+      "_apply": "            expected={'head':state['_prefix_head'],'history_hash':canonical_hash(state['_prefix_events']),\n                or p['owner_id']!=self.header['owner_id'] or canonical_hash(prior)!=canonical_hash(expected)\n        if study is None:return super()._apply(event,state)",
+      "_binding": "def _binding(row,authority):\n        if authority.get('kind')!=AUTHORITY:return CrossmodelRecoveryOwnerV1._binding(row,authority)\n        base_context(row['context'])\n        if row['context']['approval_hash']!=canonical_hash(authority):\n            raise ExecutionBlocked('follow-up financial authority differs')",
+      "_verify": "def _verify(self,db):\n        state,head=super()._verify(db)\n        if state.get('wrapper_visibility',{}).get('pending') is not None:\n            raise ExecutionBlocked('partial follow-up grant refused')\n        return state,head"
+    },
+    "src/civiclab/owner_budget_v3.py": {
+      "__init__": "def __init__(self,directory,*,clock=None):\n        self.directory=Path(directory).resolve();self.clock=clock or (lambda:datetime.now(timezone.utc))\n        self.guard=self.directory/'owner-v3-guard.local.json'\n        self.db_path=self.directory/'owner-v3.local.sqlite'\n        self.anchor=self.directory/'owner-v3-head.local.json'\n        if not self.guard.is_file() or self.guard.is_symlink():raise ExecutionBlocked('owner guard missing; no bootstrap/reset')\n        self.header=freeze(json.loads(self.guard.read_text()))\n        if (set(self.header)!={'schema_version','namespace','scope','owner_id'} or self.header['schema_version']!=1\n            or type(self.header['schema_version']) is not int or self.header['namespace']!=NAMESPACE or self.header['scope']!=SCOPE):\n            raise ExecutionBlocked('owner header/fixture scope invalid')\n        digest(self.header['owner_id'],32)",
+      "_apply": "            if state['rows'] or state['approvals'] or p!={'header_sha256':canonical_hash(self.header)}:raise ValueError('invalid owner genesis')\n            validate_approval(p,self.header['owner_id'])\n            h=canonical_hash(p);state['approvals'][h]=p;state['active']=h;state['approval_ids'].add(p['approval_id']);return\n        approval=state['approvals'].get(row['context']['approval_hash'])\n        self._binding(row,approval)",
+      "_binding": "def _binding(row,approval):\n        c=row['context'];p=approval['allowed_plans'].get(c['plan_hash'])\n        if (p is None or c['module']!=p['module'] or canonical_hash(c['terms'])!=p['terms_sha256']\n            or c['envelope']['max_tokens']>p['max_tokens'] or c['envelope']['input_token_bound']>p['max_input_token_bound']):\n            raise ExecutionBlocked('phase differs from released plan terms/module/ceilings')",
+      "_connect": "def _connect(self):\n        if not self.db_path.is_file() or self.db_path.is_symlink():raise ExecutionBlocked('owner store missing; no reset')\n        return sqlite3.connect(self.db_path.as_uri()+'?mode=rw',uri=True,timeout=10)",
+      "_verify": "def _verify(self,db):\n        if not self.anchor.is_file() or self.anchor.is_symlink():raise ExecutionBlocked('owner head missing; no reset')\n        if freeze(json.loads(self.guard.read_text()))!=self.header:raise ExecutionBlocked('owner guard identity changed')\n        headers=db.execute('SELECT data FROM header').fetchall()\n        if len(headers)!=1 or json.loads(headers[0][0])!=self.header:raise ExecutionBlocked('owner header changed')\n        state=self._empty();previous=None\n        rows=db.execute('SELECT sequence,data,digest FROM events ORDER BY sequence').fetchall()\n        for i,(sequence,data,h) in enumerate(rows):\n            event=json.loads(data)\n            if set(event)!={'sequence','previous','body'} or type(sequence) is not int or type(event['sequence']) is not int or sequence!=i or event['sequence']!=i or event['previous']!=previous or canonical_hash(event)!=h:\n                raise ValueError('owner history changed')\n            if (i==0)!=(event['body'].get('kind')=='GENESIS'):raise ValueError('genesis location invalid')\n            self._apply(event['body'],state);previous=h\n        expected={'namespace':NAMESPACE,'owner_id':self.header['owner_id'],'header_sha256':canonical_hash(self.header),\n                  'sequence':len(rows)-1,'head_hash':previous}\n        if not rows or json.loads(self.anchor.read_text())!=expected:raise ExecutionBlocked('owner store/head torn or truncated')\n        actual={i:json.loads(data) for i,data in db.execute('SELECT id,data FROM charges')}\n        if actual!=state['rows']:raise ValueError('materialized charges differ from protected history')\n        return state,expected"
+    },
+    "src/civiclab/production_owner_v4.py": {
+      "__init__": "def __init__(self):\n        self.directory = production_owner_directory()\n        self.registration = self.directory.parent/'openrouter-v4-bootstrap.local.json'\n        self.guard=self.directory/'owner-v4-guard.local.json'\n        self.db_path=self.directory/'owner-v4.local.sqlite'\n        self.anchor=self.directory/'owner-v4-head.local.json'\n        self._location()\n        if not self.guard.is_file() or self.guard.is_symlink():\n            raise ExecutionBlocked('production owner guard missing; no bootstrap/reset')\n        self.header=freeze(json.loads(self.guard.read_text()))\n        if (set(self.header)!={'schema_version','namespace','scope','owner_id','registration_sha256'}\n            or type(self.header['schema_version']) is not int or self.header['schema_version']!=1\n            or self.header['namespace']!=NAMESPACE or self.header['scope']!=SCOPE):\n            raise ExecutionBlocked('production owner identity invalid')\n        digest(self.header['owner_id'],32);digest(self.header['registration_sha256'])\n        self._registration()",
+      "_apply": "            if state['rows'] or state['approvals'] or p!={'header_sha256':canonical_hash(self.header)}:raise ValueError('invalid owner genesis')\n            registration=json.loads(self.registration.read_text())\n            if not utc(registration['valid_from_utc'])<=now<utc(registration['valid_until_utc']):\n            c=p['context'];base_context(c);a=state['approvals'].get(c['approval_hash'])\n            self._binding({'context':c},a)\n            validate_approval(p,self.header['owner_id'])\n            h=canonical_hash(p);state['approvals'][h]=p;state['active']=h;state['approval_ids'].add(p['approval_id']);return\n        approval=state['approvals'].get(row['context']['approval_hash'])\n        self._binding(row,approval)",
+      "_binding": "def _binding(row,approval):\n        c=row['context'];p=approval['allowed_plans'].get(c['plan_hash'])\n        if (p is None or c['module']!=p['module'] or canonical_hash(c['terms'])!=p['terms_sha256']\n            or c['release_hash']!=approval['release_hash']\n            or c['envelope']['max_tokens']>p['max_tokens'] or c['envelope']['input_token_bound']>p['max_input_token_bound']\n            or request_binding(c)!=p['request_binding_hash']):\n            raise ExecutionBlocked('request differs from released identity/terms/ceilings')",
+      "_connect": "def _connect(self):\n        if not self.db_path.is_file() or self.db_path.is_symlink():raise ExecutionBlocked('owner store missing; no reset')\n        return sqlite3.connect(self.db_path.as_uri()+'?mode=rw',uri=True,timeout=10)",
+      "_registration": "def _registration(self):\n        self._location()\n        if not self.registration.is_file() or self.registration.is_symlink():\n            raise ExecutionBlocked('outside owner registration missing; no reset')\n        value=freeze(json.loads(self.registration.read_text()))\n        validate_registration(value)\n        if canonical_hash(value)!=self.header['registration_sha256'] or value['owner_id']!=self.header['owner_id']:\n            raise ExecutionBlocked('outside registration differs from owner')",
+      "_verify": "def _verify(self,db):\n        self._registration()\n        if not self.anchor.is_file() or self.anchor.is_symlink():raise ExecutionBlocked('owner head missing; no reset')\n        if freeze(json.loads(self.guard.read_text()))!=self.header:raise ExecutionBlocked('owner guard identity changed')\n        headers=db.execute('SELECT data FROM header').fetchall()\n        if len(headers)!=1 or json.loads(headers[0][0])!=self.header:raise ExecutionBlocked('owner header changed')\n        state=self._empty();previous=None\n        rows=db.execute('SELECT sequence,data,digest FROM events ORDER BY sequence').fetchall()\n        for i,(sequence,data,h) in enumerate(rows):\n            event=json.loads(data)\n            if set(event)!={'sequence','previous','body'} or type(sequence) is not int or type(event['sequence']) is not int or sequence!=i or event['sequence']!=i or event['previous']!=previous or canonical_hash(event)!=h:\n                raise ValueError('owner history changed')\n            if (i==0)!=(event['body'].get('kind')=='GENESIS'):raise ValueError('genesis location invalid')\n            self._apply(event['body'],state);previous=h\n        expected={'namespace':NAMESPACE,'owner_id':self.header['owner_id'],'header_sha256':canonical_hash(self.header),\n                  'sequence':len(rows)-1,'head_hash':previous}\n        if not rows or json.loads(self.anchor.read_text())!=expected:raise ExecutionBlocked('owner store/head torn or truncated')\n        actual={i:json.loads(data) for i,data in db.execute('SELECT id,data FROM charges')}\n        if actual!=state['rows']:raise ValueError('materialized charges differ from protected history')\n        return state,expected"
+    }
+  },
+  "source_and_closed_pins": [
+    {
+      "bytes": 33110,
+      "path": "src/civiclab/production_owner_v4.py",
+      "sha256": "90b2d8da1bdc0932d0fc955172f2d67fa80372846028f284055720100cd5b5bf"
+    },
+    {
+      "bytes": 21330,
+      "path": "src/civiclab/owner_budget_v3.py",
+      "sha256": "4590a7d5aba1e3de71f7f142b44f17d6a6c818f793c110e11a95276430228058"
+    },
+    {
+      "bytes": 20485,
+      "path": "src/civiclab/additional_compatibility_owner_v1.py",
+      "sha256": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f"
+    },
+    {
+      "bytes": 39024,
+      "path": "src/civiclab/e02/exploratory_owner_v1.py",
+      "sha256": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756"
+    },
+    {
+      "bytes": 10858,
+      "path": "src/civiclab/e02/exploratory_continuation_owner_v1.py",
+      "sha256": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256"
+    },
+    {
+      "bytes": 23339,
+      "path": "src/civiclab/e02/alignment_anchoring_owner_v1.py",
+      "sha256": "c37f21dd71d8426be4906799143de38f4ec35a097a8e5ffc0b3cad48d5802301"
+    },
+    {
+      "bytes": 27606,
+      "path": "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py",
+      "sha256": "0322944250e3236c7a08a9b0e15780f0a9247ee29d22ee15762595ab41a9c84b"
+    },
+    {
+      "bytes": 29544,
+      "path": "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py",
+      "sha256": "6093e5e5b190f0a3ff7569ba52b5ff66c14b38fc66e569e3013986d4382d112d"
+    },
+    {
+      "bytes": 28723,
+      "path": "src/civiclab/e02/wrapper_visibility_owner_v1.py",
+      "sha256": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48"
+    },
+    {
+      "bytes": 29652,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1_owner.py",
+      "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+    },
+    {
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 3893676,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+      "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+    },
+    {
+      "bytes": 4617,
+      "path": "reports/E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "sha256": "21ec7483ee0f2e91633b30c76b9fe196e27c5768c8a0131c36e0ae14ce0c6baf"
+    },
+    {
+      "bytes": 8956,
+      "path": "reports/INDEPENDENT_AUDIT_E02_WRAPPER_CROSSMODEL_STOPPED_ACTUAL_20261116.json",
+      "sha256": "e856a477ae56adf13ca44b01c7f0a00f7807a305675c262117a627c09b63672d"
+    },
+    {
+      "bytes": 20203,
+      "path": "reports/evidence_e02_wrapper_crossmodel_canary_v1_preparation_20261116/closed-preflight.json",
+      "sha256": "fe3f66f2579cbcfdf5decf91635d1d2bbafba065f04fdaf7ee69553385b95103"
+    }
+  ]
+}

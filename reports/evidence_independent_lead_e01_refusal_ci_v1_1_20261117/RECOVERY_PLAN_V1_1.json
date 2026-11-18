@@ -1,0 +1,13 @@
+{
+  "kind": "INDEPENDENT_HARNESS_PARSING_RECOVERY_PLAN",
+  "created_at_UTC": "2026-11-18T02:48:08.881835+00:00",
+  "reason": "Original probe reached successful ordinary wrapper execution, then failed to extract its receipt because unittest progress text shares the same captured line. No candidate finding. Original attempt retained; cleanup controls were not reached.",
+  "change": "Require exactly one receipt marker in captured lines and split at that exact marker; no source/test/runtime changes.",
+  "maximum_new_invocations_per_runtime": 1,
+  "runtimes": [
+    "3.11",
+    "3.12"
+  ],
+  "unchanged_bounds": "Original PLAN.json bounds apply. No actual reader/private data/network/model calls.",
+  "probe_sha256": "7d46d090a6ffed3f868d22b360c5f2d0c3eaada4b6943b750a0946e8182ad0fe"
+}

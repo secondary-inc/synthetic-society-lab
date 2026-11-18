@@ -1,0 +1,18 @@
+{
+  "actual_execution": "DISABLED",
+  "created_at_UTC": "2026-11-18T02:47:07.304464+00:00",
+  "full_CI": "NOT_RUN",
+  "kind": "INDEPENDENT_LEAD_E01_REFUSAL_FIX_AND_CI_REVIEW_PLAN",
+  "limits_note": "Interpreter startup/prewarm and parent filesystem reads are not fully instrumented; this is test qualification, not whole-process or actual-runtime accounting. Outer driver enforces timeout and console capture.",
+  "maximum_invocations_per_runtime": 1,
+  "per_invocation": {
+    "child_CPU_seconds": 120,
+    "child_audited_read_bytes": 67108864,
+    "child_fixture_write_bytes": 33554432,
+    "console_bytes": 65536,
+    "outer_wall_seconds": 180
+  },
+  "probe_sha256": "b5a7dbf75791a1ff2d9bf73e6c0190d7db70a350a16077bfb33e65eac2aac5a3",
+  "reviewer": "Lead; did not implement consumer, suite or wrapper",
+  "scope": "Static narrow correction and preserved-case comparison; one ordinary-discovery wrapper run per runtime, 33 nested authored cases, three inert cleanup controls. No real saved-reader/PDF, key, live owner, network or model calls."
+}

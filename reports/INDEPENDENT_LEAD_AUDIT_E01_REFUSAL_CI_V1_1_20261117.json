@@ -1,0 +1,214 @@
+{
+  "authority_increased": false,
+  "coverage_notes": [
+    "One ordinary unittest case executes 33 explicit named nested cases; it is not 33 independently collected ordinary cases.",
+    "Three additional inert process/selector controls per runtime cover parent deadline, output overflow and terminate-to-kill cleanup. These do not qualify hostile native children or whole-process resource accounting.",
+    "Collector resource limits/alarm/tracing/profile unchanged after discovery and actual nested run; no live reader, private data, credential, network or model action.",
+    "Python 3.11/3.12 local authored checks are not a clean Linux checkout or full GitHub CI pass.",
+    "Original startup/prewarm accounting limitation is retained; actual reader/adaptation/release remains unimplemented and disabled."
+  ],
+  "decision": {
+    "G03_B01": "UNCHANGED_BLOCKED",
+    "T01": "PASS_CORRECTED_WITH_REGRESSION",
+    "T02": "PASS_CORRECTED_WITH_REGRESSION",
+    "actual_saved_reader": "NOT_RUN_DISABLED",
+    "authored_consumer_and_ordinary_wrapper": "PASS_WITHIN_MOCK_SCOPE",
+    "full_original_completion_contract": "INCOMPLETE",
+    "full_remote_CI": "PENDING_NOT_CERTIFIED"
+  },
+  "evidence_refs": [
+    {
+      "bytes": 1048,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/PLAN.json",
+      "sha256": "6a91d03a62bf37860360ed238ae7919c229232bcb621a4e190d86b098ab29ccb"
+    },
+    {
+      "bytes": 787,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/RECOVERY_PLAN_V1_1.json",
+      "sha256": "61798168e1cf6fb18a30c4a12a389eac8b8edff456acc6cc6ae821b56c17cf06"
+    },
+    {
+      "bytes": 4678,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/probe.py",
+      "sha256": "b5a7dbf75791a1ff2d9bf73e6c0190d7db70a350a16077bfb33e65eac2aac5a3"
+    },
+    {
+      "bytes": 4728,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/probe_v1_1.py",
+      "sha256": "7d46d090a6ffed3f868d22b360c5f2d0c3eaada4b6943b750a0946e8182ad0fe"
+    },
+    {
+      "bytes": 414,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311.log",
+      "sha256": "1f46652c8e98fe5f3abebc04bd1e3f71f6aaf0fdd0c4fd6fc654c97c35c60d62"
+    },
+    {
+      "bytes": 255,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311_STARTED.json",
+      "sha256": "00fe38543c0556803dd8375279fbe565120bce67476fa2451868c44c051c51b6"
+    },
+    {
+      "bytes": 198,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311_result.json",
+      "sha256": "d8d23928b6d7b9edcaa4f9fd46425f882e7ca17b822d313ed5e3c793a3cc3745"
+    },
+    {
+      "bytes": 2778,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311_v1_1.log",
+      "sha256": "efb9a4fea4895b076ffbe294a93e0f33d9bc1e21322b069688fc74ac8a64a768"
+    },
+    {
+      "bytes": 255,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311_v1_1_STARTED.json",
+      "sha256": "5459b4900c88abd8a068c3684187f2e1221c0e8387360249bc92d5ab3e1dda29"
+    },
+    {
+      "bytes": 199,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311_v1_1_result.json",
+      "sha256": "912377c8681bd219fc2272e78b6d897fb1e47f7e9e061db1216354058fd57a52"
+    },
+    {
+      "bytes": 2777,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python312_v1_1.log",
+      "sha256": "277bbb9b8d512ea24fd6727b685d55e7471468df4b61c3bf07f460de2429f1d2"
+    },
+    {
+      "bytes": 218,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python312_v1_1_STARTED.json",
+      "sha256": "63648403499d8a7ecdbf6b45341fd264811849257937f40d3e651f4b7297a1c4"
+    },
+    {
+      "bytes": 199,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python312_v1_1_result.json",
+      "sha256": "0db9cdee574056d92affddf0118a384812a4ec5e4a6f3bc1d59de646e083e02b"
+    }
+  ],
+  "independent_runs": {
+    "python311": {
+      "execution": {
+        "console_bytes": 2778,
+        "console_sha256": "efb9a4fea4895b076ffbe294a93e0f33d9bc1e21322b069688fc74ac8a64a768",
+        "exit": 0,
+        "startup_accounting": "NOT_CLAIMED",
+        "wall_seconds": 0.149641459
+      },
+      "independent_summary": {
+        "actual_reader_calls": 0,
+        "collector_controls_unchanged": true,
+        "cost_usd": 0,
+        "kind": "INDEPENDENT_E01_COLLECTOR_AND_CHILD_CHECK",
+        "mock_cleanup_controls": [
+          "deadline",
+          "overflow",
+          "deadline_force_kill"
+        ],
+        "model_calls": 0,
+        "nested_cases": 33,
+        "network_calls": 0,
+        "ordinary_cases": 1,
+        "startup_accounting": "NOT_CLAIMED"
+      }
+    },
+    "python312": {
+      "execution": {
+        "console_bytes": 2777,
+        "console_sha256": "277bbb9b8d512ea24fd6727b685d55e7471468df4b61c3bf07f460de2429f1d2",
+        "exit": 0,
+        "startup_accounting": "NOT_CLAIMED",
+        "wall_seconds": 0.162258166
+      },
+      "independent_summary": {
+        "actual_reader_calls": 0,
+        "collector_controls_unchanged": true,
+        "cost_usd": 0,
+        "kind": "INDEPENDENT_E01_COLLECTOR_AND_CHILD_CHECK",
+        "mock_cleanup_controls": [
+          "deadline",
+          "overflow",
+          "deadline_force_kill"
+        ],
+        "model_calls": 0,
+        "nested_cases": 33,
+        "network_calls": 0,
+        "ordinary_cases": 1,
+        "startup_accounting": "NOT_CLAIMED"
+      }
+    }
+  },
+  "kind": "INDEPENDENT_LEAD_E01_REFUSAL_FIX_AND_CI_HARNESS_REVIEW",
+  "new_model_calls": 0,
+  "new_model_cost_USD": "0",
+  "preserved_reviewer_failure": {
+    "cause": "Progress text and receipt share a captured line; startswith extraction failed. Not a consumer or wrapper failure.",
+    "evidence": {
+      "bytes": 198,
+      "path": "reports/evidence_independent_lead_e01_refusal_ci_v1_1_20261117/python311_result.json",
+      "sha256": "d8d23928b6d7b9edcaa4f9fd46425f882e7ca17b822d313ed5e3c793a3cc3745"
+    },
+    "invocations": 1,
+    "recovery": "One separately recorded corrected-marker probe per runtime, both PASS; original probe/log remain unchanged.",
+    "runtime": "3.11",
+    "stage": "RECEIPT_EXTRACTION_AFTER_SUCCESSFUL_ORDINARY_WRAPPER"
+  },
+  "recorded_at_UTC": "2026-11-18T02:50:03.718657+00:00",
+  "reviewer_role": "Lead acting as auditor, separate from E01 implementation author; production code/suite/wrapper not edited by reviewer.",
+  "source_refs": [
+    {
+      "bytes": 25438,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fdb303d28be7c2d880a67ebb01bfd9d77e61228e7a5887acbf7efc39b959b3a5"
+    },
+    {
+      "bytes": 27823,
+      "path": "scripts/run_e01_saved_job_ledger_suite_v1.py",
+      "sha256": "33d208d3a19cf2fc4322e3e480a5ec27a07680bd89f5da4487f182629b1b8089"
+    },
+    {
+      "bytes": 5997,
+      "path": "tests/test_e01_source_job_ledger_v1.py",
+      "sha256": "598702cf080a066ae9904151e255e8613b03ad0eee17765b63f568a960629ee1"
+    },
+    {
+      "bytes": 656,
+      "path": "scripts/compile_e01_saved_job_ledger_v1_20261117.py",
+      "sha256": "f96156495896a196e3cf92418fc98a730fc1292b6a30a1889a91c1349e1d63a0"
+    },
+    {
+      "bytes": 19196,
+      "path": "reports/E01_SAVED_LEDGER_REFUSAL_FIX_V1_1_20261117.json",
+      "sha256": "9f1740c959d7bfab50f45d44e4a5303e67387883b8ddff9377d3b00b5614932b"
+    },
+    {
+      "bytes": 9204,
+      "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_CODE_TRIAGE_V1_20261117.json",
+      "sha256": "ddb6be5132ad4642e30244b89d582e2f941fc34b40d2739cc3bff52f0bcd489b"
+    },
+    {
+      "bytes": 11031,
+      "path": "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_T01_T02_PROBE_20261117.json",
+      "sha256": "8d27f4695f03d00b0c31c043396098552af2ae3873a94989d7eaad20c4350a2a"
+    }
+  ],
+  "static_checks": {
+    "actual_entry_unchanged_and_disabled": true,
+    "added_cases": [
+      "test_31_exponent_overflow_rejected_at_any_depth",
+      "test_32_caught_store_io_errors_latch_before_completion",
+      "test_33_caught_missing_store_controls_still_latch"
+    ],
+    "all_other_consumer_AST_unchanged": true,
+    "finite_json": "Finite parse_float rejects exponent overflow via JSON_NONFINITE, while normal finite floats remain admissible.",
+    "original_30_test_case_AST_unchanged": true,
+    "production_changes_confined_to": [
+      "exact_json",
+      "ReadView.read"
+    ],
+    "projection_counts_unchanged": {
+      "accepted_final_ballots": 0,
+      "document_state_coverage": 13,
+      "slots": 33,
+      "unfinished_document_jobs": 20
+    },
+    "storage_errors": "Missing-input handling remains first; other OSError becomes sticky INPUT_IO. Callback cannot clear failure by catching an exception."
+  }
+}

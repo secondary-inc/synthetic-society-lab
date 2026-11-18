@@ -1,0 +1,45 @@
+{
+  "cases": 10,
+  "ceilings": {
+    "CPU_seconds": 600,
+    "charged_read_bytes": 1073741824,
+    "console_bytes": 524288,
+    "wall_seconds": 900,
+    "write_bytes": 268435456
+  },
+  "closed_inputs": "Six exact byte/hash-pinned export/packet/historical catalog+receipt files in probe; no retained response journal inputs",
+  "copied_owner_cases": 9,
+  "created_at_UTC": "2026-11-18T02:44:57.226951+00:00",
+  "guard": "Reviewed author bounded_main with additional exact closed-input read guard; no live owner/key/network/native/extra child. SQL logical read charges and conservative per-copy SQLite write reservations reused.",
+  "per_runtime_invocations": 1,
+  "probe_sha256": "07fc7c7a91a779bf735a97f89c03aef4369ce25939154950a9e398bb515e12f2",
+  "remaining_possible_allocations_after_this": 1,
+  "scope": "Mock transport 429/timeout/model/malformed/delayed404/generation collision, future/drift pre-reserve catalogs, SQL tamper and one-use capability",
+  "source_refs": [
+    {
+      "bytes": 7624,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1.py",
+      "sha256": "98595b5e94269f5e04d73d092428875420b05c111b8db9fbade354d9cbbeaa8d"
+    },
+    {
+      "bytes": 21807,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_owner.py",
+      "sha256": "21829e5021a1e472ab6d05c43e89362d42c833fcf2a7e93cf0895c507989b8fd"
+    },
+    {
+      "bytes": 8656,
+      "path": "src/civiclab/e02/wrapper_crossmodel_canary_v1_client.py",
+      "sha256": "79c7c817ea2704ac3c1de8f884cad33ff54c9492296e27abafdc9a64d9107c11"
+    },
+    {
+      "bytes": 2795,
+      "path": "scripts/continue_e02_wrapper_crossmodel_canary_v1_20261117.py",
+      "sha256": "0ff0db64c9c89abc699b367b743945bf464e676f13278cacf5f76ece53be545d"
+    },
+    {
+      "bytes": 30854,
+      "path": "tests/test_wrapper_crossmodel_canary_v1.py",
+      "sha256": "a07b111a9418078969fa267f4772d9a2ea95bbd72b2617ef02199aafe6ab1a24"
+    }
+  ]
+}

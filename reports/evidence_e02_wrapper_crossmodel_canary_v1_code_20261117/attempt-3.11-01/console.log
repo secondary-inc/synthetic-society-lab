@@ -1,0 +1,516 @@
+test_402_preserves_full_new_and_five_old_holds (__main__.CopiedHistoryCases.test_402_preserves_full_new_and_five_old_holds) ... FAIL
+test_404_only_three_gets_no_post_retry (__main__.CopiedHistoryCases.test_404_only_three_gets_no_post_retry) ... FAIL
+test_alias_head_slot_and_io_ordinals_refuse (__main__.CopiedHistoryCases.test_alias_head_slot_and_io_ordinals_refuse) ... FAIL
+test_atomic_before_and_after_commit_crash (__main__.CopiedHistoryCases.test_atomic_before_and_after_commit_crash) ... FAIL
+test_copied_parent_payload_slot_and_original_halt_negatives (__main__.CopiedHistoryCases.test_copied_parent_payload_slot_and_original_halt_negatives) ... FAIL
+test_overrun_preserves_known_charge_and_stops (__main__.CopiedHistoryCases.test_overrun_preserves_known_charge_and_stops) ... FAIL
+test_provider_drift_stops_without_refund (__main__.CopiedHistoryCases.test_provider_drift_stops_without_refund) ... FAIL
+test_stale_future_catalog_and_usage_provider_fields_refuse (__main__.CopiedHistoryCases.test_stale_future_catalog_and_usage_provider_fields_refuse) ... FAIL
+test_success_one_slot_preserves_all_history_and_no_reopen (__main__.CopiedHistoryCases.test_success_one_slot_preserves_all_history_and_no_reopen) ... FAIL
+test_two_processes_cannot_grant_same_original_slot (__main__.CopiedHistoryCases.test_two_processes_cannot_grant_same_original_slot) ... FAIL
+test_unknown_bill_stops_and_keeps_full_hold (__main__.CopiedHistoryCases.test_unknown_bill_stops_and_keeps_full_hold) ... FAIL
+test_clock_rollback_jump_deadline_cancel (__main__.PureCases.test_clock_rollback_jump_deadline_cancel) ... ok
+test_envelope_rejects_44_46_or_extra_records (__main__.PureCases.test_envelope_rejects_44_46_or_extra_records) ... ok
+test_full35_catalog_still_exceeds_original16 (__main__.PureCases.test_full35_catalog_still_exceeds_original16) ... ok
+test_identity_independent_of_head_alias (__main__.PureCases.test_identity_independent_of_head_alias) ... ok
+
+======================================================================
+FAIL: test_402_preserves_full_new_and_five_old_holds (__main__.CopiedHistoryCases.test_402_preserves_full_new_and_five_old_holds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_404_only_three_gets_no_post_retry (__main__.CopiedHistoryCases.test_404_only_three_gets_no_post_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_alias_head_slot_and_io_ordinals_refuse (__main__.CopiedHistoryCases.test_alias_head_slot_and_io_ordinals_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_atomic_before_and_after_commit_crash (__main__.CopiedHistoryCases.test_atomic_before_and_after_commit_crash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_copied_parent_payload_slot_and_original_halt_negatives (__main__.CopiedHistoryCases.test_copied_parent_payload_slot_and_original_halt_negatives)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_overrun_preserves_known_charge_and_stops (__main__.CopiedHistoryCases.test_overrun_preserves_known_charge_and_stops)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_provider_drift_stops_without_refund (__main__.CopiedHistoryCases.test_provider_drift_stops_without_refund)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_stale_future_catalog_and_usage_provider_fields_refuse (__main__.CopiedHistoryCases.test_stale_future_catalog_and_usage_provider_fields_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_success_one_slot_preserves_all_history_and_no_reopen (__main__.CopiedHistoryCases.test_success_one_slot_preserves_all_history_and_no_reopen)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_two_processes_cannot_grant_same_original_slot (__main__.CopiedHistoryCases.test_two_processes_cannot_grant_same_original_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+======================================================================
+FAIL: test_unknown_bill_stops_and_keeps_full_hold (__main__.CopiedHistoryCases.test_unknown_bill_stops_and_keeps_full_hold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 157, in setUp
+    'code_hash':canonical_hash(p.contract()),'price_release':deepcopy(self.old_packet['price_release'])}
+                               ^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_canary_v1.py", line 38, in contract
+    return {'kind':'WRAPPER_CANARY_CODE_V1','parent':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_crossmodel_v1_owner.py", line 61, in code_contract
+    return {'kind':'WRAPPER_CROSSMODEL_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/wrapper_visibility_owner_v1.py", line 61, in code_contract
+    return {'kind':'WRAPPER_VISIBILITY_CODE_V1','predecessor':predecessor_contract(),
+                                                              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py", line 62, in code_contract
+    return {'kind':'CROSSMODEL_RECOVERY_CODE_V1','predecessor':predecessor_contract(),
+                                                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/issue_cue_crossmodel_owner_v1.py", line 43, in code_contract
+    return {'kind':'CROSSMODEL_STUDY_CODE_V1','predecessor':predecessor_contract(),
+                                                            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/alignment_anchoring_owner_v1.py", line 42, in code_contract
+    return {'kind':'ALIGNMENT_STUDY_CODE_V1','predecessor':continuation_contract(),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_continuation_owner_v1.py", line 33, in continuation_contract
+    return {'kind':'E02_CONTINUATION_CODE_V1','base':code_contract(),
+                                                     ^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/e02/exploratory_owner_v1.py", line 94, in code_contract
+    if (sha256_file(ROOT/'docs/E02_RECOVERY_ADMISSION_V1_PROPOSAL.md') != RECOVERY_METHODS_SHA
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/src/civiclab/common.py", line 33, in sha256_file
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/data/processed/toolchains/cpython-3.11.17-macos-aarch64-none/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 405, in opened
+    stream=_original(*args,**kwargs);mode=kwargs.get('mode',args[1] if len(args)>1 else 'r')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/joshua/Documents/ChatGPT/synthetic-society-lab/tests/test_wrapper_crossmodel_canary_v1.py", line 385, in audit
+    if not (path.is_relative_to(ROOT/'src') or path.is_relative_to(ROOT/'scripts') or path==Path(__file__).resolve() or path.is_relative_to(ROOT/'configs') or path.is_relative_to(BASE) or path in {HISTORICAL_PRICES/f'{prefix}-{role}.json' for prefix in ('catalog','receipt') for role in ('A','B')} or path.is_relative_to(stdlib) or path.is_relative_to(tmp)):raise AssertionError('READ_OUTSIDE_CLOSED_TEST_SCOPE')
+                                                                                                                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: READ_OUTSIDE_CLOSED_TEST_SCOPE
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.829s
+
+FAILED (failures=11)
+{"kind": "CANARY_AUTHOR_OFFLINE_V1", "python": "3.11.17", "tests_run": 15, "successful": false, "read_reservation_bytes": 4199292, "write_reservation_bytes": 184555107, "console_bytes": 54285, "real_API_requests": 0, "live_owner_actions": 0, "credentials_read": 0}

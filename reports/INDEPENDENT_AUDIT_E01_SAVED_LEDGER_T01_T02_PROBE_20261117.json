@@ -1,0 +1,271 @@
+{
+  "COST_USD_ACTUAL_OR_ZERO": 0,
+  "FILES_CHANGED": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_T01_T02_PROBE_20261117.json",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/STARTED.json",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/probe.py",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/python312.log",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/python312_result.json",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/STARTED.json",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/probe.py",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/python312.log",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/python312_result.json"
+  ],
+  "NEXT_UNBLOCKED_TASK": "Lead may assign author to patch finite JSON handling and latch non-missing storage errors; preserve V1/probe evidence. Independently review exact corrective delta and regressions. E02 full implementation audit remains next priority when frozen.",
+  "OUTPUT_ARTIFACTS": [
+    "reports/INDEPENDENT_AUDIT_E01_SAVED_LEDGER_T01_T02_PROBE_20261117.json",
+    "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117"
+  ],
+  "REPRODUCTION_COMMANDS": [
+    [
+      "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "-I",
+      "-B",
+      "-S",
+      "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/probe.py"
+    ]
+  ],
+  "RISKS_AND_LIMITATIONS": [
+    "Confirmed behavior is in exact frozen mock consumer on Python 3.12.14 only. No independent 3.11 confirmation assigned.",
+    "Numeric overflow findings concern JSON admission; no accepted public ledger contamination or real-data effect claimed.",
+    "OSError findings concern sticky mock lifecycle state under a trusted authored callback, not an adversarial sandbox claim.",
+    "No production correction, implementation acceptance, actual execution release, CI or science qualification.",
+    "Read counters cover guarded file opens after warmed stdlib imports; interpreter startup not claimed."
+  ],
+  "SOURCE_DATA_AND_LICENSE_NOTES": "Frozen consumer plus only ref/authored fixture-builder AST nodes from committed corrected test snapshot. All candidate records, reference files and code bytes inside MemoryFixture are invented. No actual saved reader, real input, raw source, private owner or credential read.",
+  "TASK_ID": "Independent bounded authored-only confirmation of E01 saved-ledger T01/T02",
+  "TESTS_RUN_AND_RESULTS": {
+    "T01": "CONFIRMED: positive, negative and nested exponent overflow returned nonfinite float structures without refusal. Finite control accepted; literal NaN and Infinity refused JSON_NONFINITE.",
+    "T02": "CONFIRMED: one PermissionError from size and one OSError from read were caught by callback; both operations completed with COMPLETE present and budget.failed false. Normal read control completed. Missing-file controls latched failure and produced no COMPLETE.",
+    "authorized_recovery_attempt": {
+      "command": [
+        "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "-I",
+        "-B",
+        "-S",
+        "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/probe.py"
+      ],
+      "console_bytes": 1939,
+      "exit_code": 0,
+      "recovery_invocation": 1,
+      "timed_out": false,
+      "wall_seconds": 0.054195416
+    },
+    "full_suite": "NOT_RUN; no existing test bodies executed",
+    "observations": {
+      "T01_confirmed": true,
+      "T02_confirmed": true,
+      "actual_reader_calls": 0,
+      "cost_usd": 0,
+      "guard": {
+        "denied": 0,
+        "read_bytes": 49532,
+        "write_bytes": 0
+      },
+      "io_cases": [
+        {
+          "budget_failed": false,
+          "callback_calls": 1,
+          "case": "positive_read_control",
+          "caught_exception_type": null,
+          "compiled": true,
+          "complete_present": true,
+          "injected": 0,
+          "raised_type": null
+        },
+        {
+          "budget_failed": false,
+          "callback_calls": 1,
+          "case": "size_permission_caught",
+          "caught_exception_type": "PermissionError",
+          "compiled": true,
+          "complete_present": true,
+          "injected": 1,
+          "raised_type": null
+        },
+        {
+          "budget_failed": false,
+          "callback_calls": 1,
+          "case": "read_oserror_caught",
+          "caught_exception_type": "OSError",
+          "compiled": true,
+          "complete_present": true,
+          "injected": 1,
+          "raised_type": null
+        },
+        {
+          "budget_failed": true,
+          "callback_calls": 1,
+          "case": "size_missing_control",
+          "caught_exception_type": "LedgerRefused",
+          "compiled": false,
+          "complete_present": false,
+          "injected": 1,
+          "raised_type": "LedgerRefused"
+        },
+        {
+          "budget_failed": true,
+          "callback_calls": 1,
+          "case": "read_missing_control",
+          "caught_exception_type": "LedgerRefused",
+          "compiled": false,
+          "complete_present": false,
+          "injected": 1,
+          "raised_type": "LedgerRefused"
+        }
+      ],
+      "json_cases": [
+        {
+          "case": "finite",
+          "contains_nonfinite": false,
+          "refusal": null,
+          "returned": true
+        },
+        {
+          "case": "overflow_positive",
+          "contains_nonfinite": true,
+          "refusal": null,
+          "returned": true
+        },
+        {
+          "case": "overflow_negative",
+          "contains_nonfinite": true,
+          "refusal": null,
+          "returned": true
+        },
+        {
+          "case": "overflow_nested",
+          "contains_nonfinite": true,
+          "refusal": null,
+          "returned": true
+        },
+        {
+          "case": "literal_nan_control",
+          "contains_nonfinite": null,
+          "refusal": "JSON_NONFINITE",
+          "returned": false
+        },
+        {
+          "case": "literal_infinity_control",
+          "contains_nonfinite": null,
+          "refusal": "JSON_NONFINITE",
+          "returned": false
+        }
+      ],
+      "kind": "INDEPENDENT_E01_T01_T02_AUTHORED_CONFIRMATION",
+      "model_calls": 0,
+      "network_calls": 0,
+      "runtime": "3.12.14",
+      "wall_seconds": 0.021827291988302022
+    },
+    "original_harness_attempt": {
+      "command": [
+        "/Users/joshua/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+        "-I",
+        "-B",
+        "-S",
+        "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/probe.py"
+      ],
+      "console_bytes": 336,
+      "exit_code": 1,
+      "invocation": 1,
+      "timed_out": false,
+      "wall_seconds": 0.030018041
+    }
+  },
+  "UNRESOLVED_BLOCKERS": [
+    "T01/T02 require versioned correction and bounded regression evidence before full consumer acceptance.",
+    "Actual adapter, real manifest, guarded reader closure and CI harness acceptance remain separate work."
+  ],
+  "decision": {
+    "T01": "CONFIRMED_P2",
+    "T02": "CONFIRMED_P2",
+    "actual_release": "NOT_RUN",
+    "finite_and_read_controls": "PASS",
+    "full_consumer_acceptance": "BLOCKED",
+    "probe_recovery": "PASS_AFTER_PRESERVED_HARNESS_FAILURE"
+  },
+  "evidence_refs": [
+    {
+      "bytes": 504,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/STARTED.json",
+      "sha256": "61f6ef30bc9381f9dc51a5e4593f7cec184f530be26bf640461686c5cd6c8312"
+    },
+    {
+      "bytes": 6401,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/probe.py",
+      "sha256": "7ac70cfd1a17ae6cea673bbd93b13f5e7ab9e827718acd30f416377ec9ae62e2"
+    },
+    {
+      "bytes": 336,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/python312.log",
+      "sha256": "de38ce99729171010074f92eef9314e449557a81f09fc6e700f0fb90d7aebedb"
+    },
+    {
+      "bytes": 351,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/python312_result.json",
+      "sha256": "56bac4651572f9698583bbbf24b67850fd5b7f44e0f34fc2b8700a3b4e029cc1"
+    },
+    {
+      "bytes": 728,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/STARTED.json",
+      "sha256": "5fff50f807f8bf7baec35aab62e53ccf5b652be63667f2aab20ece5221809e10"
+    },
+    {
+      "bytes": 6415,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/probe.py",
+      "sha256": "263b5f7301651a76066d7584649e3a6fa94500399f049a3a65146aec61cc3333"
+    },
+    {
+      "bytes": 1939,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/python312.log",
+      "sha256": "269b2ee8b2b939c8a0426ad20fb02ce089894efec97a594b88ef7861d70ef735"
+    },
+    {
+      "bytes": 373,
+      "path": "reports/evidence_independent_e01_saved_ledger_t01_t02_probe_20261117/recovery_v1/python312_result.json",
+      "sha256": "62bdfb67f28db8d7918bebc3449dcd795c56baf7b92d76a628971dd856fbfb38"
+    }
+  ],
+  "harness_failure_and_recovery": {
+    "invocations": {
+      "explicitly_authorized_recovery": 1,
+      "original": 1,
+      "unapproved_retries": 0
+    },
+    "original": "Failed before I/O cases: extracted authored() globals omitted copy. Exit 1 preserved; no consumer finding confirmation taken from this partial attempt.",
+    "recovery": "Lead explicitly authorized exactly one separately versioned invocation with same caps. All extracted globals inspected statically: M, copy, enumerate, len, list, range, ref. Only supplied copy to helper environment; original probe/log not overwritten."
+  },
+  "input_refs": [
+    {
+      "bytes": 25240,
+      "path": "src/civiclab/e01/source_job_ledger_v1.py",
+      "sha256": "fc0bf218eb486b4489bd109dcffc84d9538716cc80dd6034edb66bbb8b9415d7"
+    },
+    {
+      "bytes": 24290,
+      "path": "reports/evidence_e01_saved_job_ledger_v1_code_20261117/discovery_safe_v1_1/corrected_test_snapshot.py",
+      "sha256": "2d9913891b91d4ac155e5850f7e2ba98d5675a43320f16850cc8bb6b96b57f7a"
+    }
+  ],
+  "no_additional_execution_access_spending_publication_authority": true,
+  "resource_accounting": {
+    "Git_mutations": 0,
+    "actual_reader_calls": 0,
+    "guard_denials": 0,
+    "guarded_read_bytes": 49532,
+    "guarded_write_bytes": 0,
+    "model_calls": 0,
+    "network_calls": 0,
+    "per_invocation_caps": {
+      "authored_read_bytes": 4194304,
+      "console_bytes": 65536,
+      "cpu_seconds": 15,
+      "evidence_write_bytes": 2097152,
+      "wall_seconds": 30
+    },
+    "recovery_console_bytes": 1939,
+    "recovery_wall_seconds": 0.054195416,
+    "total_owned_evidence_bytes": 17047
+  }
+}

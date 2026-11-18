@@ -1,0 +1,728 @@
+{
+  "actual_event_branch_metadata": [
+    {
+      "kind": "LIMITED_STUDY_START",
+      "policy_field_names": [
+        "assignment_sha256",
+        "code_contract_hash",
+        "compatibility_receipt",
+        "kind",
+        "limits",
+        "owner_id",
+        "predecessor",
+        "price_release_hash",
+        "projection_sha256",
+        "protocol_sha256",
+        "recovery",
+        "run_id",
+        "valid_from_utc",
+        "valid_until_utc"
+      ],
+      "policy_has_recovery": true
+    }
+  ],
+  "content_read_bytes_this_step": 4102907,
+  "cumulative_content_read_bytes": 16829595,
+  "guard_reconstruction": {
+    "canonical_head_sha256": "48568b715a48fe92a93efc74b4768bd9ba72242d9a69e5c3852fd41ac9768ef7",
+    "canonical_header_sha256": "9f2ab0b4e44e10191fbad96dc5fca41eb79aaba6ca3066a2d9351de57d3f6d0a",
+    "derived_sqlite_would_not_claim_original_raw_bytes": true,
+    "matches_recorded_guard_file_sha256": true,
+    "matches_recorded_head_file_sha256": false,
+    "registration_body_in_top_level_export": false,
+    "registration_canonical_value_sha256": "920278f3258c856f60959cf7bd380a944cc09d797084552698dd7ae7024a54e9",
+    "registration_original_file_sha256": "920278f3258c856f60959cf7bd380a944cc09d797084552698dd7ae7024a54e9",
+    "registration_value_canonical_hash_field_present": true,
+    "sqlite_source_raw_sha256": "f3f6f64047960e42272d73f6f7dfe74d4766a220f85e0c9fa4cafd9c3d08dadf"
+  },
+  "pins": [
+    {
+      "bytes": 20485,
+      "path": "src/civiclab/additional_compatibility_owner_v1.py",
+      "sha256": "fc8b8605c65d8da64f71f77cefc9c5c42e21d8f052a1e2a05f41be290abf898f"
+    },
+    {
+      "bytes": 39024,
+      "path": "src/civiclab/e02/exploratory_owner_v1.py",
+      "sha256": "61f914b83ae5803a0cc6c93ddb1714917975c2ead04ad732ea38c6a5212a5756"
+    },
+    {
+      "bytes": 10858,
+      "path": "src/civiclab/e02/exploratory_continuation_owner_v1.py",
+      "sha256": "3bc792b022e93f1cdcf34e555d7151c09b3c865fb33e20118d59494ceaab5256"
+    },
+    {
+      "bytes": 23339,
+      "path": "src/civiclab/e02/alignment_anchoring_owner_v1.py",
+      "sha256": "c37f21dd71d8426be4906799143de38f4ec35a097a8e5ffc0b3cad48d5802301"
+    },
+    {
+      "bytes": 27606,
+      "path": "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py",
+      "sha256": "0322944250e3236c7a08a9b0e15780f0a9247ee29d22ee15762595ab41a9c84b"
+    },
+    {
+      "bytes": 29544,
+      "path": "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py",
+      "sha256": "6093e5e5b190f0a3ff7569ba52b5ff66c14b38fc66e569e3013986d4382d112d"
+    },
+    {
+      "bytes": 28723,
+      "path": "src/civiclab/e02/wrapper_visibility_owner_v1.py",
+      "sha256": "838408c5eed7deea8010176d3c268b7c1f58c912bf80381e315120eb0b2b2b48"
+    },
+    {
+      "bytes": 29652,
+      "path": "src/civiclab/e02/wrapper_crossmodel_v1_owner.py",
+      "sha256": "5b69a1f2d1215ec93f9b6f5e4b4c86021f9c1a26882deecccbf460ea3ce31785"
+    },
+    {
+      "bytes": 3893676,
+      "path": "data/processed/e02_wrapper_crossmodel_v1_20261115_actual_01/post-run-owner-export.local.json",
+      "sha256": "ba726232dbc1375f5e7c48d5f96f3bdec70a9812a25cacfe3c00640197aa6f66"
+    }
+  ],
+  "replay_function_call_graph_names": {
+    "src/civiclab/additional_compatibility_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "(now - utc(c['price_proof']['observed_at_utc'])).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "canonical_hash",
+          "deepcopy",
+          "p.get",
+          "p.get('after', {}).get",
+          "phase_key",
+          "price_proof_key",
+          "self._binding",
+          "self._clock",
+          "self._new_row",
+          "self._predecessor",
+          "state.get",
+          "state['approval_ids'].add",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "super",
+          "super()._apply",
+          "utc",
+          "validate_bundle",
+          "validate_row"
+        ],
+        "line": 163
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "ValueError",
+          "_load",
+          "canonical_hash",
+          "data.encode",
+          "db.execute",
+          "db.execute('SELECT data FROM header').fetchall",
+          "db.execute('SELECT id,data FROM charges LIMIT 1025').fetchall",
+          "db.execute('SELECT sequence,data,digest FROM events ORDER BY sequence LIMIT 10001').fetchall",
+          "enumerate",
+          "event['body'].get",
+          "freeze",
+          "history.append",
+          "len",
+          "self._apply",
+          "self._empty",
+          "self._registration",
+          "self.anchor.is_file",
+          "self.anchor.is_symlink",
+          "self.anchor.read_text",
+          "self.guard.read_text",
+          "set",
+          "state.get",
+          "state.get('additional', {}).get",
+          "type"
+        ],
+        "line": 229
+      },
+      "validate_bundle": {
+        "call_names": [
+          "'policy review approval owner_assertion'.split",
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "any",
+          "base_context",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "integer",
+          "m[k].values",
+          "receipt_for",
+          "request_binding",
+          "set",
+          "type",
+          "utc",
+          "validate_approval"
+        ],
+        "line": 67
+      }
+    },
+    "src/civiclab/e02/alignment_anchoring_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "(now - utc(study['phase_started'][target])).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "_phase_row",
+          "_row_for",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "deepcopy",
+          "digest",
+          "len",
+          "next_action",
+          "original_next",
+          "payload.get",
+          "payload.get('after', {}).get",
+          "price_proof_key",
+          "self._context",
+          "self._new_clock",
+          "self._transition_view",
+          "sorted",
+          "state.get",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "state['rows'].values",
+          "study['receipts'].append",
+          "study['witnesses'].append",
+          "sum",
+          "super",
+          "super()._apply",
+          "type",
+          "utc",
+          "validate_packet",
+          "validate_row"
+        ],
+        "line": 145
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "state.get",
+          "state.get('alignment_followup', {}).get",
+          "super",
+          "super()._verify"
+        ],
+        "line": 230
+      },
+      "validate_packet": {
+        "call_names": [
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "len",
+          "protocol_bytes",
+          "q.items",
+          "re.fullmatch",
+          "sha256_file",
+          "type",
+          "utc",
+          "validate_decision",
+          "validate_terms"
+        ],
+        "line": 59
+      }
+    },
+    "src/civiclab/e02/exploratory_continuation_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "ExecutionBlocked",
+          "_closed",
+          "_phase_row",
+          "_protocol",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "deepcopy",
+          "len",
+          "next_action",
+          "recovered_witness",
+          "self._new_clock",
+          "sorted",
+          "state.get",
+          "super",
+          "super()._apply",
+          "validate_bundle"
+        ],
+        "line": 92
+      },
+      "validate_bundle": {
+        "call_names": [
+          "ExecutionBlocked",
+          "_closed",
+          "b.items",
+          "canonical_bytes",
+          "canonical_hash",
+          "continuation_contract",
+          "digest",
+          "freeze",
+          "len",
+          "validate_packet"
+        ],
+        "line": 37
+      }
+    },
+    "src/civiclab/e02/exploratory_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "(observed - started).total_seconds",
+          "(utc(terms['valid_until_utc']) - now).total_seconds",
+          "AnalysisRepresentationBound",
+          "ExecutionBlocked",
+          "_closed",
+          "_next",
+          "_row_for",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "deepcopy",
+          "digest",
+          "len",
+          "payload.get",
+          "payload.get('after', {}).get",
+          "price_proof_key",
+          "self._context",
+          "self._entry",
+          "self._new_clock",
+          "self._study_transition",
+          "state.get",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "study['receipts'].append",
+          "study['witnesses'].append",
+          "sum",
+          "super",
+          "super()._apply",
+          "type",
+          "utc",
+          "validate_packet",
+          "validate_row"
+        ],
+        "line": 323
+      },
+      "_entry": {
+        "call_names": [
+          "ExecutionBlocked",
+          "_answer",
+          "_load",
+          "answer.get",
+          "canonical_hash",
+          "extra.get",
+          "hashlib.sha256",
+          "hashlib.sha256(raw).hexdigest",
+          "len",
+          "parent.is_symlink",
+          "path.is_file",
+          "path.is_symlink",
+          "path.open",
+          "path.stat",
+          "recovery_mode",
+          "self._recovery_entry",
+          "set",
+          "sorted",
+          "state.get",
+          "state['rows'].get",
+          "stream.read",
+          "type",
+          "value.get"
+        ],
+        "line": 205
+      },
+      "_recovery_entry": {
+        "call_names": [
+          "ExecutionBlocked",
+          "_answer",
+          "_recovery_shape",
+          "canonical_hash",
+          "normalize_statistics",
+          "r['statistics'].get",
+          "set",
+          "type",
+          "witness.get"
+        ],
+        "line": 250
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "state.get",
+          "state.get('study', {}).get",
+          "super",
+          "super()._verify"
+        ],
+        "line": 416
+      },
+      "validate_packet": {
+        "call_names": [
+          "'kind policy review owner_assertion authority price_release terminal_review'.split",
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "_recovery_shape",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "len",
+          "q.items",
+          "re.fullmatch",
+          "recovery_mode",
+          "set",
+          "type",
+          "utc",
+          "validate_decision",
+          "validate_terms"
+        ],
+        "line": 107
+      }
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "(now - utc(study['phase_started'][target])).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "_phase_row",
+          "_row_for",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "deepcopy",
+          "digest",
+          "int",
+          "len",
+          "next_action",
+          "original_next",
+          "payload.get",
+          "payload.get('after', {}).get",
+          "payload['fresh_proofs'].items",
+          "previous_next",
+          "price_proof_key",
+          "self._check_proof",
+          "self._context",
+          "self._new_clock",
+          "self._new_proofs_clock",
+          "self._transition_view",
+          "sorted",
+          "state.get",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "state['rows'].values",
+          "state['rows'][r]['context']['unit_id'].rsplit",
+          "study['receipts'].append",
+          "study['witnesses'].append",
+          "sum",
+          "super",
+          "super()._apply",
+          "type",
+          "utc",
+          "validate_packet",
+          "validate_row"
+        ],
+        "line": 151
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "state.get",
+          "state.get('issue_cue_crossmodel', {}).get",
+          "super",
+          "super()._verify"
+        ],
+        "line": 258
+      },
+      "validate_packet": {
+        "call_names": [
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "l.items",
+          "len",
+          "protocol_bytes",
+          "q.items",
+          "re.fullmatch",
+          "sha256_file",
+          "tuple",
+          "type",
+          "utc",
+          "validate_decision",
+          "validate_terms"
+        ],
+        "line": 60
+      }
+    },
+    "src/civiclab/e02/issue_cue_crossmodel_recovery_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "(now - utc(study['phase_started'][target])).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "_phase_row",
+          "_row_for",
+          "admit_saved_pair",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "deepcopy",
+          "digest",
+          "int",
+          "len",
+          "next_action",
+          "payload.get",
+          "payload.get('after', {}).get",
+          "payload['fresh_proofs'].items",
+          "price_proof_key",
+          "protocol_bytes",
+          "refresh_stage_for_slot",
+          "self._check_proof",
+          "self._context",
+          "self._new_clock",
+          "self._new_proofs_clock",
+          "self._transition_view",
+          "sorted",
+          "state.get",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "state['rows'].values",
+          "state['rows'][r]['context']['unit_id'].rsplit",
+          "study['receipts'].append",
+          "study['witnesses'].append",
+          "sum",
+          "super",
+          "super()._apply",
+          "type",
+          "utc",
+          "validate_packet",
+          "validate_refresh",
+          "validate_row"
+        ],
+        "line": 170
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "state.get",
+          "state.get('issue_cue_crossmodel_recovery', {}).get",
+          "super",
+          "super()._verify"
+        ],
+        "line": 282
+      },
+      "validate_packet": {
+        "call_names": [
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "l.items",
+          "len",
+          "protocol_bytes",
+          "q.items",
+          "re.fullmatch",
+          "sha256_file",
+          "tuple",
+          "type",
+          "utc",
+          "validate_decision",
+          "validate_terms"
+        ],
+        "line": 79
+      }
+    },
+    "src/civiclab/e02/wrapper_crossmodel_v1_owner.py": {
+      "_apply": {
+        "call_names": [
+          "(now - utc(study['phase_started'][target])).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "_phase_row",
+          "_row_for",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "cost_envelope",
+          "deepcopy",
+          "digest",
+          "int",
+          "len",
+          "next_action",
+          "payload.get",
+          "payload.get('after', {}).get",
+          "payload['fresh_proofs'].items",
+          "previous_next",
+          "price_proof_key",
+          "protocol_bytes",
+          "q['price_release'].items",
+          "refresh_stage_for_slot",
+          "self._check_proof",
+          "self._context",
+          "self._new_clock",
+          "self._new_proofs_clock",
+          "self._transition_view",
+          "sorted",
+          "state.get",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "state['rows'].values",
+          "state['rows'][r]['context']['unit_id'].rsplit",
+          "study['receipts'].append",
+          "study['witnesses'].append",
+          "sum",
+          "super",
+          "super()._apply",
+          "type",
+          "utc",
+          "validate_packet",
+          "validate_refresh",
+          "validate_row"
+        ],
+        "line": 169
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "state.get",
+          "state.get('wrapper_crossmodel', {}).get",
+          "super",
+          "super()._verify"
+        ],
+        "line": 285
+      },
+      "validate_packet": {
+        "call_names": [
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "l.items",
+          "len",
+          "protocol_bytes",
+          "q.items",
+          "re.fullmatch",
+          "sha256_file",
+          "tuple",
+          "type",
+          "utc",
+          "validate_decision",
+          "validate_terms"
+        ],
+        "line": 78
+      }
+    },
+    "src/civiclab/e02/wrapper_visibility_owner_v1.py": {
+      "_apply": {
+        "call_names": [
+          "(now - utc(study['phase_started'][target])).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "_phase_row",
+          "_row_for",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "deepcopy",
+          "digest",
+          "int",
+          "len",
+          "next_action",
+          "payload.get",
+          "payload.get('after', {}).get",
+          "payload['fresh_proofs'].items",
+          "previous_next",
+          "price_proof_key",
+          "refresh_stage_for_slot",
+          "self._check_proof",
+          "self._context",
+          "self._new_clock",
+          "self._new_proofs_clock",
+          "self._transition_view",
+          "sorted",
+          "state.get",
+          "state['keys'].add",
+          "state['price_proofs'].add",
+          "state['rows'].values",
+          "state['rows'][r]['context']['unit_id'].rsplit",
+          "study['receipts'].append",
+          "study['witnesses'].append",
+          "sum",
+          "super",
+          "super()._apply",
+          "type",
+          "utc",
+          "validate_packet",
+          "validate_refresh",
+          "validate_row"
+        ],
+        "line": 168
+      },
+      "_verify": {
+        "call_names": [
+          "ExecutionBlocked",
+          "state.get",
+          "state.get('wrapper_visibility', {}).get",
+          "super",
+          "super()._verify"
+        ],
+        "line": 278
+      },
+      "validate_packet": {
+        "call_names": [
+          "(end - start).total_seconds",
+          "ExecutionBlocked",
+          "_closed",
+          "any",
+          "canonical_bytes",
+          "canonical_hash",
+          "code_contract",
+          "digest",
+          "freeze",
+          "l.items",
+          "len",
+          "protocol_bytes",
+          "q.items",
+          "re.fullmatch",
+          "sha256_file",
+          "tuple",
+          "type",
+          "utc",
+          "validate_decision",
+          "validate_terms"
+        ],
+        "line": 78
+      }
+    }
+  }
+}

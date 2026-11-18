@@ -52,7 +52,10 @@ def exact_json(raw):
             need(k not in d,'JSON_DUPLICATE');d[k]=v
         return d
     def constant(_):raise LedgerRefused('JSON_NONFINITE')
-    try:return json.loads(raw,object_pairs_hook=pairs,parse_constant=constant)
+    def finite_float(token):
+        value=float(token)
+        need(math.isfinite(value),'JSON_NONFINITE');return value
+    try:return json.loads(raw,object_pairs_hook=pairs,parse_constant=constant,parse_float=finite_float)
     except (UnicodeError,json.JSONDecodeError):raise LedgerRefused('JSON_INVALID') from None
 
 def relative(value):
@@ -151,6 +154,7 @@ class ReadView:
             if type(raw) is not bytes or len(raw)!=size or sha(raw)!=ref['sha256']:self.budget.trip('INPUT_HASH')
             self.budget.check();return raw
         except (KeyError,FileNotFoundError):self.budget.trip('MISSING_INPUT')
+        except OSError:self.budget.trip('INPUT_IO')
         except LedgerRefused as error:self.budget.trip(error.code)
     def json(self,name):
         try:return exact_json(self.read(name))
