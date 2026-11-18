@@ -1,0 +1,121 @@
+{
+  "additional_model_requests": 0,
+  "conservative_owner_exposure_USD": "0.016149",
+  "delivery_note": "Commit3572be9 preserves three trailing spaces in hash-bound authored probe snapshots; diff check identifies only these evidence lines. They are retained to preserve reviewed byte identity, not edited as code fixes.",
+  "execution_source_commit": "3572be9",
+  "kind": "E02_CLOSED_REPLAY_ACTUAL_OBSERVATION_V1",
+  "limits": "Exact reviewed one child/one verify, no retries. Child CPU capped, parent CPU separately observed; logical I/O/native reservations, not whole-process physical I/O.",
+  "private_refs": [
+    {
+      "bytes": 524,
+      "path": "data/processed/e02_canary_closed_replay_v1_20261117_01/accepted-review.json",
+      "sha256": "2c1974b25c696fc22cf95d7e9514a528710db86a84c18b0f189ef6fb98db5168"
+    },
+    {
+      "bytes": 41,
+      "path": "data/processed/e02_canary_closed_replay_v1_20261117_01/child.claim.json",
+      "sha256": "ef5ef6932694742c10e9c8cf2496c2d5a3a4a7911a43f1193103d91776783ab3"
+    },
+    {
+      "bytes": 698,
+      "path": "data/processed/e02_canary_closed_replay_v1_20261117_01/execution-contract.json",
+      "sha256": "97db6af3bcac9a3cc75018d367b3755135f9a5cfb027c46e5b04c41a33eb91fb"
+    },
+    {
+      "bytes": 365,
+      "path": "data/processed/e02_canary_closed_replay_v1_20261117_01/invocation.claim.json",
+      "sha256": "1d0c565b5604da8a32d97951860a3df5a53b421f5f28ef2fcf8c660ce5eb795d"
+    },
+    {
+      "bytes": 1300,
+      "path": "data/processed/e02_canary_closed_replay_v1_20261117_01/safe-child-console.jsonl",
+      "sha256": "8009fdfb2dc44601e714fa681a66cb90ccd42f893174c81163b1f9288ff05e11"
+    },
+    {
+      "bytes": 2083,
+      "path": "data/processed/e02_canary_closed_replay_v1_20261117_01/safe-supervisor-receipt.json",
+      "sha256": "e45fc147fcc0fcfc9ef806d4b81aa715c3fc850a910ad8549953a372d9dbb775"
+    }
+  ],
+  "publication_filter": "Only safe helper receipt and file metadata; no registration, row, event, key or response payload.",
+  "receipt": {
+    "CPU_scope": "CHILD_LIMIT_120_PARENT_OBSERVED_SEPARATELY",
+    "aggregate_charged_read_bytes": 171168136,
+    "child_CPU_seconds": 2.3448369999999996,
+    "child_exit": 0,
+    "child_record": {
+      "API_calls": 0,
+      "CPU_seconds": 2.3343,
+      "charged_read_bytes": 171168136,
+      "charged_write_bytes": 50468991,
+      "checks": {
+        "active": true,
+        "alignment_followup": true,
+        "claims": true,
+        "consumed": true,
+        "continuation": true,
+        "derived_files_unchanged": true,
+        "events": true,
+        "five_holds": true,
+        "head": true,
+        "issue_cue_crossmodel": true,
+        "issue_cue_crossmodel_recovery": true,
+        "no_canary_branch": true,
+        "no_denials": true,
+        "parent_stopped": true,
+        "project_inputs_unchanged": true,
+        "protected_methods_unchanged": true,
+        "rows": true,
+        "study": true,
+        "study_authorities": true,
+        "unfinished": true,
+        "wrapper_crossmodel": true,
+        "wrapper_visibility": true
+      },
+      "conservative_exposure_microusd": 16149,
+      "console_bytes_before_result": 0,
+      "credentials_read": 0,
+      "current_owner_access": 0,
+      "events": 1180,
+      "guard_denials": 0,
+      "kind": "CLOSED_PARENT_REPLAY_RESULT_V1",
+      "new_canary_events": 0,
+      "prewarm_and_native_boundary": "Exact reviewed stdlib/cache/native input pins charged conservatively. Implicit interpreter/native-loader OS reads and physical syscalls are not claimed as whole-process measured I/O; SQLite native reads/writes reserved separately and SELECT payload bytes charged.",
+      "rows": 194,
+      "status": "PASS_PARENT_ONLY",
+      "temporary_fixture_removed": true,
+      "verify_calls": 1,
+      "wall_seconds": 2.318993583001429
+    },
+    "console_bytes": 1300,
+    "console_sha256": "8009fdfb2dc44601e714fa681a66cb90ccd42f893174c81163b1f9288ff05e11",
+    "contract_sha256": "97db6af3bcac9a3cc75018d367b3755135f9a5cfb027c46e5b04c41a33eb91fb",
+    "fixture_disposition": {
+      "child_cleanup_reported": true,
+      "disposition": "NO_FIXTURE_PRESENT",
+      "followup": "NONE",
+      "path_is_alias": false,
+      "path_present": false,
+      "supervisor_cleanup_attempted": false
+    },
+    "kind": "CLOSED_PARENT_REPLAY_SUPERVISOR_V1",
+    "one_child": true,
+    "reason": "EXIT",
+    "retries": 0,
+    "review_sha256": "2c1974b25c696fc22cf95d7e9514a528710db86a84c18b0f189ef6fb98db5168",
+    "status": "PASS_PARENT_ONLY",
+    "supervisor_CPU_seconds": 0.03545500000000001,
+    "supervisor_charged_write_bytes": 131437,
+    "wall_seconds": 2.418955208006082
+  },
+  "recorded_at_UTC": "2026-11-18T03:33:38.225848+00:00",
+  "remaining_live_gates": [
+    "Independent actual replay evidence acceptance",
+    "L01/L02 exact main and interruption controls",
+    "L03 normal inherited new-event and tamper checks",
+    "Fresh current-owner/price proofs and exact one-request release"
+  ],
+  "research_response_total": 191,
+  "status": "OBSERVED_PASS_PARENT_ONLY_INDEPENDENT_ACTUAL_REVIEW_PENDING",
+  "verified_model_usage_USD": "0.0129589"
+}
